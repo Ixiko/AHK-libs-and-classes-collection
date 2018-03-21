@@ -1,2 +1,3 @@
-# AHK-libs-and-classes-collection
-### This is my collection of currently around 730 Autohotkey libraries and classes.
+AutoHotkey libraries for my projects
+--------------------------------
+cyruz - http://ciroprincipe.info
