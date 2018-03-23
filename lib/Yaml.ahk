@@ -1,4 +1,4 @@
-﻿Yaml(YamlText,IsFile=1,YamlObj=0){ ; Version 1.0.0.16 http://www.autohotkey.com/forum/viewtopic.php?t=70559
+﻿Yaml(YamlText,IsFile=1,YamlObj=0){ ; Version 1.0.0.13 http://www.autohotkey.com/forum/viewtopic.php?t=70559
   static
   static base:={Dump:"Yaml_Dump",Save:"Yaml_Save",Add:"Yaml_Add",Merge:"Yaml_Merge",__Delete:"__Delete",_Insert:"_Insert",_Remove:"_Remove",_GetCapacity:"_GetCapacity",_SetCapacity:"_SetCapacity",_GetAddress:"_GetAddress",_MaxIndex:"_MaxIndex",_MinIndex:"_MinIndex",_NewEnum:"_NewEnum",_HasKey:"_HasKey",_Clone:"_Clone",Insert:"Insert",Remove:"Remove",GetCapacity:"GetCapacity",SetCapacity:"SetCapacity",GetAddress:"GetAddress",MaxIndex:"MaxIndex",MinIndex:"MinIndex",NewEnum:"NewEnum",HasKey:"HasKey",Clone:"Clone",base:{__Call:"Yaml_Call"}}
   static BackupVars:="LVL,SEQ,KEY,SCA,TYP,VAL,CMT,LFL,CNT",IncompleteSeqMap
@@ -84,12 +84,9 @@
 			_VAL:=Yaml_UnQuoteIfNeed(_VAL)
     ;determine current level
     _LVL:=Yaml_S2I(_LVL)
-    If _LVL-__LVL>1||(_LVL>__LVL&&_LVLChanged) ;&&!(__SEQ&&__KEY!=""&&_KEY!="")) ; (__SEQ?2:1)
-    {
-      Loop % (_LVLChanged?_LVL-_LVLChanged:_LVL-__LVL-1)
-        LoopField:=SubStr(LoopField,SubStr(LoopField,1,1)=A_Tab?1:2)
-      _LVL:=_LVLChanged?_LVLChanged:__LVL+1,_LVLChanged:=_LVLChanged?_LVLChanged:_LVL ;__LVL%_LVL%:=__LVL%_NXT% ; (__SEQ?2:1)
-    } else if _LVLChanged
+    If (_LVL-__LVL>(__SEQ?2:1) ||(_LVL>__LVL&&_LVLChanged)) ;&&!(__SEQ&&__KEY!=""&&_KEY!=""))
+      _LVL:=__LVL+1+(__SEQ?1:0),_LVLChanged:=_LVL ;__LVL%_LVL%:=__LVL%_NXT%
+    else if _LVLChanged
       _LVL:=_LVLChanged
     else _LVLChanged:=0
     If (maxLVL<_LVL)
@@ -184,7 +181,7 @@
       If !LVL%_LVL%[""].MaxIndex()
         LVL%_LVL%.Remove("")
     } else if (_KEY!=""){
-      If (__SEQ && _LVL>__LVL) {
+      If (__SEQ) {
         If (OBJ:=LVL%_PRV%[""].MaxIndex())&&IsObject(LVL%_PRV%["",OBJ]){
           If !Yaml_SeqMap(LVL%_PRV%["",OBJ],_KEY,_VAL)
             LVL%_PRV%["",OBJ,_KEY]:=(_VAL!=""||IsVal)?_VAL:(LVL%_NXT%:=Object("base",base))
