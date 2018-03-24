@@ -1,5 +1,5 @@
 # AHK-libs-and-classes-collection
-### This is my collection of currently around 730 Autohotkey libraries and classes.
+### This is my collection of currently around 800 Autohotkey libraries and classes.
 <bR>
 
 1. FunctionList.ahk (this is no script)	<bR>
