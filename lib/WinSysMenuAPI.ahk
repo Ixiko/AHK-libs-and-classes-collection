@@ -25,30 +25,26 @@
 ;
 ; For system command constants see: http://source.winehq.org/source/include/winuser.h
 
-GetSystemMenu(ByRef hWnd, Revert = False) { ; Get system menu handle
-
+GetSystemMenu(ByRef hWnd, Revert = False)  ; Get system menu handle
+{
   hWnd := hWnd ? hWnd : WinExist("A")  ; Active window handle
   Return DllCall("GetSystemMenu", "UInt", hWnd, "UInt", Revert)
 }
 
-DrawMenuBar(hWnd) { ; Internal function: this is needed to apply menu changes
-
+DrawMenuBar(hWnd)  ; Internal function: this is needed to apply menu changes
+{
   Return DllCall("DrawMenuBar", "UInt", hWnd)
 }
 
-RevertSystemMenu(hWnd = "") { ; Restores all removed menu items
-
+RevertSystemMenu(hWnd = "")  ; Restores all removed menu items
+{
   Return DrawMenuBar(GetSystemMenu(hWnd, True))  ; Revert system menu
 }
 
-RemoveMenu(hWnd, Position, Flags = 0) { ; MF_BYCOMMAND = 0x0000
 
+RemoveMenu(hWnd, Position, Flags = 0)  ; MF_BYCOMMAND = 0x0000
+{
   DllCall("RemoveMenu", "UInt", GetSystemMenu(hWnd), "UInt", Position, "UInt", Flags)
-  Return DrawMenuBar(hWnd)
-}
-
-EnableMenuItem(hWnd, SystemCommand, EnableFlag) {
-  DllCall("EnableMenuItem", "UInt", GetSystemMenu(hWnd), "UInt", SystemCommand, "UInt", EnableFlag)  ; MF_BYCOMMAND = 0
   Return DrawMenuBar(hWnd)
 }
 
@@ -84,6 +80,13 @@ DeleteWindowMenuSeparator(hWnd = "") {  ; Removes the line above Close menuitem
   Return RemoveMenu(hWnd, 0)
 }
 
+
+EnableMenuItem(hWnd, SystemCommand, EnableFlag) {
+  DllCall("EnableMenuItem", "UInt", GetSystemMenu(hWnd), "UInt", SystemCommand, "UInt", EnableFlag)  ; MF_BYCOMMAND = 0
+  Return DrawMenuBar(hWnd)
+}
+
+
 DisableWindowResizing(hWnd = "") {
   Return DeleteWindowResizing()  ; Disabling has no effect, use delete instead
 }
@@ -111,6 +114,7 @@ DisableWindowRestoring(hWnd = "") {
 DisableWindowClosing(hWnd = "") {
   Return EnableMenuItem(hWnd, 0xF060, 1)  ; MF_GRAYED = 0x0001
 }
+
 
 EnableWindowResizing(hWnd = "") {
   Return EnableMenuItem(hWnd, 0xF000, 0)  ; MF_ENABLED = 0x0000
