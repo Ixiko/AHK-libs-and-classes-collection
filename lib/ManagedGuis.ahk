@@ -1,24 +1,17 @@
-﻿/*
-
+/*
   Version: MPL 2.0/GPL 3.0/LGPL 3.0
-
   The contents of this file are subject to the Mozilla Public License Version
   2.0 (the "License"); you may not use this file except in compliance with
   the License. You may obtain a copy of the License at
-
   http://www.mozilla.org/MPL/
-
   Software distributed under the License is distributed on an "AS IS" basis,
   WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
   for the specific language governing rights and limitations under the License.
-
   The Initial Developer of the Original Code is
   Elgin <Elgin_1@zoho.eu>.
   Portions created by the Initial Developer are Copyright (C) 2010-2017
   the Initial Developer. All Rights Reserved.
-
   Contributor(s):
-
   Alternatively, the contents of this file may be used under the terms of
   either the GNU General Public License Version 3 or later (the "GPL"), or
   the GNU Lesser General Public License Version 3.0 or later (the "LGPL"),
@@ -30,7 +23,6 @@
   and other provisions required by the GPL or the LGPL. If you do not delete
   the provisions above, a recipient may use your version of this file under
   the terms of any one of the MPL, the GPL or the LGPL.
-
 */
 
 ; todo
@@ -39,8 +31,7 @@
 
 #Include WindowsBase.ahk
 
-class GuiManagerMainClass
-{
+class GuiManagerMainClass {
   ; variables for internal use only
   ; use properties to access the values
   Settings :=
@@ -48,16 +39,14 @@ class GuiManagerMainClass
   ManagedGuisByHWND := Object()
   ManagedControls := Object()
   DefaultFont:=Object()
-  
-  __New(ManagedVariableObject="")
-  {
+
+  __New(ManagedVariableObject="") {
     global GuiManagerCallback
     this.Settings := ManagedVariableObject
     GuiManagerCallback:=this
     ; retrieve Windows default font settings as AHK normally uses a different font and size
     ncm:=GetNONCLIENTMETRICS()
-    If (IsObject(ncm))
-    {
+    If (IsObject(ncm)) {
       this.DefaultFont.Name:=ncm.lfMenuFont.lfFaceName
       this.DefaultFont.Size:=-ncm.lfMenuFont.lfHeight*72/A_ScreenDPI
       this.DefaultFont.Weight:=ncm.lfMenuFont.lfWeight
@@ -66,67 +55,56 @@ class GuiManagerMainClass
       this.DefaultFont.StrikeOut:=ncm.lfMenuFont.lfStrikeOut
     }
   }
-  
-  NewGUI(GuiName, Title="", Options="")
-  {
+
+  NewGUI(GuiName, Title="", Options="") {
     this.ManagedGuisByName[GuiName]:=new ManagedGui(GuiName, this, Title, Options)
     this.ManagedGuisByHWND[this.ManagedGuisByName[GuiName].HWND]:=this.ManagedGuisByName[GuiName]
     return, this.ManagedGuisByName[GuiName]
   }
-  
+
   ; Close gui GuiHwnd. GuiHwnd=0 to close all managed Guis.
-  Close(GuiHwnd=0)
-  {
-    If (GuiHwnd=0)
-    {
+  Close(GuiHwnd=0) {
+    If (GuiHwnd=0) {
       ret:=0
       For HWND, ManagedGui in ManagedGuisByHWND
         ManagedGui.Close()
     }
     return, this.ManagedGuisByHWND[GuiHwnd].Close()
   }
-  
-  ContextMenu(GuiHwnd, CtrlHwnd, EventInfo, IsRightClick, X, Y)
-  {
+
+  ContextMenu(GuiHwnd, CtrlHwnd, EventInfo, IsRightClick, X, Y) {
     return, this.ManagedGuisByHWND[GuiHwnd].ContextMenu(CtrlHwnd, EventInfo, IsRightClick, X, Y)
   }
-  
-  ControlEvent(CtrlHwnd="", GuiEvent="", EventInfo="", ErrorLvl="")
-  {
+
+  ControlEvent(CtrlHwnd="", GuiEvent="", EventInfo="", ErrorLvl="") {
     ;~ ToolTip, Hwnd: %CtrlHwnd%`nGuiEvent: %GuiEvent%`nEventInfo: %EventInfo%`nErrorLvl: %ErrorLvl%
     CallToFunc:=this.ManagedControls[CtrlHwnd].SendEvents
     %CallToFunc%(CtrlHwnd, GuiEvent, EventInfo, ErrorLvl)
   }
-  
-  DropFiles(GuiHwnd, FileArray, CtrlHwnd, X, Y) 
-  {
+
+  DropFiles(GuiHwnd, FileArray, CtrlHwnd, X, Y) {
     return, this.ManagedGuisByHWND[GuiHwnd].DropFiles(FileArray, CtrlHwnd, X, Y)
   }
-  
-  Escape(GuiHwnd)
-  {
+
+  Escape(GuiHwnd) {
     return, this.ManagedGuisByHWND[GuiHwnd].Escape()
   }
-  
-  Show(GuiName, Title="", Options="")
-  {
+
+  Show(GuiName, Title="", Options="") {
     this.ManagedGuisByName[GuiName].Show(Title, Options)
   }
-  
-  Size(GuiHwnd, EventInfo, Width, Height)
-  {
+
+  Size(GuiHwnd, EventInfo, Width, Height) {
     return, this.ManagedGuisByHWND[GuiHwnd].Size(EventInfo, Width, Height)
   }
-  
-  Submit(GuiName, Hide=0)
-  {
+
+  Submit(GuiName, Hide=0) {
     return, this.ManagedGuisByName[GuiName].Submit(Hide)
   }
 
 }
 
-class ManagedGui
-{
+class ManagedGui {
   GuiManager:=""
   GuiHWND:=0
   GuiName:=""
@@ -141,9 +119,8 @@ class ManagedGui
   AutoSize:=0
   AutoSizeReady:=0
   SizingInfo:=Object()
-  
-  __New(GuiName, GuiManager, Title="", Options="")
-  {
+
+  __New(GuiName, GuiManager, Title="", Options="") {
     Gui, New, %Options% +HwndGuiHwnd, %Title%
     this.GuiManager := GuiManager
     this.GuiName:=GuiName
@@ -151,7 +128,7 @@ class ManagedGui
     this.Title:=Title
     this.Font("S"this.GuiManager.DefaultFont.Size " W"this.GuiManager.DefaultFont.Weight " " (this.GuiManager.DefaultFont.Italic ? "italic " : "") (this.GuiManager.DefaultFont.Underline ? "underline " : "") (this.GuiManager.DefaultFont.StrikeOut ? "strike" : ""),this.GuiManager.DefaultFont.Name)
   }
-  
+
   Add(ControlType, Name, Content="", Options="", GetEvents=0, GetData=0)
   {
     global
@@ -175,7 +152,7 @@ class ManagedGui
     this.GuiManager.ManagedControls[ControlHwnd]:=this.Controls[CNum]
     return, this.Controls[CNum]
   }
-  
+
   ; AddSizingInfo("X", "*", 1, "M", 0, "MyButton", 0, "C", 0, "*", 1, "M", 0)
   AddSizingInfo(Axis, params*)
   {
@@ -265,20 +242,20 @@ class ManagedGui
         {
           LastElemWasSpacer:=0
         }
-      }      
+      }
       return this.AddSizingInfoByObj(tSizingInfo)
     }
     else
       throw "Invalid sizing info: " Axis
   }
-  
+
   /*  Structure for SizingInfo object
   optional: Index for several SI o's in one object
   Axis:="X" or "Y"; nMin nMax to use current rule to set minimum/maximum size of GUI
   Elements:=Object()
   Elements[Index].ID:=single space */0 or array of "control name"/"hwnd"
   Elements[Index].Scale:=number  ; >0 relative scaling <0 absolute scaling
-  Elements[Index].MinValue:=C/D/M/R/number ; C: calculated by CalculateSizingInfo on Show; D: elements are not resized but spaced evenly in the available space; M is set to current margin; R: use size of referenced control; number MinValue for scaling if >0; used as size if scale=0 
+  Elements[Index].MinValue:=C/D/M/R/number ; C: calculated by CalculateSizingInfo on Show; D: elements are not resized but spaced evenly in the available space; M is set to current margin; R: use size of referenced control; number MinValue for scaling if >0; used as size if scale=0
   Elements[Index].MaxValue:="C"/number ; C: calculated by CalculateSizingInfo on Show; MaxValue for scaling if >0
   */
   AddSizingInfoByObj(InObj)
@@ -287,7 +264,7 @@ class ManagedGui
     this.SizingInfo.Push(InObj)
     return this.SizingInfo.MaxIndex()
   }
-  
+
   CalculateSizingInfo(SizingInfo)
   {
     HWND:=this.GuiHWND
@@ -324,7 +301,7 @@ class ManagedGui
           {
             GuiControlGet, cpos, Pos, % elem
             vmax:=vmax<cpos%cv% ? cpos%cv% : vmax
-            Minval+=cpos%ce% + Margin               
+            Minval+=cpos%ce% + Margin
           }
           If (Minval)
             Minval-=Margin
@@ -440,7 +417,7 @@ class ManagedGui
         this.CalculateSizingInfo(obj)
     }
   }
-  
+
   ContextMenu(CtrlHwnd, EventInfo, IsRightClick, X, Y)
   {
     If (this.OnContextMenuFunc)
@@ -450,13 +427,13 @@ class ManagedGui
     else
       return, 0
   }
-  
+
   Cancel()
   {
     HWND:=this.GuiHWND
     Gui, %HWND%: Cancel
   }
-  
+
   Close()
   {
     If (this.GuiManager.Settings)
@@ -472,25 +449,25 @@ class ManagedGui
     }
     return retval
   }
-  
+
   Color(WindowColor="", ControlColor="")
   {
     HWND:=this.GuiHWND
     Gui, %HWND%: Color, %WindowColor%, %ControlColor%
   }
-  
+
   Default()
   {
     HWND:=this.GuiHWND
     Gui, %HWND%: Default
   }
-  
+
   Destroy()
   {
     HWND:=this.GuiHWND
     Gui, %HWND%: Destroy
   }
-  
+
   DropFiles(FileArray, CtrlHwnd, X, Y)
   {
     for key, function in this.Handlers.OnDropFiles
@@ -498,7 +475,7 @@ class ManagedGui
       %function%(FileArray, CtrlHwnd, X, Y)
     }
   }
-  
+
   Escape()
   {
     If (this.GuiManager.Settings)
@@ -514,7 +491,7 @@ class ManagedGui
     }
     return retval
   }
-  
+
   Flash(Off=0)
   {
     HWND:=this.GuiHWND
@@ -523,49 +500,49 @@ class ManagedGui
     else
       Gui, %HWND%: Flash
   }
-  
+
   Font(Options="", FontName="")
   {
     HWND:=this.GuiHWND
     Gui, %HWND%: Font, %Options%, %FontName%
   }
-  
+
   Hide()
   {
     HWND:=this.GuiHWND
     Gui, %HWND%: Hide
   }
-  
+
   Margin(X="", Y="")
   {
     HWND:=this.GuiHWND
     Gui, %HWND%: Margin, %X%, %Y%
   }
-  
+
   Maximize()
   {
     HWND:=this.GuiHWND
     Gui, %HWND%: Maximize
   }
-  
+
   Menu(MenuName="")
   {
     HWND:=this.GuiHWND
     Gui, %HWND%: Menu, %MenuName%
   }
-  
+
   Minimize()
   {
     HWND:=this.GuiHWND
     Gui, %HWND%: Minimize
   }
-  
+
   Restore()
   {
     HWND:=this.GuiHWND
     Gui, %HWND%: Restore
   }
-  
+
   SelectViewControl(Name)
   {
     For i, Control in this.Controls
@@ -585,13 +562,13 @@ class ManagedGui
       }
     }
   }
-  
+
   SetOption(Option)
   {
     HWND:=this.GuiHWND
     Gui, %HWND%: %Option%
   }
-  
+
   Show(Title="", Options="")
   {
     HWND:=this.GuiHWND
@@ -621,17 +598,17 @@ class ManagedGui
         If !IsInsideVisibleArea(x,y,w,h)
           x:=""
         if x is integer
-          if y is integer 
+          if y is integer
             if h is integer
               if w is integer
               {
                 Options.=" X" x " Y" y " W" w " H" h
               }
-              else 
+              else
                 Options.=" X" x " Y" y " H" h
-            else 
+            else
               Options.=" X" x " Y" y " AutoSize"
-          else 
+          else
             Options.=" X" x " yCenter AutoSize"
       }
       else
@@ -643,7 +620,7 @@ class ManagedGui
     ;~ this.Size(0,GuiRect.w, GuiRect.h)
     Gui %HWND%: Show, %Options%, %Title%
   }
-  
+
   Size(EventInfo, Width, Height)
   {
     If (this.GuiManager.Settings)
@@ -660,7 +637,7 @@ class ManagedGui
       %function%(EventInfo, Width, Height)
     }
   }
-  
+
   SizeSet(SizingInfo, Width, Height)
   {
     HWND:=this.GuiHWND
@@ -701,7 +678,7 @@ class ManagedGui
               for index, elem in element.ID
               {
                 GuiControlGet, cpos, Pos, % elem
-                Minval+=cpos%ce% + Margin               
+                Minval+=cpos%ce% + Margin
               }
               If (Minval)
                 Minval-=Margin
@@ -774,7 +751,7 @@ class ManagedGui
           If (element.MinValue="D")
           {
             Midspacing:=SizeSet[index].Extent/(element.ID.Maxindex())
-            ; check if elements can be placed with their centers evenly distributed 
+            ; check if elements can be placed with their centers evenly distributed
             ; if not distribute with even spacing inbetween
             distribute:=1
             for index2, elem in element.ID
@@ -809,7 +786,7 @@ class ManagedGui
               for index, elem in element.ID
               {
                 GuiControlGet, cpos, Pos, % elem
-                Minval+=cpos%ce% + Margin               
+                Minval+=cpos%ce% + Margin
               }
               If (Minval)
                 Minval-=Margin
@@ -819,7 +796,7 @@ class ManagedGui
               {
                 GuiControl, % this.GuiManager.ManagedControls[elem].MoveMode, %elem%, % cv dpos
                 GuiControlGet, cpos, Pos, % elem
-                dpos+=cpos%ce% + DRubber + Margin               
+                dpos+=cpos%ce% + DRubber + Margin
               }
             }
           }
@@ -843,7 +820,7 @@ class ManagedGui
       }
     }
   }
-  
+
   Submit(Hide=0)
   {
     global
@@ -865,40 +842,40 @@ class ManagedGui
     }
     return, RetObj
   }
-  
+
   HWND[]
   {
     get
     {
       return, this.GuiHWND
     }
-    
+
     set
     {
       return, this.GuiHWND
-    }      
+    }
   }
- 
+
   Name[]
   {
     get
     {
       return, this.GuiName
     }
-    
+
     set
     {
       return, this.GuiName
-    }      
+    }
   }
-  
+
   OnClose[]
   {
     Get
     {
       return, this.Handlers.OnClose.MaxIndex
     }
-    
+
     Set
     {
       return, this.Handlers.OnClose.Push(value)
@@ -911,7 +888,7 @@ class ManagedGui
     {
       return, this.Handlers.OnContextMenu.MaxIndex
     }
-    
+
     Set
     {
       return, this.Handlers.OnContextMenu.Push(value)
@@ -924,7 +901,7 @@ class ManagedGui
     {
       return, this.Handlers.OnDropFiles.MaxIndex
     }
-    
+
     Set
     {
       return, this.Handlers.OnDropFiles.Push(value)
@@ -937,7 +914,7 @@ class ManagedGui
     {
       return, this.Handlers.OnEscape.MaxIndex
     }
-    
+
     Set
     {
       return, this.Handlers.OnEscape.Push(value)
@@ -950,7 +927,7 @@ class ManagedGui
     {
       return, this.Handlers.OnSize.MaxIndex
     }
-    
+
     Set
     {
       return, this.Handlers.OnSize.Push(value)
@@ -958,157 +935,134 @@ class ManagedGui
   }
 }
 
-class ManagedButton extends ManagedControl
-{
+class ManagedButton extends ManagedControl {
 }
 
-class ManagedText extends ManagedControl
-{
+class ManagedText extends ManagedControl {
 }
 
-class ManagedEdit extends ManagedControl
-{
+class ManagedEdit extends ManagedControl {
 }
 
-class ManagedUpDown extends ManagedControl
-{
+class ManagedUpDown extends ManagedControl {
 }
 
-class ManagedPicture extends ManagedControl
-{
+class ManagedPicture extends ManagedControl {
 }
 
-class ManagedCheckBox extends ManagedControl
-{
+class ManagedCheckBox extends ManagedControl {
 }
 
-class ManagedRadio extends ManagedControl
-{
+class ManagedRadio extends ManagedControl {
 }
 
-class ManagedDropDownList extends ManagedControl
-{
+class ManagedDropDownList extends ManagedControl {
 }
 
-class ManagedComboBox extends ManagedControl
-{
+class ManagedComboBox extends ManagedControl {
 }
 
-class ManagedListBox extends ManagedControl
-{
+class ManagedListBox extends ManagedControl {
 }
 
-class ManagedLink extends ManagedControl
-{
+class ManagedLink extends ManagedControl {
 }
 
-class ManagedHotkey extends ManagedControl
-{
+class ManagedHotkey extends ManagedControl {
 }
 
-class ManagedDateTime extends ManagedControl
-{
+class ManagedDateTime extends ManagedControl {
 }
 
-class ManagedMonthCal extends ManagedControl
-{
+class ManagedMonthCal extends ManagedControl {
 }
 
-class ManagedSlider extends ManagedControl
-{
+class ManagedSlider extends ManagedControl {
 }
 
-class ManagedProgress extends ManagedControl
-{
+class ManagedProgress extends ManagedControl {
 }
 
-class ManagedGroupBox extends ManagedControl
-{
+class ManagedGroupBox extends ManagedControl {
 }
 
-class ManagedTab2 extends ManagedControl
-{
+class ManagedTab2 extends ManagedControl {
 }
 
-class ManagedStatusBar extends ManagedControl
-{
+class ManagedStatusBar extends ManagedControl {
 }
 
-class ManagedActiveX extends ManagedControl
-{
+class ManagedActiveX extends ManagedControl {
   __New(ControlHwnd, Name, vVar, GetEvents="", GetData="")
   {
     base.__New(ControlHwnd, Name, vVar, GetEvents, GetData)
     this.EmbeddedControl:=%vVar%
-  }  
+  }
 }
 
-class ManagedCustom extends ManagedControl
-{
+class ManagedCustom extends ManagedControl {
 }
 
-class ManagedListView extends ManagedControl
-{
+class ManagedListView extends ManagedControl {
   Add(param*)
   {
     return LV_Add(param*)
   }
-  
+
   Delete(param*)
   {
     return LV_Delete(param*)
   }
-  
+
   DeleteCol(ColumnNumber)
   {
     return LV_DeleteCol(ColumnNumber)
   }
-  
+
   GetCount(param*)
   {
     return LV_GetCount(param*)
   }
-  
+
   GetNext(param*)
   {
     return LV_GetNext(param*)
   }
-  
+
   GetText(byref OutputVar, RowNumber, param*)
   {
     return LV_GetText(OutputVar, RowNumber, param*)
   }
-  
+
   Insert(RowNumber, param*)
   {
     return LV_Insert(RowNumber, param*)
   }
-  
+
   InsertCol(ColumnNumber, param*)
   {
     return LV_InsertCol(ColumnNumber, param*)
   }
-  
+
   Modify(RowNumber, Options, NewCol*)
   {
     return LV_Modify(RowNumber, Options, NewCol*)
   }
-  
+
   ModifyCol(param*)
   {
     return LV_ModifyCol(param*)
   }
-  
+
   SetImageList(ImageListID, param*)
   {
     return LV_SetImageList(ImageListID, Option)
   }
 }
 
-class ManagedExtendedTreeView extends ManagedTreeView
-{
+class ManagedExtendedTreeView extends ManagedTreeView {
   Resources:=Object()
-  
+
   Add(Name, ParentItemID=0, Options="", Resource="")
   {
     Item:=base.Add(Name, ParentItemID, Options)
@@ -1118,7 +1072,7 @@ class ManagedExtendedTreeView extends ManagedTreeView
     this.Resources[Item]["Resource"]:=Resource
     return Item
   }
-  
+
   FindInName(SearchText, addline=1)
   {
     fr:=TV_GetSelection()
@@ -1161,7 +1115,7 @@ class ManagedExtendedTreeView extends ManagedTreeView
       return 0
     }
   }
-  
+
   GetResource(Item=0)
   {
     return Reources[Item]["Resource"]
@@ -1171,7 +1125,7 @@ class ManagedExtendedTreeView extends ManagedTreeView
   {
     return Reources[Item]["Depth"]
   }
-  
+
   Modify(ItemID, Options="", NewName="")
   {
     If (NewName<>"")
@@ -1180,69 +1134,67 @@ class ManagedExtendedTreeView extends ManagedTreeView
     }
     return TV_Modify(ItemID, Options, NewName)
   }
-  
+
 }
 
-class ManagedTreeView extends ManagedControl
-{
+class ManagedTreeView extends ManagedControl {
   Add(Name, ParentItemID=0, Options="")
   {
     return TV_Add(Name, ParentItemID, Options)
   }
-  
+
   Delete(ItemID="")
   {
     return TV_Delete(ItemID)
   }
-  
+
   Get(ItemID, Attribute="")
   {
     return TV_Get(ItemID, Attribute)
   }
-  
+
   GetChild(ParentItemID)
-  {  
+  {
     return TV_GetChild(ParentItemID)
   }
-  
+
   GetCount()
   {
     return TV_GetCount()
   }
-  
+
   GetNext(ItemID=0, Attribute="")
   {
     return TV_GetNext(ItemID, Attribute)
   }
-  
+
   GetParent(ItemId)
   {
     return TV_GetParent(ItemId)
   }
-  
+
   GetPrev(ItemID)
   {
     return TV_GetPrev(ItemID)
   }
-  
+
   GetSelection()
   {
     return TV_GetSelection()
   }
-  
+
   GetText(byref OutputVar, ItemID)
   {
     return TV_GetText(OutputVar, ItemID)
   }
-  
+
   Modify(ItemID, Options="", NewName="")
   {
     return TV_Modify(ItemID, Options, NewName)
   }
 }
 
-class ManagedControl
-{
+class ManagedControl {
   MoveMode:="Move"
 
   __New(ControlHwnd, Name, vVar="", GetEvents="", GetData="")
@@ -1254,12 +1206,12 @@ class ManagedControl
     this.SubmitTo:=GetData
     this.Var:=vVar
   }
-  
+
   Control(SubCommand="", Param3="")
   {
     GuiControl, %SubCommand%, % this.HWND, %Param3%
   }
-  
+
   ControlGet(SubCommand="", Param4="")
   {
     GuiControlGet, OutputVar, %SubCommand%, % this.HWND, %Param4%
@@ -1273,51 +1225,43 @@ class ManagedControl
     }
     else
     return OutputVar
-  }  
+  }
 }
 
 
-ManagedControlEventHandler(CtrlHwnd="", GuiEvent="", EventInfo="", ErrorLvl="")
-{
+ManagedControlEventHandler(CtrlHwnd="", GuiEvent="", EventInfo="", ErrorLvl="") {
   global GuiManagerCallback
   GuiManagerCallback.ControlEvent(CtrlHwnd, GuiEvent, EventInfo, ErrorLvl)
 }
 
-GuiClose(GuiHwnd)
-{
+GuiClose(GuiHwnd) {
   global GuiManagerCallback
   return, GuiManagerCallback.Close(GuiHwnd)
 }
 
-GuiEscape(GuiHwnd)
-{
+GuiEscape(GuiHwnd) {
   global GuiManagerCallback
   return, GuiManagerCallback.Escape(GuiHwnd)
 }
 
-GuiSize(GuiHwnd, EventInfo, Width, Height)
-{
+GuiSize(GuiHwnd, EventInfo, Width, Height) {
   global GuiManagerCallback
   return, GuiManagerCallback.Size(GuiHwnd, EventInfo, Width, Height)
 }
 
-GuiContextMenu(GuiHwnd, CtrlHwnd, EventInfo, IsRightClick, X, Y)
-{
+GuiContextMenu(GuiHwnd, CtrlHwnd, EventInfo, IsRightClick, X, Y) {
   global GuiManagerCallback
   return, GuiManagerCallback.ContextMenu(GuiHwnd, CtrlHwnd, EventInfo, IsRightClick, X, Y)
 }
 
-GuiDropFiles(GuiHwnd, FileArray, CtrlHwnd, X, Y) 
-{
+GuiDropFiles(GuiHwnd, FileArray, CtrlHwnd, X, Y) {
   global GuiManagerCallback
-  return, GuiManagerCallback.DropFiles(GuiHwnd, FileArray, CtrlHwnd, X, Y) 
+  return, GuiManagerCallback.DropFiles(GuiHwnd, FileArray, CtrlHwnd, X, Y)
 }
 
 /*
-
 Gui commands:
 -------------
-
 GuiCreate([Title, Options, FuncPrefixOrObj])
   Creates a new Gui object (Same as v1 Gui, New).
   The third parameter specifies the function prefix or object to bind events to.
@@ -1325,22 +1269,17 @@ GuiCreate([Title, Options, FuncPrefixOrObj])
   If an object is specified, it is used as an event sink; meaning event names are used as method names
   to invoke on the object.
   This mechanism is both similar to that of ComObjConnect() and the old v1 +Label system.
-
 GuiFromHwnd(Hwnd [, RecurseParent := false])
   Returns the Gui object associated with the specified Gui HWND.
   If RecurseParent is true, the closest parent to the specified HWND that is a Gui is automatically
   searched for and retrieved.
-
 GuiCtrlFromHwnd(Hwnd)
   Returns the Gui Control object associated with the specified Gui Control HWND.
-
 Gui object:
 -----------
-
 gui.Destroy()
   Destroys the window. Same as v1 Gui, Destroy.
   If the Gui is closed and there are no references to the Gui object, the Gui is destroyed.
-
 gui.Add(Ctrl [, Text, Options])
 gui.AddCtrl([Text, Options]) where Ctrl is a valid control type
   Adds a new control to the Gui. (Text was renamed to Label).
@@ -1353,61 +1292,46 @@ gui.AddCtrl([Text, Options]) where Ctrl is a valid control type
   automatically generate a function or method name (expanded to accomodate for stricter identifier
   names).
   Returns a GuiControl object.
-
 gui.Show([Options, Title])
   Same as v1 Gui, Show
-
 gui.Submit([Hide := false])
   Returns an associative array containing the values of all the controls that have been explicitly named.
   Similar to v1 Gui, Submit
-
 gui.Hide()
 gui.Cancel()
   Same as v1 Gui, Hide (Cancel)
-
 gui.SetFont([Options, FontName])
   Same as v1 Gui, Font
-
 gui.BgColor := color
 gui.CtrlColor := color
   Same as v1 Gui, Color
-
 gui.MarginX := value
 gui.MarginY := value
   Same as v1 Gui, Margin
-
 gui.Opt(options)
 gui.Options(options)
   Same as v1 Gui +/-Option1 +/-Option2
-
 gui.Menu := menuObj
   Same as v1 Gui, Menu
-
 gui.Hide()
 gui.Minimize()
 gui.Maximize()
 gui.Restore()
   Same as v1 Gui, Hide/Minimize/Maximize/Restore
-
 gui.Flash([onOrOff := true])
   Same as v1 Gui, Flash [, Off]
-
 gui.Hwnd
   Retrieves the Gui's Hwnd
-
 gui.Title
   Sets or retrieves the Gui's title
-
 gui.Control[Name]
   Retrieves the GuiControl object associated with the specified name, ClassNN or HWND.
   Compare:
     GuiControl,, Static1, SomeValue
     gui.Control["Static1"].Value := "SomeValue"
-
 gui._NewEnum()
   Iterates through the Gui's controls.
   The first output variable is the HWND, and the second is the control object.
-
 gui.OnClose
 gui.OnEscape
 gui.OnSize
@@ -1415,100 +1339,71 @@ gui.OnContextMenu
 gui.OnDropFiles
   These properties can be get/set in order to change the event handlers, especially for
   binding an arbitrary callable object.
-
 Events:
-
 OnClose(gui)
 OnEscape(gui)
 OnSize(gui, eventInfo, width, height)
 OnContextMenu(gui, control, eventInfo, isRightClick, x, y)
 OnDropFiles(gui, fileArray, control, x, y)
-
 OnClose now has a return value. If OnClose() returns a false value (such as nothing), the Gui is closed
 (as if the OnClose event handler did not exist). If it returns a true value, the Gui is not closed.
-
 GuiControl object
 -----------------
-
 ctrl.Type
   Retrieves the type of the control. (Not implemented yet)
-
 ctrl.Hwnd
   Retrieves the HWND of the control.
-
 ctrl.Name
   Retrieves or sets the explicit name of the control.
-
 ctrl.ClassNN
   Retrieves the ClassNN of the control.
-
 ctrl.Gui
   Retrieves the control's Gui parent.
-
 ctrl.Event
   Retrieves or sets the control's event handler, which can be either a function/method name
   or an arbitrary callable object.
-
 ctrl.Opt(options)
 ctrl.Options(options)
   Same as v1 GuiControl, +/-Option1 +/-Option2
-
 ctrl.Move(pos[, draw:=false])
   Same as v1 GuiControl Move(Draw)
-
 ctrl.Focus()
   Same as v1 GuiControl Focus
-
 ctrl.Choose(Value [, additionalActions := 0])
   Same as v1 GuiControl Choose(String). If Value is a pure integer, it is an item index;
   otherwise it is treated as the item text. additionalActions replaces the pipe-prepending
   mechanism of the v1 command (instead of prepending N pipes, this parameter is set to N).
-
 ctrl.UseTab([Value, exactMatch := false])
   Same as v1 Gui Tab. If Value is a pure intege, it is a tab index; otherwise it is text.
   Omit all parameters to stop adding controls inside this Tab control.
-
 ctrl.Value
   Same as v1 GuiControl/Get with no subcommand
-
 ctrl.Text
   Same as v1 GuiControl/Get Text
-
 ctrl.Enabled
   Specifies whether the user can interact with the control
-
 ctrl.Visible
   Same as v1 GuiControl/Get Visible
-
 ctrl.Focused
   Same as v1 GuiControlGet Focused
-
 ctrl.Pos
   Returns the position in an object containing x,y,w,h fields.
-
 Control event function:
   ControlEvent(ctrl, guiEvent, eventInfo, extra)
   The 'extra' parameter is only passed on Link or Custom control events.
-
 LV_/TV_/SB_ functions are now methods of LV/TV/SB control objects.
-
 tv.GetText() and lv.GetText() now return the text directly instead of having an
 OutputVar (failure results in an exception being thrown).
-
 -------------------------------------------------------------------------------
-
 ; Converted Example: Simple image viewer:
-
 GuiCreate gui, ImageViewer, Resize, MyGui_
 gui.AddButton &Load New Image, Default
 radio := gui.AddRadio("Load &actual size", "ym+5 x+10 checked")
 gui.AddRadio Load to &fit screen, ym+5 x+10
 pic := gui.AddPic(, "xm")
 gui.Show()
-
 ; Due to v2's Persistence rules, it is no longer necessary to include a
 ; GuiClose() { ExitApp } event handler in order for the script to properly close.
-
 MyGui_ButtonLoadNewImage() ; using automatic event handler name
 {
   global gui, radio, pic
@@ -1528,11 +1423,8 @@ MyGui_ButtonLoadNewImage() ; using automatic event handler name
   pic.Value := "*w%width% *h%height% %file%"  ; Load the image.
   gui.Show xCenter y0 AutoSize, %file% - Image Viewer  ; Resize the window to match the picture size.
 }
-
 -----------------------------------------------------------------------
-
 ; Converted Example: A moving progress bar overlayed on a background image.
-
 GuiCreate gui, Progress Example,, MyGui_
 gui.BgColor := "White"
 gui.AddPicture %A_WinDir%\system32\ntimage.gif, x0 y0 h350 w450
@@ -1540,7 +1432,6 @@ gui.AddButton Start the Bar Moving, Default xp+20 yp+250
 MyProgress := gui.AddProgress(, "w416")
 MyText := gui.AddLabel(, "wp")  ; wp means "use width of previous".
 gui.Show()
-
 MyGui_ButtonStartTheBarMoving()
 {
   global MyProgress, MyText
@@ -1554,3 +1445,16 @@ MyGui_ButtonStartTheBarMoving()
   }
   MyText.Value := "Bar finished."
 }
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
+Press h to open a hovercard with more details.
