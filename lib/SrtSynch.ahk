@@ -3,14 +3,13 @@
 ; http://www.autohotkey.com/forum/topic41466.html
 ; http://www.autohotkey.net/~gahks/
 ;////////////////////////////////////////////////
-SrtSynch(delay_or_framerate, input_subtitle, output_subtitle, delay, is_delay_positive, input_fps, output_fps)
-{
+SrtSynch(delay_or_framerate, input_subtitle, output_subtitle, delay, is_delay_positive, input_fps, output_fps) {
 shifting_ratio := input_fps/output_fps
 ; LOOK FOR TIMER SETTINGS
 Loop, Read, %input_subtitle%, %output_subtitle% ;Looping through the subtitles by rows
 {
 show_and_hide1 =
-show_and_hide2 = 
+show_and_hide2 =
 StringReplace, list, A_LoopReadLine, -->, |
 StringSplit, show_and_hide, list, |
 StringLen, var, show_and_hide1
@@ -29,7 +28,7 @@ StringSplit, show , show_and_hide1, : ; Split the timer into two parts in the mi
 StringSplit, hide, show_and_hide2, :
 ;///////////////////
 ; TIMER, FIRST PART
-StringReplace, show_ms, show3, `,, 
+StringReplace, show_ms, show3, `,,
 show_hh_in_ms := show1*3600000
 show_mm_in_ms := show2*60000
 show_time_in_ms := show_hh_in_ms+show_mm_in_ms+show_ms
@@ -39,7 +38,7 @@ If delay_or_framerate = 0
 		show_time_in_ms_converted := show_time_in_ms+delay
 	Else If is_delay_positive = 0
 		show_time_in_ms_converted := show_time_in_ms-delay
-		
+
 }
 Else If delay_or_framerate = 1
 {
@@ -82,17 +81,17 @@ Else If var = 2
 show_time_full = %show_hh%:%show_mm%:%show_ss%,%show_ms%
 ;///////////////////
 ; TIMER, SECOND PART
-StringReplace, hide_ms, hide3, `,, 
+StringReplace, hide_ms, hide3, `,,
 hide_hh_in_ms := hide1*3600000
 hide_mm_in_ms := hide2*60000
 hide_time_in_ms := hide_hh_in_ms+hide_mm_in_ms+hide_ms
-If delay_or_framerate = 0 
+If delay_or_framerate = 0
 {
 	If is_delay_positive = 1
 		hide_time_in_ms_converted := hide_time_in_ms+delay
 	Else If is_delay_positive = 0
 		hide_time_in_ms_converted := hide_time_in_ms-delay
-		
+
 }
 Else If delay_or_framerate = 1
 {
