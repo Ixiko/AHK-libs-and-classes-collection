@@ -1,10 +1,10 @@
-; ======================================================================================================================
+﻿; ======================================================================================================================
 ; Namespace:      TransparentListBox
-; AHK version:    AHK 1.1.13.00
 ; Function:       Helper object for transparent ListBoxes
-; Language:       English
-; Tested on:      Win XP (U32) & Win7 x64 (U64)
-; Version:        0.1.00.00/2013-10-03/just me - Initial release.
+; Tested with:    AHK 1.1.19.01 (A32/U32/U64)
+; Tested on:      Win 8.1 (x64)
+; Version:        0.1.01.00/2013-10-03/just me - Initial release.
+;                 0.1.01.00/2015-01-17/just me - Added scrolling by keys without a vertical scroll bar.
 ; ======================================================================================================================
 ; CLASS TransparentListBox
 ;
@@ -68,13 +68,22 @@ Class TransparentListBox {
       This.HasBackground := False
       This.TopIndex := This.CurSel := -1
       This.Drawing := True
-      VarSetCapacity(SI, 28, 0) ; SCROLLINFO
-      NumPut(28, SI, 0, "UInt") ; cbSize
-      NumPut(3, SI, 4, "UInt")  ; fMask = SIF_RANGE | SIF_PAGE
-      DllCall("User32.dll\GetScrollInfo", "Ptr", HLB, "Int", 1, "Ptr", &SI)
-      This.SIMin := NumGet(SI, 8, "Int")    ; nMin
-      This.SIMax := NumGet(SI, 12, "Int")   ; nMax
-      This.SIPage := NumGet(SI, 16, "UInt") ; nPage
+      ControlGet, Styles, Style, , , ahk_id %HLB%
+      If (Styles & 0x00200000) { ; WS_VSCROLL -> the lisbox has a vertical scroll bar
+         VarSetCapacity(SI, 28, 0) ; SCROLLINFO
+         NumPut(28, SI, 0, "UInt") ; cbSize
+         NumPut(3, SI, 4, "UInt")  ; fMask = SIF_RANGE | SIF_PAGE
+         DllCall("User32.dll\GetScrollInfo", "Ptr", HLB, "Int", 1, "Ptr", &SI)
+         This.SIMin := NumGet(SI, 8, "Int")    ; nMin
+         This.SIMax := NumGet(SI, 12, "Int")   ; nMax
+         This.SIPage := NumGet(SI, 16, "UInt") ; nPage
+      }
+      Else {
+         DllCall("User32.dll\GetClientRect", "Ptr", HLB, "Ptr", &RECT)
+         This.SIMin := 0
+         This.SIPage := NumGet(RECT, 12, "Int") // This.ItemHeight
+         This.SIMax := This.ItemCount - 1
+      }
       SCCB := RegisterCallback("TransparentListBox.SubClassCallback")
       DllCall("Comctl32.dll\SetWindowSubclass", "Ptr", HLB, "Ptr", SCCB, "Ptr", HLB, "Ptr", &This)
       This.SCCB := SCCB
@@ -241,8 +250,8 @@ Class TransparentListBox {
             CurSel := This.CurSel
             CurSel := (wParam = VK.DOWN)  ? (CurSel + 1)
                    :  (wParam = VK.UP)    ? (CurSel - 1)
-                   :  (wParam = VK.Next)  ? (CurSel + This.SIPage)
-                   :  (wParam = VK.PRIOR) ? (CurSel - This.SIPage)
+                   :  (wParam = VK.Next)  ? (CurSel + This.SIPage - 1)
+                   :  (wParam = VK.PRIOR) ? (CurSel - This.SIPage + 1)
                    :  (wParam = VK.HOME)  ? This.SIMin
                    :  (wParam = VK.END)   ? This.SIMax
                    :  CurSel
@@ -329,6 +338,10 @@ Class TransparentListBox {
          This.TopIndex := ErrorLevel
          ; Seems that you must not return here, because DefSubClassProc apparently updates the scroll bar
          ; position on the second call!!!
+         ; Seems the above isn't true.
+         ScrollPos := DllCall("User32.dll\GetScrollPos", "Ptr", hWnd, "Int", 1, "Int") ; SB_VERT = 1
+         DllCall("User32.dll\SetScrollPos", "Ptr", hWnd, "Int", 1, "Int", ScrollPos, "UInt", True)
+         Return 0
       }
       ; ----------------------------------------------------------------------------------------------------------------
       ; Destroy

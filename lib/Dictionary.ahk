@@ -23,15 +23,14 @@ CoUninitialize()
 */
 
 
-Dictionary()
-{
+Dictionary() {
    CLSID_Dictionary := "{EE09B103-97E0-11CF-978F-00A02463E06F}"
     IID_IDictionary := "{42C642C1-97E1-11CF-978F-00A02463E06F}"
    Return CreateObject(CLSID_Dictionary, IID_IDictionary)
 }
 
-SetItem0(pdic, sKey, sItm)   ; The difference with SetItem?
-{
+SetItem0(pdic, sKey, sItm) {  ; The difference with SetItem?
+
    pKey := SysAllocString(sKey)
    VarSetCapacity(var1, 8 * 2, 0)
    EncodeInteger(&var1 + 0, 8)
@@ -48,8 +47,8 @@ SetItem0(pdic, sKey, sItm)   ; The difference with SetItem?
    SysFreeString(pItm)
 }
 
-SetItem(pdic, sKey, sItm)   ; If the key exists, update the item, otherwise create a new one.
-{
+SetItem(pdic, sKey, sItm) {  ; If the key exists, update the item, otherwise create a new one.
+
    pKey := SysAllocString(sKey)
    VarSetCapacity(var1, 8 * 2, 0)
    EncodeInteger(&var1 + 0, 8)
@@ -66,8 +65,8 @@ SetItem(pdic, sKey, sItm)   ; If the key exists, update the item, otherwise crea
    SysFreeString(pItm)
 }
 
-GetItem(pdic, sKey)   ; Added Exists check, to avoid creating an unwanted new one.
-{
+GetItem(pdic, sKey) {  ; Added Exists check, to avoid creating an unwanted new one.
+
    pKey := SysAllocString(sKey)
    VarSetCapacity(var1, 8 * 2, 0)
    EncodeInteger(&var1 + 0, 8)
@@ -89,8 +88,8 @@ GetItem(pdic, sKey)   ; Added Exists check, to avoid creating an unwanted new on
    Return sItm
 }
 
-Add(pdic, sKey, sItm)   ; If already existing one, will produce error, i.e., no update.
-{
+Add(pdic, sKey, sItm) {  ; If already existing one, will produce error, i.e., no update.
+
    pKey := SysAllocString(sKey)
    VarSetCapacity(var1, 8 * 2, 0)
    EncodeInteger(&var1 + 0, 8)
@@ -107,14 +106,13 @@ Add(pdic, sKey, sItm)   ; If already existing one, will produce error, i.e., no 
    SysFreeString(pItm)
 }
 
-Count(pdic)
-{
+Count(pdic) {
+
    DllCall(VTable(pdic, 11), "Uint", pdic, "intP", nCount)
    Return nCount
 }
 
-Exists(pdic, sKey)
-{
+Exists(pdic, sKey) {
    pKey := SysAllocString(sKey)
    VarSetCapacity(var, 8 * 2, 0)
    EncodeInteger(&var + 0, 8)
@@ -127,16 +125,15 @@ Exists(pdic, sKey)
    Return bExist
 }
 
-Items(pdic)   ; Returns SafeArray.
-{
+Items(pdic) {  ; Returns SafeArray.
+
    VarSetCapacity(var, 8 * 2, 0)
    DllCall(VTable(pdic, 13), "Uint", pdic, "Uint", &var)
    pItms := DecodeInteger(&var + 8)
    Return DllCall("oleaut32\SafeArrayDestroy", "Uint", pItms)
 }
 
-Rename(pdic, sKeyFr, sKeyTo)
-{
+Rename(pdic, sKeyFr, sKeyTo) {
    pKeyFr := SysAllocString(sKeyFr)
    VarSetCapacity(var1, 8 * 2, 0)
    EncodeInteger(&var1 + 0, 8)
@@ -153,16 +150,15 @@ Rename(pdic, sKeyFr, sKeyTo)
    SysFreeString(pKeyTo)
 }
 
-Keys(pdic)   ; Returns SafeArray.
-{
+Keys(pdic) {  ; Returns SafeArray.
+
    VarSetCapacity(var, 8 * 2, 0)
    DllCall(VTable(pdic, 15), "Uint", pdic, "Uint", &var)
    pKeys := DecodeInteger(&var + 8)
    Return DllCall("oleaut32\SafeArrayDestroy", "Uint", pKeys)
 }
 
-Remove(pdic, sKey)
-{
+Remove(pdic, sKey) {
    pKey := SysAllocString(sKey)
    VarSetCapacity(var, 8 * 2, 0)
    EncodeInteger(&var + 0, 8)
@@ -173,25 +169,21 @@ Remove(pdic, sKey)
    SysFreeString(pKey)
 }
 
-RemoveAll(pdic)
-{
+RemoveAll(pdic) {
    Return DllCall(VTable(pdic, 17), "Uint", pdic)
 }
 
-SetCompareMode(pdic, nCompMode = 1)
-{
+SetCompareMode(pdic, nCompMode = 1) {
    DllCall(VTable(pdic, 18), "Uint", pdic, "int", nCompMode)
 ;   0: Binary, 1: Text, 2: Database, n: LCID
 }
 
-GetCompareMode(pdic)
-{
+GetCompareMode(pdic) {
    DllCall(VTable(pdic, 19), "Uint", pdic, "intP", nCompMode)
    Return nCompMode
 }
 
-Enumerate(pdic)
-{
+Enumerate(pdic) {
    DllCall(VTable(pdic, 20), "Uint", pdic, "UintP", penm)
 
    VarSetCapacity(var, 8 * 2, 0)
@@ -215,8 +207,8 @@ Enumerate(pdic)
    Return sKeys
 }
 
-NextKey(ByRef penm, pdic = 0)                         ; penm = "": create new list
-{
+NextKey(ByRef penm, pdic = 0) {                      ; penm = "": create new list
+
    If !penm                                                 ; not static: allow multiple independent lists
    DllCall(VTable(pdic, 20), "Uint", pdic, "UintP", penm)   ; create key-list in penm
 
@@ -232,10 +224,9 @@ NextKey(ByRef penm, pdic = 0)                         ; penm = "": create new li
    Unicode2Ansi(pKey, sKey)
    SysFreeString(pKey)
    Return sKey
-} 
+}
 
-HashVal(pdic, sKey)
-{
+HashVal(pdic, sKey) {
    pKey := SysAllocString(sKey)
    VarSetCapacity(var1, 8 * 2, 0)
    EncodeInteger(&var1 + 0, 8)

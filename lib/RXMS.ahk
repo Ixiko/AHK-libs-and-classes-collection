@@ -1,3 +1,24 @@
+﻿/*
+str=
+(
+History: r/o ruptured appendicitis. 
+
+CT of the abdomen and pelvis without/with contrast enhancement shows:
+- Minor or non-specific lung parenchymal change. 
+- Long segmental wall thickening/edema of the colon from cecum to (less severe) descending colon. Inflammatory or infectious process is considered first. Suggest endoscope correlation. 
+- the appendix is not well-identified. 
+- No definite focal lesions in the liver, spleen, pancreas, both adrenal glands and kidneys. 
+)
+arr1:=[],arr2:=[]
+rxms(str,"(\.\s*)|(-+\s+)|(\n?\d+\W\s+)","sarr1[] marr2[]")
+str:=""
+for k,v in arr1
+	str.=substr(v,1,1) substr(v,2) arr2[k]
+msgbox % str
+;~ msgbox % arr.maxindex()
+;~ loop,parse,str,% rxms(str,"(\.\s*)|(-+\s+)\","s d")
+	;~ msgbox % a_loopfield
+*/
 RXMS(ByRef _String, _Needle, _Options="") ; http://www.autohotkey.com/forum/viewtopic.php?p=470488, updated 23-10-2012
 {
 	Local _ , _1, _2, _3, _4, _5 := 1, _FoundPos := 0, _Matches := 0, _Splits := 0, _Output, _OutputPos, _OutputLen, _Error, _Delimiter, _PrevErrorLevel := ErrorLevel, _Literal := """", _Commands := "m|p|s|r|d|t|c|e|u|i|x", _Documentation := "http://www.autohotkey.com/forum/viewtopic.php?p=470488"
@@ -17,7 +38,6 @@ RXMS(ByRef _String, _Needle, _Options="") ; http://www.autohotkey.com/forum/view
 	;---------------------------------USER CONFIGURATIONS:-----------------------------------------------
 	, _UserConfig_Foo := "bar"
 	;----------------------------------------------------------------------------------------------------
-
 	While (_5 := RegExMatch(_Options, "i)(?:^|\s)(?:!(\w+)|(\+|-)?(" _Commands ")(" _Literal "(?:[^" _Literal "]|" _Literal _Literal ")*" _Literal "(?=\s|$)|\S*))", _, _5 + StrLen(_)))
 		If (_1 <> "")
 			_Options := SubStr(_Options, 1, _5 + StrLen(_)) _UserConfig_%_1% SubStr(_Options, _5 + StrLen(_))

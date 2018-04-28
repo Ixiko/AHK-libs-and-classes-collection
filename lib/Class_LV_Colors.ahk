@@ -1,9 +1,14 @@
 ﻿; ======================================================================================================================
 ; Namespace:      LV_Colors
 ; Function:       Individual row and cell coloring for AHK ListView controls.
-; Testted with:   AHK 1.1.20.03 (A32/U32/U64)
-; Tested on:      Win 8.1 (x64)
+; Tested with:    AHK 1.1.23.05 (A32/U32/U64)
+; Tested on:      Win 10 (x64)
 ; Changelog:
+;     1.1.04.01/2016-05-03/just me - added change to remove the focus rectangle from focused rows
+;     1.1.04.00/2016-05-03/just me - added SelectionColors method
+;     1.1.03.00/2015-04-11/just me - bugfix for StaticMode
+;     1.1.02.00/2015-04-07/just me - bugfixes for StaticMode, NoSort, and NoSizing
+;     1.1.01.00/2015-03-31/just me - removed option OnMessage from __New(), restructured code
 ;     1.1.00.00/2015-03-27/just me - added AlternateRows and AlternateCols, revised code.
 ;     1.0.00.00/2015-03-23/just me - new version using new AHK 1.1.20+ features
 ;     0.5.00.00/2014-08-13/just me - changed 'static mode' handling
@@ -16,25 +21,30 @@
 ; CLASS LV_Colors
 ;
 ; The class provides six public methods to set individual colors for rows and/or cells, to clear all colors, to
-; prevent/allow sorting and rezising of columns dynamically, and to remove/add a message handler for WM_NOTIFY messages.
+; prevent/allow sorting and rezising of columns dynamically, and to deactivate/activate the message handler for
+; WM_NOTIFY messages (see below).
 ;
 ; The message handler for WM_NOTIFY messages will be activated for the specified ListView whenever a new instance is
-; created. If you want to use an own message handler, set the OnMessage parameter to False when creating the new
-; instance or call MyNewInstance.OnMessage(False) after the new instance has been created.
+; created. If you want to temporarily disable coloring call MyInstance.OnMessage(False). This must be done also before
+; you try to destroy the instance. To enable it again, call MyInstance.OnMessage().
+;
+; To avoid the loss of Gui events and messages the message handler might need to be set 'critical'. This can be
+; achieved by setting the instance property 'Critical' ti the required value (e.g. MyInstance.Critical := 100).
+; New instances default to 'Critical, Off'. Though sometimes needed, ListViews or the whole Gui may become
+; unresponsive under certain circumstances if Critical is set and the ListView has a g-label.
 ; ======================================================================================================================
 Class LV_Colors {
    ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    ; META FUNCTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   ; -------------------------------------------------------------------------------------------------------------------
+   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   ; ===================================================================================================================
    ; __New()         Create a new LV_Colors instance for the given ListView
    ; Parameters:     HWND        -  ListView's HWND.
    ;                 Optional ------------------------------------------------------------------------------------------
-   ;                 OnMessage   -  Add a message handler for WM_NOTIFY messages for this ListView.
-   ;                                Values:  True/False
-   ;                                Default: True
-   ;                 StaticMode  -  Static color assignment, i.e. the colors will be assigned permanently to a row
-   ;                                rather than to a row number.
+   ;                 StaticMode  -  Static color assignment, i.e. the colors will be assigned permanently to the row
+   ;                                contents rather than to the row number.
    ;                                Values:  True/False
    ;                                Default: False
    ;                 NoSort      -  Prevent sorting by click on a header item.
@@ -43,8 +53,8 @@ Class LV_Colors {
    ;                 NoSizing    -  Prevent resizing of columns.
    ;                                Values:  True/False
    ;                                Default: True
-   ; -------------------------------------------------------------------------------------------------------------------
-   __New(HWND, OnMessage := True, StaticMode := False, NoSort := True, NoSizing := True) {
+   ; ===================================================================================================================
+   __New(HWND, StaticMode := False, NoSort := True, NoSizing := True) {
       If (This.Base.Base.__Class) ; do not instantiate instances
          Return False
       If This.Attached[HWND] ; HWND is already attached
@@ -71,100 +81,22 @@ Class LV_Colors {
       This.IsStatic := !!StaticMode
       This.AltCols := False
       This.AltRows := False
-      If (NoSort)
-         This.NoSort()
-      If (NoSizing)
-         This.NoSizing()
-      This.OnMessage(!!OnMessage)
+      This.NoSort(!!NoSort)
+      This.NoSizing(!!NoSizing)
+      This.OnMessage()
+      This.Critical := "Off"
       This.Attached[HWND] := True
    }
-   ; -------------------------------------------------------------------------------------------------------------------
+   ; ===================================================================================================================
    __Delete() {
       This.Attached.Remove(HWND, "")
       This.OnMessage(False)
       WinSet, Redraw, , % "ahk_id " . This.HWND
    }
    ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   ; PRIVATE PROPERTIES  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   Static Attached := {}
-   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   ; PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   On_WM_NOTIFY(W, L, M, H) {
-      ; Notifications: NM_CUSTOMDRAW = -12, LVN_COLUMNCLICK = -108, HDN_BEGINTRACKA = -306, HDN_BEGINTRACKW = -326
-      Critical, % LV_Colors.Critical
-      If ((HCTL := NumGet(L + 0, 0, "UPtr")) = This.HWND) || (HCTL = This.Header) {
-         Code := NumGet(L + (A_PtrSize * 2), 0, "Int")
-         If (Code = -12)
-            Return This.On_NM_CUSTOMDRAW(H, L)
-         If This.NoSort && (Code = -108)
-            Return 0
-         If This.NoSizing && ((Code = -306) || (Code = -326))
-            Return True
-      }
-   }
-   ; -------------------------------------------------------------------------------------------------------------------
-   On_NM_CUSTOMDRAW(H, L) {
-      ; Return values: 0x00 (CDRF_DODEFAULT), 0x20 (CDRF_NOTIFYITEMDRAW / CDRF_NOTIFYSUBITEMDRAW)
-      Static SizeNMHDR := A_PtrSize * 3                  ; Size of NMHDR structure
-      Static SizeNCD := SizeNMHDR + 16 + (A_PtrSize * 5) ; Size of NMCUSTOMDRAW structure
-      Static OffItem := SizeNMHDR + 16 + (A_PtrSize * 2) ; Offset of dwItemSpec (NMCUSTOMDRAW)
-      Static OffCT :=  SizeNCD                           ; Offset of clrText (NMLVCUSTOMDRAW)
-      Static OffCB := OffCT + 4                          ; Offset of clrTextBk (NMLVCUSTOMDRAW)
-      Static OffSubItem := OffCB + 4                     ; Offset of iSubItem (NMLVCUSTOMDRAW)
-      ; ----------------------------------------------------------------------------------------------------------------
-      DrawStage := NumGet(L + SizeNMHDR, 0, "UInt")
-      , Row := NumGet(L + OffItem, 0, "UPtr") + 1
-      , Col := NumGet(L + OffSubItem, 0, "Int") + 1
-      , Item := Row - 1
-      If This.IsStatic
-         Row := This.MapIndexToID(H, Row)
-      ; CDDS_SUBITEMPREPAINT = 0x030001 --------------------------------------------------------------------------------
-      If (DrawStage = 0x030001) {
-         UseAltCol := !(Col & 1) && (This.AltCols)
-         , ColColors := This["Cells", Row, Col]
-         , ColB := (ColColors.B <> "") ? ColColors.B : UseAltCol ? This.ACB : This.RowB
-         , ColT := (ColColors.T <> "") ? ColColors.T : UseAltCol ? This.ACT : This.RowT
-         , NumPut(ColT, L + OffCT, 0, "UInt"), NumPut(ColB, L + OffCB, 0, "UInt")
-         Return (!This.AltCols && !This.HasKey(Row) && (Col > This["Cells", Row].MaxIndex())) ? 0x00 : 0x20
-      }
-      ; CDDS_ITEMPREPAINT = 0x010001 -----------------------------------------------------------------------------------
-      If (DrawStage = 0x010001) {
-         UseAltRow := (Item & 1) && (This.AltRows)
-         , RowColors := This["Rows", Row]
-         , This.RowB := RowColors ? RowColors.B : UseAltRow ? This.ARB : This.BkClr
-         , This.RowT := RowColors ? RowColors.T : UseAltRow ? This.ART : This.TxClr
-         If (This.AltCols || This["Cells"].HasKey(Row))
-            Return 0x20
-         NumPut(This.RowT, L + OffCT, 0, "UInt"), NumPut(This.RowB, L + OffCB, 0, "UInt")
-         Return 0x00
-      }
-      ; CDDS_PREPAINT = 0x000001 ---------------------------------------------------------------------------------------
-      Return (DrawStage = 0x000001) ? 0x20 : 0x00
-   }
-   ; -------------------------------------------------------------------------------------------------------------------
-   MapIndexToID(Row) { ; provides the unique internal ID of the given row number
-      SendMessage, 0x10B4, % (Row - 1), 0, , % "ahk_id " . This.HWND ; LVM_MAPINDEXTOID
-      Return ErrorLevel
-   }
-   ; -------------------------------------------------------------------------------------------------------------------
-   BGR(Color, Default := "") { ; converts colors to BGR
-      Static Integer := "Integer" ; v2
-      ; HTML Colors (BGR)
-      Static HTML := {AQUA: 0xFFFF00, BLACK: 0x000000, BLUE: 0xFF0000, FUCHSIA: 0xFF00FF, GRAY: 0x808080, GREEN: 0x008000
-                    , LIME: 0x00FF00, MAROON: 0x000080, NAVY: 0x800000, OLIVE: 0x008080, PURPLE: 0x800080, RED: 0x0000FF
-                    , SILVER: 0xC0C0C0, TEAL: 0x808000, WHITE: 0xFFFFFF, YELLOW: 0x00FFFF}
-      If Color Is Integer
-         Return ((Color >> 16) & 0xFF) | (Color & 0x00FF00) | ((Color & 0xFF) << 16)
-      Return (HTML.HasKey(Color) ? HTML[Color] : Default)
-   }
-   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   ; PUBLIC PROPERTIES  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-   Static Critical := 100
    ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    ; PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
    ; ===================================================================================================================
    ; Clear()         Clears all row and cell colors.
@@ -230,6 +162,29 @@ Class LV_Colors {
       Return True
    }
    ; ===================================================================================================================
+   ; SelectionColors() Sets background and/or text color for selected rows.
+   ; Parameters:     BkColor     -  Background color as RGB color integer (e.g. 0xFF0000 = red) or HTML color name.
+   ;                                Default: Empty -> default selected background color
+   ;                 TxColor     -  Text color as RGB color integer (e.g. 0xFF0000 = red) or HTML color name.
+   ;                                Default: Empty -> default selected text color
+   ; Return Value:   True on success, otherwise false.
+   ; ===================================================================================================================
+   SelectionColors(BkColor := "", TxColor := "") {
+      If !(This.HWND)
+         Return False
+      This.SelColors := False
+      If (BkColor = "") && (TxColor = "")
+         Return True
+      BkBGR := This.BGR(BkColor)
+      TxBGR := This.BGR(TxColor)
+      If (BkBGR = "") && (TxBGR = "")
+         Return False
+      This["SELB"] := BkBGR
+      This["SELT"] := TxBGR
+      This.SelColors := True
+      Return True
+   }
+   ; ===================================================================================================================
    ; Row()           Sets background and/or text color for the specified row.
    ; Parameters:     Row         -  Row number
    ;                 Optional ------------------------------------------------------------------------------------------
@@ -269,7 +224,7 @@ Class LV_Colors {
    Cell(Row, Col, BkColor := "", TxColor := "") {
       If !(This.HWND)
          Return False
-      If ThisIsStatic
+      If This.IsStatic
          Row := This.MapIndexToID(Row)
       This["Cells", Row].Remove(Col, "")
       If (BkColor = "") && (TxColor = "")
@@ -294,9 +249,9 @@ Class LV_Colors {
       If !(This.HWND)
          Return False
       If (Apply)
-         This.NoSort := True
+         This.SortColumns := False
       Else
-         This.NoSort := False
+         This.SortColumns := True
       Return True
    }
    ; ===================================================================================================================
@@ -312,12 +267,12 @@ Class LV_Colors {
       If (Apply) {
          If (OSVersion > 5)
             Control, Style, +0x0800, , % "ahk_id " . This.Header ; HDS_NOSIZING = 0x0800
-         This.NoSizing := True
+         This.ResizeColumns := False
       }
       Else {
          If (OSVersion > 5)
             Control, Style, -0x0800, , % "ahk_id " . This.Header ; HDS_NOSIZING
-         This.NoSizing := False
+         This.ResizeColumns := True
       }
       Return True
    }
@@ -339,5 +294,95 @@ Class LV_Colors {
       }
       WinSet, Redraw, , % "ahk_id " . This.HWND
       Return True
+   }
+   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   ; PRIVATE PROPERTIES  +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   Static Attached := {}
+   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   ; PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   ; +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   On_WM_NOTIFY(W, L, M, H) {
+      ; Notifications: NM_CUSTOMDRAW = -12, LVN_COLUMNCLICK = -108, HDN_BEGINTRACKA = -306, HDN_BEGINTRACKW = -326
+      Critical, % This.Critical
+      If ((HCTL := NumGet(L + 0, 0, "UPtr")) = This.HWND) || (HCTL = This.Header) {
+         Code := NumGet(L + (A_PtrSize * 2), 0, "Int")
+         If (Code = -12)
+            Return This.NM_CUSTOMDRAW(This.HWND, L)
+         If !This.SortColumns && (Code = -108)
+            Return 0
+         If !This.ResizeColumns && ((Code = -306) || (Code = -326))
+            Return True
+      }
+   }
+   ; -------------------------------------------------------------------------------------------------------------------
+   NM_CUSTOMDRAW(H, L) {
+      ; Return values: 0x00 (CDRF_DODEFAULT), 0x20 (CDRF_NOTIFYITEMDRAW / CDRF_NOTIFYSUBITEMDRAW)
+      Static SizeNMHDR := A_PtrSize * 3                  ; Size of NMHDR structure
+      Static SizeNCD := SizeNMHDR + 16 + (A_PtrSize * 5) ; Size of NMCUSTOMDRAW structure
+      Static OffItem := SizeNMHDR + 16 + (A_PtrSize * 2) ; Offset of dwItemSpec (NMCUSTOMDRAW)
+      Static OffItemState := OffItem + A_PtrSize         ; Offset of uItemState  (NMCUSTOMDRAW)
+      Static OffCT :=  SizeNCD                           ; Offset of clrText (NMLVCUSTOMDRAW)
+      Static OffCB := OffCT + 4                          ; Offset of clrTextBk (NMLVCUSTOMDRAW)
+      Static OffSubItem := OffCB + 4                     ; Offset of iSubItem (NMLVCUSTOMDRAW)
+      ; ----------------------------------------------------------------------------------------------------------------
+      DrawStage := NumGet(L + SizeNMHDR, 0, "UInt")
+      , Row := NumGet(L + OffItem, "UPtr") + 1
+      , Col := NumGet(L + OffSubItem, "Int") + 1
+      , Item := Row - 1
+      If This.IsStatic
+         Row := This.MapIndexToID(Row)
+      ; CDDS_SUBITEMPREPAINT = 0x030001 --------------------------------------------------------------------------------
+      If (DrawStage = 0x030001) {
+         UseAltCol := !(Col & 1) && (This.AltCols)
+         , ColColors := This["Cells", Row, Col]
+         , ColB := (ColColors.B <> "") ? ColColors.B : UseAltCol ? This.ACB : This.RowB
+         , ColT := (ColColors.T <> "") ? ColColors.T : UseAltCol ? This.ACT : This.RowT
+         , NumPut(ColT, L + OffCT, "UInt"), NumPut(ColB, L + OffCB, "UInt")
+         Return (!This.AltCols && !This.HasKey(Row) && (Col > This["Cells", Row].MaxIndex())) ? 0x00 : 0x20
+      }
+      ; CDDS_ITEMPREPAINT = 0x010001 -----------------------------------------------------------------------------------
+      If (DrawStage = 0x010001) {
+         ; LVM_GETITEMSTATE = 0x102C, LVIS_SELECTED = 0x0002
+         If (This.SelColors) && DllCall("SendMessage", "Ptr", H, "UInt", 0x102C, "Ptr", Item, "Ptr", 0x0002, "UInt") {
+            ; Remove the CDIS_SELECTED (0x0001) and CDIS_FOCUS (0x0010) states from uItemState and set the colors.
+            NumPut(NumGet(L + OffItemState, "UInt") & ~0x0011, L + OffItemState, "UInt")
+            If (This.SELB <> "")
+               NumPut(This.SELB, L + OffCB, "UInt")
+            If (This.SELT <> "")
+               NumPut(This.SELT, L + OffCT, "UInt")
+            Return 0x02 ; CDRF_NEWFONT
+         }
+         UseAltRow := (Item & 1) && (This.AltRows)
+         , RowColors := This["Rows", Row]
+         , This.RowB := RowColors ? RowColors.B : UseAltRow ? This.ARB : This.BkClr
+         , This.RowT := RowColors ? RowColors.T : UseAltRow ? This.ART : This.TxClr
+         If (This.AltCols || This["Cells"].HasKey(Row))
+            Return 0x20
+         NumPut(This.RowT, L + OffCT, "UInt"), NumPut(This.RowB, L + OffCB, "UInt")
+         Return 0x00
+      }
+      ; CDDS_PREPAINT = 0x000001 ---------------------------------------------------------------------------------------
+      Return (DrawStage = 0x000001) ? 0x20 : 0x00
+   }
+   ; -------------------------------------------------------------------------------------------------------------------
+   MapIndexToID(Row) { ; provides the unique internal ID of the given row number
+      SendMessage, 0x10B4, % (Row - 1), 0, , % "ahk_id " . This.HWND ; LVM_MAPINDEXTOID
+      Return ErrorLevel
+   }
+   ; -------------------------------------------------------------------------------------------------------------------
+   BGR(Color, Default := "") { ; converts colors to BGR
+      Static Integer := "Integer" ; v2
+      ; HTML Colors (BGR)
+      Static HTML := {AQUA: 0xFFFF00, BLACK: 0x000000, BLUE: 0xFF0000, FUCHSIA: 0xFF00FF, GRAY: 0x808080, GREEN: 0x008000
+                    , LIME: 0x00FF00, MAROON: 0x000080, NAVY: 0x800000, OLIVE: 0x008080, PURPLE: 0x800080, RED: 0x0000FF
+                    , SILVER: 0xC0C0C0, TEAL: 0x808000, WHITE: 0xFFFFFF, YELLOW: 0x00FFFF}
+      If Color Is Integer
+         Return ((Color >> 16) & 0xFF) | (Color & 0x00FF00) | ((Color & 0xFF) << 16)
+      Return (HTML.HasKey(Color) ? HTML[Color] : Default)
    }
 }

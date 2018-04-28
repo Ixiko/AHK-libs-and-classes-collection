@@ -1,7 +1,8 @@
 /*
 	Title:	Win
-			Set of window functions.
+			*Set of window functions*
  */
+
 
 /*
  Function:	Animate
@@ -37,7 +38,7 @@
  
  */
 Win_Animate(Hwnd, Type="", Time=100){
-	static AW_ACTIVATE = 0x20000, AW_BLEND=0x80000, AW_CENTER=0x10, AW_HIDE=0x10000, AW_SHOW=
+	static AW_ACTIVATE = 0x20000, AW_BLEND=0x80000, AW_CENTER=0x10, AW_HIDE=0x10000
 			,AW_HNEG=0x2, AW_HPOS=0x1, AW_SLIDE=0x40000, AW_VNEG=0x8, AW_VPOS=0x4
 
 	hFlags := 0
@@ -66,29 +67,26 @@ Win_FromPoint(X="mouse", Y="") {
 
 /*
  Function:	Get
- 			Get window information.
+ 			Get window information
  
  Parameters:
  			pQ			- List of query parameters.
 			o1 .. o9	- Reference to output variables. R,L,B & N query parameters can return multiple outputs.
  
  Query:
-			C,I			- Class, pId.
+ 			C,I			- Class, pId.
 			R,L,B,N		- One of the window rectangles: R (window Rectangle), L (cLient rectangle screen coordinates), B (ver/hor Border), N (captioN rect).
- 						  N returns the size of the caption regardless of the window style or theme. These coordinates include all title-bar elements except the window menu.
+ 						  N gives size of the caption regardless of the window style. These coordinates include all title-bar elements except the window menu.
 						  The function returns x, y, w & h separated by space. 
 						  For all 4 query parameters you can additionaly specify x,y,w,h arguments in any order (except Border which can have only x(hor) and y(ver) arguments) to
-						  extract desired number into output variable.
-			S,E			- Style, Extended style.
- 		    P,A,O		- Parents handle, Ancestors handle, Owners handle.
+						  extract desired number into ouput variable.
+ 			S,E			- Style, Extended style
+ 		    P,A,O		- Parents handle, Ancestors handle, Owners handle
  			M			- Module full path (owner exe), unlike WinGet,,ProcessName which returns only name without path.
- 			T			- Title for a top level window or text for a child window.
-			D			- DC.
-			#			- Non-negative integer. If present must be first option in the query string. Function will return window information
-						  not for passed window but for its ancestor. 1 is imidiate parent, 2 is parent's parent etc... 0 represents root window.
+ 			T			- Title for top level windows or Text for child windows
  
  Returns:
-			o1
+ 			o1
  
  Examples:
  (start code)
@@ -96,31 +94,14 @@ Win_FromPoint(X="mouse", Y="") {
     Win_Get(hwnd, "RxwTC", x, w, t, c)						;get x & width attributes of window rect, title and class
   	Win_Get(hwnd, "RxywhCLxyTBy",wx,wy,ww,wh,c,lx,ly,t,b)	;get all 4 attributes of window rect, class, x & y of client rect, text and horizontal border height
     right := Win_Get(hwnd, "Rx") + Win_Get(hwnd, "Rw")		;first output is returned as function result so u can use function in expressions.
-    Win_Get(hwnd, "Rxw", x, w), right := x+w				;the same as above but faster.
-    right := Win_Get(hwnd, "Rxw", x, w ) + w				;not recommended.
-
-	Win_Get(hwnd, "1CIT", class, pid, text)					;get class, pid and text for parent of the hwnd.
-	rect := Win_Get(hwnd, "0R")								;get rectangle of the root window.
+    Win_Get(hwnd, "Rxw", x, w), right := x+w				;the same as above but faster
+    right := Win_Get(hwnd, "Rxw", x, w ) + w				;not recommended
  (end code)
- */ 
+ */
 Win_Get(Hwnd, pQ="", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o5="", ByRef o6="", ByRef o7="", ByRef o8="", ByRef o9="") {
-	c := SubStr(pQ, 1, 1)
-	if c is integer 
-	{
-		if (c = 0)
-			Hwnd := DllCall("GetAncestor", "uint", Hwnd, "uint", 2, "UInt")
-		else loop, %c%
-			Hwnd := DllCall("GetParent", "uint", Hwnd, "UInt")
-
-		pQ := SubStr(pQ, 2)
-	}
-		
 	if pQ contains R,B,L
 		VarSetCapacity(WI, 60, 0), NumPut(60, WI),  DllCall("GetWindowInfo", "uint", Hwnd, "uint", &WI)
-	
-	oldDetect := A_DetectHiddenWindows
-	DetectHiddenWindows, on
-	
+
 	k := i := 0
 	loop
 	{
@@ -137,15 +118,13 @@ Win_Get(Hwnd, pQ="", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o
 		continue
 
 		Win_Get_I:
-				WinGet, o%i%, PID, ahk_id %hwnd%		
+				WinGet, o%i%, PID, ahk_id20/08/2009 %hwnd%		
 		continue
 
 		Win_Get_N:
 				rect := "title"
-				VarSetCapacity(TBI, 44, 0), NumPut(44, TBI, 0), DllCall("GetTitleBarInfo", "uint", Hwnd, "str", TBI)
+				VarSetCapacity(TBI, 44, 0), NumPut(44, TBI, 0), DllCall("GetTitleBarInfo", "uint", hwnd, "str", TBI)
 				title_x := NumGet(TBI, 4, "Int"), title_y := NumGet(TBI, 8, "Int"), title_w := NumGet(TBI, 12) - title_x, title_h := NumGet(TBI, 16) - title_y 
-				WinGet, style, style, ahk_id %Hwnd%				
-				title_h :=  style & 0xC00000 ? title_h : 0			  ; if no WS_CAPTION style, set 0 as win sets randoms otherwise...
 				goto Win_Get_Rect
 		Win_Get_B:
 				rect := "border"
@@ -177,16 +156,16 @@ Win_Get(Hwnd, pQ="", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o
 			WinGet, o%i%, ExStyle, ahk_id %Hwnd%
 		continue
 		Win_Get_P: 
-			o%i% := DllCall("GetParent", "uint", Hwnd, "UInt")
+			o%i% := DllCall("GetParent", "uint", Hwnd)
 		continue
 		Win_Get_A: 
-			o%i% := DllCall("GetAncestor", "uint", Hwnd, "uint", 2, "UInt") ; GA_ROOT
+			o%i% := DllCall("GetAncestor", "uint", Hwnd, "uint", 2) ; GA_ROOT
 		continue
 		Win_Get_O: 
-			o%i% := DllCall("GetWindowLong", "uint", Hwnd, "int", -8, "UInt") ; GWL_HWNDPARENT
+			o%i% := DllCall("GetWindowLong", "uint", Hwnd, "int", -8) ; GWL_HWNDPARENT
 		continue
 		Win_Get_T:
-			if DllCall("IsChild", "uint", Hwnd)
+			if DllCall("IsChild", "uint", hwnd)
 				 WinGetText, o%i%, ahk_id %hwnd%
 			else WinGetTitle, o%i%, ahk_id %hwnd%
 		continue
@@ -198,11 +177,8 @@ Win_Get(Hwnd, pQ="", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o
 			VarSetCapacity(buf, 512, 0), DllCall( "psapi.dll\GetModuleFileNameExA", "uint", hp, "uint", 0, "str", buf, "uint", 512),  DllCall( "CloseHandle", hp ) 
 			o%i% := buf 
 		continue
-		Win_Get_D:
-			o%i% := DllCall("GetDC", "uint", Hwnd, "UInt")
-		continue
 	}	
-	DetectHiddenWindows, %oldDetect%
+	
 	return o1
 }
 
@@ -212,13 +188,12 @@ Win_Get(Hwnd, pQ="", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o
  
  Parameters:
  			hwnd		- Window handle
-			pQ			- Query parameter: ordered list of x, y, w and h characters and optionally type specified as first charachter.
-						  Use *  to get placement relative to the client area of the parent's window, or ! get placement relative to the root window.
-						  Omit x,y,w,h to return all attributes separated by space for given placement type.
+			pQ			- Query parameter: ordered list of x, y, w and h characters. If you specify * as first char rectangle will be raltive to the client area of window's parent.
+						  Leave pQ empty or "*" to return all attributes separated by space.
 			o1 .. o4	- Reference to output variables. 
 
  Returns:
-			o1 or string with all coordinates.
+			o1
 
  Remarks:
 			This function is faster alternative to <Get> with R parameter. However, if you query additional window info using <Get>, it may be faster and definitely more 
@@ -232,7 +207,7 @@ Win_Get(Hwnd, pQ="", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o
   			p := Win_GetRect(hwnd, "x") + 5		;for single query parameter you don't need output variable as function returns o1
   			all := Win_GetRect(hwnd)			;return all
   			Win_Get(hwnd, "*hx", h, x)			;return relative h and x
-  			all_rel := WiN_Get(hwnd, "*")		;return all, relative coordinates
+  			all_rel := WiN_Get(hwnd, "*")		;return all relative coorinates
 	(end code)
  */
 Win_GetRect(hwnd, pQ="", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="") {
@@ -242,11 +217,12 @@ Win_GetRect(hwnd, pQ="", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="") {
 	if (pQ = "") or pQ = ("*")
 		retAll := true,  pQ .= "xywh"
 
-	xx := NumGet(RECT, 0, "Int"), yy := NumGet(RECT, 4, "Int"),  c := SubStr(pQ, 1, 1)
-	if (c = "*") 
-		Win_Get(DllCall("GetParent", "uint", hwnd), "Lxy", lx, ly), xx -= lx, yy -= ly, pQ := SubStr(pQ, 2)
-	else if (c = "!") 
-		Win_Get(DllCall("GetAncestor", "uint", Hwnd, "uint", 2), "Lxy", lx, ly), xx -= lx, yy -= ly,  pQ := SubStr(pQ, 2)
+	xx := NumGet(RECT, 0, "Int"), yy := NumGet(RECT, 4, "Int")
+	if SubStr(pQ, 1, 1) = "*"
+	{
+		Win_Get(DllCall("GetParent", "uint", hwnd), "Lxy", lx, ly), xx -= lx, yy -= ly
+		StringTrimLeft, pQ, pQ, 1
+	}
 	
 	loop, parse, pQ
 		if A_LoopField = x
@@ -259,59 +235,6 @@ Win_GetRect(hwnd, pQ="", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="") {
 			o%A_Index% := NumGet(RECT, 12, "Int") - yy - ( ly ? ly : 0 )
 
 	return retAll ? o1 " " o2 " " o3 " " o4 : o1
-}
-
-/*
- Function:	GetChildren
-			Get first level child windows for a window.
- 
- Parameters:
-			Hwnd	- Handle of the parent window.
-
- Returns:
-			New line separated list of child control handles.
-  
- */
-Win_GetChildren(Hwnd){
-	static GW_HWNDNEXT=2, GW_CHILD=5, adrGetWindow
-	if !adrGetWindow
-		adrGetWindow := DllCall("GetProcAddress", "uint", DllCall("GetModuleHandle", "str", "user32"), "str", "GetWindow")
-	s := hChild := DllCall(adrGetWindow, "uint", Hwnd, "uint", GW_CHILD)
-	ifEqual, s,0, return
-	while (hChild := DllCall(adrGetWindow, "uint", hChild, "uint", GW_HWNDNEXT))
-		s .= "`n" hChild
-	return s	
-}
-
-
-/*
- Function:	GetClassNN
-			Get a control ClassNN.
- 
- Parameters:
-			HCtrl	- Handle of the parent window.
-			HRoot	- Handle of the top level window containing control.
-
- Returns:
-			ClassNN
- 
- About:
-			o Developed by Lexikos. See <http://www.autohotkey.com/forum/viewtopic.php?p=308628#308628>
- */
-Win_GetClassNN(HCtrl, HRoot="") {
-	ifEqual, HRoot,, SetEnv, HRoot, % DllCall("GetAncestor", "uint", HCtrl, "Uint", 2, "Uint")
-	WinGet, hlist, ControlListHwnd, ahk_id %HRoot% 
-    WinGetClass, tclass, ahk_id %HCtrl% 
-    Loop, Parse, hlist, `n 
-    { 
-        WinGetClass, lclass, ahk_id %A_LoopField% 
-        if (lclass == tclass) 
-        { 
-            nn += 1 
-            if A_LoopField = %hctl% 
-                return tclass nn 
-        } 
-    }
 }
 
 
@@ -359,32 +282,37 @@ Win_Is(Hwnd, pQ="win") {
  Remarks:
 			Does not produce the same effect as ControlMove on child windows. Mentioned AHK function puts child window relative to the ancestor window rectangle 
 			while Win_Move puts it relative to the parent's client rectangle which is usually the wanted behavior.
-			WinMove produces the same effect as Win_Move on child controls, except its X and Y parameters are not optional which makes lot of additional code for frequent operation: moving the control by some offset of its current position. 
+			WinMove produces the same effect as Win_Move on child controls, except its X and Y parameters are not optional which makes lot of addtional code for frequent operation: moving the control by some offset of its current position. 
 			In order to do that you must get the current position of the control. That can be done with ControlGetPos which works in pair with ControlMove hence it is not relative to the client rect or WinGetPos which returns screen coordinates of child control so those can not 
-			be immediately used in WinMove as it positions child window relative to the parents client rect. This scenario can be additionally complicated by the fact that each window may have its own theme which influences the size of its borders, non client area, etc...
+			be imediatelly used in WinMove as it positions child window relative to the parents client rect. This scenario can be additionaly complicated by the fact that each window may have its own theme which influences the size of its borders, non client area, etc...
+
  */
 Win_Move(Hwnd, X="", Y="", W="", H="", Flags="") {
 ;	static SWP_NOMOVE=2, SWP_NOREDRAW=8, SWP_NOSIZE=1, SWP_NOZORDER=4, SWP_NOACTIVATE = 0x10, SWP_ASYNCWINDOWPOS=0x4000, HWND_BOTTOM=1, HWND_TOPMOST=-1, HWND_NOTOPMOST = -2
-	static SWP_NOMOVE=2, SWP_NOSIZE=1, SWP_NOZORDER=4, SWP_NOACTIVATE=16, SWP_R=8, SWP_A=0x4000
+	static SWP_NOMOVE=2, SWP_NOSIZE=1, SWP_NOZORDER=4, SWP_NOACTIVATE = 0x10, SWP_R=8, SWP_A=0x4000
 
 	hFlags := SWP_NOZORDER | SWP_NOACTIVATE
 	loop, parse, Flags
 		hFlags |= SWP_%A_LoopField%
 		
-	if (X Y != "") {
-		p := DllCall("GetParent", "uint", Hwnd), Win_Get(p, "Lxy", px, py), Win_GetRect(Hwnd, "xywh", cx, cy, cw, ch)
-		ifEqual, X,, SetEnv, X, % cx - px
-		ifEqual, Y,, SetEnv, Y, % cy - py
+	if (x y != "") {
+		p := DllCall("GetParent", "uint", hwnd), Win_Get(p, "Lxy", px, py), Win_GetRect(hwnd, "xywh", cx, cy, cw, ch)
+		if x=
+			x := cx - px
+		if y=
+			y := cy - py
 	} else hFlags |= SWP_NOMOVE
 
-	if (W H != "") {
+	if (h w != "") {
 		if !cx
-			Win_GetRect(Hwnd, "wh", cw, ch)
-		ifEqual, W,, SetEnv, W, %cw%
-		ifEqual, H,, SetEnv, H, %ch%
-	} else hFlags |= SWP_NOSIZE
+			Win_GetRect(hwnd, "wh", cw, ch)
+		if w=
+			w := cw
+		if h=
+			h := ch
+	} else  hFlags |= SWP_NOSIZE
 
-	return DllCall("SetWindowPos", "uint", Hwnd, "uint", 0, "int", X, "int", Y, "int", W, "int", H, "uint", hFlags)
+	return DllCall("SetWindowPos", "uint", Hwnd, "uint", 0, "int", x, "int", y, "int", w, "int", h, "uint", hFlags)
 }
 
 /*
@@ -417,7 +345,7 @@ Win_MoveDelta( Hwnd, Xd="", Yd="", Wd="", Hd="", Flags="" ) {
 					calculate size of controls based on window size and position, when needed. 
 
 		IniFileName	- Ini file to use as storage. Function will save the data under the [Recall] section.
-					If omitted, Windows Registry key HKEY_CURRENT_USER\AutoHotKey\Win is used. Each script is uniquely determined by its full path 
+					If omited, Windows Registry key HKEY_CURRENT_USER\AutoHotKey\Win is used. Each script is uniquely determined by its full path 
 					so same scripts with different name will not share the storage.
 					
   Options:
@@ -463,8 +391,8 @@ Win_MoveDelta( Hwnd, Xd="", Yd="", Wd="", Hd="", Flags="" ) {
 			Win_Recall(">>")						;Save all Guis. The names will be given by their number.
 			Win_Recall("<<")						;Recall all Guis.
 
-			Win_Recall("-")							;Delete all Registry entries for the script.
-			Win_Recall("--")						;Delete all Registry entries for all scripts.
+			Win_Recall("-")							;Delete all Registry enteries for the script.
+			Win_Recall("--")						;Delete all Registry enteries for all scripts.
 
 			pos := Win_Recall("<MyWin", 0)			;Return position string only for window saved under the "MyWin" name.
 		(end code)
@@ -516,7 +444,7 @@ Win_Recall(Options, Hwnd="", IniFileName=""){
 	if (op = "<") {
 		if IniFileName !=
 			 IniRead, pos, %IniFileName%, %section%, !%name%, %A_Space%
-		else RegRead, pos, HKEY_CURRENT_USER, %key%, %A_ScriptFullPath%!%name%
+		else RegRead, pos, REG_SZ,  HKEY_CURRENT_USER, %key%, %A_ScriptFullPath%!%name%
 		if (pos = "") or !Hwnd 
 			return pos
 		
@@ -553,7 +481,7 @@ Win_Recall(Options, Hwnd="", IniFileName=""){
  			Redraws the window.
 
  Parameters:
-			Hwnd	- Handle of the window. If this parameter is omitted, Redraw updates the desktop window.
+			Hwnd	- Handle of the window. If this parameter is omited, Redraw updates the desktop window.
 			Option  - "-" to disable redrawing for the window. "+" to enable it and redraw it. By default empty.
  
  Returns:
@@ -581,7 +509,7 @@ Win_Redraw( Hwnd=0, Option="" ) {
  			Set visibility of the window caption.
 
  Parameters:
-			Flag	- Set + to show the caption or - otherwise. If omitted, caption will be toggled.
+			Flag	- Set + to show the caption or - otherwise. If omited, caption will be toggled.
  */
 Win_SetCaption(Hwnd, Flag="^"){
 	oldDetect := A_DetectHiddenWindows
@@ -612,21 +540,21 @@ Win_SetMenu(Hwnd, hMenu=0){
  			Set the titlebar icon for the window.
  
  Parameters:
-			Icon	- Path to the icon. If omitted, icon is removed. If integer, handle to the already loaded icon.
+			Icon	- Path to the icon. If omited, icon is removed. If integer, handle to the already loaded icon.
 			Flag	- 1 sets the large icon for the window, 0 sets the small icon for the window. 
 
  Returns:
 			The return value is a handle to the previous large or small icon, depending on the Flag value.
 
  */
-Win_SetIcon(Hwnd, Icon="", Flag=1){
+Win_SetIcon( Hwnd, Icon="", Flag=1){
 	static WM_SETICON = 0x80, LR_LOADFROMFILE=0x10, IMAGE_ICON=1
 
 	if Flag not in 0,1
 		return A_ThisFunc "> Unsupported Flag: " Flag
 
 	if Icon != 
-		hIcon := Icon+0 != "" ? Icon : DllCall("LoadImage", "Uint", 0, "str", Icon, "uint",IMAGE_ICON, "int", 32, "int", 32, "uint", LR_LOADFROMFILE) 	
+		hIcon := Icon+0 != "" ? Icon : DllCall("LoadImage", "Uint", 0, "str", Icon, "uint",IMAGE_ICON, "int", 32, "int", 32, "uint", LR_LOADFROMFILE)  
 
 	SendMessage, WM_SETICON, %Flag%, hIcon, , ahk_id %Hwnd%
 	return ErrorLevel
@@ -637,30 +565,13 @@ Win_SetIcon(Hwnd, Icon="", Flag=1){
  			Changes the parent window of the specified window.
  
  Parameters:
-			Hwnd	- Handle of the window for which to send parent.
-			HParent	- Handle to the parent window. If this parameter is 0, the desktop window becomes the new parent window.
-			bFixStyle - Set to TRUE to fix WS_CHILD & WS_POPUP styles. SetParent does not modify the WS_CHILD or WS_POPUP window styles of the window whose parent is being changed.
-						If HParent is 0, you should also clear the WS_CHILD bit and set the WS_POPUP style after calling SetParent (and vice-versa).
- Returns:
-			If the function succeeds, the return value is a handle to the previous parent window. Otherwise, its 0.
+			hParent	- Handle to the parent window. If this parameter is 0, the desktop window becomes the new parent window.
 
- Remarks:
-			If the window identified by the Hwnd parameter is visible, the system performs the appropriate redrawing and repainting.
-			The function sends WM_CHANGEUISTATE to the parent after succesifull operation uncoditionally.
-			See <http://msdn.microsoft.com/en-us/library/ms633541(VS.85).aspx> for more information.
+ Returns:
+			If the function succeeds, the return value is a handle to the previous parent window.
  */
-Win_SetParent(Hwnd, HParent=0, bFixStyle=false){
-	static WS_POPUP=0x80000000, WS_CHILD=0x40000000, WM_CHANGEUISTATE=0x127, UIS_INITIALIZE=3
-	
-	if (bFixStyle) {
-		s1 := Hwnd ? "+" : "-", s2 := Hwnd ? "-" : "+"
-		WinSet, Style, %s1%%WS_CHILD%, ahk_id %Hwnd%
-		WinSet, Style, %s2%%WS_POPUP%, ahk_id %Hwnd%
-	}
-	r := DllCall("SetParent", "uint", Hwnd, "uint", HParent)
-	ifEqual, r, 0, return 0
-	SendMessage, WM_CHANGEUISTATE, UIS_INITIALIZE,,,ahk_id %HParent%
-	return r
+Win_SetParent(Hwnd, hParent=0){
+	return DllCall("SetParent", "uint", Hwnd, "uint", hParent)
 }
 
 
@@ -695,7 +606,7 @@ Win_SetOwner(Hwnd, hOwner){
  			Set the WS_EX_TOOLWINDOW style for the window.
  
  Parameters:
-			Flag	- Set + to show the caption or - otherwise. If omitted, caption will be toggled.
+			Flag	- Set + to show the caption or - otherwise. If omited, caption will be toggled.
  */
 Win_SetToolWindow(Hwnd, Flag="^") {
 	static WS_EX_TOOLWINDOW = 0x80	
@@ -752,17 +663,17 @@ Win_ShowSysMenu(Hwnd, X="mouse", Y="") {
 
 /*
  Function:	Subclass 
-			Subclass window.
+			Subclass child window (control)
  
  Parameters: 
-			Hwnd    - Handle to the window to be subclassed.
+			hCtrl   - Handle to the child window to be subclassed
 			Fun		- New window procedure. You can also pass function address here in order to subclass child window
 					  with previously created window procedure.
 			Opt		- Optional callback options for Fun, by default "" 
-		   $WndProc - Optional reference to the output variable that will receive address of the new window procedure.
+		   $WndProc - Optional reference to the ouptut variable that will receive address of the new window procedure.
 
  Returns:
-			The address of the previous window procedure or 0 on error.
+			The addresss of to the previous window procedure or 0 on error	
 
  Remarks:
 			Works only for controls created in the autohotkey process.
@@ -781,22 +692,22 @@ Win_ShowSysMenu(Hwnd, X="mouse", Y="") {
   	}
 	(end code)
  */
-Win_Subclass(Hwnd, Fun, Opt="", ByRef $WndProc="") { 
+Win_Subclass(hCtrl, Fun, Opt="", ByRef $WndProc="") { 
 	if Fun is not integer
 	{
-		 oldProc := DllCall("GetWindowLong", "uint", Hwnd, "uint", -4) 
+		 oldProc := DllCall("GetWindowLong", "uint", hCtrl, "uint", -4) 
 		 ifEqual, oldProc, 0, return 0 
 		 $WndProc := RegisterCallback(Fun, Opt, 4, oldProc) 
 		 ifEqual, $WndProc, , return 0
 	}
 	else $WndProc := Fun
 	   
-    return DllCall("SetWindowLong", "UInt", Hwnd, "Int", -4, "Int", $WndProc, "UInt") 
+    return DllCall("SetWindowLong", "UInt", hCtrl, "Int", -4, "Int", $WndProc, "UInt") 
 }
 
 /*
 Group: About
-	o v1.24 by majkinetor.
+	o v1.2  by majkinetor.
 	o Reference: <http://msdn.microsoft.com/en-us/library/ms632595(VS.85).aspx>
-	o Licensed under GNU GPL <http://creativecommons.org/licenses/GPL/2.0/>
+	o Licenced under GNU GPL <http://creativecommons.org/licenses/GPL/2.0/>
 /*
