@@ -1,0 +1,17 @@
+<SyntaxTree>
+	<room id="expression" min="2">
+		<cons>
+			<range opt="1">\-+</range>
+			<room>
+				<range>0-9</range>
+			</room>
+			<cons opt="1">
+				<val>.</val>
+				<room>
+					<range>0-9</range>
+				</room>
+			</cons>
+		</cons>
+		<range id="operators">\-+*/</range>
+	</room>
+</SyntaxTree>

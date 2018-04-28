@@ -1,0 +1,41 @@
+<SyntaxTree>
+	<room id="multiLine">
+		<room id="expression">
+			<alt id="valueTypes">
+				<room id="stringApostrophe">
+					<alt id="noApostrophe">
+						<val>\\&apos;</val>
+						<val>&apos;&apos;</val>
+						<nval>&apos;</nval>
+					</alt>
+					<null />
+					<null />
+					<val id="apostrophe">&apos;</val>
+					<val id="apostrophe" />
+				</room>
+				<room id="stringQuote">
+					<alt id="noQuote">
+						<val>\\&quot;</val>
+						<val>&quot;&quot;</val>
+						<nval>&quot;</nval>
+					</alt>
+					<null />
+					<null />
+					<val id="quote">&quot;</val>
+					<val id="quote" />
+				</room>
+				<room id="variable">
+					<range>a-zA-Z</range>
+				</room>
+			</alt>
+			<alt id="operators">
+				<val id="concenation">.</val>
+				<val id="assignment">=</val>
+			</alt>
+			<room>
+				<range>\s</range>
+			</room>
+		</room>
+		<range id="newLine">\r</range>
+    </room>
+</SyntaxTree>

@@ -1,0 +1,92 @@
+<SyntaxTree>
+    <room id="document">
+		<cons id="class">
+			<val>class</val>
+			<room>
+				<range>\s</range>
+			</room>
+			<room id="className">
+				<range>a-zA-Z_</range>
+			</room>
+			<room min="0">
+				<range>\s\r</range>
+			</room>
+			<room min="0" id="classBody">
+				<alt>
+					<cons id="class" />
+					<cons id="method">
+						<room id="methodName">
+							<range>a-zA-Z_</range>
+						</room>
+						<room id="parameterDefinition" min="0">
+							<room id="parameterName">
+								<range>a-zA-Z_</range>
+							</room>
+							<val>,</val>
+							<range>\s</range>
+							<val>(</val>
+							<val>)</val>
+						</room>
+						<room min="0">
+							<range>\s\r</range>
+						</room>
+						<room id="methodBody">
+							<room id="expression">
+								<alt id="valueTypes">
+									<room id="stringApostrophe">
+										<alt id="noApostrophe">
+											<val>\\&apos;</val>
+											<val>&apos;&apos;</val>
+											<nval>&apos;</nval>
+										</alt>
+										<null />
+										<null />
+										<val id="apostrophe">&apos;</val>
+										<val id="apostrophe" />
+									</room>
+									<room id="stringQuote">
+										<alt id="noQuote">
+											<val>\\&quot;</val>
+											<val>&quot;&quot;</val>
+											<nval>&quot;</nval>
+										</alt>
+										<null />
+										<null />
+										<val id="quote">&quot;</val>
+										<val id="quote" />
+									</room>
+									<room id="variable">
+										<range>a-zA-Z</range>
+									</room>
+								</alt>
+								<alt id="operators">
+									<val id="concenation">.</val>
+									<val id="assignment">=</val>
+								</alt>
+								<room>
+									<range>\s</range>
+								</room>
+							</room>
+							<null />
+							<room>
+								<range>\s\r</range>
+							</room>
+							<val>{</val>
+							<val>}</val>
+						</room>
+					</cons>
+				</alt>
+				<null />
+				<room min="0">
+					<range>\s\r</range>
+				</room>
+				<val>{</val>
+				<val>}</val>
+			</room>
+		</cons>
+		<null />
+        <room min="0">
+			<range>\r</range>
+		</room>
+    </room>
+</SyntaxTree>

@@ -1,0 +1,1 @@
+MSH|^~\&|Master Control|Sending Facility|Receiving Application|Receiving Facility|Date/Time of Message||Message Type^Trigger Event|Message Control ID|P/T (Production/Test)||||Accept Acknoledgment TypeEVN|1337|Date/Time of EventHAK|Murphy^Dade|Zero Cool^Crash OverrideHAK|Libby^Kate|Acid Burn

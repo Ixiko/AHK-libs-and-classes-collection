@@ -1,0 +1,65 @@
+========================================================
+Item Name
+Full Item Name
+Item Flags
+Color Profile Name
+Horizontal Resolution
+Vertical Resolution
+Horizontal Extent
+Vertical Extent
+Horizontal Start Position
+Vertical Start Position
+Data Type
+Bits Per Pixel
+Brightness
+Contrast
+Current Intent
+Pixels Per Line
+Number of Lines
+Preferred Format
+Item Size
+Threshold
+Format
+Media Type
+Channels Per Pixel
+Bits Per Channel
+Planar
+Bytes Per Line
+Buffer Size
+Access Rights
+Compression
+Photometric Interpretation
+Lamp Warm up Time
+
+=============================================================
+Item Name=Top
+Full Item Name=0000\Root\Top
+Item Flags=67
+Color Profile Name=sRGB Color Space Profile.icm
+Horizontal Resolution=150
+Vertical Resolution=150
+Horizontal Extent=1275
+Vertical Extent=1753
+Horizontal Start Position=0
+Vertical Start Position=0
+Data Type=2
+Bits Per Pixel=8
+Brightness=0
+Contrast=0
+Current Intent=0
+Pixels Per Line=1275
+Number of Lines=1753
+Preferred Format={B96B3CAA-0728-11D3-9D7B-0000F81EF32E}
+Item Size=2237892
+Threshold=128
+Format={B96B3CAA-0728-11D3-9D7B-0000F81EF32E}
+Media Type=128
+Channels Per Pixel=1
+Bits Per Channel=8
+Planar=0
+Bytes Per Line=1276
+Buffer Size=65535
+Access Rights=3
+Compression=0
+Photometric Interpretation=0
+Lamp Warm up Time=180000
