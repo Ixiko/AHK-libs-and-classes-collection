@@ -1,6 +1,6 @@
-![ahk_logo](D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\Addendum für AlbisOnWindows\Docs\ahk_logo.png)
+![ahk_logo](https://raw.githubusercontent.com/Ixiko/AHK-libs-and-classes-collection/master/ahk_logo.png)
 
-![](D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lbc.png)
+![lbc-logo](https://raw.githubusercontent.com/Ixiko/AHK-libs-and-classes-collection/master/lbc.png)
 
 ###libs-and-classes-collection: *last changes on 08.06.2018*
 
