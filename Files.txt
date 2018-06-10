@@ -1,0 +1,1186 @@
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\A.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ACC.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AccV2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ACC_more.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ActiveX.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AddClearBtnToEdit.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\addFile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AddGraphicButton.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\addScript.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ADO.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\adosql.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Aero_Lib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Affinity.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AHKA.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AhkDllObject.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AhkDllThread.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ahkExec.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ahkExecuteLine.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AhkExported.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AHKForumMemoryFunctions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ahkhook.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AHKhttp.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AhkMini.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AhkSelf.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AHKsock.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ahkstructlib2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AhkThread.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AHKType.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ALD.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ALD.Connection.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ALD.DefinitionGenerator.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ALD.PackageGenerator.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Align.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AltTab_window_list.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Anchor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AnchorL.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AniGif.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Animated_Controls.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\API_Draw.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\API_GetWindowInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AppBar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AppFactory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ApplicationFramework.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ArchLogger.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\argp.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Array Extensions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Array.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AssociatedProgram.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AsyncHttp.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AtachGui_to_other_window.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Atl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Attach.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AttachToolWindow.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Auth.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Autocomplete.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Autoupdate.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AutoXYWH.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AveragingFunctions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\AVICAP.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BalloonTip.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BARCODER.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Base.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Base64.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\baseConvert.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Bin.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Bin2Dec.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BinArr.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BinaryEncodingDecoding.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BindModeThread.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BinGet.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\bink.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BinReadWrite.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BinRun.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BinToHex.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BitmapGradient.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BRA.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BrowserEmulation.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\bubbleSort2DArray.AHK
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BufferInput.AHK
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\BuildUserAhkApi.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\C.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CalcChecksum.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CalculateDistance.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Calenderfunctions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CApplication.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CB.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CColor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\cControls.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CDataBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CDialogs.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CDirectory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\cdomessage.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CEnumerator.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Cert.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CFile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\cFTP.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CFunction.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CGui.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CGuiCtrl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ChangeProcessName.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\chatGUI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CheckForUpdates.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CheckUpdate.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\chooseColor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CHotKey.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CHotstringOptions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Chrome.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CIniFile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class ClassMemory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class GdipSnapshot.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class Github.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class Hotkey.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class InsertBinToPNG.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class JSON.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class Memory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class WinEvents.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ClassCheck.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\classInput.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ClassPermissions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_3DMatrix.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_ColorPicker.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_ComImplementationBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_Compass.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_Console.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_Crypt.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_CryptConst.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_CStruct.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_cTable_Test.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_CTLCOLORS.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_CustomFont.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_DateTools.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_DD.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_Dock.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_DriveMap.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_dual.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_EditView.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_Flyout.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_FTP.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_FTPv2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_gdichart.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_GdipTooltip.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_Github_Gui.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_GroupSort.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_GuiDropFiles.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_GuiTabEx.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_hashTable.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_HL7.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_ImageButton.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_ImageConverter.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_IPHelper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_JSON.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_kbhook.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_KeyValStore.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_LeapMenu.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_Linear.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_LoaderBar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_LV_Colors.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_LV_InCellEdit (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_LV_InCellEdit.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_Mailslot.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_MailslotEx.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_Memory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_MenuEnumOption.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_MenuToggleOption.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_midiOut.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_MultiTree Data Structure.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_MySQLAPI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_NetworkManagement.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_PictureControl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_PixelState.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_ProcessExplorer.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_PureNotify.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_radical.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_scriptobj.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_SpreadSheet.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_String.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_Subtitle.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_SyntaxTree.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_taskbarInterface_v2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_Toolbar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_TransparentListBox.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_Viewport.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_WinClip.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_WinClipAPI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_WinRing0.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_WM_Dlg.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\class_xHotkey.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Class_XmlHelper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ClearArray.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Clip2Object.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Clipboard Manager.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CLocalizer.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CLR.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CMDret.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CMDret_stream.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CMenu.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CMenuBar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CMenuItem.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CMsgbox.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CoHelper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Collection.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ColURL.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\com (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\COM (3).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\com.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ComboX.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CommonDialogs.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\COMo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Compass.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\compile to vpk.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ComVar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ConnectedToInternet.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ConsoleApp v1.2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ConsoleApp.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Container.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Contains.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ContextMenuLib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ControlCol.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ControlColor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Control_AniGif.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Control_AVI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Convert2Hex.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ConvertImage.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Count.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CounterEditor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CpuMeter.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CpyData.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CreateDIB.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CreateFormData.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CreateIconsDll.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CreateScript.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\cRichEdit.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CriticalSection.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Crypt.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CryptAES.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CryptFoos.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CSV.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CSV_Functions AHK_L.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Cursor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Cycle.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\d2d1.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\d3D.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\d3D.hooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\d3D11.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\d3D9.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\d3Dx9.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DamerauLevenshteinDistance.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DataBaseAbstract.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DataBaseADO.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DataBaseFactory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DataBaseMySQL.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DataBaseSQLLite.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DateParse.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DayOfdate.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DBA.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DBGP.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dcomp.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DDE.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DDEMessage.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DDEML.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ddraw.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DDSFile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Decompiler.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Default.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DeluxeClipboard.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DesktopScreenCoordinates.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Dic.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Dictionary.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\difference.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dinput.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dinput.hooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DInputEmu.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DirGetParent.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Display.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Dlg.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DLG_FileOpenSave.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dll.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DllCallStruct.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DLLPack.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dmp.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Dock.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DockA.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DoDragDrop.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DownloadToFile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DownloadToString.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dpi.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DrawScreen.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dshow.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dshow.hooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dSleep.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dsound.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dsound.hooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dSpeak.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DumpHistory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dwrite (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\dwrite.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DynaExpr.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\DynaRun.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\EditControl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\EmptyMem.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\EnableUIAccess.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Encoding.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\EnumIncludes.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\eol.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ErrMsg.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ErrorMessage.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Eval.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\EventLibrary.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\EWinHook.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Excel.AHK
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ExcelToObj.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Excel_Functions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Exec.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ExecScript.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\exlib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Expand.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ExpandPostIDs.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Explorer.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ExplorerGrouping.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ExtListView.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ExtractIconFromExecutable.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FAILED.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FC.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FcnLib-Misc.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FcnLib-Opera.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FcnLib-Rewrites.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FcnLib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FE.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FFAAS.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FGP.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Fifo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\File (3).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\File.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FileExtract.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FileGetInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FileGetVersionInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FileHelperAndHash.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FileHooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FileInstallList.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\fileIsBinary.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FileReplace.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FileSpeichern.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FileTail.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FileVerInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FindClick.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FindFunc.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FindLabel.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FindMe.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FindText on Screen.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FixURI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FloatToFraction.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FlushDNS.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Fnt.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\fn_CMsgBox.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Font.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Form Filler.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Form.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Format4Csv.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FormatHRESULT.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\formatTickCount.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FreeImage.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\FS.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\ftp.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Functions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Func_IniSettingsEditor_v6.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GActiveXCtl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GButtonCtl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GDI.hooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Gdip.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GDIPlusHelper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GDIplusWrapper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\gdiplus_outlinedtext.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Gdip_AddPathBeziers.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Gdip_All.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Gdip_draw_n_Gui.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Gdip_Ext.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Gdip_ImageSearch.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GEditCtl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetAvailableFileName.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetChildHWND.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetCommonPath.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetControlsInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetDllBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetDnsAddress.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetEnv.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetExeMachine.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetFileEncoding.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetFileFolderSize.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetFreeDriveSpace.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetIEWindowInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\getInstalledPrograms.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetListViewItems.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetListViewText.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetMacAddress.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetModuleBaseAddr.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetOSVersion.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetParentDir.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\getProcessBaseAddress.AHK
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\getProcessBassAddressFromModules.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\getProcesses.AHK
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\getProcessFileVersion.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetProcessModules.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetProcessThreads.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetProcessWorkingDir.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetProgramWaveVolume.AHK
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\getScreenAspectRatio.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\getScriptHandle.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\getSystemLanguage.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetTcpTable.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetThreadStartAddr.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetTuples.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetUdpTable.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetWeekDay_TwoLang.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetWindowInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Get_Explorer_Paths.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GIThubReleasesAPI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\gl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\gl.hooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GlobalVarsScript.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\glu.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\googl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GTranslate.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GuiAddF.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\guiAddonInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GuiButtonIcon.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\guiCompile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GuiControlAddBox.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GuiCtl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Guid (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GUID.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\guiExplorer.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GUIHider.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\guiOffscreenCheck.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GuiSettings.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GUIUniqueDefault().ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GuiWnd.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Hash.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Help.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HelperFunctions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HexToBin.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HexView.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HIBYTE.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HiEdit.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HIWORD.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HL7.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HLink.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HotkeyControl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Hotstring.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\Hotstrings.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HPDF.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\hRes.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HtmDlg.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HTMLmodule.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\httpQuery.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HttpQueryInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\HTTPRequest.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\hwnd.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\hwndHung.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\_.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\_d3D11.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\_DragDrop.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\_filesystem.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\_Forms.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\_Input.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\_MemoryLibrary.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\_queue.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\_RemoteBuf.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\_Scintilla.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\_Struct.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Icon.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IconEx.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IDragSourceHelper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IDropSource.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IDropTarget.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IE.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IE7_Dom.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IEL.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IEReady.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\If Expression Test.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Ignore.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IL.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ILButton.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Image2Include.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ImageList.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\implode.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Include.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\inc_mf_0_3.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\inc_mf_System_IO_0_3.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\infogulchEncodings.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ini.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IniParser.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IniSettingsEditor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\iniWrapper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\InjectAhkDll.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\InputThread.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\InsertionSort.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Install.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Instance.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\InternetFileRead.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IPHelper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\is2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IsBom.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IsEmpty.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IsFileInUse.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IsFullScreen.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IsProcessElevated.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\IsUpdated.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\isValidEmail.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\iWeb.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\iWeb_L.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\JEEGetAllText.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\JEEGuiText.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\JoystickTest.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\json.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Json4Ahk.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\JSON_Beautify.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\JSON_FromObj.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\JSON_ToObj.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Jxon.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\KeyboardLayout.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LBDDLib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LBEX.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LetterVariations.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\lexer.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Lib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\libcurl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\lineReader.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\List.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ListCompare.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ListLines.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ListviewLib_1.01.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Listview_G.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LoadFile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\loadimage.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LoadPicture.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LOBYTE.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Lower.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LowerReplaceSpace.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LOWORD.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LV.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LVA.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LVCustomColors.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LVEDIT.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LVX.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LV_Colors.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LV_EX.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LV_InCellEdit.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\LV_SortArrow.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\m.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MakeIco.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MAKELANGID.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MAKELCID.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MAKELONG.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MAKELPARAM.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MAKELRESULT.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MAKEWORD.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MAKEWPARAM.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ManagedGuis.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ManagedResources.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Manifest.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Markdown2HTML.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MatchItemFromList.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MCI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MCode.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MCodeH.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\md5 (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\md5.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Mem.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MemBlk.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\memlib (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MemLib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\memory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MemoryBuffer.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Menu.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Menu_SetSysMenu.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\mg.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MI (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Midi.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MiniDump.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MISC Functions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\misc.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Misc_Functions_2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Monitor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Mount.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MouseDistance.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MouseExtras.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MouseKeyboardCounter.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MouseMove_Ellipse.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\MPC-HC TimeCode.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\msg.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\msTill.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Music.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\mySQL.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\NetShareEnum.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\NetworkAPI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\newestFile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Notify.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\NotifyOnTray.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\NumSize.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\NumType.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Obj.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ObjByRef.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ObjCSV.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ObjDump.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\object.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ObjectBundles.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ObjectHandling.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ObjLoadandBump.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ObjShare.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ObjTree.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\OCR.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\On.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\OnExitF.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\OnMenuHilite.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\OnPBMsg.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\OnWin.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\OOPFunctions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Operators_Fct.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Package.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Panel.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Parse.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\parser Directx1-10.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\parser Directx11, DirectShow.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ParseScriptCommandLine.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Path.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Path2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\patternScan.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\PDF Renamer and Signer.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Pebwa.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\PECreateEmpty.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Perl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\pgArray.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\PHY.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\PIG - Spy.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Ping (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ping.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ping2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\PipeRun.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\PlaySound.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\PleasantNotify.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\PluginHelper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\plugins.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Prefs.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Printer.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\printerfunctions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Process.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ProcessInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ProcessMem.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ProfileHandler.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\progressBox.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Property.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\PUM_API.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Qhtm.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\QMsgBox.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\QMsgBox_foos.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Query.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RaGrid.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\rand.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Random jock StrX() Parsing.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RandomBezier.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\randomdotorg.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RandomiseArray.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RandomName.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RandomStr.AHK
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RandomUniqNum.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RandomVar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\range.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RapidHotkey.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ReadIni.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ReadMemory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ReadMemory_Str.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ReadRawMemory.AHK
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\readResource.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Rebar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RecordSetADO.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RecordSetMySQL.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RecordSetSqlLite.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ref.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ReFormatTime.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\REG to VBS.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Regex.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RegExSort.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\regionGetColor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\releaseKeyspSend.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RemoteBuf_Open.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\remote_lib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ResDelete.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ResDllCreate.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ResExist.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ResGet.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ResolveHostname.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ResourceID.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ResourceIndexToId.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ResourHackIcons.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ResPut.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ResPutFile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\reverseArray.AHK
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ReverseLookup.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\rgbToHex.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RichEdit.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RIni.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RomanNumbers.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RunAsAdmin.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\runRemoteScript.AHK
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\RXMS.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SB (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SB.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\sc.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SC2_MemoryAndGeneralFunctions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Scheduler.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SCI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SciteOutPut.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\scriptCompile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\scriptlib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ScrollBar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Scroller.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\search.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SendEmail.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SendGUI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\sendmail.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Service.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SetBtnTxtColor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SetButtonF.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SetEditPlaceholder.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SetExeSubsystem.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SetIcon.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\setLowLevelInputHooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SetShortcuts.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SetTimer.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SetTimerF.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Settings.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SGDIPrint.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SHA256 WITH HMAC.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\shell.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ShellContextMenu.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ShellContextMenu2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ShellFileOperation.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Show menu.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\showabout.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ShowGif().ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ShowMenu.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ShowOCRUnderMouse.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Sift.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SignFile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\sizeof.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\sleepMode.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\slots.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SmartZip.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SnapX_Functions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\socket.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SoftModalMessageBox.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Sort.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Sort2DArray.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SortArray.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\sound.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SoundCardCapabilities.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\sourcegrab.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SpecialListviewFunctions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SpeechRecognition.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Splitter.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SQLite.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SQLiteDB_Class.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SQLite_L.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SrtSynch.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\st.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\StartServiceCtrlDispatcher.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\StayOnMonitor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\StdOutToVar (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\StdoutToVar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\stopwatch.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\String.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\StringHandling.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\StrLower.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\StrPutVar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\StrReplace.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\strTail.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Struct.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\StrX.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Subclass.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Subprocess.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SubTitle.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SubTitleClass.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SUCCEEDED.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SurfaceHooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SuspendThread_ResumeThread.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SVGraph.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\sXMLget.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SysProcInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SystemCursor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SystemMonitor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\SystemTime.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Table.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TabsToSpaces.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\talk.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Taskbar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\taskbarInterface.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\taskbarInterface_v2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TaskBar_SetAttr.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TaskButton.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TaskDialog (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TaskDialog and more.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TaskDialog.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TaskDialogEx.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TaskTrayIcon.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TbMenu-proto.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TCP-UDP-class.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TC_EX.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TermWait.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TermWaitLibs.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TexSwapLib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TexSwapLibGL.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TextureHooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\tf.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ThousandsSep.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\threadFunc.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Threads.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Timer.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Title.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TO TextOverlay.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ToChar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\todWulff.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ToInt.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\tokelex.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Toolbar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ToolTip.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ToShort.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ToUChar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ToUInt.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ToUShort.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TransButtonsv1.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\translate_google_api AHKV2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TransSplashText.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Tray.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TrayIcon (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TrayIcon (3).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TrayIcon.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\trksyln.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TskDlg.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TT.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TVX.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\type.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TypeFunctions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TypeLibHelperFunctions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\TypeLibInterfaces.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\uia.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\UIA2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\UIAutomationClient_1_0_64bit.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\UIA_Interface.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\UnHTM.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Update.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\UpdRes.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Upper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\uriencode.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\uriEncoder-Decoder.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\UrlDownloadToJson.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\UrlDownloadToVar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\USBD.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\USBUIRT.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Util.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\uuid.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\UUIDCreate.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\VA (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\VA.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\VARIANT.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\VariemClick.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\VariousFunctions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\VarZ_Compress.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\VersionRes.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\VKSend.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\VLCHTTP3.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\vtype.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WaitForEvent.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WaitForIEPageLoad.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WaitPixelColor.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WakeOnLan.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\wam.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WatchDirectory (2).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WatchDirectory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\web.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WebBrowserCtl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\websocket.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WIA.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\wic.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Win.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinApi.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinApiDef.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinCaption.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinClip.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinClipAPI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WINDERS.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Window Roller.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WindowFromPoint.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WindowFromRect.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WindowPad.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WindowsBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinEnum.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinEvents.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinGetAll.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinGetPidList.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinGetPos.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinGetPosEx.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinHttpRequest.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinIniNet.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinMoveGetPos.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinMovePos.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinProps.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinSet_Click_Through.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinSet_NoActivate.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinSock2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinSysMenuAPI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WinVisible.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WLAN.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Wmic_Win32_FunctionLog.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WPD.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WRandom.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Writer.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ws.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ws4ahk.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WS_DEControl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WS_DEControl2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WS_DEDemo2.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\WS_RemoveErrChk.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\XGraph.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\xHotkeyNormalize.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Xinput.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\XML.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\xpath.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Yaml.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\youtube (not tested).ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\Zip.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ZipFile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ZipFileRaw.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\AFC.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CChildWindow.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CControl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlActiveX.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlButton.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlCalendar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlCheckBox.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlComboBox.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlDateTime.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlDropDown.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlEdit.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlGroupBox.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlHotkey.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlImage.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlLabel.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlLink.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlListBox.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlListView.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlProgress.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlRadio.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlSlider.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlStatusBar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlTab.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlTreeView.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CCtrlUpDown.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CDefaultBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CImageList.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CMsgDispatch.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CParentWindow.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CPropImpl.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CScrollableWindow.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CWindow.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\AHK Injector\d3D.hooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\AHK Injector\dinput.hooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\AHK Injector\dshow.hooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\AHK Injector\dsound.hooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\AHK Injector\exlib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\AHK Injector\GDI.hooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\AHK Injector\gl.hooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\AHK Injector\Help.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\AHK Injector\Injector.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\AHK Injector\remote_lib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\d3d.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\d3d11.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\d3D9.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\d3D9types.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\d3dtypes.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\d3DX9.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\d3DX9core.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\ddraw.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\dinput.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\dshow.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\dsound.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\gl.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\HeaderParser.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\parser Directx1-10.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\parser Directx11, DirectShow.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\_d3D.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\_d3D11.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\_d3D9.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\_ddraw.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\_dinput.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\_dshow.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\_dsound.h.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\Lib\DDSFile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\Lib\DInputEmu.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\Lib\FileHooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\Lib\hRes.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\Lib\Lib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\Lib\ref.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\Lib\SurfaceHooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\Lib\TexSwap\TexSwapLib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\Lib\TexSwap\TexSwapLibGL.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\Lib\TexSwap\TextureHooks.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DoDragAndDrop\DoDragDrop.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DoDragAndDrop\IDataObject.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DoDragAndDrop\IDragSourceHelper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DoDragAndDrop\IDropSource.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DoDragAndDrop\IDropSource_Sample.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DoDragAndDrop\IDropTarget.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DoDragAndDrop\IDropTarget_Sample.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DoDragAndDrop\IEnumFORMATETC.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DoDragAndDrop\SHDataObject.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DoDragAndDrop\SHDoDragDrop.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DoDragAndDrop\SHDoDragDrop_Sample.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DX9-Overlay-API\include\ahk\DX9_overlay.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DX9-Overlay-API\samples\ahk\framerate.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DX9-Overlay-API\samples\ahk\hello world.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DX9-Overlay-API\samples\ahk\priority.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DX9-Overlay-API\samples\ahk\samp.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DX9-Overlay-API\samples\ahk\samp_health_overlay.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\audioRouter.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\borderlessMode.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\borderlessMove.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\checkSession.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\commaFormat.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\compileScript.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\CopyDirStructure.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\CreateOpenWithMenu.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\dpiOffset.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\EmptyMem.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\externalIP.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\externalIP_old.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\FileCountLines.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\FileFindWord.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\FileGetVersionInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\FileReadLastLines.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\fileUnblock.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\getCurrentTime.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\getImageSize.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\getPosFromAngle.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\getSelected.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\GetStringFileInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\getUTCOffset.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\getWinClientSize.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\hour.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\httpQuery.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\ifContains.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\ifIn.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\imageSearchc.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\internetConnected.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\invertCaseChr.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\invertCaseStr.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\is64bitExe.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\isAlpha.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\isAlphaNum.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\isBetween.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\isDigit.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\isFloat.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\isHex.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\isInt.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\isLower.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\isNum.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\isSpace.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\isUpper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\json.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\lanConnected.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\min.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\mouseOverWin.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\mtoh.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\mtom.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\mtos.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\muteWindow.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\nicRestart.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\nicSetState.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\processExist.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\processPriority.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\rand.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\randStr.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\regExMatchI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\regExReplaceI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\sec.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\StdOutStream.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\StdOutToVar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\StealFuncFromLib.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\strI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\strReplaceI.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\strToLower.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\strToUpper.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\threadMan.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\tool.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\toolSpeak.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\urlDownloadToFile.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\urlDownloadToVar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\urlFileGetSize.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\minilib\winInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfArgumentException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfArgumentNullException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfArgumentOutOfRangeException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfArithmeticException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfAttribute.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfBidiCategory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfBool.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfByte.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfChar.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfCharUnicodeInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfCollection.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfCollectionBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfDateTime.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfDictionary.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfDictionarybase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfDictionaryEntry.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfDigitShapes.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfDivideByZeroException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfEnum.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfEnumerableBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfEnvironment.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfEqualityComparerBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfEqualsOptions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfFlagsAttribute.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfFloat.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfFormatException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfFormatProvider.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfFrameWorkOptions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfGenericList.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfHashTable.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfIndexOutOfRangeException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfInt16.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfInt64.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfInteger.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfInvalidCastException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfInvalidOperationException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfList.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfListBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfMemberAccessException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfMissingFieldException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfMissingMemberException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfMissingMethodException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfNameObjectCollectionBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfNonMfObjectException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfNotImplementedException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfNotSupportedException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfNull.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfNullReferenceException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfNumberFormatInfo.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfNumberFormatInfoBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfNumberStyles.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfObject.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfOrdinalComparer.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfOverflowException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfParams.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfPrimitive.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfPrimitives.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfQueue.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfResourceManager.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfResourceSingletonBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfSetFormatNumberType.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfSingletonBase.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfStack.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfString.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfStringComparison.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfStringSplitOptions.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfSystemException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfTimeSpan.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfType.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfTypeCode.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\Mfunc.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfUnicodeCategory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfValueType.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfVersion.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\IO\MfDirectoryNotFoundException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\IO\MfDriveNotFoundException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\IO\MfFileNotFoundException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\IO\MfIOException.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfUnicode\MfDataBaseFactory.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfUnicode\MfDbUcdAbstract.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfUnicode\MfRecordSetSqlLite.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfUnicode\MfSQLite_L.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfUnicode\MfUcdDb.ahk
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\Mini_Framwork\MfUnicode\UCDSqlite.ahk
