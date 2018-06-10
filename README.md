@@ -1,4 +1,4 @@
-![ahk_logo](https://raw.githubusercontent.com/Ixiko/AHK-libs-and-classes-collection/master/ahk_logo.png)
+![ahk_logo](https://raw.githubusercontent.com/Ixiko/AHK-libs-and-classes-collection/master/ahklogo.png)
 
 ![lbc-logo](https://raw.githubusercontent.com/Ixiko/AHK-libs-and-classes-collection/master/lbc.png)
 
