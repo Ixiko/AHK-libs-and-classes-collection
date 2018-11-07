@@ -1,0 +1,2 @@
+Some of the files in this folder are used by the example scripts.  Do not rename
+this folder or delete/rename the files or sub-folders in this folder.

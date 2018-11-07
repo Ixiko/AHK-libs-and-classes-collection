@@ -1,0 +1,26 @@
+﻿TOOLINFO structure (Windows)
+
+The TOOLINFO structure contains information about a tool in a tooltip control.
+
+    [Member]     [Type]      [32bitA]  [32bitU]  [64bitU]
+1   cbSize       UInt        [00] 4    [00] 4    [00] 4
+2   uFlags       UInt        [04] 4    [04] 4    [04] 4
+3   hwnd         HWND        [08] 4    [08] 4    [08] 8
+4   uId          UINT_PTR    [12] 4    [12] 4    [16] 8
+5   rect.left    Int         [16] 4    [16] 4    [24] 4
+6   rect.top     Int         [20] 4    [20] 4    [28] 4
+7   rect.right   Int         [24] 4    [24] 4    [32] 4
+8   rect.bottom  Int         [28] 4    [28] 4    [36] 4
+9   hinst        HINSTANCE   [32] 4    [32] 4    [40] 8
+10  lpszText     LPTSTR      [36] 4    [36] 4    [48] 8
+11  lParam       LPARAM      [40] 4    [40] 4    [56] 8
+12  *lpReserved  UPtr        [44] 4*   [44] 4*   [64] 8*
+                                  ---       ---       ---
+                                  44        44        64
+
+ *  IMPORTANT: The space allocated for *lpReserved should be ignored for all
+    versions of Windows.  It is NOT counted.
+
+VarSetCapacity(TOOLINFO,A_PtrSize=8 ? 64:44,0)
+TOOLINFO_sizeof:=A_PtrSize=8 ? 64:44
+

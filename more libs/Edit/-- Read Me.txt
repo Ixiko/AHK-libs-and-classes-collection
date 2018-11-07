@@ -1,0 +1,30 @@
+﻿This project includes files and folders that were added to support the example
+scripts.  They include the following:
+
+    Name                    Description
+    ----                    -----------
+    _Example Files          Folder.  Contains text files used by some of the
+                            example scripts.
+
+    _Functions              Folder.  This folder contains the Edit library and
+                            the add-on functions for the Edit library.  It also
+                            contains functions that are only used by the example
+                            scripts.
+
+    dic                     Folder.  Contains the standard and custom dictionary
+                            files used by the Spell Check examples.
+
+    lib                     Folder.  Contains the Hunspell API files needed by
+                            the Spell library.
+
+
+Additional folders used by the project.
+
+    Name                    Description
+    ----                    -----------
+    _Design & Development   Folder.  Includes structure documentation and
+                            shortcuts to documentation on the internet.
+
+    _Doc                    Folder.  Contains the library documentation.
+
+

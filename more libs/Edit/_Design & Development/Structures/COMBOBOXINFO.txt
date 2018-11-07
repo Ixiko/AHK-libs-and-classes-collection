@@ -1,0 +1,19 @@
+COMBOBOXINFO structure
+Contains combo box status information.
+
+    [Member]         [Type]   [32bitA]  [32bitU]  [64bitU]
+1   cbSize           DWORD    [00] 4    [00] 4    [00] 4
+2   rcItem.left      int      [04] 4    [04] 4    [04] 4
+3   rcItem.top       int      [08] 4    [08] 4    [08] 4
+4   rcItem.right     int      [12] 4    [12] 4    [12] 4
+5   rcItem.bottom    int      [16] 4    [16] 4    [16] 4
+6   rcButton.left    int      [20] 4    [20] 4    [20] 4
+7   rcButton.top     int      [24] 4    [24] 4    [24] 4
+8   rcButton.right   int      [28] 4    [28] 4    [28] 4
+9   rcButton.bottom  int      [32] 4    [32] 4    [32] 4
+10  stateButton      DWORD    [36] 4    [36] 4    [36] 4
+11  hwndCombo        HWND     [40] 4    [40] 4    [40] 8
+12  hwndItem         HWND     [44] 4    [44] 4    [48] 8
+13  hwndList         HWND     [48] 4    [48] 4    [56] 8
+                                   ---       ---       ---
+                                   52        52        64

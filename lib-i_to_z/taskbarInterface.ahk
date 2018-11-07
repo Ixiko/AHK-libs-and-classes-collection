@@ -1,4 +1,4 @@
-﻿#include ../../classes/threadFunc/threadFunc.ahk
+﻿;#include ../../classes/threadFunc/threadFunc.ahk
 class taskbarInterface {
 	static hookWindowClose:=true							; Use SetWinEventHook to automatically clear the interface when its window is destroyed. 
 	static manualClearInterface:=false						; Set to false to automatically clear com interface when the last reference to an object derived from the taskbarInterface class is released. call taskbarInterface.clearInterface()

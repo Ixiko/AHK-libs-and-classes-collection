@@ -1,0 +1,19 @@
+GUITHREADINFO structure
+Contains information about a GUI thread.
+
+< CGUITHREADINFO structure >
+    [Member]        [Type]   [32bitA]  [32bitU]  [64bitU]
+1   cbSize          DWORD    [00] 4    [00] 4    [00] 4
+2   flags           DWORD    [04] 4    [04] 4    [04] 4
+3   hwndActive      HWND     [08] 4    [08] 4    [08] 8
+4   hwndFocus       HWND     [12] 4    [12] 4    [16] 8
+5   hwndCapture     HWND     [16] 4    [16] 4    [24] 8
+6   hwndMenuOwner   HWND     [20] 4    [20] 4    [32] 8
+7   hwndMoveSize    HWND     [24] 4    [24] 4    [40] 8
+8   hwndCaret       HWND     [28] 4    [28] 4    [48] 8
+9   rcCaret.left    int      [32] 4    [32] 4    [56] 4
+10  rcCaret.top     int      [36] 4    [36] 4    [60] 4
+11  rcCaret.right   int      [40] 4    [40] 4    [64] 4
+12  rcCaret.bottom  int      [44] 4    [44] 4    [68] 4
+                                  ---       ---       ---
+                                  48        48        72

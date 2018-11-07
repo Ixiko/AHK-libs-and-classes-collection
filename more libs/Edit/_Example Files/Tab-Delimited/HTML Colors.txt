@@ -1,0 +1,140 @@
+AliceBlue	F0F8FF	Alice Blue
+AntiqueWhite	FAEBD7	Antique White
+Aqua	00FFFF	Aqua
+Aquamarine	7FFFD4	Aquamarine
+Azure	F0FFFF	Azure
+Beige	F5F5DC	Beige
+Bisque	FFE4C4	Bisque
+Black	000000	Black
+BlanchedAlmond	FFEBCD	Blanched Almond
+Blue	0000FF	Blue
+BlueViolet	8A2BE2	Blue Violet
+Brown	A52A2A	Brown
+BurlyWood	DEB887	Burly Wood
+CadetBlue	5F9EA0	Cadet Blue
+Chartreuse	7FFF00	Chartreuse
+Chocolate	D2691E	Chocolate
+Coral	FF7F50	Coral
+CornflowerBlue	6495ED	Cornflower Blue
+Cornsilk	FFF8DC	Cornsilk
+Crimson	DC143C	Crimson
+Cyan	00FFFF	Cyan
+DarkBlue	00008B	Dark Blue
+DarkCyan	008B8B	Dark Cyan
+DarkGoldenrod	B8860B	Dark Goldenrod
+DarkGray	A9A9A9	Dark Gray
+DarkGreen	006400	Dark Green
+DarkKhaki	BDB76B	Dark Khaki
+DarkMagenta	8B008B	Dark Magenta
+DarkOliveGreen	556B2F	Dark Olive Green
+DarkOrange	FF8C00	Dark Orange
+DarkOrchid	9932CC	Dark Orchid
+DarkRed	8B0000	Dark Red
+DarkSalmon	E9967A	Dark Salmon
+DarkSeaGreen	8FBC8F	Dark Sea Green
+DarkSlateBlue	483D8B	Dark Slate Blue
+DarkSlateGray	2F4F4F	Dark Slate Gray
+DarkTurquoise	00CED1	Dark Turquoise
+DarkViolet	9400D3	Dark Violet
+DeepPink	FF1493	Deep Pink
+DeepSkyBlue	00BFFF	Deep Sky Blue
+DimGray	696969	Dim Gray
+DodgerBlue	1E90FF	Dodger Blue
+Firebrick	B22222	Firebrick
+FloralWhite	FFFAF0	Floral White
+ForestGreen	228B22	Forest Green
+Fuchsia	FF00FF	Fuchsia
+Gainsboro	DCDCDC	Gainsboro
+GhostWhite	F8F8FF	Ghost White
+Gold	FFD700	Gold
+Goldenrod	DAA520	Goldenrod
+Gray	808080	Gray
+Green	008000	Green
+GreenYellow	ADFF2F	Green Yellow
+Honeydew	F0FFF0	Honeydew
+HotPink	FF69B4	Hot Pink
+IndianRed	CD5C5C	Indian Red
+Indigo	4B0082	Indigo
+Ivory	FFFFF0	Ivory
+Khaki	F0E68C	Khaki
+Lavender	E6E6FA	Lavender
+LavenderBlush	FFF0F5	Lavender Blush
+LawnGreen	7CFC00	Lawn Green
+LemonChiffon	FFFACD	Lemon Chiffon
+LightBlue	ADD8E6	Light Blue
+LightCoral	F08080	Light Coral
+LightCyan	E0FFFF	Light Cyan
+LightGoldenrodYellow	FAFAD2	Light Goldenrod Yellow
+LightGrey	D3D3D3	Light Grey
+LightGreen	90EE90	Light Green
+LightPink	FFB6C1	Light Pink
+LightSalmon	FFA07A	Light Salmon
+LightSeaGreen	20B2AA	Light Sea Green
+LightSkyBlue	87CEFA	Light Sky Blue
+LightSlateGray	778899	Light Slate Gray
+LightSteelBlue	B0C4DE	Light Steel Blue
+LightYellow	FFFFE0	Light Yellow
+Lime	00FF00	Lime
+LimeGreen	32CD32	Lime Green
+Linen	FAF0E6	Linen
+Magenta	FF00FF	Magenta
+Maroon	800000	Maroon
+MediumAquamarine	66CDAA	Medium Aquamarine
+MediumBlue	0000CD	Medium Blue
+MediumOrchid	BA55D3	Medium Orchid
+MediumPurple	9370D8	Medium Purple
+MediumSeaGreen	3CB371	Medium Sea Green
+MediumSlateBlue	7B68EE	Medium Slate Blue
+MediumSpringGreen	00FA9A	Medium Spring Green
+MediumTurquoise	48D1CC	Medium Turquoise
+MediumVioletRed	C71585	Medium Violet Red
+MidnightBlue	191970	Midnight Blue
+MintCream	F5FFFA	Mint Cream
+MistyRose	FFE4E1	Misty Rose
+Moccasin	FFE4B5	Moccasin
+NavajoWhite	FFDEAD	Navajo White
+Navy	000080	Navy
+OldLace	FDF5E6	Old Lace
+Olive	808000	Olive
+OliveDrab	6B8E23	Olive Drab
+Orange	FFA500	Orange
+OrangeRed	FF4500	Orange Red
+Orchid	DA70D6	Orchid
+PaleGoldenrod	EEE8AA	Pale Goldenrod
+PaleGreen	98FB98	Pale Green
+PaleTurquoise	AFEEEE	Pale Turquoise
+PaleVioletRed	D87093	Pale Violet Red
+PapayaWhip	FFEFD5	Papaya Whip
+PeachPuff	FFDAB9	Peach Puff
+Peru	CD853F	Peru
+Pink	FFC0CB	Pink
+Plum	DDA0DD	Plum
+PowderBlue	B0E0E6	Powder Blue
+Purple	800080	Purple
+Red	FF0000	Red
+RosyBrown	BC8F8F	Rosy Brown
+RoyalBlue	4169E1	Royal Blue
+SaddleBrown	8B4513	Saddle Brown
+Salmon	FA8072	Salmon
+SandyBrown	F4A460	Sandy Brown
+SeaGreen	2E8B57	Sea Green
+Seashell	FFF5EE	Seashell
+Sienna	A0522D	Sienna
+Silver	C0C0C0	Silver
+SkyBlue	87CEEB	Sky Blue
+SlateBlue	6A5ACD	Slate Blue
+SlateGray	708090	Slate Gray
+Snow	FFFAFA	Snow
+SpringGreen	00FF7F	Spring Green
+SteelBlue	4682B4	Steel Blue
+Tan	D2B48C	Tan
+Teal	008080	Teal
+Thistle	D8BFD8	Thistle
+Tomato	FF6347	Tomato
+Turquoise	40E0D0	Turquoise
+Violet	EE82EE	Violet
+Wheat	F5DEB3	Wheat
+White	FFFFFF	White
+WhiteSmoke	F5F5F5	White Smoke
+Yellow	FFFF00	Yellow
+YellowGreen	9ACD32	Yellow Green

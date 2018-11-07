@@ -1,0 +1,102 @@
+Introduction
+------------
+AutoHotkey is a free, open-source utility for Windows. With it, you can:
+
+    * Automate almost anything by sending keystrokes and mouse clicks. You can write macros by hand or use the macro recorder. 
+
+    * Create hotkeys for keyboard, joystick, and mouse. Virtually any key, button, or combination can become a hotkey. 
+
+    * Expand abbreviations as you type them. For example, typing "btw" can automatically produce "by the way". 
+
+    * Create custom data-entry forms, user interfaces, and menu bars. See GUI for details.
+
+    * Remap keys and buttons on your keyboard, joystick, and mouse. 
+
+    * Respond to signals from hand-held remote controls via the WinLIRC client script.
+
+    * Run existing AutoIt v2 scripts and enhance them with new capabilities. 
+
+    * Convert any script into an EXE file that can be run on computers that don't have AutoHotkey installed.
+
+Getting started might be easier than you think. Check out the quick-start tutorial.
+
+More about Hotkeys
+------------------
+AutoHotkey unleashes the full potential of your keyboard, joystick, and mouse. For example, in addition to the typical Control, Alt, and Shift modifiers, you can use the Windows key and the Capslock key as modifiers. In fact, you can make any key or mouse button act as a modifier. For these and other capabilities, see Advanced Hotkeys.
+
+
+Other Features
+--------------
+    * Change the volume, mute, and other settings of any soundcard.
+
+    * Make any window transparent, always-on-top, or alter its shape.
+
+    * Use a joystick or keyboard as a mouse.
+
+    * Monitor your system. For example, close unwanted windows the moment they appear.
+
+    * Retrieve and change the clipboard's contents, including file names copied from an Explorer window.
+
+    * Disable or override Windows' own shortcut keys such as Win+E and Win+R.
+
+    * Alleviate RSI with substitutes for Alt-Tab (using keys, mouse wheel, or buttons).
+
+    * Customize the tray icon menu with your own icon, tooltip, menu items, and submenus.
+
+    * Display dialog boxes, tooltips, balloon tips, and popup menus to interact with the user.
+
+    * Perform scripted actions in response to system shutdown or logoff.
+
+    * Detect how long the user has been idle. For example, run CPU intensive tasks only when the user is away.
+
+    * Automate game actions by detecting images and pixel colors (this is intended for legitimate uses such as the alleviation of RSI).
+
+    * Read, write, and parse text files more easily than in other languages.
+
+    * Perform operation(s) upon a set of files that match a wildcard pattern.
+
+    * Work with the registry and INI files.
+
+Acknowledgements
+----------------
+A special thanks to Jonathan Bennett, whose generosity in releasing AutoIt v2 as free software in 1999 served as an inspiration and time-saver for myself and many others worldwide. In addition, many of AutoHotkey's enhancements to the AutoIt v2 command set, as well as the Window Spy and the script compiler, were adapted directly from the AutoIt v3 source code. So thanks to Jon and the other AutoIt authors for those as well.
+
+Finally, AutoHotkey would not be what it is today without these other individuals.
+
+Creating a script
+-----------------
+Each script is a plain text file containing commands to be executed by the program (AutoHotkey.exe). A script may also contain hotkeys and hotstrings, or even consist entirely of them. However, in the absence of hotkeys and hotstrings, a script will perform its commands sequentially from top to bottom the moment it is launched.
+
+To create a new script:
+
+    1. Download and install AutoHotkey. 
+
+    2. Right-click an empty spot on your desktop or in a folder of your choice. 
+
+    3. In the menu that appears, select New -> AutoHotkey Script. 
+
+    4. Type a name for the file, ensuring that it ends in .ahk. For example: Test.ahk 
+
+    5. Right-click the file and choose Edit Script. 
+
+    6. On a new blank line, type the following:
+       
+       #space::Run www.google.com 
+
+In the line above, the first character "#" stands for the Windows key; so #space means holding down the Windows key then pressing the spacebar to activate the hotkey. The :: means that the subsequent command should be executed whenever this hotkey is pressed, in this case to go to the Google web site. To try out this script, continue as follows:
+
+    1. Save and close the file. 
+
+    2. Double-click the file to launch it. A new icon appears in the taskbar notification area. 
+
+    3. Hold down the Windows key and press the spacebar. A web page opens in the default browser. 
+
+    4. To exit or edit the script, right-click the green "H" icon in the taskbar notification area. 
+
+Notes:
+
+    * Multiple scripts can be running simultaneously, each with its own icon in the taskbar notification area.
+
+    * Each script can have multiple hotkeys and hotstrings. 
+
+    * To have a script launch automatically when you start your computer, create a shortcut in the Start Menu's Startup folder. 

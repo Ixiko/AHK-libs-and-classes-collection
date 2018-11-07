@@ -2,9 +2,9 @@
 
 ![lbc-logo](https://raw.githubusercontent.com/Ixiko/AHK-libs-and-classes-collection/master/lbc.png)
 
-###libs-and-classes-collection: *last changes on 08.06.2018*
+###libs-and-classes-collection: *last changes on 07.11.2018*
 
-#### This is a collection of currently around 1000 Autohotkey libraries and classes.
+#### This is currently a collection of around 1500 Autohotkey libraries and classes.
 
 
 
@@ -14,6 +14,9 @@
    the script which can create the above mentioned files 
 
 changes are made:
+
+**[07.11.2018]** - added 500 hopefully new and unique library’s. Still I think that in comparison to other programming languages Autohotkey is rather a small community. I also use libraries from the early days of Autohotkey and they work fine!
+Otherwise, I hope you have a quick search program. Thanks to all for the prebuild code. It safes much time.
 
 **[08.06.2018]** - using [**AntiTwins.exe**](http://www.joerg-rosenthal.com/en/antitwin/) to remove doubled files
 
@@ -47,6 +50,7 @@ lib-a_to_h\AHKsock.ahk
 lib-a_to_h\ahkstructlib2.ahk
 lib-a_to_h\AhkThread.ahk
 lib-a_to_h\AHKType.ahk
+lib-a_to_h\AHK_Array 6.0.ahk
 lib-a_to_h\ALD.ahk
 lib-a_to_h\ALD.Connection.ahk
 lib-a_to_h\ALD.DefinitionGenerator.ahk
@@ -66,6 +70,7 @@ lib-a_to_h\ArchLogger.ahk
 lib-a_to_h\argp.ahk
 lib-a_to_h\Array Extensions.ahk
 lib-a_to_h\Array.ahk
+lib-a_to_h\array_.ahk
 lib-a_to_h\AssociatedProgram.ahk
 lib-a_to_h\AsyncHttp.ahk
 lib-a_to_h\AtachGui_to_other_window.ahk
@@ -78,6 +83,7 @@ lib-a_to_h\Autoupdate.ahk
 lib-a_to_h\AutoXYWH.ahk
 lib-a_to_h\AveragingFunctions.ahk
 lib-a_to_h\AVICAP.ahk
+lib-a_to_h\AxC.ahk
 lib-a_to_h\BalloonTip.ahk
 lib-a_to_h\BARCODER.ahk
 lib-a_to_h\Base.ahk
@@ -127,90 +133,12 @@ lib-a_to_h\CHotKey.ahk
 lib-a_to_h\CHotstringOptions.ahk
 lib-a_to_h\Chrome.ahk
 lib-a_to_h\CIniFile.ahk
-lib-a_to_h\Class ClassMemory.ahk
-lib-a_to_h\Class GdipSnapshot.ahk
-lib-a_to_h\Class Github.ahk
-lib-a_to_h\Class Hotkey.ahk
-lib-a_to_h\class InsertBinToPNG.ahk
-lib-a_to_h\Class JSON.ahk
-lib-a_to_h\Class Memory.ahk
-lib-a_to_h\Class WinEvents.ahk
-lib-a_to_h\ClassCheck.ahk
-lib-a_to_h\classInput.ahk
-lib-a_to_h\ClassPermissions.ahk
-lib-a_to_h\class_3DMatrix.ahk
-lib-a_to_h\Class_ColorPicker.ahk
-lib-a_to_h\class_ComImplementationBase.ahk
-lib-a_to_h\class_Compass.ahk
-lib-a_to_h\Class_Console.ahk
-lib-a_to_h\class_Crypt.ahk
-lib-a_to_h\class_CryptConst.ahk
-lib-a_to_h\Class_CStruct.ahk
-lib-a_to_h\class_cTable_Test.ahk
-lib-a_to_h\Class_CTLCOLORS.ahk
-lib-a_to_h\Class_CustomFont.ahk
-lib-a_to_h\Class_DateTools.ahk
-lib-a_to_h\Class_DD.ahk
-lib-a_to_h\Class_Dock.ahk
-lib-a_to_h\class_DriveMap.ahk
-lib-a_to_h\class_dual.ahk
-lib-a_to_h\class_EditView.ahk
-lib-a_to_h\Class_Flyout.ahk
-lib-a_to_h\Class_FTP.ahk
-lib-a_to_h\class_FTPv2.ahk
-lib-a_to_h\class_gdichart.ahk
-lib-a_to_h\Class_GdipTooltip.ahk
-lib-a_to_h\Class_Github_Gui.ahk
-lib-a_to_h\class_GroupSort.ahk
-lib-a_to_h\class_GuiDropFiles.ahk
-lib-a_to_h\class_GuiTabEx.ahk
-lib-a_to_h\class_hashTable.ahk
-lib-a_to_h\class_HL7.ahk
-lib-a_to_h\Class_ImageButton.ahk
-lib-a_to_h\class_ImageConverter.ahk
-lib-a_to_h\Class_IPHelper.ahk
-lib-a_to_h\Class_JSON.ahk
-lib-a_to_h\class_kbhook.ahk
-lib-a_to_h\class_KeyValStore.ahk
-lib-a_to_h\Class_LeapMenu.ahk
-lib-a_to_h\class_Linear.ahk
-lib-a_to_h\class_LoaderBar.ahk
-lib-a_to_h\Class_LV_Colors.ahk
-lib-a_to_h\Class_LV_InCellEdit (2).ahk
-lib-a_to_h\Class_LV_InCellEdit.ahk
-lib-a_to_h\class_Mailslot.ahk
-lib-a_to_h\class_MailslotEx.ahk
-lib-a_to_h\class_Memory.ahk
-lib-a_to_h\class_MenuEnumOption.ahk
-lib-a_to_h\class_MenuToggleOption.ahk
-lib-a_to_h\class_midiOut.ahk
-lib-a_to_h\class_MultiTree Data Structure.ahk
-lib-a_to_h\Class_MySQLAPI.ahk
-lib-a_to_h\Class_NetworkManagement.ahk
-lib-a_to_h\Class_PictureControl.ahk
-lib-a_to_h\class_PixelState.ahk
-lib-a_to_h\Class_ProcessExplorer.ahk
-lib-a_to_h\Class_PureNotify.ahk
-lib-a_to_h\class_radical.ahk
-lib-a_to_h\class_scriptobj.ahk
-lib-a_to_h\class_SpreadSheet.ahk
-lib-a_to_h\class_String.ahk
-lib-a_to_h\class_Subtitle.ahk
-lib-a_to_h\class_SyntaxTree.ahk
-lib-a_to_h\class_taskbarInterface_v2.ahk
-lib-a_to_h\Class_Toolbar.ahk
-lib-a_to_h\Class_TransparentListBox.ahk
-lib-a_to_h\class_Viewport.ahk
-lib-a_to_h\class_WinClip.ahk
-lib-a_to_h\class_WinClipAPI.ahk
-lib-a_to_h\Class_WinRing0.ahk
-lib-a_to_h\class_WM_Dlg.ahk
-lib-a_to_h\class_xHotkey.ahk
-lib-a_to_h\Class_XmlHelper.ahk
 lib-a_to_h\ClearArray.ahk
 lib-a_to_h\Clip2Object.ahk
 lib-a_to_h\Clipboard Manager.ahk
+lib-a_to_h\ClipboardHelpers.ahk
 lib-a_to_h\CLocalizer.ahk
+lib-a_to_h\CLR (2).ahk
 lib-a_to_h\CLR.ahk
 lib-a_to_h\CMDret.ahk
 lib-a_to_h\CMDret_stream.ahk
@@ -225,10 +153,14 @@ lib-a_to_h\com (2).ahk
 lib-a_to_h\COM (3).ahk
 lib-a_to_h\com.ahk
 lib-a_to_h\ComboX.ahk
+lib-a_to_h\ComDispatch.ahk
+lib-a_to_h\ComDispatch0.ahk
+lib-a_to_h\ComDispTable.ahk
 lib-a_to_h\CommonDialogs.ahk
 lib-a_to_h\COMo.ahk
 lib-a_to_h\Compass.ahk
 lib-a_to_h\compile to vpk.ahk
+lib-a_to_h\ComVar (2).ahk
 lib-a_to_h\ComVar.ahk
 lib-a_to_h\ConnectedToInternet.ahk
 lib-a_to_h\ConsoleApp v1.2.ahk
@@ -242,18 +174,25 @@ lib-a_to_h\Control_AniGif.ahk
 lib-a_to_h\Control_AVI.ahk
 lib-a_to_h\Convert2Hex.ahk
 lib-a_to_h\ConvertImage.ahk
+lib-a_to_h\ConvertKeyToKeyCode.ahk
+lib-a_to_h\CornerNotify.ahk
 lib-a_to_h\Count.ahk
 lib-a_to_h\CounterEditor.ahk
 lib-a_to_h\CpuMeter.ahk
 lib-a_to_h\CpyData.ahk
 lib-a_to_h\CreateDIB.ahk
 lib-a_to_h\CreateFormData.ahk
+lib-a_to_h\CreateGUID.ahk
 lib-a_to_h\CreateIconsDll.ahk
 lib-a_to_h\CreateScript.ahk
+lib-a_to_h\CreateScriptV1.ahk
+lib-a_to_h\CreateScriptV2.ahk
 lib-a_to_h\cRichEdit.ahk
 lib-a_to_h\CriticalSection.ahk
 lib-a_to_h\Crypt.ahk
 lib-a_to_h\CryptAES.ahk
+lib-a_to_h\CryptBy_nnik.ahk
+lib-a_to_h\CryptFoos (2).ahk
 lib-a_to_h\CryptFoos.ahk
 lib-a_to_h\CSV.ahk
 lib-a_to_h\CSV_Functions AHK_L.ahk
@@ -282,10 +221,13 @@ lib-a_to_h\DDEMessage.ahk
 lib-a_to_h\DDEML.ahk
 lib-a_to_h\ddraw.ahk
 lib-a_to_h\DDSFile.ahk
+lib-a_to_h\DebugPrintArray.ahk
 lib-a_to_h\Decompiler.ahk
 lib-a_to_h\Default.ahk
 lib-a_to_h\DeluxeClipboard.ahk
+lib-a_to_h\Desktophidelib.ahk
 lib-a_to_h\DesktopScreenCoordinates.ahk
+lib-a_to_h\Devices.ahk
 lib-a_to_h\Dic.ahk
 lib-a_to_h\Dictionary.ahk
 lib-a_to_h\difference.ahk
@@ -305,6 +247,7 @@ lib-a_to_h\DockA.ahk
 lib-a_to_h\DoDragDrop.ahk
 lib-a_to_h\DownloadToFile.ahk
 lib-a_to_h\DownloadToString.ahk
+lib-a_to_h\dpi (2).ahk
 lib-a_to_h\dpi.ahk
 lib-a_to_h\DrawScreen.ahk
 lib-a_to_h\dshow.ahk
@@ -319,6 +262,8 @@ lib-a_to_h\dwrite.ahk
 lib-a_to_h\DynaExpr.ahk
 lib-a_to_h\DynaRun.ahk
 lib-a_to_h\EditControl.ahk
+lib-a_to_h\EditorWin.ahk
+lib-a_to_h\Edit_Controls.ahk
 lib-a_to_h\EmptyMem.ahk
 lib-a_to_h\EnableUIAccess.ahk
 lib-a_to_h\Encoding.ahk
@@ -327,6 +272,7 @@ lib-a_to_h\eol.ahk
 lib-a_to_h\ErrMsg.ahk
 lib-a_to_h\ErrorMessage.ahk
 lib-a_to_h\Eval.ahk
+lib-a_to_h\EventLibrary (2).ahk
 lib-a_to_h\EventLibrary.ahk
 lib-a_to_h\EWinHook.ahk
 lib-a_to_h\Excel.AHK
@@ -337,10 +283,12 @@ lib-a_to_h\ExecScript.ahk
 lib-a_to_h\exlib.ahk
 lib-a_to_h\Expand.ahk
 lib-a_to_h\ExpandPostIDs.ahk
+lib-a_to_h\Explorer (2).ahk
 lib-a_to_h\Explorer.ahk
 lib-a_to_h\ExplorerGrouping.ahk
 lib-a_to_h\ExtListView.ahk
 lib-a_to_h\ExtractIconFromExecutable.ahk
+lib-a_to_h\Fade.ahk
 lib-a_to_h\FAILED.ahk
 lib-a_to_h\FC.ahk
 lib-a_to_h\FcnLib-Misc.ahk
@@ -349,24 +297,31 @@ lib-a_to_h\FcnLib-Rewrites.ahk
 lib-a_to_h\FcnLib.ahk
 lib-a_to_h\FE.ahk
 lib-a_to_h\FFAAS.ahk
+lib-a_to_h\FGP (2).ahk
 lib-a_to_h\FGP.ahk
 lib-a_to_h\Fifo.ahk
 lib-a_to_h\File (3).ahk
 lib-a_to_h\File.ahk
 lib-a_to_h\FileExtract.ahk
+lib-a_to_h\FileFunctions_JEE.ahk
 lib-a_to_h\FileGetInfo.ahk
 lib-a_to_h\FileGetVersionInfo.ahk
 lib-a_to_h\FileHelperAndHash.ahk
 lib-a_to_h\FileHooks.ahk
 lib-a_to_h\FileInstallList.ahk
 lib-a_to_h\fileIsBinary.ahk
+lib-a_to_h\FileIsType.ahk
+lib-a_to_h\FileQ.ahk
 lib-a_to_h\FileReplace.ahk
 lib-a_to_h\FileSpeichern.ahk
 lib-a_to_h\FileTail.ahk
+lib-a_to_h\FileVerInfo (2).ahk
 lib-a_to_h\FileVerInfo.ahk
 lib-a_to_h\FindClick.ahk
+lib-a_to_h\findexe.ahk
 lib-a_to_h\FindFunc.ahk
 lib-a_to_h\FindLabel.ahk
+lib-a_to_h\FindLimit.ahk
 lib-a_to_h\FindMe.ahk
 lib-a_to_h\FindText on Screen.ahk
 lib-a_to_h\FixURI.ahk
@@ -392,12 +347,15 @@ lib-a_to_h\Gdip.ahk
 lib-a_to_h\GDIPlusHelper.ahk
 lib-a_to_h\GDIplusWrapper.ahk
 lib-a_to_h\gdiplus_outlinedtext.ahk
+lib-a_to_h\GDIPrinter.ahk
 lib-a_to_h\Gdip_AddPathBeziers.ahk
+lib-a_to_h\Gdip_All (2).ahk
 lib-a_to_h\Gdip_All.ahk
 lib-a_to_h\Gdip_draw_n_Gui.ahk
 lib-a_to_h\Gdip_Ext.ahk
 lib-a_to_h\Gdip_ImageSearch.ahk
 lib-a_to_h\GEditCtl.ahk
+lib-a_to_h\GetActiveObjects.ahk
 lib-a_to_h\GetAvailableFileName.ahk
 lib-a_to_h\GetChildHWND.ahk
 lib-a_to_h\GetCommonPath.ahk
@@ -441,6 +399,7 @@ lib-a_to_h\gl.hooks.ahk
 lib-a_to_h\GlobalVarsScript.ahk
 lib-a_to_h\glu.ahk
 lib-a_to_h\googl.ahk
+lib-a_to_h\gpBinEncode.ahk
 lib-a_to_h\GTranslate.ahk
 lib-a_to_h\GuiAddF.ahk
 lib-a_to_h\guiAddonInfo.ahk
@@ -450,11 +409,13 @@ lib-a_to_h\GuiControlAddBox.ahk
 lib-a_to_h\GuiCtl.ahk
 lib-a_to_h\Guid (2).ahk
 lib-a_to_h\GUID.ahk
+lib-a_to_h\GUID_and_UUID.ahk
 lib-a_to_h\guiExplorer.ahk
 lib-a_to_h\GUIHider.ahk
 lib-a_to_h\guiOffscreenCheck.ahk
 lib-a_to_h\GuiSettings.ahk
 lib-a_to_h\GUIUniqueDefault().ahk
+lib-a_to_h\GuiVar.ahk
 lib-a_to_h\GuiWnd.ahk
 lib-a_to_h\Hash.ahk
 lib-a_to_h\Help.ahk
@@ -466,16 +427,20 @@ lib-a_to_h\HiEdit.ahk
 lib-a_to_h\HIWORD.ahk
 lib-a_to_h\HL7.ahk
 lib-a_to_h\HLink.ahk
+lib-a_to_h\Hook.ahk
 lib-a_to_h\HotkeyControl.ahk
+lib-a_to_h\Hotkey_IfControlActive.ahk
 lib-a_to_h\Hotstring.ahk
 lib-a_to_h\Hotstrings.ahk
 lib-a_to_h\HPDF.ahk
 lib-a_to_h\hRes.ahk
 lib-a_to_h\HtmDlg.ahk
 lib-a_to_h\HTMLmodule.ahk
+lib-a_to_h\http-lib.ahk
 lib-a_to_h\httpQuery.ahk
 lib-a_to_h\HttpQueryInfo.ahk
 lib-a_to_h\HTTPRequest.ahk
+lib-a_to_h\huffmann.ahk
 lib-a_to_h\hwnd.ahk
 lib-a_to_h\hwndHung.ahk
 lib-a_to_h\_.ahk
@@ -489,22 +454,27 @@ lib-a_to_h\_queue.ahk
 lib-a_to_h\_RemoteBuf.ahk
 lib-a_to_h\_Scintilla.ahk
 lib-a_to_h\_Struct.ahk
+lib-i_to_z\7zip.ahk
 lib-i_to_z\Icon.ahk
+lib-i_to_z\IconChanger.ahk
 lib-i_to_z\IconEx.ahk
 lib-i_to_z\IDragSourceHelper.ahk
 lib-i_to_z\IDropSource.ahk
 lib-i_to_z\IDropTarget.ahk
 lib-i_to_z\IE.ahk
 lib-i_to_z\IE7_Dom.ahk
+lib-i_to_z\IEControl.ahk
 lib-i_to_z\IEL.ahk
 lib-i_to_z\IEReady.ahk
 lib-i_to_z\If Expression Test.ahk
+lib-i_to_z\IfControlActive.ahk
 lib-i_to_z\Ignore.ahk
 lib-i_to_z\IL.ahk
 lib-i_to_z\ILButton.ahk
 lib-i_to_z\Image2Include.ahk
 lib-i_to_z\ImageList.ahk
 lib-i_to_z\implode.ahk
+lib-i_to_z\ImportTypeLib.ahk
 lib-i_to_z\Include.ahk
 lib-i_to_z\inc_mf_0_3.ahk
 lib-i_to_z\inc_mf_System_IO_0_3.ahk
@@ -519,7 +489,9 @@ lib-i_to_z\InsertionSort.ahk
 lib-i_to_z\Install.ahk
 lib-i_to_z\Instance.ahk
 lib-i_to_z\InternetFileRead.ahk
+lib-i_to_z\InvBase64.ahk
 lib-i_to_z\IPHelper.ahk
+lib-i_to_z\IPToInt().ahk
 lib-i_to_z\is2.ahk
 lib-i_to_z\IsBom.ahk
 lib-i_to_z\IsEmpty.ahk
@@ -532,6 +504,7 @@ lib-i_to_z\iWeb.ahk
 lib-i_to_z\iWeb_L.ahk
 lib-i_to_z\JEEGetAllText.ahk
 lib-i_to_z\JEEGuiText.ahk
+lib-i_to_z\JEE_GuiText.ahk
 lib-i_to_z\JoystickTest.ahk
 lib-i_to_z\json.ahk
 lib-i_to_z\Json4Ahk.ahk
@@ -542,9 +515,12 @@ lib-i_to_z\Jxon.ahk
 lib-i_to_z\KeyboardLayout.ahk
 lib-i_to_z\LBDDLib.ahk
 lib-i_to_z\LBEX.ahk
+lib-i_to_z\LedControl.ahk
 lib-i_to_z\LetterVariations.ahk
+lib-i_to_z\LetUserSelectRect.ahk
 lib-i_to_z\lexer.ahk
 lib-i_to_z\Lib.ahk
+lib-i_to_z\LibCon.ahk
 lib-i_to_z\libcurl.ahk
 lib-i_to_z\lineReader.ahk
 lib-i_to_z\List.ahk
@@ -554,6 +530,8 @@ lib-i_to_z\ListviewLib_1.01.ahk
 lib-i_to_z\Listview_G.ahk
 lib-i_to_z\LoadFile.ahk
 lib-i_to_z\loadimage.ahk
+lib-i_to_z\LoadLib.ahk
+lib-i_to_z\LoadLibExtended.ahk
 lib-i_to_z\LoadPicture.ahk
 lib-i_to_z\LOBYTE.ahk
 lib-i_to_z\Lower.ahk
@@ -561,14 +539,20 @@ lib-i_to_z\LowerReplaceSpace.ahk
 lib-i_to_z\LOWORD.ahk
 lib-i_to_z\LV.ahk
 lib-i_to_z\LVA.ahk
+lib-i_to_z\LVandTV_CustomColors.ahk
 lib-i_to_z\LVCustomColors.ahk
 lib-i_to_z\LVEDIT.ahk
+lib-i_to_z\LVM.ahk
+lib-i_to_z\LVS.ahk
+lib-i_to_z\LVS_demo.ahk
 lib-i_to_z\LVX.ahk
 lib-i_to_z\LV_Colors.ahk
 lib-i_to_z\LV_EX.ahk
+lib-i_to_z\LV_Group.ahk
 lib-i_to_z\LV_InCellEdit.ahk
 lib-i_to_z\LV_SortArrow.ahk
 lib-i_to_z\m.ahk
+lib-i_to_z\majkinetor_Dock.ahk
 lib-i_to_z\MakeIco.ahk
 lib-i_to_z\MAKELANGID.ahk
 lib-i_to_z\MAKELCID.ahk
@@ -582,17 +566,21 @@ lib-i_to_z\ManagedResources.ahk
 lib-i_to_z\Manifest.ahk
 lib-i_to_z\Markdown2HTML.ahk
 lib-i_to_z\MatchItemFromList.ahk
+lib-i_to_z\Math.ahk
 lib-i_to_z\MCI.ahk
 lib-i_to_z\MCode.ahk
 lib-i_to_z\MCodeH.ahk
 lib-i_to_z\md5 (2).ahk
 lib-i_to_z\md5.ahk
+lib-i_to_z\MDMF.ahk
+lib-i_to_z\MeasureText.ahk
 lib-i_to_z\Mem.ahk
 lib-i_to_z\MemBlk.ahk
 lib-i_to_z\memlib (2).ahk
 lib-i_to_z\MemLib.ahk
 lib-i_to_z\memory.ahk
 lib-i_to_z\MemoryBuffer.ahk
+lib-i_to_z\MemoryMore.ahk
 lib-i_to_z\Menu.ahk
 lib-i_to_z\Menu_SetSysMenu.ahk
 lib-i_to_z\mg.ahk
@@ -609,6 +597,7 @@ lib-i_to_z\MouseDistance.ahk
 lib-i_to_z\MouseExtras.ahk
 lib-i_to_z\MouseKeyboardCounter.ahk
 lib-i_to_z\MouseMove_Ellipse.ahk
+lib-i_to_z\MoveTaskbar.ahk
 lib-i_to_z\MPC-HC TimeCode.ahk
 lib-i_to_z\msg.ahk
 lib-i_to_z\msTill.ahk
@@ -629,9 +618,11 @@ lib-i_to_z\object.ahk
 lib-i_to_z\ObjectBundles.ahk
 lib-i_to_z\ObjectHandling.ahk
 lib-i_to_z\ObjLoadandBump.ahk
+lib-i_to_z\ObjRegisterActive.ahk
 lib-i_to_z\ObjShare.ahk
 lib-i_to_z\ObjTree.ahk
 lib-i_to_z\OCR.ahk
+lib-i_to_z\oIE.ahk
 lib-i_to_z\On.ahk
 lib-i_to_z\OnExitF.ahk
 lib-i_to_z\OnMenuHilite.ahk
@@ -648,6 +639,7 @@ lib-i_to_z\ParseScriptCommandLine.ahk
 lib-i_to_z\Path.ahk
 lib-i_to_z\Path2.ahk
 lib-i_to_z\patternScan.ahk
+lib-i_to_z\pbkdf2.ahk
 lib-i_to_z\PDF Renamer and Signer.ahk
 lib-i_to_z\Pebwa.ahk
 lib-i_to_z\PECreateEmpty.ahk
@@ -663,6 +655,7 @@ lib-i_to_z\PlaySound.ahk
 lib-i_to_z\PleasantNotify.ahk
 lib-i_to_z\PluginHelper.ahk
 lib-i_to_z\plugins.ahk
+lib-i_to_z\PostClick.ahk
 lib-i_to_z\Prefs.ahk
 lib-i_to_z\Printer.ahk
 lib-i_to_z\printerfunctions.ahk
@@ -672,13 +665,16 @@ lib-i_to_z\ProcessMem.ahk
 lib-i_to_z\ProfileHandler.ahk
 lib-i_to_z\progressBox.ahk
 lib-i_to_z\Property.ahk
+lib-i_to_z\PropertyWin.ahk
 lib-i_to_z\PUM_API.ahk
 lib-i_to_z\Qhtm.ahk
 lib-i_to_z\QMsgBox.ahk
 lib-i_to_z\QMsgBox_foos.ahk
 lib-i_to_z\Query.ahk
+lib-i_to_z\Quoted String Replace.ahk
 lib-i_to_z\RaGrid.ahk
 lib-i_to_z\rand.ahk
+lib-i_to_z\RandBezier.ahk
 lib-i_to_z\Random jock StrX() Parsing.ahk
 lib-i_to_z\RandomBezier.ahk
 lib-i_to_z\randomdotorg.ahk
@@ -687,8 +683,11 @@ lib-i_to_z\RandomName.ahk
 lib-i_to_z\RandomStr.AHK
 lib-i_to_z\RandomUniqNum.ahk
 lib-i_to_z\RandomVar.ahk
+lib-i_to_z\RandSleep.ahk
 lib-i_to_z\range.ahk
 lib-i_to_z\RapidHotkey.ahk
+lib-i_to_z\RawInput.ahk
+lib-i_to_z\RA_StringSort.ahk
 lib-i_to_z\ReadIni.ahk
 lib-i_to_z\ReadMemory.ahk
 lib-i_to_z\ReadMemory_Str.ahk
@@ -698,12 +697,14 @@ lib-i_to_z\Rebar.ahk
 lib-i_to_z\RecordSetADO.ahk
 lib-i_to_z\RecordSetMySQL.ahk
 lib-i_to_z\RecordSetSqlLite.ahk
+lib-i_to_z\RedrawDB.ahk
 lib-i_to_z\ref.ahk
 lib-i_to_z\ReFormatTime.ahk
 lib-i_to_z\REG to VBS.ahk
 lib-i_to_z\Regex.ahk
 lib-i_to_z\RegExSort.ahk
-lib-i_to_z\regionGetColor.ahk
+lib-i_to_z\regionGetColor.Ahk
+lib-i_to_z\RegisterSyncCallback.ahk
 lib-i_to_z\releaseKeyspSend.ahk
 lib-i_to_z\RemoteBuf_Open.ahk
 lib-i_to_z\remote_lib.ahk
@@ -720,6 +721,7 @@ lib-i_to_z\ResPutFile.ahk
 lib-i_to_z\reverseArray.AHK
 lib-i_to_z\ReverseLookup.ahk
 lib-i_to_z\rgbToHex.ahk
+lib-i_to_z\RI.ahk
 lib-i_to_z\RichEdit.ahk
 lib-i_to_z\RIni.ahk
 lib-i_to_z\RomanNumbers.ahk
@@ -735,9 +737,13 @@ lib-i_to_z\SCI.ahk
 lib-i_to_z\SciteOutPut.ahk
 lib-i_to_z\scriptCompile.ahk
 lib-i_to_z\scriptlib.ahk
+lib-i_to_z\ScriptMem [Function].ahk
+lib-i_to_z\ScriptParser.ahk
 lib-i_to_z\ScrollBar.ahk
 lib-i_to_z\Scroller.ahk
 lib-i_to_z\search.ahk
+lib-i_to_z\SecureHash.ahk
+lib-i_to_z\selfCompile.ahk
 lib-i_to_z\SendEmail.ahk
 lib-i_to_z\SendGUI.ahk
 lib-i_to_z\sendmail.ahk
@@ -787,14 +793,19 @@ lib-i_to_z\SQLite_L.ahk
 lib-i_to_z\SrtSynch.ahk
 lib-i_to_z\st.ahk
 lib-i_to_z\StartServiceCtrlDispatcher.ahk
+lib-i_to_z\start_with_windows.ahk
 lib-i_to_z\StayOnMonitor.ahk
 lib-i_to_z\StdOutToVar (2).ahk
 lib-i_to_z\StdoutToVar.ahk
 lib-i_to_z\stopwatch.ahk
+lib-i_to_z\Str.ahk
 lib-i_to_z\String.ahk
 lib-i_to_z\StringHandling.ahk
+lib-i_to_z\StringM.ahk
+lib-i_to_z\StringThings.ahk
 lib-i_to_z\StrLower.ahk
 lib-i_to_z\StrPutVar.ahk
+lib-i_to_z\StrQ.ahk
 lib-i_to_z\StrReplace.ahk
 lib-i_to_z\strTail.ahk
 lib-i_to_z\Struct.ahk
@@ -827,11 +838,15 @@ lib-i_to_z\TaskDialogEx.ahk
 lib-i_to_z\TaskTrayIcon.ahk
 lib-i_to_z\TbMenu-proto.ahk
 lib-i_to_z\TCP-UDP-class.ahk
+lib-i_to_z\TCP.ahk
 lib-i_to_z\TC_EX.ahk
+lib-i_to_z\TEA.ahk
+lib-i_to_z\TEA_Encryption.ahk
 lib-i_to_z\TermWait.ahk
 lib-i_to_z\TermWaitLibs.ahk
 lib-i_to_z\TexSwapLib.ahk
 lib-i_to_z\TexSwapLibGL.ahk
+lib-i_to_z\TextOverlay.ahk
 lib-i_to_z\TextureHooks.ahk
 lib-i_to_z\tf.ahk
 lib-i_to_z\ThousandsSep.ahk
@@ -839,7 +854,9 @@ lib-i_to_z\threadFunc.ahk
 lib-i_to_z\Threads.ahk
 lib-i_to_z\Timer.ahk
 lib-i_to_z\Title.ahk
+lib-i_to_z\TLLib.ahk
 lib-i_to_z\TO TextOverlay.ahk
+lib-i_to_z\TO.ahk
 lib-i_to_z\ToChar.ahk
 lib-i_to_z\todWulff.ahk
 lib-i_to_z\ToInt.ahk
@@ -861,6 +878,7 @@ lib-i_to_z\trksyln.ahk
 lib-i_to_z\TskDlg.ahk
 lib-i_to_z\TT.ahk
 lib-i_to_z\TVX.ahk
+lib-i_to_z\TV_SetSelColors.ahk
 lib-i_to_z\type.ahk
 lib-i_to_z\TypeFunctions.ahk
 lib-i_to_z\TypeLibHelperFunctions.ahk
@@ -870,25 +888,33 @@ lib-i_to_z\UIA2.ahk
 lib-i_to_z\UIAutomationClient_1_0_64bit.ahk
 lib-i_to_z\UIA_Interface.ahk
 lib-i_to_z\UnHTM.ahk
+lib-i_to_z\Unidecode.ahk
+lib-i_to_z\Unique_IDentifiers.ahk
 lib-i_to_z\Update.ahk
+lib-i_to_z\UpdateFolderTime.ahk
 lib-i_to_z\UpdRes.ahk
 lib-i_to_z\Upper.ahk
 lib-i_to_z\uriencode.ahk
 lib-i_to_z\uriEncoder-Decoder.ahk
+lib-i_to_z\UrlDownload.ahk
 lib-i_to_z\UrlDownloadToJson.ahk
 lib-i_to_z\UrlDownloadToVar.ahk
 lib-i_to_z\USBD.ahk
 lib-i_to_z\USBUIRT.ahk
+lib-i_to_z\UTF8IniFile.ahk
 lib-i_to_z\Util.ahk
 lib-i_to_z\uuid.ahk
 lib-i_to_z\UUIDCreate.ahk
 lib-i_to_z\VA (2).ahk
 lib-i_to_z\VA.ahk
+lib-i_to_z\ValidIP.ahk
 lib-i_to_z\VARIANT.ahk
 lib-i_to_z\VariemClick.ahk
 lib-i_to_z\VariousFunctions.ahk
+lib-i_to_z\Varize.ahk
 lib-i_to_z\VarZ_Compress.ahk
 lib-i_to_z\VersionRes.ahk
+lib-i_to_z\Vis2.ahk
 lib-i_to_z\VKSend.ahk
 lib-i_to_z\VLCHTTP3.ahk
 lib-i_to_z\vtype.ahk
@@ -897,6 +923,7 @@ lib-i_to_z\WaitForIEPageLoad.ahk
 lib-i_to_z\WaitPixelColor.ahk
 lib-i_to_z\WakeOnLan.ahk
 lib-i_to_z\wam.ahk
+lib-i_to_z\WAnim.ahk
 lib-i_to_z\WatchDirectory (2).ahk
 lib-i_to_z\WatchDirectory.ahk
 lib-i_to_z\web.ahk
@@ -916,6 +943,7 @@ lib-i_to_z\WindowFromPoint.ahk
 lib-i_to_z\WindowFromRect.ahk
 lib-i_to_z\WindowPad.ahk
 lib-i_to_z\WindowsBase.ahk
+lib-i_to_z\WindowsLogs.ahk
 lib-i_to_z\WinEnum.ahk
 lib-i_to_z\WinEvents.ahk
 lib-i_to_z\WinGetAll.ahk
@@ -930,15 +958,17 @@ lib-i_to_z\WinProps.ahk
 lib-i_to_z\WinSet_Click_Through.ahk
 lib-i_to_z\WinSet_NoActivate.ahk
 lib-i_to_z\WinSock2.ahk
-lib-i_to_z\WinSysMenuAPI.ahk
+lib-i_to_z\WinSysMenuApi.ahk
 lib-i_to_z\WinVisible.ahk
 lib-i_to_z\WLAN.ahk
 lib-i_to_z\Wmic_Win32_FunctionLog.ahk
 lib-i_to_z\WPD.ahk
 lib-i_to_z\WRandom.ahk
+lib-i_to_z\WrapText.ahk
 lib-i_to_z\Writer.ahk
 lib-i_to_z\ws.ahk
 lib-i_to_z\ws4ahk.ahk
+lib-i_to_z\WS_CoEvent.ahk
 lib-i_to_z\WS_DEControl.ahk
 lib-i_to_z\WS_DEControl2.ahk
 lib-i_to_z\WS_DEDemo2.ahk
@@ -953,6 +983,124 @@ lib-i_to_z\youtube (not tested).ahk
 lib-i_to_z\Zip.ahk
 lib-i_to_z\ZipFile.ahk
 lib-i_to_z\ZipFileRaw.ahk
+classes\Class ClassMemory.ahk
+classes\Class GdipSnapshot.ahk
+classes\Class Github.ahk
+classes\Class Hotkey.ahk
+classes\class InsertBinToPNG.ahk
+classes\Class JSON.ahk
+classes\Class Memory.ahk
+classes\Class WinEvents.ahk
+classes\ClassCheck.ahk
+classes\classInput.ahk
+classes\ClassPermissions.ahk
+classes\class_3DMatrix.ahk
+classes\class_AccObjObject.ahk
+classes\class_actionObject.ahk
+classes\class_ActiveScript.ahk
+classes\class_array_base.ahk
+classes\class_array_quicksort.ahk
+classes\class_BrightnessSetter.ahk
+classes\class_CFlyout.ahk
+classes\class_CFlyoutMenuHandler.ahk
+classes\class_CFlyout_New.ahk
+classes\class_CircleProgressClass.ahk
+classes\class_CLeapMenu.ahk
+classes\Class_ColorPicker.ahk
+classes\class_ComImplementationBase.ahk
+classes\class_Compass.ahk
+classes\Class_Console.ahk
+classes\class_CP.ahk
+classes\Class_CreateFormData.ahk
+classes\class_Crypt.ahk
+classes\class_CryptConst.ahk
+classes\Class_CStruct.ahk
+classes\class_cTable_Test.ahk
+classes\Class_CTLCOLORS.ahk
+classes\Class_CustomFont.ahk
+classes\Class_DateTools.ahk
+classes\Class_DD.ahk
+classes\Class_Dock.ahk
+classes\class_DragDrop.ahk
+classes\class_DriveMap.ahk
+classes\class_dual.ahk
+classes\class_EditView.ahk
+classes\class_FileMapping.ahk
+classes\Class_Flyout.ahk
+classes\Class_FTP.ahk
+classes\class_FTPv2.ahk
+classes\class_gdichart.ahk
+classes\Class_GdipTooltip.ahk
+classes\class_Github.ahk
+classes\Class_Github_Gui.ahk
+classes\class_GroupSort.ahk
+classes\class_GuiDropFiles.ahk
+classes\class_GuiTabEx.ahk
+classes\class_GuiVar.ahk
+classes\class_Gui_NoActivate.ahk
+classes\class_hashTable.ahk
+classes\class_HL7.ahk
+classes\Class_Hotkey.ahk
+classes\Class_Hotkey_example.ahk
+classes\class_iAutoComplete.ahk
+classes\Class_ImageButton.ahk
+classes\class_ImageConverter.ahk
+classes\Class_IPHelper.ahk
+classes\class_IUIAutomationEventHandler.ahk
+classes\class_IUIAutomationEventHandler_extended.ahk
+classes\Class_JSON.ahk
+classes\class_JSONFile.ahk
+classes\class_JsRT.ahk
+classes\class_kbhook.ahk
+classes\class_KeyValStore.ahk
+classes\Class_LeapMenu.ahk
+classes\class_Linear.ahk
+classes\class_LoaderBar.ahk
+classes\Class_LV_Colors.ahk
+classes\Class_LV_InCellEdit.ahk
+classes\class_Mailslot.ahk
+classes\class_MailslotEx.ahk
+classes\class_Memory.ahk
+classes\class_Mem_Injection.ahk
+classes\class_MenuEnumOption.ahk
+classes\class_MenuToggleOption.ahk
+classes\class_midiOut.ahk
+classes\Class_Multipart.ahk
+classes\class_MultiTree Data Structure.ahk
+classes\Class_MySQLAPI.ahk
+classes\Class_NetworkManagement.ahk
+classes\Class_PictureControl.ahk
+classes\class_PixelState.ahk
+classes\Class_ProcessExplorer.ahk
+classes\Class_Properties.ahk
+classes\Class_PureNotify.ahk
+classes\class_radical.ahk
+classes\Class_Rebar.ahk
+classes\class_scriptobj.ahk
+classes\Class_ScrollGUI.ahk
+classes\class_selector.ahk
+classes\class_selectorActions.ahk
+classes\class_selectorRow.ahk
+classes\class_SimpleOSD.ahk
+classes\class_SpreadSheet.ahk
+classes\Class_SQLiteDB.ahk
+classes\class_String.ahk
+classes\class_Subtitle.ahk
+classes\class_SyntaxTree.ahk
+classes\class_tableList.ahk
+classes\class_tableListMod.ahk
+classes\class_taskbarInterface_v2.ahk
+classes\class_Tesseract.ahk
+classes\Class_Toolbar.ahk
+classes\Class_TransparentListBox.ahk
+classes\class_Viewport.ahk
+classes\class_WinClip.ahk
+classes\class_WinClipAPI.ahk
+classes\Class_WinRing0.ahk
+classes\class_WMCommand_and_Notify.ahk
+classes\class_WM_Dlg.ahk
+classes\class_xHotkey.ahk
+classes\Class_XmlHelper.ahk
 more libs\AFC\AFC.ahk
 more libs\AFC\CChildWindow.ahk
 more libs\AFC\CControl.ahk
@@ -985,6 +1133,166 @@ more libs\AFC\CParentWindow.ahk
 more libs\AFC\CPropImpl.ahk
 more libs\AFC\CScrollableWindow.ahk
 more libs\AFC\CWindow.ahk
+more libs\COM-Classes-master\CCF.ahk
+more libs\COM-Classes-master\CCFramework.ahk
+more libs\COM-Classes-master\ImageList Header.ahk
+more libs\COM-Classes-master\SaveHImage2File.ahk
+more libs\COM-Classes-master\TaskbarList Header.ahk
+more libs\COM-Classes-master\Type Information Header.ahk
+more libs\COM-Classes-master\UIAutomation Header.ahk
+more libs\COM-Classes-master\_CCF_Error_Handler_.ahk
+more libs\COM-Classes-master\Constant Classes\CALLCONV.ahk
+more libs\COM-Classes-master\Constant Classes\CF.ahk
+more libs\COM-Classes-master\Constant Classes\CLR.ahk
+more libs\COM-Classes-master\Constant Classes\CLSCTX.ahk
+more libs\COM-Classes-master\Constant Classes\DESCKIND.ahk
+more libs\COM-Classes-master\Constant Classes\DEVICE_STATE.ahk
+more libs\COM-Classes-master\Constant Classes\DISPATCHF.ahk
+more libs\COM-Classes-master\Constant Classes\DISPID.ahk
+more libs\COM-Classes-master\Constant Classes\DVASPECT.ahk
+more libs\COM-Classes-master\Constant Classes\EDataFlow.ahk
+more libs\COM-Classes-master\Constant Classes\ERole.ahk
+more libs\COM-Classes-master\Constant Classes\FILE_ATTRIBUTE.ahk
+more libs\COM-Classes-master\Constant Classes\FUNCFLAG.ahk
+more libs\COM-Classes-master\Constant Classes\FUNCKIND.ahk
+more libs\COM-Classes-master\Constant Classes\IDC.ahk
+more libs\COM-Classes-master\Constant Classes\IDI.ahk
+more libs\COM-Classes-master\Constant Classes\IDLFLAG.ahk
+more libs\COM-Classes-master\Constant Classes\ILC.ahk
+more libs\COM-Classes-master\Constant Classes\ILCF.ahk
+more libs\COM-Classes-master\Constant Classes\ILD.ahk
+more libs\COM-Classes-master\Constant Classes\ILDI.ahk
+more libs\COM-Classes-master\Constant Classes\ILFIP.ahk
+more libs\COM-Classes-master\Constant Classes\ILGOS.ahk
+more libs\COM-Classes-master\Constant Classes\ILIF.ahk
+more libs\COM-Classes-master\Constant Classes\ILR.ahk
+more libs\COM-Classes-master\Constant Classes\ILS.ahk
+more libs\COM-Classes-master\Constant Classes\IMPLTYPEFLAG.ahk
+more libs\COM-Classes-master\Constant Classes\INVOKEKIND.ahk
+more libs\COM-Classes-master\Constant Classes\KDC.ahk
+more libs\COM-Classes-master\Constant Classes\KNOWNFOLDERID.ahk
+more libs\COM-Classes-master\Constant Classes\LIBFLAGS.ahk
+more libs\COM-Classes-master\Constant Classes\LOCKTYPE.ahk
+more libs\COM-Classes-master\Constant Classes\MEMBERID.ahk
+more libs\COM-Classes-master\Constant Classes\OBM.ahk
+more libs\COM-Classes-master\Constant Classes\PARAMFLAG.ahk
+more libs\COM-Classes-master\Constant Classes\PDOPSTATUS.ahk
+more libs\COM-Classes-master\Constant Classes\PDTIMER.ahk
+more libs\COM-Classes-master\Constant Classes\PICTUREATTRIBUTES.ahk
+more libs\COM-Classes-master\Constant Classes\PICTYPE.ahk
+more libs\COM-Classes-master\Constant Classes\PMODE.ahk
+more libs\COM-Classes-master\Constant Classes\PROGDLG.ahk
+more libs\COM-Classes-master\Constant Classes\PSC.ahk
+more libs\COM-Classes-master\Constant Classes\RECO.ahk
+more libs\COM-Classes-master\Constant Classes\REGKIND.ahk
+more libs\COM-Classes-master\Constant Classes\REO.ahk
+more libs\COM-Classes-master\Constant Classes\SFGAO.ahk
+more libs\COM-Classes-master\Constant Classes\SICHINT.ahk
+more libs\COM-Classes-master\Constant Classes\SIGDN.ahk
+more libs\COM-Classes-master\Constant Classes\SLGP.ahk
+more libs\COM-Classes-master\Constant Classes\SLR.ahk
+more libs\COM-Classes-master\Constant Classes\SPACTION.ahk
+more libs\COM-Classes-master\Constant Classes\STATFLAG.ahk
+more libs\COM-Classes-master\Constant Classes\STGC.ahk
+more libs\COM-Classes-master\Constant Classes\STGM.ahk
+more libs\COM-Classes-master\Constant Classes\STGMOVE.ahk
+more libs\COM-Classes-master\Constant Classes\STGTY.ahk
+more libs\COM-Classes-master\Constant Classes\STPFLAG.ahk
+more libs\COM-Classes-master\Constant Classes\STREAM_SEEK.ahk
+more libs\COM-Classes-master\Constant Classes\SW.ahk
+more libs\COM-Classes-master\Constant Classes\SYSKIND.ahk
+more libs\COM-Classes-master\Constant Classes\TBPFLAG.ahk
+more libs\COM-Classes-master\Constant Classes\THUMBBUTTONFLAGS.ahk
+more libs\COM-Classes-master\Constant Classes\THUMBBUTTONMASK.ahk
+more libs\COM-Classes-master\Constant Classes\TYPEFLAG.ahk
+more libs\COM-Classes-master\Constant Classes\TYPEKIND.ahk
+more libs\COM-Classes-master\Constant Classes\VARENUM.ahk
+more libs\COM-Classes-master\Constant Classes\VARFLAG.ahk
+more libs\COM-Classes-master\Constant Classes\VARKIND.ahk
+more libs\COM-Classes-master\CustomDestinationList\CustomDestinationList.ahk
+more libs\COM-Classes-master\Dispatch\Dispatch.ahk
+more libs\COM-Classes-master\EnumShellItems\EnumShellItems.ahk
+more libs\COM-Classes-master\EnumSTATSTG\EnumSTATSTG.ahk
+more libs\COM-Classes-master\ImageList\ImageList.ahk
+more libs\COM-Classes-master\ImageList\examples\example1.ahk
+more libs\COM-Classes-master\ImageList2\ImageList2.ahk
+more libs\COM-Classes-master\MMDevice\MMDevice.ahk
+more libs\COM-Classes-master\MMDeviceCollection\MMDeviceCollection.ahk
+more libs\COM-Classes-master\MMDeviceEnumerator\MMDeviceEnumerator.ahk
+more libs\COM-Classes-master\ObjectArray\ObjectArray.ahk
+more libs\COM-Classes-master\ObjectCollection\ObjectCollection.ahk
+more libs\COM-Classes-master\OperationsProgressDialog\OperationsProgressDialog.ahk
+more libs\COM-Classes-master\OperationsProgressDialog\examples\example1.ahk
+more libs\COM-Classes-master\Persist\Persist.ahk
+more libs\COM-Classes-master\PersistFile\PersistFile.ahk
+more libs\COM-Classes-master\Picture\Picture.ahk
+more libs\COM-Classes-master\ProgressDialog\ProgressDialog.ahk
+more libs\COM-Classes-master\ProgressDialog\examples\example1.ahk
+more libs\COM-Classes-master\PropertyStore\PropertyStore.ahk
+more libs\COM-Classes-master\PropertyStoreCache\PropertyStoreCache.ahk
+more libs\COM-Classes-master\ProvideClassInfo\ProvideClassInfo.ahk
+more libs\COM-Classes-master\RichEditOLE\RichEditOLE.ahk
+more libs\COM-Classes-master\RichEditOLE\examples\example1.ahk
+more libs\COM-Classes-master\SequentialStream\SequentialStream.ahk
+more libs\COM-Classes-master\ShellItem\ShellItem.ahk
+more libs\COM-Classes-master\ShellItem\examples\example1.ahk
+more libs\COM-Classes-master\ShellLinkA\ShellLinkA.ahk
+more libs\COM-Classes-master\ShellLinkA\examples\example1.ahk
+more libs\COM-Classes-master\ShellLinkW\ShellLinkW.ahk
+more libs\COM-Classes-master\ShellLinkW\examples\example1.ahk
+more libs\COM-Classes-master\Storage\Storage.ahk
+more libs\COM-Classes-master\Stream\Stream.ahk
+more libs\COM-Classes-master\Structure Classes\ARRAYDESC.ahk
+more libs\COM-Classes-master\Structure Classes\CHARRANGE.ahk
+more libs\COM-Classes-master\Structure Classes\CUSTDATA.ahk
+more libs\COM-Classes-master\Structure Classes\CUSTDATAITEM.ahk
+more libs\COM-Classes-master\Structure Classes\DISPPARAMS.ahk
+more libs\COM-Classes-master\Structure Classes\ELEMDESC.ahk
+more libs\COM-Classes-master\Structure Classes\EXCEPINFO.ahk
+more libs\COM-Classes-master\Structure Classes\FILETIME.ahk
+more libs\COM-Classes-master\Structure Classes\FUNCDESC.ahk
+more libs\COM-Classes-master\Structure Classes\IDLDESC.ahk
+more libs\COM-Classes-master\Structure Classes\IMAGEINFO.ahk
+more libs\COM-Classes-master\Structure Classes\IMAGELISTDRAWPARAMS.ahk
+more libs\COM-Classes-master\Structure Classes\IMAGELISTSTATS.ahk
+more libs\COM-Classes-master\Structure Classes\INTERFACEDATA.ahk
+more libs\COM-Classes-master\Structure Classes\METHODDATA.ahk
+more libs\COM-Classes-master\Structure Classes\PARAMDATA.ahk
+more libs\COM-Classes-master\Structure Classes\PARAMDESC.ahk
+more libs\COM-Classes-master\Structure Classes\PARAMDESCEX.ahk
+more libs\COM-Classes-master\Structure Classes\PICTDESC.ahk
+more libs\COM-Classes-master\Structure Classes\POINT.ahk
+more libs\COM-Classes-master\Structure Classes\PROPERTYKEY.ahk
+more libs\COM-Classes-master\Structure Classes\RECT.ahk
+more libs\COM-Classes-master\Structure Classes\REOBJECT.ahk
+more libs\COM-Classes-master\Structure Classes\SAFEARRAYBOUND.ahk
+more libs\COM-Classes-master\Structure Classes\SIZE.ahk
+more libs\COM-Classes-master\Structure Classes\STATSTG.ahk
+more libs\COM-Classes-master\Structure Classes\StructBase.ahk
+more libs\COM-Classes-master\Structure Classes\SYSTEMTIME.ahk
+more libs\COM-Classes-master\Structure Classes\THUMBBUTTON.ahk
+more libs\COM-Classes-master\Structure Classes\TLIBATTR.ahk
+more libs\COM-Classes-master\Structure Classes\TYPEATTR.ahk
+more libs\COM-Classes-master\Structure Classes\TYPEDESC.ahk
+more libs\COM-Classes-master\Structure Classes\VARDESC.ahk
+more libs\COM-Classes-master\Structure Classes\WIN32_FIND_DATA.ahk
+more libs\COM-Classes-master\TaskbarList\TaskbarList.ahk
+more libs\COM-Classes-master\TaskbarList\examples\example1.ahk
+more libs\COM-Classes-master\TaskbarList2\TaskbarList2.ahk
+more libs\COM-Classes-master\TaskbarList3\TaskbarList3.ahk
+more libs\COM-Classes-master\TaskbarList3\examples\example1.ahk
+more libs\COM-Classes-master\TaskbarList3\examples\example2.ahk
+more libs\COM-Classes-master\TaskbarList4\TaskbarList4.ahk
+more libs\COM-Classes-master\TypeComp\TypeComp.ahk
+more libs\COM-Classes-master\TypeInfo\TypeInfo.ahk
+more libs\COM-Classes-master\TypeInfo2\TypeInfo2.ahk
+more libs\COM-Classes-master\TypeLib\TypeLib.ahk
+more libs\COM-Classes-master\TypeLib2\TypeLib2.ahk
+more libs\COM-Classes-master\UIAutomationBoolCondition\UIAutomationBoolCondition.ahk
+more libs\COM-Classes-master\UIAutomationCondition\UIAutomationCondition.ahk
+more libs\COM-Classes-master\UIAutomationElementArray\UIAutomationElementArray.ahk
+more libs\COM-Classes-master\UIAutomationNotCondition\UIAutomationNotCondition.ahk
+more libs\COM-Classes-master\Unknown\Unknown.ahk
 more libs\DirectX\AHK Injector\d3D.hooks.ahk
 more libs\DirectX\AHK Injector\dinput.hooks.ahk
 more libs\DirectX\AHK Injector\dshow.hooks.ahk
@@ -1044,6 +1352,24 @@ more libs\DX9-Overlay-API\samples\ahk\hello world.ahk
 more libs\DX9-Overlay-API\samples\ahk\priority.ahk
 more libs\DX9-Overlay-API\samples\ahk\samp.ahk
 more libs\DX9-Overlay-API\samples\ahk\samp_health_overlay.ahk
+more libs\Edit\_Functions\AddTooltip.ahk
+more libs\Edit\_Functions\Dlg2.ahk
+more libs\Edit\_Functions\Edit.ahk
+more libs\Edit\_Functions\Edit_AutoSetTabStops.ahk
+more libs\Edit\_Functions\Edit_BlockMove.ahk
+more libs\Edit\_Functions\Edit_CutLine.ahk
+more libs\Edit\_Functions\Edit_DeleteLine.ahk
+more libs\Edit\_Functions\Edit_Duplicate.ahk
+more libs\Edit\_Functions\Edit_SelectLine.ahk
+more libs\Edit\_Functions\Edit_Sort.ahk
+more libs\Edit\_Functions\Edit_SpellCheckGUI.ahk
+more libs\Edit\_Functions\Edit_TTSGUI.ahk
+more libs\Edit\_Functions\Fnt.ahk
+more libs\Edit\_Functions\Fnt_RandomTTFont.ahk
+more libs\Edit\_Functions\MoveChildWindow.ahk
+more libs\Edit\_Functions\SortOptionsGUI.ahk
+more libs\Edit\_Functions\Spell.ahk
+more libs\Edit\_Functions\WinGetPosEx.ahk
 more libs\minilib\audioRouter.ahk
 more libs\minilib\borderlessMode.ahk
 more libs\minilib\borderlessMove.ahk
@@ -1070,6 +1396,7 @@ more libs\minilib\getUTCOffset.ahk
 more libs\minilib\getWinClientSize.ahk
 more libs\minilib\hour.ahk
 more libs\minilib\httpQuery.ahk
+more libs\minilib\IEObj.ahk
 more libs\minilib\ifContains.ahk
 more libs\minilib\ifIn.ahk
 more libs\minilib\imageSearchc.ahk
@@ -1205,3 +1532,9 @@ more libs\Mini_Framwork\MfUnicode\MfRecordSetSqlLite.ahk
 more libs\Mini_Framwork\MfUnicode\MfSQLite_L.ahk
 more libs\Mini_Framwork\MfUnicode\MfUcdDb.ahk
 more libs\Mini_Framwork\MfUnicode\UCDSqlite.ahk
+more libs\RamDisk & CmdReturn\MainScript.ahk
+more libs\RamDisk & CmdReturn\RamDrive.ahk
+more libs\TAB\_Functions\Edit.ahk
+more libs\TAB\_Functions\Fnt.ahk
+more libs\TAB\_Functions\HSV.ahk
+more libs\TAB\_Functions\TAB.ahk

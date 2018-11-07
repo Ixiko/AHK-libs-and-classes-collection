@@ -1,0 +1,17 @@
+﻿NMTCKEYDOWN structure
+
+Contains information about a key press in a tab control. It is used with the
+TCN_KEYDOWN notification code. This structure supersedes the TC_KEYDOWN
+structure.
+
+   [Member]        [Type]     [32bitA]  [32bitU]  [64bitU]
+1  NMHDR.hwndFrom  HWND       [00] 4    [00] 4    [00] 8
+2  NMHDR.idFrom    UINT_PTR   [04] 4    [04] 4    [08] 8
+3  NMHDR.code      UINT       [08] 4    [08] 4    [16] 4
+4  wVKey           WORD       [12] 2    [12] 2    [24] 2
+5  flags           UINT       [16] 4    [16] 4    [28] 4
+                                   --        --        --
+                                   20        20        32
+
+VarSetCapacity(NMTCKEYDOWN,A_PtrSize=8 ? 32:20,0)
+NMTCKEYDOWN_sizeof:=A_PtrSize=8 ? 32:20

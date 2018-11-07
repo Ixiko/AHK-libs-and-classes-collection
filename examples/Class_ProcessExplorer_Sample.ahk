@@ -1,5 +1,5 @@
 ﻿; GLOBAL SETTINGS ===============================================================================================================
-
+#Include %A_ScriptDir%\..\Class_ProcessExplorer.ahk
 #NoEnv
 #SingleInstance Force
 

@@ -1,0 +1,26 @@
+﻿TCITEM structure
+
+Tab control structure used with the TCM_INSERTITEM, TCM_GETITEM, and TCM_SETITEM
+messages.
+
+   [Member]     [Type]   [32bitA]  [32bitU]  [64bitU]
+1  mask         UINT     [00] 4    [00] 4    [00] 4
+2  dwState      DWORD    [04] 4    [04] 4    [04] 4
+3  dwStateMask  DWORD    [08] 4    [08] 4    [08] 4
+4  pszText      LPTSTR   [12] 4    [12] 4    [16] 8
+5  cchTextMax   int      [16] 4    [16] 4    [24] 4
+6  iImage       int      [20] 4    [20] 4    [28] 4
+7  lParam       LPARAM   [24] 4    [24] 4    [32] 8
+                              --        --        --
+                              28        28        40
+
+VarSetCapacity(TCITEM,A_PtrSize=8 ? 40:28,0)
+TCITEM_sizeof:=A_PtrSize=8 ? 40:28
+
+Important: This is standard/default structure used by the TCM_INSERTITEM,
+TCM_GETITEM, and TCM_SETITEM messages.  However, the size of the structure can
+be increased via the TCM_SETITEMEXTRA message.  An application that has changed
+the size of structure can no longer use this structure to retrieve or set the
+application-defined data for a tab.  Instead, a new structure that consists of
+the TCITEMHEADER structure followed by application-defined members must be used
+instead.

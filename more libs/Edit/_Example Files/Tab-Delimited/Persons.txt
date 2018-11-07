@@ -1,0 +1,89 @@
+Nicola Piper	0	Bright Ideas Software	CFO	10000	1.7
+Joshua Piper	0	Bright Ideas Software	Games Tester	15000	1.35
+Drew Piper	0	Bright Ideas Software	Creative Ideas	15000	1.20
+Isabella Piper	0	Bright Ideas Software	VP - Marketing	15000	0.9
+Bill Gates	0	Microsoft Corp	CTO	1000000	1.89
+Alison Ashely	0	Trends Inc	Green Police	20000	1.6
+Terry Pratt	0	Trends Inc	VP - Marketing	200000	1.8
+Brett Powder	0	Trends Inc	VP - Development	200000	1.84
+Brett Fowley	0	Trends Inc	Red Baron	250000	1.75
+Steven Agafari	3	Trends Inc	Marketing Director	79000	1.53
+Ike McDuff	0	Energy Distribution Systems	CFO	12000	2.02
+Nicola Jobs	4	Bright Ideas Software	Programmer	175000	1.67
+Jo Agafari	0	Trends Inc	Marketing Director	94000	1.81
+George Lopez	5	Wind Power Unlimited	Tester	108000	1.86
+Larry Bowen	1	Wind Power Unlimited	Filing Clerk	136000	1.74
+Steven Wheatley	5	Energy Distribution Systems	Filing Clerk	116000	1.92
+William Hand	1	Wind Power Unlimited	CFO	86000	1.70
+Nicola Agafari	3	Trends Inc	Programmer	100000	2.06
+William Agafari	0	SouthTel	Programmer	63000	1.58
+Jo Washington	4	Never Too Late Pty Ltd	Janitor	196000	1.75
+Flora Patton	1	Trends Inc	System Analyst	142000	1.89
+Ike Bowen	1	TechnoBabble Inc	CEO	176000	1.67
+Maria Washington	0	Never Too Late Pty Ltd	Security	162000	2.05
+Maria Wheatley	4	Never Too Late Pty Ltd	System Analyst	124000	1.69
+Nicola Washington	1	SouthTel	System Analyst	173000	1.54
+Larry Nord	2	TechnoBabble Inc	Security	166000	1.53
+Larry Patton	4	CompuService	Security	184000	1.78
+Phillip Turner	3	Trends Inc	Marketing Director	42000	1.99
+Ike Agafari	2	Wind Power Unlimited	Programmer	185000	1.98
+Ike Jobs	1	Never Too Late Pty Ltd	CFO	79000	2.06
+Andrew Hand	4	Wind Power Unlimited	Research Assistant	24000	1.68
+Flora Stiles	3	Energy Distribution Systems	Tester	88000	1.79
+Ike Turner	2	Never Too Late Pty Ltd	Tester	80000	1.96
+Tony Hand	2	Energy Distribution Systems	CEO	139000	1.86
+Flora Walls	0	Energy Distribution Systems	CEO	104000	1.92
+Maria Bowen	4	Energy Distribution Systems	Filing Clerk	44000	2.09
+Nicola Nord	1	CompuService	Security	140000	1.97
+Larry MacMillian	1	Energy Distribution Systems	Janitor	37000	1.61
+Steven Bowen	4	Trends Inc	Filing Clerk	176000	1.98
+Joshua Washington	2	TechnoBabble Inc	Programmer	181000	1.68
+Nicola Lopez	3	TechnoBabble Inc	Janitor	188000	1.83
+William McDuff	3	Energy Distribution Systems	System Analyst	182000	2.10
+William Turner	4	Never Too Late Pty Ltd	Tester	60000	1.54
+Andrew Nord	5	Bright Ideas Software	Janitor	41000	1.85
+Henry Stiles	5	TechnoBabble Inc	Security	193000	1.90
+Maria Walls	5	Wind Power Unlimited	Tester	66000	1.73
+Joshua Jobs	0	TechnoBabble Inc	System Analyst	92000	1.93
+Larry Hand	0	TechnoBabble Inc	Tester	187000	1.74
+Joshua Walls	5	Never Too Late Pty Ltd	Security	146000	2.10
+William Stiles	5	Energy Distribution Systems	System Analyst	196000	1.92
+Phillip Bowen	5	Energy Distribution Systems	Research Assistant	144000	2.01
+George Wheatley	3	TechnoBabble Inc	Marketing Director	13000	1.77
+Maria Lopez	2	CompuService	CEO	117000	1.88
+Joshua Turner	5	Energy Distribution Systems	System Analyst	171000	1.56
+Steven MacMillian	5	CompuService	Research Assistant	95000	1.74
+Victor Washington	1	SouthTel	System Analyst	151000	1.98
+Larry Turner	0	Energy Distribution Systems	Tester	84000	1.87
+Andrew Wheatley	4	Energy Distribution Systems	Research Assistant	54000	2.01
+Jo Hand	4	Trends Inc	Marketing Director	145000	1.80
+George Bowen	0	TechnoBabble Inc	Tester	153000	1.82
+Flora Turner	0	TechnoBabble Inc	Research Assistant	157000	1.62
+Maria MacMillian	2	SouthTel	Research Assistant	162000	1.92
+Jo Bowen	5	Bright Ideas Software	Tester	113000	1.57
+George Nord	1	TechnoBabble Inc	Programmer	62000	1.88
+Steven Lopez	4	Never Too Late Pty Ltd	CEO	118000	1.94
+Henry Jobs	5	Energy Distribution Systems	Programmer	58000	1.57
+Flora Bowen	5	Wind Power Unlimited	Janitor	145000	1.51
+Tony MacMillian	5	Trends Inc	Filing Clerk	31000	1.70
+Steven Washington	5	Never Too Late Pty Ltd	System Analyst	126000	1.57
+Jo Walls	2	Wind Power Unlimited	Janitor	27000	1.87
+Phillip Walls	0	Trends Inc	Marketing Director	17000	1.99
+Victor Turner	3	Wind Power Unlimited	Research Assistant	181000	1.70
+Phillip Wheatley	2	Wind Power Unlimited	System Analyst	142000	2.03
+George Agafari	4	Bright Ideas Software	Research Assistant	49000	1.61
+Henry McDuff	3	TechnoBabble Inc	Filing Clerk	85000	1.92
+Ike Hand	2	Energy Distribution Systems	System Analyst	113000	1.70
+Ike Patton	0	CompuService	Tester	19000	2.06
+Steven Nord	0	Bright Ideas Software	Research Assistant	32000	1.73
+George McDuff	1	SouthTel	Marketing Director	83000	1.68
+Jo Jobs	4	Never Too Late Pty Ltd	Programmer	27000	2.06
+Ike Washington	5	Wind Power Unlimited	Filing Clerk	179000	2.07
+Steven Stiles	3	Trends Inc	Security	49000	1.88
+Andrew Patton	1	Energy Distribution Systems	Janitor	199000	1.92
+Joshua MacMillian	4	Wind Power Unlimited	Tester	140000	2.02
+Larry Wheatley	5	Wind Power Unlimited	Marketing Director	151000	1.74
+Tony Bowen	4	Energy Distribution Systems	Janitor	158000	2.02
+Andrew Agafari	3	Wind Power Unlimited	Janitor	33000	1.75
+George Turner	1	TechnoBabble Inc	Programmer	48000	1.83
+William Bowen	5	CompuService	Research Assistant	45000	1.87

@@ -1,0 +1,2 @@
+This folder and the files in this folder are used by one or more examples.  Do
+not move or rename.

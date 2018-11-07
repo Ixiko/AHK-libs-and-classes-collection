@@ -1,0 +1,6 @@
+﻿This folder contains the functions that allow the example scripts to run.  The
+The scripts are identified as follows:
+
+ -  TAB.ahk.  This is the tab control library.
+
+ -  Other.  These functions are used by the example scripts.

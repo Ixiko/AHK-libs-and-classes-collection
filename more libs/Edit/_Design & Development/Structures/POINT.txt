@@ -1,0 +1,12 @@
+POINT Structure
+The POINT structure defines the x- and y- coordinates of a point.
+
+Syntax
+                                            Type            Size    OffSet  Comment
+                                            ----            ----    -----   -------
+typedef struct tagPOINT {
+  LONG x;                                   Long (Int)      4       0
+  LONG y;                                   Long (Int)      4       4
+} POINT, *PPOINT;
+                                                            --
+                                                            8

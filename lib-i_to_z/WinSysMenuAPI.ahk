@@ -25,121 +25,88 @@
 ;
 ; For system command constants see: http://source.winehq.org/source/include/winuser.h
 
-GetSystemMenu(ByRef hWnd, Revert = False)  ; Get system menu handle
-{
+GetSystemMenu(ByRef hWnd, Revert = False) { ; Get system menu handle
   hWnd := hWnd ? hWnd : WinExist("A")  ; Active window handle
   Return DllCall("GetSystemMenu", "UInt", hWnd, "UInt", Revert)
 }
-
-DrawMenuBar(hWnd)  ; Internal function: this is needed to apply menu changes
-{
+DrawMenuBar(hWnd) { ; Internal function: this is needed to apply menu changes
   Return DllCall("DrawMenuBar", "UInt", hWnd)
 }
+RevertSystemMenu(hWnd = "") { ; Restores all removed menu items
 
-RevertSystemMenu(hWnd = "")  ; Restores all removed menu items
-{
   Return DrawMenuBar(GetSystemMenu(hWnd, True))  ; Revert system menu
 }
-
-
-RemoveMenu(hWnd, Position, Flags = 0)  ; MF_BYCOMMAND = 0x0000
-{
+RemoveMenu(hWnd, Position, Flags = 0) { ; MF_BYCOMMAND = 0x0000
   DllCall("RemoveMenu", "UInt", GetSystemMenu(hWnd), "UInt", Position, "UInt", Flags)
   Return DrawMenuBar(hWnd)
 }
-
 DeleteWindowResizing(hWnd = "") {
   Return RemoveMenu(hWnd, 0xF000)  ; SC_SIZE = 0xF000
 }
-
 DeleteWindowMoving(hWnd = "") {
   Return RemoveMenu(hWnd, 0xF010)  ; SC_MOVE = 0xF010
 }
-
 DeleteWindowMinimizing(hWnd = "") {
   Return RemoveMenu(hWnd, 0xF020)  ; SC_MINIMIZE = 0xF020
 }
-
 DeleteWindowMaximizing(hWnd = "") {
   Return RemoveMenu(hWnd, 0xF030)  ; SC_MAXIMIZE = 0xF030
 }
-
 DeleteWindowArranging(hWnd = "") {
   Return RemoveMenu(hWnd, 0xF110)  ; SC_ARRANGE = 0xF110
 }
-
 DeleteWindowRestoring(hWnd = "") {
   Return RemoveMenu(hWnd, 0xF120)  ; SC_RESTORE = 0xF120
 }
-
 DeleteWindowClosing(hWnd = "") {
   Return RemoveMenu(hWnd, 0xF060)  ; SC_CLOSE = 0xF060
 }
-
 DeleteWindowMenuSeparator(hWnd = "") {  ; Removes the line above Close menuitem
   Return RemoveMenu(hWnd, 0)
 }
-
-
 EnableMenuItem(hWnd, SystemCommand, EnableFlag) {
   DllCall("EnableMenuItem", "UInt", GetSystemMenu(hWnd), "UInt", SystemCommand, "UInt", EnableFlag)  ; MF_BYCOMMAND = 0
   Return DrawMenuBar(hWnd)
 }
-
-
 DisableWindowResizing(hWnd = "") {
   Return DeleteWindowResizing()  ; Disabling has no effect, use delete instead
 }
-
 DisableWindowMoving(hWnd = "") {
   Return DeleteWindowMoving()
 }
-
 DisableWindowMinimizing(hWnd = "") {
   Return DeleteWindowMinimizing()
 }
-
 DisableWindowMaximizing(hWnd = "") {
   Return DeleteWindowMaximizing()
 }
-
 DisableWindowArranging(hWnd = "") {
   Return DeleteWindowArranging()
 }
-
 DisableWindowRestoring(hWnd = "") {
   Return DeleteWindowRestoring()
 }
-
 DisableWindowClosing(hWnd = "") {
   Return EnableMenuItem(hWnd, 0xF060, 1)  ; MF_GRAYED = 0x0001
 }
-
-
 EnableWindowResizing(hWnd = "") {
   Return EnableMenuItem(hWnd, 0xF000, 0)  ; MF_ENABLED = 0x0000
 }
-
 EnableWindowMoving(hWnd = "") {
   Return EnableMenuItem(hWnd, 0xF010, 0)
 }
-
 EnableWindowMinimizing(hWnd = "") {
   Return EnableMenuItem(hWnd, 0xF020, 0)
 }
-
 EnableWindowMaximizing(hWnd = "") {
   Return EnableMenuItem(hWnd, 0xF030, 0)
 }
-
 EnableWindowArranging(hWnd = "") {
   Return EnableMenuItem(hWnd, 0xF110, 0)
 }
-
 EnableWindowRestoring(hWnd = "") {
   Return EnableMenuItem(hWnd, 0xF120, 0)
 }
-
 EnableWindowClosing(hWnd = "") {
   Return EnableMenuItem(hWnd, 0xF060, 0)
 }

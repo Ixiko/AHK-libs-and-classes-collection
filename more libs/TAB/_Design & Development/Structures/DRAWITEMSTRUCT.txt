@@ -1,0 +1,25 @@
+﻿DRAWITEMSTRUCT structure
+
+Provides information that the owner window uses to determine how to paint an
+owner-drawn control or menu item. The owner window of the owner-drawn control or
+menu item receives a pointer to this structure as the lParam parameter of the
+WM_DRAWITEM message.
+
+    [Member]       [Type]      [32bitA]  [32bitU]  [64bitU]
+1   CtlType        UINT        [00] 4    [00] 4    [00] 4
+2   CtlID          UINT        [04] 4    [04] 4    [04] 4
+3   itemID         UINT        [08] 4    [08] 4    [08] 4
+4   itemAction     UINT        [12] 4    [12] 4    [12] 4
+5   itemState      UINT        [16] 4    [16] 4    [16] 4
+6   hwndItem       HWND        [20] 4    [20] 4    [24] 8
+7   hDC            HDC         [24] 4    [24] 4    [32] 8
+8   rcItem.left    int         [28] 4    [28] 4    [40] 4
+9   rcItem.top     int         [32] 4    [32] 4    [44] 4
+10  rcItem.right   int         [36] 4    [36] 4    [48] 4
+11  rcItem.bottom  int         [40] 4    [40] 4    [52] 4
+12  itemData       ULONG_PTR   [44] 4    [44] 4    [56] 8
+                                    --        --        --
+                                    48        48        64
+
+VarSetCapacity(DRAWITEMSTRUCT,A_PtrSize=8 ? 64:48,0)
+DRAWITEMSTRUCT_sizeof:=A_PtrSize=8 ? 64:48

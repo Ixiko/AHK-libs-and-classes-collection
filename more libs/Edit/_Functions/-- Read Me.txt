@@ -1,0 +1,13 @@
+This folder contains the Edit library, add-on functions for the Edit library,
+and functions that allow the example scripts to run.  The scripts are identified
+as follows:
+
+ -  Edit.ahk.  This is the primary Edit library.
+
+ -  Files that begin with "Edit_".  These are add-on functions to the Edit
+    library.  These functions need the Edit library to operate but are not
+    included directly in the Edit library.  There are a few add-on functions
+    that call other add-on functions.  Also, a few add-functions require
+    external functions/libraries.
+
+ -  Everything else.  These functions are used by the example scripts.

@@ -10,10 +10,12 @@ FileDelete, files.txt
 FileDelete, FileFunctionList.txt
 Dir1= %A_ScriptDir%\lib-a_to_h
 Dir2= %A_ScriptDir%\lib-i_to_z
-Dir3= %A_ScriptDir%\more libs
+Dir3= %A_ScriptDir%\classes
+Dir4= %A_ScriptDir%\more libs
 fc1:= list_files(Dir1)
 fc2:= list_files(Dir2)
 fc3:= list_files(Dir3)
+fc4:= list_files(Dir4)
                    ;\AFC
 
 functions:= Object()

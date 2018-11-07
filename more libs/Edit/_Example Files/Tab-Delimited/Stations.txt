@@ -1,0 +1,30 @@
+Station	Type	URL
+RadioCrazy - Classical	Classical	http://www.swissradio.ch/streams/6034.m3u
+BBC Radio 6 Music	Eclectic	http://www.bbc.co.uk/6music/ram/6music_hi.asx
+OPEN.FM - Classic Rock	Rock-Classic	http://open.fm/32.m3u
+SomaFM Boot Liquor	Americana	http://somafm.com/bootliquor.pls
+WKSU 3 89.7 FM Kent, OH (MP3 128k)	Classical	http://wksu1.streamguys.com:8030/
+DnbRadio	Electronica-Drum & Bass	http://dnbradio.com/hi.pls
+OEM Radio	Electronica-Chillout	http://205.188.215.231:8000/listen.pls
+Digitally Imported - Oldschool Electronica (MP3 96k)	Electronica-Techno	http://www.di.fm/mp3/classictechno.pls
+ACB Radio Treasure-Trove	Old Time Radio	http://acbradio.org/treasure-trove.pls
+SKY.fm - Best of the 80s (MP3 96k)	70s/80s	http://www.sky.fm/mp3/the80s.pls
+Edgewater Radio	Oldies	http://www.live365.com/cgi-bin/play.pls?stationid=theedge1630&tag=iTunes
+Digitally Imported - Techno (MP3 96k)	Electronica-Techno	http://www.di.fm/mp3/techno.pls
+ChroniX Aggression	Rock-Heavy Metal	http://www.chronixradio.com/chronixaggression/listen/listen.asx
+Latin Fuego	Latin	http://latin.1.fm/latin128k
+SKY.fm - All Hit 70s (MP3 96k)	70s/80s	http://www.sky.fm/mp3/hit70s.pls
+Big R 108.1 JAMZ	Dance/DJ	http://livestream2.bigrradio.com/108point1
+SomaFM Groove Salad	Electronica-Ambient	http://somafm.com/groovesalad.pls
+SKY.fm - Salsa (MP3 96k)	Latin	http://www.sky.fm/mp3/salsa.pls
+Trance.fm - Trance Channel (AAC+ 128k)	Electronica-Trance	http://www.trance.fm/play/128aac_c1.pls
+Munich Radio	Electronica-Chillout	http://www.munich-radio.de:8000/listen.pls
+Deutsche Welle	Talk-News	http://c13010-ls.i.core.cdn.streamfarm.net/dwworldlive-live/13010dwrde64.mp3
+SKY.fm - Mostly Classical (MP3 96k)	Classical	http://www.sky.fm/mp3/classical.pls
+WNYC 820 AM New York, NY (MP3 32k)	Talk-Public Radio	http://www.wnyc.org/stream/am.pls
+Roulette FM - Regio De Bilt - 106.6 FM	Public Radio	mms://193.242.108.40/Roulette103
+Café Cody	Electronica-Chillout	http://cafecody.com/listenfm.m3u
+SKY.fm - Modern Jazz (MP3 96k)	Jazz	http://www.sky.fm/mp3/jazz.pls
+1.FM - Chillout Lounge (MP3 128k)	Electronica-Chillout	http://sc11.1.fm:8010
+KCFR 1340 AM Denver, CO	Talk-Public Radio	http://www.cpr.org/listen/live_newsinfo.asx
+1.FM - Otto's Baroque Musick (MP3 128k)	Classical	http://sc17.1.fm:8045

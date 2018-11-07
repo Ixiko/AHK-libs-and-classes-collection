@@ -1,103 +1,141 @@
-; ----------------------------------------------------------------------------------------------------------------------
-; Name .........: WinEvents library
-; Description ..: Minimal Windows Events API implementation. It can be used to attach events to the Windows Events Logs.
-; AHK Version ..: AHK_L 1.1.13.01 x32/64 Unicode
-; Author .......: Cyruz (http://ciroprincipe.info)
-; License ......: WTFPL - http://www.wtfpl.net/txt/copying/
-; Changelog ....: Sep. 30, 2012 - v0.1 - First revision.
-; ..............: Oct. 06, 2012 - v0.2 - Fixed some wrong behaviours.
-; ..............: Jan. 09, 2014 - v0.3 - Unicode and x64 version. Now it uses arrays instead of continuation sections.
-; ----------------------------------------------------------------------------------------------------------------------
-
-; ----------------------------------------------------------------------------------------------------------------------
-; Function .....: WinEvents_RegisterForEvents
-; Description ..: Register the application to send Windows log events.
-; Parameters ...: sLogName - Can be "Application", "System" or a custom event log name.
-; Return .......: Handle to the registered source on success, NULL on failure.
-; ----------------------------------------------------------------------------------------------------------------------
-WinEvents_RegisterForEvents(sLogName) {
-    Return DllCall( "Advapi32.dll\RegisterEventSource", Ptr,0, Str,sLogName )
-}
-
-; ----------------------------------------------------------------------------------------------------------------------
-; Function .....: WinEvents_DeregisterForEvents
-; Description ..: Deregister the previously registered application.
-; Parameters ...: hSource    - Handle to a previously registered events source with RegisterForEvents.
-; Return .......: Nonzero if the function succeeds or zero if it fails.
-; ----------------------------------------------------------------------------------------------------------------------
-WinEvents_DeregisterForEvents(hSource) {
-    Return DllCall( "Advapi32.dll\DeregisterEventSource", Ptr,hSource )
-}
-
-; ----------------------------------------------------------------------------------------------------------------------
-; Function .....: WinEvents_SendWinLogEvent
-; Description ..: Write an entry at the end of the specified Windows event log.
-; Parameters ...: hSource    - Handle to a previously registered events source with RegisterForEvents.
-; ..............: evType     - Can be: "EVENTLOG_SUCCESS"
-; ..............:                      "EVENTLOG_AUDIT_FAILURE"
-; ..............:                      "EVENTLOG_AUDIT_SUCCESS"
-; ..............:                      "EVENTLOG_ERROR_TYPE"
-; ..............:                      "EVENTLOG_INFORMATION_TYPE"
-; ..............:                      "EVENTLOG_WARNING_TYPE"
-; ..............: evId       - Event ID, can be any dword value.
-; ..............: evCat      - Any value, used to organize events in categories.
-; ..............: arrStrings - A simple array of strings (each max 31839 chars).
-; ..............: pData      - A buffer containing the binary data.
-; Return .......: Nonzero if the function succeeds or zero if it fails.
-; ----------------------------------------------------------------------------------------------------------------------
-WinEvents_SendWinLogEvent(hSource, evType, evId, evCat:=0, ByRef arrStrings:=0, ByRef pData:=0) {
-    Static EVENTLOG_SUCCESS    := 0x0000, EVENTLOG_AUDIT_FAILURE    := 0x0010, EVENTLOG_AUDIT_SUCCESS := 0x0008
-         , EVENTLOG_ERROR_TYPE := 0x0001, EVENTLOG_INFORMATION_TYPE := 0x0004, EVENTLOG_WARNING_TYPE  := 0x0002
-    
-    If ( evType != "EVENTLOG_SUCCESS"    && evType != "EVENTLOG_AUDIT_FAILURE"    && evType != "EVENTLOG_AUDIT_SUCCESS"
-    &&   evType != "EVENTLOG_ERROR_TYPE" && evType != "EVENTLOG_INFORMATION_TYPE" && evType != "EVENTLOG_WARNING_TYPE" )
-        Return 0
-    
-    nLen := arrStrings.MaxIndex()
-    VarSetCapacity(arrFinal, nLen*A_PtrSize)
-    Loop %nLen% ; Fills the array of strings
-        NumPut(arrStrings.GetAddress(A_Index), arrFinal, (A_Index-1)*A_PtrSize, "Ptr")
-        
-    Return DllCall( "Advapi32.dll\ReportEvent", UInt,hSource, UShort,%evType%, UShort,evCat, UInt,evId, Ptr,0
-                                              , UShort,nLen, UInt,szData:=VarSetCapacity(pData), Ptr,(nLen)?&arrFinal:0
-                                              , Ptr,(szData)?&pData:0 )
-}
-
-/* EXAMPLE CODE:
-; Register the application for sending events.
-hSource := WinEvents_RegisterForEvents("Application")
-
-; Send a simple INFORMATION_TYPE Event with ID 0x0123 to the Application log. 
-WinEvents_SendWinLogEvent(hSource, "EVENTLOG_INFORMATION_TYPE", 0x0123)
-
-; Array of strings.
-arrStr := [ "This is the first test string."
-          , "Yay, this is the second test string."
-          , "This is the third and final test string." ]
+﻿;Event Library
+;Version: 1.0
+;Author: KuroiLight/klomb
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-; Some hex data (a simple icon).
-inDataHex = 
-( Join
-000001000100101010000100040028010000160000002800000010000000200000000100040000000000C00000
-0000000000000000000000000000000000C6080800CE101000CE181800D6212100D6292900E13F3F00E7525200
-EF5A5A00EF636300F76B6B00F7737300FF7B7B00FFC6C600FFCEC600FFDEDE00FFFFFF00CCCCCCCCCCCCCCCCC0
-0000000000000CC11111111111111CC22222CFFE22222CC33333CFFE33333CC44444CFFE44444CC55555CFFE55
-555CC55555CFFE55555CC55555CFFE55555CC66666CFFE66666CC77777777777777CC88888CFFC88888CC99999
-CFFC99999CCAAAAAAAAAAAAAACCBBBBBBBBBBBBBBCCCCCCCCCCCCCCCCC00000000000000000000000000000000
-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-000000
-)
+global WINEVENT_OUTOFCONTEXT                                               	:= 0x0000
+		, WINEVENT_SKIPOWNTHREAD                                              	:= 0x0001
+		, WINEVENT_SKIPOWNPROCESS                                            	:= 0x0002
+		, WINEVENT_INCONTEXT                                                        	:= 0x0004
 
-; -- MCode by Laszlo.
-VarSetCapacity(inData, StrLen(inDataHex)//2)
-Loop % StrLen(inDataHex)//2
-    NumPut("0x" . SubStr(inDataHex, 2*A_Index-1, 2), inData, A_Index-1, "UChar")
-; --
+global EVENT_OBJECT_ACCELERATORCHANGE                              	:= 0x8012
+		, EVENT_OBJECT_CLOAKED                                                     	:= 0x8017
+		, EVENT_OBJECT_CONTENTSCROLLED                                    	:= 0x8015
+		, EVENT_OBJECT_CREATE                                                        	:= 0x8000
+		, EVENT_OBJECT_DEFACTIONCHANGE                                   	:= 0x8011
+		, EVENT_OBJECT_DESCRIPTIONCHANGE                                	:= 0x800D
+		, EVENT_OBJECT_DESTROY                                                     	:= 0x8001
+		, EVENT_OBJECT_DRAGSTART                                                 	:= 0x8021
+		, EVENT_OBJECT_DRAGCANCEL                                              	:= 0x8022
+		, EVENT_OBJECT_DRAGCOMPLETE                                         	:= 0x8023
+		, EVENT_OBJECT_DRAGENTER                                                 	:= 0x8024
+		, EVENT_OBJECT_DRAGLEAVE                                                 	:= 0x8025
+		, EVENT_OBJECT_DRAGDROPPED                                           	:= 0x8026
+		, EVENT_OBJECT_END                         	                                    	:= 0x80FF
+		, EVENT_OBJECT_FOCUS                                                         	:= 0x8005
+		, EVENT_OBJECT_HELPCHANGE                                              	:= 0x8010
+		, EVENT_OBJECT_HIDE                                                             	:= 0x8003
+		, EVENT_OBJECT_HOSTEDOBJECTSINVALIDATED                   	:= 0x8020
+		, EVENT_OBJECT_IME_HIDE                                                     	:= 0x8028
+		, EVENT_OBJECT_IME_SHOW                                                  	:= 0x8027
+		, EVENT_OBJECT_IME_CHANGE                                               	:= 0x8029
+		, EVENT_OBJECT_INVOKED                                                      	:= 0x8013
+		, EVENT_OBJECT_LIVEREGIONCHANGED                                	:= 0x8019
+		, EVENT_OBJECT_LOCATIONCHANGE                                     	:= 0x800B
+		, EVENT_OBJECT_NAMECHANGE                                            	:= 0x800C
+		, EVENT_OBJECT_PARENTCHANGE                                         	:= 0x800F
+		, EVENT_OBJECT_REORDER                                                     	:= 0x8004
+		, EVENT_OBJECT_SELECTION                                                   	:= 0x8006
+		, EVENT_OBJECT_SELECTIONADD                                           	:= 0x8007
+		, EVENT_OBJECT_SELECTIONREMOVE                                     	:= 0x8008
+		, EVENT_OBJECT_SELECTIONWITHIN                                      	:= 0x8009
+		, EVENT_OBJECT_SHOW                                                          	:= 0x8002
+		, EVENT_OBJECT_STATECHANGE                                            	:= 0x800A
+		, EVENT_OBJECT_TEXTEDIT_CONVERSIONTARGETCHANGED 	:= 0x8030
+		, EVENT_OBJECT_TEXTSELECTIONCHANGED                          	:= 0x8014
+		, EVENT_OBJECT_UNCLOAKED                                                	:= 0x8018
+		, EVENT_OBJECT_VALUECHANGE                                            	:= 0x800E
+		, EVENT_SYSTEM_ALERT                                                          	:= 0x0002
+		, EVENT_SYSTEM_ARRANGMENTPREVIEW                             	:= 0x8016
+		, EVENT_SYSTEM_CAPTUREEND                 	                            	:= 0x0009
+		, EVENT_SYSTEM_CAPTURESTART                                          	:= 0x0008
+		, EVENT_SYSTEM_CONTEXTHELPEND                                     	:= 0x000D
+		, EVENT_SYSTEM_CONTEXTHELPSTART                                  	:= 0x000C
+		, EVENT_SYSTEM_DESKTOPSWITCH                                        	:= 0x0020
+		, EVENT_SYSTEM_DIALOGEND                                                	:= 0x0011
+		, EVENT_SYSTEM_DIALOGSTART                                             	:= 0x0010
+		, EVENT_SYSTEM_DRAGDROPEND                                          	:= 0x000F
+		, EVENT_SYSTEM_DRAGDROPSTART                                      	:= 0x000E
+		, EVENT_SYSTEM_END                                                             	:= 0x00FF
+		, EVENT_SYSTEM_FOREGROUND                                            	:= 0x0003
+		, EVENT_SYSTEM_MENUPOPUPEND                                       	:= 0x0007
+		, EVENT_SYSTEM_MENUPOPUPSTART                                    	:= 0x0006
+		, EVENT_SYSTEM_MENUEND                                                  	:= 0x0005
+		, EVENT_SYSTEM_MENUSTART                                               	:= 0x0004
+		, EVENT_SYSTEM_MINIMIZEEND                                             	:= 0x0017
+		, EVENT_SYSTEM_MINIMIZESTART                                         	:= 0x0016
+		, EVENT_SYSTEM_MOVESIZEEND                                            	:= 0x000B
+		, EVENT_SYSTEM_MOVESIZESTART                                         	:= 0x000A
+		, EVENT_SYSTEM_SCROLLINGEND                                          	:= 0x0013
+		, EVENT_SYSTEM_SCROLLINGSTART                                       	:= 0x0012
+		, EVENT_SYSTEM_SOUND                                                       	:= 0x0001
+		, EVENT_SYSTEM_SWITCHEND                                                	:= 0x0015
+		, EVENT_SYSTEM_SWITCHSTART                                            		:= 0x0014
 
-; Send a SUCCESS Event with ID 0x0001, arrStr as string and inData as binary data, to the Application log.
-WinEvents_SendWinLogEvent(hSource, "EVENTLOG_WARNING_TYPE", 0x0001, 0, arrStr, inData)
-
-; Deregister the application.
-WinEvents_DeregisterForEvents(hSource)
+/*
+    ;C callback definition
+    void CALLBACK WinEventProc(
+       HWINEVENTHOOK hWinEventHook,
+       DWORD         event,
+       HWND          hwnd,
+       LONG          idObject,
+       LONG          idChild,
+       DWORD         dwEventThread,
+       DWORD         dwmsEventTime
+    );
+    ;AHK callback definition
+    WinEventProc(hHook, event, hwnd, idObject, idChild, dwEventThread, dwmsEventTime)
 */
+
+EventHookTable := {}, _hHookTable := {}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+HookEvent(functionname, events, pid := "0", flags := "0") {
+    global EventHookTable
+
+    for i, event_id in events {
+        if(!EventHookTable[event_id])
+            EventHookTable[event_id] := Array()
+        if(CreateWinEventHook(functionname, event_id, pid, flags))
+            EventHookTable[event_id].Push(functionname)
+    }
+}
+
+UnHookEvent(functionname, events) {
+    global EventHookTable
+
+    for i, event_id in events {
+        if(EventHookTable[event_id]) {
+            for i2, v2 in EventHookTable[event_id] {
+                if(v2 == functionname) {
+                    DeleteWinEventHook(functionname, event_id)
+                    EventHookTable[event_id].RemoveAt(i2)
+                }
+            }
+            if(EventHookTable[event_id].Length() == 0)
+                EventHookTable.Delete(event_id)
+        }
+    }
+}
+
+CreateWinEventHook(functionname, event, pids := "0", dwflags := "0") {
+    global _hHookTable
+
+    cb := RegisterCallback(functionname)
+    DeleteWinEventHook(functionname, event)
+    DllCall("CoInitialize", UInt, 0)
+    if(hHook := DllCall("SetWinEventHook", UInt, event, UInt, event, UInt, 0, UInt, cb, UInt, pids, UInt, 0, UInt, dwflags))
+        _hHookTable[functionname . "_" . event] := hHook
+
+    return (hHook != 0)
+}
+
+DeleteWinEventHook(functionname, event) {
+    global _hHookTable
+
+    hHook := _hHookTable.Delete(functionname . "_" . event)
+
+    return (hHook != 0 ? DllCall("UnhookWinEvent", UInt, hHook) : false)
+}

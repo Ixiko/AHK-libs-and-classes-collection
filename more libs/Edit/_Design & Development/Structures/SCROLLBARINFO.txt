@@ -1,0 +1,16 @@
+SCROLLBARINFO structure
+The SCROLLBARINFO structure contains scroll bar information.
+
+    [Member]            [Type]   [32bitA]  [32bitU]  [64bitU]
+1   cbSize              DWORD    [00] 4    [00] 4    [00] 4
+2   rcScrollBar.left    int      [04] 4    [04] 4    [04] 4
+3   rcScrollBar.top     int      [08] 4    [08] 4    [08] 4
+4   rcScrollBar.right   int      [12] 4    [12] 4    [12] 4
+5   rcScrollBar.bottom  int      [16] 4    [16] 4    [16] 4
+6   dxyLineButton       int      [20] 4    [20] 4    [20] 4
+7   xyThumbTop          int      [24] 4    [24] 4    [24] 4
+8   xyThumbBottom       int      [28] 4    [28] 4    [28] 4
+9   reserved            int      [32] 4    [32] 4    [32] 4
+10  rgstate[6]          DWORD    [36] 4    [36] 4    [36] 4
+                                      ---       ---       ---
+                                      60        60        60

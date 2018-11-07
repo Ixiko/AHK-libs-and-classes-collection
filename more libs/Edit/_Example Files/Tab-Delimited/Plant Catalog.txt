@@ -1,0 +1,36 @@
+Bloodroot	Sanguinaria canadensis	4	Mostly Shady	$2.44	031599
+Columbine	Aquilegia canadensis	3	Mostly Shady	$9.37	030699
+Marsh Marigold	Caltha palustris	4	Mostly Sunny	$6.81	051799
+Cowslip	Caltha palustris	4	Mostly Shady	$9.90	030699
+Dutchman's-Breeches	Dicentra cucullaria	3	Mostly Shady	$6.44	012099
+Ginger, Wild	Asarum canadense	3	Mostly Shady	$9.03	041899
+Hepatica	Hepatica americana	4	Mostly Shady	$4.45	012699
+Liverleaf	Hepatica americana	4	Mostly Shady	$3.99	010299
+Jack-In-The-Pulpit	Arisaema triphyllum	4	Mostly Shady	$3.23	020199
+Mayapple	Podophyllum peltatum	3	Mostly Shady	$2.98	060599
+Phlox, Woodland	Phlox divaricata	3	Sun or Shade	$2.80	012299
+Phlox, Blue	Phlox divaricata	3	Sun or Shade	$5.59	021699
+Spring-Beauty	Claytonia Virginica	7	Mostly Shady	$6.59	020199
+Trillium	Trillium grandiflorum	5	Sun or Shade	$3.90	042999
+Wake Robin	Trillium grandiflorum	5	Sun or Shade	$3.20	022199
+Violet, Dog-Tooth	Erythronium americanum	4	Shade	$9.04	020199
+Trout Lily	Erythronium americanum	4	Shade	$6.94	032499
+Adder's-Tongue	Erythronium americanum	4	Shade	$9.58	041399
+Anemone	Anemone blanda	6	Mostly Shady	$8.86	122698
+Grecian Windflower	Anemone blanda	6	Mostly Shady	$9.16	071099
+Bee Balm	Monarda didyma	4	Shade	$4.59	050399
+Bergamot	Monarda didyma	4	Shade	$7.16	042799
+Black-Eyed Susan	Rudbeckia hirta	Annual	Sunny	$9.80	061899
+Buttercup	Ranunculus	4	Shade	$2.57	061099
+Crowfoot	Ranunculus	4	Shade	$9.34	040399
+Butterfly Weed	Asclepias tuberosa	Annual	Sunny	$2.78	063099
+Cinquefoil	Potentilla	Annual	Shade	$7.06	052599
+Primrose	Oenothera	3 - 5	Sunny	$6.56	013099
+Gentian	Gentiana	4	Sun or Shade	$7.81	051899
+Blue Gentian	Gentiana	4	Sun or Shade	$8.56	050299
+Jacob's Ladder	Polemonium caeruleum	Annual	Shade	$9.26	022199
+Greek Valerian	Polemonium caeruleum	Annual	Shade	$4.36	071499
+California Poppy	Eschscholzia californica	Annual	Sun	$7.89	032799
+Shooting Star	Dodecatheon	Annual	Mostly Shady	$8.60	051399
+Snakeroot	Cimicifuga	Annual	Shade	$5.63	071199
+Cardinal Flower	Lobelia cardinalis	2	Shade	$3.02	022299

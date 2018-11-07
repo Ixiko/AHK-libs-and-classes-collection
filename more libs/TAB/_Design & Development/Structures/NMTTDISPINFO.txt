@@ -1,0 +1,23 @@
+﻿NMTTDISPINFO structure
+
+Contains information used in handling the TTN_GETDISPINFO notification code.
+This structure supersedes the TOOLTIPTEXT structure.
+
+   [Member]         [Type]      [32bitA]  [32bitU]  [64bitU]
+1  NMHDR.hwndFrom   HWND        [00] 4    [00] 4    [00] 8
+2  NMHDR.idFrom     UINT_PTR    [04] 4    [04] 4    [08] 8
+3  NMHDR.code       UINT        [08] 4    [08] 4    [16] 4
+       Structure alignment padding                  [20] 4
+4  lpszText         LPTSTR      [12] 4    [12] 4    [24] 8
+5  szText           TCHAR       [16] 1    [16] 2    [32] 2
+       Alignment padding        [17] 3    [17] 3    [34] 6
+6  hinst            HINSTANCE   [20] 4    [20] 4    [40] 8
+7  uFlags           UINT        [24] 4    [24] 4    [48] 4
+       Structure alignment padding                  [52] 4
+8  lParam           LPARAM      [28] 4    [28] 4    [56] 8
+                                     --        --        --
+                                     32        32        64
+
+VarSetCapacity(NMTTDISPINFO,A_PtrSize=8 ? 64:32,0)
+NMTTDISPINFO_sizeof:=A_PtrSize=8 ? 64:32
+

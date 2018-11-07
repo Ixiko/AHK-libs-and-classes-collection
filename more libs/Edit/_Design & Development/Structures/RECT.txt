@@ -1,0 +1,15 @@
+RECT Structure
+The RECT structure defines the coordinates of the upper-left and lower-right
+corners of a rectangle.
+
+Syntax
+                                            Type            Size    OffSet  Comment
+                                            ----            ----    -----   -------
+typedef struct _RECT {
+  LONG left;                                Long (Int)      4       0
+  LONG top;                                 Long (Int)      4       4
+  LONG right;                               Long (Int)      4       8
+  LONG bottom;                              Long (Int)      4       12
+} RECT, *PRECT;
+                                                            ----
+                                                            16

@@ -1,0 +1,9 @@
+﻿SIZE structure
+
+The SIZE structure specifies the width and height of a rectangle.
+
+   [Member]  [Type]   [32bitA]  [32bitU]  [64bitU]
+1  cx        LONG     [0] 4     [0] 4     [0] 4
+2  cy        LONG     [4] 4     [4] 4     [4] 4
+                          --        --        --
+                          8         8         8

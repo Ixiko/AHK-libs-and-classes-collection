@@ -1,0 +1,7 @@
+1	Avant Browser	16.2.4.17	Avant Force	Avant Browser
+2	Blue's Port Scanner	Rev 72.1	Volker Voss	BlueBit's UltraFast Port Scanner
+3	CCleaner	4.12	Piriform	CCleaner
+4	Drag and Drop Robot	4.1.9.7	DonationCoder.com	Drag And Drop Robot
+5	The KMPlayer	16.2.4.1932	With Force!!	K-MultimediaPlayer
+6	Microsoft Speech SDK 5.1	5.1.4324.0	Microsoft	
+7	Monkey's Audio	3.09.0009	Matthew T. Ashland	Monkey's Audio

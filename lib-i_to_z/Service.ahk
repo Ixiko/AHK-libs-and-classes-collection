@@ -16,10 +16,20 @@
     SERVICE_PAUSED (7) : The service is paused.
 */
 
-MsgBox % Service_State("Alerter")
-
-
-Service_List(State="", Type="", delimiter="`n"){
+	/*                              	EXAMPLE(s)
+	
+			MsgBox % Service_List("Active") ;Get List of Running Win32 Service
+			
+			if Service_State("Print Spooler")=4 ;if Print Spooler service is running
+			    Service_Stop("Print Spooler") ;stop
+			else if Service_State("Print Spooler")=1 ;if Print Spooler service is not running
+			    Service_Start("Print Spooler") ;start
+			
+			MsgBox % Service_State("Print Spooler")
+			
+	*/
+	
+Service_List(State="", Type="", delimiter="`n") {
     if !State
         ServiceState := 0x3 ;SERVICE_STATE_ALL (0x00000003)
     else if (State="Active")
@@ -76,8 +86,7 @@ Service_List(State="", Type="", delimiter="`n"){
     
 }
 
-Service_Start(ServiceName)
-{
+Service_Start(ServiceName) {
     ServiceName := _GetName_(ServiceName) 
 
     SCM_HANDLE := DllCall("advapi32\OpenSCManagerA"
@@ -102,8 +111,7 @@ Service_Start(ServiceName)
     return result
 }
 
-Service_Stop(ServiceName)
-{
+Service_Stop(ServiceName) {
     ServiceName := _GetName_(ServiceName)
 
     SCM_HANDLE := DllCall("advapi32\OpenSCManagerA"
@@ -128,8 +136,7 @@ Service_Stop(ServiceName)
     return result
 }
 
-Service_State(ServiceName)
-{ ; Return Values
+Service_State(ServiceName) { ; Return Values
 ; SERVICE_STOPPED (1) : The service is not running.
 ; SERVICE_START_PENDING (2) : The service is starting.
 ; SERVICE_STOP_PENDING (3) : The service is stopping.
@@ -197,8 +204,8 @@ Service_Add(ServiceName, BinaryPath, StartType=""){
     Return result
 }
 
-Service_Delete(ServiceName)
-{
+Service_Delete(ServiceName) {
+	
     if !A_IsAdmin ;Requires Administrator rights
         Return False
     ServiceName := _GetName_(ServiceName)    
@@ -221,8 +228,7 @@ Service_Delete(ServiceName)
     Return result    
 }
 
-_GetName_(DisplayName)
-{ ;Internal, Gets Service Name from Display Name, 
+_GetName_(DisplayName) { ;Internal, Gets Service Name from Display Name, 
     SCM_HANDLE := DllCall("advapi32\OpenSCManagerA", "Int", 0, "Int", 0, "UInt", 0x1) ;SC_MANAGER_CONNECT (0x0001)    
 
     DllCall("advapi32\GetServiceKeyNameA" ;Get Buffer Size
