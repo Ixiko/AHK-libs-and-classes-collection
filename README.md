@@ -15,10 +15,12 @@
 
 ###changes are made
 
-**[09.12.2018]** - added 300 libs and classes
+**[09.12.2018]** - added ~230 libs and classes
 
-**[07.11.2018]** - added 500 hopefully new and unique library’s. Still I think that in comparison to other programming languages Autohotkey is rather a small community. I also use libraries from the early days of Autohotkey and they work fine!
-Otherwise, I hope you have a quick search program. Thanks to all for the prebuild code. It safes much time.
+**[07.11.2018]** - added ~500 hopefully new and unique library’s. So far I thought that Autohotkey is rather a small community compared to other programming languages, but I still find many files to add.
+I hope you have a quick search program to find what you need. 
+
+*Thanks to all for the prebuild code. It safes much time!*
 
 **[08.06.2018]** - using [**AntiTwins.exe**](http://www.joerg-rosenthal.com/en/antitwin/) to remove doubled files
 
