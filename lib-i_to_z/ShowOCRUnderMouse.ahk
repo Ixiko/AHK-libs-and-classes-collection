@@ -3,7 +3,7 @@
 
 SetBatchlines, -1
 
-#Include GDIplusWrapper.ahk
+;#Include GDIplusWrapper.ahk
 
 ;Msgbox, 52, OCR Info,
 ;(

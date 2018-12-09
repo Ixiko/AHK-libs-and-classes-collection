@@ -1,6 +1,6 @@
 #NoEnv
 #Warn
-#Include Class_GuiTabEx.ahk
+#Include %A_ScriptDir%\..\classes\Class_GuiTabEx.ahk
 ; Create an ImageList (sample in the manual)
 HIL := IL_Create(10) ; Create an ImageList to hold 10 small icons.
 Loop 10 ; Load the ImageList with a series of icons from the DLL.

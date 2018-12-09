@@ -1,19 +1,24 @@
-; AutoExecute:
-    ; SetFormat IntegerFast, H ; imporant!
-   
-    ; Gui +hwnd_GuiHwnd
-    ; Gui Show, w500 h500
-    ; Colors := [0x00FF00, 0xFF0000, 0xFF00FF]
-    ; MyColor := ChooseColor(0x80FF, _GuiHwnd, , , Colors*)
-    ; Gui Color, %MyColor%
-    ; MsgBox,
-	; ( LTrim
-	; ErrorLevel = %ErrorLevel%
-	; MyColor = %MyColor%
-	; )
-; ExitApp
+﻿/*  Windows Color Picker Plus (by rbrtryn)
+    https://autohotkey.com/board/topic/91229-windows-color-picker-plus/
 
-; Source: https://autohotkey.com/board/topic/91229-windows-color-picker-plus/
+    Edited by me lemasato:
+        BGR2RGB():
+        Use Format() to convert the value to hex instead of SetFormat
+*/
+
+/*  SAMPLE EXAMPLE
+
+    Gui +hwndGuiHwnd
+    Gui Color, 0x888888, ControlColor
+    Gui Show, w500 h500
+    Colors := [0x00FF00, 0xFF0000, 0xFF00FF]
+    MyColor := ChooseColor(0xFF, GuiHwnd, , ,Colors*)
+    Gui Color, %MyColor%
+    MsgBox % ErrorLevel "`n" MyColor
+    ExitApp
+*/
+
+
 /*!
     Function: ChooseColor([pRGB, hOwner, DlgX, DlgY, Palette])
         Displays a standard Windows dialog for choosing colors.
@@ -41,9 +46,11 @@
 */
 ChooseColor(pRGB := 0, hOwner := 0, DlgX := 0, DlgY := 0, Palette*)
 {
-	static CustColors    ; Custom colors are remembered between calls
+    static CustColors    ; Custom colors are remembered between calls
     static SizeOfCustColors := VarSetCapacity(CustColors, 64, 0)
     static StructSize := VarSetCapacity(ChooseColor, 9 * A_PtrSize, 0)
+
+    
     
     CustData := (DlgX << 16) | DlgY    ; Store X in high word, Y in the low word
 
@@ -67,8 +74,34 @@ ChooseColor(pRGB := 0, hOwner := 0, DlgX := 0, DlgY := 0, Palette*)
     if not ErrorLevel
         Loop 16
             Palette[A_Index] := BGR2RGB(NumGet(CustColors, (A_Index - 1) * 4, "UInt"))
+
+    ; My tests
+    ; ChooseColor := BGR2RGB(NumGet(ChooseColor, 3 * A_PtrSize, "UINT"))
+    ; msgbox % ChooseColor " - " 1
+    ; ChooseColor := Format("{1:#x}", NumGet(ChooseColor, 3 * A_PtrSize, "UINT"))
+    ; msgbox % ChooseColor " - " 2
+    ; chooseColor := BGR2RGB(ChooseColor)
+    ; msgbox % ChooseColor " - " 3
+
+
+    
+    ; msgbox % chooseColor
+    ; chooseColor := Format("{1:#x}", chooseColor)
+    ; msgbox % chooseColor
+    ; chooseColor := BGR2RGB(NumGet(ChooseColor, 3 * A_PtrSize, "UINT"))
+
+    ; Original
+    ; msgbox % ChooseColor " - " A_PtrSize
+    ; SetFormat, Integer, H
+    ChooseColor := BGR2RGB(NumGet(ChooseColor, 3 * A_PtrSize, "UINT"))
+    ; SetFormat, Integer, D
+    ; msgbox % ChooseColor
+
+
+
+
         
-    return BGR2RGB(NumGet(ChooseColor, 3 * A_PtrSize, "UINT"))
+    return ChooseColor
 }
 
 /*!
@@ -126,8 +159,11 @@ ColorWindowProc(hwnd, msg, wParam, lParam)
 */
 BGR2RGB(Color)
 {
-    return  (Color & 0xFF000000) 
+    
+    ret := Format("{1:#.6x}", (Color & 0xFF000000) 
          | ((Color & 0xFF0000) >> 16) 
          |  (Color & 0x00FF00) 
-         | ((Color & 0x0000FF) << 16)
+         | ((Color & 0x0000FF) << 16))
+
+    return ret
 }
