@@ -1,24 +1,29 @@
-; #FUNCTION# ====================================================================================================================
-; Name ..........: dBaseDll 1.0
-; Description ...: create, read, write dBaseIII & dBaseIV dbf files
-;                : create, read, write DBaseIII & dBaseIV dbt files
-; Author ........: Jpam
-; Modified ......: Modified by just me for AHK
-; Email .........: ouderaa@zeelandnet.nl
-; Lastupdate ....: 31-12-2015
-; ===============================================================================================================================
+﻿; #FUNCTION# ====================================================================================================================
+; Name ..........	: dBaseDll 1.0
+; Description ...	: create, read, write dBaseIII & dBaseIV dbf files
+;                     	: create, read, write DBaseIII & dBaseIV dbt files
+; Author ........	: Jpam
+; Modified ......	: Modified by just me for AHK
+; Email .........	: ouderaa@zeelandnet.nl
+; Lastupdate ....	: 31-12-2015
+; ====================================================================================================================
+; #include-once
 
-
+; OnAutoItExitRegister("Close_DLL")
 
 ; #Globals# =====================================================================================================================
 ; Version const
-; ===============================================================================================================================
-Global DBASEIII      := 0x03 ; dBaseIII w/o memo
-Global DBASEIII_MEMO := 0x83 ; dBaseIII memo
-Global DBASEIV       := 0x04 ; dBaseIV  w/o memo
-Global DBASEIV_MEMO  := 0x8B ; dBaseIV  memo
-#include %A_ScriptDir%\GuiAutomation\dbasedll.dll
+; ====================================================================================================================
+Global DBASEIII          	:= 0x03 ; dBaseIII w/o memo
+Global DBASEIII_MEMO:= 0x83 ; dBaseIII memo
+Global DBASEIV           	:= 0x04 ; dBaseIV  w/o memo
+Global DBASEIV_MEMO:= 0x8B ; dBaseIV  memo
 
+;"dbasedll.dll\" = DllOpen(AddendumDir . "\include\dbasedll.dll")
+dbasedll:= AddendumDir . "\include\dbasedll.dll"
+
+DBase_CreateDBF(pFileName, bVersion) {                                                                               	;-- creates new database file
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: CreateDBF
 ; Description ...: creates new database file
@@ -32,13 +37,14 @@ Global DBASEIV_MEMO  := 0x8B ; dBaseIV  memo
 ; Related .......:
 ; Link ..........:
 ; Example .......: $hBase = CreateDBF("Sample.dbf", $DBASEIII_MEMO)
-; ===============================================================================================================================
-DBase_CreateDBF(pFileName, bVersion) {
-
+; ====================================================================================================================
+*/
    Return DllCall("dbasedll.dll\CreateDBF", "Str", pFileName, "UChar", bVersion, "UPtr")
 
 }
 
+DBase_OpenDBF(pFileName) {
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: OpenDBF
 ; Description ...:
@@ -51,13 +57,14 @@ DBase_CreateDBF(pFileName, bVersion) {
 ; Related .......:
 ; Link ..........:
 ; Example .......: $hBase = OpenDBF("sample.dbf")
-; ===============================================================================================================================
-DBase_OpenDBF(pFileName) {
-
-   Return DllCall("dbasedll.dll\OpenDBF", "Str", pFileName, "UPtr")
+; ====================================================================================================================
+*/
+   Return DllCall(dbasedll . "\OpenDBF", "Str", pFileName, "UPtr")
 
 }
 
+DBase_AddField(hBase, fldName, fldType, fldLen, fldDecimal, fldWorkAreaId, fldFlag) {            	;-- add new field to dbf file
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: AddField
 ; Description ...: add new field to dbf file
@@ -79,20 +86,21 @@ DBase_OpenDBF(pFileName) {
 ; Related .......:
 ; Link ..........:
 ; Example .......: AddField($hBase, "city", "C", 25, 0, 0, 0)
-; ===============================================================================================================================
-DBase_AddField(hBase, fldName, fldType, fldLen, fldDecimal, fldWorkAreaId, fldFlag) {
-
+; ====================================================================================================================
+*/
    DllCall("dbasedll.dll\AddField", "Ptr",    hBase
-                                  , "Str",    fldName
-                                  , "UChar",  Asc(fldType) ; (StringToBinary(fldType),
-                                  , "UChar",  fldLen
-                                  , "UChar",  fldDecimal
-                                  , "UChar",  fldWorkAreaId
-                                  , "UChar",  fldFlag)
+								  , "Str",    fldName
+								  , "UChar",  Asc(fldType) ; (StringToBinary(fldType),
+								  , "UChar",  fldLen
+								  , "UChar",  fldDecimal
+								  , "UChar",  fldWorkAreaId
+								  , "UChar",  fldFlag)
 
 }
 
-; #FUNCTION# ====================================================================================================================
+DBase_GetFieldName(hBase, fldNr) {                                                                                      	;--  get the fieldname from fieldnumber
+/*
+; #FUNCTION# =======================================================================================================
 ; Name ..........: GetFieldName
 ; Description ...: get the fieldname from fieldnumber
 ; Syntax ........: GetFieldName(hBase, fldNr)
@@ -105,14 +113,15 @@ DBase_AddField(hBase, fldName, fldType, fldLen, fldDecimal, fldWorkAreaId, fldFl
 ; Related .......:
 ; Link ..........:
 ; Example .......: $fldName = GetFieldName($hBase, 5)
-; ===============================================================================================================================
-DBase_GetFieldName(hBase, fldNr) {
-
+; ================================================================================================================
+*/
    pFldname := DllCall("dbasedll.dll\GetFieldName", "Ptr", hBase, "UInt", fldNr, "Str")
    Return pFldname
 
 }
 
+DBase_GetFieldType(hBase, fldNr) {                                                                                       	;-- get the fieldtype from fieldnumber
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: GetFieldType
 ; Description ...: get the fieldtype from fieldnumber
@@ -126,14 +135,15 @@ DBase_GetFieldName(hBase, fldNr) {
 ; Related .......:
 ; Link ..........:
 ; Example .......: $fldType = GetFieldType($hBase, 3)
-; ===============================================================================================================================
-DBase_GetFieldType(hBase, fldNr) {
-
+; ===================================================================================================================
+*/
    pFldType := DllCall("dbasedll.dll\GetFieldType", "Ptr", hBase, "UInt", fldNr, "Str")
    Return pFldType
 
 }
 
+DBase_GetFieldLenght(hBase, fldNr) {                                                                                    	;-- GetFieldLenght returns byte lenght from field
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: GetFieldLenght
 ; Description ...: GetFieldLenght returns byte lenght from field
@@ -147,14 +157,15 @@ DBase_GetFieldType(hBase, fldNr) {
 ; Related .......:
 ; Link ..........:
 ; Example .......: $fldLen = GetFieldLenght($hBase, 1)
-; ===============================================================================================================================
-DBase_GetFieldLenght(hBase, fldNr) {
-
+; =================================================================================================================
+*/
    pFldLen := DllCall("dbasedll.dll\GetFieldLenght", "Ptr",  hBase, "UInt", fldNr, "UInt")
    Return pFldLen
 
 }
 
+DBase_GetFieldDecimal(hBase, fldNr) {                                                                                 	;-- get decimal point location
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: GetFieldDecimal
 ; Description ...: get decimal point location
@@ -168,14 +179,15 @@ DBase_GetFieldLenght(hBase, fldNr) {
 ; Related .......:
 ; Link ..........:
 ; Example .......: $fldDec = GetFieldDecimal($hBase, 3)
-; ===============================================================================================================================
-DBase_GetFieldDecimal(hBase, fldNr) {
-
+; =====================================================================================================================
+*/
    pFldDec := DllCall("dbasedll.dll\GetFieldDecimal", "Ptr", hBase, "UInt", fldNr, "UInt")
    Return pFldDec
 
 }
 
+DBase_GetRecordCount(hBase) {                                                                                             	;-- get the number of records in dbf file
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: GetRecordCount
 ; Description ...: get the number of records in dbf file
@@ -188,14 +200,15 @@ DBase_GetFieldDecimal(hBase, fldNr) {
 ; Related .......:
 ; Link ..........:
 ; Example .......: $recCnt = GetRecordCount($hBase)
-; ===============================================================================================================================
-DBase_GetRecordCount(hBase) {
-
+; ================================================================================================================
+*/
    pRecCnt := DllCall("dbasedll.dll\GetRecordCount", "Ptr", hBase, "UInt")
    Return pRecCnt
 
 }
 
+DBase_GetFieldCount(hBase) {                                                                                                 	;-- get number of fields in dbf file
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: GetFieldCount
 ; Description ...: get number of fields in dbf file
@@ -208,14 +221,15 @@ DBase_GetRecordCount(hBase) {
 ; Related .......:
 ; Link ..........:
 ; Example .......: #fldCnt = GetFieldCount($hBase)
-; ===============================================================================================================================
-DBase_GetFieldCount(hBase) {
-
+; ==================================================================================================================
+*/
    pFldCnt := DllCall("dbasedll.dll\GetFieldCount", "Ptr", hBase, "UInt")
    Return pFldCnt
 
 }
 
+DBase_AddRecord(hBase) {                                                                                                     	;-- write new blank record to dbf file
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: AddRecord
 ; Description ...: write new blank record to dbf file
@@ -228,13 +242,14 @@ DBase_GetFieldCount(hBase) {
 ; Related .......:
 ; Link ..........:
 ; Example .......: AddRecord($hBase)
-; ===============================================================================================================================
-DBase_AddRecord(hBase) {
-
+; ====================================================================================================================
+*/
    DllCall("dbasedll.dll\AddRecord", "Ptr", hBase)
 
 }
 
+DBase_GetSubRecord(hBase, recNr, fldNr) {                                                                          	;-- get record data
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: GetSubRecord
 ; Description ...: get record data
@@ -249,14 +264,15 @@ DBase_AddRecord(hBase) {
 ; Related .......:
 ; Link ..........:
 ; Example .......: $rec = GetSubRecord($hBase, 0, 2)
-; ===============================================================================================================================
-DBase_GetSubRecord(hBase, recNr, fldNr) {
-
+; ==========================================================================================================
+*/
    pRec := DllCall("dbasedll.dll\GetSubRecord", "Ptr", hBase, "UInt", recNr, "UInt", fldNr, "Str")
    Return pRec
 
 }
 
+DBase_PutSubRecord(hBase, pValue, recNr, fldNr) {                                                               	;-- write sub record to database
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: PutSubRecord
 ; Description ...: write sub record to database
@@ -272,13 +288,14 @@ DBase_GetSubRecord(hBase, recNr, fldNr) {
 ; Related .......:
 ; Link ..........:
 ; Example .......: PutSubRecord($hBase, "Amsterdam", 1, 2)
-; ===============================================================================================================================
-DBase_PutSubRecord(hBase, pValue, recNr, fldNr) {
-
+; =================================================================================================
+*/
    DllCall("dbasedll.dll\PutSubRecord", "Ptr", hBase, "Str", pValue, "UInt", recNr, "UInt", fldNr)
 
 }
 
+DBase_DeleteRecord(hBase, recNr) {                                                                                      	;-- mark record as deleted
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: DeleteRecord
 ; Description ...: mark record as deleted
@@ -292,13 +309,14 @@ DBase_PutSubRecord(hBase, pValue, recNr, fldNr) {
 ; Related .......:
 ; Link ..........:
 ; Example .......: DeleteRecord($hBase, 15)
-; ===============================================================================================================================
-DBase_DeleteRecord(hBase, recNr) {
-
+; =====================================================================================================================
+*/
    DllCall("dbasedll.dll\DeleteRecord", "Ptr", hBase, "UInt", recNr)
 
 }
 
+DBase_UnDeleteRecord(hBase, recNr) {                                                                                 	;-- unMark the marked record
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: UnDeleteRecord
 ; Description ...: unMark the marked record
@@ -312,13 +330,14 @@ DBase_DeleteRecord(hBase, recNr) {
 ; Related .......:
 ; Link ..........:
 ; Example .......: UnDeleteRecord($hBase, 15)
-; ===============================================================================================================================
-DBase_UnDeleteRecord(hBase, recNr) {
-
+; ===========================================================================================================
+*/
    DllCall("dbasedll.dll\UnDeleteRecord", "Ptr", hBase, "UInt", recNr)
 
 }
 
+DBase_Search(hBase, pStr, fld, pBuf, len) {                                                                             	;--  searches the database for an specified value
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: Search
 ; Description ...: searches the database for an specified value
@@ -344,18 +363,19 @@ DBase_UnDeleteRecord(hBase, recNr) {
 ;                  $Array = DllStructCreate("DWORD[400]") *the len para is set to 40, only 10 results are returned*
 ;                  $recCnt = Search($hDbf, "New York*", -1, DllStructGetPtr($Array), 40)
 ; ===============================================================================================================================
-DBase_Search(hBase, pStr, fld, pBuf, len) {
-
+*/
    pRecArray := DllCall("dbasedll.dll\Search", "Ptr",  hBase
-                                             , "Str",  pStr
-                                             , "UInt", fld
-                                             , "Ptr",  pBuf
-                                             , "UInt", len
-                                             , "Ptr")
+											 , "Str",  pStr
+											 , "UInt", fld
+											 , "Ptr",  pBuf
+											 , "UInt", len
+											 , "Ptr")
    Return pRecArray
 
 }
 
+DBase_Pack(hBase) {                                                                                                             	;-- deletes all marked records
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: Pack
 ; Description ...: deletes all marked records
@@ -369,12 +389,13 @@ DBase_Search(hBase, pStr, fld, pBuf, len) {
 ; Link ..........:
 ; Example .......: Pack($hBase)
 ; ===============================================================================================================================
-DBase_Pack(hBase) {
-
+*/
    DllCall("dbasedll.dll\Pack", "Ptr", hBase)
 
 }
 
+DBase_Zap(hBase) {                                                                                                              	;-- cleanup database, deletes all records
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: Zap
 ; Description ...: cleanup database, deletes all records
@@ -388,12 +409,13 @@ DBase_Pack(hBase) {
 ; Link ..........:
 ; Example .......:  Zap($hBase)
 ; ===============================================================================================================================
-DBase_Zap(hBase) {
-
+*/
    DllCall("dbasedll.dll\Zap", "Ptr", hBase)
 
 }
 
+DBase_LoadMemo(hBase, recNr, fldNr) {                                                                               	;--  load memo from dbt or fpt file
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: LoadMemo
 ; Description ...: load memo from dbt or fpt file
@@ -409,13 +431,14 @@ DBase_Zap(hBase) {
 ; Link ..........:
 ; Example .......: $memo = LoadMemo($hBase, $rec, $fld)
 ; ===============================================================================================================================
-DBase_LoadMemo(hBase, recNr, fldNr) {
-
+*/
    pBuf = DllCall("dbasedll.dll\LoadMemo", "Ptr", hBase, "UInt", recNr, "UInt", fldNr, "Str")
    Return pBuf
 
 }
 
+DBase_WriteMemo(hBase, pMemo, recNr, fldNr) {                                                                 	;-- write memo to dbt file and updates the dbf memo record with blockNumber
+/*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: WriteMemo
 ; Description ...: write memo to dbt file and updates the dbf memo record with blockNumber
@@ -432,12 +455,13 @@ DBase_LoadMemo(hBase, recNr, fldNr) {
 ; Link ..........:
 ; Example .......: WriteMemo($hBase, $Memo, 5, 3)
 ; ===============================================================================================================================
-DBase_WriteMemo(hBase, pMemo, recNr, fldNr) {
-
+*/
    DllCall("dbasedll.dll\WriteMemo", "Ptr", hBase, "Str", pMemo, "UInt", recNr, "UInt", fldNr)
 
 }
 
+DBase_CloseDBF(hBase) {                                                                                                     	;-- closes the database
+   /*
 ; #FUNCTION# ====================================================================================================================
 ; Name ..........: CloseDBF
 ; Description ...: closes the database
@@ -451,10 +475,12 @@ DBase_WriteMemo(hBase, pMemo, recNr, fldNr) {
 ; Link ..........:
 ; Example .......: CloseDBF($hBase)
 ; ===============================================================================================================================
-DBase_CloseDBF(hBase) {
+*/
    DllCall("dbasedll.dll\CloseDBF", "Ptr", hBase)
 }
 
+DBase_LoadDLL(P*) {                                                                                                            	;-- Loads the database.dll on start-up and unloads it automatically when the script exits.
+/*
 ; DBase_Close_DLL() {
 ;
 ;    DllClose("dbasedll.dll\")
@@ -473,16 +499,19 @@ DBase_CloseDBF(hBase) {
 ; Link ..........:
 ; Example .......: None
 ; ===============================================================================================================================
-DBase_LoadDLL(P*) {
+*/
    Static DBaseMod := 0
    Static Load := DBase_LoadDLL()
    If (DBaseMod = 0) {
-      If !(DBaseMod := DllCall("LoadLibrary", "Str", "dbasedll.dll", "UPtr")) {
-         MsgBox, 262160, %A_ThisFunc%, The dbasedll.dll could not be loaded!`n`nThe program will exit!
-         ExitApp
-      }
-      OnExit("DBase_LoadDLL")
+	  If !(DBaseMod := DllCall("LoadLibrary", "Str", "dbasedll.dll", "UPtr")) {
+		 MsgBox, 262160, %A_ThisFunc%, The dbasedll.dll could not be loaded!`n`nThe program will exit!
+		 ExitApp
+	  }
+	  OnExit("DBase_LoadDLL")
    }
    Else
-      DllCall("FreeLibrary", "Ptr", DBaseMod)
+	  DllCall("FreeLibrary", "Ptr", DBaseMod)
 }
+
+
+
