@@ -1,9 +1,9 @@
 ﻿; Include IO library
 #include <IO>
 ; Include CIniFile
-#include <CIniFile>
+#include <class_CIniFile>
 ; Include CInCLocalizeriFile
-#include <CLocalizer>
+#include <class_CLocalizer>
 ; This is just for convenience because the function is included when it is called.
 #include <IsEmpty>
 
