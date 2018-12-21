@@ -1,11 +1,10 @@
 class HashTable
 {
-    __New()
+    __New(Items*)
     {
-        ; The Buckets property is intended for internal use only.
-        ;
+        local
         ; An AutoHotkey Array takes the place of the array that would normally
-        ; be used to implement a hash table.
+        ; be used to implement a hash table's buckets.
         ;
         ; Masking to remove the unwanted high bits to fit within the array
         ; bounds is unnecessary because AutoHotkey Arrays are sparse arrays that
@@ -14,18 +13,42 @@ class HashTable
         ; Rehashing everything and placing it in a new array that has the next
         ; highest power of 2 elements when over 3/4ths of the buckets are full
         ; is unnecessary for the same reason.
-        local
-        this.Buckets := []
-        this.Count   := 0
+        this._Buckets := []
+        this._Count   := 0
+        loop % Items.Length()
+        {
+            if (not Items.HasKey(a_index))
+            {
+                throw Exception("Missing Argument Error", -1
+                               ,"HashTable.__New(Items*)")
+            }
+            if (not (    IsObject(Items[a_index])
+                     and Items[a_index].HasKey("HasKey") != ""))
+            {
+                throw Exception("Type Error", -1
+                               ,"HashTable.__New(Items*)  Invalid argument.")
+            }
+            if (not (    Items[a_index].HasKey(1)
+                     and Items[a_index].HasKey(2)
+                     and Items[a_index].Count() == 2))
+            {
+                throw Exception("Value Error", -1
+                               ,"HashTable.__New(Items*)  Invalid argument.")
+            }
+            this.Set(Items[a_index][1], Items[a_index][2])
+        }
         return this
     }
 
-    GetHash(Key)
+    _GetHash(Key)
     {
-        ; GetHash(Key) is intended for internal use only.  It is used to find
-        ; the bucket a key would be stored in.
+        ; _GetHash(Key) is used to find the bucket a key would be stored in.
         local
-        if (not IsObject(Key))
+        if (IsObject(Key))
+        {
+            HashCode := &Key
+        }
+        else
         {
             if Key is integer
             {
@@ -33,10 +56,10 @@ class HashTable
             }
             else if Key is float
             {
-                RoundedValue := Round(Key)
-                if (Key == RoundedValue)
+                TruncatedKey := Key & -1
+                if (Key == TruncatedKey)
                 {
-                    HashCode := RoundedValue
+                    HashCode := TruncatedKey
                 }
                 else
                 {
@@ -54,26 +77,21 @@ class HashTable
             else
             {
                 ; This is the string hashing algorithm used in Java.  It makes
-                ; use of the wrap around in integer overflow.
+                ; use of modular arithmetic via integer overflow.
                 HashCode := 0
-                loop parse, Key
+                for _, Char in StrSplit(Key)
                 {
-                    HashCode := 31 * HashCode + Ord(A_LoopField)
+                    HashCode := 31 * HashCode + Ord(Char)
                 }
             }
-        }
-        else
-        {
-            HashCode := &Key
         }
         return HashCode
     }
 
-    HasKey(Key, HashCode := "")
+    HasKey(Key, _HashCode := "")
     {
-        ; The HashCode optional parameter is intended for internal use only.  It
-        ; is used to avoid repeated hashing.
-        ;
+        ; The _HashCode optional parameter is used to avoid repeated hashing.
+        local
         ; HasKey(Key) has the side effect of moving whatever was searched for to
         ; the start of the bucket's chain if it is not already there.  This
         ; speeds future lookups.
@@ -81,24 +99,20 @@ class HashTable
         ; Set(Key, Value) and Get(Key) require almost identical logic, so they
         ; use HasKey(Key) internally to avoid code duplication.  They depend on
         ; the chain reordering behavior.
-        local
         Found        := false
-        if (HashCode == "")
-        {
-            HashCode := this.GetHash(Key)
-        }
-        Item         := this.Buckets.HasKey(HashCode) ? this.Buckets[HashCode]
-                                                      : ""
+        HashCode     := _HashCode == "" ? this._GetHash(Key) : _HashCode
+        Item         := this._Buckets.HasKey(HashCode) ? this._Buckets[HashCode]
+                      : ""
         PreviousItem := ""
-        while ((not Found) and (Item != ""))
+        while (not Found and Item != "")
         {
             if (Item.Key == Key)
             {
                 if (PreviousItem != "")
                 {
-                    PreviousItem.Next      := Item.Next
-                    Item.Next              := this.Buckets[HashCode]
-                    this.Buckets[HashCode] := Item
+                    PreviousItem.Next       := Item.Next
+                    Item.Next               := this._Buckets[HashCode]
+                    this._Buckets[HashCode] := Item
                 }
                 Found := true
             }
@@ -114,18 +128,19 @@ class HashTable
     Set(Key, Value)
     {
         local
-        HashCode := this.GetHash(Key)
+        HashCode := this._GetHash(Key)
         if (this.HasKey(Key, HashCode))
         {
-            this.Buckets[HashCode].Value := Value
+            this._Buckets[HashCode].Value := Value
         }
         else
         {
-            Next := this.Buckets.HasKey(HashCode) ? this.Buckets[HashCode] : ""
-            this.Buckets[HashCode] := {"Key":   Key
-                                      ,"Value": Value
-                                      ,"Next":  Next}
-            this.Count             += 1
+            Next := this._Buckets.HasKey(HashCode) ? this._Buckets[HashCode]
+                  : ""
+            this._Buckets[HashCode] := {"Key":   Key
+                                       ,"Value": Value
+                                       ,"Next":  Next}
+            this._Count             += 1
         }
         return Value
     }
@@ -133,34 +148,36 @@ class HashTable
     Get(Key)
     {
         local
-        HashCode := this.GetHash(Key)
+        HashCode := this._GetHash(Key)
         if (this.HasKey(Key, HashCode))
         {
-            Value := this.Buckets[HashCode].Value
+            Value := this._Buckets[HashCode].Value
         }
         else
         {
-            throw Exception("Key Error", -1, "Key not found.")
+            throw Exception("Key Error", -1
+                           ,"HashTable.Get(Key)  Key not found.")
         }
         return Value
     }
 
     Delete(Key)
     {
+        local
         ; Delete(Key) does not use HasKey(Key) internally because only the
         ; chain traversal logic is the same and reordering the chain would
         ; waste time.
-        local
         Found        := false
-        HashCode     := this.GetHash(Key)
-        Item         := this.Buckets.HasKey(HashCode) ? this.Buckets[HashCode]
-                                                      : ""
+        HashCode     := this._GetHash(Key)
+        Item         := this._Buckets.HasKey(HashCode) ? this._Buckets[HashCode]
+                      : ""
         PreviousItem := ""
         while (not Found)
         {
             if (Item == "")
             {
-                throw Exception("Key Error", -1, "Key not found.")
+                throw Exception("Key Error", -1
+                               ,"HashTable.Delete(Key)  Key not found.")
             }
             if (Item.Key == Key)
             {
@@ -168,20 +185,20 @@ class HashTable
                 {
                     if (Item.Next == "")
                     {
-                        this.Buckets.Delete(HashCode)
+                        this._Buckets.Delete(HashCode)
                     }
                     else
                     {
-                        this.Buckets[HashCode] := Item.Next
+                        this._Buckets[HashCode] := Item.Next
                     }
                 }
                 else
                 {
                     PreviousItem.Next := Item.Next
                 }
-                this.Count -= 1
-                Value      := Item.Value
-                Found      := true
+                this._Count -= 1
+                Value       := Item.Value
+                Found       := true
             }
             else
             {
@@ -192,36 +209,41 @@ class HashTable
         return Value
     }
 
-    class Enum
+    Count()
+    {
+        local
+        return this._Count
+    }
+
+    class _Enum
     {
         __New(HashTable)
         {
-            ; The BucketsEnum and PreviousItem properties are intended for
-            ; internal use only.  They are used to store the stopping place
-            ; across calls to Next(byref Key, byref Value).
             local
-            this.BucketsEnum  := HashTable.Buckets._NewEnum()
-            this.PreviousItem := ""
+            ; The _BucketsEnum and _PreviousItem properties are used to store
+            ; the stopping place across calls to Next(byref Key, byref Value).
+            this._BucketsEnum  := HashTable._Buckets._NewEnum()
+            this._PreviousItem := ""
             return this
         }
 
         Next(byref Key, byref Value)
         {
             local
-            if ((this.PreviousItem == "") or (this.PreviousItem.Next == ""))
+            if (this._PreviousItem == "" or this._PreviousItem.Next == "")
             {
-                Result := this.BucketsEnum.Next(Garbage, Item)
+                Result := this._BucketsEnum.Next(Garbage, Item)
             }
             else
             {
-                Item   := this.PreviousItem.Next
+                Item   := this._PreviousItem.Next
                 Result := true
             }
             if (Result)
             {
-                Key               := Item.Key
-                Value             := Item.Value
-                this.PreviousItem := Item
+                Key                := Item.Key
+                Value              := Item.Value
+                this._PreviousItem := Item
             }
             return Result
         }
@@ -231,7 +253,7 @@ class HashTable
     {
         local
         global HashTable
-        return new HashTable.Enum(this)
+        return new HashTable._Enum(this)
     }
 
     Clone()
@@ -240,7 +262,7 @@ class HashTable
         global HashTable
         Clone := new HashTable()
         ; Avoid rehashing when cloning.
-        for HashCode, Item in this.Buckets
+        for HashCode, Item in this._Buckets
         {
             PreviousCloneItem := ""
             while (Item != "")
@@ -259,9 +281,9 @@ class HashTable
                 PreviousCloneItem := CloneItem
                 Item              := Item.Next
             }
-            Clone.Buckets[HashCode] := Chain
+            Clone._Buckets[HashCode] := Chain
         }
-        Clone.Count := this.Count
+        Clone._Count := this._Count
         return Clone
     }
 }

@@ -1,0 +1,40 @@
+Facade follows some rules to make it resistant to breakage caused by changes to AutoHotkey:
+* It does not use hacks that depend on AutoHotkey's implementation details.
+* It does not assume more about types or interfaces than what is necessary to execute or guaranteed by the author.
+
+It abandons features that could be provided if these rules were broken.
+
+An earlier attempt that broke these rules to provide better error detection and reporting was destroyed by changes to AutoHotkey.
+
+Cases where Facade cannot report errors include
+* a member that does not exist is accessed
+* a function object is passed an incorrect number of arguments
+* a function object silently fails (e.g. built-ins when encountering an error)
+
+Cases where Facade does report errors include
+* a Facade function's string parameter is passed an incorrect type
+* a Facade function's numeric parameter is passed an incorrect type
+* a Facade function's numeric parameter is passed an incorrect value
+* a Facade function's integer parameter is passed an incorrect type
+* a Facade function's integer parameter is passed an incorrect value
+* a Facade function's function object parameter is passed an incorrect type
+* a Facade function's Obj (a value with members) parameter is passed a type with no members
+* a Facade function's dictionary (Object or HashTable) parameter is passed an incorrect type
+* a Facade function's Object (a dictionary) parameter is passed an incorrect type
+* a Facade function accesses an Object key that does not exist
+* a Facade function's Array parameter is passed an incorrect type
+* a Facade function's Array of length >= 1 parameter is passed an empty Array or a sparse Array with no element at index 1
+* a Facade function accesses an Array index that does not exist
+* a Facade function's HashTable parameter is passed an incorrect type
+* a Facade function's HashTable of count >= 1 parameter is passed an empty HashTable
+* a Facade function accesses a HashTable key that does not exist
+
+Facade's scope is limited to correcting AutoHotkey's design.  It attempts to coexist with the rest of the AutoHotkey ecosystem by converting from and to AutoHotkey's flawed data structures.  It only provides fully reified data structures that make sense when represented as key-value pairs.  To generate sequences, use a stream library.  To implement an efficient functional stack, use a singly linked list library.
+
+BoundFunc objects only support the Call(Args*) method.  That makes it impossible to write code that uses the Bind(Args*) method that works for all types of function objects.  That frustrates functional programming and programmers because partial application is a good way to construct closures and it makes code terse.  Facade does not require function objects passed to it to be bindable, but it guarantees function objects it constructs to be bindable and the function objects returned by their Bind(Args*) method to be bindable.  It does not guarantee other function object members are available because doing so is impossible.  The necessary information is not stored in BoundFunc objects.
+
+Numbers in notations AutoHotkey does not support (e.g. binary, and floating point numbers without a decimal point but with an exponent) or supports incorrectly (e.g. hexadecimal) are only converted to native values by explicitly calling Math_Int(X) and Math_Float(X).  Facade's bitwise operations do not coerce floating point numbers to integers.  When AutoHotkey v2 is released, making it possible to tell the difference between a number and a string containing a number, Facade will present an API without coercion.  That will make it possible to detect more errors.
+
+Array slices are half-open intervals because, like 0-based array indices, they have desirable mathematical properties.  When using 0-based array indexing, the slice that contains the Array is Array_Slice(Array, 0, Array.Length()).  Half-open intervals compose via concatenation.  Array slices clamp their indices because that makes it easy to get the first or last up to N elements of an Array when the Array might be less than N elements long.  Tolerating Start > Stop is a natural consequence of clamping the indices.  Using Start > Stop for reversal interacts with half-open intervals in undesirable ways (e.g. Array_Slice(Array, Array.Length(), 0) would not contain the Array reversed because Start is 1 past the end of the Array and Stop will exclude the first element).  Array slices do not have a Step parameter because I have never found a use for one other than reversing Arrays (by specifying a negative Step), and I already provided a function that reverses Arrays.  A reverse function is a better interface because it is simpler and it can be used by data structures that do not make sense to slice (e.g. singly linked lists).
+
+Nested’s interface is just Object’s interface made functional and recursive.  I considered differentiating between definition and the functional equivalent of mutation by providing a Def function that requires the last key of the Path to not be preexisting and a Set function that requires the last key of the Path to be preexisting.  Although this would detect errors caused by accidental redefinition and typos, it would cause errors by being inconsistent with the design of AutoHotkey and the typical design of a dictionary.  I considered having Set construct missing Path elements (if the key is a positive integer, an Array, else a HashTable).  Although this would be convenient for constructing nested dictionaries, it would hide errors caused by typos and it would be inconsistent with the expected behavior of all other functions in the Nested library.

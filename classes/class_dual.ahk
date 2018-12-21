@@ -2,58 +2,54 @@ class Dual {
 	;;; Settings.
 	; They are described in detail in the readme. Remember to mirror the defaults there.
 
-	settings := {delay: 150, timeout: 300, doublePress: 200}
+	settings := {delay: 70, timeout: 300, doublePress: 200, specificDelays: false}
 
 
 	;;; Public methods.
 	; They are described in the readme. Remember to mirror the function headers there.
 
+	; Note that a "key" might mean a combination of many keys, however it is often referred to as if
+	; it was only one key, to simplify things. Sometimes, though, a key is referred to as a set of
+	; subKeys. Keys taken as parameters in the `combine()`, `comboKey()` and `modifier()` methods
+	; can either be a single key as a string (`"LShift"`) or an array of keys (`["LShift",
+	; "LCtrl"]`). (See the `Dual.subKeySet() utility.`)
+
 	__New(settings=false) {
 		Dual.override(this.settings, settings)
 	}
 
-	combine(downKey, upKey, settings=false) {
+	combine(downKey, upKey, settings=false, combinators=false) {
 		currentKey := A_ThisHotkey
 		lastKey := A_PriorHotkey
-		keys := this.getKeysFor(currentKey, downKey, upKey, settings)
+		keys := this.getKeysFor(currentKey, downKey, upKey, settings, combinators)
 
 		; A single `=` means case insensitive comparison. `-1` means the last two characters.
-		if (SubStr(currentKey, -1) = "UP") {
-			keyState := "keyup"
-		} else {
-			keyState := "keydown"
-		}
+		keyState := (SubStr(currentKey, -1) = "UP") ? "keyup" : "keydown"
 		this[keyState](keys, currentKey, lastKey)
 	}
 
-	comboKey(remappingKey=false) {
-		this.combo()
-
-		if (remappingKey) {
-			key := remappingKey
-		} else {
-			key := Dual.cleanKey(A_ThisHotkey)
+	comboKey(remappingKey=false, combinators=false) {
+		; Allow `comboKey(combinators)`.
+		if (not combinators and IsObject(remappingKey)) {
+			combinators := remappingKey
+			remappingKey := false
 		}
-		Dual.sendInternal(key)
-	}
 
-	allModifiers := ["LShift", "RShift", "LCtrl", "RCtrl", "LAlt", "RAlt", "LWin", "RWin"]
-	reset() {
-		this.keys := {}
-		for index, modifier in this.allModifiers {
-			SendInput {%modifier% up}
-		}
+		this.combo(Dual.cleanKey(A_ThisHotkey))
+
+		key := remappingKey ? remappingKey : A_ThisHotkey
+		Dual.sendSubKeySet(key, combinators)
 	}
 
 	; `justReleasedDownKeyTimeDown` is not documented in the readme, since it is only used internally.
-	combo(justReleasedDownKeyTimeDown=-1) {
+	combo(currentKey, justReleasedDownKeyTimeDown=-1) {
 		shorterTimeDownKeys := []
 		for originalKey, keys in this.keys {
 			upKey := keys.upKey
 			downKey := keys.downKey
 			if (downKey.isDown) {
 				downKeyTimeDown := downKey.timeDown()
-				withinDelay := (downKeyTimeDown < keys.delay)
+				withinDelay := (downKeyTimeDown < keys.getDelay(currentKey))
 				if (downKeyTimeDown < justReleasedDownKeyTimeDown) {
 					; Let's say you've combined f with shift and d with control. You press down f,
 					; and then d, as to use a shift-control shortcut. However, you change your mind:
@@ -92,12 +88,16 @@ class Dual {
 	}
 
 	modifier(remappingKey=false) {
-		if (remappingKey) {
-			key := remappingKey
-		} else {
-			key := A_ThisHotkey
+		key := remappingKey ? remappingKey : A_ThisHotkey
+		this.combine(key, key, {delay: 0, timeout: 0, doublePress: -1, specificDelays: false})
+	}
+
+	allModifiers := ["LShift", "RShift", "LCtrl", "RCtrl", "LAlt", "RAlt", "LWin", "RWin"]
+	reset() {
+		this.keys := {}
+		for index, modifier in this.allModifiers {
+			SendInput {%modifier% up}
 		}
-		this.combine(key, key, {delay: 0, timeout: 0, doublePress: -1})
 	}
 
 	SendInput(string) {
@@ -150,22 +150,45 @@ class Dual {
 	}
 
 	keys := {}
-	getKeysFor(currentKey, downKey, upKey, settings) {
+	getKeysFor(currentKey, downKey, upKey, settings, combinators) {
 		cleanKey := Dual.cleanKey(currentKey)
 		if (this.keys[cleanKey]) {
 			keys := this.keys[cleanKey]
 		} else {
-			keys := new Dual.KeyPair(downKey, upKey, this.settings, settings)
+			keys := new Dual.KeyPair(downKey, upKey, this.settings, settings, combinators)
 			this.keys[cleanKey] := keys
 		}
 		return keys
 	}
 
 	class KeyPair {
-		__New(downKey, upKey, defaults, settings) {
+		__New(downKey, upKey, defaults, settings, combinators) {
 			this.downKey := new Dual.Key(downKey)
-			this.upKey   := new Dual.Key(upKey)
+			this.upKey   := new Dual.Key(upKey, combinators)
 			Dual.override(defaults, settings, {onto: this})
+
+			if (settings.specificDelays.extend) {
+				this.specificDelays.Remove("extend")
+				for keySet, delay in defaults.specificDelays {
+					if (not ObjHasKey(this.specificDelays, keySet)) {
+						this.specificDelays[keySet] := delay
+					}
+				}
+			}
+
+			this._specificDelays := []
+			for keySet, delay in this.specificDelays {
+				this._specificDelays.Insert({keySet: StrSplit(keySet, " "), delay: delay})
+			}
+		}
+
+		getDelay(key) {
+			for index, specificDelay in this._specificDelays {
+				if (Dual.contains(specificDelay.keySet, key)) {
+					return specificDelay.delay
+				}
+			}
+			return this.delay
 		}
 
 		; Releases a dual-role key that is held down, and sends its upKey, so that it behaves as if
@@ -179,22 +202,10 @@ class Dual {
 		}
 	}
 
-	; Note that a key might mean a combination of many keys, however it is referred to as if it was
-	; only one key, to simplify things. Sometimes, though, a key is referred to as a set of subKeys.
 	class Key {
-		__New(key) {
-			; As mentioned above, a key might mean a combination of many keys. Therefore, `key` is
-			; an array. However, mostly a single key will be used so a bare string is also accepted.
-			if (not IsObject(key)) {
-				key := [key]
-			}
-
-			; Support subKeys coming from `A_ThisHotkey`.
-			for index, subKey in key {
-				key[index] := Dual.cleanKey(subKey)
-			}
-
-			this.key := key
+		__New(key, combinators=false) {
+			this.key := Dual.subKeySet(key)
+			this.combinators := combinators
 		}
 
 		isDown := false
@@ -250,13 +261,16 @@ class Dual {
 
 		send() {
 			this._lastUpTime := A_TickCount
-			for index, key in this.key { ; (*)
-				Dual.sendInternal(key)
-			}
+			; `combinators` (if any) are only taken into account in this method, not in `down()` and
+			; `up()`, to keep things simple. It doesn't make sense to use combinators for the
+			; downKey, so it does not have `this.combinators`. In reality, only the downKey uses the
+			; `down()` and `up()` methods, and only the upKey uses the `send()` method. YAGNI for
+			; now.
+			Dual.sendSubKeySet(this.key, this.combinators) ; (*)
 		}
 
-		; (*) The `down()`, `up()` and `send()` methods send input in a loop, since a key might be
-		; a combination of keys, as mentioned before.
+		; (*) The `down()`, `up()` and `send()` (via `Dual.sendSubKeySet()`) methods send input in a
+		; loop, since a key might be a combination of keys, as mentioned before.
 
 		_timeDown := false
 		timeDown() {
@@ -310,7 +324,7 @@ class Dual {
 			and (downKeyTimeDown < keys.timeout or keys.timeout == -1)
 			and not upKey.alreadySend) {
 			; Dual-role keys are automatically comboKeys.
-			shorterTimeDownKeys := this.combo(downKeyTimeDown)
+			shorterTimeDownKeys := this.combo(Dual.cleanKey(currentKey), downKeyTimeDown)
 			; At this point, the upKey should be sent, mostly. However, there is one exception,
 			; explained in `combo()`.
 			if (shorterTimeDownKeys != false) { ; The exception referred to above.
@@ -335,7 +349,12 @@ class Dual {
 
 	; Cleans keys coming from `A_ThisHotkey`, which might look like `*j UP`.
 	cleanKey(key) {
-		return RegExReplace(key, "i)^[#!^+<>*~$]+| up$", "")
+		; Allow single `#`, `!`, `^` etc.
+		if (StrLen(key) == 1) {
+			return key
+		} else {
+			return RegExReplace(key, "i)^[#!^+<>*~$]+| up$", "")
+		}
 	}
 
 	static sentKeys := false
@@ -362,7 +381,6 @@ class Dual {
 			}
 			overrided[key] := value
 		}
-		return overrided
 	}
 
 	timeSince(time) {
@@ -371,5 +389,44 @@ class Dual {
 		} else {
 			return A_TickCount - time
 		}
+	}
+
+	subKeySet(key) {
+		; A key might mean a combination of many keys. Therefore, `key` is an array. However, mostly
+		; a single key will be used so a bare string is also accepted.
+		if (not IsObject(key)) {
+			key := [key]
+		}
+
+		; Support subKeys coming from `A_ThisHotkey`.
+		for index, subKey in key {
+			key[index] := Dual.cleanKey(subKey)
+		}
+
+		return key
+	}
+
+	sendSubKeySet(key, combinators=false) {
+		for combinator, resultingKey in combinators {
+			if (GetKeyState(combinator)) {
+				key := resultingKey
+				break
+			}
+		}
+
+		key := Dual.subKeySet(key)
+
+		for index, subKey in key {
+			Dual.sendInternal(subKey)
+		}
+	}
+
+	contains(array, searchItem) {
+		for index, item in array {
+			if (searchItem == item) {
+				return true
+			}
+		}
+		return false
 	}
 }
