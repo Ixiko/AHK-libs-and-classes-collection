@@ -20,10 +20,12 @@
 
 #Include StringHandling.ahk
 
-; ==============================================================================
+EnsureObj(BaseObject, Params*) {                                                                                                            	; creates an object following params* from the base object
+  
+  ; ==============================================================================
 ; ==============================================================================
 ; object EnsureObj(BaseObject, params*)
-; creates an object following params* from the base object
+
 ; Example:
 ; EnsureObj(BS, "Level1", "Level2", "Level3")
 ; creates:
@@ -31,9 +33,7 @@
 ; if it did not previously exist
 ; ==============================================================================
 ; ==============================================================================
-
-EnsureObj(BaseObject, Params*)
-{
+  
   If !(IsObject(BaseObject))
     BaseObject:=Object()
   TempBase:=BaseObject
@@ -46,19 +46,19 @@ EnsureObj(BaseObject, Params*)
   return, TempBase
 }
 
-; ==============================================================================
+TryKey(BaseObject, Params*) {                                                                                                                 	; tests if a key following params* from the base object exists
+  
+  ; ==============================================================================
 ; ==============================================================================
 ; boolean TryKey(BaseObject, params*)
-; tests if a key following params* from the base object exists
+
 ; Example:
 ; TryObject(BS, "Level1", "Level2", "Level3")
 ; returns true if:
 ; BS["Level1"]["Level2"]["Level3"] exists
 ; ==============================================================================
 ; ==============================================================================
-
-TryKey(BaseObject, Params*)
-{
+  
   If !(IsObject(BaseObject))
     return, 0
   TempBase:=BaseObject
@@ -77,10 +77,12 @@ TryKey(BaseObject, Params*)
   return, 1
 }
 
-; ==============================================================================
+TryObj(BaseObject, Params*) {                                                                                                                	; tests if an object following params* from the base object exists
+  
+  ; ==============================================================================
 ; ==============================================================================
 ; boolean TryObj(ByRef BaseObject, params*)
-; tests if an object following params* from the base object exists
+
 ; Example:
 ; TryObj(BS, "Level1", "Level2", "Level3")
 ; returns true if:
@@ -88,9 +90,7 @@ TryKey(BaseObject, Params*)
 ; exists
 ; ==============================================================================
 ; ==============================================================================
-
-TryObj(BaseObject, Params*)
-{
+  
   If !(IsObject(BaseObject))
     return, 0
   TempBase:=BaseObject
@@ -103,15 +103,7 @@ TryObj(BaseObject, Params*)
   return, 1
 }
 
-; ==============================================================================
-; ==============================================================================
-; integer ObjGetCount(BaseObject)
-; return the number of keys in an object
-; ==============================================================================
-; ==============================================================================
-
-ObjGetCount(BaseObject)
-{
+ObjGetCount(BaseObject) {                                                                                                                       	; return the number of keys in an object
   If !(IsObject(BaseObject))
     return, 0
   cnt:=0
@@ -122,10 +114,11 @@ ObjGetCount(BaseObject)
   return, cnt
 }
 
-; ==============================================================================
+ObjMerge(SourceObject, TargetObject, Mode="", CallBack="") {                                                           	; merges contents of SourceObject into TargetObject
+  
+  ; ==============================================================================
 ; ==============================================================================
 ; ObjMerge(SourceObject, TargetObject, Mode="", CallBack="")
-; merges contents of SourceObject into TargetObject
 ; Mode: w - overwrite, s - skip, else - warn through CallBack function
 ; Callback should return:
 ; -1: skip all
@@ -134,9 +127,7 @@ ObjGetCount(BaseObject)
 ; 2: overwrite all
 ; ==============================================================================
 ; ==============================================================================
-
-ObjMerge(SourceObject, TargetObject, Mode="", CallBack="")
-{
+  
   CBResultSave:=0
   for Index, Value in SourceObject
   {
@@ -191,15 +182,7 @@ ObjMerge(SourceObject, TargetObject, Mode="", CallBack="")
   }
 }
 
-; ==============================================================================
-; ==============================================================================
-; string ObjToStr(ByRef InObject)
-; attempts to output a string showing the structure and values of InObject
-; ==============================================================================
-; ==============================================================================
-
-ObjToStr(InObject, Depth=1)
-{
+ObjToStr(InObject, Depth=1) {                                                                                                                	; attempts to output a string showing the structure and values of InObject
   OutStr:=""
   DepthString:=""
   Loop, % Depth-2
@@ -243,10 +226,12 @@ ObjToStr(InObject, Depth=1)
   return, OutStr
 }
 
-; ==============================================================================
+ObjToTreeView(InObject, FormatFunc=0, MaxDepth=0, Depth=1, Parent=0) {                                     	; transfers data from InObject to the currently active TreeView control
+  
+  ; ==============================================================================
 ; ==============================================================================
 ; void ObjToTreeView(InObject, FormatObj=0, MaxDepth=0)
-; transfers data from InObject to the currently active TreeView control
+
 ; FormatObj can contain a callable reference to a function 
 ; FormatCallBack(Depth, Index, Value)
 ; that returns and object with the following keys:
@@ -257,9 +242,7 @@ ObjToStr(InObject, Depth=1)
 ;   RecurseInto : 1 to recurse into this object; 0 to stop (overrides MaxDepth)
 ; ==============================================================================
 ; ==============================================================================
-
-ObjToTreeView(InObject, FormatFunc=0, MaxDepth=0, Depth=1, Parent=0)
-{
+  
   thisItem:=0
   try
   {
@@ -319,16 +302,16 @@ ObjToTreeView(InObject, FormatFunc=0, MaxDepth=0, Depth=1, Parent=0)
   return thisItem
 }
 
-; ==============================================================================
+ObjToXML(InObject, Depth=1) {                                                                                                               	; attempts to output a string showing the structure and values of InObject as
+  
+  ; ==============================================================================
 ; ==============================================================================
 ; string ObjToXML(InObject)
-; attempts to output a string showing the structure and values of InObject as
+
 ; simplified XML
 ; ==============================================================================
 ; ==============================================================================
-
-ObjToXML(InObject, Depth=1)
-{
+  
   OutStr:=""
   DepthString:=""
   Loop, % Depth-1
@@ -366,15 +349,7 @@ ObjToXML(InObject, Depth=1)
   return, OutStr
 }
 
-; ==============================================================================
-; ==============================================================================
-; XMLToObj(BaseObject, InString)
-; attempts to convert simplified XML InString into an object in BaseObject
-; ==============================================================================
-; ==============================================================================
-
-XMLToObj(BaseObject, InString)
-{
+XMLToObj(BaseObject, InString) {                                                                                                             	; attempts to convert simplified XML InString into an object in BaseObject
   Value:=""
   CurrentLevel:=1
   KeyStarted:=0
@@ -423,16 +398,7 @@ XMLToObj(BaseObject, InString)
   }
 }
 
-
-; ==============================================================================
-; ==============================================================================
-; ObjSave(InObject, FileName, Mode="w")
-; saves the structure and values of InObject as simplified XML
-; ==============================================================================
-; ==============================================================================
-
-ObjSave(InObject, FileName, Mode="w")
-{
+ObjSave(InObject, FileName, Mode="w") {                                                                                                	; saves the structure and values of InObject as simplified XML
   FESave:=A_FileEncoding
   FileEncoding, UTF-16
   File:=FileOpen(FileName, Mode " `n")
@@ -450,15 +416,7 @@ ObjSave(InObject, FileName, Mode="w")
   return, rval
 }
 
-; ==============================================================================
-; ==============================================================================
-; ObjLoad(BaseObject, FileName)
-; loads the structure and values of an object from simplified XML
-; ==============================================================================
-; ==============================================================================
-
-ObjLoad(BaseObject, FileName)
-{
+ObjLoad(BaseObject, FileName) {                                                                                                             	; loads the structure and values of an object from simplified XML
   FileRead, InString, %FileName%
   XMLToObj(BaseObject, InString)
 }

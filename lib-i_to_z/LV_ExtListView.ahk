@@ -13,6 +13,7 @@
 ; ..............: May  06, 2014 - v2.0 - Complete rewrite of the library. Code more modular and updateable. Separated 
 ; ..............:                        code for De/Initialization, GetNextItem and GetItemText.
 ; ..............: Jul  24, 2017 - v2.1 - Fixed LVITEM size issue.
+
 ; 
 ; ----------------------------------------------------------------------------------------------------------------------
 
