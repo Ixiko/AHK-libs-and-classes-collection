@@ -15,6 +15,8 @@
 
 ###changes are made
 
+**[21.12.2018]** - small additions, remove doubles
+
 **[09.12.2018]** - added ~230 libs and classes
 
 **[07.11.2018]** - added ~500 hopefully new and unique library’s. So far I thought that Autohotkey is rather a small community compared to other programming languages, but I still find many files to add.
