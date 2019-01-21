@@ -31,7 +31,7 @@
 
 ## Index of all libs
 
-| **Nr** | **Library**                                        |
+| **Nr** | **Library**                                               |
 | :--- | :------------------------------------------- |
 | **0001** | [A.ahk](lib-a_to_h/A.ahk) |
 | **0002** | [ACC.ahk](lib-a_to_h/ACC.ahk) |
@@ -77,7 +77,7 @@
 | **0042** | [ApplicationFramework.ahk](lib-a_to_h/ApplicationFramework.ahk) |
 | **0043** | [ArchLogger.ahk](lib-a_to_h/ArchLogger.ahk) |
 | **0044** | [argp.ahk](lib-a_to_h/argp.ahk) |
-| **0045** | [Array Extensions.ahk](lib-a_to_h/Array Extensions.ahk) |
+| **0045** | [Array_Extensions.ahk](lib-a_to_h/Array Extensions.ahk) |
 | **0046** | [Array.ahk](lib-a_to_h/Array.ahk) |
 | **0047** | [array_.ahk](lib-a_to_h/array_.ahk) |
 | **0048** | [Array_Gui_ext.ahk](lib-a_to_h/Array_Gui_ext.ahk) |
@@ -133,9 +133,9 @@
 | **0098** | [ClearArray.ahk](lib-a_to_h/ClearArray.ahk) |
 | **0099** | [Clip.ahk](lib-a_to_h/Clip.ahk) |
 | **0100** | [Clip2Object.ahk](lib-a_to_h/Clip2Object.ahk) |
-| **0101** | [Clipboard Manager.ahk](lib-a_to_h/Clipboard Manager.ahk) |
+| **0101** | [Clipboard_Manager.ahk](lib-a_to_h/Clipboard Manager.ahk) |
 | **0102** | [ClipboardHelpers.ahk](lib-a_to_h/ClipboardHelpers.ahk) |
-| **0103** | [CLR (2).ahk](lib-a_to_h/CLR (2).ahk) |
+| **0103** | [CLR_(2).ahk](lib-a_to_h/CLR (2).ahk) |
 | **0104** | [CLR.ahk](lib-a_to_h/CLR.ahk) |
 | **0105** | [CMDret.ahk](lib-a_to_h/CMDret.ahk) |
 | **0106** | [CMDret_stream.ahk](lib-a_to_h/CMDret_stream.ahk) |
@@ -147,8 +147,8 @@
 | **0112** | [CoHelper.ahk](lib-a_to_h/CoHelper.ahk) |
 | **0113** | [Color.ahk](lib-a_to_h/Color.ahk) |
 | **0114** | [ColURL.ahk](lib-a_to_h/ColURL.ahk) |
-| **0115** | [com (2).ahk](lib-a_to_h/com (2).ahk) |
-| **0116** | [COM (3).ahk](lib-a_to_h/COM (3).ahk) |
+| **0115** | [com_(2).ahk](lib-a_to_h/com (2).ahk) |
+| **0116** | [COM_(3).ahk](lib-a_to_h/COM (3).ahk) |
 | **0117** | [com.ahk](lib-a_to_h/com.ahk) |
 | **0118** | [ComboX.ahk](lib-a_to_h/ComboX.ahk) |
 | **0119** | [ComDispatch.ahk](lib-a_to_h/ComDispatch.ahk) |
@@ -157,11 +157,11 @@
 | **0122** | [CommonDialogs.ahk](lib-a_to_h/CommonDialogs.ahk) |
 | **0123** | [COMo.ahk](lib-a_to_h/COMo.ahk) |
 | **0124** | [Compass.ahk](lib-a_to_h/Compass.ahk) |
-| **0125** | [compile to vpk.ahk](lib-a_to_h/compile to vpk.ahk) |
-| **0126** | [ComVar (2).ahk](lib-a_to_h/ComVar (2).ahk) |
+| **0125** | [compile_to_vpk.ahk](lib-a_to_h/compile to vpk.ahk) |
+| **0126** | [ComVar_(2).ahk](lib-a_to_h/ComVar (2).ahk) |
 | **0127** | [ComVar.ahk](lib-a_to_h/ComVar.ahk) |
 | **0128** | [ConnectedToInternet.ahk](lib-a_to_h/ConnectedToInternet.ahk) |
-| **0129** | [ConsoleApp v1.2.ahk](lib-a_to_h/ConsoleApp v1.2.ahk) |
+| **0129** | [ConsoleApp_v1.2.ahk](lib-a_to_h/ConsoleApp v1.2.ahk) |
 | **0130** | [ConsoleApp.ahk](lib-a_to_h/ConsoleApp.ahk) |
 | **0131** | [Container.ahk](lib-a_to_h/Container.ahk) |
 | **0132** | [Contains.ahk](lib-a_to_h/Contains.ahk) |
@@ -191,7 +191,7 @@
 | **0156** | [CryptBy_nnik.ahk](lib-a_to_h/CryptBy_nnik.ahk) |
 | **0157** | [CryptFoos.ahk](lib-a_to_h/CryptFoos.ahk) |
 | **0158** | [CSV.ahk](lib-a_to_h/CSV.ahk) |
-| **0159** | [CSV_Functions AHK_L.ahk](lib-a_to_h/CSV_Functions AHK_L.ahk) |
+| **0159** | [CSV_Functions_AHK_L.ahk](lib-a_to_h/CSV_Functions AHK_L.ahk) |
 | **0160** | [CtlColorStatic.ahk](lib-a_to_h/CtlColorStatic.ahk) |
 | **0161** | [cURL.ahk](lib-a_to_h/cURL.ahk) |
 | **0162** | [Cursor.ahk](lib-a_to_h/Cursor.ahk) |
@@ -251,7 +251,7 @@
 | **0216** | [dsound.ahk](lib-a_to_h/dsound.ahk) |
 | **0217** | [dSpeak.ahk](lib-a_to_h/dSpeak.ahk) |
 | **0218** | [DumpHistory.ahk](lib-a_to_h/DumpHistory.ahk) |
-| **0219** | [dwrite (2).ahk](lib-a_to_h/dwrite (2).ahk) |
+| **0219** | [dwrite_(2).ahk](lib-a_to_h/dwrite (2).ahk) |
 | **0220** | [dwrite.ahk](lib-a_to_h/dwrite.ahk) |
 | **0221** | [DynaExpr.ahk](lib-a_to_h/DynaExpr.ahk) |
 | **0222** | [DynamicInclude.ahk](lib-a_to_h/DynamicInclude.ahk) |
@@ -277,12 +277,12 @@
 | **0242** | [ExcelToObj.ahk](lib-a_to_h/ExcelToObj.ahk) |
 | **0243** | [Excel_Functions.ahk](lib-a_to_h/Excel_Functions.ahk) |
 | **0244** | [Exec.ahk](lib-a_to_h/Exec.ahk) |
-| **0245** | [ExecScript (2).ahk](lib-a_to_h/ExecScript (2).ahk) |
+| **0245** | [ExecScript_(2).ahk](lib-a_to_h/ExecScript (2).ahk) |
 | **0246** | [ExecScript.ahk](lib-a_to_h/ExecScript.ahk) |
 | **0247** | [ExeFunctions.ahk](lib-a_to_h/ExeFunctions.ahk) |
 | **0248** | [Expand.ahk](lib-a_to_h/Expand.ahk) |
 | **0249** | [ExpandPostIDs.ahk](lib-a_to_h/ExpandPostIDs.ahk) |
-| **0250** | [Explorer (2).ahk](lib-a_to_h/Explorer (2).ahk) |
+| **0250** | [Explorer_(2).ahk](lib-a_to_h/Explorer (2).ahk) |
 | **0251** | [Explorer.ahk](lib-a_to_h/Explorer.ahk) |
 | **0252** | [ExplorerGrouping.ahk](lib-a_to_h/ExplorerGrouping.ahk) |
 | **0253** | [ExplorerTool.ahk](lib-a_to_h/ExplorerTool.ahk) |
@@ -303,10 +303,10 @@
 | **0268** | [FcnLib.ahk](lib-a_to_h/FcnLib.ahk) |
 | **0269** | [FE.ahk](lib-a_to_h/FE.ahk) |
 | **0270** | [FFAAS.ahk](lib-a_to_h/FFAAS.ahk) |
-| **0271** | [FGP (2).ahk](lib-a_to_h/FGP (2).ahk) |
+| **0271** | [FGP_(2).ahk](lib-a_to_h/FGP (2).ahk) |
 | **0272** | [FGP.ahk](lib-a_to_h/FGP.ahk) |
 | **0273** | [Fifo.ahk](lib-a_to_h/Fifo.ahk) |
-| **0274** | [File (3).ahk](lib-a_to_h/File (3).ahk) |
+| **0274** | [File_(3).ahk](lib-a_to_h/File (3).ahk) |
 | **0275** | [File.ahk](lib-a_to_h/File.ahk) |
 | **0276** | [FileExtract.ahk](lib-a_to_h/FileExtract.ahk) |
 | **0277** | [FileFunctions_JEE.ahk](lib-a_to_h/FileFunctions_JEE.ahk) |
@@ -320,7 +320,7 @@
 | **0285** | [FileReplace.ahk](lib-a_to_h/FileReplace.ahk) |
 | **0286** | [FileSpeichern.ahk](lib-a_to_h/FileSpeichern.ahk) |
 | **0287** | [FileTail.ahk](lib-a_to_h/FileTail.ahk) |
-| **0288** | [FileVerInfo (2).ahk](lib-a_to_h/FileVerInfo (2).ahk) |
+| **0288** | [FileVerInfo_(2).ahk](lib-a_to_h/FileVerInfo (2).ahk) |
 | **0289** | [FileVerInfo.ahk](lib-a_to_h/FileVerInfo.ahk) |
 | **0290** | [FindClick.ahk](lib-a_to_h/FindClick.ahk) |
 | **0291** | [findexe.ahk](lib-a_to_h/findexe.ahk) |
@@ -328,14 +328,14 @@
 | **0293** | [FindLabel.ahk](lib-a_to_h/FindLabel.ahk) |
 | **0294** | [FindLimit.ahk](lib-a_to_h/FindLimit.ahk) |
 | **0295** | [FindMe.ahk](lib-a_to_h/FindMe.ahk) |
-| **0296** | [FindText on Screen.ahk](lib-a_to_h/FindText on Screen.ahk) |
+| **0296** | [FindText_on_Screen.ahk](lib-a_to_h/FindText on Screen.ahk) |
 | **0297** | [FixURI.ahk](lib-a_to_h/FixURI.ahk) |
 | **0298** | [FloatToFraction.ahk](lib-a_to_h/FloatToFraction.ahk) |
 | **0299** | [FlushDNS.ahk](lib-a_to_h/FlushDNS.ahk) |
 | **0300** | [Fnt.ahk](lib-a_to_h/Fnt.ahk) |
 | **0301** | [fn_CMsgBox.ahk](lib-a_to_h/fn_CMsgBox.ahk) |
 | **0302** | [Font.ahk](lib-a_to_h/Font.ahk) |
-| **0303** | [Form Filler.ahk](lib-a_to_h/Form Filler.ahk) |
+| **0303** | [Form_Filler.ahk](lib-a_to_h/Form Filler.ahk) |
 | **0304** | [Form.ahk](lib-a_to_h/Form.ahk) |
 | **0305** | [Format4Csv.ahk](lib-a_to_h/Format4Csv.ahk) |
 | **0306** | [FormatHRESULT.ahk](lib-a_to_h/FormatHRESULT.ahk) |
@@ -357,7 +357,7 @@
 | **0322** | [gdiplus_outlinedtext.ahk](lib-a_to_h/gdiplus_outlinedtext.ahk) |
 | **0323** | [GDIPrinter.ahk](lib-a_to_h/GDIPrinter.ahk) |
 | **0324** | [Gdip_AddPathBeziers.ahk](lib-a_to_h/Gdip_AddPathBeziers.ahk) |
-| **0325** | [Gdip_All (2).ahk](lib-a_to_h/Gdip_All (2).ahk) |
+| **0325** | [Gdip_All_(2).ahk](lib-a_to_h/Gdip_All (2).ahk) |
 | **0326** | [Gdip_All.ahk](lib-a_to_h/Gdip_All.ahk) |
 | **0327** | [Gdip_All_V2_V1_compatible.ahk](lib-a_to_h/Gdip_All_V2_V1_compatible.ahk) |
 | **0328** | [Gdip_draw_n_Gui.ahk](lib-a_to_h/Gdip_draw_n_Gui.ahk) |
@@ -475,7 +475,7 @@
 | **0440** | [IEControl.ahk](lib-i_to_z/IEControl.ahk) |
 | **0441** | [IEL.ahk](lib-i_to_z/IEL.ahk) |
 | **0442** | [IEReady.ahk](lib-i_to_z/IEReady.ahk) |
-| **0443** | [If Expression Test.ahk](lib-i_to_z/If Expression Test.ahk) |
+| **0443** | [If_Expression_Test.ahk](lib-i_to_z/If Expression Test.ahk) |
 | **0444** | [IfControlActive.ahk](lib-i_to_z/IfControlActive.ahk) |
 | **0445** | [Ignore.ahk](lib-i_to_z/Ignore.ahk) |
 | **0446** | [IL.ahk](lib-i_to_z/IL.ahk) |
@@ -495,7 +495,7 @@
 | **0460** | [IniSettingsEditor.ahk](lib-i_to_z/IniSettingsEditor.ahk) |
 | **0461** | [iniWrapper.ahk](lib-i_to_z/iniWrapper.ahk) |
 | **0462** | [InjectAhkDll.ahk](lib-i_to_z/InjectAhkDll.ahk) |
-| **0463** | [InjectDll (2).ahk](lib-i_to_z/InjectDll (2).ahk) |
+| **0463** | [InjectDll_(2).ahk](lib-i_to_z/InjectDll (2).ahk) |
 | **0464** | [InjectDllA.ahk](lib-i_to_z/InjectDllA.ahk) |
 | **0465** | [InMemoryWindowCapture.ahk](lib-i_to_z/InMemoryWindowCapture.ahk) |
 | **0466** | [InputThread.ahk](lib-i_to_z/InputThread.ahk) |
@@ -503,7 +503,7 @@
 | **0468** | [Install.ahk](lib-i_to_z/Install.ahk) |
 | **0469** | [Instance.ahk](lib-i_to_z/Instance.ahk) |
 | **0470** | [InternetFileRead.ahk](lib-i_to_z/InternetFileRead.ahk) |
-| **0471** | [InternetGetRedirect 20110825.ahk](lib-i_to_z/InternetGetRedirect 20110825.ahk) |
+| **0471** | [InternetGetRedirect_20110825.ahk](lib-i_to_z/InternetGetRedirect 20110825.ahk) |
 | **0472** | [InvBase64.ahk](lib-i_to_z/InvBase64.ahk) |
 | **0473** | [IPHelper.ahk](lib-i_to_z/IPHelper.ahk) |
 | **0474** | [IPToInt().ahk](lib-i_to_z/IPToInt().ahk) |
@@ -602,7 +602,7 @@
 | **0567** | [MCI.ahk](lib-i_to_z/MCI.ahk) |
 | **0568** | [MCode.ahk](lib-i_to_z/MCode.ahk) |
 | **0569** | [MCodeH.ahk](lib-i_to_z/MCodeH.ahk) |
-| **0570** | [md5 (2).ahk](lib-i_to_z/md5 (2).ahk) |
+| **0570** | [md5_(2).ahk](lib-i_to_z/md5 (2).ahk) |
 | **0571** | [md5.ahk](lib-i_to_z/md5.ahk) |
 | **0572** | [MD52.ahk](lib-i_to_z/MD52.ahk) |
 | **0573** | [MD5_File.ahk](lib-i_to_z/MD5_File.ahk) |
@@ -617,11 +617,11 @@
 | **0582** | [Menu.ahk](lib-i_to_z/Menu.ahk) |
 | **0583** | [Menu_SetSysMenu.ahk](lib-i_to_z/Menu_SetSysMenu.ahk) |
 | **0584** | [mg.ahk](lib-i_to_z/mg.ahk) |
-| **0585** | [MI (2).ahk](lib-i_to_z/MI (2).ahk) |
+| **0585** | [MI_(2).ahk](lib-i_to_z/MI (2).ahk) |
 | **0586** | [MI.ahk](lib-i_to_z/MI.ahk) |
 | **0587** | [Midi.ahk](lib-i_to_z/Midi.ahk) |
 | **0588** | [MiniDump.ahk](lib-i_to_z/MiniDump.ahk) |
-| **0589** | [MISC Functions.ahk](lib-i_to_z/MISC Functions.ahk) |
+| **0589** | [MISC_Functions.ahk](lib-i_to_z/MISC Functions.ahk) |
 | **0590** | [misc.ahk](lib-i_to_z/misc.ahk) |
 | **0591** | [Misc_Functions_2.ahk](lib-i_to_z/Misc_Functions_2.ahk) |
 | **0592** | [Monitor.ahk](lib-i_to_z/Monitor.ahk) |
@@ -631,7 +631,7 @@
 | **0596** | [MouseKeyboardCounter.ahk](lib-i_to_z/MouseKeyboardCounter.ahk) |
 | **0597** | [MouseMove_Ellipse.ahk](lib-i_to_z/MouseMove_Ellipse.ahk) |
 | **0598** | [MoveTaskbar.ahk](lib-i_to_z/MoveTaskbar.ahk) |
-| **0599** | [MPC-HC TimeCode.ahk](lib-i_to_z/MPC-HC TimeCode.ahk) |
+| **0599** | [MPC-HC_TimeCode.ahk](lib-i_to_z/MPC-HC TimeCode.ahk) |
 | **0600** | [msg.ahk](lib-i_to_z/msg.ahk) |
 | **0601** | [msTill.ahk](lib-i_to_z/msTill.ahk) |
 | **0602** | [Music.ahk](lib-i_to_z/Music.ahk) |
@@ -674,14 +674,14 @@
 | **0639** | [Path2.ahk](lib-i_to_z/Path2.ahk) |
 | **0640** | [patternScan.ahk](lib-i_to_z/patternScan.ahk) |
 | **0641** | [pbkdf2.ahk](lib-i_to_z/pbkdf2.ahk) |
-| **0642** | [PDF Renamer and Signer.ahk](lib-i_to_z/PDF Renamer and Signer.ahk) |
+| **0642** | [PDF_Renamer_and_Signer.ahk](lib-i_to_z/PDF Renamer and Signer.ahk) |
 | **0643** | [Pebwa.ahk](lib-i_to_z/Pebwa.ahk) |
 | **0644** | [PECreateEmpty.ahk](lib-i_to_z/PECreateEmpty.ahk) |
 | **0645** | [Perl.ahk](lib-i_to_z/Perl.ahk) |
 | **0646** | [pgArray.ahk](lib-i_to_z/pgArray.ahk) |
 | **0647** | [PHY.ahk](lib-i_to_z/PHY.ahk) |
-| **0648** | [PIG - Spy.ahk](lib-i_to_z/PIG - Spy.ahk) |
-| **0649** | [Ping (2).ahk](lib-i_to_z/Ping (2).ahk) |
+| **0648** | [PIG_-_Spy.ahk](lib-i_to_z/PIG - Spy.ahk) |
+| **0649** | [Ping_(2).ahk](lib-i_to_z/Ping (2).ahk) |
 | **0650** | [ping.ahk](lib-i_to_z/ping.ahk) |
 | **0651** | [ping2.ahk](lib-i_to_z/ping2.ahk) |
 | **0652** | [PipeRun.ahk](lib-i_to_z/PipeRun.ahk) |
@@ -708,11 +708,11 @@
 | **0673** | [QMsgBox.ahk](lib-i_to_z/QMsgBox.ahk) |
 | **0674** | [QMsgBox_foos.ahk](lib-i_to_z/QMsgBox_foos.ahk) |
 | **0675** | [Query.ahk](lib-i_to_z/Query.ahk) |
-| **0676** | [Quoted String Replace.ahk](lib-i_to_z/Quoted String Replace.ahk) |
+| **0676** | [Quoted_String_Replace.ahk](lib-i_to_z/Quoted String Replace.ahk) |
 | **0677** | [RaGrid.ahk](lib-i_to_z/RaGrid.ahk) |
 | **0678** | [rand.ahk](lib-i_to_z/rand.ahk) |
 | **0679** | [RandBezier.ahk](lib-i_to_z/RandBezier.ahk) |
-| **0680** | [Random jock StrX() Parsing.ahk](lib-i_to_z/Random jock StrX() Parsing.ahk) |
+| **0680** | [Random_jock_StrX()_Parsing.ahk](lib-i_to_z/Random jock StrX() Parsing.ahk) |
 | **0681** | [RandomBezier.ahk](lib-i_to_z/RandomBezier.ahk) |
 | **0682** | [randomdotorg.ahk](lib-i_to_z/randomdotorg.ahk) |
 | **0683** | [RandomiseArray.ahk](lib-i_to_z/RandomiseArray.ahk) |
@@ -737,9 +737,9 @@
 | **0702** | [RecordSetSqlLite.ahk](lib-i_to_z/RecordSetSqlLite.ahk) |
 | **0703** | [RedrawDB.ahk](lib-i_to_z/RedrawDB.ahk) |
 | **0704** | [ReFormatTime.ahk](lib-i_to_z/ReFormatTime.ahk) |
-| **0705** | [REG to VBS.ahk](lib-i_to_z/REG to VBS.ahk) |
+| **0705** | [REG_to_VBS.ahk](lib-i_to_z/REG to VBS.ahk) |
 | **0706** | [RegEasy.ahk](lib-i_to_z/RegEasy.ahk) |
-| **0707** | [RegEx (2).ahk](lib-i_to_z/RegEx (2).ahk) |
+| **0707** | [RegEx_(2).ahk](lib-i_to_z/RegEx (2).ahk) |
 | **0708** | [Regex.ahk](lib-i_to_z/Regex.ahk) |
 | **0709** | [RegExSort.ahk](lib-i_to_z/RegExSort.ahk) |
 | **0710** | [regionGetColor.Ahk](lib-i_to_z/regionGetColor.Ahk) |
@@ -765,7 +765,7 @@
 | **0730** | [ReverseSign.ahk](lib-i_to_z/ReverseSign.ahk) |
 | **0731** | [rgbToHex.ahk](lib-i_to_z/rgbToHex.ahk) |
 | **0732** | [RI.ahk](lib-i_to_z/RI.ahk) |
-| **0733** | [RichEdit OleCallback.ahk](lib-i_to_z/RichEdit OleCallback.ahk) |
+| **0733** | [RichEdit_OleCallback.ahk](lib-i_to_z/RichEdit OleCallback.ahk) |
 | **0734** | [RichEdit.ahk](lib-i_to_z/RichEdit.ahk) |
 | **0735** | [RichEdit_sample_test2.3.ahk](lib-i_to_z/RichEdit_sample_test2.3.ahk) |
 | **0736** | [RIni.ahk](lib-i_to_z/RIni.ahk) |
@@ -775,7 +775,7 @@
 | **0740** | [RunAsAdmin.ahk](lib-i_to_z/RunAsAdmin.ahk) |
 | **0741** | [runRemoteScript.AHK](lib-i_to_z/runRemoteScript.AHK) |
 | **0742** | [RXMS.ahk](lib-i_to_z/RXMS.ahk) |
-| **0743** | [SB (2).ahk](lib-i_to_z/SB (2).ahk) |
+| **0743** | [SB_(2).ahk](lib-i_to_z/SB (2).ahk) |
 | **0744** | [SB.ahk](lib-i_to_z/SB.ahk) |
 | **0745** | [sc.ahk](lib-i_to_z/sc.ahk) |
 | **0746** | [SC2_MemoryAndGeneralFunctions.ahk](lib-i_to_z/SC2_MemoryAndGeneralFunctions.ahk) |
@@ -785,7 +785,7 @@
 | **0750** | [SciteOutPut.ahk](lib-i_to_z/SciteOutPut.ahk) |
 | **0751** | [scriptCompile.ahk](lib-i_to_z/scriptCompile.ahk) |
 | **0752** | [scriptlib.ahk](lib-i_to_z/scriptlib.ahk) |
-| **0753** | [ScriptMem [Function].ahk](lib-i_to_z/ScriptMem [Function].ahk) |
+| **0753** | [ScriptMem_[Function].ahk](lib-i_to_z/ScriptMem [Function].ahk) |
 | **0754** | [ScriptParser.ahk](lib-i_to_z/ScriptParser.ahk) |
 | **0755** | [ScriptStruct.ahk](lib-i_to_z/ScriptStruct.ahk) |
 | **0756** | [ScrollBar.ahk](lib-i_to_z/ScrollBar.ahk) |
@@ -809,12 +809,12 @@
 | **0774** | [Settings.ahk](lib-i_to_z/Settings.ahk) |
 | **0775** | [SetWindowsHookEx.ahk](lib-i_to_z/SetWindowsHookEx.ahk) |
 | **0776** | [SGDIPrint.ahk](lib-i_to_z/SGDIPrint.ahk) |
-| **0777** | [SHA256 WITH HMAC.ahk](lib-i_to_z/SHA256 WITH HMAC.ahk) |
+| **0777** | [SHA256_WITH_HMAC.ahk](lib-i_to_z/SHA256 WITH HMAC.ahk) |
 | **0778** | [shell.ahk](lib-i_to_z/shell.ahk) |
 | **0779** | [ShellContextMenu.ahk](lib-i_to_z/ShellContextMenu.ahk) |
 | **0780** | [ShellContextMenu2.ahk](lib-i_to_z/ShellContextMenu2.ahk) |
 | **0781** | [ShellFileOperation.ahk](lib-i_to_z/ShellFileOperation.ahk) |
-| **0782** | [Show menu.ahk](lib-i_to_z/Show menu.ahk) |
+| **0782** | [Show_menu.ahk](lib-i_to_z/Show menu.ahk) |
 | **0783** | [showabout.ahk](lib-i_to_z/showabout.ahk) |
 | **0784** | [ShowGif().ahk](lib-i_to_z/ShowGif().ahk) |
 | **0785** | [ShowHide.ahk](lib-i_to_z/ShowHide.ahk) |
@@ -850,7 +850,7 @@
 | **0815** | [StartServiceCtrlDispatcher.ahk](lib-i_to_z/StartServiceCtrlDispatcher.ahk) |
 | **0816** | [start_with_windows.ahk](lib-i_to_z/start_with_windows.ahk) |
 | **0817** | [StayOnMonitor.ahk](lib-i_to_z/StayOnMonitor.ahk) |
-| **0818** | [StdOutToVar (2).ahk](lib-i_to_z/StdOutToVar (2).ahk) |
+| **0818** | [StdOutToVar_(2).ahk](lib-i_to_z/StdOutToVar (2).ahk) |
 | **0819** | [StdoutToVar.ahk](lib-i_to_z/StdoutToVar.ahk) |
 | **0820** | [stopwatch.ahk](lib-i_to_z/stopwatch.ahk) |
 | **0821** | [Str.ahk](lib-i_to_z/Str.ahk) |
@@ -887,8 +887,8 @@
 | **0852** | [TaskBar_SetAttr.ahk](lib-i_to_z/TaskBar_SetAttr.ahk) |
 | **0853** | [TaskButton(differentVersion).ahk](lib-i_to_z/TaskButton(differentVersion).ahk) |
 | **0854** | [TaskButton.ahk](lib-i_to_z/TaskButton.ahk) |
-| **0855** | [TaskDialog (2).ahk](lib-i_to_z/TaskDialog (2).ahk) |
-| **0856** | [TaskDialog and more.ahk](lib-i_to_z/TaskDialog and more.ahk) |
+| **0855** | [TaskDialog_(2).ahk](lib-i_to_z/TaskDialog (2).ahk) |
+| **0856** | [TaskDialog_and_more.ahk](lib-i_to_z/TaskDialog and more.ahk) |
 | **0857** | [TaskDialog.ahk](lib-i_to_z/TaskDialog.ahk) |
 | **0858** | [TaskDialogEx.ahk](lib-i_to_z/TaskDialogEx.ahk) |
 | **0859** | [TaskTrayIcon.ahk](lib-i_to_z/TaskTrayIcon.ahk) |
@@ -909,7 +909,7 @@
 | **0874** | [Timer.ahk](lib-i_to_z/Timer.ahk) |
 | **0875** | [Title.ahk](lib-i_to_z/Title.ahk) |
 | **0876** | [TLLib.ahk](lib-i_to_z/TLLib.ahk) |
-| **0877** | [TO TextOverlay.ahk](lib-i_to_z/TO TextOverlay.ahk) |
+| **0877** | [TO_TextOverlay.ahk](lib-i_to_z/TO TextOverlay.ahk) |
 | **0878** | [TO.ahk](lib-i_to_z/TO.ahk) |
 | **0879** | [ToChar.ahk](lib-i_to_z/ToChar.ahk) |
 | **0880** | [todWulff.ahk](lib-i_to_z/todWulff.ahk) |
@@ -925,11 +925,11 @@
 | **0890** | [ToUInt.ahk](lib-i_to_z/ToUInt.ahk) |
 | **0891** | [ToUShort.ahk](lib-i_to_z/ToUShort.ahk) |
 | **0892** | [TransButtonsv1.ahk](lib-i_to_z/TransButtonsv1.ahk) |
-| **0893** | [translate_google_api AHKV2.ahk](lib-i_to_z/translate_google_api AHKV2.ahk) |
+| **0893** | [translate_google_api_AHKV2.ahk](lib-i_to_z/translate_google_api AHKV2.ahk) |
 | **0894** | [TransSplashText.ahk](lib-i_to_z/TransSplashText.ahk) |
 | **0895** | [Tray.ahk](lib-i_to_z/Tray.ahk) |
-| **0896** | [TrayIcon (2).ahk](lib-i_to_z/TrayIcon (2).ahk) |
-| **0897** | [TrayIcon (3).ahk](lib-i_to_z/TrayIcon (3).ahk) |
+| **0896** | [TrayIcon_(2).ahk](lib-i_to_z/TrayIcon (2).ahk) |
+| **0897** | [TrayIcon_(3).ahk](lib-i_to_z/TrayIcon (3).ahk) |
 | **0898** | [TrayIcon.ahk](lib-i_to_z/TrayIcon.ahk) |
 | **0899** | [TrayRefresh.ahk](lib-i_to_z/TrayRefresh.ahk) |
 | **0900** | [trksyln.ahk](lib-i_to_z/trksyln.ahk) |
@@ -964,7 +964,7 @@
 | **0929** | [Util.ahk](lib-i_to_z/Util.ahk) |
 | **0930** | [uuid.ahk](lib-i_to_z/uuid.ahk) |
 | **0931** | [UUIDCreate.ahk](lib-i_to_z/UUIDCreate.ahk) |
-| **0932** | [VA (2).ahk](lib-i_to_z/VA (2).ahk) |
+| **0932** | [VA_(2).ahk](lib-i_to_z/VA (2).ahk) |
 | **0933** | [VA.ahk](lib-i_to_z/VA.ahk) |
 | **0934** | [ValidIP.ahk](lib-i_to_z/ValidIP.ahk) |
 | **0935** | [VarHistory.ahk](lib-i_to_z/VarHistory.ahk) |
@@ -984,7 +984,7 @@
 | **0949** | [WakeOnLan.ahk](lib-i_to_z/WakeOnLan.ahk) |
 | **0950** | [wam.ahk](lib-i_to_z/wam.ahk) |
 | **0951** | [WAnim.ahk](lib-i_to_z/WAnim.ahk) |
-| **0952** | [WatchDirectory (2).ahk](lib-i_to_z/WatchDirectory (2).ahk) |
+| **0952** | [WatchDirectory_(2).ahk](lib-i_to_z/WatchDirectory (2).ahk) |
 | **0953** | [WatchDirectory.ahk](lib-i_to_z/WatchDirectory.ahk) |
 | **0954** | [WBImg.ahk](lib-i_to_z/WBImg.ahk) |
 | **0955** | [web.ahk](lib-i_to_z/web.ahk) |
@@ -999,7 +999,7 @@
 | **0964** | [WinClip.ahk](lib-i_to_z/WinClip.ahk) |
 | **0965** | [WinClipAPI.ahk](lib-i_to_z/WinClipAPI.ahk) |
 | **0966** | [WINDERS.ahk](lib-i_to_z/WINDERS.ahk) |
-| **0967** | [Window Roller.ahk](lib-i_to_z/Window Roller.ahk) |
+| **0967** | [Window_Roller.ahk](lib-i_to_z/Window Roller.ahk) |
 | **0968** | [WindowFromPoint.ahk](lib-i_to_z/WindowFromPoint.ahk) |
 | **0969** | [WindowFromRect.ahk](lib-i_to_z/WindowFromRect.ahk) |
 | **0970** | [WindowPad.ahk](lib-i_to_z/WindowPad.ahk) |
@@ -1008,7 +1008,7 @@
 | **0973** | [WindowsLogs.ahk](lib-i_to_z/WindowsLogs.ahk) |
 | **0974** | [WinEnum.ahk](lib-i_to_z/WinEnum.ahk) |
 | **0975** | [WinEvents.ahk](lib-i_to_z/WinEvents.ahk) |
-| **0976** | [WinGetAll (2).ahk](lib-i_to_z/WinGetAll (2).ahk) |
+| **0976** | [WinGetAll_(2).ahk](lib-i_to_z/WinGetAll (2).ahk) |
 | **0977** | [WinGetAll.ahk](lib-i_to_z/WinGetAll.ahk) |
 | **0978** | [WinGetAtCoords.ahk](lib-i_to_z/WinGetAtCoords.ahk) |
 | **0979** | [WinGetPidList.ahk](lib-i_to_z/WinGetPidList.ahk) |
@@ -1023,7 +1023,7 @@
 | **0988** | [WinSet_NoActivate.ahk](lib-i_to_z/WinSet_NoActivate.ahk) |
 | **0989** | [WinSock2.ahk](lib-i_to_z/WinSock2.ahk) |
 | **0990** | [WinSysMenuApi.ahk](lib-i_to_z/WinSysMenuApi.ahk) |
-| **0991** | [winvisible (2).ahk](lib-i_to_z/winvisible (2).ahk) |
+| **0991** | [winvisible_(2).ahk](lib-i_to_z/winvisible (2).ahk) |
 | **0992** | [WinVisible.ahk](lib-i_to_z/WinVisible.ahk) |
 | **0993** | [WLAN.ahk](lib-i_to_z/WLAN.ahk) |
 | **0994** | [Wmic_Win32_FunctionLog.ahk](lib-i_to_z/Wmic_Win32_FunctionLog.ahk) |
@@ -1047,7 +1047,7 @@
 | **1012** | [XMLHTTP_Request.ahk](lib-i_to_z/XMLHTTP_Request.ahk) |
 | **1013** | [xpath.ahk](lib-i_to_z/xpath.ahk) |
 | **1014** | [Yaml.ahk](lib-i_to_z/Yaml.ahk) |
-| **1015** | [youtube (not tested).ahk](lib-i_to_z/youtube (not tested).ahk) |
+| **1015** | [youtube_(not_tested).ahk](lib-i_to_z/youtube (not tested).ahk) |
 | **1016** | [Zip.ahk](lib-i_to_z/Zip.ahk) |
 | **1017** | [ZipFile.ahk](lib-i_to_z/ZipFile.ahk) |
 | **1018** | [ZipFileRaw.ahk](lib-i_to_z/ZipFileRaw.ahk) |
@@ -1095,7 +1095,7 @@
 | **1060** | [Class_Console.ahk](classes/Class_Console.ahk) |
 | **1061** | [class_CP.ahk](classes/class_CP.ahk) |
 | **1062** | [Class_CreateFormData.ahk](classes/Class_CreateFormData.ahk) |
-| **1063** | [class_Crypt (2).ahk](classes/class_Crypt (2).ahk) |
+| **1063** | [class_Crypt_(2).ahk](classes/class_Crypt (2).ahk) |
 | **1064** | [class_Crypt.ahk](classes/class_Crypt.ahk) |
 | **1065** | [class_CryptConst.ahk](classes/class_CryptConst.ahk) |
 | **1066** | [Class_CStruct.ahk](classes/Class_CStruct.ahk) |
@@ -1125,7 +1125,7 @@
 | **1090** | [class_gdipChart.ahk](classes/class_gdipChart.ahk) |
 | **1091** | [Class_GdipSnapshot.ahk](classes/Class_GdipSnapshot.ahk) |
 | **1092** | [Class_GdipTooltip.ahk](classes/Class_GdipTooltip.ahk) |
-| **1093** | [Class_Github (2).ahk](classes/Class_Github (2).ahk) |
+| **1093** | [Class_Github_(2).ahk](classes/Class_Github (2).ahk) |
 | **1094** | [class_Github.ahk](classes/class_Github.ahk) |
 | **1095** | [Class_Github_Gui.ahk](classes/Class_Github_Gui.ahk) |
 | **1096** | [class_GroupSort.ahk](classes/class_GroupSort.ahk) |
@@ -1138,7 +1138,7 @@
 | **1103** | [class_HashTable_small.ahk](classes/class_HashTable_small.ahk) |
 | **1104** | [class_hashTable_v1.ahk](classes/class_hashTable_v1.ahk) |
 | **1105** | [class_HL7.ahk](classes/class_HL7.ahk) |
-| **1106** | [Class_Hotkey (2).ahk](classes/Class_Hotkey (2).ahk) |
+| **1106** | [Class_Hotkey_(2).ahk](classes/Class_Hotkey (2).ahk) |
 | **1107** | [Class_Hotkey.ahk](classes/Class_Hotkey.ahk) |
 | **1108** | [Class_Hotkey_example.ahk](classes/Class_Hotkey_example.ahk) |
 | **1109** | [class_iAutoComplete.ahk](classes/class_iAutoComplete.ahk) |
@@ -1153,7 +1153,7 @@
 | **1118** | [Class_IPHelper.ahk](classes/Class_IPHelper.ahk) |
 | **1119** | [class_IUIAutomationEventHandler.ahk](classes/class_IUIAutomationEventHandler.ahk) |
 | **1120** | [class_IUIAutomationEventHandler_extended.ahk](classes/class_IUIAutomationEventHandler_extended.ahk) |
-| **1121** | [Class_JSON (2).ahk](classes/Class_JSON (2).ahk) |
+| **1121** | [Class_JSON_(2).ahk](classes/Class_JSON (2).ahk) |
 | **1122** | [Class_JSON.ahk](classes/Class_JSON.ahk) |
 | **1123** | [class_JSONFile.ahk](classes/class_JSONFile.ahk) |
 | **1124** | [class_JsRT.ahk](classes/class_JsRT.ahk) |
@@ -1172,8 +1172,8 @@
 | **1137** | [class_Mailslot.ahk](classes/class_Mailslot.ahk) |
 | **1138** | [class_MailslotEx.ahk](classes/class_MailslotEx.ahk) |
 | **1139** | [class_MemBlk.ahk](classes/class_MemBlk.ahk) |
-| **1140** | [Class_Memory (2).ahk](classes/Class_Memory (2).ahk) |
-| **1141** | [Class_Memory (3).ahk](classes/Class_Memory (3).ahk) |
+| **1140** | [Class_Memory_(2).ahk](classes/Class_Memory (2).ahk) |
+| **1141** | [Class_Memory_(3).ahk](classes/Class_Memory (3).ahk) |
 | **1142** | [class_Memory.ahk](classes/class_Memory.ahk) |
 | **1143** | [class_MemoryBuffer.ahk](classes/class_MemoryBuffer.ahk) |
 | **1144** | [class_Mem_Injection.ahk](classes/class_Mem_Injection.ahk) |
@@ -1186,7 +1186,7 @@
 | **1151** | [class_MouseHook.ahk](classes/class_MouseHook.ahk) |
 | **1152** | [class_MsgBox.ahk](classes/class_MsgBox.ahk) |
 | **1153** | [Class_Multipart.ahk](classes/Class_Multipart.ahk) |
-| **1154** | [class_MultiTree Data Structure.ahk](classes/class_MultiTree Data Structure.ahk) |
+| **1154** | [class_MultiTree_Data_Structure.ahk](classes/class_MultiTree Data Structure.ahk) |
 | **1155** | [Class_MySQLAPI.ahk](classes/Class_MySQLAPI.ahk) |
 | **1156** | [Class_NetworkManagement.ahk](classes/Class_NetworkManagement.ahk) |
 | **1157** | [class_ObjectCheck.ahk](classes/class_ObjectCheck.ahk) |
@@ -1223,9 +1223,9 @@
 | **1188** | [class_Subtitle.ahk](classes/class_Subtitle.ahk) |
 | **1189** | [class_SyntaxTree.ahk](classes/class_SyntaxTree.ahk) |
 | **1190** | [class_SystemTime.ahk](classes/class_SystemTime.ahk) |
-| **1191** | [class_tableList (2).ahk](classes/class_tableList (2).ahk) |
+| **1191** | [class_tableList_(2).ahk](classes/class_tableList (2).ahk) |
 | **1192** | [class_tableList.ahk](classes/class_tableList.ahk) |
-| **1193** | [class_tableListMod (2).ahk](classes/class_tableListMod (2).ahk) |
+| **1193** | [class_tableListMod_(2).ahk](classes/class_tableListMod (2).ahk) |
 | **1194** | [class_tableListMod.ahk](classes/class_tableListMod.ahk) |
 | **1195** | [class_taskbarInterface_v2.ahk](classes/class_taskbarInterface_v2.ahk) |
 | **1196** | [class_Tesseract.ahk](classes/class_Tesseract.ahk) |
@@ -1252,11 +1252,11 @@
 | **1217** | [class_XNet.ahk](classes/class_XNet.ahk) |
 | **1218** | [CCF.ahk](classes/CCF.ahk) |
 | **1219** | [CCFramework.ahk](classes/CCFramework.ahk) |
-| **1220** | [ImageList Header.ahk](classes/ImageList Header.ahk) |
+| **1220** | [ImageList_Header.ahk](classes/ImageList Header.ahk) |
 | **1221** | [SaveHImage2File.ahk](classes/SaveHImage2File.ahk) |
-| **1222** | [TaskbarList Header.ahk](classes/TaskbarList Header.ahk) |
-| **1223** | [Type Information Header.ahk](classes/Type Information Header.ahk) |
-| **1224** | [UIAutomation Header.ahk](classes/UIAutomation Header.ahk) |
+| **1222** | [TaskbarList_Header.ahk](classes/TaskbarList Header.ahk) |
+| **1223** | [Type_Information_Header.ahk](classes/Type Information Header.ahk) |
+| **1224** | [UIAutomation_Header.ahk](classes/UIAutomation Header.ahk) |
 | **1225** | [_CCF_Error_Handler_.ahk](classes/_CCF_Error_Handler_.ahk) |
 | **1226** | [CALLCONV.ahk](classes/CALLCONV.ahk) |
 | **1227** | [CF.ahk](classes/CF.ahk) |
@@ -1465,8 +1465,8 @@
 | **1430** | [dsound.h.ahk](more libs/dsound.h.ahk) |
 | **1431** | [gl.h.ahk](more libs/gl.h.ahk) |
 | **1432** | [HeaderParser.ahk](more libs/HeaderParser.ahk) |
-| **1433** | [parser Directx1-10.ahk](more libs/parser Directx1-10.ahk) |
-| **1434** | [parser Directx11, DirectShow.ahk](more libs/parser Directx11, DirectShow.ahk) |
+| **1433** | [parser_Directx1-10.ahk](more libs/parser Directx1-10.ahk) |
+| **1434** | [parser_Directx11,_DirectShow.ahk](more libs/parser Directx11, DirectShow.ahk) |
 | **1435** | [_d3D.h.ahk](more libs/_d3D.h.ahk) |
 | **1436** | [_d3D11.ahk](more libs/_d3D11.ahk) |
 | **1437** | [_d3D9.h.ahk](more libs/_d3D9.h.ahk) |
@@ -1497,36 +1497,36 @@
 | **1462** | [SHDoDragDrop_Sample.ahk](more libs/SHDoDragDrop_Sample.ahk) |
 | **1463** | [DX9_overlay.ahk](more libs/DX9_overlay.ahk) |
 | **1464** | [framerate.ahk](more libs/framerate.ahk) |
-| **1465** | [hello world.ahk](more libs/hello world.ahk) |
+| **1465** | [hello_world.ahk](more libs/hello world.ahk) |
 | **1466** | [priority.ahk](more libs/priority.ahk) |
 | **1467** | [samp.ahk](more libs/samp.ahk) |
 | **1468** | [samp_health_overlay.ahk](more libs/samp_health_overlay.ahk) |
-| **1469** | [Example - Append.ahk](more libs/Example - Append.ahk) |
-| **1470** | [Example - Auto set tab stops.ahk](more libs/Example - Auto set tab stops.ahk) |
-| **1471** | [Example - Background color.ahk](more libs/Example - Background color.ahk) |
-| **1472** | [Example - Balloon tip.ahk](more libs/Example - Balloon tip.ahk) |
-| **1473** | [Example - Cue banner.ahk](more libs/Example - Cue banner.ahk) |
-| **1474** | [Example - Drag & drop.ahk](more libs/Example - Drag & drop.ahk) |
-| **1475** | [Example - Edit control on a ListView control.ahk](more libs/Example - Edit control on a ListView control.ahk) |
-| **1476** | [Example - Enable, Disable, and ReadOnly.ahk](more libs/Example - Enable, Disable, and ReadOnly.ahk) |
-| **1477** | [Example - General.ahk](more libs/Example - General.ahk) |
-| **1478** | [Example - GetComboBoxEdit.ahk](more libs/Example - GetComboBoxEdit.ahk) |
-| **1479** | [Example - InputBox.ahk](more libs/Example - InputBox.ahk) |
-| **1480** | [Example - Limit text.ahk](more libs/Example - Limit text.ahk) |
-| **1481** | [Example - Mouse in selection.ahk](more libs/Example - Mouse in selection.ahk) |
-| **1482** | [Example - Password.ahk](more libs/Example - Password.ahk) |
-| **1483** | [Example - Position from coordinates.ahk](more libs/Example - Position from coordinates.ahk) |
-| **1484** | [Example - Prepend.ahk](more libs/Example - Prepend.ahk) |
-| **1485** | [Example - Scroll bars.ahk](more libs/Example - Scroll bars.ahk) |
-| **1486** | [Example - Scroll bars; Automatically show or hide.ahk](more libs/Example - Scroll bars; Automatically show or hide.ahk) |
-| **1487** | [Example - Scroll.ahk](more libs/Example - Scroll.ahk) |
-| **1488** | [Example - Set font.ahk](more libs/Example - Set font.ahk) |
-| **1489** | [Example - Set margins.ahk](more libs/Example - Set margins.ahk) |
-| **1490** | [Example - Spell check - 1.ahk](more libs/Example - Spell check - 1.ahk) |
-| **1491** | [Example - Spell check - 2.ahk](more libs/Example - Spell check - 2.ahk) |
-| **1492** | [Example - Style.ahk](more libs/Example - Style.ahk) |
-| **1493** | [Example - Text-To-Speech.ahk](more libs/Example - Text-To-Speech.ahk) |
-| **1494** | [Example - Validate as you type.ahk](more libs/Example - Validate as you type.ahk) |
+| **1469** | [Example_-_Append.ahk](more libs/Example - Append.ahk) |
+| **1470** | [Example_-_Auto_set_tab_stops.ahk](more libs/Example - Auto set tab stops.ahk) |
+| **1471** | [Example_-_Background_color.ahk](more libs/Example - Background color.ahk) |
+| **1472** | [Example_-_Balloon_tip.ahk](more libs/Example - Balloon tip.ahk) |
+| **1473** | [Example_-_Cue_banner.ahk](more libs/Example - Cue banner.ahk) |
+| **1474** | [Example_-_Drag_&_drop.ahk](more libs/Example - Drag & drop.ahk) |
+| **1475** | [Example_-_Edit_control_on_a_ListView_control.ahk](more libs/Example - Edit control on a ListView control.ahk) |
+| **1476** | [Example_-_Enable,_Disable,_and_ReadOnly.ahk](more libs/Example - Enable, Disable, and ReadOnly.ahk) |
+| **1477** | [Example_-_General.ahk](more libs/Example - General.ahk) |
+| **1478** | [Example_-_GetComboBoxEdit.ahk](more libs/Example - GetComboBoxEdit.ahk) |
+| **1479** | [Example_-_InputBox.ahk](more libs/Example - InputBox.ahk) |
+| **1480** | [Example_-_Limit_text.ahk](more libs/Example - Limit text.ahk) |
+| **1481** | [Example_-_Mouse_in_selection.ahk](more libs/Example - Mouse in selection.ahk) |
+| **1482** | [Example_-_Password.ahk](more libs/Example - Password.ahk) |
+| **1483** | [Example_-_Position_from_coordinates.ahk](more libs/Example - Position from coordinates.ahk) |
+| **1484** | [Example_-_Prepend.ahk](more libs/Example - Prepend.ahk) |
+| **1485** | [Example_-_Scroll_bars.ahk](more libs/Example - Scroll bars.ahk) |
+| **1486** | [Example_-_Scroll_bars;_Automatically_show_or_hide.ahk](more libs/Example - Scroll bars; Automatically show or hide.ahk) |
+| **1487** | [Example_-_Scroll.ahk](more libs/Example - Scroll.ahk) |
+| **1488** | [Example_-_Set_font.ahk](more libs/Example - Set font.ahk) |
+| **1489** | [Example_-_Set_margins.ahk](more libs/Example - Set margins.ahk) |
+| **1490** | [Example_-_Spell_check_-_1.ahk](more libs/Example - Spell check - 1.ahk) |
+| **1491** | [Example_-_Spell_check_-_2.ahk](more libs/Example - Spell check - 2.ahk) |
+| **1492** | [Example_-_Style.ahk](more libs/Example - Style.ahk) |
+| **1493** | [Example_-_Text-To-Speech.ahk](more libs/Example - Text-To-Speech.ahk) |
+| **1494** | [Example_-_Validate_as_you_type.ahk](more libs/Example - Validate as you type.ahk) |
 | **1495** | [AddTooltip.ahk](more libs/AddTooltip.ahk) |
 | **1496** | [Dlg2.ahk](more libs/Dlg2.ahk) |
 | **1497** | [Edit.ahk](more libs/Edit.ahk) |
@@ -1586,9 +1586,9 @@
 | **1551** | [gcc.ahk](more libs/gcc.ahk) |
 | **1552** | [VSCompiler.ahk](more libs/VSCompiler.ahk) |
 | **1553** | [MCodeExPackage.ahk](more libs/MCodeExPackage.ahk) |
-| **1554** | [Example1 - MsgBoxW.ahk](more libs/Example1 - MsgBoxW.ahk) |
-| **1555** | [Example2 - GetOpenFileNameW.ahk](more libs/Example2 - GetOpenFileNameW.ahk) |
-| **1556** | [Example3 - InjectAhkDll.ahk](more libs/Example3 - InjectAhkDll.ahk) |
+| **1554** | [Example1_-_MsgBoxW.ahk](more libs/Example1 - MsgBoxW.ahk) |
+| **1555** | [Example2_-_GetOpenFileNameW.ahk](more libs/Example2 - GetOpenFileNameW.ahk) |
+| **1556** | [Example3_-_InjectAhkDll.ahk](more libs/Example3 - InjectAhkDll.ahk) |
 | **1557** | [InjectAhkDll.ahk](more libs/InjectAhkDll.ahk) |
 | **1558** | [MinHook.ahk](more libs/MinHook.ahk) |
 | **1559** | [sizeof.ahk](more libs/sizeof.ahk) |
@@ -1761,20 +1761,20 @@
 | **1726** | [hookSend.ahk](more libs/hookSend.ahk) |
 | **1727** | [inputUnicode.ahk](more libs/inputUnicode.ahk) |
 | **1728** | [SendInput.ahk](more libs/SendInput.ahk) |
-| **1729** | [Example - Close Tab - 1.ahk](more libs/Example - Close Tab - 1.ahk) |
-| **1730** | [Example - Close Tab - 2.ahk](more libs/Example - Close Tab - 2.ahk) |
-| **1731** | [Example - Color Tabs.ahk](more libs/Example - Color Tabs.ahk) |
-| **1732** | [Example - Display Area.ahk](more libs/Example - Display Area.ahk) |
-| **1733** | [Example - Dynamic Tooltips.ahk](more libs/Example - Dynamic Tooltips.ahk) |
-| **1734** | [Example - Highlight Tab.ahk](more libs/Example - Highlight Tab.ahk) |
-| **1735** | [Example - Icons Only.ahk](more libs/Example - Icons Only.ahk) |
-| **1736** | [Example - Monitor TCN_SELCHANGING.ahk](more libs/Example - Monitor TCN_SELCHANGING.ahk) |
-| **1737** | [Example - No Tabs.ahk](more libs/Example - No Tabs.ahk) |
-| **1738** | [Example - Resize Tab2.ahk](more libs/Example - Resize Tab2.ahk) |
-| **1739** | [Example - Resize Tab3.ahk](more libs/Example - Resize Tab3.ahk) |
-| **1740** | [Example - Set Tab Size.ahk](more libs/Example - Set Tab Size.ahk) |
-| **1741** | [Example - Tabs Only.ahk](more libs/Example - Tabs Only.ahk) |
-| **1742** | [Example - Vertical Tabs With Horizontal Text.ahk](more libs/Example - Vertical Tabs With Horizontal Text.ahk) |
+| **1729** | [Example_-_Close_Tab_-_1.ahk](more libs/Example - Close Tab - 1.ahk) |
+| **1730** | [Example_-_Close_Tab_-_2.ahk](more libs/Example - Close Tab - 2.ahk) |
+| **1731** | [Example_-_Color_Tabs.ahk](more libs/Example - Color Tabs.ahk) |
+| **1732** | [Example_-_Display_Area.ahk](more libs/Example - Display Area.ahk) |
+| **1733** | [Example_-_Dynamic_Tooltips.ahk](more libs/Example - Dynamic Tooltips.ahk) |
+| **1734** | [Example_-_Highlight_Tab.ahk](more libs/Example - Highlight Tab.ahk) |
+| **1735** | [Example_-_Icons_Only.ahk](more libs/Example - Icons Only.ahk) |
+| **1736** | [Example_-_Monitor_TCN_SELCHANGING.ahk](more libs/Example - Monitor TCN_SELCHANGING.ahk) |
+| **1737** | [Example_-_No_Tabs.ahk](more libs/Example - No Tabs.ahk) |
+| **1738** | [Example_-_Resize_Tab2.ahk](more libs/Example - Resize Tab2.ahk) |
+| **1739** | [Example_-_Resize_Tab3.ahk](more libs/Example - Resize Tab3.ahk) |
+| **1740** | [Example_-_Set_Tab_Size.ahk](more libs/Example - Set Tab Size.ahk) |
+| **1741** | [Example_-_Tabs_Only.ahk](more libs/Example - Tabs Only.ahk) |
+| **1742** | [Example_-_Vertical_Tabs_With_Horizontal_Text.ahk](more libs/Example - Vertical Tabs With Horizontal Text.ahk) |
 | **1743** | [Edit.ahk](more libs/Edit.ahk) |
 | **1744** | [Fnt.ahk](more libs/Fnt.ahk) |
 | **1745** | [HSV.ahk](more libs/HSV.ahk) |
