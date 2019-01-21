@@ -1,4 +1,4 @@
-#include <_RemoteBuf>
+#include <class_RemoteBuf>
 
 Class _Scintilla {
 	var hModule:=DllCall("LoadLibrary","Str",A_ScriptDir "\SciLexer.dll")

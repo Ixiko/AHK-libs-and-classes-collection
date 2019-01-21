@@ -1,5 +1,5 @@
 ﻿; GLOBAL SETTINGS ===============================================================================================================
-#Include %A_ScriptDir%\..\Class_ProcessExplorer.ahk
+#Include %A_ScriptDir%\..\classes\Class_ProcessExplorer.ahk
 #NoEnv
 #SingleInstance Force
 
@@ -136,7 +136,7 @@ SET_HIDEFOCUS(wParam, lParam := "", Msg := "", handle := "")    ; https://msdn.m
 
 ; INCLUDES ======================================================================================================================
 
-#Include Class_ProcessExplorer.ahk
+
 
 
 ; ===============================================================================================================================

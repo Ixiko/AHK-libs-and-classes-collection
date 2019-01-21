@@ -3,22 +3,27 @@
 SetBatchLines, -1
 SetControlDelay, -1
 SetKeyDelay, -1
+FileEncoding, UTF-8
 
-
+global fileIdx:=0
+functions:= Object()
+Dir1:= "lib-a_to_h"
+Dir2:= "lib-i_to_z"
+Dir3:= "classes"
+Dir4:= "more libs"
 
 FileDelete, files.txt
+FileDelete, filesTable.md
 FileDelete, FileFunctionList.txt
-Dir1= %A_ScriptDir%\lib-a_to_h
-Dir2= %A_ScriptDir%\lib-i_to_z
-Dir3= %A_ScriptDir%\classes
-Dir4= %A_ScriptDir%\more libs
+
+FileAppend, % "| **Number** | **Directory**                  | **Library**                                                                       |`n", %A_ScriptDir%\filesTable.md
+FileAppend, % "| :--------- | :------------------------- | :----------------------------------------------------------- |`n", %A_ScriptDir%\filesTable.md
+
 fc1:= list_files(Dir1)
 fc2:= list_files(Dir2)
 fc3:= list_files(Dir3)
 fc4:= list_files(Dir4)
-                   ;\AFC
 
-functions:= Object()
 
 ;Reads files.txt , and opens file by file - it search for function - store them into functions object + store the containing script
 ;todo - retreave informations about the functions from script lines - detect ; or /**/
@@ -77,7 +82,7 @@ listfunc(file) {
 	global rl
 	rl:=""
 	rf:=""
-	FileRead script, %file%
+	FileRead script, % A_ScriptDir "\" file
 
 	  identifierRE = ][#@$?\w                  ; Legal characters for AHK identifiers (variables and function names)
 	  parameterListRE = %identifierRE%,=".\s-  ; Legal characters in function definition parameter list
@@ -208,14 +213,15 @@ listfunc(file) {
 }
 
 list_files(Directory) {
-	files = 0
-	Loop , %Directory%\*.ahk, 1, 1
+	FileAppend, % "| **---------** |" **Directory** "| **-----------------------------------------------------------** |`n", %A_ScriptDir%\filesTable.md
+	Loop , % A_ScriptDir . "\" . Directory . "\*.ahk", 1, 1
 	{
-		files ++
+		fileIdx ++
 		MouseGetPos, mx, my
 		;files = %files%`n%A_LoopFileName%
-		FileAppend, %A_LoopFileDir%\%A_LoopFileName%`n, Files.txt
-		ToolTip, Dateien erkannt: %files%, %mx%, %my%, 6
+		FileAppend, % Directory . "\" . A_LoopFileName "`n", Files.txt
+		FileAppend, % "| **" . SubStr("0000" . fileIdx, -3) . "** | " . Directory . " | [" . A_LoopFileName . "](" . Directory . "/" . A_LoopFileName . ") | `n", FilesTable.md
+		ToolTip, found files: %files%, %mx%, %my%, 6
 	}
 	return
 }
