@@ -16,9 +16,9 @@ FileDelete, files.txt
 FileDelete, filesTable.md
 FileDelete, FileFunctionList.txt
 
-FileAppend, % "| **Number** | **Directory**                  | **Library**                                                                       |`n", %A_ScriptDir%\filesTable.md
-FileAppend, % "| :--------- | :------------------------- | :----------------------------------------------------------- |`n", %A_ScriptDir%\filesTable.md
-
+FileAppend, % "| **Number** | **Directory**            | **Library**                                      |`n", %A_ScriptDir%\filesTable.md
+FileAppend, % "| :--------- | :------------------------- | :------------------------------------ |`n", %A_ScriptDir%\filesTable.md
+																						
 fc1:= list_files(Dir1)
 fc2:= list_files(Dir2)
 fc3:= list_files(Dir3)
@@ -213,7 +213,7 @@ listfunc(file) {
 }
 
 list_files(Directory) {
-	FileAppend, % "| **---------** |" **Directory** "| **-----------------------------------------------------------** |`n", %A_ScriptDir%\filesTable.md
+	FileAppend, % "| **---------** |"   **Directory**   "| **------------------------------------** |`n", %A_ScriptDir%\filesTable.md
 	Loop , % A_ScriptDir . "\" . Directory . "\*.ahk", 1, 1
 	{
 		fileIdx ++
