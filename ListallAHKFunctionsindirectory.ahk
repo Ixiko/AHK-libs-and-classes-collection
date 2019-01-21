@@ -220,7 +220,7 @@ list_files(Directory) {
 		MouseGetPos, mx, my
 		;files = %files%`n%A_LoopFileName%
 		FileAppend, % Directory . "\" . A_LoopFileName "`n", Files.txt
-		FileAppend, % "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "/" . StrReplace(A_LoopFileName," ", "&nbsp;") . ") | `n", FilesTable.md
+		FileAppend, % "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "/" . StrReplace(A_LoopFileName," ", "%20") . ") | `n", FilesTable.md
 		ToolTip, found files: %files%, %mx%, %my%, 6
 	}
 	return
