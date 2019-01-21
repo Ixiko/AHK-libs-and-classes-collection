@@ -16,8 +16,8 @@ FileDelete, files.txt
 FileDelete, filesTable.md
 FileDelete, FileFunctionList.txt
 
-FileAppend, % "| **Number** | **Directory**            | **Library**                                      |`n", %A_ScriptDir%\filesTable.md
-FileAppend, % "| :--------- | :------------------------- | :------------------------------------ |`n", %A_ScriptDir%\filesTable.md
+FileAppend, % "| **Nr** | **Library**                                               |`n", %A_ScriptDir%\filesTable.md
+FileAppend, % "| :--- | :------------------------------------------- |`n", %A_ScriptDir%\filesTable.md
 																						
 fc1:= list_files(Dir1)
 fc2:= list_files(Dir2)
@@ -213,14 +213,14 @@ listfunc(file) {
 }
 
 list_files(Directory) {
-	FileAppend, % "| **---------** |"   **Directory**   "| **------------------------------------** |`n", %A_ScriptDir%\filesTable.md
+
 	Loop , % A_ScriptDir . "\" . Directory . "\*.ahk", 1, 1
 	{
 		fileIdx ++
 		MouseGetPos, mx, my
 		;files = %files%`n%A_LoopFileName%
 		FileAppend, % Directory . "\" . A_LoopFileName "`n", Files.txt
-		FileAppend, % "| **" . SubStr("0000" . fileIdx, -3) . "** | " . Directory . " | [" . A_LoopFileName . "](" . Directory . "/" . A_LoopFileName . ") | `n", FilesTable.md
+		FileAppend, % "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "/" . A_LoopFileName . ") | `n", FilesTable.md
 		ToolTip, found files: %files%, %mx%, %my%, 6
 	}
 	return
