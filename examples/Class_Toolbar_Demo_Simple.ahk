@@ -1,6 +1,6 @@
 ﻿#NoEnv
 #SingleInstance, Force
-#Include ..\Class_Toolbar.ahk
+#Include %A_ScriptDir%\..\classes\Class_Toolbar.ahk
 
 ; Create an ImageList.
 ILA := IL_Create(4, 2, True)
