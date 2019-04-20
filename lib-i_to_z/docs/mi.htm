@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+
+<link rel="top" href="http://www.autohotkey.com/forum/index.php?sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="AutoHotkey Community Forum Index">
+<link rel="search" href="http://www.autohotkey.com/forum/search.php?sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="Search">
+<link rel="help" href="http://www.autohotkey.com/forum/faq.php?sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="FAQ">
+<link rel="author" href="http://www.autohotkey.com/forum/memberlist.php?sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="Memberlist">
+<link rel="prev" href="http://www.autohotkey.com/forum/ptopic21991.html&amp;sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="View previous topic">
+<link rel="next" href="http://www.autohotkey.com/forum/ntopic21991.html&amp;sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="View next topic">
+<link rel="up" href="http://www.autohotkey.com/forum/forum-2.html&amp;sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-1.html&amp;sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="Ask for Help">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-2.html&amp;sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-3.html&amp;sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="Bug Reports">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-4.html&amp;sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="Wish List">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-6.html&amp;sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="Announcements">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-7.html&amp;sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="Utilities &amp; Resources">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-5.html&amp;sid=2c776290bbdb23a7a13b81acfdc4fbfe" title="General Chat">
+
+<title>Menu Icons v2 (stdlib)</title>
+
+<link rel="alternate" type="application/rss+xml" title="AutoHotkey Forum RSS" href="http://www.autohotkey.com/forum/rss.php">
+
+
+<link rel="stylesheet" type="text/css" href="mi-Dateien/index.css" media="all">
+</head><body vlink="#5493b4" bgcolor="#e5e5e5" link="#006699" text="#000000">
+<table width="100%" align="center" border="0" cellpadding="10" cellspacing="0">
+<tbody>
+<tr>
+<td class="bodyline">
+<table class="forumline" width="100%" border="0" cellpadding="3" cellspacing="1">
+<tbody>
+<tr>
+<td class="row1" valign="top" width="100%" height="28">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td colspan="2">
+<!--DOCUMENT_FRAGMENT-->
+<span class="postbody"><span style="font-weight: bold;"><span style="font-size: 18px; line-height: normal;">Menu Icons</span></span>
+<br>
+Provides a set of functions for implementing icons in menus.
+<br>
+
+<br>
+<span style="font-weight: bold;">Known Issues</span>
+<br>
+<ul><li>Using MI_EnableOwnerDrawMenus on the script's main window:
+<br>
+<ul><li>breaks the "Pause Script" menu item; and
+<br>
+</li><li>makes ListLines less useful, since interacting with the main window causes script to execute.
+<br>
+</li></ul></li></ul>
+<br>
+<span style="font-weight: bold;">Usage example(s):</span>
+<br>
+</span><table width="90%" align="center" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Code (<a href="javascript:;" onclick="javascript:expand(this);">Expand</a>):</b></span></td>	</tr>	<tr>	  <td class="code"><div style="height: 200px; overflow: auto;"><span style="color: rgb(0, 128, 0);">; Uncomment this if MI.ahk is not in your function library:</span><br><span style="color: rgb(0, 128, 0);">;#include %A_ScriptDir%\MI.ahk</span><br><br>#NoEnv<br><br><span style="color: rgb(0, 128, 0);">; Sample menu items.</span><br>Menu, M, Add, 16x16 Icon, ItemClick<br>Menu, M, Add, 32x32 Icon, ItemClick<br>Menu, M, Add, 48x48 Icon, ItemClick<br><br><span style="color: rgb(0, 128, 0);">; Set item 1's icon to shell32.dll, icon 4, 16x16.</span><br>MI_SetMenuItemIcon("M", 1, "shell32.dll", 4, 16)<br><span style="color: rgb(0, 128, 0);">; Set item 2's icon to shell32.dll, icon 4, 32x32.</span><br>MI_SetMenuItemIcon("M", 2, "shell32.dll", 4, 32)<br><span style="color: rgb(0, 128, 0);">; Windows 2000 or later required (supports sizes other than 16x16 and 32x32):</span><br>MI_SetMenuItemIcon("M", 3, "shell32.dll", 4, 48)<br><span style="color: rgb(0, 128, 0);">; Usually looks better:</span><br>MI_SetMenuStyle("M", 0x4000000)<br><br><span style="color: rgb(0, 128, 0);">; Note: This menu is shown automatically after setting up the tray menu.</span><br><br><br><span style="color: rgb(0, 128, 0);">;</span><br><span style="color: rgb(0, 128, 0);">; Icons in the Tray menu!</span><br><span style="color: rgb(0, 128, 0);">;</span><br><span style="color: rgb(0, 128, 0);">; Refer to a menu by handle for efficiency.</span><br>hTM := MI_GetMenuHandle("Tray")<br><br>if (A_OSVersion != "WIN_VISTA")<br>{&nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">; It is necessary to hook the tray icon for owner-drawing to work.</span><br>&nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; (Owner-drawing is not used on Windows Vista.)</span><br>&nbsp; &nbsp; OnMessage(0x404, "AHK_NOTIFYICON")<br>&nbsp; &nbsp; OnMessage(0x111, "WM_COMMAND") <span style="color: rgb(0, 128, 0);">; To track "pause" status.</span><br>&nbsp; &nbsp; MI_SetMenuStyle(hTM, 0x4000000) <span style="color: rgb(0, 128, 0);">; MNS_CHECKORBMP (optional)</span><br>}<br><br>SplitPath, A_AhkPath,, SpyPath<br>SpyPath = %SpyPath%\AU3_Spy.exe<br><br>MI_SetMenuItemIcon(hTM, 1, A_AhkPath, 1, 16) <span style="color: rgb(0, 128, 0);">; open</span><br>MI_SetMenuItemIcon(hTM, 2, A_WinDir "\hh.exe", 1, 16) <span style="color: rgb(0, 128, 0);">; help</span><br><span style="color: rgb(0, 128, 0);">;-</span><br>MI_SetMenuItemIcon(hTM, 4, SpyPath,&nbsp; &nbsp;1, 16) <span style="color: rgb(0, 128, 0);">; spy</span><br><span style="color: rgb(0, 128, 0);">; reload - icon needed!</span><br>MI_SetMenuItemIcon(hTM, 6, A_AhkPath, 2, 16) <span style="color: rgb(0, 128, 0);">; edit</span><br><span style="color: rgb(0, 128, 0);">;-</span><br>MI_SetMenuItemIcon(hTM, 8, A_AhkPath, 3, 16) <span style="color: rgb(0, 128, 0);">; suspend</span><br>MI_SetMenuItemIcon(hTM, 9, A_AhkPath, 4, 16) <span style="color: rgb(0, 128, 0);">; pause</span><br>MI_SetMenuItemBitmap(hTM, 10, 8) <span style="color: rgb(0, 128, 0);">; exit</span><br><br><br>MI_ShowMenu("M")<br>return<br><br>ItemClick:<br>return<br><br><br>AHK_NOTIFYICON(wParam, lParam)<br>{<br>&nbsp; &nbsp; global hTM, M_IsPaused<br>&nbsp; &nbsp; if (lParam = 0x205) <span style="color: rgb(0, 128, 0);">; WM_RBUTTONUP</span><br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; Update "Suspend Script" and "Pause Script" checkmarks.</span><br>&nbsp; &nbsp; &nbsp; &nbsp; DllCall("CheckMenuItem","uint",hTM,"uint",65305,"uint",A_IsSuspended ? 8:0)<br>&nbsp; &nbsp; &nbsp; &nbsp; DllCall("CheckMenuItem","uint",hTM,"uint",65306,"uint",M_IsPaused ? 8:0)<br>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; Show menu to allow owner-drawing.</span><br>&nbsp; &nbsp; &nbsp; &nbsp; MI_ShowMenu(hTM)<br>&nbsp; &nbsp; &nbsp; &nbsp; return 0<br>&nbsp; &nbsp; }<br>}<br><br>WM_COMMAND(wParam, lParam, Msg, hwnd)<br>{<br>&nbsp; &nbsp; Critical<br>&nbsp; &nbsp; global M_IsPaused<br>&nbsp; &nbsp; id := wParam &amp; 0xFFFF<br>&nbsp; &nbsp; if id in 65306,65403&nbsp; <span style="color: rgb(0, 128, 0);">; tray pause, file menu pause</span><br>&nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; When the script is not paused, WM_COMMAND() is called once for</span><br>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; AutoHotkey --** and once for OwnerDrawnMenuMsgWin **--.</span><br>&nbsp; &nbsp; &nbsp; &nbsp; DetectHiddenWindows, On<br>&nbsp; &nbsp; &nbsp; &nbsp; WinGetClass, cl, ahk_id %hwnd%<br>&nbsp; &nbsp; &nbsp; &nbsp; if cl != AutoHotkey<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return<br>&nbsp; &nbsp; &nbsp; &nbsp; <br>&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; This will become incorrect if "pause" is used from the script.</span><br>&nbsp; &nbsp; &nbsp; &nbsp; M_IsPaused := ! M_IsPaused<br>&nbsp; &nbsp; }<br>}</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+<img src="mi-Dateien/traymenuicons.png" border="0"><img src="mi-Dateien/folders.png" border="0">
+<br>
+
+<br>
+<span style="font-size: 18px; line-height: normal;"><a href="http://www.autohotkey.net/%7ELexikos/MI/MI.ahk" target="_top" class="postlink">Download (or view) MI.ahk</a></span>
+<br>
+<span style="font-size: 9px; line-height: normal;">Covered by <a href="http://www.autohotkey.com/forum/viewtopic.php?t=39287" target="_top" class="postlink">Lexikos' default copyright license</a>.</span>
+<br>
+
+<br>
+<span style="font-weight: bold;">Version History</span>
+<br>
+v2.21 (2010-03-13)<ul><li>Fixed: WM_COMMAND messages received by 
+subclassed GUI windows were erroneously forwarded to the script's main 
+window. This broke button gLabels.
+<br>
+</li><li>Fixed: Unicode incompatibility in MI_ExtractIcon.
+<br>
+</li></ul>v2.2 (2009-01-08<span style="font-style: italic;"></span>)<ul><li>Changed MI_SetMenuItemIcons to automatically delete the previous icon or bitmap.
+<br>
+</li><li>If individual menu items are to be removed, call MI_SetMenuItemIcons(MenuNameOrHandle, ItemPos, 0) to remove the icon.
+<br>
+</li><li>Added MI_RemoveIcons, to be called before deleting a menu.
+<br>
+</li><li>Misc optimizations (thanks animeaime).
+<br>
+</li></ul>v2.1 (2007-12-25)<ul><li>Added MI_EnableOwnerDrawnMenus(), 
+which can be used to enable owner-drawn menus for a given window (as an 
+alternative to MI_ShowMenu().)
+<br>
+</li><li>MI_SetMenuStyle() now accepts a menu name or handle.
+<br>
+</li></ul>v2 (2007-10-19)<ul><li>Now stdlib compatible (added MI_ prefix to functions.)
+<br>
+</li><li>Merged everything into MI.ahk, removing wrapper functions in the process.
+<br>
+</li></ul>
+<br>
+<span style="font-weight: bold;">Operating System Notes:</span>
+<br>
+
+<br>
+On Windows Vista, the script generates a 32-bit device-independent 
+bitmap.  This allows nice transparency (alpha blending) in icons, <span style="font-style: italic;">and</span> allows Vista's menu style to apply.
+<br>
+
+<br>
+On earlier versions of Windows, this method is not supported.  Instead, 
+the menu icons are owner-drawn.  ShowMenu() or ShowOwnerDrawnMenu() must
+ be called to show the menu with icons.  ShowOwnerDrawnMenu() creates an
+ invisible message window to act as the menu's owner (once per instance 
+of the script.)  As a side effect, showing a menu should not make the 
+script/thread uninterruptible.
+<br>
+
+<br>
+On Windows 2000 and later, PrivateExtractIcons() is used by 
+SetMenuItemIcon() to extract an icon from a file.  This should support 
+any size of icon (tested with 16, 32 and 48.)
+<br>
+
+<br>
+ExtractIconEx() is used on earlier versions of Windows, as 
+PrivateExtractIcons() is not available.  This supports 16x16 and 32x32 
+icons <span style="font-weight: bold;">only</span>.  Other sizes may be 
+specified, but the icon will be stretched to fit, regardless of which 
+sizes are available in the source file.  (However, LoadImage() can still
+ be used to load the first icon of any given size from an .ico file.)
+<br>
+
+<br>
+<span style="font-weight: bold;">Other Methods</span>
+<br>
+
+<br>
+<a href="http://www.autohotkey.net/%7ELexikos/MI/MI.Test.ahk" target="_top" class="postlink">MI.Test.ahk</a> (requires <a href="http://www.autohotkey.net/%7ELexikos/MI/AHKMenuIcons.zip" target="_top" class="postlink">MI v1</a>)
+ shows a few other ways of displaying icons.  In the following 
+screenshot I've changed the menu colour to distinguish between the 
+bitmap and the menu background.  (On most versions of Windows - but not 
+Vista - the menu background would be the same colour as the bitmap 
+backgrounds.)
+<br>
+
+<br>
+<img src="mi-Dateien/menuicons.png" border="0">
+<br>
+
+<br>
+The "FakeAlphaTest" method could be used to fake transparency in a 
+situation where owner-drawing is not an option (i.e. for some other 
+app's menus.)  The main issue with this method is:
+<br>
+<img src="mi-Dateien/fakehilite.png" border="0"> <span style="font-size: 9px; line-height: normal;">(with Windows Standard/Classic colour scheme)</span>
+<br>
+If you look closely, you can see the "background" in the bitmap is the 
+inverse of the menu colour, and is a different colour to the selection. 
+ (Not an issue if you change the selection colour to match <img src="mi-Dateien/icon_lol.gif" alt="Laughing" border="0">.)
+<br>
+
+<br>
+You can see what effect owner-drawing icons has on Vista:
+<br>
+<img src="mi-Dateien/ownerdraw.png" border="0">
+<br>
+<span style="font-size: 9px; line-height: normal;">(no visual style)</span>
+<br>
+
+<br>
+
+<br>
+<span style="font-weight: bold;">Bitmap Manipulation</span>
+<br>
+
+<br>
+<a href="http://www.autohotkey.net/%7ELexikos/MI/MI.Test.ahk" target="_top" class="postlink">MI.Test.ahk</a> (specifically the "FakeAlpha" tests; MI.Test.ahk requires <a href="http://www.autohotkey.net/%7ELexikos/MI/AHKMenuIcons.zip" target="_top" class="postlink">MI v1</a>)
+ also demonstrates how to manipulate bitmaps using AutoHotkey.  It would
+ be possible, for example, to dynamically colour an icon.
+<br>
+
+<br>
+<span style="font-weight: bold;">References</span>
+<br>
+<a href="http://shellrevealed.com/blogs/shellblog/archive/2007/02/06/Vista-Style-Menus_2C00_-Part-1-_2D00_-Adding-icons-to-standard-menus.aspx" target="_top" class="postlink">Shell Blog: Vista Style Menus, Part 1 - Adding icons to standard menus</a>
+<br>
+<a href="http://www.nanoant.com/programming/themed-menus-icons-a-complete-vista-xp-solution" target="_top" class="postlink">nanoANT: Themed menu’s icons, a complete Vista and XP solution</a>
+<br>
+
+<br>
+
+<br>
+Note: I chose to write this rather than use <a href="http://www.autohotkey.com/forum/viewtopic.php?t=17674&amp;postdays=0&amp;postorder=asc&amp;start=0" target="_top" class="postlink">MMenu</a> because:<ul><li>I did not want a whole new menu API.
+<br>
+</li><li>MMenu exclusively uses owner-drawing for icons, which disables Windows Vista's menu styles.</li></ul></span><span class="gensmall"></span>
+<!--/DOCUMENT_FRAGMENT-->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

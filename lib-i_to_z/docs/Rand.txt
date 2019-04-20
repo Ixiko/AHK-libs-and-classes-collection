@@ -1,0 +1,8 @@
+Function: Rand( From, To )
+
+    [VxE] nli said:
+    Rand() ; - A random float between 0.0 and 1.0 (many uses)
+    Rand(6) ; - A random integer between 1 and 6 (die roll)
+    Rand("") ; - New random seed (selected randomly)
+    Rand("", 12345) ; - New random seed (set explicitly)
+    Rand(50, 100) ; - Random integer between 50 and 100 (typical use)

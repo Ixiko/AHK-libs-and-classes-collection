@@ -1,0 +1,60 @@
+// Object schema for Bindings
+// Holds database of bound inputs and thier callbacks
+// View using JSONedit: http://tomeko.net/software/JSONedit/
+[
+	{
+		// Just a
+		"type": 1,					// HH_TYPE_M = 0 || HH_TYPE_K = 1 || HH_TYPE_O = 2
+		"input": 65,				// VK code
+		"modifiers": [],			// modifiers, eg CTRL, ALT but could be anything (eg Joystick button)
+		"callback": "(callback)",	// Code to call on match
+		"modes": {					// Special conditions for binding
+			"passthru": 0,			// 0 = Block, 1 = Pass Through
+			"wild": 0				// 1 = works with any modifier (modifiers must be empty)
+		},
+		"event": 1					// 0 = down, 1 = up
+	},
+	{
+		// Either Ctrl + a
+		"type": 1,
+		"input": 65,			// a
+		"modifiers": [
+			{
+				"type": 1,
+				"input": 17		// Ctrl 
+			}
+		],
+		"callback": "(callback)",
+		"modes": {}
+	},
+	{
+		// Left Ctrl + a
+		"type": 1,
+		"input": 65,
+		"modifiers": [
+			{
+				"type": 1,
+				"input": 162	// LCtrl 
+			}
+		],
+		"callback": "(callback)",
+		"modes": {}
+	},
+	{
+		// Ctrl + Shift + a
+		"type": 1,
+		"input": 65,
+		"modifiers": [
+			{
+				"type": 1,
+				"input": 17		// Ctrl 
+			},
+			{
+				"type": 1,
+				"input": 16		// Shift
+			}
+		],
+		"callback": "(callback)",
+		"modes": {}
+	}
+]

@@ -7,58 +7,85 @@ FileEncoding, UTF-8
 
 global fileIdx:=0
 functions:= Object()
-Dir1:= "lib-a_to_h"
-Dir2:= "lib-i_to_z"
-Dir3:= "classes"
-Dir4:= "more libs"
+Directorys = 
+(LTrim 
+lib-a_to_h
+lib-i_to_z
+classes
+more libs
+MSOffice
+more libs\AFC
+more libs\AHK-Object-Oriented-GUIs-master\gui
+more libs\Canvas-AHK-master
+more libs\CGUI-master
+more libs\CustomBoxes
+more libs\DirectX\AHK Injector
+more libs\DirectX\headers
+more libs\DirectX\Lib
+more libs\DirectX\Lib\TexSwap
+more libs\DoDragAndDrop
+more libs\DX9-Overlay-API\include\ahk
+more libs\more libs\Edit\_Functions
+more libs\ImportTypeLib-master
+more libs\ImportTypeLib-master\Lib
+more libs\MCode-Ex-master\src
+more libs\MCode-Ex-master\src\Compiler
+more libs\MinHook-AHK-master\Lib
+more libs\Mini_Framwork
+more libs\Mini_Framwork\MfUnicode
+more libs\Mini_Framwork\IO
+more libs\minilib
+more libs\RamDisk & CmdReturn
+more libs\SendInput-master
+more libs\Splash-Gui
+more libs\TAB\_Functions
+more libs\windows10DesktopManager
+more libs\windows10DesktopManager\injection dll
+more libs\Windy
+more libs\WinLogon
+)
+
+Dir := StrSplit(Directorys, "`n", "`r")
 
 FileDelete, files.txt
 FileDelete, filesTable.md
 FileDelete, FileFunctionList.txt
 
-FileAppend, % "| **Nr** | **Library**                                               |`n", %A_ScriptDir%\filesTable.md
-FileAppend, % "| :--- | :------------------------------------------- |`n", %A_ScriptDir%\filesTable.md
-																						
-fc1:= list_files(Dir1)
-fc2:= list_files(Dir2)
-fc3:= list_files(Dir3)
-fc4:= list_files(Dir4)
-
+FileAppend, % "| **Nr** | **Library**                                               | **Directory**                                              |`n", %A_ScriptDir%\filesTable.md
+FileAppend, % "| :--- | :-------------------------------------- |:----------------------------------------------------|`n", %A_ScriptDir%\filesTable.md
+				
+Loop, % Dir.MaxIndex()				
+		fc[A_Index]:= list_files(Dir[A_Index])
 
 ;Reads files.txt , and opens file by file - it search for function - store them into functions object + store the containing script
 ;todo - retreave informations about the functions from script lines - detect ; or /**/
 
-Loop, Read, files.txt
-{
-	filename:=A_LoopReadLine
-	clines:= A_Index
-}
+FileRead, files, %A_ScriptDir%\files.txt
+Loop, Parse, files, `n, `r
+	clines++
 
-Loop, Read, files.txt
+Loop, Parse, files, `n, `r
 {
-	filename:=A_LoopReadLine
-	ToolTip, File: %A_Index%/%clines%, 2000, 500, 6
+	filename := A_LoopField
+	ToolTip, % "File: " A_Index "/" clines, 2000, 500, 6
 	funcList:= listfunc(filename)
 	StringSplit, path, filename, `\
 	shortpath:= path7 . "`\" . path8
-	FileAppend, `;`{ `[%A_Index%`] %shortpath% `n`n`;Functions`:`n, FileFunctionList.txt
-	FileAppend, %funclist%`n, FileFunctionList.txt
-	FileAppend, `;`}`n, FileFunctionList.txt
+	FileAppend, % "[" A_Index "] " shortpath " {`n`nFunctions:`n", %A_ScriptDir%\FileFunctionList.txt   
+	FileAppend, % funclist "`n", %A_ScriptDir%\FileFunctionList.txt
+	FileAppend, % "}`n", FileFunctionList.txt
 
+		/*
 			Loop, Parse, funcList, `n
 			{
-				line:= A_LoopField
-				If not (line="") {
-						StringSplit, line, line, `|, %A_Space%
-						;FileAppend, %line2%`;%line1%`;%filename%`n, FunctionFileList.csv
+					line:= A_LoopField
+					If !line = "" 
+					{
+							StringSplit, line, line, `|, %A_Space%
+							;FileAppend, %line2%`;%line1%`;%filename%`n, FunctionFileList.csv
 					}
 			}
-
-
-
-
-
-
+		*/
 }
 
 
@@ -80,6 +107,7 @@ exitApp
 listfunc(file) {
 
 	global rl
+	
 	rl:=""
 	rf:=""
 	FileRead script, % A_ScriptDir "\" file
@@ -213,14 +241,15 @@ listfunc(file) {
 }
 
 list_files(Directory) {
-
-	Loop , % A_ScriptDir . "\" . Directory . "\*.ahk", 1, 1
+	
+	Loop , Files, % A_ScriptDir . "\" . Directory . "\*.ahk"
 	{
+		If Instr(A_LoopFileName, "example")
+				continue
 		fileIdx ++
 		MouseGetPos, mx, my
-		;files = %files%`n%A_LoopFileName%
-		FileAppend, % Directory . "\" . A_LoopFileName "`n", Files.txt
-		FileAppend, % "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "/" . StrReplace(A_LoopFileName," ", "%20") . ") | `n", FilesTable.md
+		FileAppend, % Directory . "\" . A_LoopFileName "`n", %A_ScriptDir%\Files.txt
+		FileAppend, % "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "\" . StrReplace(A_LoopFileName," ", "%20") . ") | " Directory . "\  | `n", % A_ScriptDir "\FilesTable.md"
 		ToolTip, found files: %files%, %mx%, %my%, 6
 	}
 	return

@@ -1,0 +1,96 @@
+;                                                      _     _            _____   _
+;  HtmDlg() - HTML DialogBox v0.51                    | |   | |_         (____ \ | | v0.51
+;                                                     | |__ | | |_  ____  _   \ \| | ____
+;  Suresh Kumar A N (arian.suresh@gmail.com)          |  __)| |  _)|    \| |   | | |/ _  |
+;                                                     | |   | | |__| | | | |__/ /| ( ( | |
+;  Created  : 09-Jul-2010                             |_|   |_|\___)_|_|_|_____/ |_|\_|| |
+;  Last Mod : 13-Jul-2010                                                          (_____|
+;
+;  Usage : HtmDlg( URL, hwndOwner, Options, OptionsDelimiter )
+;        :  For Options, please refer the bottom of this script
+;
+;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+/*
+/- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+>-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - O P T I O N S -
+\- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Usage: HtmDlg( URL, hwndOwner, Options, OptionsDelimiter )
+
+Parameters :
+
+URL              - A valid URL supported by Internet Explorer including Res:// and File://
+
+hWndOwner        - Handle to the parent window. If invalid handle or 0 ( zero ) is passed,
+                   the dialog will have a taskbar button. Passing "" as a parameter will
+                   definitely supress the Taskbar Button.
+
+Options          - A series of 'variable overrides' delimited with character specified in
+                   Options delimiter. Please refer 'VARIABLE OVERRIDES' below.
+
+OptionsDelimiter - The delimiter used in seperating 'variable overrides'
+
+
+;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;  * * *   V A R I A B L E   O V E R R I D E S   * * *
+;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Important Note: leading 4 characters of a variable will be sufficient.
+                for eg., Instead of 'AltReturn=1' you may use 'AltR=1'
+
+Title         = Captionbar Text
+                Default is A_ScriptName
+
+DlgXpos       = X coordinate in pixels, relative to screen
+                Dialog is horizontally centered by default
+
+DlgYpos       = Y coordinate in pixels, relative to screen
+                Dialog is vertically centered by default
+
+AltReturn     = 1 will return Button-text
+                0 is default and Button Instance will be returned
+
+TimeOut       = Seconds
+                No Default value
+                Note: A_LastError will be true when a TimeOut occurs
+
+Sleep         = MilliSeconds ( Will be used just before Dialog is shown )
+                No Sleep by Default
+
+LeftMargin    = Spacing in Pixels ( on the left/right sides of Htm Control )
+                Default value is 5. Ignored if Htm control is disabled. See: HtmDisable
+
+TopMargin     = Spacing in Pixels ( above the Htm Control )
+                Default value is 5. Ignored if Htm control is disabled. See: HtmDisable
+
+HtmDisable    = 0 to enable
+                Htm Control is disabled by default.
+
+HtmWidth      = Width of WebControl in Pixels
+                Default value is 240
+
+HtmHeight     = Height of WebControl in pixels
+                Default value is 140
+
+Buttons       = Button labels seperated with "/"  ( eg: Buttons=Yes/No/Cancel )
+                Default is "OK"
+
+BDefault      = Instance of Default Button ( eg: To make 3rd Button default, use BDef=3 )
+                Default forced value is 1
+
+BEscape       = Instance of Cancel Button ( Used when dialog is closed or Esc is pressed )
+                Default is 0
+
+BWidth        = Button Width in Pixels
+                Default Value is 75
+
+BHeight       = Button height Pixels
+                Default value is 23
+
+BSpHorizontal = Pixels ( affects the spacing on the sides of a button )
+
+BSpVertical   = Pixels ( affects the spacing above/below a button )
+
+BAlign        = 0 or 1 or 2  ( for Left, Center, Right alignment of Buttons )
+                Default is 1
+
+;- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

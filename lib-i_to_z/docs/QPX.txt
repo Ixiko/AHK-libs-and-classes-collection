@@ -1,0 +1,15 @@
+Function: QPX( N=0 )
+
+    N - 0 means Initialise Counter
+        1 means Retrieve Time consumed ( & reset internal vars )
+
+    To initilize the counter, call QPX(true). Then do some action and if you are done and want see 
+    the difference, then call time:=QPX(false). The return value contains the time between first call 
+    and the second call. 
+
+    Return:
+    The resulting time is a floating point with 6 digits after the dot (milliseconds and thousandstal 
+    of milliseconds). In example: 1.234567
+
+    Example:   
+    > time := QPX( N=0 )

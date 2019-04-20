@@ -1,4 +1,4 @@
-;{ Sift
+/* Sift
 ; Fanatic Guru
 ; 2015 04 30
 ; Version 1.00
@@ -83,8 +83,10 @@
 ;
 ; ===================================================================================================================================================
 ;
-Sift_Regex(ByRef Haystack, ByRef Needle, Options := "IN", Delimit := "`n")
-{
+*/
+
+
+Sift_Regex(ByRef Haystack, ByRef Needle, Options := "IN", Delimit := "`n") {
 	Sifted := {}
 	if (Options = "IN")		
 		Needle_Temp := "\Q" Needle "\E"
@@ -126,8 +128,7 @@ Sift_Regex(ByRef Haystack, ByRef Needle, Options := "IN", Delimit := "`n")
 	return Sifted
 }
 
-Sift_Ngram(ByRef Haystack, ByRef Needle, Delta := .7, ByRef Haystack_Matrix := false, n := 3, Format := "S`n" )
-{
+Sift_Ngram(ByRef Haystack, ByRef Needle, Delta := .7, ByRef Haystack_Matrix := false, n := 3, Format := "S`n" ) {
 	if !IsObject(Haystack_Matrix)
 		Haystack_Matrix := Sift_Ngram_Matrix(Haystack, n)
 	Needle_Ngram := Sift_Ngram_Get(Needle, n)
@@ -163,16 +164,14 @@ Sift_Ngram(ByRef Haystack, ByRef Needle, Delta := .7, ByRef Haystack_Matrix := f
 		return Search_Results
 }
 
-Sift_Ngram_Get(ByRef String, n := 3)
-{
+Sift_Ngram_Get(ByRef String, n := 3) {
 	Pos := 1, Grams := {}
 	Loop, % (1 + StrLen(String) - n)
 		gram := SubStr(String, A_Index, n), Grams[gram] ? Grams[gram] ++ : Grams[gram] := 1
 	return Grams
 } 
 
-Sift_Ngram_Compare(ByRef Hay, ByRef Needle)
-{
+Sift_Ngram_Compare(ByRef Hay, ByRef Needle) {
 	for gram, Needle_Count in Needle
 	{
 		Needle_Total += Needle_Count
@@ -181,8 +180,7 @@ Sift_Ngram_Compare(ByRef Hay, ByRef Needle)
 	return Match / Needle_Total
 }
 
-Sift_Ngram_Matrix(ByRef Data, n := 3)
-{
+Sift_Ngram_Matrix(ByRef Data, n := 3) {
 	if IsObject(Data)
 	{
 		Matrix := {}
@@ -198,8 +196,7 @@ Sift_Ngram_Matrix(ByRef Data, n := 3)
 	return Matrix
 }
 
-Sift_SortResults(ByRef Data)
-{
+Sift_SortResults(ByRef Data) {
 	Data_Temp := {}
 	for key, element in Data
 		Data_Temp[element.Delta SubStr("0000000000" key, -9)] := element

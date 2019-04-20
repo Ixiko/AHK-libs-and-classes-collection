@@ -1,5 +1,4 @@
-SignFile(File, CertCtx, Name)
-{
+SignFile(File, CertCtx, Name) {
     VarSetCapacity(wfile, 2 * StrPut(File, "utf-16")), StrPut(File, &wfile, "utf-16")
     VarSetCapacity(wname, 2 * StrPut(Name, "utf-16")), StrPut(Name, &wname, "utf-16")
     cert_ptr := IsObject(CertCtx) ? CertCtx.p : CertCtx

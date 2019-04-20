@@ -7,15 +7,16 @@ SetBatchLines, -1
 EM_SCROLLCARET := 0x00B7
 EM_SETSEL      := 0x00B1
 ES_NOHIDESEL   := 256
+PH := 600
 ; ======================================================================================================================
 Gui, +Disabled +OwnDialogs
 Gui, Margin, 20, 20
 Gui, Font, s9 , Courier New
 Gui, Add, Text, Section, Scripts:
-Gui, Add, Listbox, xm y+5 w200 r20 vLBScripts gSubLBScripts
+Gui, Add, Listbox, xm y+5 w200 h600 r40 vLBScripts gSubLBScripts
 GuiControlGet, P, Pos, LBScripts
 Gui, Add, Text, ys w600 vTXCaption, Constants:
-Gui, Add, Edit, y+5 w600 h%PH% vEDConstants hwndHEDConstants ReadOnly HScroll +%ES_NOHIDESEL%
+Gui, Add, Edit, y+5 w600 h600 vEDConstants hwndHEDConstants ReadOnly HScroll +%ES_NOHIDESEL%
 Gui, Add, Text, y+5 r1, Search:
 Gui, Add, Edit, xp y+5 w600 vEDSearch gSubEDSearch
 Gui, Add, Button, xs w200 hp gSubGlobalSearch Section, Global Search >>>

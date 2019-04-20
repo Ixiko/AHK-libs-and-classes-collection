@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+
+<link rel="prev" href="http://www.autohotkey.com/forum/viewtopic.php?t=40736&amp;view=previous" title="View previous topic">
+<link rel="next" href="http://www.autohotkey.com/forum/viewtopic.php?t=40736&amp;view=next" title="View next topic">
+<link rel="up" href="http://www.autohotkey.com/forum/viewforum.php?f=2" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=1" title="Ask for Help">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=2" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=3" title="Bug Reports">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=4" title="Wish List">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=6" title="Announcements">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=7" title="Utilities &amp; Resources">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=5" title="General Chat">
+
+<title>OneLineCommands (Execute AHK code dynamically!)</title>
+
+<link rel="alternate" type="application/rss+xml" title="AutoHotkey Forum RSS" href="http://www.autohotkey.com/forum/rss.php">
+
+
+
+<link rel="stylesheet" type="text/css" href="exec-Dateien/index.css" media="all">
+</head><body bgcolor="#e5e5e5" link="#006699" text="#000000" vlink="#5493b4">
+<table border="0" cellpadding="10" cellspacing="0" width="100%" align="center">
+<tbody>
+<tr>
+<td class="bodyline">
+<table class="forumline" border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody>
+<tr>
+<td class="row1" height="28" valign="top" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td colspan="2">
+<!--DOCUMENT_FRAGMENT-->
+<span class="postbody">I wanted to bring back this topic to live: <a href="http://www.autohotkey.com/forum/viewtopic.php?t=3332" target="_top" class="postlink">Execute AHK code dynamically!</a>
+<br>
+
+<br>
+My function does quite the same but in a little different way and it
+offers additionally a small debug feature as well as one line if
+statements, such as IfEqual, IfGreater, IfExist, IfWinActive...:
+<br>
+</span><table border="0" cellpadding="3" cellspacing="1" width="90%" align="center"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">#("IfWinActive", "ahk_class ExploreWClass","","","","MsgBox", WinExist())</td>	</tr></tbody></table><span class="postbody">
+<br>
+If var "&gt;|&lt;|=|is|is not" is also used that way:
+<br>
+</span><table border="0" cellpadding="3" cellspacing="1" width="90%" align="center"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">#("If", "var", "is", "digit","MsgBox")</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+As far as I understand, using this function performance is not affected at all, at least using new AutoHotkey.exe beta.
+<br>
+
+<br>
+
+<br>
+All commands excluding loop commands and Return are supported. Instead of Return use Exit <img src="exec-Dateien/icon_exclaim.gif" alt="Exclamation" border="0">
+<br>
+</span><table border="0" cellpadding="3" cellspacing="1" width="90%" align="center"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">#("Command", "parameter1","parameter2",...)
+<br>
+;Each command has an abbreviation:
+<br>
+; Sleep= S, Send = SN, IfWinActive = IWA, IfExist = IE,IfEqual = IEQ, ControlGet = CG,...
+<br>
+</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+Using this function you can execute many commands in one line.
+<br>
+</span><table border="0" cellpadding="3" cellspacing="1" width="90%" align="center"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">;Instead of:
+<br>
+Loop, C:\*.txt,0,1
+<br>
+{
+<br>
+&nbsp;command
+<br>
+&nbsp;command
+<br>
+&nbsp;command
+<br>
+}
+<br>
+
+<br>
+;you can do 
+<br>
+Loop, C:\*.txt,0,1
+<br>
+&nbsp;#("command") #("command") #("command") 
+<br>
+</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+Instead of If expression you can use ? : (Ternary operator [v1.0.46+])
+<br>
+For example:
+<br>
+</span><table border="0" cellpadding="3" cellspacing="1" width="90%" align="center"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">debug := WinExist("ahk_class ExploreWClass") ? #("WinActivate","ahk_class ExploreWClass") : #("Run","explorer /e")
+<br>
+MsgBox % debug</td>	</tr></tbody></table><span class="postbody">
+<br>
+Small debuging feature:
+<br>
+</span><table border="0" cellpadding="3" cellspacing="1" width="90%" align="center"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code">Such commands, that change the variable ErrorLevel, use this SubCommand to return a value for debuging:
+<br>
+Return: 
+<br>&nbsp; &nbsp;Return A_Tab . "ErrorLevel: " . Errorlevel . "`t" . p1
+. "," . p2 . "," . p3 . "," . p4 . "," . p5 . "," . p6 . "," . p7 . ","
+. p8 . "," . p9 . "," . p10 . "," . p11 . "," . p12 . "," . p13 . "," .
+p14 . "," . p15 . "," . p16 . "," . p17 . "," . p18 . "," . p19 . "," .
+p20 "`n"
+<br>
+
+<br>
+;Change this line to your needs, include parameters as well as AutoHotKey variables like ErrorLevel, A_Index, A_LoopField,...</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+You can also add your custom functions as if they were commands <img src="exec-Dateien/icon_exclaim.gif" alt="Exclamation" border="0"> (look at PixelWaitColor command in the code)
+<br>
+
+<br>
+If you find any errors or you have a suggestion, please post <img src="exec-Dateien/icon_exclaim.gif" alt="Exclamation" border="0"></span>
+<!--/DOCUMENT_FRAGMENT-->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

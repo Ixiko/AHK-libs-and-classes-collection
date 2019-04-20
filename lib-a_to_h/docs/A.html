@@ -1,0 +1,155 @@
+
+
+
+Be carefull with that: commands such as VarSetCapacity might destroy
+the length due to binary zeros within and render the Object unusable.
+See Lexikos comment below for additional informations.
+<br>
+
+<br>
+<span style="text-decoration: underline;"><span style="font-size: 18px; line-height: normal;"><span style="font-weight: bold;">List of currently supported functions</span></span></span>
+<br>
+<ul>
+<br>
+<span style="font-weight: bold;">A_Put</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span>, <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Data</span> [, <span style="color: rgb(128, 128, 128);">(int)</span> Index, <span style="color: rgb(128, 128, 128);">(int)</span> dSize] )
+<br>
+<ul>Stores given <span style="font-style: italic;">data</span> into given <span style="font-style: italic;">Array</span>. Creates the Arraystructure if neccessary. Returns elements index in <span style="font-style: italic;">Array</span> on success</ul>
+<br>
+<span style="font-weight: bold;">A_Get</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span>, <span style="color: rgb(128, 128, 128);">(int)</span> Index )
+<br>
+<ul>Returns Element and stores Size as ErrorLevel</ul>
+<br>
+<span style="font-weight: bold;">A_Implode</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span>, <span style="color: rgb(128, 128, 128);">(str)</span> glue )
+<br>
+<ul>Returns a joined string of given <span style="font-style: italic;">Array</span> and glue parameter. Additionally Length is returned as ErrorLevel</ul>
+<br>
+<span style="font-weight: bold;">A_Explode</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span>, <span style="color: rgb(128, 128, 128);">(str)</span> delimiterString, <span style="color: rgb(128, 128, 128);">(str)</span> sourceString
+<br>
+<ul>[, <span style="color: rgb(128, 128, 128);">(int)</span> Limit, <span style="color: rgb(128, 128, 128);">(str)</span> trimChars, <span style="color: rgb(128, 128, 128);">(bool)</span> trimCharsIsRegEx, <span style="color: rgb(128, 128, 128);">(bool)</span> dStringIsRegEx] )</ul>
+<br>
+<ul>Returns an <span style="font-style: italic;">Array</span> of
+strings, each of which is a substring of sourceString formed by
+splitting it on boundaries formed by the delimiterDtring. Unlike
+Stringsplit, multiple chars are allowed in delimiterString to be used
+as a seperator.
+<br>
+
+<br>
+<span style="font-weight: bold;"><span style="text-decoration: underline;">!! ATENTION - Use trimCharsIsRegEx at own risk !!</span></span>
+<br>
+<ul>By setting trimCharsIsRegEx to true, you might use directly more complex RegEx to trim Chars off the Element to insert</ul>
+<br>
+<span style="font-weight: bold;"><span style="text-decoration: underline;">!! ATENTION - Use dStringIsRegEx at own risk !!</span></span>
+<br>
+<ul>By setting dStringIsRegEx to true, you might use directly more complex RegEx to delimit a given String into subsets</ul></ul>
+<br>
+<span style="font-weight: bold;">A_Del</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span> , <span style="color: rgb(128, 128, 128);">(int)</span> Item )
+<br>
+<ul>Deletes ItemIndex of given <span style="font-style: italic;">Array</span></ul>
+<br>
+<span style="font-weight: bold;">A_Pop</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span> )
+<br>
+<ul>Returns the element off the end of <span style="font-style: italic;">Array</span> and removes it. Additionally length is returned as ErrorLevel</ul>
+<br>
+<span style="font-weight: bold;">A_Shift</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span> )
+<br>
+<ul>Shift an element off the beginning of <span style="font-style: italic;">Array</span> and returns it. Additionally length is returned as ErrorLevel</ul>
+<br>
+<span style="font-weight: bold;">A_Swap</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span>, <span style="color: rgb(128, 128, 128);">(int)</span> Index_A, <span style="color: rgb(128, 128, 128);">(int)</span> Index_B )
+<br>
+<ul>Swaps Index_A's element with Index_B's element in given Array</ul>
+<br>
+<span style="font-weight: bold;">A_Slice</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span>, <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">SourceArray</span>, <span style="color: rgb(128, 128, 128);">(int)</span> Start, <span style="color: rgb(128, 128, 128);">(int)</span> End )
+<br>
+<ul><span style="font-style: italic;">SourceArray</span>'s given intersection Elements are appended to <span style="font-style: italic;">Array</span>, which will be created at runtime if neccessary</ul>
+<br>
+<span style="font-weight: bold;">A_Merge</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> Array,  <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">SourceArray</span> )
+<br>
+<ul>Appends entire <span style="font-style: italic;">SourceArray</span> to <span style="font-style: italic;">Array</span>. Returns A_Count of <span style="font-style: italic;">Array</span>, -1 on Error with Details in ErrorLevel</ul>
+<br>
+<span style="font-weight: bold;">A_Array</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span> )
+<br>
+<ul>Returns TRUE if <span style="font-style: italic;">Array</span>, FALSE otherwise - Thx, Lexikos</ul>
+<br>
+<span style="font-weight: bold;">A_Count</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span> )
+<br>
+<ul>Returns current element count of given <span style="font-style: italic;">Array</span> or -1 if no valid binary array</ul>
+<br>
+<span style="font-weight: bold;">A_Dump</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span> )
+<br>
+<ul>Dumps existing <span style="font-style: italic;">Array</span> into Human readable List
+<br>
+<span style="font-weight: bold;">DOES NOT SUPPORT NESTED ARRAYS FOR NOW</span></ul>
+<br>
+</ul>
+<br>
+<span style="text-decoration: underline;"><span style="font-size: 18px; line-height: normal;"><span style="font-weight: bold;">List of currently used internal functions</span></span></span>
+<br>
+<ul>
+<br>
+<span style="font-weight: bold;">A_Init</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span> )
+<br>
+<ul>for internal use only - initialises bytestructure of <span style="font-style: italic;">Array</span></ul>
+<br>
+<span style="font-weight: bold;">A_Size</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span> )
+<br>
+<ul>for internal use only - returns ArrayStructuresize</ul>
+<br>
+<span style="font-weight: bold;">A_Length</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span> )
+<br>
+<ul>for internal use only - returns DataLength of <span style="font-style: italic;">Array</span></ul>
+<br>
+<span style="font-weight: bold;">A_ArrayMM</span>( (ptr) Target, (ptr) Source, <span style="color: rgb(128, 128, 128);">(uint)</span> Length )
+<br>
+<ul>for internal use only - SyntaxSugar for RtlMoveMemory</ul>
+<br>
+</ul>
+<br>
+<span style="text-decoration: underline;"><span style="font-size: 18px; line-height: normal;"><span style="font-weight: bold;">List of currently used debugging functions for RC2</span></span></span>
+<br>
+<ul>
+<br>
+<span style="font-weight: bold;">A___ArrayBin</span>( <span style="color: rgb(128, 128, 128);">(ByRef)</span> <span style="font-style: italic;">Array</span>, <span style="color: rgb(128, 128, 128);">(uint)</span> Offset, <span style="color: rgb(128, 128, 128);">(uint)</span> Length )
+<br>
+<ul>For debugging purposes only - dumps Array content in hexView</ul>
+<br>
+<span style="font-weight: bold;">A___ArrayInsideView</span>( <span style="font-style: italic;">Array</span> )
+<br>
+<ul>For debugging purposes only - to dump an <span style="font-style: italic;">Array</span> use A_Dump(Array)
+<br>
+This function returns a view on table setup with relative offsets</ul>
+<br>
+</ul>
+<br>
+
+<br>
+below is a lil testsuite which also introduces the functions. ATM its not a release but a release candidate.
+<br>
+
+```
+Loop,5  ; Add 5 elements to Array
+	VarSetCapacity(t,5,asc("0")+A_Index), A_Put(MyArray,t)<br><br><span style="color: rgb(0, 128, 0);">; Display AHK array Signature</span><br>MsgBox,0,DirectAccess Array,% MyArray<br><br>Data := "aaaa", A_Put(MyArray, Data, 1) <span style="color: rgb(0, 128, 0);">; Change 1st element w/ shorter size</span><br>Data := "bbbbbbbbb", A_Put(MyArray, Data, 3) <span style="color: rgb(0, 128, 0);">; ; Change 3rd element w/ longer size</span><br><span style="color: rgb(0, 128, 0);">; Change 5th element w/ longer size - currently last element of our Array</span><br>Data := "1234567890abcdefghijklmnopqrstuvwxyz", A_Put(MyArray, Data, 5)<br><br>Loop,5 <span style="color: rgb(0, 128, 0);">; Add another 5 elements to Array</span><br>&nbsp; &nbsp;VarSetCapacity(t,5,asc("0")+A_Index), A_Put(MyArray,t)<br><br>A_Put(MyArray, (Data := "-+-+-"), 1) <span style="color: rgb(0, 128, 0);">; Change 1st element again with different Size</span><br>A_Put(MyArray, Data, 3) <span style="color: rgb(0, 128, 0);">; Change 3rd element again with different Size</span><br>A_Put(MyArray, Data, 5) <span style="color: rgb(0, 128, 0);">; Change 5th element again with different Size</span><br><br>Loop,10 <span style="color: rgb(0, 128, 0);">; Retrieve all elements via loop</span><br>&nbsp; &nbsp;ArrayElements .= "ArrayElement #" A_Index ": " A_Get(MyArray,A_Index) "`n"<br><br>MsgBox,0,ArrayElementvia Loop,% ArrayElements "`n`n" <span style="color: rgb(0, 128, 0);">; Display 'em</span><br>MsgBox,0,GlueTest,% A_Implode(MyArray,"`n") <span style="color: rgb(0, 128, 0);">; Display A_Implode(Array) test</span><br><br><span style="color: rgb(0, 128, 0);">; If existing array given, it appends data to its end</span><br>A_Explode(MyArray, " ", "This is a test for A_Explode") <br>MsgBox,0,A_Explode Test,% "Dump Array after A_Explode applied:`n" A_Dump(MyArray)<br><br><span style="color: rgb(0, 128, 0);">; A_Del(Array,Item) Test / Element 4 is "44444"</span><br>cb&nbsp; &nbsp;:= A_Count(MyArray), data := A_Del(MyArray,4), size := ErrorLevel<br>MsgBox,0,A_Del Test,%&nbsp; cB " elements counted before A_Del`n" <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; . A_Count(MyArray) " elements counted after A_Del`n" <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; . "Deleted element #4: " data " (" size ")`n`n"<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; . "--------------DUMP:`n" A_Dump(MyArray)<br><br><span style="color: rgb(0, 128, 0);">; pops Element from ArrayStack</span><br>MsgBox,0,A_Pop Test,% A_Count(MyArray) " elements counted before A_Pop removed: " A_Pop(MyArray)<br>&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; . " ("
+ErrorLevel ")`n`n--------------DUMP:`n" A_Dump(MyArray)<br><br><span style="color: rgb(0, 128, 0);">; shifts Element off from start of ArrayStack</span><br>MsgBox,0,A_Shift Test,% A_Count(MyArray) " elemens counted before A_Shift removed: " A_Shift(MyArray)<br>&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .
+" (" ErrorLevel ")`n`n--------------DUMP:`n" A_Dump(MyArray)<br><br><span style="color: rgb(0, 128, 0);">; swap 2 elements 1 w/ 2 and 1 w/ 10</span><br>A_Swap(MyArray,1,2), A_Swap(MyArray,1,10)<br>MsgBox,0,A_Swap 1&lt;-&gt;2 and 10&lt;-&gt;1 Test, % "--------------DUMP:`n" A_Dump(MyArray)<br><br><span style="color: rgb(0, 128, 0);">; Slicetest - Slice Element 1 to 3 from MyArray</span><br>A_Slice(MyOtherArray,MyArray,1,3)<br>MsgBox,0,A_Slice Test, % "--------------DUMP:`n" A_Dump(MyOtherArray)<br><br><span style="color: rgb(0, 128, 0);">; Append MyOtherArray to MyArray's Structure</span><br>A_Merge(MyArray,MyOtherArray)<br>MsgBox,0,A_Merge Test, % "--------------DUMP:`n" A_Dump(MyArray)<br><br>#include A_Array.ahk</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+```
+
+
+
+</span>
+<!--/DOCUMENT_FRAGMENT-->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

@@ -1,0 +1,1063 @@
+; http://msdn.microsoft.com/library/default.asp?url=/library/en-us/winprog/winprog/windows_data_types.asp
+;
+; Platform SDK: Windows API
+; Windows Data Types
+;
+; The data types supported by Microsoft? Windows? are used to define
+; function return values, function and message parameters, and structure members.
+; They define the size and meaning of these elements.
+; For more information about the underlying C/C++ data types, see Data Type Ranges.
+;
+; The following table contains the following types:
+; character, integer, Boolean, pointer, and handle.
+; The character, integer, and Boolean types are common to most C compilers.
+; Most of the pointer-type names begin with a prefix of P or LP.
+; Handles refer to a resource that has been loaded into memory.
+;
+; For more information about handling 64-bit integers, see Large Integers.
+;
+; -- Format:
+; Type name
+; My equivalence, based on byte number, more generic:
+;     V0, S8, U8, S16, U16, S32, U32, F32, S64, U64, D64
+; Description
+; Include file where it is defined
+; Definition (multiline)
+;
+; Sorted by:
+; 1) Primitive types, by growing size (Win32);
+; 2) Types builts using 1);
+; 3) Handles;
+; 3) Sizeless types
+
+VOID
+V0
+Any type.
+WinNT.h
+#define VOID void
+
+CHAR
+S8
+8-bit Windows (ANSI) character.
+WinNT.h
+typedef char CHAR;
+
+TCHAR
+S8
+A WCHAR if UNICODE is defined, a CHAR otherwise.
+WinNT.h
+#ifdef UNICODE
+ typedef WCHAR TCHAR;
+#else
+ typedef char TCHAR;
+#endif
+
+UCHAR
+U8
+Unsigned CHAR.
+WinDef.h
+typedef unsigned char UCHAR;
+
+BYTE
+U8
+Byte (8 bits).
+WinDef.h
+typedef unsigned char BYTE;
+
+TBYTE
+U8
+A WCHAR if UNICODE is defined, a CHAR otherwise.
+WinNT.h
+#ifdef UNICODE
+ typedef WCHAR TBYTE;
+#else
+ typedef unsigned char TBYTE;
+#endif
+
+HALF_PTR
+S16
+Half the size of a pointer. Use within a structure that contains a pointer and two small fields.
+Basetsd.h
+#ifdef _WIN64
+ typedef int HALF_PTR;
+#else
+ typedef short HALF_PTR;
+#endif
+
+UHALF_PTR
+U16
+Unsigned HALF_PTR. Use within a structure that contains a pointer and two small fields.
+Basetsd.h
+#ifdef _WIN64
+ typedef unsigned int UHALF_PTR;
+#else
+ typedef unsigned short UHALF_PTR;
+#endif
+
+SHORT
+S16
+Short integer (16 bits).
+WinNT.h
+typedef short SHORT;
+
+USHORT
+U16
+Unsigned SHORT.
+WinDef.h
+typedef unsigned short USHORT;
+
+WORD
+U16
+16-bit unsigned integer.
+WinDef.h
+typedef unsigned short WORD;
+
+WCHAR
+U16
+16-bit Unicode character.
+WinNT.h
+typedef wchar_t WCHAR;
+
+BOOL
+S32
+Boolean variable (should be TRUE or FALSE).
+WinDef.h
+typedef int BOOL;
+
+INT
+S32
+32-bit signed integer.
+WinDef.h
+typedef int INT;
+
+UINT
+U32
+Unsigned INT.
+WinDef.h
+typedef unsigned int UINT;
+
+INT_PTR
+S32
+Signed integer type for pointer precision. Use when casting a pointer to an integer to perform pointer arithmetic.
+BaseTsd.h
+#if defined(_WIN64)
+ typedef __int64 INT_PTR;
+#else
+ typedef int INT_PTR;
+#endif
+
+UINT_PTR
+U32
+Unsigned INT_PTR.
+BaseTsd.h
+#if defined(_WIN64)
+ typedef unsigned __int64 UINT_PTR;
+#else
+ typedef unsigned int UINT_PTR;
+#endif
+
+INT32
+S32
+32-bit signed integer.
+BaseTsd.h
+typedef signed int INT32;
+
+UINT32
+U32
+Unsigned INT32.
+BaseTsd.h
+typedef unsigned int UINT32;
+
+LONG32
+S32
+32-bit signed integer.
+BaseTsd.h
+typedef signed int LONG32;
+
+ULONG32
+U32
+Unsigned LONG32.
+BaseTsd.h
+typedef unsigned int ULONG32;
+
+HFILE
+S32
+Handle to a file opened by OpenFile, not CreateFile.
+WinDef.h
+typedef int HFILE;
+
+LONG
+S32
+32-bit signed integer.
+WinNT.h
+typedef long LONG;
+
+ULONG
+U32
+Unsigned LONG.
+WinDef.h
+typedef unsigned long ULONG;
+
+LONG_PTR
+S32
+Signed long type for pointer precision. Use when casting a pointer to a long to perform pointer arithmetic.
+BaseTsd.h
+#if defined(_WIN64)
+ typedef __int64 LONG_PTR;
+#else
+ typedef long LONG_PTR;
+#endif
+
+ULONG_PTR
+U32
+Unsigned LONG_PTR.
+BaseTsd.h
+#if defined(_WIN64)
+ typedef unsigned __int64 ULONG_PTR;
+#else
+ typedef unsigned long ULONG_PTR;
+#endif
+
+DWORD32
+U32
+32-bit unsigned integer.
+BaseTsd.h
+typedef unsigned int DWORD32;
+
+DWORD
+U32
+32-bit unsigned integer.
+WinDef.h
+typedef unsigned long DWORD;
+
+POINTER_32
+U32
+32-bit pointer. On a 32-bit system, this is a native pointer. On a 64-bit system, this is a truncated 64-bit pointer.
+BaseTsd.h
+#if defined(_WIN64)
+#define POINTER_32 __ptr32
+#else
+#define POINTER32
+#endif
+
+LPCVOID
+U32
+Pointer to a constant of any type.
+WinDef.h
+typedef CONST void *LPCVOID;
+
+LPVOID
+U32
+Pointer to any type.
+WinDef.h
+typedef void *LPVOID;
+
+PVOID
+U32
+Pointer to any type.
+WinNT.h
+typedef void *PVOID;
+
+LPINT
+U32
+Pointer to an INT.
+WinDef.h
+typedef int *LPINT;
+
+PINT
+U32
+Pointer to an INT.
+WinDef.h
+typedef int *PINT;
+
+LPLONG
+U32
+Pointer to a LONG.
+WinDef.h
+typedef long *LPLONG;
+
+FLOAT
+F32
+Floating-point variable.
+WinDef.h
+typedef float FLOAT;
+
+LONGLONG
+S64
+64-bit signed integer.
+WinNT.h
+#if !defined(_M_IX86)
+ typedef __int64 LONGLONG;
+#else
+ typedef double LONGLONG;
+#endif
+
+ULONGLONG
+U64
+64-bit unsigned integer.
+WinNT.h
+#if !defined(_M_IX86)
+ typedef unsigned __int64 ULONGLONG;
+#else
+ typedef double ULONGLONG
+#endif
+
+INT64
+S64
+64-bit signed integer.
+BaseTsd.h
+typedef signed __int64 INT64;
+
+UINT64
+U64
+Unsigned INT64.
+BaseTsd.h
+typedef unsigned __int 64 UINT64;
+
+LONG64
+S64
+64-bit signed integer.
+BaseTsd.h
+typedef __int64 LONG64;
+
+ULONG64
+U64
+Unsigned LONG64.
+BaseTsd.h
+typedef unsigned __int64 ULONG64;
+
+DWORD64
+U64
+64-bit unsigned integer.
+BaseTsd.h
+typedef unsigned __int64 DWORD64;
+
+POINTER_64
+S32
+64-bit pointer. On a 64-bit system, this is a native pointer. On a 32-bit system, this is a sign-extended 32-bit pointer. Note that it is not safe to assume the state of the high pointer bit.
+BaseTsd.h
+#define POINTER_64 __ptr64
+
+
+
+
+
+ATOM
+U16
+Atom.
+WinDef.h
+typedef WORD ATOM;
+
+BOOLEAN
+U8
+Boolean variable (should be TRUE or FALSE).
+WinNT.h
+typedef BYTE BOOLEAN;
+
+COLORREF
+U32
+Red, green, blue (RGB) color value (32 bits). See COLORREF for information on this type.
+WinDef.h
+typedef DWORD COLORREF;
+
+DWORDLONG
+U64
+64-bit unsigned integer.
+WinNT.h
+typedef ULONGLONG DWORDLONG;
+
+DWORD_PTR
+U32
+Unsigned long type for pointer precision. Use when casting a pointer to a long type to perform pointer arithmetic. (Also commonly used for general 32-bit parameters that have been extended to 64 bits in 64-bit Windows. )
+BaseTsd.h
+typedef ULONG_PTR DWORD_PTR;
+
+HRESULT
+S32
+Return code used by interfaces. It is zero upon success and nonzero to represent an error code or status information.
+WinNT.h
+typedef LONG HRESULT;
+
+LANGID
+U16
+Language identifier.
+WinNT.h
+typedef WORD LANGID;
+
+LCID
+U32
+Locale identifier.
+WinNT.h
+typedef DWORD LCID;
+
+LCTYPE
+U32
+Locale information type. For a list, see Locale and Language Information.
+WinNls.h
+typedef DWORD LCTYPE;
+
+LGRPID
+U32
+Language group identifier. For a list, see EnumLanguageGroupLocales.
+WinNls.h
+typedef DWORD LGRPID;
+
+WPARAM
+U32
+Message parameter.
+WinDef.h
+typedef UINT_PTR WPARAM;
+
+LPARAM
+U32
+Message parameter.
+WinDef.h
+typedef LONG_PTR LPARAM;
+
+LPBOOL
+U32
+Pointer to a BOOL.
+WinDef.h
+typedef BOOL far *LPBOOL;
+
+LPBYTE
+U32
+Pointer to a BYTE.
+WinDef.h
+typedef BYTE far *LPBYTE;
+
+LPCOLORREF
+U32
+Pointer to a COLORREF value.
+WinDef.h
+typedef DWORD *LPCOLORREF;
+
+LPCSTR
+U32
+Pointer to a constant null-terminated string of 8-bit Windows (ANSI) characters.
+WinNT.h
+typedef __nullterminated CONST CHAR *LPCSTR;
+
+LPCTSTR
+U32
+An LPCWSTR if UNICODE is defined, an LPCSTR otherwise.
+WinNT.h
+#ifdef UNICODE
+ typedef LPCWSTR LPCTSTR;
+#else
+ typedef LPCSTR LPCTSTR;
+#endif
+
+LPCWSTR
+U32
+Pointer to a constant null-terminated string of 16-bit Unicode characters.
+WinNT.h
+typedef CONST WCHAR *LPCWSTR;
+
+LPDWORD
+U32
+Pointer to a DWORD.
+WinDef.h
+typedef DWORD *LPDWORD;
+
+LPHANDLE
+U32
+Pointer to a HANDLE.
+WinDef.h
+typedef HANDLE *LPHANDLE;
+
+LPSTR
+U32
+Pointer to a null-terminated string of 8-bit Windows (ANSI) characters.
+WinNT.h
+typedef CHAR *LPSTR;
+
+LPTSTR
+U32
+An LPWSTR if UNICODE is defined, an LPSTR otherwise.
+WinNT.h
+#ifdef UNICODE
+ typedef LPWSTR LPTSTR;
+#else
+ typedef LPSTR LPTSTR;
+#endif
+
+LPWORD
+U32
+Pointer to a WORD.
+WinDef.h
+typedef WORD *LPWORD;
+
+LPWSTR
+U32
+Pointer to a null-terminated string of 16-bit Unicode characters.
+WinNT.h
+typedef WCHAR *LPWSTR;
+
+LRESULT
+U32
+Signed result of message processing.
+WinDef.h
+typedef LONG_PTR LRESULT;
+
+PBOOL
+U32
+Pointer to a BOOL.
+WinDef.h
+typedef BOOL *PBOOL;
+
+PBOOLEAN
+U32
+Pointer to a BOOL.
+WinNT.h
+typedef BOOLEAN *PBOOLEAN;
+
+PBYTE
+U32
+Pointer to a BYTE.
+WinDef.h
+typedef BYTE *PBYTE;
+
+PCHAR
+U32
+Pointer to a CHAR.
+WinNT.h
+typedef CHAR *PCHAR;
+
+PCSTR
+U32
+Pointer to a constant null-terminated string of 8-bit Windows (ANSI) characters.
+WinNT.h
+typedef CONST CHAR *PCSTR;
+
+PCTSTR
+U32
+A PCWSTR if UNICODE is defined, a PCSTR otherwise.
+WinNT.h
+#ifdef UNICODE
+ typedef LPCWSTR PCTSTR;
+#else
+ typedef LPCSTR PCTSTR;
+#endif
+
+PCWSTR
+U32
+Pointer to a constant null-terminated string of 16-bit Unicode characters.
+WinNT.h
+typedef CONST WCHAR *PCWSTR;
+
+PDWORD
+U32
+Pointer to a DWORD.
+WinDef.h
+typedef DWORD *PDWORD;
+
+PDWORDLONG
+U32
+Pointer to a DWORDLONG.
+WinNT.h
+typedef DWORDLONG *PDWORDLONG;
+
+PDWORD_PTR
+U32
+Pointer to a DWORD_PTR.
+BaseTsd.h
+typedef DWORD_PTR *PDWORD_PTR;
+
+PDWORD32
+U32
+Pointer to a DWORD32.
+BaseTsd.h
+typedef DWORD32 *PDWORD32;
+
+PDWORD64
+U32
+Pointer to a DWORD64.
+BaseTsd.h
+typedef DWORD64 *PDWORD64;
+
+PFLOAT
+U32
+Pointer to a FLOAT.
+WinDef.h
+typedef FLOAT *PFLOAT;
+
+PHALF_PTR
+U32
+Pointer to a HALF_PTR.
+Basetsd.h
+#ifdef _WIN64
+ typedef HALF_PTR *PHALF_PTR;
+#else
+ typedef HALF_PTR *PHALF_PTR;
+#endif
+
+PHANDLE
+U32
+Pointer to a HANDLE.
+WinNT.h
+typedef HANDLE *PHANDLE;
+
+PHKEY
+U32
+Pointer to an HKEY.
+WinDef.h
+typedef HKEY *PHKEY;
+
+PINT_PTR
+U32
+Pointer to an INT_PTR.
+BaseTsd.h
+typedef INT_PTR *PINT_PTR;
+
+PINT32
+U32
+Pointer to an INT32.
+BaseTsd.h
+typedef INT32 *PINT32;
+
+PINT64
+U32
+Pointer to an INT64.
+BaseTsd.h
+typedef INT64 *PINT64;
+
+PLCID
+U32
+Pointer to an LCID.
+WinNT.h
+typedef PDWORD PLCID;
+
+PLONG
+U32
+Pointer to a LONG.
+WinNT.h
+typedef LONG *PLONG;
+
+PLONGLONG
+U32
+Pointer to a LONGLONG.
+WinNT.h
+typedef LONGLONG *PLONGLONG;
+
+PLONG_PTR
+U32
+Pointer to a LONG_PTR.
+BaseTsd.h
+typedef LONG_PTR *PLONG_PTR;
+
+PLONG32
+U32
+Pointer to a LONG32.
+BaseTsd.h
+typedef LONG32 *PLONG32;
+
+PLONG64
+U32
+Pointer to a LONG64.
+BaseTsd.h
+typedef LONG64 *PLONG64;
+
+PSHORT
+U32
+Pointer to a SHORT.
+WinNT.h
+typedef SHORT *PSHORT;
+
+PSIZE_T
+U32
+Pointer to a SIZE_T.
+BaseTsd.h
+typedef SIZE_T *PSIZE_T;
+
+PSSIZE_T
+U32
+Pointer to a SSIZE_T.
+BaseTsd.h
+typedef SSIZE_T *PSSIZE_T;
+
+PSTR
+U32
+Pointer to a null-terminated string of 8-bit Windows (ANSI) characters.
+WinNT.h
+typedef CHAR *PSTR;
+
+PTBYTE
+U32
+Pointer to a TBYTE.
+WinNT.h
+typedef TBYTE *PTBYTE;
+
+PTCHAR
+U32
+Pointer to a TCHAR.
+WinNT.h
+typedef TCHAR *PTCHAR;
+
+PTSTR
+U32
+A PWSTR if UNICODE is defined, a PSTR otherwise.
+WinNT.h
+#ifdef UNICODE
+ typedef LPWSTR PTSTR;
+#else
+ typedef LPSTR PTSTR;
+#endif
+
+PUCHAR
+U32
+Pointer to a UCHAR.
+WinDef.h
+typedef UCHAR *PUCHAR;
+
+PUHALF_PTR
+U32
+Pointer to a UHALF_PTR.
+Basetsd.h
+#ifdef _WIN64
+ typedef UHALF_PTR *PUHALF_PTR;
+#else
+ typedef UHALF_PTR *PUHALF_PTR;
+#endif
+
+PUINT
+U32
+Pointer to a UINT.
+WinDef.h
+typedef UINT *PUINT;
+
+PUINT_PTR
+U32
+Pointer to a UINT_PTR.
+BaseTsd.h
+typedef UINT_PTR *PUINT_PTR;
+
+PUINT32
+U32
+Pointer to a UINT32.
+BaseTsd.h
+typedef UINT32 *PUINT32;
+
+PUINT64
+U32
+Pointer to a UINT64.
+BaseTsd.h
+typedef UINT64 *PUINT64;
+
+PULONG
+U32
+Pointer to a ULONG.
+WinDef.h
+typedef ULONG *PULONG;
+
+PULONGLONG
+U32
+Pointer to a ULONGLONG.
+WinDef.h
+typedef ULONGLONG *PULONGLONG;
+
+PULONG_PTR
+U32
+Pointer to a ULONG_PTR.
+BaseTsd.h
+typedef ULONG_PTR *PULONG_PTR;
+
+PULONG32
+U32
+Pointer to a ULONG32.
+BaseTsd.h
+typedef ULONG32 *PULONG32;
+
+PULONG64
+U32
+Pointer to a ULONG64.
+BaseTsd.h
+typedef ULONG64 *PULONG64;
+
+PUSHORT
+U32
+Pointer to a USHORT.
+WinDef.h
+typedef USHORT *PUSHORT;
+
+PWCHAR
+U32
+Pointer to a WCHAR.
+WinNT.h
+typedef WCHAR *PWCHAR;
+
+PWORD
+U32
+Pointer to a WORD.
+WinDef.h
+typedef WORD *PWORD;
+
+PWSTR
+U32
+Pointer to a null- terminated string of 16-bit Unicode characters.
+WinNT.h
+typedef WCHAR *PWSTR;
+
+SC_LOCK
+U32
+Lock to a service control manager database.
+WinSvc.h
+typedef LPVOID SC_LOCK;
+
+SIZE_T
+U32
+The maximum number of bytes to which a pointer can point. Use for a count that must span the full range of a pointer.
+BaseTsd.h
+typedef ULONG_PTR SIZE_T;
+
+SSIZE_T
+U32
+Signed SIZE_T.
+BaseTsd.h
+typedef LONG_PTR SSIZE_T;
+
+USN
+S64
+Update sequence number (USN).
+WinNT.h
+typedef LONGLONG USN;
+
+
+
+HANDLE
+U32
+Handle to an object.
+WinNT.h
+typedef PVOID HANDLE;
+
+HACCEL
+U32
+Handle to an accelerator table.
+WinDef.h
+typedef HANDLE HACCEL;
+
+HBITMAP
+U32
+Handle to a bitmap.
+WinDef.h
+typedef HANDLE HBITMAP;
+
+HBRUSH
+U32
+Handle to a brush.
+WinDef.h
+typedef HANDLE HBRUSH;
+
+HCOLORSPACE
+U32
+Handle to a color space.
+WinDef.h
+#if(WINVER >= 0x0400)
+ typedef HANDLE HCOLORSPACE;
+#endif
+
+HCONV
+U32
+Handle to a dynamic data exchange (DDE) conversation.
+Ddeml.h
+typedef HANDLE HCONV;
+
+HCONVLIST
+U32
+Handle to a DDE conversation list.
+Ddeml.h
+typedef HANDLE HCONVLIST;
+
+HCURSOR
+U32
+Handle to a cursor.
+WinDef.h
+typedef HICON HCURSOR;
+
+HDC
+U32
+Handle to a device context (DC).
+WinDef.h
+typedef HANDLE HDC;
+
+HDDEDATA
+U32
+Handle to DDE data.
+Ddeml.h
+typedef HANDLE HDDEDATA;
+
+HDESK
+U32
+Handle to a desktop.
+WinDef.h
+typedef HANDLE HDESK;
+
+HDROP
+U32
+Handle to an internal drop structure.
+ShellApi.h
+typedef HANDLE HDROP;
+
+HDWP
+U32
+Handle to a deferred window position structure.
+WinUser.h
+typedef HANDLE HDWP;
+
+HENHMETAFILE
+U32
+Handle to an enhanced metafile.
+WinDef.h
+typedef HANDLE HENHMETAFILE;
+
+HFONT
+U32
+Handle to a font.
+WinDef.h
+typedef HANDLE HFONT;
+
+HGDIOBJ
+U32
+Handle to a GDI object.
+WinDef.h
+typedef HANDLE HGDIOBJ;
+
+HGLOBAL
+U32
+Handle to a global memory block.
+WinDef.h
+typedef HANDLE HGLOBAL;
+
+HHOOK
+U32
+Handle to a hook.
+WinDef.h
+typedef HANDLE HHOOK;
+
+HICON
+U32
+Handle to an icon.
+WinDef.h
+typedef HANDLE HICON;
+
+HINSTANCE
+U32
+Handle to an instance.
+WinDef.h
+typedef HANDLE HINSTANCE;
+
+HKEY
+U32
+Handle to a registry key.
+WinDef.h
+typedef HANDLE HKEY;
+
+HKL
+U32
+Input locale identifier.
+WinDef.h
+typedef HANDLE HKL;
+
+HLOCAL
+U32
+Handle to a local memory block.
+WinDef.h
+typedef HANDLE HLOCAL;
+
+HMENU
+U32
+Handle to a menu.
+WinDef.h
+typedef HANDLE HMENU;
+
+HMETAFILE
+U32
+Handle to a metafile.
+WinDef.h
+typedef HANDLE HMETAFILE;
+
+HMODULE
+U32
+Handle to a module. The value is the base address of the module.
+WinDef.h
+typedef HINSTANCE HMODULE;
+
+HMONITOR
+U32
+Handle to a display monitor.
+WinDef.h
+if(WINVER >= 0x0500) typedef HANDLE HMONITOR;
+
+HPALETTE
+U32
+Handle to a palette.
+WinDef.h
+typedef HANDLE HPALETTE;
+
+HPEN
+U32
+Handle to a pen.
+WinDef.h
+typedef HANDLE HPEN;
+
+HRGN
+U32
+Handle to a region.
+WinDef.h
+typedef HANDLE HRGN;
+
+HRSRC
+U32
+Handle to a resource.
+WinDef.h
+typedef HANDLE HRSRC;
+
+HSZ
+U32
+Handle to a DDE string.
+Ddeml.h
+typedef HANDLE HSZ;
+
+HWINSTA
+U32
+Handle to a window station.
+WinDef.h
+typedef HANDLE WINSTA;
+
+HWND
+U32
+Handle to a window.
+WinDef.h
+typedef HANDLE HWND;
+
+SC_HANDLE
+U32
+Handle to a service control manager database.
+WinSvc.h
+typedef HANDLE SC_HANDLE;
+
+SERVICE_STATUS_HANDLE
+U32
+Handle to a service status value.
+WinSvc.h
+typedef HANDLE SERVICE_STATUS_HANDLE;
+
+
+
+WINAPI
+V0
+Calling convention for system functions.
+WinDef.h
+#define WINAPI __stdcall
+
+CALLBACK
+V0
+Calling convention for callback functions.
+WinDef.h
+#define CALLBACK __stdcall
+
+CONST
+V0
+Variable whose value is to remain constant during execution.
+WinDef.h
+#define CONST const

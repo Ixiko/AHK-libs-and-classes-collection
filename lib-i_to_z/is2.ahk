@@ -1,4 +1,4 @@
-#include encodebin.ahk
+#include %A_ScriptDir%\..\lib-a_to_h\encodebin.ahk
 
 OffscreenSnap(wid) {
   global snappixbuf, snapwidth, snapheight

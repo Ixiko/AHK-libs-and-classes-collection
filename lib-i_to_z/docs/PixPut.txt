@@ -1,0 +1,58 @@
+Function: PixPut( Hwnd, ColorRef=0, X=0, Y=0, W=1, H=1, IsChild=0 )
+
+    Hwnd        - Handle Id of gui / window to create the control at.
+    ColorRef    - RGB color code in hexadecimal format, with leading "0x", i.g. "0x00FF00" for green.
+    X           - X coordinate window to place the pixel
+    Y           - Y coordinate window to place the pixel
+    W           - Width of the pixel 
+    H           - Height of the pixel
+    IsChild     - ???
+    
+    Puts a Pixel on GUI.
+    
+    Return
+    (cHwnd) Handle of created control.
+    
+    Example
+    > PixPut( hWnd, 0xFF0000, 100, 100, 200, 200 ) ; Create red colored solid block.
+
+
+Function: PixClr( cHwnd, ColorRef=0 )
+    
+    cHwnd       - Handle of control created with PixPut()
+    ColorRef    - RGB color code.
+
+    Changes the Color of existing PixPut() created control.
+    
+    Return
+    Does not return anything.
+
+
+Function: PixRmv( cHwnd )
+
+    cHwnd       - Handle of control created with PixPut()
+    
+    Destroys a single control created by PixPut().
+    
+    Return
+    Does not return anything.
+
+
+Function: PixRmvAll( Hwnd )
+
+    Hwnd       - Handle of window, with controls created by PixPut()
+    
+    Destroys all controls created by PixPut().
+    
+    Return
+    Does not return anything.
+
+
+Function: PixLst( Hwnd )
+
+    Hwnd       - Handle of window, with controls created by PixPut()
+
+    Returns all Control Hwnds created by PixPut().
+    
+    Return
+    Newline separated "`n" list of all controls Hwnd created by PixPut().

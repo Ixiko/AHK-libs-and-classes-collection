@@ -1,0 +1,26 @@
+ST - Stack Library by Banane
+http://www.autohotkey.com/forum/viewtopic.php?t=54153
+
+ST_Dim(ByRef Stack)
+Description: Declares the specified variable as a stack
+
+ST_Undim(ByRef Stack)
+Description: Deletes all contents from the stack variable
+
+ST_Del(ByRef Stack)
+Description: Deletes all entrys from the stack
+
+ST_Push(ByRef Stack,Value)
+Description: Adds an entry to the stack
+
+ST_Pop(ByRef Stack)
+Description: Removes and returns the newest entrys contents
+
+ST_Peek(ByRef Stack)
+Description: Returns the newest entrys contents without removing
+
+ST_Len(ByRef Stack)
+Description: Returns the count of entrys
+
+ST_Debug(OnOff="")
+Description: Actiavtes error messages

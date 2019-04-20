@@ -1,0 +1,51 @@
+/* ::::: http://www.autohotkey.com/forum/templates/subSilver/subSilver.css ::::: */
+
+body { background-color: rgb(229, 229, 229); }
+font, th, td, p { font-family: Verdana,Arial,Helvetica,sans-serif; }
+a:link, a:active, a:visited { color: rgb(0, 102, 153); }
+a:hover { text-decoration: underline; color: rgb(221, 105, 0); }
+hr { height: 0px; border-right: 0px solid rgb(209, 215, 220); border-width: 1px 0px 0px; border-style: solid; border-color: rgb(209, 215, 220); }
+.bodyline { background-color: rgb(255, 255, 255); border: 1px solid rgb(152, 170, 177); }
+.forumline { background-color: rgb(255, 255, 255); border: 2px solid rgb(0, 102, 153); }
+td.row1 { background-color: rgb(239, 239, 239); }
+td.row2 { background-color: rgb(222, 227, 231); }
+th { color: rgb(255, 163, 79); font-size: 11px; font-weight: bold; background-color: rgb(0, 102, 153); height: 25px; background-image: url('cellpic3.gif'); }
+td.cat, td.catHead, td.catSides, td.catLeft, td.catRight, td.catBottom { background-image: url('cellpic1.gif'); background-color: rgb(209, 215, 220); border: medium solid rgb(255, 255, 255); height: 28px; }
+td.cat, td.catHead, td.catBottom { height: 29px; border-width: 0px; }
+th.thHead, th.thSides, th.thTop, th.thLeft, th.thRight, th.thBottom, th.thCornerL, th.thCornerR { font-weight: bold; border: medium solid rgb(255, 255, 255); height: 28px; }
+td.row3Right, td.spaceRow { background-color: rgb(209, 215, 220); border: medium solid rgb(255, 255, 255); }
+th.thHead, td.catHead { font-size: 12px; border-width: 1px 1px 0px; }
+th.thSides, td.catSides, td.spaceRow { border-width: 0px 1px; }
+th.thRight, td.catRight, td.row3Right { border-width: 0px 1px 0px 0px; }
+th.thLeft, td.catLeft { border-width: 0px 0px 0px 1px; }
+th.thBottom, td.catBottom { border-width: 0px 1px 1px; }
+.maintitle, h1, h2 { font-weight: bold; font-size: 22px; font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif; text-decoration: none; line-height: 120%; color: rgb(0, 0, 0); }
+.gen { font-size: 12px; }
+.genmed { font-size: 11px; }
+.gensmall { font-size: 10px; }
+.gen, .genmed, .gensmall { color: rgb(0, 0, 0); }
+.mainmenu { font-size: 11px; color: rgb(0, 0, 0); }
+a.mainmenu { text-decoration: none; color: rgb(0, 102, 153); }
+a.mainmenu:hover { text-decoration: underline; color: rgb(221, 105, 0); }
+.nav { font-weight: bold; font-size: 11px; color: rgb(0, 0, 0); }
+a.nav { text-decoration: none; color: rgb(0, 102, 153); }
+a.nav:hover { text-decoration: underline; }
+.name { font-size: 11px; color: rgb(0, 0, 0); }
+.postdetails { font-size: 10px; color: rgb(0, 0, 0); }
+.postbody { font-size: 12px; line-height: 18px; }
+a.postlink:link { text-decoration: none; color: rgb(0, 102, 153); }
+a.postlink:visited { text-decoration: none; color: rgb(84, 147, 180); }
+a.postlink:hover { text-decoration: underline; color: rgb(221, 105, 0); }
+.code { font-family: Andale Mono,Courier New,Courier,sans-serif; font-size: 12px; line-height: 14px; color: rgb(0, 0, 160); background-color: rgb(250, 250, 250); border: 1px solid rgb(209, 215, 220); }
+.quote { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; color: rgb(68, 68, 68); line-height: 125%; background-color: rgb(250, 250, 250); border: 1px solid rgb(209, 215, 220); }
+.copyright { font-size: 10px; font-family: Verdana,Arial,Helvetica,sans-serif; color: rgb(68, 68, 68); letter-spacing: -1px; }
+a.copyright { color: rgb(68, 68, 68); text-decoration: none; }
+a.copyright:hover { color: rgb(0, 0, 0); text-decoration: underline; }
+input, textarea, select { color: rgb(0, 0, 0); font: 11px Verdana,Arial,Helvetica,sans-serif; border-color: rgb(0, 0, 0); }
+input.post, textarea.post, select { background-color: rgb(255, 255, 255); }
+input { text-indent: 2px; }
+input.liteoption { background-color: rgb(250, 250, 250); font-weight: normal; }
+@media print {
+  td.code > div:first-child { height: 100% ! important; }
+  .print-hide { visibility: hidden; }
+}

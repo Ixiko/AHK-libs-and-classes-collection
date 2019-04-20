@@ -1,103 +1,136 @@
-; Created by Frankie Bagnardi
-; Forum topic:
-; Licenced under the MIT license: http://www.opensource.org/licenses/mit-license.php
-class RegEx
-{
-	var Needle := "."
-	var EMAIL := "i)(?:\b|^)[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}(?:\b|$)"
-	var EMAIL2 := "[a-z0-9!#$%&'*+/=?^_``{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_``" 
-	. "{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|"
-	. "net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\b"
-	
-	__New(N) {
-		this.Needle := N
-	}
-	
-	; All matches are stored in a 2-dimentional object
-	; The format is MyMatches[Match_Number, Group_Name]
-	; In many cases Group_Name is a number
-	; When using a named group, e.g., (?P<MyGroupName>pattern), the result
-	; will be stored in MyGroupName also
-	Match(H, N=-1) {
-		If N is number
-			If (N = -1)
-				N := this.Needle ; Set default
-		Matches := {}
-		Groups := this.GetGroups(N)
-		Pos := 1, Match_ := ""
-		While ( Pos := RegExMatch(H, N, Match_, Pos + StrLen(Match_)) )
-		{
-			MatchIndex := A_Index
-			for key, subpat in Groups
-			{
-				This_Match := Match_%subpat%
-				OutputDebug Matches[%MatchIndex%, %subpat%] := %This_Match%`n%key%
-				Matches[MatchIndex, key] := This_Match
-				subpat_int := subpat+0
-				If subpat_int is not Integer
-					Matches[MatchIndex, subpat] := This_Match
-			}
-		}
-		return Matches
-	}
-	
-	; MatchCall is a callout function
-	; It calls function F each time your needle matches
-	;	F can be a string like "MyFuncName", or an object reference, e.g., Class.MyFuncName
-	;	Do not include the parenthesis and parameters. C.F not C.F(Param)
-	; Each subpattern is sent as a parameter
-	MatchCall(H, F, N=-1) {
-		If N is number
-			If (N = -1)
-				N := this.Needle ; Set default
-		If !IsFunc(F)
-			return
-		If !IsObject(F)
-			F := Func(F) ; Make it an object
-		G := this.GetGroups(N)
-		Pos := 1, M_ := ""
-		While ( Pos := RegExMatch(H, N, M_, Pos + StrLen(M_)) ) {
-			for key, subpat in G
-				P_%key% := M_%Subpat%
-			F.(M_, P_1, P_2, P_3, P_4, P_5, P_6, P_7, P_8, P_9, P_10, P_11, P_12, P_13, P_14, P_15)
-		}
-	}
-	
-	; This is essencially a one line RegExMatch, as apposed to a command
-	; Subpat refers to the numbered or named subpatern to be returned
-	;	For example, 1 or MyNamedPattern
-	;	Ommit this parameter or use "" to return the entire match
-	; To capture multiple matches use Match()
-	MatchSimple(H, Subpat="", N=-1) {
-		If N is number
-			If (N = -1)
-				N := this.Needle ; Set default
-		RegExMatch(H, N, M)
-		return M%Subpat%
-	}
-	
-	; Returns true if any mach is found
-	; false otherwise
-	Test(H, N=-1) {
-		If N is number
-			If (N = -1)
-				N := this.Needle ; Set default
-		Return !!RegExMatch(H, N)
-	}
-	
-	; Return all pattern group in the needle
-	; Unnamed subpatterns and named subpatterns will found
-	; Results will be returned in an array
-	GetGroups(N) {
-		Groups := [] ; Array to be returned
-		Pos := 0
-		While ( Pos := RegExMatch(N, "\(\?P<(?P<NamedMatch>.*?)>.*?\)|\(.*?\)", Group_, Pos + 1) )
-		{
-			If Group_NamedMatch
-				Groups.Insert(Group_NamedMatch)
-			else
-				Groups.Insert(A_Index)
-		}
-		return Groups
-	}
+﻿; https://autohotkey.com/boards/viewtopic.php?t=1035
+;----------------------------------------------------------------------
+/*
+	RegEx.ahk
+	ver 11/30/14
+	URL http://ahkscript.org/boards/viewtopic.php?f=6&t=1035&p=7482#p7481
+    Examples http://ahkscript.org/boards/viewtopic.php?f=6&t=1035&p=7481#p7482
+*/
+;----------------------------------------------------------------------
+;----------------------------------------------------------------------
+/*
+Functions List:
+					RegEx_Trim			Returns a trimmed string based on RegEx character(s)
+(12/31/15)	RegEx_Split			Returns delimited string or an array object based on RegEx delimiter
+					RegEx_Sort			Returns sorted string based on RegEx Key
+					RegEx_Grep			Returns delimited string or an array object based on RegEx needle
+					RegEx_Between	Returns delimited string or an array object between two regex patterns exclusively
+(12.17.13)		RegEx_Match		Returns match of regex
+					RegEx_Help			Returns syntax help
+*/
+;----------------------------------------------------------------------
+/*
+	RegEx_Trim		Returns a trimmed string based on RegEx characters
+	Parameters:
+		Name		Req/Opt		Data Type	Default 	Description
+		Haystack	Required	text					a string or a multi-line text to be trimmed
+		Needle		Required	Pattern					regex pattern to match trim character(s)
+		End 		Optional	text		""			"R" right trim only | "L" left trim only | omitted for left and right trim (default)
+*/
+RegEx_Trim(Haystack, Needle, End:=""){
+	IfEqual, end , L, return 	RegExReplace(HayStack, "`am)^" Needle)
+	IfEqual, end , R, return 	RegExReplace(HayStack, "`am)"  Needle "$")
+	return 						RegExReplace(HayStack, "`am)^" Needle "|" Needle "$")
 }
+;----------------------------------------------------------------------
+/*
+	RegEx_Split		Returns delimited string or an array object based on RegEx delimiter
+	Parameters:
+		Name		Req/Opt		Data Type	Default 	Description
+		Haystack	Required	text					a string to be split into delimited string or an array object
+		Needle		Required	Pattern					regex pattern to match split character(s)
+		Delim 		Optional	text		""			text delimiter for string result | omitted for an array object result (default)
+*/
+RegEx_Split(Haystack, Needle, Delim:=""){
+	O:=[], Start:=1
+	while Pos := RegExMatch(Haystack, Needle, m, A_Index=1 ?1: Pos+StrLen(m))
+		X:=SubStr(Haystack, Start, Pos-Start), R .= (A_Index=1?"":Delim) X, O.Insert(X) , Start := Pos+StrLen(m)
+	R .= (R?Delim:"") SubStr(Haystack, Start), O.Insert(SubStr(Haystack, Start))
+	return Delim?R:O
+}
+
+;----------------------------------------------------------------------
+/*
+	RegEx_Sort		Returns sorted string based on RegEx Key
+	Parameters:
+		Name		Req/Opt		Data Type	Default 	Description
+		Haystack	Required	text					a string to be sorted
+		Needle		Optional	Pattern		".*"		regex pattern to match sort key - default ".*" no sort key
+		SubPattern 	Optional	No.			""			optional subpattern number to be used as a sort key - default no subpattern
+		Descending	Optional	boolean		""			1 for Sorts in reverse order | omitted sort in ascending order (default)
+		Delim 		Optional	text		""			text delimiter for string result | omitted for "`n" delimiter (default)
+*/
+RegEx_Sort(Haystack, Needle:=".*", SubPattern:="", Descending:=0, Delim:="`n"){
+	Obj := [], 	SubPattern := SubPattern ? SubPattern : ""
+	loop, parse, Haystack, %Delim%
+		RegExMatch(A_LoopField, Needle, Match), Obj[Match%SubPattern%] .= (Obj[Match%SubPattern%]?Delim:"") A_LoopField
+	for, k, v in obj {
+		Sort, v, % "D" Delim (Descending?" R":"")
+		Res := (Descending? v (A_Index>1?Delim:"") Res : Res (A_Index>1?Delim:"") v)
+	}
+	return Res
+}
+;----------------------------------------------------------------------
+/*
+	RegEx_Grep		Returns delimited string or an array object based on RegEx needle
+	Parameters:
+		Name		Req/Opt		Data Type	Default 	Description
+		Haystack	Required	text					a string to be searched
+		Needle		Required	Pattern					regex pattern to match required text
+		SubPattern 	Optional	No.			""			optional subpattern number to be used as match - default no subpattern
+		Delim 		Optional	text		""			text delimiter for string result | omitted for an array object result (default)
+*/
+RegEx_Grep(Haystack, Needle, SubPattern:="", Delim:=""){
+	O:=[]	, SubPattern := SubPattern ? SubPattern : ""
+	while Pos:=RegExMatch(HayStack,Needle,Match,Pos?Pos+StrLen(Match):1)
+		R.= (A_Index>1?Delim:"") Match%SubPattern%, O.Insert(Match%SubPattern%)
+	return Delim?R:O
+}
+;----------------------------------------------------------------------
+/*
+	RegEx_Between	Returns delimited string or an array object between two regex patterns exclusively
+	Parameters:
+		Name		Req/Opt		Data Type	Default 	Description
+		Haystack	Required	text					a string to be searched
+		NeedleA		Required	Pattern					regex pattern to match Start of Text
+		NeedleB 	Required	Pattern					regex pattern to match End of Text
+		Delim 		Optional	text		""			text delimiter for string result | omitted for an array object result (default)
+*/
+RegEx_Between(HayStack, NeedleA, NeedleB, Delim:=""){
+	O:=[]
+	while Pos:=RegExMatch(HayStack, NeedleA "\K.*?(?=" NeedleB ")", Match, Pos?Pos+StrLen(Match):1)
+		R.= (A_Index>1?Delim:"") Match,  O.Insert(Match)
+	return , Delim?R:O
+}
+;----------------------------------------------------------------------
+/*
+	RegEx_Match		Returns matches of regex
+	Parameters:
+		Name		Req/Opt		Data Type	Default 	Description
+		Haystack	Required	text					a string to be searched
+		Needle		Required	Pattern					regex pattern to match
+		SubPattern 	Optional	No.			""			optional subpattern number to be used as match - default no subpattern
+*/
+RegEx_Match(Haystack, Needle, SubPattern:=""){
+	SubPattern := SubPattern ? SubPattern : ""
+	RegExMatch(Haystack, Needle, Match)
+	return Match%SubPattern%
+}
+;----------------------------------------------------------------------
+/*
+	RegEx_Help		Returns syntax help
+	Parameters:
+		Name		Req/Opt		Data Type	Default 	Description
+		Function	Required	text					the name of the function 
+*/
+RegEx_Help(Function){
+	Help := []
+	Help["Trim"]				:=	"RegEx_Trim(Haystack, Needle, End:=[""L|R""])"
+	Help["Split"]				:=	"RegEx_Split(Haystack, Needle, Delim:="""")"
+	Help["Sort"]				:=	"RegEx_Sort(Haystack, Needle:="".*"", SubPattern:="""", Descending:=0, Delim:=""``n"")"
+	Help["Grep"]				:=	"RegEx_Grep(Haystack, Needle, SubPattern:="""", Delim:="""")"
+	Help["Between"]			:=	"RegEx_Between(HayStack, NeedleA, NeedleB, Delim:="""")"
+	Help["Match"]				:=	"RegEx_Match(Haystack, Needle, SubPattern:="""")"
+	return help[function]
+}
+;----------------------------------------------------------------------

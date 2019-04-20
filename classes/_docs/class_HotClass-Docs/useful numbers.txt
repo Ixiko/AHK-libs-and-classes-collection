@@ -1,0 +1,27 @@
+A collection of numbers to help me debug etc.
+
+VKs
+Hex 	Dec	Key
+0x10	16 	Shift
+0x11	17 	Control
+     	65	A
+
+0xA0	160 	LShift
+0xA1 	161 	RShift
+0xA2 	162 	Lctrl
+0xA3 	163 	RCtrl
+
+SCs
+Dec 	Key
+29 	Lctrl
+
+WM_LBUTTONDOWN    0x0201 513
+WM_LBUTTONUP      0x0202 514
+WM_RBUTTONDOWN    0x0204 516
+WM_RBUTTONUP      0x0205 517
+WM_MBUTTONDOWN    0x0207 519
+WM_MBUTTONUP      0x0208 520
+WM_MOUSEHWHEEL    0x020E 526
+WM_MOUSEWHEEL     0x020A 522
+WM_XBUTTONDOWN    0x020B 523
+WM_XBUTTONUP      0x020C 524

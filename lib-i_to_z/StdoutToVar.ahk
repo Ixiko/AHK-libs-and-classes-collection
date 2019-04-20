@@ -1,101 +1,52 @@
-;------------------------------------------------------------------------------
-; StdoutToVar_CreateProcess(sCmd, bStream = "", sDir = "", sInput = "")
-; by Sean
-;------------------------------------------------------------------------------
+; Edited by Masonjar13 to be compatible with 32 and 64-bit (2015)
+StdOutToVar( sCmd ) { ;  GAHK32 ; Modified Version : SKAN 05-Jul-2013  http://goo.gl/j8XJXY                             
+  Static StrGet := "StrGet"     ; Original Author  : Sean 20-Feb-2007  http://goo.gl/mxCdn  
+   
+  DllCall( "CreatePipe", UIntP,hPipeRead, UIntP,hPipeWrite, UInt,0, UInt,0 )
+  DllCall( "SetHandleInformation", UInt,hPipeWrite, UInt,1, UInt,1 )
 
-/*	Example1
-MsgBox % sOutput := StdoutToVar_CreateProcess("ipconfig.exe /all")
-*/
+  if(a_ptrSize=8){
+    VarSetCapacity( STARTUPINFO, 104, 0 )      ; STARTUPINFO          ;  http://goo.gl/fZf24
+    NumPut( 104,        STARTUPINFO,  0 )      ; cbSize
+    NumPut( 0x100,      STARTUPINFO, 60 )      ; dwFlags    =>  STARTF_USESTDHANDLES = 0x100 
+    NumPut( hPipeWrite, STARTUPINFO, 88 )      ; hStdOutput
+    NumPut( hPipeWrite, STARTUPINFO, 96 )      ; hStdError
+    VarSetCapacity( PROCESS_INFORMATION, 32 )  ; PROCESS_INFORMATION  ;  http://goo.gl/b9BaI      
+  }else{
+    VarSetCapacity( STARTUPINFO, 68, 0  )      ; STARTUPINFO          ;  http://goo.gl/fZf24
+    NumPut( 68,         STARTUPINFO,  0 )      ; cbSize
+    NumPut( 0x100,      STARTUPINFO, 44 )      ; dwFlags    =>  STARTF_USESTDHANDLES = 0x100 
+    NumPut( hPipeWrite, STARTUPINFO, 60 )      ; hStdOutput
+    NumPut( hPipeWrite, STARTUPINFO, 64 )      ; hStdError
+    VarSetCapacity( PROCESS_INFORMATION, 16 )  ; PROCESS_INFORMATION  ;  http://goo.gl/b9BaI      
+  }
+  If ! DllCall( "CreateProcess", UInt,0, UInt,&sCmd, UInt,0, UInt,0 ;  http://goo.gl/USC5a
+              , UInt,1, UInt,0x08000000, UInt,0, UInt,0
+              , UInt,&STARTUPINFO, UInt,&PROCESS_INFORMATION ) 
+   Return "" 
+   , DllCall( "CloseHandle", UInt,hPipeWrite ) 
+   , DllCall( "CloseHandle", UInt,hPipeRead )
+   , DllCall( "SetLastError", Int,-1 )     
 
-/*	Example2 with Streaming
-MsgBox % sOutput := StdoutToVar_CreateProcess("ping.exe www.autohotkey.com", True)
-*/
+  hProcess := NumGet( PROCESS_INFORMATION, 0 )                 
+  if(a_is64bitOS)
+    hThread  := NumGet( PROCESS_INFORMATION, 8 )                      
+  else
+    hThread  := NumGet( PROCESS_INFORMATION, 4 ) 
 
-/*	Example3 with Streaming and Calling Custom Function	; Custom Function Name must not consist solely of numbers!
-MsgBox % sOutput := StdoutToVar_CreateProcess("ping.exe www.autohotkey.com", "Stream")	; Custom Function Name is "Stream" in this example!
+  DllCall( "CloseHandle", UInt,hPipeWrite )
 
-Stream(sString)
-{
-;	Custom Routine here! For example,
-;	OutputDebug %sString%
+  AIC := ( SubStr( A_AhkVersion, 1, 3 ) = "1.0" )                   ;  A_IsClassic 
+  VarSetCapacity( Buffer, 4096, 0 ), nSz := 0 
+  
+  While DllCall( "ReadFile", UInt,hPipeRead, UInt,&Buffer, UInt,4094, UIntP,nSz, UInt,0 )
+   sOutput .= ( AIC && NumPut( 0, Buffer, nSz, "UChar" ) && VarSetCapacity( Buffer,-1 ) ) 
+              ? Buffer : %StrGet%( &Buffer, nSz, "CP850" )
+ 
+  DllCall( "GetExitCodeProcess", UInt,hProcess, UIntP,ExitCode )
+  DllCall( "CloseHandle", UInt,hProcess  )
+  DllCall( "CloseHandle", UInt,hThread   )
+  DllCall( "CloseHandle", UInt,hPipeRead )
+
+Return sOutput,  DllCall( "SetLastError", UInt,ExitCode )
 }
-*/
-
-/*	Example4 with Working Directory
-MsgBox % sOutput := StdoutToVar_CreateProcess("cmd.exe /c dir /a /o", "", A_WinDir)
-*/
-
-/*	Example5 with Input String
-MsgBox % sOutput := StdoutToVar_CreateProcess("sort.exe", "", "", "abc`r`nefg`r`nhijk`r`n0123`r`nghjki`r`ndflgkhu`r`n")
-*/
-
-StdoutToVar_CreateProcess(sCmd, bStream = "", sDir = "", sInput = "")
-{
-	DllCall("CreatePipe", "UintP", hStdInRd , "UintP", hStdInWr , "Uint", 0, "Uint", 0)
-	DllCall("CreatePipe", "UintP", hStdOutRd, "UintP", hStdOutWr, "Uint", 0, "Uint", 0)
-	DllCall("SetHandleInformation", "Uint", hStdInRd , "Uint", 1, "Uint", 1)
-	DllCall("SetHandleInformation", "Uint", hStdOutWr, "Uint", 1, "Uint", 1)
-	VarSetCapacity(pi, 16, 0)
-	NumPut(VarSetCapacity(si, 68, 0), si)	; size of si
-	NumPut(0x100	, si, 44)		; STARTF_USESTDHANDLES
-	NumPut(hStdInRd	, si, 56)		; hStdInput
-	NumPut(hStdOutWr, si, 60)		; hStdOutput
-	NumPut(hStdOutWr, si, 64)		; hStdError
-	If Not	DllCall("CreateProcess", "Uint", 0, "Uint", &sCmd, "Uint", 0, "Uint", 0, "int", True, "Uint", 0x08000000, "Uint", 0, "Uint", sDir ? &sDir : 0, "Uint", &si, "Uint", &pi)	; bInheritHandles and CREATE_NO_WINDOW
-		ExitApp
-	DllCall("CloseHandle", "Uint", NumGet(pi,0))
-	DllCall("CloseHandle", "Uint", NumGet(pi,4))
-	DllCall("CloseHandle", "Uint", hStdOutWr)
-	DllCall("CloseHandle", "Uint", hStdInRd)
-	If	sInput <>
-	DllCall("WriteFile", "Uint", hStdInWr, "Uint", &sInput, "Uint", StrLen(sInput), "UintP", nSize, "Uint", 0)
-	DllCall("CloseHandle", "Uint", hStdInWr)
-	bStream+0 ? (bAlloc:=DllCall("AllocConsole"),hCon:=DllCall("CreateFile","str","CON","Uint",0x40000000,"Uint",bAlloc ? 0 : 3,"Uint",0,"Uint",3,"Uint",0,"Uint",0)) : ""
-	VarSetCapacity(sTemp, nTemp:=bStream ? 64-nTrim:=1 : 4095)
-	Loop
-		If	DllCall("ReadFile", "Uint", hStdOutRd, "Uint", &sTemp, "Uint", nTemp, "UintP", nSize:=0, "Uint", 0)&&nSize
-		{
-			NumPut(0,sTemp,nSize,"Uchar"), VarSetCapacity(sTemp,-1), sOutput.=sTemp
-			If	bStream
-				Loop
-					If	RegExMatch(sOutput, "[^\n]*\n", sTrim, nTrim)
-						bStream+0 ? DllCall("WriteFile", "Uint", hCon, "Uint", &sTrim, "Uint", StrLen(sTrim), "UintP", 0, "Uint", 0) : %bStream%(sTrim), nTrim+=StrLen(sTrim)
-					Else	Break
-		}
-		Else	Break
-	DllCall("CloseHandle", "Uint", hStdOutRd)
-	bStream+0 ? (DllCall("Sleep","Uint",1000),hCon+1 ? DllCall("CloseHandle","Uint",hCon) : "",bAlloc ? DllCall("FreeConsole") : "") : ""
-	Return	sOutput
-}
-/*
-StdoutToVar_CreateProcessCOM(sCmd, bStream = False, sDir = "", sInput = "")
-{
-	COM_Init()
-	pwsh :=	COM_CreateObject("WScript.Shell")
-	sDir ?	COM_Invoke(pwsh, "CurrentDirectory", sDir) : ""
-	pexec:=	COM_Invoke(pwsh, "Exec", sCmd)
-	pid  :=	COM_Invoke(pexec, "ProcessID")
-		WinWait, ahk_pid %pid%,,3
-	If	bStream
-		bAttach:=DllCall("AttachConsole","Uint",pid),pcon:=COM_Invoke(pfso:=COM_CreateObject("Scripting.FileSystemObject"),"GetStandardStream",1),COM_Release(pfso)
-	Else	WinHide
-	If	sInput <>
-	pin  :=	COM_Invoke(pexec, "StdIn"), COM_Invoke(pin, "Write", sInput), COM_Invoke(pin, "Close"), COM_Release(pin)
-	pout :=	COM_Invoke(pexec, "StdOut")	; perr := COM_Invoke(pexec, "StdErr")
-	Loop
-		If	COM_Invoke(pout, "AtEndOfStream")=0
-			sOutput.=sTrim:=COM_Invoke(pout, "ReadLine") . "`r`n", bStream ? COM_Invoke(pcon, "Write", sTrim) : ""
-		Else	Break
-	COM_Invoke(pout, "Close"), COM_Release(pout)
-	bStream ? (COM_Invoke(pcon,"Close"),COM_Release(pcon),DllCall("Sleep","Uint",1000),bAttach ? DllCall("FreeConsole") : "") : ""
-	Loop
-		If	COM_Invoke(pexec, "Status")=0
-			Sleep,	100
-		Else	Break
-;	COM_Invoke(pexec, "Terminate")
-	COM_Release(pexec)
-	COM_Release(pwsh)
-	COM_Term()
-	Return	sOutput
-}
-*/

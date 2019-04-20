@@ -1,0 +1,19 @@
+/* ::::: http://www.autohotkey.net/~HotKeyIt/Yaml/commands.css ::::: */
+
+body { font-family: Verdana,Arial,Helvetica,sans-serif,"MS sans serif"; font-size: 75%; border: 0pt none; background-color: rgb(255, 255, 255); }
+p { margin-top: 0.7em; margin-bottom: 0.7em; }
+.CodeCom { color: rgb(0, 160, 0); }
+.NoIndent { margin-left: 0pt; margin-right: 0pt; }
+pre { font-family: Verdana,Arial,Helvetica,sans-serif,"MS sans serif"; font-size: 100%; background-color: rgb(243, 243, 255); margin: 0.7em 1.5em; padding: 0.7em 0pt 0.7em 0.7em; }
+table { font-size: 100%; }
+tr { font-size: 100%; }
+td { font-size: 100%; }
+b { font-weight: bold; }
+a { text-decoration: none; }
+a:link { text-decoration: none; color: rgb(0, 0, 170); }
+a:visited { text-decoration: none; color: rgb(170, 0, 170); }
+a:active { text-decoration: none; color: rgb(0, 0, 170); }
+a:hover { text-decoration: underline; color: rgb(102, 102, 204); }
+h1 { font-size: 155%; font-weight: normal; margin: 0pt; }
+h4 { font-size: 111%; font-weight: bold; background-color: rgb(230, 230, 230); margin: 1em 0pt 0.5em; padding: 0.1em 0pt 0.1em 0.2em; }
+p.CommandSyntax { background-color: rgb(255, 255, 170); margin: 0pt 0pt 1em; padding: 12px 0pt 12px 4px; }

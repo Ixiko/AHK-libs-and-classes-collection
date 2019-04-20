@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+
+<link rel="top" href="http://www.autohotkey.com/forum/index.php" title="AutoHotkey Community Forum Index">
+<link rel="search" href="http://www.autohotkey.com/forum/search.php" title="Search">
+<link rel="help" href="http://www.autohotkey.com/forum/faq.php" title="FAQ">
+<link rel="author" href="http://www.autohotkey.com/forum/memberlist.php" title="Memberlist">
+<link rel="prev" href="http://www.autohotkey.com/forum/ptopic40165.html" title="View previous topic">
+<link rel="next" href="http://www.autohotkey.com/forum/ntopic40165.html" title="View next topic">
+<link rel="up" href="http://www.autohotkey.com/forum/forum-2.html" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-1.html" title="Ask for Help">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-2.html" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-3.html" title="Bug Reports">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-4.html" title="Wish List">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-6.html" title="Announcements">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-7.html" title="Utilities &amp; Resources">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-5.html" title="General Chat">
+
+<title>ToolTip() - Advanced ToolTip features + Unicode</title>
+
+<link rel="alternate" type="application/rss+xml" title="AutoHotkey Forum RSS" href="http://www.autohotkey.com/forum/rss.php">
+
+
+<link rel="stylesheet" type="text/css" href="ToolTip-Dateien/index.css" media="all">
+</head><body vlink="#5493b4" bgcolor="#e5e5e5" link="#006699" text="#000000">
+<table width="100%" align="center" border="0" cellpadding="10" cellspacing="0">
+<tbody>
+<tr>
+<td class="bodyline">
+<table class="forumline" width="100%" border="0" cellpadding="3" cellspacing="1">
+<tbody>
+<tr>
+<td class="row1" valign="top" width="100%" height="28">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td colspan="2">
+<!--DOCUMENT_FRAGMENT-->
+<span class="postbody"><img src="ToolTip-Dateien/tooltip.png" border="0">
+<br>
+
+<br>
+Many thanks to:
+<br>
+ - DerRaphael for <a href="http://www.autohotkey.com/forum/viewtopic.php?t=34490" target="_top" class="postlink">sTooltip - colored standard tooltip with timeout</a>.
+<br>
+ - Sean for <a href="http://www.autohotkey.com/forum/topic19449.html" target="_top" class="postlink">BalloonTip</a>
+<br>
+ - Superfraggle for <a href="http://www.autohotkey.com/forum/viewtopic.php?t=30300" target="_top" class="postlink">Add ToolTips to controls.</a>
+<br>
+ - Lexikos for <a href="http://www.autohotkey.com/forum/viewtopic.php?t=21991" target="_top" class="postlink">Menu Icons v2 (stdlib)</a>
+<br>
+ - majkinetor for <a href="http://www.autohotkey.com/forum/viewtopic.php?t=12251" target="_top" class="postlink">RemoteBuffer 2.0</a> (requiered to show ToolTip at TrayIcon coordinates)
+<br>
+
+<br>
+</span><table width="90%" align="center" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Important Information wrote:</b></span></td>	</tr>	<tr>	  <td class="quote">		Please note some options like Close Button and Link will require Win2000++ (+version 6.0 of comctl32.dll)
+<br>
+  		Background and Text color do not work in Vista ToolTips, but you can disable it using Q option.
+<br>
+  		AutoHotKey Version 1.0.48++ is required due to "assume static mode"
+<br>
+  		If you use 1 ToolTip for several controls, the only difference between those can be the text. 
+<br>
+  			- Rest, like Title, color and so on, will be valid globally
+<br>
+  		In Vista you can use Option Q (Q1) to disable Vista or XP Theme for the ToolTip
+<br>
+  			- this option will enable usual ToolTip and you can use colors
+<br>
+</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+</span><table width="90%" align="center" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Options wrote:</b></span></td>	</tr>	<tr>	  <td class="quote"><ul> A	-	Aim ConrolId or ClassNN (Button1, Edit2, ListBox1, SysListView321...)
+<br>
+				- using this, ToolTip will be shown when you point mouse on a control
+<br>
+				- D (delay) can be used to change how long ToolTip is shown
+<br>
+				- W (wait) can wait for specified seconds before ToolTip will be shown
+<br>
+				- Some controls like Static require a subroutine to have a ToolTip!!!
+<br>
+</ul>
+<br>
+<ul> B and F	-		Specify here the color for ToolTip in 6-digit hexadecimal RGB code
+<br>
+				- B = Background color, F = Foreground color (text color)
+<br>
+				- this can be 0x00FF00 or 00FF00 or Blue, Lime, Black, White...
+<br>
+</ul>
+<br>
+<ul> C	-			Close button for ToolTip/BalloonTip. See ToolTip actions how to use it
+<br>
+</ul>
+<br>
+<ul> D	-			Delay. This option will determine how long ToolTip should be shown.30 sec. is maximum
+<br>
+				- this option is also available when assigning the ToolTip to a control.
+<br>
+</ul>
+<br>
+<ul> E	-			Edges for ToolTip, Use this to set margin of ToolTip window (space between text and border)
+<br>
+				- Supply Etop.left.bottom.right in pixels, for example: E10.0.10.5
+<br>
+</ul>
+<br>
+<ul> G	-			Execute one or more internal Labels of ToolTip function only.
+<br>
+				For example:
+<br>
+				- Track the position only, use ToolTip(1,"","","Xcaret Ycaret gTTM_TRACKPOSITION")
+<br>
+					- When X+Y are empty (= display near mouse position) you can use TTM_UPDATE
+<br>
+				- Update text only, use ToolTip(1,"text","","G1"). Note specify L1 if links are used.
+<br>
+				- Update title only, use ToolTip(1,"","Title","G1")
+<br>
+				- Hide ToolTip, use ToolTip(1,"","","gTTM_POP")
+<br>
+					- To show ToolTip again use ToolTip(1,"","","gTTM_TRACKPOSITION.TTM_TRACKACTIVATE")
+<br>
+				- Update background color + text color, specify . between gLabels to execute several:
+<br>
+					- ToolTip(1,"","","BBlue FWhite gTTM_SETTIPBKCOLOR.TTM_SETTIPTEXTCOLOR")
+<br>
+				- Following labels can be used: TTM_SETTITLEA + TTM_SETTITLEW (title+I), TTM_POPUP, TTM_POP
+<br>
+				  TTM_SETTIPBKCOLOR (B), TTM_SETTIPTEXTCOLOR (F), TTM_TRACKPOSITION (N+X+Y),
+<br>
+				  TTM_SETMAXTIPWIDTH (R), TTM_SETMARGIN (E), TT_SETTOOLINFO (text+A+P+N+X+Y+S+L)
+<br>
+				  TTM_SETWINDOWTHEME (Q)
+<br>
+</ul>
+<br>
+<ul> H	-			Hide ToolTip after a link is clicked.See L option
+<br>
+</ul>
+<br>
+<ul> I	-			Icon 1-3, e.g. I1. If this option is missing no Icon will be used (same as I0)
+<br>
+				- 1 = Info, 2 = Warning, 3 = Error, &gt; 3 is meant to be a hIcon (handle to an Icon)
+<br>
+				Use Included MI_ExtractIcon and GetAssociatedIcon functions to get hIcon
+<br>
+</ul>
+<br>
+<ul> J	-			Justify ToolTip to center of control
+<br>
+</ul>
+<br>
+<ul> L	-			Links for ToolTips. Here an example for Links feature and another one for dynamic Text.<table width="90%" align="center" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Code (<a href="javascript:;" onclick="javascript:expand(this);">Expand</a>):</b></span></td>	</tr>	<tr>	  <td class="code"><div style="height: 200px; overflow: auto;">OnMessage(0x4e,"WM_NOTIFY") <span style="color: rgb(0, 128, 0);">;Will make LinkClick and ToolTipClose possible</span><br>WM_NOTIFY(wParam, lParam, msg, hWnd)<br>{<br>&nbsp; &nbsp;ToolTip("",lParam)<br>}<br>Sleep, 10<br>ToolTip(1,"&lt;a&gt;Click&lt;/a&gt;`n&lt;a&gt;Onother one&lt;/a&gt;`n"<br>. "&lt;a This link is different`nit uses different text&gt;Different&lt;/a&gt;`n"<br>. "&lt;a&gt;ExitApp&lt;/a&gt;","ClickMe","L1 P99 C1")<br>Return<br>ToolTip:<br>link:=ErrorLevel<br>SetTimer, MsgBox, -10<br>Return<br><br>ToolTipClose:<br>ExitApp<br><br>MsgBox:<br>If Link=ExitApp<br>ExitApp<br>MsgBox % Link<br>Return</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+</span><table width="90%" align="center" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Code (<a href="javascript:;" onclick="javascript:expand(this);">Expand</a>):</b></span></td>	</tr>	<tr>	  <td class="code"><div style="height: 200px; overflow: auto;">OnMessage(0x4e,"WM_NOTIFY")<br>Gui,Add,Button,,Time<br>Gui,Add,Button,,Username<br>Gui,Add,Button,,User is Admin?<br>Gui,Add,Button,,IP addresses<br>Loop 4<br>&nbsp; &nbsp;ToolTip("Button1"," ","","p1 aButton" . A_Index)<br>gui,show<br>Sleep, 3000<br>ToolTip("Button1","hallo","","G1")<br>Return<br><br>WM_NOTIFY(wParam,lParam){<br>&nbsp; &nbsp;If (control:=ToolTip("",lparam)){<br>&nbsp; &nbsp;&nbsp; &nbsp;Tool:=ErrorLevel<br>&nbsp; &nbsp;&nbsp; &nbsp;MouseGetPos,,,,ClassNN<br>&nbsp; &nbsp;&nbsp; &nbsp;If (ClassNN="Button1"){<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;FormatTime,text,%A_Now%,HH:mm:ss<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Title:="Time"<br>&nbsp; &nbsp;&nbsp; &nbsp;} else if (ClassNN="Button2"){<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;text:=A_UserName,title:="UserName"<br>&nbsp; &nbsp;&nbsp; &nbsp;} else if (ClassNN="Button3"){<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;text:=(A_ISAdmin ? "Yes" : "No"),title:="User is Admin?"<br>&nbsp; &nbsp;&nbsp; &nbsp;} else if (ClassNN="Button4"){<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;text:= "1: " A_IPAddress1 "`n2: " A_IPAddress2 "`n3: " A_IPAddress3 "`n4: " A_IPAddress4<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;title:="IP Addresses"<br>&nbsp; &nbsp;&nbsp; &nbsp;}<br>&nbsp; &nbsp;&nbsp; &nbsp;ToolTip(control,text,title,"G1 A" . ErrorLevel)<br>&nbsp; &nbsp;}<br>}<br><br>GuiClose:<br>ExitApp</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+</span></ul>
+<br>
+<ul> M	-			Mouse click-trough. So a click will be forwarded to the window underneath ToolTip
+<br>
+</ul>
+<br>
+<ul> N	-			Do NOT activate ToolTip (N1), To activate (show) call ToolTip(1,"","","gTTM_TRACKACTIVATE")
+<br>
+</ul>
+<br>
+<ul> O	-			Oval ToolTip (BalloonTip). Specify O1 to use a BalloonTip instead of ToolTip.
+<br>
+</ul>
+<br>
+<ul> P	-			Parent window hWnd or GUI number. This will assign a ToolTip to a window.
+<br>
+				- Reqiered to assign ToolTip to controls and actions.
+<br>
+</ul>
+<br>
+<ul> Q	-			Quench Style/Theme. Use this to disable Theme of ToolTip.
+<br>
+				Using this option you can have for example colored ToolTips in Vista.
+<br>
+</ul>
+<br>
+<ul> R	-			Restrict width. This will restrict the width of the ToolTip.
+<br>
+				So if Text is to long it will be shown in several lines
+<br>
+</ul>
+<br>
+<ul> S	-			Show at coordinates regardless of position. Specify S1 to use that feature
+<br>
+				- normally it is fed automaticaly to show on screen
+<br>
+</ul>
+<br>
+<ul> T	-			Transparency. This option will apply Transparency to a ToolTip.
+<br>
+				- this option is not available to ToolTips assigned to a control.
+<br>
+</ul>
+<br>
+<ul> V	-			Visible: even when the parent window is not active, a control-ToolTip will be shown
+<br>
+</ul>
+<br>
+<ul> W	-			Wait time in seconds (max 30) before ToolTip pops up when pointing on one of controls.
+<br>
+</ul>
+<br>
+<ul> X and Y	-		Coordinates where ToolTip should be displayed, e.g. X100 Y200
+<br>
+				- leave empty to display ToolTip near mouse
+<br>
+				- you can specify Xcaret Ycaret to display at caret coordinates
+<br>
+</ul>
+<br>
+</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+A few examples:
+<br>
+<a href="http://www.autohotkey.com/forum/viewtopic.php?t=44561" target="_top" class="postlink">InfoToolTip</a>
+<br>
+</span><table width="90%" align="center" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Code (<a href="javascript:;" onclick="javascript:expand(this);">Expand</a>):</b></span></td>	</tr>	<tr>	  <td class="code"><div style="height: 200px; overflow: auto;"><span style="color: rgb(0, 128, 0);">;-- Build GUI</span><br>gui -MinimizeBox<br>Gui +LastFound<br>GuiHwnd:=WinExist()<br>gui Add,Button,w150 hwndButton1_hWnd gButton1,Test Button 1<br>Tip:="Button 1: Press me to change my tooltip"<br>ToolTip(1,Tip,"","A" . Button1_hWnd . " P" . GuiHwnd)<br><br>gui Add,Button,y+0 w150 hwndButton2_hWnd gButton2,Test Button 2<br>Tip:="Button 2: Press me to turn off the tooltip for this button"<br>ToolTip(2,Tip,"","A" . Button2_hWnd . " P" . GuiHwnd)<br><br>gui Add,Button,y+0 w150 hwndButton3_hWnd gButton3,Test Button 3<br>Tip=<br>&nbsp; &nbsp;(ltrim<br>&nbsp; &nbsp; A Multiline Test Tooltip<br>&nbsp; &nbsp; 2nd line<br>&nbsp; &nbsp; 3rd line<br>&nbsp; &nbsp; 4th line.<br>&nbsp; &nbsp; Press me to turn off all tooltips<br>&nbsp; &nbsp;)<br>ToolTip(3,Tip,"","A" . Button3_hWnd . " P" . GuiHwnd)<br><br>gui Add,Checkbox,w150 hwndCheckbox_hWnd,Checkbox Control<br>Tip:="Tooltip for the Checkbox control"<br>ToolTip(4,Tip,"","A" . Checkbox_hWnd . " P" . GuiHwnd)<br><br>gui Add,Radio,w150 hwndRadio_hWnd,Radio Control<br>Tip:="Tooltip for the Radio control"<br>ToolTip(5,Tip,"","A" . Radio_hWnd . " P" . GuiHwnd)<br><br>gui Add,Edit,w150 hwndEdit_hWnd,Edit Control<br>Tip:="Tooltip for the Edit control"<br>ToolTip(6,Tip,"","A" . Edit_hWnd . " P" . GuiHwnd)<br><br>gui Add,Text,w150 hwndText_hWnd gNull,Text Control<br>Tip=<br>&nbsp; &nbsp;(ltrim join`s<br>&nbsp; &nbsp; Tooltip for the Text control.`nNote that the Tooltip for a Text control does<br>&nbsp; &nbsp; not show unless a g-label for the control is defined.<br>&nbsp; &nbsp;)<br>ToolTip(7,Tip,"","A" . Text_hWnd . " P" . GuiHwnd)<br><br>gui Add,Picture,w150 h100 hwndPicture_hWnd gNull,Picture.bmp<br>Tip=<br>&nbsp; &nbsp;(ltrim join`s<br>&nbsp; &nbsp; Tooltip for the Picture control.`nNote that the Tooltip for a Picture<br>&nbsp; &nbsp; control does not show unless a g-label for the control is defined.&nbsp; &nbsp;<br>&nbsp; &nbsp;)<br>ToolTip(9,Tip,"","A" . Picture_hWnd . " P" . GuiHwnd)<br><br>gui Add,DropDownList,w150 r3 hwndDropDownList_hWnd,DropDownList Control||2|3<br>Tip:="Tooltip for the DropDownList control"<br>ToolTip(10,Tip,"","A" . DropDownList_hWnd . " P" . GuiHwnd)<br><br>gui Add,ComboBox,w150 r3 hwndComboBox_hWnd,ComboBox Control||2|3<br>&nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">;-- A ComboBox is actually two controls:&nbsp; An Edit control and a Drop-down</span><br>&nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">;&nbsp; &nbsp;button. Note that handle returned for this control is for the</span><br>&nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">;&nbsp; &nbsp;drop-down button, not for the Edit control.</span><br>Tip=<br>&nbsp; &nbsp;(ltrim join`s<br>&nbsp; &nbsp; Tooltip for the drop-down button piece of the ComboBox control.`nNote that<br>&nbsp; &nbsp; this tip is different than the Edit piece of the control.<br>&nbsp; &nbsp;)<br>ToolTip(11,Tip,"","A" . ComboBox_hWnd . " P" . GuiHwnd)<br><br>gui Add,ListBox,w150 r3 hwndListBox_hWnd,ListBox Control||2|3<br>Tip:="Tooltip for the ListBox control"<br>ToolTip(12,Tip,"","A" . ListBox_hWnd . " P" . GuiHwnd)<br><br>gui Add,ListView,w150 h50 hwndListView_hWnd,ListView Control<br>Tip=<br>&nbsp; &nbsp;(ltrim join`s<br>&nbsp; &nbsp; Tooltip for the ListView control.`nNote that this tip is different than<br>&nbsp; &nbsp; the header piece of the control.<br>&nbsp; &nbsp;)<br>ToolTip(13,Tip,"","A" . ListView_hWnd . " P" . GuiHwnd)<br><br>gui Add,DateTime,w150 hwndDateTime_hWnd&nbsp; <span style="color: rgb(0, 128, 0);">;,DateTime Control</span><br>Tip:="Tooltip for the DateTime control"<br>ToolTip(14,Tip,"","A" . DateTime_hWnd . " P" . GuiHwnd)<br><br>gui Add,UpDown,hwndUpDown_hWnd Range 1-100,5<br>Tip:="Tooltip for the UpDown control"<br>ToolTip(20,Tip,"","A" . UpDown_hWnd . " P" . GuiHwnd)<br><br>gui Show,,Tooltip Test<br><br><span style="color: rgb(0, 128, 0);">;-- Note: The following information cannot be collected until after the window</span><br><span style="color: rgb(0, 128, 0);">;&nbsp; &nbsp;has been rendered</span><br><br><span style="color: rgb(0, 128, 0);">;-- Get hWnd to the Edit control piece of the ComboBox</span><br>ControlGet EditComboBox_hWnd,hWnd,,Edit2,Tooltip Test<br>Tip=<br>&nbsp; &nbsp;(ltrim join`s<br>&nbsp; &nbsp; Tooltip for the Edit piece of the ComboBox control.`nNote that this tip is<br>&nbsp; &nbsp; different than the drop-down button piece of this control.<br>&nbsp; &nbsp;)<br>ToolTip(11,Tip,"","A" . EditComboBox_hWnd . " P" . GuiHwnd)<br><br><span style="color: rgb(0, 128, 0);">;-- Get hWnd to the Edit control piece of the ComboBox</span><br>ControlGet ListViewHeader_hWnd,hWnd,,SysHeader321,Tooltip Test<br>Tip=<br>&nbsp; &nbsp;(ltrim join`s<br>&nbsp; &nbsp; Tooltip for the header of the ListView control.`nNote that this tip is<br>&nbsp; &nbsp; different than the rest of the ListView control.<br>&nbsp; &nbsp;)<br>ToolTip(13,Tip,"","A" . ListViewHeader_hWnd . " P" . GuiHwnd)<br>return<br><br>Button1:<br>ToolTip(1,"Button 1: New Text","","AButton1 P" . GuiHwnd)<br>return<br><br>Button2:<br>ToolTip(2)<br>return<br><br>Button3:<br>ToolTip()<br>MsgBox 64,ToolTips Cleared,All Tooltips destroyed.&nbsp; %A_Space%<br>return<br><br>Null:<br>return<br><br>GUIClose:<br>GUIescape:<br>Gui,Destroy<br>ExitApp<br>Return</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+</span><table width="90%" align="center" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Code (<a href="javascript:;" onclick="javascript:expand(this);">Expand</a>):</b></span></td>	</tr>	<tr>	  <td class="code"><div style="height: 200px; overflow: auto;">OnMessage(0x4e,"WM_NOTIFY") <span style="color: rgb(0, 128, 0);">;Will make LinkClick and ToolTipClose possible</span><br>OnMessage(0x404,"AHK_NotifyTrayIcon") <span style="color: rgb(0, 128, 0);">;Will pop up the ToolTip when you click on Tray Icon</span><br>OnExit, ExitApp<br>#NoEnv<br>#SingleInstance Force<br><br>Restart:<br>ToolTip(99,"Please click a link:`n`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "&lt;a&gt;My Favorite Websites&lt;/a&gt;`n`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "&lt;a&gt;ToolTip Examples&lt;/a&gt;`n`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "&lt;a notepad.exe &gt;Notepad&lt;/a&gt;`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "&lt;a explorer.exe &gt;Explorer&lt;/a&gt;`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "&lt;a calc.exe &gt;Calculator&lt;/a&gt;`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "`n&lt;a&gt;Hide ToolTip&lt;/a&gt;`n&nbsp; - To show this ToolTip again click onto Tray Icon"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "`n&lt;a&gt;ExitApp&lt;/a&gt;`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;, "Welcome to ToolTip Control"<br>&nbsp;
+ &nbsp;&nbsp; &nbsp;, "L1 H1 O1 C1 T220 BLime FBlue I" . 
+GetAssociatedIcon(A_ProgramFiles . "\Internet Explorer\iexplore.exe") <br>&nbsp; &nbsp;&nbsp; &nbsp;. " P99 X" A_ScreenWidth . " Y" . A_ScreenHeight)<br>Return<br><br>My_Favorite_Websites:<br>ToolTip(98,"&lt;a http://www.autohotkey.com &gt;AutoHotkey&lt;/a&gt; - &lt;a http://de.autohotkey.com&gt;DE&lt;/a&gt;"<br>&nbsp;
+ &nbsp;&nbsp; &nbsp;. " - &lt;a 
+http://autohotkey.free.fr/docs/&gt;FR&lt;/a&gt; - &lt;a 
+http://www.autohotkey.it/&gt;IT&lt;/a&gt;"<br>&nbsp; &nbsp;&nbsp; &nbsp;. " - &lt;a http://www.script-coding.info/AutoHotkeyTranslation.html&gt;RU&lt;/a&gt;"<br>&nbsp; &nbsp;&nbsp; &nbsp;. " - &lt;a http://lukewarm.s101.xrea.com/&gt;JP&lt;/a&gt;"<br>&nbsp; &nbsp;&nbsp; &nbsp;. " - &lt;a http://lukewarm.s101.xrea.com/&gt;GR&lt;/a&gt;"<br>&nbsp; &nbsp;&nbsp; &nbsp;. " - &lt;a http://www.autohotkey.com/docs/Tutorial-Portuguese.html&gt;PT&lt;/a&gt;"<br>&nbsp; &nbsp;&nbsp; &nbsp;. " - &lt;a http://cafe.naver.com/AutoHotKey&gt;KR&lt;/a&gt;"<br>&nbsp; &nbsp;&nbsp; &nbsp;. " - &lt;a http://forum.ahkbbs.cn/bbs.php&gt;CN&lt;/a&gt;"<br>&nbsp;
+ &nbsp;&nbsp; &nbsp;. "`n&lt;a http://www.google.com&gt;Google&lt;/a&gt;
+ - &lt;a http://www.maps.google.com&gt;Maps&lt;/a&gt;`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "&lt;a http://social.msdn.microsoft.com/Search/en-US/?Refinement=86&amp;Query=&gt;MSDN&lt;/a&gt;`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;, "My Websites"<br>&nbsp; &nbsp;&nbsp; &nbsp;, "L1 O1 C1 BSilver FBlue I" . GetAssociatedIcon(A_ProgramFiles . "\Internet Explorer\iexplore.exe") <br>&nbsp; &nbsp;&nbsp; &nbsp;. " P99")<br>Return<br><br>ToolTip_Examples:<br>ToolTip(97, "&lt;a&gt;Message Box ToolTip&lt;/a&gt;`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "&lt;a&gt;Change ToolTip&lt;/a&gt;`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "&lt;a&gt;ToolTip Loop #1&lt;/a&gt;`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "&lt;a&gt;ToolTip Loop #2&lt;/a&gt;`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "&lt;a&gt;ToolTip Loop #3&lt;/a&gt;`n`nClose to return to previous ToolTip"<br>&nbsp; &nbsp;&nbsp; &nbsp;, "ToolTip Examples"<br>&nbsp; &nbsp;&nbsp; &nbsp;, "L1 O1 C1 BYellow FBlue I" . GetAssociatedIcon(A_ProgramFiles . "\Internet Explorer\iexplore.exe") <br>&nbsp; &nbsp;&nbsp; &nbsp;. " P99")<br>Return<br><br>99ToolTip:<br>If InStr(link:=ErrorLevel,"http://")<br>&nbsp; &nbsp;Run iexplore.exe %link%<br>else if IsLabel(link:=RegExReplace(link,"[^\w\.]","_"))<br>&nbsp; &nbsp;SetTimer % link,-150<br>else if link<br>{<br>&nbsp; &nbsp;Run % link<br>&nbsp; &nbsp;SetTimer, Restart, -100<br>}<br>Return<br><br>98ToolTip:<br>Run iexplore.exe %ErrorLevel%<br>Return<br><br>97ToolTip:<br>IsLabel(ErrorLevel:=RegExReplace(ErrorLevel,"[^\w]","_"))<br>&nbsp; &nbsp;SetTimer % ErrorLevel,-100<br>Return<br><br>99ToolTipClose:<br>MsgBox,262148,Closing
+ ToolTip..., ToolTip is about to close`nClick no to disable ToolTip`n 
+-You can show it again by clicking onto the Tray Icon`nDo you want to 
+exit script?<br>IfMsgBox Yes<br>&nbsp; &nbsp;ExitApp<br>Return<br><br>97ToolTipClose:<br>98ToolTipClose:<br>SetTimer, Restart, -100<br>Return<br><br>WM_NOTIFY(wParam, lParam, msg, hWnd){<br>&nbsp; &nbsp;ToolTip("",lParam,"")<br>}<br><br>AHK_NotifyTrayIcon(wParam, lParam) {<br>&nbsp; &nbsp;If (lparam = 0x201 or lparam = 0x202)<br>&nbsp; &nbsp; &nbsp; SetTimer, Restart, -250<br>}<br><br>Hide_ToolTip:<br>ToolTip(99)<br>Return<br>Execute:<br>Run %ErrorLevel%.exe<br>SetTimer, Restart, -100<br>Return<br><br>ExitApp:<br>Loop, Parse, #_hIcons, |<br>&nbsp; &nbsp;&nbsp; &nbsp;If A_LoopField<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;DllCall("DestroyIcon",UInt,%A_LoopField%)<br>ExitApp<br>Return<br><br>ToolTip_Loop__1:<br>ToolTip(100,"`nJust an example ToolTip following mouse movements"<br>&nbsp; &nbsp;,"This ToolTip will be destroyed in " . 4 . " Seconds","o1 I" . GetAssociatedIcon(A_AhkPath) . " B0000FF FFFFFFF")<br>Start:=A_TickCount<br>end=<br>While, end &lt; 10<br>{<br>&nbsp;
+ &nbsp;ToolTip(100,"In this example text and Title are updated 
+continuously.`nTickCount:" . A_TickCount,"This ToolTip will be destroyed
+ in " .&nbsp; 11 - Round(end:=(A_TickCount-Start)/1000) . " Seconds","I"
+ . GetAssociatedIcon(A_AhkPath))<br>}<br>ToolTip(100)<br>Return<br>ToolTip_Loop__2:<br>end=<br>ToolTip(100,"In
+ this example only position is tracked.","This ToolTip will be destroyed
+ in 10 Seconds","D10 I" . GetAssociatedIcon(A_AhkPath) . " B0000FF 
+FFFFFFF")<br>ToolTip(100)<br>Return<br><br>ToolTip_Loop__3:<br>end=<br>ToolTip(100,"`nHere only title is being changed"<br>&nbsp; &nbsp;,"This ToolTip will be destroyed in 10 Seconds","I" . GetAssociatedIcon(A_AhkPath) . " B0000FF FFFFFFF")<br>Start:=A_TickCount<br>While, end &lt; 10<br>{<br>&nbsp;
+ &nbsp;ToolTip(100,"","This ToolTip will be destroyed in " .&nbsp; 11 - 
+Round(end:=(A_TickCount-Start)/1000) . " Seconds","I" . 
+GetAssociatedIcon(A_AhkPath))<br>}<br>ToolTip(100)<br>Return<br><br>Message_Box_Tooltip:<br>SetTimer,proceed, -200<br>MsgBox,4,Test,Hallo,`nPoint onto yes or no<br>proceed:<br>hwnd:=WinExist("Test ahk_class #32770")<br>ToolTip(101,"Click
+ here to accept and proceed.","Here you see an example how to assign a 
+ToolTip to MsgBox controls","I1 B00FF00 AButton1 P" . hwnd)<br>ToolTip(101,"Click here to refuse and proceed","","AButton2 P" . hwnd)<br>IfWinExist Test ahk_class #32770<br>{<br>&nbsp; &nbsp;WinWaitClose, Test ahk_class #32770<br>&nbsp; &nbsp;Return<br>}<br>ToolTip(101)<br>Return<br><br>Change_ToolTip:<br>Gui, Add,Button,,Point your mouse cursor here<br>Gui,+LastFound<br>ToolTip(1,"Test deleting and creating same Tooltip","TEST","Abutton1 P" . WinExist())<br>Gui,Show<br>Sleep, 5000<br>ToolTip(1)<br>Gui,Destroy<br>Sleep, 1000<br>Gui, Add,Button,,Move your mouse cursor a little<br>Gui,+LastFound<br>ToolTip(1,"Test
+ deleting and creating same Tooltip`nTooltips were destroyed and 
+recreated.","New Tooltip with different text and title.","Abutton1 P" . 
+WinExist())<br>Gui,Show<br>Sleep, 5000<br>Gui,Destroy<br>ToolTip(1)<br>Return</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+</span>
+<!--/DOCUMENT_FRAGMENT-->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

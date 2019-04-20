@@ -1,0 +1,15 @@
+Function: baseConvert(value, from, to)
+    
+    value   - input string to convert
+    from    - number system of source
+    to      - number system to convert to
+    
+    Some "names" for the number systems will be accepted such as decimal/dec/d/base10/dekal or
+    binary/bin/digital/dual/di/b/base2.
+    Use can use the names/shortcuts or the "base", like "base10" for decimal or "base2" for binary. 
+    
+    Return:
+    Converted value with specified number system.
+    
+    Example:
+    > result := baseConvert("123456","dec","hex")

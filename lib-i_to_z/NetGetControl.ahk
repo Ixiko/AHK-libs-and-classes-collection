@@ -1,5 +1,5 @@
-#include <COM>
-#include <RemoteScintilla>
+;#include <COM>
+#include %A_ScriptDir%\RemoteScintilla.ahk
 listAccChildProperty(hwnd){
 	COM_AccInit()
 	If	pacc :=	COM_AccessibleObjectFromWindow(hWnd)
@@ -10,7 +10,7 @@ listAccChildProperty(hwnd){
 
 		sResult	:="[Window]`n"
 			. "Name:`t`t"		COM_Invoke(pacc,"accName",0) "`n"
-			. "Value:`t`t"		COM_Invoke(pacc,"accValue",0) "`n"
+			. "Value:`t`t"			COM_Invoke(pacc,"accValue",0) "`n"
 			. "Description:`t"	COM_Invoke(pacc,"accDescription",0) "`n"
 			. COM_Invoke(pacc,"accDefaultAction",0) "`n"
 			. COM_Invoke(pacc,"accHelp",0) "`n"
@@ -23,14 +23,14 @@ listAccChildProperty(hwnd){
 			If	NumGet(varChildren,16*(A_Index-1),"Ushort")=3 && idChild:=NumGet(varChildren,16*A_Index-8)
 				sResult	.="[" A_Index "]`n"
 					. "Name:`t`t"		COM_Invoke(pacc,"accName",idChild) "`n"
-					. "Value:`t`t"		COM_Invoke(pacc,"accValue",idChild) "`n"
+					. "Value:`t`t"	    	COM_Invoke(pacc,"accValue",idChild) "`n"
 					. "Description:`t"	COM_Invoke(pacc,"accDescription",idChild) "`n"
 					. COM_Invoke(pacc,"accParent",idChild) "`n"
 					
 			Else If	paccChild:=NumGet(varChildren,16*A_Index-8) {
 				sResult	.="[" A_Index "]`n"
 					. "Name:`t`t"		COM_Invoke(paccChild,"accName",0) "`n"
-					. "Value:`t`t"		COM_Invoke(paccChild,"accValue",0) "`n"
+					. "Value:`t`t"	    	COM_Invoke(paccChild,"accValue",0) "`n"
 					. "Description:`t"	COM_Invoke(paccChild,"accDescription",0) "`n"
 				if a_index=3 
 				{
@@ -97,8 +97,6 @@ getByControlName(winHwnd,name){
     return arr
 }
 
-
-
 controlGetText(hwnd){
 	if IsObject(hwnd) {
 		if (hwnd.__Class="Scintilla") {
@@ -125,7 +123,6 @@ winGetClass(hwnd){
 	WinGetClass,cl,ahk_id %hwnd%
 	return cl
 }
-
 
 getNetAcc(winHwnd,controlName,classNN,shift=0,acc=true,name="",text=""){
 	if acc
@@ -189,7 +186,6 @@ getNetControlGlobal(text="",controlName="",accName="",classNN="",accHelp="",accR
 	return [ret,win]
 }
 	
-
 ; search for specific control
 ; return hwnd
 getNetControl(winHwnd,controlName="",accName="",classNN="",accHelp=""){

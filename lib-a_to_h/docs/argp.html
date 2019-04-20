@@ -1,0 +1,928 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<html><head><title>argp - Argument Options Parser</title><style>/*
+   IMPORTANT: If you're editing this file in the output directory of one of
+   your projects, your changes will be overwritten the next time you run
+   Natural Docs.  Instead, copy this file to your project directory, make your
+   changes, and you can use it with -s.  Even better would be to make a CSS
+   file in your project directory with only your changes, which you can then
+   use with -s [original style] [your changes].
+
+   On the other hand, if you're editing this file in the Natural Docs styles
+   directory, the changes will automatically be applied to all your projects
+   that use this style the next time Natural Docs is run on them.
+
+   This file is part of Natural Docs, which is Copyright (C) 2003-2008 Greg Valure
+   Natural Docs is licensed under the GPL
+*/
+
+body {
+    font: 10pt Verdana, Arial, sans-serif;
+    color: #000000;
+    margin: 0; padding: 0;
+    }
+
+.ContentPage,
+.IndexPage,
+.FramedMenuPage {
+    background-color: #E8E8E8;
+    }
+.FramedContentPage,
+.FramedIndexPage,
+.FramedSearchResultsPage,
+.PopupSearchResultsPage {
+    background-color: #FFFFFF;
+    }
+
+
+a:link,
+a:visited { color: #900000; text-decoration: none }
+a:hover { color: #900000; text-decoration: underline }
+a:active { color: #FF0000; text-decoration: underline }
+
+td {
+    vertical-align: top }
+
+img { border: 0;  }
+
+
+/*
+    Comment out this line to use web-style paragraphs (blank line between
+    paragraphs, no indent) instead of print-style paragraphs (no blank line,
+    indented.)
+*/
+p {
+    text-indent: 5ex; margin: 0 }
+
+
+/*  Opera doesn't break with just wbr, but will if you add this.  */
+.Opera wbr:after {
+	content: "\00200B";
+	}
+
+
+/*  Blockquotes are used as containers for things that may need to scroll.  */
+blockquote {
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    }
+
+
+.Firefox1 blockquote {
+    padding-bottom: .5em;
+    }
+
+/*  Turn off scrolling when printing.  */
+@media print {
+    blockquote {
+        overflow: visible;
+        }
+    .IE blockquote {
+        width: auto;
+        }
+    }
+
+
+
+#Menu {
+    font-size: 9pt;
+    padding: 10px 0 0 0;
+    }
+.ContentPage #Menu,
+.IndexPage #Menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 31ex;
+    overflow: hidden;
+    }
+.ContentPage .Firefox #Menu,
+.IndexPage .Firefox #Menu {
+    width: 27ex;
+    }
+
+
+    .MTitle {
+        font-size: 16pt; font-weight: bold; font-variant: small-caps;
+        text-align: center;
+        padding: 5px 10px 15px 10px;
+        border-bottom: 1px dotted #000000;
+        margin-bottom: 15px }
+
+    .MSubTitle {
+        font-size: 9pt; font-weight: normal; font-variant: normal;
+        margin-top: 1ex; margin-bottom: 5px }
+
+
+    .MEntry a:link,
+    .MEntry a:hover,
+    .MEntry a:visited { color: #606060; margin-right: 0 }
+    .MEntry a:active { color: #A00000; margin-right: 0 }
+
+
+    .MGroup {
+        font-variant: small-caps; font-weight: bold;
+        margin: 1em 0 1em 10px;
+        }
+
+    .MGroupContent {
+        font-variant: normal; font-weight: normal }
+
+    .MGroup a:link,
+    .MGroup a:hover,
+    .MGroup a:visited { color: #545454; margin-right: 10px }
+    .MGroup a:active { color: #A00000; margin-right: 10px }
+
+
+    .MFile,
+    .MText,
+    .MLink,
+    .MIndex {
+        padding: 1px 17px 2px 10px;
+        margin: .25em 0 .25em 0;
+        }
+
+    .MText {
+        font-size: 8pt; font-style: italic }
+
+    .MLink {
+        font-style: italic }
+
+    #MSelected {
+        color: #000000; background-color: #FFFFFF;
+        /*  Replace padding with border.  */
+        padding: 0 10px 0 10px;
+        border-width: 1px 2px 2px 0; border-style: solid; border-color: #000000;
+        margin-right: 5px;
+        }
+
+    /*  Close off the left side when its in a group.  */
+    .MGroup #MSelected {
+        padding-left: 9px; border-left-width: 1px }
+
+    /*  A treat for Mozilla users.  Blatantly non-standard.  Will be replaced with CSS 3 attributes when finalized/supported.  */
+    .Firefox #MSelected {
+        -moz-border-radius-topright: 10px;
+        -moz-border-radius-bottomright: 10px }
+    .Firefox .MGroup #MSelected {
+        -moz-border-radius-topleft: 10px;
+        -moz-border-radius-bottomleft: 10px }
+
+
+    #MSearchPanel {
+        padding: 0px 6px;
+        margin: .25em 0;
+        }
+
+
+    #MSearchField {
+        font: italic 9pt Verdana, sans-serif;
+        color: #606060;
+        background-color: #E8E8E8;
+        border: none;
+        padding: 2px 4px;
+        width: 100%;
+        }
+    /* Only Opera gets it right. */
+    .Firefox #MSearchField,
+    .IE #MSearchField,
+    .Safari #MSearchField {
+        width: 94%;
+        }
+    .Opera9 #MSearchField,
+    .Konqueror #MSearchField {
+        width: 97%;
+        }
+    .FramedMenuPage .Firefox #MSearchField,
+    .FramedMenuPage .Safari #MSearchField,
+    .FramedMenuPage .Konqueror #MSearchField {
+        width: 98%;
+        }
+
+    /* Firefox doesn't do this right in frames without #MSearchPanel added on.
+        It's presence doesn't hurt anything other browsers. */
+    #MSearchPanel.MSearchPanelInactive:hover #MSearchField {
+        background-color: #FFFFFF;
+        border: 1px solid #C0C0C0;
+        padding: 1px 3px;
+        }
+    .MSearchPanelActive #MSearchField {
+        background-color: #FFFFFF;
+        border: 1px solid #C0C0C0;
+        font-style: normal;
+        padding: 1px 3px;
+        }
+
+    #MSearchType {
+        visibility: hidden;
+        font: 8pt Verdana, sans-serif;
+        width: 98%;
+        padding: 0;
+        border: 1px solid #C0C0C0;
+        }
+    .MSearchPanelActive #MSearchType,
+    /*  As mentioned above, Firefox doesn't do this right in frames without #MSearchPanel added on. */
+    #MSearchPanel.MSearchPanelInactive:hover #MSearchType,
+    #MSearchType:focus {
+        visibility: visible;
+        color: #606060;
+        }
+    #MSearchType option#MSearchEverything {
+        font-weight: bold;
+        }
+
+    .Opera8 .MSearchPanelInactive:hover,
+    .Opera8 .MSearchPanelActive {
+        margin-left: -1px;
+        }
+
+
+    iframe#MSearchResults {
+        width: 60ex;
+        height: 15em;
+        }
+    #MSearchResultsWindow {
+        display: none;
+        position: absolute;
+        left: 0; top: 0;
+        border: 1px solid #000000;
+        background-color: #E8E8E8;
+        }
+    #MSearchResultsWindowClose {
+        font-weight: bold;
+        font-size: 8pt;
+        display: block;
+        padding: 2px 5px;
+        }
+    #MSearchResultsWindowClose:link,
+    #MSearchResultsWindowClose:visited {
+        color: #000000;
+        text-decoration: none;
+        }
+    #MSearchResultsWindowClose:active,
+    #MSearchResultsWindowClose:hover {
+        color: #800000;
+        text-decoration: none;
+        background-color: #F4F4F4;
+        }
+
+
+
+
+#Content {
+    padding-bottom: 15px;
+    }
+
+.ContentPage #Content {
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #000000;
+    background-color: #FFFFFF;
+    font-size: 9pt;  /* To make 31ex match the menu's 31ex. */
+    
+    }
+.ContentPage .Firefox #Content {
+    margin-left: 27ex;
+    }
+
+
+
+    .CTopic {
+        font-size: 10pt;
+        margin-bottom: 3em;
+        }
+
+
+    .CTitle {
+        font-size: 12pt; font-weight: bold;
+        border-width: 0 0 1px 0; border-style: solid; border-color: #A0A0A0;
+        margin: 0 15px .5em 15px }
+
+    .CGroup .CTitle {
+        font-size: 16pt; font-variant: small-caps;
+        padding-left: 15px; padding-right: 15px;
+        border-width: 0 0 2px 0; border-color: #000000;
+        margin-left: 0; margin-right: 0 }
+
+    .CClass .CTitle,
+    .CInterface .CTitle,
+    .CDatabase .CTitle,
+    .CDatabaseTable .CTitle,
+    .CSection .CTitle {
+        font-size: 18pt;
+        color: #FFFFFF; background-color: #A0A0A0;
+        padding: 10px 15px 10px 15px;
+        border-width: 2px 0; border-color: #000000;
+        margin-left: 0; margin-right: 0 }
+
+    #MainTopic .CTitle {
+        font-size: 20pt;
+        color: #FFFFFF; background-color: #7070C0;
+        padding: 10px 15px 10px 15px;
+        border-width: 0 0 3px 0; border-color: #000000;
+        margin-left: 0; margin-right: 0 }
+
+    .CBody {
+        margin-left: 15px; margin-right: 15px }
+
+
+    .CToolTip {
+        position: absolute; visibility: hidden;
+        left: 0; top: 0;
+        background-color: #FFFFE0;
+        padding: 5px;
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #000000;
+        font-size: 8pt;
+        }
+
+    .Opera .CToolTip {
+        max-width: 98%;
+        }
+
+    /*  Scrollbars would be useless.  */
+    .CToolTip blockquote {
+        overflow: hidden;
+        }
+    .IE6 .CToolTip blockquote {
+        overflow: visible;
+        }
+
+    .CHeading {
+        font-weight: bold; font-size: 10pt;
+        margin: 1.5em 0 .5em 0;
+        }
+
+    .CBody pre {
+        font: 10pt "Courier New", Courier, monospace;
+        margin: 1em 0;
+        }
+
+    .CBody ul {
+        /*  I don't know why CBody's margin doesn't apply, but it's consistent across browsers so whatever.
+             Reapply it here as padding.  */
+        padding-left: 15px; padding-right: 15px;
+        margin: .5em 5ex .5em 5ex;
+        }
+
+    .CDescriptionList {
+        margin: .5em 5ex 0 5ex }
+
+        .CDLEntry {
+            font: 10pt "Courier New", Courier, monospace; color: #808080;
+            padding-bottom: .25em;
+            white-space: nowrap }
+
+        .CDLDescription {
+            font-size: 10pt;  /*  For browsers that don't inherit correctly, like Opera 5.  */
+            padding-bottom: .5em; padding-left: 5ex }
+
+
+    .CTopic img {
+        text-align: center;
+        display: block;
+        margin: 1em auto;
+        }
+    .CImageCaption {
+        font-variant: small-caps;
+        font-size: 8pt;
+        color: #808080;
+        text-align: center;
+        position: relative;
+        top: 1em;
+        }
+
+    .CImageLink {
+        color: #808080;
+        font-style: italic;
+        }
+    a.CImageLink:link,
+    a.CImageLink:visited,
+    a.CImageLink:hover { color: #808080 }
+
+
+
+
+
+.Prototype {
+    font: 10pt "Courier New", Courier, monospace;
+    padding: 5px 3ex;
+    border-width: 1px; border-style: solid;
+    margin: 0 5ex 1.5em 5ex;
+    }
+
+    .Prototype td {
+        font-size: 10pt;
+        }
+
+    .PDefaultValue,
+    .PDefaultValuePrefix,
+    .PTypePrefix {
+        color: #8F8F8F;
+        }
+    .PTypePrefix {
+        text-align: right;
+        }
+    .PAfterParameters {
+        vertical-align: bottom;
+        }
+
+    .IE .Prototype table {
+        padding: 0;
+        }
+
+    .CFunction .Prototype {
+        background-color: #F4F4F4; border-color: #D0D0D0 }
+    .CProperty .Prototype {
+        background-color: #F4F4FF; border-color: #C0C0E8 }
+    .CVariable .Prototype {
+        background-color: #FFFFF0; border-color: #E0E0A0 }
+
+    .CClass .Prototype {
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #A0A0A0;
+        background-color: #F4F4F4;
+        }
+    .CInterface .Prototype {
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #A0A0D0;
+        background-color: #F4F4FF;
+        }
+
+    .CDatabaseIndex .Prototype,
+    .CConstant .Prototype {
+        background-color: #D0D0D0; border-color: #000000 }
+    .CType .Prototype,
+    .CEnumeration .Prototype {
+        background-color: #FAF0F0; border-color: #E0B0B0;
+        }
+    .CDatabaseTrigger .Prototype,
+    .CEvent .Prototype,
+    .CDelegate .Prototype {
+        background-color: #F0FCF0; border-color: #B8E4B8 }
+
+    .CToolTip .Prototype {
+        margin: 0 0 .5em 0;
+        white-space: nowrap;
+        }
+
+
+
+
+
+.Summary {
+    margin: 1.5em 5ex 0 5ex }
+
+    .STitle {
+        font-size: 12pt; font-weight: bold;
+        margin-bottom: .5em }
+
+
+    .SBorder {
+        background-color: #FFFFF0;
+        padding: 15px;
+        border: 1px solid #C0C060 }
+
+    /* In a frame IE 6 will make them too long unless you set the width to 100%.  Without frames it will be correct without a width
+        or slightly too long (but not enough to scroll) with a width.  This arbitrary weirdness simply astounds me.  IE 7 has the same
+        problem with frames, haven't tested it without.  */
+    .FramedContentPage .IE .SBorder {
+        width: 100% }
+
+    /*  A treat for Mozilla users.  Blatantly non-standard.  Will be replaced with CSS 3 attributes when finalized/supported.  */
+    .Firefox .SBorder {
+        -moz-border-radius: 20px }
+
+
+    .STable {
+        font-size: 9pt; width: 100% }
+
+    .SEntry {
+        width: 30% }
+    .SDescription {
+        width: 70% }
+
+
+    .SMarked {
+        background-color: #F8F8D8 }
+
+    .SDescription { padding-left: 2ex }
+    .SIndent1 .SEntry { padding-left: 1.5ex }   .SIndent1 .SDescription { padding-left: 3.5ex }
+    .SIndent2 .SEntry { padding-left: 3.0ex }   .SIndent2 .SDescription { padding-left: 5.0ex }
+    .SIndent3 .SEntry { padding-left: 4.5ex }   .SIndent3 .SDescription { padding-left: 6.5ex }
+    .SIndent4 .SEntry { padding-left: 6.0ex }   .SIndent4 .SDescription { padding-left: 8.0ex }
+    .SIndent5 .SEntry { padding-left: 7.5ex }   .SIndent5 .SDescription { padding-left: 9.5ex }
+
+    .SDescription a { color: #800000}
+    .SDescription a:active { color: #A00000 }
+
+    .SGroup td {
+        padding-top: .5em; padding-bottom: .25em }
+
+    .SGroup .SEntry {
+        font-weight: bold; font-variant: small-caps }
+
+    .SGroup .SEntry a { color: #800000 }
+    .SGroup .SEntry a:active { color: #F00000 }
+
+
+    .SMain td,
+    .SClass td,
+    .SDatabase td,
+    .SDatabaseTable td,
+    .SSection td {
+        font-size: 10pt;
+        padding-bottom: .25em }
+
+    .SClass td,
+    .SDatabase td,
+    .SDatabaseTable td,
+    .SSection td {
+        padding-top: 1em }
+
+    .SMain .SEntry,
+    .SClass .SEntry,
+    .SDatabase .SEntry,
+    .SDatabaseTable .SEntry,
+    .SSection .SEntry {
+        font-weight: bold;
+        }
+
+    .SMain .SEntry a,
+    .SClass .SEntry a,
+    .SDatabase .SEntry a,
+    .SDatabaseTable .SEntry a,
+    .SSection .SEntry a { color: #000000 }
+
+    .SMain .SEntry a:active,
+    .SClass .SEntry a:active,
+    .SDatabase .SEntry a:active,
+    .SDatabaseTable .SEntry a:active,
+    .SSection .SEntry a:active { color: #A00000 }
+
+
+
+
+
+.ClassHierarchy {
+    margin: 0 15px 1em 15px }
+
+    .CHEntry {
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #A0A0A0;
+        margin-bottom: 3px;
+        padding: 2px 2ex;
+        font-size: 10pt;
+        background-color: #F4F4F4; color: #606060;
+        }
+
+    .Firefox .CHEntry {
+        -moz-border-radius: 4px;
+        }
+
+    .CHCurrent .CHEntry {
+        font-weight: bold;
+        border-color: #000000;
+        color: #000000;
+        }
+
+    .CHChildNote .CHEntry {
+        font-style: italic;
+        font-size: 8pt;
+        }
+
+    .CHIndent {
+        margin-left: 3ex;
+        }
+
+    .CHEntry a:link,
+    .CHEntry a:visited,
+    .CHEntry a:hover {
+        color: #606060;
+        }
+    .CHEntry a:active {
+        color: #800000;
+        }
+
+
+
+
+
+#Index {
+    background-color: #FFFFFF;
+    }
+
+/*  As opposed to .PopupSearchResultsPage #Index  */
+.IndexPage #Index,
+.FramedIndexPage #Index,
+.FramedSearchResultsPage #Index {
+    padding: 15px;
+    }
+
+.IndexPage #Index {
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #000000;
+    font-size: 9pt;  /* To make 27ex match the menu's 27ex. */
+    margin-left: 27ex;
+    }
+
+
+    .IPageTitle {
+        font-size: 20pt; font-weight: bold;
+        color: #FFFFFF; background-color: #7070C0;
+        padding: 10px 15px 10px 15px;
+        border-width: 0 0 3px 0; border-color: #000000; border-style: solid;
+        margin: -15px -15px 0 -15px }
+
+    .FramedSearchResultsPage .IPageTitle {
+        margin-bottom: 15px;
+        }
+
+    .INavigationBar {
+        font-size: 10pt;
+        text-align: center;
+        background-color: #FFFFF0;
+        padding: 5px;
+        border-bottom: solid 1px black;
+        margin: 0 -15px 15px -15px;
+        }
+
+    .INavigationBar a {
+        font-weight: bold }
+
+    .IHeading {
+        font-size: 16pt; font-weight: bold;
+        padding: 2.5em 0 .5em 0;
+        text-align: center;
+        width: 3.5ex;
+        }
+    #IFirstHeading {
+        padding-top: 0;
+        }
+
+    .IEntry {
+        font-size: 10pt;
+        padding-left: 1ex;
+        }
+    .PopupSearchResultsPage .IEntry {
+        font-size: 8pt;
+        padding: 1px 5px;
+        }
+    .PopupSearchResultsPage .Opera9 .IEntry,
+    .FramedSearchResultsPage .Opera9 .IEntry {
+        text-align: left;
+        }
+    .FramedSearchResultsPage .IEntry {
+        padding: 0;
+        }
+
+    .ISubIndex {
+        padding-left: 3ex; padding-bottom: .5em }
+    .PopupSearchResultsPage .ISubIndex {
+        display: none;
+        }
+
+    /*  While it may cause some entries to look like links when they aren't, I found it's much easier to read the
+         index if everything's the same color.  */
+    .ISymbol {
+        font-weight: bold; color: #900000  }
+
+    .IndexPage .ISymbolPrefix,
+    .FramedIndexPage .ISymbolPrefix {
+        font-size: 10pt;
+        text-align: right;
+        color: #C47C7C;
+        background-color: #F8F8F8;
+        border-right: 3px solid #E0E0E0;
+        border-left: 1px solid #E0E0E0;
+        padding: 0 1px 0 2px;
+        }
+    .PopupSearchResultsPage .ISymbolPrefix,
+    .FramedSearchResultsPage .ISymbolPrefix {
+        color: #900000;
+        }
+    .PopupSearchResultsPage .ISymbolPrefix {
+        font-size: 8pt;
+        }
+
+    .IndexPage #IFirstSymbolPrefix,
+    .FramedIndexPage #IFirstSymbolPrefix {
+        border-top: 1px solid #E0E0E0;
+        }
+    .IndexPage #ILastSymbolPrefix,
+    .FramedIndexPage #ILastSymbolPrefix {
+        border-bottom: 1px solid #E0E0E0;
+        }
+    .IndexPage #IOnlySymbolPrefix,
+    .FramedIndexPage #IOnlySymbolPrefix {
+        border-top: 1px solid #E0E0E0;
+        border-bottom: 1px solid #E0E0E0;
+        }
+
+    a.IParent,
+    a.IFile {
+        display: block;
+        }
+
+    .PopupSearchResultsPage .SRStatus {
+        padding: 2px 5px;
+        font-size: 8pt;
+        font-style: italic;
+        }
+    .FramedSearchResultsPage .SRStatus {
+        font-size: 10pt;
+        font-style: italic;
+        }
+
+    .SRResult {
+        display: none;
+        }
+
+
+
+#Footer {
+    font-size: 8pt;
+    color: #989898;
+    text-align: right;
+    }
+
+#Footer p {
+    text-indent: 0;
+    margin-bottom: .5em;
+    }
+
+.ContentPage #Footer,
+.IndexPage #Footer {
+    text-align: right;
+    margin: 2px;
+    }
+
+.FramedMenuPage #Footer {
+    text-align: center;
+    margin: 5em 10px 10px 10px;
+    padding-top: 1em;
+    border-top: 1px solid #C8C8C8;
+    }
+
+    #Footer a:link,
+    #Footer a:hover,
+    #Footer a:visited { color: #989898 }
+    #Footer a:active { color: #A00000 }
+
+</style><script language=JavaScript src="../javascript/main.js"></script><script language=JavaScript src="../javascript/searchdata.js"></script></head><body class="ContentPage" onLoad="NDOnLoad()"><script language=JavaScript><!--
+if (browserType) {document.write("<div class=" + browserType + ">");if (browserVer) {document.write("<div class=" + browserVer + ">"); }}// --></script>
+
+<!--  Generated by Natural Docs, version 1.4 -->
+<!--  http://www.naturaldocs.org  -->
+
+<!-- saved from url=(0026)http://www.naturaldocs.org -->
+
+
+
+
+<div id=Content><div class="CSection"><div class=CTopic id=MainTopic><h1 class=CTitle><a name="argp-Argument_Options_Parser"></a>argp - Argument Options Parser</h1><div class=CBody><p>Parse an argument string with options and get keys and values.</p><h4 class=CHeading>License</h4><p>&copy; Copyright 2009, 2010 Tuncay</p><p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.&nbsp;  See the GNU Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public License along with this program.&nbsp;  If not, see <a href="http://www.gnu.org/licenses/" class=LURL target=_top>http://www.gnu.org/licenses/</a>.</p><img src="lgplv3.png" width="88" height="31"><p>See the file COPYING.txt and COPYING.LESSER.txt for license and copying conditions.</p><!--START_ND_SUMMARY--><div class=Summary><div class=STitle>Summary</div><div class=SBorder><table border=0 cellspacing=0 cellpadding=0 class=STable><tr class="SMain"><td class=SEntry><a href="#argp-Argument_Options_Parser" >argp - Argument Options Parser</a></td><td class=SDescription>Parse an argument string with options and get keys and values.</td></tr><tr class="SGeneric SIndent1 SMarked"><td class=SEntry><a href="#Description" >Description</a></td><td class=SDescription>About the idea</td></tr><tr class="SGeneric SIndent1"><td class=SEntry><a href="#Usage" >Usage</a></td><td class=SDescription>How to use the functions</td></tr><tr class="SGeneric SIndent1 SMarked"><td class=SEntry><a href="#Specification" >Specification</a></td><td class=SDescription>Argument string format</td></tr><tr class="SGroup SIndent1"><td class=SEntry><a href="#Functions" >Functions</a></td><td class=SDescription></td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#argp_parse" id=link1 onMouseOver="ShowTip(event, 'tt1', 'link1')" onMouseOut="HideTip('tt1')">argp_parse</a></td><td class=SDescription>Get optional keys and values as separate variables.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#argp_getopt" id=link2 onMouseOver="ShowTip(event, 'tt2', 'link2')" onMouseOut="HideTip('tt2')">argp_getopt</a></td><td class=SDescription>Check for known keys and get list of them and all values as separate variables.</td></tr></table></div></div><!--END_ND_SUMMARY--></div></div></div>
+
+<div class="CGeneric"><div class=CTopic><h3 class=CTitle><a name="Description"></a>Description</h3><div class=CBody><p>About the idea</p><h4 class=CHeading>Introduction</h4><p>Sometimes we need to work with many optional parameters.&nbsp; Some of the parameters may be just logical flags only (true/false).&nbsp; If the function have too many such parameters, the usability is endangered.&nbsp; To workaround that disgrace, we can make one option string to the function.&nbsp; From now on, this string contains all parameters.&nbsp; This is comparable to the commandline.</p><p>It must be parsed to find all parts.&nbsp; Writing such parsers could become difficult and slow down the complete process.&nbsp; The parsing is tried to be made with one regex call only (with some other non dramatic lines).&nbsp; As long as the string is keeped simple, there should be no problem.&nbsp; But with growing complexity, with different values of subparameters, it is a pain to make the difference.</p><h4 class=CHeading>Who needs this?</h4><p>This is not a parser for command line arguments of programs or scripts.&nbsp; It is similiar to Windows or Unix/Linux command line arguments, but different in some ways and less powerful.&nbsp; This library is for those ahk developers, who needs to write user defined functions with many options.&nbsp; With the parsing of just one real function parameter, it can be avoided to have a bunch of function parameters.</p><h4 class=CHeading>What it can do for you</h4><p>The source will be parsed and all found options are given over to specified variables.&nbsp; The other work parsing these generated variables is left to the user.</p><ul><li><b>Pro:</b> A standardized, simple and fast way of options handling.</li><li><b>Contra:</b> It isn`t a well known official standard.</li></ul><h4 class=CHeading>History</h4><p>This library is rewritten from scratch and the old BUG or LIMITATION is not present anymore.&nbsp; Not only that.&nbsp; It does work in a completly another way.&nbsp; After searching the web, I found a regular expression made by Richard Hauer at regexlib.com.&nbsp; I have modified it and now it is the backbone of my functions.&nbsp; One deserved credit goes to him.</p><p>The name of the library is changed again, from args to argp.&nbsp; The chosen name argp is a GNU C library for parsing arguments of programs.&nbsp; This AutoHotkey library is named like it, but there is no compatibility with the GNU C library.&nbsp; The name is an abbreviation for &ldquo;ARGument Parser&rdquo;.</p><h4 class=CHeading>Links</h4><ul><li>Discussion: [<a href="http://www.autohotkey.com/forum/viewtopic.php?p=310409" class=LURL target=_top>http://www.autohotkey.com<wbr>/forum<wbr>/viewtopic.php?p=310409</a>]</li><li>License: [<a href="http://www.gnu.org/licenses/lgpl-3.0.html" class=LURL target=_top>http://www.gnu.org/licenses/lgpl-3.0.html</a>]</li><li>Wikipedia - LGPL: [<a href="http://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License" class=LURL target=_top>http://en.wikipedia.org<wbr>/wiki<wbr>/GNU_Lesser_General_Public_License</a>]</li></ul><h4 class=CHeading>Date</h4><p>2010-01-30</p><h4 class=CHeading>Revision</h4><p>3.0</p><h4 class=CHeading>Status</h4><p>Release</p><h4 class=CHeading>Credits</h4><ul><li>Tuncay, [<a href="#" onClick="location.href='mai' + 'lto:' + 'tunc' + 'ay.d' + '@' + 'gmx' + '.de'; return false;" class=LEMail>tunc<span style="display: none">.nosp@m.</span>ay.d<span>@</span>gmx<span style="display: none">.nosp@m.</span>.de</a>] (Author)</li><li>Richard Hauer [<a href="http://regexlib.com/REDetails.aspx?regexp_id=1220" class=LURL target=_top>http://regexlib.com/REDetails.aspx?regexp_id=1220</a>] (Author of original Regular Expression)</li></ul><h4 class=CHeading>License</h4><p>GNU Lesser General Public License 3.0 or higher [<a href="http://www.gnu.org/licenses/lgpl-3.0.html" class=LURL target=_top>http://www.gnu.org/licenses/lgpl-3.0.html</a>]</p><h4 class=CHeading>Category</h4><p>String Manipulation</p><h4 class=CHeading>Type</h4><p>Library</p><h4 class=CHeading>Tested AutoHotkey Version</h4><p>1.0.48.05</p><h4 class=CHeading>Tested Platform</h4><p>2000/XP</p><h4 class=CHeading>Standalone (such as no need for extern file or library)</h4><p>Yes</p><h4 class=CHeading>StdLibConform (such as use of prefix and no globals use)</h4><p>Yes</p><h4 class=CHeading>Related</h4><p><b>Other Community Solutions</b></p><ul><li>Parameters and switches parser by Yook: [<a href="http://www.autohotkey.com/forum/viewtopic.php?t=50885" class=LURL target=_top>http://www.autohotkey.com<wbr>/forum<wbr>/viewtopic.php?t=50885</a>]</li><li>[function] Parse by majkinetor: [<a href="http://www.autohotkey.com/forum/viewtopic.php?t=49261" class=LURL target=_top>http://www.autohotkey.com<wbr>/forum<wbr>/viewtopic.php?t=49261</a>]</li><li>options.ahkl - an options object for AutoHotkey_L by ahklerner: [<a href="http://www.autohotkey.com/forum/viewtopic.php?t=49430" class=LURL target=_top>http://www.autohotkey.com<wbr>/forum<wbr>/viewtopic.php?t=49430</a>]</li></ul></div></div></div>
+
+<div class="CGeneric"><div class=CTopic><h3 class=CTitle><a name="Usage"></a>Usage</h3><div class=CBody><p>How to use the functions</p><h4 class=CHeading>Syntax</h4><blockquote><pre>count := argp_parse( source [, maxcount, keyname1, value1, ... keyname32, value32] )
+
+optlist := argp_getopt( source [, keylist, caseSense, value1, ... value32] )</pre></blockquote><p>There are two independently working functions.&nbsp; They have the same regular expression at the core, but the functionality and interface differs.&nbsp; One creates variables for each key name and the other one returns a list with names, checking against another list of possible names (either with case sense on or off and, removing dublicates).</p><p>After calling one of the functions, the variables or the list must be parsed.&nbsp; This is left to be done by the user.&nbsp; For the beginner, it is recommended to use argp_getopt() and then check with InStr() if a name exists in resulting list (with surrounding spaces).</p><p>No globals are created, no special objects or frameworks are needed.</p><h4 class=CHeading>Installation</h4><p>Just name the library to &ldquo;argp.ahk&rdquo; and put it into the standard or user library folder.&nbsp; A call of one of these functions in this library will lead to automatically include it into the script at call time.&nbsp; The folder should reside under one of these paths:</p><blockquote><pre>%A_MyDocuments%\AutoHotkey\Lib\  ; User library.
+path-to-the-currently-running-AutoHotkey.exe\Lib\  ; Standard library.</pre></blockquote><p>Alternatively you can include this library at any position of your script with the #include command:</p><blockquote><pre>#Include argp.ahk</pre></blockquote><h4 class=CHeading>Example 1</h4><p>This is part of parsing the options parameter from hypotetical function set_clipboard().&nbsp; The code demonstrates some aspects only, and it`s not optimized.</p><blockquote><pre>; Set default values prior to parsing argument string.
+opt_wait_use := false
+opt_errorlevel_set := false
+
+; Analyze the variable argument for existence of options namely &quot;wait&quot; and &quot;errorlevel&quot;.
+; Save the value of &quot;wait&quot; into variable wait_value.
+; After that, a new list with option names is get and saved into variable optlist.
+optlist := argp_getopt(argument, &quot;wait errorlevel&quot;, false, wait_value)
+
+; Now, parse the list and set options for programs usage.
+If InStr(optlist, &quot; wait &quot;)
+{
+    opt_wait_use := true
+    opt_wait_value := wait_value
+}
+
+If InStr(optlist, &quot; errorlevel &quot;)
+{
+    opt_errorlevel_set := true
+}</pre></blockquote><p>If the set_clipboard() function was called with following options</p><blockquote><pre>&quot;-w:2&quot;</pre></blockquote><p>Then the following variables are set</p><blockquote><pre>opt_wait_use := true
+opt_wait_value := 2
+opt_errorlevel_set := false</pre></blockquote><h4 class=CHeading>Example 2</h4><p>The next example shall show how to translate an usual function to argp_getopt() powered function.&nbsp; One function could look like this (very boring I know):</p><blockquote><pre>display(sentence = &quot;hello world&quot;, caseMod = 0, html = 0)
+{
+    If (caseMod = 1)
+        StringUpper, sentence, sentence, T
+    Else If (caseMod = 2)
+        StringUpper, sentence, sentence
+    Else If (caseMod = 3)
+        StringLower, sentence, sentence
+    If ( html)
+        Transform, sentence, HTML, %sentence%
+    MsgBox %sentence%
+}</pre></blockquote><p>A call could look like this</p><blockquote><pre>display(&quot;hello world&quot;, 1, 1)</pre></blockquote><p>Next code is one possible version with argp</p><blockquote><pre>display(options)
+{
+    ; Default values of options.
+    sentence = hello world
+
+    ; Parsing options.
+    optlist := argp_getopt(options, &quot;sentence caseMod html&quot;, false, sentence_value, caseMod_value)
+
+    Loop, Parse, optlist, %A_Space%, %A_Space%
+    {
+        If (&quot;sentence&quot; = A_LoopField)
+            sentence := sentence_value
+        Else If (&quot;caseMod&quot; = A_LoopField)
+        {
+            If (caseMod_value = 1)
+                StringUpper, sentence, sentence, T
+            Else If (caseMod_value = 2)
+                StringUpper, sentence, sentence
+            Else If (caseMod_value = 3)
+                StringLower, sentence, sentence
+        }
+        Else If (&quot;html&quot; = A_LoopField)
+            Transform, sentence, HTML, %sentence%
+    }
+
+    MsgBox %sentence%
+}</pre></blockquote><p>Lets see how a call could look now</p><blockquote><pre>display(&quot;-caseMod 2 -html&quot;)</pre></blockquote><p>What is done there?&nbsp; First we have changed from multiple function parameters to single parameter.&nbsp; All the necessary default parameters are set in the function body.&nbsp; Then the argp_getopt() is used to parse options variable.&nbsp; The third parameter (here set to false) is for doing the parse without case sensitivity.&nbsp; All the parameters after that, are variables for holding possible values of the options.&nbsp; That is, because every option can have its own value.</p><p>After this process, the resulting optlist variable holds the found names of options (given are the three &ldquo;sentence caseMod html&rdquo;).&nbsp; As a next step, this optlist variable must be parsed manually for checking which options are found actually and doing the right actions.&nbsp; In this example, a Loop, Parse command is chosen.&nbsp; There are other possibilities like multiple InStr() checks.</p></div></div></div>
+
+<div class="CGeneric"><div class=CTopic><h3 class=CTitle><a name="Specification"></a>Specification</h3><div class=CBody><p>Argument string format</p><h4 class=CHeading>Basic structure</h4><p>Any option must begin either with a hypghen &ldquo;-&rdquo; or slash &ldquo;/&rdquo;, to be recognized as an option.&nbsp; It doesn`t matter which of the two is used.&nbsp; The following character or word until next option or space is the key name of that option.&nbsp; In example:</p><blockquote><pre>-a -b</pre></blockquote><p>and</p><blockquote><pre>-a-b</pre></blockquote><p>would be resolved to these keys</p><blockquote><pre>a
+b</pre></blockquote><p>Although space is not required, you can write without it.</p><p>Normally parts in string that are not recognized as options should be ignored.&nbsp; In such a case, the resulting variable and value is allways empty.</p><h4 class=CHeading>Values added to keys</h4><p>Every option can have its own assigned value.&nbsp; The value can be delimited from its key name with a space &ldquo; &ldquo;, a double colon &ldquo;:&rdquo; or an equality sign &ldquo;=&rdquo;.&nbsp; If it is enclosed in quotes, then no delimiter is needed.&nbsp; The value is read until one space is found (or another option starts).&nbsp; In example:</p><blockquote><pre>-a test1 -b</pre></blockquote><p>would be resolved to these keys</p><blockquote><pre>a
+b</pre></blockquote><p>Where &ldquo;a&rdquo; holds the value &ldquo;test1&rdquo;.</p><p>Normally spaces around a value are lost.&nbsp; The value can be optionally enclosed between a pair of single or double quotes.&nbsp; That way spaces inside the quotes are saved.</p><blockquote><pre>-a:'foo -bar ' -B -c hello world</pre></blockquote><p>would be resolved to these keys</p><blockquote><pre>a
+B
+c</pre></blockquote><p>Where a holds the value &ldquo;foo -bar &ldquo; and c the value &ldquo;hello&rdquo;.</p><p>If a value contains one of these characters -, /, :, =, &lsquo; or &ldquo;, then it is best to enclose the whole value between quotes (single or double).</p><h4 class=CHeading>Dublicate keys</h4><p>argp_parse() and argp_getopt() treat duplicate definitions of option names in different ways. argp_parse() sees every key separately.&nbsp; And argp_getopt() sees the first definition only.&nbsp; This is important if they have values.&nbsp; In example:</p><blockquote><pre>-a:foo -a:bar -A</pre></blockquote><p>would argp_getopt() resolve to</p><blockquote><pre>a
+A</pre></blockquote><p>where a would holds the value &ldquo;foo&rdquo; and A would have an empty value.&nbsp; In contrast argp_parse() resolves to</p><blockquote><pre>a
+a
+A</pre></blockquote><p>first a holds &ldquo;foo&rdquo; and second a holds &ldquo;bar&rdquo;.&nbsp; Again, the last A have an empty value.</p><h4 class=CHeading>Key naming</h4><p>These characters in key name are allowed: a-z, A-Z, 0-9, _, ., ?, ! and @.&nbsp; Some examples:</p><blockquote><pre>-a
+-test
+/test.example
+/?
+-64
+-@section</pre></blockquote><h4 class=CHeading>The one special value without key name</h4><p>There is one exception in argp_parse() function only.&nbsp; Any string before first option is treated as a special value without a key name.&nbsp; That value is parsed like any other value.&nbsp; In example:</p><blockquote><pre>hello -a</pre></blockquote><p>would be resolved to these keys</p><blockquote><pre>a</pre></blockquote><p>The key &ldquo;a&rdquo; does have an empty value and the first special value &ldquo;hello&rdquo; is saved in ErrorLevel.&nbsp; This is supported by argp_parse() function exclusively.</p></div></div></div>
+
+<div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="Functions"></a>Functions</h3></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="argp_parse"></a>argp_parse</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>argp_parse(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_args,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_maxcount</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>32,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n1</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v1</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n2</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v2</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n3</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v3</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n4</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v4</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n5</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v5</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n6</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v6</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n7</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v7</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n8</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v8</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n9</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v9</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n10</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v10</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n11</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v11</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n12</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v12</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n13</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v13</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n14</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v14</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n15</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v15</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n16</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v16</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n17</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v17</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n18</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v18</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n19</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v19</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n20</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v20</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n21</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v21</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n22</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v22</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n23</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v23</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n24</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v24</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n25</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v25</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n26</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v26</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n27</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v27</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n28</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v28</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n29</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v29</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n30</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v30</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n31</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v31</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n32</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v32</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Get optional keys and values as separate variables.</p><h4 class=CHeading>Syntax</h4><blockquote><pre>count := argp_parse( args [, maxcount, n1, v1, ... n32, v32] )</pre></blockquote><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>args</td><td class=CDLDescription><b>Variable</b> [string] input: Source String variable with options to parse.&nbsp; See above at &ldquo;Specification&rdquo;, which is a description about the format.</td></tr><tr><td class=CDLEntry>maxcount</td><td class=CDLDescription><b>Optional</b> [integer] input:  Specifies how many options to get.&nbsp; Anything below &lsquo;1&rsquo; or above &lsquo;32&rsquo; defaults to &lsquo;32&rsquo;.</td></tr><tr><td class=CDLEntry>n1-n32</td><td class=CDLDescription><b>Variable Optional</b> [string] output: Stores the key name of option into variable.&nbsp; Variable n1 would hold first found name of option (i.e.&nbsp; &ldquo;A&rdquo;).</td></tr><tr><td class=CDLEntry>v1-v32</td><td class=CDLDescription><b>Variable Optional</b> [string] output: Stores the value of an option into variable.&nbsp; Variable v1 would hold value of first found option (i.e.&nbsp; &ldquo;33&rdquo;).</td></tr></table><h4 class=CHeading>Returns</h4><p>Number of retrieved options, or &lsquo;0&rsquo; otherwise.</p><h4 class=CHeading>Remarks</h4><p>maxcount can be set to an integer value between 1 and 32.&nbsp; That restricts the number of options to extract from source string.&nbsp; In example, if specified to 8, then the first 8 options are seen and the rest is ignored.&nbsp; This is an optimization.&nbsp; Maximum possible of 6 options to parse is faster than to parse 26 options.&nbsp; Plus, there are special optimizations to 8, 16 and 32, so they are faster in execution against values near to them.&nbsp; These values (8, 16, 32) are highly recommended.</p><h4 class=CHeading>ErrorLevel</h4><p>ErrorLevel is set to the first special value without key name.&nbsp; Otherwise it is empty.&nbsp; With following example:</p><blockquote><pre>get -i</pre></blockquote><p>it would hold &ldquo;get&rdquo;.&nbsp; With next example</p><blockquote><pre>-i get</pre></blockquote><p>ErrorLevel would be empty.</p><h4 class=CHeading>Examples</h4><blockquote><pre>options = -A='33' -i /f:c:\test -time:5:10 -x /date:11:08:2009
+count := argp_parse(options, 8, n1, v1, n2, v2, n3, v3, n4, v4, n5, v5, n6, v6, n7, v7, n8, v8)
+Text =
+(
+Number of options in source (options):
+%count%
+
+Name of key 3 (n3):
+%n3%
+
+Value of key 3 (v3):
+%v3%
+)
+MsgBox %Text%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>Number of options in source (options):
+6
+
+Name of key 3 (n3):
+f
+
+Value of key 3 (v3):
+c:\test</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="argp_getopt"></a>argp_getopt</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>argp_getopt(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_args,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_keylist</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_case</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>true,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_1</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_2</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_3</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_4</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_5</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_6</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_7</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_8</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_9</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_10</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_11</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_12</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_13</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_14</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_15</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_16</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_17</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_18</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_19</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_20</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_21</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_22</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_23</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_24</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_25</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_26</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_27</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_28</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_29</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_30</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_31</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_32</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Check for known keys and get list of them and all values as separate variables.</p><h4 class=CHeading>Syntax</h4><blockquote><pre>optlist := argp_getopt( source [, keylist, caseSense, value1, ... value32] )</pre></blockquote><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>args</td><td class=CDLDescription><b>Variable</b> [string] input: Source String variable with options to parse.&nbsp; See above at &ldquo;Specification&rdquo;, which is a description about the format.</td></tr><tr><td class=CDLEntry>keyList</td><td class=CDLDescription><b>Optional</b> [string] input: A space separated list of option names.&nbsp; Every key in options source string args will be in returning optlist.&nbsp; All values are written to output variables from number 1 to 32.&nbsp; The third item in this list relates to third output variable.&nbsp; If the keylist is empty &ldquo;&rdquo;, then all existing key names are get.</td></tr><tr><td class=CDLEntry>case</td><td class=CDLDescription><b>Optional</b> [flag] input: Case sensitivity of names checking; sensitiv at default (true or 1) leads to let &ldquo;a&rdquo; as a different option as &ldquo;A&rdquo;.</td></tr><tr><td class=CDLEntry>1-32</td><td class=CDLDescription><b>Variable Optional</b> [string] output: Stores the value of option into variable.&nbsp; Variable number 1 would hold value (i.e.&nbsp; &ldquo;33&rdquo;) of first defined option (i.e.&nbsp; &ldquo;A&rdquo;).</td></tr></table><h4 class=CHeading>Returns</h4><p>Get a space separated list of matching names.&nbsp; This means, all not found option names are filtered out from keyList.&nbsp; Duplicate names are not found and first one is used instead.&nbsp; (In example: &ldquo;A file A c i&rdquo;, these are the names of 4 options.)</p><p>If keyList is empty, then all options found in source is returned.&nbsp; Order of corresponding values (specified variables 1-32) reflects the order in source.&nbsp; But if keyList is a non empty list, then all options specified in this list are returned.</p><h4 class=CHeading>Remarks</h4><p>Other than argp_parse(), this function awaits a list of option names in keyList.&nbsp; That keylist is compared against all found option names from source.&nbsp; All matching keys are copied to resulting return list.</p><p>The returning list have spaces around also (at begin of list and end of).&nbsp; That allows checking for existency of keys with</p><blockquote><pre>InStr(keylist, &quot; A &quot;)</pre></blockquote><p>Any existing value corresponding to the key name is copied to output variable ranging from 1 to 32.&nbsp; In example second options value belongs to second variable, even if there is no value.&nbsp; In that case, the value is an empty string (blank value).</p><h4 class=CHeading>ErrorLevel</h4><p>ErrorLevel is set to the number of matching option names.&nbsp; Duplicates are not counted.&nbsp; If nothing is found, it is set to &lsquo;0&rsquo;.&nbsp; It is not the count of resulting keylist, but the count of keys in source string args.</p><h4 class=CHeading>Examples</h4><blockquote><pre>options = -A='33' -i /f:c:\test -time:5:10 -x /date:11:08:2009
+optlist := argp_getopt(options, &quot;s i test a&quot;, false, v1, v2, v3, v4)
+Text =
+(
+Number of options in source (options):
+%count%
+
+List of all matching key names (optlist):
+%optlist%
+
+Value of key 4 (v4):
+%v4%
+)
+MsgBox %Text%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>Number of options in source (options):
+6
+
+List of all matching key names (optlist):
+ a i
+
+Value of key 4 (v4):
+33</pre></blockquote></div></div></div>
+
+</div><!--Content-->
+
+
+<div id=Footer><a href="http://www.naturaldocs.org">Generated by Natural Docs</a></div><!--Footer-->
+
+
+
+
+
+
+<!--START_ND_TOOLTIPS-->
+<div class=CToolTip id="tt1"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>argp_parse(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_args,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_maxcount</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>32,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n1</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v1</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n2</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v2</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n3</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v3</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n4</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v4</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n5</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v5</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n6</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v6</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n7</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v7</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n8</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v8</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n9</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v9</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n10</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v10</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n11</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v11</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n12</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v12</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n13</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v13</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n14</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v14</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n15</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v15</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n16</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v16</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n17</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v17</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n18</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v18</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n19</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v19</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n20</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v20</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n21</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v21</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n22</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v22</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n23</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v23</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n24</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v24</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n25</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v25</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n26</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v26</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n27</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v27</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n28</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v28</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n29</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v29</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n30</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v30</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n31</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v31</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_n32</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_v32</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Get optional keys and values as separate variables.</div></div><div class=CToolTip id="tt2"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>argp_getopt(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_args,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_keylist</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_case</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>true,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_1</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_2</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_3</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_4</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_5</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_6</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_7</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_8</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_9</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_10</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_11</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_12</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_13</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_14</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_15</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_16</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_17</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_18</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_19</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_20</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_21</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_22</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_23</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_24</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_25</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_26</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_27</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_28</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_29</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_30</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_31</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_32</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Check for known keys and get list of them and all values as separate variables.</div></div><!--END_ND_TOOLTIPS-->
+
+
+
+
+<div id=MSearchResultsWindow><iframe src="" frameborder=0 name=MSearchResults id=MSearchResults></iframe><a href="javascript:searchPanel.CloseResultsWindow()" id=MSearchResultsWindowClose>Close</a></div>
+
+
+<script language=JavaScript><!--
+if (browserType) {if (browserVer) {document.write("</div>"); }document.write("</div>");}// --></script></body></html>

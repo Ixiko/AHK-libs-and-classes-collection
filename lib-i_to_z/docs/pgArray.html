@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+
+<link rel="prev" href="http://www.autohotkey.com/forum/viewtopic.php?t=36072&amp;view=previous" title="View previous topic">
+<link rel="next" href="http://www.autohotkey.com/forum/viewtopic.php?t=36072&amp;view=next" title="View next topic">
+<link rel="up" href="http://www.autohotkey.com/forum/viewforum.php?f=2" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=1" title="Ask for Help">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=2" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=3" title="Bug Reports">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=4" title="Wish List">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=6" title="Announcements">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=7" title="Utilities &amp; Resources">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=5" title="General Chat">
+
+<title>[lib] pgArray - A solution for Manipulating AHK's Arrays v2</title>
+
+<link rel="alternate" type="application/rss+xml" title="AutoHotkey Forum RSS" href="http://www.autohotkey.com/forum/rss.php">
+
+
+<link rel="stylesheet" type="text/css" href="pgArray-Dateien/index.css" media="all">
+</head><body bgcolor="#e5e5e5" link="#006699" text="#000000" vlink="#5493b4">
+<table align="center" border="0" cellpadding="10" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="bodyline">
+<table class="forumline" border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody>
+<tr>
+<td class="row1" height="28" valign="top" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td colspan="2">
+<span class="postbody">
+<!--DOCUMENT_FRAGMENT-->
+There have been requests for real arrays in ahk for a long time, and
+people have come up with several not to shabby solutions by putting the
+array in one var. (e.g. AHKA, SimpleArray) But for several (good)
+reasons, some don't want to use those, and instead choose to use AHK's
+psuedo arrays. <br>
+
+<br>
+Psuedo arrays are OK, but they're limited. There are some things that
+psuedo-arrays just can't do, like passing an array as a func param.
+Other things are just a big pain and give people headaches, like
+inserting or removing an element in an array. (not overwriting and
+clearing) What I present here is a way to alleviate these headaches.
+<br>
+
+<br>
+If you are already familiar with the terms, <span style="text-decoration: underline;">These functions can now <span style="font-weight: bold;">shift</span>, <span style="font-weight: bold;">unshift</span>, <span style="font-weight: bold;">push</span>, <span style="font-weight: bold;">pop</span>, <span style="font-weight: bold;">insert</span>, <span style="font-weight: bold;">swap</span>, and <span style="font-weight: bold;">rotate</span> psuedo-array elements</span>
+(+more). Otherwise, you could say they can add elements anywhere in an
+array, (specific # from beginning or end, or at the beginning or end)
+and also delete (not clear) elements from an array, so the array
+actually becomes shorter. <br>
+
+<br>
+Unfortunately, they are limited to only affecting global arrays since
+they naturally won't have access to a function's internal variables. It
+also requires the number of elements in the array contained be in the 0
+element of the array. (e.g. "MyArray0") It is also limited to only
+working on flat (single dimensional) arrays. <br>
+
+<br>
+There are two main funcitons:<ul><li><span style="font-weight: bold;">pgArray_Insert("MyArray", Idx, ele1 [, ele2, ele3, ...])</span>  
+<br>
+Puts any number of elements into an array starting at any point. Returns the length of the new array.
+<br>
+Idx=1; prepend the given elements to the beginning of the array (aka "unshift")
+<br>
+Idx=0; append the given elements to the end of the array (aka "push")
+<br>
+Idx&gt;0 / Idx&lt;0; insert the given elements before this index: 1 based from the beginning / -1 based from the end
+<br>
+</li><li><span style="font-weight: bold;">pgArray_Shift("MyArray" [, Idx=1, HowFar=1])</span>
+<br>
+Shifts following elements ontop of the elements at Idx + HowFar and
+clears the rest at the end. Returns the contents of the first removed
+element.
+<br>
+Don't specifiy an Idx, or use 1 to delete the first element. (aka "shift")
+<br>
+Idx=-1; delete the last element of the array. (aka "pop")
+<br>
+Idx&gt;0 / Idx&lt;0; 1 based from the beginning / -1 based from the end
+<br>
+specify HowFar for how many elements to delete. (e.g. Idx=1, HowFar=<span style="font-weight: bold;">2</span> would delete the first <span style="font-weight: bold;">two</span> elements)
+</li></ul>
+<!--/DOCUMENT_FRAGMENT-->
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

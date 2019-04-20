@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../../sitemap.xsl" type="text/xsl" media="all"?>
+<site>
+<page file="index.html" text="Simple Yaml Parser" title="Simple Yaml Parser">
+<page file="yaml_init.html" text="Yaml_Init" title="Yaml_Init"/>
+<page file="yaml_get.html" text="Yaml_Get" title="Yaml_Get"/>
+<page file="yaml_set.html" text="Yaml_Set" title="Yaml_Set"/>
+<page file="yaml_add.html" text="Yaml_Add" title="Yaml_Add"/>
+<page file="yaml_insert.html" text="Yaml_Insert" title="Yaml_Insert"/>
+<page file="yaml_clone.html" text="Yaml_Clone" title="Yaml_Clone"/>
+<page file="yaml_delete.html" text="Yaml_Delete" title="Yaml_Delete"/>
+<page file="yaml_deleteall.html" text="Yaml_DeleteAll" title="Yaml_DeleteAll"/>
+<page file="yaml_exist.html" text="Yaml_Exist" title="Yaml_Exist"/>
+<page file="yaml_save.html" text="Yaml_Save" title="Yaml_Save"/>
+</page>
+</site>

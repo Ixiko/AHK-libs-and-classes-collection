@@ -1,0 +1,11 @@
+http://www.autohotkey.net/~HotKeyIt/Yaml/Simple Yaml Parser.htm	index
+http://www.autohotkey.net/~HotKeyIt/Yaml/Yaml_Init.htm	yaml_init
+http://www.autohotkey.net/~HotKeyIt/Yaml/Yaml_Get.htm	yaml_get
+http://www.autohotkey.net/~HotKeyIt/Yaml/Yaml_Set.htm	yaml_set
+http://www.autohotkey.net/~HotKeyIt/Yaml/Yaml_Add.htm	yaml_add
+http://www.autohotkey.net/~HotKeyIt/Yaml/Yaml_Insert.htm	yaml_insert
+http://www.autohotkey.net/~HotKeyIt/Yaml/Yaml_Clone.htm	yaml_clone
+http://www.autohotkey.net/~HotKeyIt/Yaml/Yaml_Delete.htm	yaml_delete
+http://www.autohotkey.net/~HotKeyIt/Yaml/Yaml_DeleteAll.htm	yaml_deleteall
+http://www.autohotkey.net/~HotKeyIt/Yaml/Yaml_Exist.htm	yaml_exist
+http://www.autohotkey.net/~HotKeyIt/Yaml/Yaml_Save.htm	yaml_save

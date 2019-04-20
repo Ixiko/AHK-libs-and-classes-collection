@@ -1,0 +1,70 @@
+This script parses a C/C++ struct definition and outputs AutoHotkey code to set or get each field in the struct. 
+
+Known Issues: 
+    • Only types defined in ParseField() are supported. 
+    • Nested structs are not supported, except for RECT and POINT. 
+    • 1-byte field alignment is assumed. This isn't an issue for most structures defined at MSDN, which have explicit padding where necessary. 
+    • Bit fields such as BOOL fFocused:1; are not supported. 
+    • Not really an issue: for convenience, any type beginning with "LP" is assumed to be a pointer type. 
+If the script encounters a field that it cannot parse, it will prompt the user for the name, size (in bytes) and (optional) NumGet-compatible type of the field. 
+
+The generated code assumes the struct's data is stored in an AutoHotkey variable. To operate on a struct by address, the code must be adjusted. 
+Code:
+; put value into struct var
+NumPut(value, struct, offset, type)
+; put value into struct by address (+0 or similar required)
+NumPut(value, pointer_to_struct+0, offset, type)
+
+Requires: Anchor (in your function library, or add an #include.) 
+
+Usage: 
+Copy and paste a C/C++ structure definition into the top field, then click Parse. If a parsing error occurs, you will be prompted to enter the correct details. If all goes well, AutoHotkey code will appear in the bottom field. This code may or may not be directly usable in script. 
+
+[& Copy] does the same as [Parse], but also copies the result to the clipboard. 
+
+The small edit field in the middle defines the name of the struct variable for the generated code. If not "struct", it will be prepended to the name of each field (with "_" as a delimiter.) For the example output below, this field was set to "wp". 
+
+Example input: 
+typedef struct _WINDOWPLACEMENT {
+    UINT length;
+    UINT flags;
+    UINT showCmd;
+    POINT ptMinPosition;
+    POINT ptMaxPosition;
+    RECT rcNormalPosition;
+} WINDOWPLACEMENT;
+Example output: 
+VarSetCapacity(wp, 44, 0)
+
+; typedef struct _WINDOWPLACEMENT {
+    wp_length := NumGet(wp, 0, "UInt")
+    wp_flags := NumGet(wp, 4, "UInt")
+    wp_showCmd := NumGet(wp, 8, "UInt")
+    wp_ptMinPosition_X := NumGet(wp, 12, "Int")
+    wp_ptMinPosition_Y := NumGet(wp, 16, "Int")
+    wp_ptMaxPosition_X := NumGet(wp, 20, "Int")
+    wp_ptMaxPosition_Y := NumGet(wp, 24, "Int")
+    wp_rcNormalPosition_left := NumGet(wp, 28, "Int")
+    wp_rcNormalPosition_top := NumGet(wp, 32, "Int")
+    wp_rcNormalPosition_right := NumGet(wp, 36, "Int")
+    wp_rcNormalPosition_bottom := NumGet(wp, 40, "Int")
+; }
+
+; typedef struct _WINDOWPLACEMENT {
+    NumPut(wp_length, wp, 0, "UInt")
+    NumPut(wp_flags, wp, 4, "UInt")
+    NumPut(wp_showCmd, wp, 8, "UInt")
+    NumPut(wp_ptMinPosition_X, wp, 12, "Int")
+    NumPut(wp_ptMinPosition_Y, wp, 16, "Int")
+    NumPut(wp_ptMaxPosition_X, wp, 20, "Int")
+    NumPut(wp_ptMaxPosition_Y, wp, 24, "Int")
+    NumPut(wp_rcNormalPosition_left, wp, 28, "Int")
+    NumPut(wp_rcNormalPosition_top, wp, 32, "Int")
+    NumPut(wp_rcNormalPosition_right, wp, 36, "Int")
+    NumPut(wp_rcNormalPosition_bottom, wp, 40, "Int")
+; }
+
+Final notes: 
+For the curious, I wrote this script while trying to work with the DEVMODE structure. 
+
+I generally only use the code it generates as a reference.

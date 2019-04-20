@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+
+<link rel="top" href="http://www.autohotkey.com/forum/index.php?sid=82194d3a67843336cad834fd34e5ca80" title="AutoHotkey Community Forum Index">
+<link rel="search" href="http://www.autohotkey.com/forum/search.php?sid=82194d3a67843336cad834fd34e5ca80" title="Search">
+<link rel="help" href="http://www.autohotkey.com/forum/faq.php?sid=82194d3a67843336cad834fd34e5ca80" title="FAQ">
+<link rel="author" href="http://www.autohotkey.com/forum/memberlist.php?sid=82194d3a67843336cad834fd34e5ca80" title="Memberlist">
+<link rel="prev" href="http://www.autohotkey.com/forum/ptopic8728.html&amp;sid=82194d3a67843336cad834fd34e5ca80" title="View previous topic">
+<link rel="next" href="http://www.autohotkey.com/forum/ntopic8728.html&amp;sid=82194d3a67843336cad834fd34e5ca80" title="View next topic">
+<link rel="up" href="http://www.autohotkey.com/forum/forum-2.html&amp;sid=82194d3a67843336cad834fd34e5ca80" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-1.html&amp;sid=82194d3a67843336cad834fd34e5ca80" title="Ask for Help">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-2.html&amp;sid=82194d3a67843336cad834fd34e5ca80" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-3.html&amp;sid=82194d3a67843336cad834fd34e5ca80" title="Bug Reports">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-4.html&amp;sid=82194d3a67843336cad834fd34e5ca80" title="Wish List">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-6.html&amp;sid=82194d3a67843336cad834fd34e5ca80" title="Announcements">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-7.html&amp;sid=82194d3a67843336cad834fd34e5ca80" title="Utilities &amp; Resources">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-5.html&amp;sid=82194d3a67843336cad834fd34e5ca80" title="General Chat">
+
+<title>AHK Functions :: PE_FunctionExports()</title>
+
+<link rel="alternate" type="application/rss+xml" title="AutoHotkey Forum RSS" href="http://www.autohotkey.com/forum/rss.php">
+
+
+<link rel="stylesheet" type="text/css" href="ShellFileOperation-Dateien/index.css" media="all">
+</head><body bgcolor="#e5e5e5" vlink="#5493b4" link="#006699" text="#000000">
+<table align="center" border="0" cellpadding="10" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="bodyline">
+<table class="forumline" border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody>
+<tr>
+<td class="row2" valign="top" width="100%" height="28">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td colspan="2">
+<table align="center" border="0" cellpadding="3" cellspacing="1" width="90%">
+<tbody>
+<tr>
+<td class="quote">
+<!--DOCUMENT_FRAGMENT-->
+<span style="color: darkblue;"><span style="font-size: 18px; line-height: normal;"><span style="font-weight: bold;">ShellFileOperation()</span></span></span>  <span style="font-weight: bold;">- Basic Wrapper</span>
+<br>
+
+<br>
+<span style="font-size: 12px; line-height: normal;">A shell function that can be called to Copy / Move / Delete / Rename File(s). <span style="font-style: italic;">Displays an <span style="font-weight: bold;">animated progress bar</span> if the task is time consuming.</span> Progress bar is useful when operating on slower media like Digital Cameras or when dealing with huge files like video.
+<br>
+I have wrapped only the basic functionality. Hopefully, I should be updating it in near future. For customised needs refer <span style="font-weight: bold;">MSDN</span>.
+<br>
+
+<br>
+<ul><span style="color: blue;"><span style="font-weight: bold;">MSDN Reference:</span></span>
+<br>
+<a href="http://msdn2.microsoft.com/en-us/library/ms647743.aspx" target="_top" class="postlink"><span style="color: blue;"><span style="text-decoration: underline;">SHFileOperation Function</span></span></a>
+<br>
+<a href="http://msdn2.microsoft.com/en-us/library/ms538322.aspx" target="_top" class="postlink"><span style="color: blue;"><span style="text-decoration: underline;">SHFILEOPSTRUCT Structure</span></span></a>
+<br>
+<a href="http://support.microsoft.com/kb/151799" target="_top" class="postlink"><span style="color: blue;"><span style="text-decoration: underline;">How To Use the Animated Copy Functions in Windows 95/98/Me</span></span></a></ul>
+<br>
+
+<br>
+<span style="font-weight: bold;">Parameters:</span>
+<br>
+
+<br>
+The <span style="font-style: italic;">first parameter</span> can be <span style="text-decoration: underline;">only</span> one of the following:
+<br>
+</span><table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code"><div>FO_MOVE&nbsp; &nbsp;:= 0x1<br>FO_COPY&nbsp; &nbsp;:= 0x2<br>FO_DELETE := 0x3<br>FO_RENAME := 0x4</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+The <span style="font-style: italic;">Second / Third parameters</span> should be strings containing path to Source and Destination
+<br>
+Source may contain Wildcards but not Target
+<br>
+Source can be a list of files delimited with pipe. <span style="font-style: italic;">( The wrapper function replaces pipe characters with NULL )</span>
+<br>
+Always use fullpath and not relative.
+<br>
+
+<br>
+The <span style="font-style: italic;">fouth parameter</span> can contain a combination of values for which please refer MSDN
+<br>
+
+<br>
+<span style="font-weight: bold;">Usage Examples:</span>
+<br>
+
+<br>
+</span><table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code"><div>ShellFileOperation( 0x2, A_AhkPath, A_DeskTop )&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">; Copy a Single file</span><br>ShellFileOperation( 0x2, "C:\Program Files\AutoHotkey", A_DeskTop ) <span style="color: rgb(0, 128, 0);">; Copy the whole folder</span></div></td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+<span style="font-weight: bold;">Advanced Example:</span> <span style="font-style: italic;">( Along with the wrapped Shell Function )</span>
+<br>
+
+<br>
+The following code performs a recursive scan on the <span style="font-style: italic;">Temporary Internet Files</span> folder and creates a pipe delimited list of <span style="font-weight: bold;">.gif </span>files and passes it to the wrapper function which copies the files to the script's subfolder named <span style="font-weight: bold;">Gif_Files</span>.
+<br>
+
+<br>
+</span><table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code (<a href="javascript:;" onclick="javascript:expand(this);">Expand</a>):</b></span></td>	</tr>	<tr>	  <td class="code"><div style="height: 200px; overflow: auto;"><span style="color: black;">SetBatchLines -1<br>SetWorkingDir, %A_ScriptDir%<br><br>imgPath := A_Temp . "orary Internet Files"<br>Loop, %imgPath%\*.gif, 0 ,1<br>&nbsp; &nbsp; &nbsp;Source .= A_LoopFileLongPath "|"<br><br>Target := A_ScriptDir "\Gif_Files"<br><br>flags := ( FOF_RENAMEONCOLLISION := 0x8 ) | ( FOF_NOCONFIRMMKDIR := 0x200 ) <br><br>ShellFileOperation( 0x2, Source, Target, flags )<br><br>Return</span><br><br><br>ShellFileOperation( fileO=0x0, fSource="", fTarget="", flags=0x0, ghwnd=0x0 )&nbsp; &nbsp; &nbsp;{<br><br>&nbsp;If ( SubStr(fSource,0) != "|" )<br>&nbsp; &nbsp; &nbsp; fSource := fSource . "|"<br><br>&nbsp;If ( SubStr(fTarget,0) != "|" )<br>&nbsp; &nbsp; &nbsp; fTarget := fTarget . "|"<br><br>&nbsp;fsPtr := &amp;fSource<br>&nbsp;Loop, % StrLen(fSource)<br>&nbsp; If ( *(fsPtr+(A_Index-1)) = 124 ) <br>&nbsp; &nbsp; &nbsp; DllCall( "RtlFillMemory", UInt, fsPtr+(A_Index-1), Int,1, UChar,0 ) <br><br>&nbsp;ftPtr := &amp;fTarget<br>&nbsp;Loop, % StrLen(fTarget)<br>&nbsp; If ( *(ftPtr+(A_Index-1)) = 124 ) <br>&nbsp; &nbsp; &nbsp; DllCall( "RtlFillMemory", UInt, ftPtr+(A_Index-1), Int,1, UChar,0 ) <br><br>&nbsp;VarSetCapacity( SHFILEOPSTRUCT, 30, 0 )&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">; Encoding SHFILEOPSTRUCT</span><br>&nbsp;NextOffset := NumPut( ghwnd, &amp;SHFILEOPSTRUCT )&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; hWnd of calling GUI</span><br>&nbsp;NextOffset := NumPut( fileO, NextOffset+0&nbsp; &nbsp; )&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; File operation</span><br>&nbsp;NextOffset := NumPut( fsPtr, NextOffset+0&nbsp; &nbsp; )&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; Source file / pattern</span><br>&nbsp;NextOffset := NumPut( ftPtr, NextOffset+0&nbsp; &nbsp; )&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; Target file / folder</span><br>&nbsp;NextOffset := NumPut( flags, NextOffset+0, 0, "Short" ) <span style="color: rgb(0, 128, 0);">; options</span><br><br>&nbsp;DllCall( "Shell32\SHFileOperationA", UInt,&amp;SHFILEOPSTRUCT )<br>&nbsp;<br>Return NumGet( NextOffset+0 )<br>}</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+The flag FOF_NOCONFIRMMKDIR supresses the user confirmation for 
+subfolder creation and FOF_RENAMEONCOLLISION takes care of renaming 
+similar filenames.
+<br>
+
+<br>
+<span style="font-weight: bold;">FOF_RENAMEONCOLLISION:</span> For 
+example I recursively scanned for README.TXT in drive C: and I had a 
+list of 667 files. When copied to the same folder with 
+FOF_RENAMEONCOLLISION, The 1st file was <span style="font-weight: bold;">README.TXT</span>, 2nd file was <span style="font-weight: bold;">Copy of README.TXT</span>, 3rd file was <span style="font-weight: bold;">Copy (1) of README.TXT</span> ... and the last file was <span style="font-weight: bold;">Copy (665) of README.TXT</span>
+<br>
+
+<br>
+<span style="color: red;">Note: You see a progress bar only if the above takes more than a couple of seconds</span></span>
+<!--/DOCUMENT_FRAGMENT-->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

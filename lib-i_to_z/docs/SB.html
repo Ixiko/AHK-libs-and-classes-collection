@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+
+<link rel="prev" href="http://www.autohotkey.com/forum/viewtopic.php?t=37754&amp;view=previous" title="View previous topic">
+<link rel="next" href="http://www.autohotkey.com/forum/viewtopic.php?t=37754&amp;view=next" title="View next topic">
+<link rel="up" href="http://www.autohotkey.com/forum/viewforum.php?f=2" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=1" title="Ask for Help">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=2" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=3" title="Bug Reports">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=4" title="Wish List">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=6" title="Announcements">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=7" title="Utilities &amp; Resources">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=5" title="General Chat">
+
+<title>[stdlib] SB_SetProgress</title>
+
+<link rel="alternate" type="application/rss+xml" title="AutoHotkey Forum RSS" href="http://www.autohotkey.com/forum/rss.php">
+
+
+<link rel="stylesheet" type="text/css" href="SB-Dateien/index.css" media="all">
+</head><body bgcolor="#e5e5e5" link="#006699" text="#000000" vlink="#5493b4">
+<table align="center" border="0" cellpadding="10" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="bodyline">
+<table class="forumline" border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody>
+<tr>
+<td class="row1" height="28" valign="top" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td colspan="2">
+<table align="center" border="0" cellpadding="3" cellspacing="1" width="90%">
+<tbody>
+<tr>
+<td class="quote">
+<!--DOCUMENT_FRAGMENT-->
+<ul><span style="font-size: 16px; line-height: normal;"><span style="font-weight: bold;">SB_SetProgress</span></span>
+<br>
+___________________________________________________________________
+<br>
+
+<br>
+<span style="font-style: italic;">Creates and controls a progressbar placed atop the last known AHK Gui's <b style="color: rgb(255, 163, 79);">Statusbar</b> control.</span>
+<br>
+
+<br>
+<span style="font-size: 14px; line-height: normal;">SB_SetProgress([param1 [, segment [, options]]])</span></ul>
+<br>
+
+<br>
+<table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b><span style="font-weight: bold;">Parameters</span> wrote:</b></span></td>	</tr>	<tr>	  <td class="quote">
+<br>
+<span style="text-decoration: underline;">Param1</span>
+<br>
+Needs to be a number in the given range of the progressbar, its bar's position is changed to that value.
+<br>
+The default range can be changed with the method described below. By default it is from 0 to 100.
+<br>
+
+<br>
+<span style="text-decoration: underline;">Segment</span>
+<br>
+Specify the segment you wish to attach the Progressbar to. If you want
+only to change it's appearance with the options, and no segments are
+defined, use 1 which is also the default value.
+<br>
+
+<br>
+<span style="text-decoration: underline;">Options</span>
+<br>
+A string of zero or more options from the list further below.</td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+<ul>___________________________________________________________________
+<br>
+
+<br>
+<span style="font-size: 14px; line-height: normal;">Usable Options</span>
+<br>
+
+<br>
+<span style="font-weight: bold;">+/-Smooth</span>: Displays a length of
+segments rather than a smooth continuous bar. Specifying -Smooth is
+also one of the requirements to show a themed progress bar on Windows
+XP or later. The other requirement is that the bar not have any custom
+colors; that is, that the C and Background options be omitted. Windows
+95 and NT4 require Internet Explorer 3.0 or later to support this
+option.
+<br>
+
+<br>
+<span style="font-weight: bold;">+/-Range</span>: Sets the range to be
+something other than 0 to 100. After the word Range, specify the
+minimum, a dash, and maximum. For example, Range0-1000 would allow a
+numbers between 0 and 1000; Range-50-50 would allow numbers between -50
+and 50; and Range-10--5 would allow numbers between -10 and -5. On
+Windows 95 and NT4, negative ranges and ranges beyond 65535 will not
+behave correctly unless Internet Explorer 3.0 or later is installed.
+<br>
+Using -Range (minus range) will reset the range to standard defaults.
+<br>
+
+<br>
+<span style="font-weight: bold;">Cn</span>: Changes the bar's color. Specify for <span style="font-weight: bold;">n</span>
+one of the 16 primary HTML color names or a 6-digit RGB color value.
+Examples: cRed, cFFFF33, cDefault. If the C option is never used (or
+cDefault is specified), the system's default bar color will be used.
+<br>
+
+<br>
+<span style="font-weight: bold;">BackgroundN</span>: Changes the bar's background color. Specify for <span style="font-weight: bold;">n</span>
+one of the 16 primary HTML color names or a 6-digit RGB color value.
+Examples: BackgroundGreen, BackgroundFFFF33, BackgroundDefault. If the
+Background option is never used (or BackgroundDefault is specified),
+the background color will be that of the window or tab control behind
+it.
+<br>
+
+<br>
+<span style="font-weight: bold;">Enable</span>: Enables a control if it was previously disabled. On by default.
+<br>
+
+<br>
+<span style="font-weight: bold;">Disable</span>: Disables or "grays out" a control. 
+<br>
+
+<br>
+<span style="font-weight: bold;">Show</span>: Shows a control if it was previously hidden. 
+<br>
+
+<br>
+<span style="font-weight: bold;">Hide</span>: Hides the progressbar control.
+<br>
+
+<br>
+___________________________________________________________________
+<br>
+
+<br>
+<span style="font-size: 14px; line-height: normal;">ErrorLevel</span>
+<br>
+
+<br>In case an error happens, The ErrorLevel will contain informations
+about what went wrong. All Descriptions start with the word "FAIL:"
+written in caps. Possible contents and a brief explanation:
+<br>
+
+<br>
+<span style="font-style: italic;">No <b style="color: rgb(255, 163, 79);">StatusBar</b> Control</span>
+<br>
+Obvious.
+<br>
+
+<br>
+<span style="font-style: italic;">Wrong Segment Parameter</span>
+<br>
+Will be set when Segment parameter is smaller or equal zero.
+<br>
+
+<br>
+<span style="font-style: italic;">Wrong Segment Count</span>
+<br>
+Will be set when higher Segment number is given than actual segements exist. <span style="text-decoration: underline;">Exception:</span>
+When operating with just a standard statusbarcontrol and no segments at
+all, a given Segment parameter can be used to have more than just one
+Progressbar of which only the latest according to its z-Order will be
+displayed.
+<br>
+
+<br>
+<span style="font-style: italic;">Segmentdimensions</span>
+<br>
+The function was unable to determine given Segment's dimensions (x/y of upper left corner and x/y of lower right corner)
+<br>
+
+<br>
+On success the ErrorLevel will contain 1
+<br>
+
+<br>
+___________________________________________________________________
+<br>
+
+<br>
+<span style="font-size: 14px; line-height: normal;">Returnvalue</span>
+<br>
+
+<br>When an Error of the pervious described occurs, the returnvalue
+will be set to -1. On success to the progressbar's WindowHandle (hWnd).
+<br>
+___________________________________________________________________
+<br>
+
+<br>
+<span style="font-size: 14px; line-height: normal;">Performance</span>
+<br>
+
+<br>
+Allthough it works, it is better not to supply options directly at a loop which will permanently update the <b style="color: rgb(255, 163, 79);">statusbar</b>.
+This may result in flickering of the progressbar due to parsing all
+comments on each run. Better is to use Seperate commands, and have just
+passed Param1 and Segemt to update the progressbar. See the example
+below how to use this properly.
+<br>
+
+<br>
+___________________________________________________________________
+<br>
+
+<br>
+<span style="font-size: 14px; line-height: normal;">Remarks</span>
+<br>
+
+<br>
+Currently the so called marqueestyle (that is no given size, but a contantly moving part of the bar) is not functional.
+<br>The -Smooth/+Smooth parameter will only be evaluated upon
+Progressbar creation and cannot be changed from within the function
+lateron.
+<br>
+
+<br>
+Using the <a href="http://msdn.microsoft.com/en-us/library/bb760824%28VS.85%29.aspx" target="_top" class="postlink">PBM_DELTAPOS message</a> to increment the Bar by a given step and not by an absolute number is not implemented yet.
+<br>
+So something comparable to 
+<br>
+<table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code"><div>GuiControl,, MyProgress, +20&nbsp; <span style="color: rgb(0, 128, 0);">; Increase the current position by 20.</span></div></td>	</tr></tbody></table><span class="postbody">
+<br>
+won't work at the moment.
+<br>
+
+<br>
+To get the current's Progressbar value (if ever needed) a SendMessage must be used like this:
+<br>
+</span><table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code"><div>hwnd := SB_SetProgress(50,3,"BackgroundYellow cBlue") <span style="color: rgb(0, 128, 0);">; This is the way to obtain the handle to the control</span><br>SendMessage, PBM_GETPOS:=0x408, wParam:=0, lParam:=0,,ahk_id %hWnd% <span style="color: rgb(0, 128, 0);">; wParam, and lParam needs to be zero in this case</span><br>MsgBox %ErrorLevel% <span style="color: rgb(0, 128, 0);">; The ErrorLevel contains the current position</span></div></td>	</tr></tbody></table><span class="postbody">
+<br>
+___________________________________________________________________
+<br>
+
+<br>
+<span style="font-size: 14px; line-height: normal;">Related</span>
+<br>
+
+<br>
+<a href="http://www.autohotkey.com/docs/commands/GuiControls.htm#StatusBar" target="_top" class="postlink"><b style="color: rgb(255, 163, 79);">StatusBar</b></a>, <a href="http://www.autohotkey.com/docs/commands/GuiControls.htm#Progress" target="_top" class="postlink">Progress</a>, <a href="http://www.autohotkey.com/docs/misc/Styles.htm" target="_top" class="postlink">Styles</a>
+<br>
+
+<br>
+___________________________________________________________________
+<br>
+
+<br>
+<span style="font-size: 14px; line-height: normal;">Resources</span>
+<br>
+
+<br>
+Progress Bar Control Reference &gt; Messages
+<br>
+<a href="http://msdn.microsoft.com/en-us/library/cc656531%28VS.85%29.aspx" target="_top" class="postlink">http://msdn.microsoft.com/en-us/library/cc656531(VS.85).aspx</a>
+<br>
+
+<br>
+[ahksushi] <b style="color: rgb(255, 163, 79);">Statusbar</b> with Progressbar and animated Icon
+<br>
+<a href="http://www.autohotkey.com/forum/viewtopic.php?t=37674" target="_top">http://www.autohotkey.com/forum/viewtopic.php?t=37674</a>
+<br>
+
+<br>
+[Solved] How to send an array with SendMessage
+<br>
+<a href="http://www.autohotkey.com/forum/topic6017.html" target="_top">http://www.autohotkey.com/forum/topic6017.html</a>
+<br>
+
+<br>
+[tutorial] Creating windows without GUI commands
+<br>
+<a href="http://www.autohotkey.com/forum/viewtopic.php?t=22904" target="_top">http://www.autohotkey.com/forum/viewtopic.php?t=22904</a>
+<br>
+
+<br>
+___________________________________________________________________
+<br>
+
+<br>
+<span style="font-size: 14px; line-height: normal;">Examples</span>
+<br>
+
+<br>
+</span><table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code"><div>SB_SetProgress(10) <span style="color: rgb(0, 128, 0);">; will create a progress onto entire <b style="color: rgb(255, 163, 79);">statusbar</b> showing 10% bar</span></div></td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+A little working example:
+<br>
+
+<br>
+</span><table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code"><div>Gui,add,text,w280 center,Some text for the gui!<br>Gui,add,<b style="color: rgb(255, 163, 79);">statusbar</b><br>Gui,show,w300,<b style="color: rgb(255, 163, 79);">Statusbar</b> with Progress<br><br>SB_SetParts(20,200,100) <span style="color: rgb(0, 128, 0);">; Make 3 different parts</span><br>SB_SetText("demotext",2) <span style="color: rgb(0, 128, 0);">; Set a text segment 2</span><br>SB_SetIcon(A_AhkPath,1,1) <span style="color: rgb(0, 128, 0);">; Set an Icon to 1st segment</span><br><span style="color: rgb(0, 128, 0);">; create a 50% progressbar with yellow background and blue bar</span><br>hwnd := SB_SetProgress(50,3,"BackgroundYellow cBlue") <br>return</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+This example shows advanced features of the SB_SetProgress function
+<br>
+
+<br>
+</span><table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code (<a href="javascript:;" onclick="javascript:expand(this);">Expand</a>):</b></span></td>	</tr>	<tr>	  <td class="code"><div style="overflow: auto; height: 200px;"><span style="color: rgb(0, 128, 0);">; ahk-Sushi: Anime Icon + Progressbar in <b style="color: rgb(255, 163, 79);">Statusbar</b></span><br><span style="color: rgb(0, 128, 0);">; (w) Nov 2008 by DerRaphael(at)oleco.net</span><br><span style="color: rgb(0, 128, 0);">; modified for SB_SetProgress demonstration</span><br><br>gui,add,text,w180 center y10,Demo anime Icon`n+ Progressbar in StatusbarControl<br>gui,add,button,x+10 yp-3 w90 gRestart vBtn1 default, Restart!<br>Gui,add,<b style="color: rgb(255, 163, 79);">statusbar</b>, hwndhwndBar<br>gui,show,w300,[ahksushi] <b style="color: rgb(255, 163, 79);">Statusbar</b> Demo<br><br>SB_SetParts(20,200,100)<br>SB_SetText("demotext",2)<br>hIS&nbsp; &nbsp; &nbsp;:= SB_SetIcon(A_AhkPath,1,1)<br>hwnd := SB_SetProgress(50,3,"BackgroundGreen cLime")<br>Gosub, Prep_Animation<br><br>Restart:<br>&nbsp; &nbsp;SB_SetProgress(0,3,"show")<br>&nbsp; &nbsp;GuiControl,Disable,Btn1<br>&nbsp; &nbsp;Gui,+LastFound<br>&nbsp; &nbsp;ControlFocus<br>&nbsp; &nbsp;pp := 0<br>&nbsp; &nbsp;SetTimer,ProgressAnimation,50<br>return<br><br>ProgressAnimation:<br>&nbsp; &nbsp;SB_SetProgress(++pp,3)<br>&nbsp; &nbsp;R := mod(pp,8)//2+1<br>&nbsp; &nbsp;SendMessage, 0x40F, 0, hI%R%,, ahk_id %hwndBar%&nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">; SB_SETICON := (WM_USER:=0x400) + 15 - icon animation!</span><br>&nbsp; &nbsp;if (pp=100) {<br>&nbsp; &nbsp; &nbsp; SendMessage, 0x40F, 0, hIS,, ahk_id %hwndBar%&nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; StandardIcon hIS</span><br>&nbsp; &nbsp; &nbsp; SB_SetText("`tEat mo' sushi!",2,0)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">; update Text</span><br>&nbsp; &nbsp; &nbsp; SetTimer,ProgressAnimation,Off&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">; Timer OFF</span><br>&nbsp; &nbsp; &nbsp; GuiControl,Enable,Btn1<br>&nbsp;
+&nbsp; &nbsp; SB_SetText("`tDone!",3,0)&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; update Text</span><br>&nbsp;
+&nbsp; &nbsp; SB_SetProgress(0,3,"hide")&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">; hide the progress</span><br>&nbsp; &nbsp;} else&nbsp; <span style="color: rgb(0, 128, 0);">; update Text</span><br>&nbsp; &nbsp; &nbsp; SB_SetText("`tLala lala la: " pp " %",2,0)<br>Return<br><br>Prep_Animation:<br><span style="color: rgb(0, 128, 0);">; Prepare Animation - Load 4 Icons and make their handle available</span><br>hInst := DllCall("GetModuleHandle", "str", "shell32.dll")<br>Loop,4<br>&nbsp; &nbsp;hI%A_index% := DllCall("LoadImage", "Uint", hInst, "Uint", 3+A_index, "Uint", 1<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; , "int", 16, "int", 16, "Uint", 0x8000)<br>Return<br><br>GuiEscape:<br>GuiClose:<br>&nbsp; &nbsp;exitapp</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+
+<br>
+</span></ul>
+</span>
+<!--/DOCUMENT_FRAGMENT-->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

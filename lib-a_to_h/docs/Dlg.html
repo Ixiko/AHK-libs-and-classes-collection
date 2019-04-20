@@ -1,0 +1,864 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>Dlg</title><style>/*
+   IMPORTANT: If you're editing this file in the output directory of one of
+   your projects, your changes will be overwritten the next time you run
+   Natural Docs.  Instead, copy this file to your project directory, make your
+   changes, and you can use it with -s.  Even better would be to make a CSS
+   file in your project directory with only your changes, which you can then
+   use with -s [original style] [your changes].
+
+   On the other hand, if you're editing this file in the Natural Docs styles
+   directory, the changes will automatically be applied to all your projects
+   that use this style the next time Natural Docs is run on them.
+
+   This file is part of Natural Docs, which is Copyright (C) 2003-2008 Greg Valure
+   Natural Docs is licensed under the GPL
+*/
+
+body {
+    font: 10pt Verdana, Arial, sans-serif;
+    color: #000000;
+    margin: 0; padding: 0;
+    }
+
+.ContentPage,
+.IndexPage,
+.FramedMenuPage {
+    background-color: #E8E8E8;
+    }
+.FramedContentPage,
+.FramedIndexPage,
+.FramedSearchResultsPage,
+.PopupSearchResultsPage {
+    background-color: #FFFFFF;
+    }
+
+
+a:link,
+a:visited { color: #900000; text-decoration: none }
+a:hover { color: #900000; text-decoration: underline }
+a:active { color: #FF0000; text-decoration: underline }
+
+td {
+    vertical-align: top }
+
+img { border: 0;  }
+
+
+/*
+    Comment out this line to use web-style paragraphs (blank line between
+    paragraphs, no indent) instead of print-style paragraphs (no blank line,
+    indented.)
+*/
+p {
+    text-indent: 5ex; margin: 0 }
+
+
+/*  Opera doesn't break with just wbr, but will if you add this.  */
+.Opera wbr:after {
+	content: "\00200B";
+	}
+
+
+/*  Blockquotes are used as containers for things that may need to scroll.  */
+blockquote {
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    }
+
+
+.Firefox1 blockquote {
+    padding-bottom: .5em;
+    }
+
+/*  Turn off scrolling when printing.  */
+@media print {
+    blockquote {
+        overflow: visible;
+        }
+    .IE blockquote {
+        width: auto;
+        }
+    }
+
+
+
+#Menu {
+    font-size: 9pt;
+    padding: 10px 0 0 0;
+    }
+.ContentPage #Menu,
+.IndexPage #Menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 31ex;
+    overflow: hidden;
+    }
+.ContentPage .Firefox #Menu,
+.IndexPage .Firefox #Menu {
+    width: 27ex;
+    }
+
+
+    .MTitle {
+        font-size: 16pt; font-weight: bold; font-variant: small-caps;
+        text-align: center;
+        padding: 5px 10px 15px 10px;
+        border-bottom: 1px dotted #000000;
+        margin-bottom: 15px }
+
+    .MSubTitle {
+        font-size: 9pt; font-weight: normal; font-variant: normal;
+        margin-top: 1ex; margin-bottom: 5px }
+
+
+    .MEntry a:link,
+    .MEntry a:hover,
+    .MEntry a:visited { color: #606060; margin-right: 0 }
+    .MEntry a:active { color: #A00000; margin-right: 0 }
+
+
+    .MGroup {
+        font-variant: small-caps; font-weight: bold;
+        margin: 1em 0 1em 10px;
+        }
+
+    .MGroupContent {
+        font-variant: normal; font-weight: normal }
+
+    .MGroup a:link,
+    .MGroup a:hover,
+    .MGroup a:visited { color: #545454; margin-right: 10px }
+    .MGroup a:active { color: #A00000; margin-right: 10px }
+
+
+    .MFile,
+    .MText,
+    .MLink,
+    .MIndex {
+        padding: 1px 17px 2px 10px;
+        margin: .25em 0 .25em 0;
+        }
+
+    .MText {
+        font-size: 8pt; font-style: italic }
+
+    .MLink {
+        font-style: italic }
+
+    #MSelected {
+        color: #000000; background-color: #FFFFFF;
+        /*  Replace padding with border.  */
+        padding: 0 10px 0 10px;
+        border-width: 1px 2px 2px 0; border-style: solid; border-color: #000000;
+        margin-right: 5px;
+        }
+
+    /*  Close off the left side when its in a group.  */
+    .MGroup #MSelected {
+        padding-left: 9px; border-left-width: 1px }
+
+    /*  A treat for Mozilla users.  Blatantly non-standard.  Will be replaced with CSS 3 attributes when finalized/supported.  */
+    .Firefox #MSelected {
+        -moz-border-radius-topright: 10px;
+        -moz-border-radius-bottomright: 10px }
+    .Firefox .MGroup #MSelected {
+        -moz-border-radius-topleft: 10px;
+        -moz-border-radius-bottomleft: 10px }
+
+
+    #MSearchPanel {
+        padding: 0px 6px;
+        margin: .25em 0;
+        }
+
+
+    #MSearchField {
+        font: italic 9pt Verdana, sans-serif;
+        color: #606060;
+        background-color: #E8E8E8;
+        border: none;
+        padding: 2px 4px;
+        width: 100%;
+        }
+    /* Only Opera gets it right. */
+    .Firefox #MSearchField,
+    .IE #MSearchField,
+    .Safari #MSearchField {
+        width: 94%;
+        }
+    .Opera9 #MSearchField,
+    .Konqueror #MSearchField {
+        width: 97%;
+        }
+    .FramedMenuPage .Firefox #MSearchField,
+    .FramedMenuPage .Safari #MSearchField,
+    .FramedMenuPage .Konqueror #MSearchField {
+        width: 98%;
+        }
+
+    /* Firefox doesn't do this right in frames without #MSearchPanel added on.
+        It's presence doesn't hurt anything other browsers. */
+    #MSearchPanel.MSearchPanelInactive:hover #MSearchField {
+        background-color: #FFFFFF;
+        border: 1px solid #C0C0C0;
+        padding: 1px 3px;
+        }
+    .MSearchPanelActive #MSearchField {
+        background-color: #FFFFFF;
+        border: 1px solid #C0C0C0;
+        font-style: normal;
+        padding: 1px 3px;
+        }
+
+    #MSearchType {
+        visibility: hidden;
+        font: 8pt Verdana, sans-serif;
+        width: 98%;
+        padding: 0;
+        border: 1px solid #C0C0C0;
+        }
+    .MSearchPanelActive #MSearchType,
+    /*  As mentioned above, Firefox doesn't do this right in frames without #MSearchPanel added on. */
+    #MSearchPanel.MSearchPanelInactive:hover #MSearchType,
+    #MSearchType:focus {
+        visibility: visible;
+        color: #606060;
+        }
+    #MSearchType option#MSearchEverything {
+        font-weight: bold;
+        }
+
+    .Opera8 .MSearchPanelInactive:hover,
+    .Opera8 .MSearchPanelActive {
+        margin-left: -1px;
+        }
+
+
+    iframe#MSearchResults {
+        width: 60ex;
+        height: 15em;
+        }
+    #MSearchResultsWindow {
+        display: none;
+        position: absolute;
+        left: 0; top: 0;
+        border: 1px solid #000000;
+        background-color: #E8E8E8;
+        }
+    #MSearchResultsWindowClose {
+        font-weight: bold;
+        font-size: 8pt;
+        display: block;
+        padding: 2px 5px;
+        }
+    #MSearchResultsWindowClose:link,
+    #MSearchResultsWindowClose:visited {
+        color: #000000;
+        text-decoration: none;
+        }
+    #MSearchResultsWindowClose:active,
+    #MSearchResultsWindowClose:hover {
+        color: #800000;
+        text-decoration: none;
+        background-color: #F4F4F4;
+        }
+
+
+
+
+#Content {
+    padding-bottom: 15px;
+    }
+
+.ContentPage #Content {
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #000000;
+    background-color: #FFFFFF;
+    font-size: 9pt;  /* To make 31ex match the menu's 31ex. */
+    
+    }
+.ContentPage .Firefox #Content {
+    margin-left: 27ex;
+    }
+
+
+
+    .CTopic {
+        font-size: 10pt;
+        margin-bottom: 3em;
+        }
+
+
+    .CTitle {
+        font-size: 12pt; font-weight: bold;
+        border-width: 0 0 1px 0; border-style: solid; border-color: #A0A0A0;
+        margin: 0 15px .5em 15px }
+
+    .CGroup .CTitle {
+        font-size: 16pt; font-variant: small-caps;
+        padding-left: 15px; padding-right: 15px;
+        border-width: 0 0 2px 0; border-color: #000000;
+        margin-left: 0; margin-right: 0 }
+
+    .CClass .CTitle,
+    .CInterface .CTitle,
+    .CDatabase .CTitle,
+    .CDatabaseTable .CTitle,
+    .CSection .CTitle {
+        font-size: 18pt;
+        color: #FFFFFF; background-color: #A0A0A0;
+        padding: 10px 15px 10px 15px;
+        border-width: 2px 0; border-color: #000000;
+        margin-left: 0; margin-right: 0 }
+
+    #MainTopic .CTitle {
+        font-size: 20pt;
+        color: #FFFFFF; background-color: #7070C0;
+        padding: 10px 15px 10px 15px;
+        border-width: 0 0 3px 0; border-color: #000000;
+        margin-left: 0; margin-right: 0 }
+
+    .CBody {
+        margin-left: 15px; margin-right: 15px }
+
+
+    .CToolTip {
+        position: absolute; visibility: hidden;
+        left: 0; top: 0;
+        background-color: #FFFFE0;
+        padding: 5px;
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #000000;
+        font-size: 8pt;
+        }
+
+    .Opera .CToolTip {
+        max-width: 98%;
+        }
+
+    /*  Scrollbars would be useless.  */
+    .CToolTip blockquote {
+        overflow: hidden;
+        }
+    .IE6 .CToolTip blockquote {
+        overflow: visible;
+        }
+
+    .CHeading {
+        font-weight: bold; font-size: 10pt;
+        margin: 1.5em 0 .5em 0;
+        }
+
+    .CBody pre {
+        font: 10pt "Courier New", Courier, monospace;
+        margin: 1em 0;
+        }
+
+    .CBody ul {
+        /*  I don't know why CBody's margin doesn't apply, but it's consistent across browsers so whatever.
+             Reapply it here as padding.  */
+        padding-left: 15px; padding-right: 15px;
+        margin: .5em 5ex .5em 5ex;
+        }
+
+    .CDescriptionList {
+        margin: .5em 5ex 0 5ex }
+
+        .CDLEntry {
+            font: 10pt "Courier New", Courier, monospace; color: #808080;
+            padding-bottom: .25em;
+            white-space: nowrap }
+
+        .CDLDescription {
+            font-size: 10pt;  /*  For browsers that don't inherit correctly, like Opera 5.  */
+            padding-bottom: .5em; padding-left: 5ex }
+
+
+    .CTopic img {
+        text-align: center;
+        display: block;
+        margin: 1em auto;
+        }
+    .CImageCaption {
+        font-variant: small-caps;
+        font-size: 8pt;
+        color: #808080;
+        text-align: center;
+        position: relative;
+        top: 1em;
+        }
+
+    .CImageLink {
+        color: #808080;
+        font-style: italic;
+        }
+    a.CImageLink:link,
+    a.CImageLink:visited,
+    a.CImageLink:hover { color: #808080 }
+
+
+
+
+
+.Prototype {
+    font: 10pt "Courier New", Courier, monospace;
+    padding: 5px 3ex;
+    border-width: 1px; border-style: solid;
+    margin: 0 5ex 1.5em 5ex;
+    }
+
+    .Prototype td {
+        font-size: 10pt;
+        }
+
+    .PDefaultValue,
+    .PDefaultValuePrefix,
+    .PTypePrefix {
+        color: #8F8F8F;
+        }
+    .PTypePrefix {
+        text-align: right;
+        }
+    .PAfterParameters {
+        vertical-align: bottom;
+        }
+
+    .IE .Prototype table {
+        padding: 0;
+        }
+
+    .CFunction .Prototype {
+        background-color: #F4F4F4; border-color: #D0D0D0 }
+    .CProperty .Prototype {
+        background-color: #F4F4FF; border-color: #C0C0E8 }
+    .CVariable .Prototype {
+        background-color: #FFFFF0; border-color: #E0E0A0 }
+
+    .CClass .Prototype {
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #A0A0A0;
+        background-color: #F4F4F4;
+        }
+    .CInterface .Prototype {
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #A0A0D0;
+        background-color: #F4F4FF;
+        }
+
+    .CDatabaseIndex .Prototype,
+    .CConstant .Prototype {
+        background-color: #D0D0D0; border-color: #000000 }
+    .CType .Prototype,
+    .CEnumeration .Prototype {
+        background-color: #FAF0F0; border-color: #E0B0B0;
+        }
+    .CDatabaseTrigger .Prototype,
+    .CEvent .Prototype,
+    .CDelegate .Prototype {
+        background-color: #F0FCF0; border-color: #B8E4B8 }
+
+    .CToolTip .Prototype {
+        margin: 0 0 .5em 0;
+        white-space: nowrap;
+        }
+
+
+
+
+
+.Summary {
+    margin: 1.5em 5ex 0 5ex }
+
+    .STitle {
+        font-size: 12pt; font-weight: bold;
+        margin-bottom: .5em }
+
+
+    .SBorder {
+        background-color: #FFFFF0;
+        padding: 15px;
+        border: 1px solid #C0C060 }
+
+    /* In a frame IE 6 will make them too long unless you set the width to 100%.  Without frames it will be correct without a width
+        or slightly too long (but not enough to scroll) with a width.  This arbitrary weirdness simply astounds me.  IE 7 has the same
+        problem with frames, haven't tested it without.  */
+    .FramedContentPage .IE .SBorder {
+        width: 100% }
+
+    /*  A treat for Mozilla users.  Blatantly non-standard.  Will be replaced with CSS 3 attributes when finalized/supported.  */
+    .Firefox .SBorder {
+        -moz-border-radius: 20px }
+
+
+    .STable {
+        font-size: 9pt; width: 100% }
+
+    .SEntry {
+        width: 30% }
+    .SDescription {
+        width: 70% }
+
+
+    .SMarked {
+        background-color: #F8F8D8 }
+
+    .SDescription { padding-left: 2ex }
+    .SIndent1 .SEntry { padding-left: 1.5ex }   .SIndent1 .SDescription { padding-left: 3.5ex }
+    .SIndent2 .SEntry { padding-left: 3.0ex }   .SIndent2 .SDescription { padding-left: 5.0ex }
+    .SIndent3 .SEntry { padding-left: 4.5ex }   .SIndent3 .SDescription { padding-left: 6.5ex }
+    .SIndent4 .SEntry { padding-left: 6.0ex }   .SIndent4 .SDescription { padding-left: 8.0ex }
+    .SIndent5 .SEntry { padding-left: 7.5ex }   .SIndent5 .SDescription { padding-left: 9.5ex }
+
+    .SDescription a { color: #800000}
+    .SDescription a:active { color: #A00000 }
+
+    .SGroup td {
+        padding-top: .5em; padding-bottom: .25em }
+
+    .SGroup .SEntry {
+        font-weight: bold; font-variant: small-caps }
+
+    .SGroup .SEntry a { color: #800000 }
+    .SGroup .SEntry a:active { color: #F00000 }
+
+
+    .SMain td,
+    .SClass td,
+    .SDatabase td,
+    .SDatabaseTable td,
+    .SSection td {
+        font-size: 10pt;
+        padding-bottom: .25em }
+
+    .SClass td,
+    .SDatabase td,
+    .SDatabaseTable td,
+    .SSection td {
+        padding-top: 1em }
+
+    .SMain .SEntry,
+    .SClass .SEntry,
+    .SDatabase .SEntry,
+    .SDatabaseTable .SEntry,
+    .SSection .SEntry {
+        font-weight: bold;
+        }
+
+    .SMain .SEntry a,
+    .SClass .SEntry a,
+    .SDatabase .SEntry a,
+    .SDatabaseTable .SEntry a,
+    .SSection .SEntry a { color: #000000 }
+
+    .SMain .SEntry a:active,
+    .SClass .SEntry a:active,
+    .SDatabase .SEntry a:active,
+    .SDatabaseTable .SEntry a:active,
+    .SSection .SEntry a:active { color: #A00000 }
+
+
+
+
+
+.ClassHierarchy {
+    margin: 0 15px 1em 15px }
+
+    .CHEntry {
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #A0A0A0;
+        margin-bottom: 3px;
+        padding: 2px 2ex;
+        font-size: 10pt;
+        background-color: #F4F4F4; color: #606060;
+        }
+
+    .Firefox .CHEntry {
+        -moz-border-radius: 4px;
+        }
+
+    .CHCurrent .CHEntry {
+        font-weight: bold;
+        border-color: #000000;
+        color: #000000;
+        }
+
+    .CHChildNote .CHEntry {
+        font-style: italic;
+        font-size: 8pt;
+        }
+
+    .CHIndent {
+        margin-left: 3ex;
+        }
+
+    .CHEntry a:link,
+    .CHEntry a:visited,
+    .CHEntry a:hover {
+        color: #606060;
+        }
+    .CHEntry a:active {
+        color: #800000;
+        }
+
+
+
+
+
+#Index {
+    background-color: #FFFFFF;
+    }
+
+/*  As opposed to .PopupSearchResultsPage #Index  */
+.IndexPage #Index,
+.FramedIndexPage #Index,
+.FramedSearchResultsPage #Index {
+    padding: 15px;
+    }
+
+.IndexPage #Index {
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #000000;
+    font-size: 9pt;  /* To make 27ex match the menu's 27ex. */
+    margin-left: 27ex;
+    }
+
+
+    .IPageTitle {
+        font-size: 20pt; font-weight: bold;
+        color: #FFFFFF; background-color: #7070C0;
+        padding: 10px 15px 10px 15px;
+        border-width: 0 0 3px 0; border-color: #000000; border-style: solid;
+        margin: -15px -15px 0 -15px }
+
+    .FramedSearchResultsPage .IPageTitle {
+        margin-bottom: 15px;
+        }
+
+    .INavigationBar {
+        font-size: 10pt;
+        text-align: center;
+        background-color: #FFFFF0;
+        padding: 5px;
+        border-bottom: solid 1px black;
+        margin: 0 -15px 15px -15px;
+        }
+
+    .INavigationBar a {
+        font-weight: bold }
+
+    .IHeading {
+        font-size: 16pt; font-weight: bold;
+        padding: 2.5em 0 .5em 0;
+        text-align: center;
+        width: 3.5ex;
+        }
+    #IFirstHeading {
+        padding-top: 0;
+        }
+
+    .IEntry {
+        font-size: 10pt;
+        padding-left: 1ex;
+        }
+    .PopupSearchResultsPage .IEntry {
+        font-size: 8pt;
+        padding: 1px 5px;
+        }
+    .PopupSearchResultsPage .Opera9 .IEntry,
+    .FramedSearchResultsPage .Opera9 .IEntry {
+        text-align: left;
+        }
+    .FramedSearchResultsPage .IEntry {
+        padding: 0;
+        }
+
+    .ISubIndex {
+        padding-left: 3ex; padding-bottom: .5em }
+    .PopupSearchResultsPage .ISubIndex {
+        display: none;
+        }
+
+    /*  While it may cause some entries to look like links when they aren't, I found it's much easier to read the
+         index if everything's the same color.  */
+    .ISymbol {
+        font-weight: bold; color: #900000  }
+
+    .IndexPage .ISymbolPrefix,
+    .FramedIndexPage .ISymbolPrefix {
+        font-size: 10pt;
+        text-align: right;
+        color: #C47C7C;
+        background-color: #F8F8F8;
+        border-right: 3px solid #E0E0E0;
+        border-left: 1px solid #E0E0E0;
+        padding: 0 1px 0 2px;
+        }
+    .PopupSearchResultsPage .ISymbolPrefix,
+    .FramedSearchResultsPage .ISymbolPrefix {
+        color: #900000;
+        }
+    .PopupSearchResultsPage .ISymbolPrefix {
+        font-size: 8pt;
+        }
+
+    .IndexPage #IFirstSymbolPrefix,
+    .FramedIndexPage #IFirstSymbolPrefix {
+        border-top: 1px solid #E0E0E0;
+        }
+    .IndexPage #ILastSymbolPrefix,
+    .FramedIndexPage #ILastSymbolPrefix {
+        border-bottom: 1px solid #E0E0E0;
+        }
+    .IndexPage #IOnlySymbolPrefix,
+    .FramedIndexPage #IOnlySymbolPrefix {
+        border-top: 1px solid #E0E0E0;
+        border-bottom: 1px solid #E0E0E0;
+        }
+
+    a.IParent,
+    a.IFile {
+        display: block;
+        }
+
+    .PopupSearchResultsPage .SRStatus {
+        padding: 2px 5px;
+        font-size: 8pt;
+        font-style: italic;
+        }
+    .FramedSearchResultsPage .SRStatus {
+        font-size: 10pt;
+        font-style: italic;
+        }
+
+    .SRResult {
+        display: none;
+        }
+
+
+
+#Footer {
+    font-size: 8pt;
+    color: #989898;
+    text-align: right;
+    }
+
+#Footer p {
+    text-indent: 0;
+    margin-bottom: .5em;
+    }
+
+.ContentPage #Footer,
+.IndexPage #Footer {
+    text-align: right;
+    margin: 2px;
+    }
+
+.FramedMenuPage #Footer {
+    text-align: center;
+    margin: 5em 10px 10px 10px;
+    padding-top: 1em;
+    border-top: 1px solid #C8C8C8;
+    }
+
+    #Footer a:link,
+    #Footer a:hover,
+    #Footer a:visited { color: #989898 }
+    #Footer a:active { color: #A00000 }
+
+</style><script language="JavaScript" src="Dlg-Dateien/main.htm"></script><script language="JavaScript" src="Dlg-Dateien/searchdata.htm"></script></head><body class="ContentPage" onload="NDOnLoad()"><script language="JavaScript"><!--
+if (browserType) {document.write("<div class=" + browserType + ">");if (browserVer) {document.write("<div class=" + browserVer + ">"); }}// --></script>
+
+<!--  Generated by Natural Docs, version 1.4 -->
+<!--  http://www.naturaldocs.org  -->
+
+<!-- saved from url=(0026)http://www.naturaldocs.org -->
+
+
+
+
+<div id="Content"><div class="CSection"><div class="CTopic" id="MainTopic"><h1 class="CTitle"><a name="Dlg"></a>Dlg</h1><div class="CBody"><p><b>Common Operating System Dialogs</b></p><!--START_ND_SUMMARY--><div class="Summary"><div class="STitle">Summary</div><div class="SBorder"><table class="STable" border="0" cellpadding="0" cellspacing="0"><tbody><tr class="SMain"><td class="SEntry"><a href="#Dlg">Dlg</a></td><td class="SDescription"><b>Common Operating System Dialogs</b></td></tr><tr class="SFunction SIndent1 SMarked"><td class="SEntry"><a href="#Color" id="link1" onmouseover="ShowTip(event, 'tt1', 'link1')" onmouseout="HideTip('tt1')">Color</a></td><td class="SDescription"></td></tr><tr class="SFunction SIndent1"><td class="SEntry"><a href="#Find/Replace">Find / Replace</a></td><td class="SDescription"></td></tr><tr class="SFunction SIndent1 SMarked"><td class="SEntry"><a href="#Font" id="link2" onmouseover="ShowTip(event, 'tt2', 'link2')" onmouseout="HideTip('tt2')">Font</a></td><td class="SDescription"></td></tr><tr class="SFunction SIndent1"><td class="SEntry"><a href="#Icon" id="link3" onmouseover="ShowTip(event, 'tt3', 'link3')" onmouseout="HideTip('tt3')">Icon</a></td><td class="SDescription"></td></tr><tr class="SFunction SIndent1 SMarked"><td class="SEntry"><a href="#Open/Save">Open / Save</a></td><td class="SDescription"></td></tr><tr class="SGroup SIndent1"><td class="SEntry"><a href="#Examples">Examples</a></td><td class="SDescription"></td></tr><tr class="SGroup SIndent1"><td class="SEntry"><a href="#About">About</a></td><td class="SDescription"></td></tr></tbody></table></div></div><!--END_ND_SUMMARY--></div></div></div>
+
+<div class="CFunction"><div class="CTopic"><h3 class="CTitle"><a name="Color"></a>Color</h3><div class="CBody"><table class="Prototype" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="PBeforeParameters" nowrap="nowrap">Dlg_Color(</td><td class="PType" nowrap="nowrap">ByRef&nbsp;</td><td class="PParameter" nowrap="nowrap">Color,</td><td class="PDefaultValuePrefix">&nbsp;&nbsp;</td></tr><tr><td></td><td class="PType" nowrap="nowrap">&nbsp;</td><td class="PParameter" nowrap="nowrap">hGui</td><td class="PDefaultValuePrefix">&nbsp;=&nbsp;</td><td class="PAfterParameters" nowrap="nowrap">)</td></tr></tbody></table></td></tr></tbody></table><img src="Dlg-Dateien/Dlg_Color.png" height="331" width="453"><h4 class="CHeading">Parameters</h4><table class="CDescriptionList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="CDLEntry">Color</td><td class="CDLDescription">Initial color and output in RGB format.</td></tr><tr><td class="CDLEntry">hGui</td><td class="CDLDescription">Optional handle to parents Gui.&nbsp; Affects dialog position.</td></tr></tbody></table><h4 class="CHeading">Returns</h4><p>False if user canceled the dialog or if error occurred</p></div></div></div>
+
+<div class="CFunction"><div class="CTopic"><h3 class="CTitle"><a name="Find/Replace"></a>Find / Replace</h3><div class="CBody"><img src="Dlg-Dateien/Dlg_Find.png" height="134" width="473"><img src="Dlg-Dateien/Dlg_Replace.png" height="166" width="473"><h4 class="CHeading">Parameters</h4><table class="CDescriptionList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="CDLEntry">hGui</td><td class="CDLDescription">Handle to the parent.</td></tr><tr><td class="CDLEntry">Handler</td><td class="CDLDescription">Notification handler, see below.</td></tr><tr><td class="CDLEntry">Flags</td><td class="CDLDescription">Creation flags, see below.</td></tr><tr><td class="CDLEntry">FindText</td><td class="CDLDescription">Default text to be displayed at the start of the dialog box in find edit box.</td></tr><tr><td class="CDLEntry">ReplaceText</td><td class="CDLDescription">Default text to be displayed at the start of the dialog box in replace edit box.</td></tr></tbody></table><h4 class="CHeading">Flags</h4><p>String containing list of creation flags.&nbsp; You can use “-” prefix to hide that GUI field.</p><table class="CDescriptionList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="CDLEntry">d</td><td class="CDLDescription">down radio button selected in Find dialog.</td></tr><tr><td class="CDLEntry">w</td><td class="CDLDescription">whole word selected.</td></tr><tr><td class="CDLEntry">c</td><td class="CDLDescription">match case selected.</td></tr></tbody></table><h4 class="CHeading">Handler</h4><p>Dialog
+box is not modal, so it communicates with the script while it is
+active.&nbsp; Both Find &amp; Replace use the same prototype of
+notification function.</p><blockquote><pre>Handler(Event, Flags, FindText, ReplaceText)</pre></blockquote><table class="CDescriptionList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="CDLEntry">Event</td><td class="CDLDescription">C (Close), F (Find), R (Replace), A (replace All)</td></tr><tr><td class="CDLEntry">Flags</td><td class="CDLDescription">String containing flags about user selection; each letter means user has selected that particular GUI element.</td></tr><tr><td class="CDLEntry">FindText</td><td class="CDLDescription">Current find text.</td></tr><tr><td class="CDLEntry">ReplaceText</td><td class="CDLDescription">Current replace text.</td></tr></tbody></table><h4 class="CHeading">Returns</h4><p>Handle of the dialog or 0 if the dialog can’t be created.&nbsp; Returns error code on invalid handler.</p></div></div></div>
+
+<div class="CFunction"><div class="CTopic"><h3 class="CTitle"><a name="Font"></a>Font</h3><div class="CBody"><table class="Prototype" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="PBeforeParameters" nowrap="nowrap">Dlg_Font(</td><td class="PType" nowrap="nowrap">ByRef&nbsp;</td><td class="PParameter" nowrap="nowrap">Name,</td><td class="PDefaultValuePrefix">&nbsp;&nbsp;</td><td class="PDefaultValue" width="100%"></td></tr><tr><td></td><td class="PType" nowrap="nowrap">ByRef&nbsp;</td><td class="PParameter" nowrap="nowrap">Style,</td><td class="PDefaultValuePrefix">&nbsp;&nbsp;</td><td class="PDefaultValue" width="100%"></td></tr><tr><td></td><td class="PType" nowrap="nowrap">ByRef&nbsp;</td><td class="PParameter" nowrap="nowrap">Color,</td><td class="PDefaultValuePrefix">&nbsp;&nbsp;</td><td class="PDefaultValue" width="100%"></td></tr><tr><td></td><td class="PType" nowrap="nowrap">&nbsp;</td><td class="PParameter" nowrap="nowrap">Effects</td><td class="PDefaultValuePrefix">&nbsp;=&nbsp;</td><td class="PDefaultValue" width="100%">true,</td></tr><tr><td></td><td class="PType" nowrap="nowrap">&nbsp;</td><td class="PParameter" nowrap="nowrap">hGui</td><td class="PDefaultValuePrefix">&nbsp;=&nbsp;</td><td class="PDefaultValue" width="100%">0</td><td class="PAfterParameters" nowrap="nowrap">)</td></tr></tbody></table></td></tr></tbody></table><img src="Dlg-Dateien/Dlg_Font.png" height="287" width="378"><h4 class="CHeading">Parameters</h4><table class="CDescriptionList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="CDLEntry">Name</td><td class="CDLDescription">Initial font,  output.</td></tr><tr><td class="CDLEntry">Style</td><td class="CDLDescription">Initial style, output.</td></tr><tr><td class="CDLEntry">Color</td><td class="CDLDescription">Initial text color, output.</td></tr><tr><td class="CDLEntry">Effects</td><td class="CDLDescription">Set to false to disable effects (strikeout, underline, color).</td></tr><tr><td class="CDLEntry">hGui</td><td class="CDLDescription">Parent’s handle, affects position.</td></tr></tbody></table><h4 class="CHeading">Returns</h4><p>False if user canceled the dialog or if error occurred.</p></div></div></div>
+
+<div class="CFunction"><div class="CTopic"><h3 class="CTitle"><a name="Icon"></a>Icon</h3><div class="CBody"><table class="Prototype" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="PBeforeParameters" nowrap="nowrap">Dlg_Icon(</td><td class="PType" nowrap="nowrap">ByRef&nbsp;</td><td class="PParameter" nowrap="nowrap">Icon,</td><td class="PDefaultValuePrefix">&nbsp;&nbsp;</td></tr><tr><td></td><td class="PType" nowrap="nowrap">ByRef&nbsp;</td><td class="PParameter" nowrap="nowrap">Index,</td><td class="PDefaultValuePrefix">&nbsp;&nbsp;</td></tr><tr><td></td><td class="PType" nowrap="nowrap">&nbsp;</td><td class="PParameter" nowrap="nowrap">hGui</td><td class="PDefaultValuePrefix">&nbsp;=&nbsp;</td><td class="PAfterParameters" nowrap="nowrap">)</td></tr></tbody></table></td></tr></tbody></table><img src="Dlg-Dateien/Dlg_Icon.png" height="357" width="296"><h4 class="CHeading">Parameters</h4><table class="CDescriptionList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="CDLEntry">Icon</td><td class="CDLDescription">Default icon resource, output.</td></tr><tr><td class="CDLEntry">Index</td><td class="CDLDescription">Default index within resource, output.</td></tr><tr><td class="CDLEntry">hGui</td><td class="CDLDescription">Optional handle of the parent GUI.</td></tr></tbody></table><h4 class="CHeading">Returns</h4><p>False if user canceled the dialog or if error occurred</p><h4 class="CHeading">Remarks</h4><p>This is simple and non-flexible dialog.&nbsp; If you need more features, use &lt;IconEx&gt; instead.</p></div></div></div>
+
+<div class="CFunction"><div class="CTopic"><h3 class="CTitle"><a name="Open/Save"></a>Open / Save</h3><div class="CBody"><img src="Dlg-Dateien/Dlg_Open.png" height="455" width="563"><h4 class="CHeading">Parameters</h4><table class="CDescriptionList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="CDLEntry">hGui</td><td class="CDLDescription">Parent’s handle, positive number by default 0 (influences dialog position).</td></tr><tr><td class="CDLEntry">Title</td><td class="CDLDescription">Dialog title.</td></tr><tr><td class="CDLEntry">Filter</td><td class="CDLDescription">Specify filter as with FileSelectFile.&nbsp; Separate multiple filters with “|”.&nbsp; For instance “All Files (<b>.</b>)|Audio (*.wav; *.mp2; *.mp3)|Documents (*.txt)”</td></tr><tr><td class="CDLEntry">DefaultFilter</td><td class="CDLDescription">Index of default filter (1 based), by default 1.</td></tr><tr><td class="CDLEntry">Root</td><td class="CDLDescription">Specifies startup directory and initial content of “File Name” edit.&nbsp; Directory must have trailing “\”.</td></tr><tr><td class="CDLEntry">DefaultExt</td><td class="CDLDescription">Extension to append when none given .</td></tr><tr><td class="CDLEntry">Flags</td><td class="CDLDescription">White space separated list of flags, by default “FILEMUSTEXIST HIDEREADONLY”.</td></tr></tbody></table><h4 class="CHeading">Flags</h4><table class="CDescriptionList" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="CDLEntry">allowmultiselect</td><td class="CDLDescription">Specifies that the File Name list box allows multiple selections</td></tr><tr><td class="CDLEntry">createprompt</td><td class="CDLDescription">If
+the user specifies a file that does not exist, this flag causes the
+dialog box to prompt the user for permission to create the file</td></tr><tr><td class="CDLEntry">dontaddtorecent</td><td class="CDLDescription">Prevents
+the system from adding a link to the selected file in the file system
+directory that contains the user’s most recently used documents.</td></tr><tr><td class="CDLEntry">extensiondifferent</td><td class="CDLDescription">Specifies that the user typed a file name extension that differs from the extension specified by defaultExt</td></tr><tr><td class="CDLEntry">filemustexist</td><td class="CDLDescription">Specifies that the user can type only names of existing files in the File Name entry field</td></tr><tr><td class="CDLEntry">forceshowhidden</td><td class="CDLDescription">Forces
+the showing of system and hidden files, thus overriding the user
+setting to show or not show hidden files.&nbsp; However, a file that is
+marked both system and hidden is not shown.</td></tr><tr><td class="CDLEntry">hidereadonly</td><td class="CDLDescription">Hides the Read Only check box.</td></tr><tr><td class="CDLEntry">nochangedir</td><td class="CDLDescription">Restores the current directory to its original value if the user changed the directory while searching for files.</td></tr><tr><td class="CDLEntry">nodereferencelinks</td><td class="CDLDescription">Directs
+the dialog box to return the path and file name of the selected
+shortcut (.LNK) file.&nbsp; If this value is not specified, the dialog
+box returns the path and file name of the file referenced by the
+shortcut.</td></tr><tr><td class="CDLEntry">novalidate</td><td class="CDLDescription">Specifies that the common dialog boxes allow invalid characters in the returned file name</td></tr><tr><td class="CDLEntry">overwriteprompt</td><td class="CDLDescription">Causes
+the Save As dialog box to generate a message box if the selected file
+already exists.&nbsp; The user must confirm whether to overwrite the
+file.</td></tr><tr><td class="CDLEntry">pathmustexist</td><td class="CDLDescription">Specifies that the user can type only valid paths and file names.</td></tr><tr><td class="CDLEntry">readonly</td><td class="CDLDescription">Causes the Read Only check box to be selected initially when the dialog box is created</td></tr><tr><td class="CDLEntry">showhelp</td><td class="CDLDescription">Causes
+the dialog box to display the Help button.&nbsp; The hGui receives the
+HELPMSGSTRING registered messages that the dialog box sends when the
+user clicks the Help button.</td></tr><tr><td class="CDLEntry">noreadonlyreturn</td><td class="CDLDescription">Specifies that the returned file does not have the Read Only check box selected and is not in a write-protected directory.</td></tr><tr><td class="CDLEntry">notestfilecreate</td><td class="CDLDescription">Specifies
+that the file is not created before the dialog box is closed.&nbsp;
+This flag should be specified if the application saves the file on a
+create-nonmodify network share.</td></tr></tbody></table><h4 class="CHeading">Returns</h4><p>Selected FileName or nothing if cancelled.&nbsp; If more then one file is selected they are separated by new line character.</p><h4 class="CHeading">Remarks</h4><p>Those
+functions will change the working directory of the script.&nbsp; Use
+SetWorkingDir afterwards to restore working directory if needed.</p></div></div></div>
+
+<div class="CGroup"><div class="CTopic"><h3 class="CTitle"><a name="Examples"></a>Examples</h3><div class="CBody"><h4 class="CHeading">Example1</h4><blockquote><pre>  ;basic usage
+
+  if Dlg_Icon(icon, idx := 4)
+       msgbox Icon:   %icon%`nIndex:  %idx%
+
+   if Dlg_Color( color := 0xFF00AA )
+      msgbox Color:  %color%
+
+   if Dlg_Font( font := "Courier New", style := "s16 bold underline italic", color:=0x80)
+        msgbox Font:  %font%`nStyle:  %style%`nColor:  %color%
+
+   res := Dlg_Open("", "Select several files", "", "", "c:\Windows\", "", "ALLOWMULTISELECT FILEMUSTEXIST HIDEREADONLY")
+   IfNotEqual, res, , MsgBox, %res%
+return</pre></blockquote><h4 class="CHeading">Example2</h4><blockquote><pre>    ;create gui and set text color
+
+    Dlg_Font( font := "Courier New", style := "s16 bold italic", color:=0xFF)
+
+    Gui Font, %Style% c%Color%, %Font%
+    Gui, Add, Text, ,Hello world.....  :roll:
+    Gui, Show, Autosize
+return</pre></blockquote></div></div></div>
+
+<div class="CGroup"><div class="CTopic"><h3 class="CTitle"><a name="About"></a>About</h3><div class="CBody"><ul><li>Ver 5.02 by majkinetor.&nbsp; See <a href="http://www.autohotkey.com/forum/topic17230.html" class="LURL" target="_top">http://www.autohotkey.com/forum/topic17230.html</a></li><li>Licenced under BSD <a href="http://creativecommons.org/licenses/BSD/" class="LURL" target="_top">http://creativecommons.org/licenses/BSD/</a></li></ul></div></div></div>
+
+</div><!--Content-->
+
+
+<div id="Footer"><a href="http://www.naturaldocs.org/">Generated by Natural Docs</a></div><!--Footer-->
+
+
+
+
+
+
+<!--START_ND_TOOLTIPS-->
+<div class="CToolTip" id="tt1"><div class="CFunction"><table class="Prototype" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="PBeforeParameters" nowrap="nowrap">Dlg_Color(</td><td class="PType" nowrap="nowrap">ByRef&nbsp;</td><td class="PParameter" nowrap="nowrap">Color,</td><td class="PDefaultValuePrefix">&nbsp;&nbsp;</td></tr><tr><td></td><td class="PType" nowrap="nowrap">&nbsp;</td><td class="PParameter" nowrap="nowrap">hGui</td><td class="PDefaultValuePrefix">&nbsp;=&nbsp;</td><td class="PAfterParameters" nowrap="nowrap">)</td></tr></tbody></table></td></tr></tbody></table></div></div><div class="CToolTip" id="tt2"><div class="CFunction"><table class="Prototype" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="PBeforeParameters" nowrap="nowrap">Dlg_Font(</td><td class="PType" nowrap="nowrap">ByRef&nbsp;</td><td class="PParameter" nowrap="nowrap">Name,</td><td class="PDefaultValuePrefix">&nbsp;&nbsp;</td><td class="PDefaultValue" width="100%"></td></tr><tr><td></td><td class="PType" nowrap="nowrap">ByRef&nbsp;</td><td class="PParameter" nowrap="nowrap">Style,</td><td class="PDefaultValuePrefix">&nbsp;&nbsp;</td><td class="PDefaultValue" width="100%"></td></tr><tr><td></td><td class="PType" nowrap="nowrap">ByRef&nbsp;</td><td class="PParameter" nowrap="nowrap">Color,</td><td class="PDefaultValuePrefix">&nbsp;&nbsp;</td><td class="PDefaultValue" width="100%"></td></tr><tr><td></td><td class="PType" nowrap="nowrap">&nbsp;</td><td class="PParameter" nowrap="nowrap">Effects</td><td class="PDefaultValuePrefix">&nbsp;=&nbsp;</td><td class="PDefaultValue" width="100%">true,</td></tr><tr><td></td><td class="PType" nowrap="nowrap">&nbsp;</td><td class="PParameter" nowrap="nowrap">hGui</td><td class="PDefaultValuePrefix">&nbsp;=&nbsp;</td><td class="PDefaultValue" width="100%">0</td><td class="PAfterParameters" nowrap="nowrap">)</td></tr></tbody></table></td></tr></tbody></table></div></div><div class="CToolTip" id="tt3"><div class="CFunction"><table class="Prototype" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="PBeforeParameters" nowrap="nowrap">Dlg_Icon(</td><td class="PType" nowrap="nowrap">ByRef&nbsp;</td><td class="PParameter" nowrap="nowrap">Icon,</td><td class="PDefaultValuePrefix">&nbsp;&nbsp;</td></tr><tr><td></td><td class="PType" nowrap="nowrap">ByRef&nbsp;</td><td class="PParameter" nowrap="nowrap">Index,</td><td class="PDefaultValuePrefix">&nbsp;&nbsp;</td></tr><tr><td></td><td class="PType" nowrap="nowrap">&nbsp;</td><td class="PParameter" nowrap="nowrap">hGui</td><td class="PDefaultValuePrefix">&nbsp;=&nbsp;</td><td class="PAfterParameters" nowrap="nowrap">)</td></tr></tbody></table></td></tr></tbody></table></div></div><!--END_ND_TOOLTIPS-->
+
+
+
+
+<div id="MSearchResultsWindow"><iframe src="" name="MSearchResults" id="MSearchResults" frameborder="0"></iframe><a href="javascript:searchPanel.CloseResultsWindow()" id="MSearchResultsWindowClose">Close</a></div>
+
+
+<script language="JavaScript"><!--
+if (browserType) {if (browserVer) {document.write("</div>"); }document.write("</div>");}// --></script><div style="border: 0px solid rgb(255, 0, 0) ! important; margin: 0pt ! important; padding: 0pt ! important; background: transparent none repeat scroll center center ! important; overflow: visible ! important; float: none ! important; -moz-background-clip: -moz-initial ! important; -moz-background-origin: -moz-initial ! important; -moz-background-inline-policy: -moz-initial ! important; width: auto ! important; height: auto ! important; display: block ! important; position: static ! important; text-indent: 0px ! important; z-index: auto ! important; max-width: none ! important; min-width: 0pt ! important; max-height: none ! important; min-height: 0pt ! important; left: auto ! important; top: auto ! important; bottom: auto ! important; right: auto ! important; line-height: 16px ! important; white-space: nowrap ! important;" class="linkscent-iconblock"><img clueid="favIcon" src="Dlg-Dateien/pixel.gif" style="border: 0px solid rgb(255, 0, 0) ! important; margin: 0pt; padding: 0pt ! important; background: transparent url(http://www.autohotkey.net/favicon.ico) no-repeat scroll center center ! important; overflow: visible ! important; float: none ! important; width: 16px ! important; height: 16px ! important; display: none; position: absolute ! important; text-indent: 0px ! important; z-index: 2147483635 ! important; max-width: none ! important; min-width: 0pt ! important; max-height: none ! important; min-height: 0pt ! important; left: 157px; top: 218px; bottom: auto ! important; right: auto ! important; line-height: 16px ! important; white-space: nowrap ! important; visibility: hidden; -moz-background-clip: -moz-initial ! important; -moz-background-origin: -moz-initial ! important; -moz-background-inline-policy: -moz-initial ! important; opacity: 0;" class="linkscent-icon"><img src="Dlg-Dateien/pixel.gif" clueid="anchor" style="border: 0px solid rgb(255, 0, 0) ! important; margin: 0pt; padding: 0pt ! important; background: transparent url(chrome://interclue/content/cluecore/skins/default/sprites.png) no-repeat scroll -16px -64px; overflow: visible ! important; float: none ! important; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; width: 16px ! important; height: 16px ! important; display: none; position: absolute ! important; text-indent: 0px ! important; z-index: 2147483635 ! important; max-width: none ! important; min-width: 0pt ! important; max-height: none ! important; min-height: 0pt ! important; left: 175px; top: 218px; bottom: auto ! important; right: auto ! important; line-height: 16px ! important; white-space: nowrap ! important; visibility: hidden; opacity: 0;" class="linkscent-icon" height="16" width="16"><img clueid="clueIcon" src="Dlg-Dateien/pixel.gif" style="border: 0px solid rgb(255, 0, 0) ! important; margin: 0pt; padding: 0pt ! important; background: transparent none repeat scroll center center; overflow: visible ! important; float: none ! important; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; width: 16px ! important; height: 16px ! important; display: none; position: absolute ! important; text-indent: 0px ! important; z-index: 2147483635 ! important; max-width: none ! important; min-width: 0pt ! important; max-height: none ! important; min-height: 0pt ! important; left: 193px; top: 218px; bottom: auto ! important; right: auto ! important; line-height: 16px ! important; white-space: nowrap ! important; visibility: hidden; opacity: 0;" class="linkscent-icon"><img clueid="favIcon" src="Dlg-Dateien/pixel.gif" style="border: 0px solid rgb(255, 0, 0) ! important; margin: 0pt; padding: 0pt ! important; background: transparent url(http://www.autohotkey.net/favicon.ico) no-repeat scroll center center ! important; overflow: visible ! important; float: none ! important; width: 16px ! important; height: 16px ! important; display: none; position: absolute ! important; text-indent: 0px ! important; z-index: 2147483635 ! important; max-width: none ! important; min-width: 0pt ! important; max-height: none ! important; min-height: 0pt ! important; left: 119px; top: 261px; bottom: auto ! important; right: auto ! important; line-height: 16px ! important; white-space: nowrap ! important; visibility: hidden; -moz-background-clip: -moz-initial ! important; -moz-background-origin: -moz-initial ! important; -moz-background-inline-policy: -moz-initial ! important; opacity: 0;" class="linkscent-icon"><img src="Dlg-Dateien/pixel.gif" clueid="anchor" style="border: 0px solid rgb(255, 0, 0) ! important; margin: 0pt; padding: 0pt ! important; background: transparent url(chrome://interclue/content/cluecore/skins/default/sprites.png) no-repeat scroll -16px -64px; overflow: visible ! important; float: none ! important; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; width: 16px ! important; height: 16px ! important; display: none; position: absolute ! important; text-indent: 0px ! important; z-index: 2147483635 ! important; max-width: none ! important; min-width: 0pt ! important; max-height: none ! important; min-height: 0pt ! important; left: 137px; top: 261px; bottom: auto ! important; right: auto ! important; line-height: 16px ! important; white-space: nowrap ! important; visibility: hidden; opacity: 0;" class="linkscent-icon" height="16" width="16"><img clueid="clueIcon" src="Dlg-Dateien/pixel.gif" style="border: 0px solid rgb(255, 0, 0) ! important; margin: 0pt; padding: 0pt ! important; background: transparent none repeat scroll center center; overflow: visible ! important; float: none ! important; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; width: 16px ! important; height: 16px ! important; display: none; position: absolute ! important; text-indent: 0px ! important; z-index: 2147483635 ! important; max-width: none ! important; min-width: 0pt ! important; max-height: none ! important; min-height: 0pt ! important; left: 155px; top: 261px; bottom: auto ! important; right: auto ! important; line-height: 16px ! important; white-space: nowrap ! important; visibility: hidden; opacity: 0;" class="linkscent-icon"><img clueid="favIcon" src="Dlg-Dateien/pixel.gif" style="border: 0px solid rgb(255, 0, 0) ! important; margin: 0pt; padding: 0pt ! important; background: transparent url(http://www.autohotkey.com/favicon.ico) no-repeat scroll center center ! important; overflow: visible ! important; float: none ! important; width: 16px ! important; height: 16px ! important; display: none; position: absolute ! important; text-indent: 0px ! important; z-index: 2147483635 ! important; max-width: none ! important; min-width: 0pt ! important; max-height: none ! important; min-height: 0pt ! important; left: 609px; top: 5473px; bottom: auto ! important; right: auto ! important; line-height: 16px ! important; white-space: nowrap ! important; visibility: hidden; -moz-background-clip: -moz-initial ! important; -moz-background-origin: -moz-initial ! important; -moz-background-inline-policy: -moz-initial ! important; opacity: 0;" class="linkscent-icon"><img clueid="clueIcon" src="Dlg-Dateien/pixel.gif" style="border: 0px solid rgb(255, 0, 0) ! important; margin: 0pt; padding: 0pt ! important; background: transparent none repeat scroll center center; overflow: visible ! important; float: none ! important; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial; width: 16px ! important; height: 16px ! important; display: none; position: absolute ! important; text-indent: 0px ! important; z-index: 2147483635 ! important; max-width: none ! important; min-width: 0pt ! important; max-height: none ! important; min-height: 0pt ! important; left: 627px; top: 5473px; bottom: auto ! important; right: auto ! important; line-height: 16px ! important; white-space: nowrap ! important; visibility: hidden; opacity: 0;" class="linkscent-icon"></div><iframe src="javascript: void(0);" class="clueframe" style="border: 0px solid rgb(255, 0, 0) ! important; margin: 0pt ! important; padding: 0pt ! important; background: transparent none repeat scroll center center ! important; overflow: visible ! important; float: none ! important; -moz-background-clip: -moz-initial ! important; -moz-background-origin: -moz-initial ! important; -moz-background-inline-policy: -moz-initial ! important; width: 529px; height: 516px; display: none; position: fixed; text-indent: 0px ! important; z-index: 2147483637 ! important; max-width: none ! important; min-width: 0pt ! important; max-height: none ! important; min-height: 0pt ! important; left: -2000px; top: -2000px; bottom: auto ! important; right: auto ! important; line-height: 16px ! important; white-space: nowrap ! important;" name="ClueFrame" id="ClueFrame" frameborder="0" scrolling="no"></iframe><object style="border: 0px solid rgb(255, 0, 0) ! important; margin: 0pt ! important; padding: 0pt ! important; background: transparent none repeat scroll center center ! important; overflow: visible ! important; float: none ! important; -moz-background-clip: -moz-initial ! important; -moz-background-origin: -moz-initial ! important; -moz-background-inline-policy: -moz-initial ! important; width: 0px ! important; height: 0px ! important; display: block ! important; position: absolute ! important; text-indent: 0px ! important; z-index: auto ! important; max-width: none ! important; min-width: 0pt ! important; max-height: none ! important; min-height: 0pt ! important; left: 0px ! important; top: 0px ! important; bottom: auto ! important; right: auto ! important; line-height: 16px ! important; white-space: nowrap ! important; visibility: hidden ! important;"></object></body></html>

@@ -1,0 +1,1310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+<title>TF: Textfile &amp; String Library for AutoHotkey [lib]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="SHORTCUT ICON" href="http://www.autohotkey.net/%7Ehugov/favicon.ico">
+<link href="tf-Dateien/commands.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+h1 {
+	text-indent: -9000px;
+	margin:0;
+	padding:0;
+	width: 100%;
+	background: #fff url(tf-ahk.png) no-repeat;
+	}
+h1 a {
+	text-decoration: none;
+	display:block;
+	height: 110px;
+	}
+
+h2 {}
+p {line-height:145%}
+-->
+</style>
+</head><body>
+<h1><a href="http://www.autohotkey.com/">TF: Textfile &amp; String Library for AutoHotkey</a></h1>
+<!--
+<img src='tf-ahk.png' alt='TF.ahk - AutoHotkey - Automation, Hotkeys, Scripting' border='0' style='margin-top:-1em;' /></a>
+<img src='ahk2.png' alt='AutoHotkey' border='0' />
+<h1>TF (Text &amp; String) Library for AutoHotkey</h1>
+<p>AutoHotkey. TextFile. Library.<br />
+-->
+
+<p style="margin-top: -10px; padding-top: 0pt; font-size: 11px; color: rgb(0, 136, 0);" align="right"><a href="http://www.autohotkey.com/forum/post-254005.html#254005">AHK artwork by Philou</a></p>
+
+<div style="width: 265px; float: right; background-color: rgb(255, 255, 255);">
+<div style="width: 250px; float: right; border: 1px solid rgb(192, 192, 192); padding: 5px; background-color: rgb(238, 238, 238); margin-left: 15px; font-size: 10px;">
+<p><b>Available Functions</b></p>
+<ol>
+<li><a href="#TF">TF</a></li>
+<li><a href="#TF_Save">TF_Save</a></li>
+<li><a href="#TF_CountLines">TF_CountLines</a></li>
+<li><a href="#TF_Count">TF_Count</a> *2</li>
+<li><a href="#TF_ReadLines">TF_ReadLines</a></li>
+<li><a href="#TF_Tail">TF_Tail</a></li>
+<li><a href="#TF_Replace">TF_Replace</a></li>
+<li><a href="#TF_ReplaceInLines">TF_ReplaceInLines</a></li>
+<li><a href="#TF_RegExReplace">TF_RegExReplace</a></li>
+<li><a href="#TF_RegExReplaceInLines">TF_RegExReplaceInLines</a></li>
+<li><a href="#TF_RemoveLines">TF_RemoveLines</a></li>
+<li><a href="#TF_RemoveBlankLines">TF_RemoveBlankLines</a></li>
+<li><a href="#TF_RemoveDuplicateLines">TF_RemoveDuplicateLines</a></li>
+<li><a href="#TF_InsertLine">TF_InsertLine</a></li>
+<li><a href="#TF_ReplaceLine">TF_ReplaceLine</a></li>
+<li><a href="#TF_InsertPrefix">TF_InsertPrefix</a></li>
+<li><a href="#TF_InsertSuffix">TF_InsertSuffix</a></li>
+<li><a href="#TF_TrimLeft">TF_TrimLeft</a></li>
+<li><a href="#TF_TrimRight">TF_TrimRight</a></li>
+<li><a href="#TF_AlignLeft">TF_AlignLeft</a></li>
+<li><a href="#TF_AlignCenter">TF_AlignCenter</a></li>
+<li><a href="#TF_AlignRight">TF_AlignRight</a></li>
+<li><a href="#TF_LineNumber">TF_LineNumber</a></li>
+<li><a href="#TF_ConCat">TF_ConCat</a></li>
+<li><a href="#TF_ColGet">TF_ColGet</a></li>
+<li><a href="#TF_ColPut">TF_ColPut</a></li>
+<li><a href="#TF_ColCut">TF_ColCut</a></li>
+<li><a href="#TF_ReverseLines">TF_ReverseLines</a></li>
+<li><a href="#TF_Find">TF_Find</a> (can be used as basic grep)</li>
+<li><a href="#TF_SplitFileByLines">TF_SplitFileByLines</a></li>
+<li><a href="#TF_SplitFileByText">TF_SplitFileByText</a></li>
+<li><a href="#TF_Merge">TF_Merge</a> *1</li>
+<li><a href="#TF_Prepend">TF_Prepend</a> *1</li>
+<li><a href="#TF_Append">TF_Append</a> *1</li>
+<li><a href="#TF_Wrap">TF_Wrap</a></li>
+<li><a href="#TF_WhiteSpace">TF_WhiteSpace</a></li>
+<li><a href="#TF_Substract">TF_Substract</a></li>
+<li><a href="#TF_RangeReplace">TF_RangeReplace</a></li>
+<li><a href="#TF_MakeFile">TF_MakeFile</a></li>
+<li><a href="#TF_Tab2Spaces">TF_Tab2Spaces</a></li>
+<li><a href="#TF_Spaces2Tab">TF_Spaces2Tab</a></li>
+<li><a href="#TF_Sort">TF_Sort</a></li>
+</ol>
+
+<p>*1: TF_Merge, TF_Prepend, TF_Append currently do not support variables and only work with FILES.</p>
+<p>*2: TF_Count does not support files and only works with variables.</p>
+
+<p><b>Deprecated (but still working)</b></p>
+
+<ol>
+<li><a href="#TF_FindLines">TF_FindLines</a> (Use TF_Find)</li>
+</ol>
+
+</div>
+</div>
+
+
+<p><b>TF: Textfile &amp; String Library for AutoHotkey [lib]</b></p>
+<p>
+<span class="funcpurp">Version:</span> 3.3<br>
+<span class="funcpurp">last update:</span>  
+16 April 2010
+- see <a href="#History">History</a>.<br>
+<span class="funcpurp">Library:</span> <a href="http://www.autohotkey.net/%7Ehugov/tf.ahk">http://www.autohotkey.net/~hugov/tf.ahk</a><br>
+<span class="funcpurp">Forum:</span> <a href="http://www.autohotkey.com/forum/viewtopic.php?t=46195">http://www.autohotkey.com/forum/viewtopic.php?t=46195</a><br>
+<span class="funcpurp">Examples:</span> <a href="http://www.autohotkey.com/forum/viewtopic.php?p=280363#280363">http://www.autohotkey.com/forum/viewtopic.php?p=280363#280363</a>
+</p>
+
+<h2>Introduction</h2>
+
+<p>As the name suggest this is a AHK Library with 
+a number of functions to "manipulate" <b>text</b>, both <b>files</b> such as
+*.txt, *.ahk, *.html, *.css etc AND <b>Strings</b> (or variables). For example
+you can delete specific lines, replace words or specific lines, number lines,
+remove or insert columns of text, etc. See the list of functions on the right for
+a complete overview.</p>
+
+<p>It is <b>not</b> useful for binary files or
+data such as MS Office files, PDFs, EXEcutables, images etc. (Tip: search the AHK forum for "binread" 
+to find some pointers on how to read, write and "edit" binary files.)</p>
+
+<!--
+<p>By introducing a <b>matchlist</b> for the lines you want to process 
+for the majority of the functions it is also more flexible in use.<br />
+-->
+
+<p><b>Concept</b></p>
+
+<p>It is important to understand a few basic concepts before you start working with the TF library:</p>
+
+<ul>
+<li>If you pass on a file to a TF function the output will generally be a
+ file too (there are a few exceptions). By default it writes the output 
+to a COPY of the input file, leaving the original input file intact.</li>
+<li>You <b>can</b> overwrite the input file by using a ! as prefix. See 
+"Quick intro to Parameters" and "Textfile and the ! Prefix" below for 
+more details.</li>
+<li>If you pass on a variable to a TF function the returned output will also be a variable.</li>
+<li>Most TF Functions allow you to work on specific lines or sections of lines.</li>
+<li>TF "knows" if something is a file or a variable, even if the 
+variable passed on to TF is meant to represent a file. (This is done in 
+the helper function TF_GetData for those interested). </li>
+</ul>
+
+<p>To understand how to work with files and variables please read the "Textfile and the ! Prefix"
+and "Files &amp; Variables" sections below.</p>
+
+<h2>How to "install" / use</h2>
+
+<p>You can either place TF.ahk in your LIB directory (see <a href="http://www.autohotkey.com/docs/Functions.htm#lib">http://www.AutoHotkey.com/docs/Functions.htm#lib</a>) 
+or use #include (see <a href="http://www.autohotkey.com/docs/commands/_Include.htm">http://www.AutoHotkey.com/docs/commands/_Include.htm</a>)</p>
+
+<p>You can find examples of most functions in the "example script" here <a href="http://www.autohotkey.com/forum/viewtopic.php?p=280363#280363">http://www.autohotkey.com/forum/viewtopic.php?p=280363#280363</a></p>
+
+<p><b>Note:</b> Because most of these functions operate on a line by line basis they WILL be slower
+than if you write your own functions or script which could operate on an entire file or variable at once. Keep
+this in mind if you need to process many files/variables or very large files/variables in case speed is an issue.</p>
+
+<p><b>Alternatives</b></p>
+
+<p>If you want to use similar functions in <b>batch</b> files try some of these programs:</p>
+
+<ul>
+<li>MTR - <a href="http://www.idiotsdelight.net/minitrue/">http://www.idiotsdelight.net/minitrue/</a></li>
+<li>MTR mod - <a href="http://adoxa.110mb.com/minitrue/index.html">http://adoxa.110mb.com/minitrue/index.html</a> (use this one because of its support of long file names, used to be at Geocities)</li>
+<li>SSED - <a href="http://sed.sourceforge.net/grabbag/ssed/">http://sed.sourceforge.net/grabbag/ssed/</a></li>
+<li>BK Replace EM - <a href="http://www.ecobyte.com/replacetext/">http://www.ecobyte.com/replacetext/</a></li>
+<li>TEXT Utils - <a href="http://gnuwin32.sourceforge.net/packages/coreutils.htm">http://gnuwin32.sourceforge.net/packages/coreutils.htm</a></li>
+</ul>
+
+<h2>Quick intro to Parameters</h2>
+
+<p>Almost all functions accept the following basic parameters:</p>
+
+<table width="100%" border="1" bordercolor="#c0c0c0" cellpadding="3" cellspacing="0">
+
+      <tbody><tr><td>Text    </td><td> The Filename (may include (absolute) path) to read from and save to (for all functions that write an output file).<br>
+      <b>Note:</b> by default a filename_copy will be created, use the ! prefix if you want to OverWrite the TextFile (e.g. the source file)<br>
+	  As of v3 "Text" can also be a variable or indeed text directly passed on to the function.<br>
+      See <a href="#TextfileAndPrefix">Textfile and the ! Prefix</a>.
+
+	  </td></tr>
+
+      <tr><td>! Prefix    </td><td> If Text starts with ! (eg: 
+"!c:\sample.txt") it will overwrite the text file, otherwise it will 
+save the new file to a copy of the text file eg: Filename_copy.txt (All,
+ apart from reading functions because there is no output file) <br>
+      <b>Tip:</b> you can use concatenation to add the !, e.g. "!" . Filename.txt, see the examples in the AHK thread.<br>
+      Note: If Text is a variable, it can start with a ! as TF will 
+detect automatically that it is not a file and will therefore not create
+ a file but return the altered variable instead.<br>
+      See <a href="#TextfileAndPrefix">Textfile and the ! Prefix</a>.
+
+	  </td></tr>
+
+      <tr><td>Lines       </td><td> Number of lines to read </td></tr>
+      <tr><td>StartLine   </td><td> Start of Range (Almost all).<br>
+	  See <a href="#StartLine">(StartLine, Endline) Syntax</a>.
+	  </td></tr>
+      <tr><td>EndLine     </td><td> End of Range (Almost all).<br>
+  	  See <a href="#StartLine">(StartLine, Endline) Syntax</a>.
+	  </td></tr>
+      <tr><td>SearchText  </td><td> Text to Find (Find / Replace functions)</td></tr>
+      <tr><td>ReplaceText </td><td> Text to Replace (Find / Replace functions)</td></tr>
+
+</tbody></table>
+
+<p>Next to the ones above many functions have speficic parameters explained below with
+the description of each function.</p>
+
+<p><b>Backup files:</b> If a subdirectory "backup" is present in the directory of 
+TextFile a backup is made before overwriting the original file (both for file.txt 
+and file_copy.txt) with the BAK extention</p>
+
+<p>You can find examples of most functions in the "example script" here <a href="http://www.autohotkey.com/forum/viewtopic.php?p=280363#280363">http://www.autohotkey.com/forum/viewtopic.php?p=280363#280363</a></p>
+
+<br>
+
+<p class="CommandSyntax" id="StartLine">(StartLine, Endline) Syntax</p>
+
+<p>You can pass on multiple lines (sections) by using the StartLine parameter.</p>
+
+<p>Examples: </p>
+
+<ul>
+<li>(5)                 <span class="CodeCom">; start from line 5 to the end (StartLine) </span></li>
+<li>(5, 15)             <span class="CodeCom">; Section: lines 5 to 15 (StartLine, EndLine) </span></li>
+<li>("5,13,45,67", 135) <span class="CodeCom">; Specific lines: 5,13,45,67, ignore 135 ("StartLine", Endline -&gt; <b>EndLine value is ignored</b>) </span></li>
+<li>("5-13,45-51", 135) <span class="CodeCom">; Multiple sections of lines: 5 to 13, 45 to 51 ignore 135 ("StartLine", Endline -&gt; <b>EndLine value is ignored</b>)</span></li>
+</ul>
+
+<p>Incremental (EndLine will <b>not</b> be ignored)</p>
+
+<ul>
+<li>("2+3", 150) <span class="CodeCom">; start with line 2, increment 3 upto line 150 so 2,5,8,11,14 etc </span></li>
+<li>("5+15")     <span class="CodeCom">; start with line 5, increment 15 until end of file so 5,20,35 etc</span></li>
+</ul>
+
+
+
+<p class="CommandSyntax" id="TextfileAndPrefix">Textfile and the ! Prefix</p>
+
+<p>Valid examples for using a Textfile:</p>
+<pre>TF_("file.txt", .... <span class="CodeCom">; Process file.txt and write output to file_copy.txt</span>
+
+F=file.txt ; <span class="CodeCom">; Note how F is a variable, but AHK/TF will see it is meant to represent  file.txt and write output to file_copy.txt</span>
+TF_(F, .... <span class="CodeCom">; Process file.txt and write output to file_copy.txt</span>
+
+TF_("!file.txt", .... <span class="CodeCom">; Process file.txt and overwrite file.txt</span>
+
+F=file.txt
+TF_("!" . F, .... <span class="CodeCom">; Process file.txt and overwrite file.txt</span>
+
+F=!file.txt
+TF_(F, .... <span class="CodeCom">; Process file.txt and overwrite file.txt</span>
+
+In a Loop, FilePattern:
+TF_(A_LoopFileName, .... <span class="CodeCom">; Process file and write output to file_copy</span>
+TF_("!" . A_LoopFileName, .... <span class="CodeCom">; Process file and overwrite file</span>
+
+Loop, *.txt
+	{
+	 TF_(A_LoopFileName, .... <span class="CodeCom">; Process file and write output to file_copy</span>
+	}
+</pre>
+
+<p>If you want to use multiple TF functions on a single file it is advised
+to use the ! Prefix</p>
+
+<pre>F=!file.txt 
+TF_RemoveBlankLines(F)        <span class="CodeCom">; remove all empty lines from file.txt and overwrite original file.txt</span>
+TF_LineNumber(F)                  <span class="CodeCom">; add linenumbers to all lines and overwrite original file.txt</span>
+TF_Replace(F, "this", "that")  <span class="CodeCom">; Replace the word "this" with "that" and overwrite original file.txt</span>
+<span class="CodeCom">; So the original file.txt has undergone three changes</span>
+</pre>
+
+<p class="CommandSyntax" id="FilesAndVariables">Files &amp; Variables (v3+)</p>
+
+<p>The new concept of variables (while keeping backward compatibility with the TF lib 
+that only accepted files) is probably best illustrated by some easy examples. </p>
+
+<p><b>NEW as of  v3: TF()</b></p>
+
+<p>In order to save you the trouble of using a fileread to read a file
+into a variable and proceed to use various TF functions there is the TF() Function.</p>
+
+<p style="color: rgb(204, 0, 0);">TF("pathtofile", CreateGlobalVar="T")<br>
+By default it reads the contents of the file in a global variable named <b>t</b> and returns it
+for further processing. By default it creates variable <b>t</b> if a variable name is <b>omitted</b> 
+so if you do not like to use <b>t</b> you can use anything you like. It is NOT mandatory to use 
+TF(), you are welcome to use a fileread as well, TF() is merely added for convenience
+as we will see in the examples below.</p>
+
+<p>Repeat: You only have to use TF() if you want to read a file into a variable and
+use it on multiple TF_* Functions.</p>
+
+<p><b>TF() Examples:</b></p>
+
+<pre>TF("file.txt") <span class="CodeCom">; will create global var t</span>
+TF("file.txt", "MyVar") <span class="CodeCom">; will create global var MyVar</span>
+</pre>
+
+<b>Examples on how to use files &amp; variables with TF:</b>
+
+<pre>#Include tf.ahk
+TestFile= <span class="CodeCom">; create variable</span>
+(join`r`n
+1 Hi this
+2 a test variable
+3 to demonstrate
+4 how to 
+5 use this
+6 new version
+7 of TF.AHK
+)
+FileDelete, TestFile.txt
+FileAppend, %TestFile%, TestFile.txt <span class="CodeCom">; create file</span>
+F=TestFile.txt <span class="CodeCom">; just a shorthand code for TextFile.txt, so below when</span>
+<span class="CodeCom">; using F we are still passing on a TextFile, not a variable</span>
+
+<span class="CodeCom">;pass on file, read lines 5 to end of file:</span>
+MsgBox % "From File 1:`n" TF_ReadLines("TestFile.txt",5) <span class="CodeCom">; same as before</span>
+MsgBox % "From File 2:`n" TF_ReadLines(F,5)              <span class="CodeCom">; same as before</span>
+
+<span class="CodeCom">;pass on variable, read lines 1 to 5</span>
+MsgBox % "From Variable 1:`n" TF_ReadLines(TestFile,"1-5")     
+MsgBox % "From Variable 2:`n" TF_ReadLines("Hi`nthis`nis`na`ntest`nvariable`nfor`ntesting",1,3) <span class="CodeCom">; pass on string</span>
+
+<span class="CodeCom">;Examples using TF(): (it will save you a FileRead if you want to work with Variables</span>
+
+TF("TestFile.txt") <span class="CodeCom">; read file, create globar var t</span>
+t:=TF_ReadLines(t,5) <span class="CodeCom">; pass on global var t created by TF(), read lines 5 to end of file, asign result to t </span>
+MsgBox % "TF(), example 1:`n" t
+
+TF("TestFile.txt", "MyVar") <span class="CodeCom">; read file, create globar var MyVar</span>
+MyVar:=TF_ReadLines(MyVar,5) <span class="CodeCom">; pass on global var MyVar created by TF(), read lines 5 to end of file, asign result to MyVar</span>
+MsgBox % "TF(), example 2:`n" MyVar
+
+<span class="CodeCom">; Note how we can use TF() here</span>
+t:=TF_ReadLines(TF("TestFile.txt"),5) <span class="CodeCom">; pass on global var t created by TF(), read lines 5 to end of file, asign result to t </span>
+MsgBox % "TF(), example 3:`n" t
+
+MyVar:=TF_ReadLines(TF("TestFile.txt","MyVar"),5) <span class="CodeCom">; pass on global var t created by TF(), read lines 5 to end of file, asign result to t </span>
+MsgBox % "TF(), example 4:`n" MyVar
+
+t:=TF_ReadLines(TF(F),5) <span class="CodeCom">; pass on global var t created by TF(), read lines 5 to end of file, asign result to t</span>
+t:=TF_ReverseLines(t,5) <span class="CodeCom">; pass on global var t created by TF(), reverse lines, asign result to t</span>
+MsgBox % "TF(), example 5:`n" t
+
+<span class="CodeCom">; Work directly with the clipboard or another other variable</span>
+Clipboard=Line 1`nLine 2`nLine 3`nLine 4`nLine 5`nLine 6`nLine 7`nLine 8
+Clipboard:=TF_RemoveLines(Clipboard, 3, 6) <span class="CodeCom">; remove lines 3 to 6</span>
+MsgBox % "Clipboard, example 6:`n" Clipboard
+</pre>
+
+<b>TF_Merge, TF_Prepend, TF_Append currently do not support variables and only work with FILES.</b>
+
+<p><b>Common mistake(s):</b></p>
+<pre style="color: rgb(204, 0, 0);">MyVar:=TF_ReadLines("TestFile.txt"),5) ; this is wrong. It is AN INCORRECT EXAMPLE!
+</pre>
+
+<p>The example above is incorrect: You pass on a file so the output is testfile_copy.txt. In this
+case nothing meaningful is assigned to the variable MyVar. Correct would be:</p>
+
+<pre><span class="CodeCom">MyVar:=TF_ReadLines(MyVar,5) ; this is OK
+MyVar:=TF_ReadLines(TF("TestFile.txt","MyVar"),5) ; this is OK</span></pre>
+
+<h2 id="Credits">Credits</h2>
+
+<p>This library is based on the <i>Library for Text file manipulation</i> started by <a href="http://www.autohotkey.com/forum/profile.php?mode=viewprofile&amp;u=8193">Heresy</a>. 
+I have contributed a number of functions to that library, but that version also has some "bugs" which
+are hopefully resolved in this TF library. <span style="font-size: 0.8em; color: rgb(102, 102, 102);">[Heresy seems to have dropped off the radar so the original library can not be 
+updated at the moment.]</span></p>
+
+<p>Thanks to: 
+<a href="http://www.autohotkey.com/forum/profile.php?mode=viewprofile&amp;u=8193">Heresy</a>, 
+<a href="http://www.autohotkey.com/forum/profile.php?mode=viewprofile&amp;u=1820">SKAN!</a> (countlines, setwidth, spaces), 
+<a href="http://www.autohotkey.com/forum/profile.php?mode=viewprofile&amp;u=4164">Olegbl</a> (suggestion for find*), 
+<a href="http://www.autohotkey.com/forum/profile.php?mode=viewprofile&amp;u=8394">infogulch</a> (suggestion for tab &lt;-&gt; spaces),
+<a href="http://www.autohotkey.com/forum/profile.php?mode=viewprofile&amp;u=4376">Murp|e</a>  (suggestions for documentation, check if file exists), 
+<a href="http://www.autohotkey.com/forum/profile.php?mode=viewprofile&amp;u=4658">ribbet.1</a>  (New features in TF_LineNumber), 
+<a href="http://www.autohotkey.com/forum/profile.php?mode=viewprofile&amp;u=">Tuncay</a> (help with TF() and borrowed ideas for TAIL), 
+<a href="http://www.autohotkey.com/forum/viewtopic.php?p=313120#313120">Guys (and Girls?) at Ask for Help</a>,
+[maybe forget someone?],
+AHK artwork: <a href="http://www.autohotkey.com/forum/profile.php?mode=viewprofile&amp;u=3173">Philou</a>
+</p>
+
+<h2>Functions</h2>
+
+<p>
+<b>Note:</b> Some of these function are very similar but they are
+included for ease of use ...
+</p>
+
+<p>You can find examples of most functions in the "example script" here <a href="http://www.autohotkey.com/forum/viewtopic.php?p=280363#280363">http://www.autohotkey.com/forum/viewtopic.php?p=280363#280363</a></p>
+
+
+<p class="funcname" id="TF"><b>TF(TextFile, CreateGlobalVar="T")</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Read contents of file to create global variable, <b>T</b> by default.</li>
+<li><span class="funcpurp">Parameters:</span> TextFile, CreateGlobalVar (=preferred name of global variable)</li>
+<li><span class="funcpurp">Credits:</span>    Various, see TF thread &amp; http://www.autohotkey.com/forum/viewtopic.php?p=313120#313120 (jaco0646)</li>
+</ul>
+<p>Note: see background info and examples above at <a href="#FilesAndVariables">Files and Variables</a>.</p>
+
+<p class="funcname" id="TF_CountLines"><b>TF_CountLines(Text)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Returns the number of lines in a file or variable</li>
+<li><span class="funcpurp">Parameters:</span> Text</li>
+<li><span class="funcpurp">Credits:</span>    SKAN</li>
+</ul>
+
+<pre>MsgBox % TF_CountLines("File.txt") ; show the number of lines of file in a MsgBox
+Lines:=TF_CountLines("File.txt") ; store the number of lines of file in a variable 
+</pre>
+
+<p class="funcname" id="TF_Count"><b>TF_Count(String, Char)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Count the number of occurence of Char using StringReplace</li>
+<li><span class="funcpurp">Parameters:</span> String, Char</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<p>Notes: do <b>not</b> use it to count lines (`n) because that will return an incorrect value, hence TF_CountLines. <br>
+TF_Count does not support files and only works with variables.
+</p>
+
+<pre>MsgBox % TF_Count("Hello this is an example", "i") ; count how many i's there are in the string
+</pre>
+
+<p class="funcname" id="TF_ReadLines"><b>TF_ReadLines(Text, StartLine = 1, EndLine = 0, RemoveTrailing = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Return the specified lines, can be used to read sections of a file or variable. </li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, EndLine</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<p>Note: by default it will add a newline character to the lastline, so if you want to append new data to
+the readlines or you don't have to start it with a newline char. If you don't want that use RemoveTrailing = 1.
+</p>
+
+<pre>MsgBox % TF_ReadLines("File.txt",5) ; Read lines 5 to end of file, show result in a MsgBox
+Lines:=TF_ReadLines("File.txt",5) ; Read lines 5 to end of file, store result in variable
+MsgBox % TF_ReadLines("File.txt",5,0,1) ; 0 for end line indicates until end of file, remove trailing empty line.
+</pre>
+
+
+<p class="funcname" id="TF_Tail"><b>TF_Tail(Text, Lines = 1, RemoveTrailing = 0, ReturnEmpty = 1)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Read last X lines from file or variable</li>
+<li><span class="funcpurp">Parameters:</span> Text, Lines, RemoveTrailing (0 or 1), ReturnEmpty (0 or 1)</li>
+<li><span class="funcpurp">Credits:</span>    HugoV, Tuncay</li>
+</ul>
+
+<p>Notes:</p>
+
+<ol>
+<li>Lines can be a negative number: -1 will get the second to last line.
+ If you use a negative number it will ALWAYS retreive a SINGLE line</li>
+<li>By default TF_Tail will return empty lines, if you don't want that use ReturnEmpty = 0</li>
+<li>By default TF_Tail will add a newline character to the lastline, so 
+if you want to append new data to the returned data you don't have to 
+start it with a newline char. If you don't want that use RemoveTrailing =
+ 1</li>
+</ol>
+
+<pre>MsgBox % TF_Tail("File.txt", 3) ; get the last three lines
+MsgBox % TF_Tail("File.txt", -2) ; get second to last line, negative values only return one line
+MsgBox % TF_Tail("File.txt", 5, 0, 0) ; return the last five lines, with trailing new line and excluding empty lines
+</pre>
+
+<p class="funcname" id="TF_Replace"><b>TF_Replace(Text, SearchText, Replacement="")</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Find and Replace text in entire file (using StringReplace)</li>
+<li><span class="funcpurp">Parameters:</span> Text, SearchText, Replacement</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<pre>TF_Replace("File.txt","key","lock")            ; pass on file, replace the word "key" with "lock" in file
+</pre>
+
+<p class="funcname" id="TF_ReplaceInLines"><b>TF_ReplaceInLines(Text, StartLine = 1, EndLine = 0, SearchText = "", ReplaceText = "")</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Find and Replace text on specific lines (using StringReplace)</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, EndLine, SearchText, ReplaceText</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<pre>TF_ReplaceInLines("!File.txt","1,3,9","","key","lock") ;  overwrite file, replace key with lock in lines 1 3 and 9 
+</pre>
+
+<p class="funcname" id="TF_RegExReplace"><b>TF_RegExReplace(Text, NeedleRegEx = "", Replacement = "")</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Find and Replace text in entire file (using RegExReplace)</li>
+<li><span class="funcpurp">Parameters:</span> Text, NeedleRegEx, Replacement</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<pre>TF_RegExReplace("File.txt","im)^(.*)$","[$1]") ; pass on file, wrap all lines in []</pre>
+
+<p class="funcname" id="TF_RegExReplaceInLines"><b>TF_RegExReplaceInLines(Text, StartLine = 1, EndLine = 0, NeedleRegEx = "", Replacement = "")</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Find and Replace text in specific lines (using RegExReplace)</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, EndLine, NeedleRegEx, Replacement</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<pre>TF_RegExReplaceInLines("File.txt",3,8," [a-z]{3} "," lock ")  ; replace any three letter word with lock in lines 3 to 8</pre>
+
+
+<p class="funcname" id="TF_RemoveLines"><b>TF_RemoveLines(Text, StartLine = 1, EndLine = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Remove specified lines from file</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, EndLine</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<pre>TF_RemoveLines("File.txt", 5, 10) ; remove lines 5 to 10 from file
+</pre>
+
+<p>Note:
+If you pass on a negative value for StartLine, example 
+TF_RemoveLines(Text, -5, .... it will remove these lines from the end of
+ Text, so -5 will remove the last five lines. The EndLine parameter is 
+ignored.
+</p>
+
+<p class="funcname" id="TF_RemoveBlankLines"><b>TF_RemoveBlankLines(Text, StartLine = 1, EndLine = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Remove blank lines from file (in specified section)</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, EndLine</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<p>Note: also removes lines with only tabs &amp; spaces e.g. "white space"</p>
+
+<pre>TF_RemoveBlankLines("File.txt") ; remove blanklines in entire file</pre>
+
+
+<p class="funcname" id="TF_RemoveDuplicateLines"><b>TF_RemoveDuplicateLines(Text, StartLine = 1, Endline = 0, Consecutive = 0, CaseSensitive = false)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Remove duplicate lines, optionally you can specify if they need to be  Consecutive and / or Case sensitive</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, EndLine, Consecutive (0 or 1), CaseSensitive (true or false)</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<pre>TF_RemoveDuplicateLines("File.txt","","",1,false) ; remove only Consecutive duplicate lines</pre>
+
+<p class="funcname" id="TF_InsertLine"><b>TF_InsertLine(Text, StartLine = 1, Endline = 0, InsertText = "")</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Insert text in specificied lines</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, Endline, InsertText</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<pre>TF_InsertLine("File.txt","2,4,9",5,"---")     ; insert --- in lines 2 4 and 9. 5 is endline will be ignored
+</pre>
+
+<p class="funcname" id="TF_ReplaceLine"><b>TF_ReplaceLine(Text, StartLine = 1, Endline = 0, ReplaceText = "")</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Replace specified lines with new text</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, Endline, ReplaceText</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<pre>TF_ReplaceLine("File.txt","1+3",8,"---")      ; replace lines 1 4 and 7. 8 is end line so no more lines are processed after </pre>
+
+<p class="funcname" id="TF_InsertPrefix"><b>TF_InsertPrefix(Text, StartLine = 1, EndLine = 0, Text = "")</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Insert a text at the BEGINNING of each of the specified lines</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, Endline, Text</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<pre>TF_InsertPrefix("File.txt",5,8, "Hello ")          ; Prefix Hello in lines 5 to 8
+</pre>
+
+<p class="funcname" id="TF_InsertSuffix"><b>TF_InsertSuffix(Text, StartLine = 1, EndLine = 0 , Text = "")</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Append a text at the END of each of the specified lines</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, Endline, Text</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<pre>TF_InsertSuffix("File.txt","2-4,6-9","", " Hello")  ; Suffix Hello in lines 2 to 4 and 6 to 9</pre>
+
+<p class="funcname" id="TF_TrimLeft"><b>TF_TrimLeft(Text, Count = 1, StartLine = 1, EndLine = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Trim number of specified colums from specified lines</li>
+<li><span class="funcpurp">Parameters:</span> Text, Count, StartLine, Endline, Text</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<pre>TF_TrimLeft("File.txt","","",25)                    ; Trim Left 25 Characters all lines</pre>
+
+<p class="funcname" id="TF_TrimRight"><b>TF_TrimRight(Text, Count = 1, StartLine = 1, EndLine = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Trim number of specified colums from specified lines</li>
+<li><span class="funcpurp">Parameters:</span> Text, Count, StartLine, Endline, Text</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV</li>
+</ul>
+
+<pre>TF_TrimRight("File.txt","4,6,8","",45)              ; Trim Right 45 Characters in lines 4 6 and 8</pre>
+
+<p class="funcname" id="TF_AlignLeft"><b>TF_AlignLeft(Text, StartLine = 1, EndLine = 0, Columns = 80, Padding = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Align lines according to number of specified columns</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, Endline, Columns, Padding</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV - uses some of SKAN functions</li>
+</ul>
+
+<p>Note: Using the Align functions will not take into account any leading or trailing spaces a line
+had BEFORE processing. So all white space before and after the text is removed before
+the text is aligned.</p>
+
+<pre class="paranotes">Padding = 0 Remove trailing white space
+Padding = 1 Keep trailing white space
+</pre>
+
+<pre>TF_AlignLeft("File.txt","","",90, 1)    ; AlignLeft all lines, keep trailing white space</pre>
+
+<p class="funcname" id="TF_AlignCenter"><b>TF_AlignCenter(Text, StartLine = 1, EndLine = 0, Columns = 80, Padding = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Align lines according to number of specified columns</li>
+<li><span class="funcpurp">Parameters:</span> Text, Columns, StartLine, Endline, Text</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV - uses some of SKAN functions</li>
+</ul>
+
+<p>Note: Using the Align functions will not take into account any leading or trailing spaces a line
+had BEFORE processing. So all white space before and after the text is removed before
+the text is aligned.</p>
+
+<pre class="paranotes">Skip = 0 process empty lines, fill with spaces
+Skip = 1 skip empty lines, do not fill with spaces
+</pre>
+
+<pre>TF_AlignCenter("File.txt","","",150, 1) ; AlignCenter, all lines skip emtpy lines, do not fill with spaces</pre>
+
+<p class="funcname" id="TF_AlignRight"><b>TF_AlignRight(Text, StartLine = 1, EndLine = 0, Columns = 80, Skip = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Align lines according to number of specified columns</li>
+<li><span class="funcpurp">Parameters:</span> Text, Columns, StartLine, Endline, Skip (0 or 1)</li>
+<li><span class="funcpurp">Credits:</span>    Heresy / HugoV - uses some of SKAN functions</li>
+</ul>
+
+<p>Note: Using the Align functions will not take into account any leading or trailing spaces a line
+had BEFORE processing. So all white space before and after the text is removed before
+the text is aligned.</p>
+
+<pre class="paranotes">Skip = 0 process empty lines, fill with spaces
+Skip = 1 skip empty lines, do not fill with spaces
+</pre>
+
+<pre>TF_AlignRight("File.txt","","", 190, 0) ; AlignRight, all lines, do not skip emtpy lines fill them with spaces</pre>
+
+<p class="funcname" id="TF_LineNumber"><b>TF_LineNumber(Text, Leading = 0, Restart = 0, Char = 0)</b></p>
+
+<ul class="functext">
+
+<li><span class="funcpurp">Purpose:</span>    Insert line numbers before each line</li>
+<li><span class="funcpurp">Parameters:</span> Text, Leading, Restart, Char</li>
+<li><span class="funcpurp">Credits:</span>    HugoV / ribbet.1</li>
+</ul>
+
+<pre class="paranotes">Leading = 0 No padding with leading zeros
+Leading &gt;= 1 Include padding with leading zeros (001 v 1)
+Restart = restart counter after X lines (starting again at 1)
+Char = character to use for leading/padding. Default 0, but can be any character. Tip: use a space.
+</pre>
+
+<pre>TF_LineNumber("File.txt",1,15,A_Space)  ; Add linenumbers, padding with spaces, linenumbers are aligned right because of space</pre>
+
+<p class="funcname" id="TF_ConCat"><b>TF_ConCat(FirstTextFile, SecondTextFile, OutputFile, Blanks = 0, FirstPadMargin = 0, SecondPadMargin = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Join Text files side by side (line1 file1 line1 file2 newline line2 file1 line2 file2 newline etc)</li>
+<li><span class="funcpurp">Parameters:</span> FirstTextFile, SecondTextFile, OutputFile, Blanks, FirstPadMargin, SecondPadMargin</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<p>Based on: CONCATenate text files, ftp://garbo.uwasa.fi/pc/ts/tsfltc22.zip</p>
+
+<p>With TF_ConCat you can join Text files side by side.<br>
+Blanks is number of blanks between lines<br>
+You can pad blanks the right margin of either of the text files, for this use FirstPadMargin and SecondPadMargin.</p>
+
+<p class="funcname" id="TF_ColGet"><b>TF_ColGet(Text, StartLine = 1, EndLine = 0, StartColumn = 1, EndColumn = 1, Skip = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Get speficified columns from text file</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, EndLine, StartColumn, EndColumn, Skip (0 or 1)</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<pre class="paranotes">Note: A TAB character is 1 character so for files with TABS the column might not be where you expect it to be
+skip = 0, DO NOT skip lines shorter then startcolumn position
+skip = 1, skip lines shorter then startcolumn position
+</pre>
+
+<pre>TF_ColGet("File.txt","","",2,13)    ; get columns 2 to 13 from all lines, so it removes all other columns from the file or variable
+</pre>
+
+<p class="funcname" id="TF_ColPut"><b>TF_ColPut(Text, Startline = 1, EndLine = 0, StartColumn = 1, Text = "", Skip = 0)</b></p>
+                       
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Insert text at speficified columns in text file</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, EndLine, StartColumn, EndColumn, Skip (0 or 1)</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<p>Based on: COLPUT.EXE &amp; CUT.EXE, ftp://garbo.uwasa.fi/pc/ts/tsfltc22.zip</p>
+
+<pre class="paranotes">Note: A TAB character is 1 character so for files with TABS the column might not be where you expect it to be
+skip = 0, DO NOT skip lines shorter then startcolumn position
+skip = 1, skip lines shorter then startcolumn position
+</pre>
+
+<pre>TF_ColPut("File.txt","","",5, "|", 0) ; insert | in column 5 of all lines including empty lines (= | will be at column 1)
+</pre>
+
+<p class="funcname" id="TF_ColCut"><b>TF_ColCut(Text, StartLine = 1, EndLine = 0, StartColumn = 1, EndColumn = 1)</b></p>
+                       
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Remove speficified columns from text file</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, EndLine, StartColumn, EndColumn</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<p>Based on: COLPUT.EXE &amp; CUT.EXE, ftp://garbo.uwasa.fi/pc/ts/tsfltc22.zip</p>
+<!-- 
+<pre class='paranotes'>
+skip = 0, DO NOT skip lines shorter then startcolumn position
+skip = 1, skip lines shorter then startcolumn position
+</pre>
+-->
+
+<pre>TF_ColCut("File.txt", "2+2", "", 4, 38)  ; remove columns 4 to 38 in lines 2 4 6 8 etc</pre>
+
+<p class="funcname" id="TF_ReverseLines"><b>TF_ReverseLines(Text, StartLine = 1, EndLine = 0) </b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Reverse the order of specified lines</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, EndLine</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<p>Note: Startline parameter can not use specific lines, sections or incremental here</p>
+
+<pre>TF_ReverseLines("File.txt",2,9) ; reverse lines 2 to 9</pre>
+
+<p class="funcname" id="TF_Find"><b>TF_Find(Text, StartLine = 1, EndLine = 0, SearchText = "", ReturnFirst = 1, ReturnText = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Find text using RegExMatch, return line(s), text or lines and text</li>
+<li><span class="funcpurp">Parameters:</span> Text, StartLine, EndLine, SearchText, ReturnFirst, ReturnText</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<p><b>TF_Find(Lines) compatibility notes as of v3.1:</b><br>
+- Because the old TF_Find(Lines) did not use RegExMatch you may need to rewrite some of your
+SearchText parameters. This means that if you used "special" characters which have 
+a special meaning in a RegEx: <b>\.*?+[{|()^$</b> they must be preceded by a backslash to be seen as literal. 
+For example, <b>\.</b> is a literal period and <b>\\</b> is a literal backslash. Escaping can be 
+avoided by using <b>\Q</b>...<b>\E</b>. For example: <b>\QLiteral Text\E</b>.<br>
+See <a href="http://www.autohotkey.com/docs/commands/RegExMatch.htm">http://www.autohotkey.com/docs/commands/RegExMatch.htm</a>
+for further information.<br>
+- The CaseSensitive parameter has been dropped, if you used that you must update your 
+call to TF_Find(Lines)</p>
+
+<pre class="paranotes">ReturnFirst = 0 return multiple lines 
+ReturnFirst = 1 return first line only
+
+ReturnText = 0 return line numbers only
+ReturnText = 1 return entire line (text). This simulates a basic grep feature
+ReturnText = 2 return line numbers + entire line (text). This simulates a basic grep feature 
+<!-- 
+StartLine=0 special meaning: do not use "If Var in MatchList" method simply loop entire file, for searching large files this should improve the speed
+ -->
+</pre>
+
+
+
+<pre>MsgBox % TF_Find("File.txt", "", "", "keys") ; return first line number with keys in it
+MsgBox % TF_Find("File.txt", "", "", " c[a-z]+s ", 0, 1) ; find all lines with words that start with a c an end with an s
+</pre>
+
+<p class="funcname" id="TF_SplitFileByLines"><b>TF_SplitFileByLines(Text, SplitAt, Prefix = "file", Extension = "txt", InFile = 1) </b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Split a text file in to several others based on number of lines</li>
+<li><span class="funcpurp">Parameters:</span> Text, SplitAt (number), Prefix, Extension, InFile (0, 1 or 2)</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<pre class="paranotes">SplitAt = Number of lines (three methods, see below)
+Prefix . Extension = filenameAUTOINCREMENT.Extension (Example: part_ . txt)
+InFile = 0 skip line e.g. do not include the actual line in any of the output files
+InFile = 1 include line IN current file
+InFile = 2 include line IN next file
+</pre>
+
+<p>
+Note: If you pass on a variable to TF_SplitFileByLines, the array size will be returned
+as Prefix0 and the array elements as Prefix1, Prefix2 etc similar to the AHK StringSplit command.
+The Extention parameter is ignored when using variables.<br>
+Some characters are illegal such as - + @ % &amp; * _ \ / [ ] etc to use in Prefix, stick to a-z A-Z.
+</p>
+
+<p>Options for "SplitAt" parameter:</p>
+
+<pre class="paranotes">a) One numerical value, example TF_SplitFileByLines(Text, "25", ....
+will split text every 25 lines until the end 
+
+b) Split at rotating line lengths using a dash "-" as separator, example TF_SplitFileByLines(Text, "5-10-15", ....
+will split text at 5 10 15 lines, until the end so 5 lines, 10 lines, 15 lines, 5 lines, 10 lines etc
+
+c) Split at specific lines using a comma "," as separator, example TF_SplitFileByLines(Text, "5,81,135", ....
+will split text at lines 5,81,135 until end of file (e.g. last file will be from line 135 until the end)
+</pre>
+
+<pre>TF_SplitFileByLines("File.txt", 2, "part", "zec", 1)            ; split source file every 2 lines, include 2nd line INFILE
+;illlustrate use of variables and returned arrays:
+TF_SplitFileByLines(Variable, 2, "part", "zec", 1)
+MsgBox % "Array size: " . Part0 . "`n1st array element: "  Part1
+</pre>
+
+<p class="funcname" id="TF_SplitFileByText"><b>TF_SplitFileByText(Text, SplitAt, Prefix = "file", Extension = "txt",  InFile = 1) </b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Split a text file in to several others based on text</li>
+<li><span class="funcpurp">Parameters:</span> Text, SplitAt (text, can be RegEx), Prefix, Extension, InFile (0, 1 or 2)</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<pre class="paranotes">SplitAt = Text, can be RegEx
+Prefix . Extension = filenameAUTOINCREMENT.Extension (Example: part_ . txt)
+InFile = 0 skip line e.g. do not include the actual line in any of the output files
+InFile = 1 include line IN current file
+InFile = 2 include line IN next file
+</pre>
+
+<p>
+Note: If you pass on a variable to TF_SplitFileByLines, the array size will be returned
+as Prefix0 and the array elements as Prefix1, Prefix2 etc similar to the AHK StringSplit command.
+The Extention parameter is ignored when using variables.<br>
+Some characters are illegal such as - + @ % &amp; * _ \ / [ ] etc to use in Prefix, stick to a-z A-Z.
+</p>
+
+<pre>TF_SplitFileByText("File.txt", "button", "part", "zec", 1)      ; split source file on every line with the word button, include that line INFILE
+;illlustrate use of variables and returned arrays:
+TF_SplitFileByText(Variable, "keyboard", "part", "zec", 1)
+MsgBox % "Array size: " . Part0 . "`n1st array element: "  Part1
+</pre>
+
+<p class="funcname" id="TF_Merge"><b>TF_Merge(FileList, Separator = "`n", FileName = "merged.txt")</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Merge several files into one</li>
+<li><span class="funcpurp">Parameters:</span> FileList, Separator (what 
+to put between two files, newline by default), TextFile (name of output 
+file, Prefix with a ! to overwrite target file</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<p>Example FileList:</p>
+
+<pre class="paranotes">FileList=
+(
+file1.txt
+file2.txt
+file3.txt
+)</pre>
+
+<p>Note: TF_Merge, TF_Prepend, TF_Append currently do not support variables and only work with FILES.</p>
+
+<pre>; using Loop (files &amp; folders) to create one quickly if you want to merge all TXT files for example:
+Loop, c:\*.txt
+  FileList .= A_LoopFileFullPath "`n"
+TF_Merge(FileList) ; will create merged.txt, you can use ! to overwrite an excisting file if you want
+</pre>
+
+<pre>; using FileSelectFile to select files to merged: (Thanks for asking Vitor, http://www.autohotkey.com/forum/viewtopic.php?p=335329#335329)
+FileDelete merged.txt ; not required
+FileList=
+FileSelectFile, FileList, M 1,,, *.txt ; M allows you to select multiple files while holding down the left ctrl button
+If (ErrorLevel = 1) or (FileList = "")
+   ExitApp ; no files selected
+Path:=TF_ReadLines(FileList,1,1,1) ; the first line holds the directory of the selected files, so read path
+FileList:=TF_RemoveLines(FileList,1,1) ; remove path from filelist
+FileList:=TF_InsertPrefix(FileList, "", "", Path . "\") ; make sure all files have full paths to file so the are read correctly
+TF_Merge(FileList) ; will create a file in the current script dir called merged.txt you can also specify another filename, take into account the filedelete merged.txt above
+
+; You could skip the Path:= step above by calling TF_ReadLines directly in TF_InsertPrefix, but you would have to delete the first line AFTER it like so:
+;FileList:=TF_InsertPrefix(FileList, "", "", TF_ReadLines(FileList,1,1,1) . "\")
+;FileList:=TF_RemoveLines(FileList,1,1)
+</pre>
+
+<p class="funcname" id="TF_Prepend"><b>TF_Prepend(File1, File2)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Prepend file1 to file2 (file2 is changed, uses TF_Merge)</li>
+<li><span class="funcpurp">Parameters:</span> File1, File2</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<p>Note: TF_Merge, TF_Prepend, TF_Append currently do not support variables and only work with FILES.</p>
+
+<p class="funcname" id="TF_Append"><b>TF_Append(File1, File2)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Append file1 to file2 (file2 is changed, uses TF_Merge)</li>
+<li><span class="funcpurp">Parameters:</span> File1, File2</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<p>Note: TF_Merge, TF_Prepend, TF_Append currently do not support variables and only work with FILES.</p>
+
+<p class="funcname" id="TF_Wrap"><b>TF_Wrap(Text, Columns = 80, AllowBreak = 0, StartLine = 1, EndLine = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Wrap (specified) lines</li>
+<li><span class="funcpurp">Parameters:</span> Text, Columns, AllowBreak (0 or 1), StartLine, EndLine</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<pre class="paranotes">AllowBreak = 0 will not "break" words, so it will take into account whole words and not chop them off. 
+AllowBreak = 1 will break words
+</pre>
+
+<pre>TF_Wrap("File.txt",60)            ; wrap at col 60
+</pre>
+
+<p class="funcname" id="TF_WhiteSpace"><b>TF_WhiteSpace(Text, RemoveLeading = 1, RemoveTrailing = 1, StartLine = 1, EndLine = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Remove leading and/or trailing whitespace by HugoV</li>
+<li><span class="funcpurp">Parameters:</span> Text, RemoveLeading (0 or 1), RemoveTrailing (0 or 1), StartLine, EndLine</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<pre class="paranotes">RemoveLeading = 0  Do not remove leading white space of lines
+RemoveLeading = 1  Remove leading white space of lines
+RemoveTrailing = 0 Do not remove trailing white space of lines
+RemoveTrailing = 1 Remove trailing white space of lines       
+</pre>
+
+<pre>TF_WhiteSpace("File.txt", 1, 0, "5-10") ; remove leading and keep trailing whitespace in lines 5 to 10
+</pre>
+
+<p class="funcname" id="TF_Substract"><b>TF_Substract(File1, File2, PartialMatch = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Delete lines from file1 in file2  (using StringReplace)</li>
+<li><span class="funcpurp">Parameters:</span> File1, File2, PartialMatch (0 or 1)</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<pre class="paranotes">File2: you can use <b>!</b>file2 to overwrite file2 otherwise output is file2_copy.txt
+PartialMatch = 0 lines from file1 must appear as is, case insensitive 
+PartialMatch = 1 allow for paRTIal match of line
+</pre>
+
+<p class="funcname" id="TF_RangeReplace"><b>TF_RangeReplace(Text, SearchTextBegin, SearchTextEnd, ReplaceText = "", CaseSensitive = "False", KeepBegin = 0, KeepEnd = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    A Range Replacement allows
+ you to perform a replacement on text whose beginning and ending remains
+ the same, but whose middle contents might change.</li>
+<li><span class="funcpurp">Parameters:</span> SearchTextBegin, SearchTextEnd, ReplaceText, CaseSensitive (True or False), KeepBegin (0 or 1), <!-- KeepMiddle (0, 1 or 2), --> KeepEnd (0 or 1)</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<p>Note: similar to "BK Replace EM" Range Replacement (highly recommend 
+piece of software by the way, see link above). Basically an easier 
+shortcut for a RegExp. </p>
+
+<pre class="paranotes">KeepBegin = 0 Remove SearchTextBegin from file
+KeepBegin = 1 Do not remove SearchTextBegin from file (saves you the trouble of putting it back in via ReplaceText)<!-- 
+KeepMiddle = 0 Remove section between SearchTextBegin - SearchTextEnd
+KeepMiddle = 1 Do not remove section between SearchTextBegin - SearchTextEnd, place it BEFORE ReplaceText *1
+KeepMiddle = 2 Do not remove section between SearchTextBegin - SearchTextEnd, place it AFTER ReplaceText *1 -->
+KeepEnd = 0 Remove SearchTextEnd from file
+KeepEnd = 1 Do not remove SearchTextEnd from file (saves you the trouble of putting it back in via ReplaceText)
+
+SearchTextBegin = "" e.g. empty means from START of File *1
+SearchTextEnd = "" e.g. empty means until END of File *1
+</pre>
+
+<p>*1 if you pass on empty strings to SearchTextBegin and SearchTextEnd the entire 
+file will replaced with the replacement text.<br>
+SearchTextBegin/End <b>can</b> be on the same line. Remember this LIB mainly 
+operates on a line by line basis. 
+This Function only operates on the FIRST SearchTextBegin to the FIRST 
+SearchTextEnd it finds.</p>
+
+<pre>Range=[insert this`ntext for the`nrange replace Text`ntest function]
+TF_RangeReplace("File.txt", "Create hotkeys for keyboard", "into an EXE file", Range)
+</pre>
+
+<!-- 
+<p>*1: In such cases TF_ReplaceInLines may be easier to use, but I'm just trying to mimic "BK Replace EM" here. 
+</p>
+-->
+
+<p class="funcname" id="TF_MakeFile"><b>TF_MakeFile(Text, Lines = 1, Columns = 1, Fill = " ")</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Create file of X lines and Y columns, fill with space or other character(s)</li>
+<li><span class="funcpurp">Parameters:</span> TextFile (new file to be created), Lines, Columns, Fill </li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<p>Sometimes you need an "empty" file before you can start adding line numbers or
+putting data into a file.</p>
+
+<p class="funcname" id="TF_Tab2Spaces"><b>TF_Tab2Spaces(Text, TabStop = 4, StartLine = 1, EndLine = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Convert tabs to spaces, shorthand for TF_ReplaceInLines</li>
+<li><span class="funcpurp">Parameters:</span> Text, TabStop, StartLine, EndLine</li>
+<li><span class="funcpurp">Credits:</span>    HugoV based on idea of infogulch</li>
+</ul>
+
+<pre class="paranotes">TabStop = number of spaces to replace a TAB with, so 4 means a TAB will be replaced by 4 spaces
+</pre>
+
+<p class="funcname" id="TF_Spaces2Tab"><b>TF_Spaces2Tab(Text, TabStop = 4, StartLine = 1, EndLine = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Convert tabs to spaces, shorthand for TF_ReplaceInLines</li>
+<li><span class="funcpurp">Parameters:</span> Text, TabStop, StartLine, EndLine</li>
+<li><span class="funcpurp">Credits:</span>    HugoV based on idea of infogulch</li>
+</ul>
+
+<pre class="paranotes">TabStop = number of spaces to replace with a TAB, so 4 means 4 spaces will be replaced by a TAB
+</pre>
+
+<p class="funcname" id="TF_Sort"><b>TF_Sort(Text, SortOptions = "", StartLine = 1, EndLine = 0)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    Sort (section of) TextFile</li>
+<li><span class="funcpurp">Parameters:</span> Text, SortOptions, StartLine, EndLine</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<pre class="paranotes">SortOptions: use the SORT options <a href="http://www.autohotkey.com/docs/commands/Sort.htm">http://www.autohotkey.com/docs/commands/Sort.htm</a>
+</pre>
+
+<p>Note: StartLine can not have multiple sections, increments or multiple lines in this case.
+When dealing with variables/strings instead of text files the native AHK Sort command is of
+course more useful.</p>
+
+<p class="funcname" id="TF_Save"><b>TF_Save(Text, FileName, OverWrite = 1)</b></p>
+
+<ul class="functext">
+<li><span class="funcpurp">Purpose:</span>    To save a variable to a file</li>
+<li><span class="funcpurp">Parameters:</span> Text, FileName, OverWrite (O or 1)</li>
+<li><span class="funcpurp">Credits:</span>    HugoV</li>
+</ul>
+
+<pre class="paranotes">OverWrite = 0 create filename_copy.ext if filename.ext exists
+OverWrite = 1 will overwrite filename.ext if filename.ext exists (default)
+</pre>
+
+
+<!-- 
+<p class='funcname'><b></b></p>
+
+<ul class='functext'>
+<li><span class='funcpurp'>Purpose:</span>    </li>
+<li><span class='funcpurp'>Parameters:</span> Text</li>
+<li><span class='funcpurp'>Credits:</span>    HugoV</li>
+</ul>
+-->
+
+<h2><a name="Deprecated"></a>Deprecated (but still working)</h2>
+
+<p class="funcname" id="TF_FindLines"><b><strike>TF_FindLines(Text, SearchText = "", CaseSensitive = false, StartLine = 1, EndLine = 0)</strike></b></p>
+
+<p>Note: as of TF v3.1 TF_Find can replicate the results of TF_FindLines + additional features. This function
+is kept in for backwards compatibility. Only if you relied on <b>CaseSensitive</b> you <b>should</b> update your script as
+this is no longer a valid parameter. See the compatibility notes at TF_Find.</p>
+
+
+<h2><a name="History"></a>History</h2>
+
+<p><b>History v3.3, 16 April 2010</b></p>
+
+<ul>
+<li>Fixed: If you used variables with any of the replacement functions 
+or tried to remove empty lines from a VARIABLE in the following format: 
+variable:=TF_..(variable,"search","replace") and the searchtext was NOT 
+present in the variable it returned an empty variable (e.g. deleted the 
+contents of "variable")<br>
+It affected TF_ReplaceInLines, TF_Replace, TF_RegExReplaceInLines, TF_RegExReplace, TF_RemoveBlankLines, TF_RangeReplace<br>
+The built-in check only worked correctly for FILES and with the 
+introduction of variables in TF 3 this didn't surface during the test 
+:-(</li>
+<li>Fixed: documentation error for TF_Merge (seperator and filename 
+where swapped) and added examples on how to use TF_Merge in a Loop and 
+with FileSelectFile</li>
+</ul>
+
+<p><b>History v3.2, 20 February 2010</b></p>
+
+<ul>
+<li>Fixed: TF_AlignRight: due to a bug it didn't work as it should have,
+ it prepended the number of spaces rather than aligning the text at the 
+specified width.</li>
+<li>Changed: TF_GetData (helper function) should now avoid unnecessary 
+IfNotExist for files, for scripts with many loops in combination with 
+variables it should improve the speed slightly</li>
+<li>Changed: TF_SplitFileByLines: New options for SplitAt, now three methods available, see notes at function description</li>
+<li>Changed: TF_RemoveLines: New option for StartLine, if negative value
+ is used it will remove the last X lines from file, see notes at 
+function description</li>
+</ul>
+
+<p><b>History v3.1, 09 December 2009</b></p>
+
+<ul>
+<li>Changed: Rewrite of TF_Find. Can now return multiple lines (like 
+TF_Findlines used to), but not only linenumbers but the entire line 
+(text) of found lines so it can be used as a basic grep. Now uses 
+RegExp, see compatibility notes.</li>
+<li>Deprecated: TF_FindLines (see change TF_Find). Kept in for backwards compatibility</li>
+<li>Updated and expanded documentation with examples and a hopefully "better" introduction highlighting some 
+basic concepts</li>
+</ul>
+
+<p><b>History v3.0, 27 November 2009</b></p>
+
+<p>Complete overhaul of library, now accepts files &amp; variables for input and output:</p>
+<ul>
+<li>Changed: New parameter for TF_Readlines &amp; TF_Tail: trailing new line now optional</li>
+<li>Added: TF_Save, shorthand for filedelete+fileappend - HugoV</li>
+<li>Added: TF_GetData, helper function to determine if a file or a variable is passed on to function - HugoV</li>
+<li>Added: TF() To read a text file in global var, t by default - Credits various ...</li>
+<li>Added: TF_ReturnOutput has replaced: Overwrite, MakeCopy and the newly developed ReturnStr - HugoV</li>
+<li>Changed: Complete rewrite of TF_Tail, new options - borrowed bits from Tuncay (Thanks!)</li>
+<li>Changed: MakeMatchList: Removed TF_Countlines (one less fileread), Pass on "String" and not a TextFile</li>
+<!--</li>
+<li></li>
+-->
+<li>Fix: TF_ConCat &amp; TF_MakeFile didn't write output file :-( same bug as splitby* earlier.</li>
+</ul>
+
+<p><b>History v2.5 fix, 01 November 2009</b></p>
+
+<p>Unreleased, but available on request :-)<br>
+Note that in 2.4a TF_MakeFile and TF_ConCat do not produce output files, easy to fix if you are
+determined to use an older version of TF.</p>
+
+<p><b>History v2.4a fix, 10 August 2009:</b></p>
+
+<ul>
+<li>The fix for TF_SplitFileBy* functions of 2.3b wasn't complete, now it should work correctly (it didn't write the last file)</li>
+</ul>
+
+<p><b>History v2.4 update, 06 August 2009:</b></p>
+
+<ul>
+<li>Added: TF_Sort (HugoV)</li>
+</ul>
+
+<p><b>History v2.3b update, 03 August 2009:</b></p>
+
+<ul>
+<li>Fixed: No output problem for TF_SplitFileBy* functions, "bug" introduced by 2.3a "Built in Check if TextFile actually exists" </li>
+<li>TF_RemoveBlankLines check if file has empty empty lines to start 
+with, if not return and do nothing (does not create file_copy identical 
+to file)</li>
+<li>TF_RangeReplace same fix as 2.3a</li>
+</ul>
+
+
+<p><b>History v2.3a update/bugfix (29 July 2009, HugoV, ribbet.1, Murp|e)</b></p>
+
+<p>Fixed/Changed:</p>
+<ul>
+<li>New features in TF_LineNumber:<br>  Restart + Choice of leading/padding character<br>  Thanks for the idea ribbet.1, <a href="http://www.autohotkey.com/forum/viewtopic.php?p=284687#284687">http://www.autohotkey.com/forum/viewtopic.php?p=284687#284687</a></li>
+<li>Built in Check if TextFile actually exists, to prevent creation of empty file(s).<br>  Thanks for the idea Murp|e, <a href="http://www.autohotkey.com/forum/viewtopic.php?p=284687#284687">http://www.autohotkey.com/forum/viewtopic.php?p=284649#284649</a></li>
+<li>TF_Replace: if SearchText wasn't present in TextFile the function never returned (stuck in endless loop)</li>
+<li>TF_ReplaceInLines: if SearchText wasn't present in TextFile simple return an do nothing (faster, does not create file_copy)</li>
+<li>TF_RegExReplaceInLines: if NeedleRegEx wasn't present in TextFile 
+simple return an do nothing (faster, does not create file_copy)</li>
+</ul>
+
+<p><b>History v2.3 (28 July 2009, HugoV)</b></p>
+
+<ul>
+<li>Added: TF_Tab2Spaces (HugoV) *</li>
+<li>Added: TF_Spaces2Tab (HugoV) *</li>
+<li>Added: TF_RangeReplace (HugoV)</li>
+<li>Added: TF_MakeFile (HugoV)</li>
+</ul>
+
+<p>* Note: yes they are a bit silly, but I find them to be useful
+as they serve as a shorthand for TF_ReplaceInLines. They are
+by no means "intelligent". Thanks to infogulch for the idea:
+http://www.autohotkey.com/forum/viewtopic.php?p=204570#204570</p>
+
+<p>Also thanks to Murp|e for pointing out some errors in the documentation (TF_COL* functions).</p>
+
+<p><b>History v2.2 (10 July 2009, HugoV)</b></p>
+
+<ul>
+<li>Added: TF_Substract (HugoV)</li>
+<li>Added: TF_WhiteSpace (HugoV)</li>
+<li>Added: TF_Wrap (HugoV)</li>
+</ul>
+
+<p><b>History v2.1 (HugoV)</b></p>
+
+<ul>
+<li>Added: TF_Prepend (HugoV)</li>
+<li>Added: TF_Append (HugoV)</li>
+</ul>
+
+<p><b>History v2.0 (Heresy, HugoV)</b></p>
+
+<ul>
+<li>Renamed: TF_TotalLines to TF_CountLines (seemed more logical)</li>
+<li>Removed: TF_GetCSV, TF_SetCSV to keep the focus on TXT files, CSV requires a different library IMHO (HugoV)</li>
+<li>Introduced: _MakeMatchList_ and adjusted TF_ReadLines, 
+TF_RemoveLines, TF_InsertPrefix, TF_InsertSuffix, TF_TrimLeft, 
+TF_TrimRight, TF_ColGet, TF_ColPut, TF_ColCut accordingly (HugoV)<br>
+  - Make a MatchList which is used in various functions (listed above)<br>
+  - Using a MatchList gives greater flexibility so you can process 
+multiple sections of lines in one go avoiding repetitive fileread/append
+ actions<br>
+  - You can pass on multiple lines (sections) If you quote the StartLine parameter. Examples of StartLine, Endline:<br>
+    5                  ; start from line 5 to the end (StartLine)<br>
+    5, 15              ; lines 5 to 15 (StartLine, EndLine)<br>
+    "5,13,45,67", 135) ; lines 5,13,45,67, ignore 135 ("StartLine", Endline -&gt; EndLine value is ignored)<br>
+    "5-13,45-51", 135) ; lines 5 to 13, 45 to 51 ignore 135 ("StartLine", Endline -&gt; EndLine value is ignored)<br>
+  - Incremental processing of lines, example startline, endline -&gt; endline will not be ignored<br>
+    "2+3", 150         ; start with line 2, increment 3 upto line 150 so 2,5,8,11,14 etc <br>
+    "5+15"             ; start with line 5, increment 15 until end of file so 5,20,35 etc<br></li>
+<li>Introduced: _OverWrite_ &amp; _MakeCopy_ (Heresy / HugoV)<br>
+  - No longer necessary to pass on full path, e.g. "file.txt" works OK now (HugoV)<br>
+  - Reduces size of library by removing repeating code sections for saving Output (Heresy)<br>
+  - Backup files: If a subdirectory "backup" is present in the directory
+ of TextFile a backup is made before overwriting the original file (both
+ for file.txt and file_copy.txt) with the BAK extention (HugoV)<br>
+  - Includes fix to remove trailing `n added by most functions (HugoV)<br></li>
+<li>Introduced: SetWidth/space by SKAN for TF_Align* Functions http://www.AutoHotkey.com/forum/viewtopic.php?p=45880#45880</li>
+<li>Added: TF_ReplaceInLines. Similar to TF_Replace</li>
+<li>Added: TF_RegExReplaceInLines. Similar to TF_RegExReplace</li>
+<li>Added: TF_SplitFileByLines (HugoV)</li>
+<li>Added: TF_SplitFileByText (HugoV)</li>
+<li>Added: TF_Merge (HugoV)</li>
+<li>Added: TF_Find (HugoV, based on example by olegbl)</li>
+<li>Added: TF_FindLines (HugoV, based on example by olegbl)</li>
+<li>Change: TF_TrimLeft. 1) it now processes all lines of the TextFile. 
+2) you can now ommit EndLine e.g. will proces until end of file (HugoV)</li>
+<li>Change: TF_TrimRight. 1) it now processes all lines of the TextFile.
+ 2) you can now ommit EndLine e.g. will proces until end of file (HugoV)</li>
+<li>Change: TF_AlignCenter, TF_AlignLeft, TF_AlignRight. Now use 
+SetWidth/space by SKAN, more reliable also adds spaces to RIGHT side of 
+line</li>
+<li>Change: TF_AlignLeft. 1) you can now use StartLine, EndLine parameters. StartLine and/or EndLine can be omitted (HugoV)</li>
+<li>Change: TF_AlignRight. 1) you can now use StartLine, EndLine parameters. StartLine and/or EndLine can be omitted (HugoV)</li>
+<li>Change: TF_ReadLines you can now ommit EndLine e.g. will read until end of file (HugoV)</li>
+<li>Change: TF_RemoveBlankLines you can now use StartLine, EndLine parameters. EndLine can be omitted (HugoV)</li>
+<li>Change: TF_InsertLine modified to accomodate line sections and incremental lines.</li>
+<li>Change: TF_ReplaceLine modified to accomodate line sections and incremental lines.</li>
+<li>Change: TF_RegExReplace no longer returns "Counts" (HugoV)</li>
+<li>Change: TF_RemoveDuplicateLines 1) no longer returns "Removed" 2) 
+can use start/end line 3) no longer uses sort but keeps original order 
+intact 4) to methods to check consecutive lines or unique files in file 
+(HugoV)</li>
+<li>Change: TF_ColGet, TF_ColPut, TF_ColCut. 1) order of parameters changed, 2) now accept Startline, EndLine parameters. (HugoV)</li>
+<li>Fixed: TF_RemoveDuplicateLines always produced empty Output file (HugoV)
+</li></ul>
+
+<p><b>History prior 2.0 (Heresy, HugoV)</b></p>
+<ul>
+<li>2008-06-18 : added TF_AlignLeft(), TF_AlignCenter(), TF_AlignRight() (Heresy)</li>
+<li>2008-06-18 : added TF_Tail(), TF_ReverseLines() (HugoV)</li>
+<li>2008-06-17 : added TF_GetCSV(), TF_SetCSV() (Heresy)</li>
+<li>2008-06-17 : added TF_LineNumber(), TF_Concat(), TF_ColGet(), TF_ColPut(), TF_ColCut() (HugoV)</li>
+<li>2008-06-16 : added TF_RegExReplace(), TF_RemoveLines(), TF_TrimLeft(), TF_TrimRight() (Heresy)</li>
+<li>2008-06-15 : added TF_TotalLines(), TF_ReadLines(), TF_RemoveDuplicateLines() (Heresy)</li>
+</ul>
+
+</body></html>

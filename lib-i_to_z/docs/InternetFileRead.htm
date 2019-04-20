@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+
+<link rel="top" href="http://www.autohotkey.com/forum/index.php" title="AutoHotkey Community Forum Index">
+<link rel="search" href="http://www.autohotkey.com/forum/search.php" title="Search">
+<link rel="help" href="http://www.autohotkey.com/forum/faq.php" title="FAQ">
+<link rel="author" href="http://www.autohotkey.com/forum/memberlist.php" title="Memberlist">
+<link rel="prev" href="http://www.autohotkey.com/forum/ptopic45718.html" title="View previous topic">
+<link rel="next" href="http://www.autohotkey.com/forum/ntopic45718.html" title="View next topic">
+<link rel="up" href="http://www.autohotkey.com/forum/forum-2.html" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-1.html" title="Ask for Help">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-2.html" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-3.html" title="Bug Reports">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-4.html" title="Wish List">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-6.html" title="Announcements">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-7.html" title="Utilities &amp; Resources">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/forum-5.html" title="General Chat">
+
+<title>Function : InternetFileRead() aka UrlDownLoadToVar()</title>
+
+<link rel="alternate" type="application/rss+xml" title="AutoHotkey Forum RSS" href="http://www.autohotkey.com/forum/rss.php">
+
+
+<link rel="stylesheet" type="text/css" href="InternetFileRead-Dateien/index.css" media="all">
+</head><body vlink="#5493b4" bgcolor="#e5e5e5" link="#006699" text="#000000">
+<table width="100%" align="center" border="0" cellpadding="10" cellspacing="0">
+<tbody>
+<tr>
+<td class="bodyline">
+<table class="forumline" width="100%" border="0" cellpadding="3" cellspacing="1">
+<tbody>
+<tr>
+<td class="row1" valign="top" width="100%" height="28">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td colspan="2">
+<span class="postbody">
+<ul>
+<!--DOCUMENT_FRAGMENT-->
+<span style="font-size: 18px; line-height: normal;"><span style="color: darkblue;"><span style="font-weight: bold;">InternetFileRead()</span></span></span>
+<br>
+
+<br>
+As the name suggests, this function reads a file from internet (passed to it as URL).
+<br>
+<ul>It is similar to AHK <span style="font-weight: bold;">FileRead</span> command in following ways:
+<br>
+1) Reads the content into Memory Variable
+<br>
+2) Can read the specified number of bytes from the leading part of the file.
+<br>
+3) Data retrieved will be in binary ( but to process it, we are on our own )</ul>
+<br>
+
+<br>
+<ul><span style="text-decoration: underline;">Parameters :</span>
+<br>
+
+<br>
+<li><span style="font-weight: bold;">V</span> : <span style="font-style: italic;">Variable name</span> passed as ByRef
+<br>
+</li><li><span style="font-weight: bold;">URL</span> : A valid existing URL from which File will be read from
+<br>
+</li><li><span style="font-weight: bold;">RB</span> : <span style="font-style: italic;">Requested Bytes</span>. Pass <span style="font-weight: bold;">0</span> to read the whole file or request the number of bytes to read.
+<br>
+</li><li><span style="font-weight: bold;">bSz</span> : <span style="font-style: italic;">Buffer Size</span>.
+ Default value is 1024 ( bytes ). File will be read in small chunks as 
+specified with this parameter. You can increase it for faster downloads 
+but should result in less responsive GUI.  
+<br>
+</li><li><span style="font-weight: bold;">DLP</span> : The dynamic function name of the function that will handle the "<span style="font-style: italic;">Download Progress</span>". I have included one .. You can add more in the same script and call them as per your criteria. A simple one would look like: 
+<br>
+<table width="90%" align="center" border="0" cellpadding="3" cellspacing="1"><tbody><tr> 	  <td><span class="genmed"><b>Code:</b></span></td>	</tr>	<tr>	  <td class="code"><div>DLPCE( WP=0, LP=0, MSG="" ) {<br>&nbsp;Tooltip, Downloading : %WP% / %LP%<br>}</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+</span></li><li><span style="font-weight: bold;">F</span> : <span style="font-style: italic;">Flags</span>. Default is INTERNET_FLAG_RELOAD|INTERNET_FLAG_DONT_CACHE which makes sure file is not read from/written into cache. 
+<br>
+
+<br>
+
+<br>
+<span style="text-decoration: underline;">Return Value &amp; ErrorLevel:</span> 
+<br>
+
+<br>
+If there are no errors from API functions, the function will return the <span style="font-style: italic;">Bytes Read</span>, which will be exactly equal to the Variable's capacity.
+<br>
+If <span style="font-style: italic;">Bytes Read</span> is lesser than the <span style="font-style: italic;">File/Content Length</span> or If <span style="font-style: italic;">Bytes Read</span> is equal to <span style="font-style: italic;">Requested Bytes</span>, AHK ErrorLevel will be set to <span style="font-weight: bold;">1</span>
+<br>
+On an API error, the function will return a negative number which can interpreted as follows:
+<br>
+
+<br>
+<span style="font-weight: bold;">-1</span>   <span style="font-style: italic;">Internet Connection Problem</span>
+<br>
+<span style="font-weight: bold;">-2</span>   <span style="font-style: italic;">Internet Connection Problem</span>
+<br>
+<span style="font-weight: bold;">-4</span>   <span style="font-style: italic;">Length of file could not be ascertained</span>
+<br>
+<span style="font-weight: bold;">-5</span>   <span style="font-style: italic;">The above and one of the Internet handles could not closed</span>
+<br>
+<span style="font-weight: bold;">-6</span>   <span style="font-style: italic;">The above one more of the Internet handles could not closed</span>
+<br>
+<span style="font-weight: bold;">-7</span>   <span style="font-style: italic;">One of the Internet handles could not closed</span>
+<br>
+<span style="font-weight: bold;">-8</span>   <span style="font-style: italic;">Both of the the Internet handles could not closed</span>
+<br>
+</li></ul>
+<br>
+
+<br>
+<span style="font-size: 10px; line-height: normal;">The included <span style="font-style: italic;">dynamic function</span> <span style="font-weight: bold;">DLP()</span> will display a progress-bar
+<br>
+ in the right-bottom for the screen:</span>
+<br>
+<img src="InternetFileRead-Dateien/filereadinternet.png" border="0">
+<br>
+
+
+<!--/DOCUMENT_FRAGMENT-->
+</ul>
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

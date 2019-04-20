@@ -1,0 +1,3151 @@
+Type RECT
+        Left As Long
+        Top As Long
+        Right As Long
+        Bottom As Long
+End Type
+Type RECTL
+        Left As Long
+        Top As Long
+        Right As Long
+        Bottom As Long
+End Type
+Type POINTAPI
+        X As Long
+        Y As Long
+End Type
+Type POINTL
+        X As Long
+        Y As Long
+End Type
+Type Size
+        cx As Long
+        cy As Long
+End Type
+Type POINTS
+        X  As Integer
+        Y  As Integer
+End Type
+Type msg
+    hwnd As Long
+    message As Long
+    wParam As Long
+    lParam As Long
+    time As Long
+    pt As POINTAPI
+End Type
+Type SID_IDENTIFIER_AUTHORITY
+        Value(6) As Byte
+End Type
+Type SID_AND_ATTRIBUTES
+        Sid As Long
+        Attributes As Long
+End Type
+Type OVERLAPPED
+        Internal As Long
+        InternalHigh As Long
+        offset As Long
+        OffsetHigh As Long
+        hEvent As Long
+End Type
+Type SECURITY_ATTRIBUTES
+        nLength As Long
+        lpSecurityDescriptor As Long
+        bInheritHandle As Long
+End Type
+Type PROCESS_INFORMATION
+        hProcess As Long
+        hThread As Long
+        dwProcessId As Long
+        dwThreadId As Long
+End Type
+Type FILETIME
+        dwLowDateTime As Long
+        dwHighDateTime As Long
+End Type
+Type SystemTime
+        wYear As Integer
+        wMonth As Integer
+        wDayOfWeek As Integer
+        wDay As Integer
+        wHour As Integer
+        wMinute As Integer
+        wSecond As Integer
+        wMilliseconds As Integer
+End Type
+Type COMMPROP
+        wPacketLength As Integer
+        wPacketVersion As Integer
+        dwServiceMask As Long
+        dwReserved1 As Long
+        dwMaxTxQueue As Long
+        dwMaxRxQueue As Long
+        dwMaxBaud As Long
+        dwProvSubType As Long
+        dwProvCapabilities As Long
+        dwSettableParams As Long
+        dwSettableBaud As Long
+        wSettableData As Integer
+        wSettableStopParity As Integer
+        dwCurrentTxQueue As Long
+        dwCurrentRxQueue As Long
+        dwProvSpec1 As Long
+        dwProvSpec2 As Long
+        wcProvChar(1) As Integer
+End Type
+Type COMSTAT
+        fBitFields As Long
+        cbInQue As Long
+        cbOutQue As Long
+End Type
+Type DCB
+        DCBlength As Long
+        BaudRate As Long
+        fBitFields As Long
+        wReserved As Integer
+        XonLim As Integer
+        XoffLim As Integer
+        ByteSize As Byte
+        Parity As Byte
+        StopBits As Byte
+        XonChar As Byte
+        XoffChar As Byte
+        ErrorChar As Byte
+        EofChar As Byte
+        EvtChar As Byte
+        wReserved1 As Integer
+End Type
+Type COMMTIMEOUTS
+        ReadIntervalTimeout As Long
+        ReadTotalTimeoutMultiplier As Long
+        ReadTotalTimeoutConstant As Long
+        WriteTotalTimeoutMultiplier As Long
+        WriteTotalTimeoutConstant As Long
+End Type
+Type SYSTEM_INFO
+        dwOemID As Long
+        dwPageSize As Long
+        lpMinimumApplicationAddress As Long
+        lpMaximumApplicationAddress As Long
+        dwActiveProcessorMask As Long
+        dwNumberOrfProcessors As Long
+        dwProcessorType As Long
+        dwAllocationGranularity As Long
+        dwReserved As Long
+End Type
+Type MEMORYSTATUS
+        dwLength As Long
+        dwMemoryLoad As Long
+        dwTotalPhys As Long
+        dwAvailPhys As Long
+        dwTotalPageFile As Long
+        dwAvailPageFile As Long
+        dwTotalVirtual As Long
+        dwAvailVirtual As Long
+End Type
+Type GENERIC_MAPPING
+        GenericRead As Long
+        GenericWrite As Long
+        GenericExecute As Long
+        GenericAll As Long
+End Type
+Type Luid
+    lowpart As Long
+    highpart As Long
+End Type
+
+Type LUID_AND_ATTRIBUTES
+        pLuid As Luid
+        Attributes As Long
+End Type
+Type ACL
+        AclRevision As Byte
+        Sbz1 As Byte
+        AclSize As Integer
+        AceCount As Integer
+        Sbz2 As Integer
+End Type
+Type ACE_HEADER
+        AceType As Byte
+        AceFlags As Byte
+        AceSize As Long
+End Type
+Type ACCESS_ALLOWED_ACE
+        Header As ACE_HEADER
+        Mask As Long
+        SidStart As Long
+End Type
+Type ACCESS_DENIED_ACE
+        Header As ACE_HEADER
+        Mask As Long
+        SidStart As Long
+End Type
+
+Type SYSTEM_AUDIT_ACE
+        Header As ACE_HEADER
+        Mask As Long
+        SidStart As Long
+End Type
+Type SYSTEM_ALARM_ACE
+        Header As ACE_HEADER
+        Mask As Long
+        SidStart As Long
+End Type
+Type ACL_REVISION_INFORMATION
+        AclRevision As Long
+End Type
+Type ACL_SIZE_INFORMATION
+        AceCount As Long
+        AclBytesInUse As Long
+        AclBytesFree As Long
+End Type
+Type SECURITY_DESCRIPTOR
+        Revision As Byte
+        Sbz1 As Byte
+        Control As Long
+        Owner As Long
+        Group As Long
+        Sacl As ACL
+        Dacl As ACL
+End Type
+Type PRIVILEGE_SET
+        PrivilegeCount As Long
+        Control As Long
+        Privilege(ANYSIZE_ARRAY) As LUID_AND_ATTRIBUTES
+End Type
+Type EXCEPTION_RECORD
+    ExceptionCode As Long
+    ExceptionFlags As Long
+    pExceptionRecord As Long
+    ExceptionAddress As Long
+    NumberParameters As Long
+    ExceptionInformation(EXCEPTION_MAXIMUM_PARAMETERS) As Long
+End Type
+Type EXCEPTION_DEBUG_INFO
+        pExceptionRecord As EXCEPTION_RECORD
+        dwFirstChance As Long
+End Type
+Type CREATE_THREAD_DEBUG_INFO
+        hThread As Long
+        lpThreadLocalBase As Long
+        lpStartAddress As Long
+End Type
+Type CREATE_PROCESS_DEBUG_INFO
+        hFile As Long
+        hProcess As Long
+        hThread As Long
+        lpBaseOfImage As Long
+        dwDebugInfoFileOffset As Long
+        nDebugInfoSize As Long
+        lpThreadLocalBase As Long
+        lpStartAddress As Long
+        lpImageName As Long
+        fUnicode As Integer
+End Type
+Type EXIT_THREAD_DEBUG_INFO
+        dwExitCode As Long
+End Type
+Type EXIT_PROCESS_DEBUG_INFO
+        dwExitCode As Long
+End Type
+Type LOAD_DLL_DEBUG_INFO
+        hFile As Long
+        lpBaseOfDll As Long
+        dwDebugInfoFileOffset As Long
+        nDebugInfoSize As Long
+        lpImageName As Long
+        fUnicode As Integer
+End Type
+Type UNLOAD_DLL_DEBUG_INFO
+        lpBaseOfDll As Long
+End Type
+Type OUTPUT_DEBUG_STRING_INFO
+        lpDebugStringData As String
+        fUnicode As Integer
+        nDebugStringLength As Integer
+End Type
+Type RIP_INFO
+        dwError As Long
+        dwType As Long
+End Type
+Type OFSTRUCT
+        cBytes As Byte
+        fFixedDisk As Byte
+        nErrCode As Integer
+        Reserved1 As Integer
+        Reserved2 As Integer
+        szPathName(OFS_MAXPATHNAME) As Byte
+End Type
+Type CRITICAL_SECTION
+    dummy As Long
+End Type
+Type BY_HANDLE_FILE_INFORMATION
+        dwFileAttributes As Long
+        ftCreationTime As FILETIME
+        ftLastAccessTime As FILETIME
+        ftLastWriteTime As FILETIME
+        dwVolumeSerialNumber As Long
+        nFileSizeHigh As Long
+        nFileSizeLow As Long
+        nNumberOfLinks As Long
+        nFileIndexHigh As Long
+        nFileIndexLow As Long
+End Type
+Type MEMORY_BASIC_INFORMATION
+     BaseAddress As Long
+     AllocationBase As Long
+     AllocationProtect As Long
+     RegionSize As Long
+     State As Long
+     Protect As Long
+     lType As Long
+End Type
+Type EVENTLOGRECORD
+     Length As Long
+     Reserved As Long
+     RecordNumber As Long
+     TimeGenerated As Long
+     TimeWritten As Long
+     EventID As Long
+     EventType As Integer
+     NumStrings As Integer
+     EventCategory As Integer
+     ReservedFlags As Integer
+     ClosingRecordNumber As Long
+     StringOffset As Long
+     UserSidLength As Long
+     UserSidOffset As Long
+     DataLength As Long
+     DataOffset As Long
+End Type
+Type TOKEN_GROUPS
+    GroupCount As Long
+    Groups(ANYSIZE_ARRAY) As SID_AND_ATTRIBUTES
+End Type
+Type TOKEN_PRIVILEGES
+    PrivilegeCount As Long
+    Privileges(ANYSIZE_ARRAY) As LUID_AND_ATTRIBUTES
+End Type
+Type CONTEXT
+    FltF0 As Double
+    FltF1 As Double
+    FltF2 As Double
+    FltF3 As Double
+    FltF4 As Double
+    FltF5 As Double
+    FltF6 As Double
+    FltF7 As Double
+    FltF8 As Double
+    FltF9 As Double
+    FltF10 As Double
+    FltF11 As Double
+    FltF12 As Double
+    FltF13 As Double
+    FltF14 As Double
+    FltF15 As Double
+    FltF16 As Double
+    FltF17 As Double
+    FltF18 As Double
+    FltF19 As Double
+    FltF20 As Double
+    FltF21 As Double
+    FltF22 As Double
+    FltF23 As Double
+    FltF24 As Double
+    FltF25 As Double
+    FltF26 As Double
+    FltF27 As Double
+    FltF28 As Double
+    FltF29 As Double
+    FltF30 As Double
+    FltF31 As Double
+    IntV0 As Double
+    IntT0 As Double
+    IntT1 As Double
+    IntT2 As Double
+    IntT3 As Double
+    IntT4 As Double
+    IntT5 As Double
+    IntT6 As Double
+    IntT7 As Double
+    IntS0 As Double
+    IntS1 As Double
+    IntS2 As Double
+    IntS3 As Double
+    IntS4 As Double
+    IntS5 As Double
+    IntFp As Double
+    IntA0 As Double
+    IntA1 As Double
+    IntA2 As Double
+    IntA3 As Double
+    IntA4 As Double
+    IntA5 As Double
+    IntT8 As Double
+    IntT9 As Double
+    IntT10 As Double
+    IntT11 As Double
+    IntRa As Double
+    IntT12 As Double
+    IntAt As Double
+    IntGp As Double
+    IntSp As Double
+    IntZero As Double
+    Fpcr As Double
+    SoftFpcr As Double
+    Fir As Double
+    Psr As Long
+    ContextFlags As Long
+    Fill(4) As Long
+End Type
+Type EXCEPTION_POINTERS
+    pExceptionRecord As EXCEPTION_RECORD
+    ContextRecord As CONTEXT
+End Type
+Type LDT_BYTES
+    BaseMid As Byte
+    Flags1 As Byte
+    Flags2 As Byte
+    BaseHi As Byte
+End Type
+Type LDT_ENTRY
+    LimitLow As Integer
+    BaseLow As Integer
+    HighWord As Long
+End Type
+Type TIME_ZONE_INFORMATION
+        Bias As Long
+        StandardName(32) As Integer
+        StandardDate As SystemTime
+        StandardBias As Long
+        DaylightName(32) As Integer
+        DaylightDate As SystemTime
+        DaylightBias As Long
+End Type
+Type WIN32_STREAM_ID
+        dwStreamID As Long
+        dwStreamAttributes As Long
+        dwStreamSizeLow As Long
+        dwStreamSizeHigh As Long
+        dwStreamNameSize As Long
+        cStreamName As Byte
+End Type
+Type STARTUPINFO
+        cb As Long
+        lpReserved As String
+        lpDesktop As String
+        lpTitle As String
+        dwX As Long
+        dwY As Long
+        dwXSize As Long
+        dwYSize As Long
+        dwXCountChars As Long
+        dwYCountChars As Long
+        dwFillAttribute As Long
+        dwFlags As Long
+        wShowWindow As Integer
+        cbReserved2 As Integer
+        lpReserved2 As Byte
+        hStdInput As Long
+        hStdOutput As Long
+        hStdError As Long
+End Type
+Type WIN32_FIND_DATA
+        dwFileAttributes As Long
+        ftCreationTime As FILETIME
+        ftLastAccessTime As FILETIME
+        ftLastWriteTime As FILETIME
+        nFileSizeHigh As Long
+        nFileSizeLow As Long
+        dwReserved0 As Long
+        dwReserved1 As Long
+        cFileName As String * MAX_PATH
+        cAlternate As String * 14
+End Type
+Type CPINFO
+        MaxCharSize As Long
+        DefaultChar(MAX_DEFAULTCHAR) As Byte
+        LeadByte(MAX_LEADBYTES) As Byte
+End Type
+Type NUMBERFMT
+        NumDigits As Long
+        LeadingZero As Long
+        Grouping As Long
+        lpDecimalSep As String
+        lpThousandSep As String
+        NegativeOrder As Long
+End Type
+Type CURRENCYFMT
+        NumDigits As Long
+        LeadingZero As Long
+        Grouping As Long
+        lpDecimalSep As String
+        lpThousandSep As String
+        NegativeOrder As Long
+        PositiveOrder As Long
+        lpCurrencySymbol As String
+End Type
+Type COORD
+        X As Integer
+        Y As Integer
+End Type
+Type SMALL_RECT
+        Left As Integer
+        Top As Integer
+        Right As Integer
+        Bottom As Integer
+End Type
+Type KEY_EVENT_RECORD
+        bKeyDown As Long
+        wRepeatCount As Integer
+        wVirtualKeyCode As Integer
+        wVirtualScanCode As Integer
+        uChar As Integer
+        dwControlKeyState As Long
+End Type
+Type MOUSE_EVENT_RECORD
+        dwMousePosition As COORD
+        dwButtonState As Long
+        dwControlKeyState As Long
+        dwEventFlags As Long
+End Type
+Type WINDOW_BUFFER_SIZE_RECORD
+        dwSize As COORD
+End Type
+Type MENU_EVENT_RECORD
+        dwCommandId As Long
+End Type
+Type FOCUS_EVENT_RECORD
+        bSetFocus As Long
+End Type
+Type CHAR_INFO
+        Char As Integer
+        Attributes As Integer
+End Type
+Type CONSOLE_SCREEN_BUFFER_INFO
+        dwSize As COORD
+        dwCursorPosition As COORD
+        wAttributes As Integer
+        srWindow As SMALL_RECT
+        dwMaximumWindowSize As COORD
+End Type
+Type CONSOLE_CURSOR_INFO
+        dwSize As Long
+        bVisible As Long
+End Type
+Type xform
+        eM11 As Double
+        eM12 As Double
+        eM21 As Double
+        eM22 As Double
+        eDx As Double
+        eDy As Double
+End Type
+Type BITMAP
+        bmType As Long
+        bmWidth As Long
+        bmHeight As Long
+        bmWidthBytes As Long
+        bmPlanes As Integer
+        bmBitsPixel As Integer
+        bmBits As Long
+End Type
+Type RGBTRIPLE
+        rgbtBlue As Byte
+        rgbtGreen As Byte
+        rgbtRed As Byte
+End Type
+Type RGBQUAD
+        rgbBlue As Byte
+        rgbGreen As Byte
+        rgbRed As Byte
+        rgbReserved As Byte
+End Type
+Type BITMAPCOREHEADER
+        bcSize As Long
+        bcWidth As Integer
+        bcHeight As Integer
+        bcPlanes As Integer
+        bcBitCount As Integer
+End Type
+Type BITMAPINFOHEADER
+        biSize As Long
+        biWidth As Long
+        biHeight As Long
+        biPlanes As Integer
+        biBitCount As Integer
+        biCompression As Long
+        biSizeImage As Long
+        biXPelsPerMeter As Long
+        biYPelsPerMeter As Long
+        biClrUsed As Long
+        biClrImportant As Long
+End Type
+Type BITMAPINFO
+        bmiHeader As BITMAPINFOHEADER
+        bmiColors As RGBQUAD
+End Type
+Type BITMAPCOREINFO
+        bmciHeader As BITMAPCOREHEADER
+        bmciColors As RGBTRIPLE
+End Type
+Type BITMAPFILEHEADER
+        bfType As Integer
+        bfSize As Long
+        bfReserved1 As Integer
+        bfReserved2 As Integer
+        bfOffBits As Long
+End Type
+Type HANDLETABLE
+        objectHandle(1) As Long
+End Type
+Type METARECORD
+        rdSize As Long
+        rdFunction As Integer
+        rdParm(1) As Integer
+End Type
+Type METAFILEPICT
+        mm As Long
+        xExt As Long
+        yExt As Long
+        hMF As Long
+End Type
+Type METAHEADER
+        mtType As Integer
+        mtHeaderSize As Integer
+        mtVersion As Integer
+        mtSize As Long
+        mtNoObjects As Integer
+        mtMaxRecord As Long
+        mtNoParameters As Integer
+End Type
+Type ENHMETARECORD
+        iType As Long
+        nSize As Long
+        dParm(1) As Long
+End Type
+Type SIZEL
+    cx As Long
+    cy As Long
+End Type
+Type ENHMETAHEADER
+        iType As Long
+        nSize As Long
+        rclBounds As RECTL
+        rclFrame As RECTL
+        dSignature As Long
+        nVersion As Long
+        nBytes As Long
+        nRecords As Long
+        nHandles As Integer
+        sReserved As Integer
+        nDescription As Long
+        offDescription As Long
+        nPalEntries As Long
+        szlDevice As SIZEL
+        szlMillimeters As SIZEL
+End Type
+Type TEXTMETRIC
+        tmHeight As Long
+        tmAscent As Long
+        tmDescent As Long
+        tmInternalLeading As Long
+        tmExternalLeading As Long
+        tmAveCharWidth As Long
+        tmMaxCharWidth As Long
+        tmWeight As Long
+        tmOverhang As Long
+        tmDigitizedAspectX As Long
+        tmDigitizedAspectY As Long
+        tmFirstChar As Byte
+        tmLastChar As Byte
+        tmDefaultChar As Byte
+        tmBreakChar As Byte
+        tmItalic As Byte
+        tmUnderlined As Byte
+        tmStruckOut As Byte
+        tmPitchAndFamily As Byte
+        tmCharSet As Byte
+End Type
+Type NEWTEXTMETRIC
+        tmHeight As Long
+        tmAscent As Long
+        tmDescent As Long
+        tmInternalLeading As Long
+        tmExternalLeading As Long
+        tmAveCharWidth As Long
+        tmMaxCharWidth As Long
+        tmWeight As Long
+        tmOverhang As Long
+        tmDigitizedAspectX As Long
+        tmDigitizedAspectY As Long
+        tmFirstChar As Byte
+        tmLastChar As Byte
+        tmDefaultChar As Byte
+        tmBreakChar As Byte
+        tmItalic As Byte
+        tmUnderlined As Byte
+        tmStruckOut As Byte
+        tmPitchAndFamily As Byte
+        tmCharSet As Byte
+        ntmFlags As Long
+        ntmSizeEM As Long
+        ntmCellHeight As Long
+        ntmAveWidth As Long
+End Type
+Type PELARRAY
+        paXCount As Long
+        paYCount As Long
+        paXExt As Long
+        paYExt As Long
+        paRGBs As Integer
+End Type
+Type LOGBRUSH
+        lbStyle As Long
+        lbColor As Long
+        lbHatch As Long
+End Type
+Type LOGPEN
+        lopnStyle As Long
+        lopnWidth As POINTAPI
+        lopnColor As Long
+End Type
+Type EXTLOGPEN
+        elpPenStyle As Long
+        elpWidth As Long
+        elpBrushStyle As Long
+        elpColor As Long
+        elpHatch As Long
+        elpNumEntries As Long
+        elpStyleEntry(1) As Long
+End Type
+Type PALETTEENTRY
+        peRed As Byte
+        peGreen As Byte
+        peBlue As Byte
+        peFlags As Byte
+End Type
+Type LOGPALETTE
+        palVersion As Integer
+        palNumEntries As Integer
+        palPalEntry(1) As PALETTEENTRY
+End Type
+Type LOGFONT
+        lfHeight As Long
+        lfWidth As Long
+        lfEscapement As Long
+        lfOrientation As Long
+        lfWeight As Long
+        lfItalic As Byte
+        lfUnderline As Byte
+        lfStrikeOut As Byte
+        lfCharSet As Byte
+        lfOutPrecision As Byte
+        lfClipPrecision As Byte
+        lfQuality As Byte
+        lfPitchAndFamily As Byte
+        lfFaceName(LF_FACESIZE) As Byte
+End Type
+Type NONCLIENTMETRICS
+        cbSize As Long
+        iBorderWidth As Long
+        iScrollWidth As Long
+        iScrollHeight As Long
+        iCaptionWidth As Long
+        iCaptionHeight As Long
+        lfCaptionFont As LOGFONT
+        iSMCaptionWidth As Long
+        iSMCaptionHeight As Long
+        lfSMCaptionFont As LOGFONT
+        iMenuWidth As Long
+        iMenuHeight As Long
+        lfMenuFont As LOGFONT
+        lfStatusFont As LOGFONT
+        lfMessageFont As LOGFONT
+End Type
+Type ENUMLOGFONT
+        elfLogFont As LOGFONT
+        elfFullName(LF_FULLFACESIZE) As Byte
+        elfStyle(LF_FACESIZE) As Byte
+End Type
+Type PANOSE
+        ulculture As Long
+        bFamilyType As Byte
+        bSerifStyle As Byte
+        bWeight As Byte
+        bProportion As Byte
+        bContrast As Byte
+        bStrokeVariation As Byte
+        bArmStyle As Byte
+        bLetterform As Byte
+        bMidline As Byte
+        bXHeight As Byte
+End Type
+Type EXTLOGFONT
+        elfLogFont  As LOGFONT
+        elfFullName(LF_FULLFACESIZE) As Byte
+        elfStyle(LF_FACESIZE) As Byte
+        elfVersion As Long
+        elfStyleSize As Long
+        elfMatch As Long
+        elfReserved As Long
+        elfVendorId(ELF_VENDOR_SIZE) As Byte
+        elfCulture As Long
+        elfPanose As PANOSE
+End Type
+Type DEVMODE
+        dmDeviceName As String * CCHDEVICENAME
+        dmSpecVersion As Integer
+        dmDriverVersion As Integer
+        dmSize As Integer
+        dmDriverExtra As Integer
+        dmFields As Long
+        dmOrientation As Integer
+        dmPaperSize As Integer
+        dmPaperLength As Integer
+        dmPaperWidth As Integer
+        dmScale As Integer
+        dmCopies As Integer
+        dmDefaultSource As Integer
+        dmPrintQuality As Integer
+        dmColor As Integer
+        dmDuplex As Integer
+        dmYResolution As Integer
+        dmTTOption As Integer
+        dmCollate As Integer
+        dmFormName As String * CCHFORMNAME
+        dmUnusedPadding As Integer
+        dmBitsPerPel As Integer
+        dmPelsWidth As Long
+        dmPelsHeight As Long
+        dmDisplayFlags As Long
+        dmDisplayFrequency As Long
+End Type
+Type RGNDATAHEADER
+        dwSize As Long
+        iType As Long
+        nCount As Long
+        nRgnSize As Long
+        rcBound As RECT
+End Type
+Type RgnData
+        rdh As RGNDATAHEADER
+        Buffer As Byte
+End Type
+Type ABC
+        abcA As Long
+        abcB As Long
+        abcC As Long
+End Type
+Type ABCFLOAT
+        abcfA As Double
+        abcfB As Double
+        abcfC As Double
+End Type
+Type OUTLINETEXTMETRIC
+        otmSize As Long
+        otmTextMetrics As TEXTMETRIC
+        otmFiller As Byte
+        otmPanoseNumber As PANOSE
+        otmfsSelection As Long
+        otmfsType As Long
+        otmsCharSlopeRise As Long
+        otmsCharSlopeRun As Long
+        otmItalicAngle As Long
+        otmEMSquare As Long
+        otmAscent As Long
+        otmDescent As Long
+        otmLineGap As Long
+        otmsCapEmHeight As Long
+        otmsXHeight As Long
+        otmrcFontBox As RECT
+        otmMacAscent As Long
+        otmMacDescent As Long
+        otmMacLineGap As Long
+        otmusMinimumPPEM As Long
+        otmptSubscriptSize As POINTAPI
+        otmptSubscriptOffset As POINTAPI
+        otmptSuperscriptSize As POINTAPI
+        otmptSuperscriptOffset As POINTAPI
+        otmsStrikeoutSize As Long
+        otmsStrikeoutPosition As Long
+        otmsUnderscorePosition As Long
+        otmsUnderscoreSize As Long
+        otmpFamilyName As String
+        otmpFaceName As String
+        otmpStyleName As String
+        otmpFullName As String
+End Type
+Type POLYTEXT
+        X As Long
+        Y As Long
+        n As Long
+        lpStr As String
+        uiFlags As Long
+        rcl As RECT
+        pdx As Long
+End Type
+Type FIXED
+        fract As Integer
+        Value As Integer
+End Type
+Type MAT2
+        eM11 As FIXED
+        eM12 As FIXED
+        eM21 As FIXED
+        eM22 As FIXED
+End Type
+Type GLYPHMETRICS
+        gmBlackBoxX As Long
+        gmBlackBoxY As Long
+        gmptGlyphOrigin As POINTAPI
+        gmCellIncX As Integer
+        gmCellIncY As Integer
+End Type
+Type POINTFX
+        X As FIXED
+        Y As FIXED
+End Type
+Type TTPOLYCURVE
+        wType As Integer
+        cpfx As Integer
+        apfx As POINTFX
+End Type
+Type TTPOLYGONHEADER
+        cb As Long
+        dwType As Long
+        pfxStart As POINTFX
+End Type
+Type RASTERIZER_STATUS
+        nSize As Integer
+        wFlags As Integer
+        nLanguageID As Integer
+End Type
+Type ColorAdjustment
+        caSize As Integer
+        caFlags As Integer
+        caIlluminantIndex As Integer
+        caRedGamma As Integer
+        caGreenGamma As Integer
+        caBlueGamma As Integer
+        caReferenceBlack As Integer
+        caReferenceWhite As Integer
+        caContrast As Integer
+        caBrightness As Integer
+        caColorfulness As Integer
+        caRedGreenTint As Integer
+End Type
+Type DOCINFO
+        cbSize As Long
+        lpszDocName As String
+        lpszOutput As String
+End Type
+Type KERNINGPAIR
+        wFirst As Integer
+        wSecond As Integer
+        iKernAmount As Long
+End Type
+Type emr
+        iType As Long
+        nSize As Long
+End Type
+Type emrtext
+        ptlReference As POINTL
+        nchars As Long
+        offString As Long
+        fOptions As Long
+        rcl As RECTL
+        offDx As Long
+End Type
+Type EMRABORTPATH
+        pEmr As emr
+End Type
+Type EMRBEGINPATH
+        pEmr As emr
+End Type
+Type EMRENDPATH
+        pEmr As emr
+End Type
+Type EMRCLOSEFIGURE
+        pEmr As emr
+End Type
+Type EMRFLATTENPATH
+        pEmr As emr
+End Type
+Type EMRWIDENPATH
+        pEmr As emr
+End Type
+Type EMRSETMETARGN
+        pEmr As emr
+End Type
+Type EMREMRSAVEDC
+        pEmr As emr
+End Type
+Type EMRREALIZEPALETTE
+        pEmr As emr
+End Type
+Type EMRSELECTCLIPPATH
+        pEmr As emr
+        iMode As Long
+End Type
+Type EMRSETBKMODE
+        pEmr As emr
+        iMode As Long
+End Type
+Type EMRSETMAPMODE
+        pEmr As emr
+        iMode As Long
+End Type
+Type EMRSETPOLYFILLMODE
+        pEmr As emr
+        iMode As Long
+End Type
+Type EMRSETROP2
+        pEmr As emr
+        iMode As Long
+End Type
+Type EMRSETSTRETCHBLTMODE
+        pEmr As emr
+        iMode As Long
+End Type
+Type EMRSETTEXTALIGN
+        pEmr As emr
+        iMode As Long
+End Type
+Type EMRSETMITERLIMIT
+        pEmr As emr
+        eMiterLimit As Double
+End Type
+Type EMRRESTOREDC
+        pEmr As emr
+        iRelative As Long
+End Type
+Type EMRSETARCDIRECTION
+        pEmr As emr
+        iArcDirection As Long
+End Type
+Type EMRSETMAPPERFLAGS
+        pEmr As emr
+        dwFlags As Long
+End Type
+Type EMRSETTEXTCOLOR
+        pEmr As emr
+        crColor As Long
+End Type
+Type EMRSETBKCOLOR
+        pEmr As emr
+        crColor As Long
+End Type
+Type EMRSELECTOBJECT
+        pEmr As emr
+        ihObject As Long
+End Type
+Type EMRDELETEOBJECT
+        pEmr As emr
+        ihObject As Long
+End Type
+Type EMRSELECTPALETTE
+        pEmr As emr
+        ihPal As Long
+End Type
+Type EMRRESIZEPALETTE
+        pEmr As emr
+        ihPal As Long
+        cEntries As Long
+End Type
+Type EMRSETPALETTEENTRIES
+        pEmr As emr
+        ihPal As Long
+        iStart As Long
+        cEntries As Long
+        aPalEntries(1) As PALETTEENTRY
+End Type
+Type EMRSETCOLORADJUSTMENT
+        pEmr As emr
+        ColorAdjustment As ColorAdjustment
+End Type
+Type EMRGDICOMMENT
+        pEmr As emr
+        cbData As Long
+        Data(1) As Integer
+End Type
+Type EMREOF
+        pEmr As emr
+        nPalEntries As Long
+        offPalEntries As Long
+        nSizeLast As Long
+End Type
+Type EMRLINETO
+        pEmr As emr
+        ptl As POINTL
+End Type
+Type EMRMOVETOEX
+        pEmr As emr
+        ptl As POINTL
+End Type
+Type EMROFFSETCLIPRGN
+        pEmr As emr
+        ptlOffset As POINTL
+End Type
+Type EMRFILLPATH
+        pEmr As emr
+        rclBounds As RECTL
+End Type
+Type EMRSTROKEANDFILLPATH
+        pEmr As emr
+        rclBounds As RECTL
+End Type
+Type EMRSTROKEPATH
+        pEmr As emr
+        rclBounds As RECTL
+End Type
+Type EMREXCLUDECLIPRECT
+        pEmr As emr
+        rclClip As RECTL
+End Type
+Type EMRINTERSECTCLIPRECT
+        pEmr As emr
+        rclClip As RECTL
+End Type
+Type EMRSETVIEWPORTORGEX
+        pEmr As emr
+        ptlOrigin As POINTL
+End Type
+Type EMRSETWINDOWORGEX
+        pEmr As emr
+        ptlOrigin As POINTL
+End Type
+Type EMRSETBRUSHORGEX
+        pEmr As emr
+        ptlOrigin As POINTL
+End Type
+Type EMRSETVIEWPORTEXTEX
+        pEmr As emr
+        szlExtent As SIZEL
+End Type
+Type EMRSETWINDOWEXTEX
+        pEmr As emr
+        szlExtent As SIZEL
+End Type
+Type EMRSCALEVIEWPORTEXTEX
+        pEmr As emr
+        xNum As Long
+        xDenom As Long
+        yNum As Long
+        yDemon As Long
+End Type
+Type EMRSCALEWINDOWEXTEX
+        pEmr As emr
+        xNum As Long
+        xDenom As Long
+        yNum As Long
+        yDemon As Long
+End Type
+Type EMRSETWORLDTRANSFORM
+        pEmr As emr
+        xform As xform
+End Type
+Type EMRMODIFYWORLDTRANSFORM
+        pEmr As emr
+        xform As xform
+        iMode As Long
+End Type
+Type EMRSETPIXELV
+        pEmr As emr
+        ptlPixel As POINTL
+        crColor As Long
+End Type
+Type EMREXTFLOODFILL
+        pEmr As emr
+        ptlStart As POINTL
+        crColor As Long
+        iMode As Long
+End Type
+Type EMRELLIPSE
+        pEmr As emr
+        rclBox As RECTL
+End Type
+Type EMRRECTANGLE
+        pEmr As emr
+        rclBox As RECTL
+End Type
+Type EMRROUNDRECT
+        pEmr As emr
+        rclBox As RECTL
+        szlCorner As SIZEL
+End Type
+Type EMRARC
+        pEmr As emr
+        rclBox As RECTL
+        ptlStart As POINTL
+        ptlEnd As POINTL
+End Type
+Type EMRARCTO
+        pEmr As emr
+        rclBox As RECTL
+        ptlStart As POINTL
+        ptlEnd As POINTL
+End Type
+Type EMRCHORD
+        pEmr As emr
+        rclBox As RECTL
+        ptlStart As POINTL
+        ptlEnd As POINTL
+End Type
+Type EMRPIE
+        pEmr As emr
+        rclBox As RECTL
+        ptlStart As POINTL
+        ptlEnd As POINTL
+End Type
+Type EMRANGLEARC
+        pEmr As emr
+        ptlCenter As POINTL
+        nRadius As Long
+        eStartAngle As Double
+        eSweepAngle As Double
+End Type
+Type EMRPOLYLINE
+        pEmr As emr
+        rclBounds As RECTL
+        cptl As Long
+        aptl(1) As POINTL
+End Type
+Type EMRPOLYBEZIER
+        pEmr As emr
+        rclBounds As RECTL
+        cptl As Long
+        aptl(1) As POINTL
+End Type
+Type EMRPOLYGON
+        pEmr As emr
+        rclBounds As RECTL
+        cptl As Long
+        aptl(1) As POINTL
+End Type
+Type EMRPOLYBEZIERTO
+        pEmr As emr
+        rclBounds As RECTL
+        cptl As Long
+        aptl(1) As POINTL
+End Type
+Type EMRPOLYLINE16
+        pEmr As emr
+        rclBounds As RECTL
+        cpts As Long
+        apts(1) As POINTS
+End Type
+Type EMRPOLYBEZIER16
+        pEmr As emr
+        rclBounds As RECTL
+        cpts As Long
+        apts(1) As POINTS
+End Type
+Type EMRPOLYGON16
+        pEmr As emr
+        rclBounds As RECTL
+        cpts As Long
+        apts(1) As POINTS
+End Type
+Type EMRPLOYBEZIERTO16
+        pEmr As emr
+        rclBounds As RECTL
+        cpts As Long
+        apts(1) As POINTS
+End Type
+Type EMRPOLYLINETO16
+        pEmr As emr
+        rclBounds As RECTL
+        cpts As Long
+        apts(1) As POINTS
+End Type
+Type EMRPOLYDRAW
+        pEmr As emr
+        rclBounds As RECTL
+        cptl As Long
+        aptl(1) As POINTL
+        abTypes(1) As Integer
+End Type
+Type EMRPOLYDRAW16
+        pEmr As emr
+        rclBounds As RECTL
+        cpts As Long
+        apts(1) As POINTS
+        abTypes(1) As Integer
+End Type
+Type EMRPOLYPOLYLINE
+        pEmr As emr
+        rclBounds As RECTL
+        nPolys As Long
+        cptl As Long
+        aPolyCounts(1) As Long
+        aptl(1) As POINTL
+End Type
+Type EMRPOLYPOLYGON
+        pEmr As emr
+        rclBounds As RECTL
+        nPolys As Long
+        cptl As Long
+        aPolyCounts(1) As Long
+        aptl(1) As POINTL
+End Type
+Type EMRPOLYPOLYLINE16
+        pEmr As emr
+        rclBounds As RECTL
+        nPolys As Long
+        cpts As Long
+        aPolyCounts(1) As Long
+        apts(1) As POINTS
+End Type
+Type EMRPOLYPOLYGON16
+        pEmr As emr
+        rclBounds As RECTL
+        nPolys As Long
+        cpts As Long
+        aPolyCounts(1) As Long
+        apts(1) As POINTS
+End Type
+Type EMRINVERTRGN
+        pEmr As emr
+        rclBounds As RECTL
+        cbRgnData As Long
+        RgnData(1) As Integer
+End Type
+Type EMRPAINTRGN
+        pEmr As emr
+        rclBounds As RECTL
+        cbRgnData As Long
+        RgnData(1) As Integer
+End Type
+Type EMRFILLRGN
+        pEmr As emr
+        rclBounds As RECTL
+        cbRgnData As Long
+        ihBrush As Long
+        RgnData(1) As Integer
+End Type
+Type EMRFRAMERGN
+        pEmr As emr
+        rclBounds As RECTL
+        cbRgnData As Long
+        ihBrush As Long
+        szlStroke As SIZEL
+        RgnData(1) As Integer
+End Type
+Type EMREXTSELECTCLIPRGN
+        pEmr As emr
+        cbRgnData As Long
+        iMode As Long
+        RgnData(1) As Integer
+End Type
+Type EMREXTTEXTOUT
+        pEmr As emr
+        rclBounds As RECTL
+        iGraphicsMode As Long
+        exScale As Double
+        eyScale As Double
+        emrtext As emrtext
+End Type
+Type EMRBITBLT
+        pEmr As emr
+        rclBounds As RECTL
+        xDest As Long
+        yDest As Long
+        cxDest As Long
+        cyDest As Long
+        dwRop As Long
+        xSrc As Long
+        ySrc As Long
+        xformSrc As xform
+        crBkColorSrc As Long
+        iUsageSrc As Long
+        offBmiSrc As Long
+        cbBmiSrc As Long
+        offBitsSrc As Long
+        cbBitsSrc As Long
+End Type
+Type EMRSTRETCHBLT
+        pEmr As emr
+        rclBounds As RECTL
+        xDest As Long
+        yDest As Long
+        cxDest As Long
+        cyDest As Long
+        dwRop As Long
+        xSrc As Long
+        ySrc As Long
+        xformSrc As xform
+        crBkColorSrc As Long
+        iUsageSrc As Long
+        offBmiSrc As Long
+        cbBmiSrc As Long
+        offBitsSrc As Long
+        cbBitsSrc As Long
+        cxSrc As Long
+        cySrc As Long
+End Type
+Type EMRMASKBLT
+        pEmr As emr
+        rclBounds As RECTL
+        xDest As Long
+        yDest As Long
+        cxDest As Long
+        cyDest As Long
+        dwRop As Long
+        xSrc2 As Long
+        cyDest2 As Long
+        dwRop2 As Long
+        xSrc As Long
+        ySrc As Long
+        xformSrc As xform
+        crBkColorSrc As Long
+        iUsageSrc As Long
+        offBmiSrc As Long
+        cbBmiSrc As Long
+        offBitsSrc As Long
+        cbBitsSrc As Long
+        xMask As Long
+        yMask As Long
+        iUsageMask As Long
+        offBmiMask As Long
+        cbBmiMask As Long
+        offBitsMask As Long
+        cbBitsMask As Long
+End Type
+Type EMRPLGBLT
+        pEmr As emr
+        rclBounds As RECTL
+        aptlDest(3) As POINTL
+        xSrc As Long
+        ySrc As Long
+        cxSrc As Long
+        cySrc As Long
+        xformSrc As xform
+        crBkColorSrc As Long
+        iUsageSrc As Long
+        offBmiSrc As Long
+        cbBmiSrc As Long
+        offBitsSrc As Long
+        cbBitsSrc As Long
+        xMask As Long
+        yMask As Long
+        iUsageMask As Long
+        offBmiMask As Long
+        cbBmiMask As Long
+        offBitsMask As Long
+        cbBitsMask As Long
+End Type
+Type EMRSETDIBITSTODEVICE
+        pEmr As emr
+        rclBounds As RECTL
+        xDest As Long
+        yDest As Long
+        xSrc As Long
+        ySrc As Long
+        cxSrc As Long
+        cySrc As Long
+        offBmiSrc As Long
+        cbBmiSrc As Long
+        offBitsSrc As Long
+        cbBitsSrc As Long
+        iUsageSrc As Long
+        iStartScan As Long
+        cScans As Long
+End Type
+Type EMRSTRETCHDIBITS
+        pEmr As emr
+        rclBounds As RECTL
+        xDest As Long
+        yDest As Long
+        xSrc As Long
+        ySrc As Long
+        cxSrc As Long
+        cySrc As Long
+        offBmiSrc As Long
+        cbBmiSrc As Long
+        offBitsSrc As Long
+        cbBitsSrc As Long
+        iUsageSrc As Long
+        dwRop As Long
+        cxDest As Long
+        cyDest As Long
+End Type
+Type EMREXTCREATEFONTINDIRECT
+        pEmr As emr
+        ihFont As Long
+        elfw As EXTLOGFONT
+End Type
+Type EMRCREATEPALETTE
+        pEmr As emr
+        ihPal As Long
+        lgpl As LOGPALETTE
+End Type
+Type EMRCREATEPEN
+        pEmr As emr
+        ihPen As Long
+        lopn As LOGPEN
+End Type
+Type EMREXTCREATEPEN
+        pEmr As emr
+        ihPen As Long
+        offBmi As Long
+        cbBmi As Long
+        offBits As Long
+        cbBits As Long
+        elp As EXTLOGPEN
+End Type
+Type EMRCREATEBRUSHINDIRECT
+        pEmr As emr
+        ihBrush As Long
+        lb As LOGBRUSH
+End Type
+Type EMRCREATEMONOBRUSH
+        pEmr As emr
+        ihBrush As Long
+        iUsage As Long
+        offBmi As Long
+        cbBmi As Long
+        offBits As Long
+        cbBits As Long
+End Type
+Type EMRCREATEDIBPATTERNBRUSHPT
+        pEmr As emr
+        ihBursh As Long
+        iUsage As Long
+        offBmi As Long
+        cbBmi As Long
+        offBits As Long
+        cbBits As Long
+End Type
+Type BITMAPV4HEADER
+        bV4Size As Long
+        bV4Width As Long
+        bV4Height As Long
+        bV4Planes As Integer
+        bV4BitCount As Integer
+        bV4V4Compression As Long
+        bV4SizeImage As Long
+        bV4XPelsPerMeter As Long
+        bV4YPelsPerMeter As Long
+        bV4ClrUsed As Long
+        bV4ClrImportant As Long
+        bV4RedMask As Long
+        bV4GreenMask As Long
+        bV4BlueMask As Long
+        bV4AlphaMask As Long
+        bV4CSType As Long
+        bV4Endpoints As Long
+        bV4GammaRed As Long
+        bV4GammaGreen As Long
+        bV4GammaBlue As Long
+End Type
+Type FONTSIGNATURE
+        fsUsb(4) As Long
+        fsCsb(2) As Long
+End Type
+Type CHARSETINFO
+        ciCharset As Long
+        ciACP As Long
+        fs As FONTSIGNATURE
+End Type
+Type LOCALESIGNATURE
+        lsUsb(4) As Long
+        lsCsbDefault(2) As Long
+        lsCsbSupported(2) As Long
+End Type
+Type NEWTEXTMETRICEX
+        ntmTm As NEWTEXTMETRIC
+        ntmFontSig As FONTSIGNATURE
+End Type
+Type ENUMLOGFONTEX
+        elfLogFont As LOGFONT
+        elfFullName(LF_FULLFACESIZE) As Byte
+        elfStyle(LF_FACESIZE) As Byte
+        elfScript(LF_FACESIZE) As Byte
+End Type
+Type GCP_RESULTS
+        lStructSize As Long
+        lpOutString As String
+        lpOrder As Long
+        lpDX As Long
+        lpCaretPos As Long
+        lpClass As String
+        lpGlyphs As String
+        nGlyphs As Long
+        nMaxFit As Long
+End Type
+Type CIEXYZ
+    ciexyzX As Long
+    ciexyzY As Long
+    ciexyzZ As Long
+End Type
+Type CIEXYZTRIPLE
+    ciexyzRed As CIEXYZ
+    ciexyzGreen As CIEXYZ
+    ciexyBlue As CIEXYZ
+End Type
+Type LOGCOLORSPACE
+    lcsSignature As Long
+    lcsVersion As Long
+    lcsSize As Long
+    lcsCSType As Long
+    lcsIntent As Long
+    lcsEndPoints As CIEXYZTRIPLE
+    lcsGammaRed As Long
+    lcsGammaGreen As Long
+    lcsGammaBlue As Long
+    lcsFileName As String * MAX_PATH
+End Type
+Type EMRSELECTCOLORSPACE
+        pEmr As emr
+        ihCS As Long
+End Type
+Type EMRCREATECOLORSPACE
+        pEmr As emr
+        ihCS As Long
+        lcs As LOGCOLORSPACE
+End Type
+Type CBTACTIVATESTRUCT
+        fMouse As Long
+        hWndActive As Long
+End Type
+Type EVENTMSG
+        message As Long
+        paramL As Long
+        paramH As Long
+        time As Long
+        hwnd As Long
+End Type
+Type CWPSTRUCT
+        lParam As Long
+        wParam As Long
+        message As Long
+        hwnd As Long
+End Type
+Type DEBUGHOOKINFO
+        hModuleHook As Long
+        Reserved As Long
+        lParam As Long
+        wParam As Long
+        code As Long
+End Type
+
+Type MOUSEHOOKSTRUCT
+        pt As POINTAPI
+        hwnd As Long
+        wHitTestCode As Long
+        dwExtraInfo As Long
+End Type
+Type MINMAXINFO
+        ptReserved As POINTAPI
+        ptMaxSize As POINTAPI
+        ptMaxPosition As POINTAPI
+        ptMinTrackSize As POINTAPI
+        ptMaxTrackSize As POINTAPI
+End Type
+Type COPYDATASTRUCT
+        dwData As Long
+        cbData As Long
+        lpData As Long
+End Type
+Type WINDOWPOS
+        hwnd As Long
+        hWndInsertAfter As Long
+        X As Long
+        Y As Long
+        cx As Long
+        cy As Long
+        Flags As Long
+End Type
+Type ACCEL
+        fVirt As Byte
+        key As Integer
+        cmd As Integer
+End Type
+Type PAINTSTRUCT
+        hdc As Long
+        fErase As Long
+        rcPaint As RECT
+        fRestore As Long
+        fIncUpdate As Long
+        rgbReserved As Byte
+End Type
+Type CREATESTRUCT
+        lpCreateParams As Long
+        hInstance As Long
+        hMenu As Long
+        hwndParent As Long
+        cy As Long
+        cx As Long
+        Y As Long
+        X As Long
+        style As Long
+        lpszName As String
+        lpszClass As String
+        ExStyle As Long
+End Type
+Type CBT_CREATEWND
+        lpcs As CREATESTRUCT
+        hWndInsertAfter As Long
+End Type
+Type WINDOWPLACEMENT
+        Length As Long
+        Flags As Long
+        showCmd As Long
+        ptMinPosition As POINTAPI
+        ptMaxPosition As POINTAPI
+        rcNormalPosition As RECT
+End Type
+Type MEASUREITEMSTRUCT
+        CtlType As Long
+        CtlID As Long
+        itemID As Long
+        itemWidth As Long
+        itemHeight As Long
+        itemData As Long
+End Type
+Type DRAWITEMSTRUCT
+        CtlType As Long
+        CtlID As Long
+        itemID As Long
+        itemAction As Long
+        itemState As Long
+        hwndItem As Long
+        hdc As Long
+        rcItem As RECT
+        itemData As Long
+End Type
+Type DELETEITEMSTRUCT
+        CtlType As Long
+        CtlID As Long
+        itemID As Long
+        hwndItem As Long
+        itemData As Long
+End Type
+Type COMPAREITEMSTRUCT
+        CtlType As Long
+        CtlID As Long
+        hwndItem As Long
+        itemID1 As Long
+        itemData1 As Long
+        itemID2 As Long
+        itemData2 As Long
+End Type
+Type WNDCLASS
+    style As Long
+    lpfnWndProc As Long
+    cbClsExtra As Long
+    cbWndExtra2 As Long
+    hInstance As Long
+    hIcon As Long
+    hCursor As Long
+    hbrBackground As Long
+    lpszMenuName As String
+    lpszClassName As String
+End Type
+Type DLGTEMPLATE
+        style As Long
+        dwExtendedStyle As Long
+        cdit As Integer
+        X As Integer
+        Y As Integer
+        cx As Integer
+        cy As Integer
+End Type
+Type DLGITEMTEMPLATE
+        style As Long
+        dwExtendedStyle As Long
+        X As Integer
+        Y As Integer
+        cx As Integer
+        cy As Integer
+        id As Integer
+End Type
+Type MENUITEMTEMPLATEHEADER
+        versionNumber As Integer
+        offset As Integer
+End Type
+Type MENUITEMTEMPLATE
+        mtOption As Integer
+        mtID As Integer
+        mtString As Byte
+End Type
+Type ICONINFO
+        fIcon As Long
+        xHotspot As Long
+        yHotspot As Long
+        hbmMask As Long
+        hbmColor As Long
+End Type
+Type MDICREATESTRUCT
+        szClass As String
+        szTitle As String
+        hOwner As Long
+        X As Long
+        Y As Long
+        cx As Long
+        cy As Long
+        style As Long
+        lParam As Long
+End Type
+Type CLIENTCREATESTRUCT
+        hWindowMenu As Long
+        idFirstChild As Long
+End Type
+Type MULTIKEYHELP
+        mkSize As Long
+        mkKeylist As Byte
+        szKeyphrase As String * 253
+End Type
+Type HELPWININFO
+        wStructSize As Long
+        X As Long
+        Y As Long
+        dx As Long
+        dy As Long
+        wMax As Long
+        rgchMember As String * 2
+End Type
+Type DDEACK
+        bAppReturnCode As Integer
+        Reserved As Integer
+        fbusy As Integer
+        fAck As Integer
+End Type
+Type DDEADVISE
+        Reserved As Integer
+        fDeferUpd As Integer
+        fAckReq As Integer
+        cfFormat As Integer
+End Type
+Type DDEDATA
+        unused As Integer
+        fresponse As Integer
+        fRelease As Integer
+        Reserved As Integer
+        fAckReq As Integer
+        cfFormat As Integer
+        Value(1) As Byte
+End Type
+Type DDEPOKE
+        unused As Integer
+        fRelease As Integer
+        fReserved As Integer
+        cfFormat As Integer
+        Value(1) As Byte
+End Type
+Type DDELN
+        unused As Integer
+        fRelease As Integer
+        fDeferUpd As Integer
+        fAckReq As Integer
+        cfFormat As Integer
+End Type
+Type DDEUP
+        unused As Integer
+        fAck As Integer
+        fRelease As Integer
+        fReserved As Integer
+        fAckReq As Integer
+        cfFormat As Integer
+        rgb(1) As Byte
+End Type
+Type HSZPAIR
+        hszSvc As Long
+        hszTopic As Long
+End Type
+Type SECURITY_QUALITY_OF_SERVICE
+    Length As Long
+    Impersonationlevel As Integer
+    ContextTrackingMode As Integer
+    EffectiveOnly As Long
+End Type
+   
+Type CONVCONTEXT
+        cb As Long
+        wFlags As Long
+        wCountryID As Long
+        iCodePage As Long
+        dwLangID As Long
+        dwSecurity As Long
+        qos As SECURITY_QUALITY_OF_SERVICE
+End Type
+Type CONVINFO
+        cb As Long
+        hUser As Long
+        hConvPartner As Long
+        hszSvcPartner As Long
+        hszServiceReq As Long
+        hszTopic As Long
+        hszItem As Long
+        wFmt As Long
+        wType As Long
+        wStatus As Long
+        wConvst As Long
+        wLastError As Long
+        hConvList As Long
+        ConvCtxt As CONVCONTEXT
+        hwnd As Long
+        hwndPartner As Long
+End Type
+Type DDEML_MSG_HOOK_DATA
+        uiLo As Long
+        uiHi As Long
+        cbData As Long
+        Data(8) As Long
+End Type
+Type MONMSGSTRUCT
+        cb As Long
+        hwndTo As Long
+        dwTime As Long
+        htask As Long
+        wMsg As Long
+        wParam As Long
+        lParam As Long
+        dmhd As DDEML_MSG_HOOK_DATA
+End Type
+Type MONCBSTRUCT
+        cb As Long
+        dwTime As Long
+        htask As Long
+        dwRet As Long
+        wType As Long
+        wFmt As Long
+        hConv As Long
+        hsz1 As Long
+        hsz2 As Long
+        hData As Long
+        dwData1 As Long
+        dwData2 As Long
+        cc As CONVCONTEXT
+        cbData As Long
+        Data(8) As Long
+End Type
+Type MONHSZSTRUCT
+        cb As Long
+        fsAction As Long
+        dwTime As Long
+        hsz As Long
+        htask As Long
+        str As Byte
+End Type
+Type MONERRSTRUCT
+        cb As Long
+        wLastError As Long
+        dwTime As Long
+        htask As Long
+End Type
+Type MONLINKSTRUCT
+        cb As Long
+        dwTime As Long
+        htask As Long
+        fEstablished As Long
+        fNoData As Long
+        hszSvc As Long
+        hszTopic As Long
+        hszItem As Long
+        wFmt As Long
+        fServer As Long
+        hConvServer As Long
+        hConvClient As Long
+End Type
+Type MONCONVSTRUCT
+        cb As Long
+        fConnect As Long
+        dwTime As Long
+        htask As Long
+        hszSvc As Long
+        hszTopic As Long
+        hConvClient As Long
+        hConvServer As Long
+End Type
+Type smpte
+        hour As Byte
+        min As Byte
+        sec As Byte
+        frame As Byte
+        fps As Byte
+        dummy As Byte
+        pad(2) As Byte
+End Type
+Type midi
+        songptrpos As Long
+End Type
+Type MMTIME
+        wType As Long
+        u As Long
+End Type
+Type MIDIEVENT
+        dwDeltaTime As Long
+        dwStreamID As Long
+        dwEvent As Long
+        dwParms(1) As Long
+End Type
+Type MIDISTRMBUFFVER
+        dwVersion As Long
+        dwMid As Long
+        dwOEMVersion As Long
+End Type
+Type MIDIPROPTIMEDIV
+        cbStruct As Long
+        dwTimeDiv As Long
+End Type
+Type MIDIPROPTEMPO
+        cbStruct As Long
+        dwTempo As Long
+End Type
+Type MIXERCAPS
+        wMid As Integer
+        wPid As Integer
+        vDriverVersion As Long
+        szPname As String * MAXPNAMELEN
+        fdwSupport As Long
+        cDestinations As Long
+End Type
+Type Target
+       
+        dwType As Long
+        dwDeviceID As Long
+        wMid As Integer
+        wPid As Integer
+        vDriverVersion As Long
+        szPname As String * MAXPNAMELEN
+End Type
+Type MIXERLINE
+        cbStruct As Long
+        dwDestination As Long
+        dwSource As Long
+        dwLineID As Long
+        fdwLine As Long
+        dwUser As Long
+        dwComponentType As Long
+        cChannels As Long
+        cConnections As Long
+        cControls As Long
+        szShortName As String * MIXER_SHORT_NAME_CHARS
+        szName As String * MIXER_LONG_NAME_CHARS
+        lpTarget As Target
+End Type
+Type MIXERCONTROL
+        cbStruct As Long
+        dwControlID As Long
+        dwControlType As Long
+        fdwControl As Long
+        cMultipleItems As Long
+        szShortName As String * MIXER_SHORT_NAME_CHARS
+        szName As String * MIXER_LONG_NAME_CHARS
+        Bounds As Double
+        Metrics As Long
+End Type
+Type MIXERLINECONTROLS
+        cbStruct As Long
+        dwLineID As Long
+        dwControl As Long
+        cControls As Long
+        cbmxctrl As Long
+        pamxctrl As MIXERCONTROL
+End Type
+Type MIXERCONTROLDETAILS
+        cbStruct As Long
+        dwControlID As Long
+        cChannels As Long
+        item As Long
+        cbDetails As Long
+        paDetails As Long
+End Type
+Type MIXERCONTROLDETAILS_LISTTEXT
+        dwParam1 As Long
+        dwParam2 As Long
+        szName As String * MIXER_LONG_NAME_CHARS
+End Type
+Type MIXERCONTROLDETAILS_BOOLEAN
+        fValue As Long
+End Type
+Type MIXERCONTROLDETAILS_SIGNED
+        lValue As Long
+End Type
+Type MIXERCONTROLDETAILS_UNSIGNED
+        dwValue As Long
+End Type
+Type JOYINFOEX
+        dwSize As Long
+        dwFlags As Long
+        dwXpos As Long
+        dwYpos As Long
+        dwZpos As Long
+        dwRpos As Long
+        dwUpos As Long
+        dwVpos As Long
+        dwButtons As Long
+        dwButtonNumber As Long
+        dwPOV As Long
+        dwReserved1 As Long
+        dwReserved2 As Long
+End Type
+Type DRVCONFIGINFO
+        dwDCISize As Long
+        lpszDCISectionName As String
+        lpszDCIAliasName As String
+        dnDevNode As Long
+End Type
+Type WAVEHDR
+        lpData As String
+        dwBufferLength As Long
+        dwBytesRecorded As Long
+        dwUser As Long
+        dwFlags As Long
+        dwLoops As Long
+        lpNext As Long
+        Reserved As Long
+End Type
+Type WAVEOUTCAPS
+        wMid As Integer
+        wPid As Integer
+        vDriverVersion As Long
+        szPname As String * MAXPNAMELEN
+        dwFormats As Long
+        wChannels As Integer
+        dwSupport As Long
+End Type
+Type WAVEINCAPS
+        wMid As Integer
+        wPid As Integer
+        vDriverVersion As Long
+        szPname As String * MAXPNAMELEN
+        dwFormats As Long
+        wChannels As Integer
+End Type
+Type WAVEFORMAT
+        wFormatTag As Integer
+        nChannels As Integer
+        nSamplesPerSec As Long
+        nAvgBytesPerSec As Long
+        nBlockAlign As Integer
+End Type
+Type PCMWAVEFORMAT
+        wf As WAVEFORMAT
+        wBitsPerSample As Integer
+End Type
+Type MIDIOUTCAPS
+        wMid As Integer
+        wPid As Integer
+        vDriverVersion As Long
+        szPname As String * MAXPNAMELEN
+        wTechnology As Integer
+        wVoices As Integer
+        wNotes As Integer
+        wChannelMask As Integer
+        dwSupport As Long
+End Type
+Type MIDIINCAPS
+        wMid As Integer
+        wPid As Integer
+        vDriverVersion As Long
+        szPname As String * MAXPNAMELEN
+End Type
+Type MIDIHDR
+        lpData As String
+        dwBufferLength As Long
+        dwBytesRecorded As Long
+        dwUser As Long
+        dwFlags As Long
+        lpNext As Long
+        Reserved As Long
+End Type
+Type AUXCAPS
+        wMid As Integer
+        wPid As Integer
+        vDriverVersion As Long
+        szPname As String * MAXPNAMELEN
+        wTechnology As Integer
+        dwSupport As Long
+End Type
+Type TIMECAPS
+        wPeriodMin As Long
+        wPeriodMax As Long
+End Type
+Type JOYCAPS
+        wMid As Integer
+        wPid As Integer
+        szPname As String * MAXPNAMELEN
+        wXmin As Integer
+        wXmax As Integer
+        wYmin As Integer
+        wYmax As Integer
+        wZmin As Integer
+        wZmax As Integer
+        wNumButtons As Integer
+        wPeriodMin As Integer
+        wPeriodMax As Integer
+End Type
+Type JOYINFO
+        wXpos As Integer
+        wYpos As Integer
+        wZpos As Integer
+        wButtons As Integer
+End Type
+Type MMIOINFO
+        dwFlags As Long
+        fccIOProc As Long
+        pIOProc As Long
+        wErrorRet As Long
+        htask As Long
+        cchBuffer As Long
+        pchBuffer As String
+        pchNext As String
+        pchEndRead As String
+        pchEndWrite As String
+        lBufOffset As Long
+        lDiskOffset As Long
+        adwInfo(4) As Long
+        dwReserved1 As Long
+        dwReserved2 As Long
+        hmmio As Long
+End Type
+Type MMCKINFO
+    ckid As Long
+    ckSize As Long
+    fccType As Long
+    dwDataOffset As Long
+    dwFlags As Long
+End Type
+Type MCI_GENERIC_PARMS
+        dwCallback As Long
+End Type
+Type MCI_OPEN_PARMS
+        dwCallback As Long
+        wDeviceID As Long
+        lpstrDeviceType As String
+        lpstrElementName As String
+        lpstrAlias As String
+End Type
+Type MCI_PLAY_PARMS
+        dwCallback As Long
+        dwFrom As Long
+        dwTo As Long
+End Type
+Type MCI_SEEK_PARMS
+        dwCallback As Long
+        dwTo As Long
+End Type
+Type MCI_STATUS_PARMS
+        dwCallback As Long
+        dwReturn As Long
+        dwItem As Long
+        dwTrack As Integer
+End Type
+Type MCI_INFO_PARMS
+        dwCallback As Long
+        lpstrReturn As String
+        dwRetSize As Long
+End Type
+Type MCI_GETDEVCAPS_PARMS
+        dwCallback As Long
+        dwReturn As Long
+        dwIten As Long
+End Type
+Type MCI_SYSINFO_PARMS
+        dwCallback As Long
+        lpstrReturn As String
+        dwRetSize As Long
+        dwNumber As Long
+        wDeviceType As Long
+End Type
+Type MCI_SET_PARMS
+        dwCallback As Long
+        dwTimeFormat As Long
+        dwAudio As Long
+End Type
+Type MCI_BREAK_PARMS
+        dwCallback As Long
+        nVirtKey As Long
+        hwndBreak As Long
+End Type
+Type MCI_SOUND_PARMS
+        dwCallback As Long
+        lpstrSoundName As String
+End Type
+Type MCI_SAVE_PARMS
+        dwCallback As Long
+        lpFileName As String
+End Type
+Type MCI_LOAD_PARMS
+        dwCallback As Long
+        lpFileName As String
+End Type
+Type MCI_RECORD_PARMS
+        dwCallback As Long
+        dwFrom As Long
+        dwTo As Long
+End Type
+Type MCI_VD_PLAY_PARMS
+        dwCallback As Long
+        dwFrom As Long
+        dwTo As Long
+        dwSpeed As Long
+End Type
+Type MCI_VD_STEP_PARMS
+        dwCallback As Long
+        dwFrames As Long
+End Type
+Type MCI_VD_ESCAPE_PARMS
+        dwCallback As Long
+        lpstrCommand As String
+End Type
+Type MCI_WAVE_OPEN_PARMS
+        dwCallback As Long
+        wDeviceID As Long
+        lpstrDeviceType As String
+        lpstrElementName As String
+        lpstrAlias As String
+        dwBufferSeconds As Long
+End Type
+Type MCI_WAVE_DELETE_PARMS
+        dwCallback As Long
+        dwFrom As Long
+        dwTo As Long
+End Type
+Type MCI_WAVE_SET_PARMS
+        dwCallback As Long
+        dwTimeFormat As Long
+        dwAudio As Long
+        wInput As Long
+        wOutput As Long
+        wFormatTag As Integer
+        wReserved2 As Integer
+        nChannels As Integer
+        wReserved3 As Integer
+        nSamplesPerSec As Long
+        nAvgBytesPerSec As Long
+        nBlockAlign As Integer
+        wReserved4 As Integer
+        wBitsPerSample As Integer
+        wReserved5 As Integer
+End Type
+Type MCI_SEQ_SET_PARMS
+        dwCallback As Long
+        dwTimeFormat As Long
+        dwAudio As Long
+        dwTempo As Long
+        dwPort As Long
+        dwSlave As Long
+        dwMaster As Long
+        dwOffset As Long
+End Type
+Type MCI_ANIM_OPEN_PARMS
+        dwCallback As Long
+        wDeviceID As Long
+        lpstrDeviceType As String
+        lpstrElementName As String
+        lpstrAlias As String
+        dwStyle As Long
+        hwndParent As Long
+End Type
+Type MCI_ANIM_PLAY_PARMS
+        dwCallback As Long
+        dwFrom As Long
+        dwTo As Long
+        dwSpeed As Long
+End Type
+Type MCI_ANIM_STEP_PARMS
+        dwCallback As Long
+        dwFrames As Long
+End Type
+Type MCI_ANIM_WINDOW_PARMS
+        dwCallback As Long
+        hwnd As Long
+        nCmdShow As Long
+        lpstrText As String
+End Type
+Type MCI_ANIM_RECT_PARMS
+        dwCallback As Long
+        rc As RECT
+End Type
+Type MCI_ANIM_UPDATE_PARMS
+        dwCallback As Long
+        rc As RECT
+        hdc As Long
+End Type
+Type MCI_OVLY_OPEN_PARMS
+        dwCallback As Long
+        wDeviceID As Long
+        lpstrDeviceType As String
+        lpstrElementName As String
+        lpstrAlias As String
+        dwStyle As Long
+        hwndParent As Long
+End Type
+Type MCI_OVLY_WINDOW_PARMS
+        dwCallback As Long
+        hwnd As Long
+        nCmdShow As Long
+        lpstrText As String
+End Type
+Type MCI_OVLY_RECT_PARMS
+        dwCallback As Long
+        rc As RECT
+End Type
+Type MCI_OVLY_SAVE_PARMS
+        dwCallback As Long
+        lpFileName As String
+        rc As RECT
+End Type
+Type MCI_OVLY_LOAD_PARMS
+        dwCallback As Long
+        lpFileName As String
+        rc As RECT
+End Type
+Type PRINTER_INFO_1
+        Flags As Long
+        pDescription As String
+        pName As String
+        pComment As String
+End Type
+Type PRINTER_INFO_2
+        pServerName As String
+        pPrinterName As String
+        pShareName As String
+        pPortName As String
+        pDriverName As String
+        pComment As String
+        pLocation As String
+        pDevmode As DEVMODE
+        pSepFile As String
+        pPrintProcessor As String
+        pDatatype As String
+        pParameters As String
+        pSecurityDescriptor As SECURITY_DESCRIPTOR
+        Attributes As Long
+        Priority As Long
+        DefaultPriority As Long
+        StartTime As Long
+        UntilTime As Long
+        Status As Long
+        cJobs As Long
+        AveragePPM As Long
+End Type
+Type PRINTER_INFO_3
+        pSecurityDescriptor As SECURITY_DESCRIPTOR
+End Type
+Type JOB_INFO_1
+        JobId As Long
+        pPrinterName As String
+        pMachineName As String
+        pUserName As String
+        pDocument As String
+        pDatatype As String
+        pStatus As String
+        Status As Long
+        Priority As Long
+        Position As Long
+        TotalPages As Long
+        PagesPrinted As Long
+        Submitted As SystemTime
+End Type
+Type JOB_INFO_2
+        JobId As Long
+        pPrinterName As String
+        pMachineName As String
+        pUserName As String
+        pDocument As String
+        pNotifyName As String
+        pDatatype As String
+        pPrintProcessor As String
+        pParameters As String
+        pDriverName As String
+        pDevmode As DEVMODE
+        pStatus As String
+        pSecurityDescriptor As SECURITY_DESCRIPTOR
+        Status As Long
+        Priority As Long
+        Position As Long
+        StartTime As Long
+        UntilTime As Long
+        TotalPages As Long
+        Size As Long
+        Submitted As SystemTime
+        time As Long
+        PagesPrinted As Long
+End Type
+Type ADDJOB_INFO_1
+        path As String
+        JobId As Long
+End Type
+Type DRIVER_INFO_1
+        pName As String
+End Type
+Type DRIVER_INFO_2
+        cVersion As Long
+        pName As String
+        pEnvironment As String
+        pDriverPath As String
+        pDataFile As String
+        pConfigFile As String
+End Type
+Type DOC_INFO_1
+        pDocName As String
+        pOutputFile As String
+        pDatatype As String
+End Type
+Type FORM_INFO_1
+        pName As String
+        Size As SIZEL
+        ImageableArea As RECTL
+End Type
+Type PRINTPROCESSOR_INFO_1
+        pName As String
+End Type
+Type PORT_INFO_1
+        pName As String
+End Type
+Type MONITOR_INFO_1
+        pName As String
+End Type
+Type MONITOR_INFO_2
+        pName As String
+        pEnvironment As String
+        pDLLName As String
+End Type
+Type DATATYPES_INFO_1
+        pName As String
+End Type
+Type PRINTER_DEFAULTS
+        pDatatype As String
+        pDevmode As DEVMODE
+        DesiredAccess As Long
+End Type
+Type PRINTER_INFO_4
+    pPrinterName As String
+    pServerName As String
+    Attributes As Long
+End Type
+Type PRINTER_INFO_5
+        pPrinterName As String
+        pPortName As String
+        Attributes As Long
+        DeviceNotSelectedTimeout As Long
+        TransmissionRetryTimeout As Long
+End Type
+Type DRIVER_INFO_3
+        cVersion As Long
+        pName As String
+        pEnvironment As String
+        pDriverPath As String
+        pDataFile As String
+        pConfigFile As String
+        pHelpFile As String
+        pDependentFiles As String
+        pMonitorName As String
+        pDefaultDataType As String
+End Type
+Type DOC_INFO_2
+        pDocName As String
+        pOutputFile As String
+        pDatatype As String
+        dwMode As Long
+        JobId As Long
+End Type
+Type PORT_INFO_2
+        pPortName As String
+        pMonitorName As String
+        pDescription As String
+        fPortType As Long
+        Reserved As Long
+End Type
+Type PROVIDOR_INFO_1
+        pName As String
+        pEnvironment As String
+        pDLLName As String
+End Type
+Type NETRESOURCE
+        dwScope As Long
+        dwType As Long
+        dwDisplayType As Long
+        dwUsage As Long
+        lpLocalName As String
+        lpRemoteName As String
+        lpComment As String
+        lpProvider As String
+End Type
+Type NCB
+        ncb_command As Integer
+        ncb_retcode As Integer
+        ncb_lsn As Integer
+        ncb_num As Integer
+        ncb_buffer As String
+        ncb_length As Integer
+        ncb_callname As String * NCBNAMSZ
+        ncb_name As String * NCBNAMSZ
+        ncb_rto As Integer
+        ncb_sto As Integer
+        ncb_post As Long
+        ncb_lana_num As Integer
+        ncb_cmd_cplt As Integer
+        ncb_reserve(10) As Byte
+        ncb_event As Long
+End Type
+Type ADAPTER_STATUS
+        adapter_address As String * 6
+        rev_major As Integer
+        reserved0 As Integer
+        adapter_type As Integer
+        rev_minor As Integer
+        duration As Integer
+        frmr_recv As Integer
+        frmr_xmit As Integer
+        iframe_recv_err As Integer
+        xmit_aborts As Integer
+        xmit_success As Long
+        recv_success As Long
+        iframe_xmit_err As Integer
+        recv_buff_unavail As Integer
+        t1_timeouts As Integer
+        ti_timeouts As Integer
+        Reserved1 As Long
+        free_ncbs As Integer
+        max_cfg_ncbs As Integer
+        max_ncbs As Integer
+        xmit_buf_unavail As Integer
+        max_dgram_size As Integer
+        pending_sess As Integer
+        max_cfg_sess As Integer
+        max_sess As Integer
+        max_sess_pkt_size As Integer
+        name_count As Integer
+End Type
+Type NAME_BUFFER
+        name  As String * NCBNAMSZ
+        name_num As Integer
+        name_flags As Integer
+End Type
+Type SESSION_HEADER
+        sess_name As Integer
+        num_sess As Integer
+        rcv_dg_outstanding As Integer
+        rcv_any_outstanding As Integer
+End Type
+Type SESSION_BUFFER
+        lsn As Integer
+        State As Integer
+        local_name As String * NCBNAMSZ
+        remote_name As String * NCBNAMSZ
+        rcvs_outstanding As Integer
+        sends_outstanding As Integer
+End Type
+Type LANA_ENUM
+        Length As Integer
+        lana(MAX_LANA) As Integer
+End Type
+Type FIND_NAME_HEADER
+        node_count As Integer
+        Reserved As Integer
+        unique_group As Integer
+End Type
+Type FIND_NAME_BUFFER
+        Length As Integer
+        access_control As Integer
+        frame_control As Integer
+        destination_addr(6) As Integer
+        source_addr(6) As Integer
+        routing_info(18) As Integer
+End Type
+Type ACTION_HEADER
+        transport_id As Long
+        action_code As Integer
+        Reserved As Integer
+End Type
+Type CRGB
+        bRed As Byte
+        bGreen As Byte
+        bBlue As Byte
+        bExtra As Byte
+End Type
+Type SERVICE_STATUS
+        dwServiceType As Long
+        dwCurrentState As Long
+        dwControlsAccepted As Long
+        dwWin32ExitCode As Long
+        dwServiceSpecificExitCode As Long
+        dwCheckPoint As Long
+        dwWaitHint As Long
+End Type
+Type ENUM_SERVICE_STATUS
+        lpServiceName As String
+        lpDisplayName As String
+        ServiceStatus As SERVICE_STATUS
+End Type
+Type QUERY_SERVICE_LOCK_STATUS
+        fIsLocked As Long
+        lpLockOwner As String
+        dwLockDuration As Long
+End Type
+Type QUERY_SERVICE_CONFIG
+        dwServiceType As Long
+        dwStartType As Long
+        dwErrorControl As Long
+        lpBinaryPathName As String
+        lpLoadOrderGroup As String
+        dwTagId As Long
+        lpDependencies As String
+        lpServiceStartName As String
+        lpDisplayName As String
+End Type
+Type SERVICE_TABLE_ENTRY
+        lpServiceName As String
+        lpServiceProc As Long
+End Type
+Type LARGE_INTEGER
+    lowpart As Long
+    highpart As Long
+End Type
+Type PERF_DATA_BLOCK
+        Signature As String * 4
+        LittleEndian As Long
+        Version As Long
+        Revision As Long
+        TotalByteLength As Long
+        HeaderLength As Long
+        NumObjectTypes As Long
+        DefaultObject As Long
+        SystemTime As SystemTime
+        PerfTime As LARGE_INTEGER
+        PerfFreq As LARGE_INTEGER
+        PerTime100nSec As LARGE_INTEGER
+        SystemNameLength As Long
+        SystemNameOffset As Long
+End Type
+Type PERF_OBJECT_TYPE
+        TotalByteLength As Long
+        DefinitionLength As Long
+        HeaderLength As Long
+        ObjectNameTitleIndex As Long
+        ObjectNameTitle As String
+        ObjectHelpTitleIndex As Long
+        ObjectHelpTitle As String
+        DetailLevel As Long
+        NumCounters As Long
+        DefaultCounter As Long
+        NumInstances As Long
+        CodePage As Long
+        PerfTime As LARGE_INTEGER
+        PerfFreq As LARGE_INTEGER
+End Type
+Type PERF_COUNTER_DEFINITION
+        ByteLength As Long
+        CounterNameTitleIndex As Long
+        CounterNameTitle As String
+        CounterHelpTitleIndex As Long
+        CounterHelpTitle As String
+        DefaultScale As Long
+        DetailLevel As Long
+        CounterType As Long
+        CounterSize As Long
+        CounterOffset As Long
+End Type
+Type PERF_INSTANCE_DEFINITION
+        ByteLength As Long
+        ParentObjectTitleIndex As Long
+        ParentObjectInstance As Long
+        UniqueID As Long
+        NameOffset As Long
+        NameLength As Long
+End Type
+Type PERF_COUNTER_BLOCK
+        ByteLength As Long
+End Type
+Type COMPOSITIONFORM
+        dwStyle As Long
+        ptCurrentPos As POINTAPI
+        rcArea As RECT
+End Type
+Type CANDIDATEFORM
+        dwIndex As Long
+        dwStyle As Long
+        ptCurrentPos As POINTAPI
+        rcArea As RECT
+End Type
+Type CANDIDATELIST
+        dwSize As Long
+        dwStyle As Long
+        dwCount As Long
+        dwSelection As Long
+        dwPageStart As Long
+        dwPageSize As Long
+        dwOffset(1) As Long
+End Type
+Type STYLEBUF
+        dwStyle As Long
+        szDescription As String * STYLE_DESCRIPTION_SIZE
+End Type
+Type MODEMDEVCAPS
+        dwActualSize As Long
+        dwRequiredSize As Long
+        dwDevSpecificOffset As Long
+        dwDevSpecificSize As Long
+        dwModemProviderVersion As Long
+        dwModemManufacturerOffset As Long
+        dwModemManufacturerSize As Long
+        dwModemModelOffset As Long
+        dwModemModelSize As Long
+        dwModemVersionOffset As Long
+        dwModemVersionSize As Long
+        dwDialOptions As Long
+        dwCallSetupFailTimer As Long
+        dwInactivityTimeout As Long
+        dwSpeakerVolume As Long
+        dwSpeakerMode As Long
+        dwModemOptions As Long
+        dwMaxDTERate As Long
+        dwMaxDCERate As Long
+        abVariablePortion(1) As Byte
+End Type
+Type MODEMSETTINGS
+        dwActualSize As Long
+        dwRequiredSize As Long
+        dwDevSpecificOffset As Long
+        dwDevSpecificSize As Long
+        dwCallSetupFailTimer As Long
+        dwInactivityTimeout As Long
+        dwSpeakerVolume As Long
+        dwSpeakerMode As Long
+        dwPreferredModemOptions As Long
+        dwNegotiatedModemOptions As Long
+        dwNegotiatedDCERate As Long
+        abVariablePortion(1) As Byte
+End Type
+Type DRAGINFO
+        uSize As Long
+        pt As POINTAPI
+        fNC As Long
+        lpFileList As String
+        grfKeyState As Long
+End Type
+Type APPBARDATA
+        cbSize As Long
+        hwnd As Long
+        uCallbackMessage As Long
+        uEdge As Long
+        rc As RECT
+        lParam As Long
+End Type
+Type SHFILEOPSTRUCT
+        hwnd As Long
+        wFunc As Long
+        pFrom As String
+        pTo As String
+        fFlags As Integer
+        fAnyOperationsAborted As Long
+        hNameMappings As Long
+        lpszProgressTitle As String
+End Type
+Type SHNAMEMAPPING
+        pszOldPath As String
+        pszNewPath As String
+        cchOldPath As Long
+        cchNewPath As Long
+End Type
+Type SHELLEXECUTEINFO
+        cbSize As Long
+        fMask As Long
+        hwnd As Long
+        lpVerb As String
+        lpFile As String
+        lpParameters As String
+        lpDirectory As String
+        nShow As Long
+        hInstApp As Long
+        lpIDList As Long
+        lpClass As String
+        hkeyClass As Long
+        dwHotKey As Long
+        hIcon As Long
+        hProcess As Long
+End Type
+Type NOTIFYICONDATA
+        cbSize As Long
+        hwnd As Long
+        uID As Long
+        uFlags As Long
+        uCallbackMessage As Long
+        hIcon As Long
+        szTip As String * 64
+End Type
+Type SHFILEINFO
+        hIcon As Long
+        iIcon As Long
+        dwAttributes As Long
+        szDisplayName As String * MAX_PATH
+        szTypeName As String * 80
+End Type
+Type VS_FIXEDFILEINFO
+        dwSignature As Long
+        dwStrucVersion As Long
+        dwFileVersionMS As Long
+        dwFileVersionLS As Long
+        dwProductVersionMS As Long
+        dwProductVersionLS As Long
+        dwFileFlagsMask As Long
+        dwFileFlags As Long
+        dwFileOS As Long
+        dwFileType As Long
+        dwFileSubtype As Long
+        dwFileDateMS As Long
+        dwFileDateLS As Long
+End Type
+Type ICONMETRICS
+    cbSize As Long
+    iHorzSpacing As Long
+    iVertSpacing As Long
+    iTitleWrap As Long
+    lfFont As LOGFONT
+End Type
+Type HELPINFO
+    cbSize As Long
+    iContextType As Long
+    iCtrlId As Long
+    hItemHandle As Long
+    dwContextId As Long
+    MousePos As POINTAPI
+End Type
+Type ANIMATIONINFO
+    cbSize As Long
+    iMinAnimate As Long
+End Type
+Type MINIMIZEDMETRICS
+    cbSize As Long
+    iWidth As Long
+    iHorzGap As Long
+    iVertGap As Long
+    iArrange As Long
+    lfFont As LOGFONT
+End Type
+Type OSVERSIONINFO
+        dwOSVersionInfoSize As Long
+        dwMajorVersion As Long
+        dwMinorVersion As Long
+        dwBuildNumber As Long
+        dwPlatformId As Long
+        szCSDVersion As String * 128
+End Type
+Type SYSTEM_POWER_STATUS
+        ACLineStatus As Byte
+        BatteryFlag As Byte
+        BatteryLifePercent As Byte
+        Reserved1 As Byte
+        BatteryLifeTime As Long
+        BatteryFullLifeTime As Long
+End Type
+Type OPENFILENAME
+        lStructSize As Long
+        hwndOwner As Long
+        hInstance As Long
+        lpstrFilter As String
+        lpstrCustomFilter As String
+        nMaxCustFilter As Long
+        nFilterIndex As Long
+        lpstrFile As String
+        nMaxFile As Long
+        lpstrFileTitle As String
+        nMaxFileTitle As Long
+        lpstrInitialDir As String
+        lpstrTitle As String
+        Flags As Long
+        nFileOffset As Integer
+        nFileExtension As Integer
+        lpstrDefExt As String
+        lCustData As Long
+        lpfnHook As Long
+        lpTemplateName As String
+End Type
+Type NMHDR
+    hwndFrom As Long
+    idfrom As Long
+    code As Long
+End Type
+Type OFNOTIFY
+        hdr As NMHDR
+        lpOFN As OPENFILENAME
+        pszFile As String
+End Type
+Type ChooseColor
+        lStructSize As Long
+        hwndOwner As Long
+        hInstance As Long
+        rgbResult As Long
+        lpCustColors As Long
+        Flags As Long
+        lCustData As Long
+        lpfnHook As Long
+        lpTemplateName As String
+End Type
+Type FINDREPLACE
+        lStructSize As Long
+        hwndOwner As Long
+        hInstance As Long
+        Flags As Long
+        lpstrFindWhat As String
+        lpstrReplaceWith As String
+        wFindWhatLen As Integer
+        wReplaceWithLen As Integer
+        lCustData As Long
+        lpfnHook As Long
+        lpTemplateName As String
+End Type
+Type ChooseFont
+        lStructSize As Long
+        hwndOwner As Long
+        hdc As Long
+        lpLogFont As LOGFONT
+        iPointSize As Long
+        Flags As Long
+        rgbColors As Long
+        lCustData As Long
+        lpfnHook As Long
+        lpTemplateName As String
+        hInstance As Long
+        lpszStyle As String
+        nFontType As Integer
+        MISSING_ALIGNMENT As Integer
+        nSizeMin As Long
+        nSizeMax As Long
+End Type
+Type PrintDlg
+        lStructSize As Long
+        hwndOwner As Long
+        hDevMode As Long
+        hDevNames As Long
+        hdc As Long
+        Flags As Long
+        nFromPage As Integer
+        nToPage As Integer
+        nMinPage As Integer
+        nMaxPage As Integer
+        nCopies As Integer
+        hInstance As Long
+        lCustData As Long
+        lpfnPrintHook As Long
+        lpfnSetupHook As Long
+        lpPrintTemplateName As String
+        lpSetupTemplateName As String
+        hPrintTemplate As Long
+        hSetupTemplate As Long
+End Type
+Type DEVNAMES
+        wDriverOffset As Integer
+        wDeviceOffset As Integer
+        wOutputOffset As Integer
+        wDefault As Integer
+End Type
+Type PageSetupDlg
+        lStructSize As Long
+        hwndOwner As Long
+        hDevMode As Long
+        hDevNames As Long
+        Flags As Long
+        ptPaperSize As POINTAPI
+        rtMinMargin As RECT
+        rtMargin As RECT
+        hInstance As Long
+        lCustData As Long
+        lpfnPageSetupHook As Long
+        lpfnPagePaintHook As Long
+        lpPageSetupTemplateName As String
+        hPageSetupTemplate As Long
+End Type
+Type COMMCONFIG
+    dwSize As Long
+    wVersion As Integer
+    wReserved As Integer
+    dcbx As DCB
+    dwProviderSubType As Long
+    dwProviderOffset As Long
+    dwProviderSize As Long
+    wcProviderData As Byte
+End Type
+Type PIXELFORMATDESCRIPTOR
+    nSize As Integer
+    nVersion As Integer
+    dwFlags As Long
+    iPixelType As Byte
+    cColorBits As Byte
+    cRedBits As Byte
+    cRedShift As Byte
+    cGreenBits As Byte
+    cGreenShift As Byte
+    cBlueBits As Byte
+    cBlueShift As Byte
+    cAlphaBits As Byte
+    cAlphaShift As Byte
+    cAccumBits As Byte
+    cAccumRedBits As Byte
+    cAccumGreenBits As Byte
+    cAccumBlueBits As Byte
+    cAccumAlphaBits As Byte
+    cDepthBits As Byte
+    cStencilBits As Byte
+    cAuxBuffers As Byte
+    iLayerType As Byte
+    bReserved As Byte
+    dwLayerMask As Long
+    dwVisibleMask As Long
+    dwDamageMask As Long
+End Type
+Type DRAWTEXTPARAMS
+    cbSize As Long
+    iTabLength As Long
+    iLeftMargin As Long
+    iRightMargin As Long
+    uiLengthDrawn As Long
+End Type
+Type MENUITEMINFO
+    cbSize As Long
+    fMask As Long
+    fType As Long
+    fState As Long
+    wID As Long
+    hSubMenu As Long
+    hbmpChecked As Long
+    hbmpUnchecked As Long
+    dwItemData As Long
+    dwTypeData As String
+    cch As Long
+End Type
+Type SCROLLINFO
+    cbSize As Long
+    fMask As Long
+    nMin As Long
+    nMax As Long
+    nPage As Long
+    nPos As Long
+    nTrackPos As Long
+End Type
+Type MSGBOXPARAMS
+    cbSize As Long
+    hwndOwner As Long
+    hInstance As Long
+    lpszText As String
+    lpszCaption As String
+    dwStyle As Long
+    lpszIcon As String
+    dwContextHelpId As Long
+    lpfnMsgBoxCallback As Long
+    dwLanguageId As Long
+End Type
+Type WNDCLASSEX
+    cbSize As Long
+    style As Long
+    lpfnWndProc As Long
+    cbClsExtra As Long
+    cbWndExtra As Long
+    hInstance As Long
+    hIcon As Long
+    hCursor As Long
+    hbrBackground As Long
+    lpszMenuName As String
+    lpszClassName As String
+    hIconSm As Long
+End Type
+Type TPMPARAMS
+    cbSize As Long
+    rcExclude As RECT
+End Type

@@ -1,0 +1,20 @@
+Function: GetAvailableFileName( GivenFileName, GivenPath = "", StartID = 1 )
+
+	- With error checking
+
+Function: GetAvailableFileName_fast( GivenFileName, GivenPath = "", StartID = 1 )
+
+	- Without error checking
+
+
+This function returns the next free/available file name.
+
+The function returns 0 when an error occured and ErrorLevel will contain a detailed error message.
+
+The function replaces the "#" in the given file name with a number (with leading zeros). The number starts from 1 or from any given StartID. E.g. ###.ahk with StartID = 12 will result in 012.ahk, 013.ahk, 014.ahk, etc.
+
+All formats are possible, e.g. x#.#y##z.ahk with StartID = 4199 will result in x4.1y99z.ahk, x4.2y00z.ahk, x4.2y01z.ahk, etc.
+
+The path for the file can be specified or the current directory will be used.
+
+The function is 90 lines of code while the most part is error handling. Without these error handling the function is only 16 lines.

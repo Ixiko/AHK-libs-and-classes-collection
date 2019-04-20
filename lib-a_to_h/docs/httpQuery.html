@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="ltr"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+
+<link rel="prev" href="http://www.autohotkey.com/forum/viewtopic.php?t=33506&amp;view=previous" title="View previous topic">
+<link rel="next" href="http://www.autohotkey.com/forum/viewtopic.php?t=33506&amp;view=next" title="View next topic">
+<link rel="up" href="http://www.autohotkey.com/forum/viewforum.php?f=2" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=1" title="Ask for Help">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=2" title="Scripts &amp; Functions">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=3" title="Bug Reports">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=4" title="Wish List">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=6" title="Announcements">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=7" title="Utilities &amp; Resources">
+<link rel="chapter forum" href="http://www.autohotkey.com/forum/viewforum.php?f=5" title="General Chat">
+
+<title>[function] httpQuery GET and POST requests - update 0.3.5</title>
+
+<link rel="alternate" type="application/rss+xml" title="AutoHotkey Forum RSS" href="http://www.autohotkey.com/forum/rss.php">
+
+
+<link rel="stylesheet" type="text/css" href="httpQuery-Dateien/index.css" media="all">
+</head><body bgcolor="#e5e5e5" link="#006699" text="#000000" vlink="#5493b4">
+<table align="center" border="0" cellpadding="10" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td class="bodyline">
+<table class="forumline" border="0" cellpadding="3" cellspacing="1" width="100%">
+<tbody>
+<tr>
+<td class="row1" height="28" valign="top" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td colspan="2">
+<!--DOCUMENT_FRAGMENT-->
+<span class="postbody"><span style="font-size: 14px; line-height: normal;"><span style="font-weight: bold;"><span style="text-decoration: underline;">Introduction</span></span></span>
+<br>
+<ul>hi all
+<br>
+This is a small function for handling POST and GET queries natively in
+AHK so external utilities to handle it are not needed any more. It can
+be used where no additional utilities, such as cURL or wget are wanted.
+<br>
+The latest version handles following features:
+<br>
+<ul>
+<br>
+<li> ports in URL 
+<br>
+</li><li> Username:Password@domain style URLs (see this <a href="http://www.autohotkey.com/forum/viewtopic.php?p=210138#210138" target="_top" class="postlink">answer</a> to avoid common problems)
+<br>
+</li><li> SSL aka https
+<br>
+</li><li> HeaderInformations / Dumping / Storing
+<br>
+</li><li> DownloadSizes / CurrentSize (for download progressbars)
+<br>
+</li><li> Flags for InternetConnection handling (auto follow feature etc)
+<br>
+</li><li> Referrer for Queries
+<br>
+</li><li> Accepttypes for Queries
+<br>
+</li><li> Proxy handling
+<br>
+</li><li> timeout handling
+<br>
+</li><li> custom UserAgent
+<br>
+</li></ul>
+<br>
+</ul>
+<br>
+<span style="font-size: 14px; line-height: normal;"><span style="font-weight: bold;"><span style="text-decoration: underline;">Usage</span></span></span>
+<br>
+<ul>
+<br>
+Usage is pretty simple: 
+<br>
+You need to define a Variable which will receive the returned databuffer.
+<br>
+When only Strings are expected as returnvalues, autohotkey needs to
+learn the new size, so a VarSetCapacity(buffer,-1) is needed. This has
+been modified to support binary downloads aswell.
+<br>
+<span style="font-weight: bold;">httpQUERY(buffer:="",URL)</span> will
+result the length of the standard HTML which is usually retrieved. The
+html itself is stored in the variable buffer. The query method is GET
+as the length of Postparams is zero.
+<br>
+<span style="font-weight: bold;">httpQUERY(buffer:="",URL,POSTDATA)</span>
+will work as the GET above just with POSTDATA being transmitted. The
+query method is POST as the length of Postparams is non zero.
+<br>
+The URL now supports following scheme:
+<br>
+<a href="http://server.tld/path/to/target.ext?queryops#fragment" target="_top">http://username:password@server.tld:80/path/to/target.ext?queryops#fragment</a>
+<br>
+
+<br>since httpQuery has been updated to use InternetCrackURL from
+winINet, all essential parts will be recognized. so there is no need to
+set up any additional parameters. <span style="font-weight: bold;">Attention</span>:
+When u need to authetificate in the Website the username / password
+attempt will not work. u have to submit those parameters via POST or
+GET method. <br>
+
+<br>
+Additional Parameters:
+<br>
+To see a dump of the received httpHeaders, there is buildIn support for
+a global Variable named httpQueryOps. It may consist of one or more
+Verbs. For now "showHeader", "storeHeader", and "updateSize" verbs are
+supported. If You use storeHeader the complete Header will be saved in
+a variable named HttpQueryHeader which will be made global at runtime.
+The verb updateSize will make two variables globally Available:
+httpQueryFullSize and httpQueryCurrentSize. An usage example to show a
+download status indicator is included
+<br>
+
+<br>
+Following Variables are evaluated globally: 
+<br>
+<span style="font-weight: bold;">httpAgent</span>: can hold an individual UserAgent Code. The default is AutoHotkeyScript
+<br>
+<span style="font-weight: bold;">httpProxy</span>: the name of a proxy server to use. default = 0
+<br>
+<span style="font-weight: bold;">httpProxyByPass</span>: list of domains which will not be used with the proxy. default = 0
+<br>
+<span style="font-weight: bold;">httpQueryReferer</span>: an URL which
+is recognized by QueriedServer, as the location where the Request was
+generated mind though its "Referrer" the name of the variable is
+httpQueryReferer [sic]
+<br>
+<span style="font-weight: bold;">httpQueryAcceptType</span>: this variable lets u specify your accepted stream formats for the results of the query
+<br>
+<span style="font-weight: bold;">httpQueryDwFlags</span>: if in need
+for any special flags for the current connection this is the variable
+to set (example V shows an useCase for this feat)
+<br>
+
+<br>
+I think these are pretty self explaining.
+<br>
+</ul>
+<br>
+<span style="font-size: 14px; line-height: normal;"><span style="font-weight: bold;"><span style="text-decoration: underline;">Examples</span></span></span>
+<br>
+<ul>
+<br>
+<span style="font-weight: bold;">Example I:</span> Showing the raw HTML result of a search for <span style="font-weight: bold;">httpQuery</span> in AutoHotkey's forum in an edit control 
+<br>
+</ul>
+<br>
+</span><table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code (<a href="javascript:;" onclick="javascript:expand(this);">Expand</a>):</b></span></td>	</tr>	<tr>	  <td class="code"><div style="overflow: auto; height: 200px;"><span style="color: rgb(0, 128, 0);">; exmpl.searchAHKforum.httpQuery.ahk</span><br><span style="color: rgb(0, 128, 0);">; Searches the forum for a given Phrase: in this case httpQuery</span><br>#noenv<br>html&nbsp; &nbsp; &nbsp;:= ""<br>URL&nbsp; &nbsp; &nbsp; := "http://www.autohotkey.com/forum/search.php?mode=results"<br>POSTData := "search_keywords=httpQuery&amp;search_terms=all&amp;search_forum=-1&amp;"<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; . "search_time=0&amp;search_fields=all&amp;show_results=topics&amp;return_chars=500"<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; . "&amp;sort_by=0&amp;sort_dir=DESC"<br><br>length := httpQuery(html,URL,POSTdata)<br>varSetCapacity(html,-1)<br><br>Gui,Add,Edit,w600 +Wrap r25,% html<br>Gui,Show<br>Return<br><br>GuiClose:<br>GuiEscape:<br>&nbsp; &nbsp;ExitApp<br>&nbsp; &nbsp;<br>#include httpQuery.ahk</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+<ul><span style="font-weight: bold;">Remarks:</span> To make a function
+work with POST parameters, it is essential to know which parameters are
+actually sent. These can be obtained by studying the HTML source of the
+target URL or by using analyzing tools such as the <a href="https://addons.mozilla.org/en-US/firefox/addon/6647" target="_top" class="postlink">HttpFox Addon</a> for Firefox. You might also want to use the following example to learn the nature of the form in a HTML document</ul>
+<br>
+<ul>
+<br>
+<span style="font-weight: bold;">Example II</span>: Showing a dump of a HTML form to help making valid POST parameters
+<br>
+</ul>
+<br>
+</span><table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code (<a href="javascript:;" onclick="javascript:expand(this);">Expand</a>):</b></span></td>	</tr>	<tr>	  <td class="code"><div style="overflow: auto; height: 200px;"><span style="color: rgb(0, 128, 0);">; exmpl.formdump.httpquery.ahk</span><br><span style="color: rgb(0, 128, 0);">; Form Dumper v0.1b (w) 9th July 2008 by derRaphael</span><br>#NoEnv<br>InputBox<br>&nbsp;,URL&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; OutputVariable</span><br>&nbsp;,Enter
+URL to analyze&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">; Title of box</span><br>&nbsp;,Please enter the complete URL starting with http:// to be analysed&nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">; Descriptive text </span><br>&nbsp;,,,,,,,,http://www.autohotkey.com/forum/search.php&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; default value</span><br><br>&nbsp; &nbsp;html := ""<br>&nbsp; &nbsp;htmlLength := httpQuery(html,URL)<br>&nbsp; &nbsp;VarSetCapacity(html,-1)<br><br><span style="color: rgb(0, 128, 0);">; The Complete Form Node from given URL's HTML</span><br>&nbsp; &nbsp;RegExMatch(html,"i)&lt;form.+?&lt;/form&gt;",formNode)<br><span style="color: rgb(0, 128, 0);">; Just the formtag for further analyzing</span><br>&nbsp; &nbsp;RegExMatch(formNode,"i)&lt;form[^&gt;]+?&gt;",formTag)<br><span style="color: rgb(0, 128, 0);">; The name of the form</span><br>&nbsp; &nbsp;RegExMatch(formTag,"i)NAME=""?(?P&lt;Name&gt;.+?)""?&gt;",form)<br><span style="color: rgb(0, 128, 0);">; The method used to process Data</span><br>&nbsp; &nbsp;RegExMatch(formTag,"i)METHOD=""?(?P&lt;Method&gt;.+?)""?\s",form)<br><span style="color: rgb(0, 128, 0);">; The complete address used to send data to</span><br>&nbsp; &nbsp;RegExMatch(formTag,"i)ACTION=""?(?P&lt;Action&gt;.+?)""?\s",form)<br><span style="color: rgb(0, 128, 0);">; just the url</span><br>&nbsp; &nbsp;RegExMatch(formAction,"i)(?P&lt;URL&gt;[^\?]+)",formA_)<br><span style="color: rgb(0, 128, 0);">; any existing GET parameters</span><br>&nbsp; &nbsp;RegExMatch(formAction,"i)\?(?P&lt;GET&gt;.*)",formA_)<br>&nbsp; &nbsp;<span style="color: rgb(0, 128, 0);">; Fix &amp;amp; to &amp; as delimiter</span><br>&nbsp; &nbsp;StringReplace,formA_GET,formA_GET,&amp;amp`;,&amp;,All<br><br>&nbsp; &nbsp;startPosI := startPosS := startPosT := 0<br>&nbsp; &nbsp;inpCount := selCount := txtCount := 0<br><br>&nbsp; &nbsp;Loop,<br>&nbsp; &nbsp;{<br>&nbsp; &nbsp;&nbsp; &nbsp;If (startPosI:=RegExMatch(formNode,"i)&lt;input[^&gt;]+&gt;",inputTag,startPosI+1)) {<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;inpCount++<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;formInput%InpCount% := inputTag<br>&nbsp; &nbsp;&nbsp; &nbsp;} else {<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;noMoreInput := 1<br>&nbsp; &nbsp;&nbsp; &nbsp;}<br>&nbsp; &nbsp;&nbsp; &nbsp;If (startPosS:=RegExMatch(formNode,"i)&lt;select.*?&lt;/select&gt;",selectNode,startPosS+1)) {<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;selCount++<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;formSelect%selCount% := selectNode<br>&nbsp; &nbsp;&nbsp; &nbsp;} else {<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;noMoreSelectOptions := 1<br>&nbsp; &nbsp;&nbsp; &nbsp;}<br>&nbsp; &nbsp;&nbsp; &nbsp;If (startPosT:=RegExMatch(formNode,"i)&lt;textarea.*?&lt;/textarea&gt;",textareaNode,startPosT+1)) {<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;txtCount++<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;formTextarea%txtCount% := textareaNode<br>&nbsp; &nbsp;&nbsp; &nbsp;} else {<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;noMoreTextArea := 1<br>&nbsp; &nbsp;&nbsp; &nbsp;}<br>&nbsp; &nbsp;&nbsp; &nbsp;if (NoMoreInput) &amp;&amp; (NoMoreTextarea) &amp;&amp; (NoMoreSelectOptions) {<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;break<br>&nbsp; &nbsp;&nbsp; &nbsp;}<br>&nbsp; &nbsp;}<br>&nbsp; &nbsp;Loop,% inpCount<br>&nbsp; &nbsp;&nbsp; &nbsp;Inputs .= formInput%A_Index% "`n"<br>&nbsp; &nbsp;StringReplace,inputs,inputs,&lt;,%A_Tab%&lt;,All<br>&nbsp; &nbsp;Loop,% selCount<br>&nbsp; &nbsp;&nbsp; &nbsp;Selects .= formSelect%A_Index% "`n"<br>&nbsp; &nbsp;StringReplace,Selects,Selects,&lt;/option&gt;,&lt;/option&gt;`n,All<br>&nbsp; &nbsp;StringReplace,Selects,Selects,&lt;option,%A_Tab%&lt;option,All<br>&nbsp; &nbsp;Selects := RegExReplace(selects,"i)&lt;select[^&gt;]+&gt;","$0`n")<br>&nbsp; &nbsp;&nbsp; &nbsp;<br>&nbsp; &nbsp;Loop,% txtCount<br>&nbsp; &nbsp;&nbsp; &nbsp;txtAreas .= formTextArea%A_Index% "`n"<br>&nbsp; &nbsp;StringReplace,txtAreas,txtAreas,&lt;/textarea&gt;,&lt;/textarea&gt;`n,All<br>&nbsp; &nbsp;StringReplace,txtAreas,txtAreas,&lt;textarea,%A_Tab%&lt;textarea,All<br><br><span style="color: rgb(0, 128, 0);">; dump results to Gui</span><br>Gui,Add,Tab2, w800 h20,Analyzed Content|found Form|raw HTML<br>Gui,Tab,1<br>Gui,Add,Edit,w800 h600 yp+20 xp , % ""<br>&nbsp; &nbsp;&nbsp; &nbsp;. "formTag:`n" formTag "`n`n"<br>&nbsp; &nbsp; &nbsp; &nbsp; . "formMethod:`t" formMethod "`n"<br>&nbsp; &nbsp; &nbsp; &nbsp; . "formAction:`t" formAction "`n"<br>&nbsp; &nbsp; &nbsp; &nbsp; . "formActionURL:`t" formA_URL "`n"<br>&nbsp; &nbsp; &nbsp; &nbsp; . "formActionGET:`t" formA_GET "`n`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "Total Inputs:`t" inpCount "`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. inputs<br>&nbsp; &nbsp;&nbsp; &nbsp;. "`nTotal Selects:`t" selCount "`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. selects "`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "`nTotal TextAreas:`t" txtCount "`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. txtAreas "`n"<br>Gui,Tab,2<br>Gui,Add,Edit,w800 h600 yp xp , % formNode<br>Gui,Tab,3<br>Gui,Add,Edit,w800 h600 yp xp , % html<br>Gui,Show,,Statistics for Form: "%formName%" (%URL%)<br>return<br><br>GuiClose:<br>GuiEscape:<br>&nbsp; &nbsp;ExitApp<br>&nbsp; &nbsp;<br>#include httpQuery.ahk<br></div></td>	</tr></tbody></table><span class="postbody">
+<br>
+<ul><span style="font-weight: bold;">Remarks:</span> Using this function provides informations of which elements are used in a form which will be submitted. <span style="text-decoration: underline;">It neither catches modded JavaScript content nor more than one form.</span> It has been tested with google.com, autohotkey.com's searchform and autohotkey.net's pastebin</ul>
+<br>
+<ul>
+<br>
+<span style="font-weight: bold;">Example III</span>: Downloading binary data and saving it to a local file.
+<br>
+</ul>
+<br>
+</span><table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code (<a href="javascript:;" onclick="javascript:expand(this);">Expand</a>):</b></span></td>	</tr>	<tr>	  <td class="code"><div style="overflow: auto; height: 200px;"><span style="color: rgb(0, 128, 0);">; exmpl.downloadBinary.httpQuery.ahk</span><br><span style="color: rgb(0, 128, 0);">; This example downloads the latest AHK environment and stores</span><br><span style="color: rgb(0, 128, 0);">; the received binary data to a file.</span><br>#noenv<br>data&nbsp; &nbsp; &nbsp;:= ""<br>URL&nbsp; &nbsp; &nbsp; := "http://www.autohotkey.net/programs/AutoHotkey104706.zip"<br>httpQueryOps := "updateSize"<br>SetTimer,showSize,10<br>length&nbsp; &nbsp;:= httpQuery(data,URL)<br>Tooltip<br>if (write_bin(data,"ahk.exe",length)!=1)<br>&nbsp; &nbsp;MsgBox "There was an Error!"<br>else<br>&nbsp; &nbsp;MsgBox AHK Source downloaded and saved as "ahk.zip"!<br>Return<br><br>showSize:<br>&nbsp; &nbsp;Tooltip,% HttpQueryCurrentSize "/" HttpQueryFullSize<br>return<br><br>GuiClose:<br>GuiEscape:<br>&nbsp; &nbsp;ExitApp<br><br>write_bin(byref bin,filename,size){<br>&nbsp; &nbsp;h := DllCall("CreateFile","str",filename,"Uint",0x40000000<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ,"Uint",0,"UInt",0,"UInt",4,"Uint",0,"UInt",0)<br>&nbsp; &nbsp;IfEqual h,-1, SetEnv, ErrorLevel, -1<br>&nbsp; &nbsp;IfNotEqual ErrorLevel,0,ExitApp <span style="color: rgb(0, 128, 0);">; couldn't create the file</span><br>&nbsp; &nbsp;r := DllCall("SetFilePointerEx","Uint",h,"Int64",0,"UInt *",p,"Int",0)<br>&nbsp; &nbsp;IfEqual r,0, SetEnv, ErrorLevel, -3<br>&nbsp; &nbsp;IfNotEqual ErrorLevel,0, {<br>&nbsp; &nbsp; &nbsp; t = %ErrorLevel%&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; save ErrorLevel to be returned</span><br>&nbsp; &nbsp; &nbsp; DllCall("CloseHandle", "Uint", h)<br>&nbsp; &nbsp; &nbsp; ErrorLevel = %t%&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(0, 128, 0);">; return seek error</span><br>&nbsp; &nbsp;}<br>&nbsp; &nbsp;result := DllCall("WriteFile","UInt",h,"Str",bin,"UInt"<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;,size,"UInt *",Written,"UInt",0)<br>&nbsp; &nbsp;h := DllCall("CloseHandle", "Uint", h)<br>&nbsp; &nbsp;return, 1<br>}<br><br>#include httpQuery.ahk</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+<ul><span style="font-weight: bold;">Remarks:</span> This example
+downloads the current Autohotkey Source and saves it to local disk as
+ahk.zip in the same path as the script. While it does so, it shows the
+current progress of the download</ul>
+<br>
+
+<br>
+<ul>
+<br>
+<span style="font-weight: bold;">Example IV</span>: Uploading an image to Imageshack using the official (free) API
+<br>
+</ul>
+<br>
+</span><table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code (<a href="javascript:;" onclick="javascript:expand(this);">Expand</a>):</b></span></td>	</tr>	<tr>	  <td class="code"><div style="overflow: auto; height: 200px;"><span style="color: rgb(0, 128, 0);">; exmpl.imageshack.httpQuery.ahk</span><br><span style="color: rgb(0, 128, 0);">; This example uploads an image and constructs a multipart/form-data Type</span><br><span style="color: rgb(0, 128, 0);">; for fileuploading and returns the XML which is returned to show the stored Imagepath</span><br>&nbsp; &nbsp;FileSelectFile,image<br>&nbsp; &nbsp;FileGetSize,size,%image%<br>&nbsp; &nbsp;SplitPath,image,OFN<br>&nbsp; &nbsp;FileRead,img,%image%<br>&nbsp; &nbsp;VarSetCapacity(placeholder,size,32)<br>&nbsp; &nbsp;boundary := makeProperBoundary()<br>&nbsp; &nbsp;post:="--" boundary "`ncontent-disposition: form-data; name=""MAX_FILE_SIZE""`n`n"<br>&nbsp; &nbsp;&nbsp; &nbsp;. "1048576`n--" boundary "`ncontent-disposition: form-data; name=""xml""`n`nyes`n--"<br>&nbsp; &nbsp;&nbsp; &nbsp;. boundary "`ncontent-disposition: form-data; name=""fileupload""; filename="""<br>&nbsp; &nbsp;&nbsp; &nbsp;. ofn """`nContent-type: " MimeType(img) "`nContent-Transfer-Encoding: binary`n`n" <br>&nbsp; &nbsp;&nbsp; &nbsp;. placeholder "`n--" boundary "--"<br>&nbsp; &nbsp;headers:="Content-type: multipart/form-data, boundary=" boundary "`nContent-Length: " strlen(post)<br>&nbsp; &nbsp;DllCall("RtlMoveMemory","uInt",(offset:=&amp;post+strlen(post)-strlen(Boundary)-size-5)<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;,"uInt",&amp;img,"uInt",size)<br>&nbsp; &nbsp;size := httpQuery(result:="","http://www.imageshack.us/index.php",post,headers)<br>&nbsp; &nbsp;VarSetCapacity(result,-1)<br>&nbsp; &nbsp;Gui,Add,Edit,w800 h600, % result<br>&nbsp; &nbsp;Gui,Show<br>return<br><br>GuiClose:<br>GuiEscape:<br>&nbsp; &nbsp;ExitApp<br><br>makeProperBoundary(){<br>&nbsp; &nbsp;Loop,26<br>&nbsp; &nbsp;&nbsp; &nbsp;n .= chr(64+a_index)<br>&nbsp; &nbsp;n .= "0123456789"<br>&nbsp; &nbsp;Loop,% StrLen(A_Now) {<br>&nbsp; &nbsp;&nbsp; &nbsp;Random,rnd,1,% StrLen(n)<br>&nbsp; &nbsp;&nbsp; &nbsp;Random,UL,0,1<br>&nbsp; &nbsp;&nbsp; &nbsp;b .= RegExReplace(SubStr(n,rnd,1),".$","$" (round(UL)? "U":"L") "0")<br>&nbsp; &nbsp;}<br>&nbsp; &nbsp;Return b<br>}<br><br>MimeType(ByRef Binary) {<br>&nbsp; &nbsp;MimeTypes:="424d image/bmp|4749463 image/gif|ffd8ffe image/jpeg|89504e4 image/png|4657530"<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; . " application/x-shockwave-flash|49492a0 image/tiff"<br>&nbsp; &nbsp;@:="0123456789abcdef"<br>&nbsp; &nbsp;Loop,8<br>&nbsp; &nbsp;&nbsp; &nbsp;hex .= substr(@,(*(a:=&amp;Binary-1+a_index)&gt;&gt;4)+1,1) substr(@,((*a)&amp;15)+1,1)<br>&nbsp; &nbsp;Loop,Parse,MimeTypes,|<br>&nbsp; &nbsp;&nbsp; &nbsp;if ((substr(hex,1,strlen(n:=RegExReplace(A_Loopfield,"\s.*"))))=n) <br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Mime := RegExReplace(A_LoopField,".*?\s")<br>&nbsp; &nbsp;Return (Mime!="") ? Mime : "application/octet-stream"<br>}<br><br>#include httpQuery.ahk</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+<ul><span style="font-weight: bold;">Remarks:</span> Uploading binary
+data where an encodingtype "multipart/form-data" was needed, didnt work
+with classic POST usage. this example shows how to build the complete
+POST request in a different manner and to include raw binary data with
+no encoding such as base64 or ascii85</ul>
+<br>
+
+<br>
+<ul>
+<br>
+<span style="font-weight: bold;">Example V</span>: Modifying dwFlags for special useCases where a 302 is the returncode such as with dynamic created content urls
+<br>
+</ul>
+<br>
+</span><table align="center" border="0" cellpadding="3" cellspacing="1" width="90%"><tbody><tr> 	  <td><span class="genmed"><b>Code (<a href="javascript:;" onclick="javascript:expand(this);">Expand</a>):</b></span></td>	</tr>	<tr>	  <td class="code"><div style="overflow: auto; height: 200px;">#NoEnv<br>&nbsp; &nbsp;Gui,add,edit,w800 h400 vPasteBin, this is a testtext!<br>&nbsp; &nbsp;Gui,Add,Button,gPaste wp, Upload this text to http://pastebin.com<br>&nbsp; &nbsp;Gui,Show<br>return<br><br>Paste:<br>&nbsp; &nbsp;Gui,Submit,Nohide<br>&nbsp; &nbsp;URL := "http://pastebin.com/pastebin.php" <br>&nbsp; &nbsp;POSTDATA := "parent_pid=&amp;format=text&amp;code2=" uriEncode(PasteBin) "&amp;"<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; . "poster=&amp;paste=Send&amp;expiry=d&amp;email=&amp;"<br>&nbsp; &nbsp;httpQueryOps := "showHeader storeHeader"<br>&nbsp; &nbsp;httpQueryDwFlags := (INTERNET_FLAG_NO_AUTO_REDIRECT:= 0x00200000)<br>&nbsp; &nbsp;length := httpQuery(HTML:="",URL,POSTDATA)<br>&nbsp; &nbsp;VarSetCapacity(HTML,-1)<br>&nbsp; &nbsp;gui,destroy<br>&nbsp; &nbsp;Gui,Add,Edit,w800 h600,% HttpQueryHeader "`n`n" html<br>&nbsp; &nbsp;Gui,Show<br>Return<br><br>GuiClose:<br>GuiEscape:<br>&nbsp; &nbsp;ExitApp<br><br>uriEncode(str)<br>{ <span style="color: rgb(0, 128, 0);">; v 0.3 / (w) 24.06.2008 by derRaphael / zLib-Style release</span><br>&nbsp; &nbsp;b_Format := A_FormatInteger<br>&nbsp; &nbsp;data := ""<br>&nbsp; &nbsp;SetFormat,Integer,H<br>&nbsp; &nbsp;Loop,Parse,str<br>&nbsp; &nbsp;&nbsp; &nbsp;if ((Asc(A_LoopField)&gt;0x7f) || (Asc(A_LoopField)&lt;0x30) || (asc(A_LoopField)=0x3d))<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;data .= "%" . ((StrLen(c:=SubStr(ASC(A_LoopField),3))&lt;2) ? "0" . c : c)<br>&nbsp; &nbsp;&nbsp; &nbsp;Else<br>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;data .= A_LoopField<br>&nbsp; &nbsp;SetFormat,Integer,%b_format%<br>&nbsp; &nbsp;return data<br>}<br><br>#include httpQUERY.ahk</div></td>	</tr></tbody></table><span class="postbody">
+<br>
+<ul><span style="font-weight: bold;">Remarks:</span> Some WebServices
+such as PasteBin.com generate Dynamic Location Urls in order to show
+processed content. Using httpQuery in a default manner, results in a
+404 Not found error when the script tries to access the location to
+fast. Specifying the NO_FOLLOW dwFlag solves this problem but needs a
+2nd request to grab the fresh received Location Header.</ul></span>
+<!--/DOCUMENT_FRAGMENT-->
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</body></html>

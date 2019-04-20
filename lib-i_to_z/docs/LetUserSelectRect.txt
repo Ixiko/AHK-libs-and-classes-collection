@@ -1,0 +1,18 @@
+Function: LetUserSelectRect(ByRef aX1, ByRef aY1, ByRef aX2, ByRef aY2)
+
+    aX1 - top-left x coordinate
+    aY1 - top-left y coordinate
+    aX2 - bottom-right x coordinate
+    aY2 - bottom-right y coordinate
+    
+    Outputs the top-left (aX1, aY1) and bottom-right (aX2, aY2) co-ordinates of the rectangle. 
+    
+    After start of function, it waits until left mouse button is pressed. The function get
+    coordinates of selected area, after left mouse button is released.
+    
+    Return
+    Does not return anything.    
+    
+    Example
+    > LetUserSelectRect(x1, y1, x2, y2)
+    

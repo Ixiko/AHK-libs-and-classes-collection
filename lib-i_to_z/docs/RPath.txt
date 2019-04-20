@@ -1,0 +1,21 @@
+Function: RPath_Relative(MasterPath, SlavePath, s="\")
+
+    MasterPath      - Destination
+    SlavePath       - Start
+    s               - A separator, allows to adjust for Unix/HTTP paths.
+
+    Return:
+    The relative path of a Slavepath relative to a Masterpath.
+    
+    Example:
+    > ; Results to "..\..\"
+    > MsgBox, % RPath_Relative("ahkstdlib\samp\foo\bar", "ahkstdlib\samp")
+
+Function: RPath_Absolute(AbsolutPath, RelativePath, s="\")
+
+    AbsolutPath     - Destination
+    RelativePath    - Start
+    s               - A separator, allows to adjust for Unix/HTTP paths.
+
+    Return:
+    The aboslute path of a RelativePath to a AbsolutePath.

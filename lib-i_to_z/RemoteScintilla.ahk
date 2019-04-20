@@ -1,6 +1,6 @@
-﻿#include <_RemoteBuf>
-#include <SCI>
-#include <CharWordPos>
+﻿#include %A_ScriptDir%\_RemoteBuf.ahk
+#include %A_ScriptDir%\SCI.ahk
+#include %A_ScriptDir%\Scintilla_CharWordPos.ahk
 
 ;~ controlget,hwnd,hwnd,,Scintilla1,8-lex
 ;~ controlget,hwnd,hwnd,,SCIntilla1,simple RIS
@@ -151,8 +151,7 @@ class RemoteScintilla {
             pos:=this.GetCurrentPos()
         return DllCall("SendMessage","PTR",this.hwnd,"UINT", SCI_LINEFROMPOSITION,"PTR",pos,"PTR")
     }
-    
-    
+        
     SetSelectionStart(s){
         return DllCall("SendMessage","PTR",this.hwnd,"UINT", SCI_SetSELECTIONSTART,"PTR",s,"PTR")
     }
@@ -168,8 +167,7 @@ class RemoteScintilla {
     SetSel(s="", e=""){
         return DllCall("SendMessage","PTR",this.hwnd,"UINT", SCI_SetSel,"PTR",s,"PTR",e, "PTR")
     }
-    
-    
+        
     _SetSelectionStart(s){
         if Strlen(Text:=this.GetText())=this.GetLength(){
             return this.SetSelectionStart(s)
@@ -205,8 +203,7 @@ class RemoteScintilla {
         WordToCharPos(Text, s, e)
         return DllCall("SendMessage","PTR",this.hwnd,"UINT", SCI_SetSel,"PTR",s,"PTR",e, "PTR")
     }
-    
-    
+        
     SelAll(){
         return DllCall("SendMessage","PTR",this.hwnd,"UINT", SCI_SELECTALL,"PTR")
     }   

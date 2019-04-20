@@ -1,0 +1,138 @@
+html, body {
+	margin: 0; padding: 0;
+	width: 100%; height: 100%;
+}
+
+body {
+	color: #BC9458; background-color: #323232;
+	font: 16px/normal 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'source-code-pro', monospace;
+}
+
+/********** Layout **********/
+
+body {
+	display: table;
+}
+
+.wrapper {
+	display: table-row;
+}
+
+.content {
+	display: table-cell;
+	height: 100%;
+}
+
+/********** Header and Footer **********/
+
+header, footer {
+	background: #3b3b3b;
+	text-align: center;
+}
+
+header {
+	padding: 0.75em;
+}
+
+header a {
+	color: #BC9458;
+	font-size: 1.5em;
+	text-decoration: underline;
+}
+
+footer {
+	padding: 1em;
+}
+
+/********** Body Form **********/
+
+#ahkform {
+	display: inline-block;
+	height: 100%; width: 100%;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+#ahkedit, #ahkarea {
+	width: 100%; height: calc(100% - 4em);
+	color: inherit; background-color: inherit;
+	font: inherit;
+	text-align: left;
+}
+
+#ahkarea {
+	border: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	resize: none;
+}
+
+/* Hide element for ace.js */
+#ahkedit {
+	display: none;
+}
+
+.options {
+	text-align: center;
+}
+
+.options input, .options select, .options .button {
+	margin: 1em; padding: 0.5em;
+	display: inline-block;
+	color: inherit; background-color: #3b3b3b;
+	border:none;
+	vertical-align: middle;
+	font: inherit;
+	text-decoration: none;
+}
+
+.options .button {
+	min-width: 4em;
+}
+
+input[type=submit]:hover, .button:hover {
+	background-color: #3f3f3f;
+	cursor: pointer;
+}
+
+/* Set checkbox background color (doesn't work) */
+/* input[type=checkbox] {
+	background-color: #222222;
+} */
+
+/* Set text color for input boxes */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	color: #999999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #999999;
+	opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #999999;
+	opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: #999999;
+}
+
+/********** ace.js **********/
+
+/* Make braces and other punctuation
+slightly grayer than normal text */
+.ace-idle-fingers .ace_punctuation {
+	color: #CCCCCC;
+}
+
+/* Fix quotes not being string colored */
+.ace-idle-fingers .ace_quote {
+	color: #A5C261;
+}
+
+/* Color alternating line backgrounds */
+.ace-idle-fingers .ace_marker-layer .ace_alternating-lines {
+	position: absolute;
+	z-index: 2;
+	background-color: #353535;
+}

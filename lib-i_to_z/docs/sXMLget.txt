@@ -1,0 +1,7 @@
+Function: sXMLget( xml, node, attr = "" )
+
+    * For the best results, make sure all characters are escaped properly (&lt; &gt; &quot; etc) and that tags are closed in the same order they are opened. 
+    * Supports getting the values from a nested nodes; does NOT support decendant/ancestor or sibling.
+    * Should be used at simple and standard xml and html strings only.
+    
+    > MsgBox % sXMLGet(xml, "Node2")

@@ -1,0 +1,23 @@
+Function: MD5_File( sFile="", cSz=4 )
+
+    sFile   - The fullpath of filename to hash
+    cSz     - *Chunk size factor. Values accepted are 0 thru 8. Default value is 4
+    
+    * To hash large files, the function has to read the file in manageable chunks into a buffer variable.
+    The size of this buffer is derived from cSz parameter as follows:
+    
+    0 = 256 KB, 1 = 512 KB, 2 = 1.00 MB, 3 = 2.00 MB, 4 = 4.00 MB, 5 = 8.00 MB, 6 = 16.0 MB, 7 = 32.0 MB, 8 = 64.0 MB
+
+    Refer AHK Documentation for #MaxMem
+    
+    > MsgBox, % FileMD5( A_AhkPath ) ; Usage Example
+
+Function: MD5( ByRef V, L=0 )
+
+    V - Variable string from which to calculate the md5 hash.
+    L - Size of the string from V.
+    
+    > ; Usage Example
+    > V := "The quick brown fox jumps over the lazy dog"
+    > L := StrLen(V)
+    > MsgBox, % MD5( V,L )

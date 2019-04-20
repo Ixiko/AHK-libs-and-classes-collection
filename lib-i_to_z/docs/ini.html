@@ -1,0 +1,1037 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<html><head><title>Basic ini string functions</title><style>/*
+   IMPORTANT: If you're editing this file in the output directory of one of
+   your projects, your changes will be overwritten the next time you run
+   Natural Docs.  Instead, copy this file to your project directory, make your
+   changes, and you can use it with -s.  Even better would be to make a CSS
+   file in your project directory with only your changes, which you can then
+   use with -s [original style] [your changes].
+
+   On the other hand, if you're editing this file in the Natural Docs styles
+   directory, the changes will automatically be applied to all your projects
+   that use this style the next time Natural Docs is run on them.
+
+   This file is part of Natural Docs, which is Copyright (C) 2003-2008 Greg Valure
+   Natural Docs is licensed under the GPL
+*/
+
+body {
+    font: 10pt Verdana, Arial, sans-serif;
+    color: #000000;
+    margin: 0; padding: 0;
+    }
+
+.ContentPage,
+.IndexPage,
+.FramedMenuPage {
+    background-color: #E8E8E8;
+    }
+.FramedContentPage,
+.FramedIndexPage,
+.FramedSearchResultsPage,
+.PopupSearchResultsPage {
+    background-color: #FFFFFF;
+    }
+
+
+a:link,
+a:visited { color: #900000; text-decoration: none }
+a:hover { color: #900000; text-decoration: underline }
+a:active { color: #FF0000; text-decoration: underline }
+
+td {
+    vertical-align: top }
+
+img { border: 0;  }
+
+
+/*
+    Comment out this line to use web-style paragraphs (blank line between
+    paragraphs, no indent) instead of print-style paragraphs (no blank line,
+    indented.)
+*/
+p {
+    text-indent: 5ex; margin: 0 }
+
+
+/*  Opera doesn't break with just wbr, but will if you add this.  */
+.Opera wbr:after {
+	content: "\00200B";
+	}
+
+
+/*  Blockquotes are used as containers for things that may need to scroll.  */
+blockquote {
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    }
+
+
+.Firefox1 blockquote {
+    padding-bottom: .5em;
+    }
+
+/*  Turn off scrolling when printing.  */
+@media print {
+    blockquote {
+        overflow: visible;
+        }
+    .IE blockquote {
+        width: auto;
+        }
+    }
+
+
+
+#Menu {
+    font-size: 9pt;
+    padding: 10px 0 0 0;
+    }
+.ContentPage #Menu,
+.IndexPage #Menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 31ex;
+    overflow: hidden;
+    }
+.ContentPage .Firefox #Menu,
+.IndexPage .Firefox #Menu {
+    width: 27ex;
+    }
+
+
+    .MTitle {
+        font-size: 16pt; font-weight: bold; font-variant: small-caps;
+        text-align: center;
+        padding: 5px 10px 15px 10px;
+        border-bottom: 1px dotted #000000;
+        margin-bottom: 15px }
+
+    .MSubTitle {
+        font-size: 9pt; font-weight: normal; font-variant: normal;
+        margin-top: 1ex; margin-bottom: 5px }
+
+
+    .MEntry a:link,
+    .MEntry a:hover,
+    .MEntry a:visited { color: #606060; margin-right: 0 }
+    .MEntry a:active { color: #A00000; margin-right: 0 }
+
+
+    .MGroup {
+        font-variant: small-caps; font-weight: bold;
+        margin: 1em 0 1em 10px;
+        }
+
+    .MGroupContent {
+        font-variant: normal; font-weight: normal }
+
+    .MGroup a:link,
+    .MGroup a:hover,
+    .MGroup a:visited { color: #545454; margin-right: 10px }
+    .MGroup a:active { color: #A00000; margin-right: 10px }
+
+
+    .MFile,
+    .MText,
+    .MLink,
+    .MIndex {
+        padding: 1px 17px 2px 10px;
+        margin: .25em 0 .25em 0;
+        }
+
+    .MText {
+        font-size: 8pt; font-style: italic }
+
+    .MLink {
+        font-style: italic }
+
+    #MSelected {
+        color: #000000; background-color: #FFFFFF;
+        /*  Replace padding with border.  */
+        padding: 0 10px 0 10px;
+        border-width: 1px 2px 2px 0; border-style: solid; border-color: #000000;
+        margin-right: 5px;
+        }
+
+    /*  Close off the left side when its in a group.  */
+    .MGroup #MSelected {
+        padding-left: 9px; border-left-width: 1px }
+
+    /*  A treat for Mozilla users.  Blatantly non-standard.  Will be replaced with CSS 3 attributes when finalized/supported.  */
+    .Firefox #MSelected {
+        -moz-border-radius-topright: 10px;
+        -moz-border-radius-bottomright: 10px }
+    .Firefox .MGroup #MSelected {
+        -moz-border-radius-topleft: 10px;
+        -moz-border-radius-bottomleft: 10px }
+
+
+    #MSearchPanel {
+        padding: 0px 6px;
+        margin: .25em 0;
+        }
+
+
+    #MSearchField {
+        font: italic 9pt Verdana, sans-serif;
+        color: #606060;
+        background-color: #E8E8E8;
+        border: none;
+        padding: 2px 4px;
+        width: 100%;
+        }
+    /* Only Opera gets it right. */
+    .Firefox #MSearchField,
+    .IE #MSearchField,
+    .Safari #MSearchField {
+        width: 94%;
+        }
+    .Opera9 #MSearchField,
+    .Konqueror #MSearchField {
+        width: 97%;
+        }
+    .FramedMenuPage .Firefox #MSearchField,
+    .FramedMenuPage .Safari #MSearchField,
+    .FramedMenuPage .Konqueror #MSearchField {
+        width: 98%;
+        }
+
+    /* Firefox doesn't do this right in frames without #MSearchPanel added on.
+        It's presence doesn't hurt anything other browsers. */
+    #MSearchPanel.MSearchPanelInactive:hover #MSearchField {
+        background-color: #FFFFFF;
+        border: 1px solid #C0C0C0;
+        padding: 1px 3px;
+        }
+    .MSearchPanelActive #MSearchField {
+        background-color: #FFFFFF;
+        border: 1px solid #C0C0C0;
+        font-style: normal;
+        padding: 1px 3px;
+        }
+
+    #MSearchType {
+        visibility: hidden;
+        font: 8pt Verdana, sans-serif;
+        width: 98%;
+        padding: 0;
+        border: 1px solid #C0C0C0;
+        }
+    .MSearchPanelActive #MSearchType,
+    /*  As mentioned above, Firefox doesn't do this right in frames without #MSearchPanel added on. */
+    #MSearchPanel.MSearchPanelInactive:hover #MSearchType,
+    #MSearchType:focus {
+        visibility: visible;
+        color: #606060;
+        }
+    #MSearchType option#MSearchEverything {
+        font-weight: bold;
+        }
+
+    .Opera8 .MSearchPanelInactive:hover,
+    .Opera8 .MSearchPanelActive {
+        margin-left: -1px;
+        }
+
+
+    iframe#MSearchResults {
+        width: 60ex;
+        height: 15em;
+        }
+    #MSearchResultsWindow {
+        display: none;
+        position: absolute;
+        left: 0; top: 0;
+        border: 1px solid #000000;
+        background-color: #E8E8E8;
+        }
+    #MSearchResultsWindowClose {
+        font-weight: bold;
+        font-size: 8pt;
+        display: block;
+        padding: 2px 5px;
+        }
+    #MSearchResultsWindowClose:link,
+    #MSearchResultsWindowClose:visited {
+        color: #000000;
+        text-decoration: none;
+        }
+    #MSearchResultsWindowClose:active,
+    #MSearchResultsWindowClose:hover {
+        color: #800000;
+        text-decoration: none;
+        background-color: #F4F4F4;
+        }
+
+
+
+
+#Content {
+    padding-bottom: 15px;
+    }
+
+.ContentPage #Content {
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #000000;
+    background-color: #FFFFFF;
+    font-size: 9pt;  /* To make 31ex match the menu's 31ex. */
+    
+    }
+.ContentPage .Firefox #Content {
+    margin-left: 27ex;
+    }
+
+
+
+    .CTopic {
+        font-size: 10pt;
+        margin-bottom: 3em;
+        }
+
+
+    .CTitle {
+        font-size: 12pt; font-weight: bold;
+        border-width: 0 0 1px 0; border-style: solid; border-color: #A0A0A0;
+        margin: 0 15px .5em 15px }
+
+    .CGroup .CTitle {
+        font-size: 16pt; font-variant: small-caps;
+        padding-left: 15px; padding-right: 15px;
+        border-width: 0 0 2px 0; border-color: #000000;
+        margin-left: 0; margin-right: 0 }
+
+    .CClass .CTitle,
+    .CInterface .CTitle,
+    .CDatabase .CTitle,
+    .CDatabaseTable .CTitle,
+    .CSection .CTitle {
+        font-size: 18pt;
+        color: #FFFFFF; background-color: #A0A0A0;
+        padding: 10px 15px 10px 15px;
+        border-width: 2px 0; border-color: #000000;
+        margin-left: 0; margin-right: 0 }
+
+    #MainTopic .CTitle {
+        font-size: 20pt;
+        color: #FFFFFF; background-color: #7070C0;
+        padding: 10px 15px 10px 15px;
+        border-width: 0 0 3px 0; border-color: #000000;
+        margin-left: 0; margin-right: 0 }
+
+    .CBody {
+        margin-left: 15px; margin-right: 15px }
+
+
+    .CToolTip {
+        position: absolute; visibility: hidden;
+        left: 0; top: 0;
+        background-color: #FFFFE0;
+        padding: 5px;
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #000000;
+        font-size: 8pt;
+        }
+
+    .Opera .CToolTip {
+        max-width: 98%;
+        }
+
+    /*  Scrollbars would be useless.  */
+    .CToolTip blockquote {
+        overflow: hidden;
+        }
+    .IE6 .CToolTip blockquote {
+        overflow: visible;
+        }
+
+    .CHeading {
+        font-weight: bold; font-size: 10pt;
+        margin: 1.5em 0 .5em 0;
+        }
+
+    .CBody pre {
+        font: 10pt "Courier New", Courier, monospace;
+        margin: 1em 0;
+        }
+
+    .CBody ul {
+        /*  I don't know why CBody's margin doesn't apply, but it's consistent across browsers so whatever.
+             Reapply it here as padding.  */
+        padding-left: 15px; padding-right: 15px;
+        margin: .5em 5ex .5em 5ex;
+        }
+
+    .CDescriptionList {
+        margin: .5em 5ex 0 5ex }
+
+        .CDLEntry {
+            font: 10pt "Courier New", Courier, monospace; color: #808080;
+            padding-bottom: .25em;
+            white-space: nowrap }
+
+        .CDLDescription {
+            font-size: 10pt;  /*  For browsers that don't inherit correctly, like Opera 5.  */
+            padding-bottom: .5em; padding-left: 5ex }
+
+
+    .CTopic img {
+        text-align: center;
+        display: block;
+        margin: 1em auto;
+        }
+    .CImageCaption {
+        font-variant: small-caps;
+        font-size: 8pt;
+        color: #808080;
+        text-align: center;
+        position: relative;
+        top: 1em;
+        }
+
+    .CImageLink {
+        color: #808080;
+        font-style: italic;
+        }
+    a.CImageLink:link,
+    a.CImageLink:visited,
+    a.CImageLink:hover { color: #808080 }
+
+
+
+
+
+.Prototype {
+    font: 10pt "Courier New", Courier, monospace;
+    padding: 5px 3ex;
+    border-width: 1px; border-style: solid;
+    margin: 0 5ex 1.5em 5ex;
+    }
+
+    .Prototype td {
+        font-size: 10pt;
+        }
+
+    .PDefaultValue,
+    .PDefaultValuePrefix,
+    .PTypePrefix {
+        color: #8F8F8F;
+        }
+    .PTypePrefix {
+        text-align: right;
+        }
+    .PAfterParameters {
+        vertical-align: bottom;
+        }
+
+    .IE .Prototype table {
+        padding: 0;
+        }
+
+    .CFunction .Prototype {
+        background-color: #F4F4F4; border-color: #D0D0D0 }
+    .CProperty .Prototype {
+        background-color: #F4F4FF; border-color: #C0C0E8 }
+    .CVariable .Prototype {
+        background-color: #FFFFF0; border-color: #E0E0A0 }
+
+    .CClass .Prototype {
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #A0A0A0;
+        background-color: #F4F4F4;
+        }
+    .CInterface .Prototype {
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #A0A0D0;
+        background-color: #F4F4FF;
+        }
+
+    .CDatabaseIndex .Prototype,
+    .CConstant .Prototype {
+        background-color: #D0D0D0; border-color: #000000 }
+    .CType .Prototype,
+    .CEnumeration .Prototype {
+        background-color: #FAF0F0; border-color: #E0B0B0;
+        }
+    .CDatabaseTrigger .Prototype,
+    .CEvent .Prototype,
+    .CDelegate .Prototype {
+        background-color: #F0FCF0; border-color: #B8E4B8 }
+
+    .CToolTip .Prototype {
+        margin: 0 0 .5em 0;
+        white-space: nowrap;
+        }
+
+
+
+
+
+.Summary {
+    margin: 1.5em 5ex 0 5ex }
+
+    .STitle {
+        font-size: 12pt; font-weight: bold;
+        margin-bottom: .5em }
+
+
+    .SBorder {
+        background-color: #FFFFF0;
+        padding: 15px;
+        border: 1px solid #C0C060 }
+
+    /* In a frame IE 6 will make them too long unless you set the width to 100%.  Without frames it will be correct without a width
+        or slightly too long (but not enough to scroll) with a width.  This arbitrary weirdness simply astounds me.  IE 7 has the same
+        problem with frames, haven't tested it without.  */
+    .FramedContentPage .IE .SBorder {
+        width: 100% }
+
+    /*  A treat for Mozilla users.  Blatantly non-standard.  Will be replaced with CSS 3 attributes when finalized/supported.  */
+    .Firefox .SBorder {
+        -moz-border-radius: 20px }
+
+
+    .STable {
+        font-size: 9pt; width: 100% }
+
+    .SEntry {
+        width: 30% }
+    .SDescription {
+        width: 70% }
+
+
+    .SMarked {
+        background-color: #F8F8D8 }
+
+    .SDescription { padding-left: 2ex }
+    .SIndent1 .SEntry { padding-left: 1.5ex }   .SIndent1 .SDescription { padding-left: 3.5ex }
+    .SIndent2 .SEntry { padding-left: 3.0ex }   .SIndent2 .SDescription { padding-left: 5.0ex }
+    .SIndent3 .SEntry { padding-left: 4.5ex }   .SIndent3 .SDescription { padding-left: 6.5ex }
+    .SIndent4 .SEntry { padding-left: 6.0ex }   .SIndent4 .SDescription { padding-left: 8.0ex }
+    .SIndent5 .SEntry { padding-left: 7.5ex }   .SIndent5 .SDescription { padding-left: 9.5ex }
+
+    .SDescription a { color: #800000}
+    .SDescription a:active { color: #A00000 }
+
+    .SGroup td {
+        padding-top: .5em; padding-bottom: .25em }
+
+    .SGroup .SEntry {
+        font-weight: bold; font-variant: small-caps }
+
+    .SGroup .SEntry a { color: #800000 }
+    .SGroup .SEntry a:active { color: #F00000 }
+
+
+    .SMain td,
+    .SClass td,
+    .SDatabase td,
+    .SDatabaseTable td,
+    .SSection td {
+        font-size: 10pt;
+        padding-bottom: .25em }
+
+    .SClass td,
+    .SDatabase td,
+    .SDatabaseTable td,
+    .SSection td {
+        padding-top: 1em }
+
+    .SMain .SEntry,
+    .SClass .SEntry,
+    .SDatabase .SEntry,
+    .SDatabaseTable .SEntry,
+    .SSection .SEntry {
+        font-weight: bold;
+        }
+
+    .SMain .SEntry a,
+    .SClass .SEntry a,
+    .SDatabase .SEntry a,
+    .SDatabaseTable .SEntry a,
+    .SSection .SEntry a { color: #000000 }
+
+    .SMain .SEntry a:active,
+    .SClass .SEntry a:active,
+    .SDatabase .SEntry a:active,
+    .SDatabaseTable .SEntry a:active,
+    .SSection .SEntry a:active { color: #A00000 }
+
+
+
+
+
+.ClassHierarchy {
+    margin: 0 15px 1em 15px }
+
+    .CHEntry {
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #A0A0A0;
+        margin-bottom: 3px;
+        padding: 2px 2ex;
+        font-size: 10pt;
+        background-color: #F4F4F4; color: #606060;
+        }
+
+    .Firefox .CHEntry {
+        -moz-border-radius: 4px;
+        }
+
+    .CHCurrent .CHEntry {
+        font-weight: bold;
+        border-color: #000000;
+        color: #000000;
+        }
+
+    .CHChildNote .CHEntry {
+        font-style: italic;
+        font-size: 8pt;
+        }
+
+    .CHIndent {
+        margin-left: 3ex;
+        }
+
+    .CHEntry a:link,
+    .CHEntry a:visited,
+    .CHEntry a:hover {
+        color: #606060;
+        }
+    .CHEntry a:active {
+        color: #800000;
+        }
+
+
+
+
+
+#Index {
+    background-color: #FFFFFF;
+    }
+
+/*  As opposed to .PopupSearchResultsPage #Index  */
+.IndexPage #Index,
+.FramedIndexPage #Index,
+.FramedSearchResultsPage #Index {
+    padding: 15px;
+    }
+
+.IndexPage #Index {
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #000000;
+    font-size: 9pt;  /* To make 27ex match the menu's 27ex. */
+    margin-left: 27ex;
+    }
+
+
+    .IPageTitle {
+        font-size: 20pt; font-weight: bold;
+        color: #FFFFFF; background-color: #7070C0;
+        padding: 10px 15px 10px 15px;
+        border-width: 0 0 3px 0; border-color: #000000; border-style: solid;
+        margin: -15px -15px 0 -15px }
+
+    .FramedSearchResultsPage .IPageTitle {
+        margin-bottom: 15px;
+        }
+
+    .INavigationBar {
+        font-size: 10pt;
+        text-align: center;
+        background-color: #FFFFF0;
+        padding: 5px;
+        border-bottom: solid 1px black;
+        margin: 0 -15px 15px -15px;
+        }
+
+    .INavigationBar a {
+        font-weight: bold }
+
+    .IHeading {
+        font-size: 16pt; font-weight: bold;
+        padding: 2.5em 0 .5em 0;
+        text-align: center;
+        width: 3.5ex;
+        }
+    #IFirstHeading {
+        padding-top: 0;
+        }
+
+    .IEntry {
+        font-size: 10pt;
+        padding-left: 1ex;
+        }
+    .PopupSearchResultsPage .IEntry {
+        font-size: 8pt;
+        padding: 1px 5px;
+        }
+    .PopupSearchResultsPage .Opera9 .IEntry,
+    .FramedSearchResultsPage .Opera9 .IEntry {
+        text-align: left;
+        }
+    .FramedSearchResultsPage .IEntry {
+        padding: 0;
+        }
+
+    .ISubIndex {
+        padding-left: 3ex; padding-bottom: .5em }
+    .PopupSearchResultsPage .ISubIndex {
+        display: none;
+        }
+
+    /*  While it may cause some entries to look like links when they aren't, I found it's much easier to read the
+         index if everything's the same color.  */
+    .ISymbol {
+        font-weight: bold; color: #900000  }
+
+    .IndexPage .ISymbolPrefix,
+    .FramedIndexPage .ISymbolPrefix {
+        font-size: 10pt;
+        text-align: right;
+        color: #C47C7C;
+        background-color: #F8F8F8;
+        border-right: 3px solid #E0E0E0;
+        border-left: 1px solid #E0E0E0;
+        padding: 0 1px 0 2px;
+        }
+    .PopupSearchResultsPage .ISymbolPrefix,
+    .FramedSearchResultsPage .ISymbolPrefix {
+        color: #900000;
+        }
+    .PopupSearchResultsPage .ISymbolPrefix {
+        font-size: 8pt;
+        }
+
+    .IndexPage #IFirstSymbolPrefix,
+    .FramedIndexPage #IFirstSymbolPrefix {
+        border-top: 1px solid #E0E0E0;
+        }
+    .IndexPage #ILastSymbolPrefix,
+    .FramedIndexPage #ILastSymbolPrefix {
+        border-bottom: 1px solid #E0E0E0;
+        }
+    .IndexPage #IOnlySymbolPrefix,
+    .FramedIndexPage #IOnlySymbolPrefix {
+        border-top: 1px solid #E0E0E0;
+        border-bottom: 1px solid #E0E0E0;
+        }
+
+    a.IParent,
+    a.IFile {
+        display: block;
+        }
+
+    .PopupSearchResultsPage .SRStatus {
+        padding: 2px 5px;
+        font-size: 8pt;
+        font-style: italic;
+        }
+    .FramedSearchResultsPage .SRStatus {
+        font-size: 10pt;
+        font-style: italic;
+        }
+
+    .SRResult {
+        display: none;
+        }
+
+
+
+#Footer {
+    font-size: 8pt;
+    color: #989898;
+    text-align: right;
+    }
+
+#Footer p {
+    text-indent: 0;
+    margin-bottom: .5em;
+    }
+
+.ContentPage #Footer,
+.IndexPage #Footer {
+    text-align: right;
+    margin: 2px;
+    }
+
+.FramedMenuPage #Footer {
+    text-align: center;
+    margin: 5em 10px 10px 10px;
+    padding-top: 1em;
+    border-top: 1px solid #C8C8C8;
+    }
+
+    #Footer a:link,
+    #Footer a:hover,
+    #Footer a:visited { color: #989898 }
+    #Footer a:active { color: #A00000 }
+
+</style><script language=JavaScript src="../javascript/main.js"></script><script language=JavaScript src="../javascript/searchdata.js"></script></head><body class="ContentPage" onLoad="NDOnLoad()"><script language=JavaScript><!--
+if (browserType) {document.write("<div class=" + browserType + ">");if (browserVer) {document.write("<div class=" + browserVer + ">"); }}// --></script>
+
+<!--  Generated by Natural Docs, version 1.4 -->
+<!--  http://www.naturaldocs.org  -->
+
+<!-- saved from url=(0026)http://www.naturaldocs.org -->
+
+
+
+
+<div id=Content><div class="CSection"><div class=CTopic id=MainTopic><h1 class=CTitle><a name="Basic_ini_string_functions"></a>Basic ini string functions</h1><div class=CBody><p>Operate on variables instead of files.&nbsp; An easy to use ini parser.</p><h4 class=CHeading>License</h4><p>&copy; Copyright 2009, 2010 Tuncay</p><p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.</p><p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.&nbsp;  See the GNU Lesser General Public License for more details.</p><p>You should have received a copy of the GNU Lesser General Public License along with this program.&nbsp;  If not, see <a href="http://www.gnu.org/licenses/" class=LURL target=_top>http://www.gnu.org/licenses/</a>.</p><img src="lgplv3.png" width="88" height="31"><p>See the file COPYING.txt and COPYING.LESSER.txt for license and copying conditions.</p><!--START_ND_SUMMARY--><div class=Summary><div class=STitle>Summary</div><div class=SBorder><table border=0 cellspacing=0 cellpadding=0 class=STable><tr class="SMain"><td class=SEntry><a href="#Basic_ini_string_functions" >Basic ini string functions</a></td><td class=SDescription>Operate on variables instead of files. </td></tr><tr class="SGeneric SIndent1 SMarked"><td class=SEntry><a href="#Introduction" >Introduction</a></td><td class=SDescription>Ini files are used mostly as configuration files. </td></tr><tr class="SGeneric SIndent1"><td class=SEntry><a href="#Examples" >Examples</a></td><td class=SDescription></td></tr><tr class="SGeneric SIndent1 SMarked"><td class=SEntry><a href="#Functions" >Functions</a></td><td class=SDescription></td></tr><tr class="SSection"><td class=SEntry><a href="#Parse" >Parse</a></td><td class=SDescription></td></tr><tr class="SGeneric SIndent1 SMarked"><td class=SEntry><a href="#About" >About</a></td><td class=SDescription>Main functions for getting, setting and updating section or key.</td></tr><tr class="SGroup SIndent1"><td class=SEntry><a href="#Get" >Get</a></td><td class=SDescription>Functions for reading data.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#ini_getValue" id=link1 onMouseOver="ShowTip(event, 'tt1', 'link1')" onMouseOut="HideTip('tt1')">ini_getValue</a></td><td class=SDescription>Read and return a value from a key</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#ini_getKey" id=link2 onMouseOver="ShowTip(event, 'tt2', 'link2')" onMouseOut="HideTip('tt2')">ini_getKey</a></td><td class=SDescription>Read and return a complete key with key name and content.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#ini_getSection" id=link3 onMouseOver="ShowTip(event, 'tt3', 'link3')" onMouseOut="HideTip('tt3')">ini_getSection</a></td><td class=SDescription>Read and return a complete section with section name.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#ini_getAllValues" id=link4 onMouseOver="ShowTip(event, 'tt4', 'link4')" onMouseOut="HideTip('tt4')">ini_getAllValues</a></td><td class=SDescription>Read and get a new line separated list of all values in one go.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#ini_getAllKeyNames" id=link5 onMouseOver="ShowTip(event, 'tt5', 'link5')" onMouseOut="HideTip('tt5')">ini_getAllKeyNames</a></td><td class=SDescription>Read and get a comma separated list of all key names in one go.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#ini_getAllSectionNames" id=link6 onMouseOver="ShowTip(event, 'tt6', 'link6')" onMouseOut="HideTip('tt6')">ini_getAllSectionNames</a></td><td class=SDescription>Read and get a comma separated list of all section names in one go.</td></tr><tr class="SGroup SIndent1"><td class=SEntry><a href="#Replace" >Replace</a></td><td class=SDescription>Functions for replacing existing data.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#ini_replaceValue" id=link7 onMouseOver="ShowTip(event, 'tt7', 'link7')" onMouseOut="HideTip('tt7')">ini_replaceValue</a></td><td class=SDescription>Updates the value of a key.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#ini_replaceKey" id=link8 onMouseOver="ShowTip(event, 'tt8', 'link8')" onMouseOut="HideTip('tt8')">ini_replaceKey</a></td><td class=SDescription>Changes complete key with its name and value.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#ini_replaceSection" id=link9 onMouseOver="ShowTip(event, 'tt9', 'link9')" onMouseOut="HideTip('tt9')">ini_replaceSection</a></td><td class=SDescription>Changes complete section with all its keys and contents.</td></tr><tr class="SGroup SIndent1"><td class=SEntry><a href="#Insert" >Insert</a></td><td class=SDescription>Functions for adding new data.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#ini_insertValue" id=link10 onMouseOver="ShowTip(event, 'tt10', 'link10')" onMouseOut="HideTip('tt10')">ini_insertValue</a></td><td class=SDescription>Adds value to the end of existing value of specified key.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#ini_insertKey" id=link11 onMouseOver="ShowTip(event, 'tt11', 'link11')" onMouseOut="HideTip('tt11')">ini_insertKey</a></td><td class=SDescription>Adds a key pair with its name and value, if key does not already exists.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#ini_insertSection" id=link12 onMouseOver="ShowTip(event, 'tt12', 'link12')" onMouseOut="HideTip('tt12')">ini_insertSection</a></td><td class=SDescription>Adds a section and its keys, if section does not exist already.</td></tr><tr class="SSection"><td class=SEntry><a href="#Additional" >Additional</a></td><td class=SDescription></td></tr><tr class="SGeneric SIndent1 SMarked"><td class=SEntry><a href="#About" >About</a></td><td class=SDescription>Other functions besides the core ones.</td></tr><tr class="SGroup SIndent1"><td class=SEntry><a href="#File" >File</a></td><td class=SDescription>Related routines about file handling with some comfort.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#ini_load" id=link13 onMouseOver="ShowTip(event, 'tt13', 'link13')" onMouseOut="HideTip('tt13')">ini_load</a></td><td class=SDescription>Reads an ini file into a variable and resolves any part of the path.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#ini_save" id=link14 onMouseOver="ShowTip(event, 'tt14', 'link14')" onMouseOut="HideTip('tt14')">ini_save</a></td><td class=SDescription>Writes an ini file from variable to disk.</td></tr><tr class="SGroup SIndent1"><td class=SEntry><a href="#Edit" >Edit</a></td><td class=SDescription>These manipulates the whole ini structure (or an extracted section only).</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#ini_repair" id=link15 onMouseOver="ShowTip(event, 'tt15', 'link15')" onMouseOut="HideTip('tt15')">ini_repair</a></td><td class=SDescription>Repair and build an ini from scratch. </td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#ini_mergeKeys" id=link16 onMouseOver="ShowTip(event, 'tt16', 'link16')" onMouseOut="HideTip('tt16')">ini_mergeKeys</a></td><td class=SDescription>Merge two ini sources into first one. </td></tr><tr class="SGroup SIndent1"><td class=SEntry><a href="#Convert" >Convert</a></td><td class=SDescription>Export and import functions to convert ini structure.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#ini_exportToGlobals" id=link17 onMouseOver="ShowTip(event, 'tt17', 'link17')" onMouseOut="HideTip('tt17')">ini_exportToGlobals</a></td><td class=SDescription>Creates global variables from the ini structure.</td></tr><tr class="SSection"><td class=SEntry><a href="#Aliases" >Aliases</a></td><td class=SDescription></td></tr><tr class="SGeneric SIndent1 SMarked"><td class=SEntry><a href="#About" >About</a></td><td class=SDescription>Function wrappers to work with existing commands or functions via &ldquo;Basic ini string functions&rdquo;. </td></tr><tr class="SGroup SIndent1"><td class=SEntry><a href="#AutoHotkey" >AutoHotkey</a></td><td class=SDescription>Built-in Commands of AutoHotkey.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Ini_Read" id=link18 onMouseOver="ShowTip(event, 'tt18', 'link18')" onMouseOut="HideTip('tt18')">Ini_Read</a></td><td class=SDescription>Reads a value. </td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Ini_Write" id=link19 onMouseOver="ShowTip(event, 'tt19', 'link19')" onMouseOut="HideTip('tt19')">Ini_Write</a></td><td class=SDescription>Writes a value. </td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Ini_Delete" id=link20 onMouseOver="ShowTip(event, 'tt20', 'link20')" onMouseOut="HideTip('tt20')">Ini_Delete</a></td><td class=SDescription>Deletes a value or section. </td></tr></table></div></div><!--END_ND_SUMMARY--></div></div></div>
+
+<div class="CGeneric"><div class=CTopic><h3 class=CTitle><a name="Introduction"></a>Introduction</h3><div class=CBody><p>Ini files are used mostly as configuration files.&nbsp; In general, they have the &ldquo;.ini&rdquo;-extension.&nbsp; It is a simple standardized organization of text data.&nbsp; Many other simple programs use them for storing text.</p><p>AutoHotkey provides three commands IniDelete, IniRead and IniWrite.&nbsp; These commands are stable, but they have some disadvantages.&nbsp; First disadvantage is, that they access the file directly.&nbsp; The file on the disk is opened, load into memory and then read or manipulated and then saved with every single command.</p><p>With the custom functions I wrote here, the user accessess on variables instead of files.&nbsp; This is super fast, in comparison to disk access.&nbsp; Ini files can be created by Ahk just like any other variable.&nbsp; But Ahk itself does not have any function to operate on ini strings (variables).&nbsp; If you read often from ini file, then this might for you.</p><p>No other framework or library is required, no special object files are created; just work on ordinary ini file contents or variables.&nbsp; The load and save functions are added for comfort reason and are not really needed.</p><ul><li><b>First do this:</b></li></ul><blockquote><pre>FileRead, ini, config.ini</pre></blockquote><ul><li><b>or load default file with:</b></li></ul><blockquote><pre>ini_load(ini)</pre></blockquote><ul><li><b>or create the content yourself:</b></li></ul><blockquote><pre>ini =
+(
+[Tip]
+TimeStamp = 20090716194758
+[Recent File List]
+File1=F:\testfile.ahk
+File2=Z:\tempfile.tmp
+)</pre></blockquote><p>In this example &ldquo;Tip&rdquo; and &ldquo;Recent File List&rdquo; are name of the sections.&nbsp; The file consist in this example of 2 sections.&nbsp; Every section contains variables, so called &ldquo;keys&rdquo;.&nbsp; Every key is a part of a section.&nbsp; In this example, the section &ldquo;Tip&rdquo; have one key &ldquo;TimeStamp&rdquo;.&nbsp; And every key has a content, called value.&nbsp; The &ldquo;TimeStamp&rdquo; key have the value &ldquo;20090716194758&rdquo;.</p><p>After that, you can access and modify the content of the ini variable with the following functions.&nbsp; But the modifications are only temporary and must me saved to disk.&nbsp; This should be done by overwriting the source (not appending).</p><p><b>Notes</b>: A keys content (the value) goes until end of line.&nbsp; Any space surroounding the value is at default lost.&nbsp; For best compatibility, the names of section and key should consist of alpha (a-z), num (0-9) and the underscore only.&nbsp; In general, the names are case insensitiv.</p><h4 class=CHeading>Links</h4><ul><li>Discussion: [<a href="http://www.autohotkey.com/forum/viewtopic.php?t=46226" class=LURL target=_top>http://www.autohotkey.com<wbr>/forum<wbr>/viewtopic.php?t=46226</a>]</li><li>License: [<a href="http://www.gnu.org/licenses/lgpl-3.0.html" class=LURL target=_top>http://www.gnu.org/licenses/lgpl-3.0.html</a>]</li></ul><h4 class=CHeading>Date</h4><p>2010-02-05</p><h4 class=CHeading>Revision</h4><p>0.15.1</p><h4 class=CHeading>Status</h4><p>Stable</p><h4 class=CHeading>Developers</h4><ul><li>Tuncay, [<a href="#" onClick="location.href='mai' + 'lto:' + 'tunc' + 'ay.d' + '@' + 'gmx' + '.de'; return false;" class=LEMail>tunc<span style="display: none">.nosp@m.</span>ay.d<span>@</span>gmx<span style="display: none">.nosp@m.</span>.de</a>] (Author)</li><li>Mystiq (Tester and Co-Author of an important regex)</li><li>Fry (Tester)</li></ul><h4 class=CHeading>License</h4><p>GNU Lesser General Public License 3.0 or higher [<a href="http://www.gnu.org/licenses/lgpl-3.0.html" class=LURL target=_top>http://www.gnu.org/licenses/lgpl-3.0.html</a>]</p><h4 class=CHeading>Category</h4><p>String Manipulation</p><h4 class=CHeading>Type</h4><p>Library</p><h4 class=CHeading>Tested AutoHotkey Version</h4><p>1.0.48.05</p><h4 class=CHeading>Tested Platform</h4><p>2000/XP</p><h4 class=CHeading>Standalone (such as no need for extern file or library)</h4><p>Yes</p><h4 class=CHeading>StdLibConform (such as use of prefix and no globals use)</h4><p>Yes</p><h4 class=CHeading>Related</h4><p><b>Format Specifications (not strictly implemented)</b></p><ul><li>Wikipedia - INI file [<a href="http://en.wikipedia.org/wiki/INI_file" class=LURL target=_top>http://en.wikipedia.org/wiki/INI_file</a>]</li><li>Cloanto Implementation of INI File Format [<a href="http://www.cloanto.com/specs/ini.html" class=LURL target=_top>http://www.cloanto.com/specs/ini.html</a>]</li></ul><p><b>AutoHotkey Commands</b></p><ul><li>IniRead: [<a href="http://www.autohotkey.com/docs/commands/IniRead.htm" class=LURL target=_top>http://www.autohotkey.com<wbr>/docs<wbr>/commands<wbr>/IniRead.htm</a>]</li><li>IniWrite: [<a href="http://www.autohotkey.com/docs/commands/IniWrite.htm" class=LURL target=_top>http://www.autohotkey.com<wbr>/docs<wbr>/commands<wbr>/IniWrite.htm</a>]</li><li>IniDelete: [<a href="http://www.autohotkey.com/docs/commands/IniDelete.htm" class=LURL target=_top>http://www.autohotkey.com<wbr>/docs<wbr>/commands<wbr>/IniDelete.htm</a>]</li></ul><p><b>Other Community Solutions</b></p><ul><li>INI Library by Titan: [<a href="http://www.autohotkey.com/forum/viewtopic.php?t=26141" class=LURL target=_top>http://www.autohotkey.com<wbr>/forum<wbr>/viewtopic.php?t=26141</a>]</li><li>[Class] IniFile by bmcclure: [<a href="http://www.autohotkey.com/forum/viewtopic.php?t=41506" class=LURL target=_top>http://www.autohotkey.com<wbr>/forum<wbr>/viewtopic.php?t=41506</a>]</li><li>[module] Ini by majkinetor: [<a href="http://www.autohotkey.com/forum/viewtopic.php?t=22495" class=LURL target=_top>http://www.autohotkey.com<wbr>/forum<wbr>/viewtopic.php?t=22495</a>]</li><li>Auto read,load and save by Superfraggle: [<a href="http://www.autohotkey.com/forum/viewtopic.php?t=21346" class=LURL target=_top>http://www.autohotkey.com<wbr>/forum<wbr>/viewtopic.php?t=21346</a>]</li><li>globalsFromIni by Tuncay: [<a href="http://www.autohotkey.com/forum/viewtopic.php?t=27928" class=LURL target=_top>http://www.autohotkey.com<wbr>/forum<wbr>/viewtopic.php?t=27928</a>]</li><li>Read .INI file in one go by Smurth: [<a href="http://www.autohotkey.com/forum/viewtopic.php?t=36601" class=LURL target=_top>http://www.autohotkey.com<wbr>/forum<wbr>/viewtopic.php?t=36601</a>]</li></ul></div></div></div>
+
+<div class="CGeneric"><div class=CTopic><h3 class=CTitle><a name="Examples"></a>Examples</h3><div class=CBody><h4 class=CHeading>Usage</h4><blockquote><pre>value := ini_getValue(ini, &quot;Section&quot;, &quot;Key&quot;)                    ; &lt;- Get value of a key.
+value := ini_getValue(ini, &quot;&quot;, &quot;Key&quot;)                           ; &lt;- Get value of first found key.
+key := ini_getKey(ini, &quot;Section&quot;, &quot;Key&quot;)                        ; &lt;- Get key/value pair.
+section := ini_getSection(ini, &quot;Section&quot;)                       ; &lt;- Get full section with all keys.
+
+ini_replaceValue(ini, &quot;Section&quot;, &quot;Key&quot;, A_Now)                  ; -&gt; Update value of a key.
+ini_replaceKey(ini, &quot;Section&quot;, &quot;Key&quot;)                           ; -&gt; Delete a key.
+ini_replaceSection(ini, &quot;Section&quot;, &quot;[Section1]Key1=0`nKey2=1&quot;)  ; -&gt; Replace a section with all its keys.
+
+ini_insertValue(ini, &quot;Section&quot;, &quot;Key&quot; &quot;,ListItem&quot;)              ; -&gt; Add a value to existing value.
+ini_insertKey(ini, &quot;Section&quot;, &quot;Key=&quot; . A_Now)                   ; -&gt; Add a key/value pair.
+ini_insertSection(ini, &quot;Section&quot;, &quot;Key1=ini`nKey2=Tuncay&quot;)      ; -&gt; Add a section.
+
+keys := ini_getAllKeyNames(ini, &quot;Section&quot;)                      ; &lt;- Get a list of all key names.
+sections := ini_getAllSectionNames(ini)                         ; &lt;- Get a list of all section names.</pre></blockquote><h4 class=CHeading>Sample Script</h4><p>Simple script for storing and showing how often it was executed.</p><blockquote><pre>#NoEnv
+SendMode Input
+SetWorkingDir %A_ScriptDir%
+
+; ----- User Configuration -----
+#Include ini/ini.ahk
+ConfigFilePath := &quot;settings.ini&quot;
+
+
+; ----- Main -----
+IfNotExist, %ConfigFilePath%
+    createConfigFile(ConfigFilePath)
+
+FileRead, ini, %ConfigFilePath%
+value := ini_getValue(ini, &quot;Config&quot;, &quot;Started&quot;)
+value++
+ini_replaceValue(ini, &quot;Config&quot;, &quot;Started&quot;, value)
+updateConfigFile(ConfigFilePath, ini)
+
+FileRead, ini, %ConfigFilePath%
+value := ini_getValue(ini, &quot;Config&quot;, &quot;Started&quot;)
+MsgBox This script was started %value% time/s.
+
+
+RETURN ; End of AutoExec-section
+
+
+createConfigFile(Path)
+{
+    Template =
+    (LTrim
+    [Config]
+    Started=0
+    )
+    FileAppend, %Template%, %Path%
+    Return
+}
+
+
+updateConfigFile(Path, ByRef Content)
+{
+    FileDelete, %Path%
+    FileAppend, %Content%, %Path%
+    Return
+}</pre></blockquote></div></div></div>
+
+<div class="CGeneric"><div class=CTopic><h3 class=CTitle><a name="Functions"></a>Functions</h3><div class=CBody><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription>Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section.&nbsp; Some functions support the default empty string &ldquo;&rdquo;.&nbsp; This leads to look up at first found section.</td></tr><tr><td class=CDLEntry>Key</td><td class=CDLDescription>Name of the variable under the section.</td></tr><tr><td class=CDLEntry>Replacement</td><td class=CDLDescription>New content to use.</td></tr><tr><td class=CDLEntry>PreserveSpace</td><td class=CDLDescription>Should be set to 1 if spaces around the value of a key should be saved, otherwise they are lost.&nbsp; The surrounding single or double quotes are also lost.</td></tr></table><p>The &lsquo;get&rsquo; functions returns the desired contents without touching the variable.</p><p>The &lsquo;replace&rsquo; and &lsquo;insert&rsquo; functions changes the desired content directly and returns 1 for success and 0 otherwise.</p><p>There are some more type of functions and parameters.&nbsp; But these are not listed here.</p><h4 class=CHeading>Remarks</h4><p>On success, ErrorLevel is set to &lsquo;0&rsquo;.&nbsp; Otherwise ErrorLevel is set to &lsquo;1&rsquo; if key under desired section is not found.</p><p>The functions are not designed to be used in all situations.&nbsp; On rare conditions, the result could be corrupt or not usable.&nbsp; In example, there is no handling of commas inside the key or section names.&nbsp; Any &ldquo;\E&rdquo; would end the literal sequence and switch back to regex.&nbsp; The &ldquo;\E&rdquo; sequence is not escaped, because its very uncommon to use backslashes inside key and section names.&nbsp; To workaround this, replace at every key or section name the &ldquo;\E&rdquo; part with &ldquo;\E\\E\Q&rdquo;:</p><blockquote><pre>Name := &quot;Folder\Edit\Test1&quot;
+IfInString, Name, \
+{
+    StringReplace, Name, Name, \E, \E\\E\Q, All
+}
+MsgBox % ini_getValue(ini, &quot;paths&quot;, Name)</pre></blockquote><p>This allows us to work with regex, but then at the end it should be closed with &ldquo;\Q&rdquo; again.</p><blockquote><pre>; Used regex at keyname: &quot;Time.*&quot;
+value := ini_getValue(ini, &quot;Tip&quot;, &quot;\ETime.*\Q&quot;)</pre></blockquote></div></div></div>
+
+<div class="CSection"><div class=CTopic><h2 class=CTitle><a name="Parse"></a>Parse</h2><div class=CBody><!--START_ND_SUMMARY--><div class=Summary><div class=STitle>Summary</div><div class=SBorder><table border=0 cellspacing=0 cellpadding=0 class=STable><tr class="SGeneric"><td class=SEntry><a href="#About" >About</a></td><td class=SDescription>Main functions for getting, setting and updating section or key.</td></tr><tr class="SGroup"><td class=SEntry><a href="#Get" >Get</a></td><td class=SDescription>Functions for reading data.</td></tr><tr class="SFunction SIndent1 SMarked"><td class=SEntry><a href="#ini_getValue" id=link21 onMouseOver="ShowTip(event, 'tt1', 'link21')" onMouseOut="HideTip('tt1')">ini_getValue</a></td><td class=SDescription>Read and return a value from a key</td></tr><tr class="SFunction SIndent1"><td class=SEntry><a href="#ini_getKey" id=link22 onMouseOver="ShowTip(event, 'tt2', 'link22')" onMouseOut="HideTip('tt2')">ini_getKey</a></td><td class=SDescription>Read and return a complete key with key name and content.</td></tr><tr class="SFunction SIndent1 SMarked"><td class=SEntry><a href="#ini_getSection" id=link23 onMouseOver="ShowTip(event, 'tt3', 'link23')" onMouseOut="HideTip('tt3')">ini_getSection</a></td><td class=SDescription>Read and return a complete section with section name.</td></tr><tr class="SFunction SIndent1"><td class=SEntry><a href="#ini_getAllValues" id=link24 onMouseOver="ShowTip(event, 'tt4', 'link24')" onMouseOut="HideTip('tt4')">ini_getAllValues</a></td><td class=SDescription>Read and get a new line separated list of all values in one go.</td></tr><tr class="SFunction SIndent1 SMarked"><td class=SEntry><a href="#ini_getAllKeyNames" id=link25 onMouseOver="ShowTip(event, 'tt5', 'link25')" onMouseOut="HideTip('tt5')">ini_getAllKeyNames</a></td><td class=SDescription>Read and get a comma separated list of all key names in one go.</td></tr><tr class="SFunction SIndent1"><td class=SEntry><a href="#ini_getAllSectionNames" id=link26 onMouseOver="ShowTip(event, 'tt6', 'link26')" onMouseOut="HideTip('tt6')">ini_getAllSectionNames</a></td><td class=SDescription>Read and get a comma separated list of all section names in one go.</td></tr><tr class="SGroup"><td class=SEntry><a href="#Replace" >Replace</a></td><td class=SDescription>Functions for replacing existing data.</td></tr><tr class="SFunction SIndent1 SMarked"><td class=SEntry><a href="#ini_replaceValue" id=link27 onMouseOver="ShowTip(event, 'tt7', 'link27')" onMouseOut="HideTip('tt7')">ini_replaceValue</a></td><td class=SDescription>Updates the value of a key.</td></tr><tr class="SFunction SIndent1"><td class=SEntry><a href="#ini_replaceKey" id=link28 onMouseOver="ShowTip(event, 'tt8', 'link28')" onMouseOut="HideTip('tt8')">ini_replaceKey</a></td><td class=SDescription>Changes complete key with its name and value.</td></tr><tr class="SFunction SIndent1 SMarked"><td class=SEntry><a href="#ini_replaceSection" id=link29 onMouseOver="ShowTip(event, 'tt9', 'link29')" onMouseOut="HideTip('tt9')">ini_replaceSection</a></td><td class=SDescription>Changes complete section with all its keys and contents.</td></tr><tr class="SGroup"><td class=SEntry><a href="#Insert" >Insert</a></td><td class=SDescription>Functions for adding new data.</td></tr><tr class="SFunction SIndent1 SMarked"><td class=SEntry><a href="#ini_insertValue" id=link30 onMouseOver="ShowTip(event, 'tt10', 'link30')" onMouseOut="HideTip('tt10')">ini_insertValue</a></td><td class=SDescription>Adds value to the end of existing value of specified key.</td></tr><tr class="SFunction SIndent1"><td class=SEntry><a href="#ini_insertKey" id=link31 onMouseOver="ShowTip(event, 'tt11', 'link31')" onMouseOut="HideTip('tt11')">ini_insertKey</a></td><td class=SDescription>Adds a key pair with its name and value, if key does not already exists.</td></tr><tr class="SFunction SIndent1 SMarked"><td class=SEntry><a href="#ini_insertSection" id=link32 onMouseOver="ShowTip(event, 'tt12', 'link32')" onMouseOut="HideTip('tt12')">ini_insertSection</a></td><td class=SDescription>Adds a section and its keys, if section does not exist already.</td></tr></table></div></div><!--END_ND_SUMMARY--></div></div></div>
+
+<div class="CGeneric"><div class=CTopic><h3 class=CTitle><a name="About"></a>About</h3><div class=CBody><h4 class=CHeading>Brief</h4><p>Main functions for getting, setting and updating section or key.</p></div></div></div>
+
+<div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="Get"></a>Get</h3><div class=CBody><p>Functions for reading data.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_getValue"></a>ini_getValue</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_getValue(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_PreserveSpace</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> False</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Read and return a value from a key</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section.&nbsp; If it is specified to &ldquo;&rdquo;, then section is ignored and first found key is get.</td></tr><tr><td class=CDLEntry>Key</td><td class=CDLDescription>Name of the variable under the section.</td></tr><tr><td class=CDLEntry>PreserveSpace</td><td class=CDLDescription><b>Optional</b> Should be set to 1 if spaces around the value of a key should be saved, otherwise they are lost.&nbsp; The surrounding single or double quotes are also lost.&nbsp; Default is deleting surrounding spaces and quotes.</td></tr></table><h4 class=CHeading>Returns</h4><p>On success the content of desired key is returned, otherwise an empty string.</p><h4 class=CHeading>Examples</h4><blockquote><pre>value := ini_getValue(ini, &quot;Tip&quot;, &quot;TimeStamp&quot;)
+MsgBox %value%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>20090716194758</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_getKey"></a>ini_getKey</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_getKey(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Read and return a complete key with key name and content.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section.&nbsp; If it is specified to &ldquo;&rdquo;, then section is ignored and first found key is get.</td></tr><tr><td class=CDLEntry>Key</td><td class=CDLDescription>Name of the variable under the section.</td></tr></table><h4 class=CHeading>Returns</h4><p>On success the key and value pair in one string is returned, otherwise an empty string.</p><h4 class=CHeading>Examples</h4><blockquote><pre>key := ini_getKey(ini, &quot;Tip&quot;, &quot;TimeStamp&quot;)
+MsgBox %key%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>TimeStamp = 20090716194758</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_getSection"></a>ini_getSection</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_getSection(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Read and return a complete section with section name.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section.&nbsp; (An enmpty string &ldquo;&rdquo; is not working.)</td></tr></table><h4 class=CHeading>Returns</h4><p>On success the entire section in one string is returned, otherwise an empty string.</p><h4 class=CHeading>Examples</h4><blockquote><pre>section := ini_getSection(ini, &quot;Tip&quot;)
+MsgBox %section%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>[Tip]
+TimeStamp = 20090716194758</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_getAllValues"></a>ini_getAllValues</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_getAllValues(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_count</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Read and get a new line separated list of all values in one go.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription><b>Optional</b> Unique name of the section.</td></tr><tr><td class=CDLEntry>Count</td><td class=CDLDescription><b>Variable Optional</b> The number of found values/keys.</td></tr></table><h4 class=CHeading>Returns</h4><p>On success a comma separated list with all name of keys is returned, otherwise an empty string.&nbsp; If section is specified, only those from that section is returned, otherwise from all sections.</p><h4 class=CHeading>Remarks</h4><p>Other than the other getAll-functions list separator, this function uses the new line &ldquo;`n&rdquo; character instead the comma &ldquo;,&rdquo; for separating values.&nbsp; Also other than the other getValue functions, this does not provide any preserveSpaces option, as it allways preserves surrounding spaces and quotes.</p><h4 class=CHeading>Examples</h4><blockquote><pre>values := ini_getAllValues(ini, &quot;Recent File List&quot;)
+MsgBox %values%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>F:\testfile.ahk
+Z:\tempfile.tmp</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_getAllKeyNames"></a>ini_getAllKeyNames</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_getAllKeyNames(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_count</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Read and get a comma separated list of all key names in one go.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription><b>Optional</b> Unique name of the section.</td></tr><tr><td class=CDLEntry>Count</td><td class=CDLDescription><b>Variable Optional</b> The number of found keys.</td></tr></table><h4 class=CHeading>Returns</h4><p>On success a comma separated list with all name of keys is returned, otherwise an empty string.&nbsp; If section is specified, only those from that section is returned, otherwise from all sections.</p><h4 class=CHeading>Examples</h4><blockquote><pre>keys := ini_getAllKeyNames(ini, &quot;Recent File List&quot;)
+MsgBox %keys%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>File1,File2</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_getAllSectionNames"></a>ini_getAllSectionNames</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_getAllSectionNames(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_count</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Read and get a comma separated list of all section names in one go.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Count</td><td class=CDLDescription><b>Variable Optional</b> The number of found sections.</td></tr></table><h4 class=CHeading>Returns</h4><p>On success a comma separated list with all name of sections is returned, otherwise an empty string.</p><h4 class=CHeading>Examples</h4><blockquote><pre>sections := ini_getAllSectionNames(ini)
+MsgBox %sections%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>Tip,Recent File List</pre></blockquote></div></div></div>
+
+<div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="Replace"></a>Replace</h3><div class=CBody><p>Functions for replacing existing data.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_replaceValue"></a>ini_replaceValue</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_replaceValue(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Replacement</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_PreserveSpace</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> False</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Updates the value of a key.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section.&nbsp; If it is specified to &ldquo;&rdquo;, then section is ignored and first found key is get.</td></tr><tr><td class=CDLEntry>Key</td><td class=CDLDescription>Name of the variable under the section.</td></tr><tr><td class=CDLEntry>Replacement</td><td class=CDLDescription><b>Optional</b> New content to use.&nbsp; If not specified, the content will be replaced with no content.&nbsp; That means it is deleted/set to empty string.</td></tr><tr><td class=CDLEntry>PreserveSpace</td><td class=CDLDescription><b>Optional</b> Should be set to 1 if spaces around the value of a key should be saved, otherwise they are lost.&nbsp; The surrounding single or double quotes are also lost.&nbsp; Default is deleting surrounding spaces.</td></tr></table><h4 class=CHeading>Returns</h4><p>Returns 1 if key is updated to new value, and 0 otherwise (opposite of ErrorLevel).</p><h4 class=CHeading>Examples</h4><blockquote><pre>ini_replaceValue(ini, &quot;Tip&quot;, &quot;TimeStamp&quot;, 2009)
+value := ini_getValue(ini, &quot;Tip&quot;, &quot;TimeStamp&quot;)
+MsgBox %value%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>2009</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_replaceKey"></a>ini_replaceKey</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_replaceKey(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Replacement</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Changes complete key with its name and value.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section.&nbsp; If it is specified to &ldquo;&rdquo;, then section is ignored and first found key is get.</td></tr><tr><td class=CDLEntry>Key</td><td class=CDLDescription>Name of the variable under the section.</td></tr><tr><td class=CDLEntry>Replacement</td><td class=CDLDescription><b>Optional</b> New content to use.&nbsp; If not specified, the content will be replaced with no content.&nbsp; That means it is deleted/set to empty string.&nbsp; The replacement should contain an equality sign.&nbsp; (Expected form: &ldquo;keyName=value&rdquo;)</td></tr></table><h4 class=CHeading>Returns</h4><p>Returns 1 if key is updated to new value, and 0 otherwise (opposite of ErrorLevel).</p><h4 class=CHeading>Examples</h4><blockquote><pre>ini_replaceKey(ini, &quot;Tip&quot;, &quot;TimeStamp&quot;, &quot;TimeStamp=1980&quot;)
+value := ini_getValue(ini, &quot;Tip&quot;, &quot;TimeStamp&quot;)
+MsgBox %value%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>1980</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_replaceSection"></a>ini_replaceSection</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_replaceSection(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Replacement</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Changes complete section with all its keys and contents.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section.&nbsp; If it is specified to &ldquo;&rdquo;, then section is ignored and first found key is get.</td></tr><tr><td class=CDLEntry>Replacement</td><td class=CDLDescription><b>Optional</b> New content to use.&nbsp; If not specified, the content will be replaced with no content.&nbsp; That means it is deleted/set to empty string.&nbsp; The replacement should contain everything what a section contains, like the &ldquo;[&ldquo; and &ldquo;]&rdquo; before and after section name and all keys with its equality sign and value.&nbsp; (Expected form: &ldquo;[sectionName]`nkeyName=value&rdquo;)</td></tr></table><h4 class=CHeading>Returns</h4><p>Returns 1 if key is updated to new value, and 0 otherwise (opposite of ErrorLevel).</p><h4 class=CHeading>Examples</h4><blockquote><pre>ini_replaceSection(ini, &quot;Tip&quot;, &quot;TimeStamp&quot;, &quot;[Section1]`nKey1=Hello`nKey2=You!&quot;)
+value := ini_getValue(ini, &quot;Section1&quot;, &quot;Key1&quot;)
+MsgBox %value%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>Hello</pre></blockquote></div></div></div>
+
+<div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="Insert"></a>Insert</h3><div class=CBody><p>Functions for adding new data.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_insertValue"></a>ini_insertValue</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_insertValue(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Value,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_PreserveSpace</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> False</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Adds value to the end of existing value of specified key.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section.&nbsp; If it is specified to &ldquo;&rdquo;, then section is ignored and first found key is get.</td></tr><tr><td class=CDLEntry>Key</td><td class=CDLDescription>Name of the variable under the section.</td></tr><tr><td class=CDLEntry>Value</td><td class=CDLDescription>Value to be inserted at end of currently existing value.</td></tr><tr><td class=CDLEntry>PreserveSpace</td><td class=CDLDescription><b>Optional</b> Should be set to 1 if spaces around the value of a key should be saved, otherwise they are lost.&nbsp; The surrounding single or double quotes are also lost.&nbsp; Default is deleting surrounding spaces.</td></tr></table><h4 class=CHeading>Returns</h4><p>Returns 1 if value is inserted, and 0 otherwise (opposite of ErrorLevel).</p><h4 class=CHeading>Examples</h4><blockquote><pre>ini_insertValue(ini, &quot;Recent File List&quot;, &quot;File1&quot;, &quot;, &quot; . A_ScriptName)
+value := ini_getValue(ini, &quot;Recent File List&quot;, &quot;File1&quot;)
+MsgBox %value%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>F:\testfile.ahk, ini.ahk</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_insertKey"></a>ini_insertKey</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_insertKey(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Adds a key pair with its name and value, if key does not already exists.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section.&nbsp; (An enmpty string &ldquo;&rdquo; is not working.)</td></tr><tr><td class=CDLEntry>Key</td><td class=CDLDescription>Key and value pair splitted by an equality sign.</td></tr></table><h4 class=CHeading>Returns</h4><p>Returns 1 if key is inserted, and 0 otherwise (opposite of ErrorLevel).</p><h4 class=CHeading>Remarks</h4><p>Currently, it works as a workaround with different function calls instead of one regex call.&nbsp; This makes it slower against the other functions.</p><h4 class=CHeading>Examples</h4><blockquote><pre>ini_insertKey(ini, &quot;Tip&quot;, &quot;TimeNow=&quot; . 20090925195317)
+value := ini_getValue(ini, &quot;Tip&quot;, &quot;TimeNow&quot;)
+MsgBox %value%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>20090925195317</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_insertSection"></a>ini_insertSection</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_insertSection(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Keys</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Adds a section and its keys, if section does not exist already.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section to be added and checked if it is already existing.</td></tr><tr><td class=CDLEntry>Keys</td><td class=CDLDescription><b>Optional</b> Set of key value pairs.&nbsp; Every key and value pair should be at its own line divided by a new line character.</td></tr></table><h4 class=CHeading>Returns</h4><p>Returns 1 if section and the keys are inserted, and 0 otherwise (opposite of ErrorLevel).</p><h4 class=CHeading>Examples</h4><blockquote><pre>ini_insertSection(ini, &quot;Tip&quot;, &quot;Files&quot;, &quot;Name1=Programs`nPath1=C:\Program Files&quot;)
+value := ini_getValue(ini, &quot;Files&quot;, &quot;Name1&quot;)
+MsgBox %value%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>Programs</pre></blockquote></div></div></div>
+
+<div class="CSection"><div class=CTopic><h2 class=CTitle><a name="Additional"></a>Additional</h2><div class=CBody><!--START_ND_SUMMARY--><div class=Summary><div class=STitle>Summary</div><div class=SBorder><table border=0 cellspacing=0 cellpadding=0 class=STable><tr class="SGeneric"><td class=SEntry><a href="#About" >About</a></td><td class=SDescription>Other functions besides the core ones.</td></tr><tr class="SGroup"><td class=SEntry><a href="#File" >File</a></td><td class=SDescription>Related routines about file handling with some comfort.</td></tr><tr class="SFunction SIndent1 SMarked"><td class=SEntry><a href="#ini_load" id=link33 onMouseOver="ShowTip(event, 'tt13', 'link33')" onMouseOut="HideTip('tt13')">ini_load</a></td><td class=SDescription>Reads an ini file into a variable and resolves any part of the path.</td></tr><tr class="SFunction SIndent1"><td class=SEntry><a href="#ini_save" id=link34 onMouseOver="ShowTip(event, 'tt14', 'link34')" onMouseOut="HideTip('tt14')">ini_save</a></td><td class=SDescription>Writes an ini file from variable to disk.</td></tr><tr class="SGroup"><td class=SEntry><a href="#Edit" >Edit</a></td><td class=SDescription>These manipulates the whole ini structure (or an extracted section only).</td></tr><tr class="SFunction SIndent1 SMarked"><td class=SEntry><a href="#ini_repair" id=link35 onMouseOver="ShowTip(event, 'tt15', 'link35')" onMouseOut="HideTip('tt15')">ini_repair</a></td><td class=SDescription>Repair and build an ini from scratch. </td></tr><tr class="SFunction SIndent1"><td class=SEntry><a href="#ini_mergeKeys" id=link36 onMouseOver="ShowTip(event, 'tt16', 'link36')" onMouseOut="HideTip('tt16')">ini_mergeKeys</a></td><td class=SDescription>Merge two ini sources into first one. </td></tr><tr class="SGroup"><td class=SEntry><a href="#Convert" >Convert</a></td><td class=SDescription>Export and import functions to convert ini structure.</td></tr><tr class="SFunction SIndent1 SMarked"><td class=SEntry><a href="#ini_exportToGlobals" id=link37 onMouseOver="ShowTip(event, 'tt17', 'link37')" onMouseOut="HideTip('tt17')">ini_exportToGlobals</a></td><td class=SDescription>Creates global variables from the ini structure.</td></tr></table></div></div><!--END_ND_SUMMARY--></div></div></div>
+
+<div class="CGeneric"><div class=CTopic><h3 class=CTitle><a name="About"></a>About</h3><div class=CBody><h4 class=CHeading>Brief</h4><p>Other functions besides the core ones.</p></div></div></div>
+
+<div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="File"></a>File</h3><div class=CBody><p>Related routines about file handling with some comfort.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_load"></a>ini_load</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_load(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Path</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_convertNewLine</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> false</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Reads an ini file into a variable and resolves any part of the path.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> On success, the file is loaded into this variable.</td></tr><tr><td class=CDLEntry>Path</td><td class=CDLDescription><b>Optional</b> Source filename or -path to look for.&nbsp; It can contain wildcards.&nbsp; If this is an existing directory (or contains backslash at the end), then default filename is appended.&nbsp; Default filename is ScriptName with &ldquo;.ini&rdquo; extension (in example &ldquo;script.ini&rdquo;).&nbsp; Relative Pathes are solved to current WorkingDir.&nbsp; Every part of the path (like filename and -extension) are optional.&nbsp; Default extension is logically &ldquo;.ini&rdquo;.&nbsp; Binary files are not loaded.&nbsp; Empty string is resolved to &ldquo;ScriptPathNoExt + .ini&rdquo;.</td></tr><tr><td class=CDLEntry>convertNewLine</td><td class=CDLDescription><b>Optional</b> If this is true, all &ldquo;`r`n&rdquo; (CRLF) new line sequence of files content will be replaced with &ldquo;`n&rdquo; (LF) only.&nbsp; Normally this is not necessary.</td></tr></table><h4 class=CHeading>Returns</h4><p>The resolved full path which was searched for.&nbsp; If file exists, the full path with correct case from the disk is get.</p><h4 class=CHeading>Remarks</h4><p>This function is not necessary to work with the ini-library.&nbsp; In fact, in the heart, it does nothing else than FileRead.&nbsp; The filled variable is an ordinary string.&nbsp; You can work with custom functions other from this library on these variables, as if you would do allways.</p><p>If file is not found or content is binary, or at any other reason ErrorLevel is set to 1 and Content is set to &ldquo;&rdquo; (empty).</p><h4 class=CHeading>Examples</h4><blockquote><pre>; Load content of default file into variable &quot;ini&quot;.
+path := ini_load(ini)
+MsgBox %path%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>E:\Tuncay\AutoHotkey\scriptname.ini</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_save"></a>ini_save</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_save(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Path</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_convertNewLine</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> true,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_overwrite</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> true</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Writes an ini file from variable to disk.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Ini content to save at given path on disk.</td></tr><tr><td class=CDLEntry>Path</td><td class=CDLDescription><b>Optional</b> Source filename or -path to look for.&nbsp; It can contain wildcards.&nbsp; If this is an existing directory (or contains backslash at the end), then default filename is appended.&nbsp; Default filename is ScriptName with &ldquo;.ini&rdquo; extension (in example &ldquo;script.ini&rdquo;).&nbsp; Relative Pathes are solved to current WorkingDir.&nbsp; Every part of the path (like filename and -extension) are optional.&nbsp; Default extension is logically &ldquo;.ini&rdquo;.&nbsp; Binary files are not loaded.&nbsp; Empty string is resolved to &ldquo;ScriptPathNoExt + .ini&rdquo;.</td></tr><tr><td class=CDLEntry>convertNewLine</td><td class=CDLDescription><b>Optional</b> If this is true, all &ldquo;`n&rdquo; (LF) new line sequence of files content will be replaced with &ldquo;`r`n&rdquo; (CRLF).&nbsp; Normally, Windows default new line sequence is &ldquo;`r`n&rdquo;.&nbsp; (Source is not changed with this option.)</td></tr><tr><td class=CDLEntry>overwrite</td><td class=CDLDescription><b>Optional</b> If this mode is enabled (true at default), the source file will be updated.&nbsp; Otherwise, the file is saved to disk only if source does not exist already.</td></tr></table><h4 class=CHeading>Returns</h4><p>The resolved full path which was searched for.</p><h4 class=CHeading>Remarks</h4><p>If overwrite mode is enabled and file could not be deleted, then ErrorLevel is set to 1.&nbsp; Otherwise, if overwriting an existing file is not allowed (overwrite = false) and file is existing, then ErrorLevel will be set to 1 also.</p><h4 class=CHeading>Examples</h4><blockquote><pre>; Write and update content of ini variable to default file.
+path := ini_save(ini)
+MsgBox %path%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>E:\Tuncay\AutoHotkey\scriptname.ini</pre></blockquote></div></div></div>
+
+<div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="Edit"></a>Edit</h3><div class=CBody><p>These manipulates the whole ini structure (or an extracted section only).</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_repair"></a>ini_repair</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_repair(</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>_PreserveSpace</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> False,</td></tr><tr><td></td><td class=PParameter nowrap>_CommentSymbols</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;;#&quot;,</td></tr><tr><td></td><td class=PParameter nowrap>_LineDelim</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;`n&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Repair and build an ini from scratch.&nbsp; Leave out comments and trim unneeded whitespaces.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription>Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>PreserveSpace</td><td class=CDLDescription><b>Optional</b> Should be set to 1 if spaces around the value of a key should be saved, otherwise they are lost.&nbsp; Default is deleting surrounding spaces.</td></tr><tr><td class=CDLEntry>CommentSymbols</td><td class=CDLDescription><b>Optional</b> List of characters which are should be treated as comment symbols.&nbsp; Every single character in list is a symbol.&nbsp; Default are &ldquo;;&rdquo; and &ldquo;#&rdquo;, in example defined as &ldquo;;#&rdquo;.</td></tr><tr><td class=CDLEntry>LineDelim</td><td class=CDLDescription><b>Optional</b> A sequence of characters which should be the delimiter as the line end symbol.&nbsp; Default is &ldquo;`n&rdquo;, a new line.</td></tr></table><h4 class=CHeading>Returns</h4><p>The new formatted ini string with trimmed whitespaces and without comments.</p><h4 class=CHeading>Remarks</h4><p>Other than the most other functions here, the ini Content variable is not a byref and will not manipulated directly.&nbsp; The return value is the new ini.&nbsp; The LineDelim option can be leaved as is.&nbsp; Internally all commands of AutoHotkey like MsgBox or FileAppend are working correctly with this.</p><p>What it does is, building a new ini content string from an existing one.&nbsp; The reason to use this function is, if anyone have problems with the source ini because of whitespaces or comments and formatting.&nbsp; The new resulting ini is consistently reduced to standard ini format (at least, it should).&nbsp; Dublicate key entries in same section are merged into one key.&nbsp; The last instance overwrites just the one before.</p><h4 class=CHeading>Examples</h4><blockquote><pre>    ini =
+    (
+
+        [ malformed section  ]
+city   =  Berlin'
+whatever='this ; is nasty'
+
+     [bad]
+cat    =     'miao'
+
+    )
+    ini := ini_repair(ini, true)
+    MsgBox %ini%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>[malformed section]
+city=  Berlin'
+whatever='this
+[bad]
+cat=     'miao'</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_mergeKeys"></a>ini_mergeKeys</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_mergeKeys(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_source,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_updateMode</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> 1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Merge two ini sources into first one.&nbsp; Adds new sections and keys and processess existing keys.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).&nbsp; This is the destination where new sections and keys are added into.</td></tr><tr><td class=CDLEntry>source</td><td class=CDLDescription><b>Variable</b> This is also an ini content from which to retrieve the new data.&nbsp; These will be added into Content variable.</td></tr><tr><td class=CDLEntry>updateMode</td><td class=CDLDescription><b>Optional</b> Defines how existing keys should be processed.&nbsp; Default is (&lsquo;1&rsquo;) overwriting last instance with newest one.</td></tr><tr><td class=CDLEntry>updateMode: &lsquo;1&rsquo;</td><td class=CDLDescription>(&ldquo;Default&rdquo;) Replace existng key with newest/last one from source.</td></tr><tr><td class=CDLEntry>updateMode: &lsquo;2&rsquo;</td><td class=CDLDescription>Append everything to existing key in Content.</td></tr><tr><td class=CDLEntry>updateMode: &lsquo;3&rsquo;</td><td class=CDLDescription>Replace only if source is higher than destination key in Content.</td></tr><tr><td class=CDLEntry>updateMode: &lsquo;4&rsquo;</td><td class=CDLDescription>Exclude keys in Content, which exists in both sources.</td></tr><tr><td class=CDLEntry>updateMode: &lsquo;0&rsquo;</td><td class=CDLDescription>(&ldquo;Or any other value&rdquo;) Does not manipulate existing keys in Content, leaving them in their orginal state.&nbsp; Just add new unknown keys to Content.</td></tr></table><h4 class=CHeading>Returns</h4><p>Returns the steps taken to manipulate the destination Content.&nbsp; Every added or manipulated key and section are rising by 1 the return value.&nbsp; 0 if nothing is changed.</p><h4 class=CHeading>Remarks</h4><p>ErrorLevel is set to &lsquo;1&rsquo; if something is changed in Content, &lsquo;0&rsquo; otherwise.</p><p>The Content variable is updated with the content from source.&nbsp; This means, new sections and keys are added allways.&nbsp; In a conflict where same key was found in source again, in case it is existing in Content already, then the variable updateMode defines how they should be processed.&nbsp; Default is, to use last found key.</p><h4 class=CHeading>Examples</h4><blockquote><pre>ini1=
+(LTrim
+    [vasara]
+    tuni=1232
+    edg=94545
+    k=1
+)
+ini2=
+(LTrim
+    [vasara]
+    tuni=9999
+    c=
+    edg=5
+    [taitos]
+    isa=17
+)
+ini_mergeKeys(ini1, ini2)
+MsgBox %ini1%</pre></blockquote><p><b>Output:</b></p><blockquote><pre>[vasara]
+tuni=9999
+edg=5
+k1
+c=
+[taitos]
+isa=17</pre></blockquote></div></div></div>
+
+<div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="Convert"></a>Convert</h3><div class=CBody><p>Export and import functions to convert ini structure.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="ini_exportToGlobals"></a>ini_exportToGlobals</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_exportToGlobals(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_CreateIndexVars</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> false,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Prefix</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;ini&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Seperator</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;_&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_SectionSpaces</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_PreserveSpace</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> False</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Creates global variables from the ini structure.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>CreateIndexVars</td><td class=CDLDescription><b>Optional</b> If this is set to &lsquo;true&rsquo;, some additional variables are created.&nbsp; These are variables for indexed access of sections and keys.&nbsp; The scheme how the variables named are described below under Remarks.</td></tr><tr><td class=CDLEntry>Prefix</td><td class=CDLDescription><b>Optional</b> This is the leading part of all created variable names.&nbsp; (Default: &ldquo;ini&rdquo;)</td></tr><tr><td class=CDLEntry>Seperator</td><td class=CDLDescription><b>Optional</b> This is part of all created variable names.&nbsp; It is added between every section and key part and the leading part to separate them.&nbsp; (Default: &ldquo;_&rdquo;)</td></tr><tr><td class=CDLEntry>SectionSpaces</td><td class=CDLDescription><b>Optional</b> Every space inside section name will be replaced by this character or string.&nbsp; This is needed for creating AutoHotkey variables, which cannot hold spaces at name.&nbsp; Default is to delete any space with empty value: &ldquo;&rdquo;.</td></tr><tr><td class=CDLEntry>PreserveSpace</td><td class=CDLDescription><b>Optional</b> Should be set to 1 if spaces around the value of a key should be saved, otherwise they are lost.&nbsp; Surrounding quotes (&ldquo; or &lsquo;) are also lost, if not set to 1.&nbsp; Default is deleting surrounding spaces and quotes.</td></tr></table><h4 class=CHeading>Returns</h4><p>Gets count of all created keys (attention, keys in sense of ini keys, not variables).</p><h4 class=CHeading>Remarks</h4><p>Creates global variables from ini source.&nbsp; The scheme for building the variables is following:</p><blockquote><pre>Prefix  +  Seperator  +  SectionName  + Seperator  +  KeyName
+  ini   +      _      +      Tip      +     _      + TimeStamp
+--------------------------------------------------------------
+ini_Tip_TimeStamp := &quot;20090716194758&quot;</pre></blockquote><p>Standard prefix to every variable is &ldquo;ini&rdquo; and all parts are delimited by the separator &ldquo;_&rdquo;.&nbsp; The SectionSpaces parameter deletes at default every space from name of section, because spaces inside ahk variable names are not allowed.</p><h4 class=CHeading>CreateIndexVars</h4><p>These variables are created additionally to the other variables, if option CreateIndexVars is set to true (or 1 or any other value evaluating to true).</p><p>Scheme for sections</p><blockquote><pre>Prefix  +  Seperator  +  Index
+  ini   +      _      +    1
+------------------------------
+ini_1 := &quot;Tip&quot;</pre></blockquote><p>Scheme for keys</p><blockquote><pre>Prefix  +  Seperator  +  SectionName  + Index
+  ini   +      _      +      Tip      +   1
+---------------------------------------------
+ini_Tip1 := &quot;20090716194758&quot;</pre></blockquote><p>The index &ldquo;0&rdquo; contains number of all elements.</p><h4 class=CHeading>Examples</h4><blockquote><pre>ini_exportToGlobals(ini, 0)
+ListVars
+Msgbox % ini_RecentFileList_File2</pre></blockquote><p><b>Output:</b></p><blockquote><pre>Z:\tempfile.tmp</pre></blockquote><p>The example would create all these variables with following values:</p><blockquote><pre>ini_RecentFileList_File1 := &quot;F:\testfile.ahk&quot;
+ini_RecentFileList_File2 := &quot;Z:\tempfile.tmp&quot;
+ini_Tip_TimeStamp := &quot;20090716194758&quot;</pre></blockquote><p>These variables would be created in addition to the above ones, if CreateIndexVars option was set to true:</p><blockquote><pre>ini_0 := &quot;2&quot;
+ini_1 := &quot;Tip&quot;
+ini_2 := &quot;RecentFileList&quot;
+ini_RecentFileList0 := &quot;2&quot;
+ini_RecentFileList1 := &quot;File1&quot;
+ini_RecentFileList2 := &quot;File2&quot;
+ini_Tip0 := &quot;1&quot;
+ini_Tip1 := &quot;TimeStamp&quot;</pre></blockquote></div></div></div>
+
+<div class="CSection"><div class=CTopic><h2 class=CTitle><a name="Aliases"></a>Aliases</h2><div class=CBody><!--START_ND_SUMMARY--><div class=Summary><div class=STitle>Summary</div><div class=SBorder><table border=0 cellspacing=0 cellpadding=0 class=STable><tr class="SGeneric"><td class=SEntry><a href="#About" >About</a></td><td class=SDescription>Function wrappers to work with existing commands or functions via &ldquo;Basic ini string functions&rdquo;. </td></tr><tr class="SGroup"><td class=SEntry><a href="#AutoHotkey" >AutoHotkey</a></td><td class=SDescription>Built-in Commands of AutoHotkey.</td></tr><tr class="SFunction SIndent1 SMarked"><td class=SEntry><a href="#Ini_Read" id=link38 onMouseOver="ShowTip(event, 'tt18', 'link38')" onMouseOut="HideTip('tt18')">Ini_Read</a></td><td class=SDescription>Reads a value. </td></tr><tr class="SFunction SIndent1"><td class=SEntry><a href="#Ini_Write" id=link39 onMouseOver="ShowTip(event, 'tt19', 'link39')" onMouseOut="HideTip('tt19')">Ini_Write</a></td><td class=SDescription>Writes a value. </td></tr><tr class="SFunction SIndent1 SMarked"><td class=SEntry><a href="#Ini_Delete" id=link40 onMouseOver="ShowTip(event, 'tt20', 'link40')" onMouseOut="HideTip('tt20')">Ini_Delete</a></td><td class=SDescription>Deletes a value or section. </td></tr></table></div></div><!--END_ND_SUMMARY--></div></div></div>
+
+<div class="CGeneric"><div class=CTopic><h3 class=CTitle><a name="About"></a>About</h3><div class=CBody><h4 class=CHeading>Brief</h4><p>Function wrappers to work with existing commands or functions via &ldquo;Basic ini string functions&rdquo;.&nbsp; They try to mimic the interface for look and feel of original.&nbsp; This can help to migrate others to this library with lesser possible work.</p></div></div></div>
+
+<div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="AutoHotkey"></a>AutoHotkey</h3><div class=CBody><p>Built-in Commands of AutoHotkey.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Ini_Read"></a>Ini_Read</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Ini_Read(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_OutputVar,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Default</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;ERROR&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Reads a value.&nbsp; Alias of IniRead.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>OutputVar</td><td class=CDLDescription><b>Variable</b> The name of the variable in which to store the retrieved value.&nbsp; If the value cannot be retrieved, the variable is set to the value indicated by the Default parameter (described below).</td></tr><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file (also this can be one section only).</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section.</td></tr><tr><td class=CDLEntry>Key</td><td class=CDLDescription>Name of the variable under the section.</td></tr><tr><td class=CDLEntry>Default</td><td class=CDLDescription><b>Optional</b> The value to store in OutputVar if the requested key is not found.&nbsp; If omitted, it defaults to the word ERROR.</td></tr></table><h4 class=CHeading>Returns</h4><p>Does not return anything.</p><h4 class=CHeading>Remarks</h4><p>ErrorLevel is not set by this function (backed up and restored).</p><p>In Ahk you had to specify the filename of the ini file.&nbsp; Here you need to give the content, instead of.&nbsp; Compared to &ldquo;Basic ini string functions&rdquo; the parameter section is not allowed to be set to an empty string anymore.</p><h4 class=CHeading>Related</h4><ul><li>IniRead: [<a href="http://www.autohotkey.com/docs/commands/IniRead.htm" class=LURL target=_top>http://www.autohotkey.com<wbr>/docs<wbr>/commands<wbr>/IniRead.htm</a>]</li></ul><h4 class=CHeading>Examples</h4><blockquote><pre>FileRead, ini, C:\Temp\myfile.ini
+Ini_Read(OutputVar, ini, &quot;section2&quot;, &quot;key&quot;)
+MsgBox %OutputVar%</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Ini_Write"></a>Ini_Write</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Ini_Write(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Value,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Writes a value.&nbsp; Alias of IniWrite.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Value</td><td class=CDLDescription>The string or number that will be written to the right of Key&rsquo;s equal sign (=).</td></tr><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file .</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section.</td></tr><tr><td class=CDLEntry>Key</td><td class=CDLDescription>Name of the variable under the section.</td></tr></table><h4 class=CHeading>Returns</h4><p>Does not return anything.</p><h4 class=CHeading>Remarks</h4><p>ErrorLevel is set to 1 if there was a problem or 0 otherwise.</p><p>In Ahk you had to specify the filename of the ini file.&nbsp; Here you need to give the content, instead of.&nbsp; Compared to &ldquo;Basic ini string functions&rdquo; the parameter section is not allowed to be set to an empty string anymore.</p><h4 class=CHeading>Related</h4><ul><li>IniWrite: [<a href="http://www.autohotkey.com/docs/commands/IniWrite.htm" class=LURL target=_top>http://www.autohotkey.com<wbr>/docs<wbr>/commands<wbr>/IniWrite.htm</a>]</li></ul><h4 class=CHeading>Examples</h4><blockquote><pre>FileRead, ini, C:\Temp\myfile.ini
+Ini_Write(&quot;this is a new value&quot;, ini, &quot;section2&quot;, &quot;key&quot;)
+FileDelete, C:\Temp\myfile.ini
+FileAppend, %ini%, C:\Temp\myfile.ini</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Ini_Delete"></a>Ini_Delete</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Ini_Delete(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><p>Deletes a value or section.&nbsp; Alias of IniDelete.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>Content</td><td class=CDLDescription><b>Variable</b> Content of an ini file.</td></tr><tr><td class=CDLEntry>Section</td><td class=CDLDescription>Unique name of the section.</td></tr><tr><td class=CDLEntry>Key</td><td class=CDLDescription><b>Optional</b> Name of the variable under the section.</td></tr></table><h4 class=CHeading>Returns</h4><p>Does not return anything.</p><h4 class=CHeading>Remarks</h4><p>ErrorLevel is set to 1 if there was a problem or 0 otherwise.</p><p>In Ahk you had to specify the filename of the ini file.&nbsp; Here you need to give the content, instead of.&nbsp; Compared to &ldquo;Basic ini string functions&rdquo; the parameter section is not allowed to be set to an empty string anymore.</p><h4 class=CHeading>Related</h4><ul><li>IniDelete: [<a href="http://www.autohotkey.com/docs/commands/IniDelete.htm" class=LURL target=_top>http://www.autohotkey.com<wbr>/docs<wbr>/commands<wbr>/IniDelete.htm</a>]</li></ul><h4 class=CHeading>Examples</h4><blockquote><pre>FileRead, ini, C:\Temp\myfile.ini
+Ini_Delete(ini, &quot;section2&quot;, &quot;key&quot;)
+FileDelete, C:\Temp\myfile.ini
+FileAppend, %ini%, C:\Temp\myfile.ini</pre></blockquote></div></div></div>
+
+</div><!--Content-->
+
+
+<div id=Footer><a href="http://www.naturaldocs.org">Generated by Natural Docs</a></div><!--Footer-->
+
+
+
+
+
+
+<!--START_ND_TOOLTIPS-->
+<div class=CToolTip id="tt1"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_getValue(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_PreserveSpace</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> False</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Read and return a value from a key</div></div><div class=CToolTip id="tt2"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_getKey(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Read and return a complete key with key name and content.</div></div><div class=CToolTip id="tt3"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_getSection(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Read and return a complete section with section name.</div></div><div class=CToolTip id="tt4"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_getAllValues(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_count</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Read and get a new line separated list of all values in one go.</div></div><div class=CToolTip id="tt5"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_getAllKeyNames(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_count</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Read and get a comma separated list of all key names in one go.</div></div><div class=CToolTip id="tt6"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_getAllSectionNames(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_count</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Read and get a comma separated list of all section names in one go.</div></div><div class=CToolTip id="tt7"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_replaceValue(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Replacement</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_PreserveSpace</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> False</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Updates the value of a key.</div></div><div class=CToolTip id="tt8"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_replaceKey(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Replacement</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Changes complete key with its name and value.</div></div><div class=CToolTip id="tt9"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_replaceSection(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Replacement</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Changes complete section with all its keys and contents.</div></div><div class=CToolTip id="tt10"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_insertValue(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Value,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_PreserveSpace</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> False</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Adds value to the end of existing value of specified key.</div></div><div class=CToolTip id="tt11"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_insertKey(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Adds a key pair with its name and value, if key does not already exists.</div></div><div class=CToolTip id="tt12"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_insertSection(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Keys</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Adds a section and its keys, if section does not exist already.</div></div><div class=CToolTip id="tt13"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_load(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Path</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_convertNewLine</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> false</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Reads an ini file into a variable and resolves any part of the path.</div></div><div class=CToolTip id="tt14"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_save(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Path</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_convertNewLine</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> true,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_overwrite</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> true</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Writes an ini file from variable to disk.</div></div><div class=CToolTip id="tt15"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_repair(</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>_PreserveSpace</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> False,</td></tr><tr><td></td><td class=PParameter nowrap>_CommentSymbols</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;;#&quot;,</td></tr><tr><td></td><td class=PParameter nowrap>_LineDelim</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;`n&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Repair and build an ini from scratch. </div></div><div class=CToolTip id="tt16"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_mergeKeys(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_source,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_updateMode</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> 1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Merge two ini sources into first one. </div></div><div class=CToolTip id="tt17"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>ini_exportToGlobals(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_CreateIndexVars</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> false,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Prefix</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;ini&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Seperator</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;_&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_SectionSpaces</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_PreserveSpace</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> False</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Creates global variables from the ini structure.</div></div><div class=CToolTip id="tt18"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Ini_Read(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_OutputVar,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Default</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;ERROR&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Reads a value. </div></div><div class=CToolTip id="tt19"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Ini_Write(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Value,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Writes a value. </div></div><div class=CToolTip id="tt20"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Ini_Delete(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>_Content,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Section,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>_Key</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%> &quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Deletes a value or section. </div></div><!--END_ND_TOOLTIPS-->
+
+
+
+
+<div id=MSearchResultsWindow><iframe src="" frameborder=0 name=MSearchResults id=MSearchResults></iframe><a href="javascript:searchPanel.CloseResultsWindow()" id=MSearchResultsWindowClose>Close</a></div>
+
+
+<script language=JavaScript><!--
+if (browserType) {if (browserVer) {document.write("</div>"); }document.write("</div>");}// --></script></body></html>

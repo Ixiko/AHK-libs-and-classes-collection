@@ -1,0 +1,4 @@
+This library allows creating GUIs in AHK using object-oriented programming style.
+In the main directory there are some examples and a C# GUI converter to convert 
+GUIs created with the Visual Studio window designer to AHK code usable with this library.
+The library files can be found in lib\.

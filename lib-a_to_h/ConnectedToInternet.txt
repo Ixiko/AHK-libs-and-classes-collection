@@ -1,0 +1,19 @@
+Function: ConnectedToInternet( Flag ) 
+
+    Flag -  0x40 INTERNET_CONNECTION_CONFIGURED - Local system has a valid connection to the Internet, 
+                but not be currently connected.
+            0x02 INTERNET_CONNECTION_LAN - Local system uses a local area network to connect to 
+                the Internet.
+            0x01 INTERNET_CONNECTION_MODEM - Local system uses a modem to connect to the Internet.
+            0x08 INTERNET_CONNECTION_MODEM_BUSY - No longer used.
+            0x20 INTERNET_CONNECTION_OFFLINE - Local system is in offline mode.
+            0x04 INTERNET_CONNECTION_PROXY - Local system uses a proxy server to connect to the Internet 
+    
+    Simply check if internet connection is available with If ConnectedToInternet().
+    
+    Return
+    True "1" if the computer is connected to the internet, otherwise false "0".
+    
+    Example
+    > If ConnectedToInternet()
+    >   MsgBox Connected with the Internet.

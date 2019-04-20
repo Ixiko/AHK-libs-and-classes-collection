@@ -56,7 +56,6 @@ getText(byref html){
 	return html
 }
 
-
 getHtmlById(byref html,id,outer=false){
 	RegExMatch(html,"is)<([^>\s]+)[^>]*\sid=(?:(?:""" id """)|(?:'" id "')|(?:" id "))[^>]*>(.*?)<\s*\/\s*\1\s*>",match)
 	return outer ? match : match2
@@ -116,9 +115,7 @@ getUserId(sid){
 	return match1
 }
 
-
 ;~ msgbox % getText(clipboard,"NTUHWeb1_PatAccountListRecord1_GridViewInPatRecord_ctl02_InLabelStatusName")
-
 /*
 check if sid valid for portal
 return 1 if valid 
@@ -168,7 +165,6 @@ login(loginId,loginPw,HospitalCode=0){
 	return match1 ? match1 : ""
 }
 
-
 logout(sid,portalAspId){
 	global portalUrl
 	
@@ -182,8 +178,6 @@ logout(sid,portalAspId){
 	
 	
 }
-
-
 
 ;~ a:=patientBasicInfo("8053310","2D0DDD9CDE7E4EB0A33D3FCD04D55718")
 patientBasicInfo(chartNo,sid,byref html=""){
@@ -245,8 +239,6 @@ patientLabDataRecent(personId,sid){
 	return arr
 }
 
-
-
 class patientLabDataRecent {
 	__New(html){
 		i:=0,arr:=[]
@@ -283,15 +275,9 @@ class patientLabDataRecent {
 	
 }
 
-
-
-
-
-
 ; http://portal/DigReport/CheckUser_report.asp?'+a[1]+'&myurl=DigReport/Lab/NewQuery.asp'+b
 ;~ msgbox % patientBasicInfo("8053310","EE041FCC02C947A9B7009BE5A6D72444")
 ;~ msgbox % getText(clipboard,"NTUHWeb1_PatAccountListRecord1_GridViewEmergencyContent_ctl02_LabelEmerTempBedID")
-
 /* ;~ old site is closed on 2012/10/1 
 patientLabDataRecent(chartno,sid){
 	global portalUrl
@@ -322,8 +308,6 @@ patientLabDataAll(chartno,sid){
 }
 */
 
-
-
 /*
 return 0: time out
 return 1
@@ -347,8 +331,8 @@ waitLoaded(byref pwb,judge="",waitSeconds=30,firstDelay=200){
 	}
 }
 
-IEGet2(Name="",matchMode="1")      ;Retrieve pointer to existing IE window/tab
-	{
+IEGet2(Name="",matchMode="1") {     ;Retrieve pointer to existing IE window/tab
+
 		Name := ( Name="New Tab - Windows Internet Explorer" ) ? "about:Tabs" : RegExReplace( Name, " - (Windows|Microsoft) Internet Explorer" )
 		
 		if(matchMode="1"){
@@ -371,7 +355,6 @@ IEGet2(Name="",matchMode="1")      ;Retrieve pointer to existing IE window/tab
 	
 	return ""
 } 
-
 
 /*
 return array with key=(innerText), value=(id)
@@ -407,8 +390,6 @@ medOrderList(pwb,divId="NTUHWeb1_MedicationDrugSearchBox_pnlControl"){
 	
 	return arr
 }
-
-
 
 class parseLabDataRegex
 {
@@ -703,8 +684,7 @@ stringlower,MD5,md5
 return md5
 }
 
-EncodeURL( p_data, p_reserved=true, p_encode=true )
-{
+EncodeURL( p_data, p_reserved=true, p_encode=true ) {
    old_FormatInteger := A_FormatInteger
    SetFormat, Integer, hex
 
@@ -739,8 +719,7 @@ EncodeURL( p_data, p_reserved=true, p_encode=true )
    return, p_data
 }
 
-DecodeURL( p_data )
-{
+DecodeURL( p_data ) {
    return, EncodeURL( p_data, true, false )
 }
 
@@ -773,7 +752,6 @@ getLab4New(chartNo,sid,days=10){
 	dom.write(post)
 	return parseLab4New(dom)
 }
-
 
 parseLab4New(byref dom){
 	arr:=[]
@@ -1020,9 +998,7 @@ class patientLabIn10Days {
 	
 }
 
-
-StrPutVar(string, ByRef var, encoding)
-{
+StrPutVar(string, ByRef var, encoding) {
     ; Ensure capacity.
     VarSetCapacity( var, StrPut(string, encoding)
         ; StrPut returns char count, but VarSetCapacity needs bytes.
@@ -1034,8 +1010,6 @@ StrPutVar(string, ByRef var, encoding)
 ;~ a:=new patientLabIn10Days(labin10days("5786101","6F7FEA74511B4A84984B2BFB85E17C24"))
 ;~ msgbox % a["1907336","HB","value"]
 ;~ fileappend,% test,test.txt
-
-
 
 patientBasicInfoTree(chartNo,sid,function="",personId=""){
 	if !function
@@ -1057,7 +1031,6 @@ patientBasicInfoTree(chartNo,sid,function="",personId=""){
 
 
 }
-
 
 patientBasicInfoWeb(chartNo,sid,personId="",medicalPrivacy="C5"){
 	if !checkSid(sid)
@@ -1093,7 +1066,6 @@ patientBasicInfoWeb(chartNo,sid,personId="",medicalPrivacy="C5"){
 
 	return page
 }
-
 
 patientBasicInfoWebTree(html,recursing="",returnClass=1){
 	;~ if !IsObject(html) {
@@ -1159,8 +1131,6 @@ class patientBasicInfoWebTree {
 	}
 }
 
-
-
 patientBriefMedicalRecord(chartNo,sid,personId=""){
 	if !checkSid(sid)
 		return
@@ -1206,7 +1176,6 @@ patientBWBH(chartNo,sid,personId=""){
 
 ;~ k:=patientLabHistory("8053310","850F789FB5444D5990EA80650603459F")
 ;~ k.getValue("TSH")
-
 patientLabHistory(chartNo,sid,personId=""){
 	if !checkSid(sid)
 		return
@@ -1681,7 +1650,6 @@ getLabValue(byref Lab2Arr,ItemName,SpecimenName="BLOOD"){
 	return newArr
 }
 
-
 ;~ a:=getLab2("3337324","C99A5756CF684B2BB7A5B653E1D7094A")
 ;~ b:=1
 getLab2(chartNo,sid="",startDays=14,endDays=0,startTime="",endTime=""){
@@ -1830,8 +1798,6 @@ getLab2(chartNo,sid="",startDays=14,endDays=0,startTime="",endTime=""){
 	*/
 }
 
-
-
 dateTimeParse1(str,delim="-"){
 	arr:=[]
 	RegExMatch(str,"(\d{4})" delim "(\d{2})" delim "(\d{2})T(\d{2}):(\d{2}):(\d{2})((?:\+|-)(?:\d{2}):(?:\d{2}))",match)
@@ -1904,11 +1870,9 @@ getOpHistory(sid,chartNo,personId=""){
 	return arr
 }
 
-
 ;~ sid:=login("100860","31416")
 ;~ clipboard:=searchLab4("8053310",sid)
 ;~ getLab4(sid,"8053310")
-
 getLab4(sid,chartNo){
 	global portalAspId
 	
@@ -2017,7 +1981,6 @@ OpdHxToCSV(html,chartNo){
 	
 	return csv
 }
-
 
 parseOpdHx(byref html){
 	arr:=[]
@@ -2256,22 +2219,14 @@ OldOpdHxToCSV(byref html,chartNo){
 	
 }
 
-
 ;~ replyConsult(sid,AccountIDSE,NotifyIDSE,ReplyContent,Diagnosis,Suggestion){
 	;~ global __VIEWSTATE,__EVENTVALIDATION,portalAspId
-	
 	;~ url:="http://tihisaw.ntuh.gov.tw/WebApplication/InPatient/Ward/NotifyOtherDoctor.aspx?SESSION=" sid "&AccountIDSE=" AccountIDSE "&NotifyIDSE=" NotifyIDSE
-	
 	;~ httprequest(url,html:="",header:="","charset: utf-8")
-	
 	;~ RegExMatch(header,"i)ASP\.NET_SessionId=\w{24}",portalAspId)
-	
 	;~ header:="Referer: " url "`nHost: tihisaw.ntuh.gov.tw`nCookie: " portalAspId
-	
 	;~ post:="__EVENTTARGET=NTUHWeb1%24btnRecordFisrtAnalysisTime&__VIEWSTATE=" encodeurl(__VIEWSTATE:=get(html,"__VIEWSTATE")) "&__EVENTVALIDATION=" encodeurl(__EVENTVALIDATION:=get(html,"__EVENTVALIDATION")) "&NTUHWeb1%24TextboxReplyContent=" ReplyContent "&NTUHWeb1%24TextboxDiagnosis=" Diagnosis "&NTUHWeb1%24TextboxSuggestion=" Suggestion "&hiddenInputToUpdateATBuffer_CommonToolkitScripts=1"
-	
 	;~ httprequest(url,post,header,"charset: utf-8")
-
 ;~ }
 
 /* 
@@ -2404,7 +2359,6 @@ getConsult(sid,accountIDSE,notifyIDSE,PatClass){
 	
 }
 
-
 replyConsult(sid,accountIDSE,notifyIDSE,PatClass,replyContent,diagnosis,suggestion,byref params=""){
 	
 	seed1:=(substr(a_now,9,2)<12?"%ufffdU%ufffd%ufffd":"%ufffdU%ufffd%ufffd") "+" substr(a_now,11,2) "%3a" substr(a_now,13,2) "%3a" substr(a_now,15,2)
@@ -2440,7 +2394,6 @@ replyConsult(sid,accountIDSE,notifyIDSE,PatClass,replyContent,diagnosis,suggesti
 ;~ loginId:="100860",loginPw:="31416"
 ;~ askForPortalIdPw()
 ;~ ExitApp
-
 askForPortalIdPw(opt=0){
 	global loginId,loginPw,sid
 	priorSid:=Sid
@@ -2816,8 +2769,6 @@ parseRisReport2Yr(html){
 ;~ b:=RisReport2Yr(sid,chartNo)
 ;~ c:=parseRisReport2Yr(b)
 ;~ d:=1
-
-
 RisReport2Yr(sid,chartNo){
 	if !checksid(sid){
 		return -1
@@ -2886,6 +2837,7 @@ queryInjectionRecords(sid,chartno){
 	httprequest("http://hisaw.ntuh.gov.tw/WebApplication/InspectionReport/ReportOfCase.aspx",post,header,"charset: utf-8")
 	return new FoundInjectionRecords(post)
 }
+
 class FoundInjectionRecords {
 	__New(post){
 		dom:=ComObjCreate("HtmlFile")
@@ -2943,8 +2895,6 @@ class FoundInjectionRecords {
 		return str
 	}
 }
-
-
 
 /*
 POST http://hiswsvc.ntuh.gov.tw/HL7Central_IIS/Central.asmx HTTP/1.1
@@ -3073,6 +3023,7 @@ PacsWebInfoFlatten(byref result){
 					output.insert(y)
 	return output
 }
+
 PacsWebUrlTrans(url){
 	regexmatch(url,"is)(?<=studyUID=)[\d\.]+",studyUID)
 	regexmatch(url,"is)(?<=seriesUID=)[\d\.]+",seriesUID)
@@ -3085,7 +3036,7 @@ PacsWebUrl(AccNo,chartNo="",loginId="",loginPw=""){
 		chartNo:="0" chartNo
 	return "http://pacsmobile.ntuh.gov.tw/?user=" loginId "&password=" loginPw "&tab=Display&PatientID=" chartNo "&AccessionNumber=" AccNo "&theme=epr"
 }
-;~ PacsWebDownloadJpeg2("http://pacsmobile.ntuh.gov.tw/wado/?v=2.0.SU3.3&requestType=XERO&studyUID=1.2.124.113532.80.22187.2757.20130629.230919.702675561&seriesUID=1.2.840.113619.2.80.667156916.17002.1372519080.40.4.1&language=zh_TW&objectUID=1.2.840.113619.2.80.667156916.17002.1372519083.55&ae=local&user=100860&password=31416","T0134497741","8053310","test.jpeg","","2500")
+;{ PacsWebDownloadJpeg2("http://pacsmobile.ntuh.gov.tw/wado/?v=2.0.SU3.3&requestType=XERO&studyUID=1.2.124.113532.80.22187.2757.20130629.230919.702675561&seriesUID=1.2.840.113619.2.80.667156916.17002.1372519080.40.4.1&language=zh_TW&objectUID=1.2.840.113619.2.80.667156916.17002.1372519083.55&ae=local&user=100860&password=31416","T0134497741","8053310","test.jpeg","","2500")
 
 ;~ PacsWebLogin("100860","31416")
 
@@ -3098,7 +3049,7 @@ PacsWebUrl(AccNo,chartNo="",loginId="",loginPw=""){
 
 ;~ v:=output[output.maxindex()]
 				;~ PacsWebDownloadJpeg2(v.url,"T2134398558","8053310","T2134398558 " "8053310.jpeg", "T2134398558" "" "" "8053310",1000,"100860","31416")
-
+;}
 PacsWebTemp(accNo,chartNo,loginId,loginPw){
 	global JSESSIONID,JSESSIONSSO
 	candidates1:="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+-_"

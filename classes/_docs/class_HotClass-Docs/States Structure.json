@@ -1,0 +1,19 @@
+// Object schema for States
+// Holds current state of inputs
+// View using JSONedit: http://tomeko.net/software/JSONedit/
+[
+	// HH_TYPE_M = MOUSE = 0
+	{
+
+	},
+
+	// HH_TYPE_K = KEYBOARD = 1
+	{
+		"65": 1					// 65 = a. 0 = Up, 1 = Down
+	},
+
+	// HH_TYPE_O = OTHER (Joystick) = 2
+	{
+
+	}
+]

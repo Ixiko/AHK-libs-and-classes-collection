@@ -1,0 +1,12 @@
+It will display the infos of the current tray icons:
+exename, classname, hWnd, nMsg (:Message ID), uID (:Icon ID), idn (:Button ID)
+
+1) Using idn, can Hide/Show the tray icons:
+HideTrayIcon(idn, True/False)
+
+Can still control the trayicon after hidden, e.g., right-click:
+PostMessage, nMsg, uID, 0x204, , ahk_id %hWnd%
+PostMessage, nMsg, uID, 0x205, , ahk_id %hWnd%
+
+2) Using 1-based index, can rearrage the trayicon from idxOld to idxNew:
+MoveTrayIcon(idxOld, idxNew) 

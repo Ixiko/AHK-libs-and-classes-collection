@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Generator" content="XN-Docs v2.03 (http://ccgi.inspiration3.plus.com/ahk/xn-docs/)" />
+<title>XPath Reference</title>
+<style type="text/css" media="all">
+/*<![CDATA[*/
+html {
+	color: #333;
+	background: #fff;
+	font: .9em Calibri, Arial, Helvetica, sans-serif;
+}
+body { margin: 0em; }
+h1 {
+	margin: 0em;
+	color: #fff;
+	background: #333;
+	padding: .2em .5em;
+	border-bottom: 1px solid #000;
+}
+h1 a {
+	color: #fff !important;
+	background: inherit;
+	text-decoration: none;
+}
+h2 { border-bottom: 1px solid #ddd; }
+h3.command {
+	background: #09c;
+	padding: .7em;
+	color: #fff;
+	cursor: help;
+	letter-spacing: .1em;
+	font: bold 1.2em "Courier New", Courier, monospace;
+}
+a { color: #06c; }
+a:hover { color: #936; }
+table { font-size: 1em; }
+p.descr {
+	margin: 1.5em;
+	line-height: 1.5;
+}
+span.sub {
+	color: #666;
+	background: inherit;
+}
+p.descr span.sub:before { content: ">> "; }
+table.params span.sub {
+	font-size: .75em;
+	margin-right: .5em;
+}
+div#contents {
+	width: 12%;
+	float: right;
+	border-left: 1px dashed #ddd;
+	padding-right: 2%;
+	margin-top: 2em;
+	overflow: auto;
+	padding-left: 2%;
+}
+div#contents div { margin-left: 1em; }
+div#contents ul {
+	list-style: square;
+	padding-left: 1em;
+}
+div#contents *:first-child { margin-top: 0em; }
+div#page {
+	width: 80%;
+	margin: 1.5%;
+}
+div#page > div:not(:target) {
+display: none;
+}
+div#page > div:target { display: block; }
+div.method {
+	background: #fefefe;
+	border: 1px solid #eee;
+	margin-bottom: 2em;
+	margin-left: 0.5em;
+	padding: 1em;
+}
+div.method *:first-child { margin-top: 0em; }
+div#end {
+	font-size: .9em;
+	margin-top: 1em;
+	border-top: 1px solid #000;
+	padding: 1em;
+	color: #fff;
+	background: #666;
+}
+div#end a { color: #fff; }
+span.vers {
+	font-size: .6em;
+	color: #ccc;
+	padding-left: .3em;
+}
+table.params {
+	font-size: 1em;
+	margin-left: 3em;
+}
+table.params th {
+	text-align: left;
+	background: #eee;
+	padding: .2em;
+}
+table.params td {
+	vertical-align: top;
+	padding: .2em 1em .2em .5em;
+	background: #fff;
+	border: 1px solid #f3f3f3;
+}
+table.params td:first-child { background: #f3f3f3 !important; }
+table.params tr.returns td { background: #f3f3f3; }
+table.params tr.returns td:first-child { background: #fff !important; }
+table.dataset { margin-left: 3em; }
+table.dataset th {
+	background: #eee;
+	text-align: left;
+	padding: .2em;
+}
+table.dataset td {
+	vertical-align: top;
+	padding: .2em 1em .2em .5em;
+}
+pre.code {
+	padding: 1em;
+	font-size: 1em;
+	border: 1px dotted #999;
+	background: #fff;
+	margin-left: 2em;
+	overflow: auto;
+}
+code, pre.code, kbd { font: .9em "Courier New", Courier, monospace; }
+pre.code em, code em {
+	color: #060;
+	font-style: normal;
+	font-weight: bold;
+}
+pre.code kbd, code kbd {
+	color: #c00;
+	font-weight: normal;
+}
+pre.code var, code var {
+	font-style: normal;
+	font-weight: bold;
+	color: #f80;
+}
+pre.code var.prc, code var.prc {
+	font-weight: normal;
+	color: #f00;
+	font-style: italic;
+}
+pre.code strong, code strong { color: #039; }
+pre.code strong.res, code strong.res { color: #800000; }
+@media print {
+* {
+	background: none !important;
+	color: #000 !important;
+}
+p.descr span.sub, div#contents { display: none; }
+div#page { width: 100%; }
+ div#page > div:not(:target) {
+display: block;
+}
+table.params, pre.code { margin: 0em; }
+div.method {
+	border: none;
+	margin: 1em 0em;
+	padding: 0em;
+}
+pre.code { overflow: visible; }
+}
+/*]]>*/
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+function tabsetup() {
+var a = document.getElementById('contents').getElementsByTagName('a'), i;
+	tabswitch(window.location.hash);
+	for (i in a) { a[i].onclick = tabswitch; }
+}
+function tabswitch(e) {
+	var d = document.getElementById('page').getElementsByTagName('div'),
+		h = typeof(e) == 'string' ? e : this.hash, id = h ? h.slice(1) : '', i;
+	for (i = 0; i < d.length; i++) { if (d[i].className == 'method') { d[i].style.display = 'none'; } }
+	if (id) { document.getElementById(id).style.display = 'block'; }
+}
+if (window.attachEvent) { window.attachEvent('onload', tabsetup); }
+/*]]>*/
+</script>
+</head>
+<body>
+<h1> <a href="xpath.ahk">XPath  Reference</a><span class="vers"> (version 3.12)</span></h1>
+<div id="contents">
+  <div>
+    <h4>Contents</h4>
+    <ul>
+      <li><a href="#xpath">xpath</a></li>
+      <li><a href="#xpath_save">xpath_save</a></li>
+      <li><a href="#xpath_load">xpath_load</a></li>
+    </ul>
+  </div>
+</div>
+<p class="descr"><br />
+  <span class="sub">Browse through the topics in the contents list to the right.</span></p>
+<div id="page">
+  <div class="method" id="xpath">
+    <h2>xpath</h2>
+    <p>Selects nodes and attributes from a standard xpath expression.</p>
+    <h3 class="command">xpath(doc, step, set)</h3>
+    <h4>Parameters</h4>
+    <table class="params">
+      <tr class="returns">
+        <td><em>Returns</em> </td>
+        <td>The XML source of the selection. 
+          If the content was set to be modified the previous value will be returned.</td>
+      </tr>
+      <tr>
+        <td>doc</td>
+        <td>an xml object returned by xpath_load()</td>
+      </tr>
+      <tr>
+        <td>step</td>
+        <td>a valid XPath 2.0 expression</td>
+      </tr>
+      <tr>
+        <td>set</td>
+        <td><span class="sub">(optional)</span>text content to replace the current selection</td>
+      </tr>
+    </table>
+    <h4>Remarks</h4>
+    <p>Since multiple return values are seperated with a comma, any found within the text content will be entity escaped as <em>&amp;#44;</em>.<br />
+      To get or set the text content of a node use the text function,  e.g. <code><kbd>/root/node/text()</kbd></code>; this behaviour is always assumed within predicates.<br />
+      For performance reasons <code><strong>count()</strong></code> and <code><strong>last()</strong></code> do not update with the creation  of new nodes so you may need to alter the results accordingly.</p>
+    <p>Only the following functions are currently supported:</p>
+    <table class="dataset">
+      <tr>
+        <th>Function</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+      <tr>
+        <td><code><strong>text()</strong></code></td>
+        <td>Returns the text content.</td>
+        <td><code>version := <strong>xpath</strong>(feed, <kbd>&quot;/rss/@version/text()&quot;</kbd>) </code></td>
+      </tr>
+      <tr>
+        <td><code><strong>remove()</strong></code></td>
+        <td>Removes the entire selection.</td>
+        <td><code>new := <strong>xpath</strong>(feed, <kbd>&quot;/rss/channel/item[1]/remove()&quot;</kbd>) </code></td>
+      </tr>
+      <tr>
+        <td><code><strong>position()</strong></code></td>
+        <td>Gives the position of the currently selected object.</td>
+        <td><code>top := <strong>xpath</strong>(feed, <kbd>&quot;/rss/channel/item[position()&lt;=3]&quot;</kbd>) </code></td>
+      </tr>
+      <tr>
+        <td><code><strong>last()</strong></code></td>
+        <td>Returns the last found object.</td>
+        <td><code>oldest := <strong>xpath</strong>(feed, <kbd>&quot;/rss/channel/item/last()/pubDate&quot;</kbd>) </code></td>
+      </tr>
+      <tr>
+        <td><code><strong>count()</strong></code></td>
+        <td>Returns the total number of selected elements.</td>
+        <td><code>entries := <strong>xpath</strong>(feed, <kbd>&quot;/rss/channel/item/count()&quot;</kbd>)</code></td>
+      </tr>
+    </table>
+    <h4>Examples</h4>
+    <pre class="code"><var class="prc">#Include</var> xpath.ahk <em>; include functions (only required if it is not in your <a style="" href="http://www.autohotkey.com/docs/Functions.htm#lib">standard library</a>)</em><br /> <br /><em>; parsing documents:</em> <br />xml := <strong>xpath_load</strong>(<kbd>"books.xml"</kbd>) <em>; load an XML document</em><br />titles := <strong>xpath</strong>(xml, <kbd>"/bookstore/books[price&gt;35]/title/text()"</kbd>) <em>; get book titles with a cost greater than 35</em></pre>
+    <pre class="code"><em>; combining functions and using variables:</em><br />firstShow := <strong>xpath</strong>(xml := <strong>xpath_load</strong>(<kbd>"listings.xml"</kbd>), <kbd>"/tv/programme[@starts&gt;="</kbd> . <var>A_Now</var> . <kbd>"]/title[1]/text()"</kbd>)<br /><br />x = &lt;root&gt;&lt;element var=&quot;test&quot;/&gt;&lt;/root&gt;<br /><strong>xpath_load</strong>(x) <em>; XML content can be loaded in-place directly</em><br /><strong>xpath</strong>(x, <kbd>"element/text()"</kbd>, <kbd>"new content"</kbd>)<br /><strong>MsgBox</strong>, % <strong>xpath_save</strong>(x) <em>; show the new source without having to save it</em></pre>
+    <pre class="code"><em>; creating documents:</em><br /><strong>xpath</strong>(feed, <kbd>"/rss[+1]/@version"</kbd>, <kbd>"2.0"</kbd>) <em>; create 'rss' node with attribute 'version'</em><br /><strong>xpath</strong>(feed, <kbd>"/rss/channel[+1]/title[+1]"</kbd>, <kbd>"second"</kbd>) <em>; rss &gt; channel &gt; title</em><br /><strong>xpath</strong>(feed, <kbd>"/rss/channel/title[-1]"</kbd>, <kbd>"first"</kbd>) <em>; '-1' puts this node before the last</em><br /><strong>xpath_save</strong>(<kbd>"\Inetpub\wwwroot\test.xml"</kbd>, feed) <em>; write XML</em></pre>
+  </div>
+  <div class="method" id="xpath_save">
+    <h2>xpath_save</h2>
+    <p>Saves an XML document to file or returns the source.</p>
+    <h3 class="command">xpath_save(doc, src)</h3>
+    <h4>Parameters</h4>
+    <table class="params">
+      <tr class="returns">
+        <td><em>Returns</em> </td>
+        <td>False if there was an error in saving the document, true otherwise. If the src parameter is left blank the source code of the document is returned instead.</td>
+      </tr>
+      <tr>
+        <td>doc</td>
+        <td>an xml object returned by xpath_load()</td>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td><span class="sub">(optional)</span>a path to a file where the XML document should be saved; if the file already exists it will be replaced</td>
+      </tr>
+    </table>
+  </div>
+  <div class="method" id="xpath_load">
+    <h2>xpath_load</h2>
+    <p>Loads an XML document.</p>
+    <h3 class="command">xpath_load(doc, src)</h3>
+    <h4>Parameters</h4>
+    <table class="params">
+      <tr class="returns">
+        <td><em>Returns</em> </td>
+        <td>False if there was an error in loading the document, true otherwise.</td>
+      </tr>
+      <tr>
+        <td>doc</td>
+        <td>a reference to the loaded XML file as a variable, to be used in other functions</td>
+      </tr>
+      <tr>
+        <td>src</td>
+        <td><span class="sub">(optional)</span>the document to load, this can be a file name or a string, if omitted the first paramter is used as the source</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<div style="clear: both;"></div>
+<div id="end">Version 3.12; Copyright © Titan - <a href="http://www.gnu.org/licenses/gpl-3.0.txt">GNU General Public License 3.0 or higher</a></div>
+</body>
+</html>

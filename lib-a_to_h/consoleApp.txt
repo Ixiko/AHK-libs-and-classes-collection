@@ -1,0 +1,117 @@
+Functions
+
+ConsoleApp_RunWait()		- Runs an application and retrieves its standard output.
+ConsoleApp_Run()			- Runs an application and redirects its standard input/output handles such that they can be accessed from the script using the ConsoleApp_GetStdOut() function.
+ConsoleApp_GetStdOut()		- Retrieves the standard output of a ConsoleApp that was run using ConsoleApp_Run().
+ConsoleApp_CloseHandle()	- Closes a ConsoleApp handle returned by ConsoleApp_Run()
+
+
+Function: ConsoleApp_RunWait(CmdLine, WorkingDir="", byref ExitCode="")
+
+	 <summary>
+	     Runs an application and retrieves its standard output.
+	 </summary>
+	 <param="CmdLine">
+	     The executable file to run including any path information and arguments.
+	 </param>
+	 <param="WorkingDir">
+	     The startup directory for the program.
+	 </param>
+	 <param="PID">
+	     Specifies a variable to receive the ProcessID of the program. This parameter is optional.
+	 </param>
+	 <param="ExitCode">
+	     When the function returns, this parameter is set to the exit code of the program.
+	 </param>
+	 <returns>
+	     Returns the StdOut of the program.
+	 </returns>
+	 <remarks>
+	     The output of programs that are explicity redirected or "piped" in their command-lines will
+	     not be captured by this function (e.g. "cmd.exe /C echo Hello World > test.txt").
+	 </remarks>
+	 <example>
+	     MsgBox, % ConsoleApp_RunWait("cmd.exe /c echo Hello World.")
+	 </example>
+
+
+Function: ConsoleApp_Run(CmdLine, WorkingDir="", Reserved="", byref PID="")
+
+	 <summary>
+	     Runs an application and redirects its standard input/output handles such that they can be accessed
+	     from the script using the ConsoleApp_GetStdOut() function.
+	 </summary>
+	 <param="CmdLine">
+	     The executable file to run including any path information and arguments.
+	 </param>
+	 <param="WorkingDir">
+	     The startup directory for the program.
+	 </param>
+	 <param="Reserved">
+	     This parameter is reserved for future use and should be a null string ("") or should be omitted.
+	 </param>
+	 <param="PID">
+	     Specifies a variable to receive the ProcessID of the program. This parameter is optional.
+	 </param>
+	 <returns>
+	     Returns a proprietary handle to the ConsoleApp for use in calls to ConsoleApp_GetStdOut() and 
+	     ConsoleApp_CloseHandle(). This handle cannot be specified in any Win32 API functions to identify 
+	     a process.
+	 </returns>
+	 <remarks>
+	     If this function completes successfully, the handle returned by this function must be closed 
+	     when no longer needed using the ConsoleApp_CloseHandle() function.
+	     The output of programs that are explicity redirected or "piped" in their command-lines will
+	     not be captured in calls to ConsoleApp_GetStdOut (e.g. "cmd.exe /C echo Hello World > test.txt").
+	 </remarks>
+	 <example>
+	     ConsoleAppHandle := ConsoleApp_Run("cmd.exe /c echo Hello World.")
+	     if (ConsoleAppHandle == 0)
+	         MsgBox, Unable to start cmd.exe
+	     else
+	         ConsoleApp_CloseHandle(ConsoleAppHandle)
+	 </example>
+
+
+Function: ConsoleApp_GetStdOut(ConsoleAppHandle, byref Stdout, byref BytesAppended = 0, byref ExitCode="")
+
+	 <summary>
+	     Retrieves the standard output of a ConsoleApp that was run using ConsoleApp_Run().
+	 </summary>
+	 <param="ConsoleAppHandle">
+	     A handle to a ConsoleApp that was created in a call to ConsoleApp_Run.
+	 </param>
+	 <param="Stdout">
+	     A variable that is to be appended with the standard output of the ConsoleApp. The
+	     variable is appended with all of the standard output of the program since the last
+	     call to ConsoleApp_GetStdOut.
+	 </param>
+	 <param="BytesAppended">
+	     A variable that is to receive the number of bytes that were appended to the Stdout
+	     parameter.
+	 </param>
+	 <returns>
+	     Returns true if the ConsoleApp is still running.
+	     Returns false if the ConsoleApp is no longer running.
+	 </returns>
+	 <remarks>
+	     The output of programs that are explicity redirected or "piped" in their command-lines will
+	     not be captured by this function (e.g. "cmd.exe /C echo Hello World > test.txt").
+	 </remarks>
+	
+
+Function: ConsoleApp_CloseHandle(ConsoleAppHandle)
+	
+	 <summary>
+	     Closes a ConsoleApp handle returned by ConsoleApp_Run()
+	 </summary>
+	 <param="ConsoleAppHandle">
+	     Handle to close.
+	 </param>
+	 <returns>
+	     This function does not return a value.
+	 </returns>
+	 <remarks>
+	     Every handle returned by a successful call to ConsoleApp_Run() must be closed
+	     with this function.
+	 </remarks>

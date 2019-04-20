@@ -768,8 +768,7 @@ Edit_GetLineCount(hEdit)
 ;   The edit control's left margin
 ;
 ;-------------------------------------------------------------------------------
-Edit_GetMargins(hEdit,ByRef r_LeftMargin="",ByRef r_RightMargin="")
-    {
+Edit_GetMargins(hEdit,ByRef r_LeftMargin="",ByRef r_RightMargin="") {
     Static EM_GETMARGINS:=0xD4
     SendMessage EM_GETMARGINS,0,0,,ahk_id %hEdit%
     r_LeftMargin :=ErrorLevel & 0xFFFF      ;-- LOWORD of result

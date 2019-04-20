@@ -1,0 +1,1666 @@
+[ABC:|abcA D|abcB D|abcC D
+[ABCFLOAT:|abcfA D|abcfB D|abcfC D
+[ABSTIME:|sec D|ms D
+[ACCEL:|fVirt B|pad0 B|key W|cmd W
+[ACCESSTIMEOUT:|cbSize D|dwFlags D|iTimeOutMSec D
+[ACCESS_ALLOWED_ACE:|Header.AceType B|Header.AceFlags B|Header.AceSize W|imask D|SidStart D
+[ACCESS_ALLOWED_OBJECT_ACE:|Header.AceType B|Header.AceFlags B|Header.AceSize W|Mask1 D|Flags D|ObjectType.Data1 D|ObjectType.Data2 W|ObjectType.Data3 W|ObjectType.Data4 B 8|InheritedObjectType.Data1 D|InheritedObjectType.Data2 W|InheritedObjectType.Data3 W|InheritedObjectType.Data4 B 8|SidStart D
+[ACCESS_DENIED_ACE:|Header.AceType B|Header.AceFlags B|Header.AceSize W|imask D|SidStart D
+[ACCESS_DENIED_OBJECT_ACE:|Header.AceType B|Header.AceFlags B|Header.AceSize W|Mask1 D|Flags D|ObjectType.Data1 D|ObjectType.Data2 W|ObjectType.Data3 W|ObjectType.Data4 B 8|InheritedObjectType.Data1 D|InheritedObjectType.Data2 W|InheritedObjectType.Data3 W|InheritedObjectType.Data4 B 8|SidStart D
+[ACCESS_INFO_0:|acc0_resource_name D
+[ACCESS_INFO_1002:|acc1002_attr D
+[ACCESS_INFO_1:|acc1_resource_name D|acc1_attr D|acc1_count D
+[ACCESS_LIST:|acl_ugname D|acl_access D
+[ACE_HEADER:|AceType B|AceFlags B|AceSize W
+[ACL:|AclRevision B|Sbz1 B|AclSize W|AceCount W|Sbz2 W
+[ACL_REVISION_INFORMATION:|AclRevision D
+[ACL_SIZE_INFORMATION:|AceCount D|AclBytesInUse D|AclBytesFree D
+[ACMDRIVERDETAILS:|cbStruct D|fccType D|fccComp W|wMid W|wPid W|vdwACM D|vdwDriver D|fdwSupport D|cFormatTags D|cFilterTags D|hicon D|szShortName B ACMDRIVERDETAILS_SHORTNAME_CHARS|szLongName B ACMDRIVERDETAILS_LONGNAME_CHARS|szCopyright B ACMDRIVERDETAILS_COPYRIGHT_CHARS|szLicensing B ACMDRIVERDETAILS_LICENSING_CHARS|szFeatures B ACMDRIVERDETAILS_FEATURES_CHARS
+[ACMFILTERCHOOSE:|cbStruct D|fdwStyle D|hwndOwner D|pwfltr D|cbwfltr D|pszTitle D|szFilterTag B ACMFILTERTAGDETAILS_FILTERTAG_CHARS|szFilter B ACMFILTERDETAILS_FILTER_CHARS|pszName D|cchName D|fdwEnum D|pwfltrEnum D|hInstance D|pszTemplateName D|lCustData D|pfnHook D
+[ACMFILTERDETAILS:|cbStruct D|dwFilterIndex D|dwFilterTag D|fdwSupport D|pwfltr D|cbwfltr D|szFilter B ACMFILTERDETAILS_FILTER_CHARS
+[ACMFILTERTAGDETAILS:|cbStruct D|dwFilterTagIndex D|dwFilterTag D|cbFilterSize D|fdwSupport D|cStandardFilters D|szFilterTag B ACMFILTERTAGDETAILS_FILTERTAG_CHARS
+[ACMFORMATCHOOSE:|cbStruct D|fdwStyle D|hwndOwner D|pwfx D|cbwfx D|pszTitle D|szFormatTag B ACMFORMATTAGDETAILS_FORMATTAG_CHARS|szFormat B ACMFORMATDETAILS_FORMAT_CHARS|pszName D|cchName D|fdwEnum D|pwfxEnum D|hInstance D|pszTemplateName D|lCustData D|pfnHook D
+[ACMFORMATDETAILS:|cbStruct D|dwFormatIndex D|dwFormatTag D|fdwSupport D|pwfx D|cbwfx D|szFormat B ACMFORMATDETAILS_FORMAT_CHARS
+[ACMFORMATTAGDETAILS:|cbStruct D|dwFormatTagIndex D|dwFormatTag D|cbFormatSize D|fdwSupport D|cStandardFormats D|szFormatTag B ACMFORMATTAGDETAILS_FORMATTAG_CHARS
+[ACMSTREAMHEADER:|cbStruct D|fdwStatus D|dwUser D|pbSrc D|cbSrcLength D|cbSrcLengthUsed D|dwSrcUser D|pbDst D|cbDstLength D|cbDstLengthUsed D|dwDstUser D|dwReservedDriver D 10
+[ACTION_HEADER:|transport_id D|action_code W|Reserved W
+[ACTRL_ACCESS:|cEntries D|pPropertyAccessList D
+[ACTRL_ACCESS_ENTRY:|Trustee D|fAccessFlags D|Access D|ProvSpecificAccess D|Inheritance D|lpInheritProperty D
+[ACTRL_ACCESS_ENTRY_LIST:|cEntries D|pAccessList D
+[ACTRL_ACCESS_INFO:|fAccessPermission D|lpAccessPermissionName D
+[ACTRL_AUDIT:|cEntries D|pPropertyAccessList D
+[ACTRL_OVERLAPPED:|Reserved1 D|Reserved2 D|hEvent D
+[ACTRL_PROPERTY_ENTRY:|lpProperty D|pAccessEntryList D|fListFlags D
+[ADAPTER_STATUS:|adapter_address B 6|rev_major B|reserved0 B|adapter_type B|rev_minor B|duration W|frmr_recv W|frmr_xmit W|iframe_recv_err W|xmit_aborts W|xmit_success D|recv_success D|iframe_xmit_err W|recv_buff_unavail W|t1_timeouts W|ti_timeouts W|rserved1 D|free_ncbs W|max_cfg_ncbs W|max_ncbs W|xmit_buf_unavail W|max_dgram_isize W|pending_sess W|max_cfg_sess W|max_sess W|max_sess_pkt_isize W|name_count W
+[ADDJOB_INFO_1A:|Path D|JobId D
+[ADDJOB_INFO_1W:|Path D|JobId D
+[ADDRESS64:|Offset D|Segment W|Mode D
+[ADDRESS:|Offset1 D|Segment1 W|Mode D
+[ADMIN_OTHER_INFO:|alrtad_errcode D|alrtad_numstrings D
+[ADRENTRY:|ulReserved1 D|cValues D|rgPropVals D
+[ADRLIST:|cEntries D|aEntries.ulReserved1 D|aEntries.cValues D|aEntries.rgPropVals D
+[ADRPARM:|cbABContEntryID D|lpABContEntryID D|ulFlags D|lpReserved D|ulHelpContext D|lpszHelpFileName D|lpfnABSDI D|lpfnDismiss D|lpvDismissContext D|lpszCaption D|lpszNewEntryTitle D|lpszDestWellsTitle D|cDestFields D|nDestFieldFocus D|lppszDestTitles D|lpulDestComps D|lpContRestriction D|lpHierRestriction D
+[AE_ACCLIM:|ae_al_compname D|ae_al_username D|ae_al_resname D|ae_al_limit D
+[AE_ACLMOD:|ae_am_compname D|ae_am_username D|ae_am_resname D|ae_am_action D|ae_am_datalen D
+[AE_CLOSEFILE:|ae_cf_compname D|ae_cf_username D|ae_cf_resname D|ae_cf_fileid D|ae_cf_duration D|ae_cf_reason D
+[AE_CONNREJ:|ae_cr_compname D|ae_cr_username D|ae_cr_netname D|ae_cr_reason D
+[AE_CONNSTART:|ae_ct_compname D|ae_ct_username D|ae_ct_netname D|ae_ct_connid D
+[AE_CONNSTOP:|ae_cp_compname D|ae_cp_username D|ae_cp_netname D|ae_cp_connid D|ae_cp_reason D
+[AE_GENERIC:|ae_ge_msgfile D|ae_ge_msgnum D|ae_ge_params D|ae_ge_param1 D|ae_ge_param2 D|ae_ge_param3 D|ae_ge_param4 D|ae_ge_param5 D|ae_ge_param6 D|ae_ge_param7 D|ae_ge_param8 D|ae_ge_param9 D
+[AE_LOCKOUT:|ae_lk_compname D|ae_lk_username D|ae_lk_action D|ae_lk_bad_pw_count D
+[AE_NETLOGOFF:|ae_nf_compname D|ae_nf_username D|ae_nf_reserved1 D|ae_nf_reserved2 D
+[AE_NETLOGON:|ae_no_compname D|ae_no_username D|ae_no_privilege D|ae_no_authflags D
+[AE_RESACCESS:|ae_ra_compname D|ae_ra_username D|ae_ra_resname D|ae_ra_operation D|ae_ra_returncode D|ae_ra_restype D|ae_ra_fileid D
+[AE_RESACCESSREJ:|ae_rr_compname D|ae_rr_username D|ae_rr_resname D|ae_rr_operation D
+[AE_SERVICESTAT:|ae_ss_compname D|ae_ss_username D|ae_ss_svcname D|ae_ss_status D|ae_ss_code D|ae_ss_text D|ae_ss_returnval D
+[AE_SESSLOGOFF:|ae_sf_compname D|ae_sf_username D|ae_sf_reason D
+[AE_SESSLOGON:|ae_so_compname D|ae_so_username D|ae_so_privilege D
+[AE_SESSPWERR:|ae_sp_compname D|ae_sp_username D
+[AE_SRVSTATUS:|ae_sv_status D
+[AE_UASMOD:|ae_um_compname D|ae_um_username D|ae_um_resname D|ae_um_rectype D|ae_um_action D|ae_um_datalen D
+[AFPROTOCOLS:|iAddressFamily D|iProtocol D
+[ALTTABINFO:|cbSize D|cItems D|cColumns D|cRows D|iColFocus D|iRowFocus D|cxItem D|cyItem D|ptStart_Point_x D|ptStart_Point_y D
+[ANIMATEINFO:|cbSize D|uSpeedPct D|uPeriodCB D|fuFlags D|lParam D|dwReserved D
+[ANIMATIONINFO:|cbSize D|iMinAnimate D
+[API_VERSION:|MajorVersion W|MinorVersion W|Revision W|Reserved W
+[APPBARDATA:|cbSize D|hwnd D|uCallbackMessage D|uEdge D|rc.left D|rc.top D|rc.right D|rc.bottom D|lParam D
+[APPDETAIL:|AppID.Data1 D|AppID.Data2 W|AppID.Data3 W|AppID.Data4 B 8|cClasses D|prgClsIdList D|cTypeLibIds D|prgTypeLibIdList D|cServers D|prgServerNames D
+[AT_ENUM:|JobId D|JobTime D|DaysOfMonth D|DaysOfWeek W|Flags W|Command D
+[AT_INFO:|JobTime D|DaysOfMonth D|DaysOfWeek W|Flags W|Command D
+[AUDIT_ENTRY:|ae_len D|ae_reserved D|ae_time D|ae_type D|ae_data_offset D|ae_data_size D
+[AUXCAPSA:|wMid W|wPid W|vDriverVersion D|szPname B MAXPNAMELEN|wTechnology W|dwSupport D
+[AVICOMPRESSOPTIONS:|fccType D|fccHandler D|dwKeyFrameEvery D|dwQuality D|dwBytesPerSecond D|dwFlags D|lpFormat D|cbFormat D|lpParms D|cbParms D|dwInterleaveEvery D
+[AVIFILEINFO:|dwMaxBytesPerSec D|dwFlags D|dwCaps D|dwStreams D|dwSuggestedBufferSize D|dwWidth D|dwHeight D|dwScale D|dwRate D|dwLength D|dwEditCount D|szFileType B 64
+[AVISTREAMINFO:|fccType D|fccHandler D|dwFlags D|dwCaps D|wPriority W|wLanguage W|dwScale D|dwRate D|dwStart D|dwLength D|dwInitialFrames D|dwSuggestedBufferSize D|dwQuality D|dwSampleSize D|rcFrame_Rect_left D|rcFrame_Rect_top D|rcFrame_Rect_right D|rcFrame_Rect_bottom D|dwEditCount D|dwFormatChangeCount D|szName B 64
+[ACCELTABLEENTRY:|fFlags W|wAnsi W|wId W|padding W
+[ASNOBJECTIDENTIFIER:|idLength D|ids D
+[ASNOBJECTSTRING:|stream D|length D|dynamic D
+[BIND_OPTS2:|cbStruct D|grfFlags D|grfMode D|dwTickCountDeadline D|dwTrackFlags D|dwClassContext D|locale D|pServerInfo D
+[BIND_OPTS:|cbStruct D|grfFlags D|grfMode D|dwTickCountDeadline D
+[BITMAP:|bmType D|bmWidth D|bmHeight D|bmWidthBytes D|bmPlanes W|bmBitsPixel W|bmBits D
+[BITMAPCOREHEADER:|bcSize D|bcWidth W|bcHeight W|bcPlanes W|bcBitCount W
+[BITMAPCOREINFO:|bmciHeader.bcSize D|bmciHeader.bcWidth W|bmciHeader.bcHeight W|bmciHeader.bcPlanes W|bmciHeader.bcBitCount W|bmciColors.rgbtBlue B|bmciColors.rgbtGreen B|bmciColors.rgbtRed B
+[BITMAPFILEHEADER:|bfType W|bfSize D|bfReserved1 W|bfReserved2 W|bfOffBits D
+[BITMAPINFO:|bmiHeader.biSize D|bmiHeader.biWidth D|bmiHeader.biHeight D|bmiHeader.biPlanes W|bmiHeader.biBitCount W|bmiHeader.biCompression D|bmiHeader.biSizeImage D|bmiHeader.biXPelsPerMeter D|bmiHeader.biYPelsPerMeter D|bmiHeader.biClrUsed D|bmiHeader.biClrImportant D|bmiColors.rgbBlue B|bmiColors.rgbGreen B|bmiColors.rgbRed B|bmiColors.rgbReserved B
+[BITMAPINFOHEADER:|biSize D|biWidth D|biHeight D|biPlanes W|biBitCount W|biCompression D|biSizeImage D|biXPelsPerMeter D|biYPelsPerMeter D|biClrUsed D|biClrImportant D
+[BITMAPV4HEADER:|bV4Size D|bV4Width D|bV4Height D|bV4Planes W|bV4BitCount W|bV4V4Compression D|bV4SizeImage D|bV4XPelsPerMeter D|bV4YPelsPerMeter D|bV4ClrUsed D|bV4ClrImportant D|bV4RedMask D|bV4GreenMask D|bV4BlueMask D|bV4AlphaMask D|bV4CSType D|bV4Endpoints.ciexyzRed.ciexyzX D|bV4Endpoints.ciexyzRed.ciexyzY D|bV4Endpoints.ciexyzRed.ciexyzZ D|bV4Endpoints.ciexyzGreen.ciexyzX D|bV4Endpoints.ciexyzGreen.ciexyzY D|bV4Endpoints.ciexyzGreen.ciexyzZ D|bV4Endpoints.ciexyzBlue.ciexyzX D|bV4Endpoints.ciexyzBlue.ciexyzY D|bV4Endpoints.ciexyzBlue.ciexyzZ D|bV4GammaRed D|bV4GammaGreen D|bV4GammaBlue D
+[BLOB:|cbSize D|pBlobData D
+[BOXEDITINFO:|cxBox D|cyBox D|cxBase D|cyBase D|cyMid D|cyCusp D|cyEndCusp D|style D|dwReserved1 D|dwReserved2 D|dwReserved3 D|wFlags D|szFaceName B BEI_FACESIZE|wFontHeight D|rgwReserved D 8
+[BOXLAYOUT:|cyCusp D|cyEndCusp D|style D|dwReserved1 D|dwReserved2 D|dwReserved3 D
+[BOXRESULTS:|indxBox D|hinksetBox D|rgSyv D
+[BROWSEINFOA:|hwndOwner D|pidlRoot D|pszDisplayName D|lpszTitle D|ulFlags D|lpfn D|lParam D|iImage D
+[BROWSER_EMULATED_DOMAIN:|DomainName D|EmulatedServerName D|Role D
+[BROWSER_STATISTICS:|StatisticsStartTime.QuadPart Q|NumberOfServerAnnouncements.QuadPart Q|NumberOfDomainAnnouncements.QuadPart Q|NumberOfElectionPackets D|NumberOfMailslotWrites D|NumberOfGetBrowserServerListRequests D|NumberOfServerEnumerations D|NumberOfDomainEnumerations D|NumberOfOtherEnumerations D|NumberOfMissedServerAnnouncements D|NumberOfMissedMailslotDatagrams D|NumberOfMissedGetBrowserServerListRequests D|NumberOfFailedServerAnnounceAllocations D|NumberOfFailedMailslotAllocations D|NumberOfFailedMailslotReceives D|NumberOfFailedMailslotWrites D|NumberOfFailedMailslotOpens D|NumberOfDuplicateMasterAnnouncements D|NumberOfIllegalDatagrams.QuadPart Q
+[BROWSER_STATISTICS_100:|StartTime.QuadPart Q|NumberOfServerAnnouncements.QuadPart Q|NumberOfDomainAnnouncements.QuadPart Q|NumberOfElectionPackets D|NumberOfMailslotWrites D|NumberOfGetBrowserServerListRequests D|NumberOfIllegalDatagrams.QuadPart Q
+[BROWSER_STATISTICS_101:|StartTime.QuadPart Q|NumberOfServerAnnouncements.QuadPart Q|NumberOfDomainAnnouncements.QuadPart Q|NumberOfElectionPackets D|NumberOfMailslotWrites D|NumberOfGetBrowserServerListRequests D|NumberOfIllegalDatagrams.QuadPart Q|NumberOfMissedServerAnnouncements D|NumberOfMissedMailslotDatagrams D|NumberOfMissedGetBrowserServerListRequests D|NumberOfFailedServerAnnounceAllocations D|NumberOfFailedMailslotAllocations D|NumberOfFailedMailslotReceives D|NumberOfFailedMailslotWrites D|NumberOfFailedMailslotOpens D|NumberOfDuplicateMasterAnnouncements D
+[BSTRBLOB:|cbSize D|pData D
+[BYTE_BLOB:|clSize D|abData B
+[BYTE_SIZEDARR:|clSize D|pData D
+[BY_HANDLE_FILE_INFORMATION:|dwFileAttributes D|ftCreationTime.dwLowDateTime D|ftCreationTime.dwHighDateTime D|ftLastAccessTime.dwLowDateTime D|ftLastAccessTime.dwHighDateTime D|ftLastWriteTime.dwLowDateTime D|ftLastWriteTime.dwHighDateTime D|dwVolumeSerialNumber D|nFileSizeHigh D|nFileSizeLow D|nNumberOfLinks D|nFileIndexHigh D|nFileIndexLow D
+[CABINET_INFO:|CabinetPath D|CabinetFile D|DiskName D|SetId W|CabinetNumber W
+[CADWORD:|cElems D|pElems D
+[CALBSTRUCT:|wOffsetX D|wOffsetY D|wDistinctWidth D|wDistinctHeight D
+[CALPOLESTR:|cElems D|pElems D
+[CANDIDATEFORM:|dwIndex D|dwStyle D|ptCurrentPos.x D|ptCurrentPos.y D|rcArea.left D|rcArea.top D|rcArea.right D|rcArea.bottom D
+[CANDIDATELIST:|dwSize D|dwStyle D|dwCount D|dwSelection D|dwPageStart D|dwPageSize D|dwOffset1 D
+[CAPDRIVERCAPS:|wDeviceIndex D|fHasOverlay D|fHasDlgVideoSource D|fHasDlgVideoFormat D|fHasDlgVideoDisplay D|fCaptureInitialized D|fDriverSuppliesPalettes D|hVideoIn D|hVideoOut D|hVideoExtIn D|hVideoExtOut D
+[CAPINFOCHUNK:|fccInfoID D|lpData D|cbData D
+[CAPSTATUS:|uiImageWidth D|uiImageHeight D|fLiveWindow D|fOverlayWindow D|fScale D|ptScroll_x D|ptScroll_y D|fUsingDefaultPalette D|fAudioHardware D|fCapFileExists D|dwCurrentVideoFrame D|dwCurrentVideoFramesDropped D|dwCurrentWaveSamples D|dwCurrentTimeElapsedMS D|hPalCurrent D|fCapturingNow D|dwReturn D|wNumVideoAllocated D|wNumAudioAllocated D
+[CAPTUREPARMS:|dwRequestMicroSecPerFrame D|fMakeUserHitOKToCapture D|wPercentDropForError D|fYield D|dwIndexSize D|wChunkGranularity D|fUsingDOSMemory D|wNumVideoRequested D|fCaptureAudio D|wNumAudioRequested D|vKeyAbort D|fAbortLeftMouse D|fAbortRightMouse D|fLimitEnabled D|wTimeLimit D|fMCIControl D|fStepMCIDevice D|dwMCIStartTime D|dwMCIStopTime D|fStepCaptureAt2x D|wStepCaptureAverageFrames D|dwAudioBufferSize D|fDisableWriteCache D|AVStreamMaster D
+[CAUUID:|cElems D|pElems D
+[CBTACTIVATESTRUCT:|fMouse D|hWndActive D
+[CBT_CREATEWNDA:|lpcs D|hWndInsertAfter D
+[CCB_PARMS:|usStationId::usParameter0 W|usParameter::usParameter1 W|auchBuffer U 4
+[CHARDEVQ_INFO_0:|cq0_dev D
+[CHARDEVQ_INFO_1002:|cq1002_priority D
+[CHARDEVQ_INFO_1003:|cq1003_devs D
+[CHARDEVQ_INFO_1:|cq1_dev D|cq1_priority D|cq1_devs D|cq1_numusers D|cq1_numahead D
+[CHARDEV_INFO_0:|ch0_dev D
+[CHARDEV_INFO_1:|ch1_dev D|ch1_status D|ch1_username D|ch1_time D
+[CHARFORMAT2:|cbSize D|dwMask D|dwEffects D|yHeight D|yOffset D|crTextColor D|bCharSet B|bPitchAndFamily B|szFaceName B LF_FACESIZE|_wPad2 W|wWeight W|sSpacing W|crBackColor D|lcid D|dwReserved D|sStyle W|wKerning W|bUnderlineType B|bAnimation B|bRevAuthor B|bReserved1 B
+[CHARFORMAT:|cbSize D|wPad1 D|dwMask D|dwEffects D|yHeight D|yOffset D|crTextColor D|bCharSet B|bPitchAndFamily B|szFaceName B LF_FACESIZE|wPad2 D
+[CHARFORMATA:|cbSize D|dwMask D|dwEffects D|yHeight D|yOffset D|crTextColor D|bCharSet B|bPitchAndFamily B|szFaceName B LF_FACESIZE|_wPad2 W
+[CHARRANGE:|cpMin D|cpMax D
+[CHARSET:|DWORDaflBlock D 3|DWORDflLang D
+[CHARSETINFO:|ciCharset D|ciACP D|xlfs.fsUsb4 D 4|xlfs.fsCsb2 D 2
+[CHAR_INFO:|Char W|Attributes W
+[CHOOSECOLORA:|lStructSize D|hwndOwner D|hInstance D|rgbResult D|lpCustColors D|Flags D|lCustData D|lpfnHook D|lpTemplateName D
+[CHOOSEFONTA:|lStructSize D|hwndOwner D|hDC D|lpLogFont D|iPointSize D|Flags D|rgbColors D|lCustData D|lpfnHook D|lpTemplateName D|hInstance D|lpszStyle D|nFontType W|Alignment W|nSizeMin D|nSizeMax D
+[CIDA:|cidl D|aoffset D 1
+[CIEXYZ:|ciexyzX D|ciexyzY D|ciexyzZ D
+[CIEXYZTRIPLE:|ciexyzRed.ciexyzX D|ciexyzRed.ciexyzY D|ciexyzRed.ciexyzZ D|ciexyzGreen.ciexyzX D|ciexyzGreen.ciexyzY D|ciexyzGreen.ciexyzZ D|ciexyzBlue.ciexyzX D|ciexyzBlue.ciexyzY D|ciexyzBlue.ciexyzZ D
+[CLIENTCREATESTRUCT:|hWindowMenu D|idFirstChild D
+[CLIPDATA:|cbSize D|ulClipFmt D|pClipData D
+[CLSID:|Data1 D|Data2 W|Data3 W|Data4 B 8
+[CMINVOKECOMMANDINFO:|cbSize D|fMask D|hwnd D|lpVerb D|lpParameters D|lpDirectory D|nShow D|dwHotKey D|hIcon D
+[CMINVOKECOMMANDINFOEX:|cbSize D|fMask D|hwnd D|lpVerb D|lpParameters D|lpDirectory D|nShow D|dwHotKey D|hIcon D|lpTitle D|lpVerbW D|lpParametersW D|lpDirectoryW D|lpTitleW D|ptInvoke.x D|ptInvoke.y D
+[COAUTHIDENTITY:|User D|UserLength D|Domain D|DomainLength D|Password D|PasswordLength D|Flags D
+[COAUTHINFO:|dwAuthnSvc D|dwAuthzSvc D|pwszServerPrincName D|dwAuthnLevel D|dwImpersonationLevel D|pAuthIdentityData D|dwCapabilities D
+[COLORADJUSTMENT:|caSize W|caFlags W|caIlluminantIndex W|caRedGamma W|caGreenGamma W|caBlueGamma W|caReferenceBlack W|caReferenceWhite W|caContrast W|caBrightness W|caColorfulness W|caRedGreenTint W
+[COLORMAP:|From D|To D
+[COMMCONFIG:|dwSize D|wVersion W|wReserved W|dcbx.DCBlength D|dcbx.BaudRate D|dcbx.fbits D|dcbx.wReserved W|dcbx.XonLim W|dcbx.XoffLim W|dcbx.ByteSize B|dcbx.Parity B|dcbx.StopBits B|dcbx.XonChar B|dcbx.XoffChar B|dcbx.ErrorChar B|dcbx.EofChar B|dcbx.EvtChar B|dcbx.wReserved1 W|dwProviderSubType D|dwProviderOffset D|dwProviderSize D|wcProviderData W
+[COMMPROP:|wPacketiLength W|wPacketVersion W|dwServiceMask D|dwReserved1 D|dwMaxTxQueue D|dwMaxRxQueue D|dwMaxBaud D|dwProvSubType D|dwProvCapabilities D|dwSettableParams D|dwSettableBaud D|wSettableData W|wSettableStopParity W|dwCurrentTxQueue D|dwCurrentRxQueue D|dwProvSpec1 D|dwProvSpec2 D|wcProvChar W
+[COMMTIMEOUTS:|ReadIntervalTimeout D|ReadTotalTimeoutMultiplier D|ReadTotalTimeoutConstant D|WriteTotalTimeoutMultiplier D|WriteTotalTimeoutConstant D
+[COMPAREITEMSTRUCT:|CtlType D|CtlID D|hwndItem D|itemID1 D|itemData1 D|itemID2 D|itemData2 D|dwLocaleId D
+[COMPCOLOR:|crText D|crBackground D|dwEffects D
+[COMPONENT:|dwSize D|dwID D|iComponentType D|fChecked D|fDirty D|fNoScroll D|cpPos.dwSize D|cpPos.iLeft D|cpPos.iTop D|cpPos.dwWidth D|cpPos.dwHeight D|cpPos.izIndex D|cpPos.fCanResize D|cpPos.fCanResizeX D|cpPos.fCanResizeY D|cpPos.iPreferredLeftPercent D|cpPos.iPreferredTopPercent D|wszFriendlyName W MAX_PATH|wszSource W INTERNET_MAX_URL_LENGTH|wszSubscribedURL W INTERNET_MAX_URL_LENGTH
+[COMPONENTSOPT:|dwSize D|fEnableComponents D|fActiveDesktop D
+[COMPOSITIONFORM:|dwStyle D|ptCurrentPos.x D|ptCurrentPos.y D|rcArea.left D|rcArea.top D|rcArea.right D|rcArea.bottom D
+[COMPPOS:|dwSize D|iLeft D|iTop D|dwWidth D|dwHeight D|izIndex D|fCanResize D|fCanResizeX D|fCanResizeY D|iPreferredLeftPercent D|iPreferredTopPercent D
+[COMPVARS:|cbSize D|dwFlags D|hic D|fccType D|fccHandler D|lpbiIn D|lpbiOut D|lpBitsOut D|lpBitsPrev D|lFrame D|lKey D|lDataRate D|lQ D|lKeyCount D|lpState D|cbState D
+[COMSTAT:|comrec D|cbInQue D|cbOutQue D
+[CONFIG_INFO_0:|cfgi0_key D|cfgi0_data D
+[CONNECTDATA:|pUnk D|dwCookie D
+[CONNECTDLGSTRUCT:|cbStructure D|hwndOwner D|lpConnRes D|dwFlags D|dwDevNum D
+[CONNECTION_INFO_0:|coni0_id D
+[CONNECTION_INFO_1:|coni1_id D|coni1_type D|coni1_num_opens D|coni1_num_users D|coni1_time D|coni1_username D|coni1_netname D
+[CONSOLE_CURSOR_INFO:|dwSize D|bVisible D
+[CONSOLE_SCREEN_BUFFER_INFO:|dwSize.x W|dwSize.y W|dwCursorPosition.x W|dwCursorPosition.y W|wAttributes W|srWindow.Left W|srWindow.Top W|srWindow.Right W|srWindow.Bottom W|dwMaximumWindowSize.x W|dwMaximumWindowSize.y W
+[CONTEXT:|ContextFlags D|iDr0 D|iDr1 D|iDr2 D|iDr3 D|iDr6 D|iDr7 D|FloatSave.ControlWord D|FloatSave.StatusWord D|FloatSave.TagWord D|FloatSave.ErrorOffset D|FloatSave.ErrorSelector D|FloatSave.DataOffset D|FloatSave.DataSelector D|FloatSave.RegisterArea B SIZE_OF_80387_REGISTERS|FloatSave.Cr0NpxState D|regGs D|regFs D|regEs D|regDs D|regEdi D|regEsi D|regEbx D|regEdx D|regEcx D|regEax D|regEbp D|regEip D|regCs D|regFlag D|regEsp D|regSs D|ExtendedRegisters B MAXIMUM_SUPPORTED_EXTENSION
+[CONTROLINFO:|cb D|hAccel D|cAccel W|dwFlags D
+[CONVCONTEXT:|cb D|wFlags D|wCountryID D|iCodePage D|dwLangID D|dwSecurity D|qos.iLength D|qos.Impersonationlevel D|qos.ContextTrackingMode B|qos.EffectiveOnly B
+[CONVINFO:|cb D|hUser D|hConvPartner D|hszSvcPartner D|hszServiceReq D|hszTopic D|hszItem D|wFmt D|wType D|wStatus D|wConvst D|wLastError D|hConvList D|ConvCtxt.cb D|ConvCtxt.wFlags D|ConvCtxt.wCountryID D|ConvCtxt.iCodePage D|ConvCtxt.dwLangID D|ConvCtxt.dwSecurity D|ConvCtxt.qos.iLength D|ConvCtxt.qos.Impersonationlevel D|ConvCtxt.qos.ContextTrackingMode B|ConvCtxt.qos.EffectiveOnly B|hwnd D|hwndPartner D
+[COORD:|x W|y W
+[COPYDATASTRUCT:|dwData D|cbData D|lpData D
+[COSERVERINFO:|dwReserved1 D|pwszName D|pAuthInfo D|dwReserved2 D
+[CPINFO:|MaxCharSize D|DefaultChar B MAX_DEFAULTCHAR|LeadByte B MAX_LEADBYTES
+[CPINFOEX:|MaxCharSize D|DefaultChar B MAX_DEFAULTCHAR|LeadByte B MAX_LEADBYTES|UnicodeDefaultChar W|CodePage D|CodePageName B MAX_PATH
+[CPLINFO:|idIcon D|idName D|idInfo D|lData D
+[CREATESTRUCTA:|lpCreateParams D|hInstance D|hMenu D|hWndParent D|ly D|lx D|y D|x D|style D|lpszName D|lpszClass D|ExStyle D
+[CREATESTRUCTW:|lpCreateParams D|hInstance D|hMenu D|hwndParent D|cy D|cx D|y D|x D|style D|lpszName D|lpszClass D|dwExStyle D
+[CREATE_PROCESS_DEBUG_INFO:|hFile D|hProcess D|hThread D|lpBaseOfImage D|dwDebugInfoFileOffset D|nDebugInfoSize D|lpThreadLocalBase D|lpStartAddress D|lpImageName D|fUnicode W
+[CREATE_THREAD_DEBUG_INFO:|hThread D|lpThreadLocalBase D|lpStartAddress D
+[CRGB:|bRed B|bGreen B|bBlue B|bExtra B
+[CSADDR_INFO:|LocalAddr D|RemoteAddr D|iSocketType D|iProtocol D
+[CSPLATFORM:|dwPlatformId D|dwVersionHi D|dwVersionLo D|dwProcessorArch D
+[CTLINITBEDIT:|cbSize D|hwnd D|id D|wSizeCategory D|wFlags W|dwReserved D
+[CTLINITHEDIT:|cbSize D|hwnd D|id D|dwFlags D|dwReserved D
+[CTLINITIEDIT:|cbSize D|hwnd D|id D|ieb W|iedo W|iei W|ien W|ierec W|ies W|iesec W|hpndt D|pdts W|hgdiobj D|hpenGrid D|ptOrgGrid_x D|ptOrgGrid_y D|wVGrid W|wHGrid W|dwApp D|dwReserved D
+[CURRENCYFMTA:|NumDigits D|LeadingZero D|Grouping D|lpDecimalSep D|lpThousandSep D|NegativeOrder D|PositiveOrder D|lpCurrencySymbol D
+[CURSORDIR:|Width W|Height W
+[CURSORSHAPE:|xHotSpot D|yHotSpot D|regCx D|regCy D|cbWidth D|Planes B|BitsPixel B
+[CWPRETSTRUCT:|lResult D|lParam D|wParam D|message D|hwnd D
+[CWPSTRUCT:|lParam D|wParam D|message D|hwnd D
+[CWX:|cbSize D|wApplyFlags W|hwndText D|hrc D|szCaption B CBCAPTIONCWX|dwEditStyle D|dwSel D|dwFlags D|ixkb W|rgState W CKBCWX|ptUL_x D|ptUL_y D|sizeHW D
+[CY:|Lo D|Hi D|int64 Q
+[D3DADAPTER_IDENTIFIER9:|Driver B MAX_DEVICE_IDENTIFIER_STRING|Description B MAX_DEVICE_IDENTIFIER_STRING|DeviceName B 32|DriverVersion D|DriverVersionLowPart D|DriverVersionHighPart D|VendorId D|DeviceId D|SubSysId D|Revision D|DeviceIdentifier_Data1 D|DeviceIdentifier_Data2 W|DeviceIdentifier_Data3 W|DeviceIdentifier_Data4 B 8|WHQLLevel D
+[D3DBOX:|Left D|Top D|Right D|Bottom D|Front D|Back D
+[D3DBRANCH:|dwMask D|dwValue D|bNegate D|dwOffset D
+[D3DCAPS9:|DeviceType D|AdapterOrdinal D|Caps D|Caps2 D|Caps3 D|PresentationIntervals D|CursorCaps D|DevCaps D|PrimitiveMiscCaps D|RasterCaps D|ZCmpCaps D|SrcBlendCaps D|DestBlendCaps D|AlphaCmpCaps D|ShadeCaps D|TextureCaps D|TextureFilterCaps D|CubeTextureFilterCaps W|VolumeTextureFilterCaps D|TextureAddressCaps D|VolumeTextureAddressCaps D|LineCaps D|MaxTextureWidth D|MaxTextureHeight D|MaxVolumeExtent D|MaxTextureRepeat D|MaxTextureAspectRatio D|MaxAnisotropy D|MaxVertexW F|GuardBandLeft F|GuardBandTop F|GuardBandRight F|GuardBandBottom F|ExtentsAdjust F|StencilCaps D|FVFCaps D|TextureOpCaps D|MaxTextureBlendStages D|MaxSimultaneousTextures D|VertexProcessingCaps D|MaxActiveLights D|MaxUserClipPlanes D|MaxVertexBlendMatrices D|MaxVertexBlendMatrixIndex D|MaxPointSize F|MaxPrimitiveCount D|MaxVertexIndex D|MaxStreams D|MaxStreamStride D|VertexShaderVersion D|MaxVertexShaderConst D|PixelShaderVersion D|PixelShader1xMaxValue F|DevCaps2 D|MaxNpatchTesselationLevel F|MinAntial
+ iased
+LineWidth F|MaxAntialiasedLineWidth F|MasterAdapterOrdinal D|AdapterOrdinalInGroup D|NumberOfAdaptersInGroup D|DeclTypes D|NumSimultaneousRTs D|StretchRectFilterCaps D|VS20Caps D|PS20Caps D|VertexTextureFilterCaps D|MaxVShaderInstructionsExecuted D|MaxPShaderInstructionsExecuted D|MaxVertexShader30InstructionSlots D|MaxPixelShader30InstructionSlots D|Reserved2 D|Reserved3 D
+[D3DCLIPSTATUS9:|ClipUnion D|ClipIntersection D
+[D3DCOLORVALUE:|r::dvR D|g::dvF D|b::dvB D|a::dva D
+[D3DDEVICEDESC:|dwSize D|dwFlags D|dcmColorModel D|dwDevCaps D|dtcTransformCaps D|bClipping D|dlcLightingCaps D|dpcLineCaps D|dpcTriCaps D|dwDeviceRenderBitDepth D|dwDeviceZBufferBitDepth D|dwMaxBufferSize D|dwMaxVertexCount D
+[D3DDEVICE_CREATION_PARAMETERS:|AdapterOrdinal D|DeviceType D|hFocusWindow D|BehaviorFlags D
+[D3DDEVINFO_D3DVERTEXSTATS:|NumRenderedTriangles D|NumExtraClippingTriangles D
+[D3DDEVINFO_RESOURCEMANAGER:|stats D D3DRTYPECOUNT
+[D3DDEVINFO_VCACHE:|Pattern D|OptMethod D|CacheSize D|MagicNumber D
+[D3DDISPLAYMODE:|Width D|Height D|RefreshRate D|Format D
+[D3DEXECUTEBUFFERDESC:|dwSize D|dwFlags D|dwCaps D|dwBufferSize D|lpData D
+[D3DEXECUTEDATA:|dwSize D|dwVertexOffset D|dwVertexCount D|dwInstructionOffset D|dwInstructionLength D|dwHVertexOffset D|dsStatus D
+[D3DFINDDEVICERESULT:|dwSize D|guid_Data1 D|guid_Data2 W|guid_Data3 W|guid_Data4 B 8|ddHwDesc D|ddSwDesc D
+[D3DFINDDEVICESEARCH:|dwSize D|dwFlags D|bHardware D|dcmColorModel D|guid_Data2 W|guid_Data3 W|guid_Data4 B 8|dwCaps D|dpcPrimCaps D
+[D3DGAMMARAMP:|red W 256|green W 256|blue W 256
+[D3DHVERTEX:|dwFlags D|hx::dvHX D|hy::dvHY D|hz::dvHZ D
+[D3DINDEXBUFFER_DESC:|Format D|Type D|Usage D|Pool D|Size D
+[D3DINSTRUCTION:|bOpcode B|bSize B|wCount W
+[D3DLIGHT9:|Type D|Diffuse D|Specular D|Ambient D|Position D|Direction D|Range F|Falloff F|Attenuation0 F|Attenuation1 F|Attenuation2 F|Theta F|Phi F
+[D3DLIGHT:|dwSize D|dltType D|dcvColor D|dvPosition D|dvDirection D|dvRange D|dvFalloff D|dvAttenuation0 D|dvAttenuation1 D|dvAttenuation2 D|dvTheta D|dvPhi D
+[D3DLIGHTDATA:|dwSize D|lpIn D|dwInSize D|lpOut D|dwOutSize D
+[D3DLIGHTINGCAPS:|dwSize D|dwCaps D|dwLightingModel D|dwNumLights D
+[D3DLIGHTINGELEMENT:|dvPosition D|dvNormal D
+[D3DLINE:|v1::w1 W|v2::w2 W
+[D3DLINEPATTERN:wRepeatFactor W|wLinePattern W
+[D3DLOCKED_BOX:|RowPitch D|SlicePitch D|pBits D
+[D3DLOCKED_RECT:|Pitch D|pBits D
+[D3DLVERTEX:|x::dvX D|y::dvY D|z::dvZ D|dwReserved D|color::dcColor D|specular::dcSpecular D|tu::dvTU D|tv::dvTV D
+[D3DMATERIAL9:|Diffuse D|Ambient D|Specular D|Emissive D|Power F
+[D3DMATERIAL:|dwSize D|diffuse::dcvDiffuse D|ambient::dcvAmbient D|specular::dcvSpecular D|emissive::dcvEmissive D|power::dvPower D|hTexture D|dwRampSize D
+[D3DMATRIX:|D3DVALUE_11 D|D3DVALUE_12 D|D3DVALUE_13 D|D3DVALUE_14 D|D3DVALUE_21 D|D3DVALUE_22 D|D3DVALUE_23 D|D3DVALUE_24 D|D3DVALUE_31 D|D3DVALUE_32 D|D3DVALUE_33 D|D3DVALUE_34 D|D3DVALUE_41 D|D3DVALUE_42 D|D3DVALUE_43 D|D3DVALUE_44 D
+[D3DMATRIXLOAD:|hDestMatrix D|hSrcMatrix D
+[D3DMATRIXMULTIPLY:|hDestMatrix D|hSrcMatrix1 D|hSrcMatrix2 D
+[D3DPICKRECORD:|bOpcode B|bPad B|dwOffset D|dvZ D
+[D3DPOINT:wCount W|wFirst W
+[D3DPRESENT_PARAMETERS:|BackBufferWidth D|BackBufferHeight D|BackBufferFormat D|BackBufferCount D|MultiSampleType D|MultiSampleQuality D|SwapEffect D|hDeviceWindow D|Windowed D|EnableAutoDepthStencil D|AutoDepthStencilFormat D|Flags D|FullScreen_RefreshRateInHz D|PresentationInterval D
+[D3DPRIMCAPS:|dwSize D|dwMiscCaps D|dwRasterCaps D|dwZCmpCaps D|dwSrcBlendCaps D|dwDestBlendCaps D|dwAlphaCmpCaps D|dwShadeCaps D|dwTextureCaps D|dwTextureFilterCaps D|dwTextureBlendCaps D|dwTextureAddressCaps D|dwStippleWidth D|dwStippleHeight D
+[D3DPROCESSVERTICES:|dwFlags D|wStart W|wDest W|dwCount D|dwReserved D
+[D3DPSHADERCAPS2_0:|Caps D|DynamicFlowControlDepth D|NumTemps D|StaticFlowControlDepth D|NumInstructionSlots D
+[D3DRANGE:|Offset D|Size D
+[D3DRASTER_STATUS:|InVBlank D|ScanLine D
+[D3DRECT:|x1::lX1 D|y1::lY1 D|x2::lX2 D|y2::lY2 D
+[D3DRECTPATCH_INFO:|StartVertexOffsetWidth D|StartVertexOffsetHeight D|Width D|Height D|Stride D|Basis D|Degree D
+[D3DRESOURCESTATS:|bThrashing D|ApproxBytesDownloaded D|NumEvicts D|NumVidCreates D|LastPri D|NumUsed D|NumUsedInVidMem D|WorkingSet D|WorkingSetBytes D|TotalManaged D|TotalBytes D
+[D3DRMBOX:|min D|max D
+[D3DRMIMAGE:|width D|height D|aspectx D|aspecty D|depth D|rgb D|bytes_per_line D|buffer1 D|buffer2 D|red_mask D|green_mask D|blue_mask D|alpha_mask D|palette_size D|palette D
+[D3DRMLOADMEMORY:|lpMemory D|dSize D
+[D3DRMLOADRESOURCE:|hModule D|lpName D|lpType D
+[D3DRMPALETTEENTRY:|red B|green B|blue B|flags B
+[D3DRMPICKDESC:|ulFaceIdx D|lGroupIdx D|vPosition D
+[D3DRMQUATERNION:|s D|v D
+[D3DRMVECTOR4D:|x D|y D|z D|w D
+[D3DRMVERTEX:|position D|normal D|tu D|tv D|color D
+[D3DSPAN:|wCount W|wFirst W
+[D3DSTATE:|dtstTransformStateType::dlstLightStateType::drstRenderStateType D|dwArg::dvArg D
+[D3DSTATS:|dwSize D|dwTrianglesDrawn D|dwLinesDrawn D|dwPointsDrawn D|dwSpansDrawn D|dwVerticesProcessed D
+[D3DSTATUS:|dwFlags D|dwStatus D|drExtent D
+[D3DSURFACE_DESC:|Format D|Type D|Usage D|Pool D|MultiSampleType D|MultiSampleQuality D|Width D|Height D
+[D3DTEXTURELOAD:|hDestTexture D|hSrcTexture D
+[D3DTLVERTEX:|sx::dvSX D|sy::dvSY D|sz::dvSZ D|rhw::dvRHW D|color::dcColor D|specular::dcSpecular D|tu::dvTU D|tv::dvTV D
+[D3DTRANSFORMCAPS:|dwSize D|dwCaps D
+[D3DTRANSFORMDATA:|dwSize D|lpIn D|dwInSize D|lpOut D|dwOutSize D|lpHOut D|dwClip D|dwClipIntersection D|dwClipUnion D|drExtent D
+[D3DTRIANGLE:|v1::wV1 W|v2::wV2 W|v3::wV3 W|wFlags W
+[D3DTRIPATCH_INFO:|StartVertexOffset D|NumVertices D|Basis D|Degree D
+[D3DVECTOR:|x::dvX D|y::dvY D|z::dvZ D
+[D3DVERTEX:|x::dvX D|y::dvY D|z::dvZ D|nx::dvNX D|ny::dvNY D|nz::dvNZ D|tu::dvTU D|tv::dvTV D
+[D3DVERTEXBUFFER_DESC:|Format D|Type D|Usage D|Pool D|Size D|FVF D
+[D3DVERTEXELEMENT9:|Stream B|Offset B|Type B|Method B|Usage B|UsageIndex B
+[D3DVIEWPORT9:|X D|Y D|Width D|Height D|MinZ F|MaxZ F
+[D3DVIEWPORT:|dwSize D|dwX D|dwY D|dwWidth D|dwHeight D|dvScaleX D|dvScaleY D|dvMaxX D|dvMaxY D|dvMinZ D|dvMaxZ D
+[D3DVOLUME_DESC:|Format D|Type D|Usage D|Pool D|Width D|Height D|Depth D
+[D3DVSHADERCAPS2_0:|Caps D|DynamicFlowControlDepth D|NumTemps D|StaticFlowControlDepth D
+[DATATYPES_INFO_1A:|pName D
+[DATE_STRUCT:|year W|month W|day W
+[DCB:|DCBlength D|BaudRate D|fbits D|wReserved W|XonLim W|XoffLim W|ByteSize B|Parity B|StopBits B|XonChar B|XoffChar B|ErrorChar B|EofChar B|EvtChar B|wReserved1 W
+[DDBLTBATCH:|lprDest D|lpDDSSrc D|lprSrc D|dwFlags D|lpDDBltFx D
+[DDBLTFX:|dwSize D|dwDDFX D|dwROP D|dwDDROP D|dwRotationAngle D|dwZBufferOpCode D|dwZBufferLow D|dwZBufferHigh D|dwZBufferBaseDest D|dwZDestConstBitDepth D|dwZDestConst::lpDDSZBufferDest D|dwZSrcConstBitDepth D|dwZSrcConst::lpDDSZBufferSrc D|dwAlphaEdgeBlendBitDepth D|dwAlphaEdgeBlend D|dwReserved D|dwAlphaDestConstBitDepth D|dwAlphaDestConst::lpDDSAlphaDest D|dwAlphaSrcConstBitDepth D|dwAlphaSrcConst::lpDDSAlphaSrc D|dwFillColor::dwFillDepth::lpDDSPattern D|ddckDestColorkey D|ddckSrcColorkey D
+[DDCAPS:|dwSize D|dwCaps D|dwCaps2 D|dwCKeyCaps D|dwFXCaps D|dwFXAlphaCaps D|dwPalCaps D|dwSVCaps D|dwAlphaBltConstBitDepths D|dwAlphaBltPixelBitDepths D|dwAlphaBltSurfaceBitDepths D|dwAlphaOverlayConstBitDepths D|dwAlphaOverlayPixelBitDepths D|dwAlphaOverlaySurfaceBitDepths D|dwZBufferBitDepths D|dwVidMemTotal D|dwVidMemFree D|dwMaxVisibleOverlays D|dwCurrVisibleOverlays D|dwNumFourCCCodes D|dwAlignBoundarySrc D|dwAlignSizeSrc D|dwAlignBoundaryDest D|dwAlignSizeDest D|dwAlignStrideAlign D|dwRops D DD_ROP_SPACE|ddsCaps D|dwMinOverlayStretch D|dwMaxOverlayStretch D|dwMinLiveVideoStretch D|dwMaxLiveVideoStretch D|dwMinHwCodecStretch D|dwMaxHwCodecStretch D|dwReserved1 D|dwReserved2 D|dwReserved3 D|dwSVBCaps D|dwSVBCKeyCaps D|dwSVBFXCaps D|dwSVBRops D DD_ROP_SPACE|dwVSBCaps D|dwVSBCKeyCaps D|dwVSBFXCaps D|dwVSBRops D DD_ROP_SPACE|dwSSBCaps D|dwSSBCKeyCaps D|dwSSBCFXCaps D|dwSSBRops D DD_ROP_SPACE|dwReserved4 D|dwReserved5 D|dwReserved6 D
+[DDCOLORKEY:|dwColorSpaceLowValue D|dwColorSpaceHighValue D
+[DDEACK:|W
+[DDEADVISE:|D
+[DDEDATA:|D|D
+[DDELN:|D
+[DDEML_MSG_HOOK_DATA:|uiLo D|uiHi D|cbData D|xData D 8
+[DDEPOKE:|D|D
+[DDEUP:|D|D
+[DDOVERLAYFX:|dwSize D|dwAlphaEdgeBlendBitDepth D|dwAlphaEdgeBlend D|dwReserved D|dwAlphaDestConstBitDepth D|dwAlphaDestConst::lpDDSAlphaDest D|dwAlphaSrcConstBitDepth D|dwAlphaSrcConst::lpDDSAlphaSrc D|dckDestColorkey D|dckSrcColorkey D|dwDDFX D|dwFlags D
+[DDPIXELFORMAT:|dwSize D|dwFlags D|dwFourCC D|dwRGBBitCount::dwYUVBitCount::dwZBufferBitDepth::dwAlphaBitDepth D|dwRBitMask::dwYBitMask D|dwGBitMask::dwUBitMask D|dwBBitMask::dwVBitMask D|dwRGBAlphaBitMask::dwYUVAlphaBitMask D
+[DDSCAPS:|dwCaps D
+[DDSURFACEDESC:|dwSize D|dwFlags D|dwHeight D|dwWidth D|lPitch D|dwBackBufferCount D|dwMipMapCount::dwZBufferBitDepth::dwRefreshRate D|dwAlphaBitDepth D|dwReserved D|lpSurface D|ddckCKDestOverlay D|ddckCKDestBlt D|ddckCKSrcOverlay D|ddckCKSrcBlt D|ddpfPixelFormat D|ddsCaps D
+[DEBUGHOOKINFO:|hModuleHook D|Reserved D|lParam D|wParam D|code D
+[DEBUG_EVENT:|dwDebugEventCode D|dwProcessId D|dwThreadId D|pExceptionRecord::hThread::hFile::dwExitCode::lpBaseOfDll::lpDebugStringData::dwError D|dwFirstChance::lpThreadLocalBase::hProcess::lpBaseOfDll::dwType::fUnicode W|nDebugStringiLength W|lpStartAddress::hThread::dwDebugInfoFileOffset::nDebugStringiLength D|lpBaseOfImage::nDebugInfoSize D|dwDebugInfoFileOffset::lpImageName D|nDebugInfoSize::fUnicode D|lpThreadLocalBase D|lpStartAddress D|lpImageName D|fUnicode W
+[DELETEITEMSTRUCT:|CtlType D|CtlID D|itemID D|hwndItem D|itemData D
+[DESKBANDINFO:|dwMask D|ptMinSize.x D|ptMinSize.y D|ptMaxSize.x D|ptMaxSize.y D|ptIntegral.x D|ptIntegral.y D|ptActual.x D|ptActual.y D|wszTitle W 256|dwModeFlags D|crBkgnd D
+[DEVMODE:|dmDeviceName B CCHDEVICENAME|dmSpecVersion W|dmDriverVersion W|dmSize W|dmDriverExtra W|dmFields D|POINTLx::dmOrientation W|dmPaperSize W|POINTLy::dmPaperLength W|dmPaperWidth W|dmScale W|dmCopies W|dmDefaultSource W|dmPrintQuality W|dmColor W|dmDuplex W|dmYResolution W|dmTTOption W|dmCollate W|dmFormName B CCHFORMNAME|dmLogPixels W|dmBitsPerPel D|dmPelsWidth D|dmPelsHeight D|dmDisplayFlags D|dmDisplayFrequency D|dmICMMethod D|dmICMIntent D|dmMediaType D|dmDitherType D|dmReserved1 D|dmReserved2 D
+[DEVNAMES:|wDriverOffset W|wDeviceOffset W|wOutputOffset W|wDefault W
+[DEVNAMES:|wDriverOffset W|wDeviceOffset W|wOutputOffset W|wDefault W
+[DEV_BROADCAST_HDR:|dbch_size D|dbch_devicetype D|dbch_reserved D
+[DEV_BROADCAST_OEM:|dbco_size D|dbco_devicetype D|dbco_reserved D|dbco_identifier D|dbco_suppfunc D
+[DEV_BROADCAST_PORT:|dbcp_size D|dbcp_devicetype D|dbcp_reserved D|dbcp_name B
+[DEV_BROADCAST_VOLUME:|dbcv_size D|dbcv_devicetype D|dbcv_reserved D|dbcv_unitmask D|dbcv_flags W
+[DFS_INFO_100:|Comment D
+[DFS_INFO_101:|State D
+[DFS_INFO_1:|EntryPath D
+[DFS_INFO_2:|EntryPath D|Comment D|State D|NumberOfStorages D
+[DFS_INFO_3:|EntryPath D|Comment D|State D|NumberOfStorages D|Storage D
+[DFS_INFO_4:|EntryPath D|Comment D|State D|Timeout D|Guid_Data1 D|Guid_Data2 W|Guid_Data3 W|Guid_Data4 B 8|NumberOfStorages D|Storage D
+[DFS_STORAGE_INFO:|State D|ServerName D|ShareName D
+[DIBSECTION:|BitMap::bmType D|bmWidth D|bmHeight D|bmWidthBytes D|bmPlanes W|bmBitsPixel W|bmBits D|BitMapInfoHeader::biSize D|biWidth D|biHeight D|biPlanes W|biBitCount W|biCompression D|biSizeImage D|biXPelsPerMeter D|biYPelsPerMeter D|biClrUsed D|biClrImportant D|dsBitfields D 3|dshSection D|dsOffset D
+[DIOC_REGISTERS:|reg_EBX D|reg_EDX D|reg_ECX D|reg_EAX D|reg_EDI D|reg_ESI D|reg_Flags D
+[DISCDLGSTRUCT:|cbStructure D|hwndOwner D|lpLocalName D|lpRemoteName D|dwFlags D
+[DISK_GEOMETRY:|Cylinders Q|MediaType D|TracksPerCylinder D|SectorsPerTrack D|BytesPerSector D
+[DISK_PERFORMANCE:|BytesRead Q|BytesWritten Q|ReadTime Q|WriteTime Q|ReadCount D|WriteCount D|QueueDepth D
+[DLC_LINK_LOG:|cI_FramesTransmitted W|cI_FramesReceived W|cI_FrameReceiveErrors W|cI_FrameTransmissionErrors W|cT1_ExpirationCount W|uchLastCmdRespReceived U|uchLastCmdRespTransmitted U|uchPrimaryState U|uchSecondaryState U|uchSendStateVariable U|uchReceiveStateVariable U|uchLastNr U|cbLanHeader U|auchLanHeader U 32
+[DLC_SAP_LOG:|cTransmittedFrames D|cReceivedFrames D|cDiscardedFrames D|cDataLost D|cBuffersAvailable W
+[DLGITEMTEMPLATE:|style D|dwExtendedStyle D|x W|y W|lx W|cy W|id W
+[DLGITEMTEMPLATEEX:|helpID D|exstyle D|dwExtendedStyle D|x W|y W|cx W|cy W|id W
+[DLGTEMPLATE:|dlgVer W|signature W|helpID D|exStyle D|Style D|cdit W|x W|y W|lx W|ly W
+[DLGTEMPLATE:|style D|dwExtendedStyle D|cdit W|x W|y W|lx W|ly W
+[DLGTEMPLATEEX:|dlgVer W|signature W|helpID D|exStyle D|style D|cDlgItems W|x W|y W|cx W|cy W|menuANY D|windowClassANY D|title U TITLELEN|pointsize W|weight W|bItalic W|font U FONTLEN|name U 1
+[DLLVERSIONINFO2:|DLLVERSIONINFO::cbSize D|dwMajorVersion D|dwMinorVersion D|dwBuildNumber D|dwPlatformID D|dwFlags D|ullVersion D
+[DLLVERSIONINFO:|cbSize D|dwMajorVersion D|dwMinorVersion D|dwBuildNumber D|dwPlatformID D
+[DOCINFOA:|cbSize D|lpszDocName D|lpszOutput D|lpszDatatype D|fwType D
+[DOC_INFO_1A:|pDocName D|pOutputFile D|pDatatype D
+[DOC_INFO_2A:|pDocName D|pOutputFile D|pDatatype D|dwMode D|JobId D
+[DPCAPS:|dwSize D|dwFlags D|dwMaxBufferSize D|dwMaxQueueSize D|dwMaxPlayers D|dwHundredBaud D|dwLatency D
+[DPMSG_ADDPLAYER:|dwType D|dwPlayerType D|dpId D|szLongName B DPLONGNAMELEN|szShortName B DPSHORTNAMELEN|dwCurrentPlayers D
+[DPMSG_DELETEPLAYER:|dwType D|dpId D
+[DPMSG_GENERIC:|dwType D
+[DPMSG_GROUPADD:|dwType D|dpIdGroup D|dpIdPlayer D
+[DPSESSIONDESC:|dwSize D|guidSession D|dwSession D|dwMaxPlayers D|dwCurrentPlayers D|dwFlags D|szSessionName B DPSESSIONNAMELEN|szUserField B DPUSERRESERVED|dwReserved1 D|szPassword B DPPASSWORDLEN|dwReserved2 D|dwUser1 D|dwUser2 D|dwUser3 D|dwUser4 D
+[DRAGINFOA:|uSize D|pt.x D|pt.y D|fNC D|lpFileList D|grfKeyState D
+[DRAGLISTINFO:|uNotification D|hWnd D|ptCursor.x D|ptCursor.y D
+[DRAWDIBTIME:|timeCount D|timeDraw D|timeDecompress D|timeDither D|timeStretch D|timeBlt D|timeSetDIBits D
+[DRAWITEMSTRUCT:|CtlType D|CtlID D|itemID D|itemAction D|itemState D|hwndItem D|hdc D|rcItem.left D|rcItem.top D|rcItem.right D|rcItem.bottom D|itemData D
+[DRAWTEXTPARAMS:|cbSize D|iTabiLength D|iLeftMargin D|iRightMargin D|uiiLengthDrawn D
+[DRIVER_INFO_1A:|pName D
+[DRIVER_INFO_2A:|cVersion D|pName D|pEnvironment D|pDriverPath D|pDataFile D|pConfigFile D
+[DRIVER_INFO_3A:|cVersion D|pName D|pEnvironment D|pDriverPath D|pDataFile D|pConfigFile D|pHelpFile D|pDependentFiles D|pMonitorName D|pDefaultDataType D
+[DRIVE_LAYOUT_INFORMATION:|PartitionCount D|Signature D|PartitionEntry D
+[DROPFILES:|pFiles D|pt.x D|pt.y D|fNC D|fWide D
+[DROPSTRUCT:|hwndSource D|hwndSink D|wFmt D|dwData D|ptDrop.x D|ptDrop.y D|dwControlData D
+[DRVCONFIGINFO:|dwDCISize D|lpszDCISectionName D|lpszDCIAliasName D
+[DRVCONFIGINFOEX:|dwDCISize D|lpszDCISectionName D|lpszDCIAliasName D|dnDevNode D
+[DSBCAPS:|dwSize D|dwFlags D|dwBufferBytes D|dwUnlockTransferRate D|dwPlayCpuOverhead D
+[DSBUFFERDESC:|dwSize D|dwFlags D|dwBufferBytes D|dwReserved D|lpwfxFormat D
+[DSCAPS:|dwSize D|dwFlags D|dwMinSecondarySampleRate D|dwMaxSecondarySampleRate D|dwPrimaryBuffers D|dwMaxHwMixingAllBuffers D|dwMaxHwMixingStaticBuffers D|dwMaxHwMixingStreamingBuffers D|dwFreeHwMixingAllBuffers D|dwFreeHwMixingStaticBuffers D|dwFreeHwMixingStreamingBuffers D|dwMaxHw3DAllBuffers D|dwMaxHw3DStaticBuffers D|dwMaxHw3DStreamingBuffers D|dwFreeHw3DAllBuffers D|dwFreeHw3DStaticBuffers D|dwFreeHw3DStreamingBuffers D|dwTotalHwMemBytes D|dwFreeHwMemBytes D|dwMaxContigFreeHwMemBytes D|dwUnlockTransferRateHwBuffers D|dwPlayCpuOverheadSwBuffers D|dwReserved1 D|dwReserved2 D
+[DTBLBUTTON:|ulbLpszLabel D|ulFlags D|ulPRControl D
+[DTBLCHECKBOX:|ulbLpszLabel D|ulFlags D|ulPRPropertyName D
+[DTBLCOMBOBOX:|ulbLpszCharsAllowed D|ulFlags D|ulNumCharsAllowed D|ulPRPropertyName D|ulPRTableName D
+[DTBLDDLBX:|ulFlags D|ulPRDisplayProperty D|ulPRSetProperty D|ulPRTableName D
+[DTBLEDIT:|ulbLpszCharsAllowed D|ulFlags D|ulNumCharsAllowed D|ulPropTag D
+[DTBLGROUPBOX:|ulbLpszLabel D|ulFlags D
+[DTBLLABEL:|ulbLpszLabelName D|ulFlags D
+[DTBLLBX:|ulFlags D|ulPRSetProperty D|ulPRTableName D
+[DTBLMVDDLBX:|ulFlags D|ulMVPropTag D
+[DTBLMVLISTBOX:|ulFlags D|ulMVPropTag D
+[DTBLPAGE:|ulbLpszLabel D|ulFlags D|ulbLpszComponent D|ulContext D
+[DTBLRADIOBUTTON:|ulbLpszLabel D|ulFlags D|ulcButtons D|ulPropTag D|lReturnValue D
+[DTCTL:|ulCtlType D|ulCtlFlags D|lpbNotif D|cbNotif D|lpszFilter D|ulItemID D|lpv::lplabel::lpedit::lplbx::lpcombobox::lpddlbx::lpcheckbox::lpgroupbox::lpbutton::lpradiobutton::lpmvlbx::lpmvddlbx::lppage D
+[DTPAGE:|cctl D|lpszResourceName D|lpszComponent::ulItemID D|lpctl D
+[DVASPECTINFO:|cb D|dwFlags D
+[DVEXTENTINFO:|cb D|dwExtentMode D|sizelProposed D
+[DVTARGETDEVICE:|tdSize D|tdDriverNameOffset W|tdDeviceNameOffset W|tdPortNameOffset W|tdExtDevmodeOffset W|tdData B
+[DWORD_BLOB:|clSize D|alData D
+[DWORD_SIZEDARR:|clSize D|pData D
+[DIRENTRY:|fontOrdinal W
+[EDITSTREAM:|dwCookie D|dwError D|pfnCallback D
+[EMID:|cb W
+[EMR:|iType D|nSize D
+[EMRABORTPATH:|emr.iType D|emr.nSize D
+[EMRANGLEARC:|emr.iType D|emr.nSize D|ptlCenter.x D|ptlCenter.y D|nRadius D|eStartAngle D|eSweepAngle D
+[EMRARC:|emr.iType D|emr.nSize D|rclBox.left D|rclBox.top D|rclBox.right D|rclBox.bottom D|ptlStart.x D|ptlStart.y D|ptlEnd.x D|ptlEnd.y D
+[EMRARCTO:|EMR_iType D|EMR_nSize D|RECTL_left Q|RECTL_top Q|RECTL_right Q|RECTL_bottom Q|ptlStart_x D|ptlStart_y D|ptlEnd_x D|ptlEnd_y D
+[EMRBEGINPATH:|EMR_iType D|EMR_nSize D
+[EMRBITBLT:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|xDest D|yDest D|cxDest D|cyDest D|dwRop D|xSrc D|ySrc D|xformSrc.eM11 D|xformSrc.eM12 D|xformSrc.eM21 D|xformSrc.eM22 D|xformSrc.ex D|xformSrc.ey D|crBkColorSrc D|iUsageSrc D|offBmiSrc D|cbBmiSrc D|offBitsSrc D|cbBitsSrc D
+[EMRCHORD:|EMR_iType D|EMR_nSize D|RECTL_left Q|RECTL_top Q|RECTL_right Q|RECTL_bottom Q|ptlStart_x D|ptlStart_y D|ptlEnd_x D|ptlEnd_y D
+[EMRCLOSEFIGURE:|EMR_iType D|EMR_nSize D
+[EMRCREATEBRUSHINDIRECT:|emr.iType D|emr.nSize D|ihBrush D|lb.lbStyle D|lb.lbColor D|lb.lbHatch D
+[EMRCREATECOLORSPACE:|emr.iType D|emr.nSize D|ihCS D|lcs.lcsSignature D|lcs.lcsVersion D|lcs.lcsSize D|lcs.lcsCSType D|lcs.lcsIntent D|lcs.lcsEndPoints.ciexyzRed.ciexyzX D|lcs.lcsEndPoints.ciexyzRed.ciexyzY D|lcs.lcsEndPoints.ciexyzRed.ciexyzZ D|lcs.lcsEndPoints.ciexyzGreen.ciexyzX D|lcs.lcsEndPoints.ciexyzGreen.ciexyzY D|lcs.lcsEndPoints.ciexyzGreen.ciexyzZ D|lcs.lcsEndPoints.ciexyzBlue.ciexyzX D|lcs.lcsEndPoints.ciexyzBlue.ciexyzY D|lcs.lcsEndPoints.ciexyzBlue.ciexyzZ D|lcs.lcsGammaRed D|lcs.lcsGammaGreen D|lcs.lcsGammaBlue D|lcs.lcsFileName B MAX_PATH
+[EMRCREATEDIBPATTERNBRUSHPT:|emr.iType D|emr.nSize D|ihBursh D|iUsage D|offBmi D|cbBmi D|offBits D|cbBits D
+[EMRCREATEMONOBRUSH:|emr.iType D|emr.nSize D|ihBrush D|iUsage D|offBmi D|cbBmi D|offBits D|cbBits D
+[EMRCREATEPALETTE:|emr.iType D|emr.nSize D|ihPal D|lgpl.palVersion W|lgpl.palNumEntries W|lgpl.palPalEntry.peRed B|lgpl.palPalEntry.peGreen B|lgpl.palPalEntry.peBlue B|lgpl.palPalEntry.peFlags B
+[EMRCREATEPEN:|emr.iType D|emr.nSize D|ihPen D|lopn.lopnStyle D|lopn.lopnWidth.x D|lopn.lopnWidth.y D|lopn.lopnColor D
+[EMRDELETEOBJECT:|EMR_iType D|EMR_nSize D|ihObject D
+[EMRELLIPSE:|emr.iType D|emr.nSize D|rclBox.left D|rclBox.top D|rclBox.right D|rclBox.bottom D
+[EMRENABLEICM:|EMR_iType D|EMR_nSize D|iMode D
+[EMRENDPATH:|EMR_iType D|EMR_nSize D
+[EMREOF:|emr.iType D|emr.nSize D|nPalEntries D|offPalEntries D|nSizeLast D
+[EMREXCLUDECLIPRECT:|emr.iType D|emr.nSize D|rclClip.left D|rclClip.top D|rclClip.right D|rclClip.bottom D
+[EMREXTCREATEFONTINDIRECTW:|EMR_iType D|EMR_nSize D|ihFont D|elfw D
+[EMREXTCREATEPEN:|emr.iType D|emr.nSize D|ihPen D|offBmi D|cbBmi D|offBits D|cbBits D|elp.elpPenStyle D|elp.elpWidth D|elp.elpBrushStyle D|elp.elpColor D|elp.elpHatch D|elp.elpNumEntries D|elp.elpStyleEntry D
+[EMREXTFLOODFILL:|emr.iType D|emr.nSize D|ptlStart.x D|ptlStart.y D|crColor D|iMode D
+[EMREXTSELECTCLIPRGN:|emr.iType D|emr.nSize D|cbRgnData D|iMode D|RgnData B
+[EMREXTTEXTOUTA:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|iGraphicsMode D|exScale D|eyScale D|emrtext.ptlReference.x D|emrtext.ptlReference.y D|emrtext.nchars D|emrtext.offString D|emrtext.fOptions D|emrtext.ircl.left D|emrtext.ircl.top D|emrtext.ircl.right D|emrtext.ircl.bottom D|emrtext.offDx D
+[EMREXTTEXTOUTW:|EMR_iType D|EMR_nSize D|rclBounds_rclBounds_left Q|rclBounds_top Q|rclBounds_right Q|rclBounds_bottom Q|iGraphicsMode D|exScale F|eyScale F|emrtext:ptlReference.x D|ptlReference.y D|nchars D|offString D|fOptions D|ircl.left D|ircl.top D|ircl.right D|ircl.bottom D|offDx D
+[EMRFILLPATH:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D
+[EMRFILLRGN:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|cbRgnData D|ihBrush D|RgnData B
+[EMRFLATTENPATH:|EMR_iType D|EMR_nSize D
+[EMRFORMAT:|dSignature D|nVersion D|cbData D|offData D
+[EMRFRAMERGN:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|cbRgnData D|ihBrush D|szlStroke.x D|szlStroke.y D|RgnData B
+[EMRGDICOMMENT:|emr.iType D|emr.nSize D|cbData D|xData1 B
+[EMRINTERSECTCLIPRECT:|EMR_iType D|EMR_nSize D
+[EMRINVERTRGN:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|cbRgnData D|RgnData B
+[EMRLINETO:|emr.iType D|emr.nSize D|ptl.x D|ptl.y D
+[EMRMASKBLT:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|xDest D|yDest D|cxDest D|cyDest D|dwRop D|xSrc2 D|cyDest2 D|dwRop2 D|xSrc D|ySrc D|xformSrc.eM11 D|xformSrc.eM12 D|xformSrc.eM21 D|xformSrc.eM22 D|xformSrc.ex D|xformSrc.ey D|crBkColorSrc D|iUsageSrc D|offBmiSrc D|cbBmiSrc D|offBitsSrc D|cbBitsSrc D|xMask D|yMask D|iUsageMask D|offBmiMask D|cbBmiMask D|offBitsMask D|cbBitsMask D
+[EMRMODIFYWORLDTRANSFORM:|emr.iType D|emr.nSize D|xform.eM11 D|xform.eM12 D|xform.eM21 D|xform.eM22 D|xform.ex D|xform.ey D|iMode D
+[EMRMOVETOEX:|EMR_iType D|EMR_nSize D|ptl_x D|ptl_y D
+[EMROFFSETCLIPRGN:|emr.iType D|emr.nSize D|ptlOffset.x D|ptlOffset.y D
+[EMRPIE:|EMR_iType D|EMR_nSize D|rclBox_left Q|rclBox_top Q|rclBox_right Q|rclBox_bottom Q|ptlStart_x D|ptlStart_y D|ptlEnd_x D|ptlEnd_y D
+[EMRPLGBLT:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|aptlDest D 6|xSrc D|ySrc D|cxSrc D|cySrc D|xformSrc.eM11 D|xformSrc.eM12 D|xformSrc.eM21 D|xformSrc.eM22 D|xformSrc.ex D|xformSrc.ey D|crBkColorSrc D|iUsageSrc D|offBmiSrc D|cbBmiSrc D|offBitsSrc D|cbBitsSrc D|xMask D|yMask D|iUsageMask D|offBmiMask D|cbBmiMask D|offBitsMask D|cbBitsMask D
+[EMRPOLYBEZIER16:|EMR_iType D|EMR_nSize D|rclBounds_left Q|rclBounds_top Q|rclBounds_right Q|rclBounds_bottom Q|cpts D|apts_x D|apts_y D
+[EMRPOLYBEZIERTO16:|EMR_iType D|EMR_nSize D|rclBounds_left Q|rclBounds_top Q|rclBounds_right Q|rclBounds_bottom Q|cpts D|apts_x D|apts_y D
+[EMRPOLYDRAW16:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|cpts D|apts.x D|apts.y D|abTypes B
+[EMRPOLYDRAW:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|cptl D|aptl.x D|aptl.y D|abTypes1 B
+[EMRPOLYGON16:|EMR_iType D|EMR_nSize D|rclBounds_left Q|rclBounds_top Q|rclBounds_right Q|rclBounds_bottom Q|cpts D|apts_X D|apts_Y D
+[EMRPOLYLINE16:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|cpts D|apts.x D|apts.y D
+[EMRPOLYLINE:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|cptl D|aptl.x D|aptl.y D
+[EMRPOLYLINETO16:|EMR_iType D|EMR_nSize D|rclBounds_left Q|rclBounds_top Q|rclBounds_right Q|rclBounds_bottom Q|cpts D|apts_X D|apts_Y D
+[EMRPOLYPOLYGON16:|EMR_iType D|EMR_nSize D|rclBounds_left Q|rclBounds_top Q|rclBounds_right Q|rclBounds_bottom Q|nPolys D|cpts D|aPolyCounts D|apts_X D|apts_Y D
+[EMRPOLYPOLYGON:|EMR_iType D|EMR_nSize D|rclBounds_left Q|rclBounds_top Q|rclBounds_right Q|rclBounds_bottom Q|nPolys D|cptl D|aPolyCounts D|aptl_X D|aptl_Y D
+[EMRPOLYPOLYLINE16:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|nPolys D|cpts D|aPolyCounts D|apts.x D|apts.y D
+[EMRPOLYPOLYLINE:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|nPolys D|cptl D|aPolyCounts D|aptl.x D|aptl.y D
+[EMRPOLYTEXTOUTA:|EMR_iType D|EMR_nSize D|rclBounds_left Q|rclBounds_top Q|rclBounds_right Q|rclBounds_bottom Q|iGraphicsMode D|exScale F|eyScale F|cStrings D|aemrtext D
+[EMRPOLYTEXTOUTW:|EMR_iType D|EMR_nSize D|rclBounds_left Q|rclBounds_top Q|rclBounds_right Q|rclBounds_bottom Q|iGraphicsMode D|exScale F|eyScale F|cStrings D|aemrtext D
+[EMRREALIZEPALETTE:|EMR_iType D|EMR_nSize D
+[EMRRECTANGLE:|EMR_iType D|EMR_nSize D|rclBox_left Q|rclBox_top Q|rclBox_right Q|rclBox_bottom Q
+[EMRRESIZEPALETTE:|emr.iType D|emr.nSize D|ihPal D|cEntries D
+[EMRRESTOREDC:|emr.iType D|emr.nSize D|iRelative D
+[EMRROUNDRECT:|emr.iType D|emr.nSize D|rclBox.left D|rclBox.top D|rclBox.right D|rclBox.bottom D|szlCorner.x D|szlCorner.y D
+[EMRSAVEDC:|EMR_iType D|EMR_nSize D
+[EMRSCALEVIEWPORTEXTEX:|emr.iType D|emr.nSize D|xNum D|xDenom D|yNum D|yDemon D
+[EMRSELECTCLIPPATH:|emr.iType D|emr.nSize D|iMode D
+[EMRSELECTCOLORSPACE:|emr.iType D|emr.nSize D|ihCS D
+[EMRSELECTOBJECT:|emr.iType D|emr.nSize D|ihObject D
+[EMRSELECTPALETTE:|emr.iType D|emr.nSize D|ihPal D
+[EMRSETARCDIRECTION:|emr.iType D|emr.nSize D|iArcDirection D
+[EMRSETBKMODE:|EMR_iType D|EMR_nSize D|iMode D
+[EMRSETCOLORADJUSTMENT:|emr.iType D|emr.nSize D|ColorAdjustment.caSize W|ColorAdjustment.caFlags W|ColorAdjustment.caIlluminantIndex W|ColorAdjustment.caRedGamma W|ColorAdjustment.caGreenGamma W|ColorAdjustment.caBlueGamma W|ColorAdjustment.caReferenceBlack W|ColorAdjustment.caReferenceWhite W|ColorAdjustment.caContrast W|ColorAdjustment.caBrightness W|ColorAdjustment.caColorfulness W|ColorAdjustment.caRedGreenTint W
+[EMRSETDIBITSTODEVICE:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|xDest D|yDest D|xSrc D|ySrc D|cxSrc D|cySrc D|offBmiSrc D|cbBmiSrc D|offBitsSrc D|cbBitsSrc D|iUsageSrc D|iStartScan D|cScans D
+[EMRSETMAPMODE:|EMR_iType D|EMR_nSize D|iMode D
+[EMRSETMAPPERFLAGS:|emr.iType D|emr.nSize D|dwFlags D
+[EMRSETMETARGN:|EMR_iType D|EMR_nSize D
+[EMRSETMITERLIMIT:|emr.iType D|emr.nSize D|eMiterLimit D
+[EMRSETPALETTEENTRIES:|emr.iType D|emr.nSize D|ihPal D|iStart D|cEntries D|aPalEntries.peRed B|aPalEntries.peGreen B|aPalEntries.peBlue B|aPalEntries.peFlags B
+[EMRSETPIXELV:|emr.iType D|emr.nSize D|ptlPixel.x D|ptlPixel.y D|crColor D
+[EMRSETPOLYFILLMODE:|EMR_iType D|EMR_nSize D|iMode D
+[EMRSETROP2:|EMR_iType D|EMR_nSize D|iMode D
+[EMRSETSTRETCHBLTMODE:|EMR_iType D|EMR_nSize D|iMode D
+[EMRSETTEXTALIGN:|EMR_iType D|EMR_nSize D|iMode D
+[EMRSETTEXTCOLOR:|emr.iType D|emr.nSize D|crColor D
+[EMRSETVIEWPORTEXTEX:|emr.iType D|emr.nSize D|szlExtent.x D|szlExtent.y D
+[EMRSETVIEWPORTORGEX:|emr.iType D|emr.nSize D|ptlOrigin.x D|ptlOrigin.y D
+[EMRSETWINDOWEXTEX:|EMR_iType D|EMR_nSize D|szlExtent D
+[EMRSETWORLDTRANSFORM:|emr.iType D|emr.nSize D|xform.eM11 D|xform.eM12 D|xform.eM21 D|xform.eM22 D|xform.ex D|xform.ey D
+[EMRSTRETCHBLT:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|xDest D|yDest D|cxDest D|cyDest D|dwRop D|xSrc D|ySrc D|xformSrc.eM11 D|xformSrc.eM12 D|xformSrc.eM21 D|xformSrc.eM22 D|xformSrc.ex D|xformSrc.ey D|crBkColorSrc D|iUsageSrc D|offBmiSrc D|cbBmiSrc D|offBitsSrc D|cbBitsSrc D|cxSrc D|cySrc D
+[EMRSTRETCHDIBITS:|emr.iType D|emr.nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|xDest D|yDest D|xSrc D|ySrc D|cxSrc D|cySrc D|offBmiSrc D|cbBmiSrc D|offBitsSrc D|cbBitsSrc D|iUsageSrc D|dwRop D|cxDest D|cyDest D
+[EMRSTROKEANDFILLPATH:|EMR_iType D|EMR_nSize D|rclBounds_left Q|rclBounds_top Q|rclBounds_right Q|rclBounds_bottom Q
+[EMRSTROKEPATH:|EMR_iType D|EMR_nSize D|rclBounds_left Q|rclBounds_top Q|rclBounds_right Q|rclBounds_bottom Q
+[EMRTEXT:|ptlReference.x D|ptlReference.y D|nchars D|offString D|fOptions D|ircl.left D|ircl.top D|ircl.right D|ircl.bottom D|offDx D
+[EMRWIDENPATH:|EMR_iType D|EMR_nSize D
+[ENCORRECTTEXT:|nmhdr.hwndFrom D|nmhdr.idFrom D|nmhdr.code D|chrg.cpMin D|chrg.cpMax D|seltyp W
+[ENDROPFILES:|nmhdr.hwndFrom D|nmhdr.idFrom D|nmhdr.code D|hDrop D|cp D|fProtected D
+[ENHMETAHEADER:|iType D|nSize D|rclBounds.left D|rclBounds.top D|rclBounds.right D|rclBounds.bottom D|rclFrame.left D|rclFrame.top D|rclFrame.right D|rclFrame.bottom D|dSignature D|nVersion D|nBytes D|nRecords D|nHandles W|sReserved W|nDescription D|offDescription D|nPalEntries D|szlDevice.x D|szlDevice.y D|szlMillimeters.x D|szlMillimeters.y D|cbPixelFormat D|offPixelFormat D|bOpenGL D
+[ENHMETARECORD:|iType D|nSize D|dParm1 D
+[ENOLEOPFAILED:|nmhdr.hwndFrom D|nmhdr.idFrom D|nmhdr.code D|iob D|lOper D|hr D
+[ENPROTECTED:|nmhdr.hwndFrom D|nmhdr.idFrom D|nmhdr.code D|msg D|wPad1 D|wParam D|wPad2 D|lParam D|chrg.cpMin D|chrg.cpMax D
+[ENSAVECLIPBOARD:|nmhdr.hwndFrom D|nmhdr.idFrom D|nmhdr.code D|cObjectCount D|cch D
+[ENTRYID:|abFlags B 4|ab B
+[ENUMLOGFONTA:|elfLogFont.lfHeight D|elfLogFont.lfWidth D|elfLogFont.lfEscapement D|elfLogFont.lfOrientation D|elfLogFont.lfWeight D|elfLogFont.lfItalic B|elfLogFont.lfUnderline B|elfLogFont.lfStrikeOut B|elfLogFont.lfCharSet B|elfLogFont.lfOutPrecision B|elfLogFont.lfClipPrecision B|elfLogFont.lfQuality B|elfLogFont.lfPitchAndFamily B|elfLogFont.lfFaceName B LF_FACESIZE|elfFullName B LF_FULLFACESIZE|elfStyle B LF_FACESIZE
+[ENUMLOGFONTEXA:|elfLogFont.lfHeight D|elfLogFont.lfWidth D|elfLogFont.lfEscapement D|elfLogFont.lfOrientation D|elfLogFont.lfWeight D|elfLogFont.lfItalic B|elfLogFont.lfUnderline B|elfLogFont.lfStrikeOut B|elfLogFont.lfCharSet B|elfLogFont.lfOutPrecision B|elfLogFont.lfClipPrecision B|elfLogFont.lfQuality B|elfLogFont.lfPitchAndFamily B|elfLogFont.lfFaceName B LF_FACESIZE|elfFullName B LF_FULLFACESIZE|elfStyle B LF_FACESIZE|elfScript B LF_FACESIZE
+[ENUM_SERVICE_STATUSA:|lpServiceName D|lpDisplayName D|ServiceStatus.dwServiceType D|ServiceStatus.dwCurrentState D|ServiceStatus.dwControlsAccepted D|ServiceStatus.dwWin32ExitCode D|ServiceStatus.dwServiceSpecificExitCode D|ServiceStatus.dwCheckPoint D|ServiceStatus.dwWaitHint D
+[ERRLOG_OTHER_INFO:|alrter_errcode D|alrter_offset D
+[ERROR_LOG:|el_len D|el_reserved D|el_time D|el_error D|el_name D|el_text D|el_data D|el_data_size D|el_nstrings D
+[ERROR_NOTIFICATION:|cbEntryID D|lpEntryID D|scode D|ulFlags D|lpMAPIError D
+[EVENTLOGRECORD:|iLength D|Reserved D|RecordNumber D|TimeGenerated D|TimeWritten D|EventID D|EventType W|NumStrings W|EventCategory W|ReservedFlags W|ClosingRecordNumber D|StringOffset D|UserSidiLength D|UserSidOffset D|DataiLength D|DataOffset D
+[EVENTMSG:|message D|paramL D|paramH D|time D|hwnd D
+[EVENTSFORLOGFILE:|ulSize D|szLogicalLogFile W MAXLOGICALLOGNAMESIZE|ulNumRecords D|pEventLogRecords D
+[EXCEPTION_DEBUG_INFO:|pExceptionRecord D|dwFirstChance D
+[EXCEPTION_POINTERS:|pExceptionRecord D|ContextRecord D
+[EXCEPTION_RECORD:|ExceptionCode D|ExceptionFlags D|pExceptionRecord D|ExceptionAddress D|NumberParameters D|ExceptionInformation D EXCEPTION_MAXIMUM_PARAMETERS
+[EXIT_PROCESS_DEBUG_INFO:|dwExitCode D
+[EXIT_THREAD_DEBUG_INFO:|dwExitCode D
+[EXPLICIT_ACCESS:|grfAccessPermissions D|grfAccessMode D|grfInheritance D|Trustee::pMultipleTrustee D|MultipleTrusteeOperation D|TrusteeForm D|TrusteeType D|ptstrName D
+[EXTENDED_NOTIFICATION:|ulEvent D|cb D|pbEventParameters D
+[EXTLOGFONTA:|elfLogFont.lfHeight D|elfLogFont.lfWidth D|elfLogFont.lfEscapement D|elfLogFont.lfOrientation D|elfLogFont.lfWeight D|elfLogFont.lfItalic B|elfLogFont.lfUnderline B|elfLogFont.lfStrikeOut B|elfLogFont.lfCharSet B|elfLogFont.lfOutPrecision B|elfLogFont.lfClipPrecision B|elfLogFont.lfQuality B|elfLogFont.lfPitchAndFamily B|elfLogFont.lfFaceName B LF_FACESIZE|elfFullName B LF_FULLFACESIZE|elfStyle B LF_FACESIZE|elfVersion D|elfStyleSize D|elfMatch D|elfReserved D|elfVendorId B ELF_VENDOR_SIZE|elfCulture D|elfPanose.bFamilyType B|elfPanose.bSerifStyle B|elfPanose.bWeight B|elfPanose.bProportion B|elfPanose.bContrast B|elfPanose.bStrokeVariation B|elfPanose.bArmStyle B|elfPanose.bLetterform B|elfPanose.bMidline B|elfPanose.bXHeight B
+[EXTLOGPEN:|elpPenStyle D|elpWidth D|elpBrushStyle D|elpColor D|elpHatch D|elpNumEntries D|elpStyleEntry D
+[EXT_BUTTON:|idCommand W|idsHelp W|fsStyle W
+[FILEDESCRIPTORA:|dwFlags D|clsid.Data1 D|clsid.Data2 W|clsid.Data3 W|clsid.Data4 B 8|sizel.x D|sizel.y D|pointl.x D|pointl.y D|dwFileAttributes D|ftCreationTime.dwLowDateTime D|ftCreationTime.dwHighDateTime D|ftLastAccessTime.dwLowDateTime D|ftLastAccessTime.dwHighDateTime D|ftLastWriteTime.dwLowDateTime D|ftLastWriteTime.dwHighDateTime D|nFileSizeHigh D|nFileSizeLow D|cFileName B MAX_PATH
+[FILEGROUPDESCRIPTORA:|cItems D|fgd.dwFlags D|fgd.clsid.Data1 D|fgd.clsid.Data2 W|fgd.clsid.Data3 W|fgd.clsid.Data4 B 8|fgd.sizel.x D|fgd.sizel.y D|fgd.pointl.x D|fgd.pointl.y D|fgd.dwFileAttributes D|fgd.ftCreationTime.dwLowDateTime D|fgd.ftCreationTime.dwHighDateTime D|fgd.ftLastAccessTime.dwLowDateTime D|fgd.ftLastAccessTime.dwHighDateTime D|fgd.ftLastWriteTime.dwLowDateTime D|fgd.ftLastWriteTime.dwHighDateTime D|fgd.nFileSizeHigh D|fgd.nFileSizeLow D|fgd.cFileName B MAX_PATH
+[FILEPATHS:|Target D|Source D|Win32Error D|Flags D
+[FILETIME:|dwLowDateTime D|dwHighDateTime D
+[FILE_INFO_2:|fi2_id D
+[FILE_INFO_3:|fi3_id D|fi3_permissions D|fi3_num_locks D|fi3_pathname D|fi3_username D
+[FILE_IN_CABINET_INFO:|NameInCabinet D|FileSize D|Win32Error D|DosDate W|DosTime W|DosAttribs W|FullTargetName B MAX_PATH
+[FILE_NOTIFY_INFORMATION:|NextEntryOffset D|Action D|FileNameLength D|FileName W
+[FILTERKEYS:|cbSize D|dwFlags D|iWaitMSec D|iDelayMSec D|iRepeatMSec D|iBounceMSec D
+[FINDREPLACEA:|lStructSize D|hwndOwner D|hInstance D|Flags D|lpstrFindWhat D|lpstrReplaceWith D|wFindWhatLen W|wReplaceWithLen W|lCustData D|lpfnHook D|lpTemplateName D
+[FINDTEXTA:|chrg.cpMin D|chrg.cpMax D|lpstrText D
+[FINDTEXTEXA:|chrg.cpMin D|chrg.cpMax D|lpstrText D|chrgText.cpMin D|chrgText.cpMax D
+[FIND_NAME_BUFFER:|iLength B|access_control B|frame_control B|destination_addr B 6|source_addr B 6|routing_info B 18
+[FIND_NAME_HEADER:|node_count W|Reserved B|unique_group B
+[FIXED:|fract W|Value W
+[FLAGGED_BYTE_BLOB:|fFlags D|clSize D|abData B
+[FLAGGED_WORD_BLOB:|fFlags D|clSize D|asData W
+[FLATENTRY:|cb D|abEntry B
+[FLATENTRYLIST:|cEntries D|cbEntries D|abEntries B
+[FLATMTSIDLIST:|cMTSIDs D|cbMTSIDs D|abMTSIDs B
+[FLOATING_SAVE_AREA:|ControlWord D|StatusWord D|TagWord D|ErrorOffset D|ErrorSelector D|DataOffset D|DataSelector D|RegisterArea B SIZE_OF_80387_REGISTERS|Cr0NpxState D
+[FLOWSPEC:|TokenRate D|TokenBucketSize D|PeakBandwidth D|Latency D|DelayVariation D|LevelOfGuarantee D|CostOfCall D|NetworkAvailability D
+[FMS_GETDRIVEINFO:|dwTotalSpace D|dwFreeSpace D|szPath B 260|szVolume B 14|szShare B 128
+[FMS_GETFILESEL:|ftTime_dwLowDateTime D|ftTime_dwHighDateTime D|dwSize D|bAttr B|szName B 260
+[FMS_LOAD:|dwSize D|szMenuName B MENU_TEXT_LEN|hMenu D|wMenuDelta D
+[FMS_TOOLBARLOAD:|dwSize D|lpButtons D|cButtons W|cBitmaps W|idBitmap W|hBitmap D
+[FOCUS_EVENT_RECORD:|bSetFocus D
+[FOLDERSETTINGS:|ViewMode D|fFlags D
+[FONTDESC:|cbSizeOfStruct D|lpstrName D|cySize D|sWeight W|sCharset W|fItalic D|fUnderline D|fStrikethrough D
+[FONTSIGNATURE:|fsUsb4 D 4|fsCsb2 D 2
+[FORMATETC:|cfFormat D|ptd D|dwAspect D|lindex D|tymed D
+[FORMATRANGE:|hdc D|hdcTarget D|rc.left D|rc.top D|rc.right D|rc.bottom D|rcPage.left D|rcPage.top D|rcPage.right D|rcPage.bottom D|chrg.cpMin D|chrg.cpMax D
+[FORMAT_PARAMETERS:|MediaType D|StartCylinderNumber D|EndCylinderNumber D|StartHeadNumber D|EndHeadNumber D
+[FORMPRINTSETUP:|ulFlags D|hDevMode D|hDevNames D|ulFirstPageNumber D|fPrintAttachments D
+[FORM_INFO_1A:|Flags D|pName D|iSize.x D|iSize.y D|ImageableArea.left D|ImageableArea.top D|ImageableArea.right D|ImageableArea.bottom D
+[FPO_DATA:|ulOffStart D|cbProcSize D|cdwLocals D|cdwParams W|rProlog D
+[FVSHOWINFO:|cbSize D|hwndOwner D|iShow D|dwFlags D|rect.left D|rect.top D|rect.right D|rect.bottom D|punkRel D|strNewFile B MAX_PATH
+[FLAGLIST:|cFlags D|ulFlag D
+[FONTDIRENTRY:|dfVersion W|dfSize D|dfCopyright B 60|dfType W|dfPoints W|dfVertRes W|dfHorizRes W|dfAscent W|dfInternalLeading W|dfExternalLeading W|dfItalic W|dfUnderline B|dfStrikeOut B|dfWeight W|dfCharSet B|dfPixWidth W|dfPixHeight W|dfPitchAndFamily B|dfAvgWidth W|dfMaxWidth W|dfFirstChar B|dfLastChar B|dfDefaultChar B|dfBreakChar B|dfWidthBytes W|dfDevice D|dfFace D|dfReserved D|szDeviceName B|szFaceName B
+[FONTGROUPHDR:|NumberOfFonts W|DirEntry D
+[GCP_RESULTSA:|lStructSize D|lpOutString D|lpOrder D|lpDX D|lpCaretPos D|lpClass D|lpGlyphs D|nGlyphs D|nMaxFit D
+[GDI_NONREMOTE:|fContext D|hInproc::hRemote D
+[GENERIC_MAPPING:|GenericRead D|GenericWrite D|GenericExecute D|GenericAll D
+[GETTEXTEX:|cb D|flags D|codepage D|lpDefaultChar D|lpUsedDefChar D
+[GETTEXTLENGTHEX:|flags D|codepage D
+[GLYPHMETRICS:|gmBlackBoxX D|gmBlackBoxY D|gmptGlyphOrigin.x D|gmptGlyphOrigin.y D|gmCellIncX W|gmCellIncY W
+[GLYPHMETRICSFLOAT:|gmfBlackBoxX F|gmfBlackBoxY F|gmfptGlyphOrigin F|gmfCellIncX F|gmfCellIncY F
+[GOPHER_ABSTRACT_ATTRIBUTE_TYPE:|ShortAbstract D|AbstractFile D
+[GOPHER_ADMIN_ATTRIBUTE_TYPE:|Comment D|EmailAddress D
+[GOPHER_ASK_ATTRIBUTE_TYPE:|QuestionType D|QuestionText D
+[GOPHER_FIND_DATAA:|DisplayString B MAX_GOPHER_DISPLAY_TEXT + 1|GopherType D|SizeLow D|SizeHigh D|LastModificationTime.dwLowDateTime D|LastModificationTime.dwHighDateTime D|Locator B MAX_GOPHER_LOCATOR_LENGTH + 1
+[GOPHER_GEOGRAPHICAL_LOCATION_ATTRIBUTE_TYPE:|DegreesNorth D|MinutesNorth D|SecondsNorth D|DegreesEast D|MinutesEast D|SecondsEast D
+[GOPHER_LOCATION_ATTRIBUTE_TYPE:|Location D
+[GOPHER_MOD_DATE_ATTRIBUTE_TYPE:|DateAndTime.dwLowDateTime D|DateAndTime.dwHighDateTime D
+[GOPHER_ORGANIZATION_ATTRIBUTE_TYPE:|Organization D
+[GOPHER_PROVIDER_ATTRIBUTE_TYPE:|Provider D
+[GOPHER_SCORE_ATTRIBUTE_TYPE:|Score D
+[GOPHER_SCORE_RANGE_ATTRIBUTE_TYPE:|LowerBound D|UpperBound D
+[GOPHER_SITE_ATTRIBUTE_TYPE:|Site D
+[GOPHER_TIMEZONE_ATTRIBUTE_TYPE:|Zone D
+[GOPHER_TTL_ATTRIBUTE_TYPE:|Ttl D
+[GOPHER_UNKNOWN_ATTRIBUTE_TYPE:|Text D
+[GOPHER_VERONICA_ATTRIBUTE_TYPE:|TreeWalk D
+[GOPHER_VERSION_ATTRIBUTE_TYPE:|Version D
+[GOPHER_VIEW_ATTRIBUTE_TYPE:|ContentType D|Language D|iSize D
+[GROUP_INFO_0:|grpi0_name D
+[GROUP_INFO_1002:|grpi1002_comment D
+[GROUP_INFO_1005:|grpi1005_attributes D
+[GROUP_INFO_1:|grpi1_name D|grpi1_comment D
+[GROUP_INFO_2:|grpi2_name D|grpi2_comment D|grpi2_group_id D|grpi2_attributes D
+[GROUP_USERS_INFO_0:|grui0_name D
+[GROUP_USERS_INFO_1:|grui1_name D|grui1_attributes D
+[GUID:|Data1 D|Data2 W|Data3 W|Data4 B 8
+[GUIDE:|xOrigin D|yOrigin D|cxBox D|cyBox D|cxBase D|cyBase D|cHorzBox D|cVertBox D|cyMid D
+[GUITHREADINFO:|cbSize D|flags D|hwndActive D|hwndFocus D|hwndCapture D|hwndMenuOwner D|hwndMoveSize D|hwndCaret D|rcCaret_left D|rcCaret_top D|rcCaret_right D|rcCaret_bottom D
+[HANDLETABLE:|objectHandle D
+[HANDLE_INFO_1:|hdli1_chartime D|hdli1_charcount D
+[HARDWAREHOOKSTRUCT:|hwnd D|message D|wParam D|lParam D
+[HARDWAREINPUT:|uMsg D|wParamL W|wParamH W|dwExtraInfo D
+[HD_HITTESTINFO:|pt.x D|pt.y D|flags D|iItem D
+[HD_ITEM:|imask D|lxy D|pszText D|hbm D|cchTextMax D|fmt D|lParam D|iImage D|iOrder D|itype D|pvFilter D
+[HD_LAYOUT:|prc D|pwpos D
+[HD_NOTIFY:|NMHDR_hwndFrom D|NMHDR_idFrom D|NMHDR_code D|iItem D|iButton D
+[HEAPENTRY32:|dwSize D|hHandle D|dwAddress D|dwBlockSize D|dwFlags D|dwLockCount D|dwResvd D|th32ProcessID D|th32HeapID D
+[HEAPLIST32:|dwSize D|th32ProcessID D|th32HeapID D|dwFlags D
+[HELPINFO:|cbSize D|iContextType D|iCtrlId D|hItemHandle D|dwContextId D|MousePos.x D|MousePos.y D
+[HELPWININFOA:|wStructSize D|x D|y D|lx D|ly D|wMax D|rgchMember B 2
+[HIGHCONTRASTA:|cbSize D|dwFlags D|lpszDefaultScheme D
+[HLOG:|time D|last_flags D|offset1 D|rec_offset D
+[HSZPAIR:|hszSvc D|hszTopic D
+[HTTP_VERSION_INFO:|dwMajorVersion D|dwMinorVersion D
+[HW_PROFILE_INFO:|dwDockInfo D|szHwProfileGuid B HW_PROFILE_GUIDLEN|szHwProfileName B MAX_PROFILE_LEN
+[HYPER_SIZEDARR:|clSize D|pData D
+[ICCOMPRESS:|dwFlags D|lpbiOutput D|lpOutput D|lpbiInput D|lpInput D|lpckid D|lpdwFlags D|lFrameNum D|dwFrameSize D|dwQuality D|lpbiPrev D|lpPrev D
+[ICCOMPRESSFRAMES:|dwFlags D|lpbiOutput D|lOutput D|lpbiInput D|lInput D|lStartFrame D|lFrameCount D|lQuality D|lDataRate D|lKeyRate D|dwRate D|dwScale D|dwOverheadPerFrame D|dwReserved2 D|GetData D|lInput D|lFrame D|lpBits D|len D|PutData D|lInput D|lFrame D|lpBits D|len D
+[ICDECOMPRESS:|dwFlags D|lpbiInput D|lpInput D|lpbiOutput D|lpOutput D|ckid D
+[ICDECOMPRESSEX:|dwFlags D|lpbiSrc D|lpSrc D|lpbiDst D|lpDst D|xDst D|yDst D|dxDst D|dyDst D|xSrc D|ySrc D|dxSrc D|dySrc D
+[ICDRAW:|dwFlags D|lpFormat D|lpData D|cbData D|lTime D|dwFlags D|hpal D|hwnd D|hdc D|xDst D|yDst D|dxDst D|dyDst D|lpbi D|xSrc D|ySrc D|dxSrc D|dySrc D|dwRate D|dwScale D
+[ICDRAWBEGIN:|dwFlags D|hpal D|hwnd D|hdc D|xDst D|yDst D|dxDst D|dyDst D|lpbi D|xSrc D|ySrc D|dxSrc D|dySrc D|dwRate D|dwScale D
+[ICDRAWSUGGEST:|lpbiIn D|lpbiSuggest D|dxSrc D|dySrc D|dxDst D|dyDst D|hicDecompressor D
+[ICINFO:|dwSize D|fccType D|fccHandler D|dwFlags D|dwVersion D|dwVersionICM D|szName U 16|szDescription U 128|szDriver U 128
+[ICMP_ECHO_REPLY:|Address D|Status D|RoundTripTime D|DataSize W|Reserved W|DataPointer D|Options D|zData B 250
+[ICMP_OPTIONS:|Ttl B|Tos B|Flags B|OptionsSize B|OptionsData D
+[ICONINFO:|fIcon D|xHotspot D|yHotspot D|hbmMask D|hbmColor D
+[ICONMETRICSA:|cbSize D|iHorzSpacing D|iVertSpacing D|iTitleWrap D|lfFont.lfHeight D|lfFont.lfWidth D|lfFont.lfEscapement D|lfFont.lfOrientation D|lfFont.lfWeight D|lfFont.lfItalic B|lfFont.lfUnderline B|lfFont.lfStrikeOut B|lfFont.lfCharSet B|lfFont.lfOutPrecision B|lfFont.lfClipPrecision B|lfFont.lfQuality B|lfFont.lfPitchAndFamily B|lfFont.lfFaceName B LF_FACESIZE
+[ICONRESDIR:|Width B|Height B|ColorCount B|reserved B
+[ICOPEN:|dwSize D|fccType D|fccHandler D|dwVersion D|dwFlags D|dwError D|pV1Reserved D|pV2Reserved D|dnDevNode D
+[ICSETSTATUSPROC:|dwFlags D|lParam D|fpfnStatus D
+[IDATYPEDEF:|cidl D|aoffset D
+[IID:|Data1 D|Data2 W|Data3 W|Data4 B 8
+[IMAGEHLP_DEFERRED_SYMBOL_LOAD:|SizeOfStruct D|BaseOfImage D|CheckSum D|TimeDateStamp D|FileName B MAX_PATH|Reparse B
+[IMAGEHLP_DUPLICATE_SYMBOL64:|SizeOfStruct D|NumberOfDups D|Symbol D|SelectedSymbol D
+[IMAGEHLP_DUPLICATE_SYMBOL:|SizeOfStruct D|NumberOfDups D|Symbol D|SelectedSymbol D
+[IMAGEHLP_LINE:|SizeOfStruct D|Key D|LineNumber D|FileName D|Address D
+[IMAGEHLP_MODULE64:|SizeOfStruct D|BaseOfImage D|ImageSize D|TimeDateStamp D|CheckSum D|NumSyms D|SymType D|ModuleName B 32|ImageName B 256|LoadedImageName B 256|LoadedPdbName B 256|CVSig D|CVData1 B MAX_PATH|CVData2 B MAX_PATH|CVData2 B MAX_PATH|PdbSig D|PdbSig70_Data1 D|PdbSig70_Data2 W|PdbSig70_Data3 W|PdbSig70_Data4 B 8|PdbAge D|PdbUnmatched D|DbgUnmatched D|LineNumbers D|GlobalSymbols D|TypeInfo D
+[IMAGEHLP_MODULE:|SizeOfStruct D|BaseOfImage D|ImageSize D|TimeDateStamp D|CheckSum D|NumSyms D|SymType1 D|ModuleName B 32|ImageName B 256|LoadedImageName B 256
+[IMAGEHLP_SYMBOL:|SizeOfStruct D|Address D|Size1 D|Flags D|MaxNameLength D|Name1 B
+[IMAGEINFO:|hbmImage D|hbmMask D|Unused1 D|Unused2 D|rcImage.left D|rcImage.top D|rcImage.right D|rcImage.bottom D
+[IMAGE_ARCHIVE_MEMBER_HEADER:|Name1 B 16|Date B 12|UserID B 6|GroupID B 6|Mode B 8|Size1 B 10|EndHeader B 2
+[IMAGE_AUX_SYMBOL:|SymTagIndex D|SymLnSzLinenumber::SymTotalSize W|SymLnSzSize1 W|SymFcnAryFunctionPointerToLinenumber::SymFcnAryArrayDimension D|SymFcnAryFunctionPointerToNextFunction D|SymTvIndex W|FileName1 B IMAGE_SIZEOF_SYMBOL|SectionLength1 D|SectionNumberOfRelocations W|SectionNumberOfLinenumbers W|SectionCheckSum D|SectionNumber W|SectionSelection B
+[IMAGE_BASE_RELOCATION:|VirtualAddress D|SizeOfBlock D
+[IMAGE_BOUND_FORWARDER_REF:|TimeDateStamp D|OffsetModuleName W|Reserved W
+[IMAGE_BOUND_IMPORT_DESCRIPTOR:|TimeDateStamp D|OffsetModuleName W|NumberOfModuleForwarderRefs W
+[IMAGE_COFF_SYMBOLS_HEADER:|NumberOfSymbols D|LvaToFirstSymbol D|NumberOfLinenumbers D|LvaToFirstLinenumber D|RvaToFirstByteOfCode D|RvaToLastByteOfCode D|RvaToFirstByteOfData D|RvaToLastByteOfData D
+[IMAGE_DATA_DIRECTORY:|VirtualAddress D|isize D
+[IMAGE_DEBUG_DIRECTORY:|Characteristics D|TimeDateStamp D|MajorVersion W|MinorVersion W|Type1 D|SizeOfData D|AddressOfRawData D|PointerToRawData D
+[IMAGE_DEBUG_INFORMATION:|List.Flink D|List.Blink D|Size1 D|MappedBase D|Machine W|Characteristics W|CheckSum D|ImageBase D|SizeOfImage D|NumberOfSections D|Sections D|ExportedNamesSize D|ExportedNames D|NumberOfFunctionTableEntries D|FunctionTableEntries D|LowestFunctionStartingAddress D|HighestFunctionEndingAddress D|NumberOfFpoTableEntries D|FpoTableEntries D|SizeOfCoffSymbols D|CoffSymbols D|SizeOfCodeViewSymbols D|CodeViewSymbols D|ImageFilePath D|ImageFileName D|DebugFilePath D|TimeDateStamp D|RomImage B|DebugDirectory D|NumberOfDebugDirectories D|Reserved D 3
+[IMAGE_DEBUG_MISC:|DataType D|Length1 D|Unicode B|Reserved B 3|Data B
+[IMAGE_DOS_HEADER:|e_magic W|e_cblp W|e_cp W|e_crlc W|e_cparhdr W|e_minalloc W|e_maxalloc W|e_ss W|e_sp W|e_csum W|e_ip W|e_cs W|e_lfarlc W|e_ovno W|e_res W 4|e_oemid W|e_oeminfo W|e_res2 W 10|e_lfanew D
+[IMAGE_EXPORT_DIRECTORY:|Characteristics D|TimeDateStamp D|MajorVersion W|MinorVersion W|nName D|nBase D|NumberOfFunctions D|NumberOfNames D|AddressOfFunctions D|AddressOfNames D|AddressOfNameOrdinals D
+[IMAGE_FILE_HEADER:|Machine W|NumberOfSections W|TimeDateStamp D|PointerToSymbolTable D|NumberOfSymbols D|SizeOfOptionalHeader W|Characteristics W
+[IMAGE_FUNCTION_ENTRY:|StartingAddress D|EndingAddress D|EndOfPrologue D
+[IMAGE_IMPORT_BY_NAME:|Hint W|Name1 B
+[IMAGE_IMPORT_DESCRIPTOR:|Characteristics::OriginalFirstThunk D|TimeDateStamp D|ForwarderChain D|Name1 D|FirstThunk D
+[IMAGE_LINENUMBER:|SymbolTableIndex::VirtualAddress D|Linenumber W
+[IMAGE_LOAD_CONFIG_DIRECTORY64:|Characteristics D|TimeDateStamp D|MajorVersion W|MinorVersion W|GlobalFlagsClear D|GlobalFlagsSet D|CriticalSectionDefaultTimeout D|DeCommitFreeBlockThreshold Q|DeCommitTotalFreeThreshold Q|LockPrefixTable Q|MaximumAllocationSize Q|VirtualMemoryThreshold Q|ProcessAffinityMask Q|ProcessHeapFlags D|CSDVersion W|Reserved1 W|EditList Q|Reserved D 2
+[IMAGE_LOAD_CONFIG_DIRECTORY:|Characteristics D|TimeDateStamp D|MajorVersion W|MinorVersion W|GlobalFlagsClear D|GlobalFlagsSet D|CriticalSectionDefaultTimeout D|DeCommitFreeBlockThreshold D|DeCommitTotalFreeThreshold D|LockPrefixTable D|MaximumAllocationSize D|VirtualMemoryThreshold D|ProcessHeapFlags D|ProcessAffinityMask D|CSDVersion W|Reserved1 W|EditList D|Reserved D
+[IMAGE_NT_HEADERS:|Signature D|FileHeader.Machine W|FileHeader.NumberOfSections W|FileHeader.TimeDateStamp D|FileHeader.PointerToSymbolTable D|FileHeader.NumberOfSymbols D|FileHeader.SizeOfOptionalHeader W|FileHeader.Characteristics W|OptionalHeader.Magic W|OptionalHeader.MajorLinkerVersion B|OptionalHeader.MinorLinkerVersion B|OptionalHeader.SizeOfCode D|OptionalHeader.SizeOfInitializedData D|OptionalHeader.SizeOfUninitializedData D|OptionalHeader.AddressOfEntryPoint D|OptionalHeader.BaseOfCode D|OptionalHeader.BaseOfData D|OptionalHeader.ImageBase D|OptionalHeader.SectionAlignment D|OptionalHeader.FileAlignment D|OptionalHeader.MajorOperatingSystemVersion W|OptionalHeader.MinorOperatingSystemVersion W|OptionalHeader.MajorImageVersion W|OptionalHeader.MinorImageVersion W|OptionalHeader.MajorSubsystemVersion W|OptionalHeader.MinorSubsystemVersion W|OptionalHeader.Win32VersionValue D|OptionalHeader.SizeOfImage D|OptionalHeader.SizeOfHeaders D|OptionalHeader.CheckSum D|Optional
+ Heade
+r.Subsystem W|OptionalHeader.DllCharacteristics W|OptionalHeader.SizeOfStackReserve D|OptionalHeader.SizeOfStackCommit D|OptionalHeader.SizeOfHeapReserve D|OptionalHeader.SizeOfHeapCommit D|OptionalHeader.LoaderFlags D|OptionalHeader.NumberOfRvaAndSizes D|OptionalHeader.DataDirectory D 32
+[IMAGE_OPTIONAL_HEADER32:|Magic W|MajorLinkerVersion B|MinorLinkerVersion B|SizeOfCode D|SizeOfInitializedData D|SizeOfUninitializedData D|AddressOfEntryPoint D|BaseOfCode D|BaseOfData D|ImageBase D|SectionAlignment D|FileAlignment D|MajorOperatingSystemVersion W|MinorOperatingSystemVersion W|MajorImageVersion W|MinorImageVersion W|MajorSubsystemVersion W|MinorSubsystemVersion W|Win32VersionValue D|SizeOfImage D|SizeOfHeaders D|CheckSum D|Subsystem W|DllCharacteristics W|SizeOfStackReserve D|SizeOfStackCommit D|SizeOfHeapReserve D|SizeOfHeapCommit D|LoaderFlags D|NumberOfRvaAndSizes D|DataDirectory D 32
+[IMAGE_RELOCATION:|VirtualAddress::RelocCount D|SymbolTableIndex D|Type1 W
+[IMAGE_RESOURCE_DATA_ENTRY:|OffsetToData D|Size1 D|CodePage D|Reserved D
+[IMAGE_RESOURCE_DIRECTORY:|Characteristics D|TimeDateStamp D|MajorVersion W|MinorVersion W|NumberOfNamedEntries W|NumberOfIdEntries W
+[IMAGE_RESOURCE_DIRECTORY_ENTRY:|Name1::Id D|OffsetToData D
+[IMAGE_RESOURCE_DIRECTORY_STRING:|Length1 W|NameString B
+[IMAGE_RESOURCE_DIR_STRING_U:|Length1 W|NameString W
+[IMAGE_ROM_HEADERS:|FileHeader.Machine W|FileHeader.NumberOfSections W|FileHeader.TimeDateStamp D|FileHeader.PointerToSymbolTable D|FileHeader.NumberOfSymbols D|FileHeader.SizeOfOptionalHeader W|FileHeader.Characteristics W|OptionalHeader.Magic W|OptionalHeader.MajorLinkerVersion B|OptionalHeader.MinorLinkerVersion B|OptionalHeader.SizeOfCode D|OptionalHeader.SizeOfInitializedData D|OptionalHeader.SizeOfUninitializedData D|OptionalHeader.AddressOfEntryPoint D|OptionalHeader.BaseOfCode D|OptionalHeader.BaseOfData D|OptionalHeader.BaseOfBss D|OptionalHeader.GprMask D|OptionalHeader.CprMask D 4|OptionalHeader.GpValue D
+[IMAGE_ROM_OPTIONAL_HEADER:|Magic W|MajorLinkerVersion B|MinorLinkerVersion B|SizeOfCode D|SizeOfInitializedData D|SizeOfUninitializedData D|AddressOfEntryPoint D|BaseOfCode D|BaseOfData D|BaseOfBss D|GprMask D|CprMask D 4|GpValue D
+[IMAGE_SECTION_HEADER:|Name1 B IMAGE_SIZEOF_SHORT_NAME|MiscPhysicalAddress::MiscVirtualSize D|VirtualAddress D|SizeOfRawData D|PointerToRawData D|PointerToRelocations D|PointerToLinenumbers D|NumberOfRelocations W|NumberOfLinenumbers W|Characteristics D
+[IMAGE_SEPARATE_DEBUG_HEADER:|Signature W|Flags W|Machine W|Characteristics W|TimeDateStamp D|CheckSum D|ImageBase D|SizeOfImage D|NumberOfSections D|ExportedNamesSize D|DebugDirectorySize D|SectionAlignment D|Reserved D 2
+[IMAGE_SYMBOL:|ShortName::LongName::Name1Short1 D|Name1Long1 D|Value D|SectionNumber W|Type1 W|StorageClass B|NumberOfAuxSymbols B
+[IMAGE_THUNK_DATA32:|ForwarderString::Function::Ordinal::AddressOfData D
+[IMAGE_TLS_DIRECTORY32:|StartAddressOfRawData D|EndAddressOfRawData D|AddressOfIndex D|AddressOfCallBacks D|SizeOfZeroFill D|Characteristics D
+[IMAGE_VXD_HEADER:|e32_magic W|e32_border B|e32_worder B|e32_level D|e32_cpu W|e32_os W|e32_ver D|e32_mflags D|e32_mpages D|e32_startobj D|e32_eip D|e32_stackobj D|e32_esp D|e32_pagesize D|e32_lastpagesize D|e32_fixupsize D|e32_fixupsum D|e32_ldrsize D|e32_ldrsum D|e32_objtab D|e32_objcnt D|e32_objmap D|e32_itermap D|e32_rsrctab D|e32_rsrccnt D|e32_restab D|e32_enttab D|e32_dirtab D|e32_dircnt D|e32_fpagetab D|e32_frectab D|e32_impmod D|e32_impmodcnt D|e32_impproc D|e32_pagesum D|e32_datapage D|e32_preload D|e32_nrestab D|e32_cbnrestab D|e32_nressum D|e32_autodata D|e32_debuginfo D|e32_debuglen D|e32_instpreload D|e32_instdemand D|e32_heapsize D|e32_res3 B 12|e32_winresoff D|e32_winreslen D|e32_devid W|e32_ddkver W
+[IMPORT_OBJECT_HEADER:|Sig1 W|Sig2 W|Version W|Machine W|TimeDateStamp D|SizeOfData D|Ordinal::Hint W|rImport D
+[INFCONTEXT:|Inf D|CurrentInf D|Section D|Line D
+[INITCOMMONCONTROLSEX:|dwSize D|dwICC D
+[INKINGINFO:|cbSize D|wFlags D|tip_cbSize D|tip_btype B|tip_bwidth B|tip_bheight B|tip_bOpacity B|tip_rgb D|tip_dwFlags D|tip_dwReserved D|rectClip_left D|rectClip_top D|rectClip_right D|rectClip_bottom D|rectInkStop_left D|rectInkStop_top D|rectInkStop_right D|rectInkStop_bottom D|hrgnClip D|hrgnInkStop D
+[INPPARAMS:|cbSize D|dwFlags D|hpndt D|target D
+[INPUT:|type D|mi::ki::hi D
+[INPUT_RECORD:|EventType W|bKeyDown::dwMousePosition::dwSize.x::dwCommandId::bSetFocus W|dwMousePosition.y::dwSize.y W|wRepeatCount::dwButtonState W|wVirtualKeyCode W|wVirtualScanCode::dwControlKeyState W|wVirtualScanCode W|dwControlKeyState::dwEventFlags D
+[INTERFACEINFO:|pUnk D|iid D|wMethod W
+[INTERNET_ASYNC_RESULT:|dwResult D|dwError D
+[INTERNET_AUTH_NOTIFY_DATA:|cbStruct D|dwOptions D|pfnNotify D|dwContext D
+[INTERNET_BUFFERSA:|dwStructSize D|Next D|lpcszHeader D|dwHeadersLength D|dwHeadersTotal D|lpvBuffer D|dwBufferLength D|dwBufferTotal D|dwOffsetLow D|dwOffsetHigh D
+[INTERNET_CACHE_ENTRY_INFOA:|dwStructSize D|lpszSourceUrlName D|lpszLocalFileName D|CacheEntryType D|dwUseCount D|dwHitRate D|dwSizeLow D|dwSizeHigh D|LastModifiedTime.dwLowDateTime D|LastModifiedTime.dwHighDateTime D|ExpireTime.dwLowDateTime D|ExpireTime.dwHighDateTime D|LastAccessTime.dwLowDateTime D|LastAccessTime.dwHighDateTime D|LastSyncTime.dwLowDateTime D|LastSyncTime.dwHighDateTime D|lpHeaderInfo D|dwHeaderInfoSize D|lpszFileExtension D|dwReserved::dwExemptDelta D
+[INTERNET_CERTIFICATE_INFO:|ftExpiry.dwLowDateTime D|ftExpiry.dwHighDateTime D|ftStart.dwLowDateTime D|ftStart.dwHighDateTime D|lpszSubjectInfo D|lpszIssuerInfo D|lpszProtocolName D|lpszSignatureAlgName D|lpszEncryptionAlgName D|dwKeySize D
+[INTERNET_CONNECTED_INFO:|dwConnectedState D|dwFlags D
+[INTERNET_PROXY_INFO:|dwAccessType D|lpszProxy D|lpszProxyBypass D
+[INTERNET_VERSION_INFO:|dwMajorVersion D|dwMinorVersion D
+[INTERVAL_ABSTIME:|atBegin_sec D|atBegin_ms::DatEnd_sec D|atEnd_ms D
+[ITEM:|flag D|col D|row D|expx B|expy B|state B|dummy B|fmt.bckcol D|fmt.txtcol D|fmt.txtal B|fmt.imgal B|fmt.fnt B|fmt.tpe B|wt D|ht D|lpdta D
+[ITEMIDLIST:|mkid.cb W
+[JOB_INFO_1A:|JobId D|pPrinterName D|pMachineName D|pUserName D|pDocument D|pDatatype D|pStatus D|Status D|Priority D|Position D|TotalPages D|PagesPrinted D|Submitted.wYear W|Submitted.wMonth W|Submitted.wDayOfWeek W|Submitted.wDay W|Submitted.wHour W|Submitted.wMinute W|Submitted.wSecond W|Submitted.wMilliseconds W
+[JOB_INFO_2A:|JobId D|pPrinterName D|pMachineName D|pUserName D|pDocument D|pNotifyName D|pDatatype D|pPrintProcessor D|pParameters D|pDriverName D|pDevMode D|pStatus D|pSecurityDescriptor D|Status D|Priority D|Position D|StartTime D|UntilTime D|TotalPages D|isize D|Submitted.wYear W|Submitted.wMonth W|Submitted.wDayOfWeek W|Submitted.wDay W|Submitted.wHour W|Submitted.wMinute W|Submitted.wSecond W|Submitted.wMilliseconds W|time D|PagesPrinted D
+[JOB_INFO_3:|JobId D|JobIdNextJob D|Reserved D
+[JOYCAPSA:|wMid W|wPid W|szPname B MAXPNAMELEN|wXmin W|wXmax W|wYmin W|wYmax W|wZmin W|wZmax W|wNumButtons W|wPeriodMin W|wPeriodMax W|wRmin D|wRmax D|wUmin D|wUmax D|wVmin D|wVmax D|wCaps D|wMaxAxes D|wNumAxes D|wMaxButtons D|szRegKey B MAXPNAMELEN|szOEMVxD B MAX_JOYSTICKOEMVXDNAME
+[JOYINFO:|wXpos W|wYpos W|wZpos W|wButtons W
+[JOYINFOEX:|dwSize D|dwFlags D|dwXpos D|dwYpos D|dwZpos D|dwRpos D|dwUpos D|dwVpos D|dwButtons D|dwButtonNumber D|dwPOV D|dwReserved1 D|dwReserved2 D
+[KBDLLHOOKSTRUCT:|vkCode D|scanCode D|flags D|time D|dwExtraInfo D
+[KDHELP64:|Thread D|ThCallbackStack D|ThCallbackBStore D|NextCallback D|FramePointer D|KiCallUserMode D|KeUserCallbackDispatcher D|SystemRangeStart D|Reserved D 8
+[KDHELP:|Thread D|ThCallbackStack D|NextCallback D|FramePointer D|KiCallUserMode D|KeUserCallbackDispatcher D|SystemRangeStart D
+[KERNINGPAIR:|wFirst W|wSecond W|iKernAmount D
+[KEYBDINPUT:|wVk W|wScan W|dwFlags D|time D|dwExtraInfo D
+[KEY_EVENT_RECORD:|bKeyDown D|wRepeatCount W|wVirtualKeyCode W|wVirtualScanCode W|uChar W|dwControlKeyState D
+[LANA_ENUM:|iLength B|lana B MAX_LANA+1
+[LARGE_INTEGER:|QuadPart Q
+[LAYERPLANEDESCRIPTOR:|nSize W|nVersion W|dwFlags D|iPixelType B|cColorBits B|cRedBits B|cRedShift B|cGreenBits B|cGreenShift B|cBlueBits B|cBlueShift B|cAlphaBits B|cAlphaShift B|cAccumBits B|cAccumRedBits B|cAccumGreenBits B|cAccumBlueBits B|cAccumAlphaBits B|cDepthBits B|cStencilBits B|cAuxBuffers B|iLayerPlane B|bReserved B|crTransparent D
+[LDT_BYTES:|BaseMid B|Flags1 B|Flags2 B|BaseHi B
+[LDT_ENTRY:|LimitLow W|BaseLow W|HighWord1BaseMid B|HighWord1Flags1 B|HighWord1Flags2 B|HighWord1BaseHi B
+[LICINFO:|cbLicInfo D|fRuntimeKeyAvail D|fLicVerified D
+[LINEADDRESSCAPS:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwLineDeviceID D|dwAddressSize D|dwAddressOffset D|dwDevSpecificSize D|dwDevSpecificOffset D|dwAddressSharing D|dwAddressStates D|dwCallInfoStates D|dwCallerIDFlags D|dwCalledIDFlags D|dwConnectedIDFlags D|dwRedirectionIDFlags D|dwRedirectingIDFlags D|dwCallStates D|dwDialToneModes D|dwBusyModes D|dwSpecialInfo D|dwDisconnectModes D|dwMaxNumActiveCalls D|dwMaxNumOnHoldCalls D|dwMaxNumOnHoldPendingCalls D|dwMaxNumConference D|dwMaxNumTransConf D|dwAddrCapFlags D|dwCallFeatures D|dwRemoveFromConfCaps D|dwRemoveFromConfState D|dwTransferModes D|dwParkModes D|dwForwardModes D|dwMaxForwardEntries D|dwMaxSpecificEntries D|dwMinFwdNumRings D|dwMaxFwdNumRings D|dwMaxCallCompletions D|dwCallCompletionConds D|dwCallCompletionModes D|dwNumCompletionMessages D|dwCompletionMsgTextEntrySize D|dwCompletionMsgTextSize D|dwCompletionMsgTextOffset D|dwAddressFeatures D|dwPredictiveAutoTransferStates D|dwNumCallTreatments D|dwCallTreat
+ mentL
+istSize D|dwCallTreatmentListOffset D|dwDeviceClassesSize D|dwDeviceClassesOffset D|dwMaxCallDataSize D|dwCallFeatures2 D|dwMaxNoAnswerTimeout D|dwConnectedModes D|dwOfferingModes D|dwAvailableMediaModes D
+[LINEADDRESSSTATUS:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwNumInUse D|dwNumActiveCalls D|dwNumOnHoldCalls D|dwNumOnHoldPendCalls D|dwAddressFeatures D|dwNumRingsNoAnswer D|dwForwardNumEntries D|dwForwardSize D|dwForwardOffset D|dwTerminalModesSize D|dwTerminalModesOffset D|dwDevSpecificSize D|dwDevSpecificOffset D
+[LINEAGENTACTIVITYENTRY:|dwID D|dwNameSize D|dwNameOffset D
+[LINEAGENTACTIVITYLIST:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwNumEntries D|dwListSize D|dwListOffset D
+[LINEAGENTCAPS:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwAgentHandlerInfoSize D|dwAgentHandlerInfoOffset D|dwCapsVersion D|dwFeatures D|dwStates D|dwNextStates D|dwMaxNumGroupEntries D|dwAgentStatusMessages D|dwNumAgentExtensionIDs D|dwAgentExtensionIDListSize D|dwAgentExtensionIDListOffset D
+[LINEAGENTENTRY:|hAgent D|dwNameSize D|dwNameOffset D|dwIDSize D|dwIDOffset D|dwPINSize D|dwPINOffset D
+[LINEAGENTGROUPENTRY:|dwGroupID1 D|dwGroupID2 D|dwGroupID3 D|dwGroupID4 D|dwNameSize D|dwNameOffset D
+[LINEAGENTGROUPLIST:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwNumEntries D|dwListSize D|dwListOffset D
+[LINEAGENTSTATUS:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwNumEntries D|dwGroupListSize D|dwGroupListOffset D|dwState D|dwNextState D|dwActivityID D|dwActivitySize D|dwActivityOffset D|dwAgentFeatures D|dwValidStates D|dwValidNextStates D
+[LINEAPPINFO:|dwMachineNameSize D|dwMachineNameOffset D|dwUserNameSize D|dwUserNameOffset D|dwModuleFilenameSize D|dwModuleFilenameOffset D|dwFriendlyNameSize D|dwFriendlyNameOffset D|dwMediaModes D|dwAddressID D
+[LINECALLINFO:|dwTotalSize D|dwNeededSize D|dwUsedSize D|hLine D|dwLineDeviceID D|dwAddressID D|dwBearerMode D|dwRate D|dwMediaMode D|dwAppSpecific D|dwCallID D|dwRelatedCallID D|dwCallParamFlags D|dwCallStates D|dwMonitorDigitModes D|dwMonitorMediaModes D|dwDialPause D|dwDialSpeed D|dwDigitDuration D|dwWaitForDialtone D|dwOrigin D|dwReason D|dwCompletionID D|dwNumOwners D|dwNumMonitors D|dwCountryCode D|dwTrunk D|dwCallerIDFlags D|dwCallerIDSize D|dwCallerIDOffset D|dwCallerIDNameSize D|dwCallerIDNameOffset D|dwCalledIDFlags D|dwCalledIDSize D|dwCalledIDOffset D|dwCalledIDNameSize D|dwCalledIDNameOffset D|dwConnectedIDFlags D|dwConnectedIDSize D|dwConnectedIDOffset D|dwConnectedIDNameSize D|dwConnectedIDNameOffset D|dwRedirectionIDFlags D|dwRedirectionIDSize D|dwRedirectionIDOffset D|dwRedirectionIDNameSize D|dwRedirectionIDNameOffset D|dwRedirectingIDFlags D|dwRedirectingIDSize D|dwRedirectingIDOffset D|dwRedirectingIDNameSize D|dwRedirectingIDNameOffset D|dwAppNameSize D|d
+ wAppN
+ameOffset D|dwDisplayableAddressSize D|dwDisplayableAddressOffset D|dwCalledPartySize D|dwCalledPartyOffset D|dwCommentSize D|dwCommentOffset D|dwDisplaySize D|dwDisplayOffset D|dwUserUserInfoSize D|dwUserUserInfoOffset D|dwHighLevelCompSize D|dwHighLevelCompOffset D|dwLowLevelCompSize D|dwLowLevelCompOffset D|dwChargingInfoSize D|dwChargingInfoOffset D|dwTerminalModesSize D|dwTerminalModesOffset D|dwDevSpecificSize D|dwDevSpecificOffset D|dwCallTreatment D|dwCallDataSize D|dwCallDataOffset D|dwSendingFlowspecSize D|dwSendingFlowspecOffset D|dwReceivingFlowspecSize D|dwReceivingFlowspecOffset D
+[LINECALLLIST:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwCallsNumEntries D|dwCallsSize D|dwCallsOffset D
+[LINECALLPARAMS:|dwTotalSize D|dwBearerMode D|dwMinRate D|dwMaxRate D|dwMediaMode D|dwCallParamFlags D|dwAddressMode D|dwAddressID D|dwDialPause D|dwDialSpeed D|dwDigitDuration D|dwWaitForDialtone D|dwOrigAddressSize D|dwOrigAddressOffset D|dwDisplayableAddressSize D|dwDisplayableAddressOffset D|dwCalledPartySize D|dwCalledPartyOffset D|dwCommentSize D|dwCommentOffset D|dwUserUserInfoSize D|dwUserUserInfoOffset D|dwHighLevelCompSize D|dwHighLevelCompOffset D|dwLowLevelCompSize D|dwLowLevelCompOffset D|dwDevSpecificSize D|dwDevSpecificOffset D|dwPredictiveAutoTransferStates D|dwTargetAddressSize D|dwTargetAddressOffset D|dwSendingFlowspecSize D|dwSendingFlowspecOffset D|dwReceivingFlowspecSize D|dwReceivingFlowspecOffset D|dwDeviceClassSize D|dwDeviceClassOffset D|dwDeviceConfigSize D|dwDeviceConfigOffset D|dwCallDataSize D|dwCallDataOffset D|dwNoAnswerTimeout D|dwCallingPartyIDSize D|dwCallingPartyIDOffset D
+[LINECALLSTATUS:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwCallState D|dwCallStateMode D|dwCallPrivilege D|dwCallFeatures D|dwDevSpecificSize D|dwDevSpecificOffset D|dwCallFeatures2 D|wYear W|wMonth W|wDayOfWeek W|wDay W|wHour W|wMinute W|wSecond W|wMilliseconds W
+[LINECALLTREATMENTENTRY:|dwCallTreatmentID D|dwCallTreatmentNameSize D|dwCallTreatmentNameOffset D
+[LINECARDENTRY:|dwPermanentCardID D|dwCardNameSize D|dwCardNameOffset D|dwCardNumberDigits D|dwSameAreaRuleSize D|dwSameAreaRuleOffset D|dwLongDistanceRuleSize D|dwLongDistanceRuleOffset D|dwInternationalRuleSize D|dwInternationalRuleOffset D|dwOptions D
+[LINECOUNTRYENTRY:|dwCountryID D|dwCountryCode D|dwNextCountryID D|dwCountryNameSize D|dwCountryNameOffset D|dwSameAreaRuleSize D|dwSameAreaRuleOffset D|dwLongDistanceRuleSize D|dwLongDistanceRuleOffset D|dwInternationalRuleSize D|dwInternationalRuleOffset D
+[LINECOUNTRYLIST:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwNumCountries D|dwCountryListSize D|dwCountryListOffset D
+[LINEDEVCAPS:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwProviderInfoSize D|dwProviderInfoOffset D|dwSwitchInfoSize D|dwSwitchInfoOffset D|dwPermanentLineID D|dwLineNameSize D|dwLineNameOffset D|dwStringFormat D|dwAddressModes D|dwNumAddresses D|dwBearerModes D|dwMaxRate D|dwMediaModes D|dwGenerateToneModes D|dwGenerateToneMaxNumFreq D|dwGenerateDigitModes D|dwMonitorToneMaxNumFreq D|dwMonitorToneMaxNumEntries D|dwMonitorDigitModes D|dwGatherDigitsMinTimeout D|dwGatherDigitsMaxTimeout D|dwMedCtlDigitMaxListSize D|dwMedCtlMediaMaxListSize D|dwMedCtlToneMaxListSize D|dwMedCtlCallStateMaxListSize D|dwDevCapFlags D|dwMaxNumActiveCalls D|dwAnswerMode D|dwRingModes D|dwLineStates D|dwUUIAcceptSize D|dwUUIAnswerSize D|dwUUIMakeCallSize D|dwUUIDropSize D|dwUUISendUserUserInfoSize D|dwUUICallInfoSize D|Min_dwDialPause D|Min_dwDialSpeed D|Min_dwDigitDuration D|Min_dwWaitForDialtone D|Max_dwDialPause D|Max_dwDialSpeed D|Max_dwDigitDuration D|Max_dwWaitForDialtone D|Default_dwDialPause D|Default_dwDialSpeed D|Default_dwDigitDuration D|Default_dwWaitForDialtone D|dwNumTerminals D|dwTerminalCapsSize D|dwTerminalCapsOffset D|dwTerminalTextEntrySize D|dwTerminalTextSize D|dwTerminalTextOffset D|dwDevSpecificSize D|dwDevSpecificOffset D|dwLineFeatures D|dwSettableDevStatus D|dwDeviceClassesSize D|dwDeviceClassesOffset D
+[LINEDEVSTATUS:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwNumOpens D|dwOpenMediaModes D|dwNumActiveCalls D|dwNumOnHoldCalls D|dwNumOnHoldPendCalls D|dwLineFeatures D|dwNumCallCompletions D|dwRingMode D|dwSignalLevel D|dwBatteryLevel D|dwRoamMode D|dwDevStatusFlags D|dwTerminalModesSize D|dwTerminalModesOffset D|dwDevSpecificSize D|dwDevSpecificOffset D|dwAvailableMediaModes D|dwAppInfoSize D|dwAppInfoOffset D
+[LINEDIALPARAMS:|dwDialPause D|dwDialSpeed D|dwDigitDuration D|dwWaitForDialtone D
+[LINEEXTENSIONID:|dwExtensionID0 D|dwExtensionID1 D|dwExtensionID2 D|dwExtensionID3 D
+[LINEFORWARD:|dwForwardMode D|dwCallerAddressSize D|dwCallerAddressOffset D|dwDestCountryCode D|dwDestAddressSize D|dwDestAddressOffset D
+[LINEFORWARDLIST:|dwTotalSize D|dwNumEntries D|ForwardList D
+[LINEGENERATETONE:|dwFrequency D|dwCadenceOn D|dwCadenceOff D|dwVolume D
+[LINEINITIALIZEEXPARAMS:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwOptions D|hEvent::hCompletionPort D|dwCompletionKey D
+[LINELOCATIONENTRY:|dwPermanentLocationID D|dwLocationNameSize D|dwLocationNameOffset D|dwCountryCode D|dwCityCodeSize D|dwCityCodeOffset D|dwPreferredCardID D|dwLocalAccessCodeSize D|dwLocalAccessCodeOffset D|dwLongDistanceAccessCodeSize D|dwLongDistanceAccessCodeOffset D|dwTollPrefixListSize D|dwTollPrefixListOffset D|dwCountryID D|dwOptions D|dwCancelCallWaitingSize D|dwCancelCallWaitingOffset D
+[LINEMEDIACONTROLCALLSTATE:|dwCallStates D|dwMediaControl D
+[LINEMEDIACONTROLDIGIT:|dwDigit D|dwDigitModes D|dwMediaControl D
+[LINEMEDIACONTROLMEDIA:|dwMediaModes D|dwDuration D|dwMediaControl D
+[LINEMEDIACONTROLTONE:|dwAppSpecific D|dwDuration D|dwFrequency1 D|dwFrequency2 D|dwFrequency3 D|dwMediaControl D
+[LINEMESSAGE:|hDevice D|dwMessageID D|dwCallbackInstance D|dwParam1 D|dwParam2 D|dwParam3 D
+[LINEMONITORTONE:|dwAppSpecific D|dwDuration D|dwFrequency1 D|dwFrequency2 D|dwFrequency3 D
+[LINEPROVIDERENTRY:|dwPermanentProviderID D|dwProviderFilenameSize D|dwProviderFilenameOffset D
+[LINEPROVIDERLIST:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwNumProviders D|dwProviderListSize D|dwProviderListOffset D
+[LINEPROXYREQUEST:|dwSize D|dwClientMachineNameSize D|dwClientMachineNameOffset D|dwClientUserNameSize D|dwClientUserNameOffset D|dwClientAppAPIVersion D|dwRequestType D|dwAddressID D|GroupList::dwAgentState::dwActivityID::AgentCaps::dwAgentExtensionIDIndex::ActivityList::ActivityList D|dwNextAgentState::dwSize D|Params B
+[LINEREQMAKECALL:|szDestAddress B TAPIMAXDESTADDRESSSIZE|szAppName B TAPIMAXAPPNAMESIZE|szCalledParty B TAPIMAXCALLEDPARTYSIZE|szComment B TAPIMAXCOMMENTSIZE
+[LINETERMCAPS:|dwTermDev D|dwTermModes D|dwTermSharing D
+[LINETRANSLATECAPS:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwNumLocations D|dwLocationListSize D|dwLocationListOffset D|dwCurrentLocationID D|dwNumCards D|dwCardListSize D|dwCardListOffset D|dwCurrentPreferredCardID D
+[LINETRANSLATEOUTPUT:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwDialableStringSize D|dwDialableStringOffset D|dwDisplayableStringSize D|dwDisplayableStringOffset D|dwCurrentCountry D|dwDestCountry D|dwTranslateResults D
+[LIST_ENTRY:|Flink D|Blink D
+[LLC_ADAPTER_LOG:|cCRC_Error::cLineError U|uchReserved1::cInternalError U|cAlignmentError::cBurstError U|uchReserved2::cAC_Error U|cTransmitError::cAbortDelimiter U|uchReserved3::uchReserved1 U|cCollisionError::cLostFrame U|cReceiveCongestion::cReceiveCongestion U|uchReserved::cFrameCopiedError U|cFrequencyError U|cTokenError U|uchReserved2 U|uchReserved3 U|uchReserved4 U
+[LLC_ADAPTER_LOG_ETH:|cCRC_Error U|uchReserved1 U|cAlignmentError U|uchReserved2 U|cTransmitError U|uchReserved3 U|cCollisionError U|cReceiveCongestion U|uchReserved U 6
+[LLC_ADAPTER_LOG_TR:|cLineError U|cInternalError U|cBurstError U|cAC_Error U|cAbortDelimiter U|uchReserved1 U|cLostFrame U|cReceiveCongestion U|cFrameCopiedError U|cFrequencyError U|cTokenError U|uchReserved2 U|uchReserved3 U|uchReserved4 U
+[LLC_ADAPTER_OPEN_PARMS:|usOpenErrorCode W|usOpenOptions W|auchNodeAddress U 6|auchGroupAddress U 4|auchFunctionalAddress U 4|usReserved1 W|usReserved2 W|usMaxFrameSize W|usReserved3 U 4|usBringUps U|InitWarnings U|usReserved4 U 3
+[LLC_BUFFER:|pNext::Header::NotContiguous::Contiguous D|Next::auchData U
+[LLC_BUFFER_CREATE_PARMS HANDLE:|pBuffer D|cbBufferSize D|cbMinimumSizeThreshold D
+[LLC_BUFFER_FREE_PARMS:|usReserved1 W|cBuffersLeft W|ulReserved D|pFirstBuffer D
+[LLC_BUFFER_GET_PARMS:|usReserved1 W|cBuffersLeft W|cBuffersToGet W|cbBufferSize W|pFirstBuffer D
+[LLC_CCB:|uchAdapterNumber U|uchDlcCommand U|uchDlcStatus U|uchReserved1 U|pNext D|ulCompletionFlag D|CCB_PARMS_usStationId::CCB_PARMS_usParameter0 W|CCB_PARMS_usParameter::CCB_PARMS_usParameter1 W|CCB_PARMS_auchBuffer U 4|hCompletionEvent D|uchReserved2 U|uchReadFlag U|usReserved3 U
+[LLC_CONTIGUOUS_BUFFER PLLC_BUFFER:|cbFrame U|cbBuffer U|offUserData U|cbUserData U|usStationId U|uchOptions U|uchMsgType U|cBuffersLeft U|uchRcvFS U|uchAdapterNumber U|pNextFrame D
+[LLC_DIRECT_LOG:|cTransmittedFrames U|cReceivedFrames U|cDiscardedFrames U|cDataLost U|cBuffersAvailable U
+[LLC_DIR_INITIALIZE_PARMS:|usBringUps U|Reserved U 30
+[LLC_DIR_MULTICAST_ADDRESS:|auchMulticastAddress U 6
+[LLC_DIR_OPEN_ADAPTER_PARMS:|pAdapterParms D|pExtendedParms D|pDlcParms D|pReserved1 D
+[LLC_DIR_OPEN_DIRECT_PARMS:|Reserved U 4|usOpenOptions U|usEthernetType U|ulProtocolTypeMask U|ulProtocolTypeMatch U|usProtocolTypeOffset U
+[LLC_DIR_READ_LOG_BUFFER:|cCRC_Error::cLineError::cTransmittedFrames U|uchReserved1::cInternalError::cReceivedFrames U|cAlignmentError::cBurstError::cDiscardedFrames U|uchReserved2::cAC_Error::cDataLost U|cTransmitError::cAbortDelimiter::cBuffersAvailable U|uchReserved3::uchReserved1 U|cCollisionError::cLostFrame U|cReceiveCongestion::cReceiveCongestion U|uchReserved::cFrameCopiedError U|cFrequencyError U|cTokenError U|uchReserved2 U|uchReserved3 U|uchReserved4 U
+[LLC_DIR_READ_LOG_PARMS:|usTypeId U|cbLogBuffer U|pLogBuffer D|cbActualLength U
+[LLC_DIR_SET_EFLAG_PARMS:|ulAdapterCheckFlag U|ulNetworkStatusFlag U|ulPcErrorFlag U|ulSystemActionFlag U
+[LLC_DIR_STATUS_PARMS:|auchPermanentAddress U 6|auchNodeAddress U 6|auchGroupAddress U 4|auchFunctAddr U 4|uchMaxSap U|uchOpenSaps U|uchMaxStations U|uchOpenStation U|uchAvailStations U|uchAdapterConfig U|auchReserved1 U 10|ulReserved1 U|ulReserved2 U|ulMaxFrameLength U|usLastNetworkStatus U|usAdapterType U
+[LLC_DLC_CONNECT_PARMS:|usStationId U|usReserved U|pRoutingInfo U
+[LLC_DLC_LOG_BUFFER:|cTransmittedFrames::cI_FramesTransmitted W|cI_FramesReceived W|cReceivedFrames::cI_FrameReceiveErrors W|cI_FrameTransmissionErrors W|cDiscardedFrames::cT1_ExpirationCount W|uchLastCmdRespReceived U|cDataLost::uchLastCmdRespTransmitted U|uchPrimaryState U|cBuffersAvailable::uchSecondaryState U|uchSendStateVariable U|uchReceiveStateVariable U|uchLastNr U|cbLanHeader U|auchLanHeader U 32
+[LLC_DLC_MODIFY_PARMS:|usRes U|usStationId U|uchT1 U|uchT2 U|uchTi U|uchMaxOut U|uchMaxIn U|uchMaxOutIncr U|uchMaxRetryCnt U|uchReserved1 U|usMaxInfoFieldLength U|uchAccessPriority U|auchReserved3 U 4|cGroupCount U|pGroupList D
+[LLC_DLC_OPEN_SAP_PARMS:|usStationId W|usUserStatValue W|uchT1 U|uchT2 U|uchTi U|uchMaxOut U|uchMaxIn U|uchMaxOutIncr U|uchMaxRetryCnt U|uchMaxMembers U|usMaxI_Field U|uchSapValue U|uchOptionsPriority U|uchcStationCount U|uchReserved2 U 2|cGroupCount U|pGroupList D|DlcStatusFlags D|uchReserved3 U 8|cLinkStationsAvail U
+[LLC_DLC_OPEN_STATION_PARMS:|usSapStationId W|usLinkStationId W|uchT1 U|uchT2 U|uchTi U|uchMaxOut U|uchMaxIn U|uchMaxOutIncr U|uchMaxRetryCnt U|uchRemoteSap U|usMaxI_Field U|uchAccessPriority U|pRemoteNodeAddress D
+[LLC_DLC_PARMS:|uchDlcMaxSaps U|uchDlcMaxStations U|uchDlcMaxGroupSaps U|uchDlcMaxGroupMembers U|uchT1_TickOne U|uchT2_TickOne U|uchTi_TickOne U|uchT1_TickTwo U|uchT2_TickTwo U|uchTi_TickTwo U
+[LLC_DLC_REALLOCATE_PARMS:|usStationId W|uchOption U|uchStationCount U|uchStationsAvailOnAdapter U|uchStationsAvailOnSap U|uchTotalStationsOnAdapter U|uchTotalStationsOnSap U
+[LLC_DLC_SET_THRESHOLD_PARMS:|usStationId W|cBufferThreshold U|AlertEvent D
+[LLC_DLC_STATISTICS_PARMS:|usStationId W|cbLogBufSize W|pLogBuf D|usActLogLength W|uchOptions U
+[LLC_EXTENDED_ADAPTER_PARMS:|hBufferPool D|pSecurityDescriptor D|LlcEthernetType D
+[LLC_NEXT_BUFFER PLLC_BUFFER:|cbFrame W|cbBuffer W|offUserData W|cbUserData W
+[LLC_NOT_CONTIGUOUS_BUFFER_PLLC_BUFFER:|cbFrame W|cbBuffer W|offUserData W|cbUserData W|usStationId W|uchOptions U|uchMsgType U|cBuffersLeft U|uchRcvFS U|uchAdapterNumber U|pNextFrame D|cbLanHeader U|cbDlcHeader U|auchLanHeader U 32|auchDlcHeader U 4|usPadding W
+[LLC_READ_PARMS:|usStationId W|uchOptionIndicator U|uchEventSet U|uchEvent U|uchCriticalSubset U|ulNotificationFlag W|usCcbCount U|pCcbCompletionList D|usBufferCount W|pFirstBuffer D|usReceivedFrameCount W|pReceivedFrame D|usEventErrorCode W|usEventErrorData W 3
+[LLC_RECEIVE_PARMS:|usStationId W|usUserLength W|ulReceiveFlag D|pFirstBuffer D|uchOptions U|auchReserved1 U 3|uchRcvReadOption U
+[LLC_TRANSMIT_PARMS:|usStationId W|uchTransmitFs U|uchRemoteSap U|pXmitQueue1 D|pXmitQueue2 D|cbBuffer1 W|cbBuffer2 W|pBuffer1 D|pBuffer2 D|uchXmitReadOption W
+[LLC_XMIT_BUFFER:|pNext D|usReserved1 W|cbBuffer W|usReserved2 W|cbUserData W|auchData U
+[LOADED_IMAGE:|ModuleName D|hFile D|MappedAddress D|FileHeader D|LastRvaSection D|NumberOfSections D|Sections D|Characteristics D|fSystemImage B|align D|fDOSImage B|Links D|SizeOfImage D
+[LOAD_DLL_DEBUG_INFO:|hFile D|lpBaseOfDll D|dwDebugInfoFileOffset D|nDebugInfoSize D|lpImageName D|fUnicode W
+[LOCALESIGNATURE:|lsUsb4 D 4|lsCsbDefault D 2|lsCsbSupported D 2
+[LOCALGROUP_INFO_0:|lgrpi0_name D
+[LOCALGROUP_INFO_1002:|lgrpi1002_comment D
+[LOCALGROUP_INFO_1:|lgrpi1_name D|lgrpi1_comment D
+[LOCALGROUP_MEMBERS_INFO_0:|lgrmi0_sid D
+[LOCALGROUP_MEMBERS_INFO_1:|lgrmi1_sid D|lgrmi1_sidusage D|lgrmi1_name D
+[LOCALGROUP_MEMBERS_INFO_2:|lgrmi2_sid D|lgrmi2_sidusage D|lgrmi2_domainandname D
+[LOCALGROUP_MEMBERS_INFO_3:|lgrmi3_domainandname D
+[LOCALGROUP_USERS_INFO_0:|lgrui0_name D
+[LOCALHEADER:|xHotSpot W|yHotSpot W
+[LOGBRUSH:|lbStyle D|lbColor D|lbHatch D
+[LOGCOLORSPACEA:|lcsSignature D|lcsVersion D|lcsSize D|lcsCSType D|lcsIntent D|lcsEndPoints.ciexyzRed.ciexyzX D|lcsEndPoints.ciexyzRed.ciexyzY D|lcsEndPoints.ciexyzRed.ciexyzZ D|lcsEndPoints.ciexyzGreen.ciexyzX D|lcsEndPoints.ciexyzGreen.ciexyzY D|lcsEndPoints.ciexyzGreen.ciexyzZ D|lcsEndPoints.ciexyzBlue.ciexyzX D|lcsEndPoints.ciexyzBlue.ciexyzY D|lcsEndPoints.ciexyzBlue.ciexyzZ D|lcsGammaRed D|lcsGammaGreen D|lcsGammaBlue D|lcsFileName B MAX_PATH
+[LOGCOLORSPACEW:|lcsSignature D|lcsVersion D|lcsSize D|lcsCSType D|lcsIntent D|lcsEndpoints.ciexyzRed.ciexyzX D|lcsEndpoints.ciexyzRed.ciexyzY D|lcsEndpoints.ciexyzRed.ciexyzZ D|lcsEndpoints.ciexyzGreen.ciexyzX D|lcsEndpoints.ciexyzGreen.ciexyzY D|lcsEndpoints.ciexyzGreen.ciexyzZ D|lcsEndpoints.ciexyzBlue.ciexyzX D|lcsEndpoints.ciexyzBlue.ciexyzY D|lcsEndpoints.ciexyzBlue.ciexyzZ D|lcsGammaRed D|lcsGammaGreen D|lcsGammaBlue D|lcsFilename W MAX_PATH
+[LOGFONTA:|lfHeight D|lfWidth D|lfEscapement D|lfOrientation D|lfWeight D|lfItalic B|lfUnderline B|lfStrikeOut B|lfCharSet B|lfOutPrecision B|lfClipPrecision B|lfQuality B|lfPitchAndFamily B|lfFaceName B LF_FACESIZE
+[LOGPALETTE:|palVersion W|palNumEntries W|palPalEntry.peRed B|palPalEntry.peGreen B|palPalEntry.peBlue B|palPalEntry.peFlags B
+[LOGPEN:|lopnStyle D|lopnWidth.x D|lopnWidth.y D|lopnColor D
+[LS_CHALLDATA:|SecretIndex D|Random D|MessageDigest B 16
+[LS_CHALLENGE:|Protocol D|Size D|LS_CHALLDATA_SecretIndex D|LS_CHALLDATA_Random D|LS_CHALLDATA_MessageDigest B 16
+[LS_MSG_DIGEST:|MessageDigest B 16
+[LUID:|LowPart D|HighPart D
+[LUID_AND_ATTRIBUTES:|Luid.LowPart D|Luid.HighPart D|Attributes D
+[LV_COLUMN:|imask D|fmt D|lx D|pszText D|cchTextMax D|iSubItem D|iImage D|iOrder D
+[LV_DISPINFO:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|item.imask D|item.iItem D|item.iSubItem D|item.state D|item.stateMask D|item.pszText D|item.cchTextMax D|item.iImage D|item.lParam D|item.iIndent D
+[LV_FINDINFO:|flags D|psz D|lParam D|pt.x D|pt.y D|vkDirection D
+[LV_HITTESTINFO:|pt.x D|pt.y D|flags D|iItem D|iSubItem D
+[LV_ITEM:|imask D|iItem D|iSubItem D|state D|stateMask D|pszText D|cchTextMax D|iImage D|lParam D|iIndent D
+[LV_KEYDOWN:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|wVKey W|flags D
+[MAPIERROR:|ulVersion D|lpszError D|lpszComponent D|ulLowLevelError D|ulContext D
+[MAPIINIT_0:|ulVersion D|ulFlags D
+[MAPINAMEID:|lpguid D|ulKind D|KindlID::KindlpwstrName D
+[MAPIUID:|ab B 16
+[MAT2:|eM11.fract W|eM11.Value W|eM12.fract W|eM12.Value W|eM21.fract W|eM21.Value W|eM22.fract W|eM22.Value W
+[MCI_ANIM_OPEN_PARMSA:|dwCallback D|wDeviceID D|lpstrDeviceType D|lpstrElementName D|lpstrAlias D|dwStyle D|hWndParent D
+[MCI_ANIM_PLAY_PARMS:|dwCallback D|dwFrom D|dwTo D|dwSpeed D
+[MCI_ANIM_RECT_PARMS:|dwCallback D|rc.left D|rc.top D|rc.right D|rc.bottom D
+[MCI_ANIM_STEP_PARMS:|dwCallback D|dwFrames D
+[MCI_ANIM_UPDATE_PARMS:|dwCallback D|rc.left D|rc.top D|rc.right D|rc.bottom D|hdc D
+[MCI_ANIM_WINDOW_PARMS:|dwCallback D|hwnd D|nCmdShow D|lpstrText D
+[MCI_BREAK_PARMS:|dwCallback D|nVirtKey D|hwndBreak D
+[MCI_DGV_CAPTURE_PARMS:|dwCallback D|lpstrFileName D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D
+[MCI_DGV_COPY_PARMS:|dwCallback D|dwFrom D|dwTo D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D|dwAudioStream D|dwVideoStream D
+[MCI_DGV_CUE_PARMS:|dwCallback D|dwTo D
+[MCI_DGV_CUT_PARMS:|dwCallback D|dwFrom D|dwTo D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D|dwAudioStream D|dwVideoStream D
+[MCI_DGV_DELETE_PARMS:|dwCallback D|dwFrom D|dwTo D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D|dwAudioStream D
+[MCI_DGV_FREEZE_PARMS:|dwCallback D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D
+[MCI_DGV_INFO_PARMS:|dwCallback D|lpstrReturn D|dwRetSize D|dwItem D
+[MCI_DGV_LIST_PARMS:|dwCallback D|lpstrReturn D|dwLength D|dwNumber D|dwItem D|lpstrAlgorithm D
+[MCI_DGV_LOAD_PARMS:|dwCallback D|lpfilename D
+[MCI_DGV_MONITOR_PARMS:|dwCallback D|dwSource D|dwMethod D
+[MCI_DGV_OPEN_PARMS:|dwCallback D|wDeviceID D|lpstrDeviceType D|lpstrElementName D|lpstrAlias D|dwStyle D|hWndParent D
+[MCI_DGV_PASTE_PARMS:|dwCallback D|dwTo D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D|dwAudioStream D|dwVideoStream D
+[MCI_DGV_PAUSE_PARMS:|dwCallback D
+[MCI_DGV_PLAY_PARMS:|dwCallback D|dwFrom D|dwTo D
+[MCI_DGV_PUT_PARMS:|dwCallback D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D
+[MCI_DGV_QUALITY_PARMS:|dwCallback D|dwItem D|lpstrName D|lpstrAlgorithm D|dwHandle D
+[MCI_DGV_RECORD_PARMS:|dwCallback D|dwFrom D|dwTo D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D|dwAudioStream D|dwVideoStream D
+[MCI_DGV_RECT_PARMS:|dwCallback D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D
+[MCI_DGV_RESERVE_PARMS:|dwCallback D|lpstrPath D|dwSize D
+[MCI_DGV_RESTORE_PARMS:|dwCallback D|lpstrFileName D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D
+[MCI_DGV_RESUME_PARMS:|dwCallback D
+[MCI_DGV_SAVE_PARMS:|dwCallback D|lpstrFileName D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D
+[MCI_DGV_SETAUDIO_PARMS:|dwCallback D|dwItem D|dwValue D|dwOver D|lpstrAlgorithm D|lpstrQuality D
+[MCI_DGV_SETVIDEO_PARMS:|dwCallback D|dwItem D|dwValue D|dwOver D|lpstrQuality D|lpstrAlgorithm D|dwSourceNumber D
+[MCI_DGV_SET_PARMS:|dwCallback D|dwTimeFormat D|dwAudio D|dwFileFormat D|dwSpeed D
+[MCI_DGV_SIGNAL_PARMS:|dwCallback D|dwPosition D|dwPeriod D|dwUserParm D
+[MCI_DGV_STATUS_PARMS:|dwCallback D|dwReturn D|dwItem D|dwTrack D|lpstrDrive D|dwReference D
+[MCI_DGV_STEP_PARMS:|dwCallback D|dwFrames D
+[MCI_DGV_STOP_PARMS:|dwCallback D
+[MCI_DGV_UPDATE_PARMS:|dwCallback D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D|hDC D
+[MCI_DGV_WINDOW_PARMS:|dwCallback D|hWnd W|nCmdShow W|lpstrText D
+[MCI_GENERIC_PARMS:|dwCallback D
+[MCI_GETDEVCAPS_PARMS:|dwCallback D|dwReturn D|dwIten D
+[MCI_INFO_PARMSA:|dwCallback D|lpstrReturn D|dwRetSize D
+[MCI_LOAD_PARMSA:|dwCallback D|lpFileName D
+[MCI_OPEN_PARMS:|dwCallback D|wDeviceID D|lpstrDeviceType D|lpstrElementName D|lpstrAlias D
+[MCI_OVLY_LOAD_PARMSA:|dwCallback D|lpFileName D|rc.left D|rc.top D|rc.right D|rc.bottom D
+[MCI_OVLY_OPEN_PARMSA:|dwCallback D|wDeviceID D|lpstrDeviceType D|lpstrElementName D|lpstrAlias D|dwStyle D|hWndParent D
+[MCI_OVLY_RECT_PARMS:|dwCallback D|rc.left D|rc.top D|rc.right D|rc.bottom D
+[MCI_OVLY_SAVE_PARMSA:|dwCallback D|lpFileName D|rc.left D|rc.top D|rc.right D|rc.bottom D
+[MCI_OVLY_WINDOW_PARMSA:|dwCallback D|hwnd D|nCmdShow D|lpstrText D
+[MCI_PLAY_PARMS:|dwCallback D|dwFrom D|dwTo D
+[MCI_RECORD_PARMS:|dwCallback D|dwFrom D|dwTo D
+[MCI_SAVE_PARMSA:|dwCallback D|lpFileName D
+[MCI_SEEK_PARMS:|dwCallback D|dwTo D
+[MCI_SEQ_SET_PARMS:|dwCallback D|dwTimeFormat D|dwAudio D|dwTempo D|dwPort D|dwSlave D|dwMaster D|dwOffset D
+[MCI_SET_PARMS:|dwCallback D|dwTimeFormat D|dwAudio D
+[MCI_SOUND_PARMS:|dwCallback D|lpstrSoundName D
+[MCI_STATUS_PARMS:|dwCallback D|dwReturn D|dwItem D|dwTrack W
+[MCI_SYSINFO_PARMSA:|dwCallback D|lpstrReturn D|dwRetSize D|dwNumber D|wDeviceType D
+[MCI_VCR_CUE_PARMS:|dwCallback D|dwFrom D|dwTo D
+[MCI_VCR_LIST_PARMS:|dwCallback D|dwReturn D|dwNumber D
+[MCI_VCR_PLAY_PARMS:|dwCallback D|dwFrom D|dwTo D|dwAt D
+[MCI_VCR_RECORD_PARMS:|dwCallback D|dwFrom D|dwTo D|dwAt D
+[MCI_VCR_SEEK_PARMS:|dwCallback D|dwTo D|dwMark D|dwAt D
+[MCI_VCR_SETAUDIO_PARMS:|dwCallback D|dwTrack D|dwTo D|dwNumber D
+[MCI_VCR_SETTUNER_PARMS:|dwCallback D|dwChannel D|dwNumber D
+[MCI_VCR_SETVIDEO_PARMS:|dwCallback D|dwTrack D|dwTo D|dwNumber D
+[MCI_VCR_SET_PARMS:|dwCallback D|dwTimeFormat D|dwAudio D|dwTimeMode D|dwRecordFormat D|dwCounterFormat D|dwIndex D|dwTracking D|dwSpeed D|dwLength D|dwCounter D|dwClock D|dwPauseTimeout D|dwPrerollDuration D|dwPostrollDuration D
+[MCI_VCR_STATUS_PARMS:|dwCallback D|dwReturn D|dwItem D|dwTrack D|dwNumber D
+[MCI_VCR_STEP_PARMS:|dwCallback D|dwFrames D
+[MCI_VD_ESCAPE_PARMSA:|dwCallback D|lpstrCommand D
+[MCI_VD_PLAY_PARMS:|dwCallback D|dwFrom D|dwTo D|dwSpeed D
+[MCI_VD_STEP_PARMS:|dwCallback D|dwFrames D
+[MCI_WAVE_DELETE_PARMS:|dwCallback D|dwFrom D|dwTo D
+[MCI_WAVE_OPEN_PARMSA:|dwCallback D|wDeviceID D|lpstrDeviceType D|lpstrElementName D|lpstrAlias D|dwBufferSeconds D
+[MCI_WAVE_SET_PARMS:|dwCallback D|dwTimeFormat D|dwAudio D|wInput D|wOutput D|wFormatTag W|wReserved2 W|nChannels W|wReserved3 W|nSamplesPerSec D|nAvgBytesPerSec D|nBlockAlign W|wReserved4 W|wBitsPerSample W|wReserved5 W
+[MDICREATESTRUCTA:|szClass D|szTitle D|hOwner D|x D|y D|lx D|ly D|style D|lParam D
+[MDINEXTMENU:|hmenuIn D|hmenuNext D|hwndNext D
+[MEASUREITEMSTRUCT:|CtlType D|CtlID D|itemID D|itemWidth D|itemHeight D|itemData D
+[MEMORYSTATUS:|dwLength D|dwMemoryLoad D|dwTotalPhys D|dwAvailPhys D|dwTotalPageFile D|dwAvailPageFile D|dwTotalVirtual D|dwAvailVirtual D
+[MEMORY_BASIC_INFORMATION:|BaseAddress D|AllocationBase D|AllocationProtect D|RegionSize D|State D|Protect D|lType D
+[MENUEX_TEMPLATE_HEADER:|wVersion W|wOffset W|dwHelpId D
+[MENUEX_TEMPLATE_ITEM:|dwType D|dwState D|uId D|bResInfo W|szText U1|dwHelpId D
+[MENUHEADER:|wVersion W|cbHeaderSize W
+[MENUHELPID:|helpID D
+[MENUITEMINFOA:|cbSize D|fMask D|fType D|fState D|wID D|hSubMenu D|hbmpChecked D|hbmpUnchecked D|dwItemData D|dwTypeData D|cch D
+[MENUITEMTEMPLATE:|mtOption W|mtID W|mtString W
+[MENUITEMTEMPLATEHEADER:|versionNumber W|loffset W
+[MENU_EVENT_RECORD:|dwCommandId D
+[MESSAGE_RESOURCE_BLOCK:|LowId D|HighId D|OffsetToEntries D
+[MESSAGE_RESOURCE_DATA:|NumberOfBlocks D|Blocks.LowId D|Blocks.HighId D|Blocks.OffsetToEntries D
+[MESSAGE_RESOURCE_ENTRY:|Length1 W|Flags W|Text B
+[METAFILEPICT:|imm D|xExt D|yExt D|hMF D
+[METAHEADER:|mtType W|mtHeaderSize W|mtVersion W|mtSize D|mtNoObjects W|mtMaxRecord D|mtNoParameters W
+[METARECORD:|rdSize D|rdFunction W|rdParm1 W
+[MIDIEVENT:|dwDeltaTime D|dwStreamID D|dwEvent D|dwParms D
+[MIDIHDR:|lpData D|dwBufferiLength D|dwBytesRecorded D|dwUser D|dwFlags D|lpNext D|Reserved D|dwOffset D|dwReserved D 8
+[MIDIINCAPSA:|wMid W|wPid W|vDriverVersion D|szPname B MAXPNAMELEN|dwSupport D
+[MIDIOUTCAPSA:|wMid W|wPid W|vDriverVersion D|szPname B MAXPNAMELEN|wTechnology W|wVoices W|wNotes W|wChannelMask W|dwSupport D
+[MIDIPROPTEMPO:|cbStruct D|dwTempo D
+[MIDIPROPTIMEDIV:|cbStruct D|dwTimeDiv D
+[MIDISTRMBUFFVER:|dwVersion D|dwMid D|dwOEMVersion D
+[MINIMIZEDMETRICS:|cbSize D|iWidth D|iHorzGap D|iVertGap D|iArrange D
+[MINMAXINFO:|ptReserved.x D|ptReserved.y D|ptMaxSize.x D|ptMaxSize.y D|ptMaxPosition.x D|ptMaxPosition.y D|ptMinTrackSize.x D|ptMinTrackSize.y D|ptMaxTrackSize.x D|ptMaxTrackSize.y D
+[MIXERCAPSA:|wMid W|wPid W|vDriverVersion D|szPname B MAXPNAMELEN|fdwSupport D|cDestinations D
+[MIXERCONTROLA:|cbStruct D|dwControlID D|dwControlType D|fdwControl D|cMultipleItems D|szShortName B MIXER_SHORT_NAME_CHARS|szName B MIXER_LONG_NAME_CHARS|dwMinimum D|dwMaximum D|dwReserved D 4|cSteps::cbCustomData D|dwReserved D 5
+[MIXERCONTROLDETAILS:|cbStruct D|dwControlID D|cChannels D|hwndOwner::cMultipleItems D|cbDetails D|paDetails D
+[MIXERCONTROLDETAILS_BOOLEAN:|fValue D
+[MIXERCONTROLDETAILS_LISTTEXT:|dwParam1 D|dwParam2 D|szName B MIXER_LONG_NAME_CHARS
+[MIXERCONTROLDETAILS_LISTTEXTA:|dwParam1 D|dwParam2 D|szName B MIXER_LONG_NAME_CHARS
+[MIXERCONTROLDETAILS_SIGNED:|lValue D
+[MIXERCONTROLDETAILS_UNSIGNED:|dwValue D
+[MIXERLINEA:|cbStruct D|dwDestination D|dwSource D|dwLineID D|fdwLine D|dwUser D|dwComponentType D|cChannels D|cConnections D|cControls D|szShortName B MIXER_SHORT_NAME_CHARS|szName B MIXER_LONG_NAME_CHARS|TargetdwType D|TargetdwDeviceID D|TargetwMid W|TargetwPid W|TargetvDriverVersion D|TargetszPname B MAXPNAMELEN
+[MIXERLINECONTROLSA:|cbStruct D|dwLineID D|dwControlID::dwControlType D|cControls D|cbmxctrl D|pamxctrl D
+[MMCKINFO:|ckid D|ckSize D|fccType D|dwDataOffset D|dwFlags D
+[MMIOINFO:|dwFlags D|fccIOProc D|pIOProc D|wErrorRet D|htask D|cchBuffer D|pchBuffer D|pchNext D|pchEndRead D|pchEndWrite D|lBufOffset D|lDiskOffset D|adwInfo D 3|dwReserved1 D|dwReserved2 D|hmmio D
+[MMTIME:|wType D|u.midi1::smp::ms D|u.sample D|u.cb D|u.ticks D
+[MMUNION:|midi1::smp::ms D|sample D|cb D|ticks D
+[MODEMDEVCAPS:|dwActualSize D|dwRequiredSize D|dwDevSpecificOffset D|dwDevSpecificSize D|dwModemProviderVersion D|dwModemManufacturerOffset D|dwModemManufacturerSize D|dwModemModelOffset D|dwModemModelSize D|dwModemVersionOffset D|dwModemVersionSize D|dwDialOptions D|dwCallSetupFailTimer D|dwInactivityTimeout D|dwSpeakerVolume D|dwSpeakerMode D|dwModemOptions D|dwMaxDTERate D|dwMaxDCERate D|abVariablePortion B
+[MODEMSETTINGS:|dwActualSize D|dwRequiredSize D|dwDevSpecificOffset D|dwDevSpecificSize D|dwCallSetupFailTimer D|dwInactivityTimeout D|dwSpeakerVolume D|dwSpeakerMode D|dwPreferredModemOptions D|dwNegotiatedModemOptions D|dwNegotiatedDCERate D|abVariablePortion B
+[MODULEENTRY32:|dwSize D|th32ModuleID D|th32ProcessID D|GlblcntUsage D|ProccntUsage D|modBaseAddr D|modBaseSize D|hModule D|szModule B MAX_MODULE_NAME32+1|szExePath B MAX_PATH
+[MONCBSTRUCT:|cb D|dwTime D|htask D|dwRet D|wType D|wFmt D|hConv D|hsz1 D|hsz2 D|hData D|dwData1 D|dwData2 D|cc.cb D|cc.wFlags D|cc.wCountryID D|cc.iCodePage D|cc.dwLangID D|cc.dwSecurity D|cc.qos.iLength D|cc.qos.Impersonationlevel D|cc.qos.ContextTrackingMode B|cc.qos.EffectiveOnly B|cbData D|xData8 D
+[MONCONVSTRUCT:|cb D|fConnect D|dwTime D|htask D|hszSvc D|hszTopic D|hConvClient D|hConvServer D
+[MONERRSTRUCT:|cb D|wLastError D|dwTime D|htask D
+[MONHSZSTRUCTA:|cb D|fsAction D|dwTime D|hsz D|htask D|xstr B
+[MONITOR_INFO_1A:|pName D
+[MONITOR_INFO_2A:|pName D|pEnvironment D|pDLLName D
+[MONLINKSTRUCT:|cb D|dwTime D|htask D|fEstablished D|fNoData D|hszSvc D|hszTopic D|hszItem D|wFmt D|fServer D|hConvServer D|hConvClient D
+[MONMSGSTRUCT:|cb D|hwndTo D|dwTime D|htask D|wMsg D|wParam D|lParam D|dmhd.uiLo D|dmhd.uiHi D|dmhd.cbData D|dmhd.xData D 8
+[MOUSEHOOKSTRUCT:|pt.x D|pt.y D|hwnd D|wHitTestCode D|dwExtraInfo D
+[MOUSEINPUT:|dx D|dy D|mouseData D|dwFlags D|time D|dwExtraInfo D
+[MOUSEKEYS:|cbSize D|dwFlags D|iMaxSpeed D|iTimeToMaxSpeed D|iCtrlSpeed D|dwReserved1 D|dwReserved2 D
+[MOUSE_EVENT_RECORD:|dwMousePosition.x W|dwMousePosition.y W|dwButtonState D|dwControlKeyState D|dwEventFlags D
+[MSG:|hwnd D|message D|wParam D|lParam D|time D|pt.x D|pt.y D
+[MSGBOXPARAMSA:|cbSize D|hwndOwner D|hInstance D|lpszText D|lpszCaption D|dwStyle D|lpszIcon D|dwContextHelpId D|lpfnMsgBoxCallback D|dwLanguageId D
+[MSGFILTER:|nmhdr.hwndFrom D|nmhdr.idFrom D|nmhdr.code D|msg D|wParam D|lParam D
+[MSG_INFO_0:|msgi0_name D
+[MSG_INFO_1:|msgi1_name D|msgi1_forward_flag D|msgi1_forward D
+[MSLLHOOKSTRUCT:|pt D|mouseData D|flags D|time D|dwExtraInfo D
+[MTSID:|cb D|ab B
+[MULTIKEYHELPA:|mkSize D|mkKeylist B|szKeyphrase B
+[MULTI_QI:|pIID D|pItf D|hr D
+[MAPIFILEDESC:|ulReserved D|flFlags D|nPosition D|lpszPathName D|lpszFileName D|lpFileType D
+[MAPIFILETAGEXT:|ulReserved D|cbTag D|lpTag D|cbEncoding D|lpEncoding D
+[MAPIMESSAGE:|ulReserved D|lpszSubject D|lpszNoteText D|lpszMessageType D|lpszDateReceived D|lpszConversationID D|flFlags D|lpOriginator D|nRecipCount D|lpRecips D|nFileCount D|lpFiles D
+[MAPIRECIPDESC:|ulReserved D|ulRecipClass D|lpszName D|lpszAddress D|ulEIDSize D|lpEntryID D
+[NAME_BUFFER:|xname B NCBNAMSZ|name_num B|name_flags B
+[NCB:|ncb_command B|ncb_retcode B|ncb_lsn B|ncb_num B|ncb_buffer D|ncb_length W|ncb_callname B NCBNAMSZ|ncb_name B NCBNAMSZ|ncb_rto B|ncb_sto B|ncb_post D|ncb_lana_num B|ncb_cmd_cplt B|ncb_reserve B 10|ncb_event D
+[NCCALCSIZE_PARAMS:|rgrc D 6|lppos D
+[NDDESHAREINFO:|lRevision D|lpszShareName D|lShareType D|lpszAppTopicList D|fSharedFlag D|fService D|fStartAppFlag D|nCmdShow D|qModifyId D 2|cNumItems D|lpszItemList D
+[NETCONNECTINFOSTRUCT:|cbStructure D|dwFlags D|dwSpeed D|dwDelay D|dwOptDataSize D
+[NETINFOSTRUCT:|cbStructure D|dwProviderVersion D|dwStatus D|dwCharacteristics D|dwHandle D|wNetType W|dwPrinters D|dwDrives D
+[NETLOGON_INFO_1:|netlog1_flags D|netlog1_pdc_connection_status D
+[NETLOGON_INFO_2:|netlog2_flags D|netlog2_pdc_connection_status D|netlog2_trusted_dc_name D|netlog2_tc_connection_status D
+[NETLOGON_INFO_3:|netlog3_flags D|netlog3_logon_attempts D|netlog3_reserved1 D|netlog3_reserved2 D|netlog3_reserved3 D|netlog3_reserved4 D|netlog3_reserved5 D
+[NETLOGON_INFO_4:|netlog4_trusted_dc_name D|netlog4_trusted_domain_name D
+[NETRESOURCEA:|dwScope D|dwType D|dwDisplayType D|dwUsage D|lpLocalName D|lpRemoteName D|lpComment D|lpProvider D
+[NET_DISPLAY_GROUP:|grpi3_name D|grpi3_comment D|grpi3_group_id D|grpi3_attributes D|grpi3_next_index D
+[NET_DISPLAY_MACHINE:|usri2_name D|usri2_comment D|usri2_flags D|usri2_user_id D|usri2_next_index D
+[NET_DISPLAY_USER:|usri1_name D|usri1_comment D|usri1_flags D|usri1_full_name D|usri1_user_id D|usri1_next_index D
+[NEWCPLINFOA:|dwSize D|dwFlags D|dwHelpContext D|lData D|hIcon D|szName B 32|szInfo B 64|szHelpFile B 128
+[NEWHEADER:|Reserved W|ResType W|ResCount W
+[NEWMAIL_NOTIFICATION:|cbEntryID D|lpEntryID D|cbParentID D|lpParentID D|ulFlags D|lpszMessageClass D|ulMessageFlags D
+[NEWTEXTMETRICA:|tmHeight D|tmAscent D|tmDescent D|tmInternalLeading D|tmExternalLeading D|tmAveCharWidth D|tmMaxCharWidth D|tmWeight D|tmOverhang D|tmDigitizedAspectX D|tmDigitizedAspectY D|tmFirstChar B|tmLastChar B|tmDefaultChar B|tmBreakChar B|tmItalic B|tmUnderlined B|tmStruckOut B|tmPitchAndFamily B|tmCharSet B|ntmFlags D|ntmSizeEM D|ntmCellHeight D|ntmAveWidth D
+[NEWTEXTMETRICEXA:|ntmTm.tmHeight D|ntmTm.tmAscent D|ntmTm.tmDescent D|ntmTm.tmInternalLeading D|ntmTm.tmExternalLeading D|ntmTm.tmAveCharWidth D|ntmTm.tmMaxCharWidth D|ntmTm.tmWeight D|ntmTm.tmOverhang D|ntmTm.tmDigitizedAspectX D|ntmTm.tmDigitizedAspectY D|ntmTm.tmFirstChar B|ntmTm.tmLastChar B|ntmTm.tmDefaultChar B|ntmTm.tmBreakChar B|ntmTm.tmItalic B|ntmTm.tmUnderlined B|ntmTm.tmStruckOut B|ntmTm.tmPitchAndFamily B|ntmTm.tmCharSet B|ntmTm.ntmFlags D|ntmTm.ntmSizeEM D|ntmTm.ntmCellHeight D|ntmTm.ntmAveWidth D|ntmFontSig.fsUsb4 D 4|ntmFontSig.fsCsb2 D 2
+[NMHDR:|hwndFrom D|idFrom D|code D
+[NMHEADER:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|iItem D|iButton D|pitem D
+[NMMOUSE:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|dwItemSpec D|dwItemData D|pt.x D|pt.y D|dwHitInfo D
+[NMRBAUTOSIZE:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|fChanged D|rcTarget.left D|rcTarget.top D|rcTarget.right D|rcTarget.bottom D|rcActual.left D|rcActual.top D|rcActual.right D|rcActual.bottom D
+[NMREBAR:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|dwMask D|uBand D|fStyle D|wID D|lParam D
+[NMREBARCHILDSIZE:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|uBand D|wID D|rcChild.left D|rcChild.top D|rcChild.right D|rcChild.bottom D|rcBand.left D|rcBand.top D|rcBand.right D|rcBand.bottom D
+[NMTOOLBAR:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|iItem D|tbButton.iBitmap D|tbButton.idCommand D|tbButton.fsState B|tbButton.fsStyle B|tbButton._wPad1 W|tbButton.dwData D|tbButton.iString D|cchText D|pszText D
+[NMTTDISPINFO:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|lpszText D|szText B 80|hInst D|uFlags D|lParam D
+[NM_LISTVIEW:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|iItem D|iSubItem D|uNewState D|uOldState D|uChanged D|ptAction.x D|ptAction.y D|lParam D
+[NM_TREEVIEW:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|action D|itemOld.imask D|itemOld.hItem D|itemOld.state D|itemOld.stateMask D|itemOld.pszText D|itemOld.cchTextMax D|itemOld.iImage D|itemOld.iSelectedImage D|itemOld.cChildren D|itemOld.lParam D|itemNew.imask D|itemNew.hItem D|itemNew.state D|itemNew.stateMask D|itemNew.pszText D|itemNew.cchTextMax D|itemNew.iImage D|itemNew.iSelectedImage D|itemNew.cChildren D|itemNew.lParam D|ptDrag.x D|ptDrag.y D
+[NM_UPDOWN:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|iPos D|iDelta D
+[NONCLIENTMETRICSA:|cbSize D|iBorderWidth D|iScrollWidth D|iScrollHeight D|iCaptionWidth D|iCaptionHeight D|lfCaptionFont.lfHeight D|lfCaptionFont.lfWidth D|lfCaptionFont.lfEscapement D|lfCaptionFont.lfOrientation D|lfCaptionFont.lfWeight D|lfCaptionFont.lfItalic B|lfCaptionFont.lfUnderline B|lfCaptionFont.lfStrikeOut B|lfCaptionFont.lfCharSet B|lfCaptionFont.lfOutPrecision B|lfCaptionFont.lfClipPrecision B|lfCaptionFont.lfQuality B|lfCaptionFont.lfPitchAndFamily B|lfCaptionFont.lfFaceName B LF_FACESIZE|iSMCaptionWidth D|iSMCaptionHeight D|lfSMCaptionFont.lfHeight D|lfSMCaptionFont.lfWidth D|lfSMCaptionFont.lfEscapement D|lfSMCaptionFont.lfOrientation D|lfSMCaptionFont.lfWeight D|lfSMCaptionFont.lfItalic B|lfSMCaptionFont.lfUnderline B|lfSMCaptionFont.lfStrikeOut B|lfSMCaptionFont.lfCharSet B|lfSMCaptionFont.lfOutPrecision B|lfSMCaptionFont.lfClipPrecision B|lfSMCaptionFont.lfQuality B|lfSMCaptionFont.lfPitchAndFamily B|lfSMCaptionFont.lfFaceName B LF_FACESIZE|iMenuWidth D|iMenuHeight D|lfMenuFont.lfHeight D|lfMenuFont.lfWidth D|lfMenuFont.lfEscapement D|lfMenuFont.lfOrientation D|lfMenuFont.lfWeight D|lfMenuFont.lfItalic B|lfMenuFont.lfUnderline B|lfMenuFont.lfStrikeOut B|lfMenuFont.lfCharSet B|lfMenuFont.lfOutPrecision B|lfMenuFont.lfClipPrecision B|lfMenuFont.lfQuality B|lfMenuFont.lfPitchAndFamily B|lfMenuFont.lfFaceName B LF_FACESIZE|lfStatusFont.lfHeight D|lfStatusFont.lfWidth D|lfStatusFont.lfEscapement D|lfStatusFont.lfOrientation D|lfStatusFont.lfWeight D|lfStatusFont.lfItalic B|lfStatusFont.lfUnderline B|lfStatusFont.lfStrikeOut B|lfStatusFont.lfCharSet B|lfStatusFont.lfOutPrecision B|lfStatusFont.lfClipPrecision B|lfStatusFont.lfQuality B|lfStatusFont.lfPitchAndFamily B|lfStatusFont.lfFaceName B LF_FACESIZE|lfMessageFont.lfHeight D|lfMessageFont.lfWidth D|lfMessageFont.lfEscapement D|lfMessageFont.lfOrientation D|lfMessageFont.lfWeight D|lfMessageFont.lfItalic B|lfMessageFont.lfUnderline B|lfMessageFont.lfStrikeOut B|lfMessageFont.lfCharSet B|lfMessageFont.lfOutPrecision B|lfMessageFont.lfClipPrecision B|lfMessageFont.lfQuality B|lfMessageFont.lfPitchAndFamily B|lfMessageFont.lfFaceName B LF_FACESIZE
+[NORMALMENUITEM:|resInfo W|menuText D
+[NOTIFICATION:|ulEventType D|err::newmail::obj::tab::ext::statobj D
+[NOTIFKEY:|cb D|ab B
+[NOTIFYICONDATAA:|cbSize D|hwnd D|uID D|uFlags D|uCallbackMessage D|hIcon D|szTip B 64
+[NRESARRAY:|cItems D|nr.dwScope D|nr.dwType D|nr.dwDisplayType D|nr.dwUsage D|nr.lpLocalName D|nr.lpRemoteName D|nr.lpComment D|nr.lpProvider D
+[NS_SERVICE_INFO:|dwNameSpace D|lpServiceType D|lpServiceName D|lpComment D|lpLocale D|dwDisplayHint D|dwVersion D|dwTime D|lpMachineName D|lpServiceAddress D|BLOB_cbSize D|BLOB_pBlobData D
+[NT_TIB:|ExceptionList D|StackBase D|StackLimit D|SubSystemTib D|FiberData::Version D|ArbitraryUserPointer D|Self D
+[NUMBERFMTA:|NumDigits D|LeadingZero D|Grouping D|lpDecimalSep D|lpThousandSep D|NegativeOrder D
+[OBJECTDESCRIPTOR:|cbSize D|CLSID_Data1 D|CLSID_Data2 W|CLSID_Data3 W|CLSID_Data4 B 8|dwDrawAspect D|sizel D|POINTL_x D|POINTL_y D|dwStatus D|dwFullUserTypeName D|dwSrcOfCopy D
+[OBJECTID:|Lineage.Data1 D|Lineage.Data2 W|Lineage.Data3 W|Lineage.Data4 B 8|Uniquifier D
+[OBJECT_NOTIFICATION:|cbEntryID D|lpEntryID D|ulObjType D|cbParentID D|lpParentID D|cbOldID D|lpOldID D|cbOldParentID D|lpOldParentID D|lpPropTagArray D
+[OBJECT_TYPE_LIST:|Level W|Sbz W|ObjectType D
+[OCPFIPARAMS:|cbStructSize D|hWndOwner D|x D|y D|lpszCaption D|cObjects D|lplpUnk D|cPages D|lpPages D|lcid D|dispIDInitialProperty D
+[OEMPENINFO:|wPdt D|wValueMax D|wDistinct D
+[OEM_PENPACKET:|wTabletX D|wTabletY D|wPDK D|rgwOemData D MAXOEMDATAWORDS|dwTime D
+[OFNOTIFY:|NMHDR_hwndFrom D|NMHDR_idFrom D|NMHDR_code D|lpOFN D|pszFile D
+[OFSTRUCT:|cBytes B|fFixedDisk B|nErrCode W|Reserved1 W|Reserved2 W|szPathName B OFS_MAXPATHNAME
+[OLEINPLACEFRAMEINFO:|cb D|fMDIApp D|hwndFrame D|haccel D|cAccelEntries D
+[OLEMENUGROUPWIDTHS:|width D 6
+[OLEUIBUSY:|cbStruct D|dwFlags D|hWndOwner D|lpszCaption D|lpfnHook D|lCustData D|hInstance D|lpszTemplate D|hResource D|hTask D|lphWndDialog D
+[OLEUICHANGEICON:|cbStruct D|dwFlags D|hWndOwner D|lpszCaption D|lpfnHook D|lCustData D|hInstance D|lpszTemplate D|hResource D|hMetaPict D|CLSID_Data1 D|CLSID_Data2 W|CLSID_Data3 W|CLSID_Data4 B 8|szIconExe B OLEUI_CCHPATHMAX|cchIconExe D
+[OLEUICHANGESOURCE:|cbStruct D|dwFlags D|hWndOwner D|lpszCaption D|lpfnHook D|lCustData D|hInstance D|lpszTemplate D|hResource D|dwReserved1 D 4|lpOleUILinkContainer D|dwLink D|lpszDisplayName D|nFileLength D|lpszFrom D|lpszTo D
+[OLEUICONVERT:|cbStruct D|dwFlags D|hWndOwner D|lpszCaption D|lpfnHook D|lCustData D|hInstance D|lpszTemplate D|hResource D|CLSID_Data1 D|CLSID_Data2 W|CLSID_Data3 W|CLSID_Data4 B 8|CLSIDCONVERT_Data1 D|CLSIDCONVERT_Data2 W|CLSIDCONVERT_Data3 W|CLSIDCONVERT_Data4 B 8|CLSIDACTIVATE_Data1 D|CLSIDACTIVATE_Data2 W|CLSIDACTIVATE_Data3 W|CLSIDACTIVATE_Data4 B 8|CLSIDNEW_Data1 D|CLSIDNEW_Data2 W|CLSIDNEW_Data3 W|CLSIDNEW_Data4 B 8|dvAspect D|wFormat W|fIsLinkedObject D|hMetaPict D|lpszUserType D|fObjectsIconChanged D|lpszDefLabel D|cClsidExclude D|lpClsidExclude D
+[OLEUIEDITLINKS:|cbStruct D|dwFlags D|hWndOwner D|lpszCaption D|lpfnHook D|lCustData D|hInstance D|lpszTemplate D|hResource D|lpOleUILinkContainer D
+[OLEUIGNRLPROPS:|cbStruct D|dwFlags D|dwReserved1 D 2|lpfnHook D|lCustData D|dwReserved2 D 3|lpOP D
+[OLEUIINSERTOBJECT:|cbStruct D|dwFlags D|hWndOwner D|lpszCaption D|lpfnHook D|lCustData D|hInstance D|lpszTemplate D|hResource D|CLSID_Data1 D|CLSID_Data2 W|CLSID_Data3 W|CLSID_Data4 B 8|lpszFile D|cchFile D|cClsidExclude D|lpClsidExclude D|iid D|oleRender D|lpFormatEtc D|lpIOleClientSite D|lpIStorage D|ppvObj D|sc D|hMetaPict D
+[OLEUILINKPROPS:|cbStruct D|dwFlags D|dwReserved1 D 2|lpfnHook D|lCustData D|dwReserved2 D 3|lpOP D
+[OLEUIOBJECTPROPS:|cbStruct D|dwFlags D|lpPS D|dwObject D|lpObjInfo D|dwLink D|lpLinkInfo D|lpGP D|lpVP D|lpLP D
+[OLEUIPASTEENTRY:|FORMATETC_cfFormat D|FORMATETC_ptd D|FORMATETC_dwAspect D|FORMATETC_lindex D|FORMATETC_tymed D|lpstrFormatName D|lpstrResultText D|dwFlags D|dwScratchSpace D
+[OLEUIPASTESPECIAL:|cbStruct D|dwFlags D|hWndOwner D|lpszCaption D|lpfnHook D|lCustData D|hInstance D|lpszTemplate D|hResource D|lpSrcDataObj D|arrPasteEntries D|cPasteEntries D|arrLinkTypes D|cLinkTypes D|cClsidExclude D|lpClsidExclude D|nSelectedIndex D|fLink D|hMetaPict D|sizel D
+[OLEUIVIEWPROPS:|cbStruct D|dwFlags D|dwReserved1 D 2|lpfnHook D|lCustData D|dwReserved2 D 3|lpOP D|nScaleMin D|nScaleMax D
+[OLEVERB:|lVerb D|lpszVerbName D|fuFlags D|grfAttribs D
+[OPENFILENAMEA:|lStructSize D|hwndOwner D|hInstance D|lpstrFilter D|lpstrCustomFilter D|nMaxCustFilter D|nFilterIndex D|lpstrFile D|nMaxFile D|lpstrFileTitle D|nMaxFileTitle D|lpstrInitialDir D|lpstrTitle D|Flags D|nFileOffset W|nFileExtension W|lpstrDefExt D|lCustData D|lpfnHook D|lpTemplateName D
+[OPTIONDATA:|ulFlags D|lpRecipGUID D|lpszAdrType D|lpszDLLName D|ulOrdinal D|cbOptionsData D|lpbOptionsData D|cOptionsProps D|lpOptionsProps D
+[OSVERSIONINFOA:|dwOSVersionInfoSize D|dwMajorVersion D|dwMinorVersion D|dwBuildNumber D|dwPlatformId D|szCSDVersion B 128
+[OUTLINETEXTMETRICA:|otmSize D|otmTextMetrics.tmHeight D|otmTextMetrics.tmAscent D|otmTextMetrics.tmDescent D|otmTextMetrics.tmInternalLeading D|otmTextMetrics.tmExternalLeading D|otmTextMetrics.tmAveCharWidth D|otmTextMetrics.tmMaxCharWidth D|otmTextMetrics.tmWeight D|otmTextMetrics.tmOverhang D|otmTextMetrics.tmDigitizedAspectX D|otmTextMetrics.tmDigitizedAspectY D|otmTextMetrics.tmFirstChar B|otmTextMetrics.tmLastChar B|otmTextMetrics.tmDefaultChar B|otmTextMetrics.tmBreakChar B|otmTextMetrics.tmItalic B|otmTextMetrics.tmUnderlined B|otmTextMetrics.tmStruckOut B|otmTextMetrics.tmPitchAndFamily B|otmTextMetrics.tmCharSet B|otmFiller B|otmPanoseNumber.bFamilyType B|otmPanoseNumber.bSerifStyle B|otmPanoseNumber.bWeight B|otmPanoseNumber.bProportion B|otmPanoseNumber.bContrast B|otmPanoseNumber.bStrokeVariation B|otmPanoseNumber.bArmStyle B|otmPanoseNumber.bLetterform B|otmPanoseNumber.bMidline B|otmPanoseNumber.bXHeight B|otmfsSelection D|otmfsType D|otmsCharSlopeRise D|otmsCharSlopeRun D|otmItalicAngle D|otmEMSquare D|otmAscent D|otmDescent D|otmLineGap D|otmsCapEmHeight D|otmsXHeight D|otmrcFontBox.left D|otmrcFontBox.top D|otmrcFontBox.right D|otmrcFontBox.bottom D|otmMacAscent D|otmMacDescent D|otmMacLineGap D|otmusMinimumPPEM D|otmptSubscriptSize.x D|otmptSubscriptSize.y D|otmptSubscriptOffset.x D|otmptSubscriptOffset.y D|otmptSuperscriptSize.x D|otmptSuperscriptSize.y D|otmptSuperscriptOffset.x D|otmptSuperscriptOffset.y D|otmsStrikeoutSize D|otmsStrikeoutPosition D|otmsUnderscoreSize D|otmsUnderscorePosition D|otmpFamilyName D|otmpFaceName D|otmpStyleName D|otmpFullName D
+[OUTPUT_DEBUG_STRING_INFO:|lpDebugStringData D|fUnicode W|nDebugStringiLength W
+[OVERLAPPED:|Internal D|InternalHigh D|loffset D|OffsetHigh D|hEvent D
+[PACKEDEVENTINFO:|ulSize D|ulNumEventsForLogFile D|ulOffsets D
+[PAGESETUPDLGA:|lStructSize D|hwndOwner D|hDevMode D|hDevNames D|Flags D|ptPaperSize.x D|ptPaperSize.y D|rtMinMargin.left D|rtMinMargin.top D|rtMinMargin.right D|rtMinMargin.bottom D|rtMargin.left D|rtMargin.top D|rtMargin.right D|rtMargin.bottom D|hInstance D|lCustData D|lpfnPageSetupHook D|lpfnPagePaintHook D|lpPageSetupTemplateName D|hPageSetupTemplate D
+[PAINTSTRUCT:|hdc D|fErase D|rcPaint.left D|rcPaint.top D|rcPaint.right D|rcPaint.bottom D|fRestore D|fIncUpdate D|rgbReserved B 32
+[PALETTEENTRY:|peRed B|peGreen B|peBlue B|peFlags B
+[PANOSE:|bFamilyType B|bSerifStyle B|bWeight B|bProportion B|bContrast B|bStrokeVariation B|bArmStyle B|bLetterform B|bMidline B|bXHeight B
+[PARAFORMAT2:|cbSize D|dwMask D|wNumbering W|wEffects W|dxStartIndent D|dxRightIndent D|dxOffset D|wAlignment W|cTabCount W|rgxTabs D MAX_TAB_STOPS|dySpaceBefore D|dySpaceAfter D|dyLineSpacing D|sStyle W|bLineSpacingRule B|bOutlineLevel B|wShadingWeight W|wShadingStyle W|wNumberingStart W|wNumberingStyle W|wNumberingTab W|wBorderSpace W|wBorderWidth W|wBorders W
+[PARAFORMAT:|cbSize D|dwMask D|wNumbering W|wEffects W|dxStartIndent D|dxRightIndent D|dxOffset D|wAlignment W|cTabCount W|rgxTabs D MAX_TAB_STOPS
+[PARTITION_INFORMATION:|StartingOffset D|PartitionLength D|HiddenSectors D|PartitionNumber D|PartitionType D|BootIndicator D|RecognizedPartition D|RewritePartition D
+[PCMINFO:|cbSize D|dwPcm D|RECTBOUND_left D|RECTBOUND_top D|RECTBOUND_right D|RECTBOUND_bottom D|RECTEXCLUDE_left D|RECTEXCLUDE_top D|RECTEXCLUDE_right D|RECTEXCLUDE_bottom D|hrgnBound D|hrgnExclude D|dwTimeout D
+[PCMWAVEFORMAT:|wf.wFormatTag W|wf.nChannels W|wf.nSamplesPerSec D|wf.nAvgBytesPerSec D|wf.nBlockAlign W|wBitsPerSample W
+[PDEVENT:|cbSize D|hwnd D|wm D|wParam D|lParam D|POINT_x D|POINT_y D|fPen D|lExInfo D|dwReserved D
+[PDH_BROWSE_DLG_CONFIG:|bIncludeInstanceIndex D|bSingleCounterPerAdd D|bSingleCounterPerDialog D|bLocalCountersOnly D|bWildCardInstances D|bHideDetailBox D|bInitializePath D|bReserved D 25|hWndOwner D|szReserved D|szReturnPathBuffer D|cchReturnPathLength D|pCallBack D|dwCallBackArg D|CallBackStatus D|dwDefaultDetailLevel D|szDialogBoxCaption D
+[PDH_COUNTER_INFO:|dwLength D|dwType D|CVersion D|CStatus D|lScale D|lDefaultScale D|dwUserData D|dwQueryUserData D|szFullPath D|szMachineName D|szObjectName D|szInstanceName D|szParentInstance D|dwInstanceIndex D|szCounterName D|szExplainText D|DataBuffer D
+[PDH_COUNTER_PATH_ELEMENTS:|szMachineName D|szObjectName D|szInstanceName D|szParentInstance D|dwInstanceIndex D|szCounterName D
+[PDH_FMT_COUNTERVALUE:|CStatus D|longValue::doubleValue::largeValue Q
+[PDH_RAW_COUNTER:|CStatus D|FILETIME_dwLowDateTime D|FILETIME_dwHighDateTime D|FirstValue Q|SecondValue Q|MultiCount D
+[PDH_STATISTICS:|dwFormat D|count D|min D|max D|mean D
+[PELARRAY:|paXCount D|paYCount D|paXExt D|paYExt D|paRGBs B
+[PENDATAHEADER:|wVersion D|cbSizeUsed D|cStrokes D|cPnt D|cPntStrokeMax D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D|wPndts D|nInkWidth D|rgbInk D
+[PENINFO:|cxRawWidth D|cyRawHeight D|wDistinctWidth D|wDistinctHeight D|nSamplingRate D|nSamplingDist D|lPdc D|cPens D|cbOemData D|OEMPENINFO_wPdt D MAXOEMDATAWORDS|OEMPENINFO_wValueMax D MAXOEMDATAWORDS|OEMPENINFO_wDistinct D MAXOEMDATAWORDS|rgwReserved D 7|fuOEM D
+[PENPACKET:|wTabletX D|wTabletY D|wPDK D|rgwOemData D MAXOEMDATAWORDS
+[PENTIP:|cbSize D|btype B|bwidth B|bheight B|bOpacity B|rgb D|dwFlags D|dwReserved D
+[PERF_COUNTER_BLOCK:|ByteiLength D
+[PERF_COUNTER_DEFINITION:|ByteiLength D|CounterNameTitleIndex D|CounterNameTitle D|CounterHelpTitleIndex D|CounterHelpTitle D|DefaultScale D|DetailLevel D|CounterType D|CounterSize D|CounterOffset D
+[PERF_DATA_BLOCK:|Signature W 4|LittleEndian D|Version D|Revision D|TotalByteiLength D|HeaderiLength D|NumObjectTypes D|DefaultObject D|SystemTime.wYear W|SystemTime.wMonth W|SystemTime.wDayOfWeek W|SystemTime.wDay W|SystemTime.wHour W|SystemTime.wMinute W|SystemTime.wSecond W|SystemTime.wMilliseconds W|Padding D|PerfTime.QuadPart Q|PerfFreq.QuadPart Q|PerTime100nSec.QuadPart Q|SystemNameiLength D|SystemNameOffset D
+[PERF_INSTANCE_DEFINITION:|ByteiLength D|ParentObjectTitleIndex D|ParentObjectInstance D|UniqueID D|NameOffset D|NameiLength D
+[PERF_OBJECT_TYPE:|TotalByteiLength D|DefinitioniLength D|HeaderiLength D|ObjectNameTitleIndex D|ObjectNameTitle D|ObjectHelpTitleIndex D|ObjectHelpTitle D|DetailLevel D|NumCounters D|DefaultCounter D|NumInstances D|CodePage D|PerfTime.QuadPart Q|PerfFreq.QuadPart Q
+[PHONEBUTTONINFO:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwButtonMode D|dwButtonFunction D|dwButtonTextSize D|dwButtonTextOffset D|dwDevSpecificSize D|dwDevSpecificOffset D|dwButtonState D
+[PHONECAPS:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwProviderInfoSize D|dwProviderInfoOffset D|dwPhoneInfoSize D|dwPhoneInfoOffset D|dwPermanentPhoneID D|dwPhoneNameSize D|dwPhoneNameOffset D|dwStringFormat D|dwPhoneStates D|dwHookSwitchDevs D|dwHandsetHookSwitchModes D|dwSpeakerHookSwitchModes D|dwHeadsetHookSwitchModes D|dwVolumeFlags D|dwGainFlags D|dwDisplayNumRows D|dwDisplayNumColumns D|dwNumRingModes D|dwNumButtonLamps D|dwButtonModesSize D|dwButtonModesOffset D|dwButtonFunctionsSize D|dwButtonFunctionsOffset D|dwLampModesSize D|dwLampModesOffset D|dwNumSetData D|dwSetDataSize D|dwSetDataOffset D|dwNumGetData D|dwGetDataSize D|dwGetDataOffset D|dwDevSpecificSize D|dwDevSpecificOffset D|dwDeviceClassesSize D|dwDeviceClassesOffset D|dwPhoneFeatures D|dwSettableHandsetHookSwitchModes D|dwSettableSpeakerHookSwitchModes D|dwSettableHeadsetHookSwitchModes D|dwMonitoredHandsetHookSwitchModes D|dwMonitoredSpeakerHookSwitchModes D|dwMonitoredHeadsetHookSwitchModes D
+[PHONEEXTENSIONID:|dwExtensionID0 D|dwExtensionID1 D|dwExtensionID2 D|dwExtensionID3 D
+[PHONEINITIALIZEEXPARAMS:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwOptions D|hEvent::hCompletionPort D|dwCompletionKey D
+[PHONEMESSAGE:|hDevice D|dwMessageID D|dwCallbackInstance D|dwParam1 D|dwParam2 D|dwParam3 D
+[PHONESTATUS:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwStatusFlags D|dwNumOwners D|dwNumMonitors D|dwRingMode D|dwRingVolume D|dwHandsetHookSwitchMode D|dwHandsetVolume D|dwHandsetGain D|dwSpeakerHookSwitchMode D|dwSpeakerVolume D|dwSpeakerGain D|dwHeadsetHookSwitchMode D|dwHeadsetVolume D|dwHeadsetGain D|dwDisplaySize D|dwDisplayOffset D|dwLampModesSize D|dwLampModesOffset D|dwOwnerNameSize D|dwOwnerNameOffset D|dwDevSpecificSize D|dwDevSpecificOffset D|dwPhoneFeatures D
+[PICTDESC:|cbSizeOfStruct D|picType D|hbitmap::hmeta::hicon::hemf D|hpal::xExt D|yExt D
+[PIXELFORMATDESCRIPTOR:|nSize W|nVersion W|dwFlags D|iPixelType B|cColorBits B|cRedBits B|cRedShift B|cGreenBits B|cGreenShift B|cBlueBits B|cBlueShift B|cAlphaBits B|cAlphaShift B|cAccumBits B|cAccumRedBits B|cAccumGreenBits B|cAccumBlueBits B|cAccumAlphaBits B|cDepthBits B|cStencilBits B|cAuxBuffers B|iLayerType B|bReserved B|dwLayerMask D|dwVisibleMask D|dwDamageMask D
+[POINT:|x D|y D
+[POINTF:|x F|y F
+[POINTFLOAT:|x F|y F
+[POINTFX:|x.fract W|x.Value W|y.fract W|y.Value W
+[POINTL:|x D|y D
+[POINTS:|x W|y W
+[POLYTEXTA:|x D|y D|n D|lpStr D|uiFlags D|icl.left D|icl.top D|icl.right D|icl.bottom D|pdx D
+[PORT_INFO_1A:|pName D
+[PORT_INFO_2A:|pPortName D|pMonitorName D|pDescription D|fPortType D|Reserved D
+[PORT_INFO_3:|dwStatus D|pszStatus D|dwSeverity D
+[POWER_DEVICE_TIMEOUTS:|ConservationIdleTime D|PerformanceIdleTime D
+[PREVENT_MEDIA_REMOVAL:|PreventMediaRemoval D
+[PRINTDLGA:|lStructSize D|hwndOwner D|hDevMode D|hDevNames D|hDC D|Flags D|nFromPage W|nToPage W|nMinPage W|nMaxPage W|nCopies W|hInstance D|lCustData D|lpfnPrintHook D|lpfnSetupHook D|lpPrintTemplateName D|lpPrintSetupTemplateName D|hPrintTemplate D|hSetupTemplate D
+[PRINTER_DEFAULTSA:|pDatatype D|pDevMode D|DesiredAccess D
+[PRINTER_INFO_1A:|flags D|pDescription D|pName D|pComment D
+[PRINTER_INFO_2A:|pServerName D|pPrinterName D|pShareName D|pPortName D|pDriverName D|pComment D|pLocation D|pDevMode D|pSepFile D|pPrintProcessor D|pDatatype D|pParameters D|pSecurityDescriptor D|Attributes D|Priority D|DefaultPriority D|StartTime D|UntilTime D|Status D|cJobs D|AveragePPM D
+[PRINTER_INFO_3:|pSecurityDescriptor D
+[PRINTER_INFO_4A:|pPrinterName D|pServerName D|Attributes D
+[PRINTER_INFO_4A:|pPrinterName D|pServerName D|Attributes D
+[PRINTER_INFO_5A:|pPrinterName D|pPortName D|Attributes D|DeviceNotSelectedTimeout D|TransmissionRetryTimeout D
+[PRINTER_INFO_6:|dwStatus D
+[PRINTER_NOTIFY_INFO:|Version D|Flags D|Count D|Type W|Field W|Reserved D|Id D|adwData D 2
+[PRINTER_NOTIFY_INFO_DATA:|Type W|Field W|Reserved D|Id D|adwData D 2
+[PRINTER_NOTIFY_OPTIONS:|Version D|Flags D|Count D|Type W|Reserved0 W|Reserved1 D|Reserved2 D|Count D|pFields D
+[PRINTER_NOTIFY_OPTIONS_TYPE:|Type W|Reserved0 W|Reserved1 D|Reserved2 D|Count D|pFields D
+[PRINTPROCESSOR_INFO_1A:|pName D
+[PRINT_OTHER_INFO:|alrtpr_jobid D|alrtpr_status D|alrtpr_submitted D|alrtpr_size D
+[PRIVILEGE_SET:|PrivilegeCount D|Control D|Privilege.Luid.LowPart D|Privilege.Luid.HighPart D|Privilege.Attributes D
+[PROCESSENTRY32:|dwSize D|cntUsage D|th32ProcessID D|th32DefaultHeapID D|th32ModuleID D|cntThreads D|th32ParentProcessID D|pcPriClassBase D|dwFlags D|szExeFile B MAX_PATH
+[PROCESS_HEAP_ENTRY:|lpData D|cbData D|cbOverhead B|iRegionIndex B|wFlags W|hMem::dwCommittedSize D|dwReserved:: D|lpFirstBlock D|lpLastBlock D
+[PROCESS_INFORMATION:|hProcess D|hThread D|dwProcessId D|dwThreadId D
+[PROPBAG2:|dwType D|vt D|cfType D|dwHint D|pstrName D|CLSID_Data1 D|CLSID_Data2 W|CLSID_Data3 W|CLSID_Data4 B 8
+[PROPPAGEINFO:|cb D|pszTitle D|size D|pszDocString D|pszHelpFile D|dwHelpContext D
+[PROPSHEETHEADERA:|dwSize D|dwFlags D|hwndParent D|hInstance D|hIcon::pszIcon D|pszCaption D|nPages D|nStartPage::pStartPage D|ppsp::phpage D|pfnCallback D|hbmWatermark::pszbmWatermark D|hplWatermark D|hbmHeader::pszbmHeader D
+[PROPSHEETPAGEA:|dwSize D|dwFlags D|hInstance D|pszTemplate::pResource D|hIcon::pszIcon D|pszTitle D|pfnDlgProc D|lParam D|pfnCallback D|pcRefParent D|pszHeaderTitle D|pszHeaderSubTitle D
+[PROPSPEC:|ulKind D|propid::lpwstr D
+[PROPVARIANT:|vt D|wReserved1 W|wReserved2 W|wReserved3 W|Any D
+[PROTOCOL_INFO:|dwServiceFlags D|iAddressFamily D|iMaxSockAddr D|iMinSockAddr D|iSocketType D|iProtocol D|dwMessageSize D|lpProtocol D
+[PROVIDOR_INFO_1A:|pName D|pEnvironment D|pDLLName D
+[PSHNOTIFY:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|lParam D
+[PUBLISHEDAPPINFO:|pwszFileExtension D|pwszDisplayName D|pwszPackagePath D
+[PUNCTUATION:|iSize D|szPunctuation D
+[POPUPMENUITEM:|type D|state D|id D|resInfo W|menuText D
+[QACONTAINER:|cbSize D|pClientSite D|pAdviseSink D|pPropertyNotifySink D|pUnkEventSink D|dwAmbientFlags D|colorFore D|colorBack D|pFont D|pUndoMgr D|dwAppearance D|lcid D|hpal D|pBindHost D
+[QACONTROL:|cbSize D|dwMiscStatus D|dwViewStatus D|dwEventCookie D|dwPropNotifyCookie D|dwPointerActivationPolicy D
+[QUERYCONTEXT:|dwContext D|Platform.dwPlatformId D|Platform.dwVersionHi D|Platform.dwVersionLo D|Platform.dwProcessorArch D|Locale D|dwVersionHi D|dwVersionLo D
+[QUERY_SERVICE_CONFIGA:|dwServiceType D|dwStartType D|dwErrorControl D|lpBinaryPathName D|lpLoadOrderGroup D|dwTagId D|lpDependencies D|lpServiceStartName D|lpDisplayName D
+[QUERY_SERVICE_LOCK_STATUSA:|fIsLocked D|lpLockOwner D|dwLockDuration D
+[RASADPARAMS:|dwSize D|hwndOwner D|dwFlags D|xDlg D|yDlg D
+[RASAMBA:|dwSize D|dwError D|szNetBiosError B NETBIOS_NAME_LEN + 1|bLana B
+[RASAUTODIALENTRY:|dwSize D|dwFlags D|dwDialingLocation D|szEntry B RAS_MAXENTRYNAME+1
+[RASCONNA:|dwSize D|hrasconn D|szEntryName B RAS_MAXENTRYNAME+1|szDeviceType B RAS_MAXDEVICETYPE+1|szDeviceName B RAS_MAXDEVICENAME+1
+[RASCONNSTATUSA:|dwSize D|rasconnstate D|dwError D|szDeviceType B RAS_MAXDEVICETYPE+1|szDeviceName B RAS_MAXDEVICENAME+1
+[RASCREDENTIALS:|dwSize D|dwMask D|szUserName B UNLEN+1|szPassword B PWLEN+1|szDomain B DNLEN+1
+[RASCTRYINFO:|dwSize D|dwCountryID D|dwNextCountryID D|dwCountryCode D|dwCountryNameOffset D
+[RASDEVINFOA:|dwSize D|szDeviceType B RAS_MAXDEVICETYPE+1|szDeviceName B RAS_MAXDEVICENAME+1
+[RASDIALDLG:|dwSize D|hwndOwner D|dwFlags D|xDlg D|yDlg D|dwSubEntry D|dwError D|reserved D|reserved2 D
+[RASDIALEXTENSIONS:|dwSize D|dwfOptions D|hwndParent D|reserved D
+[RASDIALPARAMSA:|dwSize D|szEntryName B RAS_MAXENTRYNAME+1|szPhoneNumber B RAS_MAXPHONENUMBER+1|szCallbackNumber B RAS_MAXCALLBACKNUMBER+1|szUserName B UNLEN+1|szPassword B PWLEN+1|szDomain B DNLEN+1
+[RASENTRYA:|dwSize D|dwfOptions D|dwCountryID D|dwCountryCode D|szAreaCode B RAS_MAXAREACODE+1|szLocalPhoneNumber B RAS_MAXPHONENUMBER+1|dwAlternateOffset D|ipaddr._a B|ipaddr._b B|ipaddr._c B|ipaddr._d B|ipaddrDns._a B|ipaddrDns._b B|ipaddrDns._c B|ipaddrDns._d B|ipaddrDnsAlt._a B|ipaddrDnsAlt._b B|ipaddrDnsAlt._c B|ipaddrDnsAlt._d B|ipaddrWins._a B|ipaddrWins._b B|ipaddrWins._c B|ipaddrWins._d B|ipaddrWinsAlt._a B|ipaddrWinsAlt._b B|ipaddrWinsAlt._c B|ipaddrWinsAlt._d B|dwFrameSize D|dwfNetProtocols D|dwFramingProtocol D|szScript B MAX_PATH|szAutodialDll B MAX_PATH|szAutodialFunc B MAX_PATH|szDeviceType B RAS_MAXDEVICETYPE+1|szDeviceName B RAS_MAXDEVICENAME+1|szX25PadType B RAS_MAXPADTYPE+1|szX25Address B RAS_MAXX25ADDRESS+1|szX25Facilities B RAS_MAXFACILITIES+1|szX25UserData B RAS_MAXUSERDATA+1|dwChannels D|dwReserved1 D|dwReserved2 D
+[RASENTRYDLGA:|dwSize D|hwndOwner D|dwFlags D|xDlg D|yDlg D|szEntry B RAS_MAXENTRYNAME+1|dwError D|reserved D|reserved2 D
+[RASENTRYNAMEA:|dwSize D|szEntryName B RAS_MAXENTRYNAME+1
+[RASIPADDR:|_a B|_b B|_c B|_d B
+[RASMONITORDLG:|dwSize D|hwndOwner D|dwFlags D|dwStartPage D|xDlg D|yDlg D|dwError D|reserved D|reserved2 D
+[RASNOUSERA:|dwSize D|dwFlags D|dwTimeoutMs D|szUserName B UNLEN+1|szPassword B PWLEN+1|szDomain B DNLEN+1
+[RASPBDLGA:|dwSize D|hwndOwner D|dwFlags D|xDlg D|yDlg D|dwCallbackId D|pCallback D|dwError D|reserved D|reserved2 D
+[RASPPPIPA:|dwSize D|dwError D|szIpAddress B RAS_MAXIPADDRESS+1|szServerIpAddress B RAS_MAXIPADDRESS+1
+[RASPPPIPXA:|dwSize D|dwError D|szIpxAddress B RAS_MAXIPADDRESS+1
+[RASPPPLCP:|dwSize D|fBundled D
+[RASPPPNBFA:|dwSize D|dwError D|dwNetBiosError D|szNetBiosError B NETBIOS_NAME_LEN+1|szWorkstationName B NETBIOS_NAME_LEN+1|bLana B
+[RASSLIPA:|dwSize D|dwError D|szIpAddress B RAS_MAXIPADDRESS+1
+[RASSUBENTRY:|dwSize D|dwfFlags D|szDeviceType B RAS_MAXDEVICETYPE+1|szDeviceName B RAS_MAXDEVICENAME+1|szLocalPhoneNumber B RAS_MAXPHONENUMBER+1|dwAlternateOffset D
+[RASTERIZER_STATUS:|nSize W|wFlags W|nLanguageID W
+[RAS_PARAMETERS:|P_Key B RASSAPI_MAX_PARAM_KEY_SIZE|P_Type D|P_Attributes B|P_Value::Number::StringiLength D|StringData D
+[RAS_PARAMS_VALUE:|Number::Length D|Data D
+[RAS_PORT_0:|wszPortName W RASSAPI_MAX_PORT_NAME|wszDeviceType W RASSAPI_MAX_DEVICETYPE_NAME|wszDeviceName W RASSAPI_MAX_DEVICE_NAME|wszMediaName W RASSAPI_MAX_MEDIA_NAME|reserved D|Flags D|wszUserName W UNLEN+1|wszComputer W NETBIOS_NAME_LEN|dwStartSessionTime D|wszLogonDomain W DNLEN+1|fAdvancedServer D
+[RAS_PORT_1:|rasport0.wszPortName W RASSAPI_MAX_PORT_NAME|rasport0.wszDeviceType W RASSAPI_MAX_DEVICETYPE_NAME|rasport0.wszDeviceName W RASSAPI_MAX_DEVICE_NAME|rasport0.wszMediaName W RASSAPI_MAX_MEDIA_NAME|rasport0.reserved D|rasport0.Flags D|rasport0.wszUserName W UNLEN+1|rasport0.wszComputer W NETBIOS_NAME_LEN|rasport0.dwStartSessionTime D|rasport0.wszLogonDomain W DNLEN+1|rasport0.fAdvancedServer D|LineCondition D|HardwareCondition D|LineSpeed D|NumStatistics W|NumMediaParms W|SizeMediaParms D|ProjResult.nbf.dwError D|ProjResult.nbf.dwNetBiosError D|ProjResult.nbf.szName B NETBIOS_NAME_LEN+1|ProjResult.nbf.wszWksta W NETBIOS_NAME_LEN+1|ProjResult.ip.dwError D|ProjResult.ip.wszAddress W RAS_IPADDRESSLEN+1|ProjResult.ipx.dwError D|ProjResult.ipx.wszAddress W RAS_IPXADDRESSLEN+1|ProjResult.at.dwError D|ProjResult.at.wszAddress W RAS_ATADDRESSLEN+1
+[RAS_PORT_STATISTICS:|dwBytesXmited D|dwBytesRcved D|dwFramesXmited D|dwFramesRcved D|dwCrcErr D|dwTimeoutErr D|dwAlignmentErr D|dwHardwareOverrunErr D|dwFramingErr D|dwBufferOverrunErr D|dwBytesXmitedUncompressed D|dwBytesRcvedUncompressed D|dwBytesXmitedCompressed D|dwBytesRcvedCompressed D|dwPortBytesXmited D|dwPortBytesRcved D|dwPortFramesXmited D|dwPortFramesRcved D|dwPortCrcErr D|dwPortTimeoutErr D|dwPortAlignmentErr D|dwPortHardwareOverrunErr D|dwPortFramingErr D|dwPortBufferOverrunErr D|dwPortBytesXmitedUncompressed D|dwPortBytesRcvedUncompressed D|dwPortBytesXmitedCompressed D|dwPortBytesRcvedCompressed D
+[RAS_PPP_ATCP_RESULT:|dwError D|wszAddress W RAS_ATADDRESSLEN+1
+[RAS_PPP_IPCP_RESULT:|dwError D|wszAddress W RAS_IPADDRESSLEN+1
+[RAS_PPP_IPXCP_RESULT:|dwError D|wszAddress W RAS_IPXADDRESSLEN+1
+[RAS_PPP_NBFCP_RESULT:|dwError D|dwNetBiosError D|szName B NETBIOS_NAME_LEN+1|wszWksta W NETBIOS_NAME_LEN+1
+[RAS_PPP_PROJECTION_RESULT:|nbf.dwError D|nbf.dwNetBiosError D|nbf.szName B NETBIOS_NAME_LEN+1|nbf.wszWksta W NETBIOS_NAME_LEN+1|ip.dwError D|ip.wszAddress W RAS_IPADDRESSLEN+1|ipx.dwError D|ipx.wszAddress W RAS_IPXADDRESSLEN+1|at.dwError D|at.wszAddress W RAS_ATADDRESSLEN+1
+[RAS_SECURITY_INFO:|LastError D|BytesReceived D|DeviceName B RASSAPI_MAX_DEVICE_NAME+1
+[RAS_SERVER_0:|TotalPorts W|PortsInUse W|RasVersion D
+[RAS_USER_0:|bfPrivilege B|szPhoneNumber W RASSAPI_MAX_PHONENUMBER_SIZE+1
+[RBHITTESTINFO:|pt.x D|pt.y D|flags D|iBand D
+[RC:|hrec D|hwnd D|wEventRef D|wRcPreferences D|lRcOptions D|lpfnYield D|lpUser B CBRCUSERMAX|wCountry D|wIntlPreferences D|lpLanguage B CBRCLANGUAGEMAX|rglpdf D MAXDICTIONARIES|wTryDictionary D|clErrorLevel D|alc D|alcPriority D|rgbfAlc D CBRCRGBFALCMAX|wResultMode D|wTimeOut D|lPcm D|RECTBOUND_left D|RECTBOUND_top D|RECTBOUND_right D|RECTBOUND_bottom D|RECTEXCLUDE_left D|RECTEXCLUDE_top D|RECTEXCLUDE_right D|RECTEXCLUDE_bottom D|GUIDE_xOrigin D|GUIDE_yOrigin D|GUIDE_cxBox D|GUIDE_cyBox D|GUIDE_cxBase D|GUIDE_cyBase D|GUIDE_cHorzBox D|GUIDE_cVertBox D|GUIDE_cyMid D|wRcOrient D|wRcDirect D|nInkWidth D|rgbInk D|dwAppParam D|dwDictParam D|dwRecognizer D|rgwReserved D CWRCRESERVEDMAX
+[RCRESULT:|rgpntHotSpotsXY Q MAXHOTSPOT|cHotSpot D|nFirstBox D|lRecogVal D|lpsye D|cSye D|lpsyc D|cSyc D|syv D|lRecogVal D|cl D|iSyc D|wStrokeFirst D|wPntFirst D|wStrokeLast D|wPntLast D|fLastSyc D|wResultsType D|cSyv D|lpsyv D|hSyv D|nBaseLine D|nMidLine D|hpendata D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D|POINT_x D|POINT_y D|lprc D
+[REASSIGN_BLOCKS:|Reserved W|Count W|BlockNumber D
+[REBARBANDINFO:|cbSize D|fMask D|fStyle D|clrFore D|clrBack D|lpText D|cch D|iImage D|hwndChild D|cxMinChild D|cyMinChild D|lx D|hbmBack D|wID D|cyChild D|cyMaxChild D|cyIntegral D|cxIdeal D|lParam D|cxHeader D
+[REBARINFO:|cbSize D|fMask D|himl D
+[RECT:|left D|top D|right D|bottom D
+[RECTL:|left Q|top Q|right Q|bottom Q
+[RECTOFS:|dLeft D|dTop D|dRight D|dBottom D
+[REGISTERWORD:|lpReading D|lpWord D
+[REMOTE_NAME_INFO:|lpUniversalName D|lpConnectionName D|lpRemainingPath D
+[REOBJECT:|cbStruct D|cp D|clsid D|poleobj D|pstg D|polesite D|sizel D|dvaspect D|dwFlags D|dwUser D
+[REPARSE_DATA_BUFFER:|ReparseTag D|ReparseDataLength W|Reserved W|SymbolicLinkReparseBufferSubstituteNameOffset::MountPointReparseBufferSubstituteNameOffset::GenericReparseBufferDataBuffer W|SymbolicLinkReparseBufferSubstituteNameLength::MountPointReparseBufferSubstituteNameLength W|SymbolicLinkReparseBufferPrintNameOffset::MountPointReparseBufferPrintNameOffset W|SymbolicLinkReparseBufferPrintNameLength::MountPointReparseBufferPrintNameLength W|SymbolicLinkReparseBufferPathBuffer::MountPointReparseBufferPathBuffer W
+[REPARSE_GUID_DATA_BUFFER:|ReparseTag D|ReparseDataLength W|Reserved W|ReparseGuid.Data1 D|ReparseGuid.Data2 W|ReparseGuid.Data3 W|ReparseGuid.Data4 B 8|GenericReparseBufferDataBuffer B
+[REPARSE_POINT_INFORMATION:|ReparseDataLength W|UnparsedNameLength W
+[REPASTESPECIAL:|dwAspect D|dwParam D
+[REPL_EDIR_INFO_0:|rped0_dirname D
+[REPL_EDIR_INFO_1000:|rped1000_integrity D
+[REPL_EDIR_INFO_1001:|rped1001_extent D
+[REPL_EDIR_INFO_1:|rped1_dirname D|rped1_integrity D|rped1_extent D
+[REPL_EDIR_INFO_2:|rped2_dirname D|rped2_integrity D|rped2_extent D|rped2_lockcount D|rped2_locktime D
+[REPL_IDIR_INFO_0:|rpid0_dirname D
+[REPL_IDIR_INFO_1:|rpid1_dirname D|rpid1_state D|rpid1_mastername D|rpid1_last_update_time D|rpid1_lockcount D|rpid1_locktime D
+[REPL_INFO_0:|rp0_role D|rp0_exportpath D|rp0_exportlist D|rp0_importpath D|rp0_importlist D|rp0_logonusername D|rp0_interval D|rp0_pulse D|rp0_guardtime D|rp0_random D
+[REPL_INFO_1000:|rp1000_interval D
+[REPL_INFO_1001:|rp1001_pulse D
+[REPL_INFO_1002:|rp1002_guardtime D
+[REPL_INFO_1003:|rp1003_random D
+[REQRESIZE:|nmhdr.hwndFrom D|nmhdr.idFrom D|nmhdr.code D|rc.left D|rc.top D|rc.right D|rc.bottom D
+[RESDIR:|CURSORDIR_Width::ICONRESDIR_Width B|ICONRESDIR_Height B|CURSORDIR_Height::ICONRESDIR_ColorCount B|ICONRESDIR_reserved B|Planes W|BitCount W|BytesInRes D|IconCursorId W
+[RESOURCEHEADER:|DataSize D|HeaderSize D|DataVersion D|MemoryFlags W|LanguageId W|Version D|Characteristics D
+[RFC1157VARBIND:|name D|value D
+[RFC1157VARBINDLIST:|list D|len D
+[RGBQUAD:|rgbBlue B|rgbGreen B|rgbRed B|rgbReserved B
+[RGBTRIPLE:|rgbtBlue B|rgbtGreen B|rgbtRed B
+[RGNDATA:|rdh.dwSize D|rdh.iType D|rdh.nCount D|rdh.nRgnSize D|rdh.rcBound.left D|rdh.rcBound.top D|rdh.rcBound.right D|rdh.rcBound.bottom D|Buffer B
+[RGNDATAHEADER:|dwSize D|iType D|nCount D|nRgnSize D|rcBound.left D|rcBound.top D|rcBound.right D|rcBound.bottom D
+[RIP_INFO:|dwError D|dwType D
+[RPC_BINDING_VECTOR:|Count D|BindingH D
+[RPC_IF_ID:|UUID_Data1 D|UUID_Data2 W|UUID_Data3 W|UUID_Data4 B 8|VersMajor W|VersMinor W
+[RPC_IF_ID_VECTOR:|Count D|UUID_Data1 D|UUID_Data2 W|UUID_Data3 W|UUID_Data4 B 8|VersMajor W|VersMinor W
+[RPC_POLICY:|Length D|EndpointFlags D|NICFlags D
+[RPC_PROTSEQ_VECTOR:|Count D|Protseq B
+[RPC_STATS_VECTOR:|Count D|Stats D
+[RTL_CRITICAL_SECTION:|DebugInfo D|LockCount Q|RecursionCount Q|OwningThread D|LockSemaphore D|SpinCount D
+[RTL_CRITICAL_SECTION_DEBUG:|Type1 W|CreatorBackTraceIndex W|CriticalSection D|ProcessLocksList.Flink D|ProcessLocksList.Blink D|EntryCount D|ContentionCount D|Spare D 2
+[REMHBITMAP:|cbData D|data B
+[REMHBRUSH:|cbData D|data B
+[REMHENHMETAFILE:|cbData D|data B
+[REMHGLOBAL:|fNullHGlobal D|cbData D|data B
+[REMHMETAFILEPICT:|imm D|xExt D|yExt D|cbData D|data B
+[REMHPALETTE:|cbData D|data B
+[REMSNB:|ulCntStr D|ulCntChar D|Any D
+[REMOTABLEHANDLE:|fContext D|hInproc::hRemote D
+[SAANDRESTRICTION:|cRes D|lpRes D
+[SAPPTIMEARRAY:|cValues D|lpat D
+[SBINARY:|cb D|lpb D
+[SBINARYARRAY:|cValues D|lpbin D
+[SBIRMASKRESTRICTION:|relBMR D|ulPropTag D|ulMask D
+[SCROLLINFO:|cbSize D|fMask D|nMin D|nMax D|nPage D|nPos D|nTrackPos D
+[SCOMMENTRESTRICTION:|cValues D|lpRes D|lpProp D
+[SCOMPAREPROPSRESTRICTION:|relop D|ulPropTag1 D|ulPropTag2 D
+[SCONTENTRESTRICTION:|ulFuzzyLevel D|ulPropTag D|lpProp D
+[SCURRENCYARRAY:|cValues D|lpcur D
+[SDATETIMEARRAY:|cValues D|lpft D
+[SDOUBLEARRAY:|cValues D|lpdbl D
+[SECURITY_ATTRIBUTES:|nLength D|lpSecurityDescriptor D|bInheritHandle D
+[SECURITY_DESCRIPTOR:|Revision B|Sbz1 B|Control W|Owner D|lGroup D|Sacl D|Dacl D
+[SECURITY_DESCRIPTOR_RELATIVE:|Revision B|Sbz1 B|Control1 W|Owner D|Group1 D|Sacl D|Dacl D
+[SECURITY_MESSAGE:|dwMsgId D|hPort D|dwError D|UserName B UNLEN+1|Domain B DNLEN+1
+[SECURITY_QUALITY_OF_SERVICE:|iLength D|Impersonationlevel D|ContextTrackingMode B|EffectiveOnly B
+[SEC_WINNT_AUTH_IDENTITY:|User W|UserLength D|Domain W|DomainLength D|Password W|PasswordLength D|Flags D
+[SEC_WINNT_AUTH_IDENTITY_WIN3X:|User W|UserLength D|Domain W|DomainLength D|Password W|PasswordLength D|Flags D
+[SELCHANGE:|nmhdr.hwndFrom D|nmhdr.idFrom D|nmhdr.code D|chrg.cpMin D|chrg.cpMax D|seltyp W
+[SERIALKEYSA:|cbSize D|dwFlags D|lpszActivePort D|lpszPort D|iBaudRate D|iPortState D|iActive D
+[SERVER_INFO_1005:|sv1005_comment D
+[SERVER_INFO_100:|sv100_platform_id D|sv100_name D
+[SERVER_INFO_1010:|sv1010_disc D
+[SERVER_INFO_1016:|sv1016_hidden D
+[SERVER_INFO_1017:|sv1017_announce D
+[SERVER_INFO_1018:|sv1018_anndelta D
+[SERVER_INFO_101:|sv101_platform_id D|sv101_name D|sv101_version_major D|sv101_version_minor D|sv101_type D|sv101_comment D
+[SERVER_INFO_102:|sv102_platform_id D|sv102_name D|sv102_version_major D|sv102_version_minor D|sv102_type D|sv102_comment D|sv102_users D|sv102_disc D|sv102_hidden D|sv102_announce D|sv102_anndelta D|sv102_licenses D|sv102_userpath D
+[SERVER_INFO_1107:|sv1107_users D
+[SERVER_INFO_1501:|sv1501_sessopens D
+[SERVER_INFO_1502:|sv1502_sessvcs D
+[SERVER_INFO_1503:|sv1503_opensearch D
+[SERVER_INFO_1506:|sv1506_maxworkitems D
+[SERVER_INFO_1509:|sv1509_maxrawbuflen D
+[SERVER_INFO_1510:|sv1510_sessusers D
+[SERVER_INFO_1511:|sv1511_sessconns D
+[SERVER_INFO_1512:|sv1512_maxnonpagedmemoryusage D
+[SERVER_INFO_1513:|sv1513_maxpagedmemoryusage D
+[SERVER_INFO_1514:|sv1514_enablesoftcompat D
+[SERVER_INFO_1515:|sv1515_enableforcedlogoff D
+[SERVER_INFO_1516:|sv1516_timesource D
+[SERVER_INFO_1518:|sv1518_lmannounce D
+[SERVER_INFO_1520:|sv1520_maxcopyreadlen D
+[SERVER_INFO_1521:|sv1521_maxcopywritelen D
+[SERVER_INFO_1522:|sv1522_minkeepsearch D
+[SERVER_INFO_1523:|sv1523_maxkeepsearch D
+[SERVER_INFO_1524:|sv1524_minkeepcomplsearch D
+[SERVER_INFO_1525:|sv1525_maxkeepcomplsearch D
+[SERVER_INFO_1528:|sv1528_scavtimeout D
+[SERVER_INFO_1529:|sv1529_minrcvqueue D
+[SERVER_INFO_1530:|sv1530_minfreeworkitems D
+[SERVER_INFO_1533:|sv1533_maxmpxct D
+[SERVER_INFO_1534:|sv1534_oplockbreakwait D
+[SERVER_INFO_1535:|sv1535_oplockbreakresponsewait D
+[SERVER_INFO_1536:|sv1536_enableoplocks D
+[SERVER_INFO_1537:|sv1537_enableoplockforceclose D
+[SERVER_INFO_1538:|sv1538_enablefcbopens D
+[SERVER_INFO_1539:|sv1539_enableraw D
+[SERVER_INFO_1540:|sv1540_enablesharednetdrives D
+[SERVER_INFO_1541:|sv1541_minfreeconnections D
+[SERVER_INFO_1542:|sv1542_maxfreeconnections D
+[SERVER_INFO_1543:|sv1543_initsesstable D
+[SERVER_INFO_1544:|sv1544_initconntable D
+[SERVER_INFO_1545:|sv1545_initfiletable D
+[SERVER_INFO_1546:|sv1546_initsearchtable D
+[SERVER_INFO_1547:|sv1547_alertschedule D
+[SERVER_INFO_1548:|sv1548_errorthreshold D
+[SERVER_INFO_1549:|sv1549_networkerrorthreshold D
+[SERVER_INFO_1550:|sv1550_diskspacethreshold D
+[SERVER_INFO_1552:|sv1552_maxlinkdelay D
+[SERVER_INFO_1553:|sv1553_minlinkthroughput D
+[SERVER_INFO_1554:|sv1554_linkinfovalidtime D
+[SERVER_INFO_1555:|sv1555_scavqosinfoupdatetime D
+[SERVER_INFO_1556:|sv1556_maxworkitemidletime D
+[SERVER_INFO_1557:|sv1557_maxrawworkitems D
+[SERVER_INFO_1560:|sv1560_producttype D
+[SERVER_INFO_1561:|sv1561_serversize D
+[SERVER_INFO_1562:|sv1562_connectionlessautodisc D
+[SERVER_INFO_1563:|sv1563_sharingviolationretries D
+[SERVER_INFO_1564:|sv1564_sharingviolationdelay D
+[SERVER_INFO_1565:|sv1565_maxglobalopensearch D
+[SERVER_INFO_1566:|sv1566_removeduplicatesearches D
+[SERVER_INFO_1567:|sv1567_lockviolationretries D
+[SERVER_INFO_1568:|sv1568_lockviolationoffset D
+[SERVER_INFO_1569:|sv1569_lockviolationdelay D
+[SERVER_INFO_1570:|sv1570_mdlreadswitchover D
+[SERVER_INFO_1571:|sv1571_cachedopenlimit D
+[SERVER_INFO_1572:|sv1572_criticalthreads D
+[SERVER_INFO_1573:|sv1573_restrictnullsessaccess D
+[SERVER_INFO_1574:|sv1574_enablewfw311directipx D
+[SERVER_INFO_1575:|sv1575_otherqueueaffinity D
+[SERVER_INFO_1576:|sv1576_queuesamplesecs D
+[SERVER_INFO_1577:|sv1577_balancecount D
+[SERVER_INFO_1578:|sv1578_preferredaffinity D
+[SERVER_INFO_1579:|sv1579_maxfreerfcbs D
+[SERVER_INFO_1580:|sv1580_maxfreemfcbs D
+[SERVER_INFO_1581:|sv1581_maxfreemlcbs D
+[SERVER_INFO_1582:|sv1582_maxfreepagedpoolchunks D
+[SERVER_INFO_1583:|sv1583_minpagedpoolchunksize D
+[SERVER_INFO_1584:|sv1584_maxpagedpoolchunksize D
+[SERVER_INFO_1585:|sv1585_sendsfrompreferredprocessor D
+[SERVER_INFO_1586:|sv1586_maxthreadsperqueue D
+[SERVER_INFO_1587:|sv1587_cacheddirectorylimit D
+[SERVER_INFO_1588:|sv1588_maxcopylength D
+[SERVER_INFO_1589:|sv1589_enablebulktransfer D
+[SERVER_INFO_1590:|sv1590_enablecompression D
+[SERVER_INFO_1591:|sv1591_autosharewks D
+[SERVER_INFO_1592:|sv1592_autosharewks D
+[SERVER_INFO_1593:|sv1593_enablesecuritysignature D
+[SERVER_INFO_1594:|sv1594_requiresecuritysignature D
+[SERVER_INFO_1595:|sv1595_minclientbuffersize D
+[SERVER_INFO_1596:|sv1596_ConnectionNoSessionsTimeout D
+[SERVER_INFO_402:|sv402_ulist_mtime D|sv402_glist_mtime D|sv402_alist_mtime D|sv402_alerts D|sv402_security D|sv402_numadmin D|sv402_lanmask D|sv402_guestacct D|sv402_chdevs D|sv402_chdevq D|sv402_chdevjobs D|sv402_connections D|sv402_shares D|sv402_openfiles D|sv402_sessopens D|sv402_sessvcs D|sv402_sessreqs D|sv402_opensearch D|sv402_activelocks D|sv402_numreqbuf D|sv402_sizreqbuf D|sv402_numbigbuf D|sv402_numfiletasks D|sv402_alertsched D|sv402_erroralert D|sv402_logonalert D|sv402_accessalert D|sv402_diskalert D|sv402_netioalert D|sv402_maxauditsz D|sv402_srvheuristics D
+[SERVER_INFO_403:|sv403_ulist_mtime D|sv403_glist_mtime D|sv403_alist_mtime D|sv403_alerts D|sv403_security D|sv403_numadmin D|sv403_lanmask D|sv403_guestacct D|sv403_chdevs D|sv403_chdevq D|sv403_chdevjobs D|sv403_connections D|sv403_shares D|sv403_openfiles D|sv403_sessopens D|sv403_sessvcs D|sv403_sessreqs D|sv403_opensearch D|sv403_activelocks D|sv403_numreqbuf D|sv403_sizreqbuf D|sv403_numbigbuf D|sv403_numfiletasks D|sv403_alertsched D|sv403_erroralert D|sv403_logonalert D|sv403_accessalert D|sv403_diskalert D|sv403_netioalert D|sv403_maxauditsz D|sv403_srvheuristics D|sv403_auditedevents D|sv403_autoprofile D|sv403_autopath D
+[SERVER_INFO_502:|sv502_sessopens D|sv502_sessvcs D|sv502_opensearch D|sv502_sizreqbuf D|sv502_initworkitems D|sv502_maxworkitems D|sv502_rawworkitems D|sv502_irpstacksize D|sv502_maxrawbuflen D|sv502_sessusers D|sv502_sessconns D|sv502_maxpagedmemoryusage D|sv502_maxnonpagedmemoryusage D|sv502_enablesoftcompat D|sv502_enableforcedlogoff D|sv502_timesource D|sv502_acceptdownlevelapis D|sv502_lmannounce D
+[SERVER_INFO_503:|sv503_sessopens D|sv503_sessvcs D|sv503_opensearch D|sv503_sizreqbuf D|sv503_initworkitems D|sv503_maxworkitems D|sv503_rawworkitems D|sv503_irpstacksize D|sv503_maxrawbuflen D|sv503_sessusers D|sv503_sessconns D|sv503_maxpagedmemoryusage D|sv503_maxnonpagedmemoryusage D|sv503_enablesoftcompat D|sv503_enableforcedlogoff D|sv503_timesource D|sv503_acceptdownlevelapis D|sv503_lmannounce D|sv503_domain D|sv503_maxcopyreadlen D|sv503_maxcopywritelen D|sv503_minkeepsearch D|sv503_maxkeepsearch D|sv503_minkeepcomplsearch D|sv503_maxkeepcomplsearch D|sv503_threadcountadd D|sv503_numblockthreads D|sv503_scavtimeout D|sv503_minrcvqueue D|sv503_minfreeworkitems D|sv503_xactmemsize D|sv503_threadpriority D|sv503_maxmpxct D|sv503_oplockbreakwait D|sv503_oplockbreakresponsewait D|sv503_enableoplocks D|sv503_enableoplockforceclose D|sv503_enablefcbopens D|sv503_enableraw D|sv503_enablesharednetdrives D|sv503_minfreeconnections D|sv503_maxfreeconnections D
+[SERVER_INFO_598:|sv598_maxrawworkitems D|sv598_maxthreadsperqueue D|sv598_producttype D|sv598_serversize D|sv598_connectionlessautodisc D|sv598_sharingviolationretries D|sv598_sharingviolationdelay D|sv598_maxglobalopensearch D|sv598_removeduplicatesearches D|sv598_lockviolationoffset D|sv598_lockviolationdelay D|sv598_mdlreadswitchover D|sv598_cachedopenlimit D|sv598_otherqueueaffinity D|sv598_restrictnullsessaccess D|sv598_enablewfw311directipx D|sv598_queuesamplesecs D|sv598_balancecount D|sv598_preferredaffinity D|sv598_maxfreerfcbs D|sv598_maxfreemfcbs D|sv598_maxfreelfcbs D|sv598_maxfreepagedpoolchunks D|sv598_minpagedpoolchunksize D|sv598_maxpagedpoolchunksize D|sv598_sendsfrompreferredprocessor D|sv598_cacheddirectorylimit D|sv598_maxcopylength D|sv598_enablebulktransfer D|sv598_enablecompression D|sv598_autosharewks D|sv598_autoshareserver D|sv598_enablesecuritysignature D|sv598_requiresecuritysignature D|sv598_minclientbuffersize D|sv598_serverguid.Data1 D|sv598_serverguid.Data2 W|sv598_serverguid.Data3 W|sv598_serverguid.Data4 B 8|sv598_ConnectionNoSessionsTimeout D
+[SERVER_INFO_599:|sv599_sessopens D|sv599_sessvcs D|sv599_opensearch D|sv599_sizreqbuf D|sv599_initworkitems D|sv599_maxworkitems D|sv599_rawworkitems D|sv599_irpstacksize D|sv599_maxrawbuflen D|sv599_sessusers D|sv599_sessconns D|sv599_maxpagedmemoryusage D|sv599_maxnonpagedmemoryusage D|sv599_enablesoftcompat D|sv599_enableforcedlogoff D|sv599_timesource D|sv599_acceptdownlevelapis D|sv599_lmannounce D|sv599_domain D|sv599_maxcopyreadlen D|sv599_maxcopywritelen D|sv599_minkeepsearch D|sv599_maxkeepsearch D|sv599_minkeepcomplsearch D|sv599_maxkeepcomplsearch D|sv599_threadcountadd D|sv599_numblockthreads D|sv599_scavtimeout D|sv599_minrcvqueue D|sv599_minfreeworkitems D|sv599_xactmemsize D|sv599_threadpriority D|sv599_maxmpxct D|sv599_oplockbreakwait D|sv599_oplockbreakresponsewait D|sv599_enableoplocks D|sv599_enableoplockforceclose D|sv599_enablefcbopens D|sv599_enableraw D|sv599_enablesharednetdrives D|sv599_minfreeconnections D|sv599_maxfreeconnections D|sv599_initsesstable D|sv599_initconntable D|sv599_initfiletable D|sv599_initsearchtable D|sv599_alertschedule D|sv599_errorthreshold D|sv599_networkerrorthreshold D|sv599_diskspacethreshold D|sv599_reserved D|sv599_maxlinkdelay D|sv599_minlinkthroughput D|sv599_linkinfovalidtime D|sv599_scavqosinfoupdatetime D|sv599_maxworkitemidletime D
+[SERVER_TRANSPORT_INFO_0:|svti0_numberofvcs D|svti0_transportname D|svti0_transportaddress D|svti0_transportaddresslength D|svti0_networkaddress D
+[SERVER_TRANSPORT_INFO_1:|svti1_numberofvcs D|svti1_transportname D|svti1_transportaddress D|svti1_transportaddresslength D|svti1_networkaddress D|svti1_domain D
+[SERVER_TRANSPORT_INFO_2:|svti2_numberofvcs D|svti2_transportname D|svti2_transportaddress D|svti2_transportaddresslength D|svti2_networkaddress D|svti2_domain D|svti2_flags D
+[SERVICE_ADDRESS:|dwAddressType D|dwAddressFlags D|dwAddressLength D|dwPrincipalLength D|lpAddress B|lpPrincipal B
+[SERVICE_ADDRESSES:|dwAddressCount D|dwAddressType D|dwAddressFlags D|dwAddressLength D|dwPrincipalLength D|lpAddress B|lpPrincipal B
+[SERVICE_INFO:|lpServiceType D|lpServiceName D|lpComment D|lpLocale D|dwDisplayHint D|dwVersion D|dwTime D|lpMachineName D|lpServiceAddress D|BLOB_cbSize D|BLOB_pBlobData D
+[SERVICE_INFO_0:|svci0_name D
+[SERVICE_INFO_1:|svci1_name D|svci1_status D|svci1_code D|svci1_pid D
+[SERVICE_INFO_2:|svci2_name D|svci2_status D|svci2_code D|svci2_pid D|svci2_text D|svci2_specific_error D|svci2_display_name D
+[SERVICE_STATUS:|dwServiceType D|dwCurrentState D|dwControlsAccepted D|dwWin32ExitCode D|dwServiceSpecificExitCode D|dwCheckPoint D|dwWaitHint D
+[SERVICE_TABLE_ENTRYA:|lpServiceName D|lpServiceProc D
+[SERVICE_TYPE_INFO_ABS:|lpTypeName D|dwValueCount D|dwNameSpace D|dwValueType D|dwValueSize D|lpValueName D|lpValue D
+[SERVICE_TYPE_VALUE_ABS:|dwNameSpace D|dwValueType D|dwValueSize D|lpValueName D|lpValue D
+[SESSION_BUFFER:|lsn B|State B|local_name B NCBNAMSZ|remote_name B NCBNAMSZ|rcvs_outstanding B|sends_outstanding B
+[SESSION_HEADER:|sess_name B|num_sess B|rcv_dg_outstanding B|rcv_any_outstanding B
+[SESSION_INFO_0:|sesi0_cname D
+[SESSION_INFO_10:|sesi10_cname D|sesi10_username D|sesi10_time D|sesi10_idle_time D
+[SESSION_INFO_1:|sesi1_cname D|sesi1_username D|sesi1_num_opens D|sesi1_time D|sesi1_idle_time D|sesi1_user_flags D
+[SESSION_INFO_2:|sesi2_cname D|sesi2_username D|sesi2_num_opens D|sesi2_time D|sesi2_idle_time D|sesi2_user_flags D|sesi2_cltype_name D
+[SESSION_INFO_502:|sesi502_cname D|sesi502_username D|sesi502_num_opens D|sesi502_time D|sesi502_idle_time D|sesi502_user_flags D|sesi502_cltype_name D|sesi502_transport D
+[SETTEXTEX:|flags D|codepage D
+[SET_PARTITION_INFORMATION:|PartitionType B
+[SEXISTRESTRICTION:|ulReserved1 D|ulPropTag D|ulReserved2 D
+[SGUIDARRAY:|cValues D|lpguid D
+[SHARE_INFO_0:|shi0_netname D
+[SHARE_INFO_1004:|shi1004_remark D
+[SHARE_INFO_1005:|shi1005_flags D
+[SHARE_INFO_1006:|shi1006_max_uses D
+[SHARE_INFO_1007:|shi1007_flags D|shi1007_AlternateDirectoryName D
+[SHARE_INFO_1501:|shi1501_reserved D|shi1501_security_descriptor D
+[SHARE_INFO_1:|shi1_netname D|shi1_type D|shi1_remark D
+[SHARE_INFO_2:|shi2_netname D|shi2_type D|shi2_remark D|shi2_permissions D|shi2_max_uses D|shi2_current_uses D|shi2_path D|shi2_passwd D
+[SHARE_INFO_501:|shi501_netname D|shi501_type D|shi501_remark D|shi501_flags D
+[SHARE_INFO_502:|shi502_netname D|shi502_type D|shi502_remark D|shi502_permissions D|shi502_max_uses D|shi502_current_uses D|shi502_path D|shi502_passwd D|shi502_reserved D|shi502_security_descriptor D
+[SHDESCRIPTIONID:|dwDescriptionId D|clsid.Data1 D|clsid.Data2 W|clsid.Data3 W|clsid.Data4 B 8
+[SHELLEXECUTEINFOA:|cbSize D|fMask D|hwnd D|lpVerb D|lpFile D|lpParameters D|lpDirectory D|nShow D|hInstApp D|lpIDList D|lpClass D|hkeyClass D|dwHotKey D|hIcon::hMonitor D|hProcess D
+[SHFILEINFOA:|hIcon D|iIcon D|dwAttributes D|szDisplayName B MAX_PATH|szTypeName B 80
+[SHFILEOPSTRUCTA:|hwnd D|wFunc D|pFrom D|pTo D|fFlags W|fAnyOperationsAborted D|hNameMappings D|lpszProgressTitle D
+[SHITEMID:|cb W|abID B
+[SHITEMID:|cb W
+[SHNAMEMAPPINGA:|pszOldPath D|pszNewPath D|cchOldPath D|cchNewPath D
+[SHQUERYRBINFO:|cbSize D|i64Size Q|i64NumItems Q
+[SID:|Revision B|SubAuthorityCount B|IdentifierAuthority.Value B 6|SubAuthority D
+[SID_AND_ATTRIBUTES:|Sid D|Attributes D
+[SID_IDENTIFIER_AUTHORITY:|Value B 6
+[SID_IDENTIFIER_AUTHORITY:|Value B 6
+[SINGLE_LIST_ENTRY:|Next D
+[SIZE:|x D|y D
+[SIZEL:|x D|y D
+[SKBINFO:|hwnd D|nPad D|fVisible D|fMinimized D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D|dwReserved D
+[SLPSTRArray:|cValues D|lppszA D
+[SLARGEINTEGERARRAY:|cValues D|lpli D
+[SLONGARRAY:|cValues D|lpl D
+[SMALL_RECT:|Left W|Top W|Right W|Bottom W
+[SMAPIFORMINFOARRAY:|cForms D|aFormInfo D
+[SMAPIFORMPROP:|ulFlags D|nPropType D|nmid.lpguid D|nmid.ulKind D|nmid.KindlID::KindlpwstrName D|pszDisplayName D|nSpecialType D|slnmidIdxlpguid D|slnmidIdxulKind D|slnmidIdxKindlID::slKindlpwstrName D|slcfpevAvailable D|slpfpevAvailable D
+[SMAPIFORMPROPARRAY:|cProps D|ulPad D|aFormProp.pszDisplayName D|aFormProp.nVal D
+[SMAPIFORMPROPENUMVAL:|pszDisplayName D|nVal D
+[SMAPIVERB:|lVerb D|szVerbname D|fuFlags D|grfAttribs D|ulFlags D
+[SMAPIVERBARRAY:|cMAPIVerb D|aMAPIVerb.lVerb D|aMAPIVerb.szVerbname D|aMAPIVerb.fuFlags D|aMAPIVerb.grfAttribs D|aMAPIVerb.ulFlags D
+[SMESSAGECLASSARRAY:|cValues D|aMessageClass D
+[SNOTRESTRICTION:|ulReserved D|lpRes D
+[SOARCINFO:|SORECT_left D|SORECT_top D|SORECT_right D|SORECT_bottom D|StartAngle D|EndAngle D
+[SOBITMAPHEADER:|wStructSize W|wImageFlags W|wImageWidth W|wImageLength W|wTileWidth W|wTileLength W|wBitsPerPixel W|wNPlanes W|wHDpi W|wVDpi W
+[SOBORDER:|wWidth W|rgbColor D|wFlags W
+[SOCOLUMN:|wStructSize W|dwWidth D|szName B 40
+[SOCPARCANGLE:|SOPOINT_x D|SOPOINT_y D|SweepAngle D
+[SOCPPIEANGLE:|nRadius D|StartAngle D|SweepAngle D
+[SOCPTEXTATPOINT:|wFormat W|nTextLength D
+[SODATACELL:|wStructSize W|wStorage W|wDisplay W|dwSubDisplay D|wPrecision W|wAlignment W|wAttribute W|Int32S::Int32U::IEEE4::IEEE8::IEEE10::BCD8 T
+[SOEMBEDDEDGRAPHIC:|Size D|SORECT_left D|SORECT_top D|SORECT_right D|SORECT_bottom D|ScaledSize D|wBorder W|dwFlags D
+[SOEMBEDDEDOBJECT:|wStructSize W|wObjectType W|szFile B 144|wFIType W|dwFileOffset D|Size D|SORECT_left D|SORECT_top D|SORECT_right D|SORECT_bottom D|ScaledSize D|wBorder W|dwFlags D
+[SOEMBEDINFO:|Size D|SORECT_left D|SORECT_top D|SORECT_right D|SORECT_bottom D|ScaledSize D|wBorder W|dwFlags D
+[SOFIELD:|wStructSize W|dwWidth D|szName B 40|wStorage W|wDisplay W|dwSubDisplay D|wPrecision W|wAlignment W
+[SOFILTERINFO:|wFilterCharSet D|szFilterName B 32
+[SOGROUPINFO:|wStructSize W|SORECT_left D|SORECT_top D|SORECT_right D|SORECT_bottom D|nTransforms D
+[SOLE_AUTHENTICATION_SERVICE:|dwAuthnSvc D|dwAuthzSvc D|pPrincipalName D|hr D
+[SOLOGBRUSH:|lbStyle W|lbColor D|lbHatch D
+[SOLOGFONT:|lfHeight D|lfWidth D|lfEscapement D|lfOrientation D|lfWeight D|lfItalic B|lfUnderline B|lfStrikeOut B|lfCharSet B|lfOutputPrecision B|lfClipPrecision B|lfQuality B|lfPitchAndFamily B|lfFaceName B SOLF_FACESIZE
+[SOLOGPEN:|loPenStyle D|SOPOINT_x D|SOPOINT_y D|loColor D
+[SOPARAINDENTS:|FirstLineIndent D|LeftIndent D|RightIndent D
+[SOPATHINFO:|wStructSize W|SORECT_left D|SORECT_top D|SORECT_right D|SORECT_bottom D|nTransforms D
+[SOPOINT:|x D|y D
+[SOPOLYINFO:|wFormat W|nPoints D
+[SORECT:|left D|top D|right D|bottom D
+[SOTAB:|wType W|wChar W|wLeader W|dwOffset D
+[SOTABLECELLINFO:|wWidth W|wMerge W|wShading W|pLeftBorder D|pRightBorder D|pTopBorder D|pBottomBorder D
+[SOTEXTATARCANGLE:|SORECT_left D|SORECT_top D|SORECT_right D|SORECT_bottom D|StartAngle D|EndAngle D|wFormat W|nTextLength D
+[SOTEXTATPOINT:|SOPOINT_x D|SOPOINT_y D|wFormat D|nTextLength D
+[SOTEXTCELL:|wStructSize W|wAlignment W|wAttribute W
+[SOTEXTINRECT:|SORECT_x D|SORECT_y D|wFormat W|nTextLength D
+[SOTRANSFORM:|wTransformFlags W|SOPOINT_x D|SOPOINT_y D|xOffset D|yOffset D|xScale D|yScale D|xSkew D|ySkew D|RotationAngle D
+[SOUNDSENTRYA:|cbSize D|dwFlags D|iFSTextEffect D|iFSTextEffectMSec D|iFSTextEffectColorBits D|iFSGrafEffect D|iFSGrafEffectMSec D|iFSGrafEffectColor D|iWindowsEffect D|iWindowsEffectMSec D|lpszWindowsEffectDLL D|iWindowsEffectOrdinal D
+[SOURCE_MEDIA:|Reserved D|Tagfile D|Description D|SourcePath D|SourceFile D|Flags D
+[SOVECTORHEADER:|wStructSize W|SORECT_left D|SORECT_top D|SORECT_right D|SORECT_bottom D|wHDPI W|wVDPI W|wImageFlags W|BkgColor W
+[SORRESTRICTION:|cRes D|lpRes D
+[SP_INF_INFORMATION:|InfStyle D|InfCount D|VersionData B ANYSIZE_ARRAY
+[SPROPATTRARRAY:|cValues D|aPropAttr D MAPI_DIM
+[SPROPROBLEM:|ulIndex D|ulPropTag D|scode D
+[SPROPPROBLEMARRAY:|cProblem D|aProblem.ulIndex D|aProblem.ulPropTag D|aProblem.scode D
+[SPROPTAGARRAY:|cValues D|aulPropTag D
+[SPROPVALUE:|ulPropTag D|dwAlignPad D|Value D
+[SPROPERTYRESTRICTION:|relop D|ulPropTag D|lpProp D
+[SQLGUID:|Data1 D|Data2 W|Data3 W|Data4 B 8
+[SQL_DAY_SECOND_STRUCT:|day D|hour D|minute D|second D|fraction D
+[SQL_INTERVAL_STRUCT:|interval_type D|interval_sign D|year::day D|month::hour D|minute D|second D|fraction D
+[SQL_NUMERIC_STRUCT:|precision B|scale B|sign B|val B SQL_MAX_NUMERIC_LEN
+[SQL_YEAR_MONTH_STRUCT:|year D|month D
+[SREALARRAY:|cValues D|lpflt D
+[SRESTRICTION:|rt D|relop::cRes::ulReserved::ulFuzzyLevel::relBMR::cValues D|ulPropTag1::lpRes D|ulPropTag2::cb::lpProp::ulMask::ulReserved2 D
+[SROW:|ulAdrEntryPad D|cValues D|lpProps D
+[SROWSET:|cRows D|aRow.ulAdrEntryPad D|aRow.cValues D|aRow.lpProps D
+[SSHORTARRAY:|cValues D|lpi D
+[SSIZERESTRICTION:|relop D|ulPropTag D|cb D
+[SSORTORDER:|ulPropTag D|ulOrder D
+[SSORTORDERSET:|cSorts D|cCategories D|cExpanded D|aSort.ulPropTag D|aSort.ulOrder D
+[SSUBRESTRICTION:|ulSubObject D|lpRes D
+[STACKFRAME:|AddrPC.Offset1 D|AddrPC.Segment1 W|AddrPC.Mode D|AddrReturn.Offset1 D|AddrReturn.Segment1 W|AddrReturn.Mode D|AddrFrame.Offset1 D|AddrFrame.Segment1 W|AddrFrame.Mode D|AddrStack.Offset1 D|AddrStack.Segment1 W|AddrStack.Mode D|FuncTableEntry D|Params D 4|Far1 D|Virtual D|Reserved D 3|KdHelp.Thread D|KdHelp.ThCallbackStack D|KdHelp.NextCallback D|KdHelp.FramePointer D|KdHelp.KiCallUserMode D|KdHelp.KeUserCallbackDispatcher D|KdHelp.SystemRangeStart D
+[STARTUPINFO:|cb D|lpReserved D|lpDesktop D|lpTitle D|dwX D|dwY D|dwXSize D|dwYSize D|dwXCountChars D|dwYCountChars D|dwFillAttribute D|dwFlags D|wShowWindow W|cbReserved2 W|lpReserved2 D|hStdInput D|hStdOutput D|hStdError D
+[STATDATA:|FORMATETC_cfFormat D|FORMATETC_ptd D|FORMATETC_dwAspect D|FORMATETC_lindex D|FORMATETC_tymed D|grfAdvf D|pAdvSink D|dwConnection D
+[STATPROPSETSTG:|fmtid D|CLSID_Data1 D|CLSID_Data2 W|CLSID_Data3 W|CLSID_Data4 B 8|grfFlags D|mtime_dwLowDateTime D|mtime_dwHighDateTime D|ctime_dwLowDateTime D|ctime_dwHighDateTime D|atime_dwLowDateTime D|atime_dwHighDateTime D
+[STATPROPSTG:|lpwstrName D|propid D|vt D
+[STATSTG:|pwcsName D|type D|cbSize D|mtime_dwLowDateTime D|mtime_dwHighDateTime D|ctime_dwLowDateTime D|ctime_dwHighDateTime D|atime_dwLowDateTime D|atime_dwHighDateTime D|grfMode D|grfLocksSupported D|CLSID_Data1 D|CLSID_Data2 W|CLSID_Data3 W|CLSID_Data4 B 8|grfStateBits D|reserved D
+[STATUS_OBJECT_NOTIFICATION:|cbEntryID D|lpEntryID D|cValues D|lpPropVals D
+[STAT_SERVER_0:|sts0_start D|sts0_fopens D|sts0_devopens D|sts0_jobsqueued D|sts0_sopens D|sts0_stimedout D|sts0_serrorout D|sts0_pwerrors D|sts0_permerrors D|sts0_syserrors D|sts0_bytessent_low D|sts0_bytessent_high D|sts0_bytesrcvd_low D|sts0_bytesrcvd_high D|sts0_avresponse D|sts0_reqbufneed D|sts0_bigbufneed D
+[STAT_WORKSTATION_0:|stw0_start D|stw0_numNCB_r D|stw0_numNCB_s D|stw0_numNCB_a D|stw0_fiNCB_r D|stw0_fiNCB_s D|stw0_fiNCB_a D|stw0_fcNCB_r D|stw0_fcNCB_s D|stw0_fcNCB_a D|stw0_sesstart D|stw0_sessfailcon D|stw0_sessbroke D|stw0_uses D|stw0_usefail D|stw0_autorec D|stw0_bytessent_r_lo D|stw0_bytessent_r_hi D|stw0_bytesrcvd_r_lo D|stw0_bytesrcvd_r_hi D|stw0_bytessent_s_lo D|stw0_bytessent_s_hi D|stw0_bytesrcvd_s_lo D|stw0_bytesrcvd_s_hi D|stw0_bytessent_a_lo D|stw0_bytessent_a_hi D|stw0_bytesrcvd_a_lo D|stw0_bytesrcvd_a_hi D|stw0_reqbufneed D|stw0_bigbufneed D
+[STD_ALERT:|alrt_timestamp D|alrt_eventname W EVLEN + 1|alrt_servicename W SNLEN + 1
+[STGMEDIUM:|tymed D|hBitmap::hMetafilePict::hEnhMetaFile::hGlobal::lpszFileName::IStream::IStorage D
+[STICKYKEYS:|cbSize D|dwFlags D
+[STORAGELAYOUT:|LayoutType D|pwcsElementName D|cOffset D|cBytes D
+[STRKFMT:|cbSize D|iesf D|iStrk D|tip D|dwUser D|dwReserved D
+[STROKEINFO:|cPnt D|cbPnts D|wPdk D|dwTick D
+[STRRET:|uType D|cStr B MAX_PATH
+[STYLEBUFA:|dwStyle D|szDescription B STYLE_DESCRIPTION_SIZE
+[STYLESTRUCT:|styleOld D|styleNew D
+[STNEFPROBLEM:|ulComponent D|ulAttribute D|ulPropTag D|scode D
+[STNEFPROBLEMARRAY:|cProblem D|aProblem D MAPI_DIM
+[SV2CVW2_PARAMS:|cbSize D|psvPrev D|pfs D|psbOwner D|prcView D|pvid D|hwndView D
+[SWSTRINGARRAY:|cValues D|lppszW D
+[SYC:|wStrokeFirst D|wPntFirst D|wStrokeLast D|wPntLast D|fLastSyc D
+[SYE:|syv D|lRecogVal D|cl D|iSyc D
+[SYG:|rgpntHotSpotsXY Q MAXHOTSPOT|cHotSpot D|nFirstBox D|lRecogVal D|lpsye D|cSye D|lpsyc D|cSyc D|syv D|lRecogVal D|cl D|iSyc D|wStrokeFirst D|wPntFirst D|wStrokeLast D|wPntLast D|fLastSyc D
+[SYSTEMTIME:|wYear W|wMonth W|wDayOfWeek W|wDay W|wHour W|wMinute W|wSecond W|wMilliseconds W
+[SYSTEM_ALARM_ACE:|Header.AceType B|Header.AceFlags B|Header.AceSize W|imask D|SidStart D
+[SYSTEM_ALARM_OBJECT_ACE:|Header.AceType B|Header.AceFlags B|Header.AceSize W|Mask1 D|Flags D|ObjectType.Data1 D|ObjectType.Data2 W|ObjectType.Data3 W|ObjectType.Data4 B 8|InheritedObjectType.Data1 D|InheritedObjectType.Data2 W|InheritedObjectType.Data3 W|InheritedObjectType.Data4 B 8|SidStart D
+[SYSTEM_AUDIT_ACE:|Header.AceType B|Header.AceFlags B|Header.AceSize W|imask D|SidStart D
+[SYSTEM_AUDIT_OBJECT_ACE:|Header.AceType B|Header.AceFlags B|Header.AceSize W|Mask1 D|Flags D|ObjectType.Data1 D|ObjectType.Data2 W|ObjectType.Data3 W|ObjectType.Data4 B 8|InheritedObjectType.Data1 D|InheritedObjectType.Data2 W|InheritedObjectType.Data3 W|InheritedObjectType.Data4 B 8|SidStart D
+[SYSTEM_INFO:|wProcessorArchitecture W|wReserved W|dwPageSize D|lpMinimumApplicationAddress D|lpMaximumApplicationAddress D|dwActiveProcessorMask D|dwNumberOfProcessors D|dwProcessorType D|dwAllocationGranularity D|wProcessorLevel W|wProcessorRevision W
+[SYSTEM_POWER_STATUS:|ACLineStatus B|BatteryFlag B|BatteryLifePercent B|Reserved1 B|BatteryLifeTime D|BatteryFullLifeTime D
+[S_UN_B:|s_b1 B|s_b2 B|s_b3 B|s_b4 B
+[S_UN_W:|s_w1 W|s_w2 W
+[STRING_STRING:|wLength W|wValueLength W|wType W|szKey U|Padding W|String_Value D
+[STRINGFILEINFO:|wLength W|wValueLength W|wType W|szKey U|Padding U|StringTable_Children D
+[STRINGTABLE:|wLength W|wValueLength W|wType W|szKey U|String_Children D
+[TABLE_NOTIFICATION:|ulTableEvent D|hResult D|propIndex.ulPropTag D|propIndex.dwAlignPad D|propIndex.Value D|propPrior.ulPropTag D|propPrior.dwAlignPad D|propPrior.Value D|row.ulAdrEntryPad D|row.cValues D|row.lpProps D|ulPad D
+[TAPE_CREATE_PARTITION:|Method D|Count D|Size1 D
+[TAPE_ERASE:|Type1 D|Immediate B
+[TAPE_GET_DRIVE_PARAMETERS:|ECC B|Compression B|DataPadding B|ReportSetmarks B|DefaultBlockSize D|MaximumBlockSize D|MinimumBlockSize D|MaximumPartitionCount D|FeaturesLow D|FeaturesHigh D|EOTWarningZoneSize D
+[TAPE_GET_MEDIA_PARAMETERS:|Capacity Q|Remaining Q|BlockSize D|PartitionCount D|WriteProtected B
+[TAPE_GET_POSITION:|Type1 D|Partition D|Offset1 Q
+[TAPE_PREPARE:|Operation D|Immediate B
+[TAPE_SET_DRIVE_PARAMETERS:|ECC B|Compression B|DataPadding B|ReportSetmarks B|EOTWarningZoneSize D
+[TAPE_SET_MEDIA_PARAMETERS:|BlockSize D
+[TAPE_SET_POSITION:|Method D|Partition D|Offset1 Q|Immediate B
+[TAPE_WRITE_MARKS:|Type1 D|Count D|Immediate B
+[TARGINFO:|cbSize D|dwFlags D|htrgOwner D|cTargets W|iTargetLast W|rgTarget D
+[TBADDBITMAP:|hInst D|nID D
+[TBBUTTON:|iBitmap D|idCommand D|fsState B|fsStyle B|_wPad1 W|dwData D|iString D
+[TBNOTIFY:|NMHDR_hwndFrom D|NMHDR_idFrom D|NMHDR_code DiItem D|tbButton D|cchText D|pszText D
+[TBREPLACEBITMAP:|hInstOld D|nIdOld D|hInstNew D|nIdNew D|nButtons D
+[TBSAVEPARAMS:|hkr D|pszSubKey D|pszValueName D
+[TC_HITTESTINFO:|pt.x D|pt.y D|flags D
+[TC_ITEM:|imask D|lpReserved1 D|lpReserved2 D|pszText D|cchTextMax D|iImage D|lParam D
+[TC_ITEMHEADER:|imask D|lpReserved1 D|lpReserved2 D|pszText D|cchTextMax D|iImage D
+[TC_KEYDOWN:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|wVKey W|flags D
+[TEXTMETRICA:|tmHeight D|tmAscent D|tmDescent D|tmInternalLeading D|tmExternalLeading D|tmAveCharWidth D|tmMaxCharWidth D|tmWeight D|tmOverhang D|tmDigitizedAspectX D|tmDigitizedAspectY D|tmFirstChar B|tmLastChar B|tmDefaultChar B|tmBreakChar B|tmItalic B|tmUnderlined B|tmStruckOut B|tmPitchAndFamily B|tmCharSet B
+[TEXTRANGEA:|chrg.cpMin D|chrg.cpMax D|lpstrText D
+[THREADENTRY32:|dwSize D|cntUsage D|th32ThreadID D|th32OwnerProcessID D|tpBasePri D|tpDeltaPri D|dwFlags D
+[TIMECAPS:|wPeriodMin D|wPeriodMax D
+[TIMESTAMP_STRUCT:|year W|month W|day W|hour W|minute W|second W|fraction D
+[TIME_OF_DAY_INFO:|tod_elapsedt D|tod_msecs D|tod_hours D|tod_mins D|tod_secs D|tod_hunds D|tod_timezone D|tod_tinterval D|tod_day D|tod_month D|tod_year D|tod_weekday D
+[TIME_STRUCT:|hour W|minute W|second W
+[TIME_ZONE_INFORMATION:|Bias D|StandardName W 32|StandardDate.wYear W|StandardDate.wMonth W|StandardDate.wDayOfWeek W|StandardDate.wDay W|StandardDate.wHour W|StandardDate.wMinute W|StandardDate.wSecond W|StandardDate.wMilliseconds W|StandardBias D|DaylightName W 32|DaylightDate.wYear W|DaylightDate.wMonth W|DaylightDate.wDayOfWeek W|DaylightDate.wDay W|DaylightDate.wHour W|DaylightDate.wMinute W|DaylightDate.wSecond W|DaylightDate.wMilliseconds W|DaylightBias D
+[TITLEBARINFO:|cbSize D|RECT_left D|RECT_top D|RECT_right D|RECT_bottom D|rgstate D CCHILDREN_TITLEBAR+1
+[TOGGLEKEYS:|cbSize D|dwFlags D
+[TOKEN_CONTROL:|TokenId.LowPart D|TokenId.HighPart D|AuthenticationId.LowPart D|AuthenticationId.HighPart D|ModifiedId.LowPart D|ModifiedId.HighPart D|TokenSource1.SourceName B TOKEN_SOURCE_LENGTH|TokenSource1.SourceIdentifier.LowPart D|TokenSource1.SourceIdentifier.HighPart D
+[TOKEN_DEFAULT_DACL:|DefaultDacl D
+[TOKEN_GROUPS:|GroupCount D|Groups.Sid D|Groups.Attributes D
+[TOKEN_OWNER:|Owner D
+[TOKEN_PRIMARY_GROUP:|PrimaryGroup D
+[TOKEN_PRIVILEGES:|PrivilegeCount D|Privileges.Luid.LowPart D|Privileges.Luid.HighPart D|Privileges.Attributes D
+[TOKEN_SOURCE:|SourceName B TOKEN_SOURCE_LENGTH|SourceIdentifier.LowPart D|SourceIdentifier.HighPart D
+[TOKEN_STATISTICS:|LUID_LowPart D|LUID_HighPart D|LUID_AuthenticationId_LowPart D|LUID_AuthenticationId_HighPart D|ExpirationTime D|TokenType D|ImpersonationLevel D|DynamicCharged D|DynamicAvailable D|GroupCount D|PrivilegeCount D|LUID_ModifiedId_LowPart D|LUID_ModifiedId_HighPart D
+[TOKEN_USER:|User.Sid D|User.Attributes D
+[TOOLINFO:|cbSize D|uFlags D|hWnd D|uId D|rect.left D|rect.top D|rect.right D|rect.bottom D|hInst D|lpszText D|lParam D
+[TOOLTIPTEXT:|NMHDR_hwndFrom D|NMHDR_idFrom D|NMHDR_code D|lpszText D|szText B 80|hinst D|uFlags D
+[TPMPARAMS:|cbSize D|rcExclude.left D|rcExclude.top D|rcExclude.right D|rcExclude.bottom D
+[TRACKMOUSEEVENT:|cbSize D|dwFlags D|hwndTrack D|dwHoverTime D
+[TRANSMIT_FILE_BUFFERS:|Head D|HeadLength D|Tail D|TailLength D
+[TRUSTEE:|pMultipleTrustee D|MultipleTrusteeOperation D|TrusteeForm D|TrusteeType D|ptstrName D
+[TRUSTEE_ACCESS:|lpProperty D|Access D|fAccessFlags D|fReturnedAccess D
+[TTPOLYCURVE:|wType W|cpfx W|apfx.x.fract W|apfx.x.Value W|apfx.y.fract W|apfx.y.Value W
+[TTPOLYGONHEADER:|cb D|dwType D|pfxStart.x.fract W|pfxStart.x.Value W|pfxStart.y.fract W|pfxStart.y.Value W
+[TT_HITTESTINFO:|hWnd D|pt.x D|pt.y D|ti.cbSize D|ti.uFlags D|ti.hWnd D|ti.uId D|ti.rect.left D|ti.rect.top D|ti.rect.right D|ti.rect.bottom D|ti.hInst D|ti.lpszText D|ti.lParam D
+[TV_DISPINFO:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|item.imask D|item.hItem D|item.state D|item.stateMask D|item.pszText D|item.cchTextMax D|item.iImage D|item.iSelectedImage D|item.cChildren D|item.lParam D
+[TV_HITTESTINFO:|pt.x D|pt.y D|flags D|hItem D
+[TV_INSERTSTRUCT:|hParent D|hInsertAfter D|ITEM_TYPE D
+[TV_ITEM:|imask D|hItem D|state D|stateMask D|pszText D|cchTextMax D|iImage D|iSelectedImage D|cChildren D|lParam D
+[TV_ITEMEX:|imask D|hItem D|state D|stateMask D|pszText D|cchTextMax D|iImage D|iSelectedImage D|cChildren D|lParam D|iIntegral D
+[TV_KEYDOWN:|hdr.hwndFrom D|hdr.idFrom D|hdr.code D|wVKey W|flags D
+[TV_SORTCB:|hParent D|lpfnCompare D|lParam D
+[TARGET:|dwType D|dwDeviceID D|wMid W|wPid W|vDriverVersion D|szPname B MAXPNAMELEN
+[UDACCEL:|nSec D|nInc D
+[ULARGE_INTEGER:|QuadPart::LowPart D|HighPart D
+[UNIVERSAL_NAME_INFO:|lpUniversalName D
+[UNLOAD_DLL_DEBUG_INFO:|lpBaseOfDll D
+[URL_COMPONENTSA:|dwStructSize D|lpszScheme D|dwSchemeLength D|nScheme D|lpszHostName D|dwHostNameLength D|nPort W|lpszUserName D|dwUserNameLength D|lpszPassword D|dwPasswordLength D|lpszUrlPath D|dwUrlPathLength D|lpszExtraInfo D|dwExtraInfoLength D
+[USEROBJECTFLAGS:|fInherit D|fReserved D|dwFlags D
+[USER_INFO_0:|usri0_name D
+[USER_INFO_1003:|usri1003_password D
+[USER_INFO_1005:|usri1005_priv D
+[USER_INFO_1006:|usri1006_home_dir D
+[USER_INFO_1007:|usri1007_comment D
+[USER_INFO_1008:|usri1008_flags D
+[USER_INFO_1009:|usri1009_script_path D
+[USER_INFO_1010:|usri1010_auth_flags D
+[USER_INFO_1011:|usri1011_full_name D
+[USER_INFO_1012:|usri1012_usr_comment D
+[USER_INFO_1013:|usri1013_parms D
+[USER_INFO_1014:|usri1014_workstations D
+[USER_INFO_1017:|usri1017_acct_expires D
+[USER_INFO_1018:|usri1018_max_storage D
+[USER_INFO_1020:|usri1020_units_per_week D|usri1020_logon_hours D
+[USER_INFO_1023:|usri1023_logon_server D
+[USER_INFO_1024:|usri1024_country_code D
+[USER_INFO_1025:|usri1025_code_page D
+[USER_INFO_1051:|usri1051_primary_group_id D
+[USER_INFO_1052:|usri1052_profile D
+[USER_INFO_1053:|usri1053_home_dir_drive D
+[USER_INFO_10:|usri10_name D|usri10_comment D|usri10_usr_comment D|usri10_full_name D
+[USER_INFO_11:|usri11_name D|usri11_comment D|usri11_usr_comment D|usri11_full_name D|usri11_priv D|usri11_auth_flags D|usri11_password_age D|usri11_home_dir D|usri11_parms D|usri11_last_logon D|usri11_last_logoff D|usri11_bad_pw_count D|usri11_num_logons D|usri11_logon_server D|usri11_country_code D|usri11_workstations D|usri11_max_storage D|usri11_units_per_week D|usri11_logon_hours D|usri11_code_page D
+[USER_INFO_1:|usri1_name D|usri1_password D|usri1_password_age D|usri1_priv D|usri1_home_dir D|usri1_comment D|usri1_flags D|usri1_script_path D
+[USER_INFO_20:|usri20_name D|usri20_full_name D|usri20_comment D|usri20_flags D|usri20_user_id D
+[USER_INFO_21:|usri21_password B ENCRYPTED_PWLEN
+[USER_INFO_22:|usri22_name D|usri22_password B ENCRYPTED_PWLEN|usri22_password_age D|usri22_priv D|usri22_home_dir D|usri22_comment D|usri22_flags D|usri22_script_path D|usri22_auth_flags D|usri22_full_name D|usri22_usr_comment D|usri22_parms D|usri22_workstations D|usri22_last_logon D|usri22_last_logoff D|usri22_acct_expires D|usri22_max_storage D|usri22_units_per_week D|usri22_logon_hours D|usri22_bad_pw_count D|usri22_num_logons D|usri22_logon_server D|usri22_country_code D|usri22_code_page D
+[USER_INFO_2:|usri2_name D|usri2_password D|usri2_password_age D|usri2_priv D|usri2_home_dir D|usri2_comment D|usri2_flags D|usri2_script_path D|usri2_auth_flags D|usri2_full_name D|usri2_usr_comment D|usri2_parms D|usri2_workstations D|usri2_last_logon D|usri2_last_logoff D|usri2_acct_expires D|usri2_max_storage D|usri2_units_per_week D|usri2_logon_hours D|usri2_bad_pw_count D|usri2_num_logons D|usri2_logon_server D|usri2_country_code D|usri2_code_page D
+[USER_INFO_3:|usri3_name D|usri3_password D|usri3_password_age D|usri3_priv D|usri3_home_dir D|usri3_comment D|usri3_flags D|usri3_script_path D|usri3_auth_flags D|usri3_full_name D|usri3_usr_comment D|usri3_parms D|usri3_workstations D|usri3_last_logon D|usri3_last_logoff D|usri3_acct_expires D|usri3_max_storage D|usri3_units_per_week D|usri3_logon_hours D|usri3_bad_pw_count D|usri3_num_logons D|usri3_logon_server D|usri3_country_code D|usri3_code_page D|usri3_user_id D|usri3_primary_group_id D|usri3_profile D|usri3_home_dir_drive D|usri3_password_expired D
+[USER_MODALS_INFO_0:|usrmod0_min_passwd_len D|usrmod0_max_passwd_age D|usrmod0_min_passwd_age D|usrmod0_force_logoff D|usrmod0_password_hist_len D
+[USER_MODALS_INFO_1001:|usrmod1001_min_passwd_len D
+[USER_MODALS_INFO_1002:|usrmod1002_max_passwd_age D
+[USER_MODALS_INFO_1003:|usrmod1003_min_passwd_age D
+[USER_MODALS_INFO_1004:|usrmod1004_force_logoff D
+[USER_MODALS_INFO_1005:|usrmod1005_password_hist_len D
+[USER_MODALS_INFO_1006:|usrmod1006_role D
+[USER_MODALS_INFO_1007:|usrmod1007_primary D
+[USER_MODALS_INFO_1:|usrmod1_role D|usrmod1_primary D
+[USER_MODALS_INFO_2:|usrmod2_domain_name D|usrmod2_domain_id D
+[USER_MODALS_INFO_3:|usrmod3_lockout_duration D|usrmod3_lockout_observation_window D|usrmod3_lockout_threshold D
+[USER_OTHER_INFO:|alrtus_errcode D|alrtus_numstrings D
+[USE_INFO_0:|ui0_local D|ui0_remote D
+[USE_INFO_1:|ui1_local D|ui1_remote D|ui1_password D|ui1_status D|ui1_asg_type D|ui1_refcount D|ui1_usecount D
+[USE_INFO_2:|ui2_local D|ui2_remote D|ui2_password D|ui2_status D|ui2_asg_type D|ui2_refcount D|ui2_usecount D|ui2_username D|ui2_domainname D
+[USE_INFO_3:|ui3_ui2.ui0_local D|ui3_ui2.ui0_remote D|ui3_flags D
+[UUID:|Data1 D|Data2 W|Data3 W|Data4 B 8
+[UUID_VECTOR:|Count D|UUID_Data1 D|UUID_Data2 W|UUID_Data3 W|UUID_Data4 B 8
+[VALENT:|ve_valuename D|ve_valuelen D|ve_valueptr D|ve_type D
+[VARSTRING:|dwTotalSize D|dwNeededSize D|dwUsedSize D|dwStringFormat D|dwStringSize D|dwStringOffset D
+[VERIFY_INFORMATION:|StartingOffset D|Length D
+[VS_FIXEDFILEINFO:|dwSignature D|dwStrucVersion D|dwFileVersionMS D|dwFileVersionLS D|dwProductVersionMS D|dwProductVersionLS D|dwFileFlagsMask D|dwFileFlags D|dwFileOS D|dwFileType D|dwFileSubtype D|dwFileDateMS D|dwFileDateLS D
+[VS_VERSION_INFO:|wLength W|wValueLength W|wType W|szKey U|Padding1 W|dwSignature D|dwStrucVersion D|dwFileVersionMS D|dwFileVersionLS D|dwProductVersionMS D|dwProductVersionLS D|dwFileFlagsMask D|dwFileFlags D|dwFileOS D|dwFileType D|dwFileSubtype D|dwFileDateMS D|dwFileDateLS D|Padding2 W|Children W
+[VAR:|wLength W|wValueLength W|wType W|szKey U|Padding U|Value W
+[VARFILEINFO:|wLength W|wValueLength W|wType W|szKey U|Padding W|Children D
+[WALLPAPEROPT:|dwSize D|dwStyle D
+[WAVEFORMAT:|wFormatTag W|nChannels W|nSamplesPerSec D|nAvgBytesPerSec D|nBlockAlign W
+[WAVEFORMATEX:|wFormatTag W|nChannels W|nSamplesPerSec D|nAvgBytesPerSec D|nBlockAlign W|wBitsPerSample W|cbSize W
+[WAVEHDR:|lpData D|dwBufferLength D|dwBytesRecorded D|dwUser D|dwFlags D|dwLoops D|lpNext D|Reserved D
+[WAVEINCAPSA:|wMid W|wPid W|vDriverVersion D|szPname B MAXPNAMELEN|dwFormats D|wChannels W|wReserved1 W
+[WAVEOUTCAPSA:|wMid W|wPid W|vDriverVersion D|szPname B MAXPNAMELEN|dwFormats D|wChannels W|wReserved1 W|dwSupport D
+[WIN32_FILE_ATTRIBUTE_DATA:|dwFileAttributes D|ftCreationTime_dwLowDateTime D|ftCreationTime_dwHighDateTime D|ftLastAccessTime_dwLowDateTime D|ftLastAccessTime_dwHighDateTime D|ftLastWriteTime_dwLowDateTime D|ftLastWriteTime_dwHighDateTime D|nFileSizeHigh D|nFileSizeLow D
+[WIN32_FIND_DATA:|dwFileAttributes D|ftCreationTime.dwLowDateTime D|ftCreationTime.dwHighDateTime D|ftLastAccessTime.dwLowDateTime D|ftLastAccessTime.dwHighDateTime D|ftLastWriteTime.dwLowDateTime D|ftLastWriteTime.dwHighDateTime D|nFileSizeHigh D|nFileSizeLow D|dwReserved0 D|dwReserved1 D|cFileName B MAX_PATH|cAlternate B 14
+[WIN32_STREAM_ID:|dwStreamID D|dwStreamAttributes D|dwSize.QuadPart Q|dwStreamNameSize D|cStreamName B
+[WINDOWINFO:|cbSize D|rcWindow_left D|rcWindow_top D|rcWindow_right D|rcWindow_bottom D|rcClient_left D|rcClient_top D|rcClient_right D|rcClient_bottom D|dwStyle D|dwExStyle D|dwWindowStatus D|cxWindowBorders D|cyWindowBorders D|atomWindowType D|wCreatorVersion W
+[WINDOWPLACEMENT:|iLength D|flags D|showCmd D|ptMinPosition.x D|ptMinPosition.y D|ptMaxPosition.x D|ptMaxPosition.y D|rcNormalPosition.left D|rcNormalPosition.top D|rcNormalPosition.right D|rcNormalPosition.bottom D
+[WINDOWPOS:|hwnd D|hWndInsertAfter D|x D|y D|lx D|cy D|flags D
+[WINDOW_BUFFER_SIZE_RECORD:|dwSize.x W|dwSize.y W
+[WINTRUST_CLIENT_TP_DISPATCH_TABLE:|ServerPing D|CheckSubjectContentInfo D|EnumSubjectCertificates D|GetSubjectCertificate D|GetSubjectCertHeader D|GetSubjectName D
+[WINTRUST_CLIENT_TP_INFO:|dwRevision D|lpServices D
+[WINTRUST_PROVIDER_CLIENT_INFO:|dwRevision D|lpServices D|dwActionIdCount D|GUID_Data1 D|GUID_Data2 W|GUID_Data3 W|GUID_Data4 B 8
+[WINTRUST_PROVIDER_CLIENT_SERVICES:|Unload D|VerifyTrust D|SubmitCertificate D
+[WINTRUST_PROVIDER_SERVER_INFO:|dwRevision D|lpServices D
+[WINTRUST_PROVIDER_SERVER_SERVICES:|Unload D|Ping D
+[WINTRUST_SERVER_TP_DISPATCH_TABLE:|CheckSubjectContentInfo D|EnumSubectCertificates D|GetSubjectCertificate D|GetSubjectCertHeader D|GetSubjectName D
+[WINTRUST_SERVER_TP_INFO:|dwRevision D|lpServices D
+[WINTRUST_SIP_DISPATCH_TABLE:|CheckSubjectContentInfo D|EnumSubjectCertificates D|GetSubjectCertificate D|GetSubjectCertHeader D|GetSubjectName D
+[WINTRUST_SIP_INFO:|dwRevision D|lpServices D|dwSubjectTypeCount D|GUID_Data1 D|GUID_Data2 W|GUID_Data3 W|GUID_Data4 B 8
+[WIN_CERTIFICATE:|dwLength D|wRevision W|wCertificateType W|bCertificate B ANYSIZE_ARRAY
+[WIN_TRUST_ACTDATA_CONTEXT_WITH_SUBJECT:|hClientToken D|GUID_Data1 D|GUID_Data2 W|GUID_Data3 W|GUID_Data4 B 8|Subject D
+[WIN_TRUST_ACTDATA_SUBJECT_ONLY:|GUID_Data1 D|GUID_Data2 W|GUID_Data3 W|GUID_Data4 B 8|Subject D
+[WIN_TRUST_SIP_SUBJECT:|GUID_Data1 D|GUID_Data2 W|GUID_Data3 W|GUID_Data4 B 8|Subject D
+[WIN_TRUST_SUBJECT_FILE:|hFile D|lpPath D
+[WKSTA_INFO_100:|wki100_platform_id D|wki100_computername D|wki100_langroup D|wki100_ver_major D|wki100_ver_minor D
+[WKSTA_INFO_1010:|wki1010_char_wait D
+[WKSTA_INFO_1011:|wki1011_collection_time D
+[WKSTA_INFO_1012:|wki1012_maximum_collection_count D
+[WKSTA_INFO_1013:|wki1013_keep_conn D
+[WKSTA_INFO_1018:|wki1018_sess_timeout D
+[WKSTA_INFO_101:|wki101_platform_id D|wki101_computername D|wki101_langroup D|wki101_ver_major D|wki101_ver_minor D|wki101_lanroot D
+[WKSTA_INFO_1023:|wki1023_siz_char_buf D
+[WKSTA_INFO_1027:|wki1027_errlog_sz D
+[WKSTA_INFO_1028:|wki1028_print_buf_time D
+[WKSTA_INFO_102:|wki102_platform_id D|wki102_computername D|wki102_langroup D|wki102_ver_major D|wki102_ver_minor D|wki102_lanroot D|wki102_logged_on_users D
+[WKSTA_INFO_1032:|wki1032_wrk_heuristics D
+[WKSTA_INFO_1033:|wki1033_max_threads D
+[WKSTA_INFO_1041:|wki1041_lock_quota D
+[WKSTA_INFO_1042:|wki1042_lock_increment D
+[WKSTA_INFO_1043:|wki1043_lock_maximum D
+[WKSTA_INFO_1044:|wki1044_pipe_increment D
+[WKSTA_INFO_1045:|wki1045_pipe_maximum D
+[WKSTA_INFO_1046:|wki1046_dormant_file_limit D
+[WKSTA_INFO_1047:|wki1047_cache_file_timeout D
+[WKSTA_INFO_1048:|wki1048_use_opportunistic_locking D
+[WKSTA_INFO_1049:|wki1049_use_unlock_behind D
+[WKSTA_INFO_1050:|wki1050_use_close_behind D
+[WKSTA_INFO_1051:|wki1051_buf_named_pipes D
+[WKSTA_INFO_1052:|wki1052_use_lock_read_unlock D
+[WKSTA_INFO_1053:|wki1053_utilize_nt_caching D
+[WKSTA_INFO_1054:|wki1054_use_raw_read D
+[WKSTA_INFO_1055:|wki1055_use_raw_write D
+[WKSTA_INFO_1056:|wki1056_use_write_raw_data D
+[WKSTA_INFO_1057:|wki1057_use_encryption D
+[WKSTA_INFO_1058:|wki1058_buf_files_deny_write D
+[WKSTA_INFO_1059:|wki1059_buf_read_only_files D
+[WKSTA_INFO_1060:|wki1060_force_core_create_mode D
+[WKSTA_INFO_1061:|wki1061_use_512_byte_max_transfer D
+[WKSTA_INFO_1062:|wki1062_read_ahead_throughput D
+[WKSTA_INFO_302:|wki302_char_wait D|wki302_collection_time D|wki302_maximum_collection_count D|wki302_keep_conn D|wki302_keep_search D|wki302_max_cmds D|wki302_num_work_buf D|wki302_siz_work_buf D|wki302_max_wrk_cache D|wki302_sess_timeout D|wki302_siz_error D|wki302_num_alerts D|wki302_num_services D|wki302_errlog_sz D|wki302_print_buf_time D|wki302_num_char_buf D|wki302_siz_char_buf D|wki302_wrk_heuristics D|wki302_mailslots D|wki302_num_dgram_buf D
+[WKSTA_INFO_402:|wki402_char_wait D|wki402_collection_time D|wki402_maximum_collection_count D|wki402_keep_conn D|wki402_keep_search D|wki402_max_cmds D|wki402_num_work_buf D|wki402_siz_work_buf D|wki402_max_wrk_cache D|wki402_sess_timeout D|wki402_siz_error D|wki402_num_alerts D|wki402_num_services D|wki402_errlog_sz D|wki402_print_buf_time D|wki402_num_char_buf D|wki402_siz_char_buf D|wki402_wrk_heuristics D|wki402_mailslots D|wki402_num_dgram_buf D|wki402_max_threads D
+[WKSTA_INFO_502:|wki502_char_wait D|wki502_collection_time D|wki502_maximum_collection_count D|wki502_keep_conn D|wki502_max_cmds D|wki502_sess_timeout D|wki502_siz_char_buf D|wki502_max_threads D|wki502_lock_quota D|wki502_lock_increment D|wki502_lock_maximum D|wki502_pipe_increment D|wki502_pipe_maximum D|wki502_cache_file_timeout D|wki502_dormant_file_limit D|wki502_read_ahead_throughput D|wki502_num_mailslot_buffers D|wki502_num_srv_announce_buffers D|wki502_max_illegal_datagram_events D|wki502_illegal_datagram_event_reset_frequency D|wki502_log_election_packets D|wki502_use_opportunistic_locking D|wki502_use_unlock_behind D|wki502_use_close_behind D|wki502_buf_named_pipes D|wki502_use_lock_read_unlock D|wki502_utilize_nt_caching D|wki502_use_raw_read D|wki502_use_raw_write D|wki502_use_write_raw_data D|wki502_use_encryption D|wki502_buf_files_deny_write D|wki502_buf_read_only_files D|wki502_force_core_create_mode D|wki502_use_512_byte_max_transfer D
+[WKSTA_TRANSPORT_INFO_0:|wkti0_quality_of_service D|wkti0_number_of_vcs D|wkti0_transport_name D|wkti0_transport_address D|wkti0_wan_ish D
+[WKSTA_USER_INFO_0:|wkui0_username D
+[WKSTA_USER_INFO_1101:|wkui1101_oth_domains D
+[WKSTA_USER_INFO_1:|wkui1_username D|wkui1_logon_domain D|wkui1_oth_domains D|wkui1_logon_server D
+[WNDCLASSA:|style D|lpfnWndProc D|cbClsExtra D|cbWndExtra D|hInstance D|hIcon D|hCursor D|hbrBackground D|lpszMenuName D|lpszClassName D
+[WNDCLASSEX:|cbSize D|style D|lpfnWndProc D|cbClsExtra D|cbWndExtra D|hInstance D|hIcon D|hCursor D|hbrBackground D|lpszMenuName D|lpszClassName D|hIconSm D
+[WORD_BLOB:|clSize D|asData W
+[WORD_SIZEDARR:|clSize D|pData D
+[WSADATA:|wVersion W|wHighVersion W|szDescription B WSADESCRIPTION_LEN + 1|szSystemStatus B WSASYS_STATUS_LEN + 1|iMaxSockets W|iMaxUdpDg W|lpVendorInfo D
+[WSANETWORKEVENTS:|lNetworkEvents D|iErrorCode D FD_MAX_EVENTS
+[XFORM:|eM11 D|eM12 D|eM21 D|eM22 D|ex D|ey D
+[_DEV_BROADCAST_USERDEFINED:|UserDefinedContent D
+[_PV:|cur::at::ft::lpszA::bin::lpszW::lpguid::li::MVi::MVl::MVflt::MVdbl::MVcur::MVat::MVft::MVbin::MVszA SWStringArray MVszW SGuidArray MVguid SLargeIntegerArray MVli::SCODE err::x D
+[FD_SET:|fd_count D|fd_array D FD_SETSIZE
+[HOSTENT:|h_name D|h_alias D|h_addr W|h_len W|h_list D
+[ICMP_HDR:|icmp_type B|icmp_code B|icmp_cksum W|icmp_id W|icmp_seq W|icmp_data B
+[IN_ADDR:|S_un_b::S_un_w::S_addr D
+[IP_HDR:|ip_hlv B|ip_tos B|ip_len W|ip_id W|ip_off W|ip_ttl B|ip_p B|ip_cksum W|ip_src D|ip_dest D
+[LINGER:|l_onoff W|l_linger W
+[MIDI:|songptrpos D
+[NETENT:|n_name D|n_aliases D|n_addrtype W|n_net D
+[REMOTEMETAFILEPICT:|imm D|xExt D|yExt D|hMF D
+[RPCLOGPALETTE:|palVersion W|palNumEntries W|palPalEntry.peRed B|palPalEntry.peGreen B|palPalEntry.peBlue B|palPalEntry.peFlags B
+[SERVENT:|s_name D|s_aliases D|s_port W|s_proto D
+[SMPTE:|hour B|minute B|sec B|frame B|fps B|dummy B|pad B 2
+[SOCKADDR:|sa_family W|sa_data B 14
+[SOCKADDR_IN:|sin_family W|sin_port W|sin_addr.S_un_b::S_un_w::S_addr D|sin_zero B 8
+[SOCKPROTO:|sp_family W|sp_protocol W
+[TIMEVAL:|tv_sec D|tv_usec D
+[UCLSSPEC:|tyspec D|pFileExt D|pMimeType D|pProgId D|pFileName D|pJavaClassName D|pPackageName D
+[USERBITMAP:|bmType D|bmWidth D|bmHeight D|bmWidthBytes D|bmPlanes W|bmBitsPixel W|cbSize D|pBuffer B
+[USERCLIPFORMAT:|fContext D|dwValue::pwszName D
+[USERHBITMAP:|fContext D|hInproc::hRemote::hGlobal D
+[USERHENHMETAFILE:|fContext D|hInproc::hRemote::hGlobal D
+[USERHGLOBAL:|fContext D|hInproc::hRemote::hGlobal D
+[USERHMETAFILE:|fContext D|hInproc::hRemote::hGlobal D
+[USERHMETAFILEPICT:|fContext D|hInproc::hRemote::hGlobal D
+[USERHPALETTE:|fContext D|hInproc::hRemote::hGlobal D

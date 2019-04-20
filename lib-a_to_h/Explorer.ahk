@@ -2,8 +2,7 @@
 https://autohotkey.com/board/topic/60985-get-paths-of-selected-items-in-an-explorer-window/
 */
 
-Explorer_GetPath(hwnd="")
-{
+Explorer_GetPath(hwnd=""){
 	if !(window := Explorer_GetWindow(hwnd))
 		return ErrorLevel := "ERROR"
 	if (window="desktop")
@@ -21,17 +20,15 @@ Explorer_GetPath(hwnd="")
 	return path
 }
 
-Explorer_GetAll(hwnd="")
-{
+Explorer_GetAll(hwnd=""){
 	return Explorer_Get(hwnd)
 }
-Explorer_GetSelected(hwnd="")
-{
+
+Explorer_GetSelected(hwnd=""){
 	return Explorer_Get(hwnd,true)
 }
 
-Explorer_GetWindow(hwnd="")
-{
+Explorer_GetWindow(hwnd=""){
 	; thanks to jethrow for some pointers here
     WinGet, process, processName, % "ahk_id" hwnd := hwnd? hwnd:WinExist("A")
     WinGetClass class, ahk_id %hwnd%
@@ -47,8 +44,8 @@ Explorer_GetWindow(hwnd="")
 	else if (class ~= "Progman|WorkerW") 
 		return "desktop" ; desktop found
 }
-Explorer_Get(hwnd="",selection=false)
-{
+
+Explorer_Get(hwnd="",selection=false){
 	if !(window := Explorer_GetWindow(hwnd))
 		return ErrorLevel := "ERROR"
 	if (window="desktop")
@@ -76,3 +73,16 @@ Explorer_Get(hwnd="",selection=false)
 	}
 	return Trim(ret,"`n")
 }
+
+explorerPath() {; Get active Windows Explorer window's path and store it in %path% variable 
+
+	global
+	WinGetText, txt, A, 
+	Loop, Parse, txt, `r
+	{
+		if A_Index = 1
+			path := A_LoopField
+	}
+	StringTrimLeft, path, path, 9
+}
+

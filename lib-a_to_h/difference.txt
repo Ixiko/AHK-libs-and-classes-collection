@@ -1,0 +1,12 @@
+Function: Difference(string1, string2, maxOffset=5)
+    
+    string1     - string to compare to string2	
+    string2     - string to compare to string1	
+    maxOffset   - maxOffset should be around 5 and it represents the range in which to try to find a missing character.
+    
+    Return:
+    The difference between the strings as a float between 0 and 1. 0 means strings are identical. 1 means they have nothing in common. 
+    
+    Example:
+    > MsgBox % Difference( "A H K", "A H Kn" )       ;0.083333
+    

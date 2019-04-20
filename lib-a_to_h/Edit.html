@@ -1,0 +1,1035 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+
+<html><head><title>Edit Library v1.1</title><style>/*
+   IMPORTANT: If you're editing this file in the output directory of one of
+   your projects, your changes will be overwritten the next time you run
+   Natural Docs.  Instead, copy this file to your project directory, make your
+   changes, and you can use it with -s.  Even better would be to make a CSS
+   file in your project directory with only your changes, which you can then
+   use with -s [original style] [your changes].
+
+   On the other hand, if you're editing this file in the Natural Docs styles
+   directory, the changes will automatically be applied to all your projects
+   that use this style the next time Natural Docs is run on them.
+
+   This file is part of Natural Docs, which is Copyright (C) 2003-2008 Greg Valure
+   Natural Docs is licensed under the GPL
+*/
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+    color: #000000;
+    margin: 0; padding: 0;
+    }
+
+.ContentPage,
+.IndexPage,
+.FramedMenuPage {
+    background-color: #E8E8E8;
+    }
+.FramedContentPage,
+.FramedIndexPage,
+.FramedSearchResultsPage,
+.PopupSearchResultsPage {
+    background-color: #FFFFFF;
+    }
+
+
+a:link,
+a:visited { color: #900000; text-decoration: none }
+a:hover { color: #900000; text-decoration: underline }
+a:active { color: #FF0000; text-decoration: underline }
+
+td {
+    vertical-align: top }
+
+img { border: 0;  }
+
+
+/*
+    Comment out this line to use web-style paragraphs (blank line between
+    paragraphs, no indent) instead of print-style paragraphs (no blank line,
+    indented.)
+*/
+p {
+    text-indent: 0ex; margin-top: 2px; }
+
+
+/*  Opera doesn't break with just wbr, but will if you add this.  */
+.Opera wbr:after {
+	content: "\00200B";
+	}
+
+/*  Blockquotes are used as containers for things that may need to scroll.  */
+blockquote {
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    }
+
+
+.Firefox1 blockquote {
+    padding-bottom: .5em;
+    }
+
+/*  Turn off scrolling when printing.  */
+@media print {
+    blockquote {
+        overflow: visible;
+        }
+    .IE blockquote {
+        width: auto;
+        }
+    }
+
+
+
+#Menu {
+    font-size: 9pt;
+    padding: 10px 0 0 0;
+    }
+.ContentPage #Menu,
+.IndexPage #Menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 31ex;
+    overflow: hidden;
+    }
+.ContentPage .Firefox #Menu,
+.IndexPage .Firefox #Menu {
+    width: 27ex;
+    }
+
+
+    .MTitle {
+        font-size: 16pt; font-weight: bold; font-variant: small-caps;
+        text-align: center;
+        padding: 5px 10px 15px 10px;
+        border-bottom: 1px dotted #000000;
+        margin-bottom: 15px }
+
+    .MSubTitle {
+        font-size: 9pt; font-weight: normal; font-variant: normal;
+        margin-top: 1ex; margin-bottom: 5px }
+
+
+    .MEntry a:link,
+    .MEntry a:hover,
+    .MEntry a:visited { color: #606060; margin-right: 0 }
+    .MEntry a:active { color: #A00000; margin-right: 0 }
+
+
+    .MGroup {
+        font-variant: small-caps; font-weight: bold;
+        margin: 1em 0 1em 10px;
+        }
+
+    .MGroupContent {
+        font-variant: normal; font-weight: normal }
+
+    .MGroup a:link,
+    .MGroup a:hover,
+    .MGroup a:visited { color: #545454; margin-right: 10px }
+    .MGroup a:active { color: #A00000; margin-right: 10px }
+
+
+    .MFile,
+    .MText,
+    .MLink,
+    .MIndex {
+        padding: 1px 17px 2px 10px;
+        margin: .25em 0 .25em 0;
+        }
+
+    .MText {
+        font-size: 8pt; font-style: italic }
+
+    .MLink {
+        font-style: italic }
+
+    #MSelected {
+        color: #000000; background-color: #FFFFFF;
+        /*  Replace padding with border.  */
+        padding: 0 10px 0 10px;
+        border-width: 1px 2px 2px 0; border-style: solid; border-color: #000000;
+        margin-right: 5px;
+        }
+
+    /*  Close off the left side when its in a group.  */
+    .MGroup #MSelected {
+        padding-left: 9px; border-left-width: 1px }
+
+    /*  A treat for Mozilla users.  Blatantly non-standard.  Will be replaced with CSS 3 attributes when finalized/supported.  */
+    .Firefox #MSelected {
+        -moz-border-radius-topright: 10px;
+        -moz-border-radius-bottomright: 10px }
+    .Firefox .MGroup #MSelected {
+        -moz-border-radius-topleft: 10px;
+        -moz-border-radius-bottomleft: 10px }
+
+
+    #MSearchPanel {
+        padding: 0px 6px;
+        margin: .25em 0;
+        }
+
+
+    #MSearchField {
+        font: italic 9pt Verdana, sans-serif;
+        color: #606060;
+        background-color: #E8E8E8;
+        border: none;
+        padding: 2px 4px;
+        width: 100%;
+        }
+    /* Only Opera gets it right. */
+    .Firefox #MSearchField,
+    .IE #MSearchField,
+    .Safari #MSearchField {
+        width: 94%;
+        }
+    .Opera9 #MSearchField,
+    .Konqueror #MSearchField {
+        width: 97%;
+        }
+    .FramedMenuPage .Firefox #MSearchField,
+    .FramedMenuPage .Safari #MSearchField,
+    .FramedMenuPage .Konqueror #MSearchField {
+        width: 98%;
+        }
+
+    /* Firefox doesn't do this right in frames without #MSearchPanel added on.
+        It's presence doesn't hurt anything other browsers. */
+    #MSearchPanel.MSearchPanelInactive:hover #MSearchField {
+        background-color: #FFFFFF;
+        border: 1px solid #C0C0C0;
+        padding: 1px 3px;
+        }
+    .MSearchPanelActive #MSearchField {
+        background-color: #FFFFFF;
+        border: 1px solid #C0C0C0;
+        font-style: normal;
+        padding: 1px 3px;
+        }
+
+    #MSearchType {
+        visibility: hidden;
+        font: 8pt Verdana, sans-serif;
+        width: 98%;
+        padding: 0;
+        border: 1px solid #C0C0C0;
+        }
+    .MSearchPanelActive #MSearchType,
+    /*  As mentioned above, Firefox doesn't do this right in frames without #MSearchPanel added on. */
+    #MSearchPanel.MSearchPanelInactive:hover #MSearchType,
+    #MSearchType:focus {
+        visibility: visible;
+        color: #606060;
+        }
+    #MSearchType option#MSearchEverything {
+        font-weight: bold;
+        }
+
+    .Opera8 .MSearchPanelInactive:hover,
+    .Opera8 .MSearchPanelActive {
+        margin-left: -1px;
+        }
+
+
+    iframe#MSearchResults {
+        width: 60ex;
+        height: 15em;
+        }
+    #MSearchResultsWindow {
+        display: none;
+        position: absolute;
+        left: 0; top: 0;
+        border: 1px solid #000000;
+        background-color: #E8E8E8;
+        }
+    #MSearchResultsWindowClose {
+        font-weight: bold;
+        font-size: 8pt;
+        display: block;
+        padding: 2px 5px;
+        }
+    #MSearchResultsWindowClose:link,
+    #MSearchResultsWindowClose:visited {
+        color: #000000;
+        text-decoration: none;
+        }
+    #MSearchResultsWindowClose:active,
+    #MSearchResultsWindowClose:hover {
+        color: #800000;
+        text-decoration: none;
+        background-color: #F4F4F4;
+        }
+
+
+
+
+#Content {
+    padding-bottom: 15px;
+    }
+
+.ContentPage #Content {
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #000000;
+    background-color: #FFFFFF;
+    font-size: 9pt;  /* To make 31ex match the menu's 31ex. */
+    
+    }
+.ContentPage .Firefox #Content {
+    margin-left: 27ex;
+    }
+
+
+
+    .CTopic {
+        font-size: 10pt;
+        margin-bottom: 3em;
+        }
+
+
+    .CTitle {
+        font-size: 12pt; font-weight: bold;
+        border-width: 0 0 1px 0; border-style: solid; border-color: #A0A0A0;
+        margin: 0 15px .5em 15px }
+
+    .CGroup .CTitle {
+        font-size: 16pt; font-variant: small-caps;
+        padding-left: 15px; padding-right: 15px;
+        border-width: 0 0 2px 0; border-color: #000000;
+        margin-left: 0; margin-right: 0 }
+
+    .CClass .CTitle,
+    .CInterface .CTitle,
+    .CDatabase .CTitle,
+    .CDatabaseTable .CTitle,
+    .CSection .CTitle {
+        font-size: 18pt;
+        color: #FFFFFF; background-color: #A0A0A0;
+        padding: 10px 15px 10px 15px;
+        border-width: 2px 0; border-color: #000000;
+        margin-left: 0; margin-right: 0 }
+
+    #MainTopic .CTitle {
+        font-size: 20pt;
+        color: #FFFFFF; background-color: #7070C0;
+        padding: 10px 15px 10px 15px;
+        border-width: 0 0 3px 0; border-color: #000000;
+        margin-left: 0; margin-right: 0 }
+
+    .CBody {
+        margin-left: 15px; margin-right: 15px }
+
+
+    .CToolTip {
+        position: absolute; visibility: hidden;
+        left: 0; top: 0;
+        background-color: #FFFFE0;
+        padding: 5px;
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #000000;
+        font-size: 8pt;
+        }
+
+    .Opera .CToolTip {
+        max-width: 98%;
+        }
+
+    /*  Scrollbars would be useless.  */
+    .CToolTip blockquote {
+        overflow: hidden;
+        }
+    .IE6 .CToolTip blockquote {
+        overflow: visible;
+        }
+
+    .CHeading {
+        font-weight: bold; font-size: 10pt;
+        margin: 1.5em 0 .5em 0;
+        }
+
+    .CBody pre {
+        font: 9pt "Courier New", Courier, monospace;
+        margin: 1em 0;
+        }
+
+    .CBody ul {
+        /*  I don't know why CBody's margin doesn't apply, but it's consistent across browsers so whatever.
+             Reapply it here as padding.  */
+        padding-left: 15px; padding-right: 15px;
+        margin: .5em 5ex .5em 5ex;
+        }
+
+    .CDescriptionList {
+        margin: .5em 5ex 0 5ex }
+
+    .CDLEntry {
+            font: 10pt "Courier New", Courier, monospace; color: #808080;
+            padding-bottom: .25em;
+            white-space: nowrap }
+
+    CDLDescription {
+            font-size: 10pt;  /*  For browsers that don't inherit correctly, like Opera 5.  */
+            padding-bottom: .5em; padding-left: 5ex }
+
+
+    .CTopic img {
+        text-align: center;
+        display: block;
+        margin: 1em auto;
+        }
+    .CImageCaption {
+        font-variant: small-caps;
+        font-size: 8pt;
+        color: #808080;
+        text-align: center;
+        position: relative;
+        top: 1em;
+        }
+
+    .CImageLink {
+        color: #808080;
+        font-style: italic;
+        }
+    a.CImageLink:link,
+    a.CImageLink:visited,
+    a.CImageLink:hover { color: #808080 }
+
+
+
+
+
+.Prototype {
+    font: 10pt "Courier New", Courier, monospace;
+    padding: 5px 3ex;
+    border-width: 1px; border-style: solid;
+    margin: 0 5ex 1.5em 5ex;
+    }
+
+    .Prototype td {
+        font-size: 10pt;
+        }
+
+    .PDefaultValue,
+    .PDefaultValuePrefix,
+    .PTypePrefix {
+        color: #8F8F8F;
+        }
+    .PTypePrefix {
+        text-align: right;
+        }
+    .PAfterParameters {
+        vertical-align: bottom;
+        }
+
+    .IE .Prototype table {
+        padding: 0;
+        }
+
+    .CFunction .Prototype {
+        background-color: #F4F4F4; border-color: #D0D0D0 }
+    .CProperty .Prototype {
+        background-color: #F4F4FF; border-color: #C0C0E8 }
+    .CVariable .Prototype {
+        background-color: #FFFFF0; border-color: #E0E0A0 }
+
+    .CClass .Prototype {
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #A0A0A0;
+        background-color: #F4F4F4;
+        }
+    .CInterface .Prototype {
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #A0A0D0;
+        background-color: #F4F4FF;
+        }
+
+    .CDatabaseIndex .Prototype,
+    .CConstant .Prototype {
+        background-color: #D0D0D0; border-color: #000000 }
+    .CType .Prototype,
+    .CEnumeration .Prototype {
+        background-color: #FAF0F0; border-color: #E0B0B0;
+        }
+    .CDatabaseTrigger .Prototype,
+    .CEvent .Prototype,
+    .CDelegate .Prototype {
+        background-color: #F0FCF0; border-color: #B8E4B8 }
+
+    .CToolTip .Prototype {
+        margin: 0 0 .5em 0;
+        white-space: nowrap;
+        }
+
+
+
+
+
+.Summary {
+    margin: 1.5em 5ex 0 5ex }
+
+    .STitle {
+        font-size: 12pt; font-weight: bold;
+        margin-bottom: .5em }
+
+
+    .SBorder {
+        background-color: #FFFFF0;
+        padding: 15px;
+        border: 1px solid #C0C060 }
+
+    /* In a frame IE 6 will make them too long unless you set the width to 100%.  Without frames it will be correct without a width
+        or slightly too long (but not enough to scroll) with a width.  This arbitrary weirdness simply astounds me.  IE 7 has the same
+        problem with frames, haven't tested it without.  */
+    .FramedContentPage .IE .SBorder {
+        width: 100% }
+
+    /*  A treat for Mozilla users.  Blatantly non-standard.  Will be replaced with CSS 3 attributes when finalized/supported.  */
+    .Firefox .SBorder {
+        -moz-border-radius: 20px }
+
+
+    .STable {
+        font-size: 9pt; width: 100% }
+
+    .SEntry {
+        width: 30% }
+    .SDescription {
+        width: 70% }
+
+
+    .SMarked {
+        background-color: #F8F8D8 }
+
+    .SDescription { padding-left: 2ex }
+    .SIndent1 .SEntry { padding-left: 1.5ex }   .SIndent1 .SDescription { padding-left: 3.5ex }
+    .SIndent2 .SEntry { padding-left: 3.0ex }   .SIndent2 .SDescription { padding-left: 5.0ex }
+    .SIndent3 .SEntry { padding-left: 4.5ex }   .SIndent3 .SDescription { padding-left: 6.5ex }
+    .SIndent4 .SEntry { padding-left: 6.0ex }   .SIndent4 .SDescription { padding-left: 8.0ex }
+    .SIndent5 .SEntry { padding-left: 7.5ex }   .SIndent5 .SDescription { padding-left: 9.5ex }
+
+    .SDescription a { color: #800000}
+    .SDescription a:active { color: #A00000 }
+
+    .SGroup td {
+        padding-top: .5em; padding-bottom: .25em }
+
+    .SGroup .SEntry {
+        font-weight: bold; font-variant: small-caps }
+
+    .SGroup .SEntry a { color: #800000 }
+    .SGroup .SEntry a:active { color: #F00000 }
+
+
+    .SMain td,
+    .SClass td,
+    .SDatabase td,
+    .SDatabaseTable td,
+    .SSection td {
+        font-size: 10pt;
+        padding-bottom: .25em }
+
+    .SClass td,
+    .SDatabase td,
+    .SDatabaseTable td,
+    .SSection td {
+        padding-top: 1em }
+
+    .SMain .SEntry,
+    .SClass .SEntry,
+    .SDatabase .SEntry,
+    .SDatabaseTable .SEntry,
+    .SSection .SEntry {
+        font-weight: bold;
+        }
+
+    .SMain .SEntry a,
+    .SClass .SEntry a,
+    .SDatabase .SEntry a,
+    .SDatabaseTable .SEntry a,
+    .SSection .SEntry a { color: #000000 }
+
+    .SMain .SEntry a:active,
+    .SClass .SEntry a:active,
+    .SDatabase .SEntry a:active,
+    .SDatabaseTable .SEntry a:active,
+    .SSection .SEntry a:active { color: #A00000 }
+
+
+
+
+
+.ClassHierarchy {
+    margin: 0 15px 1em 15px }
+
+    .CHEntry {
+        border-width: 1px 2px 2px 1px; border-style: solid; border-color: #A0A0A0;
+        margin-bottom: 3px;
+        padding: 2px 2ex;
+        font-size: 10pt;
+        background-color: #F4F4F4; color: #606060;
+        }
+
+    .Firefox .CHEntry {
+        -moz-border-radius: 4px;
+        }
+
+    .CHCurrent .CHEntry {
+        font-weight: bold;
+        border-color: #000000;
+        color: #000000;
+        }
+
+    .CHChildNote .CHEntry {
+        font-style: italic;
+        font-size: 8pt;
+        }
+
+    .CHIndent {
+        margin-left: 3ex;
+        }
+
+    .CHEntry a:link,
+    .CHEntry a:visited,
+    .CHEntry a:hover {
+        color: #606060;
+        }
+    .CHEntry a:active {
+        color: #800000;
+        }
+
+
+
+
+
+#Index {
+    background-color: #FFFFFF;
+    }
+
+/*  As opposed to .PopupSearchResultsPage #Index  */
+.IndexPage #Index,
+.FramedIndexPage #Index,
+.FramedSearchResultsPage #Index {
+    padding: 15px;
+    }
+
+.IndexPage #Index {
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #000000;
+    font-size: 9pt;  /* To make 27ex match the menu's 27ex. */
+    margin-left: 27ex;
+    }
+
+
+    .IPageTitle {
+        font-size: 20pt; font-weight: bold;
+        color: #FFFFFF; background-color: #7070C0;
+        padding: 10px 15px 10px 15px;
+        border-width: 0 0 3px 0; border-color: #000000; border-style: solid;
+        margin: -15px -15px 0 -15px }
+
+    .FramedSearchResultsPage .IPageTitle {
+        margin-bottom: 15px;
+        }
+
+    .INavigationBar {
+        font-size: 10pt;
+        text-align: center;
+        background-color: #FFFFF0;
+        padding: 5px;
+        border-bottom: solid 1px black;
+        margin: 0 -15px 15px -15px;
+        }
+
+    .INavigationBar a {
+        font-weight: bold }
+
+    .IHeading {
+        font-size: 16pt; font-weight: bold;
+        padding: 2.5em 0 .5em 0;
+        text-align: center;
+        width: 3.5ex;
+        }
+    #IFirstHeading {
+        padding-top: 0;
+        }
+
+    .IEntry {
+        font-size: 10pt;
+        padding-left: 1ex;
+        }
+    .PopupSearchResultsPage .IEntry {
+        font-size: 8pt;
+        padding: 1px 5px;
+        }
+    .PopupSearchResultsPage .Opera9 .IEntry,
+    .FramedSearchResultsPage .Opera9 .IEntry {
+        text-align: left;
+        }
+    .FramedSearchResultsPage .IEntry {
+        padding: 0;
+        }
+
+    .ISubIndex {
+        padding-left: 3ex; padding-bottom: .5em }
+    .PopupSearchResultsPage .ISubIndex {
+        display: none;
+        }
+
+
+    /*  While it may cause some entries to look like links when they aren't, I found it's much easier to read the
+         index if everything's the same color.  */
+    .ISymbol {
+        font-weight: bold; color: #900000  }
+
+    .IndexPage .ISymbolPrefix,
+    .FramedIndexPage .ISymbolPrefix {
+        font-size: 10pt;
+        text-align: right;
+        color: #C47C7C;
+        background-color: #F8F8F8;
+        border-right: 3px solid #E0E0E0;
+        border-left: 1px solid #E0E0E0;
+        padding: 0 1px 0 2px;
+        }
+    .PopupSearchResultsPage .ISymbolPrefix,
+    .FramedSearchResultsPage .ISymbolPrefix {
+        color: #900000;
+        }
+    .PopupSearchResultsPage .ISymbolPrefix {
+        font-size: 8pt;
+        }
+
+    .IndexPage #IFirstSymbolPrefix,
+    .FramedIndexPage #IFirstSymbolPrefix {
+        border-top: 1px solid #E0E0E0;
+        }
+    .IndexPage #ILastSymbolPrefix,
+    .FramedIndexPage #ILastSymbolPrefix {
+        border-bottom: 1px solid #E0E0E0;
+        }
+    .IndexPage #IOnlySymbolPrefix,
+    .FramedIndexPage #IOnlySymbolPrefix {
+        border-top: 1px solid #E0E0E0;
+        border-bottom: 1px solid #E0E0E0;
+        }
+
+    a.IParent,
+    a.IFile {
+        display: block;
+        }
+
+    .PopupSearchResultsPage .SRStatus {
+        padding: 2px 5px;
+        font-size: 8pt;
+        font-style: italic;
+        }
+    .FramedSearchResultsPage .SRStatus {
+        font-size: 10pt;
+        font-style: italic;
+        }
+
+    .SRResult {
+        display: none;
+        }
+
+
+
+#Footer {
+    font-size: 8pt;
+    color: #989898;
+    text-align: right;
+    }
+
+#Footer p {
+    text-indent: 0;
+    margin-bottom: .5em;
+    }
+
+.ContentPage #Footer,
+.IndexPage #Footer {
+    text-align: right;
+    margin: 2px;
+    }
+
+.FramedMenuPage #Footer {
+    text-align: center;
+    margin: 5em 10px 10px 10px;
+    padding-top: 1em;
+    border-top: 1px solid #C8C8C8;
+    }
+
+    #Footer a:link,
+    #Footer a:hover,
+    #Footer a:visited { color: #989898 }
+    #Footer a:active { color: #A00000 }
+
+
+#MainTopic .CTitle {					/* Title: */
+  font-size: 20pt;
+  font-weight: bold; /* Bold looks better against dark background. */
+  font-family: Arial, Helvetica, sans-serif, "MS sans serif"; 
+  background-color: #405871;
+  color: #FFFFFF;
+  margin: 0 0 0.5em 0;
+  padding: 10px 15px 10px 15px;
+}
+
+
+.SBorder,.SEntry, .SDescription {				/* Summary index */
+  background-color: #F2F2F2;
+  padding: 5px;
+  border: 1px solid #E0E0E0 }
+.SBorder{ padding: 1px; }
+
+
+.CTitle {							/* Function */
+  background-color: #FFFFAA;
+  margin: 1 1 1 1;
+  padding: 12px 0 12px 4px;
+  font-size: 12pt; font-weight: bold;
+  border-width: 3px 0px 0px 0; border-style: solid; border-color: #A0A0A0;
+}
+
+
+h4 {							/* topics.. (parameters, returns, example..) */
+  font-size: 111%;  font-weight: bold;
+  background-color:#E6E6E6;
+  margin: 1.0em 0 0.5em 0;
+  padding: 0.1em 0 0.1em 0.2em;
+}
+
+
+.CDescriptionList, .CDLEntry, .CDLDescription {			/* parameter table */
+  width: 100%;
+  margin: 1em 0ex 0 0ex;
+  border-width: 1px 1px 1px 1px; border-style: solid; border-color: #C0C0C0;
+}
+.CDLEntry, .CDLDescription { margin: 0 0 0em 0;  text-indent: 0px;  padding-left: 1ex; padding-bottom: .5em; padding-top: .5em; }
+.CDLEntry { width: 15%; font: 10pt "Courier New", Courier, monospace; }
+
+/*  Blockquotes are used as containers for things that may need to scroll.  */
+blockquote {
+    padding: 20;
+        padding-left: 9px; border-left-width: 1px;
+    margin: 0;
+    overflow: auto;
+    background-color: #F3F3FF;			/* example bg color..*/
+        border-width: 0px 0px 0px 0px; border-style: solid; border-color: #838B8B;
+    }
+
+/* .ContentPage #Content { margin-left: 0ex; }   */
+
+
+a        {text-decoration: none;}
+a:link   {text-decoration: none; color: #0000AA;}
+a:visited{text-decoration: none; color: #AA00AA;}
+a:active {text-decoration: none; color: #0000AA;}
+a:hover  {text-decoration: underline; color: #6666CC;}</style><script language=JavaScript src="../javascript/main.js"></script><script language=JavaScript src="../javascript/searchdata.js"></script></head><body class="ContentPage" onLoad="NDOnLoad()"><script language=JavaScript><!--
+if (browserType) {document.write("<div class=" + browserType + ">");if (browserVer) {document.write("<div class=" + browserVer + ">"); }}// --></script>
+
+<!--  Generated by Natural Docs, version 1.4 -->
+<!--  http://www.naturaldocs.org  -->
+
+<!-- saved from url=(0026)http://www.naturaldocs.org -->
+
+
+
+
+<div id=Content><div class="CSection"><div class=CTopic id=MainTopic><h1 class=CTitle><a name="Edit_Library_v1.1"></a>Edit Library v1.1</h1><div class=CBody><!--START_ND_SUMMARY--><div class=Summary><div class=STitle>Summary</div><div class=SBorder><table border=0 cellspacing=0 cellpadding=0 class=STable><tr class="SMain"><td class=SEntry><a href="#Edit_Library_v1.1" >Edit Library v1.1</a></td><td class=SDescription></td></tr><tr class="SGroup SIndent1"><td class=SEntry><a href="#Introduction" >Introduction</a></td><td class=SDescription>This library is designed for use on the standard edit control.</td></tr><tr class="SGroup SIndent1"><td class=SEntry><a href="#Issues/Consideration" >Issues/<wbr>Consideration</a></td><td class=SDescription>A few considerations...</td></tr><tr class="SGroup SIndent1"><td class=SEntry><a href="#Credit" >Credit</a></td><td class=SDescription>This library was inspired by the Edit mini-library created by <b>Lexikos</b> and the HiEditor library created by <b>majkinetor</b>. </td></tr><tr class="SGroup SIndent1"><td class=SEntry><a href="#Functions" >Functions</a></td><td class=SDescription></td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_CanUndo" id=link1 onMouseOver="ShowTip(event, 'tt1', 'link1')" onMouseOut="HideTip('tt1')">Edit_CanUndo</a></td><td class=SDescription>Returns TRUE if there are any actions in the edit control&rsquo;s undo queue, otherwise FALSE.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_CharFromPos" id=link2 onMouseOver="ShowTip(event, 'tt2', 'link2')" onMouseOut="HideTip('tt2')">Edit_CharFromPos</a></td><td class=SDescription>Gets information about the character and/or line closest to a specified point in the the client area of the edit control.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_Clear" id=link3 onMouseOver="ShowTip(event, 'tt3', 'link3')" onMouseOut="HideTip('tt3')">Edit_Clear</a></td><td class=SDescription>Delete (clear) the current selection, if any, from the edit control.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_Convert2DOS" id=link4 onMouseOver="ShowTip(event, 'tt4', 'link4')" onMouseOut="HideTip('tt4')">Edit_Convert2DOS</a></td><td class=SDescription>Converts Unix, DOS/Unix mix, and Mac file formats to DOS format.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_Convert2Mac" id=link5 onMouseOver="ShowTip(event, 'tt5', 'link5')" onMouseOut="HideTip('tt5')">Edit_Convert2Mac</a></td><td class=SDescription>Convert DOS, DOS/Unix mix, and Unix file formats to Mac format.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_Convert2Unix" id=link6 onMouseOver="ShowTip(event, 'tt6', 'link6')" onMouseOut="HideTip('tt6')">Edit_Convert2Unix</a></td><td class=SDescription>Convert DOS, DOS/Unix mix, and Mac formats to Unix format.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_ConvertCase" id=link7 onMouseOver="ShowTip(event, 'tt7', 'link7')" onMouseOut="HideTip('tt7')">Edit_ConvertCase</a></td><td class=SDescription>Convert case of selected text.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_Copy" id=link8 onMouseOver="ShowTip(event, 'tt8', 'link8')" onMouseOut="HideTip('tt8')">Edit_Copy</a></td><td class=SDescription>Copy the current selection to the clipboard in CF_TEXT format.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_Cut" id=link9 onMouseOver="ShowTip(event, 'tt9', 'link9')" onMouseOut="HideTip('tt9')">Edit_Cut</a></td><td class=SDescription>Delete the current selection, if any, and copy the deleted text to the clipboard in CF_TEXT format.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_EmptyUndoBuffer" id=link10 onMouseOver="ShowTip(event, 'tt10', 'link10')" onMouseOut="HideTip('tt10')">Edit_EmptyUndoBuffer</a></td><td class=SDescription>Resets the undo flag of the edit control. </td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_FindText" id=link11 onMouseOver="ShowTip(event, 'tt11', 'link11')" onMouseOut="HideTip('tt11')">Edit_FindText</a></td><td class=SDescription>Find text within the edit control.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_FmtLines" id=link12 onMouseOver="ShowTip(event, 'tt12', 'link12')" onMouseOut="HideTip('tt12')">Edit_FmtLines</a></td><td class=SDescription>Sets a flag that determines whether a multiline edit control includes soft line-break characters. </td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_GetFirstVisibleLine" id=link13 onMouseOver="ShowTip(event, 'tt13', 'link13')" onMouseOut="HideTip('tt13')">Edit_GetFirstVisibleLine</a></td><td class=SDescription>Returns the zero-based index of the uppermost visible line. </td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_GetLastVisibleLine" id=link14 onMouseOver="ShowTip(event, 'tt14', 'link14')" onMouseOut="HideTip('tt14')">Edit_GetLastVisibleLine</a></td><td class=SDescription>Returns the zero-based line index of the last visible line on the edit control.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_GetLimitText" id=link15 onMouseOver="ShowTip(event, 'tt15', 'link15')" onMouseOut="HideTip('tt15')">Edit_GetLimitText</a></td><td class=SDescription>Returns the current text limit for the edit control.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_GetLine" id=link16 onMouseOver="ShowTip(event, 'tt16', 'link16')" onMouseOut="HideTip('tt16')">Edit_GetLine</a></td><td class=SDescription>Get the text of the desired line from the edit control.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_GetLineCount" id=link17 onMouseOver="ShowTip(event, 'tt17', 'link17')" onMouseOut="HideTip('tt17')">Edit_GetLineCount</a></td><td class=SDescription>Returns an integer specifying the total number of text lines in a multiline edit control. </td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_GetMargins" id=link18 onMouseOver="ShowTip(event, 'tt18', 'link18')" onMouseOut="HideTip('tt18')">Edit_GetMargins</a></td><td class=SDescription>Gets the widths of the left and right margins for the edit control. </td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_GetModify" id=link19 onMouseOver="ShowTip(event, 'tt19', 'link19')" onMouseOut="HideTip('tt19')">Edit_GetModify</a></td><td class=SDescription>Gets the state of the edit control&rsquo;s modification flag. </td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_GetRect" id=link20 onMouseOver="ShowTip(event, 'tt20', 'link20')" onMouseOut="HideTip('tt20')">Edit_GetRect</a></td><td class=SDescription>Gets the formatting rectangle of the edit control.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_GetSel" id=link21 onMouseOver="ShowTip(event, 'tt21', 'link21')" onMouseOut="HideTip('tt21')">Edit_GetSel</a></td><td class=SDescription>Gets the starting and ending character positions of the current selection in the edit control. </td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_GetSelText" id=link22 onMouseOver="ShowTip(event, 'tt22', 'link22')" onMouseOut="HideTip('tt22')">Edit_GetSelText</a></td><td class=SDescription>Returns the currently selected text (if any).</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_GetText" id=link23 onMouseOver="ShowTip(event, 'tt23', 'link23')" onMouseOut="HideTip('tt23')">Edit_GetText</a></td><td class=SDescription>Returns all text from the control up to p_Length length. </td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_GetTextLength" id=link24 onMouseOver="ShowTip(event, 'tt24', 'link24')" onMouseOut="HideTip('tt24')">Edit_GetTextLength</a></td><td class=SDescription>Returns the length, in characters, of the text in the edit control.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_GetTextRange" id=link25 onMouseOver="ShowTip(event, 'tt25', 'link25')" onMouseOut="HideTip('tt25')">Edit_GetTextRange</a></td><td class=SDescription>Get a range of characters.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_IsMultiline" id=link26 onMouseOver="ShowTip(event, 'tt26', 'link26')" onMouseOut="HideTip('tt26')">Edit_IsMultiline</a></td><td class=SDescription>Returns TRUE if the edit control is multiline, otherwise FALSE.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_IsReadOnly" id=link27 onMouseOver="ShowTip(event, 'tt27', 'link27')" onMouseOut="HideTip('tt27')">Edit_IsReadOnly</a></td><td class=SDescription>Returns TRUE if the ES_READONLY style has been set, otherwise FALSE.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_IsStyle" id=link28 onMouseOver="ShowTip(event, 'tt28', 'link28')" onMouseOut="HideTip('tt28')">Edit_IsStyle</a></td><td class=SDescription>Returns TRUE if the specified style has been set, otherwise FALSE.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_SetStyle" id=link29 onMouseOver="ShowTip(event, 'tt29', 'link29')" onMouseOut="HideTip('tt29')">Edit_SetStyle</a></td><td class=SDescription>Adds, removes, or toggles a style for an edit control.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_LineFromChar" id=link30 onMouseOver="ShowTip(event, 'tt30', 'link30')" onMouseOut="HideTip('tt30')">Edit_LineFromChar</a></td><td class=SDescription>Gets the index of the line that contains the specified character index.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_LineFromPos" id=link31 onMouseOver="ShowTip(event, 'tt31', 'link31')" onMouseOut="HideTip('tt31')">Edit_LineFromPos</a></td><td class=SDescription>This function is the same as <a href="#Edit_CharFromPos" class=LFunction id=link32 onMouseOver="ShowTip(event, 'tt2', 'link32')" onMouseOut="HideTip('tt2')">Edit_CharFromPos</a> except the line index (r_LineIdx) is returned.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_LineIndex" id=link33 onMouseOver="ShowTip(event, 'tt32', 'link33')" onMouseOut="HideTip('tt32')">Edit_LineIndex</a></td><td class=SDescription>Gets the character index of the first character of a specified line.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_LineLength" id=link34 onMouseOver="ShowTip(event, 'tt33', 'link34')" onMouseOut="HideTip('tt33')">Edit_LineLength</a></td><td class=SDescription>Gets the length of a line.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_LineScroll" id=link35 onMouseOver="ShowTip(event, 'tt34', 'link35')" onMouseOut="HideTip('tt34')">Edit_LineScroll</a></td><td class=SDescription>Scrolls the text in the edit control for the current file.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_LoadFile" id=link36 onMouseOver="ShowTip(event, 'tt35', 'link36')" onMouseOut="HideTip('tt35')">Edit_LoadFile</a></td><td class=SDescription>Load the contents of a file to the edit control.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_Paste" id=link37 onMouseOver="ShowTip(event, 'tt36', 'link37')" onMouseOut="HideTip('tt36')">Edit_Paste</a></td><td class=SDescription>Copies the current content of the clipboard to the edit control at the current caret position. </td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_PosFromChar" id=link38 onMouseOver="ShowTip(event, 'tt37', 'link38')" onMouseOut="HideTip('tt37')">Edit_PosFromChar</a></td><td class=SDescription>Gets the client area coordinates of a specified character in the edit control.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_ReplaceSel" id=link39 onMouseOver="ShowTip(event, 'tt38', 'link39')" onMouseOut="HideTip('tt38')">Edit_ReplaceSel</a></td><td class=SDescription>Replaces the selected text with the specified text. </td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_SaveFile" id=link40 onMouseOver="ShowTip(event, 'tt39', 'link40')" onMouseOut="HideTip('tt39')">Edit_SaveFile</a></td><td class=SDescription>Save the contents of the edit control to a file. </td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_Scroll" id=link41 onMouseOver="ShowTip(event, 'tt40', 'link41')" onMouseOut="HideTip('tt40')">Edit_Scroll</a></td><td class=SDescription>Scrolls the text vertically in the edit control.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_ScrollCaret" id=link42 onMouseOver="ShowTip(event, 'tt41', 'link42')" onMouseOut="HideTip('tt41')">Edit_ScrollCaret</a></td><td class=SDescription>Scrolls the edit control until caret is visible.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_SetLimitText" id=link43 onMouseOver="ShowTip(event, 'tt42', 'link43')" onMouseOut="HideTip('tt42')">Edit_SetLimitText</a></td><td class=SDescription>Sets the text limit of the edit control.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_SetMargins" id=link44 onMouseOver="ShowTip(event, 'tt43', 'link44')" onMouseOut="HideTip('tt43')">Edit_SetMargins</a></td><td class=SDescription>Sets the width of the left and/or right margin (in pixels) for the edit control. </td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_SetModify" id=link45 onMouseOver="ShowTip(event, 'tt44', 'link45')" onMouseOut="HideTip('tt44')">Edit_SetModify</a></td><td class=SDescription>Sets or clears the modification flag for the edit control. </td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_SetPasswordChar" id=link46 onMouseOver="ShowTip(event, 'tt45', 'link46')" onMouseOut="HideTip('tt45')">Edit_SetPasswordChar</a></td><td class=SDescription>Sets or removes the password character for a single-line edit control.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_SetReadOnly" id=link47 onMouseOver="ShowTip(event, 'tt46', 'link47')" onMouseOut="HideTip('tt46')">Edit_SetReadOnly</a></td><td class=SDescription>Sets or removes the read-only style (ES_READONLY) of the edit control.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_SetRect" id=link48 onMouseOver="ShowTip(event, 'tt47', 'link48')" onMouseOut="HideTip('tt47')">Edit_SetRect</a></td><td class=SDescription>Sets the formatting rectangle of a multiline edit control. </td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_SetTabStops" id=link49 onMouseOver="ShowTip(event, 'tt48', 'link49')" onMouseOut="HideTip('tt48')">Edit_SetTabStops</a></td><td class=SDescription>Sets the tab stops in a multiline edit control. </td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_SetText" id=link50 onMouseOver="ShowTip(event, 'tt49', 'link50')" onMouseOut="HideTip('tt49')">Edit_SetText</a></td><td class=SDescription>Set the text of the edit control. </td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_SetSel" id=link51 onMouseOver="ShowTip(event, 'tt50', 'link51')" onMouseOut="HideTip('tt50')">Edit_SetSel</a></td><td class=SDescription>Selects a range of characters.</td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_TextIsSelected" id=link52 onMouseOver="ShowTip(event, 'tt51', 'link52')" onMouseOut="HideTip('tt51')">Edit_TextIsSelected</a></td><td class=SDescription>Returns TRUE if text is selected, otherwise FALSE.</td></tr><tr class="SFunction SIndent2"><td class=SEntry><a href="#Edit_Undo" id=link53 onMouseOver="ShowTip(event, 'tt52', 'link53')" onMouseOut="HideTip('tt52')">Edit_Undo</a></td><td class=SDescription>Undo the last operation. </td></tr><tr class="SFunction SIndent2 SMarked"><td class=SEntry><a href="#Edit_GetActiveHandles" id=link54 onMouseOver="ShowTip(event, 'tt53', 'link54')" onMouseOut="HideTip('tt53')">Edit_GetActiveHandles</a></td><td class=SDescription>Finds the handles for the active control and active window.</td></tr></table></div></div><!--END_ND_SUMMARY--></div></div></div>
+
+<div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="Introduction"></a>Introduction</h3><div class=CBody><p>This library is designed for use on the standard edit control.</p></div></div></div>
+
+<div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="Issues/Consideration"></a>Issues/<wbr>Consideration</h3><div class=CBody><p>A few considerations...</p><ul><li>Although many of the functions work on all types of edit controls -- single-line, multiline, and combo boxes (contains a single-line edit control) -- there are several functions that only work on one type of edit control.&nbsp;  See the documentation for each function for more information.</li><li>AutoHotkey supports the creation and manipulation of the standard edit control.&nbsp; For this reason, there are a small number functions that were intentionally left out of this library because they provide no additional value to what the standard AutoHotkey commands provide.</li><li>The edit control does not support several key messages that are needed by this library.&nbsp;  Absent messages include EM_GETSELTEXT, EM_GETTEXTRANGE, and EM_FINDTEXT.&nbsp;  These messages have been replaced with AutoHotkey commands or with other messages.&nbsp;  Although the substitute code/messages are very capable, they are not quite as efficient (memory and/or speed) as the messages they replace (if they existed).&nbsp;  These inefficiencies are not really noticable if the control only contains a limited amount of text (~512K or less), but they become more pronounced with increasing text sizes.&nbsp; Efficiency also depends on the where work in the control is being done.&nbsp;  For example, extracting text from the top of the control uses less resources that extracting text from the end of the control.</li></ul></div></div></div>
+
+<div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="Credit"></a>Credit</h3><div class=CBody><p>This library was inspired by the Edit mini-library created by <b>Lexikos</b> and the HiEditor library created by <b>majkinetor</b>.&nbsp;  Some of the syntax and code ideas were extracted from these libraries.&nbsp;  Thank to these authors for sharing their work.</p></div></div></div>
+
+<div class="CGroup"><div class=CTopic><h3 class=CTitle><a name="Functions"></a>Functions</h3></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_CanUndo"></a>Edit_CanUndo</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_CanUndo(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Returns TRUE if there are any actions in the edit control&rsquo;s undo queue, otherwise FALSE.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_CharFromPos"></a>Edit_CharFromPos</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_CharFromPos(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>X,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>Y,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_CharPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_LineIdx</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Gets information about the character and/or line closest to a specified point in the the client area of the edit control.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>X, Y</td><td class=CDLDescription>The coordinates of a point in the edit control&rsquo;s client area relative to the upper-left corner of the client area.</td></tr><tr><td class=CDLEntry>r_CharPos</td><td class=CDLDescription>The zero-based index of the character nearest the specified point.&nbsp; [Optional] This index is relative to the beginning of the control, not the beginning of the line.&nbsp; If the specified point is beyond the last character in the edit control, the return value indicates the last character in the control.&nbsp;  See the Remarks section for more information.</td></tr><tr><td class=CDLEntry>r_LineIdx</td><td class=CDLDescription>Zero-based index of the line that contains the character.&nbsp; [Optional] For single-line edit controls, this value is zero.&nbsp; The index indicates the line delimiter if the specified point is beyond the last visible character in a line.&nbsp;  See the Remarks section for more information.</td></tr></table><h4 class=CHeading>Returns</h4><p>The value of the r_CharPos variable.</p><h4 class=CHeading>Remarks</h4><p>If the specified point is outside the bounds of the edit control, all output variables (Return, r_CharPos, and r_LineIdx) are set to -1.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_Clear"></a>Edit_Clear</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Clear(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Delete (clear) the current selection, if any, from the edit control.</p><h4 class=CHeading>Remarks</h4><p>Undo can be used to reverse this action.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_Convert2DOS"></a>Edit_Convert2DOS</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Convert2DOS(</td><td class=PParameter nowrap>p_Text</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Converts Unix, DOS/Unix mix, and Mac file formats to DOS format.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_Convert2Mac"></a>Edit_Convert2Mac</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Convert2Mac(</td><td class=PParameter nowrap>p_Text</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Convert DOS, DOS/Unix mix, and Unix file formats to Mac format.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_Convert2Unix"></a>Edit_Convert2Unix</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Convert2Unix(</td><td class=PParameter nowrap>p_Text</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Convert DOS, DOS/Unix mix, and Mac formats to Unix format.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_ConvertCase"></a>Edit_ConvertCase</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_ConvertCase(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Case</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Convert case of selected text.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_Case</td><td class=CDLDescription>Set to &ldquo;Upper&rdquo;, &ldquo;Lower&rdquo;, &ldquo;Capitalize&rdquo;, or &ldquo;Toggle&rdquo;.</td></tr></table></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_Copy"></a>Edit_Copy</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Copy(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Copy the current selection to the clipboard in CF_TEXT format.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_Cut"></a>Edit_Cut</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Cut(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Delete the current selection, if any, and copy the deleted text to the clipboard in CF_TEXT format.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_EmptyUndoBuffer"></a>Edit_EmptyUndoBuffer</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_EmptyUndoBuffer(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Resets the undo flag of the edit control.&nbsp; The undo flag is set whenever an operation within the edit control can be undone.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_FindText"></a>Edit_FindText</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_FindText(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_SearchText,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_Min</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_Max</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_Flags</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_RegExOut</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Find text within the edit control.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_SearchText</td><td class=CDLDescription>Search text.</td></tr><tr><td class=CDLEntry>p_Min, p_Max</td><td class=CDLDescription>Zero-based search range within the edit control. p_Min is the character index of the first character in the range and p_Max is the character index immediately following the last character in the range.&nbsp; (Ex: To search the first 5 characters of the text, set p_Min to 0 and p_Max to 5)  Set p_Max to -1 to search to the end of the text.&nbsp; To search backward, the roles and descriptions of the p_Min and p_Max are reversed.&nbsp; (Ex: To search the first 5 characters of the control in reverse, set p_Min to 5 and p_Max to 0)</td></tr><tr><td class=CDLEntry>p_Flags</td><td class=CDLDescription>Valid flags are as follows:</td></tr></table><blockquote><pre>Flag        Description
+----        -----------
+MatchCase   Search is case sensitive.  This flag is ignored if the
+            &quot;RegEx&quot; flag is also defined.
+
+RegEx       Regular expression search.
+
+Static      [Advanced feature]
+            Text collected from the edit control remains in memory is
+            used to satisfy the search request.  The text remains in
+            memory until the &quot;Reset&quot; flag is used or until the
+            &quot;Static&quot; flag is not used.
+
+            Advantages: Search time is reduced 10 to 60 percent
+            (or more) depending on the size of the text in the control.
+            There is no speed increase on the first use of the &quot;Static&quot;
+            flag.
+
+            Disadvantages: Any changes in the edit control are not
+            reflected in the search.
+
+            Bottom line: Don't use this flag unless performing multiple
+            search requests on a control that will not be modified
+            while searching.
+
+
+Reset       [Advanced feature]
+            Clears the saved text created by the &quot;Static&quot; flag so that
+            the next use of the &quot;Static&quot; flag will get the text directly
+            from the edit control.  To clear the saved memory without
+            performing a search, use the following syntax:
+
+                Edit_FindText(&quot;&quot;,&quot;&quot;,0,0,&quot;Reset&quot;)</pre></blockquote><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>r_RegExOutput</td><td class=CDLDescription>Variable that contains the part of the source text that matched the RegEx pattern.&nbsp; [Optional]</td></tr></table><h4 class=CHeading>Returns</h4><p>Zero-based character index of the first character of the match or -1 if no match is found.</p><h4 class=CHeading>Programming Notes</h4><p>Searching using regular expressions (RegEx) can produce results that have a dynamic number of characters.&nbsp;  For this reason, searching for the &ldquo;next&rdquo; pattern (forward or backward) may produce different results from developer developer depending on how values of p_Min and p_Max are determined.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_FmtLines"></a>Edit_FmtLines</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_FmtLines(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Flag</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Sets a flag that determines whether a multiline edit control includes soft line-break characters.&nbsp; A soft line break consists of two carriage returns and a line feed and is inserted at the end of a line that is broken because of word wrapping.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_Flag</td><td class=CDLDescription>Set to TRUE to insert soft line-break characters characters, FALSE to removes them.</td></tr></table><h4 class=CHeading>Returns</h4><p>The value of p_Flag.</p><h4 class=CHeading>Remarks</h4><p>This message has no effect on the display of the text within the edit control.&nbsp;  It affects the buffer returned by the EM_GETHANDLE message and the text returned by the WM_GETTEXT message.&nbsp;  Since the WM_GETTEXT message is used by other functions in this library, be sure to un-format the text as soon as possible.&nbsp;  Example of use:</p><blockquote><pre>Edit_FmtLines(hEdit,True)
+FormattedText:=Edit_GetText(hEdit)
+Edit_FmtLines(hEdit,False)</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetFirstVisibleLine"></a>Edit_GetFirstVisibleLine</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetFirstVisibleLine(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Returns the zero-based index of the uppermost visible line.&nbsp;  For single-line edit controls, the return value is the zero-based index of the first visible character.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetLastVisibleLine"></a>Edit_GetLastVisibleLine</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetLastVisibleLine(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Returns the zero-based line index of the last visible line on the edit control.</p><h4 class=CHeading>Remarks</h4><p>To calculate the total number of visible lines, use the following...</p><blockquote><pre>Edit_GetLastVisibleLine(hEdit) - Edit_GetFirstVisibleLine(hEdit) + 1</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetLimitText"></a>Edit_GetLimitText</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetLimitText(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Returns the current text limit for the edit control.</p><h4 class=CHeading>Remarks</h4><p>Windows NT+: The maximum text length is 0x7FFFFFFE characters for single-line edit controls and -1 for multiline edit controls.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetLine"></a>Edit_GetLine</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetLine(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_LineIdx</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1,</td></tr><tr><td></td><td class=PParameter nowrap>p_Length</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Get the text of the desired line from the edit control.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_LineIdx</td><td class=CDLDescription>The zero-based index of the line to retrieve.&nbsp; [Optional] Use -1 (the default) to get the current line.&nbsp;  This parameter is ignored if used for a single-line edit control.</td></tr><tr><td class=CDLEntry>p_Length</td><td class=CDLDescription>Length of the line or length of the text to be extracted.&nbsp; [Optional] Use -1 (the default) to automatically determine the length of the line.</td></tr></table><h4 class=CHeading>Returns</h4><p>The text of the specified line.&nbsp;  The return value is an empty string if the line number specified by the p_LineIdx parameter is greater than the number of lines in the Edit control.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetLineCount"></a>Edit_GetLineCount</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetLineCount(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Returns an integer specifying the total number of text lines in a multiline edit control.&nbsp;  If the control has no text, the return value is 1.&nbsp;  The return value will never be less than 1.</p><h4 class=CHeading>Remarks</h4><p>The value returned is for the number of lines in the edit control.&nbsp; Very long lines (&gt;1024) or word wrap may introduce additional lines to the control.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetMargins"></a>Edit_GetMargins</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetMargins(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_LeftMargin</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_RightMargin</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Gets the widths of the left and right margins for the edit control.&nbsp;  If defined, these values are returned in the r_LeftMargin and r_RightMargin variables.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>r_LeftMargin</td><td class=CDLDescription>Left margin, in pixels.&nbsp; [Optional]</td></tr><tr><td class=CDLEntry>r_RightMargin</td><td class=CDLDescription>Right margin, in pixels.&nbsp; [Optional]</td></tr></table><h4 class=CHeading>Returns</h4><p>The edit control&rsquo;s left margin</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetModify"></a>Edit_GetModify</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetModify(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Gets the state of the edit control&rsquo;s modification flag.&nbsp;  The flag indicates whether the contents of the edit control have been modified.&nbsp;  Returns TRUE if the control has been modified, otherwise FALSE.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetRect"></a>Edit_GetRect</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetRect(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_Left</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_Top</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_Right</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_Bottom</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Gets the formatting rectangle of the edit control.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>r_Left..r_Bottom</td><td class=CDLDescription>Output variables.&nbsp; [Optional]</td></tr></table><h4 class=CHeading>Returns</h4><p>Space separated rectangle.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetSel"></a>Edit_GetSel</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetSel(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_StartSelPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_EndSelPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Gets the starting and ending character positions of the current selection in the edit control.&nbsp;  If defined, these values are returned in the r_StartSelPos and r_EndSelPos variables.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>r_StartSelPos</td><td class=CDLDescription>Starting position of the selection.&nbsp; [Optional]</td></tr><tr><td class=CDLEntry>r_EndSelPos</td><td class=CDLDescription>Ending position of the selection.&nbsp; [Optional]</td></tr></table><h4 class=CHeading>Returns</h4><p>Starting position of the selection.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetSelText"></a>Edit_GetSelText</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetSelText(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Returns the currently selected text (if any).</p><h4 class=CHeading>Remarks</h4><p>Since the edit control does not support the EM_GETSELTEXT message, the EM_GETLINE (if the selection is on one line) and the WM_GETTEXT messages are used instead.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetText"></a>Edit_GetText</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetText(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Length</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Returns all text from the control up to p_Length length.&nbsp;  If p_Length=-1 (the default), all text is returned.</p><h4 class=CHeading>Remarks</h4><p>This function is similar to the AutoHotkey <b>GUIControlGet</b> command (for AHK GUI&rsquo;s) and the <b>ControlGetText</b> command except that end-of-line (EOL) characters from the retrieved text are not automatically converted (CR+LF to LF).&nbsp;  If needed, use the <a href="#Edit_Convert2Unix" class=LFunction id=link55 onMouseOver="ShowTip(event, 'tt6', 'link55')" onMouseOut="HideTip('tt6')">Edit_Convert2Unix</a> function to convert the text to the AutoHotkey text format.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetTextLength"></a>Edit_GetTextLength</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetTextLength(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Returns the length, in characters, of the text in the edit control.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetTextRange"></a>Edit_GetTextRange</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetTextRange(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Min</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0,</td></tr><tr><td></td><td class=PParameter nowrap>p_Max</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Get a range of characters.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_Min</td><td class=CDLDescription>Character position index immediately preceding the first character in the range.</td></tr><tr><td class=CDLEntry>p_Max</td><td class=CDLDescription>Character position immediately following the last character in the range.&nbsp;  Set to -1 to indicate the end of the text.</td></tr></table><h4 class=CHeading>Remarks</h4><p>Since the edit control does not support the EM_GETTEXTRANGE message, the <a href="#Edit_GetText" class=LFunction id=link56 onMouseOver="ShowTip(event, 'tt23', 'link56')" onMouseOut="HideTip('tt23')">Edit_GetText</a> function (WM_GETTEXT message) is used to collect the desired range of characters.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_IsMultiline"></a>Edit_IsMultiline</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_IsMultiline(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Returns TRUE if the edit control is multiline, otherwise FALSE.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_IsReadOnly"></a>Edit_IsReadOnly</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_IsReadOnly(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Returns TRUE if the ES_READONLY style has been set, otherwise FALSE.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_IsStyle"></a>Edit_IsStyle</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_IsStyle(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Style</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Returns TRUE if the specified style has been set, otherwise FALSE.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_Style</td><td class=CDLDescription>Style of the edit control.</td></tr></table><p>Some common edit control styles...</p><blockquote><pre>ES_LEFT       :=0x0         ;-- Can't actually check this style.  It's the lack of ES_CENTER or ES_RIGHT.
+ES_CENTER     :=0x1
+ES_RIGHT      :=0x2
+ES_MULTILINE  :=0x4
+ES_UPPERCASE  :=0x8
+ES_LOWERCASE  :=0x10
+ES_PASSWORD   :=0x20        ;-- Single-line edit control only
+ES_AUTOVSCROLL:=0x40
+ES_AUTOHSCROLL:=0x80
+ES_NOHIDESEL  :=0x100
+ES_COMBO      :=0x200
+ES_OEMCONVERT :=0x400
+ES_READONLY   :=0x800
+ES_WANTRETURN :=0x1000
+ES_NUMBER     :=0x2000
+WS_TABSTOP    :=0x10000
+WS_HSCROLL    :=0x100000
+WS_VSCROLL    :=0x200000</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_SetStyle"></a>Edit_SetStyle</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetStyle(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Style,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Option</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;+&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Adds, removes, or toggles a style for an edit control.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_Style</td><td class=CDLDescription>Style to set.</td></tr><tr><td class=CDLEntry>p_Option</td><td class=CDLDescription>Use &ldquo;+&rdquo; (the default) to add, &ldquo;-&rdquo; to remove, and &ldquo;^&rdquo; to toggle.</td></tr></table><h4 class=CHeading>Returns</h4><p>TRUE if the request completed successfully, otherwise FALSE.</p><h4 class=CHeading>Remarks</h4><p>Styles that can be modified after the edit control has been created include the following:</p><blockquote><pre>ES_UPPERCASE  :=0x8
+ES_LOWERCASE  :=0x10
+ES_PASSWORD   :=0x20    ;-- Use the Edit_SetPasswordChar function
+ES_OEMCONVERT :=0x400
+ES_READONLY   :=0x800   ;-- Use the Edit_SetReadOnly function
+ES_WANTRETURN :=0x1000
+ES_NUMBER     :=0x2000</pre></blockquote><p>Use the <a href="#Edit_IsStyle" class=LFunction id=link57 onMouseOver="ShowTip(event, 'tt28', 'link57')" onMouseOut="HideTip('tt28')">Edit_IsStyle</a> function to determine if a style is currently set.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_LineFromChar"></a>Edit_LineFromChar</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_LineFromChar(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_CharPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Gets the index of the line that contains the specified character index.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_CharPos</td><td class=CDLDescription>The character index of the character contained in the line whose number is to be retrieved.&nbsp; [Optional] If –1 (the default), the function retrieves either the line number of the current line (the line containing the caret) or, if there is a selection, the line number of the line containing the beginning of the selection.</td></tr></table><h4 class=CHeading>Returns</h4><p>The zero-based line number of the line containing the character index specified by p_CharPos.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_LineFromPos"></a>Edit_LineFromPos</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_LineFromPos(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>X,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>Y,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_CharPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_LineIdx</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>This function is the same as <a href="#Edit_CharFromPos" class=LFunction id=link58 onMouseOver="ShowTip(event, 'tt2', 'link58')" onMouseOut="HideTip('tt2')">Edit_CharFromPos</a> except the line index (r_LineIdx) is returned.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_LineIndex"></a>Edit_LineIndex</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_LineIndex(</td><td class=PParameter nowrap>hedit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_LineIdx</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Gets the character index of the first character of a specified line.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_LineIdx</td><td class=CDLDescription>Zero-based line number.&nbsp; [Optional] Use -1 (the default) for the current line.</td></tr></table><h4 class=CHeading>Returns</h4><p>The character index of the specified line or -1 if the specified line is greater than the total number of lines in the edit control.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_LineLength"></a>Edit_LineLength</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_LineLength(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_LineIdx</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Gets the length of a line.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_LineIdx</td><td class=CDLDescription>The zero-based line index of the desired line.&nbsp;  Use -1 (the default) for the current line.</td></tr></table><h4 class=CHeading>Returns</h4><p>The length, in characters, of the specified line.&nbsp;  If p_LineIndex is greater than the total number of lines in the edit control, the length of the last (or only) line is returned.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_LineScroll"></a>Edit_LineScroll</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_LineScroll(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>xScroll</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0,</td></tr><tr><td></td><td class=PParameter nowrap>yScroll</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Scrolls the text in the edit control for the current file.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>xScroll</td><td class=CDLDescription>The number of characters to scroll horizontally.&nbsp;  Use a negative number to scroll to the left and a positive number to scroll to the right.</td></tr><tr><td class=CDLEntry>yScroll</td><td class=CDLDescription>The number of lines to scroll vertically.&nbsp;  Use a negative number to scroll up and a positive number to scroll down.</td></tr></table><h4 class=CHeading>Returns</h4><p>TRUE if sent to a multiline edit control, otherwise FALSE.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_LoadFile"></a>Edit_LoadFile</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_LoadFile(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_FileName,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_Convert2DOS</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>False,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_FileFormat</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Load the contents of a file to the edit control.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_FileName</td><td class=CDLDescription>The full path and name of the file.</td></tr><tr><td class=CDLEntry>p_Convert2DOS</td><td class=CDLDescription>If TRUE, the text will be converted from Unix, DOS/Unix mix, or Mac format, to DOS format before it is loaded to the edit control.&nbsp; [Optional]</td></tr><tr><td class=CDLEntry>r_FileFormat</td><td class=CDLDescription>Contains the file format variable.&nbsp; [Optional]  This variable</td></tr><tr><td class=CDLEntry>is set to the file format of loaded file</td><td class=CDLDescription>&rdquo;DOS&rdquo;, &ldquo;Unix&rdquo;, or &ldquo;Mac&rdquo;.&nbsp; This information is useful if the contents of the edit control will be be converted back to the original file format when the file is saved.</td></tr></table><h4 class=CHeading>Returns</h4><p>TRUE if successful, otherwise FALSE.</p><h4 class=CHeading>Remarks</h4><p>This request will replace the entire edit control with the contents of the the requested file.&nbsp;  Consequently, the Undo buffer is flushed.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_Paste"></a>Edit_Paste</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Paste(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Copies the current content of the clipboard to the edit control at the current caret position.&nbsp;  Data is inserted only if the clipboard contains data in CF_TEXT format.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_PosFromChar"></a>Edit_PosFromChar</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_PosFromChar(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_CharPos,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>X,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>Y</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Gets the client area coordinates of a specified character in the edit control.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_CharPos</td><td class=CDLDescription>The zero-based index of the character.</td></tr><tr><td class=CDLEntry>X, Y</td><td class=CDLDescription>These parameters, which must contain valid variable names, are used to return the x/y-coordinates of a point in the Edit control&rsquo;s client relative to the upper-left corner of the client area.</td></tr></table><h4 class=CHeading>Remarks</h4><p>If p_CharPos is greater than the index of the last character in the control, the returned coordinates are of the position just past the last character of the control.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_ReplaceSel"></a>Edit_ReplaceSel</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_ReplaceSel(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Text</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PParameter nowrap>p_CanUndo</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>True</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Replaces the selected text with the specified text.&nbsp;  If there is no selection, the replacement text is inserted at the caret.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_Text</td><td class=CDLDescription>Text to replace selection with.</td></tr><tr><td class=CDLEntry>p_CanUndo</td><td class=CDLDescription>If TRUE (the default), replace can be undone.</td></tr></table></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_SaveFile"></a>Edit_SaveFile</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SaveFile(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_FileName,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Convert</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Save the contents of the edit control to a file.&nbsp;  If the file does not exist, it will be created.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_FileName</td><td class=CDLDescription>The full path and name of the file.</td></tr><tr><td class=CDLEntry>p_Convert</td><td class=CDLDescription>Convert file format.&nbsp; [Optional] Set to &ldquo;M&rdquo; or &ldquo;Mac&rdquo; to convert to Mac.&nbsp;  Set to &ldquo;U&rdquo; or &ldquo;Unix&rdquo; to convert to Unix.</td></tr></table><h4 class=CHeading>Returns</h4><p>TRUE if successful, otherwise FALSE.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_Scroll"></a>Edit_Scroll</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Scroll(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Pages</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0,</td></tr><tr><td></td><td class=PParameter nowrap>p_Lines</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Scrolls the text vertically in the edit control.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_Pages</td><td class=CDLDescription>The number of pages to scroll.&nbsp;  Use a negative number to scroll up and a positive number to scroll down.</td></tr><tr><td class=CDLEntry>p_Lines</td><td class=CDLDescription>The number of lines to scroll.&nbsp;  Use a negative number to scroll up and a positive number to scroll down.</td></tr></table><h4 class=CHeading>Returns</h4><p>The number of lines that the command scrolls.&nbsp; The value will be negative if scrolling up and positive if scrolling down.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_ScrollCaret"></a>Edit_ScrollCaret</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_ScrollCaret(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Scrolls the edit control until caret is visible.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_SetLimitText"></a>Edit_SetLimitText</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetLimitText(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Limit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Sets the text limit of the edit control.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_Limit</td><td class=CDLDescription>The maximum number of characters the user can enter.&nbsp; Windows NT+: If this parameter is zero, the text length is set to 0x7FFFFFFE characters for single-line edit controls or –1 for multiline edit controls.</td></tr></table><h4 class=CHeading>Remarks</h4><ul><li>This message limits only the text the user can enter.&nbsp; It does not affect any text already in the edit control when the message is sent, nor does it affect the length of the text copied to the edit control by the WM_SETTEXT message.&nbsp; For more information:</li></ul><p><a href="http://msdn.microsoft.com/en-us/library/bb761607(VS.85).aspx" class=LURL target=_top>http://msdn.microsoft.com<wbr>/en-us<wbr>/library<wbr>/bb761607(VS.85).aspx</a></p><ul><li>For AutoHotkey GUI&rsquo;s, use the +Limitnn and -Limit options.</li><li>Although this message can be sent to any edit control, not all programs will respond well to a limit change.</li></ul></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_SetMargins"></a>Edit_SetMargins</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetMargins(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_LeftMargin</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PParameter nowrap>p_RightMargin</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Sets the width of the left and/or right margin (in pixels) for the edit control.&nbsp; The message automatically redraws the control to reflect the new margins.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_LeftMargin</td><td class=CDLDescription>Left margin, in pixels.&nbsp; If blank, the left margin is not set.&nbsp; Specify the EC_USEFONTINFO value (0xFFFF or 65535) to set the left margin to a narrow width calculated using the text metrics of the control&rsquo;s current font.&nbsp; If no font has been set for the control, the margin is set to zero.</td></tr><tr><td class=CDLEntry>p_RightMargin</td><td class=CDLDescription>Right margin, in pixels.&nbsp;  If blank, the right margin is not set.&nbsp;  Specify the EC_USEFONTINFO value (0xFFFF or 65535) to set the right margin to a narrow width calculated using the text metrics of the control&rsquo;s current font.&nbsp; If no font has been set for the control, the margin is set to zero.</td></tr></table></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_SetModify"></a>Edit_SetModify</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetModify(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Flag</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Sets or clears the modification flag for the edit control.&nbsp; The modification flag indicates whether the text within the control has been modified.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_Flag</td><td class=CDLDescription>Set to TRUE to set the modification flag.&nbsp; Set to FALSE to clear the modification flag.</td></tr></table></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_SetPasswordChar"></a>Edit_SetPasswordChar</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetPasswordChar(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Char</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;*&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Sets or removes the password character for a single-line edit control.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_Char</td><td class=CDLDescription>The character that is displayed in place of the characters typed by the user.&nbsp; [Optional] The default is an asterisk (&ldquo;*&rdquo;).&nbsp;  Set to null (&ldquo;&rdquo;) to remove the password character.</td></tr></table><h4 class=CHeading>Returns</h4><p>Documented: This message does not return a value.&nbsp;  Undocumented and/or does not apply to all OS versions:  Returns TRUE if successful or &ldquo;FAIL&rdquo; if unsuccessful.</p><h4 class=CHeading>Remarks</h4><ul><li>This request adds or removes the ES_Password style to/from a single-line edit control.&nbsp;  Use the <a href="#Edit_IsStyle" class=LFunction id=link59 onMouseOver="ShowTip(event, 'tt28', 'link59')" onMouseOut="HideTip('tt28')">Edit_IsStyle</a> function to determine if the ES_PASSWORD style has been set.</li><li>Observation:  On Windows 2000+, the ES_Password style cannot be removed once added unless the request is made from the same process that created the control.</li><li>For AutoHotkey GUI&rsquo;s, use the +Password and -Password options to add/remove ES_PASSWORD style unless a password character other than &ldquo;*&rdquo; is desired.</li></ul></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_SetReadOnly"></a>Edit_SetReadOnly</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetReadOnly(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Flag</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Sets or removes the read-only style (ES_READONLY) of the edit control.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_Flag</td><td class=CDLDescription>Set to TRUE to add the ES_READONLY style.&nbsp;  Set to FALSE to remove the ES_READONLY style.</td></tr></table><h4 class=CHeading>Returns</h4><p>TRUE if successful, otherwise FALSE.</p><h4 class=CHeading>Remarks</h4><p>For AutoHotkey GUIs, this is same as using the +ReadOnly or -ReadOnly option when creating the Edit control or using the GUIControl command after the edit control has been created.&nbsp;  For example:</p><blockquote><pre>GUIControl +ReadOnly,Edit1</pre></blockquote></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_SetRect"></a>Edit_SetRect</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetRect(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Left,</td></tr><tr><td></td><td class=PParameter nowrap>p_Top,</td></tr><tr><td></td><td class=PParameter nowrap>p_Right,</td></tr><tr><td></td><td class=PParameter nowrap>p_Bottom</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Sets the formatting rectangle of a multiline edit control.&nbsp; The formatting rectangle is the limiting rectangle into which the control draws the text.&nbsp; The limiting rectangle is independent of the size of the edit control window.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_Left..p_Bottom</td><td class=CDLDescription>Coordinates.</td></tr></table><h4 class=CHeading>Remarks</h4><p>Advanced feature.&nbsp; For additional information, see the following...</p><p><a href="http://msdn.microsoft.com/en-us/library/bb761657(VS.85).aspx" class=LURL target=_top>http://msdn.microsoft.com<wbr>/en-us<wbr>/library<wbr>/bb761657(VS.85).aspx</a></p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_SetTabStops"></a>Edit_SetTabStops</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetTabStops(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_NbrOfTabStops</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0,</td></tr><tr><td></td><td class=PParameter nowrap>p_DTU</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>32</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Sets the tab stops in a multiline edit control.&nbsp; When text is copied to the control, any tab character in the text causes space to be generated up to the next tab stop.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_NbrOfTabStops</td><td class=CDLDescription>Number of tab stops.&nbsp; [Optional] Set to 0 (the default) to set the tab stops to the system default.&nbsp;  Set to 1 to have all tab stops set to the value of the p_DTU parameter or 32 if p_DTU is not defined.&nbsp; Any value greater than 1 will set that number of tab stops.</td></tr><tr><td class=CDLEntry>p_DTU</td><td class=CDLDescription>Dialog Template Units.&nbsp; [Optional] If p_NbrOfTabStops=0, this parameter is ignored.&nbsp;  If this parameter contains a single value (Ex: 21), all tab stops will be set to a factor of this value (Ex: 21, 42, 63, etc.).&nbsp;  Otherwise, this parameter should contain values for all requested tab stops each separated by a comma &ldquo;,&rdquo; (Ex: &ldquo;20,45,70,125&rdquo;).</td></tr></table><h4 class=CHeading>Returns</h4><p>TRUE if all the tabs are set, otherwise FALSE.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_SetText"></a>Edit_SetText</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetText(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Text</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Set the text of the edit control.&nbsp;  Returns TRUE if successful, otherwise FALSE.</p><h4 class=CHeading>Remarks</h4><ul><li>The system automatically resets the undo flag whenever an edit control receives a WM_SETTEXT message.&nbsp;  Use the <a href="#Edit_SetSel" class=LFunction id=link60 onMouseOver="ShowTip(event, 'tt50', 'link60')" onMouseOut="HideTip('tt50')">Edit_SetSel</a> (select all) and <a href="#Edit_ReplaceSel" class=LFunction id=link61 onMouseOver="ShowTip(event, 'tt38', 'link61')" onMouseOut="HideTip('tt38')">Edit_ReplaceSel</a> functions to populate the control if undo is desired.</li><li>This function is the same as the AutoHotkey <b>ControlSetText</b> command except there is no delay after the command has executed.</li></ul></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_SetSel"></a>Edit_SetSel</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetSel(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_StartSelPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0,</td></tr><tr><td></td><td class=PParameter nowrap>p_EndSelPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Selects a range of characters.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>p_StartSelPos</td><td class=CDLDescription>Starting character position of the selection.&nbsp; If set to -1, the current selection (if any) will be deselected.</td></tr><tr><td class=CDLEntry>p_EndSelPos</td><td class=CDLDescription>Ending character position of the selection.&nbsp; Set to -1 to use the position of the last character in the control.</td></tr></table></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_TextIsSelected"></a>Edit_TextIsSelected</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_TextIsSelected(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Returns TRUE if text is selected, otherwise FALSE.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_Undo"></a>Edit_Undo</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Undo(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Undo the last operation.&nbsp;  Returns TRUE if the Undo operation succeeds, otherwise FALSE.</p><h4 class=CHeading>Returns</h4><p>For a single-line edit control, the return value is always TRUE.&nbsp;  For a multiline edit control, the return value is TRUE if the undo operation is successful, otherwise FALSE.</p></div></div></div>
+
+<div class="CFunction"><div class=CTopic><h3 class=CTitle><a name="Edit_GetActiveHandles"></a>Edit_GetActiveHandles</h3><div class=CBody><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetActiveHandles(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>hEdit</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>hWindow</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_MsgBox</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>False</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote><h4 class=CHeading>Description</h4><p>Finds the handles for the active control and active window.</p><h4 class=CHeading>Parameters</h4><table border=0 cellspacing=0 cellpadding=0 class=CDescriptionList><tr><td class=CDLEntry>hEdit</td><td class=CDLDescription>Variable that contains the handle of the active edit control.&nbsp; [Optional] Value is zero if the active control is not an edit control.</td></tr><tr><td class=CDLEntry>hWindow</td><td class=CDLDescription>Variable that contains the handle of the active window.&nbsp; [Optional]</td></tr><tr><td class=CDLEntry>p_MsgBox</td><td class=CDLDescription>Display error message.&nbsp; [Optional] If TRUE, an error MsgBox is displayed if the active control is not an edit control.</td></tr></table><h4 class=CHeading>Returns</h4><p>Handle of the active edit control or FALSE (0) if the active control is not an edit control.</p></div></div></div>
+
+</div><!--Content-->
+
+
+<div id=Footer><a href="http://www.naturaldocs.org">Generated by Natural Docs</a></div><!--Footer-->
+
+
+
+
+
+
+<!--START_ND_TOOLTIPS-->
+<div class=CToolTip id="tt1"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_CanUndo(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Returns TRUE if there are any actions in the edit control&rsquo;s undo queue, otherwise FALSE.</div></div><div class=CToolTip id="tt2"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_CharFromPos(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>X,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>Y,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_CharPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_LineIdx</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Gets information about the character and/or line closest to a specified point in the the client area of the edit control.</div></div><div class=CToolTip id="tt3"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Clear(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Delete (clear) the current selection, if any, from the edit control.</div></div><div class=CToolTip id="tt4"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Convert2DOS(</td><td class=PParameter nowrap>p_Text</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Converts Unix, DOS/Unix mix, and Mac file formats to DOS format.</div></div><div class=CToolTip id="tt5"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Convert2Mac(</td><td class=PParameter nowrap>p_Text</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Convert DOS, DOS/Unix mix, and Unix file formats to Mac format.</div></div><div class=CToolTip id="tt6"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Convert2Unix(</td><td class=PParameter nowrap>p_Text</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Convert DOS, DOS/Unix mix, and Mac formats to Unix format.</div></div><div class=CToolTip id="tt7"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_ConvertCase(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Case</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Convert case of selected text.</div></div><div class=CToolTip id="tt8"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Copy(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Copy the current selection to the clipboard in CF_TEXT format.</div></div><div class=CToolTip id="tt9"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Cut(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Delete the current selection, if any, and copy the deleted text to the clipboard in CF_TEXT format.</div></div><div class=CToolTip id="tt10"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_EmptyUndoBuffer(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Resets the undo flag of the edit control. </div></div><div class=CToolTip id="tt11"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_FindText(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_SearchText,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_Min</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_Max</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_Flags</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_RegExOut</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Find text within the edit control.</div></div><div class=CToolTip id="tt12"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_FmtLines(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Flag</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Sets a flag that determines whether a multiline edit control includes soft line-break characters. </div></div><div class=CToolTip id="tt13"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetFirstVisibleLine(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Returns the zero-based index of the uppermost visible line. </div></div><div class=CToolTip id="tt14"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetLastVisibleLine(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Returns the zero-based line index of the last visible line on the edit control.</div></div><div class=CToolTip id="tt15"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetLimitText(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Returns the current text limit for the edit control.</div></div><div class=CToolTip id="tt16"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetLine(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_LineIdx</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1,</td></tr><tr><td></td><td class=PParameter nowrap>p_Length</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Get the text of the desired line from the edit control.</div></div><div class=CToolTip id="tt17"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetLineCount(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Returns an integer specifying the total number of text lines in a multiline edit control. </div></div><div class=CToolTip id="tt18"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetMargins(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_LeftMargin</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_RightMargin</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Gets the widths of the left and right margins for the edit control. </div></div><div class=CToolTip id="tt19"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetModify(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Gets the state of the edit control&rsquo;s modification flag. </div></div><div class=CToolTip id="tt20"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetRect(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_Left</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_Top</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_Right</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_Bottom</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Gets the formatting rectangle of the edit control.</div></div><div class=CToolTip id="tt21"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetSel(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_StartSelPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_EndSelPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Gets the starting and ending character positions of the current selection in the edit control. </div></div><div class=CToolTip id="tt22"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetSelText(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Returns the currently selected text (if any).</div></div><div class=CToolTip id="tt23"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetText(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Length</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Returns all text from the control up to p_Length length. </div></div><div class=CToolTip id="tt24"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetTextLength(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Returns the length, in characters, of the text in the edit control.</div></div><div class=CToolTip id="tt25"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetTextRange(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Min</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0,</td></tr><tr><td></td><td class=PParameter nowrap>p_Max</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Get a range of characters.</div></div><div class=CToolTip id="tt26"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_IsMultiline(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Returns TRUE if the edit control is multiline, otherwise FALSE.</div></div><div class=CToolTip id="tt27"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_IsReadOnly(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Returns TRUE if the ES_READONLY style has been set, otherwise FALSE.</div></div><div class=CToolTip id="tt28"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_IsStyle(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Style</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Returns TRUE if the specified style has been set, otherwise FALSE.</div></div><div class=CToolTip id="tt29"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetStyle(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Style,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Option</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;+&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Adds, removes, or toggles a style for an edit control.</div></div><div class=CToolTip id="tt30"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_LineFromChar(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_CharPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Gets the index of the line that contains the specified character index.</div></div><div class=CToolTip id="tt31"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_LineFromPos(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>X,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>Y,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_CharPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_LineIdx</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>This function is the same as Edit_CharFromPos except the line index (r_LineIdx) is returned.</div></div><div class=CToolTip id="tt32"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_LineIndex(</td><td class=PParameter nowrap>hedit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_LineIdx</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Gets the character index of the first character of a specified line.</div></div><div class=CToolTip id="tt33"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_LineLength(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_LineIdx</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Gets the length of a line.</div></div><div class=CToolTip id="tt34"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_LineScroll(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>xScroll</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0,</td></tr><tr><td></td><td class=PParameter nowrap>yScroll</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Scrolls the text in the edit control for the current file.</div></div><div class=CToolTip id="tt35"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_LoadFile(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_FileName,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_Convert2DOS</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>False,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>r_FileFormat</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Load the contents of a file to the edit control.</div></div><div class=CToolTip id="tt36"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Paste(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Copies the current content of the clipboard to the edit control at the current caret position. </div></div><div class=CToolTip id="tt37"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_PosFromChar(</td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_CharPos,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>X,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>Y</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Gets the client area coordinates of a specified character in the edit control.</div></div><div class=CToolTip id="tt38"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_ReplaceSel(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Text</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PParameter nowrap>p_CanUndo</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>True</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Replaces the selected text with the specified text. </div></div><div class=CToolTip id="tt39"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SaveFile(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_FileName,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Convert</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Save the contents of the edit control to a file. </div></div><div class=CToolTip id="tt40"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Scroll(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Pages</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0,</td></tr><tr><td></td><td class=PParameter nowrap>p_Lines</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Scrolls the text vertically in the edit control.</div></div><div class=CToolTip id="tt41"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_ScrollCaret(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Scrolls the edit control until caret is visible.</div></div><div class=CToolTip id="tt42"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetLimitText(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Limit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Sets the text limit of the edit control.</div></div><div class=CToolTip id="tt43"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetMargins(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_LeftMargin</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PParameter nowrap>p_RightMargin</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Sets the width of the left and/or right margin (in pixels) for the edit control. </div></div><div class=CToolTip id="tt44"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetModify(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Flag</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Sets or clears the modification flag for the edit control. </div></div><div class=CToolTip id="tt45"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetPasswordChar(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_Char</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;*&quot;</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Sets or removes the password character for a single-line edit control.</div></div><div class=CToolTip id="tt46"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetReadOnly(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Flag</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Sets or removes the read-only style (ES_READONLY) of the edit control.</div></div><div class=CToolTip id="tt47"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetRect(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Left,</td></tr><tr><td></td><td class=PParameter nowrap>p_Top,</td></tr><tr><td></td><td class=PParameter nowrap>p_Right,</td></tr><tr><td></td><td class=PParameter nowrap>p_Bottom</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Sets the formatting rectangle of a multiline edit control. </div></div><div class=CToolTip id="tt48"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetTabStops(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_NbrOfTabStops</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0,</td></tr><tr><td></td><td class=PParameter nowrap>p_DTU</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>32</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Sets the tab stops in a multiline edit control. </div></div><div class=CToolTip id="tt49"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetText(</td><td class=PParameter nowrap>hEdit,</td></tr><tr><td></td><td class=PParameter nowrap>p_Text</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Set the text of the edit control. </div></div><div class=CToolTip id="tt50"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_SetSel(</td><td class=PParameter nowrap>hEdit,</td><td class=PDefaultValuePrefix>&nbsp;&nbsp;</td><td class=PDefaultValue width=100%></td></tr><tr><td></td><td class=PParameter nowrap>p_StartSelPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>0,</td></tr><tr><td></td><td class=PParameter nowrap>p_EndSelPos</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>-1</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Selects a range of characters.</div></div><div class=CToolTip id="tt51"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_TextIsSelected(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Returns TRUE if text is selected, otherwise FALSE.</div></div><div class=CToolTip id="tt52"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_Undo(</td><td class=PParameter nowrap>hEdit</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Undo the last operation. </div></div><div class=CToolTip id="tt53"><div class=CFunction><blockquote><table border=0 cellspacing=0 cellpadding=0 class=Prototype><tr><td><table border=0 cellspacing=0 cellpadding=0><tr><td class=PBeforeParameters nowrap>Edit_GetActiveHandles(</td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>hEdit</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>ByRef&nbsp;</td><td class=PParameter nowrap>hWindow</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>&quot;&quot;,</td></tr><tr><td></td><td class=PType nowrap>&nbsp;</td><td class=PParameter nowrap>p_MsgBox</td><td class=PDefaultValuePrefix>&nbsp;=&nbsp;</td><td class=PDefaultValue width=100%>False</td><td class=PAfterParameters nowrap>)</td></tr></table></td></tr></table></blockquote>Finds the handles for the active control and active window.</div></div><!--END_ND_TOOLTIPS-->
+
+
+
+
+<div id=MSearchResultsWindow><iframe src="" frameborder=0 name=MSearchResults id=MSearchResults></iframe><a href="javascript:searchPanel.CloseResultsWindow()" id=MSearchResultsWindowClose>Close</a></div>
+
+
+<script language=JavaScript><!--
+if (browserType) {if (browserVer) {document.write("</div>"); }document.write("</div>");}// --></script></body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+
+
+
+<title>Notify()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="Notify-Dateien/commands.css" rel="stylesheet" type="text/css">
+<link href="Notify-Dateien/print.css" rel="stylesheet" type="text/css" media="print">
+</head><body>
+
+<table width="100%"><tbody><tr>
+<td><h1>Notify()</h1></td>
+<td width="150"><a href="http://www.autohotkey.com/">AutoHotkey Homepage</a><br>
+<a href="http://www.autohotkey.com/docs/commands.htm">gwarble's tools</a></td>
+</tr></tbody></table>
+<hr size="2">
+<p>Create multiple simultaneous auto-positioning tray area notifications very simply.
+ Use Notify() in any number of scripts and they will stack accordingly.
+ Notifications are customizable in color and style, duration, and can call subroutines when clicked or timeout.
+ Display information quickly and easily for debugging or end-user interfaces.</p>
+<p class="CommandSyntax">Notify(Title,Message,Duration,Options,Image)</p>
+<p>Standard Library [stdlib] compliant, drop in your Lib folder and call <i>Notify()</i> to use.</p>
+<h4>Parameters</h4>
+<table border="1" bordercolor="#c0c0c0" cellpadding="3" cellspacing="0" width="100%">
+  <tbody><tr> 
+    <td width="15%">Title</td>
+    <td width="85%"><p>Title text of notification.</p>
+    <p>Title and Message can contain <i>`n</i> to show multiple lines.
+    <br>Title is bold by default, change this with <i>Options</i>.</p></td>
+  </tr>
+  <tr> 
+    <td width="15%">Message</td>
+    <td width="85%"><p>Message text of notification.</p></td>
+  </tr>
+  <tr> 
+    <td width="15%">Duration</td>
+    <td width="85%"><p>[<i>15</i>] Number of seconds to show notification.
+    <br>Use a negative duration to force an ExitApp after duration or click.
+    <br>Use "-0" in quotes to force an ExitApp after click, but last indefinitely</p></td>
+  </tr>
+  <tr>
+    <td width="15%">Options</td>
+    <td width="85%"><p>Options string to set the style of this and following notifications.<br>See below for details.</p>
+    <p>*** "Wait" to wait for a notification</p></td>
+  </tr>
+  <tr> 
+    <td width="15%">Image</td>
+    <td width="85%"><p>Number of icon from shell32.dll to use for image.<br> - or - <br>Filename of image or resource to use for image.</p>
+    <p>*** Gui Number to "Wait" for</p></td>
+  </tr>
+</tbody></table>
+<p>Need Options details here...</p>
+<h4>Returns</h4>
+<p>Gui Number used ***<br>0 if failed (too many open)</p>
+<h4>Related</h4>
+<p><a href=""> ToasterPops</a>, <a href=""> ToolTip()</a>, <a href="">TrayTip</a>, <a href="">MsgBox</a></p>
+<h4>Example</h4>
+<pre class="NoIndent">Notify() <span class="CodeCom">;= all parameters optional</span>
+Notify("Title","Message")
+Title = This is the title
+Notify(Title)
+
+Notify("T","M",5)  <span class="CodeCom">;= lasts 5 seconds</span>
+Notify("T","M",-5) <span class="CodeCom">;= ExitApp when clicked or 5 seconds</span>
+NotifyID := Notify("T","M",0)  <span class="CodeCom">;= lasts until clicked</span>
+  Sleep, 5000
+Notify("","",0,"Wait",NotifyID)   <span class="CodeCom">;= kills an open notification, or</span>
+Notify("","",-5,"Wait",NotifyID)   <span class="CodeCom">;= waits 5 seconds before killing</span>
+Notify("","",5,"Wait",NotifyID)   <span class="CodeCom">;= waits 5 seconds or until clicked/timeouts before proceding without killing</span>
+
+</pre>
+<hr>
+<p><a href="http://www.autohotkey.com/">Homepage</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.autohotkey.com/docs/commands.htm">Command List</a></p>
+</body></html>
