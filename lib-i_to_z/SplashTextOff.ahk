@@ -1,0 +1,3 @@
+SplashTextOff(){
+	SplashTextOn()
+}
