@@ -10,56 +10,85 @@
             Threads         = La cantidad de Threads iniciados por este proceso.
     Ejemplo:
         For Each, Obj In EnumerateProcesses()
-            List .= Obj.ProcessName . ' [' . Obj.ProcessId . ']`n'
+            List .= Obj.ProcessName . " [" . Obj.ProcessId . "]`n"
         MsgBox(List)
 */
 EnumerateProcesses()
 {
-    Local hSnapshot, PROCESSENTRY32, OutputVar, Info
-
-    If ((hSnapshot := DLLCall('Kernel32.dll\CreateToolhelp32Snapshot', 'UInt', 2, 'UInt', 0, 'Ptr')) == -1)
-        Return (-2)
+    ; https://msdn.microsoft.com/en-us/library/windows/desktop/ms682489(v=vs.85).aspx
+    Local hSnapshot := 0
+    If ((hSnapshot := DLLCall("Kernel32.dll\CreateToolhelp32Snapshot", "UInt", 2, "UInt", 0, "Ptr")) == -1)    ; TH32CS_SNAPPROCESS = 2 | INVALID_HANDLE_VALUE = -1
+        Return -1
     
-    NumPut(VarSetCapacity(PROCESSENTRY32, A_PtrSize == 4 ? 556 : 568, 0), &PROCESSENTRY32, 'UInt')
+    Local PROCESSENTRY32
+    NumPut(VarSetCapacity(PROCESSENTRY32, A_PtrSize == 4 ? 556 : 568), &PROCESSENTRY32, "UInt")
     
-    If (DllCall('Kernel32.dll\Process32FirstW', 'Ptr', hSnapshot, 'UPtr', &PROCESSENTRY32))
-    {
-        OutputVar := []
-
+    ; https://msdn.microsoft.com/en-us/library/windows/desktop/ms684834(v=vs.85).aspx
+    Local OutputVar := []
+    If (DllCall("Kernel32.dll\Process32FirstW", "Ptr", hSnapshot, "UPtr", &PROCESSENTRY32))
         Loop
-        {
-            Info                 := {}
-            Info.ProcessId       := NumGet(&PROCESSENTRY32 +                          8, 'UInt')
-            Info.ParentProcessId := NumGet(&PROCESSENTRY32 + (A_PtrSize == 4 ? 24 : 32), 'UInt')
-            Info.ProcessName     := StrGet(&PROCESSENTRY32 + (A_PtrSize == 4 ? 36 : 44), 'UTF-16')
-            Info.Threads         := NumGet(&PROCESSENTRY32 + (A_PtrSize == 4 ? 20 : 28), 'UInt')
-            OutputVar[A_Index]   := Info
-        }
-        Until (!DllCall('Kernel32.dll\Process32NextW', 'Ptr', hSnapshot, 'UPtr', &PROCESSENTRY32))
-    }
+            OutputVar[A_Index] := {       ProcessId: NumGet(&PROCESSENTRY32 +                          8,   "UInt")
+                                  , ParentProcessId: NumGet(&PROCESSENTRY32 + (A_PtrSize == 4 ? 24 : 32),   "UInt")
+                                  ,     ProcessName: StrGet(&PROCESSENTRY32 + (A_PtrSize == 4 ? 36 : 44), "UTF-16")
+                                  ,         Threads: NumGet(&PROCESSENTRY32 + (A_PtrSize == 4 ? 20 : 28),   "UInt") }
+        ; https://msdn.microsoft.com/en-us/library/windows/desktop/ms684836(v=vs.85).aspx
+        Until (!DllCall("Kernel32.dll\Process32NextW", "Ptr", hSnapshot, "UPtr", &PROCESSENTRY32))
     
-    DllCall('Kernel32.dll\CloseHandle', 'Ptr', hSnapshot)
-    
-    Return (OutputVar ? OutputVar : -1)
+    ; https://msdn.microsoft.com/en-us/library/windows/desktop/ms724211(v=vs.85).aspx
+    DllCall("Kernel32.dll\CloseHandle", "Ptr", hSnapshot)
+
+    Return ObjLength(OutputVar) ? OutputVar : FALSE
 } ;https://msdn.microsoft.com/en-us/library/windows/desktop/ms684834(v=vs.85).aspx
 
 
 
 
+
 /*
-                                              32-bit (A/U)               64-bit (A/U)
-    typedef struct tagPROCESSENTRY32 {        size     offset            size     offset
-      DWORD     dwSize;                       4        0                 4        0
-      DWORD     cntUsage;                     4        4                 4        4
-      DWORD     th32ProcessID;                4        8                 4        8
-    64-bit alignment                          0        12                4        12          *
-      ULONG_PTR th32DefaultHeapID;            4        12                8        16          size = A_PtrSize
-      DWORD     th32ModuleID;                 4        16                4        24
-      DWORD     cntThreads;                   4        20                4        28
-      DWORD     th32ParentProcessID;          4        24                4        32
-      LONG      pcPriClassBase;               4        28                4        36
-      DWORD     dwFlags;                      4        32                4        40
-      TCHAR     szExeFile[MAX_PATH];          260/520  36                260/520  44          MAX_PATH = 260
-    64-bit alignment                          0                          4                    ** U only
-    } PROCESSENTRY32, *PPROCESSENTRY32;       ---------------            ---------------
+    typedef struct tagPROCESSENTRY32W
+    {
+        DWORD   dwSize;
+        DWORD   cntUsage;
+        DWORD   th32ProcessID;          // this process
+        ULONG_PTR th32DefaultHeapID;
+        DWORD   th32ModuleID;           // associated exe
+        DWORD   cntThreads;
+        DWORD   th32ParentProcessID;    // this process's parent process
+        LONG    pcPriClassBase;         // Base priority of process's threads
+        DWORD   dwFlags;
+        WCHAR   szExeFile[MAX_PATH];    // Path
+    } PROCESSENTRY32W;
+
+    
+    MAX_PATH = 260 bytes (520 bytes UTF-16)
+
+
+    32-bit
+        -- TYPE -    ------ NAME -------    -- SIZE -    - TOTAL -
+            DWORD                 dwSize      4 bytes      4 bytes    #1
+            DWORD               cntUsage      4 bytes      8 bytes    #2
+            DWORD          th32ProcessID      4 bytes     12 bytes    #3
+        ULONG_PTR      th32DefaultHeapID      4 bytes     16 bytes    #4
+            DWORD           th32ModuleID      4 bytes     20 bytes    #5
+            DWORD             cntThreads      4 bytes     24 bytes    #6
+            DWORD    th32ParentProcessID      4 bytes     28 bytes    #7
+             LONG         pcPriClassBase      4 bytes     32 bytes    #8
+            DWORD                dwFlags      4 bytes     36 bytes    #9
+            WCHAR    szExeFile[MAX_PATH]    520 bytes    556 bytes
+
+
+    64-bit
+        -- TYPE -    ------ NAME -------    -- SIZE -    - TOTAL -
+            DWORD                 dwSize      4 bytes      4 bytes    #1
+            DWORD               cntUsage      4 bytes      8 bytes    #1
+            DWORD          th32ProcessID      4 bytes     12 bytes    #2
+          PADDING                             4 bytes     16 bytes    #2
+        ULONG_PTR      th32DefaultHeapID      8 bytes     24 bytes    #3
+            DWORD           th32ModuleID      4 bytes     28 bytes    #4
+            DWORD             cntThreads      4 bytes     32 bytes    #4
+            DWORD    th32ParentProcessID      4 bytes     36 bytes    #5
+             LONG         pcPriClassBase      4 bytes     40 bytes    #5
+            DWORD                dwFlags      4 bytes     44 bytes    #6
+          PADDING                             4 bytes     48 bytes    #6
+            WCHAR    szExeFile[MAX_PATH]    520 bytes    568 bytes
 */

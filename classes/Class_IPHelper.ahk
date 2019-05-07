@@ -1,11 +1,16 @@
-﻿MsgBox % IPHelper.ResolveHostname("google-public-dns-a.google.com")    ; -> 8.8.8.8
-MsgBox % IPHelper.ReverseLookup("8.8.8.8")                             ; -> google-public-dns-a.google.com
-MsgBox % IPHelper.Ping("8.8.8.8")                                      ; -> 24
+﻿/*
+    IPHelper by jNizM
+    https://github.com/jNizM/AHK_Scripts/blob/master/src/net/Class_IPHelper.ahk
 
-MsgBox % IPHelper.ResolveHostname("autohotkey.com")                    ; -> 104.24.122.247
-MsgBox % IPHelper.ReverseLookup("104.24.122.247")                      ; -> 104.24.122.247 (because no reverse pointer is set)
-MsgBox % IPHelper.Ping("autohotkey.com")                               ; -> 129
+    MsgBox % IPHelper.ResolveHostname("google-public-dns-a.google.com")    ; -> 8.8.8.8
+    MsgBox % IPHelper.ReverseLookup("8.8.8.8")                             ; -> google-public-dns-a.google.com
+    MsgBox % IPHelper.Ping("8.8.8.8")                                      ; -> 24
 
+    MsgBox % IPHelper.ResolveHostname("autohotkey.com")                    ; -> 104.24.122.247
+    MsgBox % IPHelper.ReverseLookup("104.24.122.247")                      ; -> 104.24.122.247 (because no reverse pointer is set)
+    MsgBox % IPHelper.Ping("autohotkey.com")                               ; -> 129
+
+*/
 
 class IPHelper
 {

@@ -1,4 +1,21 @@
-﻿; ======================================================================================================================
+﻿/*
+g := GuiCreate()
+b := g.AddButton(, "hola mundo!")
+a:=ImageButton.Create(b.hwnd, [0, 0x7E8DB6, 'Black', 0x242424, 2, 0x282828, 0x242424, 1], [5, 0x8392B8, 0x98A5C5, 0x242424, 2, 0x282828, 0x242424, 1], [5, 0x8392B8, 0xA9B5CF, 0x242424, 2, 0x282828, 0x242424, 1], [0, 0xCCCCCC, 'Black', 0x4A4A4A, 2, 0x282828, 0xA7B7C9, 1], [0, 0x7E8DB6, 'Black', 0x242424, 2, 0x282828, 0x404040, 2], [5, 0x8392B8, 0x98A5C5, 0x242424, 2, 0x282828, 0x242424, 1])
+g.show("x20 y20")
+WinWaitClose('ahk_id' g.hwnd)
+ExitApp
+*/
+
+
+
+
+
+
+
+
+
+; ======================================================================================================================
 ; Namespace:         ImageButton
 ; Function:          Create images and assign them to pushbuttons.
 ; Tested with:       AHK 1.1.14.03 (A32/U32/U64)
@@ -200,8 +217,8 @@ Class ImageButton {
          Return This.SetError("Invalid parameter Options!")
       ; ----------------------------------------------------------------------------------------------------------------
       ; Get and check control's class and styles
-      WinGetClass, BtnClass, ahk_id %HWND%
-      ControlGet, BtnStyle, Style, , , ahk_id %HWND%
+      BtnClass := WinGetClass("ahk_id" . HWND)
+      BtnStyle := ControlGetStyle(, "ahk_id" . HWND)
       If (BtnClass != "Button") || ((BtnStyle & 0xF ^ BS_GROUPBOX) = 0) || ((BtnStyle & RCBUTTONS) > 1)
          Return This.SetError("The control must be a pushbutton!")
       ; ----------------------------------------------------------------------------------------------------------------
@@ -227,7 +244,7 @@ Class ImageButton {
       BtnH := NumGet(RECT, 12, "Int") - NumGet(RECT, 4, "Int")
       ; ----------------------------------------------------------------------------------------------------------------
       ; Get the button's caption
-      ControlGetText, BtnCaption, , ahk_id %HWND%
+      BtnCaption := ControlGetText(, "ahk_id" . HWND)
       If (ErrorLevel)
          Return This.SetError("Couldn't get button's caption!")
       ; ----------------------------------------------------------------------------------------------------------------
@@ -238,7 +255,8 @@ Class ImageButton {
             Continue
          BkgColor1 := BkgColor2 := TxtColor := Mode := Rounded := GuiColor := Image := ""
          ; Replace omitted options with the values of Options.1
-         Loop, % This.MaxOptions {
+         Loop (This.MaxOptions)
+         {
             If (Option[A_Index] = "")
                Option[A_Index] := Options.1[A_Index]
          }
@@ -278,7 +296,7 @@ Class ImageButton {
             Rounded := 0
          ; GuiColor
          If (Option.6 = "")
-            Option.6 := This.DefGuiColor
+            Option.6 := This.DefGuiColord
          If !(Option.6 + 0) && !This.HTML.HasKey(Option.6)
             Return This.SetError("Invalid value for GuiColor in Options[" . Index . "]!")
          GuiColor := This.GetARGB(Option.6)
@@ -326,10 +344,12 @@ Class ImageButton {
                DllCall("Gdiplus.dll\GdipResetPath", "Ptr", PPATH)
                ; Add a new 'inner' path
                PathX := PathY := BorderWidth, PathW -= BorderWidth, PathH -= BorderWidth, Rounded -= BorderWidth
+
                If (Rounded < 1) ; the path is a rectangular rectangle
                   This.PathAddRectangle(PPATH, PathX, PathY, PathW - PathX, PathH - PathY)
                Else ; the path is a rounded rectangle
                   This.PathAddRoundedRect(PPATH, PathX, PathY, PathW, PathH, Rounded)
+               
                ; If a BorderColor has been drawn, BkgColors must be opaque
                BkgColor1 := 0xFF000000 | BkgColor1
                BkgColor2 := 0xFF000000 | BkgColor2               
@@ -445,7 +465,8 @@ Class ImageButton {
       ; Create the ImageList
       HIL := DllCall("Comctl32.dll\ImageList_Create"
                    , "UInt", BtnW, "UInt", BtnH, "UInt", ILC_COLOR32, "Int", 6, "Int", 0, "Ptr")
-      Loop, % (This.BitMaps.MaxIndex() > 1 ? 6 : 1) {
+      Loop (This.BitMaps.MaxIndex() > 1 ? 6 : 1)
+      {
          HBITMAP := This.BitMaps.HasKey(A_Index) ? This.BitMaps[A_Index] : This.BitMaps.1
          DllCall("Comctl32.dll\ImageList_Add", "Ptr", HIL, "Ptr", HBITMAP, "Ptr", 0)
       }
@@ -454,11 +475,11 @@ Class ImageButton {
       NumPut(HIL, BIL, 0, "Ptr")
       Numput(BUTTON_IMAGELIST_ALIGN_CENTER, BIL, A_PtrSize + 16, "UInt")
       ; Hide buttons's caption
-      ControlSetText, , , ahk_id %HWND%
-      Control, Style, +%BS_BITMAP%, , ahk_id %HWND%
+      ControlSetText("",, "ahk_id" . HWND)
+      ControlSetStyle("+" . BS_BITMAP,, "ahk_id" . HWND)
       ; Assign the ImageList to the button
-      SendMessage, %BCM_SETIMAGELIST%, 0, 0, , ahk_id %HWND%
-      SendMessage, %BCM_SETIMAGELIST%, 0, % &BIL, , ahk_id %HWND%
+      SendMessage(BCM_SETIMAGELIST, 0, 0,, "ahk_id" . HWND)
+      SendMessage(BCM_SETIMAGELIST, 0, &BIL,, "ahk_id" . HWND)
       ; Free the bitmaps
       This.FreeBitmaps()
       ; ----------------------------------------------------------------------------------------------------------------

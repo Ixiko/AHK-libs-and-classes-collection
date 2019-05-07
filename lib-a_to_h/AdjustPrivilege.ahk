@@ -42,7 +42,5 @@
 AdjustPrivilege(Privilege, Enable := TRUE)
 {
     Local t
-    
-    VarSetCapacity(t, 4, 0)
-    Return (!DllCall('Ntdll.dll\RtlAdjustPrivilege', 'UInt', Privilege, 'UChar', Enable, 'UChar', FALSE, 'UPtr', &t))
+    Return !DllCall('Ntdll.dll\RtlAdjustPrivilege', 'UInt', Privilege, 'UChar', Enable, 'UChar', FALSE, 'IntP', t)
 }

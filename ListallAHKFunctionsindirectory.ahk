@@ -13,12 +13,13 @@ lib-a_to_h
 lib-i_to_z
 classes
 more libs
-MSOffice
 more libs\AFC
 more libs\AHK-Object-Oriented-GUIs-master\gui
 more libs\Canvas-AHK-master
 more libs\CGUI-master
+more libs\core_audio_interfaces
 more libs\CustomBoxes
+more libs\Dictation-Interface-master
 more libs\DirectX\AHK Injector
 more libs\DirectX\headers
 more libs\DirectX\Lib
@@ -43,6 +44,8 @@ more libs\windows10DesktopManager
 more libs\windows10DesktopManager\injection dll
 more libs\Windy
 more libs\WinLogon
+MSOffice
+MSOffice\DocX
 )
 
 Dir := StrSplit(Directorys, "`n", "`r")
@@ -69,8 +72,8 @@ Loop, Parse, files, `n, `r
 	filename := A_LoopField
 	ToolTip, % "File: " A_Index "/" clines, 2000, 500, 6
 	funcList:= listfunc(filename)
-	StringSplit, path, filename, `\
-	shortpath:= path7 . "`\" . path8
+	RegExMatch(filename, "\w+\\[\w\s\(\)]+\.ahk", shortpath)
+	;shortpath:= path7 . "`\" . path8
 	FileAppend, % "[" A_Index "] " shortpath " {`n`nFunctions:`n", %A_ScriptDir%\FileFunctionList.txt   
 	FileAppend, % funclist "`n", %A_ScriptDir%\FileFunctionList.txt
 	FileAppend, % "}`n", FileFunctionList.txt

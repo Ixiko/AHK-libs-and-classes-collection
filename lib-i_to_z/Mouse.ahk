@@ -7,24 +7,17 @@
     Return:
         Si tuvo éxito devuelve 1, caso contrario devuelve 0.
 */
-SetCursorPos(X, Y, hWnd := '')
+SetCursorPos(X, Y, hWnd := "")
 {
-    Local POINT
-
-    If (hWnd != '')
+    If (hWnd != "")
     {
-        VarSetCapacity(POINT, 8)
-        NumPut(X, &POINT    , 'Int')
-        NumPut(Y, &POINT + 4, 'Int')
-
-        If (!DllCall('User32.dll\ClientToScreen', 'Ptr', hWnd, 'UPtr', &POINT))
+        Local POINT := X & 0xFFFFFFFF | Y << 32    ; combina 2 int (4 bytes c/u) en un int64 (8 bytes); la estructura point esta conformada por dos valores de tipo int
+        If (!DllCall("User32.dll\ClientToScreen", "Ptr", hWnd, "Int64P", POINT))    ; pasamos un puntero (la dirección de memoria de la variable POINT) a ClientToScreen
             Return (FALSE)
-
-        X := NumGet(&POINT    , 'Int')
-        Y := NumGet(&POINT + 4, 'Int')
+        X := NumGet(&POINT, "Int"), Y := NumGet(&POINT + 4, "Int")
     }
     
-    Return (DllCall('User32.dll\SetCursorPos', 'Int', X, 'Int', Y))
+    Return DllCall("User32.dll\SetCursorPos", "Int", X, "Int", Y)
 } ;https://msdn.microsoft.com/en-us/library/windows/desktop/ms648394(v=vs.85).aspx
 
 
@@ -57,22 +50,22 @@ SetCursorPos(X, Y, hWnd := '')
         MoveCursor(Right//2, Bottom//2, 1)
         ExitApp
     Ejemplo 2:
-        Run('Notepad.exe')
-        WinWait('ahk_class Notepad')
+        Run("Notepad.exe")
+        WinWait("ahk_class Notepad")
         WinActivate()
         WinWaitActive()
         WinMove(100, 100, 400, 400)
         MoveCursor(0, 0, 5, WinExist())
         VarSetCapacity(RECT, 16, 0)
-        DllCall('User32.dll\GetClientRect', 'Ptr', WinExist(), 'Ptr', &RECT)
-        MoveCursor(NumGet(RECT, 8, 'Int'), NumGet(RECT, 12, 'Int'), 5, WinExist())
-        SendInput('{LButton Down}')
-        MoveCursor(NumGet(RECT, 8, 'Int')+400, NumGet(RECT, 12, 'Int')+50, 4, WinExist())
-        SendInput('{LButton Up}')
-        ControLSend('{raw}=D =D =D =D =D`n...',, 'ahk_class Notepad')
+        DllCall("User32.dll\GetClientRect", "Ptr", WinExist(), "Ptr", &RECT)
+        MoveCursor(NumGet(RECT, 8, "Int"), NumGet(RECT, 12, "Int"), 5, WinExist())
+        SendInput("{LButton Down}")
+        MoveCursor(NumGet(RECT, 8, "Int")+400, NumGet(RECT, 12, "Int")+50, 4, WinExist())
+        SendInput("{LButton Up}")
+        ControLSend("{raw}=D =D =D =D =D`n...",, "ahk_class Notepad")
         ExitApp
 */
-MoveCursor(X, Y, Speed := 0, hWnd := '')
+MoveCursor(X, Y, Speed := 0, hWnd := "")
 {
     Local Pos
 
@@ -116,7 +109,7 @@ MoveCursor(X, Y, Speed := 0, hWnd := '')
 */
 MoveCursorR(X, Y)
 {
-    DllCall('User32.dll\mouse_event', 'UInt', 1, 'Int', X, 'Int', Y, 'UInt', 0, 'UPtr', 0)
+    DllCall("User32.dll\mouse_event", "UInt", 1, "Int", X, "Int", Y, "UInt", 0, "UPtr", 0)
 }
 
 
@@ -130,19 +123,15 @@ MoveCursorR(X, Y)
                0 = Ha ocurrido un error al recuperar la posición actual del cursor.
         [object] = Si tuvo éxito devuele un objeto con las claves X e Y.
 */
-GetCursorPos(hWnd := '')
+GetCursorPos(hWnd := "")
 {
-    Local POINT
-    VarSetCapacity(POINT, 8)
+    Local POINT := 0
+    DllCall("User32.dll\GetCursorPos", "Int64P", POINT)
 
-    DllCall('User32.dll\GetCursorPos', 'UPtr', &POINT)
+    If (hWnd != "" && !DllCall("User32.dll\ScreenToClient", "Ptr", hWnd, "Int64P", POINT))
+        Return FALSE
 
-    If (hWnd != ''
-        && !DllCall('User32.dll\ScreenToClient', 'Ptr', hWnd, 'UPtr', &POINT))
-        Return (FALSE)
-
-    Return ({ X: NumGet(&POINT    , 'Int')
-            , Y: NumGet(&POINT + 4, 'Int') })
+    Return {X: NumGet(&POINT, "Int"), Y: NumGet(&POINT + 4, "Int")}
 } ;https://msdn.microsoft.com/en-us/library/windows/desktop/ms648390(v=vs.85).aspx
 
 
@@ -157,9 +146,9 @@ GetCursorPos(hWnd := '')
         El tiempo de doble clic es el número máximo de milisegundos que puede ocurrir entre el primer y segundo clic de un doble clic.
         El tiempo máximo de doble clic es 5000 milisegundos. El tiempo mínimo de doble clic es de 1 milisegundo.
 */
-DoubleClickTime(Value := '')
+DoubleClickTime(Value := "")
 {
-    Return (Value == '' ? DllCall('User32.dll\GetDoubleClickTime', 'UInt') : DllCall('User32.dll\SetDoubleClickTime', 'UInt', Value))
+    Return (Value == "" ? DllCall("User32.dll\GetDoubleClickTime", "UInt") : DllCall("User32.dll\SetDoubleClickTime", "UInt", Value))
 } ;https://msdn.microsoft.com/en-us/library/windows/desktop/ms646258(v=vs.85).aspx | https://msdn.microsoft.com/en-us/library/windows/desktop/ms646263(v=vs.85).aspx
 
 
@@ -172,7 +161,7 @@ DoubleClickTime(Value := '')
 */
 SwapMouseButton(State := -1)
 {
-    Return (State == -1 ? DllCall('User32.dll\GetSystemMetrics', 'Int', 23) : DllCall('User32.dll\SwapMouseButton', 'Int', !!State))
+    Return (State == -1 ? DllCall("User32.dll\GetSystemMetrics", "Int", 23) : DllCall("User32.dll\SwapMouseButton", "Int", !!State))
 } ;https://msdn.microsoft.com/en-us/library/windows/desktop/ms646264(v=vs.85).aspx | https://msdn.microsoft.com/en-us/library/ms724385
 
 
@@ -185,14 +174,14 @@ SwapMouseButton(State := -1)
         Save : Determina si el nuevo valor establecido debe de ser permanente. De lo contrario, se restaurará al reiniciar el ordenador.
     Nota: La velocidad del ratón determina la distancia con que se moverá el puntero en función de la distancia que se mueva el ratón.
 */
-MouseSpeed(Value := '', Save := FALSE)
+MouseSpeed(Value := "", Save := FALSE)
 {
     Local R
 
-    If (Value != '')
-        Return (DllCall('User32.dll\SystemParametersInfoW', 'UInt', 0x0071, 'UInt', 0, 'UInt', Value > 20 ? 20 : Value < 1 ? 1 : Value, 'UInt', !!Save * 3))
+    If (Value != "")
+        Return (DllCall("User32.dll\SystemParametersInfoW", "UInt", 0x0071, "UInt", 0, "UInt", Value > 20 ? 20 : Value < 1 ? 1 : Value, "UInt", !!Save * 3))
     
-    DllCall('User32.dll\SystemParametersInfoW', 'UInt', 0x0070, 'UInt', 0, 'UIntP', R, 'UInt', 0)
+    DllCall("User32.dll\SystemParametersInfoW", "UInt", 0x0070, "UInt", 0, "UIntP", R, "UInt", 0)
     Return (R)
 } ;https://msdn.microsoft.com/en-us/library/windows/desktop/ms724947(v=vs.85).aspx
 
@@ -209,14 +198,14 @@ MouseSpeed(Value := '', Save := FALSE)
         Si el número es 0, entonces no debería haber desplazamiento.
         Si el número de líneas a desplazarse es mayor que el número de líneas visibles, la operación debe interpretarse como hacer clic una vez en la página hacia abajo en la barra de desplazamiento.
 */
-MouseScrollLines(Value := '', Save := FALSE)
+MouseScrollLines(Value := "", Save := FALSE)
 {
     Local R
 
-    If (Value != '')
-        Return (DllCall('User32.dll\SystemParametersInfoW', 'UInt', 0x0069, 'UInt', Value, 'UInt', 0, 'UInt', !!Save * 3))
+    If (Value != "")
+        Return (DllCall("User32.dll\SystemParametersInfoW", "UInt", 0x0069, "UInt", Value, "UInt", 0, "UInt", !!Save * 3))
     
-    DllCall('User32.dll\SystemParametersInfoW', 'UInt', 0x0068, 'UInt', 0, 'UIntP', R, 'UInt', 0)
+    DllCall("User32.dll\SystemParametersInfoW", "UInt", 0x0068, "UInt", 0, "UIntP", R, "UInt", 0)
     Return (R)
 } ;https://msdn.microsoft.com/en-us/library/windows/desktop/ms724947(v=vs.85).aspx
 
@@ -230,14 +219,14 @@ MouseScrollLines(Value := '', Save := FALSE)
         Save : Determina si el nuevo valor establecido debe de ser permanente. De lo contrario, se restaurará al reiniciar el ordenador. Vacío para recuperar el valor actual.
     Return: El valor actual. Si el valor es 0 o 1, la función está desactivada. Si el valor es mayor que 1, la función está habilitada y el valor indica el número de cursores dibujados en la ruta.
 */
-MouseTrails(Value := '', Save := FALSE)
+MouseTrails(Value := "", Save := FALSE)
 {
     Local R
 
-    If (Value != '')
-        Return (DllCall('User32.dll\SystemParametersInfoW', 'UInt', 0x005D, 'UInt', Value, 'Ptr', 0, 'UInt', !!Save * 3))
+    If (Value != "")
+        Return (DllCall("User32.dll\SystemParametersInfoW", "UInt", 0x005D, "UInt", Value, "Ptr", 0, "UInt", !!Save * 3))
 
-    DllCall('User32.dll\SystemParametersInfoW', 'UInt', 0x005E, 'UInt', 0, 'UIntP', R, 'UInt', 0)
+    DllCall("User32.dll\SystemParametersInfoW", "UInt", 0x005E, "UInt", 0, "UIntP", R, "UInt", 0)
     Return (R)
 } ;https://msdn.microsoft.com/en-us/library/windows/desktop/ms724947(v=vs.85).aspx
 
@@ -250,13 +239,13 @@ MouseTrails(Value := '', Save := FALSE)
         Value: El número de líneas. El valor predeterminado es 3. Vacío para recuperar el valor actual.
         Save : Determina si el nuevo valor establecido debe de ser permanente. De lo contrario, se restaurará al reiniciar el ordenador.
 */
-MouseWheelScrollChars(Value := '', Save := FALSE)
+MouseWheelScrollChars(Value := "", Save := FALSE)
 {
     Local R
 
-    If (Value != '')
-        Return (DllCall('User32.dll\SystemParametersInfoW', 'UInt', 0x006D, 'UInt', Value, 'Ptr', 0, 'UInt', !!Save * 3))
+    If (Value != "")
+        Return (DllCall("User32.dll\SystemParametersInfoW", "UInt", 0x006D, "UInt", Value, "Ptr", 0, "UInt", !!Save * 3))
     
-    DllCall('User32.dll\SystemParametersInfoW', 'UInt', 0x006C, 'UInt', 0, 'UIntP', R, 'UInt', 0)
+    DllCall("User32.dll\SystemParametersInfoW", "UInt", 0x006C, "UInt", 0, "UIntP", R, "UInt", 0)
     Return (R)
 } ;https://msdn.microsoft.com/en-us/library/windows/desktop/ms724947(v=vs.85).aspx

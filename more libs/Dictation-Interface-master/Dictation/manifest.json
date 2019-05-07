@@ -1,0 +1,27 @@
+﻿{
+    "manifest_version": 2,
+    "name": "Dictation",
+    "description": "",
+    "version": "0.1",
+    "author": "",
+    "homepage_url": "https://github.com/A-AhkUser/Dictation-Interface",
+    "icons": {
+        "16": "ico/Letter-H-lg-icon16.png",
+        "24": "ico/Letter-H-lg-icon24.png",
+        "32": "ico/Letter-H-lg-icon32.png",
+        "48": "ico/Letter-H-lg-icon48.png",
+        "64": "ico/Letter-H-lg-icon64.png",
+        "128": "ico/Letter-H-lg-icon128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://dictation.io/speech"
+            ],
+            "js": [
+                "Dictation.injection.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}

@@ -1,0 +1,344 @@
+<html>
+<head>
+<title>GPF Documentation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--
+<link rel="alternate" type="application/rss+xml" title="AutoHotkey Forum RSS" href="http://www.autohotkey.com/forum/rss.php">
+-->
+<link href="default.css" rel="stylesheet" type="text/css">
+<!--
+<link href="http://www.autohotkey.com/docs/css/print.css" rel="stylesheet" type="text/css" media="print">
+-->
+</head>
+
+<body>
+<h1>GPF v1.1c Documentation</h1>
+<!--
+<hr size="2">
+-->
+<hr>
+<h2>Table of Contents</h2>
+
+<ul>
+  <li><a href="#what">What Is It?</a></li>
+  <li><a href="#require">Requirements</a></li>
+  <li><a href="#features">Features</a></li>
+  <li><a href="#notes">Notes</a></li>
+  <li><a href="#how">NOT YET ~ CHECK RELEASE TOPIC - How To</a></li>
+  <li><a href="#functions">Functions & Remarks</a></li>
+  <li><a href="#examples">Examples</a></li>
+</ul>
+
+
+<h2><a name="what"></a>What Is It?</h2>
+<B>GPF</B> stands for <I>General Proxy-Dll Functions</I>. It's a library for <a href="http://www.autohotkey.com">AutoHotkey</a> that allows you to overlay texts and images ontop of DirectX games. This library <U>only works with games that were developed for DirectX8 or 9</U>. Created by <a href="http://www.autohotkey.net/~MasterFocus/AHK">MasterFocus</a>, this library performs <I>DllCall</I> to use simple DLLs from <a href="http://www.mikoweb.eu/index.php?node=28">GPP 1.5</a>, which should receive all the credits for the overlaying method.
+<h2><a name="require"></a>Requirements</h2>
+<ul>
+  <li><a href="http://www.autohotkey.com">AutoHotkey</a></li>
+  <li>DirectX8 or later</li>
+  <li>Game to be overlayed must have been developed for DirectX8 or 9</li>
+</ul>
+
+
+<h2><a name="features"></a>Features</h2>
+<ul>
+  <li>Up to 5 independent ingame <a href="#GPF_SetSingleLine">single-line text fields</a></li>
+  <li>Up to 5 independent ingame <a href="#GPF_SetMultiLine">multi-line text fields</a></li>
+  <li>One ingame <a href="#GPF_SetPicture">picture</a></li>
+  <li><a href="#GPF_TakeScreenShot">Screenshot</a> taker (BMP/JPG)</li>
+  <li>Ingame toggleable <a href="#GPF_ShowFPS">FPS</a></li>
+  <li>Game <a href="#GPF_GetScreenSize">screen size retriever</a></li>
+  <li>No global variables (functions use their own static variables)</li>
+</ul>
+
+
+<h2><a name="notes"></a>Notes</h2>
+<ul>
+  <li>This library was tested <B>ONLY</B> with DirectX8 game <b>Warcraft III</b></li>
+  <li>Overlayed elements also get ontop of the game's custom mouse cursor</li>
+</ul>
+Be aware that <u>the hook method used by this library is highly detectable</u> and may get your online game account banned!
+<ul>
+  <li><b>Warcraft III</b> tested on <b>Garena</b> will <u>not</u> get you banned</li>
+  <li><b>BattleField 2</b> may perform a <b>MD5 check</b> and detect the extra DLL file(s)</li>
+<li><b>Punkbuster</b> anti-cheat system may perform same/similar routine that won't let you use this library online</li>
+</ul>
+
+
+<h2><a name="functions"></a>Functions</h2>
+<ul>
+
+  <li><a name="GeneralFunctions"><h3>General Functions</h3></li>
+
+  <a name="GPF_Main"></a><h4>GPF_Main( )</h4>
+  Toggle function (load/unload the library).
+  <BR>
+  <BR>
+  Return values: <U>+1</U> , <U>+2</U> , <U>-1</U> , <U>-2</U>
+  <BR>
+  A positive value indicates success. A negative value indicates failure.
+  <BR>
+  <U>+1</U> and <U>-1</U> are related to loading the library. <U>+2</U> and <U>-2</U> are related to unloading it.
+  
+  
+  <a name="GPF_ShowFPS"></a><h4>GPF_ShowFPS( <I>bShowFPS</I> )</h4>
+  <B><I>bShowFPS</I></B> is a boolean (0/1). Indicates display of FPS info.
+  <BR>
+  <BR>
+  It is always shown in the upper left screen corner and is not changeable in size or color.
+  <BR>
+  <BR>
+  Function returns ErrorLevel (0 if performed successfully).
+  
+  
+  <a name="GPF_GetScreenSize"></a><h4>GPF_GetScreenSize( <I>SizeX</I> , <I>SizeY</I> )</h4>
+  <B><I>SizeX/Y</I></B> are the <U>ouput variables</U> for current width and height (in pixels) of game screen. Both are set to 0 if screen size cannot be determined.
+  <BR>
+  <BR>
+  This function does not work when the game is minimized.
+  <BR>
+  <BR>
+  Function returns ErrorLevel (0 if performed successfully).
+
+
+  <li><a name="TextRelatedFunctions"><h3>Text-related Functions</h3></li>
+
+  <a name="GPF_SetSingleLine"></a><h4>GPF_SetSingleLine( <I>ObjNum</I> , <I>PosX</I> , <I>PosY</I> , <I>Text</I> , <I>ARGB</I> , <I>UseBlackBG</I> , <I>FontSize</I> , <I>UseBold</I> , <I>FontFamily</I> )</h4>
+  <B><I>ObjNum</I></B> indicates the single-line text field (0-4) to be set.
+  <BR>
+  <B><I>PosX/Y</I></B> indicate position (upper left corner of text field).
+  <BR>
+  <B><I>Text</I></B> is a single-line text. Maximum length is 127 or 128, I'm not sure.
+  <BR>
+  <B><I>ARGB</I></B> sets transparency (0-255) and color. <U>Number format must be hexadecimal</U>. Example: 0xFF000000 - black text, no transparency.
+  <BR>
+  <B><I>UseBlackBG</I></B> is a boolean (0/1). Indicates usage of a black background for the text field.
+  <BR>
+  <B><I>FontSize</I></B> is the size of the font in "logical device units" (I don't know what this means, so just pick a value and try it out).
+  <BR>
+  <B><I>UseBold</I></B> is a boolean (0/1). Indicates usage of bold effect.
+  <BR>
+  <B><I>FontFamily</I></B> is a boolean (0/1). 0 is SWISS type (proportional font like Arial), and 1 is MODERN type (monospace font like Courier New).
+  <BR>
+  <BR>
+  Function returns ErrorLevel (0 if performed successfully).
+
+
+  <a name="GPF_SetMultiLine"></a><h4>GPF_SetMultiLine( <I>ObjNum</I> , <I>PosX</I> , <I>PosY</I> , <I>Text</I> , <I>ARGB</I> , <I>UseBlackBG</I> , <I>FontSize</I> , <I>UseBold</I> , <I>SizeX</I> , <I>SizeY</I> , <I>FontFamily</I> )</h4>
+  <B><I>ObjNum</I></B> indicates the multi-line text field (0-4) to be set.
+  <BR>
+  <B><I>PosX/Y</I></B> indicate position (upper left corner of text field).
+  <BR>
+  <B><I>Text</I></B> is a multi-line text. Maximum length is 1023 or 1024, I'm not sure.
+  <BR>
+  <B><I>ARGB</I></B> sets transparency (0-255) and color. <U>Number format must be hexadecimal</U>. Example: 0xFF000000 - black text, no transparency.
+  <BR>
+  <B><I>UseBlackBG</I></B> is a boolean (0/1). Indicates usage of a black background for the text field.
+  <BR>
+  <B><I>FontSize</I></B> is the size of the font in "logical device units" (I don't know what this means, so just pick a value and try it out).
+  <BR>
+  <B><I>UseBold</I></B> is a boolean (0/1). Indicates usage of bold effect.
+  <BR>
+  <B><I>SizeX/Y</I></B> set the boundaries of text field. Text will be shown <U>only</U> within this box. Values in pixels and <a href="#remarks">based on current screen resolution</a>.
+  <BR>
+  <B><I>FontFamily</I></B> is a boolean (0/1). 0 is SWISS type (proportional font like Arial), and 1 is MODERN type (monospace font like Courier New).
+  <BR>
+  <BR>
+  Function returns ErrorLevel (0 if performed successfully).
+  
+  
+  <a name="GPF_ShowSingleLine"></a><h4>GPF_ShowSingleLine( <I>ObjNum</I> , <I>ShowText</I> )</h4>
+  <B><I>ObjNum</I></B> indicates the single-line text field (0-4) to be displayed.
+  <BR>
+  <B><I>ShowText</I></B> is a boolean (0/1). Indicates if text will be displayed or not.
+  <BR>
+  <BR>
+  Function returns ErrorLevel (0 if performed successfully).
+  
+  
+  <a name="GPF_ShowMultiLine"></a><h4>GPF_ShowMultiLine( <I>ObjNum</I> , <I>ShowText</I> )</h4>
+  <B><I>ObjNum</I></B> indicates the multi-line text field (0-4) to be displayed.
+  <BR>
+  <B><I>ShowText</I></B> is a boolean (0/1). Indicates if text will be displayed or not.
+  <BR>
+  <BR>
+  Function returns ErrorLevel (0 if performed successfully).
+  
+  
+  <li><a name="PicRelatedFunctions"><h3>Picture-related Functions</h3></li>
+
+  <a name="GPF_SetPicture"></a><h4>GPF_SetPicture( <I>FileFullPath</I> )</h4>
+  <B><I>FileFullPath</I></B> is the <U>full path</U> of the desired picture.
+  <BR>
+  <BR>
+  Allowed formats are <U>BMP</U>, <U>DDS</U>, <U>DIB</U>, <U>HDR</U>, <U>JPG</U>, <U>PFM</U>, <U>PNG</U>, <U>PPM</U> and <U>TGA</U>.
+  <BR>
+  There is no transparency except for picture's own transparent color.
+  <BR>
+  Having a picture size with the powers of 2 is recommended for compatibility with some graphics cards (e.g. better use 256x256 than 200x200).
+  <BR>
+  <BR>
+  Function returns ErrorLevel (0 if performed successfully).
+  
+  
+  <a name="GPF_ShowPicture"></a><h4>GPF_ShowPicture( <I>ShowPic</I> , <I>PosX</I> , <I>PosY</I> )</h4>
+  <B><I>ShowPic</I></B> is a boolean (0/1). Indicates if picture will be displayed or not.
+  <BR>
+  <B><I>PosX/Y</I></B> indicate position (upper left corner of picture).
+  <BR>
+  <BR>
+  Function returns ErrorLevel (0 if performed successfully).
+
+
+  <a name="GPF_TakeScreenShot"></a><h4>GPF_TakeScreenShot( <I>bFormat</I> , <I>SaveFullPath</I> )</h4>
+  <B><I>bFormat</I></B> is a boolean (0/1). Indicates format of saved screenshot. 0 = <U>BMP</U> and 1 = <U>JPG</U>.
+  <BR>
+  <B><I>SaveFullPath</I></B> is the <U>full path</U> of saved screenshot (<U>including file extension</U>).
+  <BR>
+  <BR>
+  If a previous screenshot request is still pending (being processed), a subsequent call to this function will fail.
+  <BR>
+  Function returns ErrorLevel (0 if performed successfully).
+  <BR>
+  Note that 0 indicates that the request has successfully been passed. It does not indicate that the screenshot has already been taken.
+  <BR>
+  Checking existance of screenshot file would be a good workaround.
+  
+  
+  <li><a name="remarks"></a><h3>Remarks</h3></li>
+  
+  "<B>Based on current screen resolution</B>": whenever this is stated, it means that a picture or text-field will <B>not</B> be scaled for windowed games. Let's say you're playing a game in fullscreen mode. If you have a 256x256 picture, it will be displayed normally. Now, if you switch to windowed mode and scale it to 50% of fullscreen size, the picture will not be scaled and will look like a 512x512 picture ingame.
+</ul>
+
+
+<h2><a name="examples"></a>Examples</h2>
+<ul>
+  <li><a href="Example1.ahk">Download Example 1</a></li>
+  <pre class="NoIndent"><span class="CodeCom">; =========================================</span>
+
+#Include GPF_v1.1c.ahk
+
+var_ObjNumber := 0 <span class="CodeCom">; ------------ from 0 to 4</span>
+var_PosX := 420 <span class="CodeCom">; --------------- text X position</span>
+var_PosY := 230 <span class="CodeCom">; --------------- text Y position</span>
+<span class="CodeCom">;   var_SizeX := 500 ; ---------- X multiline field size</span>
+<span class="CodeCom">;   var_SizeY := 500 ; ---------- Y multiline field size</span>
+var_TextLine := "LineTest1!" <span class="CodeCom">;--- text</span>
+var_ARGB := 0xFF000000 <span class="CodeCom">; -------- Alpha,Red,Green,Blue</span>
+var_UseBlackBG := 0 <span class="CodeCom">; ----------- boolean, use black background</span>
+var_UseBold := 1 <span class="CodeCom">; -------------- boolean, use bold text</span>
+var_FontSize := 20 <span class="CodeCom">; ------------ font size (in units)</span>
+var_FontFamily := 0 <span class="CodeCom">; ----------- 0 = SWISS (proportional) --- 1 = MODERN (monospace)</span>
+var_ShowText := 0 <span class="CodeCom">; ------------- boolean, show text or not</span>
+
+Return
+
+<span class="CodeCom">; =========================================
+
+; F12 toggles the overlayed text by toggling
+; library loaded or not via GPF_Main()</span>
+F12::
+
+<span class="CodeCom">; If not loaded, open/load library, otherwise close/free library
+;
+; Return values for GPF_Main():
+;  1 = Success (load library)
+; -1 = Fail (load library)
+;  2 = Sucess (free library)
+; -2 = Fail (free library)</span>
+
+GPF_Main()
+
+<span class="CodeCom">; If library isn't loaded at this point, other
+; functions will return ErrorLevel different
+; than 0 and will simply not work (as expected).
+
+; Boolean for showing text TRUE</span>
+var_ShowText := 1
+
+<span class="CodeCom">; Current var_ObjNumer is 0, so it sets the data of the first SingLine Text Field</span>
+GPF_SetSingleLine(var_ObjNumber,var_PosX,var_PosY,var_TextLine,var_ARGB,var_UseBlackBG,var_FontSize,var_UseBold,var_FontFamily)
+
+<span class="CodeCom">; Shows the SingleLine Text Field number 0 (the first one)</span>
+GPF_ShowSingleLine(var_ObjNumber,var_ShowText)
+
+Sleep, 1000
+
+<span class="CodeCom">; Now previous text will be replaced by a new one</span>
+GPF_SetSingleLine(var_ObjNumber,var_PosX,var_PosY,"Test number 2!",var_ARGB,var_UseBlackBG,var_FontSize,var_UseBold,var_FontFamily)
+
+Return
+
+<span class="CodeCom">; =========================================</span></pre>
+  <li><a href="Example2.ahk">Download Example 2</a></li>
+  <pre class="NoIndent"><span class="CodeCom">; =========================================
+
+;
+; Example function - f_Change_SL_Text_0
+;
+; Function to change only the text parameter
+; of SingleLine Text Field number 0.
+; All other parameters are fixed.
+; A static variable checks if text really changed.
+; Must have GPF_v1.1c.ahk included, of course.
+;</span>
+
+f_Change_SL_Text_0(newText)
+{
+  static oldText
+  if ( oldText = newText )
+    return "NoChange"  <span class="CodeCom">;  indicates I'm performing an unecessary attempt to change text</span>
+  oldText := newText
+  return GPF_SetSingleLine(0,100,100,oldText,0xFFFFFFFF,0,20,1,0)
+}
+
+<span class="CodeCom">; =========================================</span></pre>
+  <li><a href="Example3.ahk">Download Example 3</a></li>
+  <pre class="NoIndent"><span class="CodeCom">; =========================================
+;
+; This example shows usage of picture functions
+;
+; =========================================</span>
+
+#Include GPF_v1.1c.ahk
+
+<span class="CodeCom">; -- Picture X position</span>
+var_PosX := 100
+<span class="CodeCom">; -- Picture Y position</span>
+var_PosY := 150
+<span class="CodeCom">; -- Boolean for showing picture</span>
+var_ShowPic := 0
+<span class="CodeCom">; -- Picture to be shown (MUST BE FULL PATH)</span>
+var_PicFullPath := "C:\My Folder\This is a full path\picture.png"
+
+Return
+
+<span class="CodeCom">; ~~~~~~~~~~~~~~~~~~~~
+
+; -- Pressing F10 will toggle library via GPF_Main()</span>
+F10::GPF_Main()
+
+<span class="CodeCom">; -- Pressing F11 will set desired picture</span>
+F11::GPF_SetPicture(var_PicFullPath)
+
+<span class="CodeCom">; -- Pressing F12 will toggle
+; picture display once the library
+; is loaded and the picture is set</span>
+F12::
+
+var_ShowPic := !var_ShowPic
+
+GPF_ShowPicture(var_ShowPic,var_PosX,var_PosY)
+
+Return
+
+<span class="CodeCom">; =========================================</span></pre>
+</ul>
+
+<hr>
+
+<B>This the end of the documentation for now.
+<BR>
+More information in <a href="http://www.autohotkey.com/forum/viewtopic.php?t=45689">this topic<a>.</B>
+</body>
+</html>

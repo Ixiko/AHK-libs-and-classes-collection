@@ -5,9 +5,7 @@
 ; AHK_B / AHK_L and ANSI / Unicode compatible
 ; http://www.autohotkey.com/forum/viewtopic.php?t=32660
 ; Thanks goes out to majkinetor for corrections and suggestions.
-; --------------------------------------
-;
-; List of functions the User may call:
+/* List of functions the User may call:
 ;
 ; --------------------------------------
 ; LBDDLib_Init(Options)
@@ -161,6 +159,7 @@
 ;      moving of the items yourself, use LBDDLib_CallBack at the end of your function.
 ;      Default value: "" (meaning non-existant)
 ; --------------------------------------
+
 ; LBDDLib_Modify(hWnd, Options)
 ; Modify the options that were set during adding of the control.
 ; Leave options blank to reset every option to its default value!
@@ -248,8 +247,7 @@
 ; Wrapper function that inserts an Item, defines through MyPos (the position to insert it)
 ; and MyText (the item-text) in an listbox, defined through its handle.
 
-
-
+*/
 
 
 LBDDLib_Init(Options=0){

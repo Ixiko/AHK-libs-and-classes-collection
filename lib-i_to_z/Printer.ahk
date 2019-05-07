@@ -1,25 +1,69 @@
-GetDefaultPrinter() {
-         nSize := VarSetCapacity(gPrinter, 256)
-         DllCall(A_WinDir . "\system\winspool.drv\GetDefaultPrinterA", "str", gPrinter, "UintP", nSize)
-         Return gprinter
-   }
+﻿/*
+    Enumerar todos los dispositivos de impresora y fax.
+    Return:
+              0 = Ha ocurrido un error al recuperar la información.
+        [array] = Si tuvo éxito devuelve un Array de objetos. Cada objeto tiene las siguientes claves:
+            Flags       = Especifica información sobre los datos devueltos.
+            Description = Descripción del dispositivo.
+            Name        = Nombre del dispositivo.
+            Comment     = Comentario del dispositivo.
+    Ejemplo:
+        For Each, Printer in EnumPrinters()
+            List .= Printer.Description . '`n'
+        MsgBox(List)
+*/
+EnumPrinters()
+{
+    Local Size, PRINTER_INFO_1, Count
+        , List   := []
+        , Offset := 0
 
-SetDefaultPrinter(sPrinter) {
-      DllCall(A_WinDir . "\system\winspool.drv\SetDefaultPrinterA", "str", sPrinter)
-   }
+    DllCall('Winspool.drv\EnumPrintersW', 'UInt', 0x02000002, 'Ptr', 0, 'UInt', 1, 'Ptr', 0, 'UInt', 0, 'UIntP', Size, 'UIntP', 0)
+    If (!VarSetCapacity(PRINTER_INFO_1, Size, 0))
+        Return (FALSE)
 
-GetInstalledPrinters() {
-	regread,defaultPrinter,HKCU,Software\Microsoft\Windows NT\CurrentVersion\Windows,device
-	stringsplit,defaultName,defaultPrinter,`,
-	defaultName := defaultName1
-	SplitPath, defaultName , DefaultPrinterName
-	printerlist =
-	loop,HKCU,Software\Microsoft\Windows NT\CurrentVersion\devices
-	{
-		SplitPath, A_LoopRegName , PrinterName
-		if (PrinterName = DefaultPrinterName)
-		printerlist = %printerlist%%PrinterName%||
-		else printerlist = %printerlist%%PrinterName%|
-	}
-	return %printerlist%
-}
+    If (!DllCall('Winspool.drv\EnumPrintersW', 'UInt', 0x02000002, 'Ptr', 0, 'UInt', 1, 'UPtr', &PRINTER_INFO_1, 'UInt', Size, 'UIntP', 0, 'UIntP', Count))
+        Return (FALSE)
+    
+    Loop (Count)
+    {
+        List[A_Index] := { Flags      : NumGet(&PRINTER_INFO_1 + Offset, 'UInt')
+                         , Description: StrGet(NumGet(&PRINTER_INFO_1 + Offset + A_PtrSize), 'UTF-16')
+                         , Name       : StrGet(NumGet(&PRINTER_INFO_1 + Offset + A_PtrSize), 'UTF-16')
+                         , Comment    : StrGet(NumGet(&PRINTER_INFO_1 + Offset + A_PtrSize), 'UTF-16') }
+        Offset        += A_PtrSize == 4 ? 16 : 32
+    }
+
+    Return (List)
+} ;https://msdn.microsoft.com/en-us/library/windows/desktop/dd162692(v=vs.85).aspx
+
+
+
+
+/*
+    Recupera el nombre de impresora de la impresora predeterminada para el usuario actual en el equipo local.
+*/
+GetDefaultPrinter()
+{
+    Local Size, Buffer
+
+    DllCall('Winspool.drv\GetDefaultPrinterW', 'Ptr', 0, 'UIntP', Size)
+    If (!VarSetCapacity(Buffer, Size * 2, 0))
+        Return ('')
+
+    If (!DllCall('Winspool.drv\GetDefaultPrinterW', 'UPtr', &Buffer, 'UIntP', Size))
+        Return ('')
+
+    Return (StrGet(&Buffer, 'UTF-16'))
+} ;https://msdn.microsoft.com/en-us/library/windows/desktop/dd144876(v=vs.85).aspx
+
+
+
+
+/*
+    Establece el nombre de impresora de la impresora predeterminada para el usuario actual en el equipo local.
+*/
+SetDefaultPrinter(PrinterName)
+{
+    Return (DllCall('Winspool.drv\SetDefaultPrinterW', 'UPtr', &PrinterName))
+} ;https://msdn.microsoft.com/en-us/library/windows/desktop/dd162971(v=vs.85).aspx

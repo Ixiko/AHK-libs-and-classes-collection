@@ -1,42 +1,47 @@
-﻿; ======================================================================================================================
-; Namespace:      LBEX
-; Function:       Some functions to use with AHK GUI ListBox controls (LB).
-; Tested with:    AHK 1.1.23.01 (A32/U32/U64)
-; Tested on:      Win 10 Pro (x64)
-; Changelog:
-;     1.0.01.00/2016-02-14/just me - added LBEX_SetColumnTabs()
-;     1.0.00.00/2014-10-01/just me - initial release
-; Common function parameters (not mentioned in the parameter descriptions of functions):
-;     HLB         -  Handle to the list box control.
-;     Index       -  1-based index of a list box item (line).
-; MSDN:           msdn.microsoft.com/en-us/library/bb775146(v=vs.85).aspx
-; ======================================================================================================================
-; Add             Adds a string to a list box.
-;                 If the list box does not have the LBS_SORT style, the string is added to the end of the list.
-;                 Otherwise, the string is inserted into the list and the list is sorted.
-; Parameters:     String   -  String to be added.
-; Return values:  Returns the index of the string in the list box, 0, if an error occurs, or -1, if there
-;                 is insufficient space to store the new string.
-; ======================================================================================================================
-LBEX_Add(HLB, ByRef String) {
+﻿LBEX_Add(HLB, ByRef String) {
+   
+   ; ======================================================================================================================
+   ; Namespace:      LBEX
+   ; Function:       Some functions to use with AHK GUI ListBox controls (LB).
+   ; Tested with:    AHK 1.1.23.01 (A32/U32/U64)
+   ; Tested on:      Win 10 Pro (x64)
+   ; Changelog:
+   ;     1.0.01.00/2016-02-14/just me - added LBEX_SetColumnTabs()
+   ;     1.0.00.00/2014-10-01/just me - initial release
+   ; Common function parameters (not mentioned in the parameter descriptions of functions):
+   ;     HLB         -  Handle to the list box control.
+   ;     Index       -  1-based index of a list box item (line).
+   ; MSDN:           msdn.microsoft.com/en-us/library/bb775146(v=vs.85).aspx
+   ; ======================================================================================================================
+   ; Add             Adds a string to a list box.
+   ;                 If the list box does not have the LBS_SORT style, the string is added to the end of the list.
+   ;                 Otherwise, the string is inserted into the list and the list is sorted.
+   ; Parameters:     String   -  String to be added.
+   ; Return values:  Returns the index of the string in the list box, 0, if an error occurs, or -1, if there
+   ;                 is insufficient space to store the new string.
+   ; ======================================================================================================================
+   
    Static LB_ADDSTRING := 0x0180
    SendMessage, % LB_ADDSTRING, 0, % &String, , % "ahk_id " . HLB
    Return (ErrorLevel + 1)
 }
-; ======================================================================================================================
-; CalcIdealWidth  Calculates the ideal width of a list box needed to display the current content.
-; Parameters:     HLB         -  Handle to the list box.
-;                                If you want to determine the ideal width of an existing control specify its HWND;
-;                                all other parameters are ignored in this case.
-;                                Otherwise pass 0 and use the other parameters to specify the content and other options.
-;                 ------------------------------------------------------------------------------------------------------
-;                 Content     -  Content to be displayed in the list box.
-;                 Delimiter   -  The field separator to be used.
-;                 FontOptions -  The 'Options' parameter to be used for Gui, Font, ...
-;                 FontName    -  The 'Name' parameter to be used for Gui, Font, ...
-; Return values:  Returns the ideal width of the list box in respect to the content.
-; ======================================================================================================================
+
 LBEX_CalcIdealWidth(HLB, Content := "", Delimiter := "|", FontOptions := "", FontName := "") {
+   
+   ; ======================================================================================================================
+   ; CalcIdealWidth  Calculates the ideal width of a list box needed to display the current content.
+   ; Parameters:     HLB         -  Handle to the list box.
+   ;                                If you want to determine the ideal width of an existing control specify its HWND;
+   ;                                all other parameters are ignored in this case.
+   ;                                Otherwise pass 0 and use the other parameters to specify the content and other options.
+   ;                 ------------------------------------------------------------------------------------------------------
+   ;                 Content     -  Content to be displayed in the list box.
+   ;                 Delimiter   -  The field separator to be used.
+   ;                 FontOptions -  The 'Options' parameter to be used for Gui, Font, ...
+   ;                 FontName    -  The 'Name' parameter to be used for Gui, Font, ...
+   ; Return values:  Returns the ideal width of the list box in respect to the content.
+   ; ======================================================================================================================
+   
    DestroyGui := MaxW := 0
    If !(HLB) {
       If (Content = "")
