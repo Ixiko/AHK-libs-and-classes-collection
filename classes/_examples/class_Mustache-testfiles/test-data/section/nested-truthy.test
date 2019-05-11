@@ -1,0 +1,27 @@
+--META
+
+Nested (Truthy)
+Nested truthy sections should have their contents rendered.
+
+--DATA
+
+{"bool": true}
+
+--TEMPLATE
+
+| A {{#bool}}B {{#bool}}C{{/bool}} D{{/bool}} E |
+
+--EXPECTED
+
+| A B C D E |
+
+--TOKENS
+
+[T:| A ]
+[S:bool]
+    [T:B ]
+[S:bool]
+    [T:C]
+[S:bool]
+    [T: D]
+[T: E |]

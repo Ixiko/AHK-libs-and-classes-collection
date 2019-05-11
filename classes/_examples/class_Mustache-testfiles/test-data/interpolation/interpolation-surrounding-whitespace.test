@@ -1,0 +1,24 @@
+--META
+
+Interpolation - Surrounding Whitespace
+Interpolation should not alter surrounding whitespace.
+
+--DATA
+
+{
+    "string": "---"
+}
+
+--TEMPLATE
+
+| {{string}} |
+
+--EXPECTED
+
+| --- |
+
+--TOKENS
+
+[T:| ]
+[V:string]
+[T: |]

@@ -1,0 +1,23 @@
+--META
+
+Ampersand
+Ampersand should interpolate without HTML escaping.
+
+--DATA
+
+{
+    "forbidden": "& \" < >"
+}
+
+--TEMPLATE
+
+These characters should not be HTML escaped: {{&forbidden}}
+
+--EXPECTED
+
+These characters should not be HTML escaped: & " < >
+
+--TOKENS
+
+[T:These characters should not be HTML escaped: ]
+[&:forbidden]

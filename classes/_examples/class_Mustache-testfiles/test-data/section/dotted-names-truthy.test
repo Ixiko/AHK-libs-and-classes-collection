@@ -1,0 +1,29 @@
+--META
+
+Dotted Names - Truthy
+Dotted names should be valid for Section tags.
+
+--DATA
+
+{
+    "a": {
+        "b": {
+            "c": true
+        }
+    }
+}
+
+--TEMPLATE
+
+"{{#a.b.c}}Here{{/a.b.c}}" == "Here"
+
+--EXPECTED
+
+"Here" == "Here"
+
+--TOKENS
+
+[T:"]
+[S:a.b.c]
+    [T:Here]
+[T:" == "Here"]

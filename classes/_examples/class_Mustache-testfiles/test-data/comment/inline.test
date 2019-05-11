@@ -1,0 +1,20 @@
+--META
+
+Inline
+Comment blocks should be removed from the template.
+
+--DATA
+
+{}
+
+--TEMPLATE
+
+"12345{{! Comment Block! }}67890"
+
+--EXPECTED
+
+"1234567890"
+
+--TOKENS
+
+[T:Not implemented]

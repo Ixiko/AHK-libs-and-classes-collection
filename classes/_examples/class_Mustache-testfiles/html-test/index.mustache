@@ -1,0 +1,11 @@
+<div class="content">
+	<div class="welcome">
+		<h4>Hello {{ User.FirstName }}</h4>
+		
+		<div class="raw">{{{User.RawContent}}}</div>
+		<div class="enc">{{ User.EscapedContent }}</div>
+	</div>
+	{{#Messages}}
+	<p>{{ User.FirstName }} has {{ I }} message{{#Plural}}s{{/Plural}}</p>
+	{{/Messages}}
+</div>

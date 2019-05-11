@@ -1,0 +1,33 @@
+--META
+
+Falsey
+Falsey sections should have their contents omitted.
+
+--DATA
+
+{
+    "boolean": false
+}
+
+--TEMPLATE
+
+Before
+"{{#boolean}}This should not be rendered.{{/boolean}}"
+After
+
+--EXPECTED
+
+Before
+""
+After
+
+--TOKENS
+
+[T:Before]
+[T:\r\n]
+[T:"]
+[S:boolean]
+    [T:This should not be rendered.]
+[T:"]
+[T:\r\n]
+[T:After]

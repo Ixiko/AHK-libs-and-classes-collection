@@ -1,0 +1,24 @@
+--META
+
+Interpolation With Padding
+Superfluous in-tag whitespace should be ignored.
+
+--DATA
+
+{
+    "string": "---"
+}
+
+--TEMPLATE
+
+|{{ string }}|
+
+--EXPECTED
+
+|---|
+
+--TOKENS
+
+[T:|]
+[V:string]
+[T:|]

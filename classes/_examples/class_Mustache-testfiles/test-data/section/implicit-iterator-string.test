@@ -1,0 +1,25 @@
+--META
+
+Implicit Iterator - String
+Implicit iterators should directly interpolate strings.
+
+--DATA
+
+{
+    "list": ["a", "b", "c"]
+}
+
+--TEMPLATE
+
+{{#list}}({{.}}){{/list}}
+
+--EXPECTED
+
+(a)(b)(c)
+
+--TOKENS
+
+[S:list]
+    [T:(]
+    [E:element]
+    [T:)]

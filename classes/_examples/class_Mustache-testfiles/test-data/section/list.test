@@ -1,0 +1,27 @@
+--META
+
+List
+Lists should be iterated; list items should visit the context stack.
+
+--DATA
+
+{
+    "list": [
+        {"item": 1},
+        {"item": 2},
+        {"item": 3}
+    ]
+}
+
+--TEMPLATE
+
+{{#list}}{{item}}{{/list}}
+
+--EXPECTED
+
+123
+
+--TOKENS
+
+[S:list]
+    [V:item]

@@ -1,0 +1,24 @@
+--META
+
+Basic Context Miss - Trailing linebreaks
+A context miss should not produce a linebreak.
+
+--DATA
+
+{}
+
+--TEMPLATE
+
+Before
+{{variable}}
+
+--EXPECTED
+
+Before
+
+--TOKENS
+
+[T:Before]
+[T:\r\n]
+[V:variable]
+[T:\r\n]

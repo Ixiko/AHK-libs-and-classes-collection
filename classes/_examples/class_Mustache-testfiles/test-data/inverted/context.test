@@ -1,0 +1,24 @@
+--META
+
+Context
+Objects and hashes should behave like truthy values.
+
+--DATA
+
+{
+    "context": {
+        "name": "Joe"
+    }
+}
+
+--TEMPLATE
+
+"{{^context}}Hi {{name}}.{{/context}}"
+
+--EXPECTED
+
+""
+
+--TOKENS
+
+[T:Not implemented]

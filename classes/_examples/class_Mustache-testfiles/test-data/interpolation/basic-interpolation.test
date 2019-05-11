@@ -1,0 +1,22 @@
+--META
+
+Basic Interpolation
+Unadorned tags should interpolate content into the template
+
+--DATA
+
+{"subject": "world"}
+
+--TEMPLATE
+
+Hello, {{subject}}!
+
+--EXPECTED
+
+Hello, world!
+
+--TOKENS
+
+[T:Hello, ]
+[V:subject]
+[T:!]

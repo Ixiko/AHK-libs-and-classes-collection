@@ -1,0 +1,23 @@
+--META
+
+Ampersand Decimal Interpolation
+Decimals should interpolate seamlessly with proper significance.
+
+--DATA
+
+{
+    "power": 1.210
+}
+
+--TEMPLATE
+
+{{&power}} jiggawatts!
+
+--EXPECTED
+
+1.21 jiggawatts!
+
+--TOKENS
+
+[V:power]
+[T: jiggawatts!]

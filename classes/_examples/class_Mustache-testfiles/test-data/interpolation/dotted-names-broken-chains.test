@@ -1,0 +1,24 @@
+--META
+
+Dotted Names - Broken Chains
+Any falsey value prior to the last part of the name should yield ''.
+
+--DATA
+
+{
+  "a": { }
+}
+
+--TEMPLATE
+
+"{{a.b.c}}" == ""
+
+--EXPECTED
+
+"" == ""
+
+--TOKENS
+
+[T:"]
+[V:a.b.c]
+[T:" == ""]

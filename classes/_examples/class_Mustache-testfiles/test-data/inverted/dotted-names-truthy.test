@@ -1,0 +1,26 @@
+--META
+
+Dotted Names - Truthy
+Dotted names should be valid for Inverted Section tags.
+
+--DATA
+
+{
+    "a": {
+        "b": {
+            "c": 1
+        }
+    }
+}
+
+--TEMPLATE
+
+"{{^a.b.c}}Not Here{{/a.b.c}}" == ""
+
+--EXPECTED
+
+"" == ""
+
+--TOKENS
+
+[T:Not implemented]

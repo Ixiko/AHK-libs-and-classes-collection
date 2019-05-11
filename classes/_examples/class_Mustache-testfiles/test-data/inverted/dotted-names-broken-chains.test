@@ -1,0 +1,22 @@
+--META
+
+Dotted Names - Broken Chains
+Dotted names that cannot be resolved should be considered falsey.
+
+--DATA
+
+{
+    "a": {}
+}
+
+--TEMPLATE
+
+"{{^a.b.c}}Not Here{{/a.b.c}}" == "Not Here"
+
+--EXPECTED
+
+"Not Here" == "Not Here"
+
+--TOKENS
+
+[T:Not implemented]

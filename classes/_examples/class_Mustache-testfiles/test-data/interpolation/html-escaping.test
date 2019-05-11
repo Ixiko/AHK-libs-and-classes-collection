@@ -1,0 +1,23 @@
+--META
+
+HTML Escaping
+Basic interpolation should be HTML escaped.
+
+--DATA
+
+{
+    "forbidden": "& \" < >"
+}
+
+--TEMPLATE
+
+These characters should be HTML escaped: {{forbidden}}
+
+--EXPECTED
+
+These characters should be HTML escaped: &amp; &quot; &lt; &gt;
+
+--TOKENS
+
+[T:These characters should be HTML escaped: ]
+[V:forbidden]

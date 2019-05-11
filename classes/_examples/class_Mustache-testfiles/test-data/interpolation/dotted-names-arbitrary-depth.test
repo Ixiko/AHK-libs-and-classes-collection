@@ -1,0 +1,34 @@
+--META
+
+Dotted Names - Arbitrary Depth
+Dotted names should be functional to any level of nesting.
+
+--DATA
+
+{
+  "a": {
+    "b": {
+      "c": {
+        "d": {
+          "e": {
+            "name": "Phil"
+          }
+        }
+      }
+    }
+  }
+}
+
+--TEMPLATE
+
+"{{a.b.c.d.e.name}}" == "Phil"
+
+--EXPECTED
+
+"Phil" == "Phil"
+
+--TOKENS
+
+[T:"]
+[V:a.b.c.d.e.name]
+[T:" == "Phil"]

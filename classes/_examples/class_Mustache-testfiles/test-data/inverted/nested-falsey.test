@@ -1,0 +1,22 @@
+--META
+
+Nested (Falsey)
+Nested falsey sections should have their contents rendered.
+
+--DATA
+
+{
+    "bool": 0
+}
+
+--TEMPLATE
+
+| A {{^bool}}B {{^bool}}C{{/bool}} D{{/bool}} E |
+
+--EXPECTED
+
+| A B C D E |
+
+--TOKENS
+
+[T:Not implemented]

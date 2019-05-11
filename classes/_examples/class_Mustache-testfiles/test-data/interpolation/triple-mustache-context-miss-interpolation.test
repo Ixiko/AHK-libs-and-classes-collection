@@ -1,0 +1,22 @@
+--META
+
+Triple Mustache Context Miss Interpolation
+Failed context lookups should default to empty strings.
+
+--DATA
+
+{}
+
+--TEMPLATE
+
+I ({{{cannot}}}) be seen!
+
+--EXPECTED
+
+I () be seen!
+
+--TOKENS
+
+[T:I (]
+[&:cannot]
+[T:) be seen!]

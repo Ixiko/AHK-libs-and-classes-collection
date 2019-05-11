@@ -1,0 +1,27 @@
+--META
+
+Interpolation - Standalone
+Standalone interpolation should not alter surrounding whitespace.
+
+--DATA
+
+{
+    "string": "---"
+}
+
+--TEMPLATE
+
+  {{string}}
+After
+
+--EXPECTED
+
+  ---
+After
+
+--TOKENS
+
+[T:  ]
+[V:string]
+[T:\r\n]
+[T:After]

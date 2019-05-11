@@ -1,0 +1,53 @@
+--META
+
+Custom section whitespace
+Section whitespace test
+
+--DATA
+
+{
+    "bool": true,
+    "list": [1, 2]
+}
+
+--TEMPLATE
+
+Before{{#list}}
+{{.}}
+{{/list}}
+After
+
+--
+
+Before{{#bool}}
+Output
+{{/bool}}
+After
+
+--EXPECTED
+
+Before
+1
+
+2
+After
+
+--
+
+Before
+Output
+After
+
+--TOKENS
+
+[T:Before]
+[S:list]
+	[T:\r\n]
+	[E:element]
+	[T:\r\n]
+[T:After\r\n\r\n--\r\n\r\nBefore]
+[S:bool]
+	[T:\r\n]
+	[T:Output]
+	[T:\r\n]
+[T:After]

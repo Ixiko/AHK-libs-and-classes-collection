@@ -1,0 +1,27 @@
+--META
+
+Multiline
+Multiline comments should be permitted.
+
+--DATA
+
+{}
+
+--TEMPLATE
+
+Before
+12345{{!
+  This is a
+  multi-line comment...
+}}67890
+After
+
+--EXPECTED
+
+Before
+1234567890
+After
+
+--TOKENS
+
+[T:Not implemented]

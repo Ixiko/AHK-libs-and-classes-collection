@@ -1,0 +1,44 @@
+--META
+
+Dotted Names - Initial Resolution
+The first part of a dotted name should resolve as any other name.
+
+--DATA
+
+{
+  "a": {
+    "b": {
+      "c": {
+        "d": {
+          "e": {
+            "name": "Phil"
+          }
+        }
+      }
+    }
+  },
+  "b": {
+    "c": {
+      "d": {
+        "e": {
+          "name": "Wrong"
+        }
+      }
+    }
+  }
+}
+
+--TEMPLATE
+
+"{{#a}}{{b.c.d.e.name}}{{/a}}" == "Phil"
+
+--EXPECTED
+
+"Phil" == "Phil"
+
+--TOKENS
+
+[T:"]
+[S:a]
+    [V:b.c.d.e.name]
+[T:" == "Phil"]

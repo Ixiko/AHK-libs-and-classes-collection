@@ -1,0 +1,25 @@
+--META
+
+Implicit Iterator - Decimal
+Implicit iterators should cast decimals to strings and interpolate.
+
+--DATA
+
+{
+    "list": [1.10, 2.20, 3.30]
+}
+
+--TEMPLATE
+
+{{#list}}({{.}}){{/list}}
+
+--EXPECTED
+
+(1.1)(2.2)(3.3)
+
+--TOKENS
+
+[S:list]
+    [T:(]
+    [E:element]
+    [T:)]

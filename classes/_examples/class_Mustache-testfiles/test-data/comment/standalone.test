@@ -1,0 +1,25 @@
+--META
+
+Standalone
+All standalone comment lines should be removed.
+
+--DATA
+
+{}
+
+--TEMPLATE
+
+Begin.
+{{! Comment Block! }}
+End.
+
+
+--EXPECTED
+
+Begin.
+End.
+
+
+--TOKENS
+
+[T:Not implemented]

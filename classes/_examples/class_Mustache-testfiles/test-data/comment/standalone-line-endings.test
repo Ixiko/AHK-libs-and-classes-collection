@@ -1,0 +1,27 @@
+--META
+
+Standalone Line Endings
+"\r\n" should be considered a newline for standalone tags.
+
+--DATA
+
+{}
+
+--TEMPLATE
+
+|
+
+{{! Standalone Comment }}
+
+|
+
+--EXPECTED
+
+|
+
+
+|
+
+--TOKENS
+
+[T:Not implemented]

@@ -1,0 +1,22 @@
+--META
+
+Truthy
+Truthy sections should have their contents omitted.
+
+--DATA
+
+{
+    "boolean": 1
+}
+
+--TEMPLATE
+
+"{{^boolean}}This should not be rendered.{{/boolean}}"
+
+--EXPECTED
+
+""
+
+--TOKENS
+
+[T:Not implemented]

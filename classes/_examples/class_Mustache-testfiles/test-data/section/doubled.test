@@ -1,0 +1,40 @@
+--META
+
+Doubled
+Multiple sections per template should be permitted.
+
+--DATA
+
+{
+    "bool": true,
+    "two": "second"
+}
+
+--TEMPLATE
+
+{{#bool}}
+* first
+{{/bool}}
+* {{two}}
+{{#bool}}
+* third
+{{/bool}}
+
+--EXPECTED
+
+* first
+* second
+* third
+
+--TOKENS
+
+[S:bool]
+    [T:* first]
+    [T:\r\n]
+[S:bool]
+    [T:* ]
+    [V:two]
+    [T:\r\n]
+[S:bool]
+    [T:* third]
+    [T:\r\n]

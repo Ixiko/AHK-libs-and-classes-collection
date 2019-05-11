@@ -1,0 +1,26 @@
+--META
+
+Indented Inline Sections
+Single-line sections should not alter surrounding whitespace.
+
+--DATA
+
+{
+    "boolean": 0
+}
+
+--TEMPLATE
+
+ {{^boolean}}NO{{/boolean}}
+ {{^boolean}}WAY{{/boolean}}
+
+
+--EXPECTED
+
+ NO
+ WAY
+
+
+--TOKENS
+
+[T:Not implemented]

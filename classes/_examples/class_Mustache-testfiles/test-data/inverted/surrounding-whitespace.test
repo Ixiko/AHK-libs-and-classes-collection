@@ -1,0 +1,24 @@
+--META
+
+Surrounding Whitespace
+Inverted sections should not alter surrounding whitespace.
+
+--DATA
+
+{
+    "boolean": 0
+}
+
+--TEMPLATE
+
+ | {{^boolean}} |   {{/boolean}} | 
+
+
+--EXPECTED
+
+ |  |    | 
+
+
+--TOKENS
+
+[T:Not implemented]

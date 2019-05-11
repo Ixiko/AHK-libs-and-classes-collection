@@ -1,0 +1,29 @@
+--META
+
+Implicit Iterator - Array
+Implicit iterators should allow iterating over nested arrays.
+
+--DATA
+
+{
+    "list": [
+        [1, 2, 3],
+        ["a", "b", "c"]
+    ]
+}
+
+--TEMPLATE
+
+{{#list}}({{#.}}{{.}}{{/.}}){{/list}}
+
+--EXPECTED
+
+(123)(abc)
+
+--TOKENS
+
+[S:list]
+    [T:(]
+    [E:element]
+        [E:element]
+    [T:)]

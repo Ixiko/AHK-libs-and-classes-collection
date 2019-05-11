@@ -1,0 +1,27 @@
+--META
+
+Triple Mustache - Standalone
+Standalone interpolation should not alter surrounding whitespace.
+
+--DATA
+
+{
+    "string": "---"
+}
+
+--TEMPLATE
+
+  {{{string}}}
+After
+
+--EXPECTED
+
+  ---
+After
+
+--TOKENS
+
+[T:  ]
+[&:string]
+[T:\r\n]
+[T:After]

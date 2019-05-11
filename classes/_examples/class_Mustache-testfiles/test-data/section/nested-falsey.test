@@ -1,0 +1,27 @@
+--META
+
+Nested (Falsey)
+Nested falsey sections should be omitted.
+
+--DATA
+
+{"bool": false}
+
+--TEMPLATE
+
+| A {{#bool}}B {{#bool}}C{{/bool}} D{{/bool}} E |
+
+--EXPECTED
+
+| A  E |
+
+--TOKENS
+
+[T:| A ]
+[S:bool]
+    [T:B ]
+[S:bool]
+    [T:C]
+[S:bool]
+    [T: D]
+[T: E |]

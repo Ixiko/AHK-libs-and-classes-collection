@@ -1,0 +1,20 @@
+--META
+
+No Interpolation
+Mustache-free templates should render as-is
+
+--DATA
+
+{}
+
+--TEMPLATE
+
+Hello from {Mustache}!
+
+--EXPECTED
+
+Hello from {Mustache}!
+
+--TOKENS
+
+[T:Hello from {Mustache}!]

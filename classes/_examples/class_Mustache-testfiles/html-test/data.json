@@ -1,0 +1,19 @@
+{
+    "Title": "Testers",
+    "User": {
+        "FirstName": "Alice",
+        "EscapedContent": "<HerpDerp>",
+        "RawContent": "<HerpDerp>"
+    },
+    "Plural": true,
+    "Messages": true,
+    "I": 10,
+    "Nav": [
+        {"Link": "#", "Item": "Apple"},
+        {"Link": "#", "Item": "Pear"},
+        {"Link": "#", "Item": "Orange"}
+    ],
+    "Content": "Lots of content!",
+    "FirstName": "Bob",
+    "FavoriteColors": ["Red", "Orange", "Black"]
+}

@@ -1,0 +1,26 @@
+--META
+
+Internal Whitespace
+Inverted should not alter internal whitespace.
+
+--DATA
+
+{
+    "boolean": 0
+}
+
+--TEMPLATE
+
+ | {{^boolean}} {{! Important Whitespace }}
+ {{/boolean}} | 
+
+
+--EXPECTED
+
+ |  
+  | 
+
+
+--TOKENS
+
+[T:Not implemented]

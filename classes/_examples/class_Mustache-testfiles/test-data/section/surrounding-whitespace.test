@@ -1,0 +1,29 @@
+--META
+
+Surrounding Whitespace
+Sections should not alter surrounding whitespace.
+
+--DATA
+
+{
+    "boolean": true
+}
+
+--TEMPLATE
+
+ | {{#boolean}}\t|\t{{/boolean}} | 
+Newline
+
+--EXPECTED
+
+ | \t|\t | 
+Newline
+
+--TOKENS
+
+[T: | ]
+[S:boolean]
+    [T:\t|\t]
+[T: | ]
+[T:\r\n]
+[T:Newline]

@@ -1,0 +1,52 @@
+--META
+
+Deeply Nested Contexts
+All elements on the context stack should be accessible.
+
+--DATA
+
+{
+    "a": {"one": 1},
+    "b": {"two": 2},
+    "c": {"three": 3},
+    "d": {"four": 4},
+    "e": {"five": 5}
+}
+
+--TEMPLATE
+
+{{#a}}
+{{one}}
+{{#b}}
+{{one}}{{two}}{{one}}
+{{#c}}
+{{one}}{{two}}{{three}}{{two}}{{one}}
+{{#d}}
+{{one}}{{two}}{{three}}{{four}}{{three}}{{two}}{{one}}
+{{#e}}
+{{one}}{{two}}{{three}}{{four}}{{five}}{{four}}{{three}}{{two}}{{one}}
+{{/e}}
+{{one}}{{two}}{{three}}{{four}}{{three}}{{two}}{{one}}
+{{/d}}
+{{one}}{{two}}{{three}}{{two}}{{one}}
+{{/c}}
+{{one}}{{two}}{{one}}
+{{/b}}
+{{one}}
+{{/a}}
+
+--EXPECTED
+
+1
+121
+12321
+1234321
+123454321
+1234321
+12321
+121
+1
+
+--TOKENS
+
+[T:Not implemeneted]

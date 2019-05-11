@@ -1,0 +1,20 @@
+--META
+
+Surrounding Whitespace
+Comment removal should preserve surrounding whitespace.
+
+--DATA
+
+{}
+
+--TEMPLATE
+
+"12345 {{! Comment Block! }} 67890"
+
+--EXPECTED
+
+"12345  67890"
+
+--TOKENS
+
+[T:Not implemented]

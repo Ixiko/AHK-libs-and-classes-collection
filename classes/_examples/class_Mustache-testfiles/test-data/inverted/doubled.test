@@ -1,0 +1,33 @@
+--META
+
+Doubled
+Multiple inverted sections per template should be permitted.
+
+--DATA
+
+{
+    "bool": 0,
+    "two": "second"
+}
+
+--TEMPLATE
+
+{{^bool}}
+* first
+{{/bool}}
+* {{two}}
+{{^bool}}
+* third
+{{/bool}}
+
+
+--EXPECTED
+
+* first
+* second
+* third
+
+
+--TOKENS
+
+[T:Not implemented]

@@ -1,0 +1,28 @@
+--META
+
+Standalone Line Endings
+"\r\n" should be considered a newline for standalone tags.
+
+--DATA
+
+{
+    "boolean": 1
+}
+
+--TEMPLATE
+
+|
+{{#boolean}}
+{{/boolean}}
+|
+
+--EXPECTED
+
+|
+|
+
+--TOKENS
+
+[T:|]
+[T:\r\n]
+[T:|]

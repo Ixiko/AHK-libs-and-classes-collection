@@ -1,0 +1,25 @@
+--META
+
+Indented Standalone
+All standalone comment lines should be removed.
+
+--DATA
+
+{}
+
+--TEMPLATE
+
+Begin.
+  {{! Indented Comment Block! }}
+End.
+
+
+--EXPECTED
+
+Begin.
+End.
+
+
+--TOKENS
+
+[T:Not implemented]

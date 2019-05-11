@@ -1,0 +1,25 @@
+--META
+
+Implicit Iterator - Integer
+Implicit iterators should cast integers to strings and interpolate.
+
+--DATA
+
+{
+    "list": [1, 2, 3]
+}
+
+--TEMPLATE
+
+{{#list}}({{.}}){{/list}}
+
+--EXPECTED
+
+(1)(2)(3)
+
+--TOKENS
+
+[S:list]
+    [T:(]
+    [E:element]
+    [T:)]

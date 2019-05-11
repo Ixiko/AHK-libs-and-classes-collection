@@ -1,0 +1,29 @@
+--META
+
+Dotted Names - Broken Chain Resolution
+Each part of a dotted name should resolve only against its parent.
+
+--DATA
+
+{
+    "a": {
+        "b": { }
+    },
+    "c": {
+        "name": "Jim"
+    }
+}
+
+--TEMPLATE
+
+"{{a.b.c.name}}" == ""
+
+--EXPECTED
+
+"" == ""
+
+--TOKENS
+
+[T:"]
+[V:a.b.c.name]
+[T:" == ""]

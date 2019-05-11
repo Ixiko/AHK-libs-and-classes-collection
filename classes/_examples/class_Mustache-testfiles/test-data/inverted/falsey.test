@@ -1,0 +1,22 @@
+--META
+
+Falsey
+Falsey sections should have their contents rendered.
+
+--DATA
+
+{
+    "boolean": 0
+}
+
+--TEMPLATE
+
+"{{^boolean}}This should be rendered.{{/boolean}}"
+
+--EXPECTED
+
+"This should be rendered."
+
+--TOKENS
+
+[T:Not implemented]

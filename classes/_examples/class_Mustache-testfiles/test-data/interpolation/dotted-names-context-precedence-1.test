@@ -1,0 +1,36 @@
+--META
+
+Dotted Names - Context Precedence 1
+A context miss against a former resolution should resolve against the root-context.
+
+--DATA
+
+{
+  "a": {
+    "b": { }
+  },
+  "b": {
+    "c": "B-Tree"
+  }
+}
+
+--TEMPLATE
+
+Before
+{{#a}}{{b.c}}{{/a}}
+After
+
+--EXPECTED
+
+Before
+B-Tree
+After
+
+--TOKENS
+
+[T:Before]
+[T:\r\n]
+[S:a]
+  [V:b.c]
+[T:\r\n]
+[T:After]

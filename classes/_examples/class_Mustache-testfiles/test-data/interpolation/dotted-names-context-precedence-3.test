@@ -1,0 +1,34 @@
+--META
+
+Dotted Names - Context Precedence 3
+A context miss shouldn't produce a value.
+
+--DATA
+
+{
+  "a": {
+    "b": { }
+  },
+  "b": { }
+}
+
+--TEMPLATE
+
+Before
+{{#a}}{{b.c}}{{/a}}
+After
+
+--EXPECTED
+
+Before
+
+After
+
+--TOKENS
+
+[T:Before]
+[T:\r\n]
+[S:a]
+  [V:b.c]
+[T:\r\n]
+[T:After]

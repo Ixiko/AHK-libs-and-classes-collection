@@ -1,0 +1,32 @@
+--META
+
+List
+Lists should behave like truthy values.
+
+--DATA
+
+{
+    "list": [
+        {
+            "n": 1
+        },
+        {
+            "n": 2
+        },
+        {
+            "n": 3
+        }
+    ]
+}
+
+--TEMPLATE
+
+"{{^list}}{{n}}{{/list}}"
+
+--EXPECTED
+
+""
+
+--TOKENS
+
+[T:Not implemented]

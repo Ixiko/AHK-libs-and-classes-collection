@@ -1,0 +1,22 @@
+--META
+
+Standalone Without Newline
+Standalone tags should not require a newline to follow them.
+
+--DATA
+
+{}
+
+--TEMPLATE
+
+!
+  {{! I'm Still Standalone }}
+
+--EXPECTED
+
+!
+
+
+--TOKENS
+
+[T:Not implemented]

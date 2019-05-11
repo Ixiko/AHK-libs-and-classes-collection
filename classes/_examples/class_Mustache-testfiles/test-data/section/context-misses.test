@@ -1,0 +1,23 @@
+--META
+
+Context Misses
+Failed context lookups should be considered falsey.
+
+--DATA
+
+{}
+
+--TEMPLATE
+
+[{{#missing}}Found key 'missing'!{{/missing}}]
+
+--EXPECTED
+
+[]
+
+--TOKENS
+
+[T:[]
+[S:missing]
+    [T:Found key 'missing'!]
+[T:]]

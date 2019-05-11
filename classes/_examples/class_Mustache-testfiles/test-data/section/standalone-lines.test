@@ -1,0 +1,33 @@
+--META
+
+Standalone Lines
+Standalone lines should be removed from the template.
+
+--DATA
+
+{
+    "boolean": true
+}
+
+--TEMPLATE
+
+| This Is
+{{#boolean}}
+|
+{{/boolean}}
+| A Line
+
+--EXPECTED
+
+| This Is
+|
+| A Line
+
+--TOKENS
+
+[T:| This Is]
+[T:\r\n]
+[S:boolean]
+    [T:|]
+    [T:\r\n]
+[T:| A Line]

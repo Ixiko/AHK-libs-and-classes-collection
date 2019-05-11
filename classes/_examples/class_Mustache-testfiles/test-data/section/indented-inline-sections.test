@@ -1,0 +1,34 @@
+--META
+
+Indented Inline Sections
+Single-line sections should not alter surrounding whitespace.
+
+--DATA
+
+{
+    "boolean": true
+}
+
+--TEMPLATE
+
+ {{#boolean}}YES{{/boolean}}
+ {{#boolean}}GOOD{{/boolean}}
+Newline
+
+--EXPECTED
+
+ YES
+ GOOD
+Newline
+
+--TOKENS
+
+[T: ]
+[S:boolean]
+    [T:YES]
+[T:\r\n]
+[T: ]
+[S:boolean]
+    [T:GOOD]
+[T:\r\n]
+[T:Newline]

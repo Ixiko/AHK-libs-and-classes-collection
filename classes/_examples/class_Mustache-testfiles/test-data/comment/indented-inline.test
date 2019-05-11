@@ -1,0 +1,24 @@
+--META
+
+Indented Inline
+Inline comments should not strip whitespace
+
+--DATA
+
+{}
+
+--TEMPLATE
+
+Before
+  12 {{! 34 }}
+After
+
+--EXPECTED
+
+Before
+  12 
+After
+
+--TOKENS
+
+[T:Not implemented]

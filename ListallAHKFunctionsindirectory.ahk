@@ -17,6 +17,8 @@ more libs\AFC
 more libs\AHK-Object-Oriented-GUIs-master\gui
 more libs\Canvas-AHK-master
 more libs\CGUI-master
+more libs\CNG\win7
+more libs\CNG\win10
 more libs\core_audio_interfaces
 more libs\CustomBoxes
 more libs\Dictation-Interface-master

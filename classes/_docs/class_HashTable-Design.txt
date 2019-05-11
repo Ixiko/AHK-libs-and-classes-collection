@@ -1,0 +1,10 @@
+
+                            HashTable
+
+Everything is defined inside one class to minimize global namespace pollution.
+
+The parts of the Object interface that made sense for an unordered data structure were adopted in the interest of consistency.  A Count property (like most Automation collections have) was used instead of a Length() method because the documentation for Length() indicates it is only useful for ordered data structures.
+
+I considered but rejected the idea of allowing Objects to customize their hashing and equality comparison because it is unlikely it would see much use while AutoHotkey does not support operator overloading.  I avoided using the names I would have used for the methods, Hash() and Eq(Other), so that it could be added in the future.
+
+I prioritized fast lookup over ease of use because some uses of hash tables are performance-sensitive (like call stack frames in an interpreter).  Specifically, chain reordering (described in comments in the source code) makes it unsafe to use most non-destructive methods (like HasKey(Key) and Get(Key)) while enumerating the same hash table.  I made certain that enumeration is safe to use, even in nested loops operating on the same hash table.  This seems like a small price to pay to me because destructive methods (like Set(Key, Value) and Delete(Key)) would inherently cause this problem and working around it is trivial.

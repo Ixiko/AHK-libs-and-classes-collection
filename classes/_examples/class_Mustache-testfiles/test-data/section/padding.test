@@ -1,0 +1,25 @@
+--META
+
+Padding
+Superfluous in-tag whitespace should be ignored.
+
+--DATA
+
+{
+    "boolean": 1
+}
+
+--TEMPLATE
+
+|{{# boolean }}={{/ boolean }}|
+
+--EXPECTED
+
+|=|
+
+--TOKENS
+
+[T:|]
+[S:boolean]
+	[T:=]
+[T:|]

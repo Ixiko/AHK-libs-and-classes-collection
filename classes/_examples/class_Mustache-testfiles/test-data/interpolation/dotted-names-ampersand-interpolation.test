@@ -1,0 +1,27 @@
+--META
+
+Dotted Names - Ampersand Interpolation
+Dotted names should be considered a form of shorthand for sections.
+
+--DATA
+
+{
+    "person": { "name": "Joe" }
+}
+
+--TEMPLATE
+
+"{{&person.name}}" == "{{#person}}{{&name}}{{/person}}"
+
+--EXPECTED
+
+"Joe" == "Joe"
+
+--TOKENS
+
+[T:"]
+[&:person.name]
+[T:" == "]
+[S:person]
+    [&:name]
+[T:"]

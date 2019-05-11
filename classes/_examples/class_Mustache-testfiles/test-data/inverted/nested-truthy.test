@@ -1,0 +1,22 @@
+--META
+
+Nested (Truthy)
+Nested truthy sections should be omitted.
+
+--DATA
+
+{
+    "bool": 1
+}
+
+--TEMPLATE
+
+| A {{^bool}}B {{^bool}}C{{/bool}} D{{/bool}} E |
+
+--EXPECTED
+
+| A  E |
+
+--TOKENS
+
+[T:Not implemented]

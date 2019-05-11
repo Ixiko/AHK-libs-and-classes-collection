@@ -1,0 +1,25 @@
+--META
+
+Truthy
+Truthy sections should have their contents rendered.
+
+--DATA
+
+{
+    "boolean": true
+}
+
+--TEMPLATE
+
+"{{#boolean}}This should be rendered.{{/boolean}}"
+
+--EXPECTED
+
+"This should be rendered."
+
+--TOKENS
+
+[T:"]
+[S:boolean]
+    [T:This should be rendered.]
+[T:"]

@@ -1,0 +1,33 @@
+--META
+
+Internal Whitespace
+Sections should not alter internal whitespace.
+
+--DATA
+
+{
+    "boolean": true
+}
+
+--TEMPLATE
+
+ | {{#boolean}} 
+ {{/boolean}} | 
+Newline
+
+--EXPECTED
+
+ |  
+  | 
+Newline
+
+--TOKENS
+
+[T: | ]
+[S:boolean]
+    [T: ]
+    [T:\r\n]
+    [T: ]
+[T: | ]
+[T:\r\n]
+[T:Newline]

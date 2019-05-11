@@ -1,0 +1,23 @@
+--META
+
+Ampersand Integer Interpolation
+Integers should interpolate seamlessly.
+
+--DATA
+
+{
+    "mph": 85
+}
+
+--TEMPLATE
+
+{{&mph}} miles an hour!
+
+--EXPECTED
+
+85 miles an hour!
+
+--TOKENS
+
+[V:mph]
+[T: miles an hour!]

@@ -1,0 +1,29 @@
+--META
+
+Context
+Objects and hashes should be pushed onto the context stack.
+
+--DATA
+
+{
+    "context": {
+        "name": "Joe"
+    }
+}
+
+--TEMPLATE
+
+"{{#context}}Hi {{name}}.{{/context}}"
+
+--EXPECTED
+
+"Hi Joe."
+
+--TOKENS
+
+[T:"]
+[S:context]
+    [T:Hi ]
+    [V:name]
+    [T:.]
+[T:"]

@@ -1,0 +1,30 @@
+--META
+
+Standalone Without Newline
+Standalone tags should not require a newline to follow them.
+
+--DATA
+
+{
+    "boolean": 1
+}
+
+--TEMPLATE
+
+#{{#boolean}}
+/
+  {{/boolean}}
+
+--EXPECTED
+
+#
+/
+
+
+--TOKENS
+
+[T:#]
+[S:boolean]
+	[T:\r\n]
+	[T:/]
+	[T:\r\n]

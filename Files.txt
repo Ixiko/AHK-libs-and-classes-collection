@@ -16,6 +16,7 @@ lib-a_to_h\adosql.ahk
 lib-a_to_h\ADO_ACCESS.ahk
 lib-a_to_h\Aero_Lib.ahk
 lib-a_to_h\Affinity.ahk
+lib-a_to_h\AHK-LUA-API.ahk
 lib-a_to_h\AHKA.ahk
 lib-a_to_h\AHKColorDialog.ahk
 lib-a_to_h\AhkDllFunctions.ahk
@@ -108,6 +109,7 @@ lib-a_to_h\CalcChecksum.ahk
 lib-a_to_h\CalculateDistance.ahk
 lib-a_to_h\Calenderfunctions.ahk
 lib-a_to_h\callbackcreate.ahk
+lib-a_to_h\CatchHandler.ahk
 lib-a_to_h\CB.ahk
 lib-a_to_h\CColor.ahk
 lib-a_to_h\cControls.ahk
@@ -168,6 +170,7 @@ lib-a_to_h\ComDispTable.ahk
 lib-a_to_h\commaFormat.ahk
 lib-a_to_h\CommonDialogs.ahk
 lib-a_to_h\COMo.ahk
+lib-a_to_h\CompareFileNameArray.ahk
 lib-a_to_h\Compass.ahk
 lib-a_to_h\compile to vpk.ahk
 lib-a_to_h\compileScript.ahk
@@ -191,16 +194,19 @@ lib-a_to_h\ConvertToCamelCase.ahk
 lib-a_to_h\ConvertToLoserCase.ahk
 lib-a_to_h\ConvertToMp3.ahk
 lib-a_to_h\ConvertToPascalCase.ahk
+lib-a_to_h\CopyFilesToClipboard.ahk
 lib-a_to_h\CopyImage.ahk
 lib-a_to_h\CopyMemory.ahk
 lib-a_to_h\CornerNotify.ahk
 lib-a_to_h\Count.ahk
 lib-a_to_h\CounterEditor.ahk
 lib-a_to_h\CountOfFiles.ahk
-lib-a_to_h\CpuMeter.ahk
+lib-a_to_h\CPULoad.ahk
 lib-a_to_h\CpyData.ahk
 lib-a_to_h\CRC32.ahk
 lib-a_to_h\CreateDIB.ahk
+lib-a_to_h\CreateFileNameArray.ahk
+lib-a_to_h\CreateFolderFromString.ahk
 lib-a_to_h\CreateFont.ahk
 lib-a_to_h\CreateFormData.ahk
 lib-a_to_h\CreateGist.ahk
@@ -209,6 +215,7 @@ lib-a_to_h\CreateIconsDll.ahk
 lib-a_to_h\CreateScript.ahk
 lib-a_to_h\CreateScriptV1.ahk
 lib-a_to_h\CreateScriptV2.ahk
+lib-a_to_h\CreateSystemErrorTextList.ahk
 lib-a_to_h\cRichEdit.ahk
 lib-a_to_h\CriticalSection.ahk
 lib-a_to_h\crypt (2).ahk
@@ -232,6 +239,7 @@ lib-a_to_h\d3D11.ahk
 lib-a_to_h\d3D9.ahk
 lib-a_to_h\d3Dx9.ahk
 lib-a_to_h\DamerauLevenshteinDistance.ahk
+lib-a_to_h\DateAdd.ahk
 lib-a_to_h\DateDiff.ahk
 lib-a_to_h\DateParse.ahk
 lib-a_to_h\dateTime.ahk
@@ -290,6 +298,7 @@ lib-a_to_h\dpi.ahk
 lib-a_to_h\dpiOffset.ahk
 lib-a_to_h\DrawScreen.ahk
 lib-a_to_h\DrawShadowText9x.ahk
+lib-a_to_h\DriveGetLabels.ahk
 lib-a_to_h\dshow.ahk
 lib-a_to_h\dSleep.ahk
 lib-a_to_h\dsound.ahk
@@ -332,6 +341,7 @@ lib-a_to_h\ErrMsg.ahk
 lib-a_to_h\ErrorMessage.ahk
 lib-a_to_h\Eval.ahk
 lib-a_to_h\EventHandler.ahk
+lib-a_to_h\EventIsDue.ahk
 lib-a_to_h\EventLibrary.ahk
 lib-a_to_h\EWinHook.ahk
 lib-a_to_h\Exec.ahk
@@ -461,7 +471,9 @@ lib-a_to_h\GetDesktopWallpaper.ahk
 lib-a_to_h\GetDirParent.ahk
 lib-a_to_h\GetDllBase.ahk
 lib-a_to_h\GetDnsAddress.ahk
+lib-a_to_h\GetDriveLetter.ahk
 lib-a_to_h\GetDriveType.ahk
+lib-a_to_h\GetDurationFromMilliseconds.ahk
 lib-a_to_h\GetEnv.ahk
 lib-a_to_h\GetEnvironmentVariables.ahk
 lib-a_to_h\GetExeMachine.ahk
@@ -486,9 +498,12 @@ lib-a_to_h\getKeyFromValue.ahk
 lib-a_to_h\GetKnownFolderPath.ahk
 lib-a_to_h\GetListViewItems.ahk
 lib-a_to_h\GetListViewText.ahk
+lib-a_to_h\GetLogText.ahk
 lib-a_to_h\GetMacAddress.ahk
 lib-a_to_h\GetMachineType.ahk
 lib-a_to_h\GetModuleBaseAddr.ahk
+lib-a_to_h\GetMonthNum.ahk
+lib-a_to_h\GetMostRecentTime.ahk
 lib-a_to_h\GetObject.ahk
 lib-a_to_h\GetObjectType.ahk
 lib-a_to_h\GetOSVersion.ahk
@@ -512,13 +527,18 @@ lib-a_to_h\GetProgramWaveVolume.AHK
 lib-a_to_h\getScreenAspectRatio.ahk
 lib-a_to_h\getScriptHandle.ahk
 lib-a_to_h\getSelected.ahk
+lib-a_to_h\GetServerName.ahk
 lib-a_to_h\GetStockObject.ahk
+lib-a_to_h\GetSystemDateFormat.ahk
+lib-a_to_h\GetSystemErrorText.ahk
 lib-a_to_h\getSystemLanguage.ahk
 lib-a_to_h\GetSystemVersion.ahk
+lib-a_to_h\GetTaskInfos.ahk
 lib-a_to_h\GetTcpTable.ahk
 lib-a_to_h\GetTempFile.ahk
 lib-a_to_h\GetTextExtentPoint.ahk
 lib-a_to_h\GetThreadStartAddr.ahk
+lib-a_to_h\GetTimeDifference.ahk
 lib-a_to_h\GetTuples.ahk
 lib-a_to_h\GetUdpTable.ahk
 lib-a_to_h\getUTCOffset.ahk
@@ -576,6 +596,7 @@ lib-a_to_h\HexToBin.ahk
 lib-a_to_h\HexView.ahk
 lib-a_to_h\HIBYTE.ahk
 lib-a_to_h\HideFocusBorder.ahk
+lib-a_to_h\HideInfotipOnMouseOver.ahk
 lib-a_to_h\hideTaskbar.ahk
 lib-a_to_h\HiEdit.ahk
 lib-a_to_h\HimetricToPixel.ahk
@@ -640,6 +661,7 @@ lib-i_to_z\inc_mf_0_3.ahk
 lib-i_to_z\inc_mf_System_IO_0_3.ahk
 lib-i_to_z\InfoGUI.ahk
 lib-i_to_z\infogulchEncodings.ahk
+lib-i_to_z\InfoTip.ahk
 lib-i_to_z\ini.ahk
 lib-i_to_z\IniFile.ahk
 lib-i_to_z\IniParser.ahk
@@ -675,6 +697,7 @@ lib-i_to_z\isDigit.ahk
 lib-i_to_z\IsDirectory.ahk
 lib-i_to_z\IsEmpty.ahk
 lib-i_to_z\IsFileInUse.ahk
+lib-i_to_z\IsFilePathTooLong.ahk
 lib-i_to_z\isFloat.ahk
 lib-i_to_z\IsFullScreen.ahk
 lib-i_to_z\IsFuncObj.ahk
@@ -841,6 +864,7 @@ lib-i_to_z\NetworkAPI.ahk
 lib-i_to_z\newestFile.ahk
 lib-i_to_z\nicRestart.ahk
 lib-i_to_z\nicSetState.ahk
+lib-i_to_z\NormaliseLineEndings.ahk
 lib-i_to_z\Notify.ahk
 lib-i_to_z\NotifyOnTray.ahk
 lib-i_to_z\NoTrayOrphans.ahk
@@ -874,6 +898,8 @@ lib-i_to_z\OnMenuHilite.ahk
 lib-i_to_z\OnPBMsg.ahk
 lib-i_to_z\OnWin.ahk
 lib-i_to_z\OOPFunctions.ahk
+lib-i_to_z\OpenFileLocation.ahk
+lib-i_to_z\OpenFilepaths.ahk
 lib-i_to_z\OpenFolderAndSelectItems.ahk
 lib-i_to_z\OpenProcess.ahk
 lib-i_to_z\OpenProcessToken.ahk
@@ -888,7 +914,10 @@ lib-i_to_z\PasteAsCSV.ahk
 lib-i_to_z\Path.ahk
 lib-i_to_z\Path2.ahk
 lib-i_to_z\patternScan.ahk
+lib-i_to_z\PBhash.ahk
+lib-i_to_z\PBhashtype.ahk
 lib-i_to_z\pbkdf2.ahk
+lib-i_to_z\PBtimeserver.ahk
 lib-i_to_z\Pebwa.ahk
 lib-i_to_z\PECreateEmpty.ahk
 lib-i_to_z\Percent.ahk
@@ -989,6 +1018,8 @@ lib-i_to_z\ReFormatTime.ahk
 lib-i_to_z\REG to VBS.ahk
 lib-i_to_z\RegEasy.ahk
 lib-i_to_z\RegEx.ahk
+lib-i_to_z\RegExDebug.ahk
+lib-i_to_z\RegExFileSearch.ahk
 lib-i_to_z\regExMatchI.ahk
 lib-i_to_z\regExReplaceI.ahk
 lib-i_to_z\RegExSort.ahk
@@ -1000,12 +1031,15 @@ lib-i_to_z\RemoteBuf.ahk
 lib-i_to_z\RemoteObj.ahk
 lib-i_to_z\RemoteScintilla.ahk
 lib-i_to_z\RemoveDuplicates.ahk
+lib-i_to_z\RemoveIllegalFilenameCharacters.ahk
 lib-i_to_z\rename.ahk
 lib-i_to_z\rename_script.ahk
 lib-i_to_z\ReplaceHtmlDecodedChars.ahk
 lib-i_to_z\ReplaceHtmlEncodedChars.ahk
+lib-i_to_z\ReplaceIllegalFilenameCharacters.ahk
 lib-i_to_z\ReplaceSystemVariables.ahk
 lib-i_to_z\ReplaceUrlEncodedChars.ahk
+lib-i_to_z\ReplaceUserVariables.ahk
 lib-i_to_z\Replicate.ahk
 lib-i_to_z\ResDelete.ahk
 lib-i_to_z\ResDllCreate.ahk
@@ -1053,7 +1087,7 @@ lib-i_to_z\Scheduler.ahk
 lib-i_to_z\SCI.ahk
 lib-i_to_z\ScINTILLA.ahk
 lib-i_to_z\Scintilla_CharWordPos.ahk
-lib-i_to_z\SciteOutPut.ahk
+lib-i_to_z\SciTEOutput.ahk
 lib-i_to_z\scriptCompile.ahk
 lib-i_to_z\scriptlib.ahk
 lib-i_to_z\ScriptMem [Function].ahk
@@ -1081,6 +1115,7 @@ lib-i_to_z\SetDesktopWallpaper.ahk
 lib-i_to_z\SetEditPlaceholder.ahk
 lib-i_to_z\SetExeSubsystem.ahk
 lib-i_to_z\SetFileAttributes.ahk
+lib-i_to_z\SetHostsFile.ahk
 lib-i_to_z\SetIcon.ahk
 lib-i_to_z\setLowLevelInputHooks.ahk
 lib-i_to_z\SetProcessPriority.ahk
@@ -1108,11 +1143,15 @@ lib-i_to_z\ShellAbout.ahk
 lib-i_to_z\ShellContextMenu.ahk
 lib-i_to_z\ShellContextMenu2.ahk
 lib-i_to_z\ShellFileOperation.ahk
+lib-i_to_z\ShortcutCreate.ahk
+lib-i_to_z\ShortcutDelete.ahk
+lib-i_to_z\ShortcutExists.ahk
 lib-i_to_z\Show menu.ahk
 lib-i_to_z\showabout.ahk
 lib-i_to_z\ShowDesktop.ahk
 lib-i_to_z\ShowGif().ahk
 lib-i_to_z\ShowHide.ahk
+lib-i_to_z\ShowHideTaskbar.ahk
 lib-i_to_z\ShowHtmlDialog.ahk
 lib-i_to_z\ShowMenu.ahk
 lib-i_to_z\ShowOCRUnderMouse.ahk
@@ -1125,6 +1164,7 @@ lib-i_to_z\SleepWithoutInterruption.ahk
 lib-i_to_z\sleipnir.ahk
 lib-i_to_z\slots.ahk
 lib-i_to_z\SmartZip.ahk
+lib-i_to_z\SnapFolderWindows.ahk
 lib-i_to_z\SnapX_Functions.ahk
 lib-i_to_z\socket.ahk
 lib-i_to_z\SoftModalMessageBox.ahk
@@ -1181,6 +1221,8 @@ lib-i_to_z\StrQ.ahk
 lib-i_to_z\StrRepeat.ahk
 lib-i_to_z\StrReplace.ahk
 lib-i_to_z\strReplaceI.ahk
+lib-i_to_z\StrReplicate.ahk
+lib-i_to_z\StrReverse.ahk
 lib-i_to_z\strTail.ahk
 lib-i_to_z\strToLower.ahk
 lib-i_to_z\strToUpper.ahk
@@ -1191,7 +1233,9 @@ lib-i_to_z\Subprocess.ahk
 lib-i_to_z\SubTitle.ahk
 lib-i_to_z\SubTitleClass.ahk
 lib-i_to_z\SUCCEEDED.ahk
+lib-i_to_z\SuperMaxWindow.ahk
 lib-i_to_z\SuppressRuntimeErrors.ahk
+lib-i_to_z\SuspendAfterDelay.ahk
 lib-i_to_z\SuspendProcess.ahk
 lib-i_to_z\SuspendThread_ResumeThread.ahk
 lib-i_to_z\SVGraph.ahk
@@ -1234,10 +1278,13 @@ lib-i_to_z\Threads.ahk
 lib-i_to_z\Thumbnail.ahk
 lib-i_to_z\thumbnailer.ahk
 lib-i_to_z\Timer.ahk
+lib-i_to_z\TimeStampAHK.ahk
+lib-i_to_z\TimeStampSQL.ahk
 lib-i_to_z\Title.ahk
 lib-i_to_z\TLLib.ahk
 lib-i_to_z\TO TextOverlay.ahk
 lib-i_to_z\TO.ahk
+lib-i_to_z\ToBase.ahk
 lib-i_to_z\ToChar.ahk
 lib-i_to_z\todWulff.ahk
 lib-i_to_z\ToInt.ahk
@@ -1360,6 +1407,7 @@ lib-i_to_z\WindowsBase.ahk
 lib-i_to_z\windowscalepos.ahk
 lib-i_to_z\WindowShellEvent.ahk
 lib-i_to_z\WindowsLogs.ahk
+lib-i_to_z\WindowSuperMaxStatus.ahk
 lib-i_to_z\WinEnum.ahk
 lib-i_to_z\WinEvents.ahk
 lib-i_to_z\WinFade.ahk
@@ -1394,6 +1442,7 @@ lib-i_to_z\WrapText (2).ahk
 lib-i_to_z\WrapText.ahk
 lib-i_to_z\WriteFileLine.ahk
 lib-i_to_z\Writer.ahk
+lib-i_to_z\WriteToLogs.ahk
 lib-i_to_z\ws.ahk
 lib-i_to_z\ws4ahk.ahk
 lib-i_to_z\WS_CoEvent.ahk
@@ -1472,6 +1521,7 @@ classes\class_Crypt (2).ahk
 classes\class_Crypt.ahk
 classes\class_CryptConst.ahk
 classes\Class_CStruct.ahk
+classes\class_cTable.ahk
 classes\class_cTable_Test.ahk
 classes\Class_CTLCOLORS.ahk
 classes\Class_CustomFont.ahk
@@ -1589,6 +1639,7 @@ classes\class_MS_SAPI.ahk
 classes\class_MS_XMLDOM.ahk
 classes\Class_Multipart.ahk
 classes\class_MultiTree Data Structure.ahk
+classes\class_Mustache.ahk
 classes\Class_MySQLAPI.ahk
 classes\Class_NetworkManagement.ahk
 classes\class_ObjectCheck.ahk
@@ -1651,6 +1702,7 @@ classes\class_threadFunc.ahk
 classes\class_threadFunc_v1.ahk
 classes\Class_ThreadInstance.ahk
 classes\class_threadMan.ahk
+classes\class_threefishCrypt.ahk
 classes\class_Thumbnail.ahk
 classes\class_tokelex.ahk
 classes\Class_Toolbar.ahk
@@ -1668,6 +1720,7 @@ classes\class_WindowsSettings.ahk
 classes\class_Window_Ext_Monitor.ahk
 classes\Class_WinEvents.ahk
 classes\Class_WinRing0.ahk
+classes\class_WinStructs.ahk
 classes\class_WMCommand_and_Notify.ahk
 classes\class_WM_Dlg.ahk
 classes\class_WorkerThread.ahk
@@ -1764,6 +1817,57 @@ more libs\CGUI-master\gdip.ahk
 more libs\CGUI-master\json.ahk
 more libs\CGUI-master\Parse.ahk
 more libs\CGUI-master\Regex.ahk
+more libs\CNG\win7\bcrypt_md2.ahk
+more libs\CNG\win7\bcrypt_md2_file.ahk
+more libs\CNG\win7\bcrypt_md2_hmac.ahk
+more libs\CNG\win7\bcrypt_md4.ahk
+more libs\CNG\win7\bcrypt_md4_file.ahk
+more libs\CNG\win7\bcrypt_md4_hmac.ahk
+more libs\CNG\win7\bcrypt_md5.ahk
+more libs\CNG\win7\bcrypt_md5_file.ahk
+more libs\CNG\win7\bcrypt_md5_hmac.ahk
+more libs\CNG\win7\bcrypt_pbkdf2_md2.ahk
+more libs\CNG\win7\bcrypt_pbkdf2_md4.ahk
+more libs\CNG\win7\bcrypt_pbkdf2_md5.ahk
+more libs\CNG\win7\bcrypt_pbkdf2_sha1.ahk
+more libs\CNG\win7\bcrypt_pbkdf2_sha256.ahk
+more libs\CNG\win7\bcrypt_pbkdf2_sha384.ahk
+more libs\CNG\win7\bcrypt_pbkdf2_sha512.ahk
+more libs\CNG\win7\bcrypt_sha1.ahk
+more libs\CNG\win7\bcrypt_sha1_file.ahk
+more libs\CNG\win7\bcrypt_sha1_hmac.ahk
+more libs\CNG\win7\bcrypt_sha256.ahk
+more libs\CNG\win7\bcrypt_sha256_file.ahk
+more libs\CNG\win7\bcrypt_sha256_hmac.ahk
+more libs\CNG\win7\bcrypt_sha384.ahk
+more libs\CNG\win7\bcrypt_sha384_file.ahk
+more libs\CNG\win7\bcrypt_sha384_hmac.ahk
+more libs\CNG\win7\bcrypt_sha512.ahk
+more libs\CNG\win7\bcrypt_sha512_file.ahk
+more libs\CNG\win7\bcrypt_sha512_hmac.ahk
+more libs\CNG\win7\class_bcrypt.ahk
+more libs\CNG\win10\bcrypt_md2.ahk
+more libs\CNG\win10\bcrypt_md2_file.ahk
+more libs\CNG\win10\bcrypt_md2_hmac.ahk
+more libs\CNG\win10\bcrypt_md4.ahk
+more libs\CNG\win10\bcrypt_md4_file.ahk
+more libs\CNG\win10\bcrypt_md4_hmac.ahk
+more libs\CNG\win10\bcrypt_md5.ahk
+more libs\CNG\win10\bcrypt_md5_file.ahk
+more libs\CNG\win10\bcrypt_md5_hmac.ahk
+more libs\CNG\win10\bcrypt_sha1.ahk
+more libs\CNG\win10\bcrypt_sha1_file.ahk
+more libs\CNG\win10\bcrypt_sha1_hmac.ahk
+more libs\CNG\win10\bcrypt_sha256.ahk
+more libs\CNG\win10\bcrypt_sha256_file.ahk
+more libs\CNG\win10\bcrypt_sha256_hmac.ahk
+more libs\CNG\win10\bcrypt_sha384.ahk
+more libs\CNG\win10\bcrypt_sha384_file.ahk
+more libs\CNG\win10\bcrypt_sha384_hmac.ahk
+more libs\CNG\win10\bcrypt_sha512.ahk
+more libs\CNG\win10\bcrypt_sha512_file.ahk
+more libs\CNG\win10\bcrypt_sha512_hmac.ahk
+more libs\CNG\win10\class_bcrypt.ahk
 more libs\core_audio_interfaces\header.ahk
 more libs\core_audio_interfaces\IAudioEndpointVolume.ahk
 more libs\core_audio_interfaces\IAudioSessionControl.ahk

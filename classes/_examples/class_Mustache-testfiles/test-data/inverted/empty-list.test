@@ -1,0 +1,22 @@
+--META
+
+Empty List
+Empty lists should behave like falsey values.
+
+--DATA
+
+{
+    "list": []
+}
+
+--TEMPLATE
+
+"{{^list}}Yay lists!{{/list}}"
+
+--EXPECTED
+
+"Yay lists!"
+
+--TOKENS
+
+[T:Not implemented]
