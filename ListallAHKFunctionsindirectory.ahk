@@ -10,18 +10,64 @@ functions:= Object()
 Directorys = 
 (LTrim 
 lib-a_to_h
+lib-a_to_h\core_audio_interfaces
 lib-i_to_z
 classes
+classes\Class_PictureButton-master\lib
+classes\COM-Classes-FrameWork
+classes\COM-Classes-FrameWork\Constant Classes
+classes\COM-Classes-FrameWork\CustomDestinationList
+classes\COM-Classes-FrameWork\Dispatch
+classes\COM-Classes-FrameWork\EnumShellItems
+classes\COM-Classes-FrameWork\EnumSTATSTG
+classes\COM-Classes-FrameWork\ImageList
+classes\COM-Classes-FrameWork\ImageList2
+classes\COM-Classes-FrameWork\MMDevice
+classes\COM-Classes-FrameWork\MMDeviceCollection
+classes\COM-Classes-FrameWork\MMDeviceEnumerator
+classes\COM-Classes-FrameWork\ObjectArray
+classes\COM-Classes-FrameWork\ObjectCollection
+classes\COM-Classes-FrameWork\OperationsProgressDialog
+classes\COM-Classes-FrameWork\Persist
+classes\COM-Classes-FrameWork\PersistFile
+classes\COM-Classes-FrameWork\Picture
+classes\COM-Classes-FrameWork\ProgressDialog
+classes\COM-Classes-FrameWork\PropertyStore
+classes\COM-Classes-FrameWork\PropertyStoreCache
+classes\COM-Classes-FrameWork\ProvideClassInfo
+classes\COM-Classes-FrameWork\RichEditOLE
+classes\COM-Classes-FrameWork\SequentialStream
+classes\COM-Classes-FrameWork\ShellItem
+classes\COM-Classes-FrameWork\ShellLinkA
+classes\COM-Classes-FrameWork\ShellLinkW
+classes\COM-Classes-FrameWork\Storage
+classes\COM-Classes-FrameWork\Stream
+classes\COM-Classes-FrameWork\Structure Classes
+classes\COM-Classes-FrameWork\TaskbarList
+classes\COM-Classes-FrameWork\TaskbarList2
+classes\COM-Classes-FrameWork\TaskbarList3
+classes\COM-Classes-FrameWork\TaskbarList4
+classes\COM-Classes-FrameWork\TypeComp
+classes\COM-Classes-FrameWork\TypeInfo
+classes\COM-Classes-FrameWork\TypeInfo2
+classes\COM-Classes-FrameWork\TypeLib
+classes\COM-Classes-FrameWork\TypeLib2
+classes\COM-Classes-FrameWork\UIAutomationBoolCondition
+classes\COM-Classes-FrameWork\UIAutomationCondition
+classes\COM-Classes-FrameWork\UIAutomationElementArray
+classes\COM-Classes-FrameWork\UIAutomationNotCondition
+classes\COM-Classes-FrameWork\Unknown
 more libs
+more libs\ActiveScript
 more libs\AFC
-more libs\AHK-Object-Oriented-GUIs-master\gui
-more libs\Canvas-AHK-master
-more libs\CGUI-master
+more libs\AHK-Object-Oriented-GUIs\gui
+more libs\Canvas
+more libs\CGUI
 more libs\CNG\win7
 more libs\CNG\win10
 more libs\core_audio_interfaces
 more libs\CustomBoxes
-more libs\Dictation-Interface-master
+more libs\Dictation-Interface
 more libs\DirectX\AHK Injector
 more libs\DirectX\headers
 more libs\DirectX\Lib
@@ -29,17 +75,17 @@ more libs\DirectX\Lib\TexSwap
 more libs\DoDragAndDrop
 more libs\DX9-Overlay-API\include\ahk
 more libs\more libs\Edit\_Functions
-more libs\ImportTypeLib-master
-more libs\ImportTypeLib-master\Lib
-more libs\MCode-Ex-master\src
-more libs\MCode-Ex-master\src\Compiler
-more libs\MinHook-AHK-master\Lib
+more libs\ImportTypeLib
+more libs\ImportTypeLib\Lib
+more libs\MCode-Ex\src
+more libs\MCode-Ex\src\Compiler
+more libs\MinHook\Lib
 more libs\Mini_Framwork
 more libs\Mini_Framwork\MfUnicode
 more libs\Mini_Framwork\IO
 more libs\minilib
 more libs\RamDisk & CmdReturn
-more libs\SendInput-master
+more libs\SendInput
 more libs\Splash-Gui
 more libs\TAB\_Functions
 more libs\windows10DesktopManager

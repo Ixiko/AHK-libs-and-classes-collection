@@ -1,0 +1,36 @@
+# This file lists names which are also medical terms in German
+#
+# Copyright © 2005-2011 Tobias Quathamer <t.quathamer@gmx.net>
+#
+# This file is part of Medicalterms.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+Alagille
+Albers
+Alport
+Alzheimersche/N
+Botalli
+Byler
+Calmette-Guérin
+Cochrane
+Crohn
+Fallot
+Guedel
+Jacobson
+Prick
+Samter
+Schönberg
+Tiffeneau
+Wendl

@@ -1,0 +1,70 @@
+# This file lists medical terms in German, old spelling
+#
+# Copyright © 2005-2011 Tobias Quathamer <t.quathamer@gmx.net>
+#
+# This file is part of Medicalterms.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+Abdomensonographiekontrolle/N
+abdominalsonographisch/A
+Abhängigkeitspotential/S
+Aktivierungsprozeß
+Angiographie/N
+angiographisch/A
+Arteriographie/N
+Ausflußbahn/P
+Autoradiographie/N
+Bewußtseinsverlust/EPST
+Bodyplethysmographie/N
+Brustdrüsenabszeß
+Cannabismißbrauch/TS
+Cholangiographie/N
+Computertomographie/N
+computertomographisch/A
+Coronarangiographie/N
+Dermographie/N
+Dermographismus
+Differentialdiagnose/N
+differentialdiagnostisch/A
+Dopplerechokardiographie/N
+Echographie/N
+Echokardiographie/N
+Elektroenzephalographie/N
+Elektrokardiographie/N
+Eßschwierigkeit/P
+Eßstörung/P
+Freßzelle/N
+Ganzkörperplethysmographie/N
+ganzkörperplethysmographisch/A
+Gefäßmißbildung/P
+Kernspintomograph/PS
+Kernspintomographie/N
+kernspintomographisch/A
+Koronarangiographie/N
+Magnetresonanztomographie/N
+Mammographie/N
+Mikrographie/N
+Phlebographie/N
+Radiographie/N
+Sonographie/N
+streßbelastet/A
+Szintigraphie/N
+Thermographie/N
+Tomographie/N
+tomographisch/A
+Urographie/N
+Verfolgungsphantasie/N
+Xeromammographie/N
+Xeroradiographie/N

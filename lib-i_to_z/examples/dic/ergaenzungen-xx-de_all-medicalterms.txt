@@ -1,0 +1,74 @@
+# This file lists terms which also appear in the igerman98 file provided
+# by Björn Jacke <bjoern@j3e.de>. The terms in igerman are lacking some
+# forms, though, most often plural forms and declinations.
+#
+# If Björn decides to add these suffixes to his igerman98 files, I'll
+# remove the corresponding entries from this file.
+#
+# Copyright © 2005-2011 Tobias Quathamer <t.quathamer@gmx.net>
+#
+# This file is part of Medicalterms.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+Akzeleration/P
+allergisch/AC
+Anamnese/N
+Antikörper/NS
+Arteriosklerose/N
+Automatismen
+Bauchdecke/N
+Bauchschmerz/PT
+Bauchspeicheldrüse/N
+bizonal/A
+Blutgruppenfaktor/PS
+Blutmischung/P
+Blutpfütze/N
+Blutspender/FNS
+Destruktion/P
+Durchblutungsstörung/P
+Ernährungsstörung/P
+Gallenblase/N
+Glaskörper/NS
+Glaslinse/N
+Glasplatte/N
+Herzinfarktrisiko/S
+Herzmassage/N
+Herzneurose/N
+Herzscheibe/N
+Herzschlagfolge/N
+Herzschrittmacher/NS
+Herzspezialist/FP
+induzieren/BDIOXY
+Insertion/P
+Kinderheilkundler/FNS
+Klagschrift/P
+Krankenwagenfahrer/FNS
+Krankheitsbild/RST
+Krankheitskeim/EPST
+Krebsbehandlung/P
+Krebsbekämpfung/P
+Krebserkrankung/P
+Krebsforschung/P
+Krebsgeschwülste/N
+Krebsgeschwür/EPST
+Krebskrankheit/P
+Krebswachstum/S
+Lokalisation/P
+Lokalisierung/P
+sensitiv/AC
+Sensitivität/P
+Trockner/S
+Umland/ST
+verletzt/AU

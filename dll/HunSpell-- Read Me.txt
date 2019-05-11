@@ -1,0 +1,2 @@
+This folder is used to store the Hunspell dll files.  This folder and these
+files are used by the example script.  Do not move or rename.

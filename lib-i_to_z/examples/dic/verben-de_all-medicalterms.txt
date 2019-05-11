@@ -1,0 +1,99 @@
+# This file lists medical verbs in German
+#
+# Copyright © 2005-2011 Tobias Quathamer <t.quathamer@gmx.net>
+#
+# This file is part of Medicalterms.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+abduzieren/DIOXY
+aberrieren/DIXY
+abladieren/DIOXY
+abschwellen/DY
+abstillen/DY
+abszedieren/DIOXY
+abzentrifugieren/DIOXY
+adduzieren/DIOXY
+adstringieren/DIOXY
+aggravieren/DIOXY
+akquirieren/DIOXY
+akzelerieren/DIOXY
+alkalisieren/DIOXY
+alkylieren/DIOXY
+amplifizieren/DIOXY
+anästhesieren/DIOXY
+anästhetisieren/DIOXY
+anfärben/DIXY
+äquilibrieren/DIOXY
+autolysieren/DIOXY
+biopsieren/DIOXY
+bronchoskopieren/DOIXY
+chronifizieren/DIOXY
+debridieren/DIOXY
+degranulieren/DIOXY
+dekantieren/DIOXY
+depolarisieren/DIXY
+deszendieren/DIOXY
+dezelerieren/DIOXY
+disseminieren/DIOXY
+dissimulieren/DIOXY
+eingruppieren/D
+einnässen/DIY
+eluieren/DIOXY
+explantieren/DIOXY
+exprimieren/DIOXY
+filtrieren/DIOXY
+glukuronidieren/DIOXY
+granulieren/DIOXY
+grimassieren/DIOXY
+hybridisieren/DIOXY
+infundieren/DIOXY
+inhibieren/DIOXY
+inkubieren/DIOXY
+insufflieren/DIOXY
+klonieren/DIOXY
+koinfizieren/DIOXY
+konfundieren/DIXY
+lamellieren/DIOXY
+ligieren/DIOXY
+linearisieren/DIOXY
+lyophilisieren/DIOXY
+lysieren/DIOXY
+metastasieren/DIOXY
+nässen/DIXY
+obliterieren/DIOXY
+okkludieren/DIOXY
+pelletieren/DIOXY
+persistieren/DIOXY
+pipettieren/DIOXY
+polytronisieren/DIOXY
+präzipitieren/DIOXY
+randomisieren/DIOXY
+repolarisieren/DIOXY
+resorbieren/DIOXY
+resuspendieren/DIOXY
+retransplantatieren/DIOXY
+sedieren/DIOXY
+sequenzieren/DIOXY
+sezernieren/DIOXY
+silanisieren/DIOXY
+stenosieren/DIOXY
+stratifizieren/DIOXY
+sulfatieren/DIOXY
+titrieren/DIOXY
+transkribieren/DIOXY
+überschichten/DIOXY
+versterben/DI
+zentrifugieren/DIOXY
+zusammenpipettieren/DIOXY
