@@ -1,0 +1,15 @@
+col := new MfCollection()
+MsgBox % col.InheritancePath()
+
+; or we can use as a static method
+MsgBox % MfObject.InheritancePath(col)
+
+; or we can use not instance of object
+MsgBox % MfObject.InheritancePath(MfCollection)
+
+; result in
+; Inheritance tree
+; MfObject
+;   >MfEnumerableBase
+;	  >MfCollectionBase
+;		 >MfCollection

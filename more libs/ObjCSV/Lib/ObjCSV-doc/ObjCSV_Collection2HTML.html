@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>ObjCSV_Collection2HTML()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>ObjCSV_Collection2HTML()</h1>
+<p>Builds an HTML file based on a template file where variable names are replaced with the content in each record of the collection.</p>
+
+<pre class="Syntax">ObjCSV_Collection2HTML(objCollection, strFilePath, strTemplateFile [, strTemplateEncapsulator = ~, intProgressType = 0, blnOverwrite = 0, strProgressText = &quot;&quot;, strFileEncoding := &quot;&quot;])</pre>
+<h3>Parameters</h4>
+<table class="info">
+<tr>
+  <td width="15%">objCollection</td>
+  <td width="85%">Object containing an array of objects (or collection). Objects in the collection are associative arrays which contain a list key-value pairs. See ObjCSV_CSV2Collection returned value for details.</td>
+</tr>
+<tr>
+  <td width="15%">strFilePath</td>
+  <td width="85%">The name of the HTML file, which is assumed to be in %A_WorkingDir% if an absolute path isn't specified. This path and name of the file can be inserted in the HTML template as described below.</td>
+</tr>
+<tr>
+  <td width="15%">strTemplateFile</td>
+  <td width="85%"><p>The name of the HTML template file used to create the HTML file, which is assumed to be in %A_WorkingDir% if an absolute path isn't specified. In the template, markups and variables are encapsulated by the strTemplateEncapsulator parameter (single charater of your choice). Markups and variables are not case sensitive unless StringCaseSense has been turned on. The template is divided in three sections: the header template (from the start of the file to the start of the row template), the row template (delimited by the markups ROWS and /ROWS) and the footer template (from the end of the row template to the end of the file). The row template is repeated in the output file for each record in the collection. Field names encapsulated by the strTemplateEncapsulator parameter are replaced by the matching data in each record.  Additionally, in the header and footer, the following variables encapsulated by the strTemplateEncapsulator are replaced by parts of the strFilePath parameter: FILENAME (file name without its path, but including its extension), DIR (drive letter or share name, if present, and directory of the file, final backslash excluded), EXTENSION (file's extension, dot excluded), NAMENOEXT (file name without its path, dot and extension) and DRIVE (drive letter or server name, if present). Finally, in the row template, ROWNUMBER is replaced by the current row number. This simple example, where each record has two fields named &quot;Field1&quot; and &quot;Field2&quot; and the strTemplateEncapsulator is ~ (tilde), shows the use of the various markups and variables:</p>
+<pre class="NoIndent">&lt;HEAD&gt;
+  &lt;TITLE&gt;~NAMENOEXT~&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+  &lt;H1&gt;~FILENAME~&lt;/H1&gt;
+  &lt;TABLE&gt;
+    &lt;TR&gt;
+      &lt;TH&gt;Row #&lt;/TH&gt;&lt;TH&gt;Field One&lt;/TH&gt;&lt;TH&gt;Field Two&lt;/TH&gt;
+    &lt;/TR&gt;
+~ROWS~
+    &lt;TR&gt;
+      &lt;TD&gt;~ROWNUMBER~&lt;/TD&gt;&lt;TD&gt;~Field1~&lt;/TD&gt;&lt;TD&gt;~Field2~&lt;/TD&gt;
+    &lt;/TR&gt;
+~/ROWS~
+  &lt;/TABLE&gt;
+  Source: ~DIR~\~FILENAME~
+&lt;/BODY&gt;</pre></td>
+</tr>
+<tr>
+  <td width="15%">strTemplateEncapsulator</td>
+  <td width="85%">(Optional) One character used to encapsulate markups and variable names in the template. By default ~ (tilde).</td>
+</tr>
+<tr>
+  <td width="15%">intProgressType</td>
+  <td width="85%">(Optional) If 1, a progress bar is displayed. If -1, -2 or -n, the part &quot;n&quot; of the status bar is updated with the progress in percentage. See also strProgressText below. By default, no progress bar or status (0).</td>
+</tr>
+<tr>
+  <td width="15%">blnOverwrite</td>
+  <td width="85%">(Optional) If true (or 1), overwrite existing files. If false (or 0) and the output file exists, the function ends without writing the output file. False (or 0) by default.</td>
+</tr>
+<tr>
+  <td width="15%">strProgressText</td>
+  <td width="85%">(Optional) Text to display in the progress bar or in the status bar. For status bar progress, the string &quot;##&quot; is replaced with the percentage of progress. See also intProgressType above. Empty by default.</td>
+</tr>
+<tr>
+  <td width="15%">strFileEncoding</td>
+  <td width="85%">(Optional) File encoding: ANSI, UTF-8, UTF-16, UTF-8-RAW, UTF-16-RAW or CPnnnn (a code page with numeric identifier nnn - see <a href="https://autohotkey.com/docs/commands/FileEncoding.htm">https://autohotkey.com/docs/commands/FileEncoding.htm</a>). Empty by default (system default ANSI code page).</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<p>At the end of execution, the function sets ErrorLevel to: 0 No error / 1 File system error / 2 No HTML template / 3 Invalid encapsulator / 4 No ~ROWS~ start delimiter / 5 No ~/ROWS~ end delimiter / 6 File exists and should not be overwritten. For system errors, check A_LastError and google &quot;windows system error codes&quot;.</p>
+
+</body>
+</html>

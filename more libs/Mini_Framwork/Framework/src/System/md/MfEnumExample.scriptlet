@@ -1,0 +1,72 @@
+
+class HotstringEnum extends MfEnum
+{
+	static m_Instance	:= Null
+
+	__New(args*) {
+		if (this.base.__Class != "HotstringEnum") {
+			throw new MfNotSupportedException(MfEnvironment.Instance.GetResourceString("NotSupportedException_Sealed_Class","HotstringEnum"))
+		}
+		base.__New(args*)
+		this.m_isInherited := this.__Class != "HotstringEnum"
+	}
+
+	AddAttributes()
+	{
+	}
+
+	AddEnums()
+	{
+		this.AddEnumValue("None", 0)
+		this.AddEnumValue("Inline", 1)
+		this.AddEnumValue("File", 2)
+	}
+	
+	Equals(objA, ObjB = "")
+	{
+		return base.Equals(objA, ObjB)
+	}
+
+	GetInstance()
+	{
+		if (HotstringEnum.m_Instance = Null) {
+			HotstringEnum.m_Instance := new HotstringEnum(0)
+		}
+		return HotstringEnum.m_Instance
+	}
+
+    GetType()
+	{
+		return base.GetType()
+	}
+
+	Is(type)
+	{
+		typeName := null
+		if (IsObject(type)) {
+			if (MfObject.IsObjInstance(type,"MfType")) {
+				typeName := type.ClassName
+			} else if (type.__Class) {
+				typeName := type.__Class
+			} else if (type.base.__Class) {
+				typeName := type.base.__Class
+			}
+		} else if (type ~= "^[a-zA-Z0-9.]+$") {
+			typeName := type
+		}
+		if (typeName = "HotstringEnum") {
+			return true
+		} 
+		return base.Is(type)
+	}
+
+	IsObjInstance(obj, objType = "")
+	{
+		return MfObject.IsObjInstance(obj, objType)
+	}
+
+	ToString()
+	{
+		return base.ToString()
+	}
+}

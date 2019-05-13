@@ -1,0 +1,86 @@
+; Create a class the derives from MfObject
+class Foo extends MfObject
+{
+	m_FooMsg := ""
+	__New(msg) {
+		base.__New()
+		this.m_FooMsg := msg
+	}
+	GetFoo() {
+		if (this.IsInstance()) { ; check to see if class is actual instance
+			return this.m_FooMsg
+		}
+		return "Error: Not an instance"
+	}
+	
+	; Override MfObject Is to add type info
+	Is(type) {
+		typeName := null
+		if (IsObject(type)) {
+			if (MfObject.IsObjInstance(type,"MfType")) {
+				typeName := type.TypeName
+			} else if (type.__Class) {
+				typeName := type.__Class
+			} else if (type.base.__Class) {
+				typeName := type.base.__Class
+			}
+		} else if (type ~= "^[a-zA-Z0-9.]+$") {
+			typeName := type
+		}
+		if (typeName = "Foo") { ; check the type name against the name of this class name
+			return true
+		} 
+		return base.Is(type) ; continue on to chekc base types
+	}
+}
+
+Class Bar extends Foo
+{
+	m_BarMsg := ""
+	__New(msgFoo, msgBar) {
+		base.__New(msgFoo)
+		this.m_BarMsg := msgBar
+	}
+	GetFooBar() {
+		if (this.IsInstance()) { ; check to see if class is actual instance
+			str := this.GetFoo() . ", " . this.m_BarMsg
+			return str
+		}
+		return "Error: Not an instance"
+	}
+	
+	; Override Foo Is to add type info
+	Is(type) {
+		typeName := null
+		if (IsObject(type)) {
+			if (AhkObject.IsObjInstance(type,"MfType")) {
+				typeName := type.TypeName
+			} else if (type.__Class) {
+				typeName := type.__Class
+			} else if (type.base.__Class) {
+				typeName := type.base.__Class
+			}
+		} else if (type ~= "^[a-zA-Z0-9.]+$") {
+			typeName := type
+		}
+		if (typeName = "Bar") { ; check the type name against the name of this class name
+			return true
+		} 
+		return base.Is(type) ; continue on to chekc base types
+	}
+}
+
+; exampe usage
+MyFoo := new Foo("Hello World")
+MsgBox % MyFoo.GetFoo() ; displays Hello World
+
+MyBar := new Bar("Hello World", "have a nice day!")
+MsgBox % MyBar.GetFoo() ; displays Hello World
+MsgBox % MyBar.GetFooBar() ; displays Hello World, have a nice day!
+
+; Type checking examples
+MsgBox % MyBar.Is(Foo) ; displays 1 for true as Bar inherits foo
+MsgBox % MyBar.Is(MfObject) ; displays 1 for true as Bar inherits foo and foo inherits MfObject
+MsgBox % MyFoo.Is(MfObject) ; ; displays 1 for true as foo inherits MfObject
+MsgBox % MyFoo.Is(Bar) ; ; displays 0 for false as foo does not inherit from bar
+MsgBox % MyBar.Is(MyFoo.GetType()) ; Displays 1 for true

@@ -1,0 +1,20 @@
+d := new MfDictionary()
+loop, 10
+{
+	d.Add("MyKey" . A_Index, "MyValue" . A_Index)
+}
+MyEnum := d.GetEnumerator()
+t := ""
+While MyEnum.Next(k, v)
+{
+	t .= k "=" v "`n"
+}
+MsgBox % t
+
+; alternatively we can do this
+t := ""
+for k, v in d
+{
+	t .= k "=" v "`n"
+}
+MsgBox % t

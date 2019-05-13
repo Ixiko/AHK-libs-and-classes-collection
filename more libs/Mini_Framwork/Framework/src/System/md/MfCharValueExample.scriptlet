@@ -1,0 +1,39 @@
+c := new MfChar() ; create a new instance of MfChar class.
+c.Value := "a"
+var := c.Value
+MsgBox %var% ; displays a
+
+c.Value := "F"
+c.ReturnAsObject := true ; return MfChar object instances on methods it applys to.
+var := c.Value
+MsgBox %var% ; displays F
+
+c.Value := "hello world" ; only the first char will be used
+var := c.Value
+MsgBox %var% ; displays h
+
+c.Value := 237 ; only the first char of 237 which is 2 will be used
+var := c.Value
+MsgBox %var% ; displays 2
+
+c.Value := -642 ; only the first char of -642 which is - will be used
+var := c.Value
+MsgBox %var% ; displays -
+
+str := new MfString("Hello world")
+c.Value := str ; assigning str to c.Value is converted into first char of string
+var := c.Value
+MsgBox %var% ; displays H
+
+c.Value := 0x0045 ; hex values inf formart of 0x#### are converted into the Unicode a character same as c.Value := "0x0045"
+var := c.Value
+MsgBox %var% ; displays E
+
+c.Value := 0x45 ; hex value is not in format of 0x#### and is treated like string
+var := c.Value
+MsgBox %var% ; displays 0
+
+i := new MfInteger(89) ; create new MfInteger instance
+c.Value := i ; Set MfInteger as Value and it is converted to char value
+var := c.Value
+MsgBox %var% ; displays Y

@@ -1,0 +1,20 @@
+MyQueue := new MfQueue()
+loop, 10
+{
+	MyQueue.Enqueue("Hello World " . A_Index)
+}
+MyEnum := MyQueue.GetEnumerator()
+t := ""
+While MyEnum.Next(k, v)
+{
+	t .= k "=" v "`n"
+}
+MsgBox % t
+
+; alternatively we can do this
+t := ""
+for k, v in MyQueue
+{
+	t .= k "=" v "`n"
+}
+MsgBox % t

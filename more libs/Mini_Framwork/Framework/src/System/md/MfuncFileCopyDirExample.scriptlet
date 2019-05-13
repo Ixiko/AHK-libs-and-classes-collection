@@ -1,0 +1,19 @@
+Mfunc.FileCopyDir("C:\My Folder", "C:\Copy of My Folder")
+
+; Example #2: A working script that prompts you to copy a folder.
+SourceFolder := Mfunc.FileSelectFolder( , 3, "Select the folder to copy")
+if SourceFolder =
+    return
+; Otherwise, continue.
+TargetFolder := Mfunc.FileSelectFolder( , 3, "Select the folder IN WHICH to create the duplicate folder.")
+if TargetFolder =
+    return
+; Otherwise, continue.
+MsgBox, 4, , A copy of the folder "%SourceFolder%" will be put into "%TargetFolder%".  Continue?
+IfMsgBox, No
+    return
+Mfunc.SplitPath(SourceFolder, SourceFolderName)  ; Extract only the folder name from its full path.
+Mfunc.FileCopyDir(SourceFolder, TargetFolder . "\" . SourceFolderName)
+if ErrorLevel
+    MsgBox The folder could not be copied, perhaps because a folder of that name already exists in "%TargetFolder%".
+return

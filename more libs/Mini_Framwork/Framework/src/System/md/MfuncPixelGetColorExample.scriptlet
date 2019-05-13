@@ -1,0 +1,5 @@
+^!z::  ; Control+Alt+Z hotkey.
+Mfunc.MouseGetPos(MouseX, MouseY)
+color := Mfunc.PixelGetColor(MouseX, MouseY)
+MsgBox The color at the current cursor position is %color%.
+return

@@ -1,0 +1,4 @@
+Mfunc.FileSetAttrib("+RH", "C:\MyFiles\*.*", 1)  ; +RH is identical to +R+H
+Mfunc.FileSetAttrib("^H", "C:\MyFiles") ; Toggle the folder's "hidden" attribute.
+Mfunc.FileSetAttrib("-R+A", "C:\New Text File.txt")
+Mfunc.FileSetAttrib("+A", "C:\*.ini", , 1) ; Recurse through all .ini files on the C drive.

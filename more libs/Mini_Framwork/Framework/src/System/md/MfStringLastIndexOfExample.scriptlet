@@ -1,0 +1,83 @@
+; Static method example
+str := "Now is the time for all good men to come to the aid of their party."
+result := MfString.LastIndexOf(str, "he")
+MsgBox The last index of he:%result% ; displays - The last index of he:56
+
+result := MfString.LastIndexOf(str, ".")
+MsgBox The last index of he:%result% ; displays - The last index of he:66
+
+
+result := MfString.LastIndexOf(str, "he", 44)
+MsgBox The last index of he:%result% ; displays - The last index of he:8
+
+result := MfString.LastIndexOf(str, "he", 54, 10)
+MsgBox The last index of he:%result% ; displays - The last index of he:45
+
+strMain := new MfString(str)
+searchStr := new MfString("he")
+startIndex := new MfInteger(54)
+count := new MfInteger(10)
+result := MfString.LastIndexOf(strMain, searchStr, startIndex, count)
+MsgBox The last index of he:%result% ; displays - The last index of he:45
+
+; ----------------------------------------------------------------------------------------
+; instance method examples
+str := new MfString("Now is the time for all good men to come to the aid of their party.")
+result := str.LastIndexOf("he")
+MsgBox The last index of he:%result% ; displays - The last index of he:56
+
+result := str.LastIndexOf(new MfChar("."))
+MsgBox The last index of he:%result% ; displays - The last index of he:66
+
+result := str.LastIndexOf(".")
+MsgBox The last index of he:%result% ; displays - The last index of he:66
+
+result := str.LastIndexOf("he", 44)
+MsgBox The last index of he:%result% ; displays - The last index of he:8
+
+result := str.LastIndexOf("he", 54, 10)
+MsgBox The last index of he:%result% ; displays - The last index of he:45
+
+searchStr := new MfString("he")
+startIndex := new MfInteger(54)
+count := new MfInteger(10)
+result := str.LastIndexOf(searchStr, startIndex, count)
+MsgBox The last index of he:%result% ; displays - The last index of he:45
+
+; ----------------------------------------------------------------------------------------
+br1 := new MfString("0----+----1----+----2----+----3----+----4----+----5----+----6----+-")
+br2 := new MfString("0123456789012345678901234567890123456789012345678901234567890123456")
+str := new MfString("Now is the time for all good men to come to the aid of their party.")
+start := new MfInteger()
+at := new MfInteger()
+count := new MfInteger()
+end := new MfInteger()
+
+start.Value := str.Length-1
+end.Value := start.Value/2 - 1
+msg := MfString.Format("All occurrences of 'he' from position {0} to {1}.", start, end)	
+msg .= MfString.Format("{0}{0}{1}{0}{2}{0}{3}{0}", MfEnvironment.Instance.NewLine, br1, br2, str)
+msg .= MfString.Format("{0}The string 'he' occurs at position(s): ", MfEnvironment.Instance.NewLine)
+
+count.Value := 0
+at.Value := 0
+while ((start.Value > -1) && (at.Value > -1))
+{
+	count.Value := start.Value - end.Value ; Count must be within the substring.
+	at.Value := str.LastIndexOf("he", start, count)
+	if (at.Value > -1) 
+	{
+		msg .= MfString.Format("{0} ", at)
+		start.Value := at.Value - 1
+	}
+}
+msg .= MfString.Format("{0}{0}{0}", MfEnvironment.Instance.NewLine)
+MsgBox %msg%
+; msg contains the following:
+; All occurrences of 'he' from position 66 to 32.
+;
+; 0----+----1----+----2----+----3----+----4----+----5----+----6----+-
+; 0123456789012345678901234567890123456789012345678901234567890123456
+; Now is the time for all good men to come to the aid of their party.
+;
+; The string 'he' occurs at position(s): 56 45 

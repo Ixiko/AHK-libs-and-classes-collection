@@ -1214,14 +1214,45 @@ RichEdit_SetBgColor(hCtrl, Color)  {
  Remarks:
 			This function will fire up SELCHANGE message even if selection isn't changed.
  */
-RichEdit_SetCharFormat(HCtrl, Face="", Style="", TextColor="", BackColor="", Mode="SELECTION")  {
-	static EM_SETCHARFORMAT=0x444
-		  , CFM_CHARSET:=0x8000000,CFM_COLOR:=0x40000000, CFM_FACE:=0x20000000, CFM_OFFSET:=0x10000000, CFM_SIZE:=0x80000000, CFM_WEIGHT=0x400000, CFM_UNDERLINETYPE=0x800000
-		  , CFM_HIDDEN=0x100, CFM_BOLD=1, CFM_ITALIC=2, CFM_DISABLED=0x2000, CFM_LINK=0x20, CFM_PROTECTED=0x10, CFM_STRIKEOUT=8, CFM_UNDERLINE=4, CFM_SUPERSCRIPT=0x30000, CFM_SUBSCRIPT=0x30000, CFM_BACKCOLOR=0x4000000, CFE_AUTOBACKCOLOR=0x4000000, CFE_AUTOCOLOR = 0x40000000
-		  , CFE_HIDDEN=0x100, CFE_BOLD=1, CFE_ITALIC=2, CFE_DISABLED=0x2000, CFE_LINK=0x20, CFE_PROTECTED=0x10, CFE_STRIKEOUT=8, CFE_UNDERLINE=4, CFE_SUBSCRIPT=0x10000, CFE_SUPERSCRIPT=0x20000, CFM_COLOR=0x40000000, CFM_AUTOBACKCOLOR=0x4000000, CFM_AUTOCOLOR=0x40000000
-		  , SCF_ALL=4, SCF_SELECTION=1, SCF_WORD=3	;, SCF_ASSOCIATEFONT=0x10
+RichEdit_SetCharFormat(HCtrl, Face:="", Style:="", TextColor:="", BackColor:="", Mode:="SELECTION")  {
+	static EM_SETCHARFORMAT	:=0x444
+			, CFM_CHARSET            	:=0x8000000			
+			, CFM_COLOR                	:=0x40000000	
+			, CFM_BACKCOLOR        	:=0x4000000
+			, CFM_FACE                 	:=0x20000000
+			, CFM_OFFSET               	:=0x10000000				
+			, CFM_SIZE                   	:=0x80000000		
+			, CFM_WEIGHT            	:=0x400000
+			, CFM_UNDERLINETYPE	:=0x800000 	
+			, CFM_HIDDEN            	:=0x100			
+			, CFM_BOLD                 	:=1
+			, CFM_ITALIC                	:=2
+			, CFM_DISABLED          	:=0x2000
+			, CFM_LINK                  	:=0x20
+			, CFM_PROTECTED         	:=0x10
+			, CFM_STRIKEOUT        	:=8
+			, CFM_UNDERLINE        	:=4
+			, CFM_SUPERSCRIPT    	:=0x30000
+			, CFM_SUBSCRIPT        	:=0x30000
+			, CFE_AUTOBACKCOLOR	:=0x4000000
+			, CFE_AUTOCOLOR         	:= 0x40000000
+			, CFE_HIDDEN              	:=0x100
+			, CFE_BOLD                  	:=1
+			, CFE_ITALIC                 	:=2
+			, CFE_DISABLED            	:=0x2000
+			, CFE_LINK                    	:=0x20
+			, CFE_PROTECTED        	:=0x10
+			, CFE_STRIKEOUT         	:=8
+			, CFE_UNDERLINE        	:=4
+			, CFE_SUBSCRIPT         	:=0x10000
+			, CFE_SUPERSCRIPT     	:=0x20000
+			, SCF_ALL                     	:=4
+			, SCF_SELECTION         	:=1
+			, SCF_WORD                	:=3	
+			, SCF_ASSOCIATEFONT	:=0x10
 
-	;sz := S(_, "CHARFORMAT2A: cbSize dwMask dwEffects yHeight=.04 yOffset=.04 crTextColor bCharSet=.1 bPitchAndFamily=.1 szFaceName wWeight=60.2 sSpacing=.02 crBackColor lcid dwReserved sStyle=.02 wKerning=.2 bUnderlineType=.1 bAnimation=.1 bRevAuthor=.1 bReserved1=.1")
+;sz := S(_, "CHARFORMAT2A: cbSize dwMask dwEffects yHeight=.04 yOffset=.04 crTextColor bCharSet=.1 
+;bPitchAndFamily=.1 szFaceName wWeight=60.2 sSpacing=.02 crBackColor lcid dwReserved sStyle=.02 wKerning=.2 bUnderlineType=.1 bAnimation=.1 bRevAuthor=.1 bReserved1=.1")
 
 	VarSetCapacity(CF, 84, 0),  NumPut(84, CF)
 	hMask := 0

@@ -1,0 +1,23 @@
+span := new MfTimeSpan(MfTimeSpan.Zero)
+MsgBox % span.ToString() ; Displays: 00
+
+span := new MfTimeSpan(5624853448000)
+MsgBox % span.ToString() ; Displays: 06.12:14:45.3448000
+
+span := new MfTimeSpan(7,14,0)
+MsgBox % span.ToString() ; Displays: 07:14:00
+
+span := new  MfTimeSpan(7,14,17)
+MsgBox % span.ToString() ; Displays: 07:14:17
+
+span := new MfTimeSpan(7,14,17,41)
+MsgBox % span.ToString() ; Displays: 07.14:17:41
+
+span := new MfTimeSpan(7,14,17,41,243)
+MsgBox % span.ToString() ; Displays: 07.14:17:41.2430000
+
+iHour := new MfInteger(14)
+iMin := new MfInteger(57)
+iSec := new MfInteger(29)
+span := new MfTimeSpan(iHour, iMin, iSec)
+MsgBox % span.ToString() ; Displays: 14:57:29

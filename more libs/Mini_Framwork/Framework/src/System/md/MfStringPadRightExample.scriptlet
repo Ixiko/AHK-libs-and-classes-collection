@@ -1,0 +1,38 @@
+; ---------------------------------------------------
+s := "Hello World"
+result := MfString.PadRight(s, 20) ; Get the results; result.Value = "Hello World         "
+
+; ---------------------------------------------------
+MyStr := new MfString("Hello World")
+result := MyStr.PadLeft(20) ; Get the results; result.Value = "Hello World         "
+
+; ---------------------------------------------------
+MyStr := new MfString("Hello World")
+result := MyStr.PadLeft(20, ".") ; Get the results; result.Value = "Hello World........."
+
+; ---------------------------------------------------
+MyStr := new MfString("Hello World")
+iWidth := new MfInteger(20) ; create a new instance MfInteger
+result := MyStr.PadLeft(iWidth) ; Get the results; result.Value = "Hello World         "
+
+; ---------------------------------------------------
+MyStr := new MfString("Hello World")
+p := new MfParams() ; create a new instance of the MfParams class
+p.AddInteger(20) ; add totalWidth to MfParams
+p.AddChar(".") ; add paddingChar to MfParams
+result := MyStr.PadLeft(p) ; Get the results; result.Value = "Hello World........."
+
+; ---------------------------------------------------
+MyStr := new MfString("Hello World")
+iWidth := new MfInteger(20) ; create a new instance MfInteger
+pChar := new MfChar(".") ; create a new instance of MfChar
+result := MyStr.PadLeft(iWidth, pChar) ; Get the results; result.Value = "Hello World........."
+
+;---------------------------------------------------
+mystr := MfString.Format("OsType:{0} Version:{1}", A_OSType, A_OSVersion)
+i := new MfInteger(5)
+str := new MfString("Cool computer")
+mystr := MfString.Format("My computer is named:{0} and I have had it for {1} years", str, i)
+strObjA := new MfString(mystr, true) ; set MfString instance to return it method outputs as objects. This allows for method chaining
+resultA := MfString.Format(strObjA, str, i).Substring(58).PadRight(20,".").value
+MsgBox %resultA% ; displays years...............

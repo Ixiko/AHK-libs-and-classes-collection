@@ -1,0 +1,161 @@
+
+class MyClass extends MfObject
+{
+	__New() {
+		this.m_HotString := HotstringEnum.Instance.None
+	}
+	
+	; return a string var that represents the Enum Name
+	GetHotStringEnumName()
+	{
+		return this.HotstringEnum.Name
+	}
+	
+	; return a Integer var that represents the Enum Value
+	GetHotStringEnumValue()
+	{
+		return this.HotStringEnum.Value
+	}
+	
+	; parse a string representing a HotStringEnum EnumItem and return a new MyClass object
+	Parse(str)
+	{
+		if (MfNull.IsNull(str)) {
+			ex := new MfArgumentNullException("str")
+			ex.SetProp(A_LineFile, A_LineNumber, A_ThisFunc)
+			throw ex
+		}
+		ParseClass := new MyClass()
+		_str := MfString.GetValue(str) ; conver any MfString Objects into a var
+		try
+		{
+			ParseClass.m_HotString := HotstringEnum.Instance.ParseItem(_str)
+		}
+		catch e
+		{
+			ex := new MfException("Unable to Parse", e)
+			ex.SetProp(A_LineFile, A_LineNumber, A_ThisFunc)
+			throw ex
+		}
+		return ParseClass
+	}
+	
+	IsInline
+	{
+		get {
+			; same as: return this.HotStringEnum.Equals(HotStringEnum.Instance.Inline)
+			return this.HotStringEnum.Value = HotStringEnum.Instance.Inline.Value
+		}
+		set {
+			ex := new MfNotSupportedException(MfEnvironment.Instance.GetResourceString("NotSupportedException_Readonly_Property"))
+			ex.SetProp(A_LineFile, A_LineNumber, A_ThisFunc)
+			Throw ex
+		}
+	}
+	
+	IsFile
+	{
+		get {
+			; same as: return this.HotStringEnum.Value = HotStringEnum.Instance.File.Value
+			return this.HotStringEnum.Equals(HotStringEnum.Instance.File)
+		}
+		set {
+			ex := new MfNotSupportedException(MfEnvironment.Instance.GetResourceString("NotSupportedException_Readonly_Property"))
+			ex.SetProp(A_LineFile, A_LineNumber, A_ThisFunc)
+			Throw ex
+		}
+	}
+	
+	
+	m_HotString := Null
+	HotStringEnum[]
+	{
+		get
+		{
+			return this.m_HotString
+		}
+		set
+		{
+			if (MfNull.IsNull(value))
+			{
+				ex := new MfArgumentNullException("value",MfEnvironment.Instance.GetResourceString("ArgumentNull_Generic"))
+				ex.SetProp(A_LineFile, A_LineNumber, A_ThisFunc)
+				throw ex
+			}
+			if (!MfObject.IsObjInstance(value, "MfEnum.EnumItem"))
+			{
+				ex := new MfArgumentException(MfEnvironment.Instance.GetResourceString("Argument_Enum_Item_Not_Instance"))
+				ex.SetProp(A_LineFile, A_LineNumber, A_ThisFunc)
+				throw ex
+			}
+			this.m_HotString := value
+		}
+	}
+}
+
+
+class HotstringEnum extends MfEnum
+{
+	static m_Instance	:= Null
+
+	__New(args*) {
+		if (this.base.__Class != "HotstringEnum") {
+			throw new MfNotSupportedException(MfEnvironment.Instance.GetResourceString("NotSupportedException_Sealed_Class","HotstringEnum"))
+		}
+		base.__New(args*)
+		this.m_isInherited := this.__Class != "HotstringEnum"
+	}
+
+	AddAttributes() {
+	}
+
+	AddEnums() {
+		this.AddEnumValue("None", 0)
+		this.AddEnumValue("Inline", 1)
+		this.AddEnumValue("File", 2)
+	}
+	
+	Equals(objA, ObjB = "")
+	{
+		return base.Equals(objA, ObjB)
+	}
+
+	GetInstance() {
+		if (HotstringEnum.m_Instance = Null) {
+			HotstringEnum.m_Instance := new HotstringEnum(0)
+		}
+		return HotstringEnum.m_Instance
+	}
+
+    GetType() {
+		return base.GetType()
+	}
+
+	Is(type) {
+		typeName := null
+		if (IsObject(type)) {
+			if (MfObject.IsObjInstance(type,"MfType")) {
+				; we have a type class so lets use the TypeName
+				typeName := type.ClassName
+			} else if (type.__Class) {
+				typeName := type.__Class
+			} else if (type.base.__Class) {
+				typeName := type.base.__Class
+			}
+		} else if (type ~= "^[a-zA-Z0-9.]+$") {
+			typeName := type
+		}
+		if (typeName = "HotstringEnum") {
+			return true
+		} 
+		return base.Is(type)
+	}
+
+	IsObjInstance(obj, objType = "") {
+		return MfObject.IsObjInstance(obj, objType)
+	}
+
+	ToString() {
+		return base.ToString()
+	}
+}

@@ -1,0 +1,5 @@
+Haystack = abcdefghijklmnopqrs
+Needle = def
+pos := Mfunc.StringGetPos("Haystack", Needle)
+if pos >= 0
+    MsgBox, The string was found at position %pos%.

@@ -1,12 +1,16 @@
 #NoEnv
-#NoTrayIcon
+;#NoTrayIcon
 SetBatchLines, -1
 SetControlDelay, -1
 SetKeyDelay, -1
 FileEncoding, UTF-8
 
-global fileIdx:=0
-functions:= Object()
+
+;-----------------------------------------------------------------------------------------------------------------------------------------
+; some variables
+;-----------------------------------------------------------------------------------------------------------------------------------------
+global fileIdx:=0, lib:= []
+
 Directorys = 
 (LTrim 
 lib-a_to_h
@@ -14,6 +18,7 @@ lib-a_to_h\core_audio_interfaces
 lib-i_to_z
 classes
 classes\Class_PictureButton-master\lib
+classes\class_Java-Access-Bridge
 classes\COM-Classes-FrameWork
 classes\COM-Classes-FrameWork\Constant Classes
 classes\COM-Classes-FrameWork\CustomDestinationList
@@ -80,10 +85,13 @@ more libs\ImportTypeLib\Lib
 more libs\MCode-Ex\src
 more libs\MCode-Ex\src\Compiler
 more libs\MinHook\Lib
-more libs\Mini_Framwork
-more libs\Mini_Framwork\MfUnicode
-more libs\Mini_Framwork\IO
+more libs\Mini_Framwork\Framework\src\System\
+more libs\Mini_Framwork\Framework\src\System\IO
+more libs\Mini_Framwork\Framework\src\System\MfStruct
+more libs\Mini_Framwork\Framework\src\System\MfUnicode
+more libs\Mini_Framwork\Framework\src\System\Text
 more libs\minilib
+more libs\ObjCSV\lib
 more libs\RamDisk & CmdReturn
 more libs\SendInput
 more libs\Splash-Gui
@@ -95,65 +103,77 @@ more libs\WinLogon
 MSOffice
 MSOffice\DocX
 )
+functions          	:= Object()
+Dir                    	:= StrSplit(Directorys, "`n", "`r")
+file_readmeMd	:= A_ScriptDir "\readme.md"
+MDTable          	:= "| **Nr** | **Library**                                               | **Directory**                                              |`n"
+MDTable          	.= "| :--- | :-------------------------------------- |:----------------------------------------------------|`n"
 
-Dir := StrSplit(Directorys, "`n", "`r")
+;-----------------------------------------------------------------------------------------------------------------------------------------
+; fileread of readme.md till table is reached
+;-----------------------------------------------------------------------------------------------------------------------------------------
+ReadMeMd:= MakeTableLess_readmeMd(file_readmeMd, tableStartLine, libMaxOld)
+ReadMeMd .= "| **Nr** | **Library**                                               | **Directory**                                              |`n"
+ReadMeMd .= "| :--- | :-------------------------------------- |:----------------------------------------------------|`n"
+;ReadMeMd:= StrReplace(ReadMeMd, "history of updates `n`n", "history of updates `n`n* **[" A_DD "." A_MM "." A_YYYY "]** - on last update: " libMaxOld "`n")
+;ReadMeMd:= RegExReplace(ReadMeMd, "M)Edition\:\s\d\d\.\d\d.\d\d\d\d", "Edition: " A_DD "." A_MM "." A_YYYY)
 
-FileDelete, files.txt
-FileDelete, filesTable.md
-FileDelete, FileFunctionList.txt
-
-FileAppend, % "| **Nr** | **Library**                                               | **Directory**                                              |`n", %A_ScriptDir%\filesTable.md
-FileAppend, % "| :--- | :-------------------------------------- |:----------------------------------------------------|`n", %A_ScriptDir%\filesTable.md
-				
-Loop, % Dir.MaxIndex()				
-		fc[A_Index]:= list_files(Dir[A_Index])
-
-;Reads files.txt , and opens file by file - it search for function - store them into functions object + store the containing script
-;todo - retreave informations about the functions from script lines - detect ; or /**/
-
-FileRead, files, %A_ScriptDir%\files.txt
-Loop, Parse, files, `n, `r
-	clines++
-
-Loop, Parse, files, `n, `r
+;-----------------------------------------------------------------------------------------------------------------------------------------
+; scan for files 
+;-----------------------------------------------------------------------------------------------------------------------------------------
+Loop, % Dir.MaxIndex()												; list all files in all directory's
 {
-	filename := A_LoopField
+		Md := list_files(Dir[A_Index])
+		ReadMeMd .= Md
+}
+
+clines:= lib.MaxIndex()
+
+;-----------------------------------------------------------------------------------------------------------------------------------------
+; write a functionlist - maybe you use it for fast searching
+;-----------------------------------------------------------------------------------------------------------------------------------------
+file:= FileOpen(A_ScriptDir "\FileFunctionList.ahk", "w")
+For idx, ffpath in lib
+{
+	;filename := A_LoopField
 	ToolTip, % "File: " A_Index "/" clines, 2000, 500, 6
-	funcList:= listfunc(filename)
-	RegExMatch(filename, "\w+\\[\w\s\(\)]+\.ahk", shortpath)
-	;shortpath:= path7 . "`\" . path8
-	FileAppend, % "[" A_Index "] " shortpath " {`n`nFunctions:`n", %A_ScriptDir%\FileFunctionList.txt   
-	FileAppend, % funclist "`n", %A_ScriptDir%\FileFunctionList.txt
-	FileAppend, % "}`n", FileFunctionList.txt
-
-		/*
-			Loop, Parse, funcList, `n
-			{
-					line:= A_LoopField
-					If !line = "" 
-					{
-							StringSplit, line, line, `|, %A_Space%
-							;FileAppend, %line2%`;%line1%`;%filename%`n, FunctionFileList.csv
-					}
-			}
-		*/
+	funcList:= listfunc(ffpath)
+	RegExMatch(ffpath, "\w+\\[\w\s\(\)]+\.ahk", shortpath)
+	
+	File.Write("[" A_Index "] " shortpath " {`n`nLine  `t|`tFunction`n" funclist "`n}`n")
 }
+File.Close()
 
+file:= FileOpen(A_ScriptDir "\README.md", "w")
+file.Write(ReadMeMd)
+File.Close()
 
-/*
-FileRead, Index, FunctionFileList.csv
-if not ErrorLevel  ; Erfolgreich geladen.
-{
-    Sort, Index
-    FileDelete, FunctionFileList.csv
-    ;FileAppend, %Index%, FunctionFileList.csv
-    Index =
-}
-*/
-
+MsgBox, % "Ready`nlast lib count: " libMaxOld
 
 exitApp
 
+MakeTableLess_readmeMd(file_readmeMd, byref tableStartLine, byref libMaxOld) {
+
+	Table_RegExString	        	:= "O)(\|\s[^\|]+\s)"
+	TableColCountHelp_RegExString:= "\|\s\-+\s\|"
+
+	FileRead, tmp, % file_readmeMd
+
+	Loop, Parse, tmp, `n, `r
+	{
+		 If RegExmatch(A_LoopField, Table_RegExString, Match)
+				If !tableStartLine
+				{
+					tableStartLine:= A_Index
+				}
+				else
+					tableLastLine:= A_Index, RegExMatch(A_LoopField, "(?<=\|\s\*\*)\d+", libMaxOld)
+		else
+			newMd.= A_LoopField "`n"
+	}
+		
+return newMd
+}
 
 listfunc(file) {
 
@@ -266,7 +286,7 @@ listfunc(file) {
 		linec:= SubStr("00000" . linec, -3)
 		str:= functionList#%A_Index%@name
 		If Not Instr(str, "if`(")
-				rf := rf . "" . linec . " | " . str . "(" . pl . ")`n"
+				rf := rf . "" . linec . "`t|`t" . str . "(" . pl . ")`n"
     }
 
   labelNb--
@@ -274,36 +294,41 @@ listfunc(file) {
   Loop %labelNb% {
 		linec.= labelList#%A_Index%@line
 		linec:= SubStr("00000" . linec, -3)
-		rl := rl . "" . linec . " | " . labelList#%A_Index%@name . "`n"
+		rl := rl . "" . linec . "`t|`t" . labelList#%A_Index%@name . "`n"
 
 	}
   hotkeyNb--
   rk =
   Loop %hotkeyNb%
-      rk :=rk . "" . hotkeyList#%A_Index%@line . " | " . hotkeyList#%A_Index%@name . "`n"
+      rk :=rk . "" . hotkeyList#%A_Index%@line . "`t|`t" . hotkeyList#%A_Index%@name . "`n"
 
   hotstringNb--
   rs =
   Loop %hotstringNb%
-      rs := rs . "" . hotstringList#%A_Index%@line . " | " . hotstringList#%A_Index%@name . "`n"
+      rs := rs . "" . hotstringList#%A_Index%@line . "`t|`t" . hotstringList#%A_Index%@name . "`n"
 
 	return rf
 
 }
 
 list_files(Directory) {
-	
+		
+	mdline:=""
+		
 	Loop , Files, % A_ScriptDir . "\" . Directory . "\*.ahk"
 	{
 		If Instr(A_LoopFileName, "example")
 				continue
 		fileIdx ++
 		MouseGetPos, mx, my
-		FileAppend, % Directory . "\" . A_LoopFileName "`n", %A_ScriptDir%\Files.txt
-		FileAppend, % "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "\" . StrReplace(A_LoopFileName," ", "%20") . ") | " Directory . "\  | `n", % A_ScriptDir "\FilesTable.md"
+		mdline .= "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "\" . StrReplace(A_LoopFileName," ", "%20") . ") | " Directory . " | `n"
+		lib.Push(Directory "\" A_LoopFileName)
 		ToolTip, found files: %files%, %mx%, %my%, 6
 	}
-	return
+	
+	;FileAppend, % "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "\" . StrReplace(A_LoopFileName," ", "%20") . ") | " Directory . "  | `n", % A_ScriptDir "\FilesTable.md"
+	
+	return mdline
 }
 
 Contains(haystack, needle) {
@@ -328,3 +353,5 @@ Contains(haystack, needle) {
 		return false
 	}
 }
+
+

@@ -1,0 +1,66 @@
+MsgBox % SingletonHello.Instance.Message
+SingletonHello.Instance.Value := "Way too cool!"
+MsgBox % SingletonHello.Instance.Message
+return
+
+class SingletonHello extends MfSingletonBase
+{
+	static _instance := Null ; Static var to contain the singleton instance
+	m_Value 	:= Null
+	__New() {
+		base.__New()
+		this.m_Value 	:= "Hello World"
+	}
+	
+	; GetInstance() is required to be overriden from the SingletonBase base class
+	GetInstance() { ; Overrides base
+		if (MfNull.IsNull(SingletonHello._instance)) {
+			SingletonHello._instance := new SingletonHello()
+		}
+		return SingletonHello._instance
+	}
+	; DestroyInstance() is required to be overriden from the SingletonBase base class
+	DestroyInstance() {
+		SingletonHello._instance = Null ; Clears current instance and releases memory
+	}
+	; Override base class Is type method to return accurate type checking
+	Is(type) {
+		typeName := null
+		if (IsObject(type)) {
+			if (type.__Class) {
+				typeName := type.__Class
+			} else if (type.base.__Class) {
+				typeName := type.base.__Class
+			}
+		} else if (type ~= "^[a-zA-Z0-9]+$") {
+			typeName := type
+		}
+		if (typeName = "SingletonHello") { ; reflect this Class name for type checking
+			return true
+		} 
+		return base.Is(type)
+	}
+	; Properties Start
+	Value[]
+	{
+		get {
+			return this.m_Value
+		}
+		set {
+			this.m_Value := value
+			return this.m_Value
+		}
+	}
+	Message[]
+	{
+		get {
+			return MfString.Format("The Value is currently:'{0}'", this.Value)
+		}
+		set { ; Readonly Property
+			ex := new MfNotSupportedException(MfEnvironment.Instance.GetResourceString("NotSupportedException_Readonly_Property"))
+			ex.SetProp(A_LineFile, A_LineNumber, A_ThisFunc)
+			throw ex
+		}
+	}
+	; Properties End
+}

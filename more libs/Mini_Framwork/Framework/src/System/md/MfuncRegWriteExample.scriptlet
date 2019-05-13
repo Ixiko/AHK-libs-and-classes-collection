@@ -1,0 +1,3 @@
+Mfunc.RegWrite("REG_SZ", "HKEY_LOCAL_MACHINE", "SOFTWARE\TestKey", "MyValueName", "Test Value")
+Mfunc.RegWrite("REG_BINARY", "HKEY_CURRENT_USER", "Software\TEST_APP", "TEST_NAME", "01A9FF77")
+Mfunc.RegWrite("REG_MULTI_SZ", "HKEY_CURRENT_USER", "Software\TEST_APP", "TEST_NAME", "Line1`nLine2")

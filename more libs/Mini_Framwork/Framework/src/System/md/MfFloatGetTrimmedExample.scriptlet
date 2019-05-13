@@ -1,0 +1,59 @@
+f := new MfFloat(0.5) ; ReturnAsObject is false
+result := f.Value
+MsgBox Result:'%result%' ; Displays Result:'0.500000'
+result := f.GetTrimmed() ; returns var
+MsgBox Result:'%result%' ; displays '0.5'
+
+
+f := new MfFloat(0.5, false, "10.5") ; ReturnAsObject is false
+result := f.Value
+MsgBox Result:'%result%' ; Displays Result:'   0.50000'
+result := f.GetTrimmed() ; returns var
+MsgBox Result:'%result%' ; displays '0.5'
+
+
+f := new MfFloat(256.030, true, "10.5") ; ReturnAsObject is true
+result := f.Value
+MsgBox Result:'%result%' ; Displays Result:' 256.03000'
+fTrim := f.GetTrimmed() ; returns MfFloat object instance because ReturnAsObject is true
+result := fTrim.Value
+MsgBox Result:'%result%' ; Displays Result:'256.03'
+result := fTrim.Format
+MsgBox Result:'%result%' ; Displays Result:'0.2'
+
+
+f := new MfFloat()
+f.TotalWidth := "012"
+f.DecimalPlaces := "5"
+f.Value := 256.030
+f.ReturnAsObject := true
+result := f.Value
+MsgBox Result:'%result%' ; Displays Result:'000256.03000'
+fTrim := f.GetTrimmed() ; returns MfFloat object instance because ReturnAsObject is true
+result := fTrim.Value
+MsgBox Result:'%result%' ; Displays Result:'256.03'
+result := fTrim.Format
+MsgBox Result:'%result%' ; Displays Result:'0.2'
+
+
+f := new MfFloat()
+f.Format := "-012.5"
+f.Value := 256.1
+f.ReturnAsObject := true
+result := f.Value
+MsgBox Result:'%result%' ; Displays Result:'256.10000   '
+fTrim := f.GetTrimmed() ; returns MfFloat object instance because ReturnAsObject is true
+result := fTrim.Value
+MsgBox Result:'%result%' ; Displays Result:'256.1'
+result := fTrim.Format
+MsgBox Result:'%result%' ; Displays Result:'0.1'
+
+
+f := new MfFloat(256.0, true, "10.5") ; ReturnAsObject is true
+result := f.Value
+MsgBox Result:'%result%' ; Displays Result:' 256.00000'
+fTrim := f.GetTrimmed() ; returns MfFloat object instance because ReturnAsObject is true
+result := fTrim.Value
+MsgBox Result:'%result%' ; a whole number is returned - Displays Result:'256'
+result := fTrim.Format
+MsgBox Result:'%result%' ; Displays Result:'0.0'

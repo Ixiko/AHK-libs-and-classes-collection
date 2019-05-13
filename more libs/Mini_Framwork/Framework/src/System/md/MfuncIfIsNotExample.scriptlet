@@ -1,0 +1,14 @@
+if (!Mfunc.IfIsNot(var,"float"))
+{
+	MsgBox, %var% is a not floating point number.
+}
+
+if (Mfunc.IfIsNot(var,"integer"))
+{
+	MsgBox, %var% is not an integer.
+}
+
+if (Mfunc.IfIsNot(var,"time"))
+{
+	 MsgBox, %var% is not a valid date-time.
+}

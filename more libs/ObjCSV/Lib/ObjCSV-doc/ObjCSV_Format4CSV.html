@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>ObjCSV_Format4CSV()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>ObjCSV_Format4CSV()</h1>
+<p>Add encapsulator before and after strF4C if the string includes line breaks, field delimiter or field encapsulator. Encapsulated field encapsulators are doubled.</p>
+
+<pre class="Syntax">ObjCSV_Format4CSV(strF4C [, strFieldDelimiter = &quot;,&quot;, strEncapsulator = &quot;&quot;&quot;&quot;])</pre>
+<h3>Parameters</h4>
+<table class="info">
+<tr>
+  <td width="15%">strF4C</td>
+  <td width="85%">String to convert to CSV format</td>
+</tr>
+<tr>
+  <td width="15%">strFieldDelimiter</td>
+  <td width="85%">(Optional) Field delimiter. One character, usually comma (default value) or tab.</td>
+</tr>
+<tr>
+  <td width="15%">strEncapsulator</td>
+  <td width="85%">(Optional) Character (usualy double-quote) used in the CSV file to embed fields that include at least one of these special characters: line-breaks, field delimiters or the encapsulator character itself. In this last case, the encapsulator character must be doubled in the string. For example: &quot;one &quot;&quot;quoted&quot;&quot; word&quot;. Double-quote by default.</td>
+</tr>
+<tr>
+  <td width="15%">blnAlwaysEncapsulate</td>
+  <td width="85%">(Optional) If true (or 1), always encapsulate values with field encapsulator. If false (or 0), fields are encapsulated only if required (see strEncapsulator above). False (or 0) by default.</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<p>String with required encapsulator.</p>
+<h3>Remarks</h3>
+<p>Based on Format4CSV by Rhys (<a href="http://www.autohotkey.com/forum/topic27233.html">http://www.autohotkey.com/forum/topic27233.html</a>).<br/></p>
+<p>Added the strFieldDelimiter parameter to make it work with separators other than comma.<br/>
+Added the strEncapsulator parameter to make it work with other encapsultors than double-quotes.</p>
+
+</body>
+</html>

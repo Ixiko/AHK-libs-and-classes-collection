@@ -1,0 +1,8 @@
+OutputVar := Mfunc.ControlGet("Line", 1, "Edit1", "Some Window Title")
+
+try {
+	WhichTab := Mfunc.ControlGet("Tab", , "SysTabControl321", "Some Window Title")
+	MsgBox Tab #%WhichTab% is active.
+} catch e {
+	MsgBox There was a problem.
+}

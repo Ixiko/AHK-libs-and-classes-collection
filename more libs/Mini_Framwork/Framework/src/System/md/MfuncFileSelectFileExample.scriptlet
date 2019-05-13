@@ -1,0 +1,27 @@
+SelectedFile := Mfunc.FileSelectFile(3, , "Open a file", "Text Documents (*.txt; *.doc)")
+if SelectedFile =
+    MsgBox, The user didn't select anything.
+else
+    MsgBox, The user selected the following:`n%SelectedFile%
+
+
+; CLSID Example (requires XP/2003 or earlier):
+OutputVar := Mfunc.FileSelectFile(, "::{645ff040-5081-101b-9f08-00aa002f954e}")  ; Recycle Bin.
+
+; Multi-Select Example:
+files := Mfunc.FileSelectFile("M3")  ; M3 = Multiselect existing files.
+if files =
+{
+    MsgBox, The user pressed cancel.
+    return
+}
+Loop, parse, files, `n
+{
+    if a_index = 1
+        MsgBox, The selected files are all contained in %A_LoopField%.
+    else
+    {
+        MsgBox, 4, , The next file is %A_LoopField%.  Continue?
+        IfMsgBox, No, break
+    }
+}

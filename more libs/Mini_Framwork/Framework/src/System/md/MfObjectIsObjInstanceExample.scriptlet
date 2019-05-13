@@ -1,0 +1,32 @@
+try {
+	sc := new MfStringComparison(MfStringComparison.Instance.Ordinal)
+	result := MyFunc(sc)
+	MsgBox Result:%result% ; Displays Result:Something Ordinal
+} catch e {
+	msg := e.Message
+	MsgBox %msg%
+}
+
+try {
+	sc := "something"
+	result := MyFunc(sc) ; this will cause an error because sc in not instance of MfStringComparison
+	MsgBox Result:%result% 
+} catch e {
+	msg := e.Message
+	MsgBox %msg%
+}
+
+MyFunc(myObj) {
+	; if myObj is not an instance of MfStringComparison we will throw an error
+	if (!MfObject.IsObjInstance(myObj, "MfStringComparison")) {
+		ex := new MfArgumentException("Error was expecting instance of MfStringComparison", "myObj")
+		ex.Source := A_ThisFunc
+		ex.File := A_LineFile
+		ex.Line := A_LineNumber
+		throw ex
+	}
+	if (myObj.Value = MfStringComparison.Instance.Ordinal.Value) {
+		return "Something Ordinal"
+	}
+	return "Nothing Ordinal"
+}

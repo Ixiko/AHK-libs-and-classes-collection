@@ -1,0 +1,10 @@
+String = This is a test.
+OutputVar := Mfunc.StringTrimLeft(String, 5)  ; Stores the string "is a test." in OutputVar.
+OutputVar := Mfunc.StringTrimRight(String, 6)  ; Stores the string "This is a" in OutputVar.
+
+; ----------------------------------------------
+str := new MfString("This is a test.")
+intLeft := new MfInteger(5)
+OutputVar := Mfunc.StringTrimLeft(str, intLeft)  ; Stores the string "is a test." in OutputVar.
+intRight := new MfInteger(6)
+OutputVar := Mfunc.StringTrimRight(str, intRight)  ; Stores the string "This is a" in OutputVar.

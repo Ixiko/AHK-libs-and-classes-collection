@@ -1,0 +1,15 @@
+; Remove all CR+LF's from the clipboard contents:
+clipboard := Mfunc.StringReplace(clipboard, "`r`n", , "All")
+
+; Replace all spaces with pluses:
+mfsOldString := new MfString("My String With Something to Say!")
+NewStr := Mfunc.StringReplace(mfsOldString, A_SPACE, "+", "All")
+MsgBox %NewStr% ; Displays: My+String+With+Something+to+Say!
+
+; Remove all blank lines from the text in a variable:
+Loop
+{
+    MyString := Mfunc.StringReplace(MyString, "`r`n`r`n", "`r`n", "UseErrorLevel")
+    if ErrorLevel = 0  ; No more replacements needed.
+        break
+}

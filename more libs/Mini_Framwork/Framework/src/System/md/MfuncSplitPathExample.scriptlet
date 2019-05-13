@@ -1,0 +1,36 @@
+FullFileName := "C:\My Documents\Address List.txt"
+   
+; To fetch only the bare filename from the above:
+Mfunc.SplitPath(FullFileName, name)
+
+; To fetch only its directory:
+Mfunc.SplitPath(FullFileName,, dir)
+
+; To fetch all info:
+Mfunc.SplitPath(FullFileName, name, dir, ext, name_no_ext, drive)
+   
+; The above will set the variables as follows:
+; name = Address List.txt
+; dir = C:\My Documents
+; ext = txt
+; name_no_ext = Address List
+; drive = C:
+
+;--------------------------------------------------
+; Example using MfString Objects
+sInput := new MfString("D:\Users\user\Documents\AutoHotkey\Scripts\Documentation\DocCleanup_00020.ahk")
+sFile := new MfString()
+sDir := new MfString()
+sExt := new MfString()
+sNoExt := new MfString()
+sOutDrive := new MfString()
+Mfunc.SplitPath(sInput, sFile, sDir, sExt, sNoExt, sOutDrive)
+MsgBox % MfString.Format("Split Results;{5}FileName:'{0}'{5}Folder:'{1}'{5}Extension:'{2}'{5}Name No Ext: '{3}'{5}Drive:'{4}'"
+	, sFile, sDir, sExt, sNoExt, sOutDrive, MfEnvironment.Instance.NewLine)
+; MsgBox will Display the following
+; Split Results;
+; FileName:'DocCleanup_00020.ahk'
+; Folder:'D:\Users\user\Documents\AutoHotkey\Scripts\Documentation'
+; Extension:'ahk'
+; Name No Ext: 'DocCleanup_00020'
+; Drive:'D:'

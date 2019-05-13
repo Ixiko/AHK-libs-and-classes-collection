@@ -1,0 +1,21 @@
+span := MfTimeSpan.Parse("7")
+MsgBox % span.ToString() ; Displays: 07.00:00:00
+
+span := MfTimeSpan.Parse("7.14")
+MsgBox % span.ToString() ; Displays: 07:14:00
+
+span := MfTimeSpan.Parse("7.14:17")
+MsgBox % span.ToString() ; Displays: 07:14:17
+
+span := MfTimeSpan.Parse("7.14:17:41")
+MsgBox % span.ToString() ; Displays: 07.14:17:41
+
+span := MfTimeSpan.Parse("7.14:17:41.2434")
+MsgBox % span.ToString() ; Displays: 07.14:17:41.2434000
+
+str := new MfString("5.14:17:41")
+span := MfTimeSpan.Parse(str)
+MsgBox % span.ToString() ; Displays: 07.14:17:41
+
+span := MfTimeSpan.Parse("5.14:17:41.023")
+MsgBox % span.ToString() ; Displays: 05.14:17:41.0230000

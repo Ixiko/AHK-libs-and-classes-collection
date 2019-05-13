@@ -1,0 +1,28 @@
+; Input of 10 parses to 10
+; input of 0xA parses to 10 as 0XA is a hex value
+; input of abc resuts in an error
+; leading and trailing spaces are allowed
+try {
+	InputBox, myInput, Enter value, Enter a number to parse!
+	if (MfNull.IsNull(myInput))
+	{
+		MsgBox Sorry no input!
+	} else {
+		byte := MfByte.Parse(myInput)
+		MsgBox My Integer Number is:%byte%
+	}
+} catch e {
+	MsgBox, 8240, Error, % "An error has occured!`r`n" . e.Message
+}
+ExitApp
+
+; Example using MfParams and adding ReturnAsObject to MfParams.Data
+; this example passes MfParams into MfInteger.Parse method with
+; Data Key of ReturnAsObject. This cause MfInteger.Parse to return is value
+; as an instance of MfInteger rather then the default of a var containing integer.
+pStr := "33"
+Parms := new MfParams()
+Parms.AddString(pStr)
+Parms.Data.Add("ReturnAsObject",true)
+byte := MfByte.Parse(Parms)
+MsgBox % byte.Value

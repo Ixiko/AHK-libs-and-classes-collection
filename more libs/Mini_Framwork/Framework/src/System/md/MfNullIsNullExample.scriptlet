@@ -1,0 +1,46 @@
+; MfChar Instances and MfNull.IsNull()
+ch1 := new MfChar("0x0000")
+ch2 := new MfChar("")
+ch3 := new MfChar()
+ch4 := new MfChar(" ") ; char is a space
+ch5 := new MfChar(0) ; char is latin1 zero - CharCode of 0x0030
+
+MfNull.IsNull(ch1) ; returns true
+MfNull.IsNull(ch2) ; returns true
+MfNull.IsNull(ch3) ; returns true
+MfNull.IsNull(ch4) ; returns false
+MfNull.IsNull(ch5) ; returns false
+
+; MfString Instances and MfNull.IsNull()
+str1 := new MfString() ; empty string
+str2 := new MfString("")
+str3 := new MfString(MfString.Empty)
+str4 := new MfString(" ") ; str4.Value is a space
+MfNull.IsNull(str1) ; returns true
+MfNull.IsNull(str2) ; returns true
+MfNull.IsNull(str3) ; returns true
+MfNull.IsNull(str4) ; returns false
+MfNull.IsNull(MfString.Empty) ; return true
+
+; other objects and vars
+o := ""
+p := MfNull.Null
+q := MfNull.Null.Value
+r := Object()
+s := MfInteger ; non instance of MfInteger
+t := new MfInteger(10)
+u := 10
+v := "abc"
+w := 0
+x := "0"
+
+MfNull.IsNull(o) ; returns true
+MfNull.IsNull(p) ; returns true
+MfNull.IsNull(q) ; returns true
+MfNull.IsNull(r) ; returns false
+MfNull.IsNull(s) ; returns true
+MfNull.IsNull(t) ; returns false
+MfNull.IsNull(u) ; returns false
+MfNull.IsNull(v) ; returns false
+MfNull.IsNull(w) ; returns false
+MfNull.IsNull(x) ; returns false

@@ -1,0 +1,42 @@
+; Wait for the user to press any key.  Keys that produce no visible character -- such as
+; the modifier keys, function keys, and arrow keys -- are listed as end keys so that they
+; will be detected too.
+SingleKey := Mfunc.Input("L1", "{LControl}{RControl}{LAlt}{RAlt}{LShift}{RShift}{LWin}{RWin}{AppsKey}{F1}{F2}{F3}{F4}{F5}{F6}{F7}{F8}{F9}{F10}{F11}{F12}{Left}{Right}{Up}{Down}{Home}{End}{PgUp}{PgDn}{Del}{Ins}{BS}{Capslock}{Numlock}{PrintScreen}{Pause}")
+
+; This is a working hotkey example.  Since the hotkey has the tilde (~)
+; prefix, its own keystroke will pass through to the active window.
+; Thus, if you type [btw (or one of the other match
+; phrases) in any editor, the script will automatically perform an
+; action of your choice (such as replacing the typed text):
+
+~[::
+UserInput := Mfunc.Input("V T5 L4 C", "{enter}.{esc}{tab}", "btw", "otoh" , "fl", "ahk", "ca")
+if (ErrorLevel = "Max")
+{
+    MsgBox, You entered "%UserInput%", which is the maximum length of text.
+    return
+}
+if (ErrorLevel = "Timeout")
+{
+    MsgBox, You entered "%UserInput%" at which time the input timed out.
+    return
+}
+if (ErrorLevel = "NewInput")
+    return
+If InStr(ErrorLevel, "EndKey:")
+{
+    MsgBox, You entered "%UserInput%" and terminated the input with %ErrorLevel%.
+    return
+}
+; Otherwise, a match was found.
+if (UserInput = "btw")
+    Send, {backspace 4}by the way
+else if (UserInput = "otoh")
+    Send, {backspace 5}on the other hand
+else if (UserInput = "fl")
+    Send, {backspace 3}Florida
+else if (UserInput = "ca")
+    Send, {backspace 3}California
+else if (UserInput = "ahk")
+    Run, http://ahkscript.org
+return

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>ObjCSV_ListView2Collection()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>ObjCSV_ListView2Collection()</h1>
+<p>Transfer the selected lines of the selected columns of a ListView to a collection of objects. Lines are transfered in the order they appear in the ListView. Column headers are used as objects keys.</p>
+
+<pre class="Syntax">ObjCSV_ListView2Collection([strGuiID = &quot;&quot;, strListViewID = &quot;&quot;, strFieldOrder = &quot;&quot;, strFieldDelimiter = &quot;,&quot;, strEncapsulator = &quot;&quot;&quot;&quot;, intProgressType = 0, strProgressText = &quot;&quot;])</pre>
+<h3>Parameters</h4>
+<table class="info">
+<tr>
+  <td width="15%">strGuiID</td>
+  <td width="85%">(Optional) Name of the Gui that contains the ListView where is the data to transfer. If empty, the last default Gui is used. Empty by default. NOTE: If a Gui name is provided, this Gui will remain the default Gui at the termination of the function.</td>
+</tr>
+<tr>
+  <td width="15%">strListViewID</td>
+  <td width="85%">(Optional) Name of the target ListView where is the data to transfer. If empty, the last default ListView is used. If one or more rows in the ListView are selected, only these rows will be inserted in the collection. Empty by default. NOTE: If a ListView name is provided, this ListView will remain the default at the termination of the function.</td>
+</tr>
+<tr>
+  <td width="15%">strFieldOrder</td>
+  <td width="85%">(Optional) Name of the fields (or ListView columns) to insert in the collection records. Names are separated by the strFieldDelimiter character (see below). If empty, all fields are transfered. Empty by default.</td>
+</tr>
+<tr>
+  <td width="15%">strFieldDelimiter</td>
+  <td width="85%">(Optional) Delimiter of the fields in the strFieldOrder parameter. One character, usually comma, but can also be tab, semi-colon, pipe (|), space, etc. Comma by default.</td>
+</tr>
+<tr>
+  <td width="15%">strEncapsulator</td>
+  <td width="85%">(Optional) One character (usualy double-quote) possibly used in the in the strFieldOrder string to embed fields data or field names that would include special characters (as described above).</td>
+</tr>
+<tr>
+  <td width="15%">intProgressType</td>
+  <td width="85%">(Optional) If 1, a progress bar is displayed. If -1, -2 or -n, the part &quot;n&quot; of the status bar is updated with the progress in percentage. See also strProgressText below. By default, no progress bar or status (0).</td>
+</tr>
+<tr>
+  <td width="15%">strProgressText</td>
+  <td width="85%">(Optional) Text to display in the progress bar or in the status bar. For status bar progress, the string &quot;##&quot; is replaced with the percentage of progress. See also intProgressType above. Empty by default.</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<p>This functions returns an object that contains a collection (or array of objects). See ObjCSV_CSV2Collection returned value for details.</p>
+
+</body>
+</html>

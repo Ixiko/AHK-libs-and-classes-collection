@@ -1,0 +1,22 @@
+; in this example result will contain 1 for true
+str := new MfString("true")
+bool := new MfBool()
+if (MfBool.TryParse(bool, str))
+{
+	result := bool.Value
+} else {
+	result := "Not Found"
+}
+MsgBox Result:%result% ; Displays Result:1
+
+
+; in this example result will contain 0 for false
+str := "false"
+bool := true
+if (MfBool.TryParse(bool, str))
+{
+	result := bool
+} else {
+	result := "Not Found"
+}
+MsgBox Result:%result% ; Displays Result:0

@@ -1,0 +1,13 @@
+Var = 11.333333
+Mfunc.SetFormat("float", 6.2)
+Var -= 1  ; Sets Var to be 10.33 with one leading space because the total width is 6.
+Mfunc.SetFormat("float", 0.2)
+Var += 1  ; Sets Var to be 11.33 with no leading spaces.
+Mfunc.SetFormat("float", 06.0)
+Var += 0  ; Sets Var to be 000011
+
+; Convert a decimal integer to hexadecimal:
+Mfunc.SetFormat("IntegerFast", "hex")
+Var += 0  ; Sets Var (which previously contained 11) to be 0xb.
+Var .= ""  ; Necessary due to the "fast" mode.
+Mfunc.SetFormat("IntegerFast", "d")

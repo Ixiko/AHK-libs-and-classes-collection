@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>ObjCSV_Collection2ListView()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>ObjCSV_Collection2ListView()</h1>
+<p>Transfer the selected fields from a collection of objects to ListView. The collection can be sorted by the function. Field names taken from the objects keys are used as header for the ListView. NOTE-1: Due to an AHK limitation, files with more that 200 fields will not be transfered to a ListView. NOTE-2: Although up to 8191 characters of text can be stored in each cell of a ListView, only the first 260 characters are displayed (no lost data under 8192 characters).</p>
+
+<pre class="Syntax">ObjCSV_Collection2ListView(objCollection [, strGuiID = &quot;&quot;, strListViewID = &quot;&quot;, strFieldOrder = &quot;&quot;, strFieldDelimiter = &quot;,&quot;, strEncapsulator = &quot;&quot;&quot;&quot;, strSortFields = &quot;&quot;, strSortOptions = &quot;&quot;, intProgressType = 0, strProgressText = &quot;&quot;])</pre>
+<h3>Parameters</h4>
+<table class="info">
+<tr>
+  <td width="15%">objCollection</td>
+  <td width="85%">Object containing an array of objects (or collection). Objects in the collection are associative arrays which contain a list key-value pairs. See ObjCSV_CSV2Collection returned value for details. NOTE: Multi-line fields can be inserted in a ListView and retreived from a ListView. However, take note that end-of-lines will not be visible in cells with current version of AHK_L (v1.1.09.03).</td>
+</tr>
+<tr>
+  <td width="15%">strGuiID</td>
+  <td width="85%">(Optional) Name of the Gui that contains the ListView where the collection will be displayed. If empty, the last default Gui is used. Empty by default. NOTE: If a Gui name is provided, this Gui will remain the default Gui at the termination of the function.</td>
+</tr>
+<tr>
+  <td width="15%">strListViewID</td>
+  <td width="85%">(Optional) Name of the target ListView where the collection will be displayed. If empty, the last default ListView is used. The target ListView should be empty or should contain data in the same columns number and order than the data to display. If this is not respected, new columns will be added to the right of existing columns and new rows will be added at the bottom of existing data. Empty by default. NOTE-1: Performance is greatly improved if we provide the ListView ID because we avoid redraw during import. NOTE-2: If a ListView name is provided, this ListView will remain the default at the termination of the function.</td>
+</tr>
+<tr>
+  <td width="15%">strFieldOrder</td>
+  <td width="85%">(Optional) List of field to include in the ListView and the order of these columns. Fields names must be separated by the strFieldDelimiter character. If empty, all fields are included. Empty by default.</td>
+</tr>
+<tr>
+  <td width="15%">strFieldDelimiter</td>
+  <td width="85%">(Optional) Delimiter of the fields in the strFieldOrder parameter. One character, usually comma, but can also be tab, semi-colon, pipe (|), space, etc. Comma by default.</td>
+</tr>
+<tr>
+  <td width="15%">strEncapsulator</td>
+  <td width="85%">(Optional) One character (usualy double-quote) possibly used in the in the strFieldOrder string to embed fields that would include special characters (as described above).</td>
+</tr>
+<tr>
+  <td width="15%">strSortFields</td>
+  <td width="85%">(Optional) Field(s) value(s) used to sort the collection before its insertion in the ListView. To sort on more than one field, concatenate field names with the + character (e.g. &quot;LastName+FirstName&quot;). Faster sort can be obtained by manualy clicking on columns headers in the ListView after the collection has been inserted. Empty by default.</td>
+</tr>
+<tr>
+  <td width="15%">strSortOptions</td>
+  <td width="85%">(Optional) Sorting options to apply to the sort command above. A string of zero or more of the option letters (in any order, with optional spaces in between). Most frequently used are R (reverse order) and N (numeric sort). All AHK_L sort options are supported. See <a href="http://l.autohotkey.net/docs/commands/Sort.htm">http://l.autohotkey.net/docs/commands/Sort.htm</a> for more options. Empty by default.</td>
+</tr>
+<tr>
+  <td width="15%">intProgressType</td>
+  <td width="85%">(Optional) If 1, a progress bar is displayed. If -1, -2 or -n, the part &quot;n&quot; of the status bar is updated with the progress in percentage. See also strProgressText below. By default, no progress bar or status (0).</td>
+</tr>
+<tr>
+  <td width="15%">strProgressText</td>
+  <td width="85%">(Optional) Text to display in the progress bar or in the status bar. For status bar progress, the string &quot;##&quot; is replaced with the percentage of progress. See also intProgressType above. Empty by default.</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<p>At the end of execution, the function sets ErrorLevel to: 0 No error / 1 More than 200 columns.</p>
+
+</body>
+</html>

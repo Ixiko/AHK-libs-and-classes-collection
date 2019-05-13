@@ -1,0 +1,25 @@
+Mfunc.FileCopy("C:\My Documents\List1.txt", "D:\Main Backup\")  ; Make a copy but keep the orig. file name.
+Mfunc.FileCopy("C:\My File.txt", "C:\My File New.txt")  ; Copy a file into the same folder by providing a new name.
+Mfunc.FileCopy("C:\Folder1\*.txt", "D:\New Folder\*.bkp")  ; Copy to new location and give new extension.
+
+
+; The following example copies all files and folders inside a folder to a different folder:
+ErrorCount := CopyFilesAndFolders("C:\My Folder\*.*", "D:\Folder to receive all files & folders")
+if ErrorCount <> 0
+    MsgBox %ErrorCount% files/folders could not be copied.
+
+CopyFilesAndFolders(SourcePattern, DestinationFolder, DoOverwrite = false)
+; Copies all files and folders matching SourcePattern into the folder named DestinationFolder and
+; returns the number of files/folders that could not be copied.
+{
+    ; First copy all the files (but not the folders):
+    ErrorCount := FileCopy(SourcePattern, DestinationFolder, DoOverwrite)
+    ; Now copy all the folders:
+    Loop, %SourcePattern%, 2  ; 2 means "retrieve folders only".
+    {
+        ErrorCount += FileCopyDir(A_LoopFileFullPath, DestinationFolder . "\" . A_LoopFileName, DoOverwrite)
+        if ErrorLevel  ; Report each problem folder by name.
+            MsgBox Could not copy %A_LoopFileFullPath% into %DestinationFolder%.
+    }
+    return ErrorCount
+}

@@ -1,0 +1,39 @@
+str := new MfString("7")
+span := New MfTimeSpan(new MfInt64(0))
+
+if (MfTimeSpan.Parse(str)) {
+	MsgBox % span.ToString() ; Displays: 07.00:00:00
+} else {
+	MsgBox Unable to parse value
+}
+
+str.Value := "7:14"
+if (MfTimeSpan.Parse(str)) {
+	MsgBox % span.ToString() ; Displays: 07:14:00
+} else {
+	MsgBox Unable to parse value
+}
+
+if (MfTimeSpan.Parse("7.14:17")) {
+	MsgBox % span.ToString() ; Displays: 07:14:17
+} else {
+	MsgBox Unable to parse value
+}
+
+if (MfTimeSpan.Parse("7.14:17:41")) {
+	MsgBox % span.ToString() ; Displays: 07.14:17:41
+} else {
+	MsgBox Unable to parse value
+}
+
+if (MfTimeSpan.Parse("7.14:17:41.2434")) {
+	MsgBox % span.ToString() ; Displays: 07.14:17:41.2434000
+} else {
+	MsgBox Unable to parse value
+}
+
+if (MfTimeSpan.Parse("5.14:17:41.023")) {
+	MsgBox % span.ToString() ; Displays: 05.14:17:41.0230000
+} else {
+	MsgBox Unable to parse value
+}

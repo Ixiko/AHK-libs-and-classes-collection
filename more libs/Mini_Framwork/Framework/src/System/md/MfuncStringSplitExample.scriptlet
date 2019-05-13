@@ -1,0 +1,26 @@
+v := "String1,String2,String3"
+values := Mfunc.StringSplit(v, ",")
+vCount := Values.Count
+; recommend way to loop
+loop, %vCount%
+{
+	MsgBox % "Element number " . A_Index . " is " . values[A_Index]
+}
+
+; Loop using while method
+While (A_Index <= values.Count)
+{
+	MsgBox % "Element number " . A_Index . " is " . values[A_Index]
+}
+
+; the following may also be used to loop the array values
+; Because the Count has been added to the array and shows up as a element we must
+; make sure not to include the count field
+; count will always be the at the last index.
+for index, element in values
+{
+	if (index <= values.Count) { ; to avoid including the Count field we will make certain index is no more than the value of Count
+		 MsgBox % "Element number " . index . " is " . element
+	}
+   
+}

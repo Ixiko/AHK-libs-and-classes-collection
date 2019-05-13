@@ -1,0 +1,67 @@
+Mfunc.Run("Notepad.exe", "C:\My Documents", "max")
+
+Mfunc.Run("mailto:someone@domain.com?subject=This is the subject line&body=This is the message body's text.")
+Mfunc.Run("ReadMe.doc", , "Max UseErrorLevel") ; Launch maximized and don't display dialog if it fails.
+if ErrorLevel = ERROR
+    MsgBox The document could not be launched.
+
+Mfunc.RunWait(comspec . " /c dir c:\ >>c:\DirTest.txt", , "min")
+Mfunc.Run("c:\DirTest.txt")
+Mfunc.Run("properties c:\DirTest.txt")
+
+Mfunc.Run("http://www.google.com") ; i.e. any URL can be launched.
+Mfunc.Run("mailto:someone@somedomain.com")  ; This should open the default e-mail application.
+
+Mfunc.Run("::{20d04fe0-3aea-1069-a2d8-08002b30309d}") ; Opens the "My Computer" folder.
+Mfunc.Run("::{645ff040-5081-101b-9f08-00aa002f954e}")  ; Opens the Recycle Bin.
+
+; To run multiple commands consecutively, use "&&" between each:
+Mfunc.Run(comspec. " /c dir /b > C:\list.txt && type C:\list.txt && pause")
+
+
+; The following can be used to run a command and retrieve its output:
+MsgBox % RunWaitOne("dir " A_ScriptDir)
+
+; ...or run multiple commands in one go and retrieve their output:
+MsgBox % RunWaitMany("
+(
+echo Put your commands here,
+echo each one will be run,
+echo and you'll get the output.
+)")
+
+RunWaitOne(command) {
+    ; WshShell object: http://msdn.microsoft.com/en-us/library/aew9yb99
+    shell := ComObjCreate("WScript.Shell")
+    ; Execute a single command via cmd.exe
+    exec := shell.Exec(ComSpec " /C " command)
+    ; Read and return the command's output
+    return exec.StdOut.ReadAll()
+}
+
+RunWaitMany(commands) {
+    shell := ComObjCreate("WScript.Shell")
+    ; Open cmd.exe with echoing of commands disabled
+    exec := shell.Exec(ComSpec " /Q /K echo off")
+    ; Send the commands to execute, separated by newline
+    exec.StdIn.WriteLine(commands "`nexit")  ; Always exit at the end!
+    ; Read and return the output of all commands
+    return exec.StdOut.ReadAll()
+}
+
+
+; ExecScript: Executes the given code as a new AutoHotkey process.
+ExecScript(Script, Wait:=true)
+{
+    shell := ComObjCreate("WScript.Shell")
+    exec := shell.Exec("AutoHotkey.exe /ErrorStdOut *")
+    exec.StdIn.Write(script)
+    exec.StdIn.Close()
+    if Wait
+        return exec.StdOut.ReadAll()
+}
+
+; Example:
+InputBox expr,, Enter an expression to evaluate as a new script.,,,,,,,, Asc("*")
+result := ExecScript("FileAppend % (" expr "), *")
+MsgBox % "Result: " result

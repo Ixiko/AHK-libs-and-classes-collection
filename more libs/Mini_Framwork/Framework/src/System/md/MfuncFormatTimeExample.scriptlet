@@ -1,0 +1,49 @@
+TimeString := Mfunc.FormatTime()
+MsgBox The current time and date (time first) is %TimeString%.
+
+TimeString := Mfunc.FormatTime("R")
+MsgBox The current time and date (date first) is %TimeString%.
+
+TimeString := Mfunc.FormatTime(, "Time")
+MsgBox The current time is %TimeString%.
+
+TimeString := Mfunc.FormatTime( "T12", "Time")
+MsgBox The current 24-hour time is %TimeString%.
+
+TimeString := Mfunc.FormatTime(, "LongDate")
+MsgBox The current date (long format) is %TimeString%.
+
+TimeString := Mfunc.FormatTime("20050423220133", "dddd MMMM d, yyyy hh:mm:ss tt")
+MsgBox The specified date and time, when formatted, is %TimeString%.
+
+TimeString := Mfunc.FormatTime("200504", "'Month Name': MMMM`n'Day Name': dddd")
+MsgBox %TimeString%
+
+YearWeek := Mfunc.FormatTime("20050101", "YWeek")
+MsgBox January 1st of 2005 is in the following ISO year and week number: %YearWeek%
+
+; Change the date-time stamp of a file:
+FileName := Mfunc.FileSelectFile(3,, "Pick a file")
+if FileName =  ; The user didn't pick a file.
+    return
+FileTime := Mfunc.FileGetTime(FileName)
+FileTime := Mfunc.FormatTime(FileTime)   ; Since the last parameter is omitted, the long date and time are retrieved.
+MsgBox The selected file was last modified at %FileTime%.
+
+; The following function converts the specified number of seconds into the corresponding
+; number of hours, minutes, and seconds (hh:mm:ss format).
+
+MsgBox % FormatSeconds(7384)  ; 7384 = 2 hours + 3 minutes + 4 seconds. It yields: 2:03:04
+
+FormatSeconds(NumberOfSeconds)  ; Convert the specified number of seconds to hh:mm:ss format.
+{
+    time = 19990101  ; *Midnight* of an arbitrary date.
+    time += %NumberOfSeconds%, seconds
+    mmss := Mfunc.FormatTime(time, "mm:ss")
+    return NumberOfSeconds//3600 ":" mmss
+    /*
+    ; Unlike the method used above, this would not support more than 24 hours worth of seconds:
+    ; hmmss := Mfunc.FormatTime(time, "h:mm:ss")
+    ; return hmmss
+    */
+}

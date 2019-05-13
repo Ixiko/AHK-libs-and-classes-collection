@@ -1,0 +1,29 @@
+; Input of true parses to 1
+; input of True parses to 1
+; input of false parses to 0
+; input of abc resuts in an error
+; leading and trailing spaces are allowed
+try {
+    InputBox, myInput, Enter value, Enter a true or false to parse!
+    if (MfNull.IsNull(myInput))
+    {
+        MsgBox Sorry no input!
+    } else {
+        bool := MfBool.Parse(myInput)
+        MsgBox My boolean is:%bool%
+    }
+} catch e {
+    MsgBox, 8240, Error, % "An error has occured!`r`n" . e.Message
+}
+ExitApp
+
+; Example using MfParams and adding ReturnAsObject to MfParams.Data
+; this example passes MfParams into MfBool.Parse method with
+; Data Key of ReturnAsObject. This cause MfBool.Parse to return is value
+; as an instance of MfBool rather then the default of a var containing boolean.
+pStr := "true"
+Parms := new MfParams()
+Parms.AddString(pStr)
+Parms.Data.Add("ReturnAsObject",true)
+boolObj := MfBool.Parse(Parms)
+MsgBox % boolObj.Value

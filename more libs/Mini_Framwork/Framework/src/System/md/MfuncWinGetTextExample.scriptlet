@@ -1,0 +1,4 @@
+Mfunc.Run("Calc.exe")
+WinWait, Calculator
+text := Mfunc.WinGetText() ; The window found above will be used.
+MsgBox, The text is:`n%text%

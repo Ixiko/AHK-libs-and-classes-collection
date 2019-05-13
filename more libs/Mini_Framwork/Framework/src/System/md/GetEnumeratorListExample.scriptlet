@@ -1,0 +1,20 @@
+MyList := new MfList()
+loop, 10
+{
+	MyList.Add("MyItem" . A_Index)
+}
+MyEnum := MyList.GetEnumerator()
+t := ""
+While MyEnum.Next(k, v)
+{
+	t .= k "=" v "`n"
+}
+MsgBox % t
+
+; alternatively we can do this
+t := ""
+for k, v in MyList
+{
+	t .= k "=" v "`n"
+}
+MsgBox % t

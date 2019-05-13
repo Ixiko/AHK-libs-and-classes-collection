@@ -1,0 +1,20 @@
+MyStack := new MfStack()
+loop, 10
+{
+	MyStack.Push("Hello World " . A_Index)
+}
+MyEnum := MyStack.GetEnumerator()
+t := ""
+While MyEnum.Next(k, v)
+{
+	t .= k "=" v "`n"
+}
+MsgBox % t
+
+; alternatively we can do this
+t := ""
+for k, v in MyStack
+{
+	t .= k "=" v "`n"
+}
+MsgBox % t

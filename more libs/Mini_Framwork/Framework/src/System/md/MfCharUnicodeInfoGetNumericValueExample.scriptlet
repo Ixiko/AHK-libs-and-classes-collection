@@ -1,0 +1,43 @@
+var := MfCharUnicodeInfo.GetNumericValue(1)
+MsgBox %var% ; displays 1 as it is taken as literal same as MfChar.GetNumericValue("0x0031")
+
+var := MfCharUnicodeInfo.GetNumericValue("0x0033") ; valid range is 0x0000 to 0xFFFF
+MsgBox %var% ; displays 3 as it is taken as literal same as MfChar.GetNumericValue("0x0033")
+
+var := MfCharUnicodeInfo.GetNumericValue("a") ; 'a' has no Unicode Numberi value
+MsgBox %var% ; displays -1 as it is taken as literal same as MfChar.GetNumericValue("0x0061")
+
+var := MfCharUnicodeInfo.GetNumericValue("0x0F33") ; '0x0F33' TIBETAN DIGIT HALF ZERO
+MsgBox %var% ; displays -0.5
+
+myInt := new MfInteger(0x0F33) ; same as new MfInteger(3891)
+var := MfCharUnicodeInfo.GetNumericValue(myInt) ; '0x0F33' TIBETAN DIGIT HALF ZERO
+MsgBox %var% ; displays -0.5
+
+HexChar := 0x0F33 ; Decimal value is 3891 - (TIBETAN DIGIT HALF ZERO) has a Unicode Numeric Value of -0.5
+strHexChar := "0x0F33" ; string of hex value, valid range is 0x0000 to 0xFFFF
+
+var := MfCharUnicodeInfo.GetNumericValue(strHexChar) ; '0x0F33' TIBETAN DIGIT HALF ZERO
+MsgBox %var% ; displays -0.5
+
+var := MfCharUnicodeInfo.GetNumericValue(HexChar) ; hex char is not a string contain hex value and will not work
+MsgBox %var% ; displays -1
+
+var := MfCharUnicodeInfo.GetNumericValue("Hello World 2015", 12)
+MsgBox %var% ; displays 2 - zero based index put 12 at the position of 2 in 2015
+
+var := MfCharUnicodeInfo.GetNumericValue("Hello World 2015", 15)
+MsgBox %var% ; displays 5 - zero based index put 15 at the position of 5 in 2015
+
+myStr := new MfString("Hello world 2015")
+myInt := new MfInteger(15)
+var := MfCharUnicodeInfo.GetNumericValue(myStr, myInt)
+MsgBox %var% ; displays 5 - zero based index put 15 at the position of 5 in 2015
+
+myChar := new MfChar("8")
+var := MfCharUnicodeInfo.GetNumericValue(myChar)
+MsgBox %var% ; displays 8
+
+myChar := new MfChar(new MfInteger(0x0F33)) ; '0x0F33' TIBETAN DIGIT HALF ZERO
+var := MfCharUnicodeInfo.GetNumericValue(myChar)
+MsgBox %var% ; displays -0.5

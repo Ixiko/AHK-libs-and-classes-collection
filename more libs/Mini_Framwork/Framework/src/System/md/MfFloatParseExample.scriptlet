@@ -1,0 +1,30 @@
+; Input of 10.1 parses to 10.100000
+; input of -15 parses to -15.000000
+; input of 0060089.00099 parses to 60089.000990
+; input of abc resuts in an error
+; leading and trailing spaces are allowed
+try {
+	InputBox, myInput, Enter value, Enter a number to parse!
+	if (MfNull.IsNull(myInput)) {
+		MsgBox Sorry no input!
+	} else {
+		oflt := MfFloat.Parse(myInput)
+		MsgBox My Float Number is:%oflt%
+	}
+} catch e {
+	MsgBox, 8240, Error, % "An error has occured!`r`n" . e.Message
+}
+ExitApp
+
+; Example using MfParams and adding ReturnAsObject and a Format value to MfParams.Data
+; this example passes MfParams into MfFloat.Parse method with
+; Data Key of ReturnAsObject. This cause MfFloat.Parse to return is value
+; as an instance of MfFloat rather then the default of a var containing float.
+; Data Key of Format with a valid format will cause the float to be formated
+pStr := "33.5"
+Parms := new MfParams()
+Parms.AddString(pStr)
+Parms.Data.Add("ReturnAsObject",true)
+Parms.Data.Add("Format","0.2")
+oflt := MfFloat.Parse(Parms)
+MsgBox % oflt.Value ; displays 33.50

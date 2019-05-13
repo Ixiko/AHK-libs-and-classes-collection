@@ -1,0 +1,14 @@
+OutputVar := Mfunc.RegRead("HKEY_LOCAL_MACHINE", "SOFTWARE\Microsoft\Windows\CurrentVersion", "ProgramFilesDir")
+MsgBox, Program files are in: %OutputVar%
+
+; The following example retrieves  the TYPE of a registry value (e.g. REG_SZ or REG_DWORD).
+MsgBox % RegKeyType("HKCU", "Environment", "TEMP")
+return
+
+RegKeyType(RootKey, SubKey, ValueName)  ; This function returns the type of the specified value.
+{
+    Loop, %RootKey%, %SubKey%
+        if (A_LoopRegName = ValueName)
+            return A_LoopRegType
+    return "Error"
+}

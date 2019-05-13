@@ -1,0 +1,30 @@
+if (Mfunc.IfIn(var, "exe,bat,com")) {
+	MsgBox The file extension is an executable type.
+}
+
+if (Mfunc.IfIn(var, "1,2,3,5,7,11")) { ; Avoid spaces in list.
+	MsgBox %var% is a small prime number.
+}
+
+if (Mfunc.IfContains(var, "1,3")) { ; Note that it compares the values as strings, not numbers.
+	MsgBox Var contains the digit 1 or 3 (Var could be 1, 3, 10, 21, 23, etc.)
+}
+
+if (Mfunc.IfIn(var, MyItemList)) { ; Avoid spaces in list.
+	MsgBox %var% is in the list.
+}
+
+
+InputBox, UserInput, Enter YES or NO
+if (!Mfunc.IfIn(UserInput, "yes,no")) {
+	MsgBox Your input is not valid.
+}
+
+
+WinGetTitle, active_title, A
+if (Mfunc.IfContains(active_title, "Address List.txt,Customer List.txt")) { ; Note that it compares the values as strings, not numbers.
+	MsgBox One of the desired windows is active.
+}
+if (!Mfunc.IfContains(active_title, "metapad,Notepad")) { ; Note that it compares the values as strings, not numbers.
+	MsgBox But the file is not open in either Metapad or Notepad.
+}

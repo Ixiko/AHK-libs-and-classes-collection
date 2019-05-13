@@ -1,0 +1,6 @@
+try {
+	OutputVar := Mfunc.ControlGetFocus("Untitled - Notepad")
+	MsgBox, Control with focus = %OutputVar%
+} catch e {
+	MsgBox, The target window doesn't exist or none of its controls has input focus.
+}

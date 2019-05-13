@@ -1,0 +1,43 @@
+var := MfChar.GetDecimalDigitValue(1)
+MsgBox %var% ; displays 1 as it is taken as literal same as MfChar.GetDecimalDigitValue("0x0031")
+
+var := MfChar.GetDecimalDigitValue("0x0033") ; valid range is 0x0000 to 0xFFFF
+MsgBox %var% ; displays 3 as it is taken as literal same as MfChar.GetDecimalDigitValue("0x0033")
+
+var := MfChar.GetDecimalDigitValue("a") ; 'a' has no Unicode Number value
+MsgBox %var% ; displays -1 as it is taken as literal same as MfChar.GetDecimalDigitValue("0x0061")
+
+var := MfChar.GetDecimalDigitValue("0x0F33") ; '0x0F33' TIBETAN DIGIT HALF ZERO
+MsgBox %var% ; displays -1 does not have a Digit Value
+
+myInt := new MfInteger(0x2788) ; same as new MfInteger(10120)
+var := MfChar.GetDecimalDigitValue(myInt) ; '0x2788' CIRCLED SANS-SERIF DIGIT NINE
+MsgBox %var% ; displays -1
+
+HexChar := 0x0BEF ; Decimal value is 3055 - (TAMIL DIGIT NINE)
+strHexChar := "0x0BEF" ; string of hex value, valid range is 0x0000 to 0xFFFF
+
+var := MfChar.GetDecimalDigitValue(strHexChar) ; '0x0BEF' TAMIL DIGIT NINE
+MsgBox %var% ; displays 9
+
+var := MfChar.GetDecimalDigitValue(HexChar) ; hex char is not a string contain hex value and will not work
+MsgBox %var% ; displays -1
+
+var := MfChar.GetDecimalDigitValue("Hello World 2015", 12)
+MsgBox %var% ; displays 2 - zero based index put 12 at the position of 2 in 2015
+
+var := MfChar.GetDecimalDigitValue("Hello World 2015", 15)
+MsgBox %var% ; displays 5 - zero based index put 15 at the position of 5 in 2015
+
+myStr := new MfString("Hello world 2015")
+myInt := new MfInteger(15)
+var := MfChar.GetDecimalDigitValue(myStr, myInt)
+MsgBox %var% ; displays 5 - zero based index put 15 at the position of 5 in 2015
+
+myChar := new MfChar("8")
+var := MfChar.GetDecimalDigitValue(myChar)
+MsgBox %var% ; displays 8
+
+myChar := new MfChar(new MfInteger(0x0BEF)) ; '0x0BEF' TAMIL DIGIT NINE
+var := MfChar.GetDecimalDigitValue(myChar)
+MsgBox %var% ; displays 9

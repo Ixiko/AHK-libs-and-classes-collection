@@ -1,0 +1,20 @@
+MyCol := new MfCollection()
+loop, 10
+{
+	MyCol.Add("MyItem" . A_Index)
+}
+MyEnum := MyCol.GetEnumerator()
+t := ""
+While MyEnum.Next(k, v)
+{
+	t .= k "=" v "`n"
+}
+MsgBox % t
+
+; alternatively we can do this
+t := ""
+for k, v in MyCol
+{
+	t .= k "=" v "`n"
+}
+MsgBox % t

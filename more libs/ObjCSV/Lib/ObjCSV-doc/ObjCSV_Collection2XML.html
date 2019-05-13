@@ -1,0 +1,57 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>ObjCSV_Collection2XML()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>ObjCSV_Collection2XML()</h1>
+<p>Builds an XML file from the content of the collection. The calling script must ensure that field names and field data comply with the rules of XML syntax. This simple example, where each record has two fields named &quot;Field1&quot; and &quot;Field2&quot;, shows the XML output format:</p>
+<pre class="NoIndent">&lt;?xml version='1.0'?&gt;
+&lt;XMLExport&gt;
+  &lt;Record&gt;
+    &lt;Field1&gt;Value Row 1 Col 1&lt;/Field1&gt;
+    &lt;Field2&gt;Value Row 1 Col 2&lt;/Field1&gt;
+  &lt;/Record&gt;
+  &lt;Record&gt;
+    &lt;Field1&gt;Value Row 2 Col 1&lt;/Field1&gt;
+    &lt;Field2&gt;Value Row 2 Col 2&lt;/Field1&gt;
+  &lt;/Record&gt;
+&lt;/XMLExport&gt;</pre>
+
+<pre class="Syntax">ObjCSV_Collection2XML(objCollection, strFilePath [, intProgressType = 0, blnOverwrite = 0, strProgressText = &quot;&quot;, strFileEncoding := &quot;&quot;])</pre>
+<h3>Parameters</h4>
+<table class="info">
+<tr>
+  <td width="15%">objCollection</td>
+  <td width="85%">Object containing an array of objects (or collection). Objects in the collection are associative arrays which contain a list key-value pairs. See ObjCSV_CSV2Collection returned value for details.</td>
+</tr>
+<tr>
+  <td width="15%">strFilePath</td>
+  <td width="85%">The name of the XML file, which is assumed to be in %A_WorkingDir% if an absolute path isn't specified.</td>
+</tr>
+<tr>
+  <td width="15%">intProgressType</td>
+  <td width="85%">(Optional) If 1, a progress bar is displayed. If -1, -2 or -n, the part &quot;n&quot; of the status bar is updated with the progress in percentage. See also strProgressText below. By default, no progress bar or status (0).</td>
+</tr>
+<tr>
+  <td width="15%">blnOverwrite</td>
+  <td width="85%">(Optional) If true (or 1), overwrite existing files. If false (or 0) and the output file exists, the function ends without writing the output file. False (or 0) by default.</td>
+</tr>
+<tr>
+  <td width="15%">strProgressText</td>
+  <td width="85%">(Optional) Text to display in the progress bar or in the status bar. For status bar progress, the string &quot;##&quot; is replaced with the percentage of progress. See also intProgressType above. Empty by default.</td>
+</tr>
+<tr>
+  <td width="15%">strFileEncoding</td>
+  <td width="85%">(Optional) File encoding: ANSI, UTF-8, UTF-16, UTF-8-RAW, UTF-16-RAW or CPnnnn (a code page with numeric identifier nnn - see <a href="https://autohotkey.com/docs/commands/FileEncoding.htm">https://autohotkey.com/docs/commands/FileEncoding.htm</a>). Empty by default (system default ANSI code page).</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<p>At the end of execution, the function sets ErrorLevel to: 0 No error / 1 File system error / 2 File exists and should not be overwritten. For system errors, check A_LastError and google &quot;windows system error codes&quot;.</p>
+
+</body>
+</html>

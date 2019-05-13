@@ -1,0 +1,15 @@
+; This is a working example script.
+folder := Mfunc.FileSelectFolder(, , 3, "Pick a drive to analyze:")
+if (MfNull.IsNull(folder)) {
+	return
+}
+
+list := Mfunc.DriveGet("list")
+cap := Mfunc.DriveGet("capacity", folder)
+free := Mfunc.DrivespaceFree(folder)
+fs := Mfunc.DriveGet("fs", folder)
+label := Mfunc.DriveGet("label", folder)
+serial := Mfunc.DriveGet("serial", folder)
+type := Mfunc.DriveGet("type", folder)
+status := Mfunc.DriveGet("status", folder)
+MsgBox All Drives: %list%`nSelected Drive: %folder%`nDrive Type: %type%`nStatus: %status%`nCapacity: %cap% M`nFree Space: %free% M`nFilesystem: %fs%`nVolume Label: %label%`nSerial Number: %serial%

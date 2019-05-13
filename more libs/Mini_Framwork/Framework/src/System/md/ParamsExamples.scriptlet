@@ -1,0 +1,83 @@
+; Example constructor
+p := new Params("Hello World")  ; Creates new instance of Params and add String object containg "Hello World"
+strObj := p.Item[0] ; strObj now contains an instance of String object
+MsgBox % strObj.Value ; displays Hello World
+MsgBox % p.ToString() ; Displays String
+
+; Example using Primitives
+intObj := new MfInteger(10)
+strObj := new MfString("Hello World")
+chrObj := new MfChar("%")
+p := new MfParams(intObj, strObj, chrObj)
+MsgBox % p.ToString() ; Displays Integer,String,Char
+MyFunc(p)
+
+; Example Using Add...
+p := new MfParams()
+p.AddInteger(10)
+p.AddString("Hello World")
+p.AddChar("%")
+MsgBox % p.ToString() ; Displays Integer,String,Char
+MyFunc(p)
+
+; Example using Data
+; this example passes MfParams into MfInteger.Parse method with
+; Data Key of ReturnAsObject. This cause MfInteger.Parse to return is value
+; as an instance of MfInteger rather then the default of a var containing integer.
+pStr := "33"
+Parms := new MfParams()
+Parms.AddString(pStr)
+Parms.Data.Add("ReturnAsObject",true)
+int := MfInteger.Parse(Parms)
+MsgBox % int.Value
+
+; Example constructor using MfParams static Primitave generators
+; Create a new instance of MfParams
+; add Integer, String, Char in the constructor
+p := new MfParams(MfParams.I(10),MfParams.S("Hello World"),MfParams.C("%"))
+MsgBox % p.ToString() ; Displays: MfInteger,MfString,MfChar
+MyFunc(p)
+
+; Example AddRange using MfParams static Primitave generators
+p := new MfParams() ; create a new instance of MfParams
+p.AddRange(MfParams.I(10),MfParams.S("Hello World"),MfParams.C("%"))
+MsgBox % p.ToString() ; Displays Integer,String,Char
+MyFunc(p)
+
+; Example function
+MyFunc(p) {
+	if (!MfObject.IsObjInstance(p, MfParams)) { ; Check to see if this is a valid MfParams instance object
+		Ex := new MfArgumentException("Invalid Argument. Expected intance of MfParams","p")
+		Ex.Source := A_ThisFunc
+		Ex.File := A_LineFile
+		Ex.Line := A_LineNumber
+		throw Ex
+	}
+	strParams := p.ToString()
+	retval := "unknown"
+	if (strParams = "MfString") {
+		str := p.GetValue(0) ; get the first item in the params
+		retval := str
+	} else if (strParams = "MfString,MfInteger") {
+		str := p.GetValue(0) ; get the first item in the params
+		int := p.GetValue(1) ; get the second item in the params
+		retval := "String:" . str . " Integer:" . int
+	} else if (strParams = "MfString,MfString") {
+		strObjA := p.Item[0] ; get the first object which is a String Object
+		strObjA := p.Item[1] ; get the second object which is a String Object
+		retval := MfString.Format("StringA:{0}\nStringB:{1}",strObjA.Value, strObjB.Value)
+	} else if (strParams = "MfString,MfChar") {
+		str := p.GetValue(0) ; get the first item in the params
+		strCh := p.GetValue(1) ; get the second item in the params
+		retval := MfString.Format("String:{0}\nChar:{1}",str, strCh)
+	} else if (strParams = "MfInteger,MfString,MfChar") {
+		retval = MfString.Format("Integer:{0}\nString:{1}\nChar:{1}", p.Item[0].Value, p.Item[1].Value, p.Item[2].Value)
+	}
+	MsgBox % retval
+	if (p.Data["obj"] = false) { ; optionally return different value using Data Property
+		retval := v
+	} else {
+		retval := new MfString(v)
+	}
+	return retval
+}

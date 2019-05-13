@@ -1,0 +1,34 @@
+; Example #1: Maximize the active window and report its unique ID:
+WinGet, active_id, ID, A
+WinMaximize, ahk_id %active_id%
+MsgBox, The active window's ID is "%active_id%".
+
+; Example #2: This will visit all windows on the entire system and display info about each of them:
+Id := Mfunc.WinGet("list",,, "Program Manager")
+Loop, %id%
+{
+    this_id := id%A_Index%
+    Mfunc.WinActivate("ahk_id" . this_id)
+    this_class := Mfunc.WinGetClass("ahk_id" . this_id)
+    this_title := Mfunc.WinGetTitle("ahk_id" . this_id)
+    MsgBox, 4, , Visiting All Windows`n%a_index% of %id%`nahk_id %this_id%`nahk_class %this_class%`n%this_title%`n`nContinue?
+    IfMsgBox, NO, break
+}
+
+; Example #3: Extract the individual control names from a ControlList:
+ActiveControlList := Mfunc.WinGet("ControlList", "A")
+Loop, Parse, ActiveControlList, `n
+{
+    MsgBox, 4,, Control #%a_index% is "%A_LoopField%". Continue?
+    IfMsgBox, No
+        break
+}
+
+; Example #4: Display in real time the active window's control list:
+#Persistent
+SetTimer, WatchActiveWindow, 200
+return
+WatchActiveWindow:
+ControlList := Mfunc.WinGet("ControlList", "A")
+ToolTip, %ControlList%
+return

@@ -1,0 +1,5 @@
+MyEdit := Mfunc.GuiControlGet(, "MyEdit")
+CtrlContents := Mfunc.GuiControlGet(, "MyEdit")  ; Same as the above except uses a non-default output variable.
+MyCheckbox1 := Mfunc.GuiControlGet(, "MyCheckbox1") ; Retrieves 1 if it is checked, 0 if it is unchecked.
+MyCheckbox1 := Mfunc.GuiControlGet(, "MyCheckbox1", "Text")  ; Retrieves the caption/text of the checkbox.
+Pic := Mfunc.GuiControlGet(, "Pos", "Static4") ; The position/size will be stored in PicX, PicY, PicW, and PicH

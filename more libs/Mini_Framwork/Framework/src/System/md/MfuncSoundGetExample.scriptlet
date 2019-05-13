@@ -1,0 +1,15 @@
+master_volume := Mfunc.SoundGet()
+MsgBox, Master volume is %master_volume% percent.
+
+master_mute := Mfunc.SoundGet( , "mute")
+MsgBox, Master Mute is currently %master_mute%.
+
+bass_level := Mfunc.SoundGet("Master", "bass")
+if ErrorLevel
+    MsgBox, Error Description: %ErrorLevel%
+else
+    MsgBox, The BASS level for MASTER is %bass_level% percent.
+
+microphone_mute := Mfunc.SoundGet("Microphone", "mute")
+if microphone_mute = Off
+    MsgBox, The microphone is not muted.

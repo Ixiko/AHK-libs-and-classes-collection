@@ -1,0 +1,18 @@
+c := new MfChar() ; create a new instance of MfChar class.
+c.CharCode := 0x0061
+var := c.Value
+MsgBox %var% ; displays a
+
+c.CharCode := 70
+c.ReturnAsObject := true ; return MfChar object instances on methods it applys to.
+var := c.Value
+MsgBox %var% ; displays F
+
+c.CharCode := 0x45 ; hex values inf formart of 0x#### are converted into the Unicode a character same as c.CharCode := "0x45"
+var := c.Value
+MsgBox %var% ; displays E
+
+i := new MfInteger(89) ; create new MfInteger instance
+c.CharCode := i ; Set MfInteger as Value and it is converted to char value
+var := c.Value
+MsgBox %var% ; displays Y
