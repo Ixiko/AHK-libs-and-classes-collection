@@ -1,0 +1,53 @@
+<SyntaxTree>
+	<alt id="tag">
+		<cons id="containingTag">
+			<val>&lt;</val>
+			<room id="tagName"><range>a-zA-Z\-</range></room>
+			<room id="openingTag" min="0">
+				<cons id="attribute">
+					<room id="attributeName"><range>a-zA-Z\-</range></room>
+					<val>=&quot;</val>
+					<room id="attributeValue"><nval>&quot;</nval></room>
+					<val>&quot;</val>
+				</cons>
+				<null />
+				<room id="mw"><range>\s</range></room>
+			</room>
+			<val>&gt;</val>
+			<alt id="elementContent"> 
+				<room id="tags">
+					<alt id="tag"/>
+					<null/>
+					<room id="mlw"><range>\s\R</range></room>
+				</room>
+				<room id="text">
+					<alt>
+						<cons id="escapeSequence">
+							<val>&amp;</val>
+							<room><nval>;</nval></room>
+							<val>;</val>
+						</cons>
+						<nval>&lt;</nval>
+					</alt>
+				</room>
+			</alt>
+			<cons id="closingTag">
+				<val>&lt;/</val>
+				<parrot>tagName</parrot>
+				<val>&gt;</val>
+			</cons>
+		</cons>
+		<cons id="singleTag">
+			<val>&lt;</val>
+			<room id="tagName" />
+			<room id="omw"/>
+			<cons opt="1">
+				<val>id=&quot;</val>
+				<room id="attributeValue" />
+				<val>&quot;</val>
+				<room id="omw" min="0"><range>\s</range></room>
+			</cons>
+			<val>/&gt;</val>
+		</cons>
+	</alt>
+</SyntaxTree>

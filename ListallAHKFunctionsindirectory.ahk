@@ -100,6 +100,15 @@ more libs\windows10DesktopManager
 more libs\windows10DesktopManager\injection dll
 more libs\Windy
 more libs\WinLogon
+more libs\xlib
+more libs\xlib\xinclude\common
+more libs\xlib\xinclude\pool
+more libs\xlib\xinclude\pool\threadPool
+more libs\xlib\xinclude\threads
+more libs\xlib\xinclude\threads\threadHandler
+more libs\xlib-xdllcall
+more libs\xlib-xdllcall\lib
+more libs\xlib-xdllcall\lib\xinclude
 MSOffice
 MSOffice\DocX
 )

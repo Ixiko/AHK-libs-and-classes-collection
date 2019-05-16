@@ -1,0 +1,35 @@
+<SyntaxTree>
+	<room id="expression">
+		<cons id="values">
+			<alt id="prefix" opt="1">
+				<val>+</val>
+				<val>-</val>
+			</alt>
+			<alt id="value">
+				<cons id="numbers">	
+					<room id="digits">
+						<range>0-9</range>
+					</room>
+					<val>.</val>
+					<room id="digits"/>
+				</cons>
+				<room id="brackets">
+					<cons id="values"/>
+					<alt id="operators"/>
+					<room id="whitespace"/>
+					<val id="leftBracket">(</val>
+					<val id="rightBracket">)</val>
+				</room>
+			</alt>
+		</cons>
+		<alt id="operators">
+			<val id="add">+</val>
+			<val id="sub">-</val>
+			<val id="mul">*</val>
+			<val id="div">/</val>
+		</alt>
+		<room id="whitespace" min="0">
+			<range>\s</range>
+		</room>
+	</room>
+</SyntaxTree>

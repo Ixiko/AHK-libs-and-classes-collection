@@ -1,0 +1,18 @@
+class classTest
+{
+	test()
+	{
+		foo="bar"
+		goo='car'
+	}
+}
+class testClass
+{
+	class containedClassTest
+	{
+		method( abc )
+		{
+			def = abc
+		}
+	}
+}
