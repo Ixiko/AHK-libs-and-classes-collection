@@ -1,8 +1,21 @@
+﻿/* Example
 #NoEnv
-MsgBox, % (Share := DriveMap.Get("F:")) . " - " . ErrorLevel
-MsgBox, % DriveMap.Del("F:")
-MsgBox, % DriveMap.Add("F:", Share)
+
+ShareDrive := "Y:"
+ShareName := "\\Computername\freigegebenes Verzeichnis"
+ShareUser := "niemand@noname.de"
+SharePass := "PassWord_XYZ"
+
+Result := DriveMap.Add(ShareDrive, ShareName, ShareUser, SharePass)
+
+If (Result)
+   MsgBox, 0, Success!, Successfully mapped share %ShareName% to drive %Result%!
+Else
+   MsgBox, 16, Error!, Could not map share %ShareName% to drive %ShareDrive%!`n`nError: %ErrorLevel%
+
 ExitApp
+*/
+
 ; ======================================================================================================================
 ; Namespace:      DriveMap
 ; Function:       Add, delete, or query network shares mapped to local drives.

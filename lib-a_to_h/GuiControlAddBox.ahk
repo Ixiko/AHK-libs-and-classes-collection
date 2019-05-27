@@ -1,3 +1,4 @@
+/* Example
 #NoEnv
 SetBatchLines, -1
 
@@ -30,6 +31,8 @@ Return
 
 GuiClose:
 ExitApp
+*/
+
 
 ; ======================================================================================================================
 ; GuiControlAddBox(HCTL[, BC[, BW]]) - "GroupBox" Rahmen in einem Textfeld setzen
