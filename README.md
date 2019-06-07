@@ -17,12 +17,12 @@
 * **[11.05.2019]**
   * ***second release today:*** 
     * found some libs they are allready included - added to the index
-    * I cleaned my harddrive and found some more libraries and
-    * I can add a handfull docs and examples again
+    * cleaned my harddrive and found some more libraries and
+    * added a handful of documents and examples
   * ***first release today:***
     * **105** new libraries
     * added examples, docs and licences
-    * removed some files, because they are doubled or they are no libraries
+    * removed some files, because they are double or or these were not libraries at all
 * **[28.04.2019]** 
   * **66** new libraries and some new functions for MSOffice
 * **[19.04.2019]** 
