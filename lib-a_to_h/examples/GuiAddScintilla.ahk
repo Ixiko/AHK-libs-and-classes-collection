@@ -1,4 +1,4 @@
-﻿#Include ..\MCode.ahk
+﻿#Include %A_ScriptDir%\..\..\lib-i_to_z\MCode.ahk
 
 Gui     := GuiCreate("", "ScintillaNET")
 Sci     := GuiAddScintilla(Gui, "x0 y0 w500 h350", "Test ScintillaNET Control.`nLine 2 " . Chr(128064) . ".")

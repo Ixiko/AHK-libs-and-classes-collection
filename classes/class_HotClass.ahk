@@ -517,5 +517,5 @@ class HotClass{
 		return out
 	}
 	
-	#include <CInputDetector>
+	#include %A_LineFile%\..\class_CInputDetector.ahk
 }

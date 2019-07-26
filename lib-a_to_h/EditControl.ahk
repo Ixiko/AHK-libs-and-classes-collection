@@ -56,14 +56,11 @@ Group: Functions
 ;
 ;
 ;-------------------------------------------------------------------------------
-Edit_CanUndo(hEdit)
-    {
+Edit_CanUndo(hEdit)     {
     Static EM_CANUNDO:=0xC6
     SendMessage EM_CANUNDO,0,0,,ahk_id %hEdit%
     Return ErrorLevel
-    }
-
-
+}
 
 ;-----------------------------
 ;
@@ -105,8 +102,7 @@ Edit_CanUndo(hEdit)
 ;   variables (Return, r_CharPos, and r_LineIdx) are set to -1.
 ;
 ;-------------------------------------------------------------------------------
-Edit_CharFromPos(hEdit,X,Y,ByRef r_CharPos="",ByRef r_LineIdx="")
-    {
+Edit_CharFromPos(hEdit,X,Y,ByRef r_CharPos="",ByRef r_LineIdx="") {
     Static EM_CHARFROMPOS:=0xD7
     SendMessage EM_CHARFROMPOS,0,(Y<<16)|X,,ahk_id %hEdit%
 
@@ -134,8 +130,6 @@ Edit_CharFromPos(hEdit,X,Y,ByRef r_CharPos="",ByRef r_LineIdx="")
     Return r_CharPos
     }
 
-
-
 ;-----------------------------
 ;
 ; Function: Edit_Clear
@@ -150,13 +144,10 @@ Edit_CharFromPos(hEdit,X,Y,ByRef r_CharPos="",ByRef r_LineIdx="")
 ;   Undo can be used to reverse this action.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Clear(hEdit)
-    {
+Edit_Clear(hEdit)  {
     Static WM_CLEAR:=0x303
     SendMessage WM_CLEAR,0,0,,ahk_id %hEdit%
     }
-
-
 
 ;-----------------------------
 ;
@@ -167,15 +158,12 @@ Edit_Clear(hEdit)
 ;   Converts Unix, DOS/Unix mix, and Mac file formats to DOS format.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Convert2DOS(p_Text)
-    {
+Edit_Convert2DOS(p_Text)   {
     StringReplace p_Text,p_Text,`r`n,`n,All     ;-- Convert DOS to Unix
     StringReplace p_Text,p_Text,`r,`n,All       ;-- Convert Mac to Unix
     StringReplace p_Text,p_Text,`n,`r`n,All     ;-- Convert Unix to DOS
     Return p_Text
     }
-
-
 
 ;-----------------------------
 ;
@@ -186,8 +174,7 @@ Edit_Convert2DOS(p_Text)
 ;   Convert DOS, DOS/Unix mix, and Unix file formats to Mac format.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Convert2Mac(p_Text)
-    {
+Edit_Convert2Mac(p_Text)  {
     StringReplace p_Text,p_Text,`r`n,`r,All     ;-- Convert DOS to Mac
     StringReplace p_Text,p_Text,`n,`r,All       ;-- Convert Unix to Mac
     if StrLen(p_Text)
@@ -196,8 +183,6 @@ Edit_Convert2Mac(p_Text)
 
     Return p_Text
     }
-
-
 
 ;-----------------------------
 ;
@@ -208,8 +193,7 @@ Edit_Convert2Mac(p_Text)
 ;   Convert DOS, DOS/Unix mix, and Mac formats to Unix format.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Convert2Unix(p_Text)
-    {
+Edit_Convert2Unix(p_Text)   {
     StringReplace p_Text,p_Text,`r`n,`n,All     ;-- Convert DOS to Unix
     StringReplace p_Text,p_Text,`r,`n,All       ;-- Convert Mac to Unix
     if StrLen(p_Text)
@@ -1012,13 +996,10 @@ Edit_IsMultiline(hEdit)
 ;   Returns TRUE if the ES_READONLY style has been set, otherwise FALSE.
 ;
 ;-------------------------------------------------------------------------------
-Edit_IsReadOnly(hEdit)
-    {
+Edit_IsReadOnly(hEdit)    {
     Static ES_READONLY:=0x800
     Return Edit_IsStyle(hEdit,ES_READONLY)
     }
-
-
 
 ;-----------------------------
 ;
@@ -1057,8 +1038,7 @@ Edit_IsReadOnly(hEdit)
 ;   (end)
 ;
 ;-------------------------------------------------------------------------------
-Edit_IsStyle(hEdit,p_Style)
-    {
+Edit_IsStyle(hEdit,p_Style)    {
     Static GWL_STYLE:=-16
     ControlGet l_Style,Style,,,ahk_id %hEdit%
 ;;;;;    l_Style:=DllCall("GetWindowLong","UInt",hEdit,"Int",GWL_STYLE)
@@ -1106,8 +1086,7 @@ Edit_IsStyle(hEdit,p_Style)
 ; Use the <Edit_IsStyle> function to determine if a style is currently set.
 ;
 ;-------------------------------------------------------------------------------
-Edit_SetStyle(hEdit,p_Style,p_Option="+")
-    {
+Edit_SetStyle(hEdit,p_Style,p_Option="+")    {
     Control Style,%p_Option%%p_Style%,,ahk_id %hEdit%
     Return ErrorLevel ? False:True
     }
@@ -1138,14 +1117,11 @@ Edit_SetStyle(hEdit,p_Style,p_Option="+")
 ;   specified by p_CharPos.
 ;
 ;-------------------------------------------------------------------------------
-Edit_LineFromChar(hEdit,p_CharPos=-1)
-    {
+Edit_LineFromChar(hEdit,p_CharPos=-1)    {
 	Static EM_LINEFROMCHAR:=0xC9
    	SendMessage EM_LINEFROMCHAR,p_CharPos,0,,ahk_id %hEdit%
 	Return ErrorLevel
     }
-
-
 
 ;-----------------------------
 ;
@@ -1157,13 +1133,10 @@ Edit_LineFromChar(hEdit,p_CharPos=-1)
 ;   (r_LineIdx) is returned.
 ;
 ;-------------------------------------------------------------------------------
-Edit_LineFromPos(hEdit,X,Y,ByRef r_CharPos="",ByRef r_LineIdx="")
-    {
+Edit_LineFromPos(hEdit,X,Y,ByRef r_CharPos="",ByRef r_LineIdx="")    {
     Edit_CharFromPos(hEdit,X,Y,r_CharPos,r_LineIdx)
     Return r_LineIdx
     }
-
-
 
 ;-----------------------------
 ;
@@ -1186,14 +1159,11 @@ Edit_LineFromPos(hEdit,X,Y,ByRef r_CharPos="",ByRef r_LineIdx="")
 ;   greater than the total number of lines in the edit control.
 ;
 ;-------------------------------------------------------------------------------
-Edit_LineIndex(hedit,p_LineIdx=-1)
-    {
+Edit_LineIndex(hedit,p_LineIdx=-1)    {
     Static EM_LINEINDEX:=0xBB
     SendMessage EM_LINEINDEX,p_LineIdx,0,,ahk_id %hEdit%
     Return ErrorLevel<<32>>32
     }
-
-
 
 ;-----------------------------
 ;
@@ -1217,8 +1187,7 @@ Edit_LineIndex(hedit,p_LineIdx=-1)
 ;   (or only) line is returned.
 ;
 ;-------------------------------------------------------------------------------
-Edit_LineLength(hEdit,p_LineIdx=-1)
-    {
+Edit_LineLength(hEdit,p_LineIdx=-1)    {
 	Static EM_LINELENGTH:=0xC1
 
     l_CharPos:=Edit_LineIndex(hEdit,p_LineIdx)
@@ -1228,8 +1197,6 @@ Edit_LineLength(hEdit,p_LineIdx=-1)
 	SendMessage EM_LINELENGTH,l_CharPos,0,,ahk_id %hEdit%
 	Return ErrorLevel
     }
-
-
 
 ;-----------------------------
 ;
@@ -1255,14 +1222,11 @@ Edit_LineLength(hEdit,p_LineIdx=-1)
 ;   TRUE if sent to a multiline edit control, otherwise FALSE.
 ;
 ;-------------------------------------------------------------------------------
-Edit_LineScroll(hEdit,xScroll=0,yScroll=0)
-    {
+Edit_LineScroll(hEdit,xScroll=0,yScroll=0)   {
     Static EM_LINESCROLL:=0xB6
     SendMessage EM_LINESCROLL,xScroll,yScroll,,ahk_id %hEdit%
     Return ErrorLevel
     }
-
-
 
 ;-----------------------------
 ;
@@ -1298,8 +1262,7 @@ Edit_LineScroll(hEdit,xScroll=0,yScroll=0)
 ;   the requested file.  Consequently, the Undo buffer is flushed.
 ;
 ;-------------------------------------------------------------------------------
-Edit_LoadFile(hEdit,p_FileName,p_Convert2DOS=False,ByRef r_FileFormat="")
-    {
+Edit_LoadFile(hEdit,p_FileName,p_Convert2DOS=False,ByRef r_FileFormat="")    {
     IfNotExist %p_FileName%
         {
         outputdebug Function: %A_ThiSFunc% - File "%p_FileName%" not found
@@ -1360,8 +1323,7 @@ Edit_LoadFile(hEdit,p_FileName,p_Convert2DOS=False,ByRef r_FileFormat="")
 ;   data in CF_TEXT format.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Paste(hEdit)
-    {
+Edit_Paste(hEdit)   {
     Static WM_PASTE:=0x302
     SendMessage WM_PASTE,0,0,,ahk_id %hEdit%
     }
@@ -1394,8 +1356,7 @@ Edit_Paste(hEdit)
 ;   character of the control.
 ;
 ;-------------------------------------------------------------------------------
-Edit_PosFromChar(hEdit,p_CharPos,ByRef X,ByRef Y)
-    {
+Edit_PosFromChar(hEdit,p_CharPos,ByRef X,ByRef Y)   {
     Static EM_POSFROMCHAR:=0xD6
     SendMessage EM_POSFROMCHAR,p_CharPos,0,,ahk_id %hEdit%
     X:=(ErrorLevel & 0xFFFF)<<48>>48
@@ -1403,8 +1364,6 @@ Edit_PosFromChar(hEdit,p_CharPos,ByRef X,ByRef Y)
     Y:=(ErrorLevel>>16)<<48>>48
         ;-- HIWORD of result and converted from UShort to Short
     }
-
-
 
 ;-----------------------------
 ;
@@ -1422,13 +1381,10 @@ Edit_PosFromChar(hEdit,p_CharPos,ByRef X,ByRef Y)
 ;   p_CanUndo - If TRUE (the default), replace can be undone.
 ;
 ;-------------------------------------------------------------------------------
-Edit_ReplaceSel(hEdit,p_Text="",p_CanUndo=True)
-    {
+Edit_ReplaceSel(hEdit,p_Text="",p_CanUndo=True)   {
 	Static EM_REPLACESEL:=0xC2
 	SendMessage EM_REPLACESEL,p_CanUndo,&p_Text,,ahk_id %hEdit%
     }
-
-
 
 ;-----------------------------
 ;
@@ -1453,8 +1409,7 @@ Edit_ReplaceSel(hEdit,p_Text="",p_CanUndo=True)
 ;   TRUE if successful, otherwise FALSE.
 ;
 ;-------------------------------------------------------------------------------
-Edit_SaveFile(hEdit,p_FileName,p_Convert="")
-    {
+Edit_SaveFile(hEdit,p_FileName,p_Convert="")  {
     ;-- Delete if file exists
     IfExist %p_FileName%
         {
@@ -1513,8 +1468,7 @@ Edit_SaveFile(hEdit,p_FileName,p_Convert="")
 ;   scrolling up and positive if scrolling down.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Scroll(hEdit,p_Pages=0,p_Lines=0)
-    {
+Edit_Scroll(hEdit,p_Pages=0,p_Lines=0)  {
     Static EM_SCROLL  :=0xB5
           ,SB_LINEUP  :=0x0     ;-- Scroll up one line
           ,SB_LINEDOWN:=0x1     ;-- Scroll down one line
@@ -1560,8 +1514,7 @@ Edit_Scroll(hEdit,p_Pages=0,p_Lines=0)
 ;   Scrolls the edit control until caret is visible.
 ;
 ;-------------------------------------------------------------------------------
-Edit_ScrollCaret(hEdit)
-    {
+Edit_ScrollCaret(hEdit)  {
 	Static EM_SCROLLCARET:=0xB7
 	SendMessage EM_SCROLLCARET,0,0,,ahk_id %hEdit%
     }
@@ -1600,8 +1553,7 @@ Edit_ScrollCaret(hEdit)
 ;   respond well to a limit change.
 ;
 ;-------------------------------------------------------------------------------
-Edit_SetLimitText(hEdit,p_Limit)
-    {
+Edit_SetLimitText(hEdit,p_Limit)   {
     Static EM_LIMITTEXT:=0xC5
     SendMessage EM_LIMITTEXT,p_Limit,0,,ahk_id %hEdit%
     }
@@ -1634,8 +1586,7 @@ Edit_SetLimitText(hEdit,p_Limit)
 ;       margin is set to zero.
 ;
 ;-------------------------------------------------------------------------------
-Edit_SetMargins(hEdit,p_LeftMargin="",p_RightMargin="")
-    {
+Edit_SetMargins(hEdit,p_LeftMargin="",p_RightMargin="")   {
     Static EM_SETMARGINS :=0xD3
           ,EC_LEFTMARGIN :=0x1
           ,EC_RIGHTMARGIN:=0x2
@@ -1677,8 +1628,7 @@ Edit_SetMargins(hEdit,p_LeftMargin="",p_RightMargin="")
 ;       modification flag.
 ;
 ;-------------------------------------------------------------------------------
-Edit_SetModify(hEdit,p_Flag)
-    {
+Edit_SetModify(hEdit,p_Flag)   {
     Static EM_SETMODIFY:=0xB9
     SendMessage EM_SETMODIFY,p_Flag,0,,ahk_id %hEdit%
     }
@@ -1722,8 +1672,7 @@ Edit_SetModify(hEdit,p_Flag)
 ;   ES_PASSWORD style unless a password character other than "*" is desired.
 ;
 ;-------------------------------------------------------------------------------
-Edit_SetPasswordChar(hEdit,p_Char="*")
-    {
+Edit_SetPasswordChar(hEdit,p_Char="*")   {
     Static EM_SETPASSWORDCHAR:=0xCC
     SendMessage EM_SETPASSWORDCHAR,Asc(p_Char),0,,ahk_id %hEdit%
     Return ErrorLevel
@@ -1762,8 +1711,7 @@ Edit_SetPasswordChar(hEdit,p_Char="*")
 ;       (end code)
 ;
 ;-------------------------------------------------------------------------------
-Edit_SetReadOnly(hEdit,p_Flag)
-    {
+Edit_SetReadOnly(hEdit,p_Flag)   {
     Static EM_SETREADONLY:=0xCF
     SendMessage EM_SETREADONLY,p_Flag,0,,ahk_id %hEdit%
     Return ErrorLevel ? True:False
@@ -1795,8 +1743,7 @@ Edit_SetReadOnly(hEdit,p_Flag)
 ;       <http://msdn.microsoft.com/en-us/library/bb761657(VS.85).aspx>
 ;
 ;-------------------------------------------------------------------------------
-Edit_SetRect(hEdit,p_Left,p_Top,p_Right,p_Bottom)
-    {
+Edit_SetRect(hEdit,p_Left,p_Top,p_Right,p_Bottom)   {
     Static EM_SETRECT:=0xB3
 
     VarSetCapacity(RECT_Structure,16,0)
@@ -1840,8 +1787,7 @@ Edit_SetRect(hEdit,p_Left,p_Top,p_Right,p_Bottom)
 ;   TRUE if all the tabs are set, otherwise FALSE.
 ;
 ;-------------------------------------------------------------------------------
-Edit_SetTabStops(hEdit,p_NbrOfTabStops=0,p_DTU=32)
-    {
+Edit_SetTabStops(hEdit,p_NbrOfTabStops=0,p_DTU=32)   {
     Static EM_SETTABSTOPS:=0xCB
 
     VarSetCapacity(l_TabStops,p_NbrOfTabStops*4,0)
@@ -1881,8 +1827,7 @@ Edit_SetTabStops(hEdit,p_NbrOfTabStops=0,p_DTU=32)
 ;   there is no delay after the command has executed.
 ;
 ;-------------------------------------------------------------------------------
-Edit_SetText(hEdit,p_Text)
-    {
+Edit_SetText(hEdit,p_Text)   {
     Static WM_SETTEXT:=0xC
     SendMessage WM_SETTEXT,0,&p_Text,,ahk_id %hEdit%
     Return ErrorLevel
@@ -1908,8 +1853,7 @@ Edit_SetText(hEdit,p_Text)
 ;       the position of the last character in the control.
 ;
 ;-------------------------------------------------------------------------------
-Edit_SetSel(hEdit,p_StartSelPos=0,p_EndSelPos=-1)
-    {
+Edit_SetSel(hEdit,p_StartSelPos=0,p_EndSelPos=-1)  {
 	Static EM_SETSEL:=0x0B1
 	SendMessage EM_SETSEL,p_StartSelPos,p_EndSelPos,,ahk_id %hEdit%
     }
@@ -1925,8 +1869,7 @@ Edit_SetSel(hEdit,p_StartSelPos=0,p_EndSelPos=-1)
 ;   Returns TRUE if text is selected, otherwise FALSE.
 ;
 ;-------------------------------------------------------------------------------
-Edit_TextIsSelected(hEdit)
-    {
+Edit_TextIsSelected(hEdit)  {
     Edit_GetSel(hEdit,l_StartSelPos,l_EndSelPos)
     Return (l_StartSelPos<>l_EndSelPos)
     }
@@ -1950,8 +1893,7 @@ Edit_TextIsSelected(hEdit)
 ;   successful, otherwise FALSE.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Undo(hEdit)
-    {
+Edit_Undo(hEdit)  {
 	Static EM_UNDO:=0xC7
 	SendMessage EM_UNDO,0,0,,ahk_id %hEdit%
 	Return ErrorLevel
@@ -1990,8 +1932,7 @@ Edit_Undo(hEdit)
 ;   an edit control.
 ;
 ;-------------------------------------------------------------------------------
-Edit_GetActiveHandles(ByRef hEdit="",ByRef hWindow="",p_MsgBox=False)
-    {
+Edit_GetActiveHandles(ByRef hEdit="",ByRef hWindow="",p_MsgBox=False)  {
     WinGet hWindow,ID,A
     ControlGetFocus l_Control,A
     if SubStr(l_Control,1,4)="Edit"
