@@ -9,18 +9,18 @@
  *     The text of the button pressed by the user. Values are OK, Cancel, Retry,
  *     Yes, No.
  * Parameters:
- *     main          [in] - main instruction text
- *     extra    [in, opt] - additional text that appears below the main instruction
- *     title    [in, opt] - task dialog window title, defaults to A_ScriptName
- *     buttons  [in, opt] - pipe/space/comma/newline-delimited string containing
- *                          the name/text of the buttons to display. Argument can
- *                          also be a combination of flags/integer values defined
- *                          in TDBTNS(static variable). If omitted an 'OK' button
- *                          is used. 
- *     icon     [in, opt] - the icon to display in the task dialog. Can be one
- *                          of the keys defined in TDICON(static variable). If
- *                          omitted, no icon is used.
- *     parent   [in, opt] - handle to the owner window of the task dialog
+ *     main      	[in]       	- 	main instruction text
+ *     extra     	[in, opt] 	- 	additional text that appears below the main instruction
+ *     title       	[in, opt] 	- 	task dialog window title, defaults to A_ScriptName
+ *     buttons  	[in, opt] 	- 	pipe/space/comma/newline-delimited string containing
+ *                                         	the name/text of the buttons to display. Argument can
+ *                                         	also be a combination of flags/integer values defined
+ *                                         	in TDBTNS(static variable). If omitted an 'OK' button
+ *                                         	is used. 
+ *     icon      	[in, opt] 	- 	the icon to display in the task dialog. Can be one
+ *                                       	of the keys defined in TDICON(static variable). If
+ *                                       	omitted, no icon is used.
+ *     parent   	[in, opt] 	- 	handle to the owner window of the task dialog
  * Remarks:
  *     Credits to just me. An exception is thrown if A_OSVersion <= WIN_XP.
  */

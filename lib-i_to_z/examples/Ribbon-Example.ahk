@@ -1,5 +1,5 @@
 #NoEnv
-#Include Ribbon.ahk
+#Include %A_ScriptDir%\..\Ribbon.ahk
 SetWorkingDir, %A_ScriptDir%
 
 ; Initialize the ribbon library

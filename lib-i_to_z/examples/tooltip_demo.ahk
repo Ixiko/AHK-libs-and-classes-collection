@@ -86,7 +86,7 @@ gui Add,DateTime,w150 hwndDateTime_hWnd  ;,DateTime Control
 Tip:="Tooltip for the DateTime control"
 ToolTip(14,Tip,"","A" . DateTime_hWnd . " P" . GuiHwnd)
 
-gui Add,UpDown,hwndUpDown_hWnd Range 1-100,5
+gui Add, UpDown, hwndUpDown_hWnd Range 1-100, 5
 Tip:="Tooltip for the UpDown control"
 ToolTip(20,Tip,"","A" . UpDown_hWnd . " P" . GuiHwnd)
 

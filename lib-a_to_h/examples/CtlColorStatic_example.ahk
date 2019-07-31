@@ -45,4 +45,4 @@ GetStates:
       Controls[Ctrl].State := GetKeyState(Key, "T")
 Return
 
-#Include %A_ScriptDir%\..\lib-a_to_h\CtlColorStatic.ahk
+#Include %A_ScriptDir%\..\CtlColorStatic.ahk

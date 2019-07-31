@@ -1,5 +1,5 @@
 ﻿#NoEnv
-#Include TaskDialog.ahk
+#Include %A_ScriptDir%\..\TaskDialog.ahk
 TaskDialogUseMsgBoxOnXP(True)
 Gui, +HwndHGUI
 Gui, Show, w600 h400, Dummy

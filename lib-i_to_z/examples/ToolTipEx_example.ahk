@@ -40,4 +40,4 @@ IL_EX_GetHICON(ILID, Index, Styles := 0x20) {
    Return DllCall("ComCtl32.dll\ImageList_GetIcon", "Ptr", ILID, "Int", Index - 1, "UInt", Styles, "UPtr")
 }
 ; ======================================================================================================================
-#Include %A_ScriptDir%\..\lib-i_to_z\ToolTipEx.ahk
+#Include %A_ScriptDir%\..\ToolTipEx.ahk

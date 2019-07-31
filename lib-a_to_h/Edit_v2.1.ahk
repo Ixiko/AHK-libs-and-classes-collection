@@ -44,30 +44,30 @@ Group: Credit
 Group: Functions
 */
 
-
-;-----------------------------
-;
-; Function: Edit_ActivateParent
-;
-; Description:
-;
-;   Activates (makes foremost) the parent window of the Edit control if needed.
-;   If the window is minimized, it is automatically restored prior to being
-;   activated.
-;
-; Returns:
-;
-;   TRUE if successful, or FALSE otherwise.
-;
-; Remarks:
-;
-;   This function only actives the parent window of the Edit control.  It does
-;   not give focus to the Edit control.  If needed, call <Edit_SetFocus> instead
-;   of (or in addition to) this function.
-;
-;-------------------------------------------------------------------------------
-Edit_ActivateParent(hEdit)
-    {
+Edit_ActivateParent(hEdit)     {
+    
+    ;-----------------------------
+    ;
+    ; Function: Edit_ActivateParent
+    ;
+    ; Description:
+    ;
+    ;   Activates (makes foremost) the parent window of the Edit control if needed.
+    ;   If the window is minimized, it is automatically restored prior to being
+    ;   activated.
+    ;
+    ; Returns:
+    ;
+    ;   TRUE if successful, or FALSE otherwise.
+    ;
+    ; Remarks:
+    ;
+    ;   This function only actives the parent window of the Edit control.  It does
+    ;   not give focus to the Edit control.  If needed, call <Edit_SetFocus> instead
+    ;   of (or in addition to) this function.
+    ;
+    ;-------------------------------------------------------------------------------
+    
     ;-- Get handle to the parent window
     hParent:=DllCall("GetParent","Ptr",hEdit,"Ptr")
 
@@ -88,8 +88,6 @@ Edit_ActivateParent(hEdit)
 
     Return True
     }
-
-
 ;-----------------------------
 ;
 ; Function: Edit_CanUndo
@@ -100,14 +98,11 @@ Edit_ActivateParent(hEdit)
 ;   otherwise FALSE.
 ;
 ;-------------------------------------------------------------------------------
-Edit_CanUndo(hEdit)
-    {
+Edit_CanUndo(hEdit)     {
     Static EM_CANUNDO:=0xC6
     SendMessage EM_CANUNDO,0,0,,ahk_id %hEdit%
     Return ErrorLevel
     }
-
-
 ;-----------------------------
 ;
 ; Function: Edit_CharFromPos
@@ -151,8 +146,7 @@ Edit_CanUndo(hEdit)
 ;   -1.
 ;
 ;-------------------------------------------------------------------------------
-Edit_CharFromPos(hEdit,X,Y,ByRef r_CharPos="",ByRef r_LineIdx="")
-    {
+Edit_CharFromPos(hEdit,X,Y,ByRef r_CharPos="",ByRef r_LineIdx="")  {
     Static Dummy3902
 
           ;-- Messages
@@ -188,8 +182,6 @@ Edit_CharFromPos(hEdit,X,Y,ByRef r_CharPos="",ByRef r_LineIdx="")
 
     Return r_CharPos
     }
-
-
 ;-----------------------------
 ;
 ; Function: Edit_Clear
@@ -203,13 +195,10 @@ Edit_CharFromPos(hEdit,X,Y,ByRef r_CharPos="",ByRef r_LineIdx="")
 ;   Undo can be used to reverse this action.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Clear(hEdit)
-    {
+Edit_Clear(hEdit)  {
     Static WM_CLEAR:=0x303
     SendMessage WM_CLEAR,0,0,,ahk_id %hEdit%
     }
-
-
 ;-----------------------------
 ;
 ; Function: Edit_ContainsSoftLineBreaks
@@ -257,8 +246,7 @@ Edit_Clear(hEdit)
 ;   high value (or -1) before calling this function.
 ;
 ;-------------------------------------------------------------------------------
-Edit_ContainsSoftLineBreaks(hEdit)
-    {
+Edit_ContainsSoftLineBreaks(hEdit)    {
     ;-- Bounce if Word Wrap is not enabled
     ;
     ;   Note 1: The Edit_IsWordWrap function can return a false positive (very
@@ -283,8 +271,6 @@ Edit_ContainsSoftLineBreaks(hEdit)
 
     Return False
     }
-
-
 ;-----------------------------
 ;
 ; Function: Edit_Convert2DOS
@@ -294,15 +280,12 @@ Edit_ContainsSoftLineBreaks(hEdit)
 ;   Converts Unix, DOS/Unix mix, and Mac EOL formats to DOS format.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Convert2DOS(p_Text)
-    {
+Edit_Convert2DOS(p_Text)    {
     StringReplace p_Text,p_Text,`r`n,`n,All             ;-- Convert DOS to Unix
     StringReplace p_Text,p_Text,`r,`n,All               ;-- Convert Mac to Unix
     StringReplace p_Text,p_Text,`n,`r`n,All             ;-- Convert Unix to DOS
     Return p_Text
     }
-
-
 ;-----------------------------
 ;
 ; Function: Edit_Convert2Mac
@@ -312,8 +295,7 @@ Edit_Convert2DOS(p_Text)
 ;   Convert DOS, DOS/Unix mix, and Unix EOL formats to Mac format.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Convert2Mac(p_Text)
-    {
+Edit_Convert2Mac(p_Text)    {
     StringReplace p_Text,p_Text,`r`n,`r,All             ;-- Convert DOS to Mac
     StringReplace p_Text,p_Text,`n,`r,All               ;-- Convert Unix to Mac
     if StrLen(p_Text)
@@ -322,8 +304,6 @@ Edit_Convert2Mac(p_Text)
 
     Return p_Text
     }
-
-
 ;-----------------------------
 ;
 ; Function: Edit_Convert2Unix
@@ -333,8 +313,7 @@ Edit_Convert2Mac(p_Text)
 ;   Convert DOS, DOS/Unix mix, and Mac formats to Unix format.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Convert2Unix(p_Text)
-    {
+Edit_Convert2Unix(p_Text)    {
     StringReplace p_Text,p_Text,`r`n,`n,All             ;-- Convert DOS to Unix
     StringReplace p_Text,p_Text,`r,`n,All               ;-- Convert Mac to Unix
     if StrLen(p_Text)
@@ -343,8 +322,6 @@ Edit_Convert2Unix(p_Text)
 
     Return p_Text
     }
-
-
 ;-----------------------------
 ;
 ; Function: Edit_ConvertCase
@@ -365,8 +342,7 @@ Edit_Convert2Unix(p_Text)
 ; * <Edit_SetSel>
 ;
 ;-------------------------------------------------------------------------------
-Edit_ConvertCase(hEdit,p_Case)
-    {
+Edit_ConvertCase(hEdit,p_Case)     {
     StringUpper,p_Case,p_Case,T  ;-- Just in case StringCaseSense is On
 
     ;-- Collect current select postions
@@ -420,8 +396,6 @@ Edit_ConvertCase(hEdit,p_Case)
     ;-- Reselect to the user's original positions
     Edit_SetSel(hEdit,l_StartSelPos,l_EndSelPos)
     }
-
-
 ;-----------------------------
 ;
 ; Function: Edit_Copy
@@ -431,13 +405,10 @@ Edit_ConvertCase(hEdit,p_Case)
 ;   Copy the current selection to the clipboard in CF_TEXT format.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Copy(hEdit)
-    {
+Edit_Copy(hEdit)    {
     Static WM_COPY:=0x301
     SendMessage WM_COPY,0,0,,ahk_id %hEdit%
     }
-
-
 ;-----------------------------
 ;
 ; Function: Edit_Cut
@@ -448,13 +419,10 @@ Edit_Copy(hEdit)
 ;   clipboard in CF_TEXT format.
 ;
 ;-------------------------------------------------------------------------------
-Edit_Cut(hEdit)
-    {
+Edit_Cut(hEdit)    {
     Static WM_CUT:=0x300
     SendMessage WM_CUT,0,0,,ahk_id %hEdit%
     }
-
-
 ;------------------------------
 ;
 ; Function: Edit_Disable
