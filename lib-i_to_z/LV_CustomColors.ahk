@@ -1,5 +1,7 @@
-LV_Initialize(Gui_Number="", Control="", Column="")
-{
+
+; http://www.autohotkey.com/board/topic/51488-treeviews-color-individual-rows-multiple-tv-support/
+
+LV_Initialize(Gui_Number="", Control="", Column="") {
 	local hGUI, hLV
 	;Get either class or hWnd of control
 	If !Control												;Control omitted
@@ -70,8 +72,7 @@ LV_Initialize(Gui_Number="", Control="", Column="")
 	Return hLV
 }
 
-LV_Change(Gui_Number="", Control="", Select="", Column="")
-{
+LV_Change(Gui_Number="", Control="", Select="", Column="") {
 	local hLV
 	;Get either class or hWnd of control
 	If !Control												;Control omitted
@@ -134,9 +135,7 @@ LV_Change(Gui_Number="", Control="", Select="", Column="")
 	Return 1
 }
 
-
-LV_SetColor(Index="", TextColor="", BackColor="", Redraw=1)
-{
+LV_SetColor(Index="", TextColor="", BackColor="", Redraw=1) {
 	local i, j, L
 	If !_LV_h_
 		Return
@@ -200,9 +199,8 @@ LV_SetColor(Index="", TextColor="", BackColor="", Redraw=1)
 	Return 1
 }
 
+LV_GetColor(Index, T="Text") {		;Index of the item from which to get color , T="Text" ; T="Back" , L=0 : linked to lines; L=1 : linked to rows 
 
-LV_GetColor(Index, T="Text")		;Index of the item from which to get color , T="Text" ; T="Back" , L=0 : linked to lines; L=1 : linked to rows 
-{
 	local L
 	If (Index<0)
 	{
@@ -212,9 +210,7 @@ LV_GetColor(Index, T="Text")		;Index of the item from which to get color , T="Te
 	Return _%_LV_h_%_%Index%_%L%%T%
 }
 
-
-LV_Destroy(Gui_Number="", Control="", DeactivateWMNotify="")
-{
+LV_Destroy(Gui_Number="", Control="", DeactivateWMNotify="") {
 	local hLV
 	;Get either class or hWnd of control
 	If !Control												;Control omitted
@@ -282,9 +278,7 @@ LV_Destroy(Gui_Number="", Control="", DeactivateWMNotify="")
 	Return 1
 }
 
-
-DecodeInteger( p_type, p_address, p_offset) ;, p_hex=false )
-{
+DecodeInteger( p_type, p_address, p_offset) {
 	;old_FormatInteger := A_FormatInteger
 	;ifEqual, p_hex, 1, SetFormat, Integer, hex
 	;else, SetFormat, Integer, dec
@@ -297,17 +291,13 @@ DecodeInteger( p_type, p_address, p_offset) ;, p_hex=false )
 	return, value
 }
 
-
-EncodeInteger( p_value, p_size, p_address, p_offset )
-{
+EncodeInteger( p_value, p_size, p_address, p_offset ) {
 	loop, %p_size%
 		DllCall( "RtlFillMemory", "uint", p_address+p_offset+A_Index-1, "uint", 1, "uchar", p_value >> ( 8*( A_Index-1 ) ) )
 }
 
-
 ;Retrieves gui number and classNN from hwnd of a gui control
-HWND2GuiNClass(hWnd, ByRef Gui = "", ByRef Control = "")
-{
+HWND2GuiNClass(hWnd, ByRef Gui = "", ByRef Control = "") {
 	WinGetClass, Cc, ahk_id %hWnd%
 	Loop, 99
 	{
@@ -335,9 +325,7 @@ HWND2GuiNClass(hWnd, ByRef Gui = "", ByRef Control = "")
 	}
 }
 
-
-LV_WM_NOTIFY(p_l)
-{
+LV_WM_NOTIFY(p_l) {
 	local draw_stage, Current_Line, hLV, Index1, Index
 	static IndexList
 	Critical
@@ -372,9 +360,7 @@ LV_WM_NOTIFY(p_l)
 
 }
 
-
-WM_NOTIFY( p_w, p_l, p_m )
-{
+WM_NOTIFY( p_w, p_l, p_m ) {
 	Critical
 	;/*
 	;Prevents column resizing, uncomment if resizing is buggy
