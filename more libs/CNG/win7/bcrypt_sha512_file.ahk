@@ -1,10 +1,5 @@
-﻿MsgBox % bcrypt_sha512_file("C:\Windows\notepad.exe")
-; ==> 5f5a3b5e64b4a149865f65d678028cef3bc0de16ef265c130b985494ab6690193f8f5e065c6e57d723beb208411aca6debd4afb55a64ce06f3326a76b9469145
-
-
-
-bcrypt_sha512_file(filename)
-{
+﻿
+bcrypt_sha512_file(filename) {
     static BCRYPT_SHA512_ALGORITHM := "SHA512"
     static BCRYPT_OBJECT_LENGTH    := "ObjectLength"
     static BCRYPT_HASH_LENGTH      := "HashDigestLength"

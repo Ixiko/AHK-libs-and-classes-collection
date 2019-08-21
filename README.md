@@ -12,10 +12,17 @@
 
 * **[21.08.2019]** (2552)
   * **+49** libraries
+  
   * links to the individual files in the ***"Index of all libs"*** table are now linked correctly 
+  
+  * added *file sizes* and *file creation times\** time to the table for more information 
+  
+    *\* the file creation time does not always match the actual file age!*
 * **[27.05.2019]** (2503)
+  
   * **+53** libraries, found some examples for allready includes libs, some additions to ms-office scripts, moved classes to class-directory
 * **[13.05.2019]** 
+  
   * **+62** libraries added, more examples, more docs, constants and dll’s added
 * **[11.05.2019]**
   * ***second release today:*** 
@@ -27,6 +34,7 @@
     * added examples, docs and licences
     * removed some files, because they are double or or these were not libraries at all
 * **[28.04.2019]** 
+  
   * **66** new libraries and some new functions for MSOffice
 * **[19.04.2019]** 
   * wiped old dust and added a new dust
@@ -39,6 +47,7 @@
 * **[09.12.2018]** - added ~230 libs and classes
 * **[07.11.2018]** - added ~500 hopefully new and unique library’s. So far I thought that Autohotkey is rather a small community compared to other programming languages, but I still find many files to add.
   I hope you have a quick search program to find what you need. 
+  
   * *Thanks to all for the prebuild code. It safes much time!*
 * **[08.06.2018]** - using [**AntiTwins.exe**](http://www.joerg-rosenthal.com/en/antitwin/) to remove doubled files
 
