@@ -115,15 +115,17 @@ MSOffice\DocX
 functions          	:= Object()
 Dir                    	:= StrSplit(Directorys, "`n", "`r")
 file_readmeMd	:= A_ScriptDir "\readme.md"
-MDTable          	:= "| **Nr** | **Library**                                               | **Directory**                                              |`n"
-MDTable          	.= "| :--- | :-------------------------------------- |:----------------------------------------------------|`n"
+;MDTable          	:= "| **Nr** | **Library**                                               | **Directory**                                              |`n"
+;MDTable          	.= "| :--- | :-------------------------------------- |:----------------------------------------------------|`n"
+MDTable          	:= "| **Nr** | **Library**                                      | **Directory**                                    |`n"
+MDTable          	.= "| :--- | :--------------------------------- | :------------------------------------------- |`n"
 
 ;-----------------------------------------------------------------------------------------------------------------------------------------
 ; fileread of readme.md till table is reached
 ;-----------------------------------------------------------------------------------------------------------------------------------------
 ReadMeMd:= MakeTableLess_readmeMd(file_readmeMd, tableStartLine, libMaxOld)
-ReadMeMd .= "| **Nr** | **Library**                                               | **Directory**                                              |`n"
-ReadMeMd .= "| :--- | :-------------------------------------- |:----------------------------------------------------|`n"
+ReadMeMd .= "| **Nr** | **Library**                                      | **Directory**                                    |`n"
+ReadMeMd .= "| :--- | :--------------------------------- | :------------------------------------------- |`n"
 ;ReadMeMd:= StrReplace(ReadMeMd, "history of updates `n`n", "history of updates `n`n* **[" A_DD "." A_MM "." A_YYYY "]** - on last update: " libMaxOld "`n")
 ;ReadMeMd:= RegExReplace(ReadMeMd, "M)Edition\:\s\d\d\.\d\d.\d\d\d\d", "Edition: " A_DD "." A_MM "." A_YYYY)
 
@@ -328,7 +330,11 @@ list_files(Directory) {
 				continue
 		fileIdx ++
 		MouseGetPos, mx, my
-		mdline .= "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "\" . StrReplace(A_LoopFileName," ", "%20") . ") | " Directory . " | `n"
+		FileGetSize	, fsize	, % A_ScriptDir . "\" . Directory . "\" A_LoopFileName
+		fsize:= Round(fsize/1024, 2) 
+		FileGetTime	, ftime	, % A_ScriptDir . "\" . Directory . "\" A_LoopFileName, M
+		FormatTime, ftime, % ftime, yyyy-MM-dd
+		mdline .= "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "\" . StrReplace(A_LoopFileName," ", "%20") . ") <br>" fsize "kb - " ftime " | " Directory . "|`n"
 		lib.Push(Directory "\" A_LoopFileName)
 		ToolTip, found files: %files%, %mx%, %my%, 6
 	}
