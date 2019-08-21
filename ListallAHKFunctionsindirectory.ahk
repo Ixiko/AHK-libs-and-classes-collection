@@ -133,7 +133,7 @@ ReadMeMd .= "| :--- | :-------------------------------------- |:----------------
 Loop, % Dir.MaxIndex()												; list all files in all directory's
 {
 		Md := list_files(Dir[A_Index])
-		ReadMeMd .= Md
+		ReadMeMd .= StrReplace(Md, "\", "/")
 }
 
 clines:= lib.MaxIndex()
@@ -144,11 +144,9 @@ clines:= lib.MaxIndex()
 file:= FileOpen(A_ScriptDir "\FileFunctionList.ahk", "w")
 For idx, ffpath in lib
 {
-	;filename := A_LoopField
 	ToolTip, % "File: " A_Index "/" clines, 2000, 500, 6
 	funcList:= listfunc(ffpath)
 	RegExMatch(ffpath, "\w+\\[\w\s\(\)]+\.ahk", shortpath)
-	
 	File.Write("[" A_Index "] " shortpath " {`n`nLine  `t|`tFunction`n" funclist "`n}`n")
 }
 File.Close()
