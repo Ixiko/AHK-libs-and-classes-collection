@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>ObjCSV Library</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>ObjCSV Library - Version v0.5.9 (2017-07-20) - by By Jean Lalonde</h1>
+<p>AutoHotkey_L (AHK) functions to load from CSV files, sort, display and save collections of records using the
+Object data type.<br/></p>
+<ul>
+<li>Read and save files in any delimited format (CSV, semi-colon, tab delimited, single-line or multi-line, etc.).</li>
+<li>Display, edit and read Collections in GUI ListView objects.</li>
+<li>Export Collection to fixed-width, HTML or XML files.</li>
+</ul>
+<p>For more info on CSV files, see
+<a href="http://en.wikipedia.org/wiki/Comma-separated_values">http://en.wikipedia.org/wiki/Comma-separated_values</a>.<br/></p>
+<p>Written by Jean Lalonde (<a href="http://www.autohotkey.com/board/user/4880-jnllnd/">JnLlnd</a> on AHK forum) using
+AutoHotkey_L v1.1.09.03+ (<a href="http://l.autohotkey.net/">http://l.autohotkey.net/</a>)<br/></p>
+<h3 id="online-material">ONLINE MATERIAL</h3>
+<ul>
+<li><a href="https://github.com/JnLlnd/ObjCSV">Home of this library is on GitHub</a></li>
+<li><a href="https://raw.github.com/JnLlnd/ObjCSV/master/Lib/ObjCSV.ahk">The most up-to-date version of this AHK file on GitHub</a></li>
+<li><a href="http://code.jeanlalonde.ca/ahk/ObjCSV/ObjCSV-doc/">Online ObjCSV Library Help</a></li>
+<li><a href="http://www.autohotkey.com/board/topic/96618-lib-objcsv-library-v01-library-to-load-and-save-csv-files-tofrom-objects-and-listview/">Topic about this library on AutoHotkey forum</a></li>
+</ul>
+<h3 id="instructions">INSTRUCTIONS</h3>
+<p>Copy this script in a file named ObjCSV.ahk and save this file in one of these \Lib folders:</p>
+<ul>
+<li>%A_ScriptDir%\Lib\</li>
+<li>%A_MyDocuments%\AutoHotkey\Lib\</li>
+<li>[path to the currently running AutoHotkey_L.exe]\Lib\</li>
+</ul>
+<p>You can use the functions in this library by calling ObjCSV_FunctionName (no #Include required)</p>
+<h3 id="versions-history">VERSIONS HISTORY</h3>
+<p>0.5.9  2017-07-20 In ObjCSV_CSV2Collection, reverse change in v0.4.1 to import non-standard CSV files created by XL causing issue (stripping &quot;=&quot;) in encapsulated fields with containing &quot;...=&quot;&quot;...&quot;<br/>
+0.5.8  2016-12-22 In ObjCSV_CSV2Collection, fix bug when creating &quot;C&quot; names header if blnHeader is false (0) and strFieldNames is empty.<br/>
+0.5.7  2016-12-20  In ObjCSV_CSV2Collection, if blnHeader is false (0) and strFieldNames is empty, strFieldNames returns the &quot;C&quot; field names created by the function.<br/>
+0.5.6  2016-10-20  Stop trimming data value read from CSV file. Addition of blnTrim parameter to ObjCSV_ReturnDSVObjectArray
+(true by default for backward compatibility).<br/>
+0.5.5  2016-08-28  Optional parameter strEol to ObjCSV_Collection2CSV and ObjCSV_Collection2Fixed now empty by default.
+If not provided, end-of-lines character(s) are detected in value to replace. The first end-of-lines character(s) found is used
+for remaining fields and records.<br/>
+0.5.4  2016-08-23  Add optional parameter strEol to ObjCSV_Collection2CSV and ObjCSV_Collection2Fixed to set end-of-line
+character(s) in fields when line-breaks are replaced.<br/>
+0.5.3  2016-08-21  Fix bug with blnAlwaysEncapsulate in ObjCSV_Collection2CSV.<br/>
+0.5.2  2016-07-24  Add an option to ObjCSV_Collection2CSV and blnAlwaysEncapsulate functions to force encapsulation of all values.<br/>
+0.5.1  2016-06-06  In ObjCSV_CSV2Collection if the ByRef parameter is empty, the file encoding is returned only for UTF-8 or
+UTF-16 encoded files (no BOM) because other types (ANSI or UTF-n-RAW) files cannot be differentiated by the AHK engine.<br/>
+0.5.0  2016-05-23  Addition of file encoding optional parameter to ObjCSV_CSV2Collection, ObjCSV_Collection2CSV,
+ObjCSV_Collection2Fixed, ObjCSV_Collection2HTML and ObjCSV_Collection2XML. In ObjCSV_CSV2Collection if the ByRef parameter is
+empty, it is returned with the detected file encoding.<br/>
+0.4.1  2014-03-05  Import files with equal sign before opening field encasulator to indicate text data or formula not to be
+interpreted as numeric when imported by XL (eg. ...;=&quot;12345&quot;;...). This is an XL-only CSV feature, not a standard CSV feature.<br/>
+0.4.0  2013-12-29  Improved file system error handling (upgrade recommended). Compatibility breaker: review ErrorLevel codes only.<br/>
+0.3.2  2013-11-27  Check presence of ROWS delimiters in HTML export template<br/>
+0.3.1  2013-10-10  Fix ProgressStop missing bug, fix numeric column names bug<br/>
+0.3.0  2013-10-07  Removed strRecordDelimiter, strOmitChars and strEndOfLine parameters. Replaced by <code>`r</code>`n (CR-LF). 
+Compatibility breaker. Review functions calls for ObjCSV_CSV2Collection, ObjCSV_Collection2CSV, ObjCSV_Collection2Fixed,
+ObjCSV_Collection2HTML, ObjCSV_Collection2XML, ObjCSV_Format4CSV and ObjCSV_ReturnDSVObjectArray<br/>
+0.2.8  2013-10-06  Fix bug in progress start and stop<br/>
+0.2.7  2013-10-06  Memory management optimization and introduction of ErrorLevel results<br/>
+0.2.6  2013-09-29  Display progress using Progress bar or Status bar, customize progress messages, doc converted to GenDocs 3.0<br/>
+0.2.5  2013-09-26  Optimize large variables management in save functions (2CSV, 2Fixed, 2HTML and 2XML),
+optimize progress bars refresh rates<br/>
+0.2.4  2013-09-25  Fix a bug adding progress bar in ObjCSV_ListView2Collection<br/>
+0.2.3  2013-09-20  Fix a bug when importing files with duplicate field names, reformating long lines of
+code<br/>
+0.2.2  2013-09-15  Export to fixed-width (ObjCSV_Collection2Fixed), HTML (ObjCSV_Collection2HTML) and XML
+(ObjCSV_Collection2XML)<br/>
+0.1.3  2013-09-08  Multi-line replacement character at load time in ObjCSV_CSV2Collection<br/>
+0.1.2  2013-09-05  Standardize boolean parameters to 0/1 (not True/False) and without double-quotes<br/>
+0.1.1  2013-08-26  First release<br/></p>
+<h2>Table of Contents</h2>
+<ul>
+  <li><a href="ObjCSV_CSV2Collection.html">ObjCSV_CSV2Collection() Function</a></li>
+  <li><a href="ObjCSV_Collection2CSV.html">ObjCSV_Collection2CSV() Function</a></li>
+  <li><a href="ObjCSV_Collection2Fixed.html">ObjCSV_Collection2Fixed() Function</a></li>
+  <li><a href="ObjCSV_Collection2HTML.html">ObjCSV_Collection2HTML() Function</a></li>
+  <li><a href="ObjCSV_Collection2XML.html">ObjCSV_Collection2XML() Function</a></li>
+  <li><a href="ObjCSV_Collection2ListView.html">ObjCSV_Collection2ListView() Function</a></li>
+  <li><a href="ObjCSV_ListView2Collection.html">ObjCSV_ListView2Collection() Function</a></li>
+  <li><a href="ObjCSV_SortCollection.html">ObjCSV_SortCollection() Function</a></li>
+  <li><a href="ObjCSV_Format4CSV.html">ObjCSV_Format4CSV() Function</a></li>
+  <li><a href="ObjCSV_ReturnDSVObjectArray.html">ObjCSV_ReturnDSVObjectArray() Function</a></li>
+</ul>
+
+</body>
+</html>

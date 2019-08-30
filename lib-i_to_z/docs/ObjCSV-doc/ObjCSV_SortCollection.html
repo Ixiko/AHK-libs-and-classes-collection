@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>ObjCSV_SortCollection()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>ObjCSV_SortCollection()</h1>
+<p>Scan a collection of objects, sort the collection on one or more field and return sorted collection. Standard AHK_L sort options are supported.</p>
+
+<pre class="Syntax">ObjCSV_SortCollection(objCollection, strSortFields [, strSortOptions = &quot;&quot;, intProgressType = 0, strProgressText = &quot;&quot;])</pre>
+<h3>Parameters</h4>
+<table class="info">
+<tr>
+  <td width="15%">objCollection</td>
+  <td width="85%">Object containing an array of objects (or collection). Objects in the collection are associative arrays which contain a list key-value pairs. See ObjCSV_CSV2Collection returned value for details.</td>
+</tr>
+<tr>
+  <td width="15%">strSortFields</td>
+  <td width="85%">Name(s) of the field(s) to use as sort criteria. To sort on more than one field, concatenate field names with the + character (e.g. &quot;LastName+FirstName&quot;).</td>
+</tr>
+<tr>
+  <td width="15%">strSortOptions</td>
+  <td width="85%">(Optional) Sorting options to apply to the sort command. A string of zero or more of the option letters (in any order, with optional spaces in between). Most frequently used are R (reverse order) and N (numeric sort). All AHK_L sort options are supported. See <a href="http://l.autohotkey.net/docs/commands/Sort.htm">http://l.autohotkey.net/docs/commands/Sort.htm</a> for more options. Empty by default.</td>
+</tr>
+<tr>
+  <td width="15%">intProgressType</td>
+  <td width="85%">(Optional) If 1, a progress bar is displayed. If -1, -2 or -n, the part &quot;n&quot; of the status bar is updated with the progress in percentage. See also strProgressText below. By default, no progress bar or status (0).</td>
+</tr>
+<tr>
+  <td width="15%">strProgressText</td>
+  <td width="85%">(Optional) Text to display in the progress bar or in the status bar. For status bar progress, the string &quot;##&quot; is replaced with the percentage of progress. See also intProgressType above. Empty by default.</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<p>This functions returns an object that contains the array (or collection) of objects of objCollection sorted on strSortFields. See ObjCSV_CSV2Collection returned value for details.</p>
+
+</body>
+</html>

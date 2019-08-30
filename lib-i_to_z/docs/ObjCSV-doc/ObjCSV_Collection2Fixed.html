@@ -1,0 +1,74 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>ObjCSV_Collection2Fixed()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>ObjCSV_Collection2Fixed()</h1>
+<p>Transfer the selected fields from a collection of objects to a fixed-width file. Field names taken from key names are optionnaly included the file. Width are determined by the delimited string strWidth. Field names and data fields shorter than their width are padded with trailing spaces. Field names and data fields longer than their width are truncated at their maximal width.</p>
+
+<pre class="Syntax">ObjCSV_Collection2Fixed(objCollection, strFilePath, strWidth [, blnHeader = 0, strFieldOrder = &quot;&quot;, intProgressType = 0, blnOverwrite = 0, strFieldDelimiter = &quot;,&quot;, strEncapsulator = &quot;&quot;&quot;&quot;, strEolReplacement = &quot;&quot;, strProgressText = &quot;&quot;, strFileEncoding := &quot;&quot;, strEol := &quot;&quot;])</pre>
+<h3>Parameters</h4>
+<table class="info">
+<tr>
+  <td width="15%">objCollection</td>
+  <td width="85%">Object containing an array of objects (or collection). Objects in the collection are associative arrays which contain a list key-value pairs. See ObjCSV_CSV2Collection returned value for details.</td>
+</tr>
+<tr>
+  <td width="15%">strFilePath</td>
+  <td width="85%">The name of the fixed-width destination file, which is assumed to be in %A_WorkingDir% if an absolute path isn't specified.</td>
+</tr>
+<tr>
+  <td width="15%">strWidth</td>
+  <td width="85%">Width for each field. Each numeric values must be in the same order as strFieldOrder and separated by the strFieldDelimiter character.</td>
+</tr>
+<tr>
+  <td width="15%">blnHeader</td>
+  <td width="85%">(Optional) If true, the field names in the collection objects are inserted as header of the file, padded or truncated according to each field's width. NOTE: If field names are longer than their fixed-width they will be truncated as well.</td>
+</tr>
+<tr>
+  <td width="15%">strFieldOrder</td>
+  <td width="85%">(Optional) List of field to include in the file and the order of these fields in the file. Fields names must be separated by the strFieldDelimiter character and, if required, encapsulated by the strEncapsulator character. If empty, all fields are included. Empty by default.</td>
+</tr>
+<tr>
+  <td width="15%">intProgressType</td>
+  <td width="85%">(Optional) If 1, a progress bar is displayed. If -1, -2 or -n, the part &quot;n&quot; of the status bar is updated with the progress in percentage. See also strProgressText below. By default, no progress bar or status (0).</td>
+</tr>
+<tr>
+  <td width="15%">blnOverwrite</td>
+  <td width="85%">(Optional) If true (or 1), overwrite existing files. If false (or 0), content is appended to the existing file. False (or 0) by default. NOTE: If content is appended to an existing file, fields names and order should be the same as in the existing file.</td>
+</tr>
+<tr>
+  <td width="15%">strFieldDelimiter</td>
+  <td width="85%">(Optional) Delimiter inserted between fields names in the strFieldOrder parameter and fields width in the strWidth parameter. This delimiter is NOT used in the file data. One character, usually comma, tab or semi-colon. You can choose other delimiters like pipe (|), space, etc. Comma by default. NOTE: End-of-line characters (<code>n or </code>r) are prohibited as field separator since they are used as record delimiters.</td>
+</tr>
+<tr>
+  <td width="15%">strEncapsulator</td>
+  <td width="85%">(Optional) One character (usualy double-quote) inserted in the strFieldOrder parameter to embed field names that include at least one of these special characters: line-breaks, field delimiters or the encapsulator character itself. In this last case, the encapsulator character is doubled in the string. For example: &quot;one &quot;&quot;quoted&quot;&quot; word&quot;. Double-quote by default. This delimiter is NOT used in the file data.</td>
+</tr>
+<tr>
+  <td width="15%">strEolReplacement</td>
+  <td width="85%">(Optional) A fixed-width file should not include end-of-line within data. If it does and if a strEolReplacement is provided, end-of-line in multi-line fields are replaced by the string strEolReplacement and this (or these) characters are included in the fixed-width character count. Empty by default.</td>
+</tr>
+<tr>
+  <td width="15%">strProgressText</td>
+  <td width="85%">(Optional) Text to display in the progress bar or in the status bar. For status bar progress, the string &quot;##&quot; is replaced with the percentage of progress. See also intProgressType above. Empty by default.</td>
+</tr>
+<tr>
+  <td width="15%">strFileEncoding</td>
+  <td width="85%">(Optional) File encoding: ANSI, UTF-8, UTF-16, UTF-8-RAW, UTF-16-RAW or CPnnnn (a code page with numeric identifier nnn - see <a href="https://autohotkey.com/docs/commands/FileEncoding.htm">https://autohotkey.com/docs/commands/FileEncoding.htm</a>). Empty by default (system default ANSI code page).</td>
+</tr>
+<tr>
+  <td width="15%">strEol</td>
+  <td width="85%">(Optional) If strEolReplacement is used, character(s) that mark end-of-lines in multi-line fields. Use &quot;<code>r</code>n&quot; (carriage-return + line-feed, ASCII 13 &amp; 10), &quot;<code>n&quot; (line-feed, ASCII 10) or &quot;</code>r&quot; (carriage-return, ASCII 13). If the parameter is empty, the content is searched to detect the first end-of-lines character(s) detected in the string (in the order &quot;<code>r</code>n&quot;, &quot;<code>n&quot;, &quot;</code>r&quot;). The first end-of-lines character(s) found is used for remaining fields and records. Empty by default.</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<p>At the end of execution, the function sets ErrorLevel to: 0 No error / 1 File system error. For system errors, check A_LastError and google &quot;windows system error codes&quot;.</p>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>ObjCSV_CSV2Collection()</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="default.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<h1>ObjCSV_CSV2Collection()</h1>
+<p>Transfer the content of a CSV file to a collection of objects. Field names are taken from the first line of
+the file or from the strFieldNameReplacement parameter. If taken from the file, fields names are returned by
+the ByRef variable strFieldNames. Delimiters are configurable.</p>
+
+<pre class="Syntax">ObjCSV_CSV2Collection(strFilePath, ByRef strFieldNames [, blnHeader = 1, blnMultiline = 1, intProgressType = 0, strFieldDelimiter = &quot;,&quot;, strEncapsulator = &quot;&quot;&quot;&quot;, strEolReplacement = &quot;&quot;, strProgressText := &quot;&quot;, ByRef strFileEncoding := &quot;&quot;])</pre>
+<h3>Parameters</h4>
+<table class="info">
+<tr>
+  <td width="15%">strFilePath</td>
+  <td width="85%">Path of the file to load, which is assumed to be in A_WorkingDir if an absolute path isn't specified.</td>
+</tr>
+<tr>
+  <td width="15%">strFieldNames</td>
+  <td width="85%">(ByRef) Input: Names for object keys if blnHeader if false. Names must appear in the same order as they appear in the file, separated by the strFieldDelimiter character (see below). If names are not provided and blnHeader is false, &quot;C&quot; + column numbers are used as object keys, starting at 1, and strFieldNames will return the &quot;C&quot; names. Empty by default. Output: See &quot;Returns:&quot; below.</td>
+</tr>
+<tr>
+  <td width="15%">blnHeader</td>
+  <td width="85%">(Optional) If true (or 1), the objects key names are taken from the header of the CSV file (first line of the file). If blnHeader if false (or 0), the first line is considered as data (see strFieldNames). True (or 1) by default.</td>
+</tr>
+<tr>
+  <td width="15%">blnMultiline</td>
+  <td width="85%">(Optional) If true (or 1), multi-line fields are supported. Multi-line fields include line breaks (end-of-line characters) which are usualy considered as delimiters for records (lines of data). Multi-line fields must be enclosed by the strEncapsulator character (usualy double-quote, see below). True by default. NOTE-1: If you know that your CSV file does NOT include multi-line fields, turn this option to false (or 0) to allow handling of larger files and improve performance (RegEx experts, help needed! See the function code for details). NOTE-2: If blnMultiline is True, you can use the strEolReplacement parameter to specify a character (or string) that will be converted to line-breaks if found in the CSV file.</td>
+</tr>
+<tr>
+  <td width="15%">intProgressType</td>
+  <td width="85%">(Optional) If 1, a progress bar is displayed. If -1, -2 or -n, the part &quot;n&quot; of the status bar is updated with the progress in percentage. See also strProgressText below. By default, no progress bar or status (0).</td>
+</tr>
+<tr>
+  <td width="15%">strFieldDelimiter</td>
+  <td width="85%">(Optional) Field delimiter in the CSV file. One character, usually comma (default value) or tab. According to locale setting of software (e.g. MS Office) or user preferences, delimiter can be semi-colon (;), pipe (|), space, etc. NOTE-1: End-of-line characters (<code>n or </code>r) are prohibited as field separator since they are used as record delimiters. NOTE-2: Using the Trim function, %A_Space% and %A_Tab% (when tab is not a delimiter) are removed from the beginning and end of all field names (but not of data since v0.5.6).</td>
+</tr>
+<tr>
+  <td width="15%">strEncapsulator</td>
+  <td width="85%">(Optional) Character (usualy double-quote) used in the CSV file to embed fields that include at least one of these special characters: line-breaks, field delimiters or the encapsulator character itself. In this last case, the encapsulator character must be doubled in the string. For example: &quot;one &quot;&quot;quoted&quot;&quot; word&quot;. All fields and headers in the CSV file can be encapsulated, if desired by the file creator. Double-quote by default.</td>
+</tr>
+<tr>
+  <td width="15%">strEolReplacement</td>
+  <td width="85%">(Optional) Character (or string) that will be converted to line-breaks if found in the CSV file. Replacements occur only when blnMultiline is True. Empty by default.</td>
+</tr>
+<tr>
+  <td width="15%">strProgressText</td>
+  <td width="85%">(Optional) Text to display in the progress bar or in the status bar. For status bar progress, the string &quot;##&quot; is replaced with the percentage of progress. See also intProgressType above. Empty by default.</td>
+</tr>
+<tr>
+  <td width="15%">strFileEncoding</td>
+  <td width="85%">(ByRef, Optional) File encoding: ANSI, UTF-8, UTF-16, UTF-8-RAW, UTF-16-RAW or CPnnnn (nnnn being a code page numeric identifier - see <a href="https://autohotkey.com/docs/commands/FileEncoding.htm">https://autohotkey.com/docs/commands/FileEncoding.htm</a>. Empty by default (using current encoding). If a literal value or a filled variable is passed as parameter, this value is used to set reading encoding. If an empty variable is passed to the ByRef parameter, the detected file encoding is returned in the ByRef variable.</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<p>This functions returns an object that contains an array of objects. This collection of objects can be viewed as a table in a database. Each object in the collection is like a record (or a line) in a table. These records are, in fact, associative arrays which contain a list key-value pairs. Key names are like field names (or column names) in the table. Key names are taken in the header of the CSV file, if it exists. Keys can be strings or integers, while values can be of any type that can be expressed as text. The records can be read using the syntax obj[1], obj[2] (...). Field values can be read using the syntax obj[1].keyname or, when field names contain spaces, obj[1][&quot;key name&quot;]. The &quot;Loop, Parse&quot; and &quot;For key, value in array&quot; commands allow to easily browse the content of these objects.</p>
+<p>If blnHeader is true (or 1), the ByRef parameter strFieldNames returns a string containing the field names (object keys) read from the first line of the CSV file, in the format and in the order they appear in the file. If a field name is empty, it is replaced with &quot;Empty_&quot; and its field number.  If a field name is duplicated, the field number is added to the duplicate name.  If blnHeader is false (or 0), the value of strFieldNames is unchanged by the function except if strFieldNames is empty. In this case, strFieldNames will return the &quot;C&quot; field names created by this function.</p>
+<p>If an empty variable is passed to the ByRef parameter strFileEncoding, returns the detected file encoding.</p>
+
+</body>
+</html>

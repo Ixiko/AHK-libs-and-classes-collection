@@ -1,4 +1,4 @@
-/*	Title:	HiEdit
+﻿/*	Title:	HiEdit
 			HiEdit is a multitabbed, ultra fast, large file edit control consuming very little memory. 
 			It can display non-printable characters in a readable format and can be used for any general 
 			purpose editing of text and birary files.
@@ -137,7 +137,10 @@ HE_Clear(hEdit) {
     Static WM_CLEAR:=0x303 
     SendMessage WM_CLEAR,,,,ahk_id %hEdit% 
 } 
+;{
 
+
+;}
 /*
  Function: CharFromPos
            Gets information about the character closest to a specified point in the client area of the Edit control.
