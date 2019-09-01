@@ -1,4 +1,4 @@
-/* Title:		RichEdit
+﻿/* Title:		RichEdit
 
 				This module allows you to create and programmatically set text properties in rich edit control.
 				Besides that, it contains functions that work with standard edit controls. Each function contains
@@ -975,7 +975,6 @@ RichEdit_PasteSpecial(HCtrl, Format)  {
 
   SendMessage, EM_PASTESPECIAL, CF_%Format%, 0,, ahk_id %hCtrl%
 }
-
 
 /*
  Function: PosFromChar
