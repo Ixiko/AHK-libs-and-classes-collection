@@ -1,50 +1,149 @@
-Crypt_Hash(pData, nSize, SID = "CRC32", nInitial = 0)
+/* 
+AutoHotkey Version: 1.0.35+ 
+Language:  English 
+Platform:  Win2000/XP 
+Author:    Laszlo Hars <www.Hars.US> 
+Modified by: Christian Sander
+
+Script to en/decrypt text files to text files 
+
+Plus-minus Counter Mode: stream cipher using add/subtract with reduced range 
+   (32...126). Characters outside remain unchanged (TAB, CR, LF, ...). 
+   Lines will remain of the same length. If it leaks information, pad! 
+
+The underlying cipher is TEA, the Tiny Encryption Algorithm 
+http://www.simonshepherd.supanet.com/tea.htm It is one of the fastest and most 
+efficient cryptographic algorithms. It was developed by David Wheeler and Roger 
+Needham at the Computer Laboratory of Cambridge University. It is a Feistel 
+cipher, which uses operations from mixed (orthogonal) algebraic groups - XOR, 
+ADD and SHIFT in this case. It encrypts 64 data bits at a time using a 128-bit 
+key. It seems highly resistant to differential cryptanalysis, and achieves 
+complete diffusion (where a one bit difference in the plaintext will cause 
+approximately 32 bit differences in the ciphertext) after only six rounds. 
+
+As a test, the script reads its source file and saves the ciphertext with 
+   extension .enc to the same directory. 
+If it exists, the decrypted file is saved with extension .dec instead 
+
+Version:   1.0  2005.07.08  First created 
+*/ 
+
+Encrypt(text)
 {
-	CALG_SHA := CALG_SHA1 := 1 + CALG_MD5 := 0x8003
-	If Not	CALG_%SID%
-	{
-		FormatI := A_FormatInteger
-		SetFormat, Integer, H
-		sHash := DllCall("ntdll\RtlComputeCrc32", "Uint", nInitial, "Uint", pData, "Uint", nSize, "Uint")
-		SetFormat, Integer, %FormatI%
-		StringUpper,	sHash, sHash
-		StringReplace,	sHash, sHash, X, 000000
-		Return	SubStr(sHash,-7)
+	StringCaseSense Off 
+	AutoTrim Off 
+	k1 := 0x11111111                 ; 128-bit secret key 
+	k2 := 0x22222222 
+	k3 := 0x33333333                 ; choose wisely! 
+	k4 := 0x44444444 
+	k5 := 0x12345678                 ; starting counter value 
+	i = 9                         ; pad-index, force restart 
+	p = 0                         ; counter to be encrypted 
+
+	Loop Parse, text, `n, `r 
+	{ 
+	  L =                        ; processed line 
+	  Loop % StrLen(A_LoopField) 
+	  { 
+		 i++ 
+		 IfGreater i,8, {        ; all 9 pad values exhausted 
+			u := p 
+			v := k5              ; another secret 
+			p++                  ; increment counter 
+			TEA(u,v, k1,k2,k3,k4) 
+			s := Stream9(u,v)         ; 9 pads from encrypted counter 
+			i = 0 
+		 } 
+		 StringMid c, A_LoopField, A_Index, 1 
+		 a := Asc(c) 
+		 if a between 32 and 126 
+		 {                       ; chars > 126 or < 31 unchanged 
+			a += s[i]
+			IfGreater a, 126, SetEnv, a, % a-95 
+			c := Chr(a) 
+		 } 
+		 L = %L%%c%              ; attach encrypted character 
+	  } 
+	  encrypted .=L "`n"
 	}
-
-	DllCall("advapi32\CryptAcquireContextA", "UintP", hProv, "Uint", 0, "Uint", 0, "Uint", 1, "Uint", 0xF0000000)
-	DllCall("advapi32\CryptCreateHash", "Uint", hProv, "Uint", CALG_%SID%, "Uint", 0, "Uint", 0, "UintP", hHash)
-	DllCall("advapi32\CryptHashData", "Uint", hHash, "Uint", pData, "Uint", nSize, "Uint", 0)
-	DllCall("advapi32\CryptGetHashParam", "Uint", hHash, "Uint", 2, "Uint", 0, "UintP", nSize, "Uint", 0)
-	VarSetCapacity(HashVal, nSize, 0)
-	DllCall("advapi32\CryptGetHashParam", "Uint", hHash, "Uint", 2, "Uint", &HashVal, "UintP", nSize, "Uint", 0)
-	DllCall("advapi32\CryptDestroyHash", "Uint", hHash)
-	DllCall("advapi32\CryptReleaseContext", "Uint", hProv, "Uint", 0)
-
-	FormatI := A_FormatInteger
-	SetFormat, Integer, H
-	Loop,	%nSize%
-		sHash .= SubStr(*(&HashVal + A_Index - 1), -1)
-	SetFormat, Integer, %FormatI%
-	StringReplace,	sHash, sHash, x, 0, All
-	StringUpper,	sHash, sHash
-	Return	sHash
+	if(Substr(text,0)!="`n")
+		encrypted := Substr(encrypted, 1, strLen(encrypted)-1)
+	Return encrypted
 }
 
-; Require Windows XP or Higher!
-Crypt_AES(pData, nSize, sPassword, SID = 256, bEncrypt = True)
+Decrypt(text)
 {
-	CALG_AES_256 := 1 + CALG_AES_192 := 1 + CALG_AES_128 := 0x660E
-	CALG_SHA := CALG_SHA1 := 1 + CALG_MD5 := 0x8003
-	DllCall("advapi32\CryptAcquireContextA", "UintP", hProv, "Uint", 0, "Uint", 0, "Uint", 24, "Uint", 0xF0000000)
-	DllCall("advapi32\CryptCreateHash", "Uint", hProv, "Uint", CALG_SHA1, "Uint", 0, "Uint", 0, "UintP", hHash)
-	DllCall("advapi32\CryptHashData", "Uint", hHash, "Uint", &sPassword, "Uint", StrLen(sPassword), "Uint", 0)
-	DllCall("advapi32\CryptDeriveKey", "Uint", hProv, "Uint", CALG_AES_%SID%, "Uint", hHash, "Uint", SID<<16, "UintP", hKey)
-	DllCall("advapi32\CryptDestroyHash", "Uint", hHash)
-	If	bEncrypt
-		DllCall("advapi32\CryptEncrypt", "Uint", hKey, "Uint", 0, "Uint", True, "Uint", 0, "Uint", pData, "UintP", nSize, "Uint", nSize+16)
-	Else	DllCall("advapi32\CryptDecrypt", "Uint", hKey, "Uint", 0, "Uint", True, "Uint", 0, "Uint", pData, "UintP", nSize)
-	DllCall("advapi32\CryptDestroyKey", "Uint", hKey)
-	DllCall("advapi32\CryptReleaseContext", "Uint", hProv, "Uint", 0)
-	Return	nSize
+	StringCaseSense Off 
+	AutoTrim Off 
+	k1 := 0x11111111                 ; 128-bit secret key 
+	k2 := 0x22222222 
+	k3 := 0x33333333                 ; choose wisely! 
+	k4 := 0x44444444 
+	k5 := 0x12345678                 ; starting counter value 
+	i = 9                         ; pad-index, force restart 
+	p = 0                         ; counter to be encrypted 
+	decrypted := ""
+	Loop Parse, text, `n, `r 
+	{ 
+	  L =                        ; processed line 
+	  Loop % StrLen(A_LoopField) 
+	  { 
+		 i++ 
+		 IfGreater i,8, {        ; all 9 pad values exhausted 
+			u := p 
+			v := k5              ; another secret 
+			p++                  ; increment counter 
+			TEA(u,v, k1,k2,k3,k4) 
+			s := Stream9(u,v)         ; 9 pads from encrypted counter 
+			i = 0 
+		 } 
+		 StringMid c, A_LoopField, A_Index, 1 
+		 a := Asc(c) 
+		 if a between 32 and 126 
+		 {                       ; chars > 126 or < 31 unchanged 
+			a -= s[i] 
+			IfLess a, 32, SetEnv, a, % a+95 
+			c := Chr(a) 
+		 } 
+		 L = %L%%c%              ; attach encrypted character 
+	  } 
+	  decrypted .= L "`n"
+	}
+	if(Substr(text,0)!="`n")
+		decrypted := Substr(decrypted, 1, strLen(decrypted)-1)
+	Return decrypted
+}
+
+
+TEA(ByRef y,ByRef z,k0,k1,k2,k3) ; (y,z) = 64-bit I/0 block 
+{                                ; (k0,k1,k2,k3) = 128-bit key 
+   IntFormat = %A_FormatInteger% 
+   SetFormat Integer, D          ; needed for decimal indices 
+   s := 0 
+   d := 0x9E3779B9 
+   Loop 32 
+   { 
+      k := "k" . s & 3           ; indexing the key 
+      y := 0xFFFFFFFF & (y + ((z << 4 ^ z >> 5) + z  ^  s + %k%)) 
+      s := 0xFFFFFFFF & (s + d)  ; simulate 32 bit operations 
+      k := "k" . s >> 11 & 3 
+      z := 0xFFFFFFFF & (z + ((y << 4 ^ y >> 5) + y  ^  s + %k%)) 
+   } 
+   SetFormat Integer, %IntFormat% 
+   y += 0 
+   z += 0                        ; Convert to original ineger format 
+} 
+
+Stream9(x,y)                     ; Convert 2 32-bit words to 9 pad values 
+{                                ; 0 <= s[0], s[1], ... s[8] <= 94 
+   s := []
+   s[0] := Floor(x*0.000000022118911147) ; 95/2**32 
+   Loop 8 
+   { 
+      z := (y << 25) + (x >> 7) & 0xFFFFFFFF 
+      y := (x << 25) + (y >> 7) & 0xFFFFFFFF 
+      x = %z%
+      s[A_Index] := Floor(x * 0.000000022118911147) 
+   } 
+   return s
 }

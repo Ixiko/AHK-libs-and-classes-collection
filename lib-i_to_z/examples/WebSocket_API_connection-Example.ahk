@@ -1,6 +1,6 @@
 ﻿#NoEnv
 #SingleInstance Force
-#include ..\..\include\ahk\websocket.ahk
+#include %A_ScriptDir%\..\websocket.ahk
 
 Gui, Add, ListBox, x12 y10 w590 h400 vView ,
 
@@ -50,7 +50,7 @@ BtnDisconnect:
 if(!websocket_disconnect())
 {
 	addText("The connection couldn't be closed. The connection is already closed!")
-	
+
 	return
 }
 
@@ -82,28 +82,28 @@ return
 on_connect()
 {
 	Critical
-	
+
 	addText("The connection has been established!")
 }
 
 on_fail()
 {
 	Critical
-	
+
 	addText("The connection couldn't be created!")
 }
 
 on_disconnect()
 {
 	Critical
-	
+
 	addText("The connection has been closed!")
 }
 
 on_data(data, len)
 {
 	Critical
-	
+
 	addText("Data has been received [" . len . "]: " . StrGet(data, len) )
 }
 
