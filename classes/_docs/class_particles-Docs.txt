@@ -1,0 +1,199 @@
+Requires: Gdip by tic/Rseding91:
+get: "Alternative Download: Gdip All" https://autohotkey.com/boards/viewtopic.php?t=6517
+... but it should already be packaged with the program
+
+
+class particles
+
+Properites:
+	assuming you used: psys:=new particles(30)
+	psys.emitters[emitterN].property
+	| get/set the properties as mentioned in addEmitter()
+	
+	psys.particles[emitterN, particleN].property
+	| Available properties to get/set:
+	| x1     = center x point for a line/circle/everything
+	| y1     = center y point for a line/circle/everything
+	| x2     = for lines, the second x point to connect to
+	| y2     = for lines, the second y point to connect to
+	| dir    = what way is it facing
+	| vel    = how much gravity (velocity) is affecting it
+	| radius = size of a circle, font size of text or the scale of an image
+	| lineW  = How fat a line is
+	| life   = current life phase
+	| mlife  = how much life did it have on creation
+	| color  = what beautiful color will it be
+	| alpha  = how see-through is it? 255 is solid, 0 is invisible
+	| type   = how is it going to be displayed, this is the particle type name
+	
+	psys.fps
+	| the simulations FPS.
+	| !!! Note !!! Changing this does NOT affect psys.delay (but it probably should)
+	
+	psys.delay
+	| How fast the simulation should update, based on the FPS.
+	| This is not used internally, it's meant to be used for the user within sleep/settimer.
+	
+	psys.drawCount
+	| How many things are currently drawn on screen
+	
+	psys.defaults
+	| get/set the default values, as mentioned in addEmitter()
+
+
+
+Methods:
+	__New(FPS=30)
+	| Create a particle system that'll hold all the emitter(s) and particle info.
+	| EXAMPLE: var:=new particles(24) ; create a new particle system that runs at 24 fps
+	| EXAMPLE: psys:=new particles(30) ; create a new particle system that runs at 30 fps
+	
+	setCanvas(cx, cy, cw, ch, cquality, drawOnThis="")
+	| This is what particles get drawn onto.
+	| cx = Canvas x position on the screen
+	| cy = Canvas y position on the screen
+	| cw = Canvas width
+	| ch = Canvas height
+	| cquality = Canvas quality. values are 0-4. Default = 0, HighSpeed = 1, HighQuality = 2, None = 3, AntiAlias = 4
+	| drawOnThis = If specified, it draws onto a control (see "demo2_Draw_on_GUI.ahk") otherwise it draws over the screen.
+	| if drawOnThis is **NOT** blank, cx/y/w/h will be set to the x/y/w/h of the control used, so you may specify 0 for them all.
+	| EXAMPLE: psys.setCanvas(0,0,0,0, 4, hwnd)
+	| EXAMPLE: psys.setCanvas(0, 0, A_ScreenHeight, A_ScreenWidth, 2)
+
+	clear()
+	| clear everything that has been drawn, so you can display the next frame
+	| EXAMPLE: psys.clear()
+
+	step()
+	| Advance the simulation forward 1 tick, but doesn't draw anything.
+	| EXAMPLE: psys.step()
+	
+	draw(drawOnThis="")
+	| Goes through every emitter and particle in the particle system and draws them onto the screen/control
+	| drawOnThis = If specified, it draws onto a control (see "demo2_Draw_on_GUI.ahk") otherwise it draws over the screen.
+	| !!! IMPORTANT NOTE !!!
+	| - Some emitter types, as of (Tue January 03, 2017) only work with certain modes.
+	| - These work on both drawOnThis modes: Generic, Generic Fill, Sparks, AllLines
+	| - These *only* work when drawOnThis is specified: Cursor
+	| - These *only* work when drawOnThis is NOT specified: Text, Image
+	|
+	| Returns the Graphics that it was drawn onto
+	|
+	| EXAMPLE: psys.draw()
+	| EXAMPLE: psys.draw(hwnd)
+	
+	addEmitter(pe="")
+	| Create a new emitter and give it all its properties.
+	| pe = If pe (particle emitter) is blank, it uses all the default values.
+	| Default values ("option":default):
+	| "type":"Generic"  = How it'll behave and be displayed.
+	|                     Avalable types: 
+	|                     - Generic      = Creates connected lines and.or dots.
+	|                     - Generic Fill = Creates connected lines and.or dots, but all particles are connected by polygon.
+	|                     - Sparks       = Creates jitter squares
+	|                     - AllLines     = Same as Generic except there are lines that connect every particle to every other particle
+	|                     - Text         = Particles, with words*. It also uses a hardcoded font everyone loves, Comic Sans MS.
+	|                     - Image        = Particles, with images*
+	|                     - Cursor       = Particles, using you current cursor*
+	|                     * !!! these do not work 100% correct, use with caution
+	| "life":[1]        = An array of 2-3 values of how long it should live. [1] is 1 second, [0.5,2] is 0.5-2 seconds, at random. 
+	|                     If the first item is "f" (["f",1]) it'll be based on frames, not seconds
+	| "offx":0          = An additional offset in the x direction, offset from the coords used in addParticle(...)
+	| "offy":0          = An additional offset in the y direction, offset from the coords used in addParticle(...)
+	| "color":""        = If blank, a random color is chosen. Otherwise specify an array of colors to choose from. ["ffffff", "00ff00", "ff4400"].
+	|                     If [type] is "image", you may place your image(s) here instead of colors. ["c:\path\img1.jpg","c:\path\img2.png","c:\path\img3.jpg"]
+	| "colorMode":1     = How the colors should be chosen. 
+	|                     Available modes:
+	|                     1 = Cycle colors in order,
+	|                     2 = Choose randomly,
+	|                     3 = Base the color on how old it is,
+	|                     4 = Same as 3, but reversed
+	| "colorVari":0     = Apply some random color variations. -255 - 255. 0 is none.
+	| "alpha":[255]     = An array of transparency values to smoothly transition between over its life. 255 is solid, 0 is invisible.
+	| "lineWidth":[0]   = How thick, in pixels, should lines be? and array of values to smoothly transition between over its life.
+	| "circleSize":[10] = The radius of circles. an array of values to smoothly transition between over its life.
+	|                     When [Type] is "text", this is the font size.
+	|                     When [Type] is "image", this is the scale of the image ("100" being real size, "10" is 10%)
+	| "pattern":["r"]   = An array of angles, in degrees, choose between at random.
+	|                     "r" may be used anywhere for a random direction (0-360).
+	|                     values may be negative. 
+	|                     if the first field contains "c", it cycles the directions in order.
+	|                     if the first field contains "m", the angles are offset based on the direction the mouse is going
+	|                     if the first field contains "w", same as "m", but reversed
+	| "speed":[100]     = How fast should stuff move in the current direction, in pixels-per-second. an array of values to smoothly transition between over its life.
+	| "gravity":[0]     = A pseudo-gravity system to make particles fall down. good values are 50-150. values can be negative to go upward. An array of values to smoothly transition between over its life.
+	| "jitter":[0]      = Apply some wiggle action to those particles! good values are 1-20. An array of values to smoothly transition between over its life.
+	| "spiral":[0]      = How much should the particles rotate, in degrees-per-second. An array of values to smoothly transition between over its life.
+	|
+	| Returns an object of the emitters properiter
+	|
+	| EXAMPLES:
+	| ------
+	| - ; 1) Use all the default values
+	| - psys.addEmitter()
+	| ------
+	| - ; 2) save the emitter to a variable "e1" then modify the values.
+	| - e1:=psys.addEmitter()
+	| - e1.life:=[1,2]
+	| - e1.speed:=[100,500,0,0]
+	| - e1.pattern:=["c", 90, 210, 330]
+	| ------
+	| - ; 3) same as 2, but using the built-in functions to set the values
+	| - psys.addEmitter()
+	| - psys.life([1,2], 2)
+	| - psys.speed([100,500,0,0], 2)
+	| - psys.pattern(["c", 90, 210, 330], 2)
+	| ------
+	| - ; 3) same as 2, but using the short version of setting the values
+	| - e1:=psys.addEmitter({"type":"AllLines", "life":[1], "color":["dd3333"], "alpha":[80], "lineWidth":[2,1], "circleSize":[5], "gravity":[50], "spiral":[180]})
+	
+	addParticle(px, py, pe=1, misc*)
+	| Adds a new particle to the simulation. AHK seems to handle around 50-100 (based on system) at any given time pretty smoothly.
+	| px = The particle x coordinate. the emitter's offx will affect this.
+	| py = The particle y coordinate. the emitter's offy will affect this.
+	| pe = What emitter to use
+	| misc* = Additional parameters for emitter types such as "text" and "Image".dditional options (currently not fully functional)
+	|         for Images: specify the path
+	|         EXAMPLE: psys.addParticle(20, 100, 1, "Text particles!")
+	|         EXAMPLE: psys.addParticle(200, 200, 2, "c:\path\to\image.png")
+	| EXAMPLE: psys.addParticle(100, 100, 1)
+
+
+All of these use the same rules as addEmitter, except they are function-form.
+	| type(ptype, eNum=1)
+	| life(plife, eNum=1)
+	| offx(poffx, eNum=1)
+	| offy(poffy, eNum=1)
+	| color(pcolor, eNum=1)
+	| colorMode(pcolorMode, eNum=1)
+	| colorVari(pcolorVari, eNum=1)
+	| alpha(palpha, eNum=1)
+	| lineWidth(plw, eNum=1)
+	| circleSize(pcs, eNum=1)
+	| pattern(ppattern, eNum=1)
+	| speed(pspeed, eNum=1)
+	| gravity(pgravity, eNum=1)
+	| jitter(pjitter, eNum=1)
+	* EXAMPLE: psys.life([1,2], 1)
+	* EXAMPLE: psys.color(["ffffff", "cccccc", "aaaaaa", "777777", "444444", "000000"], 3)
+	* EXAMPLE: psys.colorMode(3, 2)
+
+
+Bonus functions used by the class:
+	| rand(max=100, min=1)
+	| - Generate a random number.
+	| - Example: num:=rand(333)
+	| - Example: num:=rand(4, 325)
+	| 
+	| getAngle(x1, y1, x2, y2, mode=1)
+	| - Get the angle between 2 points.
+	| 
+	| numRange(steps, IWantThis="", numbers*)
+	| - Generate an array of numbers smoothly transitioning between all key points.
+	| 
+	|         for Text: the first one will be the text to use. the second one is a
+	| cshift(hex, lum=0.5, mode=2)
+	| - Shift a 0xrrggbb color a little bit
+	|  
+	| st_printArr(array, depth=5, indentLevel="")
+	| - A magical function for debugging arrays.

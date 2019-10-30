@@ -208,11 +208,12 @@ EnumDisplayDevices(DeviceName := "", DevNum := -1, Flags := 1) {
         if (!DllCall("User32.dll\EnumDisplayDevicesW", "UPtr", DeviceName==""?0:&DeviceName, "UInt", DevNum<0?A_Index-1:DevNum, "UPtr", Address, "UInt", Flags))
             break
 
-        Devices[A_Index].DeviceName   := StrGet(Address+4, 32, "UTF-16")      ; El nombre del dispositivo. Este es el dispositivo adaptador o el dispositivo monitor.
-        Devices[A_Index].DeviceString := StrGet(Address+68, 128, "UTF-16")    ; La cadena de contexto del dispositivo. Esta es una descripción del adaptador de pantalla o del monitor de pantalla.
-        Devices[A_Index].StateFlags   := NumGet(Address+324, "UInt")          ; Indicadores de estado del dispositivo. Puede ser una combinación de valores.
-        Devices[A_Index].DeviceID     := StrGet(Address+328, 128, "UTF-16")   ; No utilizado.
-        Devices[A_Index].DeviceKey    := StrGet(Address+584, 128, "UTF-16")   ; Reservado.
+        Devices[A_Index].DeviceName  	:= StrGet(Address+4, 32, "UTF-16")     		; The name of the device. This is the adapter device or the monitor device.
+        Devices[A_Index].DeviceString  	:= StrGet(Address+68, 128, "UTF-16")     	; The device context string. This is a description of the display adapter or the display monitor.
+        Devices[A_Index].StateFlags     	:= NumGet(Address+324, "UInt")            	; Device status indicators. It can be a combination of values.
+        Devices[A_Index].DeviceID        	:= StrGet(Address+328, 128, "UTF-16")   	; Not used.
+        Devices[A_Index].DeviceKey    	:= StrGet(Address+584, 128, "UTF-16")   	; reserved.
+
     } Until (A_Index > 1 && DevNum >= 0)
 
  return  Devices.Pop() && Devices.Length() ? (DevNum < 0 ? Devices : Devices[1]) : 0

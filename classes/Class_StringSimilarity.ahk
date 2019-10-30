@@ -17,9 +17,14 @@ Class stringsimilarity {
                 oArray["z" SubStr(para_string2, A_Index, 2)]--
                 vCount++
             }
-        vDSC := (2 * vCount) / (vCount1 + vCount2)
-        ; MsgBox, % vCount " " vCount1 " " vCount2 "`r`n" vDSC
-        return Round(vDSC,2)
+        vDSC := Round((2 * vCount) / (vCount1 + vCount2),2)
+        if (!vDSC || vDSC < 0.005) { ;round to 0 if less than 0.005
+            return 0
+        }
+        if (vDSC = 1) { 
+            return 1
+        }
+        return % vDSC
     }
 
 

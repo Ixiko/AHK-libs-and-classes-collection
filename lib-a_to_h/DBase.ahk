@@ -19,8 +19,7 @@ Global DBASEIII_MEMO:= 0x83 ; dBaseIII memo
 Global DBASEIV           	:= 0x04 ; dBaseIV  w/o memo
 Global DBASEIV_MEMO:= 0x8B ; dBaseIV  memo
 
-;"dbasedll.dll\" = DllOpen(AddendumDir . "\include\dbasedll.dll")
-dbasedll:= AddendumDir . "\include\dbasedll.dll"
+dbasedll:= "\include\dbasedll.dll"
 
 DBase_CreateDBF(pFileName, bVersion) {                                                                               	;-- creates new database file
 /*
