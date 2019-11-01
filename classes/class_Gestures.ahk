@@ -43,22 +43,6 @@ class gestures {
     }
     end() { ; Returns 0 = No Gesture, 1 = Gesture Triggered, -1 = Unidentified Gesture
         setTimer(this.tracker, "Off")
-
-        /**
-        showinfo() ; For debugging
-        showinfo(){
-            for i,p in this.points
-                t.=p.x " " p.y "`n"
-            t.="--------------`n"
-            for i,obj in this.list {
-                for i,s in obj.gesture
-                    t.=s.angle[1] ", " s.angle[2] ", " s.size[1] ", " s.size[2] " | "
-                t.="`n"
-            }
-            msgbox t
-        }
-        /**/
-
         triggered:= this.points.length()>1? -1: 0
         for _,item in this.list
             if this.checkGesture(item) {

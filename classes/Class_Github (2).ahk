@@ -78,9 +78,9 @@ class github{
 		url:=this.url "/repos/" this.owner "/" repo "/git/trees" this.token ;POST /repos/:owner/:repo/git/trees
 		json={"base_tree":"%parent%","tree":[
 		for a,blob in blobs{
-			add={"path":"%a%","mode":"100644","type":"blob","sha":"%blob%"}, 
+			add={"path":"%a%","mode":"100644","type":"blob","sha":"%blob%"},
 			json.=add
-		}
+		]}
 		return this.sha(this.Send("POST",url,Trim(json,",") "]}"))
 	}
 	commit(repo,tree,parent,message="Updated the file",name="placeholder",email="placeholder@gmail.com"){
@@ -112,4 +112,6 @@ class github{
 			StringReplace,info,info,%a%,%b%,All
 		return info
 	}
+	}
+
 }

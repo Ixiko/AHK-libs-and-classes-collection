@@ -18,9 +18,8 @@ Hold down Alt while scrolling to scroll horizontally
 ;Prevent hotkey limit reached warning (500 is just an arbitrarily high number)
 #MaxHotkeysPerInterval 500
 
-#Include %A_ScriptDir%
-#Include Acc.ahk ;Required for scrolling in MS Office applications
-#Include HoverScroll.ahk
+#Include %A_ScriptDir%\..\Acc.ahk ;Required for scrolling in MS Office applications
+#Include %A_ScriptDir%\..\HoverScroll.ahk
 
 ;Acc.ahk courtesy of AHK user "jethrow", for information please refer to the following thread:
 ;http://www.autohotkey.com/board/topic/77303-acc-library-ahk-l-updated-09272012/

@@ -10,7 +10,7 @@ SetControlDelay -1
 SetWinDelay -1
 StringCaseSense On
 
-#Include GuiLayout.ahk
+#Include %A_ScriptDir%\..\GuiLayout.ahk
 ;~ #Include ..\Debug.ahk
 
 ; -- Auto-execute
@@ -23,7 +23,7 @@ Gui Add, Button, HwndBtnRemoveHwnd, Remove
 Gui Add, Button, HwndBtnUpHwnd, Up
 Gui Add, Button, HwndBtnDownHwnd, Down
 Gui Add, GroupBox, HwndGroupBoxTopHwnd, Right Top Panel
-Gui Add, Edit, HwndRightPanelEditHwnd, 
+Gui Add, Edit, HwndRightPanelEditHwnd,
 Gui Add, Button, HwndRightPanelBtnHwnd, Click
 Gui Add, GroupBox, HwndGroupBoxBottomHwnd, Right Bottom Panel
 Gui Show, w480 h360, GuiLayout

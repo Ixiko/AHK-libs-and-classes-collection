@@ -3,7 +3,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 WinSetTitle, World of Warcraft,,WOWWINDOW
 
-#include get_variance.ahk
+#include %A_ScriptDir%\..\get_variance.ahk
 
 
 hexWhite := 0xFFFFFF
@@ -25,7 +25,7 @@ x::
 ;Loop
 {
 
-time1 = %A_TickCount% 
+time1 = %A_TickCount%
 
 foundcolor := pixel_get(ST2MBx, ST2MBy)
 
@@ -45,7 +45,7 @@ lowest := a[a.MinIndex()]
 
 	if ( %lowest% = cvWhite )
 		{
-		MsgBox, looks like white, variance was %cvwhite% - 
+		MsgBox, looks like white, variance was %cvwhite% -
 		}
 	else
 	if ( %lowest% = cvRed )
@@ -77,7 +77,7 @@ lowest := a[a.MinIndex()]
 		{
 		MsgBox, looks like red, variance was %cvYellow%
 		}
-			
+
 
 }
 return
@@ -85,7 +85,7 @@ return
 
 
 pixel_get(X, Y)
-{ 
+{
 		PixelGetColor, Color, X, Y, RGB
 		return Color
 

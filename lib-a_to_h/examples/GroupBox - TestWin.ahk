@@ -1,7 +1,7 @@
 #SingleInstance Force
 SetWorkingDir %A_ScriptDir%
 
-#Include %A_ScriptDir%\GroupBox.ahk
+#Include %A_ScriptDir%\..\GroupBox.ahk
 
 GBTHeight:=10
 Gui, +LastFound AlwaysOnTop

@@ -1,5 +1,5 @@
-FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
-{
+FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0) {
+
 	; function description
 	; MsgBox fnText: %fnText%`nfnAllowFormatAlterationsAhk: %fnAllowFormatAlterationsAhk%
 
@@ -42,7 +42,7 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 			Uncheck,Until
 			While,Win,WinMinimizeAll,WinMinimizeAllUndo
 		)
-		
+
 		KeyNames =
 		( LTrim Join, Comments
 			{ASC,{Alt,{AppsKey
@@ -63,7 +63,7 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 			{Volume_Down,{Volume_Mute,{Volume_Up
 			{WheelDown
 		)
-		
+
 		CommaAllowedKeywords =
 		( LTrim Join, Comments
 			Break
@@ -79,7 +79,7 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 			Throw,ToolTip,TrayTip
 			WinActivate,WinActivateBottom,WinClose,WinGetPos,WinHide,WinKill,WinMaximize,WinMinimize,WinRestore,WinShow,WinWait,WinWaitActive,WinWaitClose,WinWaitNotActive
 		)
-		
+
 		CommaNeededKeywords =
 		( LTrim Join, Comments
 			AutoTrim
@@ -101,7 +101,7 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 			UrlDownloadToFile
 			WinGet,WinGetActiveStats,WinGetActiveTitle,WinGetClass,WinGetText,WinGetTitle,WinMenuSelectItem,WinMove,WinSet,WinSetTitle
 		)
-		
+
 		ParenNeededKeywords =
 		( LTrim Join, Comments
 			._NewEnum
@@ -137,7 +137,7 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 			VarSetCapacity
 			WinActive,WinExist
 		)
-			
+
 		BuiltInVariablesList =
 		( LTrim Join, Comments
 			A_AhkPath,A_AhkVersion,A_AppData,A_AppDataCommon,A_AutoTrim
@@ -168,7 +168,7 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 			ProgramFiles
 			true
 		)
-		
+
 		DirectivesList =
 		( LTrim Join, Comments
 			; #AllowSameLineComments
@@ -186,8 +186,8 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 			#UseHook
 			#Warn,#WinActivateForce
 		)
-		
-		WinTitleParams = 
+
+		WinTitleParams =
 		( LTrim Join, Comments
 			ahk_class
 			ahk_exe
@@ -195,9 +195,9 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 			ahk_id
 			ahk_pid
 		)
-		
-		
-		MessagesList = 
+
+
+		MessagesList =
 		( LTrim Join, Comments
 			WM_ACTIVATE,WM_ACTIVATEAPP,WM_APP,WM_ASKCBFORMATNAME
 			WM_CANCELJOURNAL,WM_CANCELMODE,WM_CAPTURECHANGED,WM_CHANGECBCHAIN,WM_CHAR,WM_CHARTOITEM,WM_CHILDACTIVATE,WM_CLEAR,WM_CLOSE,WM_COALESCE_FIRST,WM_COALESCE_LAST,WM_COMMAND,WM_COMPACTING,WM_COMPAREITEM,WM_CONTEXTMENU,WM_COPY,WM_COPYDATA,WM_CREATE,WM_CTLCOLOR,WM_CTLCOLORBTN,WM_CTLCOLORDLG,WM_CTLCOLOREDIT,WM_CTLCOLORLISTBOX,WM_CTLCOLORMSGBOX,WM_CTLCOLORSCROLLBAR,WM_CTLCOLORSTATIC,WM_CUT
@@ -244,8 +244,8 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 			%MessagesList%
 			%CustomList%
 		)
-		
-		
+
+
 		; prepare the text
 		NormaliseLineEndings(fnText)
 		NewText := fnText
@@ -253,8 +253,8 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 		FormatStoreComments(NewText,";")
 		FormatStoreStrings(NewText,"/*","*/","StreamComments")
 		FormatStoreStrings(NewText,"""","DoubleQuotes")
-		
-		
+
+
 		; loop through each word, replacing each instance with its correctly formatted version
 		Loop, Parse, WordList, CSV
 		{
@@ -262,13 +262,13 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 			Word1  := SubStr(Word,1,1)
 			If Word1 is not alnum
 				PCRE := "[" Word1 "]\b" SubStr(Word,2)
-			Else 
+			Else
 				PCRE := "\b" Word
 			PCRE   := "imS)" PCRE "\b"
 			NewText := RegExReplace(NewText,PCRE,Word)
 		}
-		
-		
+
+
 		; additional formatting
 		If fnAllowFormatAlterationsAhk
 		{
@@ -277,23 +277,23 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 			NewText := RegExReplace(NewText,PCRE,"$1$3")
 			PCRE   := "iS)\b(GetKeyState)\b(\s*)(,)?(\s*)([^;(]+)"
 			NewText := RegExReplace(NewText,PCRE,"$1, $5")
-			
+
 			; Loop
 			PCRE   := "iS)\b(Loop)\b(?![\r\n])(\s*)(,)?(\s*+)([^{;\r\n])"
 			NewText := RegExReplace(NewText,PCRE,"$1, $5")
 			PCRE   := "iS)\b(Loop,)\b(\s*)(Reg|Files|Parse|Read)(\s*)(,)(\s*)"
 			NewText := RegExReplace(NewText,PCRE,"$1 $T3, ")
-			
+
 			; OnClipboardChange:
 			PCRE   := "iS)\b(OnClipboardChange)\b(\s+)([(:])"
 			NewText := RegExReplace(NewText,PCRE,"$1$3")
-			
+
 			; OnExit
 			PCRE   := "iS)\b(OnExit)\b(\s+)([(])"
 			NewText := RegExReplace(NewText,PCRE,"$1$3")
 			PCRE   := "iS)\b(OnExit)\b(?![\r\n])(\s*)(,)?(\s*+)([^;(])"
 			NewText := RegExReplace(NewText,PCRE,"$1, $5")
-			
+
 			; CommaAllowedKeywords
 			Loop, Parse, CommaAllowedKeywords, CSV
 			{
@@ -301,7 +301,7 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 				PCRE   := "iS)(?<!\*)(\b" Word "\b)(?![\r\n:])(\s*)(,)?(\s*+)([^;(,])"
 				NewText := RegExReplace(NewText,PCRE,"$1, $5")
 			}
-			
+
 			; CommaNeededKeywords
 			Loop, Parse, CommaNeededKeywords, CSV
 			{
@@ -309,7 +309,7 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 				PCRE   := "iS)(\b" Word "\b)(?![\r\n:])(\s*)(,)?(\s*)([^\s,])"
 				NewText := RegExReplace(NewText,PCRE,"$1, $5")
 			}
-			
+
 			; ParenNeededKeywords
 			Loop, Parse, ParenNeededKeywords, CSV
 			{
@@ -317,10 +317,10 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 				PCRE   := "iS)(\b" Word "\b)(?![\r\n:])(\s+)([(])"
 				NewText := RegExReplace(NewText,PCRE,"$1$3")
 			}
-			
+
 			PCRE   := "S)([^:\s])(:=)([^=\s])"
-			NewText := RegExReplace(NewText,PCRE,"$1 $2 $3") ; space around := 
-			
+			NewText := RegExReplace(NewText,PCRE,"$1 $2 $3") ; space around :=
+
 			TotalCountOfReplacements := 1 ; just to force entry into while loop
 			While TotalCountOfReplacements > 0
 			{
@@ -348,8 +348,8 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 			; PCRE   := "imS)([ \t]*)([\+\-\*\/])([ \t]*)" ; whitespace around maths symbols
 			; NewText := RegExReplace(NewText,PCRE,"$2")
 		}
-		
-		
+
+
 		; restore comments and strings
 		FormatRestoreStrings(NewText,"DoubleQuotes")
 		FormatRestoreStrings(NewText,"StreamComments")
@@ -362,14 +362,14 @@ FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0)
 
 		; PCRE   := "imS)^[ `t]+$" ; trim blank lines (whitespace only lines)
 		; NewText := RegExReplace(NewText,PCRE,"")
-			
+
 		PCRE   := "S)(\s;)([^; ])" ; unspaced comments
 		NewText := RegExReplace(NewText,PCRE,"$1 $2")
-		
+
 		PCRE   := "mS)^(;)([^; ])" ; whole line comments
 		NewText := RegExReplace(NewText,PCRE,"$1 $2")
-		
-		
+
+
 		; assign back to ByRef parameter
 		fnText := NewText
 
