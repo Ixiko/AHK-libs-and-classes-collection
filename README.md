@@ -11,10 +11,27 @@
 * **[01.11.2019]**(2636)
   
   * **+68** libraries
+  
   * moved examples to right directories, correct some #include path’s in example scripts
+  
   * new descriptions
+  
   * updates for some libraries 
-  * ***AHK-Library-Cooking*** - at the moment it only lists all functions inside every library, more features are in my head
+  
+  * ***AHK-Library-Cooking*** 
+  
+    * at the moment it only lists all functions inside every library
+  
+      * some statistics:
+  
+        | files with .ahk extension |          |
+        | ------------------------- | -------- |
+        | script files processed    | 3364     |
+        | functions found inside    | 24271    |
+        | text lines                | 819.256  |
+        | size of all files         | 29.62 MB |
+  
+    * more features are in my head
   
 * **[30.08.2019]**(2568)
   
