@@ -2,8 +2,8 @@
 versioninfo =
 (
 ========================================================================
- Description ...: A Custom ColorDialog 
- Usage..........: Run from your script and selected color is saved to colors.ini as RGB   
+ Description ...: A Custom ColorDialog
+ Usage..........: Run from your script and selected color is saved to colors.ini as RGB
  .................: runwait, colordialog.ahk  ; run script, return when exited
 ..................:	IniRead, color, colors.ini, Color, color_selected,0x00000 ; load color from dialog into %color%
  Version .......: 1.0
@@ -12,7 +12,7 @@ versioninfo =
  AHK-Version....: 1.1.26.00 U32
  OS-Versions....: Win 10 64
 ========================================================================
-Copyright (C) 2014-2016  
+Copyright (C) 2014-2016
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -31,200 +31,210 @@ found in Autohotkey.com forum, so thank you all for sharing.
 )
 #NoEnv
 color_dialog_tool()
+
 color_dialog_tool(){
-global
-colorlist2:=[0xffff0000,0xffff6600,0xffffcc00,0xffccff00,0xff66ff00,0xff00ff00,0xff00ff66,0xff00ffcc,0xff00ccff,0xff0066ff,0xff0000ff,0xff6600ff,0xffcc00ff,0xffff00cc,0xffff0066,0xffff0004]
-colorlist1:=[0xff000000,0xffff0000,0xffffffff]
-colorlist1pos := [0.0,0.3,1.0]
-c1:=0
-gui colordial:+alwaysontop +lastfound
-Gui, colordial:Margin, 5, 5
-Gui, colordial:color, white
-Gui, colordial:FONT, BLACK
-loop 8
-{
-IniRead, v%c1%, colors.ini, Color, v%c1%,0x000000
-tmpcol := v%c1%
-Gui, colordial:Add, text,+E0x20 0x200 w20 h20 BackgroundTrans v1%c1% gcolor_preset, 
-Gui, colordial:Add, Progress, x+-20 y+-20 w20 h20 Background%tmpcol% vv%c1% 
-c1++
-GuiControl,+Background%tmpcol%,v%c1%
-}
-loop 4
-{
-IniRead, v%c1%, colors.ini, Color, v%c1%,0x000000
-tmpcol := v%c1%
-Gui, colordial:Add, text,+E0x20 0x200 x+5 y5 w20 h20 BackgroundTrans v1%c1% gcolor_preset, 
-Gui, colordial:Add, Progress, x+-20 y+-20 w20 h20 Background%tmpcol% vv%c1% 
 
-c1++
-GuiControl,+Background%tmpcol%,v%c1%
-loop 7
-{
-IniRead, v%c1%, colors.ini, Color, v%c1%,0x000000
-tmpcol := v%c1%
-Gui, colordial:Add, text,y+5 +E0x20 0x200 w20 h20 BackgroundTrans v2%c1% gcolor_preset, 
-Gui, colordial:Add, progress, x+-20 y+-20 w20 h20 Background%tmpcol% vv%c1%
-GuiControl,+Background%tmpcol%,v%c1%
-c1++
-}
-}
-gui, colordial:font, s10 w700, 
-Gui, colordial:Add, Pic, x+5 y5 w200 h200 gcolorpal hwndHPI1C
-Gui, colordial:Add, Pic, x+5 w15 h200 gcolorver hwndHPIC 
-Gui, colordial:Add, text, x+5 y5 +E0x20 0x200 w60 h30 section BackgroundTrans gcolor_preset_set, 
-Gui, colordial:Add, Progress, x+-60 y+-30 w60 h30 Background%RGB_v% vpC
-Gui, colordial:Add, text, x+5 +E0x20 0x200 w70 h30 BackgroundTrans vrgbval, # %color_main%
-gui, colordial:add, button, x+5 w50 h30 gcopy, Copy
-Gui, colordial:Add, text,xs y+0 +E0x20 0x200 w60 h30 BackgroundTrans gcolor_preset_set, 
-Gui, colordial:Add, Progress, x+-60 y+-30 w60 h30 Background%RGB_v2% vpC2
-Gui, colordial:Add, text, x+5 +E0x20 0x200 w70 h30 BackgroundTrans vrgbvalold, # %color_old%
-gui, colordial:add, button, x+5 w50 h30 gcopyold, Copy
-Gui, colordial:Add, Slider,xs y+10 w120 h20 AltSubmit +NoTicks +Range0-255 vsR gSlidermove line1, %R_v%
-Gui, colordial:Add, Text, x+5 w28 h28 +Border vtr cBLACK +BackgroundTrans, R: 
-gui, colordial:font
-Gui, colordial:Add, Edit, X+-10 W50 r1 LIMIT3 number vS_Red hwndRED gedit_set,%R_v%
-Gui, colordial:Add, UpDown, vU_redDown Range0-255 gupdown_set, %R_v%
+	global
+	colorlist2:=[0xffff0000,0xffff6600,0xffffcc00,0xffccff00,0xff66ff00,0xff00ff00,0xff00ff66,0xff00ffcc,0xff00ccff,0xff0066ff,0xff0000ff,0xff6600ff,0xffcc00ff,0xffff00cc,0xffff0066,0xffff0004]
+	colorlist1:=[0xff000000,0xffff0000,0xffffffff]
+	colorlist1pos := [0.0,0.3,1.0]
+	c1:=0
+	gui colordial:+alwaysontop +lastfound -DPIScale
+	Gui, colordial:Margin, 5, 5
+	Gui, colordial:color, white
+	Gui, colordial:FONT, BLACK
 
-Gui, colordial:Add, Slider, xs y+7 w120 h20 AltSubmit +NoTicks +Range0-255 vsG gSlidermove line1, %G_v%
-gui, colordial:font, s10 w700,
-Gui, colordial:Add, Text,x+5 w28 h28 +Border vtg cBLACK +BackgroundTrans, G:
-gui, colordial:font
-Gui, colordial:Add, Edit, X+-10 W50 r1 LIMIT3 number r1 vS_GREEN hwndGREEN gedit_set,%G_v% 
-Gui, colordial:Add, UpDown, vU_greenDown Range0-255 gupdown_set, %G_v%
-Gui, colordial:Add, Slider, xs y+8 w120 h20 AltSubmit +NoTicks +Range0-255 vsB gSlidermove line1, %B_v%
-gui, colordial:font, s10 w700,
-Gui, colordial:Add, Text, x+5 w28 h28 +Border vtb cBLACK +BackgroundTrans, B:
-gui, colordial:font
-Gui, colordial:Add, Edit, X+-10 W50 r1 LIMIT3 number r1 vS_BLUE hwndBLUE gedit_set,%B_v%
-Gui, colordial:Add, UpDown, vU_blueDown Range0-255 gupdown_set, %B_v%
-IC := Colors.MaxIndex()
-Ip := pos.MaxIndex()
-gui, colordial:add, button, xs+11 y+18 w80 h30 gcolor_ok_button, OK
-gui, colordial:add, button, x+12 w80 h30 gcolor_cancel_button, Cancel
-LinearGradient(HPI1C, Colorlist1, colorlist1pos, 2,1,200, 200)
-LinearGradient(HPIC, Colorlist2, , 1,1)
-Gui, colordial:Font, s14, Tahoma
-Gui, colordial:Show, , AHK ColorPick
+	loop 8 {
+	IniRead, v%c1%, colors.ini, Color, v%c1%,0x000000
+	tmpcol := v%c1%
+	Gui, colordial:Add, text,+E0x20 0x200 w20 h20 BackgroundTrans v1%c1% gcolor_preset,
+	Gui, colordial:Add, Progress, x+-20 y+-20 w20 h20 Background%tmpcol% vv%c1%
+	c1++
+	GuiControl,+Background%tmpcol%,v%c1%
+	}
+	loop 4 {
+
+		IniRead, v%c1%, colors.ini, Color, v%c1%,0x000000
+		tmpcol := v%c1%
+		Gui, colordial:Add, text,+E0x20 0x200 x+5 y5 w20 h20 BackgroundTrans v1%c1% gcolor_preset,
+		Gui, colordial:Add, Progress, x+-20 y+-20 w20 h20 Background%tmpcol% vv%c1%
+
+		c1++
+		GuiControl,+Background%tmpcol%,v%c1%
+
+		loop 7 {
+			IniRead, v%c1%, colors.ini, Color, v%c1%,0x000000
+			tmpcol := v%c1%
+			Gui, colordial:Add, text,y+5 +E0x20 0x200 w20 h20 BackgroundTrans v2%c1% gcolor_preset,
+			Gui, colordial:Add, progress, x+-20 y+-20 w20 h20 Background%tmpcol% vv%c1%
+			GuiControl,+Background%tmpcol%,v%c1%
+			c1++
+		}
+
+	}
+
+	gui, colordial:font, s10 w700,
+	Gui, colordial:Add, Pic, x+5 y5 w200 h200 gcolorpal hwndHPI1C
+	Gui, colordial:Add, Pic, x+5 w15 h200 gcolorver hwndHPIC
+	Gui, colordial:Add, text, x+5 y5 +E0x20 0x200 w60 h30 section BackgroundTrans gcolor_preset_set,
+	Gui, colordial:Add, Progress, x+-60 y+-30 w60 h30 Background%RGB_v% vpC
+	Gui, colordial:Add, text, x+5 +E0x20 0x200 w110 h30 BackgroundTrans vrgbval, # %color_main%
+	gui, colordial:add, button, x+5 w80 h30 gcopy, Copy
+	Gui, colordial:Add, text,xs y+0 +E0x20 0x200 w60 h30 BackgroundTrans gcolor_preset_set,
+	Gui, colordial:Add, Progress, x+-60 y+-30 w60 h30 Background%RGB_v2% vpC2
+	Gui, colordial:Add, text, x+5 +E0x20 0x200 w110 h30 BackgroundTrans vrgbvalold, # %color_old%
+	gui, colordial:add, button, x+5 w80 h30 gcopyold, Copy
+
+	Gui, colordial:Add, Slider,xs y+10 w160 h20 AltSubmit +NoTicks +Range0-255 vsR gSlidermove line1, %R_v%
+	Gui, colordial:Add, Text, x+5 w35 h32 +Border vtr cBLACK +BackgroundTrans, R:
+	gui, colordial:font
+	Gui, colordial:Add, Edit, X+-10 W70 r1 LIMIT3 number vS_Red hwndRED gedit_set,%R_v%
+	Gui, colordial:Add, UpDown, vU_redDown Range0-255 gupdown_set, %R_v%
+
+	Gui, colordial:Add, Slider, xs y+7 w160 h20 AltSubmit +NoTicks +Range0-255 vsG gSlidermove line1, %G_v%
+	gui, colordial:font, s10 w700,
+	Gui, colordial:Add, Text,x+5 w35 h32 +Border vtg cBLACK +BackgroundTrans, G:
+	gui, colordial:font
+	Gui, colordial:Add, Edit, X+-10 W70 r1 LIMIT3 number r1 vS_GREEN hwndGREEN gedit_set,%G_v%
+	Gui, colordial:Add, UpDown, vU_greenDown Range0-255 gupdown_set, %G_v%
+
+	Gui, colordial:Add, Slider, xs y+8 w160 h20 AltSubmit +NoTicks +Range0-255 vsB gSlidermove line1, %B_v%
+	gui, colordial:font, s10 w700,
+	Gui, colordial:Add, Text, x+5 w35 h32 +Border vtb cBLACK +BackgroundTrans, B:
+	gui, colordial:font
+	Gui, colordial:Add, Edit, X+-10 W70 r1 LIMIT3 number r1 vS_BLUE hwndBLUE gedit_set,%B_v%
+	Gui, colordial:Add, UpDown, vU_blueDown Range0-255 gupdown_set, %B_v%
+
+	IC := Colors.MaxIndex()
+	Ip := pos.MaxIndex()
+	gui, colordial:add, button, xs+11 y+18 w80 h30 gcolor_ok_button, OK
+	gui, colordial:add, button, x+12 w80 h30 gcolor_cancel_button, Cancel
+	LinearGradient(HPI1C, Colorlist1, colorlist1pos, 2,1,200, 200)
+	LinearGradient(HPIC, Colorlist2, , 1,1)
+	Gui, colordial:Font, s14, Tahoma
+	Gui, colordial:Show, , AHK ColorPick
+
 return
 
 ; -------------------------------------------------------------------------------------------------------
-color_cancel_button:
+color_cancel_button: ;{
 gui, colordial:destroy
 exitapp
-return 
+return ;}
 ; -------------------------------------------------------------------------------------------------------
-color_ok_button:
+color_ok_button: ;{
 gui, colordial:destroy
 IniWrite, %color%, colors.ini, Color,color_selected
 exitapp
-return 
+return ;}
 ; ------------------------------------------------------------------------------------------------------
-copy:
-clipboard = %color%   
-return
+copy: ;{
+clipboard = %color%
+return ;}
 ; ---------------------------------------------------------------------------------------------------------
-copyold:
-clipboard = %color_old%  
-return
+copyold: ;{
+clipboard = %color_old%
+return ;}
 ; ------------------------------------------------------------------------------------------------------
-colorver:
-color_old := color
-loop
-{
-MouseGetPos, ,,, OutputVarControl,3
-if (OutputVarControl = HPIC)
-{
-MouseGetPos, MouseX, MouseY
-PixelGetColor, color, %MouseX%, %MouseY%, RGB
-set_color_sel(color)
-c := Hex2RGB(color)
-r_v := rgb("1" ,color), g_v:=rgb("2",color) ,B_v:=rgb("3" ,color) 
-set_control_val(r_v, g_v, b_v)	
-GuiControl,+Background%color%,pC
-GuiControl,+Background%color_old%,pC2
-stringtrimleft,color, color, 2
-color_main := color
-color_view(color_main)
+colorver: ;{
+
+	color_old := color
+	loop
+	{
+		MouseGetPos, ,,, OutputVarControl,3
+		if (OutputVarControl = HPIC)
+		{
+			MouseGetPos, MouseX, MouseY
+			PixelGetColor, color, %MouseX%, %MouseY%, RGB
+			set_color_sel(color)
+			c := Hex2RGB(color)
+			r_v := rgb("1" ,color), g_v:=rgb("2",color) ,B_v:=rgb("3" ,color)
+			set_control_val(r_v, g_v, b_v)
+			GuiControl,+Background%color%,pC
+			GuiControl,+Background%color_old%,pC2
+			stringtrimleft,color, color, 2
+			color_main := color
+			color_view(color_main)
+		}
+
+		GetKeyState, OutputVar, lbutton
+		if outputvar = U
+			break
 	}
-GetKeyState, OutputVar, lbutton 
-if outputvar = U
-break
-}
-return
+
+return ;}
 ; ------------------------------------------------------------------------------------------------------
-color_preset_set:
+color_preset_set: ;{
 set_col := 1
-return
+return ;}
 ; --------------------------------------------------------
-color_preset:
- 
-if set_col = 1 
-{
-var := A_GuiControl
-stringtrimleft,var, var, 1
-GuiControl,+Background%color%,v%var%
-v%var% = %color%
-set_col = 0
-		IniWrite, %color%, colors.ini, Color,v%var%
-} else {
-var := A_GuiControl
-stringtrimleft,var, var, 1
-color := v%var%
-GuiControl,+Background%color%,pC
-color_main := Hex2RGB(color)
-r_v := rgb("1" ,color), g_v:=rgb("2",color) ,B_v:=rgb("3" ,color) 
-set_control_val(r_v, g_v, b_v)
-color_view(color)
-set_color_sel(color)
+color_preset: ;{
+
+	if (set_col = 1) {
+		var := A_GuiControl
+		stringtrimleft,var, var, 1
+		GuiControl,+Background%color%,v%var%
+		v%var% = %color%
+		set_col = 0
+				IniWrite, %color%, colors.ini, Color,v%var%
+	} else {
+		var := A_GuiControl
+		stringtrimleft,var, var, 1
+		color := v%var%
+		GuiControl,+Background%color%,pC
+		color_main := Hex2RGB(color)
+		r_v := rgb("1" ,color), g_v:=rgb("2",color) ,B_v:=rgb("3" ,color)
+		set_control_val(r_v, g_v, b_v)
+		color_view(color)
+		set_color_sel(color)
 	}
-	
-return
+
+return ;}
 ;-------------------------------------------------------------
+colorpal: ;{
 
-colorpal:
+	color_old := color
+	loop
+	{
+		MouseGetPos, ,,, OutputVarControl,3
+		if (OutputVarControl = HPI1C) 		{
+			MouseGetPos, MouseX, MouseY
+			PixelGetColor, color, %MouseX%, %MouseY%, RGB
+			set_color_sel(color)
+			c := Hex2RGB(color)
+			r_v := rgb("1" ,color), g_v:=rgb("2",color) ,B_v:=rgb("3" ,color)
+			set_control_val(r_v, g_v, b_v)
+			stringtrimleft,color, color, 2
+		}
+		GetKeyState, OutputVar, lbutton
+		if outputvar = U
+			break
+	}
 
-color_old := color
-loop
-{
-MouseGetPos, ,,, OutputVarControl,3
-if (OutputVarControl = HPI1C)
-{
-MouseGetPos, MouseX, MouseY
-PixelGetColor, color, %MouseX%, %MouseY%, RGB
-set_color_sel(color)
-c := Hex2RGB(color)
-r_v := rgb("1" ,color), g_v:=rgb("2",color) ,B_v:=rgb("3" ,color) 
-set_control_val(r_v, g_v, b_v)
-stringtrimleft,color, color, 2
-}
-GetKeyState, OutputVar, lbutton 
-if outputvar = U
-break
-}
-
-	return
-
+return ;}
 ; ------------------------------------------------------------------------------------------------------
-edit_set:
-GuiControlGet,R_v,,s_red
-	GuiControlGet,G_v,,s_green
-	GuiControlGet,B_v,,s_blue
-set_control_val(r_v, g_v, b_v)
-rgb_c = %R_v%,%G_v%,%B_v%
-	hex_c := RGB2Hex(rgb_c)
-	set_color_sel("0x" hex_c)
-return
+edit_set: ;{
+	GuiControlGet,R_v,,s_red
+		GuiControlGet,G_v,,s_green
+		GuiControlGet,B_v,,s_blue
+	set_control_val(r_v, g_v, b_v)
+	rgb_c = %R_v%,%G_v%,%B_v%
+		hex_c := RGB2Hex(rgb_c)
+		set_color_sel("0x" hex_c)
+	return
 updown_set:
-GuiControlGet,R_v,,U_redDown
-	GuiControlGet,G_v,,U_greenDown
-	GuiControlGet,B_v,,U_blueDown
-set_control_val(r_v, g_v, b_v)
-rgb_c = %R_v%,%G_v%,%B_v%
-	hex_c := RGB2Hex(rgb_c)
-	color_view(hex_c)
-set_color_sel("0x" hex_c)
-return
+	GuiControlGet,R_v,,U_redDown
+		GuiControlGet,G_v,,U_greenDown
+		GuiControlGet,B_v,,U_blueDown
+	set_control_val(r_v, g_v, b_v)
+	rgb_c = %R_v%,%G_v%,%B_v%
+		hex_c := RGB2Hex(rgb_c)
+		color_view(hex_c)
+	set_color_sel("0x" hex_c)
+return ;}
+; ------------------------------------------------------------------------------------------------------
+colordialGuiClose:
+ExitApp
 }
 
 set_color_sel(color){
@@ -238,7 +248,7 @@ GuiControl,,rgbvalold,# %color_old%
 }
 
 set_control_val(r_v, g_v, b_v){
-GuiControl,,sr,%R_v%
+	GuiControl,,sr,%R_v%
 	GuiControl,,sg,%G_v%
 	GuiControl,,sb,%B_v%
 	GuiControl,,s_red,%R_v%
@@ -247,11 +257,11 @@ GuiControl,,sr,%R_v%
 	GuiControl,,U_redDown,%R_v%
 	GuiControl,,U_greenDown,%G_v%
 	GuiControl,,U_blueDown,%B_v%
-	return
+return
 }
 
 
-slidermove:
+slidermove: ;{
 	GuiControlGet,R_v,,sR
 	GuiControlGet,G_v,,sG
 	GuiControlGet,B_v,,sB
@@ -259,7 +269,7 @@ slidermove:
 	rgb_c = %R_v%,%G_v%,%B_v%
 	hex_c := RGB2Hex(rgb_c)
 	color_main := hex_c
-color_view(color_main)
+    color_view(color_main)
 	GuiControl,+Background%hex_c%,pC
 	GuiControl,,s_red,%R_v%
 	GuiControl,,s_green,%G_v%
@@ -267,7 +277,7 @@ color_view(color_main)
 	GuiControl,,U_redDown,%R_v%
 	GuiControl,,U_greenDown,%G_v%
 	GuiControl,,U_blueDown,%B_v%
-return
+return ;}
 
 color_view(color_main){
 global
@@ -299,12 +309,12 @@ RGB2Hex(s, d="") {
 }
 ;-------------- Code by JustMe
 LinearGradient(HWND, oColors, oPositions = "", D = 0, GC = 0, BW = 0, BH = 0) {
-	
+
 	Static SS_BITMAP    := 0xE
 	Static SS_ICON      := 0x3
 	Static STM_SETIMAGE := 0x172
 	Static IMAGE_BITMAP := 0x0
-	
+
 	If !IsObject(oColors) || (oColors.MaxIndex() < 2) {
 		ErrorLevel := "Invalid parameter oColors!"
 		Return False
@@ -361,7 +371,7 @@ DllCall("Gdiplus.dll\GdipCreateLineBrushFromRect", "Ptr", &RECTF
 DllCall("Gdiplus.dll\GdipSetLineGammaCorrection", "Ptr", pBrush, "Int", GC)
 	VarSetCapacity(COLORS, IC * 4, 0)
 	O := -4
-	For I, V In oColors 
+	For I, V In oColors
 		NumPut(V | 0x00000000, COLORS, O += 4, "UInt")
 VarSetCapacity(POSITIONS, IC * 4, 0)
 	O := -4
@@ -370,8 +380,8 @@ VarSetCapacity(POSITIONS, IC * 4, 0)
 	DllCall("Gdiplus.dll\GdipSetLinePresetBlend", "Ptr", pBrush, "Ptr", &COLORS, "Ptr", &POSITIONS, "Int", IC)
 VarSetCapacity(ColourMatrix, 100, 0)
 	Matrix := 1.5|0|0|0|0|0|1.5|0|0|0|0|0|1.5|0|0|0|0|0|1|0|0.05|0.05|0.05|0|1
-	
-	
+
+
 	StringSplit, Matrix, Matrix, |
 	Loop, 25
 	{
@@ -390,10 +400,10 @@ DllCall("Gdiplus.dll\GdipFillRectangle", "Ptr", pGraphics, "Ptr", pBrush
 	DllCall("gdiplus\GdipSetSmoothingMode", "uint", pGraphics, "int", 4)
 DllCall("gdiplus\GdipCreatePen1", "int", 0xffff0000, "float", 3, "int", 2, "uint*", pPen)
 	; Create HBITMAP from bitmap
-	
+
 
 DllCall("gdiplus\GdipDrawEllipse", "uint", pGraphics, "uint", pPen, "float", 0, "float", 80, "float", 80, "float", 60)
-	
+
 	DllCall("Gdiplus.dll\GdipDisposeImage", "Ptr", pBitmap)
 	DllCall("Gdiplus.dll\GdipDeleteBrush", "Ptr", pBrush)
 	DllCall("Gdiplus.dll\GdipDeleteGraphics", "Ptr", pGraphics)
@@ -411,3 +421,4 @@ DllCall("gdiplus\GdipDrawEllipse", "uint", pGraphics, "uint", pPen, "float", 0, 
 	DllCall("Gdi32.dll\DeleteObject", "Ptr", hBitmap)
 	Return True
 }
+

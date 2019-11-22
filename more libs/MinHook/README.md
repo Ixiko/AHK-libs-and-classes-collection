@@ -1,12 +1,18 @@
 # MinHook-AHK
-An AutoHotkey wrapper for [MinHook](https://github.com/TsudaKageyu/minhook)
+AutoHotkey wrapper for [MinHook](https://github.com/TsudaKageyu/minhook)
 
-**Note1**: The following files by HotkeyIt are only required for `Example3 - InjectAhkDll.ahk`:
-- `ahkDll` folder
-- `sizeof.ahk`, `InjectAhkDll.ahk` and `_Struct.ahk` in Lib folder
+**Note**:
+- `Example3 - InjectAhkDll.ahk` requires the following files by HotkeyIt:
+   - `ahkDll` folder
+   - `sizeof.ahk`, `InjectAhkDll.ahk` and `_Struct.ahk`
+   
+- `Example6 - Change GUI class name (Memory).ahk` requires the following files by HotkeyIt:
+   - `_MemoryLibrary.ahk`, `_Struct.ahk` and `sizeof.ahk`
 
-**Note2**: You can place `Minhook.dll` in one of the following directories:
-- `WorkingDir`
-- `WorkingDir`\MinHook\x32 and/or `WorkingDir`\MinHook\x64
-- `Minhook.ahk Directory`
-- `Minhook.ahk Directory`\MinHook\x32 and/or `Minhook.ahk Directory`\MinHook\x64
+- You can place `Minhook.dll` in one of the following directories:
+  - `<WorkingDir>`
+  - `<WorkingDir>\MinHook\x32`, `<WorkingDir>\MinHook\x64`
+  - `<Minhook.ahk Directory>`
+  - `<Minhook.ahk Directory>\MinHook\x32`, `<Minhook.ahk Directory>\MinHook\x64`
+
+Forum topic: https://www.autohotkey.com/boards/viewtopic.php?f=6&t=53812

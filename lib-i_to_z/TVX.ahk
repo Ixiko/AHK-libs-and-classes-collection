@@ -1,39 +1,39 @@
-;Title: TreeViewX
+﻿;Title: TreeViewX
 ;		TreeViewX  extends standard TreeView control to support moving, deleting & inserting.
 
-;----------------------------------------------------------------------------------------
-; Function: TVX
-;			Initialisation function. Mandatory to call before you show the TreeView.
-; 
-; Parameters:
-;			pTree		- AHK name of the TreeView control
-;			pSub		- Subroutine for TreeViewX, the same rules as in g.
-;			pOptions	- String containing space delimited options for setting up TreeViewX
-;			pUserData	- Base name of the array holding user data. 
-;						  This array is indexed using tree view item handles.
-;			
-; Options: 
-;			HasRoot		- TreeViewX has root item - the one containing all other items. 
-;						  Root item can't be moved, edited or delited, and items can not
-;						  be moved or created outside of it. This option need to be set 
-;						  after root is already added to the menu, as TreeViewX need to
-;						  know the root menu handle.
-;						  
-;		CollapseOnMove	- When moving item out of of its container, this option makes container collapse
-;		EditOnInsert	- Automaticaly enters edit mode upon insertion of new item
-;
-; Example:
-;>
-;>	 	TVX("MyTree", "Handler", "HasRoot CollapseOnMove")
-;>
 TVX( pTree, pSub, pOptions="", pUserData="" ) {
+	;----------------------------------------------------------------------------------------
+	; Function: TVX
+	;			Initialisation function. Mandatory to call before you show the TreeView.
+	;
+	; Parameters:
+	;			pTree		- AHK name of the TreeView control
+	;			pSub		- Subroutine for TreeViewX, the same rules as in g.
+	;			pOptions	- String containing space delimited options for setting up TreeViewX
+	;			pUserData	- Base name of the array holding user data.
+	;						  This array is indexed using tree view item handles.
+	;
+	; Options:
+	;			HasRoot		- TreeViewX has root item - the one containing all other items.
+	;						  Root item can't be moved, edited or delited, and items can not
+	;						  be moved or created outside of it. This option need to be set
+	;						  after root is already added to the menu, as TreeViewX need to
+	;						  know the root menu handle.
+	;
+	;		CollapseOnMove	- When moving item out of of its container, this option makes container collapse
+	;		EditOnInsert	- Automaticaly enters edit mode upon insertion of new item
+	;
+	; Example:
+	;>
+	;>	 	TVX("MyTree", "Handler", "HasRoot CollapseOnMove")
+	;>
 	global
 
 	if InStr(pOptions, "HasRoot")	{
 		TVX_HasRoot  := 1
 		TVX_root := TV_GetNext()
 	}
-	
+
 	if InStr(pOptions, "CollapseOnMove")
 	  	TVX_CollapseOnMove := 1
 
@@ -45,26 +45,26 @@ TVX( pTree, pSub, pOptions="", pUserData="" ) {
 	GuiControl, +AltSubmit -ReadOnly +gTVX_OnEvent, %pTree%
 }
 
-;----------------------------------------------------------------------------------------
-; Function: Walk
-;			Walk the menu and rise events
-; 
-; Parameters:
-;			root		- menu to iterate, can be simple item also
-;			label		- event handler
-;			event_type	- event argument 1 - Event type
-;			event_param	- event argument 2 - Item upon which event is rised
-;			
-;
-;				   Type						  Param
-;
-;			+  - Iteration start,			root handle
-;			M  - Menu item,					menu handle 
-;			I  - Item,						item handle
-;			E  - End of menu				menu handle			(pseudo item)
-;			-  - Iteration end				root handle			(pseudo item)
-;
 TVX_Walk(root, label, ByRef event_type, ByRef event_param){
+	;----------------------------------------------------------------------------------------
+	; Function: Walk
+	;			Walk the menu and rise events
+	;
+	; Parameters:
+	;			root		- menu to iterate, can be simple item also
+	;			label		- event handler
+	;			event_type	- event argument 1 - Event type
+	;			event_param	- event argument 2 - Item upon which event is rised
+	;
+	;
+	;				   Type						  Param
+	;
+	;			+  - Iteration start,			root handle
+	;			M  - Menu item,					menu handle
+	;			I  - Item,						item handle
+	;			E  - End of menu				menu handle			(pseudo item)
+	;			-  - Iteration end				root handle			(pseudo item)
+	;
 	local n, t, p, c,	pref, bSetEnd, lastParent, rootsParent, tmp
 
 	; start event for menus
@@ -74,10 +74,10 @@ TVX_Walk(root, label, ByRef event_type, ByRef event_param){
 
 	if !TV_GetChild(root)
 		return
-	
+
 	; this will be exit condition. If we come to roots parent, stop walking.
 	rootsParent := TV_GetParent(root)
-	
+
 	lastParent := root
 	c := root
 	loop {
@@ -85,32 +85,32 @@ TVX_Walk(root, label, ByRef event_type, ByRef event_param){
 		TV_GetText(tmp, c)
 
 		; Check if this item is submenu. If so, set the lastParent
-		if ( TV_GetChild(c) ){	
+		if ( TV_GetChild(c) ){
 			lastParent := c
 			event_type := "M"
 		}
 		else event_type := "I"			; not a submenu, it is normal item
 
 		event_param := c
-		GoSub %label%		
-	
+		GoSub %label%
+
 
 		; Check if c is the last item in the current submenu
 		; Do so by taking the next item and checking its parent.
-		; If the parent is different then "lastParent" current item is 
-		;  at the end of the its submenu. 
+		; If the parent is different then "lastParent" current item is
+		;  at the end of the its submenu.
 		n := TV_GetNext(c, "FULL")
 		if (n)
 		{
 			p := TV_GetParent(n)
-			if ( p != lastParent){	
+			if ( p != lastParent){
 				t := lastParent
 				lastParent := p
 			}
 			else continue
 
 			; It is the last child
-			Loop {	; rise "E" (end of menu) event 
+			Loop {	; rise "E" (end of menu) event
 				event_type := "E"
 				event_param := t
 				GoSub %label%
@@ -126,40 +126,40 @@ TVX_Walk(root, label, ByRef event_type, ByRef event_param){
 					break
 			}
 
-		} else 
+		} else
 			Loop {
 				 ;this is the end of the complite menu, so close all open submenus, if any
 				 if (lastParent = root)	 {
-					event_type := "-" 
+					event_type := "-"
 					event_param := root
 					GoSub %label%
 					return
 				 }
-				
+
 				 event_type := "E"
 				 event_param := lastParent
 				 GoSub %label%
 				 lastParent := TV_GetParent(lastParent)
-			}	
+			}
 	}
 }
 
-;----------------------------------------------------------------------------------------------
-; Function:		Move
-;				Moves tree view item up or down
-;
-; Parameters:
-;				item		-	Handle of the item to move
-;				direction	-   "u" or "d" (Up & Down)
-;
-; Returns:
-;				Handle of the item
-;
-; Remarks:
-;				Item to be moved is copied to the new place then source item is deleted. This
-;				creates new handle for the moved item. New handle will be returned by the function.
-;
 TVX_Move(item, direction){
+	;----------------------------------------------------------------------------------------------
+	; Function:		Move
+	;				Moves tree view item up or down
+	;
+	; Parameters:
+	;				item		-	Handle of the item to move
+	;				direction	-   "u" or "d" (Up & Down)
+	;
+	; Returns:
+	;				Handle of the item
+	;
+	; Remarks:
+	;				Item to be moved is copied to the new place then source item is deleted. This
+	;				creates new handle for the moved item. New handle will be returned by the function.
+	;
 	local newc, newp, t, p, n
 
 	p := TV_GetPrev(item)
@@ -184,8 +184,8 @@ TVX_Move(item, direction){
 
 	; Do so by coping an item bellow calculated item and deleting the old one.
 	; Return handle of new item
- 	
-	; newc - calculated child after which "item" should be created. 
+
+	; newc - calculated child after which "item" should be created.
 	; newp -  ... and its parent
 
 	; if moving down
@@ -205,8 +205,8 @@ TVX_Move(item, direction){
 
 			newp := TV_GetParent(newc)
 		}
-		; somewhere in the middle 
-		else 
+		; somewhere in the middle
+		else
 		{
    			; if submenu, go into it
 			t := TV_Get(n, "E")
@@ -220,7 +220,7 @@ TVX_Move(item, direction){
 			{
 				newc := n
 				newp := TV_GetParent(n)
-			}    
+			}
 		}
 	}
 
@@ -233,9 +233,9 @@ TVX_Move(item, direction){
 			t := TV_GetParent(item)
 			if TVX_CollapseOnMove
 				TV_Modify(t, "-Expand")
-																					  
+
 			newc := TV_GetPrev(t)
-																											  
+
 			; handle start of the menu again
 			if !newc
 			{
@@ -262,9 +262,9 @@ TVX_Move(item, direction){
 				if !t
 				{
 					newc := "First"
-					newp := TV_GetParent(p)				
+					newp := TV_GetParent(p)
 				}
-				else 
+				else
 				{
 					newc := t
 					newp := TV_GetParent(newc)
@@ -278,23 +278,23 @@ TVX_Move(item, direction){
 	return newc
 }
 
-
-;---------------------------------------------------------------------------------------------
-; TVX_Walk event handler wrapped in the function
-;	
-; Function that copies menu item to the destination item. 
-; Handle of destination item is specified in the global variable TVX_copyDest.
-; 
 TVX_CopyProc(iType, item) {
+
+	;---------------------------------------------------------------------------------------------
+	; TVX_Walk event handler wrapped in the function
+	;
+	; Function that copies menu item to the destination item.
+	; Handle of destination item is specified in the global variable TVX_copyDest.
+	;
 	local c, txt
 	static lastParent
-	
+
 	TV_GetText(txt, item)
 	if iType in +
 	{
 		lastParent := TVX_copyDest
 		TV_Modify(TVX_copyDest, "", txt)
-		
+
 		if TVX_userData
 		{
 			%TVX_userData%%TVX_copyDest% := %TVX_userData%%item%
@@ -316,20 +316,14 @@ TVX_CopyProc(iType, item) {
 	}
 
 	if iType = E
-		lastParent := TV_GetParent(lastParent)	
+		lastParent := TV_GetParent(lastParent)
 }
 
-;----------------------------------------------
-
-_TVX_CopyProc:
-	TVX_CopyProc(TVX_itemType, TVX_param)
-return
-
-;-----------------------------------------------------------------------------------------------
-; Create new item after the child "destc" with parent "destp" and copy the "source" item into it
-;
 TVX_CopyItem(destc, destp, source){
-	global 
+	;-----------------------------------------------------------------------------------------------
+	; Create new item after the child "destc" with parent "destp" and copy the "source" item into it
+	;
+	global
 
 	;create the holder and call the copy function
 	TVX_copyDest := TV_Add("", destp , destc )
@@ -338,16 +332,16 @@ TVX_CopyItem(destc, destp, source){
 	return TVX_copyDest
 }
 
-;----------------------------------------------------------------------------------------------
-; Used to control moving
-;
 TVX_OnItemSelect(pItemId){
+	;----------------------------------------------------------------------------------------------
+	; Used to control moving
+	;
 	global
 
-	if (TVX_bSelfSelect)	{	
+	if (TVX_bSelfSelect)	{
 		TVX_bSelfSelect := false
 		return true
-	}	
+	}
 
 	TVX_prevSel := TVX_sel
 	TVX_sel := pItemId
@@ -358,7 +352,7 @@ TVX_OnItemSelect(pItemId){
 	  	TVX_sel := TVX_Move( TVX_prevSel, TVX_lastKey=40 ? "d" : "u")
 		TVX_prevSel := pItemId
 
-		
+
 		TVX_bSelfSelect := true
 		TV_Modify(TVX_sel, "Select Bold")
 		return true
@@ -367,17 +361,15 @@ TVX_OnItemSelect(pItemId){
 	 return false
 }
 
-;----------------------------------------------------------------------------------------------
-
 TVX_OnKeyPress(pKey){
 	local tp, sel
 
 	TVX_lastKey := pKey
 
-	if (TVX_bSelfPress)	{	
+	if (TVX_bSelfPress)	{
 		TVX_bSelfPress := false
 		return true
-	}	
+	}
 
 	;delete
 	if pKey = 46
@@ -424,6 +416,12 @@ TVX_OnKeyPress(pKey){
 	return false
 }
 
+
+;----------------------------------------------
+_TVX_CopyProc:
+	TVX_CopyProc(TVX_itemType, TVX_param)
+return
+
 ;----------------------------------------------------------------------------------------------
 ; g soubroutine for Tree View
 ;
@@ -435,7 +433,7 @@ TVX_OnEvent:
 	if (A_GuiEvent="K")
 		if TVX_OnKeyPress(A_EventInfo)
 			return
-	
+
 	;if not the Xtended property send event to the caller
 	gosub %TVX_sub%
 return

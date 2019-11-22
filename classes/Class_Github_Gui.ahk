@@ -1,5 +1,8 @@
 Gui(do:=""){
+
 	static
+	q    	:= Chr(0x22)
+
 	if (do="expandsettings")
 		return TV_Modify(TreeView.settings,"Expand")
 	Gui,+hwndmain
@@ -110,7 +113,8 @@ Gui(do:=""){
 	GuiDropFiles:
 	if !repo:=TreeView.repository[TV_GetSelection()]
 		return m("Please select a repository to send the files to")
-	for a,b in StrSplit(A_GuiEvent,"`n"){
+	for a,b in StrSplit(A_GuiEvent,"`n")
+	{
 		FileRead,bin,% "*c " b
 		FileGetSize,size,%b%
 		DllCall("Crypt32.dll\CryptBinaryToStringW",Ptr,&bin,UInt,size,UInt,1,UInt,0,UIntP,Bytes)
@@ -124,7 +128,7 @@ Gui(do:=""){
 		http:=ComObjCreate("WinHttp.WinHttpRequest.5.1")
 		url:=git.url "/repos/" git.owner "/" repo "/contents/" filename git.token
 		name:=git.name,email:=git.email
-		json={"message":"%message%","committer":{"name":"%name%","email":"%email%"},"content":
+		json := "{" q "message" q ":" message ", " q "committer" q ":{" q "name" q ":" name ", " q "email" q ":" email "}, " q "content" q ":"
 		json.= Chr(34) out chr(34) "}"
 		http.open("PUT",url)
 		http.Send(json)

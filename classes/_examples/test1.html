@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function alerta(msg,obj){
+            obj.click()
+            alert('mensaje: '+msg)
+        }
+    </script>
+    <style>
+        body {
+            color: blue;
+        }
+        input {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="total" name="nombreDiv1">
+    <select multiple>
+    <option id="opc1" value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="opel">Opel</option>
+    <option value="audi">Audi</option>
+    </select>
+    <p>
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female</input><br>
+        <input type="radio" name="gender" value="other"> Other
+        
+    </p>
+    <input id="campo" value="texto"></input>
+    <button id="boton" onclick="alerta('Close this alert!!!!', document.getElementById('botonMsg'))">msg</button>
+    <p><a href="https://www.w3schools.com" target="_blank">Visit W3Schools.com!</a></p>
+    <p>
+    <div id="borrar">
+        <p>
+            <b>este texto </b>se puede borrar......
+        </p>
+    </div>
+    </p>
+    <button id="botonMsg" onclick="document.getElementById('divMsg').innerHTML='esto es un mensaje'">msg</button>
+    <div id="divMsg">
+        ...
+    </div>
+    <div>
+    <iframe src='test2.html' id='frame1'></iframe>
+    </div>
+</div>
+</body>
+</html>

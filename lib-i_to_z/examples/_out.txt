@@ -1,0 +1,19 @@
+0    7251024
+|-1    7251504    My Tooltip 1
+|-2    7251664    My Tooltip 2
+|-3    7251824    My Tooltip 3
+|-4    7251984    My Tooltip 4
+|-5    7252144    My Tooltip 5
+|-6    7252352    My Tooltip 6
+|-7    7252512    My Tooltip 7
+|-8    7252672    My Tooltip 8
+|-9    7252832    My Tooltip 9
+|-10    7252992    My Tooltip 10
+|---2.1    7253152    My Tooltip 2.1
+|---2.2    7253312    My Tooltip 2.2
+|-----2.2.1    7253472    My Tooltip 2.2.1
+|-----2.2.2   7253632    My Tooltip 2.2.2
+|-----2.2.3    7253792    My Tooltip 2.2.3
+|-----this text    
+|-------__ new item __    
+|-----__ new item __    

@@ -7,8 +7,7 @@
     Return:
         Si tuvo éxito devuelve 1, caso contrario devuelve 0. Si Childs es TRUE y no hay sub-elementos para eliminar, devuelve -1.
 */
-TV_Delete(TV, ItemID, Childs := FALSE)
-{
+TV_Delete(TV, ItemID, Childs := FALSE){
     If (Childs)
     {
         ; TVM_GETNEXTITEM message | TVGN_CHILD = 4 | TVGN_NEXT = 1
@@ -29,9 +28,6 @@ TV_Delete(TV, ItemID, Childs := FALSE)
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1101, 'Ptr', 0, 'Ptr', ItemID))
 }
 
-
-
-
 /*
     Elimina todos los elementos en el control TreeView especificado.
     Parámetros:
@@ -39,8 +35,7 @@ TV_Delete(TV, ItemID, Childs := FALSE)
     Return:
         Si tuvo éxito devuelve 1, caso contrario devuelve 0.
 */
-TV_DeleteAll(TV)
-{
+TV_DeleteAll(TV){
     Local Styles := WinGetStyle('ahk_id' . TV.Hwnd)
     ; TVM_DELETEITEM message | TVI_ROOT = -65536
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773560(v=vs.85).aspx
@@ -50,9 +45,6 @@ TV_DeleteAll(TV)
     Return (Result)
 }
 
-
-
-
 /*
     Recupera el elemento actualmente seleccionado en el control TreeView especificado.
     Parámetros:
@@ -60,15 +52,11 @@ TV_DeleteAll(TV)
     Return:
         Devuelve el identificador del elemento actual seleccionado, o cero si no hay ningún elemento seleccionado.
 */
-TV_GetSelection(TV)
-{
+TV_GetSelection(TV){
     ; TVM_GETNEXTITEM message | TVGN_CARET = 9
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773622(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x110A, 'Int', 9, 'Ptr', 0, 'Ptr'))
 }
-
-
-
 
 /*
     Recupera el primer elemento secundario del elemento especificado.
@@ -78,15 +66,11 @@ TV_GetSelection(TV)
     Return:
         Devuelve el identificador del primer elemento secundario, o cero si no se ha encontrado ningún elemento secundario.
 */
-TV_GetChild(TV, ItemID)
-{
+TV_GetChild(TV, ItemID){
     ; TVM_GETNEXTITEM message | TVGN_CHILD = 4
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773622(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x110A, 'Int', 4, 'Ptr', ItemID, 'Ptr'))
 }
-
-
-
 
 /*
     Recupera el elemento padre del elemento secundario especificado.
@@ -96,15 +80,11 @@ TV_GetChild(TV, ItemID)
     Return:
         Devuelve el identificador del elemento padre, o cero si el elemento especificado no tiene un elemento padre.
 */
-TV_GetParent(TV, ItemID)
-{
+TV_GetParent(TV, ItemID){
     ; TVM_GETNEXTITEM message | TVGN_PARENT = 3
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773622(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x110A, 'Int', 3, 'Ptr', ItemID, 'Ptr'))
 }
-
-
-
 
 /*
     Recupera el elemento hermano anterior del elemento especificado.
@@ -114,15 +94,11 @@ TV_GetParent(TV, ItemID)
     Return:
         Devuelve el identificador del elemento hermano anterior, o cero si el elemento especificado no tiene un elemento hermano anterior.
 */
-TV_GetPrev(TV, ItemID, Visible := FALSE)
-{
+TV_GetPrev(TV, ItemID, Visible := FALSE){
     ; TVM_GETNEXTITEM message | TVGN_PREVIOUS = 2 | TVGN_PREVIOUSVISIBLE = 7
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773622(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x110A, 'Int', Visible?7:2, 'Ptr', ItemID, 'Ptr'))
 }
-
-
-
 
 /*
     Recupera el elemento hermano siguiente del elemento especificado.
@@ -138,15 +114,11 @@ TV_GetPrev(TV, ItemID, Visible := FALSE)
     Return:
         Devuelve el identificador del elemento hermano siguiente, o cero si el elemento especificado no tiene un elemento hermano siguiente.
 */
-TV_GetNext(TV, ItemID := 0, Type := 1)
-{
+TV_GetNext(TV, ItemID := 0, Type := 1){
     ; TVM_GETNEXTITEM message | TVGN_NEXT = 1 | TVGN_ROOT = 0
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773622(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x110A, 'Int', ItemID==0?0:Type, 'Ptr', ItemID, 'Ptr'))
 }
-
-
-
 
 /*
     Comienza o finaliza la edición del texto del elemento especificado.
@@ -167,8 +139,7 @@ TV_GetNext(TV, ItemID := 0, Type := 1)
     Ejemplo:
         ToolTip('Return: ' . TV_EditLabel(TV, TV.GetSelection(),, TRUE, 5) . '`nErrorLevel: ' . ErrorLevel)
 */
-TV_EditLabel(TV, ItemID := '', Discard := FALSE, Wait := FALSE, Seconds := '')
-{
+TV_EditLabel(TV, ItemID := '', Discard := FALSE, Wait := FALSE, Seconds := ''){
     If (ItemID == '')
         ; TVM_ENDEDITLABELNOW message
         ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773564(v=vs.85).aspx
@@ -189,9 +160,6 @@ TV_EditLabel(TV, ItemID := '', Discard := FALSE, Wait := FALSE, Seconds := '')
     Return (hEdit)
 }
 
-
-
-
 /*
     Recupera el identificador del control Edit siendo utilizado durante la edición del texto de un elemento en el control TreeView especificado.
     Parámetros:
@@ -199,15 +167,11 @@ TV_EditLabel(TV, ItemID := '', Discard := FALSE, Wait := FALSE, Seconds := '')
     Return:
         Si tuvo éxito devuelve el identificador del control, caso contrario devuelve 0.
 */
-TV_GetEdit(TV)
-{
+TV_GetEdit(TV){
     ; TVM_GETEDITCONTROL message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773576(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', Msg, 'Ptr', 0x110F, 'Ptr', 0, 'Ptr'))
 }
-
-
-
 
 /*
     Asegura de que el elemento especificado es visible, expandiendo el elemento padre o desplazando las barras de desplazamiento.
@@ -218,8 +182,7 @@ TV_GetEdit(TV)
     Return:
         Devuelve un valor distinto de cero si el sistema desplazó las barras y no se expandieron los elementos. De lo contrario devuelve cero.
 */
-TV_EnsureVisible(TV, ItemID, Mode := 0)
-{
+TV_EnsureVisible(TV, ItemID, Mode := 0){
     If (Mode)
         ; TVM_SELECTITEM message
         ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773736(v=vs.85).aspx
@@ -229,9 +192,6 @@ TV_EnsureVisible(TV, ItemID, Mode := 0)
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773566(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1114, 'Ptr', 0, 'Ptr', ItemID))
 }
-
-
-
 
 /*
     Expande o contrae la lista de elementos secundarios asociados con el elemento primario especificado, si los hubiere.
@@ -245,15 +205,11 @@ TV_EnsureVisible(TV, ItemID, Mode := 0)
     Return:
         Si tuvo éxito devuelve un valor distinto de cero, caso contrario devuelve 0.
 */
-TV_Expand(TV, ItemID, Action := 1)
-{
+TV_Expand(TV, ItemID, Action := 1){
     ; TVM_EXPAND message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773568(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1102, 'Ptr', {-1:3,0:1:1:2}[Action], 'Ptr', ItemID))
 }
-
-
-
 
 /*
     Recupera el color del texto en el control TreeView especificado.
@@ -262,16 +218,12 @@ TV_Expand(TV, ItemID, Action := 1)
     Return:
         Devuelve el color RGB del texto.
 */
-TV_GetTextColor(TV)
-{
+TV_GetTextColor(TV){
     ; TVM_GETTEXTCOLOR message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773633(v=vs.85).aspx
     Local Color := DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1120, 'Ptr', 0, 'Ptr', 0)
     Return (Color > 0 ? (Color & 255) << 16 | (Color & 65280) | (Color >> 16) : 0)    ; BGR --> RGB
 }
-
-
-
 
 /*
     Establece el color del texto en el control TreeView especificado.
@@ -283,8 +235,7 @@ TV_GetTextColor(TV)
     Observaciones:
         Cuando llama a esta función, automáticamente se redibuja el control una vez se establece el nuevo color, para asegurarse de que se visualiza correctamente.
 */
-TV_SetTextColor(TV, Color := 0x000000)
-{
+TV_SetTextColor(TV, Color := 0x000000){
     ; TVM_SETTEXTCOLOR message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773769(v=vs.85).aspx
     Color := ((Color & 255) << 16) | (((Color >> 8) & 255) << 8) | (Color >> 16)    ; RGB --> BGR
@@ -297,9 +248,6 @@ TV_SetTextColor(TV, Color := 0x000000)
     Return (Color > 0 ? (Color & 255) << 16 | (Color & 65280) | (Color >> 16) : 0)    ; BGR --> RGB
 }
 
-
-
-
 /*
     Recupera el color de fondo del control TreeView especificado.
     Parámetros:
@@ -309,17 +257,13 @@ TV_SetTextColor(TV, Color := 0x000000)
     Nota:
         Utilizamos TVM_SETBKCOLOR y no TVM_GETBKCOLOR debido a que TVM_GETBKCOLOR devuelve siempre cero.
 */
-TV_GetBkColor(TV)
-{
+TV_GetBkColor(TV){
     ; TVM_SETBKCOLOR message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773741(v=vs.85).aspx
     Local Color := DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x111D, 'Ptr', 0, 'Int', -1)
     DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x111D, 'Ptr', 0, 'Int', Color)
     Return (Color > -1 ? (Color & 255) << 16 | (Color & 65280) | (Color >> 16) : 0xFFFFFF)    ; BGR --> RGB
 }
-
-
-
 
 /*
     Establece el color de fondo del control TreeView especificado.
@@ -331,8 +275,7 @@ TV_GetBkColor(TV)
     Observaciones:
         Cuando llama a esta función, automáticamente se redibuja el control una vez se establece el nuevo color, para asegurarse de que se visualiza correctamente.
 */
-TV_SetBkColor(TV, Color := 0xFFFFFF)
-{
+TV_SetBkColor(TV, Color := 0xFFFFFF){
     ; TVM_SETBKCOLOR message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773741(v=vs.85).aspx
     Color := ((Color & 255) << 16) | (((Color >> 8) & 255) << 8) | (Color >> 16)    ; RGB --> BGR
@@ -345,9 +288,6 @@ TV_SetBkColor(TV, Color := 0xFFFFFF)
     Return (Color > -1 ? (Color & 255) << 16 | (Color & 65280) | (Color >> 16) : 0xFFFFFF)    ; BGR --> RGB
 }
 
-
-
-
 /*
     Recupera el color de las líneas en el control TreeView especificado.
     Parámetros:
@@ -355,16 +295,12 @@ TV_SetBkColor(TV, Color := 0xFFFFFF)
     Return:
         Devuelve el color RGB de las líneas.
 */
-TV_GetLineColor(TV)
-{
+TV_GetLineColor(TV){
     ; TVM_SETLINECOLOR message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773619(v=vs.85).aspx
     Local Color := DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1129, 'Ptr', 0, 'Ptr', 0)
     Return (Color > 0 ? (Color & 255) << 16 | (Color & 65280) | (Color >> 16) : 0)    ; BGR --> RGB
 }
-
-
-
 
 /*
     Establece el color de las líneas del control TreeView especificado.
@@ -376,8 +312,7 @@ TV_GetLineColor(TV)
     Observaciones:
         Cuando llama a esta función, automáticamente se redibuja el control una vez se establece el nuevo color, para asegurarse de que se visualiza correctamente.
 */
-TV_SetLineColor(TV, Color)
-{
+TV_SetLineColor(TV, Color){
     ; TVM_SETLINECOLOR message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773764(v=vs.85).aspx
     Color := ((Color & 255) << 16) | (((Color >> 8) & 255) << 8) | (Color >> 16)    ; RGB --> BGR
@@ -390,9 +325,6 @@ TV_SetLineColor(TV, Color)
     Return (Color > 0 ? (Color & 255) << 16 | (Color & 65280) | (Color >> 16) : 0)    ; BGR --> RGB
 }
 
-
-
-
 /*
     Recupera la cantidad de elementos en el control TreeView especificado.
     Parámetros:
@@ -403,8 +335,7 @@ TV_SetLineColor(TV, Color)
     Return:
         Devuelve la cantidad de elementos.
 */
-TV_GetCount(TV, Type := '')
-{
+TV_GetCount(TV, Type := ''){
     If (Type == '')
         ; TVM_GETCOUNT message
         ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773572(v=vs.85).aspx
@@ -424,9 +355,6 @@ TV_GetCount(TV, Type := '')
         Throw Exception('TV_GetCount invalid parameter (2)',, Type)
 }
 
-
-
-
 /*
     Selecciona el elemento especificado, desplaza el elemento en vista o vuelve a dibujar el elemento del estilo utilizado para indicar el destino de una operación de arrastrar y soltar.
     Parámetros:
@@ -439,15 +367,11 @@ TV_GetCount(TV, Type := '')
     Return:
         Si tuvo éxito devuelve 1, caso contrario devuelve 0.
 */
-TV_Select(TV, ItemID := 0, Action := 0x8009)
-{
+TV_Select(TV, ItemID := 0, Action := 0x8009){
     ; TVM_SELECTITEM message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773736(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x110B, 'UInt', Action, 'Ptr', ItemID))
 }
-
-
-
 
 /*
     Ordena los subelementos del elemento padre especificado.
@@ -466,8 +390,7 @@ TV_Select(TV, ItemID := 0, Action := 0x8009)
                 Return (1) ;invierte el orden de los elementos (el último pasa a estar en la primera posición, ...)
             }
 */
-TV_Sort(TV, ItemID := -65536, Recursive := FALSE, Callback := 0, pData := 0)
-{
+TV_Sort(TV, ItemID := -65536, Recursive := FALSE, Callback := 0, pData := 0){
     If (Callback)
     {
         ; TVSORTCB structure
@@ -491,9 +414,6 @@ TV_Sort(TV, ItemID := -65536, Recursive := FALSE, Callback := 0, pData := 0)
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773782(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1113, 'Int', Recursive, 'Ptr', ItemID))
 }
-
-
-
 
 /*
     Recupera información en base a las coordenadas relativas al área del control TreeView especificado.
@@ -522,8 +442,7 @@ TV_Sort(TV, ItemID := -65536, Recursive := FALSE, Callback := 0, pData := 0)
     Observaciones:
         Si 'X' y 'Y' se omiten, se tienen en cuenta las coordenadas del cursor.
 */
-TV_HitTest(TV, X := '', Y := '')
-{
+TV_HitTest(TV, X := '', Y := ''){
     If (X == '' && Y == '')
     {
         ; POINT structure
@@ -553,9 +472,6 @@ TV_HitTest(TV, X := '', Y := '')
             , Y    : Y                                                                                                           }) ;y
 }
 
-
-
-
 /*
     Recupera el rectángulo delimitador del elemento especificado e indica si el elemento está visible.
     Parámetros:
@@ -565,8 +481,7 @@ TV_HitTest(TV, X := '', Y := '')
     Return:
         Si tuvo éxito y el elemento es visible devuelve un objeto con las claves X|Y|W|H. Si hubo un error devuelve 0.
 */
-TV_GetRect(TV, ItemID, Portion := 0)
-{
+TV_GetRect(TV, ItemID, Portion := 0){
     ; RECT structure
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/dd162897(v=vs.85).aspx
     Local RECT
@@ -584,9 +499,6 @@ TV_GetRect(TV, ItemID, Portion := 0)
             , H: NumGet(&RECT+12, 'Int') - NumGet(&RECT+4, 'Int') })
 }
 
-
-
-
 /*
     Recupera el texto del elemento especificado.
     Parámetros:
@@ -598,8 +510,7 @@ TV_GetRect(TV, ItemID, Portion := 0)
     ErrorLevel:
         Si hubo un error se establece en 1, caso contrario se establece en 0.
 */
-TV_GetText(TV, ItemID, Length := 1000)
-{
+TV_GetText(TV, ItemID, Length := 1000){
     ; TVITEM structure
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773456(v=vs.85).aspx
     Local TVITEM, Buffer
@@ -620,9 +531,6 @@ TV_GetText(TV, ItemID, Length := 1000)
     Return (Buffer)
 }
 
-
-
-
 /*
     Establece el texto del elemento expecificado.
     Parámetros:
@@ -632,8 +540,7 @@ TV_GetText(TV, ItemID, Length := 1000)
     Return:
         Si tuvo éxito devuelve 1, caso contrario devuelve 0.
 */
-TV_SetText(TV, ItemID, Text := '')
-{
+TV_SetText(TV, ItemID, Text := ''){
     ; TVITEM structure
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773456(v=vs.85).aspx
     Local TVITEM
@@ -646,9 +553,6 @@ TV_SetText(TV, ItemID, Text := '')
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773758(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x113F, 'Ptr', 0, 'UPtr', &TVITEM))
 }
-
-
-
 
 /*
     Añade un nuevo elemento en el control TreeView especificado.
@@ -664,8 +568,7 @@ TV_SetText(TV, ItemID, Text := '')
     Nota:
         Utilizamos la version ANSI de TVM_INSERTITEM junto con TVM_SETITEMW debido a que la versión unicode de TVM_INSERTITEM por algún motivo que desconozco falla.
 */
-TV_Insert(TV, Text := '', hParent := -65536, hInsertAfter := -65534)
-{
+TV_Insert(TV, Text := '', hParent := -65536, hInsertAfter := -65534){
     ; TVINSERTSTRUCT structure
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773452(v=vs.85).aspx
     Local TVINSERTSTRUCT
@@ -688,15 +591,12 @@ TV_Insert(TV, Text := '', hParent := -65536, hInsertAfter := -65534)
         NumPut(&Text, &TVINSERTSTRUCT+A_PtrSize*4+8, 'UPtr')    ; TVINSERTSTRUCT.TVITEM.pszText
 
         ; TVM_SETITEMW message
-        ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773758(v=vs.85).aspx 
+        ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773758(v=vs.85).aspx
         DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x113F, 'Ptr', 0, 'UPtr', &TVINSERTSTRUCT+A_PtrSize*2)
     }
 
     Return (hItem)
 }
-
-
-
 
 /*
     Recupera la longitud, en píxeles, de separación de los elementos secundarios con respecto a sus elementos primarios.
@@ -705,15 +605,11 @@ TV_Insert(TV, Text := '', hParent := -65536, hInsertAfter := -65534)
     Return:
         Devuelve la longitud de separación, en píxeles.
 */
-TV_GetIndent(TV)
-{
-    ; TVM_GETINDENT message
+TV_GetIndent(TV){
+; TVM_GETINDENT message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773588(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1106, 'Ptr', 0, 'Ptr', 0))
 }
-
-
-
 
 /*
     Establece la longitud, en píxeles, de separación de los elementos secundarios con respecto a sus elementos primarios.
@@ -723,8 +619,7 @@ TV_GetIndent(TV)
     Return:
         Devuelve la longitud de separación anterior.
 */
-TV_SetIndent(TV, Indent := 19)
-{
+TV_SetIndent(TV, Indent := 19){
     ; TVM_GETINDENT message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773588(v=vs.85).aspx
     Local n := DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1106, 'Ptr', 0, 'Ptr', 0)
@@ -736,9 +631,6 @@ TV_SetIndent(TV, Indent := 19)
     Return (n)
 }
 
-
-
-
 /*
     Recupera el color utilizado para dibujar la marca de inserción en el control TreeView especificado.
     Parámetros:
@@ -746,16 +638,12 @@ TV_SetIndent(TV, Indent := 19)
     Return:
         Devuelve el color RGB utilizado para dibujar la marca de inserción.
 */
-TV_GetInsertMarkColor(TV)
-{
+TV_GetInsertMarkColor(TV){
     ; TVM_GETINSERTMARKCOLOR message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773590(v=vs.85).aspx
     Local Color := DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1126, 'Ptr', 0, 'Ptr', 0)
     Return (Color > 0 ? ((Color & 255) << 16 | (Color & 65280) | (Color >> 16)) : 0)    ; BGR --> RGB
 }
-
-
-
 
 /*
     Establece el color utilizado para dibujar la marca de inserción en el control TreeView especificado.
@@ -765,16 +653,13 @@ TV_GetInsertMarkColor(TV)
     Return:
         Devuelve el color RGB anterior de la marca de inserción.
 */
-TV_SetInsertMarkColor(TV, Color := 0x696969)
-{
+TV_SetInsertMarkColor(TV, Color := 0x696969){
     ; TVM_SETINSERTMARKCOLOR message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773755(v=vs.85).aspx
     Color := ((Color & 255) << 16) | (((Color >> 8) & 255) << 8) | (Color >> 16)    ; RGB --> BGR
     Color := DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1125, 'Ptr', 0, 'Int', Color)
     Return (Color > 0 ? ((Color & 255) << 16 | (Color & 65280) | (Color >> 16)) : 0)    ; BGR --> RGB
 }
-
-
 
 /*
     Establece la marca de inserción en el control TreeView especificado.
@@ -785,15 +670,11 @@ TV_SetInsertMarkColor(TV, Color := 0x696969)
     Return:
         Devuelve un valor distinto de cero si tuvo éxito. De lo contrario devuelve cero.
 */
-TV_SetInsertMark(TV, ItemID := 0, Pos := 0)
-{
+TV_SetInsertMark(TV, ItemID := 0, Pos := 0){
     ; TVM_SETINSERTMARK message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773753(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x111A, 'Int', !!Pos, 'Ptr', ItemID))
 }
-
-
-
 
 /*
     Recupera la cadena de búsqueda incremental para el control TreeView especificado.
@@ -805,8 +686,7 @@ TV_SetInsertMark(TV, ItemID := 0, Pos := 0)
         La cadena de búsqueda incremental se crea cuando el usuario escribe para buscar un elemento y el control TreeView tiene el foco.
         La cadena de búsqueda incremental se elimina en poco más de 1 segundo.
 */
-TV_GetISearchStr(TV)
-{
+TV_GetISearchStr(TV){
     ; TVM_GETISEARCHSTRINGW message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773592(v=vs.85).aspx
     Local Length := DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1140, 'Ptr', 0, 'UPtr', 0)
@@ -821,9 +701,6 @@ TV_GetISearchStr(TV)
     Return (Buffer)
 }
 
-
-
-
 /*
     Recupera la altura de los elementos en el control TreeView especificado.
     Parámetros:
@@ -831,15 +708,11 @@ TV_GetISearchStr(TV)
     Return:
         Devuelve la altura de los elementos, en píxeles.
 */
-TV_GetHeight(TV)
-{
+TV_GetHeight(TV){
     ; TVM_GETITEMHEIGHT message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773599(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x111C, 'Ptr', 0, 'Ptr', 0))
 }
-
-
-
 
 /*
     Establece la altura de los elementos en el control TreeView especificado.
@@ -849,15 +722,11 @@ TV_GetHeight(TV)
     Return:
         Devuelve la altura de los elementos anterior, en píxeles.
 */
-TV_SetHeight(TV, Height := -1)
-{
+TV_SetHeight(TV, Height := -1){
     ; TVM_SETITEMHEIGHT message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773761(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x111B, 'Int', Height, 'Ptr', 0))
 }
-
-
-
 
 /*
     Recupera el identificador a la lista de imagenes asignada al control TreeView especificado.
@@ -869,15 +738,11 @@ TV_SetHeight(TV, Height := -1)
     Return:
         Devuelve el identificador de la lista de imagenes, o cero si el control TreeView no tiene ninguna lista de imagenes asignada.
 */
-TV_GetImageList(TV, Type := 0)
-{
+TV_GetImageList(TV, Type := 0){
     ; TVM_GETIMAGELIST message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773585(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1108, 'Int', Type, 'Ptr', 0, 'Ptr'))
 }
-
-
-
 
 /*
     Establece la lista de imagenes en el control TreeView especificado.
@@ -890,15 +755,11 @@ TV_GetImageList(TV, Type := 0)
     Return:
         Devuelve el identificador de la lista de imagenes asignada anteriormente, o cero si no tenía ninguna lista de imagenes asignada.
 */
-TV_SetImageList(TV, ImageList := 0, Type := 0)
-{
+TV_SetImageList(TV, ImageList := 0, Type := 0){
     ; TVM_SETIMAGELIST message
     ; https://msdn.microsoft.com/en-us/library/windows/desktop/bb773747(v=vs.85).aspx
     Return (DllCall('User32.dll\SendMessageW', 'Ptr', TV.Hwnd, 'UInt', 0x1109, 'Int', Type, 'Ptr', ImageList, 'Ptr'))
 }
-
-
-
 
 /*
     Recuper la ruta completa del elemento especificado.
@@ -909,8 +770,7 @@ TV_SetImageList(TV, ImageList := 0, Type := 0)
     Return:
         Devuelve la ruta completa de ItemID.
 */
-TV_GetPath(TV, ItemID, Delimiter := '\')
-{
+TV_GetPath(TV, ItemID, Delimiter := '\'){
     If (TV_GetText(TV, ItemID) == '' && ErrorLevel)
         Return ('')
 
@@ -921,9 +781,6 @@ TV_GetPath(TV, ItemID, Delimiter := '\')
 
     Return (SubStr(Path, 1, -StrLen(Delimiter)))
 }
-
-
-
 
 /*  NO FUNCIONA COMO CORRESPONDE! NO FUNCIONA CON SUB-ITEMS! NO SE PUEDEN MOVER LOS ELEMENTOS! (TÍPICO DE WINDOWS) NO COPIA SUB-ELEMENTOS NI ICONOS!
     Comienza una operación de arrastrar y soltar para el elemento bajo el cursor.
@@ -940,8 +797,7 @@ TV_GetPath(TV, ItemID, Delimiter := '\')
             TV_DragDrop(TV)
         }
 */
-TV_DragDrop(TV)
-{
+TV_DragDrop(TV){
     Local HitTest, Rect, Pos
         , ItemID := TV_GetSelection(TV)    ; el identificador del ememento que se va a mover
         , H      := TV.Pos.H               ; la altura del control TreeView, para determinar si se debe desplazar la barra vertical hacia abajo.

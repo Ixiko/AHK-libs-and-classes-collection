@@ -68,6 +68,7 @@
 		global FoundIndex   	:= 0          	; a flag
 		global currentFuncNr                  	; contains the currently selected function nr
 		global fdecr1, fdecr2
+		global EditorPath			:= "C:\Program Files\AutoHotkey\SciTE\Scite.exe"
 
 
 	; ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -87,7 +88,7 @@
 							ExitApp
 
 						files:= FileIndexer(Startfolder)
-						FuncReferencer(files)
+						FuncIndexing(files)
 				}
 
 				ExitApp
@@ -582,8 +583,10 @@ TTGui(title, BZN, x, y) {
 	global
 	RefIdentMaxW	:= 0
 	RefLV1Width    	:= 0
-	RefNextFile      	:=0
+	RefNextFile      	:= 0
 	RefPauser         	:= 0
+	RefCheck				:= 0
+	RefOpen          	:= 0
 	lIdent                	:= StrSplit(BZN, "|")
 
 	Gui, Ref: New, -DPIScale +AlwaysOnTop +HWNDhRefGui
@@ -604,9 +607,11 @@ TTGui(title, BZN, x, y) {
 	Gui, Ref: Add	, Text           	, % "x0 y"+5 " vRefMsg1 Center", % " - - - - - - - - - - - - - - - - - - - - - - - - - "
 	Gui, Ref: Font	, s8 cBlack normal q5
 	Gui, Ref: Add	, Button       	, % "x10 y"+20 " vRefPause gRefButtons ", % "Pause"
-	Gui, Ref: Add	, Button    	, % "x"+ 20 " vRefStop gRefButtons ", % "Stop"
-	Gui, Ref: Add	, CheckBox	, % "x"+ 20 " vRefCheck gRefButtons ", % "no automatic breaks during the process"
-	Gui, Ref: Add	, Button   		, % "x"+ 60 " vRefNext HWNDhRefNext gRefButtons ", % "Next >>"
+	Gui, Ref: Add	, Button    	, % "x"+ 20 	" vRefStop gRefButtons ", % "Stop"
+	Gui, Ref: Add	, Button    	, % "x"+ 20 	" vRefReload gRefButtons ", % "Reload"
+	Gui, Ref: Add	, CheckBox	, % "x"+ 20 	" vRefCheck gRefButtons ", % "no automatic breaks"
+	Gui, Ref: Add	, CheckBox	, % "y"+ 5 	" vRefOpen gRefButtons ", % "no automatic presentation of corrupt files"
+	Gui, Ref: Add	, Button   		, % "x"+ 60 	" vRefNext HWNDhRefNext gRefButtons ", % "Next >>"
 	Gui, Ref: Font	, s8 cBlack Normal q5
 	Gui, Ref: Show	, % "x" X " y" Y " Hide", % title
 
@@ -628,10 +633,12 @@ TTGui(title, BZN, x, y) {
 	GuiControlGet, RefD, Ref: Pos, RefDebug
 	GuiControl, Ref: Move, RefMsg1	, % "y" RefDY+RefDH " w" RefLVW
 	GuiControlGet, RefD, Ref: Pos, RefMsg1
-	GuiControl, Ref: Move, RefPause, % "x" 50 	"y" RefDY+RefDH+5
-	GuiControl, Ref: Move, RefStop	, % "x" 150 	"y" RefDY+RefDH+5
-	GuiControl, Ref: Move, RefCheck, % "x" 350 	"y" RefDY+RefDH+10
-	GuiControl, Ref: Move, RefNext	, % "x" RefLVW-80 	"y" RefDY+RefDH+5
+	GuiControl, Ref: Move, RefPause	, % "x" 30 	"y" RefDY+RefDH+5
+	GuiControl, Ref: Move, RefStop  	, % "x" 100 	"y" RefDY+RefDH+5
+	GuiControl, Ref: Move, RefReload	, % "x" 170 	"y" RefDY+RefDH+5
+	GuiControl, Ref: Move, RefCheck	, % "x" 350 	"y" RefDY+RefDH+10
+	GuiControl, Ref: Move, RefOpen  	, % "x" 350 	"y" RefDY+RefDH+35
+	GuiControl, Ref: Move, RefNext  	, % "x" RefLVW-80 	"y" RefDY+RefDH+5
 
 	;-: and now the circus show starts
 	Gui, Ref: Show, % "AutoSize", % title
@@ -642,6 +649,7 @@ TTGui(title, BZN, x, y) {
 return
 
 RefButtons:
+
 	Gui, Ref: Submit, NoHide
 
 	If Instr(A_GuiControl, "RefNext")
@@ -650,6 +658,13 @@ RefButtons:
 			gosub RefGuiClose
 	else if Instr(A_GuiControl, "RefPause")
 			RefPauser:= !RefPauser
+	else if Instr(A_GuiControl, "RefReload")
+	{
+			MsgBox, 4, AHK-Library-Cooking, Choose Yes if you wan't to reload this script!
+			IfMsgBox, Yes
+				Reload
+	}
+
 return
 
 RefGuiEscape:
@@ -688,11 +703,15 @@ TTShow(InfoLine, text) {
 
 }
 
-FuncReferencer(AHKFiles) {                                                                        	;--
+FuncIndexing(AHKFiles) {                                                                        	;--
 
+	;----------------------------------------------------------------------------------------------------------------------------------------------
 	; defining some variables
-		global functionName
+	;----------------------------------------------------------------------------------------------------------------------------------------------;{
+		;global functionName
+		;global fncName
 		global RefPauser
+		global RefCheck
 		global FEncoding
 
 		AHKData:= Object()
@@ -702,6 +721,8 @@ FuncReferencer(AHKFiles) {                                                      
 
 		q                      	:= Chr(0x22)
 		totalfuncs        	:= 0
+		totalclasses			:= 0
+		totalextclasses 	:= 0
 		totalcodelines   	:= 0
 		totalfilesize      	:= 0
 		startTime         	:= A_TickCount
@@ -709,19 +730,20 @@ FuncReferencer(AHKFiles) {                                                      
 		refFile:= FileOpen(A_ScriptDir "\FunctionReference.txt", "w", "UTF-8")
 		refFile.WriteLine("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
 		refFile.WriteLine("function reference : " A_MM "/" A_DD "/" A_YYYY "     " A_Hour ":" A_Min ":" A_Sec )
-		refFile.WriteLine("tabledescription : function name`t|`tparameters`t|`tstart`t|`tend`t|" )
+		refFile.WriteLine("tabledescription : function name | parameters | inside class | start | end | md5hash |" )
 		refFile.WriteLine("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
 
-		TTGui("operating...", "file name|encoding|file no.|codelines|actual line|functions found|funcbody process|commentblock|brackets left|total functions|total text lines processed", 2500, 300)
+		TTGui("operating...", "file name|encoding|file no.|codelines|actual line|Class|functions found|funcbody process|commentblock|brackets left|total functions|total text lines processed", 2500, 300)
+	;}
 
 	;----------------------------------------------------------------------------------------------------------------------------------------------
 	; parsing algorithm
-	;----------------------------------------------------------------------------------------------------------------------------------------------
+	;----------------------------------------------------------------------------------------------------------------------------------------------;{
 		Loop, % AHKFiles.MaxIndex()
 		{
 			;---------------------------------------------------------------------------------------------------
 			; preparations
-			;---------------------------------------------------------------------------------------------------
+			;---------------------------------------------------------------------------------------------------;{
 				WaitFuncBracket	:= false
 				commentblock	:= false
 				global fileName  	:= AHKFiles[A_index].FileFullPath
@@ -731,7 +753,8 @@ FuncReferencer(AHKFiles) {                                                      
 				totalfilessize	    	+= filesizeBytes
 				fncNr                	:= 0
 				prcdNr                	:= 0
-				towrite =
+				ClassStart	        	:= 0
+				towrite1 =
 				(LTrim
 				****************************************************************************************************************************************************************************************
 				File: -- %fileName% --
@@ -741,133 +764,193 @@ FuncReferencer(AHKFiles) {                                                      
 				------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 				)
+			;}
 
 			;---------------------------------------------------------------------------------------------------
 			; progress gui
-			;---------------------------------------------------------------------------------------------------
+			;---------------------------------------------------------------------------------------------------;{
 				RegExMatch(filename, ".*?(\\[^\\]*?\\*[^\\]*?\\*[^\\]*$)", shortPath)
 				TTShow(1, ShortPath1)
-				;TTShow(2, FEncoding)
 				TTShow(3, A_Index "/" AHKFiles.MaxIndex())
 				TTShow(4, fileObject.Count())
-				TotalCodeLines+= fileObject.Count()
+				TotalCodeLines += fileObject.Count()
 
 				While (RefPauser=1)
 					sleep, 20
+			;}
 
 			;---------------------------------------------------------------------------------------------------
 			; parses one file for functions
-			;---------------------------------------------------------------------------------------------------
+			;---------------------------------------------------------------------------------------------------;{
 				For lNr, line in fileObject
 				{
 						TTShow(5, lNr)
-						TTShow(6, fncNr " - "  fncName "   (" fncParam ")")
-						TTShow(10, totalfuncs)
+						TTShow(6, fncClass)
+						TTShow(7, fncNr " - "  fncName "   (" fncParam ")")
+						TTShow(11, totalfuncs)
 
 						If (lNr < prcdNr)
 							continue
 
 						prcdNr := 0
 
-						;If Instr(filename, "InsertBinToPNG") or Instr(filename, "DllCallCheck") {
-						;	sleep, 100
-						; }
-
 						If !commentblock && RegExMatch(line, "^\s*\/\*") {		                                                 	; found start of block comment
 								commentblock:= true
 						} else if commentblock && RegExMatch(line, "^\s*\*\/") {  ; found end of block comment
 								commentblock:= false
-						}
-						else If (StrLen(Line) > 0)
-						{
-								If RegExMatch(line, "^\s*([\w\_]+)\[.*?\])") && !RegExMatch(line, "i)^\s*(\sif)") {				;e.g. columnsDelimiter[] {  - i have no idea of classes - is this a function concept?
-										prcdNr:= FuncBody(fileObject,lNr, Trash) + 1
+						} else If (StrLen(Line) > 0) {
+
+								If RegExMatch(line, "i)^Class\s") {
+
+										ClassNr    	++
+										If (ClassStart > 0)
+										{
+												ClassEnd	:= lNr - 1
+												towriteClass .= "ClassName: " fncClass "|" ClassStart "|" ClassEnd "`n"
+										}
+										fncClass   	:= RegExReplace(line, "i)^Class\s")
+										fncClass   	:= RegExReplace(fncClass, "i)\{")
+										fncClass   	:= RegExReplace(fncClass, ";.*")
+										ClassStart 	:= lNr
+
+								} else If RegExMatch(line, "i)^#include\s") {
+										towrite1   	.= "includes: " RegExReplace(line, "i)^#include\s") "`n"
+								} else If RegExMatch(line, "^\s*([\w\_]+)\[.*?\])") && !RegExMatch(line, "i)^\s*(\sif)") {				;e.g. columnsDelimiter[] {  - i have no idea of classes - is this a function concept?
+										prcdNr     	:= FuncBody(fileObject,lNr, Trash, "") + 1
 								} else If RegExMatch(line, "^\s*([\w\_]+)\(.*?\)") && !RegExMatch(line, "i)^\s*(\sif)") {              ;function found ;(StrLen(fnc) = 0) &&
+
 										RegExMatch(line, "^\s*(?<Name>[\w_]+)\((?<Param>[^\)]*)\)", fnc)
-										functionName := fncName
+										;functionName := fncName
 										fncNr       	++
 										totalfuncs	++
 										fncStart    	:= lNr
 										fncParam 	:= RegExReplace(fncparam, "(ByRef)|\s|\=|\" q)
-										fncEnd     	:= FuncBody(fileObject, lNr, fncHash)
+										fncEnd     	:= FuncBody(fileObject, lNr, fncHash, fncName)
 										prcdNr     	:= fncEnd + 1
-										towrite     	.= fncName "|" fncParam "|" fncStart "|" fncEnd "|" fncHash  "|`n"
-										TTShow(6, fncNr " - " fncName "   (" fncParam ")" )
+										towriteFnc  	.= fncName "|" fncParam "|" fncClass "|"  fncStart "|" fncEnd "|" fncHash  "|`n"
+										TTShow(7, fncNr " - " fncName "   (" fncParam ")" )
 										If (fncEnd = 0)
 											break
+
 								}
+
 						}
-				}
+				}				;}
 
-				TTShow(11, totalcodelines)
+
+			;---------------------------------------------------------------------------------------------------
+			; save data
+			;---------------------------------------------------------------------------------------------------;{
+				TTShow(12, totalcodelines)
+				refFile.WriteLine(towrite1)
+
+				If (ClassStart > 0)
+					refFile.WriteLine(towriteClass)
+
 				If (fncEnd>0) ;&& (fncStart < fncEnd)
-					refFile.WriteLine(towrite)
-				towrite	:= ""
+					refFile.WriteLine(towriteFnc)
+
+				towrite1:= towriteFnc:=towriteClass := ""
+
+			;}
 		}
+	;}
 
+	;----------------------------------------------------------------------------------------------------------------------------------------------
+	; writing last data
+	;----------------------------------------------------------------------------------------------------------------------------------------------;{
+		EndTime       	:= A_TickCount
+		totalTime     	:= EndTime - StartTime
+		tmin             	:= Floor(totalTime/1000/60)
+		tsec               	:= Floor(totalTime/1000)
+		tms              	:= Mod(totalTime, 1000) * 1000
+		totalcodelines	:= RegExReplace(totalcodelines, "(.*)(\d{3})*(\d{3})(\d{3})", "$1$2.$3.$4")
+		totalfuncs    	:= RegExReplace(totalfuncs, "(.*)(\d{3})*(\d{3})(\d{3})", "$1$2.$3.$4")
+		filesmax       	:= RegExReplace(AHKFiles.MaxIndex(), "(.*)(\d{3})*(\d{3})(\d{3})", "$1$2.$3.$4")
 
-	EndTime       	:= A_TickCount
-	totalTime     	:= EndTime - StartTime
-	totalcodelines	:= RegExReplace(totalcodelines, "(.*)(\d{3})*(\d{3})(\d{3})", "$1$2.$3.$4")
-	totalfuncs    	:= RegExReplace(totalfuncs, "(.*)(\d{3})*(\d{3})(\d{3})", "$1$2.$3.$4")
-	filesmax       	:= RegExReplace(AHKFiles.MaxIndex(), "(.*)(\d{3})*(\d{3})(\d{3})", "$1$2.$3.$4")
+		refFile.WriteLine("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+		refFile.WriteLine("sum of all operations")
+		refFile.WriteLine("time is taken            : " totaltime "ms"  -- tmin ":" tsec "::" tms)
+		refFile.WriteLine("files processed         : " filesmax)
+		refFile.WriteLine("functions found       : " totalfuncs)
+		refFile.WriteLine("text lines processed : " totalcodelines)
+		refFile.WriteLine("size of all files          : " Round(totalfilessize/1024/1024, 2) " MB")
 
-	refFile.WriteLine("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
-	refFile.WriteLine("sum of all operations")
-	refFile.WriteLine("time is taken            : " totaltime "ms")
-	refFile.WriteLine("files processed         : " filesmax)
-	refFile.WriteLine("functions found       : " totalfuncs)
-	refFile.WriteLine("text lines processed : " totalcodelines)
-	refFile.WriteLine("size of all files          : " Round(totalfilessize/1024/1024, 2) " MB")
+		refFile.Close()
+		Pause
+	;}
 
-	refFile.Close()
-	Pause
 return ;AHKData
 }
 
-FuncBody(fileObject, bNr, byRef bodyHash) {
+FuncBody(fileObject, startLine, byRef bodyHash, functionName) {
 
 	local
 
 	global fileName
-	global functionName
+	;global functionName
+	;global fncName
 	global RefCheck
+	global RefOpen
+	global EditorPath
 	global RefNextFile
 
 	tcbr              	:= 0
 	tobr             	:= 0
 	commentblock:= false
+	continuationsection:=false
 	funcstart			:= true
 	startbNr			:= bNr
 	q                  	:= Chr(0x22)
 	subbrackets		:= 0
+	bNr := startLine
 
 	Loop
 	{
-			TTShow(7, bNr "(" fileObject.Count() ")   --|"  fileObject[bNr] "|--")
-			TTShow(8, (commentblock ? "true":"false"))
+			TTShow(8, bNr "(" fileObject.Count() ")   --|"  fileObject[bNr] "|--")
+			TTShow(9, (commentblock ? "true":"false") "[" SubStr("0000" cmtBlockStart, -3) ":" SubStr("0000" cmtBlockEnd, -3) "] , continuitation section: " (continuationsection ? "true":"false") "[" SubStr("0000" conBlockStart, -3) ":" SubStr("0000" conBlockEnd, -3) "]" )
 
 			;----------------------------------------------------------------------------------------------------------------------------------------------
 			; end of file - view informations about missing bracket
 			;----------------------------------------------------------------------------------------------------------------------------------------------
 			If (bNr > fileObject.Count()) {
+
 					Gui, Ref: Default
 					GuiControlGet, tDebug, Ref:, RefDebug
-					tDebug .= "---------------------------------------------------------------------------------------------`n"
-					tDebug .= "function name: " functionname "`n"
-					tDebug .= "The end of this function can not be determined!`n"
-					tDebug .= "missing " q "}" q " probably between line no. " sbLine1 " and " sbLine2 ".`n"
+					tDebug .= "----------------------------------------------------------------------------------------------------------------------------------------------------------------------`n"
+					tDebug .= "func`t: " functionName "`n"
+					tDebug .= "file `t: " filename "`n"
+					tDebug .= "info`t: The end of this function can not be determined!`n"
+					tDebug .= "      `t   missing " q "}" q " probably between line no. " sbLine1 " and " sbLine2 ".`n`n"
 					tDebug .= "the following log shows all lines where a successful bracket comparison was present:`n"
 					tDebug .= out
 					GuiControl, Ref:, RefDebug, % tDebug
 
-					If (RefCheck=0) {
-							If StrLen(filename) > 0
-								Run, % "C:\Program Files\AutoHotkey\SciTE\Scite.exe " q filename q
+					If (RefOpen = 0) {
+							If (StrLen(filename) > 0)
+								Run, % EditorPath " " q filename q
 
+							WinWait, % filename,, 5
+
+							; goto line + unfold
+							If Instr(EditorPath, "scite") {
+									Scite:= GetSciTEInstance()
+									hScite := GetHex(SciTE.SciTEHandle)
+									ControlGet, hSci, Hwnd,, Scintilla1, % "ahk_id " SciTE.SciTEHandle
+									SendMessage, 2152, 0, 0,, % "ahk_id " hSci
+									If (ErrorLevel < startLine - 1) {
+										;Get the number of lines on screen. SCI_LINESONSCREEN
+										SendMessage, 2370, 0, 0,,% "ahk_id " hSci
+										;Go to the line wanted + lines on screen. SCI_GOTOLINE
+										SendMessage, 2024, % line - 1 + ErrorLevel, 0,, % "ahk_id " hSci
+									}
+									SendMessage, 2024, % startLine - 1, 0,, % "ahk_id " hSci ; Sci_GotoLine := 2024
+							}
+					}
+
+					If (RefCheck=0) {
 							While, (RefNextFile = 0)
 										sleep, 20
-
 							RefNextFile := 0
 					}
 
@@ -877,18 +960,37 @@ FuncBody(fileObject, bNr, byRef bodyHash) {
 
 			funcbodyLine := fileObject[bNr]
 			strippedLine:= RegExReplace(funcbodyLine, "(" q "[^" q "]+" q ")")
-			strippedLine:= RegExReplace(strippedLine, ";.*")
+			strippedLine:= RegExReplace(strippedLine, ";.*")				; removes comments
+			strippedLine:= RegExReplace(strippedLine, q ".*" q)		; removes all >> ".*" <<
 
 			;-: continue box comment or empty line
-			If (!commentblock && RegExMatch(strippedLine, "^\s*\/\*"))
+			If (!commentblock && !continuationsection && RegExMatch(strippedLine, "^\s*\/\*"))
 			{ ; found block comment
 					commentblock:= true
+					cmtblockStart:= bNr
+					cmtBlockEnd:= 0
 			}
-			else If commentblock && RegExMatch(strippedLine, "^\s*\*\/") ; found end of block comment
+			else If (commentblock && RegExMatch(strippedLine, "^\s*\*\/")) ; found end of block comment
 			{
 					commentblock:= false
+					cmtBlockEnd:= bNr
 			}
-			else If (StrLen(strippedLine) > 0)
+			else If (!continuationsection && !commentblock && RegExMatch(strippedLine, "^\s*\(") && !Instr(strippedLine, ")"))
+			{
+					continuationsection:= true
+					conBlockStart:= bNr
+					conBlockEnd:= 0
+			}
+			else if continuationsection && RegExMatch(strippedLine, "^\s*\)")
+			{
+					continuationsection:= false
+					conBlockEnd:= bNr
+			}
+			else if (RegExMatch(strippedLine, "^\s*(\w+\s*\,)") || RegExMatch(strippedLine, "^\s*\,") || RegExMatch(strippedLine, "\=\s*\{"))   ; do not match a line with a command or ',' is followed by a { or }
+			{
+					nomatch:= 1
+			}
+			else If (!commentblock && !continuationsection && (StrLen(strippedLine) > 0))
 			{
 					RegExReplace(strippedLine, "i)\}", "", cbr)
 					RegExReplace(strippedLine, "i)\{", "", obr)
@@ -911,7 +1013,7 @@ FuncBody(fileObject, bNr, byRef bodyHash) {
 					tcbr	+= cbr
 					tobr	+= obr
 
-					TTShow(9, brackets " (" obr "{, " cbr "})    total brackets: " tobr "x '{'  " tcbr "x '}'")
+					TTShow(10, brackets " (" obr "{, " cbr "})    total brackets: " tobr "x '{'  " tcbr "x '}'")
 
 					If funcstart && (startbNR <bNr) && RegExMatch(strippedLine, "^\s*[\w\(\)]+")
 					{
@@ -931,11 +1033,11 @@ FuncBody(fileObject, bNr, byRef bodyHash) {
 	}
 
 	If (bNr > 0)
-		bodyHash:= bcrypt_sha512(body)   ; used to hash the whole function
+		bodyHash:= bcrypt_md5(body)   ; used to hash the whole function
 
-	TTShow(7, "")
 	TTShow(8, "")
 	TTShow(9, "")
+	TTShow(10, "")
 
 
 return bNr
@@ -1022,6 +1124,29 @@ return TrailingSpaces
 ;}
 
 ;{08. all the  other functions
+
+GetSciTEInstance() {
+	olderr := ComObjError()
+	ComObjError(false)
+	scite := ComObjActive("{D7334085-22FB-416E-B398-B5038A5A0784}")
+	ComObjError(olderr)
+	return IsObject(scite) ? scite : ""
+}
+
+GetFocusedControl()  {   																								                            				;-- retrieves the ahk_id (HWND) of the active window's focused control.
+
+   ; This script requires Windows 98+ or NT 4.0 SP3+.
+   guiThreadInfoSize := 8 + 6 * A_PtrSize + 16
+   VarSetCapacity(guiThreadInfo, guiThreadInfoSize, 0)
+   NumPut(GuiThreadInfoSize, GuiThreadInfo, 0)
+   ; DllCall("RtlFillMemory" , "PTR", &guiThreadInfo, "UInt", 1 , "UChar", guiThreadInfoSize)   ; Below 0xFF, one call only is needed
+   if (DllCall("GetGUIThreadInfo" , "UInt", 0, "PTR", &guiThreadInfo) = 0) {   ; Foreground thread
+			ErrorLevel := A_LastError   ; Failure
+			Return 0
+   }
+
+Return NumGet(guiThreadInfo, 8+A_PtrSize, "Ptr") ; *(addr + 12) + (*(addr + 13) << 8) +  (*(addr + 14) << 16) + (*(addr + 15) << 24)
+}
 
 HighlightAHK(Settings, ByRef Code) {
 	static Flow := "break|byref|catch|class|continue|else|exit|exitapp|finally|for|global|gosub|goto|if|ifequal|ifexist|ifgreater|ifgreaterorequal|ifinstring|ifless|iflessorequal|ifmsgbox|ifnotequal|ifnotexist|ifnotinstring|ifwinactive|ifwinexist|ifwinnotactive|ifwinnotexist|local|loop|onexit|pause|return|settimer|sleep|static|suspend|throw|try|until|var|while"
@@ -1566,6 +1691,45 @@ GetWindowInfo(hWnd) {                                                           
     wi.Atom        	:= NumGet(WINDOWINFO, 56, "UShort")
     wi.Version    	:= NumGet(WINDOWINFO, 58, "UShort")
     Return wi
+}
+
+bcrypt_md5(string) {
+    static BCRYPT_MD5_ALGORITHM := "MD5"
+    static BCRYPT_OBJECT_LENGTH := "ObjectLength"
+    static BCRYPT_HASH_LENGTH   := "HashDigestLength"
+
+    if !(hBCRYPT := DllCall("LoadLibrary", "str", "bcrypt.dll", "ptr"))
+        throw Exception("Failed to load bcrypt.dll", -1)
+
+    if (NT_STATUS := DllCall("bcrypt\BCryptOpenAlgorithmProvider", "ptr*", hAlgo, "ptr", &BCRYPT_MD5_ALGORITHM, "ptr", 0, "uint", 0) != 0)
+        throw Exception("BCryptOpenAlgorithmProvider: " NT_STATUS, -1)
+
+    if (NT_STATUS := DllCall("bcrypt\BCryptGetProperty", "ptr", hAlgo, "ptr", &BCRYPT_OBJECT_LENGTH, "uint*", cbHashObject, "uint", 4, "uint*", cbResult, "uint", 0) != 0)
+        throw Exception("BCryptGetProperty: " NT_STATUS, -1)
+
+    if (NT_STATUS := DllCall("bcrypt\BCryptGetProperty", "ptr", hAlgo, "ptr", &BCRYPT_HASH_LENGTH, "uint*", cbHash, "uint", 4, "uint*", cbResult, "uint", 0) != 0)
+        throw Exception("BCryptGetProperty: " NT_STATUS, -1)
+
+    VarSetCapacity(pbHashObject, cbHashObject, 0)
+    if (NT_STATUS := DllCall("bcrypt\BCryptCreateHash", "ptr", hAlgo, "ptr*", hHash, "ptr", &pbHashObject, "uint", cbHashObject, "ptr", 0, "uint", 0, "uint", 0) != 0)
+        throw Exception("BCryptCreateHash: " NT_STATUS, -1)
+
+    VarSetCapacity(pbInput, StrPut(string, "UTF-8"), 0) && cbInput := StrPut(string, &pbInput, "UTF-8") - 1
+    if (NT_STATUS := DllCall("bcrypt\BCryptHashData", "ptr", hHash, "ptr", &pbInput, "uint", cbInput, "uint", 0) != 0)
+        throw Exception("BCryptHashData: " NT_STATUS, -1)
+
+    VarSetCapacity(pbHash, cbHash, 0)
+    if (NT_STATUS := DllCall("bcrypt\BCryptFinishHash", "ptr", hHash, "ptr", &pbHash, "uint", cbHash, "uint", 0) != 0)
+        throw Exception("BCryptFinishHash: " NT_STATUS, -1)
+
+    loop % cbHash
+        hash .= Format("{:02x}", NumGet(pbHash, A_Index - 1, "uchar"))
+
+    DllCall("bcrypt\BCryptDestroyHash", "ptr", hHash)
+    DllCall("bcrypt\BCryptCloseAlgorithmProvider", "ptr", hAlgo, "uint", 0)
+    DllCall("FreeLibrary", "ptr", hBCRYPT)
+
+    return hash
 }
 
 bcrypt_sha512(string) {                                                                            	;-- used to compare versions of files

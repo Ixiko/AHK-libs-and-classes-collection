@@ -1,6 +1,6 @@
 #NoEnv
 #SingleInstance force
-	
+
 	gosub CreateGui
 	gosub FillTV
 
@@ -25,14 +25,14 @@ SaveHandler:
 	TV_GetText(txt, Item)
 	if Event = +
 	{
-		FileDelete, _out.txt 
+		FileDelete, _out.txt
 		FileAppend %txt%`n, _out.txt
 		line := "|-"
 	}
 
 	if Event = E
 		StringTrimRight, line, line, 2
-	
+
 	if Event in I,M
 	{
 		FileAppend %line%%txt%, _out.txt
@@ -41,7 +41,7 @@ SaveHandler:
 
 	if Event = M
 		line .= "--"
-	
+
 	if Event = -
 	  	Msgbox, TVX saved in _out.txt
 return
@@ -51,7 +51,7 @@ return
 OnButton:
     ControlSend, SysTreeView321, {SHIFT down}
 	ControlSend, SysTreeView321, {%A_GuiControl%}
-	sleep 50	
+	sleep 50
     ControlSend, SysTreeView321, {SHIFT up}
 
 ;	h := TVX_Move(TV_GetSelection(), A_GuiControl="Up" ? "u" : "d")
@@ -86,19 +86,19 @@ FillTV:
 		aTooltip%P% := "My Tooltip " A_Index
 	}
 
-	
+
 	P2  := TV_Add("", P),		aTooltip%P2% := "My Tooltip 2.1"
 	TV_Modify( P2, "", "2.1    " P2)
 
 	P2   := TV_Add("", P), 		aTooltip%P2% := "My Tooltip 2.2"
 	TV_Modify( P2, "", "2.2    " P2)
-	
+
 	P3   := TV_Add("", P2),		aTooltip%P3% := "My Tooltip 2.2.1"
 	TV_Modify( P3, "", "2.2.1    " P3)
-	
+
 	P3   := TV_Add("", P2),		aTooltip%P3% := "My Tooltip 2.2.2"
 	TV_Modify( P3, "", "2.2.2   " P3)
-	
+
 	P3   := TV_Add("", P2),		aTooltip%P3% := "My Tooltip 2.2.3"
 	TV_Modify( P3, "", "2.2.3    " P3)
 return
@@ -115,7 +115,7 @@ CreateGui:
 
 	Gui, Add, Button, y+20 wp gModify, Delete
 
-	Gui, Add, Edit, y+50 wp vMyEdit gEdit, 
+	Gui, Add, Edit, y+50 wp vMyEdit gEdit,
 	Gui, Add, Text, yp-30 wp, Change tooltip for selection
 
 	Gui, Add, Button, y+150 w100 gSave, Save to file
@@ -134,4 +134,4 @@ GuiEscape:
 	 ExitApp
 return
 
-; #include TVX.ahk
+#include %A_ScriptDir%\..\tvx.ahk

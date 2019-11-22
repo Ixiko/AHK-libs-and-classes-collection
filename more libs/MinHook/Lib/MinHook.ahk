@@ -1,7 +1,7 @@
-; v1.1 (2018-8-16)
+﻿; v1.2.1 (2019-08-18)
 ; AHK version: U32/U64
 
-class MinHook 
+class MinHook
 {
 	__New(ModuleName, ModuleFunction, CallbackFunction)
 	{
@@ -9,18 +9,28 @@ class MinHook
 		if !init
 			init := this.__MinHook_Load_Unload()
 
-		if !(ModuleName ~= "i)^(User32|Kernel32|ComCtl32|Gdi32)(\.dll)?$")
-		{
-			if !this.hModule := DllCall("LoadLibrary", "str", ModuleName, "ptr")
-				throw "Failed loading module: " ModuleName
-		}
 		if !IsFunc(CallbackFunction)
 			throw "Function <" CallbackFunction "> does not exist."
 
-		this.cbAddr := RegisterCallback(CallbackFunction, "F")
-		if err := MH_CreateHookApiEx(ModuleName, ModuleFunction, this.cbAddr, pOriginal, pTarget)
-			throw MH_StatusToString(err)
+		this.cbAddr := RegisterCallback(CallbackFunction, "F",, &this)
 
+		if (ModuleName = "")
+		{
+			if err := MH_CreateHook(ModuleFunction, this.cbAddr, pOriginal)
+				throw MH_StatusToString(err)
+		}
+		else
+		{
+			if !(ModuleName ~= "i)^(User32|Kernel32|ComCtl32|Gdi32)(\.dll)?$")
+			{
+				if !this.hModule := DllCall("LoadLibrary", "str", ModuleName, "ptr")
+					throw "Failed loading module: " ModuleName
+			}
+			
+			if err := MH_CreateHookApiEx(ModuleName, ModuleFunction, this.cbAddr, pOriginal, pTarget)
+				throw MH_StatusToString(err)
+		}
+		
 		this.original := pOriginal
 		this.target := pTarget
 	}
