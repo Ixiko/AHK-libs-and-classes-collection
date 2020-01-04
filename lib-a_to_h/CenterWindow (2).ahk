@@ -1,4 +1,4 @@
-CenterWindow(aWidth,aHeight){
+﻿; CenterWindow(aWidth,aHeight){
   ; Given a the window's width and height, calculates where to position its upper-left corner
   ; so that it is centered EVEN IF the task bar is on the left side or top side of the window.
   ; This does not currently handle multi-monitor systems explicitly, since those calculations

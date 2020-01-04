@@ -1,5 +1,5 @@
 ﻿#noenv
-#include json.ahk
+;#include json.ahk
 
 class WDSession{
 	;-- Selectors -------------------------------------
@@ -48,7 +48,7 @@ class WDSession{
         	body.capabilities := capabilities
 			body := JSON.Stringify(body)
 		 }
-		else 
+		else
 			body := "{""capabilities"":{}}"
 		this.prefijo:=location
         this.rc := WDSession.__ws("POST", this.prefijo "session",body )
@@ -105,7 +105,7 @@ class WDSession{
 	closeWindow(){
     	this.rc := WDSession.__ws("DELETE", this.prefijo "session/" this.sessionId "/window")
 		return this.rc.isError
-    }	
+    }
 	getWindowHandles(){
 		this.rc := WDSession.__ws("GET", this.prefijo "session/" this.sessionId "/window/handles")
 		return this.rc.value
@@ -156,7 +156,7 @@ class WDSession{
 					}
 					else
 						body .= """" id """}"
-		this.rc := WDSession.__ws("POST", this.prefijo "session/" this.sessionId "/frame", body) 
+		this.rc := WDSession.__ws("POST", this.prefijo "session/" this.sessionId "/frame", body)
 		return this.rc.isError
 	}
 	frameParent(){
@@ -165,14 +165,14 @@ class WDSession{
 	}
 	getElementActive(){
 		this.rc := WDSession.__ws("GET", this.prefijo "session/" this.sessionId "/element/active")
-		if(this.rc.isError) 
+		if(this.rc.isError)
 			return ""
 		return new WDSession.WDElement(this.rc.value, this)
 	}
 	element(selector, value){
 		local body := {using: selector, value: value }
 		this.rc := WDSession.__ws("POST", this.prefijo "session/" this.sessionId "/element", JSON.Stringify(body))
-		if(this.rc.isError) 
+		if(this.rc.isError)
 			return ""
 		return new WDSession.WDElement(this.rc.value, this)
 	}
@@ -180,7 +180,7 @@ class WDSession{
 		local body := {using: selector, value: value }
 		local list,i,k
 		this.rc := WDSession.__ws("POST", this.prefijo "session/" this.sessionId "/elements", JSON.Stringify(body))
-		if(this.rc.isError) 
+		if(this.rc.isError)
 			return ""
 		list:=[]
 		loop % this.rc.value.Count()
@@ -189,7 +189,7 @@ class WDSession{
 	}
 	getSource(){
 		this.rc := WDSession.__ws("GET", this.prefijo "session/" this.sessionId "/source")
-		if(this.rc.isError) 
+		if(this.rc.isError)
 			return ""
 		return this.rc.value
 	}
@@ -197,7 +197,7 @@ class WDSession{
 		local body:={}
 		local x,i
 		body.script := script
-		if(args="") 
+		if(args="")
 			args:=[]
 		else
 			for x in args
@@ -205,10 +205,10 @@ class WDSession{
 					if(args[x].uuid = WDSession.WDElement.weID)
 						args[x] := {WDSession.WDElement.weID: args[x].ref}
 					else
-						this.__dumpObj(args[x])				
+						this.__dumpObj(args[x])
 				}
 		body.args:=args
-		this.rc := WDSession.__ws("POST", this.prefijo "session/" this.sessionId "/execute/" sync, JSON.Stringify(body)) 
+		this.rc := WDSession.__ws("POST", this.prefijo "session/" this.sessionId "/execute/" sync, JSON.Stringify(body))
 		if(isObject(this.rc.value))
 			if(this.rc.value.HasKey(WDSession.WDElement.weID))
 				this.rc.value := new WDSession.WDElement(obj, this)
@@ -218,34 +218,34 @@ class WDSession{
 	}
 	getAllCookies(){
 		this.rc := WDSession.__ws("GET", this.prefijo "session/" this.sessionId "/cookie")
-		if(this.rc.isError) 
+		if(this.rc.isError)
 			return ""
 		return this.rc.value
 	}
 	getCookie(name){
 		this.rc := WDSession.__ws("GET", this.prefijo "session/" this.sessionId "/cookie/" name)
-		if(this.rc.isError) 
+		if(this.rc.isError)
 			return ""
 		return this.rc.value
 	}
 	cookie(name,value,path:="",domain:="",secure:="",httpOnly:="",expiry:=""){
 		local body:={}
-		cookieObj:={} 
+		cookieObj:={}
 		cookieObj.name:=name
 		cookieObj.value:=value
 		if(isObject(path)){
 			for k,v in path
 				cookieObj[k]:=v
 		}else{
-			if(path!="") 
+			if(path!="")
 				cookieObj.path:=path
-			if(domain!="") 
+			if(domain!="")
 				cookieObj.domain:=domain
-			if(secure!="") 
+			if(secure!="")
 				cookieObj.secure:=secure
-			if(httpOnly!="") 
+			if(httpOnly!="")
 				cookieObj.httpOnly:=httpOnly
-			if(expiry!="") 
+			if(expiry!="")
 				cookieObj.expiry:=expiry
 		}
 		body.cookie:=cookieObj
@@ -262,7 +262,7 @@ class WDSession{
 	}
 	getScreenshot(){
 		this.rc := WDSession.__ws("GET", this.prefijo "session/" this.sessionId "/screenshot")
-		if(this.rc.isError) 
+		if(this.rc.isError)
 			return ""
 		return this.rc.value
 	}
@@ -325,52 +325,52 @@ class WDSession{
 		}
 		getSelected(){
 			this.rc := WDSession.__ws("GET", this.objSession.prefijo "session/" this.objSession.sessionId "/element/" this.ref "/selected")
-			if(this.rc.isError) 
+			if(this.rc.isError)
 				return ""
 			return this.rc.value
 		}
 		getAttribute(name){
 			this.rc := WDSession.__ws("GET", this.objSession.prefijo "session/" this.objSession.sessionId "/element/" this.ref "/attribute/" name)
-			if(this.rc.isError) 
+			if(this.rc.isError)
 				return ""
 			return this.rc.value
 		}
 		getProperty(name){
 			this.rc := WDSession.__ws("GET", this.objSession.prefijo "session/" this.objSession.sessionId "/element/" this.ref "/property/" name)
-			if(this.rc.isError) 
+			if(this.rc.isError)
 				return ""
 			return this.rc.value
 		}
 		getCSS(propertyName){
 			this.rc := WDSession.__ws("GET", this.objSession.prefijo "session/" this.objSession.sessionId "/element/" this.ref "/css/" propertyName)
-			if(this.rc.isError) 
+			if(this.rc.isError)
 				return ""
 			return this.rc.value
 		}
 		getText(){
 			this.rc := WDSession.__ws("GET", this.objSession.prefijo "session/" this.objSession.sessionId "/element/" this.ref "/text")
-			if(this.rc.isError) 
+			if(this.rc.isError)
 				return ""
 			return this.rc.value
 		}
 		getName(){
 			this.rc := WDSession.__ws("GET", this.objSession.prefijo "session/" this.objSession.sessionId "/element/" this.ref "/name")
-			if(this.rc.isError) 
+			if(this.rc.isError)
 				return ""
 			return this.rc.value
 		}
 		getRect(){
 			this.rc := WDSession.__ws("GET", this.objSession.prefijo "session/" this.objSession.sessionId "/element/" this.ref "/rect")
-			if(this.rc.isError) 
+			if(this.rc.isError)
 				return ""
 			return this.rc.value
 		}
 		getEnabled(){
 			this.rc := WDSession.__ws("GET", this.objSession.prefijo "session/" this.objSession.sessionId "/element/" this.ref "/enabled")
-			if(this.rc.isError) 
+			if(this.rc.isError)
 				return ""
 			return this.rc.value
-		} 
+		}
 		click(){
 			this.rc := WDSession.__ws("POST", this.objSession.prefijo "session/" this.objSession.sessionId "/element/" this.ref "/click", "{}")
 			return this.rc.isError
@@ -385,7 +385,7 @@ class WDSession{
 		}
 		getScreenshot(){
 			this.rc := WDSession.__ws("GET", this.objSession.prefijo "session/" this.objSession.sessionId "/element/" this.ref "/screenshot")
-			if(this.rc.isError) 
+			if(this.rc.isError)
 				return ""
 			return this.rc.value
 		}
@@ -408,11 +408,11 @@ class WDSession{
 	debug(copyToClipboard:=true){
 		if(copyToClipboard)
 			Clipboard:=this.rc.raw
-		msg := this.rc.raw 
-			. "`n---------------------------------------" 
+		msg := this.rc.raw
+			. "`n---------------------------------------"
 	    	. "`n Error:" this.rc.isError
     		. "`n Status:" this.rc.status
-			. "`n---------------------------------------" 
+			. "`n---------------------------------------"
 		if(isObject(this.rc.value)){
 			msg .= "`n Value:"
     		for k,v in this.rc.value

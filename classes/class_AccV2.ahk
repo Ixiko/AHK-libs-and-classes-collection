@@ -1,50 +1,127 @@
-;Member Properties:      {accChild,accChildCount,accDefaultAction,accDescription,accFocus,accHelp,accHelpTopic,accKeyboardShortcut,accName,accParent,accRole,accSelection,accState,accValue}
-;accChild                Read-only        An IDispatch interface for the specified child, if one exists. All objects must support this property. See get_accChild.
-;accChildCount           Read-only        The number of children that belong to this object. All objects must support this property. See get_accChildCount.
-;accDefaultAction        Read-only        A string that describes the object's default action. Not all objects have a default action. See get_accDefaultAction.
-;accDescription          Read-only        Note  The accDescription property is not supported in the transition to UI Automation. Microsoft Active Accessibility servers and applications should not use it. A string that describes the visual appearance of the specified object. Not all objects have a description.
-;accFocus                Read-only        The object that has the keyboard focus. All objects that receive the keyboard focus must support this property. See get_accFocus.
-;accHelp                 Read-only        A help string. Not all objects support this property. See get_accHelp.
-;accHelpTopic            Read-only        Note  The accHelpTopic property is deprecated and should not be used.The full path of the help file associated with the specified object and the identifier of the appropriate topic within that file. Not all objects support this property.
-;accKeyboardShortcut     Read-only        The object's shortcut key or access key, also known as the mnemonic. All objects that have a shortcut key or an access key support this property. See get_accKeyboardShortcut.
-;accName                 Read-only        The name of the object. All objects support this property. See get_accName.
-;accParent               Read-only        The IDispatch interface of the object's parent. All objects support this property. See get_accParent.
-;accRole                 Read-only        Information that describes the role of the specified object. All objects support this property. See get_accRole.
-;accSelection            Read-only        The selected children of this object. All objects that support selection must support this property. See get_accSelection.
-;accState                Read-only        The current state of the object. All objects support this property. See get_accState.
-;accValue                Read/write       The value of the object. Not all objects have a value. See get_accValue, put_accValue.
-
-;Member Methods:         {accDoDefaultAction,accHitTest,accLocation,accNavigate,accSelect}
-;accDoDefaultAction      Performs the specified object's default action. Not all objects have a default action.
-;accHitTest              Retrieves the child element or child object at a given point on the screen. All visual objects support this method.
-;accLocation             Retrieves the specified object's current screen location. All visual objects support this method.
-;accNavigate             Note  The accNavigate method is deprecated and should not be used. Clients should use other methods and properties such as AccessibleChildren, get_accChild, get_accParent, and IEnumVARIANT. Traverses to another user interface element within a container and retrieves the object. All visual objects support this method.
-;accSelect               Modifies the selection or moves the keyboard focus of the specified object. All objects that support selection or receive the keyboard focus must support this method.
-
-
-
-
-;------------------------------------------------------------------------------
-; Acc.ahk Standard Library
-; by Sean
-; Updated by jethrow:
+;----------------------------------------------------------------------------------------------------------------------
+; Acc.ahk
+;----------------------------------------------------------------------------------------------------------------------
+; Authors   (dd/mm/yyyy):
+;   Sean    ()
+;   jethrow (19/02/2012)
+;   Sancarn (26/11/2017,18/01/2019,10/05/2019)
+;----------------------------------------------------------------------------------------------------------------------
+; CHANGE LOG:
+;----------------------------------------------------------------------------------------------------------------------
+;19/02/2012:
 ;     Modified ComObjEnwrap params from (9,pacc) --> (9,pacc,1)
 ;     Changed ComObjUnwrap to ComObjValue in order to avoid AddRef (thanks fincs)
 ;     Added Acc_GetRoleText & Acc_GetStateText
 ;     Added additional functions - commented below
 ;     Removed original Acc_Children function
-; last updated 2/19/2012
-; Updated by Sancarn:
-;    Added all relevant enumerations
-;   Added IAccessible walking functionality e.g.
-;       acc_childrenFilter(oAcc, ACC_FILTERS.byDescription, "Amazing button")
+;26/11/2017:
+;     Added Enumerations as Objects
+;     Added IAccessible walking functionality e.g.
+;         acc_childrenFilter(oAcc, ACC_FILTERS.byDescription, "Amazing button")
+;         
+;         acc_childrenFilter(oAcc, Func("myAwesomeFunction"), true)
+;         myAwesomeFunction(oAcc,val){
+;             return val
+;         }
+;     Added Acc_ChildProxy to Acc_Children
+;18/01/2019:
+;     Documentation Update
+;10/05/2019:
+;     Error Checking to ACC_ChildProxy
+;----------------------------------------------------------------------------------------------------------------------
+;ACC INTELLISENSE PACK:
+;----------------------------------------------------------------------------------------------------------------------
+;IAcc Member Properties: [accChild,accChildCount,accDefaultAction,accDescription,accFocus,accHelp,accHelpTopic,accKeyboardShortcut,accName,accParent,accRole,accSelection,accState,accValue]
+;Member Methods:         [accDoDefaultAction,accHitTest,accLocation,accNavigate,accSelect]
+;Global Constants:       [ACC_NAVDIR,ACC_SELECTIONFLAG,ACC_EVENT,VT_CONSTANTS,ACC_FILTERS,ACC_OBJID,ACC_STATE,ACC_ROLE]
+;Global Methods:         [Acc_ObjectFromEvent,Acc_ObjectFromPoint,Acc_ObjectFromWindow,Acc_WindowFromObject,Acc_SetWinEventHook,Acc_UnhookWinEvent,Acc_Location,Acc_Parent,Acc_Child,Acc_Children,Acc_Get,acc_childrenFilter,acc_getRootElement]
 ;
-;       acc_childrenFilter(oAcc, Func("myAwesomeFunction"), true)
+;----------------------------------------------------------------------------------------------------------------------
+; DOCUMENTATION:
+;----------------------------------------------------------------------------------------------------------------------
+;IAcc Member Properties:
+;  accChild                Read-only        An IDispatch interface for the specified child, if one exists. All objects must support this property. See get_accChild.
+;  accChildCount           Read-only        The number of children that belong to this object. All objects must support this property. See get_accChildCount.
+;  accDefaultAction        Read-only        A string that describes the object's default action. Not all objects have a default action. See get_accDefaultAction.
+;  accDescription          Read-only        Note  The accDescription property is not supported in the transition to UI Automation. Microsoft Active Accessibility servers and applications should not use it. A string that describes the visual appearance of the specified object. Not all objects have a description.
+;  accFocus                Read-only        The object that has the keyboard focus. All objects that receive the keyboard focus must support this property. See get_accFocus.
+;  accHelp                 Read-only        A help string. Not all objects support this property. See get_accHelp.
+;  accHelpTopic            Read-only        Note  The accHelpTopic property is deprecated and should not be used.The full path of the help file associated with the specified object and the identifier of the appropriate topic within that file. Not all objects support this property.
+;  accKeyboardShortcut     Read-only        The object's shortcut key or access key, also known as the mnemonic. All objects that have a shortcut key or an access key support this property. See get_accKeyboardShortcut.
+;  accName                 Read-only        The name of the object. All objects support this property. See get_accName.
+;  accParent               Read-only        The IDispatch interface of the object's parent. All objects support this property. See get_accParent.
+;  accRole                 Read-only        Information that describes the role of the specified object. All objects support this property. See get_accRole.
+;  accSelection            Read-only        The selected children of this object. All objects that support selection must support this property. See get_accSelection.
+;  accState                Read-only        The current state of the object. All objects support this property. See get_accState.
+;  accValue                Read/write       The value of the object. Not all objects have a value. See get_accValue, put_accValue.
+;Member Methods:
+;  accDoDefaultAction                       Performs the specified object's default action. Not all objects have a default action.
+;  accHitTest                               Retrieves the child element or child object at a given point on the screen. All visual objects support this method.
+;  accLocation                              Retrieves the specified object's current screen location. All visual objects support this method. 
+;  accNavigate                              Note  The accNavigate method is deprecated and should not be used. Clients should use other methods and properties such as AccessibleChildren, get_accChild, get_accParent, and IEnumVARIANT. Traverses to another user interface element within a container and retrieves the object. All visual objects support this method.
+;  accSelect                                Modifies the selection or moves the keyboard focus of the specified object. All objects that support selection or receive the keyboard focus must support this method.
+;Global Constants:
+;  ACC_NAVDIR                               Object containing different navigation direction flags.
+;  ACC_SELECTIONFLAG                        Object containing different accSelect() Flags.
+;  ACC_EVENT                                Object containing different windows events which can be used with Acc_ObjectFromEvent.
+;  VT_CONSTANTS                             Object containing different COM VTable constants.
+;  ACC_FILTERS                              Object containing filter functions to be used with acc_childrenFilter.
+;  ACC_OBJID                                Object containing different object names and ids.
+;  ACC_STATE                                Object containing different state names and ids.
+;  ACC_ROLE                                 Object containing different role names and ids.
+;Global Methods:
+;  Acc_ObjectFromEvent(ByRef _idChild_, hWnd, idObject, idChild)                                    - Used to get Acc object from Event
+;  Acc_ObjectFromPoint(ByRef _idChild_ = "", x = "", y = "")                                        - Used to get Acc object from X,Y Point
+;  Acc_ObjectFromWindow(hWnd, idObject = -4)                                                        - Used to get Acc object from hWND
+;  Acc_WindowFromObject(pacc)                                                                       - Used to get hWND from ACC object
+;  Acc_SetWinEventHook(eventMin, eventMax, pCallback)                                               - Listen for Windows events. Call callback with Acc object param.
+;  Acc_UnhookWinEvent(hHook)                                                                        - Stop listening to existing event hook.
+;  Acc_Location(Acc, ChildId=0)                                                                     - Get the location of an IAccessible object
+;  Acc_Parent(Acc)                                                                                  - Get the parent object of an element
+;  Acc_Child(Acc, ChildId=0)                                                                        - Get a child of the object with a specified id.
+;  Acc_Children(Acc)                                                                                - Get the children of an IAccessible object (as an array)
+;  Acc_Get(Cmd, ChildPath="", ChildID=0, WinTitle="", WinText="", ExcludeTitle="", ExcludeText="")  - Get an accessible object
+;  acc_childrenFilter(oAcc, fCondition, value=0, returnOne=false, obj=0)                            - Filter children by some defined condition
+;  acc_getRootElement()                                                                             - Returns the Acc Object for the Desktop (Root of all Acc tree elements)
+;DEPRECATED AND INTERNAL METHODS:
+;  Acc_Init()                                                                                       - DO NOT CALL!
+;  Acc_Query(Acc)                                                                                   - DO NOT CALL! Query IAccessible interface from object
+;  Acc_Error(p="")                                                                                  - DO NOT CALL! Error information
+;  Acc_GetRoleText(nRole)                                                                           - [DEPRECATED. USE ACC_ROLE OBJECT   ] Get's ACC Role as Text.
+;  Acc_GetStateText(nState)                                                                         - [DEPRECATED. USE ACC_STATE OBJECT  ] Get's ACC State as Text.
+;  Acc_Role(Acc, ChildId=0)                                                                         - [DEPRECATED. USE ACC_ROLE OBJECT   ]
+;  Acc_State(Acc, ChildId=0)                                                                        - [DEPRECATED. USE ACC_STATE OBJECT  ]
+;  Acc_ChildrenByRole(Acc, Role)                                                                    - [DEPRECATED. USE acc_childrenFilter] Get all children of the specified role.
+;  acc_childrenByName(oAccessible, name,returnOne=false)                                            - [DEPRECATED. USE acc_childrenFilter]Filter children by name, if returnOne then only 1 child is returned
+;
+;----------------------------------------------------------------------------------------------------------------------
+;Further descriptions:
+;----------------------------------------------------------------------------------------------------------------------
+;acc_childrenFilter
+;  Filters the children in an acc object and calls the function defined by the 2nd parameter with Acc object and the 3rd param.
+;  If the function returns true, the child is included in the filter.
+;Example:
+;	The following function will include children based on the 3rd parameter:
+;       acc_childrenFilter(oAcc, Func("myAwesomeFunction"), true) ;Returns all children
+;		acc_childrenFilter(oAcc, Func("myAwesomeFunction"), true) ;Returns no  children
 ;       myAwesomeFunction(oAcc,val){
 ;           return val
 ;       }
-; last updated 26/11/2017
-;------------------------------------------------------------------------------
+;
+;ACC_FILTERS
+;  These are commonly used in conjunction with `acc_childrenFilter`:
+;Example:
+;  acc_childrenFilter(oAcc, ACC_FILTERS.byDescription, "Amazing button")
+;List of helper methods:
+;  ACC_FILTERS.byDefaultAction(oAcc,action) - Filter children by a specific default action
+;  ACC_FILTERS.byDescription(oAcc,desc)     - Filter children by a specific description
+;  ACC_FILTERS.byValue(oAcc, value)         - Filter children by a specific value
+;  ACC_FILTERS.byHelp(oAcc, hlpTxt)         - Filter children by a specific help text
+;  ACC_FILTERS.byState(oAcc, state)         - Filter children by a specific state
+;  ACC_FILTERS.byRole(oAcc, role)           - Filter children by a specific role
+;  ACC_FILTERS.byName(oAcc, name)           - Filter children by a specific name
+;  ACC_FILTERS.byRegex(oAcc, regex)         - Filter children by regex matching against string: %accName%;%accHelp%;%accValue%;%accDescription%;%accDefaultAction%
+;----------------------------------------------------------------------------------------------------------------------
 
 ;https://msdn.microsoft.com/en-us/library/windows/desktop/dd373606(v=vs.85).aspx
 class ACC_OBJID{
@@ -66,58 +143,58 @@ class ACC_OBJID{
 
 ;https://msdn.microsoft.com/en-us/library/windows/desktop/dd373609(v=vs.85).aspx
 class ACC_STATE {
-    static    NORMAL                  :=        0
-    static    UNAVAILABLE             :=        0x1
-    static    SELECTED                :=        0x2
-    static    FOCUSED                 :=        0x4
-    static    PRESSED                 :=        0x8
-    static    CHECKED                 :=        0x10
-    static    MIXED                   :=        0x20
-    static    INDETERMINATE           :=        this.MIXED
-    static    READONLY                :=        0x40
-    static    HOTTRACKED              :=        0x80
-    static    DEFAULT                 :=        0x100
-    static    EXPANDED                :=        0x200
-    static    COLLAPSED               :=        0x400
-    static    BUSY                    :=        0x800
-    static    FLOATING                :=        0x1000
-    static    MARQUEED                :=        0x2000
-    static    ANIMATED                :=        0x4000
-    static    INVISIBLE               :=        0x8000
-    static    OFFSCREEN               :=        0x10000
-    static    SIZEABLE                :=        0x20000
-    static    MOVEABLE                :=        0x40000
-    static    SELFVOICING             :=        0x80000
-    static    FOCUSABLE               :=        0x100000
-    static    SELECTABLE              :=        0x200000
-    static    LINKED                  :=        0x400000
-    static    TRAVERSED               :=        0x800000
-    static    MULTISELECTABLE         :=        0x1000000
-    static    EXTSELECTABLE           :=        0x2000000
-    static    ALERT_LOW               :=        0x4000000
-    static    ALERT_MEDIUM            :=        0x8000000
-    static    ALERT_HIGH              :=        0x10000000
-    static    PROTECTED               :=        0x20000000
-    static    VALID                   :=        0x7fffffff
+    static    NORMAL                  :=        0                    
+    static    UNAVAILABLE             :=        0x1                    
+    static    SELECTED                :=        0x2                    
+    static    FOCUSED                 :=        0x4                    
+    static    PRESSED                 :=        0x8                    
+    static    CHECKED                 :=        0x10                   
+    static    MIXED                   :=        0x20                   
+    static    INDETERMINATE           :=        this.MIXED            
+    static    READONLY                :=        0x40                   
+    static    HOTTRACKED              :=        0x80                   
+    static    DEFAULT                 :=        0x100                  
+    static    EXPANDED                :=        0x200                  
+    static    COLLAPSED               :=        0x400                  
+    static    BUSY                    :=        0x800                  
+    static    FLOATING                :=        0x1000                 
+    static    MARQUEED                :=        0x2000                 
+    static    ANIMATED                :=        0x4000                 
+    static    INVISIBLE               :=        0x8000                 
+    static    OFFSCREEN               :=        0x10000                
+    static    SIZEABLE                :=        0x20000                
+    static    MOVEABLE                :=        0x40000                
+    static    SELFVOICING             :=        0x80000                
+    static    FOCUSABLE               :=        0x100000               
+    static    SELECTABLE              :=        0x200000               
+    static    LINKED                  :=        0x400000               
+    static    TRAVERSED               :=        0x800000               
+    static    MULTISELECTABLE         :=        0x1000000              
+    static    EXTSELECTABLE           :=        0x2000000              
+    static    ALERT_LOW               :=        0x4000000              
+    static    ALERT_MEDIUM            :=        0x8000000              
+    static    ALERT_HIGH              :=        0x10000000             
+    static    PROTECTED               :=        0x20000000             
+    static    VALID                   :=        0x7fffffff            
 }
 
 ;https://msdn.microsoft.com/en-us/library/windows/desktop/dd373608(v=vs.85).aspx
 class ACC_ROLE {
-    static    TITLEBAR                :=        0x1
-    static    MENUBAR                 :=        0x2
-    static    SCROLLBAR               :=        0x3
-    static    GRIP                    :=        0x4
-    static    SOUND                   :=        0x5
-    static    CURSOR                  :=        0x6
-    static    CARET                   :=        0x7
-    static    ALERT                   :=        0x8
-    static    WINDOW                  :=        0x9
-    static    CLIENT                  :=        0xa
-    static    MENUPOPUP               :=        0xb
-    static    MENUITEM                :=        0xc
-    static    TOOLTIP                 :=        0xd
-    static    APPLICATION             :=        0xe
-    static    DOCUMENT                :=        0xf
+    static    TITLEBAR                :=        0x1    
+    static    MENUBAR                 :=        0x2 
+    static    SCROLLBAR               :=        0x3 
+    static    GRIP                    :=        0x4 
+    static    SOUND                   :=        0x5 
+    static    CURSOR                  :=        0x6 
+    static    CARET                   :=        0x7 
+    static    ALERT                   :=        0x8 
+    static    WINDOW                  :=        0x9 
+    static    CLIENT                  :=        0xa 
+    static    MENUPOPUP               :=        0xb 
+    static    MENUITEM                :=        0xc 
+    static    TOOLTIP                 :=        0xd 
+    static    APPLICATION             :=        0xe 
+    static    DOCUMENT                :=        0xf 
     static    PANE                    :=        0x10
     static    CHART                   :=        0x11
     static    DIALOG                  :=        0x12
@@ -185,11 +262,11 @@ class ACC_NAVDIR {
 
 ;https://msdn.microsoft.com/en-us/library/windows/desktop/dd373634(v=vs.85).aspx
 class ACC_SELECTIONFLAG {
-    static    NONE                    := 0x0
-    static    TAKEFOCUS               := 0x1
-    static    TAKESELECTION           := 0x2
-    static    EXTENDSELECTION         := 0x4
-    static    ADDSELECTION            := 0x8
+    static    NONE                    := 0x0    
+    static    TAKEFOCUS               := 0x1 
+    static    TAKESELECTION           := 0x2 
+    static    EXTENDSELECTION         := 0x4 
+    static    ADDSELECTION            := 0x8 
     static    REMOVESELECTION         := 0x10
     static    VALID                   := 0x1f
 }
@@ -320,21 +397,23 @@ class ACC_FILTERS {
     }
 
     byRegex(oAcc,rx){
-        info := oAcc.accName . ";"
-              . oAcc.accHelp . ";"
-              . oAcc.accValue ";"
-              . oAcc.accDescription . ";"
+        info := oAcc.accName . ";" 
+              . oAcc.accHelp . ";" 
+              . oAcc.accValue ";" 
+              . oAcc.accDescription . ";" 
               . oAcc.accDefaultAction
         return RegexMatch(Haystack, rx) > 0
     }
 }
 
 
-Acc_Init() {
+Acc_Init()
+{
     Static    h := DllCall("LoadLibrary","Str","oleacc","Ptr")
 }
 
-Acc_ObjectFromEvent(ByRef _idChild_, hWnd, idObject, idChild) {
+Acc_ObjectFromEvent(ByRef _idChild_, hWnd, idObject, idChild)
+{
     Acc_Init()
     if (DllCall("oleacc\AccessibleObjectFromEvent"
               , "Ptr", hWnd
@@ -347,7 +426,8 @@ Acc_ObjectFromEvent(ByRef _idChild_, hWnd, idObject, idChild) {
     }
 }
 
-Acc_ObjectFromPoint(ByRef _idChild_ = "", x = "", y = "") {
+Acc_ObjectFromPoint(ByRef _idChild_ = "", x = "", y = "")
+{
     Acc_Init()
     if (DllCall("oleacc\AccessibleObjectFromPoint"
               , "Int64", x == ""||y==""
@@ -360,7 +440,8 @@ Acc_ObjectFromPoint(ByRef _idChild_ = "", x = "", y = "") {
     }
 }
 
-Acc_ObjectFromWindow(hWnd, idObject = -4) {
+Acc_ObjectFromWindow(hWnd, idObject = -4)
+{
     Acc_Init()
     if (DllCall("oleacc\AccessibleObjectFromWindow"
               , "Ptr", hWnd
@@ -376,7 +457,8 @@ Acc_ObjectFromWindow(hWnd, idObject = -4) {
         return ComObjEnwrap(9,pacc,1)
 }
 
-Acc_WindowFromObject(pacc) {
+Acc_WindowFromObject(pacc)
+{
     if (DllCall("oleacc\WindowFromAccessibleObject"
               , "Ptr", IsObject(pacc) ? ComObjValue(pacc) : pacc
               , "Ptr*", hWnd) = 0)
@@ -384,9 +466,10 @@ Acc_WindowFromObject(pacc) {
 }
 
 ;Implement this?
-;    IAccessibleHandler::AccessibleObjectFromID
+;    IAccessibleHandler::AccessibleObjectFromID 
 
-Acc_GetRoleText(nRole) {
+Acc_GetRoleText(nRole)
+{
     nSize := DllCall("oleacc\GetRoleText"
                    , "Uint", nRole
                    , "Ptr", 0
@@ -399,7 +482,8 @@ Acc_GetRoleText(nRole) {
     return sRole
 }
 
-Acc_GetStateText(nState) {
+Acc_GetStateText(nState)
+{
     nSize := DllCall("oleacc\GetStateText"
                    , "Uint", nState
                    , "Ptr", 0
@@ -412,11 +496,13 @@ Acc_GetStateText(nState) {
     return sState
 }
 
-Acc_SetWinEventHook(eventMin, eventMax, pCallback) {
+Acc_SetWinEventHook(eventMin, eventMax, pCallback)
+{
     Return    DllCall("SetWinEventHook", "Uint", eventMin, "Uint", eventMax, "Uint", 0, "Ptr", pCallback, "Uint", 0, "Uint", 0, "Uint", 0)
 }
 
-Acc_UnhookWinEvent(hHook) {
+Acc_UnhookWinEvent(hHook)
+{
     Return    DllCall("UnhookWinEvent", "Ptr", hHook)
 }
 /*    Win Events:
@@ -460,7 +546,7 @@ Acc_Location(Acc, ChildId=0) { ; adapted from Sean's code
               . " h" NumGet(h,0,"int") }
 }
 
-Acc_Parent(Acc) {
+Acc_Parent(Acc) { 
     try parent := Acc.accParent
     return parent ? Acc_Query(parent) :
 }
@@ -471,7 +557,7 @@ Acc_Child(Acc, ChildId=0) {
 }
 
 ; thanks Lexikos - www.autohotkey.com/forum/viewtopic.php?t=81731&p=509530#509530
-Acc_Query(Acc) {
+Acc_Query(Acc) { 
     try return ComObj(9, ComObjQuery(Acc, "{618736e0-3c3d-11cf-810c-00aa00389b71}"), 1)
 }
 
@@ -499,7 +585,7 @@ Acc_Children(Acc) {
             {
                 i:=(A_Index-1)*(A_PtrSize*2+8)+8
                 child:=NumGet(varChildren,i)
-
+                
                 ;I assume NumGet(varChildren,i-8) is ComObjType ~Sancarn
                 ComType := NumGet(varChildren,i-8)
                 if (ComType = VT_CONSTANTS.DISPATCH) {
@@ -511,7 +597,7 @@ Acc_Children(Acc) {
                     ErrorLevel := "Unknown ComType: " ComType
                     Children.push(child)
                 }
-            }
+            }    
             return Children.MaxIndex()?Children:
         } else
             ErrorLevel := "AccessibleChildren DllCall Failed"
@@ -519,6 +605,7 @@ Acc_Children(Acc) {
     if Acc_Error()
         throw Exception(ErrorLevel,-1)
 }
+
 Acc_ChildrenByRole(Acc, Role) {
     if ComObjType(Acc,"Name")!="IAccessible"
         ErrorLevel := "Invalid IAccessible Object"
@@ -606,16 +693,16 @@ acc_childrenByName(oAccessible, name,returnOne=false){
 }
 
 acc_childrenFilter(oAcc, fCondition, value=0, returnOne=false, obj=0){
-
+    
     items:=Acc_Children(oAcc)
     results := []
     if !IsFunc(fCondition)
-        return 0
+        return 0        
     if obj =0
         obj:=ACC_FILTERS
-
+    
     methodCallConvention = instr(fCondition.name, ".") > 0
-
+    
     for k,item in items
     {
         ;fCondition(this ==> stores variables && other methods of object,item,value)
@@ -640,25 +727,68 @@ acc_getRootElement(){
 
 class ACC_ChildProxy {
     __New(oAccParent,id){
-        this.__accParent         := oAccParent
-        this.__accChildID        := id
-        this.accDefaultAction    := oAccParent.accDefaultAction(id)
-        this.accDescription      := oAccParent.accDescription(id)
-        this.accHelp             := oAccParent.accHelp(id)
-        this.accHelpTopic        := oAccParent.accHelpTopic(id)
-        this.accKeyboardShortcut := oAccParent.accKeyboardShortcut(id)
-        this.accName             := oAccParent.accName(id)
-        this.accParent           := oAccParent
-        this.accRole             := oAccParent.accRole(id)
-        this.accState            := oAccParent.accState(id)
-        this.accValue            := oAccParent.accValue(id)
-        this.accFocus            := this.accState && ACC_STATE.FOCUSED
+      global ACC_STATE
+      this.__accParent         := oAccParent                        
+      this.__accChildID        := id   
+      this.accParent           := oAccParent                               
+      
+      try {
+        this.accDefaultAction    := oAccParent.accDefaultAction(id)    
+      } catch e {
+        this.accDefaultAction:=""
+      }
+      try {
+        this.accDescription      := oAccParent.accDescription(id)      
+      } catch e {
+        this.accDescription:=""
+      }
+      try {
+        this.accHelp             := oAccParent.accHelp(id)             
+      } catch e {
+        this.accHelp:=""
+      }
+      try {
+        this.accHelpTopic        := oAccParent.accHelpTopic(id)        
+      } catch e {
+        this.accHelpTopic:=""
+      }
+      try {
+        this.accKeyboardShortcut := oAccParent.accKeyboardShortcut(id) 
+      } catch e {
+        this.accKeyboardShortcut:=""
+      }
+      try {
+        this.accName             := oAccParent.accName(id)             
+      } catch e {
+        this.accName:=""
+      }
+      
+      try {
+        this.accRole             := oAccParent.accRole(id)             
+      } catch e {
+        this.accRole:=""
+      }
+      try {
+        this.accState            := oAccParent.accState(id)            
+      } catch e {
+        this.accState:=""
+      }
+      try {
+        this.accValue            := oAccParent.accValue(id)            
+      } catch e {
+        this.accValue:=""
+      }
+      try {
+        this.accFocus            := this.accState && ACC_STATE.FOCUSED 
+      } catch e {
+        this.accFocus:=""
+      }
     }
-
+    
     accDoDefaultAction(){
         return this.__accParent.accDoDefaultAction(this.__accChildID)
     }
-
+    
     accHitTest(){
         return false
     }

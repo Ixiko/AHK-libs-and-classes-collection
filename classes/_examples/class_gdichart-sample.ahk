@@ -1,5 +1,5 @@
 #NoEnv
-#Include gdichart.ahk
+#include %A_ScriptDir%\..\class_gdichart.ahk
 
 ;~ 0x2e880c	绿
 ;~ 0x234fcb	橙

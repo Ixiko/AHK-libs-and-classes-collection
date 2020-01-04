@@ -1,4 +1,4 @@
-; Copyright © 2013 VxE. All rights reserved.
+﻿; Copyright © 2013 VxE. All rights reserved.
 
 ; Uses a two-pass iterative approach to deserialize a json string
 json_toobj( str ) {

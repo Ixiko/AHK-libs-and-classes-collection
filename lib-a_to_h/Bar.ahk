@@ -1,4 +1,4 @@
-/*
+﻿/*
   bug.n -- tiling window management
   Copyright (c) 2010-2019 Joshua Fuhs, joten
 

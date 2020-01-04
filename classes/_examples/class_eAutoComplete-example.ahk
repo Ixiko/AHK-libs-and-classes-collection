@@ -2,10 +2,10 @@
 #SingleInstance force
 SetWorkingDir % A_ScriptDir
 SendMode, Input
-#Warn
+;#Warn
 ; Windows 8.1 64 bit - Autohotkey v1.1.28.00 32-bit Unicode
 
-#Include %A_ScriptDir%\eAutocomplete.ahk
+#Include %A_ScriptDir%\..\class_eAutocomplete.ahk
 
 if not (FileExist(listPath:=A_ScriptDir . "\englishWordList.txt"))
 	UrlDownloadToFile, https://raw.githubusercontent.com/A-AhkUser/keypad-library/master/Keypad/Autocompletion/en, % listPath

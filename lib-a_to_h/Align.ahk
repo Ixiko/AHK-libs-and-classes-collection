@@ -1,4 +1,4 @@
-/*
+﻿/*
   Function:	Align
  			Aligns controls inside the parent.
 

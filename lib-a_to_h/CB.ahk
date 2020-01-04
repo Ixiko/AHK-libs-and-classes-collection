@@ -1,4 +1,4 @@
-/* ComboBox / DropDownList Manipulation functions
+﻿/* ComboBox / DropDownList Manipulation functions
 - heresy
 
 -Common Parameters

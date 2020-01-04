@@ -22,14 +22,14 @@ fps:=30
 psys:=new particles(fps)
 
 ; create a display/canvas using the dimensions of the picture control "PHWND"
-; set the quality to 4, which is the best but slowest (1-4) 
+; set the quality to 4, which is the best but slowest (1-4)
 
 ; add an emitter, this is what stores all the info of how a particle should behave
 ; if unset, it uses the default values
-e1:=psys.addEmitter()  ; create the emitter, save its pointer as "e1" for easy access  
-e1.type:="sparks"      ; how it displays  
-e1.life:=[0.3,0.7]     ; how long it will live, 1/3 to 1/3 second, random.  
-e1.lineWidth:=[35,2]   ; transition from these values over its life. 
+e1:=psys.addEmitter()  ; create the emitter, save its pointer as "e1" for easy access
+e1.type:="sparks"      ; how it displays
+e1.life:=[0.3,0.7]     ; how long it will live, 1/3 to 1/3 second, random.
+e1.lineWidth:=[35,2]   ; transition from these values over its life.
 e1.circleSize:=[30,5]  ; transition from these values over its life.
 e1.alpha:=[120]        ; how see-through is it? 255=solid, 0= invisible
 e1.jitter:=[80,80,200] ; how much will it wiggle from its position each tick?
@@ -100,17 +100,17 @@ doTheMagic:
 		psys.clear(psys.ID)
 	}
 
-	
+
 	; emitter 1+2
 	if (A_GuiControl="btn3")
 	{
 		; move the canvas to the position+size of the button, set the quality to the best (4)
 		psys.setCanvas(pos2x, pos2y, pos2w, pos2h, 4)
 		guiControlGet, pos, pos, %A_GuiControl%
-		
+
 		loop, 50
 			psys.addParticle(rand(pos2w), rand(pos2h), 1)
-			
+
 		while (psys.particles[1].length()>=1 || psys.particles[2].length()>=1)
 		{
 			if (A_Index<=fps//2)
@@ -127,5 +127,5 @@ return
 
 
 
-#include %A_ScriptDir%\Gdip.ahk
-#include %A_ScriptDir%\particles_class.ahk
+#include %A_ScriptDir%\..\..\lib-a_to_h\Gdip.ahk
+#include %A_ScriptDir%\..\class_particles.ahk

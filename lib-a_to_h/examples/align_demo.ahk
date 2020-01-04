@@ -1,4 +1,4 @@
-; #Include Win.ahk
+﻿; #Include Win.ahk
 ; #Include Align.ahk
 #NoEnv
 SendMode Input
@@ -17,7 +17,7 @@ Sleep, 1500
 Align(h1, "L", 100)	  ;Align this control to the left edge of its parent, set width to 100,
 Align(h2, "T")		  ; then align this control to the top minus space taken from previous control, use its own height,
 Align(h3, "F")		  ; then set this control to fill remaining space.
- 		
+
 Align(hGui)			  ;Re-align hGui
 Return
 

@@ -1,4 +1,4 @@
-#Include <Base>
+﻿#Include <Base>
 
 class ArchLogger
 {

@@ -5,14 +5,13 @@ SetControlDelay, -1
 SetKeyDelay, -1
 FileEncoding, UTF-8
 
-
 ;-----------------------------------------------------------------------------------------------------------------------------------------
 ; some variables
 ;-----------------------------------------------------------------------------------------------------------------------------------------
 global fileIdx:=0, lib:= []
 
-Directorys = 
-(LTrim 
+Directorys =
+(LTrim
 lib-a_to_h
 lib-a_to_h\core_audio_interfaces
 lib-i_to_z
@@ -79,7 +78,8 @@ more libs\DirectX\Lib
 more libs\DirectX\Lib\TexSwap
 more libs\DoDragAndDrop
 more libs\DX9-Overlay-API\include\ahk
-more libs\more libs\Edit\_Functions
+more libs\exLibs
+more libs\Edit\_Functions
 more libs\ImportTypeLib
 more libs\ImportTypeLib\Lib
 more libs\MCode-Ex\src
@@ -96,10 +96,14 @@ more libs\RamDisk & CmdReturn
 more libs\SendInput
 more libs\Splash-Gui
 more libs\TAB\_Functions
+more libs\Various1\lib
 more libs\windows10DesktopManager
 more libs\windows10DesktopManager\injection dll
 more libs\Windy
 more libs\WinLogon
+more libs\Wy\lib
+more libs\Wy\lib\GdipC
+more libs\Wy\lib\Wy
 more libs\xlib
 more libs\xlib\xinclude\common
 more libs\xlib\xinclude\pool
@@ -130,7 +134,7 @@ ReadMeMd .= "| :--- | :--------------------------------- | :--------------------
 ;ReadMeMd:= RegExReplace(ReadMeMd, "M)Edition\:\s\d\d\.\d\d.\d\d\d\d", "Edition: " A_DD "." A_MM "." A_YYYY)
 
 ;-----------------------------------------------------------------------------------------------------------------------------------------
-; scan for files 
+; scan for files
 ;-----------------------------------------------------------------------------------------------------------------------------------------
 Loop, % Dir.MaxIndex()												; list all files in all directory's
 {
@@ -180,14 +184,14 @@ MakeTableLess_readmeMd(file_readmeMd, byref tableStartLine, byref libMaxOld) {
 		else
 			newMd.= A_LoopField "`n"
 	}
-		
+
 return newMd
 }
 
 listfunc(file) {
 
 	global rl
-	
+
 	rl:=""
 	rf:=""
 	FileRead script, % A_ScriptDir "\" file
@@ -321,9 +325,9 @@ listfunc(file) {
 }
 
 list_files(Directory) {
-		
+
 	mdline:=""
-		
+
 	Loop , Files, % A_ScriptDir . "\" . Directory . "\*.ahk"
 	{
 		If Instr(A_LoopFileName, "example")
@@ -331,16 +335,16 @@ list_files(Directory) {
 		fileIdx ++
 		MouseGetPos, mx, my
 		FileGetSize	, fsize	, % A_ScriptDir . "\" . Directory . "\" A_LoopFileName
-		fsize:= Round(fsize/1024, 2) 
+		fsize:= Round(fsize/1024, 2)
 		FileGetTime	, ftime	, % A_ScriptDir . "\" . Directory . "\" A_LoopFileName, M
 		FormatTime, ftime, % ftime, yyyy-MM-dd
 		mdline .= "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "\" . StrReplace(A_LoopFileName," ", "%20") . ") <br>" fsize "kb - " ftime " | " Directory . "|`n"
 		lib.Push(Directory "\" A_LoopFileName)
 		ToolTip, found files: %files%, %mx%, %my%, 6
 	}
-	
+
 	;FileAppend, % "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "\" . StrReplace(A_LoopFileName," ", "%20") . ") | " Directory . "  | `n", % A_ScriptDir "\FilesTable.md"
-	
+
 	return mdline
 }
 

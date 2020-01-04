@@ -1,4 +1,4 @@
-﻿#Include <ZeeGrid>
+﻿#include %A_ScriptDir%\..\Class_ZeeGrid.ahk
 main := GuiCreate()
 
 main.OnEvent("close", () => ExitApp())
@@ -21,7 +21,7 @@ Loop(rows := 20) {
     grid.AppendRow()
     cell := cols * A_Index + A_Index
     col := grid.GetColOfIndex(cell)
-    
+
     if (col = 2) {
         grid.SetCellType(cell, Mod(A_Index, 2) ? grid.BOOL_TRUE : grid.BOOL_FALSE)
     }
@@ -60,6 +60,6 @@ onRightClick(grid) {
     col := grid.GetMouseCol()
     row := grid.GetMouseRow()
     cell := grid.GetCellIndex(row, col)
-    
+
     ToolTip(row "x" col "`nCell Index " cell)
 }

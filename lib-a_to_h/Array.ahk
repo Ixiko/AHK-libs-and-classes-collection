@@ -1,5 +1,5 @@
-; Array Lib - temp01 - http://www.autohotkey.com/forum/viewtopic.php?t=49736
-Array(p1="……", p2="……", p3="……", p4="……", p5="……", p6="……"){
+ï»¿; Array Lib - temp01 - http://www.autohotkey.com/forum/viewtopic.php?t=49736
+Array(p1="â€¦â€¦", p2="â€¦â€¦", p3="â€¦â€¦", p4="â€¦â€¦", p5="â€¦â€¦", p6="â€¦â€¦"){
 	static ArrBase
 	If !ArrBase
 		ArrBase := Object("len", "Array_Length", "indexOf", "Array_indexOf", "join", "Array_Join"
@@ -8,7 +8,7 @@ Array(p1="……", p2="……", p3="……", p4="……", p5="……", p6="……"){
 		, "extend", "Array_Extend", "copy", "Array_Copy", "pop", "Array_Pop")
 
 	arr := Object("base", ArrBase)
-	While (_:=p%A_Index%)!="……" && A_Index<=6
+	While (_:=p%A_Index%)!="â€¦â€¦" && A_Index<=6
 		arr[A_Index] := _
 	Return arr
 }
@@ -39,11 +39,11 @@ Array_Copy(arr){
 	Return Array().extend(arr)
 }
 
-Array_Append(arr, p1="……", p2="……", p3="……", p4="……", p5="……", p6="……"){
+Array_Append(arr, p1="â€¦â€¦", p2="â€¦â€¦", p3="â€¦â€¦", p4="â€¦â€¦", p5="â€¦â€¦", p6="â€¦â€¦"){
 	Return arr.insert(arr.len()+1, p1, p2, p3, p4, p5, p6)
 }
-Array_Insert(arr, index, p1="……", p2="……", p3="……", p4="……", p5="……", p6="……"){
-	While (_:=p%A_Index%)!="……" && A_Index<=6
+Array_Insert(arr, index, p1="â€¦â€¦", p2="â€¦â€¦", p3="â€¦â€¦", p4="â€¦â€¦", p5="â€¦â€¦", p6="â€¦â€¦"){
+	While (_:=p%A_Index%)!="â€¦â€¦" && A_Index<=6
 		arr._Insert(index + (A_Index-1), _)
 	Return arr
 }
@@ -85,8 +85,8 @@ Array_CompareFunc(a, b, c){
 	return a > b ? 1 : a = b ? 0 : -1
 }
 
-Array_Extend(arr, p1="……", p2="……", p3="……", p4="……", p5="……", p6="……"){
-	While (_:=p%A_Index%)!="……" && A_Index<=6
+Array_Extend(arr, p1="â€¦â€¦", p2="â€¦â€¦", p3="â€¦â€¦", p4="â€¦â€¦", p5="â€¦â€¦", p6="â€¦â€¦"){
+	While (_:=p%A_Index%)!="â€¦â€¦" && A_Index<=6
 		If IsObject(_)
 			Loop, % _.len()
 				arr.append(_[A_Index])
@@ -98,8 +98,8 @@ Array_Extend(arr, p1="……", p2="……", p3="……", p4="……", p5="……", p6="……"){
 Array_Pop(arr){
 	Return arr.delete(arr.len())
 }
-Array_Delete(arr, p1="……", p2="……", p3="……", p4="……", p5="……", p6="……"){
-	While (_:=p%A_Index%)!="……" && A_Index<=6
+Array_Delete(arr, p1="â€¦â€¦", p2="â€¦â€¦", p3="â€¦â€¦", p4="â€¦â€¦", p5="â€¦â€¦", p6="â€¦â€¦"){
+	While (_:=p%A_Index%)!="â€¦â€¦" && A_Index<=6
 		arr._Remove(_)
 	Return arr
 }

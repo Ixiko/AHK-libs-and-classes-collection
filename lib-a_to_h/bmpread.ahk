@@ -1,4 +1,4 @@
-
+﻿
 BMPWidth(ByRef bmpdata) {
   return NumGet(bmpdata, 18, "UInt")
 }

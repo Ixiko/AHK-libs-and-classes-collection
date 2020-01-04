@@ -1,4 +1,4 @@
-/*
+﻿/*
     Can process JSON files from the spec:
     - https://github.com/mustache/spec/tree/master/specs
 
@@ -38,7 +38,7 @@ template =
 
 jsonData := JSON.Load(var)
 For key, test in jsonData.tests {
-    
+
     data := Trim(print(test.data), "`n")
     desc := test.desc
     title := test.name

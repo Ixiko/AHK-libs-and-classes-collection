@@ -1,6 +1,6 @@
 ï»¿/*
-COM‘€ìƒ‰ƒCƒuƒ‰ƒŠ	by —¬s‚ç‚¹‚éƒy[ƒWŠÇ—l
- Ver 3ƒÀ
+COMâ€˜â‚¬ÂÃ¬Æ’â€°Æ’CÆ’uÆ’â€°Æ’Å 	by â€”Â¬Âsâ€šÃ§â€šÂ¹â€šÃ©Æ’yÂ[Æ’WÅ Ã‡â€”ÂÂl
+ Ver 3Æ’Ã€
 */
 
 ActiveX(){
@@ -19,15 +19,15 @@ ActiveX(){
 
 /*
 	**********************************
-	”Ä—pƒƒ‚ƒŠŠÇ—
+	â€Ã„â€”pÆ’ÂÆ’â€šÆ’Å Å Ã‡â€”Â
 	**********************************
 */
 
-;ƒƒ‚ƒŠ‚ğŠm•Û‚µƒ|ƒCƒ“ƒ^‚ğ•Ô‚·
+;Æ’ÂÆ’â€šÆ’Å â€šÃ°Å mâ€¢Ã›â€šÂµÆ’|Æ’CÆ’â€œÆ’^â€šÃ°â€¢Ã”â€šÂ·
 Malloc(size,flag=0x40){
 	return DllCall("kernel32.dll\GlobalAlloc","UInt",flag,"UInt",size,"UInt")
 }
-;ƒ|ƒCƒ“ƒ^‚Åw’è‚³‚ê‚½ƒƒ‚ƒŠ‚ğ‰ğ•ú‚·‚é
+;Æ’|Æ’CÆ’â€œÆ’^â€šÃ…Å½wâ€™Ã¨â€šÂ³â€šÃªâ€šÂ½Æ’ÂÆ’â€šÆ’Å â€šÃ°â€°Ã°â€¢Ãºâ€šÂ·â€šÃ©
 Free(p){
 	DllCall("kernel32.dll\GlobalFree",UInt,p,UInt)
 }
@@ -35,11 +35,11 @@ Free(p){
 
 /*
 	**********************************
-	GUIDŠÖ˜A
+	GUIDÅ Ã–ËœA
 	**********************************
 */
 
-;CLSID•¶š—ñ‚©‚çGUID\‘¢‘Ì‚ğ¶¬‚µƒAƒhƒŒƒX‚ğ“¾‚é(‰¼)
+;CLSIDâ€¢Â¶Å½Å¡â€”Ã±â€šÂ©â€šÃ§GUIDÂ\â€˜Â¢â€˜ÃŒâ€šÃ°ÂÂ¶ÂÂ¬â€šÂµÆ’AÆ’hÆ’Å’Æ’Xâ€šÃ°â€œÂ¾â€šÃ©(â€°Â¼)
 GUID(string){
 	size:=DllCall("kernel32.dll\MultiByteToWideChar","UInt",0,"UInt",0,"Str",string,"Int",-1,"UInt",0,"Int",0)
 	wstr:=Malloc((size+1)*2)
@@ -49,7 +49,7 @@ GUID(string){
 	Free(wstr)
 	return ptr
 }
-;ProgID•¶š—ñ‚©‚çGUID\‘¢‘Ì‚ğ¶¬‚µƒAƒhƒŒƒX‚ğ“¾‚é(‰¼)
+;ProgIDâ€¢Â¶Å½Å¡â€”Ã±â€šÂ©â€šÃ§GUIDÂ\â€˜Â¢â€˜ÃŒâ€šÃ°ÂÂ¶ÂÂ¬â€šÂµÆ’AÆ’hÆ’Å’Æ’Xâ€šÃ°â€œÂ¾â€šÃ©(â€°Â¼)
 ProgID(string){
 	size:=DllCall("kernel32.dll\MultiByteToWideChar","UInt",0,"UInt",0,"Str",string,"Int",-1,"UInt",0,"Int",0)
 	wstr:=Malloc((size+1)*2)
@@ -60,7 +60,7 @@ ProgID(string){
 	return ptr
 }
 
-;GUID\‘¢‘Ì‚ğ•¶š—ñ‚É•ÏŠ·
+;GUIDÂ\â€˜Â¢â€˜ÃŒâ€šÃ°â€¢Â¶Å½Å¡â€”Ã±â€šÃ‰â€¢ÃÅ Â·
 fromGUID(ByRef guid){
 	ptr:=Malloc(80)
 	DllCall("ole32.dll\StringFromGUID2","UInt",guid,"UInt",ptr,"Int",80)
@@ -71,12 +71,12 @@ fromGUID(ByRef guid){
 
 /*
 	**********************************
-	UnicodeŠÖ˜A
+	UnicodeÅ Ã–ËœA
 	**********************************
 */
 
-;•¶š—ñ‚©‚ç‚ÉUnicode‚Ö‚Ì•ÏŠ·‚ğs‚¤
-;•Ô‚è’l‚ÍUnicode•¶š—ñ‚Ö‚Ìƒ|ƒCƒ“ƒ^
+;â€¢Â¶Å½Å¡â€”Ã±â€šÂ©â€šÃ§â€šÃ‰Unicodeâ€šÃ–â€šÃŒâ€¢ÃÅ Â·â€šÃ°Âsâ€šÂ¤
+;â€¢Ã”â€šÃ¨â€™lâ€šÃUnicodeâ€¢Â¶Å½Å¡â€”Ã±â€šÃ–â€šÃŒÆ’|Æ’CÆ’â€œÆ’^
 mb2wc(mbstr){
 	size:=(DllCall("kernel32.dll\MultiByteToWideChar","UInt",0,"UInt",0,"Str",mbstr,"Int",-1,"UInt",0,"Int",0)+1)*2
 	wstr:=Malloc(size)
@@ -89,8 +89,8 @@ mb2wc_ref(ByRef mbstr){
 	DllCall("kernel32.dll\MultiByteToWideChar","UInt",0,"UInt",0,"Str",mbstr,"Int",-1,"UInt",wstr,"Int",size)
 	return wstr
 }
-;Unicode‚©‚çAnsi•¶š—ñ‚Ö‚Ì•ÏŠ·‚ğs‚¤
-;•Ô‚è’l‚Í•¶š—ñ
+;Unicodeâ€šÂ©â€šÃ§Ansiâ€¢Â¶Å½Å¡â€”Ã±â€šÃ–â€šÃŒâ€¢ÃÅ Â·â€šÃ°Âsâ€šÂ¤
+;â€¢Ã”â€šÃ¨â€™lâ€šÃâ€¢Â¶Å½Å¡â€”Ã±
 wc2mb(wstr){
 	size:=DllCall("kernel32.dll\WideCharToMultiByte","UInt",0,"UInt",0,"UInt",wstr,"Int",-1,"UInt",0,"Int",0,"UInt",0,"UInt",0)
 	VarSetCapacity(mbstr,size)
@@ -108,7 +108,7 @@ wc2mb_ref(wstr,ByRef mbstr){
 
 /*
 	**********************************
-	COM”Ä—p
+	COMâ€Ã„â€”p
 	**********************************
 */
 
@@ -171,23 +171,23 @@ ReleaseL(p1,p2=-1,p3=-1,p4=-1,p5=-1,p6=-1,p7=-1,p8=-1,p9=-1){
 
 /*
 	**********************************
-	VARIANTŠÖ˜A
+	VARIANTÅ Ã–ËœA
 	**********************************
 */
 
-;Ansi•¶š—ñ‚ğBSTRŒ`®‚É•ÏŠ·‚·‚é
+;Ansiâ€¢Â¶Å½Å¡â€”Ã±â€šÃ°BSTRÅ’`Å½Â®â€šÃ‰â€¢ÃÅ Â·â€šÂ·â€šÃ©
 toBSTR(str){
 	oc:=mb2wc(str)
 	res:=DllCall("oleaut32.dll\SysAllocString","UInt",oc,"UInt")
 	Free(oc)
 	return res
 }
-;BSTR‚ğAnsi•¶š—ñ‚É•ÏŠ·‚·‚é
+;BSTRâ€šÃ°Ansiâ€¢Â¶Å½Å¡â€”Ã±â€šÃ‰â€¢ÃÅ Â·â€šÂ·â€šÃ©
 fromBSTR(bstr){
 	return wc2mb(bstr)
 }
 
-;BSTR‚ğ‰ğ•ú‚·‚é(VariantClear“à‚Å‚â‚Á‚Ä‚­‚ê‚é‚Í‚¸‚È‚Ì‚Å‘½•ª•s—v)
+;BSTRâ€šÃ°â€°Ã°â€¢Ãºâ€šÂ·â€šÃ©(VariantClearâ€œÃ â€šÃ…â€šÃ¢â€šÃâ€šÃ„â€šÂ­â€šÃªâ€šÃ©â€šÃâ€šÂ¸â€šÃˆâ€šÃŒâ€šÃ…â€˜Â½â€¢Âªâ€¢sâ€”v)
 freeBSTR(bstr,get=0){
 	if(get!=0){
 		wc2mb_ref(bstr,res)
@@ -204,11 +204,11 @@ vNull(){
 vObj(obj){
 	return 0x7FFFFFFF00000000 | obj
 }
-;VARIANT‚É•ÏŠ·(type‚É‚Í•ÏŠ·‚µ‚½‚¢Œ^‚ğw’è
-;settype‚ğw’è‚·‚é‚ÆAŒ^•ÏŠ·‚µ‚½ã‚ÅAŒ^‚ğ¦‚·’l‚Æ‚µ‚Äsettype‚Åw’è‚µ‚½Œ^‚ğŠi”[‚·‚é
+;VARIANTâ€šÃ‰â€¢ÃÅ Â·(typeâ€šÃ‰â€šÃâ€¢ÃÅ Â·â€šÂµâ€šÂ½â€šÂ¢Å’^â€šÃ°Å½wâ€™Ã¨
+;settypeâ€šÃ°Å½wâ€™Ã¨â€šÂ·â€šÃ©â€šÃ†ÂAÅ’^â€¢ÃÅ Â·â€šÂµâ€šÂ½ÂÃ£â€šÃ…ÂAÅ’^â€šÃ°Å½Â¦â€šÂ·â€™lâ€šÃ†â€šÂµâ€šÃ„settypeâ€šÃ…Å½wâ€™Ã¨â€šÂµâ€šÂ½Å’^â€šÃ°Å iâ€[â€šÂ·â€šÃ©
 toVariant(value,variant=0,type=0x08,settype=-1){
 	global LOCALE_USER_DEFAULT
-	;Ši”[æ‰Šú‰»
+	;Å iâ€[ÂÃ¦Ââ€°Å Ãºâ€°Â»
 	if(variant=0){
 		dest:=Malloc(16)
 	}else{
@@ -226,12 +226,12 @@ toVariant(value,variant=0,type=0x08,settype=-1){
 				NumPut(value - 0x7FFFFFFF00000000,dest+8,0)
 			}
 		}else{
-			;•¶š—ñ‚Ìê‡
+			;â€¢Â¶Å½Å¡â€”Ã±â€šÃŒÂÃªÂâ€¡
 			NumPut(0x08,dest+0,0,"UShort")
 			NumPut(toBSTR(value),dest+8,0)
 		}
 	}else{
-		;‚»‚êˆÈŠO‚ÌŒ^‚Ìê‡
+		;â€šÂ»â€šÃªË†ÃˆÅ Oâ€šÃŒÅ’^â€šÃŒÂÃªÂâ€¡
 		tmp:=toVariant(value)
 		DllCall("oleaut32.dll\VariantChangeTypeEx","UInt",dest,"UInt",tmp,"UInt",LOCALE_USER_DEFAULT,"UShort",0,"UShort",type)
 		if(settype!=-1){
@@ -242,27 +242,27 @@ toVariant(value,variant=0,type=0x08,settype=-1){
 	return dest
 }
 
-;VARIANT‚ÉŠi”[‚³‚ê‚½“à—e‚ğ’Êí‚ÌAutoHotkey•Ï”‚Æ‚µ‚Äæ“¾
-;rawsize‚ª1,2,4‚Ìê‡AŠi”[‚³‚ê‚Ä‚¢‚é¶‚Ì’l‚ğæ“¾
-;rawsize‚ª0‚Ìê‡A•¶š—ñ‚É•ÏŠ·‚µ‚Äæ“¾
+;VARIANTâ€šÃ‰Å iâ€[â€šÂ³â€šÃªâ€šÂ½â€œÃ â€”eâ€šÃ°â€™ÃŠÂÃ­â€šÃŒAutoHotkeyâ€¢ÃÂâ€â€šÃ†â€šÂµâ€šÃ„Å½Ã¦â€œÂ¾
+;rawsizeâ€šÂª1,2,4â€šÃŒÂÃªÂâ€¡ÂAÅ iâ€[â€šÂ³â€šÃªâ€šÃ„â€šÂ¢â€šÃ©ÂÂ¶â€šÃŒâ€™lâ€šÃ°Å½Ã¦â€œÂ¾
+;rawsizeâ€šÂª0â€šÃŒÂÃªÂâ€¡ÂAâ€¢Â¶Å½Å¡â€”Ã±â€šÃ‰â€¢ÃÅ Â·â€šÂµâ€šÃ„Å½Ã¦â€œÂ¾
 fromVariant(var,rawsize=0){
 	global LOCALE_USER_DEFAULT
 	if(rawsize=0){
 		type:=NumGet(var+0,0,"UShort")
 		if((type=9)||(type=13)){
-			;COMƒIƒuƒWƒFƒNƒg
+			;COMÆ’IÆ’uÆ’WÆ’FÆ’NÆ’g
 			pObj:=NumGet(var+8)
 			AddRef(pObj)
 			return pObj
 		}else if(type>0xFF){
-			;ƒ|ƒCƒ“ƒ^‚à‚µ‚­‚Í”z—ñ		(b’è)
+			;Æ’|Æ’CÆ’â€œÆ’^â€šÃ â€šÂµâ€šÂ­â€šÃâ€zâ€”Ã±		(Å½bâ€™Ã¨)
 			return NumGet(var+8)
 		}else{
-			;VT_BSTR‚É•ÏŠ·
+			;VT_BSTRâ€šÃ‰â€¢ÃÅ Â·
 			var2:=Malloc(16)
 			DllCall("oleaut32.dll\VariantInit","UInt",var2)
 			DllCall("oleaut32.dll\VariantChangeTypeEx","UInt",var2,"UInt",var,"UInt",LOCALE_USER_DEFAULT,"UShort",0,"UShort",0x8)
-			;’l‚ğAnsi‚É•ÏŠ·
+			;â€™lâ€šÃ°Ansiâ€šÃ‰â€¢ÃÅ Â·
 			wc2mb_ref(NumGet(var2+8),res)
 			vFree(var2)
 			return res
@@ -278,7 +278,7 @@ fromVariant(var,rawsize=0){
 	}
 }
 
-;VARIANT‚ğ‰ğ•ú(get‚É-1ˆÈŠO‚ğw’è‚·‚é‚ÆA’l‚ğæ“¾‚µ‚Ä•Ô‚·)
+;VARIANTâ€šÃ°â€°Ã°â€¢Ãº(getâ€šÃ‰-1Ë†ÃˆÅ Oâ€šÃ°Å½wâ€™Ã¨â€šÂ·â€šÃ©â€šÃ†ÂAâ€™lâ€šÃ°Å½Ã¦â€œÂ¾â€šÂµâ€šÃ„â€¢Ã”â€šÂ·)
 vFree(ByRef var,get=-1){
 	if(get!=-1){
 		res:=fromVariant(var,get)
@@ -293,10 +293,10 @@ vFree(ByRef var,get=-1){
 
 /*
 	**********************************
-	IDispatch—p
+	IDispatchâ€”p
 	**********************************
 */
-;ƒIƒuƒWƒFƒNƒg‚ğ¶¬‚·‚é
+;Æ’IÆ’uÆ’WÆ’FÆ’NÆ’gâ€šÃ°ÂÂ¶ÂÂ¬â€šÂ·â€šÃ©
 CreateObject(clsid,iid="",CLSCTX=5){	;CLSCTX_SERVER
 	global IID_IDispatch
 	if(!IID_IDispatch){
@@ -324,7 +324,7 @@ CreateObject(clsid,iid="",CLSCTX=5){	;CLSCTX_SERVER
 }
 
 
-;obj‚ª‚Ânameƒƒ“ƒo‚ÌDispatchID‚ğ“¾‚é
+;objâ€šÂªÅ½Ââ€šÃ‚nameÆ’ÂÆ’â€œÆ’oâ€šÃŒDispatchIDâ€šÃ°â€œÂ¾â€šÃ©
 GetDispID(ByRef obj,name){
 	global IID_NULL,LOCALE_USER_DEFAULT
 	wName:=mb2wc_ref(name)
@@ -333,9 +333,9 @@ GetDispID(ByRef obj,name){
 	Free(wName)
 	return dispid
 }
-;ˆø”‚©‚çDISPPARAMS‚ğ¶¬
+;Ë†Ã¸Ââ€â€šÂ©â€šÃ§DISPPARAMSâ€šÃ°ÂÂ¶ÂÂ¬
 CreateParam(ByRef p1, ByRef p2, ByRef p3, ByRef p4, ByRef p5, ByRef p6, ByRef p7, ByRef p8, ByRef p9, ByRef p10){
-	;ˆø”‚ğ”‚¦‚é(0xFFFFFFFFFFFFFFFF‚Ì‘O‚Ü‚Å‚ª—^‚¦‚ç‚ê‚½ˆø”)
+	;Ë†Ã¸Ââ€â€šÃ°Ââ€â€šÂ¦â€šÃ©(0xFFFFFFFFFFFFFFFFâ€šÃŒâ€˜Oâ€šÃœâ€šÃ…â€šÂªâ€”^â€šÂ¦â€šÃ§â€šÃªâ€šÂ½Ë†Ã¸Ââ€)
 	num:=0
 	format:=A_FormatInteger
 	SetFormat,Integer,D
@@ -345,13 +345,13 @@ CreateParam(ByRef p1, ByRef p2, ByRef p3, ByRef p4, ByRef p5, ByRef p6, ByRef p7
 		}
 		num++
 	}
-	;numŒÂ‚ÌVARIANTARG”z—ñ‚ğì¬
+	;numÅ’Ã‚â€šÃŒVARIANTARGâ€zâ€”Ã±â€šÃ°ÂÃ¬ÂÂ¬
 	if(num=0){
 		pvArgs:=0
 	}else{
 		pvArgs:=Malloc(16*num)
 		ptr:=pvArgs+16*(num-1)
-		;ˆø”‚ğƒZƒbƒg‚µ‚Ä‚¢‚­
+		;Ë†Ã¸Ââ€â€šÃ°Æ’ZÆ’bÆ’gâ€šÂµâ€šÃ„â€šÂ¢â€šÂ­
 		Loop,%num%{
 			toVariant(p%A_Index%,ptr)
 			ptr-=16
@@ -359,30 +359,30 @@ CreateParam(ByRef p1, ByRef p2, ByRef p3, ByRef p4, ByRef p5, ByRef p6, ByRef p7
 	}
 	SetFormat,Integer,%format%
 
-	;DISPPARAMSì¬
+	;DISPPARAMSÂÃ¬ÂÂ¬
 	res:=Malloc(16)
 	NumPut(pvArgs,	res+0)
 	NumPut(num,		res+8)
 	return res
 }
-;DISPPARAMS‚ğ‰ğ•ú
+;DISPPARAMSâ€šÃ°â€°Ã°â€¢Ãº
 FreeParam(ByRef params){
 	num:=NumGet(params+8)
 	pvArgs:=NumGet(params+0)
 	pvNArgs:=NumGet(params+4)
-	;VARIANTARG‚Ì‰ğ•úˆ—
+	;VARIANTARGâ€šÃŒâ€°Ã°â€¢ÃºÂË†â€”Â
 	ptr:=pvArgs
 	Loop,%num%{
 		vFree(ptr)
 		ptr+=16
 	}
-	;VARIANTARG©‘Ì‚Ì‰ğ•ú
+	;VARIANTARGÅ½Â©â€˜ÃŒâ€šÃŒâ€°Ã°â€¢Ãº
 	Free(ptr)
-	;rgdispidNamedArgs‚Ì‰ğ•ú
+	;rgdispidNamedArgsâ€šÃŒâ€°Ã°â€¢Ãº
 	if(pvNArgs!=0){
 		Free(pvNArgs)
 	}
-	;–{‘Ìƒƒ‚ƒŠ‰ğ•ú
+	;â€“{â€˜ÃŒÆ’ÂÆ’â€šÆ’Å â€°Ã°â€¢Ãº
 	Free(params)
 }
 Invoke(ByRef pObj,ByRef dispid,mode,ByRef params){
@@ -414,7 +414,7 @@ pp(obj,name,p1=0xFFFFFFFFFFFFFFFF,p2=0xFFFFFFFFFFFFFFFF,p3=0xFFFFFFFFFFFFFFFF,p4
 p6=0xFFFFFFFFFFFFFFFF,p7=0xFFFFFFFFFFFFFFFF,p8=0xFFFFFFFFFFFFFFFF,p9=0xFFFFFFFFFFFFFFFF,p10=0xFFFFFFFFFFFFFFFF){
 	if((dispid:=GetDispID(obj,name))!=0){
 		params:=CreateParam(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10)
-		;rgdispidNamedArgs‚ÌƒZƒbƒg
+		;rgdispidNamedArgsâ€šÃŒÆ’ZÆ’bÆ’g
 		namedArgs:=Malloc(4)
 		NumPut(namedArgs,	params+4)
 		NumPut(0xFFFFFFFD,	namedArgs+0)
@@ -506,7 +506,7 @@ EVENTSINK_Destructor(pEv){
 
 /*
 	**********************************
-	ƒRƒlƒNƒg—p‚ÌƒCƒ“ƒ^[ƒtƒFƒCƒXID‚ğŒŸõ
+	Æ’RÆ’lÆ’NÆ’gâ€”pâ€šÃŒÆ’CÆ’â€œÆ’^Â[Æ’tÆ’FÆ’CÆ’XIDâ€šÃ°Å’Å¸ÂÃµ
 	**********************************
 */
 find_iid(ByRef obj,ByRef itf,ByRef iid,ByRef refPTypeInfo=0xFFFFFFFFFFFFFFFF){
@@ -748,7 +748,7 @@ evReturn(ByRef res,value){
 
 /*
 	**********************************
-	ƒfƒBƒXƒpƒbƒ`ƒIƒuƒWƒFƒNƒgì¬
+	Æ’fÆ’BÆ’XÆ’pÆ’bÆ’`Æ’IÆ’uÆ’WÆ’FÆ’NÆ’gÂÃ¬ÂÂ¬
 	**********************************
 */
 

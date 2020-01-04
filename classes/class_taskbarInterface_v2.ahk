@@ -1,6 +1,6 @@
-﻿#include ../../classes/threadFunc/threadFunc.ahk
+﻿;#include ../../classes/threadFunc/threadFunc.ahk
 class taskbarInterface {
-	static hookWindowClose:=true							; Use SetWinEventHook to automatically clear the interface when its window is destroyed. 
+	static hookWindowClose:=true							; Use SetWinEventHook to automatically clear the interface when its window is destroyed.
 	static manualClearInterface:=false						; Set to false to automatically clear com interface when the last reference to an object derived from the taskbarInterface class is released. call taskbarInterface.clearInterface()
 	__new(hwnd,onButtonClickFunction:="",mute:=false){
 		this.mute:=mute										; By default, errors are thrown. Set mute:=true to suppress exceptions.
@@ -16,7 +16,7 @@ class taskbarInterface {
 		this.hwnd:=hwnd										; Handle to the window whose taskbar preview will recieve the buttons
 		if !taskbarInterface.init							; On first call here, initialise the com object and turn on button messages. (WM_COMMAND)
 			taskbarInterface.initInterface()				; Note, must init com before any interface functions are called.
-		this.setButtonCallback(onButtonClickFunction)		
+		this.setButtonCallback(onButtonClickFunction)
 		if taskbarInterface.hookWindowClose
 			this.allowHooking:=true
 	}
@@ -61,7 +61,7 @@ class taskbarInterface {
 	setButtonImage(n,nIL){
 		; Set image for button n.
 		; nIL is the index of the image to set in the image list, you can add images to the image list via the addToImageList() method
-		
+
 		static THB_BITMAP:=0x1
 		this.updateThumbButtonMask(n,THB_BITMAP,0)
 		this.setThumbButtoniBitmap(n,nIL)
@@ -103,7 +103,7 @@ class taskbarInterface {
 			this.hImageList:=""
 			return 1
 		} else if this.hImageList {
-			this.lastError:=Exception("ImageList destroy failed.") 
+			this.lastError:=Exception("ImageList destroy failed.")
 			if this.mute
 				return this.lastError
 			else
@@ -114,7 +114,7 @@ class taskbarInterface {
 	setButtonIcon(n,hIcon){
 		; Set button icon for button n
 		; Call queryButtonIconSize() to obtain the required size of the icon. See queryButtonIconSize() below.
-		static THB_ICON:=0x2					
+		static THB_ICON:=0x2
 		this.updateThumbButtonMask(n,THB_ICON,0)			; Update mask THB_ICON
 		this.setThumbButtonhIcon(n,hIcon)					; Set the icon handle
 		return this.ThumbBarUpdateButtons(n)				; Update
@@ -140,9 +140,9 @@ class taskbarInterface {
 		this.ThumbBarUpdateButtons(n)						; Update the buttons
 		if (text="")
 			this.updateThumbButtonMask(n,0,THB_TOOLTIP)		; Update mask THB_TOOLTIP, remove
-		return 
+		return
 	}
-	dismissPreviewOnButtonClick(n,dismiss:=true){	
+	dismissPreviewOnButtonClick(n,dismiss:=true){
         ; Call with dismiss:=true to make button  n's  click
         ; to  cause  the thumbnail preview to be dismissed
         ; (close). To show again, hover mouse on taskbar icon.
@@ -185,7 +185,7 @@ class taskbarInterface {
 	}
 	setButtonCallback(onButtonClickFunction:=""){
 		; For changing or specifying the onButtonClick callback function.
-		if onButtonClickFunction {		
+		if onButtonClickFunction {
 			this.callback:= new threadFunc(onButtonClickFunction,,,,this.mute)	; Pass a func / bound func object or function name.
 		} else {
 			this.callback:=""
@@ -196,12 +196,12 @@ class taskbarInterface {
 		taskbarInterface.turnOnButtonMessages()				; If monitoring is off, turn on.
 		taskbarInterface.startTaskbarMsgMonitor()
 		this.isDisabled:=false								; By default, the interface is not disabled, us stopThisButtonMonitor() to disable.
-		return 
+		return
 	}
 	;
 	; End Button methods
 	;
-	
+
 	; Misc interface methods:
 	setTaskbarIcon(smallIconHandle,bigIconHandle:=""){
 		; Url:
@@ -233,7 +233,7 @@ class taskbarInterface {
 
 	; SetProgressType(type) - The underlying function is called SetProgressState, but
 	;	I think the word Type is more descriptive of its function.
-	; 
+	;
 	; Sets the type and state of the progress indicator displayed on a taskbar button.
 	; Url:
 	;	- https://msdn.microsoft.com/en-us/library/windows/desktop/dd391697(v=vs.85).aspx (ITaskbarList3::SetProgressState)
@@ -309,7 +309,7 @@ class taskbarInterface {
 	; pointer rests on an individual preview thumbnail in a taskbar button flyout.
 
 	; Input:
-	; Text, string specifying the new text to show as tooltip when 
+	; Text, string specifying the new text to show as tooltip when
 	; mouse cursor hovers the thumbnail preview in the taskbar
 	; Specify an empty strin, text:="" to remove the tooltip.
 	setThumbnailToolTip(text:=""){
@@ -330,7 +330,7 @@ class taskbarInterface {
 	;  		measuring  16x16  pixels  at 96 dpi. If an overlay icon is already applied to
 	;  		the taskbar button, that existing overlay is replaced.
 	;
-	;	Omit the handle paramter to remove the icon. 
+	;	Omit the handle paramter to remove the icon.
 	;
 	;	To use a bitmap as the overlay icon, you can use LoadPictureType to load a bitmap as an icon, see https://github.com/HelgeffegleH/LoadPictureType
 	setOverlayIcon(hIcon:=0,text:=""){
@@ -387,12 +387,12 @@ class taskbarInterface {
 			return
 		if !taskbarInterface.nCustomPreviews {													; Turn on message handler when calling this method the first time.
 			taskbarInterface.WM_DWMSENDICONICTHUMBNAILfn:=ObjBindMethod(taskbarInterface,"WM_DWMSENDICONICTHUMBNAIL")
-			OnMessage(WM_DWMSENDICONICTHUMBNAIL,taskbarInterface.WM_DWMSENDICONICTHUMBNAILfn)	
+			OnMessage(WM_DWMSENDICONICTHUMBNAIL,taskbarInterface.WM_DWMSENDICONICTHUMBNAILfn)
 		}
 		taskbarInterface.nCustomPreviews++														; Increment counter, to track when to turn on / off message handler
 		rate := (IsObject(bitmapOrBitmapFunc) && rate=0) ? 1 : rate 							; If user doesn't follow instructions, try  to save the day.
 		bitmapFunc:= IsObject(bitmapOrBitmapFunc) || rate=0 ? bitmapOrBitmapFunc : IsFunc(bitmapOrBitmapFunc) ? func(bitmapOrBitmapFunc) : 0		; Store the bitmap provider function.
-		this.bitmapFunc:= new threadFunc(bitmapFunc,,,,this.mute)										
+		this.bitmapFunc:= new threadFunc(bitmapFunc,,,,this.mute)
 		if !this.bitmapFunc {																	; If invalid bitmapFunc, return/throw exception
 			this.lastError:=Exception("The provided bitmap (function) is not a valid.", -1)
 			if this.mute
@@ -446,7 +446,7 @@ class taskbarInterface {
 			return
 		if !taskbarInterface.nCustomPeekPreviews {													; Turn on message handler when calling this method the first time.
 			taskbarInterface.WM_DWMSENDICONICLIVEPREVIEWBITMAPfn:=ObjBindMethod(taskbarInterface,"WM_DWMSENDICONICLIVEPREVIEWBITMAP")
-			OnMessage(WM_DWMSENDICONICLIVEPREVIEWBITMAP,taskbarInterface.WM_DWMSENDICONICLIVEPREVIEWBITMAPfn)	
+			OnMessage(WM_DWMSENDICONICLIVEPREVIEWBITMAP,taskbarInterface.WM_DWMSENDICONICLIVEPREVIEWBITMAPfn)
 		}
 		taskbarInterface.nCustomPeekPreviews++														; Increment counter, to track when to turn on / off message handler
 		rate := (IsObject(bitmapOrBitmapFunc) && rate=0) ? 1 : rate 								; If user doesn't follow instructions, try  to save the day.
@@ -469,13 +469,13 @@ class taskbarInterface {
 		this.dwSITFlagsPeekPreview:=addBorder
 		this.Dwm_SetWindowAttributeHasIconicBitmap(this.hwnd,1)										; See dwm lib for details.
 		this.Dwm_SetWindowAttributeForceIconicRepresentaion(this.hwnd,1)
-		
+
 		this.Dwm_InvalidateIconicBitmaps(this.hwnd)
 		return this.CustomPeekPreviewEnabled:=true
 	}
 	disableCustomPeekPreview(){
 		local tf
-		static WM_DWMSENDICONICLIVEPREVIEWBITMAP:=0x326	
+		static WM_DWMSENDICONICLIVEPREVIEWBITMAP:=0x326
 		if (!this.CustomPeekPreviewEnabled || !taskbarInterface.nCustomPeekPreviews)
 			return
 		if (tf:=this.invalidatePeekTimerFn) {
@@ -535,7 +535,7 @@ class taskbarInterface {
 		return
 	}
 	restoreTaskbar(){
-		; Restores the taskbar for the window. 
+		; Restores the taskbar for the window.
 		this.deleteTab()
 		Sleep(50)
 		this.addTab()
@@ -548,7 +548,7 @@ class taskbarInterface {
 		return this.isDisabled:=true
 	}
 	restartThisButtonMonitor(){
-		; This will reenable the button click callbacks. 
+		; This will reenable the button click callbacks.
 		; If all message monitor is off, i.e., stopAllButtonMonitor() was called,
 		; restart by calling restartAllButtonMonitor()
 		; Default is message monitoring on
@@ -629,7 +629,7 @@ class taskbarInterface {
 	;
 	;
 	; Internal methods
-	; Meta functions 
+	; Meta functions
 	;
 	__Call(fn,p*){
 		; For verifying correct input. maybe change this.
@@ -637,7 +637,7 @@ class taskbarInterface {
 					. ",setButtonToolTip,dismissPreviewOnButtonClick,removeButtonBackground"
 					. ",reAddButtonBackground,setButtonNonInteractive,setButtonInteractive,", "," . fn . ",") {
 			if this.isFreed {
-				this.lastError:=Exception("This interface has freed its memory, it cannot be used.",-1) 
+				this.lastError:=Exception("This interface has freed its memory, it cannot be used.",-1)
 				if this.mute
 					return this.lastError
 				else
@@ -654,12 +654,12 @@ class taskbarInterface {
 			return
 		if (bool:=(!taskbarInterface.manualClearInterface && taskbarInterface.arrayIsEmpty(taskbarInterface.allInterfaces))) && !taskbarInterface.hasTemplates		; If the last interface is released and no templates, release com.
 			taskbarInterface.clearInterface()
-		else if bool 
+		else if bool
 			taskbarInterface.turnOffButtonMessages(), taskbarInterface.stopTaskbarMsgMonitor()
 		return
 	}
-	
-	
+
+
 	arrayIsEmpty(arr){
 		return !arr._NewEnum().next()
 	}
@@ -671,16 +671,16 @@ class taskbarInterface {
 		this.setProgress(100)										; Set 100 progress to fill taskbar icon with the color
 		fn:=ObjBindMethod(this,"flashOff",type,flashTime,offTime)	; Make a timer for turning off the color
 		this.flashTimer:=fn											;
-		SetTimer(fn, -flashTime)									;	
+		SetTimer(fn, -flashTime)									;
 		return
 	}
 	flashOff(type,flashTime,offTime){
 		local fn
 		this.SetProgressType("Off")									; Turn off the progress/color
 		if !(--this.flashesRemaining){								; Decrement flash count, return if appropriate
-			this.setProgressType(this.preFlashSettings[2])			; For reference: this.preFlashSettings:=[this.progressValue,this.unmappedProgressType] 
-			this.setProgress(this.preFlashSettings[1])		
-			this.preFlashSettings:=""                               
+			this.setProgressType(this.preFlashSettings[2])			; For reference: this.preFlashSettings:=[this.progressValue,this.unmappedProgressType]
+			this.setProgress(this.preFlashSettings[1])
+			this.preFlashSettings:=""
 			return this.flashTimer:=""
 		}
 		fn:=ObjBindMethod(this,"flashOn",type,flashTime,offTime)	; Make a timer for turning on the color
@@ -689,7 +689,7 @@ class taskbarInterface {
 		return
 	}
 	stopTimer(){
-		; Terminates the flashTimer when appropriate. 
+		; Terminates the flashTimer when appropriate.
 		; Typically from refreshButtons() or clear()
 		local fn
 		if this.flashTimer {
@@ -732,7 +732,7 @@ class taskbarInterface {
 	freeThumbnailPreviewBMP(){
 		if (this.deleteBMPThumbnailPreview && this.thumbHbm)
 			this.freeBitmap(this.thumbHbm), this.thumbHbm:=""
-		return 
+		return
 	}
 	freePeekPreviewBMP(){
 		if (this.deleteBMPPeekPreview && this.peekHbm)
@@ -772,7 +772,7 @@ class taskbarInterface {
 				throw this.lastError
 		}
 		this.THUMBBUTTON:=this.GlobalAlloc(this.thumbButtonSize*7)
-		
+
 		loop 7 {
 			structOffset:=this.thumbButtonSize*(A_Index-1)
 			NumPut(A_Index,this.THUMBBUTTON+structOffset, 4, "Uint")					; Specify the ids: 1,...,7
@@ -787,7 +787,7 @@ class taskbarInterface {
 	; The caller of update() then calls ThumbBarUpdateButtons() when finished
 
 	; Update
-	/* 
+	/*
 	Masks:
 	THB_BITMAP   = 0x00000001,
 	THB_ICON     = 0x00000002,
@@ -827,7 +827,7 @@ class taskbarInterface {
 	}
 	getThumbButtonFlags(iId){
 		static	itemOffset		:=	8+2*A_PtrSize+260*2														; dwFlags
-		local	structOffset	:=	this.thumbButtonSize*(iId-1)	
+		local	structOffset	:=	this.thumbButtonSize*(iId-1)
 		return NumGet(this.THUMBBUTTON+itemOffset+structOffset,0,"Uint")
 	}
 	; Set
@@ -847,7 +847,7 @@ class taskbarInterface {
 		local	structOffset	:=	this.thumbButtonSize*(iId-1)
 		return NumPut(hIcon, this.THUMBBUTTON+itemOffset+structOffset, "Ptr")
 	}
-	
+
 	setThumbButtonToolTipText(iId,text:=""){
 		static	itemOffset		:=	8+2*A_PtrSize															; szTip
 		local	structOffset	:=	this.thumbButtonSize*(iId-1)
@@ -855,10 +855,10 @@ class taskbarInterface {
 	}
 	setThumbButtonFlags(iId,dwFlags){
 		static	itemOffset		:=	8+2*A_PtrSize+260*2														; dwFlags
-		local	structOffset	:=	this.thumbButtonSize*(iId-1)	
+		local	structOffset	:=	this.thumbButtonSize*(iId-1)
 		return NumPut(dwFlags, this.THUMBBUTTON+structOffset+itemOffset, "Uint")
 	}
-	
+
 	;
 	; Com Interface wrapper functions
 	; The bound funcs are made in initInterface()
@@ -902,25 +902,25 @@ class taskbarInterface {
 		return taskbarInterface.vTable.SetProgressValueFn.Call("Ptr", this.hWnd, "Int64", this.progressValue, "Int64", 100) ; 100 is max progress (done)
 	}
 	_setOverlayIcon(){
-		return taskbarInterface.vTable.setOverlayIconFn.Call("Ptr", this.hWnd, "Ptr", this.overlayIconHandle, "Str", this.overlayIconDescription) 
+		return taskbarInterface.vTable.setOverlayIconFn.Call("Ptr", this.hWnd, "Ptr", this.overlayIconHandle, "Str", this.overlayIconDescription)
 	}
 	_setThumbnailClip(rect){
 		return taskbarInterface.vTable.ThumbnailClipFn.Call("Ptr", this.hWnd, "Ptr", rect)
 	}
-	             
+
 	;
 	; Static variables
 	;
 	static allInterfaces:=[] 						; Tracks all interfaces, for callbacks.
 	static init:=0									; For first time use initialising of the com object.
-	
+
 	; THUMBBUTTON  struct:
 	static thumbButtonSize:=A_PtrSize=4?540:552		; Size calculations according to:
 	/*
 	; URL:
 	;	- https://msdn.microsoft.com/en-us/library/windows/desktop/dd391559(v=vs.85).aspx (THUMBBUTTON structure)
 	;
-	;									offsets:							Contribution to size (bytes):	
+	;									offsets:							Contribution to size (bytes):
 	THUMBBUTTONMASK  dwMask				0						...			4
 	UINT             iId				4						...			4
 	UINT             iBitmap			8						...			4
@@ -932,7 +932,7 @@ class taskbarInterface {
 	;																		Sum: 64-bit: 4+4+4+4+A_PtrSize+260*2+4=548, 548/A_PtrSize=68.5 -> add 4 bytes, 552/A_PtrSize=69 (mod(552,A_Ptrsize)=0).
 	;																		64-bit: add 4 bytes spacing to next struct in array
 	;																		Summary: size:= A_PtrSize=4?544:552
-	
+
 	*/
 	;
 	; NOTE:
@@ -961,11 +961,11 @@ class taskbarInterface {
 		; Get the address to the vTable.
 		this.vTablePtr:=NumGet(this.hComObj+0,0,"Ptr")
 		; Create function objects for the interface, for convenience and clarity
-			
+
 																																								; Name:					 Number:
-		; For convenience when freeing the interface, add all bound funcs to one array																																					
+		; For convenience when freeing the interface, add all bound funcs to one array
 		 ;this.vTable:={}
-		this.vTable:=[]                                                                                                                                
+		this.vTable:=[]
 		this.vTable["HrInitFn"]					:= Func("DllCall").Bind(NumGet(this.vTablePtr+ 3*A_PtrSize,0,"Ptr"), "Ptr", this.hComObj)						; HrInit					( 3)
 		this.vTable["addTabFn"]					:= Func("DllCall").Bind(NumGet(this.vTablePtr+ 4*A_PtrSize,0,"Ptr"), "Ptr", this.hComObj)						; AddTab					( 4)
 		this.vTable["deleteTabFn"]				:= Func("DllCall").Bind(NumGet(this.vTablePtr+ 5*A_PtrSize,0,"Ptr"), "Ptr", this.hComObj)						; DeleteTab					( 5)
@@ -983,7 +983,7 @@ class taskbarInterface {
 		this.vTable["SetOverlayIconFn"]			:= Func("DllCall").Bind(NumGet(this.vTablePtr+18*A_PtrSize,0,"Ptr"), "Ptr", this.hComObj)						; SetOverlayIcon			(18)
 		this.vTable["ThumbnailToolTipFn"]		:= Func("DllCall").Bind(NumGet(this.vTablePtr+19*A_PtrSize,0,"Ptr"), "Ptr", this.hComObj)						; SetThumbnailTooltip		(19)
 		this.vTable["ThumbnailClipFn"]			:= Func("DllCall").Bind(NumGet(this.vTablePtr+20*A_PtrSize,0,"Ptr"), "Ptr", this.hComObj)						; SetThumbnailClip			(20)
-		
+
 		hr:=this.vTable.HrInitFn.Call()	; Init the interface.
 		if hr {
 			this.lastError:=Exception("Com failed to initialise.",-2)
@@ -994,11 +994,11 @@ class taskbarInterface {
 		}
 		this.CoInitialize()																		; This might not be needed, it calls CoUnInitialize if needed.
 		this.startTaskbarMsgMonitor()
-		
+
 		; Hook
 		this.SetWinEventHook()
 		this.init:=1	; Success!
-		return	
+		return
 	}
 	clearInterface(){
 		local hr
@@ -1015,7 +1015,7 @@ class taskbarInterface {
 		this.stopTaskbarMsgMonitor()
 		; Clear all boundFuncs
 		this.vTable:=""
-		
+
 		this.hComObj:=""
 		this.vTablePtr:=""
 		if this.hHook	; unHook
@@ -1024,7 +1024,7 @@ class taskbarInterface {
 			this.CoUnInitialize()
 		this.init:=0				; Indicate com is not initialised
 		return hr					; returns 0 on success (released)
-		
+
 	}
 	; CoInitialize/CoUnInitialize
 	; Url:
@@ -1083,7 +1083,7 @@ class taskbarInterface {
 	  _In_ UINT         dwflags
 	)
 	; For future reference and debug
-	EVENT_OBJECT_UNCLOAKED:=0x8018 
+	EVENT_OBJECT_UNCLOAKED:=0x8018
 	EVENT_OBJECT_SHOW:=0x8002
 	EVENT_OBJECT_HIDE:=0x8003
 	EVENT_OBJECT_CREATE:=0x8000
@@ -1140,8 +1140,8 @@ class taskbarInterface {
 		   DWORD         dwmsEventTime
 		);
 		*/
-		static EVENT_OBJECT_DESTROY:=0x8001	
-		static EVENT_OBJECT_SHOW:=0x8002	
+		static EVENT_OBJECT_DESTROY:=0x8001
+		static EVENT_OBJECT_SHOW:=0x8002
 		static OBJID_WINDOW:=0
 		local hWinEventHook,event,hwnd,idObject,idChild,dwEventThread,dwmsEventTime,i,template,cls ; Awkward.
 		local WinExistIncludeParams,WinExistExcludeParams
@@ -1161,8 +1161,8 @@ class taskbarInterface {
 		if (event == EVENT_OBJECT_DESTROY) {
 			if taskbarInterface.allInterfaces.HasKey(hwnd)
 				taskbarInterface.allInterfaces[hwnd].clear()
-			return 
-		} else if (event == EVENT_OBJECT_SHOW && taskbarInterface.hasTemplates) {	; Templates 
+			return
+		} else if (event == EVENT_OBJECT_SHOW && taskbarInterface.hasTemplates) {	; Templates
 			if taskbarInterface.allInterfaces.HasKey(hwnd) ; If the hwnd alredy has an interface, return
 				return
 			; For reference:
@@ -1191,7 +1191,7 @@ class taskbarInterface {
 		}
 		return
 	}
-	
+
 	; Click on button message handling:
 	; URL:
 	;	- https://msdn.microsoft.com/en-us/library/windows/desktop/dd391703(v=vs.85).aspx (ITaskbarList3::ThumbBarAddButtons method, remarks)
@@ -1202,14 +1202,14 @@ class taskbarInterface {
 	turnOffButtonMessages(){
 		static WM_COMMAND := 0x111
 		if this.buttonMessageFn
-			OnMessage(WM_COMMAND,this.buttonMessageFn,0)				;	Turn off button message monitoring. 
+			OnMessage(WM_COMMAND,this.buttonMessageFn,0)				;	Turn off button message monitoring.
 		return this.buttonMessageFn:=""
 	}
 	turnOnButtonMessages(){
 		static WM_COMMAND := 0x111
 		if this.buttonMessageFn
 			return
-		this.buttonMessageFn:=ObjBindMethod(this,"onButtonClick")	;	The monitor function is kept for 
+		this.buttonMessageFn:=ObjBindMethod(this,"onButtonClick")	;	The monitor function is kept for
 		OnMessage(WM_COMMAND,this.buttonMessageFn) 						;	When the buttons are clicked, a WM_COMMAND message is sent.
 		return
 	}
@@ -1229,7 +1229,7 @@ class taskbarInterface {
 		}
 		return
 	}
-	; Taskbar messages - this is for restoring the interface in case the taskbar is destroyed or the 
+	; Taskbar messages - this is for restoring the interface in case the taskbar is destroyed or the
 	; taskbar icon is destroyed and remade. For example when a window is hidden and then shown.
 	startTaskbarMsgMonitor(){
 		if !this.taskbarCreatedMsgId
@@ -1272,14 +1272,14 @@ class taskbarInterface {
 			return
 		w:= lParam >> 16, h:= lParam & 0xFFFF																	; Get the max width and height of the bitmap
 		if (ref.saveThumbBitmap && ref.thumbHbm) || (ref.thumbHbm && A_TickCount-ref.pThumbTic<ref.thumbrate)
-			return this.Dwm_SetIconicThumbnail(hWnd,ref.thumbHbm,false,ref.dwSITFlagsThumbnailPreview)			; Set the old bitmap																					
+			return this.Dwm_SetIconicThumbnail(hWnd,ref.thumbHbm,false,ref.dwSITFlagsThumbnailPreview)			; Set the old bitmap
 		ref.freeThumbnailPreviewBMP()																			; Conditional: if (ref.thumbHbm && ref.deleteBMPThumbnailPreview)
 		ref.thumbHbm:=ref.bitmapFunc.call(w,h,ref)																; Call the bitmapFunc to get the new bitmap
 		if !ref.thumbHbm
 			return
 		this.Dwm_SetIconicThumbnail(hWnd,ref.thumbHbm, false,ref.dwSITFlagsThumbnailPreview)					; Set the new bitmap
 		if !ref.thumbrate																						; If rate is 0, the bitmap will not be invalidated, no more calls here will be made.
-			return			
+			return
 		ref.pThumbTic:=A_TickCount
 		tf:=ref.invalidateThumbTimerFn:=ObjBindMethod(ref,"InvalidateIconicBitmaps")							; The bitmap will be invalidated after rate ms.
 		SetTimer(tf,-abs(ref.thumbrate))
@@ -1292,7 +1292,7 @@ class taskbarInterface {
 		;		- The DWMWA_HAS_ICONIC_BITMAP attribute is set on the window.
 		;		- An iconic representation is the only one that exists for this window.
 		;	wParam,lParam not used.
-		; 	
+		;
 		;	Url:
 		;		https://msdn.microsoft.com/en-us/library/windows/desktop/dd938874(v=vs.85).aspx
 		;
@@ -1320,7 +1320,7 @@ class taskbarInterface {
 	}
 
 	;	NOTE: End context: this=taskbarInterface
-	; 		
+	;
 	;
 	InvalidateIconicBitmaps(){
 		taskbarInterface.Dwm_InvalidateIconicBitmaps(this.hWnd)
@@ -1348,7 +1348,7 @@ class taskbarInterface {
 		;
 		;	DWMWA_FORCE_ICONIC_REPRESENTATION=7
 		;	Use with DwmSetWindowAttribute. Forces the window to display an iconic thumbnail or peek representation (a static bitmap),
-		;	even if a live or snapshot representation of the window is available. This value normally is set during a window's creation 
+		;	even if a live or snapshot representation of the window is available. This value normally is set during a window's creation
 		;	and not changed throughout the window's lifetime. Some scenarios, however, might require the value to change over time.
 		;	The pvAttribute parameter points to a value of TRUE to require a iconic thumbnail or peek representation; otherwise, it points to FALSE.
 		;
@@ -1412,7 +1412,7 @@ class taskbarInterface {
 		;			deleteBMP, option to delete the bitmap after it's been set as thumbnail, 1 - delete, 0 - don't delete.
 		;			dwSITFlags, The display options for the thumbnail. One of the following values:
 		;						0, No frame is displayed around the provided thumbnail.
-		;						1, Displays a frame around the provided thumbnail.		
+		;						1, Displays a frame around the provided thumbnail.
 		; 	Output:
 		;			hr, if this function succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.
 		;	Url:
@@ -1439,14 +1439,14 @@ class taskbarInterface {
 		;			deleteBMP, option to delete the bitmap after it's been set as thumbnail, 1 - delete, 0 - don't delete. DWM doesn't need it after it's been set, so delete if you don't need it anymore.
 		;			dwSITFlags, The display options for the thumbnail. One of the following values:
 		;						0, No frame is displayed around the provided thumbnail.
-		;						1, Displays a frame around the provided thumbnail.		
+		;						1, Displays a frame around the provided thumbnail.
 		; 	Output:
 		;			hr, if this function succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.
 		;	Url:
 		;			https://msdn.microsoft.com/en-us/library/windows/desktop/dd389410(v=vs.85).aspx
 		;	Notes:
 		;			The size of the bitmap should (perhaps must) fit the (hwnds) client rectangle.
-		
+
 		; offset point from x,y
 		local ppt,pt,hr
 		if (x="" || y="") {
@@ -1468,7 +1468,7 @@ class taskbarInterface {
 		;	both thumbnails and peek representations, should be refreshed.
 		;
 		;	Input:
-		;			hwnd, A handle to the window or tab whose bitmaps are being invalidated through this call. 
+		;			hwnd, A handle to the window or tab whose bitmaps are being invalidated through this call.
 		;				  This window must belong to the calling process.
 		; 	Output:
 		;			hr, if this function succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.
@@ -1492,7 +1492,7 @@ class taskbarInterface {
 			else
 				throw this.lastError
 		}
-		
+
 		return h
 	}
 	GlobalFree(hMem){
@@ -1530,107 +1530,107 @@ class taskbarInterface {
 	 typedef struct ITaskbarList3Vtbl
     {
         BEGIN_INTERFACE
-        
+
         HRESULT ( STDMETHODCALLTYPE *QueryInterface )( 									(0)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in REFIID riid,
-             [annotation][iid_is][out]  
+             [annotation][iid_is][out]
             _COM_Outptr_  void **ppvObject);
-        
+
         ULONG ( STDMETHODCALLTYPE *AddRef )( 											(1)
             __RPC__in ITaskbarList3 * This);
-        
-        ULONG ( STDMETHODCALLTYPE *Release )(											(2) 
+
+        ULONG ( STDMETHODCALLTYPE *Release )(											(2)
             __RPC__in ITaskbarList3 * This);
-        
+
         HRESULT ( STDMETHODCALLTYPE *HrInit )( 											(3)
             __RPC__in ITaskbarList3 * This);
-        
+
         HRESULT ( STDMETHODCALLTYPE *AddTab )( 											(4)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd);
-        
+
         HRESULT ( STDMETHODCALLTYPE *DeleteTab )( 										(5)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd);
-        
+
         HRESULT ( STDMETHODCALLTYPE *ActivateTab )( 									(6)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd);
-        
+
         HRESULT ( STDMETHODCALLTYPE *SetActiveAlt )(									(7)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd);
-        
+
         HRESULT ( STDMETHODCALLTYPE *MarkFullscreenWindow )( 							(8)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd,
              [in]  BOOL fFullscreen);
-        
+
         HRESULT ( STDMETHODCALLTYPE *SetProgressValue )( 								(9)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd,
              [in]  ULONGLONG ullCompleted,
              [in]  ULONGLONG ullTotal);
-        
+
         HRESULT ( STDMETHODCALLTYPE *SetProgressState )( 								(10)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd,
              [in]  TBPFLAG tbpFlags);
-        
+
         HRESULT ( STDMETHODCALLTYPE *RegisterTab )( 									(11)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwndTab,
              [in]  __RPC__in HWND hwndMDI);
-        
+
         HRESULT ( STDMETHODCALLTYPE *UnregisterTab )( 									(12)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwndTab);
-        
+
         HRESULT ( STDMETHODCALLTYPE *SetTabOrder )( 									(13)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwndTab,
              [in]  __RPC__in HWND hwndInsertBefore);
-        
+
         HRESULT ( STDMETHODCALLTYPE *SetTabActive )( 									(14)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwndTab,
              [in]  __RPC__in HWND hwndMDI,
              [in]  DWORD dwReserved);
-        
+
         HRESULT ( STDMETHODCALLTYPE *ThumbBarAddButtons )( 								(15)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd,
              [in]  UINT cButtons,
-             [size_is][in]  __RPC__in_ecount_full(cButtons) LPTHUMBBUTTON pButton);    
-        
+             [size_is][in]  __RPC__in_ecount_full(cButtons) LPTHUMBBUTTON pButton);
+
         HRESULT ( STDMETHODCALLTYPE *ThumbBarUpdateButtons )( 							(16)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd,
              [in]  UINT cButtons,
              [size_is][in]  __RPC__in_ecount_full(cButtons) LPTHUMBBUTTON pButton);
-        
+
         HRESULT ( STDMETHODCALLTYPE *ThumbBarSetImageList )( 							(17)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd,
              [in]  __RPC__in_opt HIMAGELIST himl);
-        
+
         HRESULT ( STDMETHODCALLTYPE *SetOverlayIcon )( 									(18)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd,
              [in]  __RPC__in HICON hIcon,
              [string][unique][in]  __RPC__in_opt_string LPCWSTR pszDescription);
-        
+
         HRESULT ( STDMETHODCALLTYPE *SetThumbnailTooltip )( 							(19)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd,
              [string][unique][in]  __RPC__in_opt_string LPCWSTR pszTip);
-        
+
         HRESULT ( STDMETHODCALLTYPE *SetThumbnailClip )( 								(20)
             __RPC__in ITaskbarList3 * This,
              [in]  __RPC__in HWND hwnd,
              [in]  __RPC__in RECT *prcClip);
-        
+
         END_INTERFACE
     } ITaskbarList3Vtbl;
 	*/

@@ -1,4 +1,4 @@
-autoUpdateAHK(path:="", dl:=True, install:=True, openCLog:=True){
+﻿autoUpdateAHK(path:="", dl:=True, install:=True, openCLog:=True){
     ; Doesnt actually work since it compares the running v2 with old v1 versions!
     if A_IsCompiled
         return -2

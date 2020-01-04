@@ -6,7 +6,9 @@
 #SingleInstance, Force
 #NoEnv
 SetBatchLines, -1
-#include ..\taskbarInterface.ahk
+;#include %A_ScriptDir%\..\class_threadfunc.ahk
+#include %A_ScriptDir%\..\class_threadfunc_V1.ahk
+#include %A_ScriptDir%\..\class_taskbarInterface.ahk
 
 ; Start gdi+
 If !pToken := Gdip_Startup()

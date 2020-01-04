@@ -1,4 +1,4 @@
-/*
+﻿/*
 ; In this example, Email is sent using GMail SMTP (SSL) server. 
 cdomessage( sFrom     := "Mail_Address_Of_Sender"
           , sTo       := "Mail_Address_Of_Receipient"

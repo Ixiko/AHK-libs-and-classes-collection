@@ -1,3 +1,5 @@
+#include %A_ScriptDir%\..\class_CreateFormData.ahk
+
 objParam := { "btSubmit": "Upload It!"
             , "adult": "no"
             , "mode": "local"

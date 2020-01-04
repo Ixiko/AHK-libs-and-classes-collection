@@ -1,4 +1,4 @@
-autoUpdateAHK(path:="", dl:=True, install:=True, openCLog:=False){
+﻿autoUpdateAHK(path:="", dl:=True, install:=True, openCLog:=False){
     if A_IsCompiled
         return -2
     RegexMatch(download_toVar("https://autohotkey.com/download/2.0/version.txt"),"^2.0-a.+$",v)

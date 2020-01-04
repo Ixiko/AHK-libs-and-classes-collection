@@ -1,4 +1,4 @@
-AVICAP_Startup()
+﻿AVICAP_Startup()
 {
 	DllCall("LoadLibrary", "str", "avicap32.dll")
 }

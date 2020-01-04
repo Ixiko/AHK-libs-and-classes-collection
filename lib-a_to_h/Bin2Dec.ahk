@@ -1,4 +1,4 @@
-Bin2Dec(bin)
+﻿Bin2Dec(bin)
 {
 	sum := 0, len := StrLen(bin)
 	Loop Parse, bin

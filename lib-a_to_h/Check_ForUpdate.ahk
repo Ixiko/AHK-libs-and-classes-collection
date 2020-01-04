@@ -1,4 +1,4 @@
-Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunction = "", ByRef _Information = "")
+﻿Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunction = "", ByRef _Information = "")
 {
 	;Version.ini file format - this is just an example of what the version.ini file would look like
 	;

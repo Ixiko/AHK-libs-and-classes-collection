@@ -1,4 +1,4 @@
-/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+﻿/*  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
     Disclaimer: You may use these functions "ONLY" at your own risk. 
 

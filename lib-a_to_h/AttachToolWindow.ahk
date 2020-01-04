@@ -1,4 +1,4 @@
-AttachToolWindow(hParent, GUINumber, AutoClose)
+﻿AttachToolWindow(hParent, GUINumber, AutoClose)
 {
 		global ToolWindows
 		if(!IsObject(ToolWindows))

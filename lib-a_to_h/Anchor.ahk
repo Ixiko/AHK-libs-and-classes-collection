@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Function: Anchor
 		Defines how controls should be automatically positioned relative to the new dimensions of a window when resized.
 

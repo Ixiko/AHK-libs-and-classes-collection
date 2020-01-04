@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Function:	CColor
 				Set text and background color for some Gui controls. 
 				Supported types: Edit, Text, ListBox, ComboBox, DropDownList, CheckBox, RadioButton, ListView, TreeView, RichEdit

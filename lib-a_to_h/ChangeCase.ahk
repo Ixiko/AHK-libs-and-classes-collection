@@ -1,4 +1,4 @@
-; Change case. Type is S,I,U,L, or T:
+﻿; Change case. Type is S,I,U,L, or T:
 ; Sentence, Inverse, Upper, Lower, or Title 
 
 ChangeCase(String,Type) { 

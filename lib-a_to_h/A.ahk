@@ -11,24 +11,24 @@ A_Put(ByRef Array, ByRef Data, Index=-1, dSize=-1){
 
     if ((Index=-1) || (A_Count(Array)+1=Index)) {
         Gosub, GetArrayStats
-    
+
         nSize := aSize+dSize+8                         ; calculate new size
         VarSetCapacity(tmpArray, nSize, 32)            ; create tmpArray for our new data
         A_ArrayMM(&tmpArray, &Array, aSize)            ; Copy entire array to TMP
-    
+
         NumPut(nSize,       tmpArray, 12)              ; Update size of array in total
         NumPut(tSize+8,     tmpArray, 16)              ; Update tableLenght
         NumPut(oSize+dSize, tmpArray, 20)              ; Update length of new ArrayStructure
         NumPut(ElmCount+1,  tmpArray, 24)              ; Update elementcount
-    
+
         A_ArrayMM( &tmpArray + tSize + 8               ; Shift ArrayData for 8 bytes
                     , &Array + tSize, oSize )
         A_ArrayMM(&tmpArray+aSize+8,&Data,dSize)       ; copy data to tmpArray
-    
+
         Offset := 28                                   ; move offsets for array contents
         Loop, % ElmCount+1
             NumPut( NumGet(tmpArray
-                    ,(Offset+(A_index-1)*8))+8         ; get last known value and 
+                    ,(Offset+(A_index-1)*8))+8         ; get last known value and
                     ,tmpArray,(Offset+(A_index-1)*8))  ; increment it by 8
 
         NumPut(aSize+8, tmpArray, tSize)               ; Set offsetpointer to new data
@@ -40,12 +40,12 @@ A_Put(ByRef Array, ByRef Data, Index=-1, dSize=-1){
         Return ElmCount+1
     } else if ((A_Count(Array)>=Index) && (Index!=0)) {
         Gosub, GetArrayStats
-        
+
         ElmPtr  := NumGet(Array,28+(Index-1)*8)
         ElmSize := NumGet(Array,32+(Index-1)*8)
-        
+
         if ((dSize>ElmSize) || (dSize<ElmSize)) {      ; Fix table offsets to new size
-    
+
             OffSet  := 28+Index*8                      ; GetStarting offset in table
             ptrDiff := dSize-ElmSize                   ; Get difference
 
@@ -59,7 +59,7 @@ A_Put(ByRef Array, ByRef Data, Index=-1, dSize=-1){
 
             Loop,% ElmCount-Index                      ; loop remaining elements
                 NumPut( NumGet(tmpArray
-                    ,(Offset+(A_index-1)*8))+ptrDiff   ; get last known value and 
+                    ,(Offset+(A_index-1)*8))+ptrDiff   ; get last known value and
                     ,tmpArray,(Offset+(A_index-1)*8))  ; add the difference
 
             Offset := NumGet(tmpArray,Offset-8)
@@ -106,7 +106,7 @@ A_Get(ByRef Array, Index) {
 
         VarSetCapacity(ArrayElement,ElmSize,32)        ; Initialise the returnbuffer
         A_ArrayMM(&ArrayElement,&Array+ElmPtr,ElmSize) ; Copy the binary data
-        
+
         ErrorLevel := ElmSize
         Return ArrayElement
     }
@@ -142,8 +142,8 @@ A_Implode(ByRef Array, glue=" ") {
     }
 }
 
-; Returns an array of strings, each of which is a substring of string formed 
-; by splitting it on boundaries formed by the string delimiter. 
+; Returns an array of strings, each of which is a substring of string formed
+; by splitting it on boundaries formed by the string delimiter.
 ; unlike Stringsplit, multiple chars are allowed in dString
 A_Explode(ByRef Array, dString, sString, Limit=0, trimChars="", trimCharsIsRegEx=False, dStringIsRegEx=False) {
     if !(A_Array(Array))
@@ -161,7 +161,7 @@ A_Explode(ByRef Array, dString, sString, Limit=0, trimChars="", trimCharsIsRegEx
     gLen := StrLen(dString)           ; get length of delimiterString
     sLen := StrLen(sString)           ; get length of string
                                       ; since this is not a byref parameter,
-                                      ; binary values need to be assigned direct in call such as 
+                                      ; binary values need to be assigned direct in call such as
                                       ; A_Explode(Array,"\x0",FileGetContent("myfile.dat"),"",0,1)
 
     If !(dStringIsRegEx) {            ; Build RegExNeedle for matching if non given
@@ -273,7 +273,7 @@ A_Slice(ByRef Array, ByRef sArray, Start, End) {
     If !(A_Array(sArray)) {
         ErrorLevel := "No valid source Array"
         return -1
-    } else if ((cnt := A_Count(sArray)) 
+    } else if ((cnt := A_Count(sArray))
                     && (Start>0) && (cnt<Start)
                     && (End>0) && (cnt<End)) {
         ErrorLevel := "Wrong Start or End of sArray"
@@ -322,7 +322,7 @@ A_Count(byRef Array) {
 ; for internal use only - initialises bytestructure of array
 A_Init(byRef Array) {
     ; ATM 28 Bytes is minimum for AHK binary array structure
-    ArraySize := 28 
+    ArraySize := 28
     VarSetCapacity(Array,ArraySize,32)
 
     Array = Array()
@@ -366,7 +366,7 @@ A_Dump(ByRef Array) {
         Loop,parse,out,`n
             if ((A_Index>=3) && (A_Count(Array)+2>=A_Index))
                 out .= "   [" A_Index-2 "]" ((A_index-2=1) ? "`t=>`t" : "") A_LoopField "`n"
-            else 
+            else
                 out := ((A_Index=1) ? A_LoopField : out A_LoopField) "`n"
         Return out
     }
@@ -406,19 +406,19 @@ A___ArrayInsideView(Array) {
     tl  := NumGet(Array, 16)  ; TableLength in bytes
     al  := NumGet(Array, 20)  ; ArrayLength in bytes  (Data)
     ec  := NumGet(Array, 24)  ; Element count
-    
+
     offset := 28
     Loop,% (tl-offset) // 8
     {
-        elms .= "&" offset+((A_index-1)*8)   " ptr elm " a_index 
+        elms .= "&" offset+((A_index-1)*8)   " ptr elm " a_index
                     . "`t->`t" (o:=NumGet(Array,offset+((A_index-1)*8)))   "`n"
-              . "&" offset+((A_index-1)*8)+4 " len elm " a_index 
+              . "&" offset+((A_index-1)*8)+4 " len elm " a_index
                     . "`t->`t" (l:=NumGet(Array,offset+4+((A_index-1)*8))) "`n"
         data .= "&" o ": " A___ArrayBin(Array,o,l) "`n"
     }
-    
+
     out=
-        (LTrim 
+        (LTrim
             aSignature    &0    %as1%
             Terminator    &7    %as2%
             arrayVersion    &8    %av%
@@ -426,12 +426,12 @@ A___ArrayInsideView(Array) {
             tableLength    &16    %tl%
             arrayLength    &20    %al%
             elementCount    &24    %ec%
-                        
+
             %elms%
             %data%
         )
 
-    return out 
+    return out
 }
 
 /*

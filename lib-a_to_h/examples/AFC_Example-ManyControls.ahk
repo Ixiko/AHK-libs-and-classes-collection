@@ -1,11 +1,11 @@
 ﻿
-#include <CCtrlButton>
-#include <CCtrlLabel>
-#include <CCtrlEdit>
-#include <CCtrlUpDown>
-#include <CCtrlListView>
-#include <CCtrlTreeView>
-#include <CCtrlStatusBar>
+#include %A_ScriptDir%\..\CCtrlButton.ahk
+#include %A_ScriptDir%\..\CCtrlLabel.ahk
+#include %A_ScriptDir%\..\CCtrlEdit.ahk
+#include %A_ScriptDir%\..\CCtrlUpDown.ahk
+#include %A_ScriptDir%\..\CCtrlListView.ahk
+#include %A_ScriptDir%\..\CCtrlTreeView.ahk
+#include %A_ScriptDir%\..\CCtrlStatusBar.ahk
 
 AFC_Entrypoint(MyWin)
 
@@ -29,24 +29,24 @@ class MyWin extends CWindow
 		lv := new CCtrlListView(this, "First column|Second column", "xs Section")
 		lv.OnDoubleClick := this.lvDoubleClick
 		lv.AddRow(["Hello", "world!"])
-		
+
 		tv := new CCtrlTreeView(this, "r7")
 		tv.OnDoubleClick := this.tvDoubleClick
-		
+
 		p1 := tv.AddNode("First parent")
 		p1c1 := p1.AddNode("Parent 1's first child")
 		p2 := tv.AddNode("Second parent")
 		p2c1 := p2.AddNode("Parent 2's first child")
 		p2c2 := p2.AddNode("Parent 2's second child")
 		p2c2c1 := p2c2.AddNode("Parent 2's second child's first child")
-		
+
 		sb := new CCtrlStatusBar(this)
 		sb.OnClick := this.sbClick
 		sb.SetPartText("Ready.")
-		
+
 		this.Show()
 	}
-	
+
 	ButtonClick(oCtrl)
 	{
 		this.OwnDialogs()
@@ -56,13 +56,13 @@ class MyWin extends CWindow
 		MsgBox, Hello, world!`n%text%
 		this.editBox.Text .= "WORKS"
 	}
-	
+
 	ShowOtherGUI()
 	{
 		this.loginform := new CLoginForm(this)
 		this.loginform.OnEvent := this.EnteredNameAndPass
 	}
-	
+
 	EnteredNameAndPass(name, pass)
 	{
 		this.OwnDialogs()
@@ -72,7 +72,7 @@ class MyWin extends CWindow
 		Pass: %pass%
 		)
 	}
-	
+
 	lvDoubleClick(lv, row)
 	{
 		this.OwnDialogs()
@@ -82,7 +82,7 @@ class MyWin extends CWindow
 		lv.Item[row, 2] .= "EDITED"
 		lv.AutoSizeCol()
 	}
-	
+
 	tvDoubleClick(tv, node)
 	{
 		this.OwnDialogs()
@@ -90,11 +90,11 @@ class MyWin extends CWindow
 		for i,child in node
 			t .= "[" i "]: " child.Text "`n"
 		MsgBox % t
-		
+
 		node.Text .= "EDITED"
 		node.Bold := !node.Bold
 	}
-	
+
 	sbClick(sb)
 	{
 		this.OwnDialogs()
@@ -118,7 +118,7 @@ class CLoginForm extends COwnedWindow
 		but.OnEvent := this.ButtonOk
 		this.Show()
 	}
-	
+
 	ButtonOk()
 	{
 		name := this.ctrlName.Text
@@ -132,7 +132,7 @@ class CLoginForm extends COwnedWindow
 		this.Close()
 		this.OnEvent.(this.owner, name, pass)
 	}
-	
+
 	OnDestroy()
 	{
 		this.owner.SetOptions("-Disabled")

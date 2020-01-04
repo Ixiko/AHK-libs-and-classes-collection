@@ -1,4 +1,4 @@
-/*
+﻿/*
 Control_AVI.ahk
 
 Add a SysAnimate32 (AVI animation) control to your AHK Gui.

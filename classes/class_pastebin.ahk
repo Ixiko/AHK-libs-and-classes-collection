@@ -1,6 +1,7 @@
-/*
+﻿/*
 Pastebin API v0.0.0.1 (fully functional)
 Avi Aryan
+
 Example
 	pbin := new pastebin()
 	msgbox % Clipboard := pbin.pasteAsGuest("some text to paste", "paste_name", "autohotkey")
@@ -8,14 +9,14 @@ Example
 
 class pasteBin
 {
-	__New(username="floppernopper", password="19aug1993"){ 		; dev_key is nothing special and can be made public
+	__New(username="", password=""){ 		; dev_key is nothing special and can be made public
 		
-		this.dev_key := "b87797d42ce46dd4ec478f55bacf9d28" , this.username := username , this.password := password
+		this.dev_key := "a5570948bfe060e3df15b9ac02d8b93f" , this.username := username , this.password := password
 		this.http := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 		; done - 
 		if ( username != "" ) && ( Password != "" ) 		;return if invalid data
 		{
-			f := "api_dev_key=" dev_key "&api_user_name=" this._UrlEncode(username) "&api_user_password=" this._UrlEncode(password)
+			f := "api_dev_key=" this.dev_key "&api_user_name=" this._UrlEncode(this.username) "&api_user_password=" this._UrlEncode(this.password)
 			this._openRequest("http://pastebin.com/api/api_login.php")
 			this.http.Send(f)
 			this.userkey := this._return(this.http.ResponseText) 		; return 0 if key is wrong invalid
@@ -81,7 +82,7 @@ class pasteBin
 		return this.http.ResponseText
 	}
 
-	editPaste(link, mode=1, message=""){
+	editPaste(link, mode=1){
 		; total auto sign - in
 		; just open
 		page := "http://pastebin.com/edit.php?i=" ( id:=this.getPastekey(link) )
@@ -94,29 +95,15 @@ class pasteBin
 		ie.visible := 0
 		while ie.busy
 			sleep 100
-		sleep 1000
-		if !Instr(ie.document.url, id) 		; means already signed in --
+		if !Instr(ie.document.url, "edit.php?i=" id) 		; means already signed in --
 		{
-			ie.Document.All.user_name.Value := this.username
-			ie.Document.All.user_password.Value := this.password
-			ie.Document.All.submit.click()
-		}
-		sleep 1000
-		if message!= ""
-		{
-			ie.Document.All.paste_code.Value := message 
-			ie.Document.All.submit.click()
+			ie.document.all.user_name.value := this.username
+			ie.document.all.user_password.value := this.password
+			ie.document.all.submit.click()
 		}
 		while ie.busy
 			sleep 100
-		ie.visible := 0
-		sleep 100
-		While ( value <> "Log Out" )
-			value := ie.document.getElementsByTagName( "li")[ A_Index - 1].innertext, index := A_Index - 1
-		ie.document.getElementsByTagName( "li")[ index].Click()
-		while ie.busy
-			sleep 100
-		ie.Quit 
+		ie.visible := 1
 		return 1
 	}
 

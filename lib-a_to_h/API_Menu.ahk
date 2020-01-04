@@ -1,18 +1,18 @@
-/*
+﻿/*
 	-- FUN --
-	CreatePopupMenu			() 
-	DeleteMenu				( hMenu, uPos, uFlags ) 
-	DestroyMenu				( hMenu ) 
+	CreatePopupMenu			()
+	DeleteMenu				( hMenu, uPos, uFlags )
+	DestroyMenu				( hMenu )
 	GetMenuCheckMarkDimensions()
-	GetMenuItemCount		( hMenu ) 
+	GetMenuItemCount		( hMenu )
 	GetMenuItemID			( hMenu, nPos )
 	GetMenuItemInfo			( hMenu, uItem, fByPosition, lpmii )
 	GetMenuState			( hMenu, uId, uFlags )
 	GetMenuString			( hMenu, uIDItem, lpString, nMaxCount, uFlag )
-	GetSubmenu				( hMenu, nPos) 
+	GetSubmenu				( hMenu, nPos)
 	SetMenuItemInfo			( hMenu, uItem, fByPosition, lpmii )
 	SetMenuInfo				( hMenu, sMENUINFO )
-	TrackPopupMenu			( hMenu, uFlags, X, Y, hWnd ) 
+	TrackPopupMenu			( hMenu, uFlags, X, Y, hWnd )
 	InsertMenu				( hMenu, uPos, uFlags, uID, pData)
 	IsMenu					( hMenu )
 	RemoveMenu				( hMenu, uPosition, uFlags )
@@ -35,7 +35,7 @@ API_GetMenuState( hMenu, uId, uFlags ) {
 API_GetMenuString( hMenu, uIDItem, lpString, nMaxCount, uFlag ){
 	return DllCall("GetMenuString", "uint", hMenu, "uint", uIDItem, "str", lpString, "uint", nMaxCount, "uint", uFlag)
 }
- 
+
 API_IsMenu( hMenu ) {
 	return DllCall("IsMenu", "uint", hMenu)
 }
@@ -52,8 +52,7 @@ API_GetMenuItemID( hMenu, nPos ) {
 	return DllCall("GetMenuItemID", "uint", hMenu, "int", nPos)
 }
 
-INIT_Menu()
-{
+INIT_Menu(){
 ;	global
 ;	;messages
 ;	WM_MENUSELECT	= 0x11F
@@ -61,8 +60,8 @@ INIT_Menu()
 ;	WM_DRAWITEM		= 0x2B
 ;	WM_ENTERMENULOOP= 0x211
 ;
-;	MNS_DRAGDROP	= 0x20000000    
-;	MNS_MODELESS	= 0x40000000  
+;	MNS_DRAGDROP	= 0x20000000
+;	MNS_MODELESS	= 0x40000000
 ;	MNS_NOTIFYBYPOS	= 0x80000000
 ;
 ;
@@ -133,7 +132,7 @@ INIT_Menu()
 ;	MIIM_STATE	= 0x1
 ;
 ;
-;	
+;
 ;
 ;	;states
 ;	ODS_CHECKED			= 0x08
@@ -158,7 +157,7 @@ INIT_Menu()
 ;	DI_IMAGE	= 2
 ;	DI_MASK		= 1
 ;	DI_DEFAULTSIZE	= 8
-;	DI_NORMAL	:= DI_MASK | DI_IMAGE 
+;	DI_NORMAL	:= DI_MASK | DI_IMAGE
 ;
 ;	;STYLES
 ;	MFS_GRAYED	  := 0x3
@@ -167,111 +166,79 @@ INIT_Menu()
 ;	MFS_UNCHECKED := MF_UNCHECKED
 ;	MFS_DEFAULT	  := MF_DEFAULT
 }
-
 ;----------------------------------------------------------
-
-API_InsertMenu( hMenu, uPos, uFlags, uID, pData)
-{ 
-   return DllCall("InsertMenu" 
+API_InsertMenu( hMenu, uPos, uFlags, uID, pData){
+   return DllCall("InsertMenu"
 					,"uint", hMenu
 					,"uint", uPos
 				    ,"uint", uFlags
 			        ,"uint", uID
-		            ,"uint", pData) 
+		            ,"uint", pData)
 }
-
 ;----------------------------------------------------------
-
-API_GetMenuItemCount( hMenu ) 
-{ 
-	return DllCall("GetMenuItemCount", "uint", hMenu) 
-} 
-
+API_GetMenuItemCount( hMenu ) {
+	return DllCall("GetMenuItemCount", "uint", hMenu)
+}
 ;----------------------------------------------------------
-
-API_CreatePopupMenu() 
-{ 
-	return DllCall("CreatePopupMenu") 
-} 
-
+API_CreatePopupMenu() {
+	return DllCall("CreatePopupMenu")
+}
 ;----------------------------------------------------------
-
-API_DestroyMenu( hMenu ) 
-{ 
-	return  DllCall("DestroyMenu", "uint", hMenu) 
-} 
-
-
+API_DestroyMenu( hMenu ) {
+	return  DllCall("DestroyMenu", "uint", hMenu)
+}
 ;----------------------------------------------------------
+API_TrackPopupMenu( hMenu, uFlags, X, Y, hWnd ) {
+   global
 
-API_TrackPopupMenu( hMenu, uFlags, X, Y, hWnd ) 
-{ 
-   global 
-
-	return DllCall("TrackPopupMenu" 
-               , "uint", hMenu 
+	return DllCall("TrackPopupMenu"
+               , "uint", hMenu
                , "uint", uFlags
-               , "int", X 
-               , "int", Y 
-               , "uint", 0 
+               , "int", X
+               , "int", Y
+               , "uint", 0
                , "uint", hWnd
-               , "uint", 0) 
-} 
-
-;----------------------------------------------------------
-
-API_SetMenuInfo(hMenu, sMENUINFO)
-{
-	return DllCall("SetMenuInfo", "uint", hMenu, "uint", sMENUINFO) 
+               , "uint", 0)
 }
-
 ;----------------------------------------------------------
-
-API_DeleteMenu( hMenu, uPos, uFlags) 
-{ 
-   DllCall("DeleteMenu" 
-         ,"uint", hMenu 
+API_SetMenuInfo(hMenu, sMENUINFO){
+	return DllCall("SetMenuInfo", "uint", hMenu, "uint", sMENUINFO)
+}
+;----------------------------------------------------------
+API_DeleteMenu( hMenu, uPos, uFlags) {
+   DllCall("DeleteMenu"
+         ,"uint", hMenu
          ,"uint", uPos
-         ,"uint", uFlags) 
-} 
-
+         ,"uint", uFlags)
+}
 ;-------------------------------------------------------------------------------------------------
-
-API_SetMenuItemInfo( hMenu, uItem, fByPosition, lpmii)
-{
+API_SetMenuItemInfo( hMenu, uItem, fByPosition, lpmii){
 	return, DllCall("SetMenuItemInfo", "uint", hMenu, "uint", uItem, "uint", fByPosition, "uint", lpmii)
 }
-
 ;-------------------------------------------------------------------------------------------------
-
-API_GetMenuItemInfo( hMenu, uItem, fByPosition, lpmii)
-{
+API_GetMenuItemInfo( hMenu, uItem, fByPosition, lpmii){
 	return, DllCall("GetMenuItemInfo", "uint", hMenu, "uint", uItem, "uint", fByPosition, "uint", lpmii)
 }
 
-
-
 /*
 =================================================================================================
-				
+
 							STRUCTS
 
 ==================================================================================================
 */
 
-;typedef struct tagSIZE { 
-;  LONG cx; 
-;  LONG cy; 
+;typedef struct tagSIZE {
+;  LONG cx;
+;  LONG cy;
 ;} SIZE, *PSIZE;
-SIZE_Get(var)
-{
+SIZE_Get(var){
 	global
 	%var%_cx := ExtractInteger(%var%_c,0)
 	%var%_cy := ExtractInteger(%var%_c,4)
 }
 
-SIZE_Set(var)
-{
+SIZE_Set(var){
 	global
 
 	VarSetCapacity(%var%_c, 4, 0)
@@ -282,46 +249,44 @@ SIZE_Set(var)
 
 ;-------------------------------------------------------------------------------------------------
 ;typedef struct tagMENUITEMINFO {
-;  UINT    cbSize; 
-;  UINT    fMask; 
-;  UINT    fType; 
-;  UINT    fState; 
-;  UINT    wID; 
-;  HMENU   hSubMenu; 
-;  HBITMAP hbmpChecked; 
-;  HBITMAP hbmpUnchecked; 
-;  ULONG_PTR dwItemData; 
-;  LPTSTR  dwTypeData; 
-;  UINT    cch; 
+;  UINT    cbSize;
+;  UINT    fMask;
+;  UINT    fType;
+;  UINT    fState;
+;  UINT    wID;
+;  HMENU   hSubMenu;
+;  HBITMAP hbmpChecked;
+;  HBITMAP hbmpUnchecked;
+;  ULONG_PTR dwItemData;
+;  LPTSTR  dwTypeData;
+;  UINT    cch;
 ;  HBITMAP hbmpItem;
-;} MENUITEMINFO, *LPMENUITEMINFO; 
-MENUITEMINFO_Get(var)
-{
+;} MENUITEMINFO, *LPMENUITEMINFO;
+MENUITEMINFO_Get(var){
 	global
 	%var%_fMask			:= ExtractInteger(%var%,4)
 	%var%_fType			:= ExtractInteger(%var%,8)
-	%var%_fState		:= ExtractInteger(%var%,12) 
-	%var%_wID			:= ExtractInteger(%var%,16) 
-	%var%_hSubMenu		:= ExtractInteger(%var%,20) 
-	%var%_dwItemData	:= ExtractInteger(%var%,32) 
-	%var%_dwTypeData	:= ExtractInteger(%var%,36) 
-	%var%_hbmpItem		:= ExtractInteger(%var%,44) 
+	%var%_fState		:= ExtractInteger(%var%,12)
+	%var%_wID			:= ExtractInteger(%var%,16)
+	%var%_hSubMenu		:= ExtractInteger(%var%,20)
+	%var%_dwItemData	:= ExtractInteger(%var%,32)
+	%var%_dwTypeData	:= ExtractInteger(%var%,36)
+	%var%_hbmpItem		:= ExtractInteger(%var%,44)
 }
 
-MENUITEMINFO_Set(var)
-{
+MENUITEMINFO_Set(var){
 	global
 	VarSetCapacity(%var%, 48, 0)
 	InsertInteger(48,				%var%,0)
-	InsertInteger(%var%_fMask,		%var%,4) 
-	InsertInteger(%var%_fType,		%var%,8) 
-	InsertInteger(%var%_fState,		%var%,12) 
-	InsertInteger(%var%_wID,		%var%,16) 
-	InsertInteger(%var%_hSubMenu,	%var%,20) 
-	InsertInteger(%var%_dwItemData,	%var%,32) 
-	InsertInteger(%var%_dwTypeData,	%var%,36) 
-	InsertInteger(%var%_cch,		%var%,40) 
-	InsertInteger(%var%_hbmpItem,	%var%,44) 
+	InsertInteger(%var%_fMask,		%var%,4)
+	InsertInteger(%var%_fType,		%var%,8)
+	InsertInteger(%var%_fState,		%var%,12)
+	InsertInteger(%var%_wID,		%var%,16)
+	InsertInteger(%var%_hSubMenu,	%var%,20)
+	InsertInteger(%var%_dwItemData,	%var%,32)
+	InsertInteger(%var%_dwTypeData,	%var%,36)
+	InsertInteger(%var%_cch,		%var%,40)
+	InsertInteger(%var%_hbmpItem,	%var%,44)
 
 }
 
@@ -335,11 +300,10 @@ MENUITEMINFO_Set(var)
 ;  DWORD   dwContextHelpID;		20
 ;  ULONG_PTR  dwMenuData;		24
 ;
-MENUINFO_Set(var)
-{
-	global 
-	
-	VarSetCapacity(%var%, 28, 0) 
+MENUINFO_Set(var){
+	global
+
+	VarSetCapacity(%var%, 28, 0)
 	InsertInteger(28,				%var%, 0)
 	InsertInteger(%var%_fMask,		%var%, 4)
 	InsertInteger(%var%_dwStyle,	%var%, 8)
@@ -348,9 +312,8 @@ MENUINFO_Set(var)
 	InsertInteger(%var%_dwMenuData,	%var%, 24)
 }
 
-MENUINFO_Get(var)
-{
-	global 
+MENUINFO_Get(var){
+	global
 
 	%var%_fMask		 := ExtractInteger(%var%, 4)
 	%var%_dwStyle	 := ExtractInteger(%var%, 8)

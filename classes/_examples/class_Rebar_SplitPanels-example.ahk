@@ -2,7 +2,7 @@
 
 #NoEnv
 #SingleInstance Force
-#Include ..\Class_Rebar.ahk
+#Include %A_ScriptDir%\..\Class_Rebar.ahk
 
 Gui, LeftPanel:+HwndhLeft -Caption
 Gui, LeftPanel:Add, DDL, vDList, Item1||Item2|Item3

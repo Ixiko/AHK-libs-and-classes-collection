@@ -1,9 +1,10 @@
 #NoEnv
 #SingleInstance force
-#Warn
+;#Warn
 ; Windows 8.1 64 bit - Autohotkey v1.1.28.00 32-bit Unicode
 
-#Include %A_ScriptDir%\eAutocomplete.ahk
+#Include %A_ScriptDir%\..\class_eAutocomplete.ahk
+#Include %A_ScriptDir%\..\..\lib-a_to_h\acc.ahk
 
 WinWait, ahk_class Notepad
 ControlGet, eHwnd, Hwnd,, Edit1, % "ahk_id " . WinExist()

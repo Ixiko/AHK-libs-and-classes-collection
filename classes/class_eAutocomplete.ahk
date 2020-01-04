@@ -1,4 +1,4 @@
-﻿#Include %A_LineFile%/../acc.ahk
+﻿;#Include %A_LineFile%/../acc.ahk
 Class eAutocomplete {
 	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	; ~~~~~~~~~~~~~~~~~~~~ PRIVATE NESTED CLASSES ~~~~~~~~~~~~

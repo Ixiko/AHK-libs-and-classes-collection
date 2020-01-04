@@ -1,4 +1,4 @@
-; e.g. run an internet explorer window and go to the page: "about:blank" so that is the start of the title text
+﻿; e.g. run an internet explorer window and go to the page: "about:blank" so that is the start of the title text
 ;   then run this script and it adds a gui window onto the internet explorer window.
 ; Some programs, such as notepad and calculator, don't seem to work properly with this technique.
 

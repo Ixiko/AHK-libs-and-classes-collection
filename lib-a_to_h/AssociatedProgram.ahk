@@ -1,4 +1,4 @@
-;-- Function: AssociatedProgram
+﻿;-- Function: AssociatedProgram
 ;-- Description: Returns the full path of the program (if any) associated to
 ;   a file extension (p_FileExt).
 ;-- Original author: TheGood

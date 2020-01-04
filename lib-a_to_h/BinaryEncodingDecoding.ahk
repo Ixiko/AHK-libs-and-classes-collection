@@ -1,4 +1,4 @@
-/*
+﻿/*
 BinaryEncodingDecoding.ahk
 
 Routines to encode and decode binary data to and from Ascii/Ansi data (source code).

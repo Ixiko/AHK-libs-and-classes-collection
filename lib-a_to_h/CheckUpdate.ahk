@@ -1,4 +1,4 @@
-CheckUpdate(_ReplaceCurrentScript:=1, _SuppressMsgBox:=0, _CallbackFunction:="", ByRef _Information:="") {
+﻿CheckUpdate(_ReplaceCurrentScript:=1, _SuppressMsgBox:=0, _CallbackFunction:="", ByRef _Information:="") {
 	Static Update_URL   := "http://files.wsnhapps.com/hotstrings/Custom%20Hotstrings.text"
 		 , Download_URL := "http://files.wsnhapps.com/hotstrings/Custom%20Hotstrings.exe" 
 		 , Retry_Count  := 2

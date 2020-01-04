@@ -3,10 +3,10 @@ Name: Particle System
 Version 2.1 (Tuesday, January 17, 2017)
 Created: Thursday, December 22, 2016
 Author: tidbit
-Credit: 
+Credit:
 	maestrith - dlg_color()
 	tic - GDIP
-	
+
 Hotkeys:
 
 Description:
@@ -196,7 +196,7 @@ contArr:=["etype","emisc","lifemin","lifemax","offx","offy","useFrames"
 ,"relm","relw","speeds","jitters","gravity","spiral"]
 
 winGetPos, x,y,w,h, ahk_id %MAINHWND%
-gui, preview: show, % "x" x+w " y" y " autosize", Preview - %_name_% 
+gui, preview: show, % "x" x+w " y" y " autosize", Preview - %_name_%
 ; gui, preview: show, % "x" x " y" y " autosize", Preview
 
 psys:=new particles(FPS)
@@ -226,14 +226,14 @@ return
 
 
 chooseCol:
-	BGCol:=RGB(dlg_color(BGCol,MAINHWND)) 
+	BGCol:=RGB(dlg_color(BGCol,MAINHWND))
 	gui, preview: color, 0x%BGCol%
 return
 
 
 setup:
 	gui, main: submit, noHide
-	
+
 	guiControlGet, drawArea, preview: pos, PDisp
 	anchorX:=(drawAreaW//2)+offx
 	anchorY:=(drawAreaH//2)+offy
@@ -264,11 +264,11 @@ addEmit:
 	gui, main: submit, noHide
 	gui, main: default
 	newE:=psys.addEmitter()
-	
+
 	for k, v in contArr
 		guiControl, main: -g, %v%
 	guiControl, main: -g, eLB
-	
+
 	guiControl, main: choose, eType, 1
 	guiControl, main:, lifemin, % newE.Life[1]
 	guiControl, main:, lifemax, % newE.Life[1]
@@ -290,7 +290,7 @@ addEmit:
 	guiControl, main:, gravity, % st_glue(newE.gravity)
 	guiControl, main:, spiral, % st_glue(newE.spiral)
 	guiControl, main:, eLB, Generic||
-	
+
 	gui, main: submit, noHide
 	for k, v in contArr
 	{
@@ -325,18 +325,18 @@ CreateBG:
 	Gdip_DisposeImage(BGBitmap)     ; get rid of the old one
 	BGBitmap:=Gdip_CreateBitmap(drawAreaW, drawAreaH)
 	BGGraphics:=Gdip_GraphicsFromImage(BGBitmap)
-	
+
 	; brsh := Gdip_BrushCreateSolid("0xffff4400")
 	brsh := Gdip_BrushCreateSolid("0xff" BGCol)
 	Gdip_FillRectangle(BGGraphics, brsh, 0, 0, drawAreaW, drawAreaH)
 	pen:=Gdip_CreatePen("0x44000000", 2)
 	gdip_drawLine(BGGraphics, pen, 0, anchorY, drawAreaW, anchorY)
 	gdip_drawLine(BGGraphics, pen, anchorX, 0, anchorX, drawAreaH)
-	Gdip_DrawRectangle(BGGraphics, pen, 1, 1, drawAreaW-2, drawAreaH-2) 
+	Gdip_DrawRectangle(BGGraphics, pen, 1, 1, drawAreaW-2, drawAreaH-2)
 	Gdip_DeleteBrush(brsh)
 	Gdip_DeletePen(pen)
 	BGCloned:=Gdip_CloneBitmapArea(BGBitmap, 0, 0, drawAreaW, drawAreaH)
-	if (useMouse=0)	
+	if (useMouse=0)
 		Graphics:=psys.setCanvas(0, 0, drawAreaW, drawAreaH, quality, PHWND)
 return
 
@@ -373,13 +373,13 @@ changeEProperty:
 	critical
 	gui, main: default
 	gui, main: submit, noHide
-	
+
 	guiControlGet, typeN, main:, eType, text
 	if (typeN="")
 		typeN:="Generic"
 	if (eLB="")
 		eLB:=1
-	
+
 	ttt:=""
 	if (selCtrl="etype")
 	{
@@ -398,7 +398,7 @@ changeEProperty:
 		guiControl, main:, colors, % st_glue(gradientPresets[colorPreN], "`n")
 		gui, main: submit, noHide
 	}
-	
+
 	offx:=(offx="") ? 0 : offx
 	offy:=(offy="") ? 0 : offy
 	; eLB:=1
@@ -430,7 +430,7 @@ changeEProperty:
 	loop, parse, alphas, %ttt%, `r ; ignore blanks
 		if (trim(A_LoopField)!="")
 			qqq.alpha.push(A_LoopField)
-			
+
 	if (useFrames=1)
 		qqq.life.insertAt(1, "f")
 	ttt:=""
@@ -465,7 +465,7 @@ changeEProperty:
 		else
 			Graphics:=psys.setCanvas(0, 0, drawAreaW, drawAreaH, quality, PHWND)
 			, psys.particles:=[]
-					
+
 	useMouseP:=useMouse
 
 	; gui, submit, noHide
@@ -496,17 +496,17 @@ update:
 		; toolTip, % psys.drawcount "/" psys.emitters.length(), 0
 
 		mouseGetPos, xxx, yyy
-		
+
 		psys.step()
 		psys.clear()
-		
+
 		; DRAW THE BACKGROUND CLONE HERE
 		if (useMouse=0)
-			Gdip_DrawImage(Graphics, BGCloned) 
-			
+			Gdip_DrawImage(Graphics, BGCloned)
+
 		; ahk has smart evaluation. if it sees PPS>=FPS is true ...
 		; ... it'll never do mod(). Doing less division is better
-		if (PPS>=FPS || mod(frame, PPS)=0) 
+		if (PPS>=FPS || mod(frame, PPS)=0)
 		{
 			for dummy in psys.Emitters
 			{
@@ -521,7 +521,7 @@ update:
 				}
 			}
 		}
-		
+
 		if (useMouse=1)
 			psys.draw()
 		else
@@ -602,5 +602,5 @@ rgb(c){
 }
 
 
-#include %A_ScriptDir%\Gdip.ahk
-#include %A_ScriptDir%\particles_class.ahk
+#include %A_ScriptDir%\..\..\lib-a_to_h\Gdip.ahk
+#include %A_ScriptDir%\..\class_particles.ahk

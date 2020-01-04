@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 
 SimpleMovingAverage(NumberToAppend,Method = "Mean",MaxListLen = 10) {
  static NumList

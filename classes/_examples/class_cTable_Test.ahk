@@ -1,4 +1,4 @@
-#include cTable.ahk
+#include %A_ScriptDir%\..\class_cTable.ahk
 
 ;===oTable testing area=================================================================
 Variable =      ; column names are specified as first row
@@ -29,60 +29,60 @@ Gui 1: Show, w510 h310 hide
 
 
 ;=== Field management ===
-;MsgBox % oTable.3.2   ; get value from [3. row, 2. column]
-;oTable.1.1 := "Bobby"   ; set [1. row, 1. column] to "Bobby"
+MsgBox % oTable.3.2   ; get value from [3. row, 2. column]
+oTable.1.1 := "Bobby"   ; set [1. row, 1. column] to "Bobby"
 
 
 ;=== Converting to numbers ===
-;MsgBox % oTable.Row2Num("Jonny", "Poor", "Beggar")   ; get number of row whose fields are: Jonny, Poor, Beggar. (Identification by fields)
-;MsgBox % oTable.Col2Num("Occupation")   ; get number of "Occupation" column
-;MsgBox % oTable.Col2Num("First name|Notes")   ; get numbers of "First name" and "Notes" columns
+MsgBox % oTable.Row2Num("Jonny", "Poor", "Beggar")   ; get number of row whose fields are: Jonny, Poor, Beggar. (Identification by fields)
+MsgBox % oTable.Col2Num("Occupation")   ; get number of "Occupation" column
+MsgBox % oTable.Col2Num("First name|Notes")   ; get numbers of "First name" and "Notes" columns
 
 
 ;=== ToString method ===
-;MsgBox % oTable.ToString()   ; convert whole table object to string
-;MsgBox % oTable.3.ToString()   ; convert 3. row object to string
-;MsgBox % oTable.11.ToString("#")   ; convert 11. row object to string but use custom delimiter
-;MsgBox % oTable.HeaderToString()   ; converts table's header (first row) to string
+MsgBox % oTable.ToString()   ; convert whole table object to string
+MsgBox % oTable.3.ToString()   ; convert 3. row object to string
+MsgBox % oTable.11.ToString("#")   ; convert 11. row object to string but use custom delimiter
+MsgBox % oTable.HeaderToString()   ; converts table's header (first row) to string
 
 
 ;=== MaxIndex (Count) ===
-;MsgBox % oTable.MaxIndex()   ; get total number of rows (in future maybe: oTable.Count)
-;MsgBox % oTable.ColumnNames.MaxIndex()   ; get total number of columns
+MsgBox % oTable.MaxIndex()   ; get total number of rows (in future maybe: oTable.Count)
+MsgBox % oTable.ColumnNames.MaxIndex()   ; get total number of columns
 
 
 ;=== Row management ===
-;oTable.AddRow("Joe", "Newman", "Kiteboarder", "Freestyle & Wave")   ; add row (to the bottom)
-;oTable.InsertRow(2 ,"Mike", "Insertovich", "Actor")   ; inserts new row number 2.
-;oTable.ModifyRow(3 ,"Sergey", "Modifysky", "Actor")   ; modify row number 3.
-;oTable.ModifyRow(0 ,"Chris", "Allman", "Actor")   ; modify all existing rows
-;oTable.DeleteRow(2)   ; delete 2. row
-;oTable.DeleteRow()      ; delete last row
-;oTable.DeleteRow(0)   ; delete all rows
+oTable.AddRow("Joe", "Newman", "Kiteboarder", "Freestyle & Wave")   ; add row (to the bottom)
+oTable.InsertRow(2 ,"Mike", "Insertovich", "Actor")   ; inserts new row number 2.
+oTable.ModifyRow(3 ,"Sergey", "Modifysky", "Actor")   ; modify row number 3.
+oTable.ModifyRow(0 ,"Chris", "Allman", "Actor")   ; modify all existing rows
+oTable.DeleteRow(2)   ; delete 2. row
+oTable.DeleteRow()      ; delete last row
+oTable.DeleteRow(0)   ; delete all rows
 
 
 ;=== Searching ===
-;MsgBox % oTable.Search("Occupation", "Driver").ToString()    ; search Occupation column for containing string "driver"
-;MsgBox % oTable.Search("Occupation|Notes", "Driver").ToString()    ; search Occupation and Notes columns for containing string "driver"
-;MsgBox % oTable.Search("", "Driver", "containing+").ToString()    ; search whole table (all columns) for containing string "driver" but ignore withespaces
-;MsgBox % oTable.Search("Last name", "^J.*an$", "RegEx").ToString() ; Search for all last names starting with "J" and ending with "an".
-;MsgBox % oTable.Search("First name", "ny", "EndingWith").ToString()    ;  search first names ending with "ny"
-;MsgBox % oTable.Search("Last name", "ja|bla", "StartingWith").ToString()    ;  search last names starting with "ja" or "bla"
-;MsgBox % oTable.Search("", "Jack", "exactly").ToString()    ; search whole table (all columns) for string "Jack" (not containing, but exactly)
+MsgBox % oTable.Search("Occupation", "Driver").ToString()    ; search Occupation column for containing string "driver"
+MsgBox % oTable.Search("Occupation|Notes", "Driver").ToString()    ; search Occupation and Notes columns for containing string "driver"
+MsgBox % oTable.Search("", "Driver", "containing+").ToString()    ; search whole table (all columns) for containing string "driver" but ignore withespaces
+MsgBox % oTable.Search("Last name", "^J.*an$", "RegEx").ToString() ; Search for all last names starting with "J" and ending with "an".
+MsgBox % oTable.Search("First name", "ny", "EndingWith").ToString()    ;  search first names ending with "ny"
+MsgBox % oTable.Search("Last name", "ja|bla", "StartingWith").ToString()    ;  search last names starting with "ja" or "bla"
+MsgBox % oTable.Search("", "Jack", "exactly").ToString()    ; search whole table (all columns) for string "Jack" (not containing, but exactly)
 
 
 ;=== Multiple filters search ===
 ; step 1: search "Occupation" and "Notes" columns for containing "Driver" or "artist" strings. "|" is query delimiter.
 ; step 2: search that search result again: search "First name" column for containing "J" string
-;oFound := oTable.Search("Occupation|Notes", "Driver|artist")      ; store search results as object
-;oFound2 := oFound.Search("First name", "J")      ; search oFound (second search filter)
+Found := oTable.Search("Occupation|Notes", "Driver|artist")      ; store search results as object
+oFound2 := oFound.Search("First name", "J")      ; search oFound (second search filter)
 
 ; or shorter:   oFound2 := oTable.Search("Occupation|Notes", "Driver|artist").Search("First name", "J")   ; etc. --> multiple filters
 
-;MsgBox % oFound2.ToString()      ; convert search results to string
-;MsgBox % oFound2.2.ToString()   ; convert 2. row from search results to string
-;MsgBox % oFound2.1.3   ; get [1. row, 3. column] field from search results
-;MsgBox % oFound2.MaxIndex()   ; get number of found rows - from oFound2 (in future maybe: oFound2.Count)
+MsgBox % oFound2.ToString()      ; convert search results to string
+MsgBox % oFound2.2.ToString()   ; convert 2. row from search results to string
+MsgBox % oFound2.1.3   ; get [1. row, 3. column] field from search results
+MsgBox % oFound2.MaxIndex()   ; get number of found rows - from oFound2 (in future maybe: oFound2.Count)
 
 
 ;=== RegEx search ===   and LastFound property
@@ -142,7 +142,7 @@ return
 
 
 
- 
+
 ;=== oTable - ListView interaction ===
 d::oTable.LVDelete()   ; delete selected row
 a::oTable.LVAdd("Mia","Addstan","Driver")   ; add new row

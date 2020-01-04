@@ -1,5 +1,5 @@
-﻿#Include %A_ScriptDir%\..\classes\Class_Trie.ahk
-
+﻿#Include %A_ScriptDir%\..\Class_Trie.ahk
+#persistent
 SetBatchLines, -1
 CoordMode, Mouse, Screen
 
@@ -9,13 +9,13 @@ BackgroundColor := "C6D43C"
 WM_SETREDRAW := 0x0B
 
 Gui, 1:New
-Gui, +AlwaysOnTop +ToolWindow -SysMenu -Caption +HwndGuiHwnd +LastFound ; +E0x08000000
-Gui, Color, %BackgroundColor%
+Gui, 1:+AlwaysOnTop +ToolWindow -SysMenu -Caption +HwndGuiHwnd +LastFound ; +E0x08000000
+Gui, 1:Color, %BackgroundColor%
 
-Gui, Font, s15
-Gui, Margin, 0, 0, 0, 0
-Gui, Add, Edit, vAddress gSearch w300
-Gui, Add, ListBox, vSuggestions w300 h200 +HwndCtrlHwnd
+Gui, 1:Font, s15
+Gui, 1:Margin, 0, 0, 0, 0
+Gui, 1:Add, Edit, vAddress gSearch w300
+Gui, 1:Add, ListBox, vSuggestions w300 h200 +HwndCtrlHwnd
 
 WinSet, TransColor, %BackgroundColor%
 
@@ -29,10 +29,10 @@ return
 
 AddDict() {
 	Global Entries
-	lst := StrSplit(FileOpen("English British.txt", "r").Read(), "`n")
-	
+	lst := StrSplit(FileOpen(A_ScriptDir "\English British.txt", "r").Read(), "`n")
+
 	len := Round(lst.Length() / 100)
-	
+
 	for index, line in lst {
 		if(!mod(index, len)) {
 			ToolTip, % Format("{:02.1d}", (index / lst.Length())*100)
@@ -48,7 +48,7 @@ AddDict() {
 		Entries.__Set(Address, "")
 		Goto, Search
 	return
-	
+
 	Delete::
 		Gui, Submit, NoHide
 		Entries.remove(Address)

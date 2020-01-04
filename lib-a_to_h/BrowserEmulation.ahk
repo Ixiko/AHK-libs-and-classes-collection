@@ -1,4 +1,4 @@
-/* Function: BrowserEmulation
+﻿/* Function: BrowserEmulation
  *     FEATURE_BROWSER_EMULATION -> http://goo.gl/V01Frx
  * Requirements:
  *     AutoHotkey v1.1.17.01+ OR v2.0-a057

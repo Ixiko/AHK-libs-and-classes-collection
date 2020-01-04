@@ -1,4 +1,4 @@
-; Data-structure-related functions.
+﻿; Data-structure-related functions.
 
 
 ; Returns the number of keys in an array.

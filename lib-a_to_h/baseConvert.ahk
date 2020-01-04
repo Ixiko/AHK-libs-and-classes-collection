@@ -1,4 +1,4 @@
-; Number System Converter by Holle
+﻿; Number System Converter by Holle
 ; http://www.autohotkey.com/forum/viewtopic.php?t=56135
 
 ; Some "names" for the number systems will be accepted such as decimal/dec/d/base10/dekal or

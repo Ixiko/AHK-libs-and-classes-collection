@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Function:		Attach
 					Determines how a control is resized with its parent.
 

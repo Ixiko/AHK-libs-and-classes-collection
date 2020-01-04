@@ -1,4 +1,4 @@
-A_Caret(param, coordMode = "Screen")
+﻿A_Caret(param, coordMode = "Screen")
 {
 	target_window := DllCall("GetForegroundWindow")
 	If !target_window

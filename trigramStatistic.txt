@@ -1,0 +1,49 @@
+﻿D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\CoHelper.ahk
+100.000000;sea
+100.000000
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-a_to_h\GetBinaryType (2).ahk
+100.000000;bit
+100.000000
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\InputBoxEx.ahk
+50.000000;ter
+50.000000;foo
+100.000000
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ObjToFile.ahk
+50.000000;gab
+50.000000;aus
+100.000000
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\plugins.ahk
+100.000000;etc
+100.000000
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\readResource.ahk
+50.000000;rcd
+50.000000;ata
+100.000000
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\lib-i_to_z\ws.ahk
+50.000000;udp
+50.000000;onl
+100.000000
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\classes\Class_Github_Gui.ahk
+50.000000;siz
+50.000000;get
+100.000000
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\AFC\CChildWindow.ahk
+50.000000;msg
+50.000000;box
+100.000000
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\CNG\win7\bcrypt_md2.ahk
+50.000000;dce
+50.000000;dad
+100.000000
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\CNG\win10\bcrypt_md2.ahk
+50.000000;dce
+50.000000;dad
+100.000000
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\AHK Injector\GDI.hooks.ahk
+50.000000;pil
+50.000000;com
+100.000000
+D:\Eigene Dateien\Eigene Dokumente\AutoIt Scripte\GitHub\AHK-libs-and-classes-collection\more libs\DirectX\headers\_d3D9.h.ahk
+50.000000;uin
+50.000000;pbi
+100.000000

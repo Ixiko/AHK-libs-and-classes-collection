@@ -1,4 +1,4 @@
-; https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+﻿; https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 array_concat(arrays*) {
 
 	results := []

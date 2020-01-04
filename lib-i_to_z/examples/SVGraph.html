@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+		<script src="d3.v4.js"></script>
+	</head>
+	<body>
+		<svg id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<style>
+				.node circle {
+					fill: #999;
+					r: 2.5;
+				}
+				
+				.node text {
+					font: 15px sans-serif;
+				}
+				
+				.node--leaf text {
+					text-anchor: start;
+				}
+				
+				.node--internal circle {
+					fill: #555;
+				}
+				
+				.node--internal text {
+					text-anchor: end;
+					text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+				}
+				
+				.node--word circle {
+					r: 4;
+				}
+				
+				.node--word text {
+					font-weight: bold;
+					/*text-decoration: underline;*/
+				}
+				
+				.link {
+					fill: none;
+					stroke: #555;
+					stroke-opacity: 0.4;
+					stroke-width: 2px;
+				}
+			</style>
+		</svg>
+		<script src="SVGraph.js"></script>
+	</body>
+</html>

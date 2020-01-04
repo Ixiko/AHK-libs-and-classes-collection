@@ -1,6 +1,5 @@
 #NoEnv
-
-#Include Classifier.ahk
+#include %A_ScriptDir%\..\class_Classifier.ahk
 
 c := new Classifier
 

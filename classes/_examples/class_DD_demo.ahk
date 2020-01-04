@@ -1,4 +1,4 @@
-﻿#Include, class_DD.ahk
+﻿#include %A_ScriptDir%\..\class_DD.ahk
 SetWorkingDir %A_ScriptDir%
 
 DD.str("abc")

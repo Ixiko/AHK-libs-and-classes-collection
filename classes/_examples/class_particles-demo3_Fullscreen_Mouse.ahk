@@ -14,12 +14,12 @@ fps:=30
 psys:=new particles(fps)
 
 ; create a display/canvas using the dimensions of the picture control "PHWND"
-; set the quality to 2, which is pretty good quality, but not the best (1-4) 
+; set the quality to 2, which is pretty good quality, but not the best (1-4)
 psys.setCanvas(0, 0, A_ScreenWidth, A_ScreenHeight, 2)
 
 ; add an emitter, this is what stores all the info of how a particle should behave
 ; if unset, it uses the default values
-e1:=psys.addEmitter() ; create the emitter, save its pointer as "e1" for easy access 
+e1:=psys.addEmitter() ; create the emitter, save its pointer as "e1" for easy access
 e1.type:="Generic" ; how it displays
 e1.life:=[0.5] ; how long it will live? 1/2 second.
 e1.LineWidth:=[5, 1] ; transition from 5 to 1 pixels over its life
@@ -60,5 +60,5 @@ return
 
 
 
-#include %A_ScriptDir%\Gdip.ahk
-#include %A_ScriptDir%\particles_class.ahk
+#include %A_ScriptDir%\..\..\lib-a_to_h\Gdip.ahk
+#include %A_ScriptDir%\..\class_particles.ahk

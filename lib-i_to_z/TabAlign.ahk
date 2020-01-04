@@ -1,4 +1,4 @@
-; DESCRIPTION: Aligns tabs from input data into human-readable aligned columns.
+﻿; DESCRIPTION: Aligns tabs from input data into human-readable aligned columns.
 ; Found at: http://www.autohotkey.com/board/topic/123117-tabalign-tab-align-columnar-data/
 ; Which is an improvement of: http://www.autohotkey.com/board/topic/74885-tabalign-function-to-tab-align-columnar-data/
 ; 09/15/2015 05:55:15 PM
@@ -19,7 +19,7 @@ TabAlign(data) {
 	    res .= RTrim(NewLine, "`t") . "`r`n", 	NewLine := ""			; append to result
     }
     return RTrim(res, "`r`n")
-} 
+}
 
 tabs(n) {
     loop, % n

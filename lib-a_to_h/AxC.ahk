@@ -1,4 +1,4 @@
-;AxC : Pack and Unpack Binary files
+﻿;AxC : Pack and Unpack Binary files
 ;Started by SKAN! , Mar 12 2008 04:27 PM
 /*                              	DESCRIPTION
 	

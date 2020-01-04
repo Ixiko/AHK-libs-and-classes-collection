@@ -1,4 +1,4 @@
-Global g_center_to_this_hwnd  ; Unconditionally forces all dialogs to center to this window (safer than relying on default below)
+﻿Global g_center_to_this_hwnd  ; Unconditionally forces all dialogs to center to this window (safer than relying on default below)
 OnMessage(WM_COMMNOTIFY, "WM_COMMNOTIFY")
 
 WM_COMMNOTIFY(wParam, lParam, msg, hWnd)

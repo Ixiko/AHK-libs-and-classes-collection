@@ -1,4 +1,4 @@
-; AsyncHttp
+﻿; AsyncHttp
 
 /*
 ; create new instance

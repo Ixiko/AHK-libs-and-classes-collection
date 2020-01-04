@@ -1,4 +1,4 @@
-AhkSelf(){
+﻿AhkSelf(){
    static functions :="
 (Join
 ahkFunction:s==stttttttttt|ahkPostFunction:i==stttttttttt|

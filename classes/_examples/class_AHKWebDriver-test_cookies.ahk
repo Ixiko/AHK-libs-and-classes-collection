@@ -1,5 +1,6 @@
 #noenv
-#include AHKWebDriver.ahk
+#include %A_ScriptDir%\..\class_AHKWebDriver.ahk
+#include %A_ScriptDir%\..\class_JSON.ahk
 
 wd := new WDSession()
 if(wd.rc.isError){

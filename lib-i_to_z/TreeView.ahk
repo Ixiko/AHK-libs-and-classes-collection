@@ -1,4 +1,13 @@
-﻿/*
+﻿; I THINK THIS FILE IS WRITTEN BY:
+; Flipeador -	uno de nuestros mejores programadores ingeniosos y miembros dedicados del foro
+;                  	one of our best ingenious programmers and dedicated forum members
+;
+; 	y sí, el español es un idioma excelente!
+; 	Pero con demasiada frecuencia los 132 idiomas que hablo se mezclan con fluidez, y luego ya no entiendo nada.
+;	¡Es por eso que usé Google y traduje las letras al inglés, dejando los originales en español!
+;	¡Creo que no solo me siento así! ¡Por eso Flipeador no estaría tan enojado conmigo!
+
+/*
     Elimina el elemento especificado junto con todos sus subelementos.
     Parámetros:
         TV    : El objeto control TreeView.
@@ -6,6 +15,14 @@
         Childs: Si este valor es 1, solo se eliminan todos los subelementos del elemento especificado.
     Return:
         Si tuvo éxito devuelve 1, caso contrario devuelve 0. Si Childs es TRUE y no hay sub-elementos para eliminar, devuelve -1.
+    ----------------------------------------------------------------------------------------------------------------------------------------
+    Deletes the specified item along with all its sub-elements.
+     Parameters:
+         TV: The TreeView control object.
+         ItemID: The identifier of the item to be deleted. If this value is -65536, all the elements are eliminated (it is recommended to use TV_DeleteAll).
+         Childs: If this value is 1, only all sub-elements of the specified element are removed.
+     Return:
+         If it succeeds, it returns 1, otherwise it returns 0. If Childs is TRUE and there are no sub-elements to eliminate, it returns -1.
 */
 TV_Delete(TV, ItemID, Childs := FALSE){
     If (Childs)
@@ -34,6 +51,12 @@ TV_Delete(TV, ItemID, Childs := FALSE){
         TV: El objeto control TreeView.
     Return:
         Si tuvo éxito devuelve 1, caso contrario devuelve 0.
+    ----------------------------------------------------------------------------------------------------------------------------------------
+    Remove all items in the specified TreeView control.
+     Parameters:
+         TV: The TreeView control object.
+     Return:
+         If successful, return 1, otherwise return 0.
 */
 TV_DeleteAll(TV){
     Local Styles := WinGetStyle('ahk_id' . TV.Hwnd)
@@ -51,6 +74,12 @@ TV_DeleteAll(TV){
         TV: El objeto control TreeView.
     Return:
         Devuelve el identificador del elemento actual seleccionado, o cero si no hay ningún elemento seleccionado.
+    ----------------------------------------------------------------------------------------------------------------------------------------
+    Retrieves the currently selected item in the specified TreeView control.
+     Parameters:
+         TV: The TreeView control object.
+     Return:
+         Returns the identifier of the current selected item, or zero if no item is selected.
 */
 TV_GetSelection(TV){
     ; TVM_GETNEXTITEM message | TVGN_CARET = 9
@@ -65,6 +94,13 @@ TV_GetSelection(TV){
         ItemID: El elemento primario.
     Return:
         Devuelve el identificador del primer elemento secundario, o cero si no se ha encontrado ningún elemento secundario.
+    ----------------------------------------------------------------------------------------------------------------------------------------
+    Retrieves the first child of the specified element.
+     Parameters:
+         TV: The TreeView control object.
+         ItemID: The primary element.
+     Return:
+         Returns the identifier of the first child element, or zero if no child element was found.
 */
 TV_GetChild(TV, ItemID){
     ; TVM_GETNEXTITEM message | TVGN_CHILD = 4
@@ -79,6 +115,13 @@ TV_GetChild(TV, ItemID){
         ItemID: El elemento secundario.
     Return:
         Devuelve el identificador del elemento padre, o cero si el elemento especificado no tiene un elemento padre.
+    ----------------------------------------------------------------------------------------------------------------------------------------
+    Retrieves the parent element of the specified child element.
+     Parameters:
+         TV: The TreeView control object.
+         ItemID: The secondary element.
+     Return:
+         Returns the identifier of the parent element, or zero if the specified element does not have a parent element.
 */
 TV_GetParent(TV, ItemID){
     ; TVM_GETNEXTITEM message | TVGN_PARENT = 3
@@ -93,6 +136,13 @@ TV_GetParent(TV, ItemID){
         ItemID: El identificador del elemento.
     Return:
         Devuelve el identificador del elemento hermano anterior, o cero si el elemento especificado no tiene un elemento hermano anterior.
+    ----------------------------------------------------------------------------------------------------------------------------------------
+    Retrieves the previous sister element of the specified element.
+     Parameters:
+         TV: The TreeView control object.
+         ItemID: The identifier of the element.
+     Return:
+         Returns the identifier of the previous sibling element, or zero if the specified element does not have a previous sibling element.
 */
 TV_GetPrev(TV, ItemID, Visible := FALSE){
     ; TVM_GETNEXTITEM message | TVGN_PREVIOUS = 2 | TVGN_PREVIOUSVISIBLE = 7

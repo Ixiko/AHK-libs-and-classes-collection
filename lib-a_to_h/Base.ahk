@@ -1,4 +1,4 @@
-class IUnknown
+﻿class IUnknown
 {
   __new(p=0){
 		if (this.__:=p)

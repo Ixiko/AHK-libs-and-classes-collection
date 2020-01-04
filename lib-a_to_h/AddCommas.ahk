@@ -1,4 +1,4 @@
-;********************
+﻿;********************
 ;*                  *
 ;*    Add Commas    *
 ;*                  *
@@ -20,7 +20,7 @@
 ;   ============
 ;   Formatted number (string)
 ;
-;   
+;
 ;
 ;   Calls To Other Functions
 ;   ========================
@@ -28,8 +28,7 @@
 ;
 ;
 ;-------------------------------------------------------------------------------
-AddCommas(p_Number)
-    {
+AddCommas(p_Number)    {
     ;[==============]
     ;[  Initialize  ]
     ;[==============]
@@ -53,11 +52,11 @@ AddCommas(p_Number)
                 {
                  if (mod(l_IntLen-A_Index,3)=0 and A_Index<>l_IntLen)
                     l_Number:=l_Number . A_LoopField . ","
-                 else 
+                 else
                     l_Number:=l_Number . A_LoopField
                 }
             }
-         else 
+         else
             l_Number:=l_Number . "." . A_LoopField
         }
 
@@ -67,4 +66,4 @@ AddCommas(p_Number)
     ;[==========================]
     l_Return:=l_Sign . l_Number
     return l_Return
-    } 
+    }

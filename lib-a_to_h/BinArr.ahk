@@ -1,4 +1,4 @@
-
+﻿
 ; Update: 2015-6-4 - Added BinArr_ToFile()
 
 BinArr_FromString(str) {

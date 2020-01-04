@@ -1,4 +1,4 @@
-CheckForUpdates(installed_version, byRef latestVersion, url)
+﻿CheckForUpdates(installed_version, byRef latestVersion, url)
 {
 	URLDownloadToFile, %url%, %A_Temp%\version_checker_temp_file.ini
 	if !ErrorLevel 

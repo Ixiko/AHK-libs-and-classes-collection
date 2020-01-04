@@ -4,7 +4,7 @@
 #SingleInstance Force
 SetBatchLines -1
 
-#Include TreeList.ahk
+#include %A_ScriptDir%\..\Class_TreeList.ahk
 
 Menu Tray, Icon, shell32.dll, 42
 

@@ -217,3 +217,8 @@ PixelTrack := {"debug": {}, "CurrentLocation": "Init", "LowHPBeep": false, "Jobs
 ;;  BackgroundTasks
 ;;;;;;;;;;;;;;;;;;;;;;;
 SetTimer, PixelStateBackgroundTasks, % Round(PixelStateTasksFrequency*1000)
+
+
+return
+
+#include %A_ScriptDir%\..\class_pixelstate.ahk

@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 Use:
 BalloonTip(sTitle = "", sText = "", hlicon=0, TitleCodePage = "", TextCodePage = "", Clickable=1, Timeout = 10000, MinTimeDisp = 200, RefreshRate = 100)
 - sTitle: Title of the tooltip. Leave it empty for no title.
@@ -19,7 +19,7 @@ F1::
 BalloonTip()
 sleep 200 ;Waits for the previous tooltip to disappear and the previous window to retrieve focus, if Clickable is >0
 i++
-BalloonTip("Tooltip n¡ã" i, "A" A_Tab "few`n" A_Space A_Space "words.", 1)
+BalloonTip("Tooltip nÐ±Ñƒ" i, "A" A_Tab "few`n" A_Space A_Space "words.", 1)
 KeyWait F1
 return
 
@@ -77,7 +77,7 @@ BalloonTip(sTitle = "", sText = "", hlicon=0, TitleCodePage = "", TextCodePage =
    If !TitleCodePage
    {
       If (StrLen(sTitle)>99)
-         sTitle := SubStr(sTitle, 1, 98) "¡­"
+         sTitle := SubStr(sTitle, 1, 98) "Ð±Ð½"
       DllCall("SendMessage", "Uint", hWnd, "Uint", 1056, "Uint", hlicon, "Uint", &sTitle)   ; TTM_SETTITLE   ; 0: None, 1:Info, 2: Warning, 3: Error. n > 3: assumed to be an hIcon.
    }
    Else If (TitleCodePage = "U8")
@@ -88,7 +88,7 @@ BalloonTip(sTitle = "", sText = "", hlicon=0, TitleCodePage = "", TextCodePage =
       DllCall("MultiByteToWideChar", "Uint", 65001, "Uint", 0, "Uint", &sTitle, "int",  -1, "Uint", &sU16, "int",  nSize)
       ;Cut the string at the proper size by writing an end char in memory.
       If (nSize>100) ;100=string+end char
-         NumPut(0x2026, &sU16+196, "UInt") ;2026 is "¡­" .UInt is 32bits. The remaining bits will be filled with 0, creating the end char.
+         NumPut(0x2026, &sU16+196, "UInt") ;2026 is "Ð±Ð½" .UInt is 32bits. The remaining bits will be filled with 0, creating the end char.
       DllCall("SendMessage", "Uint", hWnd, "Uint", 1057, "Uint", hlicon, "Uint", &sU16)
    }
    Else If (TitleCodePage = "U16")
@@ -99,7 +99,7 @@ BalloonTip(sTitle = "", sText = "", hlicon=0, TitleCodePage = "", TextCodePage =
       {
          If (A_Index>100)
          {
-            NumPut(0x2026, sTitle+196, "UInt") ;2026 is "¡­" .UInt is 32bits. The remaining bits will be filled with 0, creating the end char.
+            NumPut(0x2026, sTitle+196, "UInt") ;2026 is "Ð±Ð½" .UInt is 32bits. The remaining bits will be filled with 0, creating the end char.
             Break
          }
          If !NumGet(sTitle+0, 2*(A_Index-1), "UShort")

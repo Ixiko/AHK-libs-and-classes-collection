@@ -1,4 +1,4 @@
-AutoUpdate()
+﻿AutoUpdate()
 {
 	SetTimer,UPDATEDSCRIPT,1000
 	

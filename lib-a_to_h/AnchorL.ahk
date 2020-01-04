@@ -1,4 +1,4 @@
-; ----------------------------------------------------------------------------------------------------------------------
+﻿; ----------------------------------------------------------------------------------------------------------------------
 ; Function .....: AnchorL
 ; Description ..: Defines controls positioning on window resize.
 ; Parameters ...: i - a control HWND, associated variable name or ClassNN to operate on.

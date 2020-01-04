@@ -2,8 +2,8 @@
 #SingleInstance Force
 SetWinDelay -1
 SetBatchLines -1
-#Include <Class_ScrollGUI>
-#Include <Class_expandView>
+#include %A_ScriptDir%\..\Class_ScrollGUI.ahk
+#include %A_ScriptDir%\..\Class_expandView.ahk
 
 Gui New, HwndhParent +labelParent_, Window
 exp := new expandView( hParent, 10, 10, 300, 400 )		; new expandView( Hwnd of parent GUI, x position, y position, width, height )

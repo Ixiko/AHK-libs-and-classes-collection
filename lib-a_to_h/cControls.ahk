@@ -1,4 +1,4 @@
-Class CControl ;Never created directly
+﻿Class CControl ;Never created directly
 {
 	__New(Name, Options, Text, GUINum) ;Basic constructor for all controls. The control is created in CGUI.Add()
 	{

@@ -1,4 +1,4 @@
-; A modified bubble search
+﻿; A modified bubble search
 ; This is slow, but very useful.
 ; If called in the correct sequence, you can completely order 
 ; a 2 dimensional array by as many keys as you want (and in any order)!

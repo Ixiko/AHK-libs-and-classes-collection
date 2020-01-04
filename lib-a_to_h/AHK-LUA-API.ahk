@@ -1,4 +1,4 @@
-/*
+﻿/*
 	AHK-LUA-API
 
 	MIT License

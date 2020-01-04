@@ -1,4 +1,4 @@
-/*
+﻿/*
 Author: Naveen Garg
 license: GPL v2
 */

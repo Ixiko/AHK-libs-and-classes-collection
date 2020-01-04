@@ -1,4 +1,4 @@
-        ; Note: **** it seems when using *~LButton to monitor user mouse/drag position
+﻿        ; Note: **** it seems when using *~LButton to monitor user mouse/drag position
         ; it stuffs up using *lbutton as a modifier for blocking the button press is still passed to the active window
         ; hence have to manually enter all the +^! combinations
         ; this does not work when placing the *modifier in front of the modifier+Lbutton Combos in bufferinput command

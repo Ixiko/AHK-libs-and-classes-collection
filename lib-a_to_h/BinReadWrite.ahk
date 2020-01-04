@@ -1,4 +1,4 @@
-/*
+﻿/*
 BinReadWrite.ahk
 
 Routines to read and write binary data from/to files.

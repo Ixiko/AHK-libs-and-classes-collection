@@ -1,4 +1,4 @@
-; ----------------------------------------------------------------------------------------------------------------------
+﻿; ----------------------------------------------------------------------------------------------------------------------
 ; Name .........: BinGet library
 ; Description ..: This library is a collection of functions that return different kind of data from binary buffers.
 ; AHK Version ..: AHK_L 1.1.13.01 x32/64 ANSI/Unicode

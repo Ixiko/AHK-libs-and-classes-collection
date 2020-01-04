@@ -1,4 +1,4 @@
-; Usage: BlockSysMenu(ControlHwnd)
+﻿; Usage: BlockSysMenu(ControlHwnd)
 BlockSysMenu(wParam:="", lParam:="", msg:="", hwnd:="") {
 	static oHwnd := {}, WM_RBUTTONUP := 0x205, WM_CONTEXTMENU := 0x7B
 	     , ____a := OnMessage(WM_RBUTTONUP, "BlockSysMenu")

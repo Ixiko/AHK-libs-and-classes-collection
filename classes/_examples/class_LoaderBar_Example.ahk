@@ -1,5 +1,5 @@
 ;http://ahkscript.org/boards/viewtopic.php?f=5&t=3583
-#Include LoaderBar.ahk
+#include %A_ScriptDir%\..\class_LoaderBar.ahk
 #SingleInstance, Force
 SetBatchLines,-1
 SetWinDelay,0

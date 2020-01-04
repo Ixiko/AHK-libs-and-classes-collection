@@ -1,6 +1,6 @@
-/*
+ï»¿/*
     Extended Methods for Indexed arrays
-    Copyright © 2013 Robert Ryan
+    Copyright Â© 2013 Robert Ryan
 
     Released under the MIT licence
     http://opensource.org/licenses/MIT
@@ -285,7 +285,7 @@ class _Array
 */
     Sort(Options := "")
     {
-        static Delims := "¤¦§«¬¶·»!#$%&"
+        static Delims := "Â¤Â¦Â§Â«Â¬Â¶Â·Â»!#$%&"
 
 ;_______Remove any supplied delimiter and substitute our own from the list above
         Options := RegExReplace(Options, "i)(?<!ran)d.")

@@ -1,8 +1,10 @@
 #NoEnv
 #SingleInstance, force
+#include %A_ScriptDir%\..\class_dock.ahk
+
 
 Gui, +hwndGuihwnd
-Gui, Font, s13				
+Gui, Font, s13
 Gui, Add, Button, gBtn, Dock to Top
 Gui, Add, Button, gBtn, Dock to Bottom
 Gui, Add, Button, gBtn, Dock to Right
@@ -12,7 +14,7 @@ Gui, Add, Button, gAdd, Add dock to Top
 Gui, Add, Button, gAdd, Add dock to Bottom
 Gui, Add, Button, gAdd, Add dock to Right
 Gui, Add, Button, gAdd, Add dock to Left
-Gui, Show, xCenter yCenter w300, class Dock Example  
+Gui, Show, xCenter yCenter w300, class Dock Example
 
 ParentID:= WinExist("Editor")
 ;exDock := new Dock(Guihwnd, Dock.HelperFunc.Run("notepad.exe"))

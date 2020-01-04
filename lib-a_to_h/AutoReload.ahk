@@ -1,4 +1,4 @@
-AutoReload()
+﻿AutoReload()
 {
   SetTimer, ReloadScriptIfChanged, 1000
   ReloadScriptIfChanged:

@@ -1,4 +1,4 @@
-BuildUserAhkApi(AhkScriptPath, OverwriteAhkApi:="1", RecurseIncludes:="1", Labels:="1", WrapWidth:="265", AhkApiPath:="ReplaceThisWithFullPathTo\SciTE\user\user.ahk.api", RecursionCall:="0"){
+﻿BuildUserAhkApi(AhkScriptPath, OverwriteAhkApi:="1", RecurseIncludes:="1", Labels:="1", WrapWidth:="265", AhkApiPath:="ReplaceThisWithFullPathTo\SciTE\user\user.ahk.api", RecursionCall:="0"){
 	; Written by XeroByte
 	; Generates the User.ahk.api file to add custom function & label intellisense!
 	; to initate: use BuildUserAhkApi(A_ScriptFullPath,1) from the main script
