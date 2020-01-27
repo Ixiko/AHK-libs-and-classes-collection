@@ -1,7 +1,7 @@
 ; Example - Drag and drop highlight
 
 #NoEnv
-#Include, <_GuiDropFiles>
+#Include %A_ScriptDir%\..\class_GuiDropFiles.ahk
 
 ; =================================
 ; Interface
@@ -47,7 +47,7 @@ Static handler := {__New: "test"}
 Static _ := new handler
 Static HGUI2
 If !HGUI2 {
-Gui, New, +LastFound +hwndHGUI2 -Caption +E0x20 +ToolWindow +AlwaysOnTop
+Gui, New, +LastFound +hwndHGUI2 -Caption +E0x20 +ToolWindow +AlwaysOnTop -DPIScale
 Gui, Color, 00FF00
 Gui, 1:Default
 WinSet, Transparent, 50
