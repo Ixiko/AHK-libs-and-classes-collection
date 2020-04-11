@@ -1,4 +1,4 @@
-;************************** GroupBox *******************************
+﻿;************************** GroupBox *******************************
 ;
 ;	Adds and wraps a GroupBox around a group of controls in
 ;	the default Gui. Use the Gui Default command if needed.

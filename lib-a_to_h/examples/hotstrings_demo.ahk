@@ -1,4 +1,4 @@
-; #Include Hotstrings.ahk
+﻿; #Include Hotstrings.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

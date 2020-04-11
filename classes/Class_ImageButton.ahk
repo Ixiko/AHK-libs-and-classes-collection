@@ -7,14 +7,6 @@ WinWaitClose('ahk_id' g.hwnd)
 ExitApp
 */
 
-
-
-
-
-
-
-
-
 ; ======================================================================================================================
 ; Namespace:         ImageButton
 ; Function:          Create images and assign them to pushbuttons.
@@ -23,7 +15,7 @@ ExitApp
 ; Change history:    1.4.00.00/2014-06-07/just me - fixed bug for button caption = "0", "000", etc.
 ;                    1.3.00.00/2014-02-28/just me - added support for ARGB colors
 ;                    1.2.00.00/2014-02-23/just me - added borders
-;                    1.1.00.00/2013-12-26/just me - added rounded and bicolored buttons       
+;                    1.1.00.00/2013-12-26/just me - added rounded and bicolored buttons
 ;                    1.0.00.00/2013-12-21/just me - initial release
 ; How to use:
 ;     1. Create a push button (e.g. "Gui, Add, Button, vMyButton hwndHwndButton, Caption") using the 'Hwnd' option
@@ -60,7 +52,7 @@ ExitApp
 ;           3     TargetColor mandatory for Option[1] if Mode > 0, ignored if Mode = 0. Higher indcices will inherit
 ;                             the color of Option[1], if omitted:
 ;                             -  ARGB integer value (0xAARRGGBB) or HTML color name ("Red").
-;           4     TextColor   optional, if omitted, the default text color will be used for Option[1], higher indices 
+;           4     TextColor   optional, if omitted, the default text color will be used for Option[1], higher indices
 ;                             will inherit the color of Option[1]:
 ;                             -  ARGB integer value (0xAARRGGBB) or HTML color name ("Red").
 ;                                Default: 0xFF000000 (black)
@@ -349,10 +341,10 @@ Class ImageButton {
                   This.PathAddRectangle(PPATH, PathX, PathY, PathW - PathX, PathH - PathY)
                Else ; the path is a rounded rectangle
                   This.PathAddRoundedRect(PPATH, PathX, PathY, PathW, PathH, Rounded)
-               
+
                ; If a BorderColor has been drawn, BkgColors must be opaque
                BkgColor1 := 0xFF000000 | BkgColor1
-               BkgColor2 := 0xFF000000 | BkgColor2               
+               BkgColor2 := 0xFF000000 | BkgColor2
             }
             PathW -= PathX
             PathH -= PathY
@@ -506,3 +498,41 @@ Class ImageButton {
       Return True
    }
 }
+
+winGetClass(hwnd) {
+	WinGetClass,cl,ahk_id %hwnd%
+	return cl
+}
+ControlGetStyle(Control:="", WinTitle:="", WinText:="", ExcludeTitle:="", ExcludeText:="") {
+
+    local OutputVar
+   ControlGet OutputVar, Style,, %Control%, %WinTitle%, %WinText%, %ExcludeTitle%, %ExcludeText%
+
+return OutputVar
+}
+ControlGetText(Control:="", WinTitle:="", WinText:="", ExcludeTitle:="", ExcludeText:="") {
+    local OutputVar
+    ControlGetText OutputVar, %Control%, %WinTitle%, %WinText%, %ExcludeTitle%, %ExcludeText%
+    if !ErrorLevel
+        return OutputVar
+}
+ControlSetText(NewText, Control:="", WinTitle:="", WinText:="", ExcludeTitle:="", ExcludeText:="") {
+    ControlSetText %Control%, %NewText%, %WinTitle%, %WinText%, %ExcludeTitle%, %ExcludeText%
+    return !ErrorLevel
+}
+ControlSetExStyle(Value, Control:="", WinTitle:="", WinText:="", ExcludeTitle:="", ExcludeText:=""){
+    Control ExStyle, %Value%, %Control%, %WinTitle%, %WinText%, %ExcludeTitle%, %ExcludeText%
+}
+ControlSetStyle(Value, Control:="", WinTitle:="", WinText:="", ExcludeTitle:="", ExcludeText:=""){
+    Control Style, %Value%, %Control%, %WinTitle%, %WinText%, %ExcludeTitle%, %ExcludeText%
+}
+SendMessage(Msg, wParam:="", lParam:="", Control:="", WinTitle:="", WinText:="", ExcludeTitle:="", ExcludeText:="", Timeout:="") {
+    local MsgReply
+    SendMessage %Msg%, %wParam%, %lParam%, %Control%, %WinTitle%, %WinText%, %ExcludeTitle%, %ExcludeText%, %Timeout%
+    MsgReply := (ErrorLevel = "FAIL") ? "" : ErrorLevel
+    ErrorLevel := (ErrorLevel = "FAIL")
+    return MsgReply
+}
+
+
+

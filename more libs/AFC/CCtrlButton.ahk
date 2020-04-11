@@ -2,7 +2,7 @@
 ; GUI Button Control Wrapper Class
 ;
 
-#include <CControl>
+#include %A_ScriptDir%\CControl.ahk
 
 /*!
 	Class: CCtrlButton

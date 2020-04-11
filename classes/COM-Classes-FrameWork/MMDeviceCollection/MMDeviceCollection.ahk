@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: MMDeviceCollection
 wraps the *IMMDeviceCollection* interface and represents a collection of multimedia device resources.
 
@@ -51,7 +51,7 @@ class MMDeviceCollection extends Unknown
 	retrieves the specified item in the device collection.
 
 	Parameters:
-		UINT index - The device number. If the collection contains n devices, the devices are numbered 0 to n�1.
+		UINT index - The device number. If the collection contains n devices, the devices are numbered 0 to n–1.
 
 	Returns:
 		MMDevice device - the device, either as class instance (if available) or raw interface pointer

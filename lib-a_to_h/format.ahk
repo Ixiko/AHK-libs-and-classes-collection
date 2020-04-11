@@ -1,4 +1,4 @@
-; AutoHotkey v2 alpha
+﻿; AutoHotkey v2 alpha
 
 ; format(format_string, ...)
 ;   Equivalent to format_v(format_string, Array(...))

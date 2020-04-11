@@ -1,4 +1,4 @@
-FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0) {
+﻿FormatAHK(ByRef fnText,fnAllowFormatAlterationsAhk := 0) {
 
 	; function description
 	; MsgBox fnText: %fnText%`nfnAllowFormatAlterationsAhk: %fnAllowFormatAlterationsAhk%

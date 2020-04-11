@@ -1,4 +1,4 @@
-; Requires HL7.ahk
+﻿; Requires HL7.ahk
 #Include, %A_ScriptDir%\..\HL7.ahk
 
 ; For a simple use case.  I've included in the Sample_HL7.txt file a header

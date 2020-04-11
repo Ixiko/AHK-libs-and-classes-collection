@@ -1,4 +1,4 @@
-;#include <COM>
+﻿;#include <COM>
 #include %A_ScriptDir%\RemoteScintilla.ahk
 listAccChildProperty(hwnd){
 	COM_AccInit()
@@ -17,8 +17,8 @@ listAccChildProperty(hwnd){
 			. COM_Invoke(pacc,"accKeyboardShortcut",0) "`n"
 			. COM_Invoke(pacc,"accRole",0) "`n"
 			. COM_Invoke(pacc,"accState",0) "`n"
-			
-			
+
+
 		Loop, %	COM_AccessibleChildren(pacc, COM_Invoke(pacc,"accChildCount"), varChildren)
 			If	NumGet(varChildren,16*(A_Index-1),"Ushort")=3 && idChild:=NumGet(varChildren,16*A_Index-8)
 				sResult	.="[" A_Index "]`n"
@@ -26,13 +26,13 @@ listAccChildProperty(hwnd){
 					. "Value:`t`t"	    	COM_Invoke(pacc,"accValue",idChild) "`n"
 					. "Description:`t"	COM_Invoke(pacc,"accDescription",idChild) "`n"
 					. COM_Invoke(pacc,"accParent",idChild) "`n"
-					
+
 			Else If	paccChild:=NumGet(varChildren,16*A_Index-8) {
 				sResult	.="[" A_Index "]`n"
 					. "Name:`t`t"		COM_Invoke(paccChild,"accName",0) "`n"
 					. "Value:`t`t"	    	COM_Invoke(paccChild,"accValue",0) "`n"
 					. "Description:`t"	COM_Invoke(paccChild,"accDescription",0) "`n"
-				if a_index=3 
+				if a_index=3
 				{
 					numput(1,var,"UInt")
 					COM_Invoke(pacc,"accSelect",1,paccChild)
@@ -43,8 +43,8 @@ listAccChildProperty(hwnd){
 	}
 	COM_AccTerm()
 
-	return sResult	
-}	
+	return sResult
+}
 
 getControlNameByHwnd(winHwnd,controlHwnd){
 	bufSize=1024
@@ -64,7 +64,7 @@ getControlNameByHwnd(winHwnd,controlHwnd){
 }
 
 ; search by control name
-; return hwnd 
+; return hwnd
 getByControlName(winHwnd,name){
 	winget,controlList,controlListhwnd,ahk_id %winHwnd%
     arr:=[]
@@ -79,7 +79,7 @@ getByControlName(winHwnd,name){
         return []
     if !(otherMem:=DllCall("VirtualAllocEx", "Ptr", hProcess, "Ptr", 0, "PTR", bufSize, "UInt", 0x3000, "UInt", 0x0004, "Ptr"))
         return []
-    
+
 	loop,parse,controlList,`n
 	{
         SendMessage,%getName%,%bufSize%,%otherMem%,,ahk_id %a_loopfield%
@@ -91,7 +91,7 @@ getByControlName(winHwnd,name){
             arr.insert(a_loopfield)
             ,var1:=""
 	}
-    
+
     DllCall("VirtualFreeEx","Ptr", hProcess,"UInt",otherMem,"UInt", 0, "UInt", 0x8000)
 	DllCall("CloseHandle","Ptr",hProcess)
     return arr
@@ -108,7 +108,7 @@ controlGetText(hwnd){
 		}
 		return Text
 	}
-	
+
 	WinGetClass,class,ahk_id %hwnd%
 	if (class="scintilla") {
 		hwnd:=new RemoteScintilla(hwnd)
@@ -127,7 +127,7 @@ winGetClass(hwnd){
 getNetAcc(winHwnd,controlName,classNN,shift=0,acc=true,name="",text=""){
 	if acc
 		return acc_objectfromwindow(getNetControl2(winHwnd,text,controlName,name,classNN,"","","",shift)[1])
-	else 
+	else
 		return getNetControl2(winHwnd,text,controlName,name,classNN,"","","",shift)[1]
 }
 
@@ -143,28 +143,28 @@ getNetAcc(winHwnd,controlName,classNN,shift=0,acc=true,name="",text=""){
 getNetControl2(winHwnd,text="",controlName="",accName="",classNN="",accHelp="",accRole="",style="",shift=0, result=""){
 	if !isobject(result)
 		result:=[]
-	
+
 	if isobject(winHwnd){
-		
+
 		for k,v in winHwnd
 			result:=getNetControl2(v,text,controlName,accName,classNN,accHelp,accRole,style,shift,result)
 		return result
 	}
-	
+
 	winget,list,controllisthwnd,ahk_id %winHwnd%
 	arr:=[],controlArr:=[]
-	loop,parse,list,`n 
+	loop,parse,list,`n
 	{
 		controlArr.insert(a_loopfield)
 		if (text="" || instr(controlgettext(a_loopfield),text)) && (classNN="" || instr(winGetClass(a_loopfield),classNN)) && (controlName="" || getControlNameByHwnd(winHwnd,a_loopfield)=controlName) && (accName="" || instr((acc:=acc_objectfromwindow(a_loopfield)).accName,accName)) && (accHelp="" || instr(acc.accHelp,accHelp)) && (accRole="" || instr(acc.accRole,accRole)) && (!style || DllCall("GetWindowLong",UInt,a_loopfield,Int,-16)=style)
 			arr[a_index]:=a_loopfield
 	}
 	;~ result:=[]
-	
+
 	for k,v in arr
 		if (r:=controlArr[k+shift])
 			result.insert(r)
-	
+
 	return result
 }
 
@@ -185,12 +185,12 @@ getNetControlGlobal(text="",controlName="",accName="",classNN="",accHelp="",accR
 	}
 	return [ret,win]
 }
-	
+
 ; search for specific control
 ; return hwnd
 getNetControl(winHwnd,controlName="",accName="",classNN="",accHelp=""){
 	winget,list,controllisthwnd,ahk_id %winHwnd%
-	
+
 	bufSize=1024
 	winget,processID,pid,ahk_id %winHwnd%
 	VarSetCapacity(var1,bufSize)
@@ -210,17 +210,17 @@ getNetControl(winHwnd,controlName="",accName="",classNN="",accHelp=""){
 	{
 		SendMessage,%getName%,%bufSize%,%otherMem%,,ahk_id %a_loopfield%
         DllCall("ReadProcessMemory","UInt",hProcess,"UInt",otherMem,"Str",var1,"UInt",bufSize,"UInt *",0)
-		
+
 		;~ acc:=acc_objectfromwindow2(a_loopfield)
-		
+
 		;~ if !DllCall(AccessibleObjectFromWindowProc, "Ptr", a_loopfield, "UInt", idObject&=0xFFFFFFFF, "Ptr", -VarSetCapacity(IID,16)+NumPut(idObject==0xFFFFFFF0?0x46000000000000C0:0x719B3800AA000C81,NumPut(idObject==0xFFFFFFF0?0x0000000000020400:0x11CF3C3D618736E0,IID,"Int64"),"Int64"), "Ptr*", pacc)
 			;~ acc:=ComObjEnwrap(9,pacc,1)
 		;~ else
 			;~ acc:=""
-		
-		
-		
-		
+
+
+
+
 	;&&(accParentHwnd=""||acc_windowfromobject(acc.accParent)=accParentHwnd)
 		if ((var1&&var1=controlName)&&(accName=""||(acc:=Acc_ObjectFromWindow(a_loopfield)).accName=accName)){
 			WinGetClass,cl,ahk_id %a_loopfield%
@@ -229,20 +229,20 @@ getNetControl(winHwnd,controlName="",accName="",classNN="",accHelp=""){
 				break
 			}
 		}
-		
+
 		var1:=""
 	}
-	
+
     DllCall("VirtualFreeEx","Ptr", hProcess,"UInt",otherMem,"UInt", 0, "UInt", 0x8000)
 	DllCall("CloseHandle","Ptr",hProcess)
 	DllCall("FreeLibrary", "Ptr", hModule)
 	return ret
-	
+
 }
 
 ;~ clipboard:=getControlDescription(0x27048E,0x680532)
 ;~ clipboard:=getControlDescription(0x3e0784,0x380CA4)
 getControlDescription(winHwnd,controlHwnd){
-	return "getNetControl2(RisState[2],""" controlgettext(controlHwnd) """,""" getControlNameByHwnd(winHwnd,controlHwnd) """,""" (acc:=acc_objectfromwindow(controlHwnd)).accName """,""" winGetClass(controlHwnd) """,""" acc.accHelp """,""" acc.accRole """,""" DllCall("GetWindowLong",UInt,controlHwnd,Int,-16) """,0)"	
+	return "getNetControl2(RisState[2],""" controlgettext(controlHwnd) """,""" getControlNameByHwnd(winHwnd,controlHwnd) """,""" (acc:=acc_objectfromwindow(controlHwnd)).accName """,""" winGetClass(controlHwnd) """,""" acc.accHelp """,""" acc.accRole """,""" DllCall("GetWindowLong",UInt,controlHwnd,Int,-16) """,0)"
 }
 

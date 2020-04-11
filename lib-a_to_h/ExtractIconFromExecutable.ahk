@@ -1,4 +1,4 @@
-ExtractIconFromExecutable(aFilespec, aIconNumber, aWidth, aHeight){
+﻿ExtractIconFromExecutable(aFilespec, aIconNumber, aWidth, aHeight){
 	static LOAD_LIBRARY_AS_DATAFILE,RT_ICON,RT_GROUP_ICON
 	if !RT_ICON
     LOAD_LIBRARY_AS_DATAFILE:=2,RT_ICON:=11,RT_GROUP_ICON := RT_ICON + 11

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: CLR
 an enumeration class containing special values for COLORREF variables.
 

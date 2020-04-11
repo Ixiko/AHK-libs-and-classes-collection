@@ -1,4 +1,4 @@
-Class Clip2Object {
+﻿Class Clip2Object {
   __Set(key,ByRef raw){
     static _AHKVar := "{Int64 ContentsInt64,Double ContentsDouble,PTR object},{char *mByteContents,LPTSTR CharContents},{UINT_PTR Length,_AHKVar *AliasFor},{UINT_PTR Capacity,UINT_PTR BIV},BYTE HowAllocated,BYTE Attrib,BYTE IsLocal,BYTE Type,LPTSTR Name"
     len:=this.SetCapacity(key,(var:=Struct(_AHKVar,getvar(raw))).AliasFor.Length)

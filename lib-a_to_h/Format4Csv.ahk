@@ -1,4 +1,4 @@
-;Format a cell for csv format by Rhys
+﻿;Format a cell for csv format by Rhys
 ;Does all the proper escaping and stuff to write a csv cell
 ;http://www.autohotkey.com/forum/topic27233.html
 

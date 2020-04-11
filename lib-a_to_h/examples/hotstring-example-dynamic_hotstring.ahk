@@ -1,4 +1,4 @@
-;hotstrings("i)Show me\s*=\s*(.*?)\s*\.", "Result: %$1%%A_Space%") ; try: show me = #$&*_+{|<? .
+﻿;hotstrings("i)Show me\s*=\s*(.*?)\s*\.", "Result: %$1%%A_Space%") ; try: show me = #$&*_+{|<? .
 ;hotstrings("now#", "%A_Now%") ; try: now#
 ;hotstrings("(B|b)tw", "%$1%y the way") ; try: Btw or btw
 ;hotstrings("(\d+)\/(\d+)%", "percent") ; try: 4/50%

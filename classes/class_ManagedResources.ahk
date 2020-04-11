@@ -1,4 +1,4 @@
-/*
+﻿/*
 
   Version: MPL 2.0/GPL 3.0/LGPL 3.0
 
@@ -42,7 +42,7 @@
 class ManagedResourcesClass
 {
 	Resources:=Object()
-	
+
 	__New(ResourceFile, Language="English", DefaultLanguage="English")
 	{
 		this.Language:=Language
@@ -56,28 +56,28 @@ class ManagedResourcesClass
 			Throw, "Resource file not found: " ResourceFile
 		}
 	}
-	
+
 	__Get(ResName)
 	{
     If (TryKey(this.Resources, "Common", ResName))
       return, this.Resources["Common"][ResName]
-    else 
+    else
     If (TryKey(this.Resources, this.Language, ResName))
       return, this.Resources[this.Language][ResName]
-    else 
+    else
     If (TryKey(this.Resources, this.DefaultLanguage, ResName))
       return, this.Resources[this.DefaultLanguage][ResName]
-    else 
+    else
     {
       Throw, "Undefined resource: " ResName
       ListLines
     }
 	}
-	
+
 	__Set()
 	{
 	}
-	
+
 }
 
 ; ==============================================================================
@@ -88,7 +88,7 @@ class ManagedResourcesClass
 
 class ManagedVariableClass
 {
-  
+
   __New(IniFile="", Section="Main")
   {
     ManagedVariableClass.hidden[this]:= { Values: [], Vars: [], Consts: [], Inis: []}
@@ -96,23 +96,23 @@ class ManagedVariableClass
     ManagedVariableClass.hidden[this].Inis.DefaultIniSection:=Section
     ManagedVariableClass.hidden[this].Inis.INIValues:=Object()
   }
-  
+
   __Get(VarName)
   {
     If (ManagedVariableClass.hidden[this].Values.HasKey(VarName))
       return, ManagedVariableClass.hidden[this].Values[VarName]
-    else 
+    else
     {
       Throw, "Read from undefined variable: " VarName
       ListLines
     }
   }
-  
+
   _NewEnum()
   {
     return, ManagedVariableClass.hidden[this].Values._NewEnum()
   }
-  
+
   __Set(VarName, byref Value)
   {
     If (ManagedVariableClass.hidden[this].Consts.HasKey(VarName))
@@ -165,21 +165,21 @@ class ManagedVariableClass
       return, Value
     }
   }
-  
+
   HasKey(Key) ; 0 not found, 1 constant, 2 ini, 3 variable
   {
     If (ManagedVariableClass.hidden[this].Consts.HasKey(Key))
       return, 1
-    else     
+    else
     If (ManagedVariableClass.hidden[this].Inis.INIValues.HasKey(Key))
       return, 2
-    else     
+    else
     If (ManagedVariableClass.hidden[this].Vars.HasKey(Key))
       return, 3
     else
-      return, 0    
+      return, 0
   }
-  
+
   SetConstant(VarName, byref Value)
   {
     If (ManagedVariableClass.hidden[this].Consts.HasKey(VarName))
@@ -187,14 +187,14 @@ class ManagedVariableClass
       Throw, "Attempt to write to constant: " VarName
 	  return
     }
-    else    
+    else
     {
       ManagedVariableClass.hidden[this].Consts[VarName]:=1
       ManagedVariableClass.hidden[this].Values[VarName]:=Value
-      return, value 
+      return, value
     }
   }
-  
+
   CreateIni(VarName, DefaultValue, IniSection="", IniFile="", Type="", MinValue="", MaxValue="") ; MinValue, MaxValue for numbers, setting MinValue to " " means it must not be empty
   {
     If (ManagedVariableClass.hidden[this].Consts.HasKey(VarName))
@@ -202,7 +202,7 @@ class ManagedVariableClass
       Throw, "Attempt to overload constant: " VarName
 	  return
     }
-    else    
+    else
     {
       If (IniFile<>"")
         ReadFile:=IniFile
@@ -220,7 +220,7 @@ class ManagedVariableClass
           IniWrite, %DefaultValue%, %ReadFile%, %ReadSection%, %VarName%
           Value:=DefaultValue
         }
-        If (Type<>"")  
+        If (Type<>"")
           If Value is not %Type%
             Value:=DefaultValue
         If (MinValue<>"")
@@ -258,7 +258,7 @@ class ManagedVariableClass
         Throw, "Error creating ini variable " VarName " : No ini file defined. Variable will not be defined."
     }
   }
-  
+
   GetIniFilePath(VarName)
   {
     If (ManagedVariableClass.hidden[this].Inis.INIValues.HasKey(VarName))
@@ -277,7 +277,7 @@ class ManagedVariableClass
     else
       return, ""
   }
-  
+
   __Delete()
   {
     this.Delete("Values")

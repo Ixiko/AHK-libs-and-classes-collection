@@ -1,4 +1,4 @@
-/*
+﻿/*
   Version: MPL 2.0/GPL 3.0/LGPL 3.0
   The contents of this file are subject to the Mozilla Public License Version
   2.0 (the "License"); you may not use this file except in compliance with

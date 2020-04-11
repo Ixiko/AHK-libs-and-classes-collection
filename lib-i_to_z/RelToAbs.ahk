@@ -1,4 +1,4 @@
-RelToAbs(d1, d2, s = "\") {
+﻿RelToAbs(d1, d2, s = "\") {
 	d0 := SubStr(d1, 1, len := InStr(d1, s, "", InStr(d1, s . s) + 2) - 1)
 		, d1 := SubStr(d1, len + 1), off := 0
 	Loop, 2

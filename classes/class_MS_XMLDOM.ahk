@@ -1,13 +1,12 @@
-
+﻿
 
 ;https://msdn.microsoft.com/en-us/library/ms764730(v=vs.85).aspx
 ;https://msdn.microsoft.com/en-us/library/aa468547.aspx
-New_DOMDocument(handlerPrefix:="") 
-{
+New_DOMDocument(handlerPrefix:="")  {
     Com := 0
     try
     {
-        Com := ComObjCreate("Msxml2.DOMDocument.6.0") 
+        Com := ComObjCreate("Msxml2.DOMDocument.6.0")
     }
     catch e
     {
@@ -27,8 +26,7 @@ New_DOMDocument(handlerPrefix:="")
     return Com
 }
 
-class DOMNodeType
-{
+class DOMNodeType {
     static NODE_INVALID := 0
     static NODE_ELEMENT := 1
     static NODE_ATTRIBUTE := 2
@@ -61,8 +59,7 @@ global gDOMNodeTypeArr := ["NODE_INVALID"
                         ,"NODE_NOTATION"]
 
 
-DOMDecodeErrorFromExceptionString(ExceptionString)
-{
+DOMDecodeErrorFromExceptionString(ExceptionString) {
     StartPos := InStr(ExceptionString, "0x")
     err := SubStr(ExceptionString, StartPos , 10)
     if(err == "0xC00CE200")
@@ -319,6 +316,6 @@ DOMDecodeErrorFromExceptionString(ExceptionString)
     }
     else
     {
-        return "Unknown Error: " . ExceptionString 
+        return "Unknown Error: " . ExceptionString
     }
 }

@@ -1,4 +1,4 @@
-/* Function: EntryForm
+﻿/* Function: EntryForm
  *     Create custom InputBox, data entry forms
  * License: WTFPL (http://www.wtfpl.net/)
  * AutoHotkey Version: AHK v1.1+ OR v2.0-a049+
@@ -43,17 +43,17 @@
 EntryForm(form, fields*) {
 	;// assume static mode for GUI controls variable(s)
 	static
-	
+
 	;// During script's exit, __Delete is invoked to release resources used
 	;   by the function such as image list(s), etc.
 	static ef := { "__Delete": Func("EntryForm") }
 	     , _  := new ef ;// static vars are released alphabetically
-	
+
 	;// Misc variables
 	static is_v2 := A_AhkVersion >= "2"
 	     , is_xp := ( is_v2 ? (A_OSVersion < "6") : (A_OSVersion == "WIN_XP") )
 	     , end   := ( is_v2 ? -1 : 0 )
-	
+
 	;// Object built-in functions (v1.1 and v2.0-a049 compatibility)
 	static del  := Func( is_v2 ? "ObjRemoveAt" : "ObjRemove" )
 	     , push := Func( is_v2 ? "ObjPush"     : "ObjInsert" )
@@ -65,14 +65,14 @@ EntryForm(form, fields*) {
 	               , "-cb":"cue", "-cue":"cue", "-fs":"file", "-ds":"dir", "-tt":"tip"
 	               , "-ud":"updown", "-o":"options", "-opt":"options" }
 	     , delims := [ " ", ":", "`t", "`r", "`n" ]
-	
+
 	;// for DllCall()
 	static ExtractIconEx := "shell32\ExtractIconEx" . (A_IsUnicode ? "W" : "A")
 	     , GetWindowLong := A_Is64bitOS ? "GetWindowLongPtr" : "GetWindowLong"
 
 	;// Control types for input field(s)
 	static input_ctrls := { "E":"Edit", "CB":"ComboBox", "DDL":"DDL", "LB":"ListBox", "DT":"DateTime" }
-	
+
 	static btn_size := 0, himl := 0
 	     ; , ndl := ( is_v2 ? "i)" : "Oi)" ) . "(?<=^|,)\s*\K.*?(?=(?<!\\),|$)" ;// not used
 
@@ -85,7 +85,7 @@ EntryForm(form, fields*) {
 	;   1 = OFN_FILEMUSTEXIST, 2 = OFN_PATHMUSTEXIST, 8 = OFN_CREATEPROMPT
 	;   16 = OFN_OVERWRITEPROMPT, 32 = OFN_NODEREFERENCELINKS
 	static fs_flags := { 1: 0x1000, 2: 0x800, 8: 0x2000, 16: 0x2, 32: 0x100000 }
-	
+
 	;// static variable(s) for EF_SelectDir subroutine
 	;   BIF_NONEWFOLDERBUTTON = 0x200, BIF_NEWDIALOGSTYLE = 0x40
 	;   BIF_EDITBOX = 0x10, BIF_USENEWUI = 0x10|0x40
@@ -101,7 +101,7 @@ EntryForm(form, fields*) {
 	    , RECT, width, idx, field, ctrl, font, is_input, ftype, hPrompt, hInput
 	    , is_mline, input_pos, btn, wd, hBtn, vBtn, BTN_IMGLIST, btns := {}, ii
 	    , jj, b_arg, k, dhw, flds := [], callback := 0, ret
-	
+
 	;// local variables for EF_SelectFile subroutine(local label)
 	;   opt, i, is_mline -> declared above
 	local dlg_args, prompt, filter, lpstrFile, init_dir, init_file, flags, flag
@@ -113,8 +113,8 @@ EntryForm(form, fields*) {
 
 	;// local variables for EF_SetToolTip subroutine(local label)
 	local tt := {}, hTip := 0, tt_tmp
-	
-	
+
+
 	;// __Delete - This routine is called during script script's exit
 	if (form.base == ef)
 	{
@@ -122,7 +122,7 @@ EntryForm(form, fields*) {
 			IL_Destroy(himl.file), IL_Destroy(himl.dir)
 		return
 	}
-	
+
 	;// ROUTINE STARTS HERE
 	;   Extract quoted strings from params to make parsing easier
 	s_opt := [], quoted := []
@@ -151,7 +151,7 @@ EntryForm(form, fields*) {
 		{
 			if (opt == "")
 				continue
-			
+
 			if (opt ~= "^-(f|(?i)[cipto]|cap|fnt|ico|pos|to|opt)$")
 				form[ key := args[SubStr(opt, 2, 1)] ] := ""
 
@@ -177,7 +177,7 @@ EntryForm(form, fields*) {
 
 	;// Create EntryForm window
 	Gui New, % "+HwndhForm +LabelEF_ " . form.options
-	
+
 	;// Initialize font, InputBox uses 's10, MS Shell Dlg 2' on OS >= WIN_7??
 	form.font := form.HasKey("font") ? StrSplit(form.font, ",", " `t`r`n")
 	                                 : ["s10", "MS Shell Dlg 2"]
@@ -191,7 +191,7 @@ EntryForm(form, fields*) {
 		form.pos .= " xCenter"
 	if !InStr(form.pos, "y")
 		form.pos .= " yCenter"
-	
+
 	;// Show hidden
 	Gui Show, % "Hide " form.pos, % form.caption
 
@@ -202,17 +202,17 @@ EntryForm(form, fields*) {
 		form.icon := StrSplit(form.icon, ",", " `t`r`n")
 		DllCall(ExtractIconEx, "Str", form.icon[1], "Int", form.icon[2] + 0
 		      , "UIntP", hIconL, "UIntP", hIconS, "UInt", 2)
-		
+
 		;// WM_SETICON = 0x0080
 		DllCall("SendMessage", "Ptr", hForm, "Int", 0x0080, "Ptr", 0, "Ptr", hIconS)
 		DllCall("SendMessage", "Ptr", hForm, "Int", 0x0080, "Ptr", 1, "Ptr", hIconL)
 	}
-	
+
 	;// Get GUI width-(left+right) margin, controls are confined within this width
 	VarSetCapacity(RECT, 16, 0)
 	, DllCall("GetClientRect", "Ptr", hForm, "Ptr", &RECT)
 	, width := NumGet(RECT, 8, "UInt")-20
-	
+
 	;// Add the EntryForm fields
 	for idx, field in fields
 	{
@@ -265,10 +265,10 @@ EntryForm(form, fields*) {
 			         ? " y+5 " field.options
 			         : " Wrap y" ( idx == 1 ? 10 : input_posY+input_posH+10 ) )
 			       , % field[ is_input ? "default" : "prompt" ]
-			
+
 			if !font
 				continue
-			
+
 			Gui Font
 			Gui Font, % form.font[1], % form.font[2]
 		}
@@ -282,7 +282,7 @@ EntryForm(form, fields*) {
 			tt.ctrl := hInput, tt.text := field.tip
 			gosub EF_SetToolTip
 		}
-		
+
 		if (ctrl != "Edit") ;// skip rest of loop for other control types
 			continue
 
@@ -292,7 +292,7 @@ EntryForm(form, fields*) {
 		;// Cue banner | EM_SETCUEBANNER = 0x1501
 		if field.HasKey("cue")
 			SendMessage 0x1501, 0, % ObjGetAddress(field, "cue"),, ahk_id %hInput%
-		
+
 		;// Buddy UpDown control
 		if field.HasKey("updown")
 			Gui Add, Updown, % field.updown
@@ -326,7 +326,7 @@ EntryForm(form, fields*) {
 			                 . " xm+" width - btn_size
 			                 . " HwndhBtn gEF_Select" btn
 			GuiControl % "+v" ( vBtn := "ef_btn_" . hBtn ), %hBtn%
-			
+
 			/*
 			Create BUTTON_IMAGELIST structure -> http://goo.gl/RVQsnM
 			typedef struct {
@@ -348,19 +348,19 @@ EntryForm(form, fields*) {
 
 			;// Set himl member of struct
 			NumPut(himl[btn], BTN_IMGLIST, 0, "Ptr")
-			
+
 			;// Set margin member | 1px??
 			Loop 4
 				NumPut(1, BTN_IMGLIST, A_PtrSize+A_Index*4-4, "UInt")
-			
+
 			;// Set uAlign member | BUTTON_IMAGELIST_ALIGN_CENTER := 4
 			NumPut(4, BTN_IMGLIST, A_PtrSize+16, "UInt")
-			
+
 			;// BCM_SETIMAGELIST = 0x1602
 			SendMessage 0x1602, 0, % &BTN_IMGLIST,, ahk_id %hBtn%
 
 			btns[vBtn] := { "input": hInput, "args": [] }
-			
+
 			;// Parse option arguments, comma-delimited
 			ii := jj := 0
 			while (ii := InStr(field[btn] . ",", ",",, ii+1))
@@ -382,7 +382,7 @@ EntryForm(form, fields*) {
 	;// Add OK and Cancel buttons
 	Gui Add, Button, % "w100 r1 gEF_OK xm+" (width/2)-110 " y" input_posY + input_posH + 20, OK
 	Gui Add, Button, x+20 yp wp hp gEF_Cancel, Cancel
-	
+
 	;// Show the EntryForm and wait for it to close / gets destroyed
 	Gui Show, % "AutoSize " form.pos, % form.caption
 
@@ -395,19 +395,19 @@ EntryForm(form, fields*) {
 		;   convert to integer for consistency with v2.0-a050+
 		cb_forms[hForm+0] := { "callback": form.callback, "flds": flds, "hTip": hTip
 		                     , "hIconS": hIconS, "hIconL": hIconL, "btns": btns }
-		
+
 		;// return, on event, the callback function is called passing the
 		;   output as the first parameter.
 		return true
 	}
-	
+
 	dhw := A_DetectHiddenWindows
 	DetectHiddenWindows On
 	WinWaitClose ahk_id %hForm%,, % form.timeout/1000
 	if ErrorLevel
 		gosub EF_Timeout ;// WinClose ahk_id %hForm% -> triggers EF_CLose
 	DetectHiddenWindows %dhw%
-	
+
 	;// { "event": [ OK, Cancel, Close, Escape, Timeout ], "output": [ field1, field2 ... ] }
 	return ret
 
@@ -436,13 +436,13 @@ EF_Timeout:
 	}
 	if ( NumGet( &(ret.output) + 4*A_PtrSize ) <= 1 ) ;// ObjCount()
 		ret.output := ret.output[1]
-	
+
 	;// Destroy tooltip
 	if hTip
 		DllCall("DestroyWindow", "Ptr", hTip)
-	
+
 	Gui Destroy
-	
+
 	;// Destroy window icon(s) (if any)
 	if hIconL
 		DllCall("DestroyIcon", "Ptr", hIconL)
@@ -451,7 +451,7 @@ EF_Timeout:
 
 	if callback
 		%callback%(ret) ;// call the callback function and pass output
-	
+
 	return
 
 /* FileSelectFile(v1.1) / FileSelect(v2.0-a) workaround
@@ -469,8 +469,8 @@ EF_SelectFile: ;// [Options, RootDir\Filename, Prompt, Filter]
 
 	;// Initialize lpstrFile, output goes here
 	VarSetCapacity(lpstrFile, 0xffff)
-	
-	;// Get initial dir and/or initial file name 
+
+	;// Get initial dir and/or initial file name
 	GuiControlGet init_dir,, %hInput%
 	if (init_dir == "")
 		init_dir := dlg_args[2]
@@ -488,7 +488,7 @@ EF_SelectFile: ;// [Options, RootDir\Filename, Prompt, Filter]
 	for i in flag ? fs_flags : 0
 		if (flag & i)
 			flags |= fs_flags[i]
-	
+
 	if InStr(opt, "M")
 		flags |= 0x200 ;// OFN_ALLOWMULTISELECT = 0x200
 
@@ -525,7 +525,7 @@ EF_SelectFile: ;// [Options, RootDir\Filename, Prompt, Filter]
 	if (flags & 0x200) ;// OFN_ALLOWMULTISELECT
 		while (sel := StrGet( addr += (StrLen(sel) + 1) * (A_IsUnicode ? 2 : 1) ))
 			files .= dir . sel . "`n"
-	
+
 	GuiControl,, %hInput%, % SubStr(files ? files : dir, 1, -1)
 	return
 
@@ -538,7 +538,7 @@ EF_SelectDir: ;// [StartingFolder, Options, Prompt]
 	, dlg_args := btns[A_GuiControl].args
 	if ( (prompt := dlg_args[3]) == "" )
 		prompt := "Select Folder - " . A_ScriptName
-	
+
 	flags := 0x1 ;// BIF_RETURNONLYFSDIRS = 0x1
 	if ( (flag := ds_flags[dlg_args[2] + 0]) != "" )
 		flags |= flag
@@ -548,12 +548,12 @@ EF_SelectDir: ;// [StartingFolder, Options, Prompt]
 	if !InStr(FileExist(init_dir), "D")
 		if ( (init_dir := dlg_args[1]) == "" )
 			init_dir := "*" . A_MyDocuments
-	
+
 	if !shell ;// this is a static variable, we don't initialize it unless needed
 		shell := ComObjCreate("Shell.Application")
 	if !( folder := shell.BrowseForFolder(A_Gui + 0, prompt, flags, init_dir) )
 		return
-	
+
 	GuiControl,, %hInput%, % folder.self.Path
 	return
 
@@ -562,7 +562,7 @@ EF_SelectDir: ;// [StartingFolder, Options, Prompt]
 EF_SetToolTip:
 	if !NumGet( &tt + 4 * A_PtrSize ) ;// no arguments
 		return
-	
+
 	if !hTip ;// this is a static variable
 	{
 		;// WS_EX_TOPMOST = 0x8, CW_USEDEFAULT = 0x80000000
@@ -570,10 +570,10 @@ EF_SetToolTip:
 		     ,  "Ptr", 0, "UInt", 0x80000002 ;// WS_POPUP:=0x80000000|TTS_NOPREFIX:=0x02
 		     ,  "Int", 0x80000000, "Int",  0x80000000, "Int", 0x80000000, "Int", 0x80000000
 		     ,  "Ptr", hForm, "Ptr", 0, "Ptr", 0, "Ptr", 0, "Ptr")
-		
+
 		;// TTM_SETMAXTIPWIDTH = 0x0418
 		DllCall("SendMessage", "Ptr", hTip, "Int", 0x0418, "Ptr", 0, "Ptr", 0)
-		
+
 		;// for Windows XP issues
 		if is_xp
 		{

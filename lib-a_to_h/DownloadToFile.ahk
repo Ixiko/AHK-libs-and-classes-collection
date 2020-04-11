@@ -1,5 +1,4 @@
-DownloadToFile(url, filename)
-{
+﻿DownloadToFile(url, filename) {
     static a := "AutoHotkey/" A_AhkVersion
     if (!(o := FileOpen(filename, "w")) || !DllCall("LoadLibrary", "str", "wininet") || !(h := DllCall("wininet\InternetOpen", "str", a, "uint", 1, "ptr", 0, "ptr", 0, "uint", 0, "ptr")))
         return 0

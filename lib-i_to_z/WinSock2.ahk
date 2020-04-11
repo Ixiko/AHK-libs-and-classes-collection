@@ -1,4 +1,4 @@
-;http://www.autohotkey.com/forum/topic35575.html
+﻿;http://www.autohotkey.com/forum/topic35575.html
 
 /*
 WS2.ahk / StdLib WinSock IPv4 Library for AHK
@@ -24,6 +24,20 @@ WS2_SendDataEx, WS2_SendNumber
    http://www.autohotkey.com/forum/viewtopic.php?p=285164#285164
 */
 
+/*
+; WS2 OnMessage - This function defines, whatever should happen when
+; a Message is received on the socket.
+; Expected Parameter:
+;      Ws2_Socket    => Socket returned from WS2_Connect() Call
+;      UDF           => An UserDefinedFunction to which the received
+;                       Data will be passed to
+; Optional Parameter:
+;      WindowMessage => A number indicating upon which WM_Message to react
+;
+; Returns -1 on error, 0 on success
+*/
+
+WS2_Connect(lpszUrl) {
 ; WS2 Connect - This establishes a connection to a named resource
 ; The parameter is to be passed in an URI:Port manner.
 ; Returns the socket upon successfull connection, otherwise it
@@ -33,7 +47,6 @@ WS2_SendDataEx, WS2_SendNumber
 ; Usage-Example:
 ;    Pop3_Socket := WS2_Connect("mail.isp.com:110")
 ; See the Doc for more Information.
-WS2_Connect(lpszUrl) {
 
     Global
 
@@ -89,17 +102,6 @@ WS2_Connect(lpszUrl) {
     }
 }
 
-; WS2 OnMessage - This function defines, whatever should happen when
-; a Message is received on the socket.
-; Expected Parameter:
-;      Ws2_Socket    => Socket returned from WS2_Connect() Call
-;      UDF           => An UserDefinedFunction to which the received
-;                       Data will be passed to
-; Optional Parameter:
-;      WindowMessage => A number indicating upon which WM_Message to react
-;
-; Returns -1 on error, 0 on success
-
 WS2_AsyncSelect(Ws2_Socket,UDF,WindowMessage="") {
     Global __WSA_ErrMsg
     If (    ( StrLen(Ws2_Socket)=0 )
@@ -137,9 +139,9 @@ WS2_SendNumber(WS2_Socket, Num, Type="UInt") {
     }
 }
 
+WS2_CleanUp() {
 ; WS2 Cleanup - This needs to be called whenever Your Script exits
 ; Usually this is invoked by some OnExit, Label subroutines.
-WS2_CleanUp() {
     DllCall("Ws2_32\WSACleanup")
 }
 
@@ -149,10 +151,10 @@ WS2_Disconnect(WS2_Socket) {
         MsgBox, 16, %A_ScriptName%: CloseSocket-Error, % __WSA_ErrMsg
 }
 
+__WSA_ScriptInit() {
 ; WS2 ScriptInit - for internal use only
 ; Initializes neccessary variables for this Script.
-__WSA_ScriptInit()
-{
+
     ; CONTANTS
 
     ; We're working with version 2 of Winsock
@@ -178,10 +180,9 @@ __WSA_ScriptInit()
     return 1
 }
 
+__WSA_Startup(){
 ; WS2 Startup - for internal use only
 ; Initializes the Winsock 2 Adapter
-__WSA_Startup()
-{
     Global WSAData, __WSA_ErrMsg, __WSA_WSVersion
 
     ; It's a good idea, to have a __WSA_ErrMsg Container, so any Error Msgs
@@ -207,10 +208,9 @@ __WSA_Startup()
         Return 1
 }
 
+__WSA_Socket(){
 ; WS2 Socket Descriptor - for internal use only
 ; Sets type and neccessary structures for a successfull connection
-__WSA_Socket()
-{
     Global __WSA_ErrMsg, __WSA_SocketProtocol, __WSA_SocketType, __WSA_SocketAF
 
     ; Supposed to return a descriptor referencing the new socket
@@ -229,10 +229,9 @@ __WSA_Socket()
 
 }
 
+__WSA_Connect(){
 ; WS2 Connection call - for internal use only
 ; Establishes a connection to a foreign IP at the specified port
-__WSA_Connect()
-{
     Global __WSA_ErrMsg, __WSA_Port, __WSA_Socket, __WSA_InetAddr, __WSA_SocketAF
 
     ; Generate socketaddr structure for the connect()
@@ -258,16 +257,15 @@ __WSA_Connect()
         Return 1
 }
 
-
 /*
  This code based originally upon an example by DarviK
     http://www.autohotkey.com/forum/topic8871.html
  and on the modifcations by Tasman
     http://www.autohotkey.com/forum/viewtopic.php?t=9937
 */
+
+__WSA_GetHostByName(url){
 ; Resolves canonical domainname to IP
-__WSA_GetHostByName(url)
-{
     Global __WSA_ErrMsg
     ; gethostbyname returns information about a domainname into a Hostent Structure
     ; http://msdn.microsoft.com/en-us/library/ms738524(VS.85).aspx
@@ -289,13 +287,12 @@ __WSA_GetHostByName(url)
     return result
 }
 
+__WSA_GetLastError(txt=1){
 ; Return the last Error with a lil bit o' text if neccessary
 ; Note: the txt variable is set to 0 when checking for received content
 ;
 ; Changes contributed by Lexikos
 ; http://www.autohotkey.com/forum/viewtopic.php?p=285164#285164
-__WSA_GetLastError(txt=1)
-{
     err := DllCall("Ws2_32\WSAGetLastError")
     if txt {
         VarSetCapacity(txt, 1024) ; "Limit" to 1024 chars.
@@ -306,7 +303,74 @@ __WSA_GetLastError(txt=1)
     return err
 }
 
+__WSA_ErrLookUp(sNumber) {
+; Lookup Winsock ErrCode - for internal use only
+; This list is form http://www.sockets.com
+WSA_ErrorList =
+(LTrim Join`n
+    10004 - Interrupted system call
+    10009 - Bad file number
+    10013 - Permission denied
+    10014 - Bad address
+    10022 - Invalid argument
+    10024 - Too many open files
+    10035 - Operation would block
+    10036 - Operation now in progress
+    10037 - Operation already in progress
+    10038 - Socket operation on non-socket
+    10039 - D   estination address required
+    10040 - Message too long
+    10041 - Protocol wrong type for socket
+    10042 - Bad protocol option
+    10043 - Protocol not supported
+    10044 - Socket type not supported
+    10045 - Operation not supported on socket
+    10046 - Protocol family not supported
+    10047 - Address family not supported by protocol family
+    10048 - Address already in use
+    10049 - Can't assign requested address
+    10050 - Network is down
+    10051 - Network is unreachable
+    10052 - Net dropped connection or reset
+    10053 - Software caused connection abort
+    10054 - Connection reset by peer
+    10055 - No buffer space available
+    10056 - Socket is already connected
+    10057 - Socket is not connected
+    10058 - Can't send after socket shutdown
+    10059 - Too many references, can't splice
+    10060 - Connection timed out
+    10061 - Connection refused
+    10062 - Too many levels of symbolic links
+    10063 - File name too long
+    10064 - Host is down
+    10065 - No Route to Host
+    10066 - Directory not empty
+    10067 - Too many processes
+    10068 - Too many users
+    10069 - Disc Quota Exceeded
+    10070 - Stale NFS file handle
+    10091 - Network SubSystem is unavailable
+    10092 - WINSOCK DLL Version out of range
+    10093 - Successful WSASTARTUP not yet performed
+    10071 - Too many levels of remote in path
+    11001 - Host not found
+    11002 - Non-Authoritative Host not found
+    11003 - Non-Recoverable errors: FORMERR, REFUSED, NOTIMP
+    11004 - Valid name, no data record of requested type
+    11004 - No address, look for MX record
+)
+    ExNr := 0, ExErr := "Sorry, but no definition available."
+    Loop,Parse,WSA_ErrorList,`n
+    {
+        RegExMatch(A_LoopField,"(?P<Nr>\d+) - (?P<Err>.*)",Ex)
+        if (sNumber = ExNr)
+            break
+    }
+Return ExNr " means " ExErr "`n"
+}
 
+__WSA_AsyncSelect(__WSA_Socket, UDF, __WSA_NotificationMsg=0x5000,__WSA_DataReceiver="__WSA_recv"){
 ; WS2 AsyncSelect - for internal use only
 ; Sets up an Notification Handler for Receiving Messages
 ; Expected Parameters: Socket from Initialisation
@@ -315,9 +379,6 @@ __WSA_GetLastError(txt=1)
 ;                               wm_* processor function.
 ;                               default __WSA_ReceiveData
 ; Returns -1 on Error, 0 on success
-__WSA_AsyncSelect(__WSA_Socket, UDF, __WSA_NotificationMsg=0x5000
-                              ,__WSA_DataReceiver="__WSA_recv")
-{
     Global
 
     __WSA_UDF := UDF
@@ -338,13 +399,12 @@ __WSA_AsyncSelect(__WSA_Socket, UDF, __WSA_NotificationMsg=0x5000
     Return Result
 }
 
+__WSA_recv(wParam, lParam){
 ; WS2 Receive - for internal use only
 ; Triggers upon Notification Handler when Receiving Messages
 ;
 ; Changes contributed by Lexikos
 ; http://www.autohotkey.com/forum/viewtopic.php?p=285164#285164
-__WSA_recv(wParam, lParam)
-{
     Global __WSA_UDF, __WSA_ErrMsg
     ; __WSA_UDF containes the name of the UserDefinedFunction to call when the event
     ; has been triggered and text may be processed (allthough the reveived text might
@@ -389,13 +449,12 @@ __WSA_recv(wParam, lParam)
     return 1
 }
 
+__WSA_send(__WSA_Socket, __WSA_Data, __WSA_DataLen){
 ; WSA Send - for internal use only
 ; Users are encouraged to use the WS2_SendData() Function
 ;
 ; Changes contributed by Lexikos
 ; http://www.autohotkey.com/forum/viewtopic.php?p=285164#285164
-__WSA_send(__WSA_Socket, __WSA_Data, __WSA_DataLen)
-{
     Global __WSA_ErrMsg
 
     Result := DllCall("Ws2_32\send"
@@ -408,10 +467,9 @@ __WSA_send(__WSA_Socket, __WSA_Data, __WSA_DataLen)
    Return Result
 }
 
+__WSA_CloseSocket(__WSA_Socket){
 ; Closes Open Socket - for internal use only
 ; Returns 0 on success
-__WSA_CloseSocket(__WSA_Socket)
-{
     Global __WSA_ErrMsg
 
     Result := DllCall("Ws2_32\closesocket"
@@ -422,10 +480,9 @@ __WSA_CloseSocket(__WSA_Socket)
     Return result
 }
 
+__WSA_GetThisScriptHandle(){
 ; GetThisScriptHandle - for internal use only
 ; Returns the handle of the executing script
-__WSA_GetThisScriptHandle()
-{
 
     HiddenWindowsSave := A_DetectHiddenWindows
 
@@ -436,12 +493,11 @@ __WSA_GetThisScriptHandle()
     Return ScriptMainWindowId
 }
 
+__WinINet_InternetCrackURL(lpszUrl,arrayName="URL"){
 ; WinINet InternetCrackURL - for internal use only
 ; v 0.1 / (w) 25.07.2008 by derRaphael / zLib-Style release
 ; This routine was originally posted here:
 ; http://www.autohotkey.com/forum/viewtopic.php?p=209957#209957
-__WinINet_InternetCrackURL(lpszUrl,arrayName="URL")
-{
     local hModule, offset_name_length
     hModule := DllCall("LoadLibrary", "Str", "WinINet.Dll")
 

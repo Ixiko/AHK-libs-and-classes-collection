@@ -1,4 +1,4 @@
-FormatSQL(ByRef fnText,fnAllowFormatAlterationsSql := 0)
+﻿FormatSQL(ByRef fnText,fnAllowFormatAlterationsSql := 0)
 {
 	; function description
 	; MsgBox fnText: %fnText%`nfnAllowFormatAlterationsSql: %fnAllowFormatAlterationsSql%`n

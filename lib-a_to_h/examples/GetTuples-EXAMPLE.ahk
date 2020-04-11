@@ -1,4 +1,4 @@
-ListLines, Off
+﻿ListLines, Off
 #NoEnv
 SetBatchLines, -1
 

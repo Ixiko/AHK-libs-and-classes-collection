@@ -45,8 +45,8 @@
             Return (GetKeyState('ESC'))                                  ;presione la tecla ESC para cancelar la descarga (el archivo puede quedar obsoleto)
         }
 */
-DownloadFile(Url, FileName, Overwrite := TRUE, MaxSize := 0, BlockSize := 1000000, CallBack := 0)
-{
+DownloadFile(Url, FileName, Overwrite := TRUE, MaxSize := 0, BlockSize := 1000000, CallBack := 0) {
+
     Local hModule, hInternet, hUrl, Percentage, WinHttpReq, NumberOfBytesAvailable, Buffer, NumberOfBytesRead, BytesRead
 
     ; Si FileName es un directorio devolvemos -1. O si FileName ya existe y Overwrite=0 devolvemos -1.
@@ -104,7 +104,7 @@ DownloadFile(Url, FileName, Overwrite := TRUE, MaxSize := 0, BlockSize := 100000
 
         If (MaxSize && NumberOfBytesRead + BytesRead > MaxSize)
             BytesRead := (NumberOfBytesRead + BytesRead) - ((NumberOfBytesRead + BytesRead) - MaxSize)
-        
+
         NumberOfBytesRead += BytesRead
         File.RawWrite(&Buffer, BytesRead)
 
@@ -151,7 +151,7 @@ DownloadFile(Url, FileName, Overwrite := TRUE, MaxSize := 0, BlockSize := 100000
 
     WinHttpReq.Open('GET', Url, FALSE)
 
-    For Header, Value In Headers 
+    For Header, Value In Headers
         WinHttpReq.SetRequestHeader(Header, Value)
 
     WinHttpReq.Send()
@@ -161,7 +161,7 @@ DownloadFile(Url, FileName, Overwrite := TRUE, MaxSize := 0, BlockSize := 100000
 
     ADODBObj.Open()
     ADODBObj.Write(WinHttpReq.ResponseBody)
-    
+
     ADODBObj.SaveToFile(FileName, Overwrite ? 2 : 1)
     ADODBObj.Close()
 */

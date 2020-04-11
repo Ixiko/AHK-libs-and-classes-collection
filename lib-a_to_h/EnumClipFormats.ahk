@@ -1,4 +1,4 @@
-;msgbox % EnumClipFormats()
+﻿;msgbox % EnumClipFormats()
 
 EnumClipFormats() {
     DllCall("OpenClipboard"), VarSetCapacity( buf, 256 )

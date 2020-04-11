@@ -1,4 +1,4 @@
-/*
+﻿/*
 Hotstring(
 	trigger:
 		A string or a regular expression to trigger the hotstring. (If you use a regex here, the mode should be 3 for the regex to work)

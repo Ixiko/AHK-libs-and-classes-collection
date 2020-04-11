@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ObjectCollection
 wraps the *IObjectCollection* interface and extends the IObjectArray interface by providing methods that enable clients to add and remove objects that support IUnknown in a collection.
 

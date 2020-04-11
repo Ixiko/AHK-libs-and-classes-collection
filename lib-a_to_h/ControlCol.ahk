@@ -1,4 +1,4 @@
-; ------------------------
+﻿; ------------------------
 ; http://www.autohotkey.com/board/topic/104539-controlcol-set-background-and-text-color-gui-controls/
 ; v1.0.2
 ; ------------------------

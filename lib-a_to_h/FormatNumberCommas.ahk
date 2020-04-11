@@ -1,4 +1,4 @@
-FormatNumberCommas(fnInputNumber)
+﻿FormatNumberCommas(fnInputNumber)
 {
 	; takes a decimal value and formats it with thousands separators
 	; MsgBox fnInputNumber: %fnInputNumber%

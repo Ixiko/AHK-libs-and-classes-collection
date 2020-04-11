@@ -1,4 +1,4 @@
-; This script copies example data from an object into a SafeArray. The SafeArray is then assigned to a Range in Excel.
+﻿; This script copies example data from an object into a SafeArray. The SafeArray is then assigned to a Range in Excel.
 ; Some formatting is then added such as bold text, column widths and borders.
 
 ; Constants

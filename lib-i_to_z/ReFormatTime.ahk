@@ -1,4 +1,4 @@
-; function by skan. Added Trim for A_LoopField to remove spaces 
+﻿; function by skan. Added Trim for A_LoopField to remove spaces 
 ReFormatTime( Time, Format, Delimiters  ) {
  StringSplit F,Format, %A_Space%
  Loop, Parse, Time, %Delimiters%

@@ -1,4 +1,4 @@
-;~ Process, Exist, notepad.exe
+﻿;~ Process, Exist, notepad.exe
 ;~ If !PID := ErrorLevel
   ;~ Run notepad.exe,,,PID
 ;~ MsgBox % GetProcessWorkingDir(PID)

@@ -1,5 +1,4 @@
-GetDllBase(DllName, PID = 0)
-{
+﻿GetDllBase(DllName, PID = 0) {
     TH32CS_SNAPMODULE := 0x00000008
     INVALID_HANDLE_VALUE = -1
     VarSetCapacity(me32, 548, 0)

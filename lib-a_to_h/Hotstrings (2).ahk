@@ -1,4 +1,4 @@
-/*
+﻿/*
     Function: HotStrings
         Dynamically adds regular expression hotstrings.
 

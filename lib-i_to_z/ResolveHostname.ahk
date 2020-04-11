@@ -2,8 +2,7 @@
 ; DNS Name Resolution – Gets IP address from hostname
 ; ===============================================================================================================================
 
-ResolveHostname(hostname)
-{
+ResolveHostname(hostname) {
     hWS2_32 := DllCall("LoadLibrary", "str", "ws2_32.dll", "ptr")
     VarSetCapacity(WSADATA, 394 + (A_PtrSize - 2) + A_PtrSize, 0)
     if (DllCall("ws2_32\WSAStartup", "ushort", 0x0202, "ptr", &WSADATA) != 0)

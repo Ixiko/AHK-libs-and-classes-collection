@@ -1,4 +1,4 @@
-ITL_FormatException(msg, detail, error, hr = "", special = false, special_msg = "")
+﻿ITL_FormatException(msg, detail, error, hr = "", special = false, special_msg = "")
 {
 	static NL := "`n`t"
 	return [  msg

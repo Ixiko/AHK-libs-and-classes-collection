@@ -1,4 +1,4 @@
-FormatTickCount(ms)  ;  Formats milliseconds into 00:00:00:000 (last three digits are milliseconds)
+﻿FormatTickCount(ms)  ;  Formats milliseconds into 00:00:00:000 (last three digits are milliseconds)
 {
 	StringRight , mil , ms , 3
 	StringTrimRight , sec , ms , 3

@@ -1,4 +1,4 @@
-; https://autohotkey.com/board/topic/66811-way-to-get-short-date-format-used-by-local-machine/
+﻿; https://autohotkey.com/board/topic/66811-way-to-get-short-date-format-used-by-local-machine/
 GetSystemDateFormat()
 {
 	; return the system short date format e.g. dd-MMM-yyyy

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 	HL7.ahk
  *
  * 	An AutoHotkey library/class to parse HL7 files into structured Autohotkey Objects.

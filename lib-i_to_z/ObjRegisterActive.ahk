@@ -1,9 +1,9 @@
-/*
+﻿/*
     ObjRegisterActive(Object, CLSID, Flags:=0)
-    
+
         Registers an object as the active object for a given class ID.
         Requires AutoHotkey v1.1.17+; may crash earlier versions.
-    
+
     Object:
             Any AutoHotkey object.
     CLSID:
@@ -14,7 +14,7 @@
               0 (ACTIVEOBJECT_STRONG)
               1 (ACTIVEOBJECT_WEAK)
             Defaults to 0.
-    
+
     Related:
         http://goo.gl/KJS4Dp - RegisterActiveObject
         http://goo.gl/no6XAS - ProgID

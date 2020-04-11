@@ -1,4 +1,4 @@
-EmptyWorkingSets(pids*){
+﻿EmptyWorkingSets(pids*){
 	if !pid
 		WinGetPidList,pids
 	for k,pid in pids

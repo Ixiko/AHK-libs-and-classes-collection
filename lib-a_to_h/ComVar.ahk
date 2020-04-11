@@ -1,4 +1,4 @@
-ComVar(Type=0xC){
+﻿ComVar(Type=0xC){
 static base
 if !base
   base:={__Get:"ComVarGet",__Set:"ComVarSet",__Delete:"ComVarDel"}

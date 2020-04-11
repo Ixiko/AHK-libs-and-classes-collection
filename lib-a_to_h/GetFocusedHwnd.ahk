@@ -1,4 +1,4 @@
-getFocusedHwnd(){
+﻿getFocusedHwnd(){
 	static GuiThreadInfoSize = 48
 	VarSetCapacity(GuiThreadInfo, GuiThreadInfoSize)
 	NumPut(GuiThreadInfoSize, GuiThreadInfo, 0)

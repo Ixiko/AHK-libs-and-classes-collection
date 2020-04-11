@@ -1,4 +1,4 @@
-
+﻿
 /* Class: ZipFile
  *     Wrapper for Windows shell ZIP function
  * Version:
@@ -14,7 +14,7 @@
  *     GitHub      - http://goo.gl/Ur0wg5
  *     Forum topic - http://goo.gl/rx6cNm
  */
- 
+
 class ZipFile
 {
 	/* Constructor: __New
@@ -36,10 +36,10 @@ class ZipFile
 			static header ; magic number(empty ZIP file)
 			if !VarSetCapacity(header)
 				VarSetCapacity(header, 22, 0), NumPut(0x06054b50, header, 0, "UInt") ; 'PK' Chr(5) Chr(6)
-			
+
 			if !fzip := FileOpen(this.Path, "w")
 				throw Exception("Failed to create ZIP file.", -1, this.Path)
-			
+
 			fzip.RawWrite(header, 22), fzip := "" ; close
 		}
 		; Check if valid ZIP file ??
@@ -89,9 +89,9 @@ class ZipFile
 			FileMove %ZipPath%, % TmpFolder.Path
 			ZipPath := TmpFolder.Path . "\" . fso.GetFileName(ZipPath) ; update the ZIP path
 		}
-		
+
 		dest := sApp.NameSpace(IsPack ? ZipPath : %AbsPath%(arg))
-		
+
 		; Destination is not empty, this causes a problem when checking if the
 		; MoveHere/CopyHere routine has completed, so we create a temporary dump
 		; location, Pack() or Unpack() into it, then move the item(s) back to the
@@ -199,7 +199,7 @@ class ZipFile
 			}
 			else fso := ComObjCreate("Scripting.FileSystemObject")
 				try fso.MoveFile(this.Path . "\*", dest), fso.MoveFolder(this.Path . "\*", dest)
-			
+
 			this.Folder.Delete(true) ; http://goo.gl/b5p7DT
 		}
 	}

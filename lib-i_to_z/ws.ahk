@@ -3,76 +3,75 @@ Title: Socket Lib (Netzwerk) + HowTo
 Author: Bentschi
 Website: http://de.autohotkey.com/forum/viewtopic.php?p=62765#62765
 
-WS_Startup(version=2.0) Started Winsock 2.0 oder höher 
-WS_Shutdown() Beendet Winsock 
-WS_Socket(protocol="TCP", ipversion="IPv4") Erstellt einen Socket (eine neue Verbindung) 
-WS_CloseSocket(byref socket) Beendet einen Socket 
-WS_GetSocketInfo(socket, byref af, byref maxsockaddr, byref minsockaddr, byref type, byref protocol) Ermittelt die informationen die automatisch bei Socket() gesetzt werden. 
-WS_Listen(socket, backlog=32) Erlaubt eine eingehende verbindung 
-WS_Bind(socket, ip, port) Bindet den Socket an eine Adresse oder einen Host 
-WS_Accept(socket, byref out_ip, byref out_port) Nimmt eine eingehende verbindung an. 
-WS_Connect(socket, ip, port) Verbindet zu einer Adresse 
-WS_RecvFrom(socket, byref out_ip, byref out_port, byref message, len=1024, flags=0) Wartet bis eine Nachricht eintrifft und ließt diese. 
-WS_Recv(socket, byref message, len=1024, flags=0) Wartet bis eine Nachricht eintrifft und ließt diese. 
-WS_RecvBinary(socket, byref pbuffer, len, flags=0) Wartet bis eine Nachricht eintrifft und ließt diese (binär). 
-WS_RecvFile(socket, file, flags=0) Speichert eine eingehende Nachricht in eine Datei. 
-WS_SendTo(socket, ip, port, message, len=0, flags=0) Sendet eine Nachricht. 
-WS_Send(socket, message, len=0, flags=0) Sendet eine Nachricht. 
-WS_SendBinary(socket, buffer, len=0, flags=0) Sendet eine Nachricht (Binär). 
-WS_SendFile(socket, file, flags=0) Sendet den Inhalt einer Datei. 
-WS_GetAddressFromString(hostname_or_ip) 05.12.2010 - Ersetzt durch WS_GetAddrInfo() 
-WS_GetAddrInfo(socket, hostname_or_ip, port, byref sockaddr, byref sockaddrlen) Konvertiert einen Hostnamen zu einer IP und gibt die struktur sockaddr zurück. 
-WS_EnableBroadcast(socket) Erlaubt Broadcast für UDP 
-WS_MessageSize(socket) Ermittelt die größe in bytes einer Nachricht am eingang. 
-WS_HandleEvents(socket, events="READ ACCEPT CONNECT CLOSE") Events die in Callbacks bearbeited werden sollen. 
-WS_Log(str, type=0) Schreibt den Log 
-WS_GetLog() Giebt den Log zurück und löscht den Buffer. 
-WS_GetConsoleInput() Erlaubt die Benutzereingabe, wenn die Konsole verwendet wird. 
+WS_Startup(version=2.0) Started Winsock 2.0 oder höher
+WS_Shutdown() Beendet Winsock
+WS_Socket(protocol="TCP", ipversion="IPv4") Erstellt einen Socket (eine neue Verbindung)
+WS_CloseSocket(byref socket) Beendet einen Socket
+WS_GetSocketInfo(socket, byref af, byref maxsockaddr, byref minsockaddr, byref type, byref protocol) Ermittelt die informationen die automatisch bei Socket() gesetzt werden.
+WS_Listen(socket, backlog=32) Erlaubt eine eingehende verbindung
+WS_Bind(socket, ip, port) Bindet den Socket an eine Adresse oder einen Host
+WS_Accept(socket, byref out_ip, byref out_port) Nimmt eine eingehende verbindung an.
+WS_Connect(socket, ip, port) Verbindet zu einer Adresse
+WS_RecvFrom(socket, byref out_ip, byref out_port, byref message, len=1024, flags=0) Wartet bis eine Nachricht eintrifft und ließt diese.
+WS_Recv(socket, byref message, len=1024, flags=0) Wartet bis eine Nachricht eintrifft und ließt diese.
+WS_RecvBinary(socket, byref pbuffer, len, flags=0) Wartet bis eine Nachricht eintrifft und ließt diese (binär).
+WS_RecvFile(socket, file, flags=0) Speichert eine eingehende Nachricht in eine Datei.
+WS_SendTo(socket, ip, port, message, len=0, flags=0) Sendet eine Nachricht.
+WS_Send(socket, message, len=0, flags=0) Sendet eine Nachricht.
+WS_SendBinary(socket, buffer, len=0, flags=0) Sendet eine Nachricht (Binär).
+WS_SendFile(socket, file, flags=0) Sendet den Inhalt einer Datei.
+WS_GetAddressFromString(hostname_or_ip) 05.12.2010 - Ersetzt durch WS_GetAddrInfo()
+WS_GetAddrInfo(socket, hostname_or_ip, port, byref sockaddr, byref sockaddrlen) Konvertiert einen Hostnamen zu einer IP und gibt die struktur sockaddr zurück.
+WS_EnableBroadcast(socket) Erlaubt Broadcast für UDP
+WS_MessageSize(socket) Ermittelt die größe in bytes einer Nachricht am eingang.
+WS_HandleEvents(socket, events="READ ACCEPT CONNECT CLOSE") Events die in Callbacks bearbeited werden sollen.
+WS_Log(str, type=0) Schreibt den Log
+WS_GetLog() Giebt den Log zurück und löscht den Buffer.
+WS_GetConsoleInput() Erlaubt die Benutzereingabe, wenn die Konsole verwendet wird.
 
 
-Callbacks: 
-============================ 
-WS_OnRead(socket) Wird ausgeführt wenn WS_HandleEvents() mit "READ" aufgerufen wird und Daten zum lesen vorhanden sind 
-WS_OnAccept(socket) Wird ausgeführt wenn WS_HandleEvents() mit "ACCEPT" aufgerufen wird und eine eingehende Verbindung vorhanden ist. 
-WS_OnConnect(socket) Wird ausgeführt wenn WS_HandleEvents() mit "CONNECT" aufgerufen wird und der Socket bereits verbunden ist. 
-WS_OnClose(socket) Wird ausgeführt wenn WS_HandleEvents() mit "CLOSE" aufgerufen wird und die Verbindung unterbrochen wird. 
+Callbacks:
+============================
+WS_OnRead(socket) Wird ausgeführt wenn WS_HandleEvents() mit "READ" aufgerufen wird und Daten zum lesen vorhanden sind
+WS_OnAccept(socket) Wird ausgeführt wenn WS_HandleEvents() mit "ACCEPT" aufgerufen wird und eine eingehende Verbindung vorhanden ist.
+WS_OnConnect(socket) Wird ausgeführt wenn WS_HandleEvents() mit "CONNECT" aufgerufen wird und der Socket bereits verbunden ist.
+WS_OnClose(socket) Wird ausgeführt wenn WS_HandleEvents() mit "CLOSE" aufgerufen wird und die Verbindung unterbrochen wird.
 
 
-Interne Funktionen: 
-============================ 
-WS_Proc(wParam, lParam, msg, hwnd) Ist ein Callback, das die Informationen an WS_DefProc oder WS_On... weiterleitet. 
-WS_DefProc(socket, event) Ist ein Callback das die Standartaktion für WS_HandleEvents() ausführt 
+Interne Funktionen:
+============================
+WS_Proc(wParam, lParam, msg, hwnd) Ist ein Callback, das die Informationen an WS_DefProc oder WS_On... weiterleitet.
+WS_DefProc(socket, event) Ist ein Callback das die Standartaktion für WS_HandleEvents() ausführt
 
 
-Globale Variablen: 
-============================ 
-WS_NOLOG Schreibt keinen Log 
-WS_LOGTOCONSOLE Zeigt den Log in einer Konsole an. 
-WS_LASTRECVMESSAGE Enthält die zulezt gelesene Nachricht, wenn WS_OnRead() definiert wurde, aber nicht existiert oder 0 (false) zurückgiebt. 
-WS_LASTACCEPTEDSOCKET Enthält den Socket der letzten akzeptierten Verbindung, wenn WS_OnAccept() definiert wurde, aber nicht existiert oder 0 (false) zurückgiebt. 
-WS_LASTACCEPTEDIP Enthält die IP-Adresse der letzten akzeptierten Verbindung, wenn WS_OnAccept() definiert wurde, aber nicht existiert oder 0 (false) zurückgiebt. 
-WS_LASTACCEPTEDPORT Enthält den Port der letzten akzeptierten Verbindung, wenn WS_OnAccept() definiert wurde, aber nicht existiert oder 0 (false) zurückgiebt. 
-WS_LASTCONNECTEDSOCKET Enthält den Socket der neuesten Verbindung, wenn WS_OnConnect() definiert wurde, aber nicht existiert oder 0 (false) zurückgiebt. 
-WS_LASTCLOSEDSOCKET Enthält den zulezt geschlossenen Socket, wenn WS_OnClose() definiert wurde, aber nicht existiert oder 0 (false) zurückgiebt. 
+Globale Variablen:
+============================
+WS_NOLOG Schreibt keinen Log
+WS_LOGTOCONSOLE Zeigt den Log in einer Konsole an.
+WS_LASTRECVMESSAGE Enthält die zulezt gelesene Nachricht, wenn WS_OnRead() definiert wurde, aber nicht existiert oder 0 (false) zurückgiebt.
+WS_LASTACCEPTEDSOCKET Enthält den Socket der letzten akzeptierten Verbindung, wenn WS_OnAccept() definiert wurde, aber nicht existiert oder 0 (false) zurückgiebt.
+WS_LASTACCEPTEDIP Enthält die IP-Adresse der letzten akzeptierten Verbindung, wenn WS_OnAccept() definiert wurde, aber nicht existiert oder 0 (false) zurückgiebt.
+WS_LASTACCEPTEDPORT Enthält den Port der letzten akzeptierten Verbindung, wenn WS_OnAccept() definiert wurde, aber nicht existiert oder 0 (false) zurückgiebt.
+WS_LASTCONNECTEDSOCKET Enthält den Socket der neuesten Verbindung, wenn WS_OnConnect() definiert wurde, aber nicht existiert oder 0 (false) zurückgiebt.
+WS_LASTCLOSEDSOCKET Enthält den zulezt geschlossenen Socket, wenn WS_OnClose() definiert wurde, aber nicht existiert oder 0 (false) zurückgiebt.
 
 
-Hinweise: 
-============================ 
-- Die in WS_HandleEvents() definierten Callbacks müssen nicht im script existieren. 
-In diesem Fall übernimmt WS_DefProc() eine Standardaktion. 
-WS_DefProc() wird ebenso aufgerufen, wenn eines der Callbacks 0 (false) zurückgiebt. 
+Hinweise:
+============================
+- Die in WS_HandleEvents() definierten Callbacks müssen nicht im script existieren.
+In diesem Fall übernimmt WS_DefProc() eine Standardaktion.
+WS_DefProc() wird ebenso aufgerufen, wenn eines der Callbacks 0 (false) zurückgiebt.
 
-- Anstelle von den Parametern "ip" kann auch ein Hostname verwendet werden. (bsp: "www.someurl.com") 
-ACHTUNG: Der Hostname darf kein "http://", "ftp://" oder sonstige Protokollinformationen enthalten. 
-Andernfalls kann auch eine der folgenen IP-Addressen (für IPv4) verwendet werden: 
-"0.0.0.0" für INADDR_ANY bzw. ADDR_ANY 
-"127.0.0.1" für INADDR_LOOPBACK bzw. ADDR_LOOPBACK 
-"255.255.255.255" für INADDR_BROADCAST bzw. ADDR_BROADCAST 
-"255.255.255.255" für INADDR_NONE bzw. ADDR_NONE 
+- Anstelle von den Parametern "ip" kann auch ein Hostname verwendet werden. (bsp: "www.someurl.com")
+ACHTUNG: Der Hostname darf kein "http://", "ftp://" oder sonstige Protokollinformationen enthalten.
+Andernfalls kann auch eine der folgenen IP-Addressen (für IPv4) verwendet werden:
+"0.0.0.0" für INADDR_ANY bzw. ADDR_ANY
+"127.0.0.1" für INADDR_LOOPBACK bzw. ADDR_LOOPBACK
+"255.255.255.255" für INADDR_BROADCAST bzw. ADDR_BROADCAST
+"255.255.255.255" für INADDR_NONE bzw. ADDR_NONE
 */
 
-WS_HandleEvents(socket, events="READ ACCEPT CONNECT CLOSE")
-{
+WS_HandleEvents(socket, events="READ ACCEPT CONNECT CLOSE"){
   static FD_READ := 1, FD_ACCEPT := 8, FD_CONNECT := 16, FD_CLOSE := 32
   static msg := 0xB93D
   Ptr := (A_PtrSize) ? "uptr" : "uint"
@@ -100,8 +99,7 @@ WS_HandleEvents(socket, events="READ ACCEPT CONNECT CLOSE")
   return 1
 }
 
-WS_Proc(wParam, lParam, msg, hwnd)
-{
+WS_Proc(wParam, lParam, msg, hwnd){
   static FD_READ := 1, FD_ACCEPT := 8, FD_CONNECT := 16, FD_CLOSE := 32
   event := lParam & 0xFFFF
   error := lParam >> 16
@@ -142,8 +140,7 @@ WS_Proc(wParam, lParam, msg, hwnd)
   return 1
 }
 
-WS_DefProc(socket, event)
-{
+WS_DefProc(socket, event){
   global WS_LASTRECVMESSAGE, WS_LASTACCEPTEDSOCKET, WS_LASTACCEPTEDIP, WS_LASTACCEPTEDPORT
   global WS_LASTCONNECTEDSOCKET, WS_LASTCLOSEDSOCKET
 
@@ -179,8 +176,7 @@ WS_DefProc(socket, event)
   return 1
 }
 
-WS_MessageSize(socket)
-{
+WS_MessageSize(socket){
   static FIONREAD := 0x4004667F
   Ptr := (A_PtrSize) ? "uptr" : "uint"
 
@@ -190,8 +186,7 @@ WS_MessageSize(socket)
   return NumGet(argp, 0, "int")
 }
 
-WS_EnableBroadcast(socket) ;(UDP only!)
-{
+WS_EnableBroadcast(socket)  { ;(UDP only!)
   static SOL_SOCKET := 0xFFFF
   static SO_BROADCAST := 0x0020
   static IPPROTO_UDP := 17
@@ -221,8 +216,7 @@ WS_EnableBroadcast(socket) ;(UDP only!)
   return 1
 }
 
-WS_GetAddrInfo(socket, hostname_or_ip, port, byref sockaddr, byref sockaddrlen)
-{
+WS_GetAddrInfo(socket, hostname_or_ip, port, byref sockaddr, byref sockaddrlen){
   static AF_INET := 2, AF_INET6 := 23
   static ADDR_ANY := 0xFFFFFFFF, ADDR_NONE := 0
   static addr
@@ -256,8 +250,7 @@ WS_GetAddrInfo(socket, hostname_or_ip, port, byref sockaddr, byref sockaddrlen)
   return 1
 }
 
-WS_Send(socket, message, len=0, flags=0)
-{
+WS_Send(socket, message, len=0, flags=0){
   static MSG_DONTROUTE := 4, MSG_OOB := 1
 
   Ptr := (A_PtrSize) ? "uptr" : "uint"
@@ -273,7 +266,7 @@ WS_Send(socket, message, len=0, flags=0)
     else if (A_LoopField="MSG_OOB")
       fl |= MSG_OOB
   }
-  
+
   WS_Log(A_ThisFunc "(" socket ", message, " len ", " flags ")", 3)
   result := DllCall("ws2_32\send", Ptr, socket, AStr, message, "int", len, "int", fl, "int")
   if (result=-1)
@@ -285,8 +278,7 @@ WS_Send(socket, message, len=0, flags=0)
   return result
 }
 
-WS_SendBinary(socket, pbuffer, len, flags=0)
-{
+WS_SendBinary(socket, pbuffer, len, flags=0){
   static MSG_DONTROUTE := 4, MSG_OOB := 1
 
   Ptr := (A_PtrSize) ? "uptr" : "uint"
@@ -300,7 +292,7 @@ WS_SendBinary(socket, pbuffer, len, flags=0)
     else if (A_LoopField="MSG_OOB")
       fl |= MSG_OOB
   }
-  
+
   WS_Log(A_ThisFunc "(" socket ", message, " len ", " flags ")", 3)
   result := DllCall("ws2_32\send", Ptr, socket, Ptr, pbuffer, "int", len, "int", fl, "int")
   if (result=-1)
@@ -312,8 +304,7 @@ WS_SendBinary(socket, pbuffer, len, flags=0)
   return result
 }
 
-WS_SendFile(socket, file, flags=0)
-{
+WS_SendFile(socket, file, flags=0){
   static MSG_DONTROUTE := 4, MSG_OOB := 1
   static GENERIC_READ := 0x80000000, OPEN_EXISTING := 3
 
@@ -328,7 +319,7 @@ WS_SendFile(socket, file, flags=0)
     else if (A_LoopField="MSG_OOB")
       fl |= MSG_OOB
   }
-  
+
   if ((hFile := DllCall("CreateFile", Ptr, &file, "uint", GENERIC_READ, "uint", 0, Ptr, 0, "uint", OPEN_EXISTING, "uint", 0, Ptr, 0, Ptr))=0)
   {
     WS_Log("[ERROR] Can't open the file!", 1)
@@ -361,8 +352,7 @@ WS_SendFile(socket, file, flags=0)
   return result
 }
 
-WS_SendTo(socket, ip, port, message, len=0, flags=0)
-{
+WS_SendTo(socket, ip, port, message, len=0, flags=0){
   static MSG_DONTROUTE := 4, MSG_OOB := 1
 
   Ptr := (A_PtrSize) ? "uptr" : "uint"
@@ -378,7 +368,7 @@ WS_SendTo(socket, ip, port, message, len=0, flags=0)
     else if (A_LoopField="MSG_OOB")
       fl |= MSG_OOB
   }
-  
+
   WS_Log(A_ThisFunc "(" socket ", " ip ", " port ", message, " len ", " flags ")", 3)
 
   if (!WS_GetAddrInfo(socket, ip, port, sockaddr, sockaddrlen))
@@ -396,10 +386,9 @@ WS_SendTo(socket, ip, port, message, len=0, flags=0)
   return result
 }
 
-WS_Recv(socket, byref message, len=0, flags=0)
-{
+WS_Recv(socket, byref message, len=0, flags=0){
   static MSG_PEEK := 2, MSG_OOB := 1, MSG_WAITALL := 8
-  
+
   Ptr := (A_PtrSize) ? "uptr" : "uint"
   fl := 0
   Loop, parse, flags, % " "
@@ -431,10 +420,9 @@ WS_Recv(socket, byref message, len=0, flags=0)
   return result
 }
 
-WS_RecvBinary(socket, byref pbuffer, len, flags=0)
-{
+WS_RecvBinary(socket, byref pbuffer, len, flags=0){
   static MSG_PEEK := 2, MSG_OOB := 1, MSG_WAITALL := 8
-  
+
   Ptr := (A_PtrSize) ? "uptr" : "uint"
   fl := 0
   Loop, parse, flags, % " "
@@ -461,8 +449,7 @@ WS_RecvBinary(socket, byref pbuffer, len, flags=0)
   return result
 }
 
-WS_RecvFile(socket, file, flags=0)
-{
+WS_RecvFile(socket, file, flags=0){
   static MSG_PEEK := 2, MSG_OOB := 1, MSG_WAITALL := 8
   static GENERIC_WRITE := 0x40000000, CREATE_ALWAYS := 2
 
@@ -507,10 +494,9 @@ WS_RecvFile(socket, file, flags=0)
   return result
 }
 
-WS_RecvFrom(socket, byref out_ip, byref out_port, byref message, len=0, flags=0)
-{
+WS_RecvFrom(socket, byref out_ip, byref out_port, byref message, len=0, flags=0){
   static MSG_PEEK := 2, MSG_OOB := 1, MSG_WAITALL := 8
-  
+
   Ptr := (A_PtrSize) ? "uptr" : "uint"
   fl := 0
   Loop, parse, flags, % " "
@@ -568,8 +554,7 @@ WS_RecvFrom(socket, byref out_ip, byref out_port, byref message, len=0, flags=0)
   return result
 }
 
-WS_Connect(socket, ip, port)
-{
+WS_Connect(socket, ip, port){
   static AF_INET := 2, AF_INET6 := 23
 
   WS_Log(A_ThisFunc "(" socket ", " ip ", " port ")", 3)
@@ -591,8 +576,7 @@ WS_Connect(socket, ip, port)
   return 1
 }
 
-WS_Accept(socket, byref out_ip, byref out_port)
-{
+WS_Accept(socket, byref out_ip, byref out_port){
   static AF_INET := 2, AF_INET6 := 23
 
   WS_Log(A_ThisFunc "(" socket ")", 3)
@@ -636,8 +620,7 @@ WS_Accept(socket, byref out_ip, byref out_port)
   return newsocket
 }
 
-WS_Bind(socket, ip, port)
-{
+WS_Bind(socket, ip, port){
   static AF_INET := 2, AF_INET6 := 23
 
   WS_Log(A_ThisFunc "(" socket ", " ip ", " port ")", 3)
@@ -660,8 +643,7 @@ WS_Bind(socket, ip, port)
   return 1
 }
 
-WS_Listen(socket, backlog=32)
-{
+WS_Listen(socket, backlog=32){
   WS_Log(A_ThisFunc "(" socket ", " backlog ")", 3)
   Ptr := (A_PtrSize) ? "uptr" : "uint"
   if (DllCall("ws2_32\listen", Ptr, socket, "int", backlog)!=0)
@@ -673,8 +655,7 @@ WS_Listen(socket, backlog=32)
   return 1
 }
 
-WS_GetSocketInfo(socket, byref af, byref maxsockaddr, byref minsockaddr, byref type, byref protocol)
-{
+WS_GetSocketInfo(socket, byref af, byref maxsockaddr, byref minsockaddr, byref type, byref protocol){
   static SOL_SOCKET := 0xFFFF
   static SO_PROTOCOL_INFOA := 0x2004
 
@@ -696,8 +677,7 @@ WS_GetSocketInfo(socket, byref af, byref maxsockaddr, byref minsockaddr, byref t
   return result
 }
 
-WS_Socket(protocol="TCP", ipversion="IPv4")
-{
+WS_Socket(protocol="TCP", ipversion="IPv4"){
   static AF_INET := 2, AF_INET6 := 23
   static SOCK_STREAM := 1, SOCK_DGRAM := 2
   static IPPROTO_TCP := 6, IPPROTO_UDP := 17
@@ -723,12 +703,11 @@ WS_Socket(protocol="TCP", ipversion="IPv4")
   return socket
 }
 
-WS_CloseSocket(byref socket)
-{
+WS_CloseSocket(byref socket){
   WS_Log(A_ThisFunc "(" socket ")", 3)
   sPtr := (A_PtrSize) ? A_PtrSize : 4
   Ptr := (A_PtrSize) ? "uptr" : "uint"
-  
+
   if (DllCall("ws2_32\closesocket", Ptr, socket, "int")!=0)
   {
     WS_Log("[ERROR] Can't close this Socket!", 1)
@@ -739,8 +718,7 @@ WS_CloseSocket(byref socket)
   return 1
 }
 
-WS_Startup(version = "2.0")
-{
+WS_Startup(version = "2.0"){
   WS_Log(A_ThisFunc "(" version ")", 3)
   sPtr := (A_PtrSize) ? A_PtrSize : 4
   Ptr := (A_PtrSize) ? "uptr" : "uint"
@@ -752,7 +730,7 @@ WS_Startup(version = "2.0")
     return 0
   }
   WS_Log("Winsock Library loaded. (Handle: " hWS ")")
-  
+
   VarSetCapacity(WSAData, 394+sPtr, 0)
   if (instr(version, "."))
   {
@@ -779,8 +757,7 @@ WS_Startup(version = "2.0")
   return 1
 }
 
-WS_Shutdown()
-{
+WS_Shutdown(){
   WS_Log(A_ThisFunc "()", 3)
   Ptr := (A_PtrSize) ? "uptr" : "uint"
 
@@ -805,12 +782,11 @@ WS_Shutdown()
   return 1
 }
 
-WS_Log(str, type=0)
-{
+WS_Log(str, type=0){
   global WS_NOLOG, WS_LOGTOCONSOLE
   static log, cmd, stdout
   Ptr := (A_PtrSize) ? "uptr" : "uint"
-  
+
   if (WS_NOLOG=1)
     return 0
 
@@ -863,8 +839,7 @@ WS_Log(str, type=0)
   return 1
 }
 
-WS_GetConsoleInput()
-{
+WS_GetConsoleInput(){
   global WS_LOGTOCONSOLE
   if (!WS_LOGTOCONSOLE)
     return 0
@@ -884,7 +859,6 @@ WS_GetConsoleInput()
   return msg
 }
 
-WS_GetLog()
-{
+WS_GetLog(){
   return WS_Log("")
 }
