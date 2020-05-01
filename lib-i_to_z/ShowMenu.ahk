@@ -1,4 +1,4 @@
-/*
+﻿/*
   Function:		ShowMenu
  				Show menu from the text string.
    

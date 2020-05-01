@@ -1,4 +1,4 @@
-splashText(text, rows = 1, helptext = "", defaultTxt = "", timeout = ""){
+﻿splashText(text, rows = 1, helptext = "", defaultTxt = "", timeout = ""){
 	global  ; Set variable as global - rename 'vinput' below if you use 'input' as a variable elsewhere.
 	input = ; Clear input variable
   	IniRead()

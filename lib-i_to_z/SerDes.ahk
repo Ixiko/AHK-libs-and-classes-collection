@@ -1,4 +1,4 @@
-/* Function: SerDes
+﻿/* Function: SerDes
  *     Serialize an AHK object to string and optionally dumps it into a file.
  *     De-serialize a 'SerDes()' formatted string to an AHK object.
  * AHK Version: Requires v1.1+ OR v2.0-a049+

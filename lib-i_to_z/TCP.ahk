@@ -1,4 +1,4 @@
-; --------------------------------------------------------------------------------------------------------------------------------
+﻿; --------------------------------------------------------------------------------------------------------------------------------
 TCP_Startup(OnExit = True, OnMessage = "") {
    ; Returns True upon success, False upon failure
    ; The WSAStartup function initiates use of the Winsock DLL by a process.

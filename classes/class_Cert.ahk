@@ -1,4 +1,4 @@
-class Cert
+﻿class Cert
 {
     ;   Encoding Types
 static X509_ASN_ENCODING    := 0x00000001

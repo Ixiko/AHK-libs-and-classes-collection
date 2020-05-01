@@ -1,4 +1,4 @@
-; #Include DockA.ahk
+﻿; #Include DockA.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

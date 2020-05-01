@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Class JSONFile
 	Written by Runar "RUNIE" Borge
 	

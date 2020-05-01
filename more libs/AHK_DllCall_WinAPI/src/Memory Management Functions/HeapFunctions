@@ -1,0 +1,94 @@
+/*
+HeapFunctions:
+This functions give control over the memory.
+the returned pointer can be used with numput:
+
+
+v:=HeapAlloc(20) ;20 bytes
+Loop,5
+numput(A_Index,v+0,A_Index*4,"UInt")
+v:=HeapReAlloc(v,HeapSize(v))
+Loop,5
+numput(A_Index,v+0,A_Index*4+20,"UInt")
+
+
+See:
+http://msdn.microsoft.com/en-us/library/aa366711(v=vs.85).aspx
+*/
+
+
+/*
+HeapAlloc(Size)
+   Creates a  new Memory region.
+   Size: The size of the new memoy block in bytes.
+   Return: the pointer to the memory block.
+Used functions:
+HeapAlloc: The main function.
+http://msdn.microsoft.com/en-us/library/windows/apps/aa366597(v=vs.85).aspx
+GetProcessHeap: Function to access the process heap.
+http://msdn.microsoft.com/en-us/library/windows/apps/aa366569(v=vs.85).aspx
+*/
+
+
+HeapAlloc(Size)
+{
+    return DllCall("HeapAlloc","Ptr",DllCall("GetProcessHeap"),"UInt",8,"Ptr",size,"ptr")   
+}
+
+
+/*
+HeapReAlloc(ptr,Size)
+  An funcion to change the size of a memory block. You can either make it smaller or bigger. (The data stays)
+  ptr: The ptr to an memory region. It can be returned by HeapAlloc.
+  Size: The new size of the memory block.
+  Return: The pointer  to the memory block with the new size.
+Used functions:
+HeapReAlloc: The main function. 
+http://msdn.microsoft.com/en-us/library/windows/apps/aa366704(v=vs.85).aspx
+GetProcessHeap: Function to access the process heap.
+http://msdn.microsoft.com/en-us/library/windows/apps/aa366569(v=vs.85).aspx
+*/
+
+
+HeapReAlloc(ptr,Size)
+{
+    return DllCall("HeapReAlloc","Ptr",DllCall("GetProcessHeap"),"UInt",8,"Ptr",ptr,"Ptr",Size)
+}
+
+
+/*
+HeapSize(ptr)
+  Function that returns the size of a memory block
+  ptr: The pointe to the memory block. Either created by HeapAlloc or HeapReAlloc.
+  Return: The size of the memory block in bytes.
+Used functions:
+HeapSize: The main function.
+http://msdn.microsoft.com/en-us/library/windows/apps/aa366706(v=vs.85).aspx
+GetProcessHeap: Function to access the process heap.
+http://msdn.microsoft.com/en-us/library/windows/apps/aa366569(v=vs.85).aspx
+*/
+
+
+HeapSize(ptr)
+{
+    return a:=DllCall("HeapSize","Ptr",DllCall("GetProcessHeap"),"UInt",8,"Ptr",ptr)
+}
+
+
+/*
+HeapFree(ptr)
+  Function to delete a block in the memory.(delete)
+  ptr: The ptr to the memory block. It can be created by the HeapAlloc or HeapReAlloc function.
+  Return Value: Returns 0 if sucessful.
+Used functions:
+HeapFree: The main function.
+http://msdn.microsoft.com/en-us/library/windows/apps/aa366701(v=vs.85).aspx
+GetProcessHeap: Function to access the process heap.
+http://msdn.microsoft.com/en-us/library/windows/apps/aa366569(v=vs.85).aspx
+*/
+
+
+HeapFree(ptr)
+{
+    return DllCall("HeapFree","Ptr",DllCall("GetProcessHeap"),"UInt",8,"Ptr",ptr)
+}

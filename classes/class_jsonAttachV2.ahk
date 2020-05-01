@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Storing variables/files in JSON format inside AHK Script Demo
 	created by oif2003 for AutoHotkey v2 a100 on 20 Nov 2018
 */

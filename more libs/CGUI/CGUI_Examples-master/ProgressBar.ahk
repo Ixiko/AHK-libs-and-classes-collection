@@ -1,4 +1,4 @@
-SetBatchlines, -1
+﻿SetBatchlines, -1
 MyWindow := new CBasicWindow("Demo") ;Create an instance of this window class
 
 Loop 1000

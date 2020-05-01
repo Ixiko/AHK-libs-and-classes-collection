@@ -1,4 +1,4 @@
-; Function to draw shadowed text in Win9x
+﻿; Function to draw shadowed text in Win9x
 ; Uses Laszlo's MCode() ; http://www.autohotkey.com/forum/viewtopic.php?p=135302#135302
 ; Code is an adaptation of some functions found in RP8.dll pertaining to Revolutions Pack by Tihiy
 ;================================================================

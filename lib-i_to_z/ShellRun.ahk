@@ -1,4 +1,4 @@
-;====================================== EXAMPLE ==================================================
+﻿;====================================== EXAMPLE ==================================================
 ;ShellRun("Taskmgr.exe")  ;Task manager
 ;ShellRun("Notepad", A_ScriptFullPath)  ;Open a file with notepad
 ;ShellRun("Notepad",,,"RunAs")  ;Open untitled notepad as administrator

@@ -1,4 +1,4 @@
-#include <ShellRun>
+﻿#include <ShellRun>
 
 ShellRunEx(cmdLine, workingDir)
 {

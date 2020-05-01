@@ -1,4 +1,4 @@
-; gdi+ ahk tutorial 8 written by tic (Tariq Porter)
+﻿; gdi+ ahk tutorial 8 written by tic (Tariq Porter)
 ; Requires Gdip.ahk either in your Lib folder as standard library or using #Include
 ;
 ; Tutorial to write text onto a gui

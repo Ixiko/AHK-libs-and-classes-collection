@@ -1,4 +1,4 @@
-; #Include Dock.ahk
+﻿; #Include Dock.ahk
 SetBatchLines, -1 
 #SingleInstance, force 
    

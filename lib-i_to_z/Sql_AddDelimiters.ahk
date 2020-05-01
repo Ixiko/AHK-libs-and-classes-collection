@@ -1,4 +1,4 @@
-AddSqlDelimiters(fnCopiedText)
+﻿AddSqlDelimiters(fnCopiedText)
 {
 	; adds or removes SQL object name delimiters ([,]) to selected text
 	; MsgBox fnCopiedText: %fnCopiedText%

@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #SingleInstance, force
 #include %A_ScriptDir%\..\class_dock.ahk
 

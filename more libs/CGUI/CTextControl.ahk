@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CTextControl
 A static text control that can also be used as hyperlink.
 

@@ -1,7 +1,7 @@
-; Title:     Dock 
+ï»¿; Title:     Dock 
 ;            *Dock desired top level windows (dock clients) to any top level window (dock host)* 
 ;
-; 
+;Â 
 ;
 ;			 Using dock module you can glue your or third-party windows to any top level window.
 ;			 Docked windows in module terminology are called Clients and the window that keeps their 
@@ -33,8 +33,8 @@
 ;			fine tuning of Client's postion and basicly every setup is possible. Parameters are grouped in 4 classes - first 3 influence X coordinate 
 ;			of the client, next 3 Y coordinate, next 2 Client's width and final 2 Client's height:
 ;			
-;> 					xhw,xw,xd,  yhh,yh,yd [, whw,wd,  hhh,hd] 
-;> 						X			Y			W		H
+;>Â 					xhw,xw,xd,  yhh,yh,yd [, whw,wd,  hhh,hd] 
+;>Â 						X			Y			W		H
 ; 
 ;            o The *X* coordinate of the top, left corner of the client window is computed as 
 ;            *HostX + xhw*HostWidth + xw*ClientWidth + xd*, with the parameters xhw, xw and xd 

@@ -1,4 +1,4 @@
-JEE_StrRept(vText, vNum) {
+﻿JEE_StrRept(vText, vNum) {
 	if (vNum <= 0)
 		return
 	return StrReplace(Format("{:" vNum "}", ""), " ", vText)

@@ -1,4 +1,4 @@
-#Persistent
+﻿#Persistent
 /*
 ;enable Debug view
 	a_scriptPID := DllCall("GetCurrentProcessId")	; get script's PID

@@ -1,4 +1,4 @@
-; Outlined Text with Some String Path functions
+﻿; Outlined Text with Some String Path functions
 ; Based mostly on gdi+ ahk tutorial 8 written by tic (Tariq Porter)
 ; Requires Gdip.ahk either in your Lib folder as standard library or using #Include
 ; reference - http://www.codeproject.com/KB/GDI-plus/OutlineText.aspx

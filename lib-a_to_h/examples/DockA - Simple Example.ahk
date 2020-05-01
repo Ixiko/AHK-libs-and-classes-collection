@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #SingleInstance Force
 gui 1:-DPIScale +LastFound +Resize +LabelForm1_
 gui,1:Show,w400 h300,Form1

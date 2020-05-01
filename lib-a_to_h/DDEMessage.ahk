@@ -1,4 +1,4 @@
-sApplication := "firefox"  ; iexplore, opera
+﻿sApplication := "firefox"  ; iexplore, opera
 sTopic := "WWW_GetWindowInfo"
 sItem  := "0xFFFFFFFF"
 

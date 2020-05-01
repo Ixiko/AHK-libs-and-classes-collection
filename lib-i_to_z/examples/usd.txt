@@ -1,0 +1,151 @@
+USD currency rate as on:
+1 May 2020 00:00:01 GMT
+
+Euro                       	1 EUR = USD 1.08809082		1 USD = EUR      0.91904093
+U.K. Pound Sterling        	1 GBP = USD 1.25093136		1 USD = GBP      0.79940437
+Japanese Yen               	1 JPY = USD 0.00937810		1 USD = JPY    106.63136459
+Swiss Franc                	1 CHF = USD 1.02982239		1 USD = CHF      0.97104123
+Australian Dollar          	1 AUD = USD 0.65499953		1 USD = AUD      1.52671865
+Canadian Dollar            	1 CAD = USD 0.72029455		1 USD = CAD      1.38832092
+Nicaraguan Córdoba        	1 NIO = USD 0.02947801		1 USD = NIO     33.92359015
+Namibian dollar            	1 NAD = USD 0.05420691		1 USD = NAD     18.44783378
+Sudanese pound             	1 SDG = USD 0.01816483		1 USD = SDG     55.05145119
+Mauritanian ouguiya        	1 MRU = USD 0.02640849		1 USD = MRU     37.86660617
+Tanzanian shilling         	1 TZS = USD 0.00043279		1 USD = TZS  2,310.57585825
+South Korean Won           	1 KRW = USD 0.00082461		1 USD = KRW  1,212.68845488
+Bulgarian Lev              	1 BGN = USD 0.55608008		1 USD = BGN      1.79830216
+Papua New Guinean kina     	1 PGK = USD 0.29068648		1 USD = PGK      3.44013252
+Iranian rial               	1 IRR = USD 0.00002382		1 USD = IRR 41,975.10870738
+Panamanian Balboa          	1 PAB = USD 1.00186920		1 USD = PAB      0.99813428
+East Caribbean Dollar      	1 XCD = USD 0.36969494		1 USD = XCD      2.70493291
+Neth. Antillean Guilder    	1 ANG = USD 0.55798126		1 USD = ANG      1.79217488
+Dominican Peso             	1 DOP = USD 0.01838050		1 USD = DOP     54.40547588
+Mongolian togrog           	1 MNT = USD 0.00035850		1 USD = MNT  2,789.37165775
+Mauritian Rupee            	1 MUR = USD 0.02481916		1 USD = MUR     40.29144856
+Icelandic Krona            	1 ISK = USD 0.00682778		1 USD = ISK    146.46055479
+Pakistani Rupee            	1 PKR = USD 0.00622103		1 USD = PKR    160.74506415
+Libyan Dinar               	1 LYD = USD 0.70687873		1 USD = LYD      1.41466982
+Gambian dalasi             	1 GMD = USD 0.01936303		1 USD = GMD     51.64480198
+Aruban florin              	1 AWG = USD 0.55182247		1 USD = AWG      1.81217701
+Zambian kwacha             	1 ZMW = USD 0.05358384		1 USD = ZMW     18.66234347
+Yemeni rial                	1 YER = USD 0.00400465		1 USD = YER    249.70977201
+Algerian Dinar             	1 DZD = USD 0.00779461		1 USD = DZD    128.29381554
+Polish Zloty               	1 PLN = USD 0.23971658		1 USD = PLN      4.17159300
+Brazilian Real             	1 BRL = USD 0.18528718		1 USD = BRL      5.39702751
+Azerbaijan Manat           	1 AZN = USD 0.58897684		1 USD = AZN      1.69785962
+Ghanaian Cedi              	1 GHS = USD 0.17253525		1 USD = GHS      5.79591716
+São Tomé and Príncipe   	1 STN = USD 0.04395025		1 USD = STN     22.75299891
+Djiboutian franc           	1 DJF = USD 0.00562582		1 USD = DJF    177.75174646
+Albanian lek               	1 ALL = USD 0.00880107		1 USD = ALL    113.62250177
+Cambodian riel             	1 KHR = USD 0.00024563		1 USD = KHR  4,071.12195122
+Brunei Dollar              	1 BND = USD 0.70878663		1 USD = BND      1.41086183
+Singapore Dollar           	1 SGD = USD 0.70937193		1 USD = SGD      1.40969774
+Israeli New Sheqel         	1 ILS = USD 0.28570498		1 USD = ILS      3.50011404
+Kyrgyzstan Som             	1 KGS = USD 0.01265779		1 USD = KGS     79.00275160
+Jordanian Dinar            	1 JOD = USD 1.41101512		1 USD = JOD      0.70870963
+Fiji Dollar                	1 FJD = USD 0.44618850		1 USD = FJD      2.24120522
+Congolese franc            	1 CDF = USD 0.00057921		1 USD = CDF  1,726.47910633
+Swazi lilangeni            	1 SZL = USD 0.05423087		1 USD = SZL     18.43968184
+Nepalese Rupee             	1 NPR = USD 0.00827889		1 USD = NPR    120.78906996
+Colombian Peso             	1 COP = USD 0.00025115		1 USD = COP  3,981.73297941
+Central African CFA Franc  	1 XAF = USD 0.00162885		1 USD = XAF    613.92916383
+New Turkmenistan Manat     	1 TMT = USD 0.28581406		1 USD = TMT      3.49877824
+Uruguayan Peso             	1 UYU = USD 0.02330872		1 USD = UYU     42.90239114
+Liberian dollar            	1 LRD = USD 0.00503247		1 USD = LRD    198.70952381
+South Sudanese pound       	1 SSP = USD 0.00622445		1 USD = SSP    160.65681066
+Eritrean nakfa             	1 ERN = USD 0.06645259		1 USD = ERN     15.04832312
+Somali shilling            	1 SOS = USD 0.00173141		1 USD = SOS    577.56401384
+Indian Rupee               	1 INR = USD 0.01332254		1 USD = INR     75.06074847
+Barbadian Dollar           	1 BBD = USD 0.49963683		1 USD = BBD      2.00145374
+Vietnamese Dong            	1 VND = USD 0.00004279		1 USD = VND 23,368.79118653
+Egyptian Pound             	1 EGP = USD 0.06344193		1 USD = EGP     15.76244573
+Costa Rican Colón         	1 CRC = USD 0.00176174		1 USD = CRC    567.62107007
+Malagasy ariary            	1 MGA = USD 0.00026385		1 USD = MGA  3,790.09990917
+Trinidad Tobago Dollar     	1 TTD = USD 0.14812241		1 USD = TTD      6.75117295
+Haitian gourde             	1 HTG = USD 0.01023269		1 USD = HTG     97.72599532
+Macanese pataca            	1 MOP = USD 0.12547629		1 USD = MOP      7.96963331
+Samoan tala                	1 WST = USD 0.36535743		1 USD = WST      2.73704578
+Malaysian Ringgit          	1 MYR = USD 0.23195707		1 USD = MYR      4.31114253
+Romanian New Leu           	1 RON = USD 0.22449131		1 USD = RON      4.45451544
+Peruvian Nuevo Sol         	1 PEN = USD 0.29623269		1 USD = PEN      3.37572469
+Lebanese Pound             	1 LBP = USD 0.00066298		1 USD = LBP  1,508.35055997
+Salvadoran colon           	1 SVC = USD 0.11440485		1 USD = SVC      8.74088814
+Cape Verde escudo          	1 CVE = USD 0.00975341		1 USD = CVE    102.52825553
+Malawian kwacha            	1 MWK = USD 0.00135709		1 USD = MWK    736.87091648
+Guatemalan Quetzal         	1 GTQ = USD 0.12981380		1 USD = GTQ      7.70334133
+Bosnia and Herzegovina co  	1 BAM = USD 0.55000120		1 USD = BAM      1.81817786
+Norwegian Krone            	1 NOK = USD 0.09726062		1 USD = NOK     10.28165369
+Turkish Lira               	1 TRY = USD 0.14312605		1 USD = TRY      6.98684841
+Bangladeshi taka           	1 BDT = USD 0.01177350		1 USD = BDT     84.93652232
+Tunisian Dinar             	1 TND = USD 0.34461363		1 USD = TND      2.90180048
+Bahrain Dinar              	1 BHD = USD 2.64899710		1 USD = BHD      0.37750136
+CFP Franc                  	1 XPF = USD 0.00912339		1 USD = XPF    109.60836332
+Myanma Kyat                	1 MMK = USD 0.00071030		1 USD = MMK  1,407.86099865
+Omani Rial                 	1 OMR = USD 2.60092502		1 USD = OMR      0.38447860
+Botswana Pula              	1 BWP = USD 0.08301931		1 USD = BWP     12.04538971
+Russian Rouble             	1 RUB = USD 0.01362393		1 USD = RUB     73.40026270
+Indonesian Rupiah          	1 IDR = USD 0.00006724		1 USD = IDR 14,872.11693695
+Kazakhstani Tenge          	1 KZT = USD 0.00235418		1 USD = KZT    424.77719026
+Georgian lari              	1 GEL = USD 0.31219117		1 USD = GEL      3.20316559
+Belize dollar              	1 BZD = USD 0.49687268		1 USD = BZD      2.01258802
+Comoro franc               	1 KMF = USD 0.00226078		1 USD = KMF    442.32563070
+Sierra Leonean leone       	1 SLL = USD 0.00010329		1 USD = SLL  9,681.90255220
+Maldivian rufiyaa          	1 MVR = USD 0.06477510		1 USD = MVR     15.43803182
+Chilean Peso               	1 CLP = USD 0.00119535		1 USD = CLP    836.57586326
+Swedish Krona              	1 SEK = USD 0.10193488		1 USD = SEK      9.81018488
+Philippine Peso            	1 PHP = USD 0.01985604		1 USD = PHP     50.36252061
+Tajikistan Ruble           	1 TJS = USD 0.09765282		1 USD = TJS     10.24035938
+Paraguayan Guaraní        	1 PYG = USD 0.00015394		1 USD = PYG  6,495.92718160
+Jamaican Dollar            	1 JMD = USD 0.00706942		1 USD = JMD    141.45423729
+Gibraltar pound            	1 GIP = USD 1.24654317		1 USD = GIP      0.80221851
+Mozambican metical         	1 MZN = USD 0.01471399		1 USD = MZN     67.96254072
+Kenyan shilling            	1 KES = USD 0.00932972		1 USD = KES    107.18432138
+Danish Krone               	1 DKK = USD 0.14580336		1 USD = DKK      6.85855260
+U.A.E Dirham               	1 AED = USD 0.27228977		1 USD = AED      3.67255806
+New Taiwan Dollar          	1 TWD = USD 0.03360799		1 USD = TWD     29.75482642
+Ukrainian Hryvnia          	1 UAH = USD 0.03709688		1 USD = UAH     26.95644726
+Bolivian Boliviano         	1 BOB = USD 0.14550918		1 USD = BOB      6.87241874
+Afghan afghani             	1 AFN = USD 0.01316183		1 USD = AFN     75.97727728
+Surinamese dollar          	1 SRD = USD 0.13398356		1 USD = SRD      7.46360222
+Syrian pound               	1 SYP = USD 0.00194110		1 USD = SYP    515.17283951
+Tongan paʻanga            	1 TOP = USD 0.43375111		1 USD = TOP      2.30546961
+Ugandan shilling           	1 UGX = USD 0.00026313		1 USD = UGX  3,800.45537341
+Chinese Yuan               	1 CNY = USD 0.14178986		1 USD = CNY      7.05269030
+Kuwaiti Dinar              	1 KWD = USD 3.23903431		1 USD = KWD      0.30873399
+Hungarian Forint           	1 HUF = USD 0.00308198		1 USD = HUF    324.46639483
+Nigerian Naira             	1 NGN = USD 0.00277604		1 USD = NGN    360.22498490
+Iraqi dinar                	1 IQD = USD 0.00084022		1 USD = IQD  1,190.16420403
+Ethiopian birr             	1 ETB = USD 0.02990726		1 USD = ETB     33.43669872
+Solomon Islands dollar     	1 SBD = USD 0.12157013		1 USD = SBD      8.22570471
+Lao kip                    	1 LAK = USD 0.00011143		1 USD = LAK  8,973.97849462
+Cuban peso                 	1 CUP = USD 1.00186920		1 USD = CUP      0.99813428
+Vanuatu vatu               	1 VUV = USD 0.00834767		1 USD = VUV    119.79387954
+New Zealand Dollar         	1 NZD = USD 0.61394229		1 USD = NZD      1.62881759
+Croatian Kuna              	1 HRK = USD 0.14346555		1 USD = HRK      6.97031449
+Belarussian Ruble          	1 BYN = USD 0.41375871		1 USD = BYN      2.41686757
+Moroccan Dirham            	1 MAD = USD 0.10099192		1 USD = MAD      9.90178241
+Macedonian denar           	1 MKD = USD 0.01766709		1 USD = MKD     56.60241716
+Burundian franc            	1 BIF = USD 0.00052937		1 USD = BIF  1,889.04481666
+Angolan kwanza             	1 AOA = USD 0.00177335		1 USD = AOA    563.90540541
+Qatari Rial                	1 QAR = USD 0.27508447		1 USD = QAR      3.63524697
+Saudi Riyal                	1 SAR = USD 0.26632919		1 USD = SAR      3.75475177
+Hong Kong Dollar           	1 HKD = USD 0.12900684		1 USD = HKD      7.75152678
+Armenia Dram               	1 AMD = USD 0.00208652		1 USD = AMD    479.26790007
+Serbian Dinar              	1 RSD = USD 0.00924096		1 USD = RSD    108.21387440
+Bahamian Dollar            	1 BSD = USD 1.00186920		1 USD = BSD      0.99813428
+Guinean franc              	1 GNF = USD 0.00010472		1 USD = GNF  9,548.97025172
+Honduran Lempira           	1 HNL = USD 0.04037959		1 USD = HNL     24.76498516
+Sri Lanka Rupee            	1 LKR = USD 0.00521652		1 USD = LKR    191.69882396
+South African Rand         	1 ZAR = USD 0.05514868		1 USD = ZAR     18.13280020
+Mexican Peso               	1 MXN = USD 0.04201264		1 USD = MXN     23.80236106
+Moldova Lei                	1 MDL = USD 0.05584073		1 USD = MDL     17.90807556
+Argentine Peso             	1 ARS = USD 0.01500567		1 USD = ARS     66.64149696
+Guyanese dollar            	1 GYD = USD 0.00478804		1 USD = GYD    208.85385385
+Rwandan franc              	1 RWF = USD 0.00105107		1 USD = RWF    951.41358869
+Lesotho loti               	1 LSL = USD 0.05423087		1 USD = LSL     18.43968184
+Seychelles rupee           	1 SCR = USD 0.05725035		1 USD = SCR     17.46714106
+Czech Koruna               	1 CZK = USD 0.04012548		1 USD = CZK     24.92181715
+Thai Baht                  	1 THB = USD 0.03089830		1 USD = THB     32.36424152
+West African CFA Franc     	1 XOF = USD 0.00163056		1 USD = XOF    613.28597992
+Uzbekistan Sum             	1 UZS = USD 0.00009873		1 USD = UZS 10,129.02257824
+Venezuelan Bolivar         	1 VES = USD 0.00000579		1 USD = VES 172,685.41666667

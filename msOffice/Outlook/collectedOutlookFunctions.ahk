@@ -477,4 +477,16 @@ olEmail.ReminderSet := true
 olEmail.ReminderTime  := DatePlusDays(2)
 olEmail.Save
 
+;----------
+
+
+olApp := ComObjCreate("Outlook.Application")
+olNameSpace := olApp.GetNamespace("MAPI")
+olDestFolder := olNameSpace.Folders("BaseFolderName@Email.com").Folders("Deleted Items")
+
+olEmails := olApp.ActiveExplorer.Selection
+   	For olEmail in olEmails
+		olEmail.Move(olDestFolder)
+
+
 

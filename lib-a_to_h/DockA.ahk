@@ -1,4 +1,4 @@
-/* Title:   DockA
+ï»¿/* Title:   DockA
 			Dock AHK windows.
 
 			Using dock module you can glue windows to an AHK window.
@@ -23,7 +23,7 @@
 			Dock definition is white space separated combination of parameters which describe Client's position relative to the Host.
 			Parameters are grouped into 4 classes - x, y, w & h parameters. Classes and their parameters are optional.
 			
- > 		Syntax:		x(hw,cw,dx)  y(hh,ch,dy)  w(hw,dw)  h(hh,dh)
+ >Â 		Syntax:		x(hw,cw,dx)  y(hh,ch,dy)  w(hw,dw)  h(hh,dh)
 
 
             o The *X* coordinate of the top, left corner of the client window is computed as 
@@ -36,7 +36,7 @@
 			> h(hh,dh) = hh*HostHeight + dh
 
 			If you omit any of the class parameters it will default to 0. So, the following expressions all have the same effect :
- > 		    x(0,0,0) = x(0,0) = x(0,0,) = x(0) = x(0,)= x(0,,) = x() = x(0,,0) = x(,0,0) = x(,,0) = ...
+ >Â 		    x(0,0,0) = x(0,0) = x(0,0,) = x(0) = x(0,)= x(0,,) = x() = x(0,,0) = x(,0,0) = x(,,0) = ...
  >			y(0,1,0) = y(0,1) = y(,1) = y(,1,) = y(,1,0) = ...
 
 			Notice that x() is not the same as omitting x entirely. First case is equal to x(0,0,0) so it will set Client's X coordinate to be equal as Host's. 

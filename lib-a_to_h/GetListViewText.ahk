@@ -1,4 +1,4 @@
-GetListViewItemText(item_index, sub_index, ctrl_id, win_id) {
+﻿GetListViewItemText(item_index, sub_index, ctrl_id, win_id) {
         ;const
         MAX_TEXT = 260
 

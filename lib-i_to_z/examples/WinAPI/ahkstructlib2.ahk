@@ -1,4 +1,4 @@
-; *********************************
+﻿; *********************************
 ; AHK Function Library - Structures
 ; Version 2.02
 ; - by Corrupt

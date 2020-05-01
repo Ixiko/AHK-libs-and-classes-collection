@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 SetBatchLines, -1
 FileSelectFile, FilePath					; Select a file to use for this example.
 

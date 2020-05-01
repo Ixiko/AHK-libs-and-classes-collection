@@ -1,4 +1,4 @@
-/*  FGP_Init()
+﻿/*  FGP_Init()
  *		Gets an object containing all of the property numbers that have corresponding names. 
  *		Used to initialize the other functions.
  *	Returns

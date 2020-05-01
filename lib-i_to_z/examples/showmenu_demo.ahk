@@ -1,4 +1,4 @@
-; #Include ShowMenu.ahk
+﻿; #Include ShowMenu.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

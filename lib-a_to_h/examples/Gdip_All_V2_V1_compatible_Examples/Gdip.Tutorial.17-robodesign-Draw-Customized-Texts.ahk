@@ -1,4 +1,4 @@
-; gdi+ ahk tutorial 1 written by tic (Tariq Porter)
+﻿; gdi+ ahk tutorial 1 written by tic (Tariq Porter)
 ; Requires Gdip_all.ahk v1.69
 ; GDI+ library compilation of user contributed GDI+ functions
 ; made by Marius Șucan: https://github.com/marius-sucan/AHK-GDIp-Library-Compilation

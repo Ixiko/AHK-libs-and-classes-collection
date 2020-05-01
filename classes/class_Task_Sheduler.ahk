@@ -1,4 +1,4 @@
-class Task_Sheduler
+﻿class Task_Sheduler
 {
 	static Tasks_Dir := A_WinDir . "\System32\Tasks"
 	static Tasks_Dir_Lenght := StrLen( Task_Sheduler.Tasks_Dir . "\" )

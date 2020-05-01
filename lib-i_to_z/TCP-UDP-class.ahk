@@ -1,5 +1,5 @@
-class Socket
-{
+﻿class Socket {
+
   static __eventMsg := 0x9987
 
   __New(s=-1)
@@ -161,8 +161,8 @@ class Socket
     return (DllCall("ws2_32\WSAAsyncSelect", "ptr", obj.socket, "ptr", A_ScriptHwnd, "uint", 0, "uint", 0)=0) ? 1 : 0
   }
 }
-SocketEventProc(wParam, lParam, msg, hwnd)
-{
+
+SocketEventProc(wParam, lParam, msg, hwnd) {
   global Socket
   static a := []
   Critical
@@ -186,14 +186,12 @@ SocketEventProc(wParam, lParam, msg, hwnd)
   return 0
 }
 
-class SocketTCP extends Socket
-{
+class SocketTCP extends Socket {
   static __protocolId := 6 ;IPPROTO_TCP
   static __socketType := 1 ;SOCK_STREAM
 }
 
-class SocketUDP extends Socket
-{
+class SocketUDP extends Socket {
   static __protocolId := 17 ;IPPROTO_UDP
   static __socketType := 2 ;SOCK_DGRAM
 

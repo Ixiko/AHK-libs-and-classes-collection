@@ -1,0 +1,1936 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="http://www.floatrates.com/currency-rates.xsl" ?>
+<channel>
+	<title>XML Daily Foreign Exchange Rates for U.S. Dollar (USD)</title>
+	<link>http://www.floatrates.com/currency/usd/</link>
+	<xmlLink>http://www.floatrates.com/daily/usd.xml</xmlLink>
+	<description>XML Daily foreign exchange rates for U.S. Dollar (USD) from the Float Rates. Published at Fri, 1 May 2020 00:00:01 GMT.</description>
+	<language>en</language>
+	<baseCurrency>USD</baseCurrency>
+	<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+	<lastBuildDate>Fri, 1 May 2020 00:00:01 GMT</lastBuildDate>
+	<item>
+		<title>1 USD = 0.91904093 EUR</title>
+		<link>http://www.floatrates.com/usd/eur/</link>
+		<description>1 U.S. Dollar = 0.91904093 Euro</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>EUR</targetCurrency>
+		<targetName>Euro</targetName>
+		<exchangeRate>0.91904093</exchangeRate>
+		<inverseRate>1.08809082</inverseRate>
+		<inverseDescription>1 Euro = 1.08809082 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 0.79940437 GBP</title>
+		<link>http://www.floatrates.com/usd/gbp/</link>
+		<description>1 U.S. Dollar = 0.79940437 U.K. Pound Sterling</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>GBP</targetCurrency>
+		<targetName>U.K. Pound Sterling</targetName>
+		<exchangeRate>0.79940437</exchangeRate>
+		<inverseRate>1.25093136</inverseRate>
+		<inverseDescription>1 U.K. Pound Sterling = 1.25093136 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 106.63136459 JPY</title>
+		<link>http://www.floatrates.com/usd/jpy/</link>
+		<description>1 U.S. Dollar = 106.63136459 Japanese Yen</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>JPY</targetCurrency>
+		<targetName>Japanese Yen</targetName>
+		<exchangeRate>106.63136459</exchangeRate>
+		<inverseRate>0.00937810</inverseRate>
+		<inverseDescription>1 Japanese Yen = 0.00937810 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 0.97104123 CHF</title>
+		<link>http://www.floatrates.com/usd/chf/</link>
+		<description>1 U.S. Dollar = 0.97104123 Swiss Franc</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>CHF</targetCurrency>
+		<targetName>Swiss Franc</targetName>
+		<exchangeRate>0.97104123</exchangeRate>
+		<inverseRate>1.02982239</inverseRate>
+		<inverseDescription>1 Swiss Franc = 1.02982239 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1.52671865 AUD</title>
+		<link>http://www.floatrates.com/usd/aud/</link>
+		<description>1 U.S. Dollar = 1.52671865 Australian Dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>AUD</targetCurrency>
+		<targetName>Australian Dollar</targetName>
+		<exchangeRate>1.52671865</exchangeRate>
+		<inverseRate>0.65499953</inverseRate>
+		<inverseDescription>1 Australian Dollar = 0.65499953 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1.38832092 CAD</title>
+		<link>http://www.floatrates.com/usd/cad/</link>
+		<description>1 U.S. Dollar = 1.38832092 Canadian Dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>CAD</targetCurrency>
+		<targetName>Canadian Dollar</targetName>
+		<exchangeRate>1.38832092</exchangeRate>
+		<inverseRate>0.72029455</inverseRate>
+		<inverseDescription>1 Canadian Dollar = 0.72029455 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 33.92359015 NIO</title>
+		<link>http://www.floatrates.com/usd/nio/</link>
+		<description>1 U.S. Dollar = 33.92359015 Nicaraguan Córdoba</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>NIO</targetCurrency>
+		<targetName>Nicaraguan Córdoba</targetName>
+		<exchangeRate>33.92359015</exchangeRate>
+		<inverseRate>0.02947801</inverseRate>
+		<inverseDescription>1 Nicaraguan Córdoba = 0.02947801 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 18.44783378 NAD</title>
+		<link>http://www.floatrates.com/usd/nad/</link>
+		<description>1 U.S. Dollar = 18.44783378 Namibian dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>NAD</targetCurrency>
+		<targetName>Namibian dollar</targetName>
+		<exchangeRate>18.44783378</exchangeRate>
+		<inverseRate>0.05420691</inverseRate>
+		<inverseDescription>1 Namibian dollar = 0.05420691 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 55.05145119 SDG</title>
+		<link>http://www.floatrates.com/usd/sdg/</link>
+		<description>1 U.S. Dollar = 55.05145119 Sudanese pound</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SDG</targetCurrency>
+		<targetName>Sudanese pound</targetName>
+		<exchangeRate>55.05145119</exchangeRate>
+		<inverseRate>0.01816483</inverseRate>
+		<inverseDescription>1 Sudanese pound = 0.01816483 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 37.86660617 MRU</title>
+		<link>http://www.floatrates.com/usd/mru/</link>
+		<description>1 U.S. Dollar = 37.86660617 Mauritanian ouguiya</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MRU</targetCurrency>
+		<targetName>Mauritanian ouguiya</targetName>
+		<exchangeRate>37.86660617</exchangeRate>
+		<inverseRate>0.02640849</inverseRate>
+		<inverseDescription>1 Mauritanian ouguiya = 0.02640849 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 2,310.57585825 TZS</title>
+		<link>http://www.floatrates.com/usd/tzs/</link>
+		<description>1 U.S. Dollar = 2,310.57585825 Tanzanian shilling</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>TZS</targetCurrency>
+		<targetName>Tanzanian shilling</targetName>
+		<exchangeRate>2,310.57585825</exchangeRate>
+		<inverseRate>0.00043279</inverseRate>
+		<inverseDescription>1 Tanzanian shilling = 0.00043279 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1,212.68845488 KRW</title>
+		<link>http://www.floatrates.com/usd/krw/</link>
+		<description>1 U.S. Dollar = 1,212.68845488 South Korean Won</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>KRW</targetCurrency>
+		<targetName>South Korean Won</targetName>
+		<exchangeRate>1,212.68845488</exchangeRate>
+		<inverseRate>0.00082461</inverseRate>
+		<inverseDescription>1 South Korean Won = 0.00082461 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1.79830216 BGN</title>
+		<link>http://www.floatrates.com/usd/bgn/</link>
+		<description>1 U.S. Dollar = 1.79830216 Bulgarian Lev</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BGN</targetCurrency>
+		<targetName>Bulgarian Lev</targetName>
+		<exchangeRate>1.79830216</exchangeRate>
+		<inverseRate>0.55608008</inverseRate>
+		<inverseDescription>1 Bulgarian Lev = 0.55608008 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 3.44013252 PGK</title>
+		<link>http://www.floatrates.com/usd/pgk/</link>
+		<description>1 U.S. Dollar = 3.44013252 Papua New Guinean kina</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>PGK</targetCurrency>
+		<targetName>Papua New Guinean kina</targetName>
+		<exchangeRate>3.44013252</exchangeRate>
+		<inverseRate>0.29068648</inverseRate>
+		<inverseDescription>1 Papua New Guinean kina = 0.29068648 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 41,975.10870738 IRR</title>
+		<link>http://www.floatrates.com/usd/irr/</link>
+		<description>1 U.S. Dollar = 41,975.10870738 Iranian rial</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>IRR</targetCurrency>
+		<targetName>Iranian rial</targetName>
+		<exchangeRate>41,975.10870738</exchangeRate>
+		<inverseRate>0.00002382</inverseRate>
+		<inverseDescription>1 Iranian rial = 0.00002382 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 0.99813428 PAB</title>
+		<link>http://www.floatrates.com/usd/pab/</link>
+		<description>1 U.S. Dollar = 0.99813428 Panamanian Balboa</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>PAB</targetCurrency>
+		<targetName>Panamanian Balboa</targetName>
+		<exchangeRate>0.99813428</exchangeRate>
+		<inverseRate>1.00186920</inverseRate>
+		<inverseDescription>1 Panamanian Balboa = 1.00186920 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 2.70493291 XCD</title>
+		<link>http://www.floatrates.com/usd/xcd/</link>
+		<description>1 U.S. Dollar = 2.70493291 East Caribbean Dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>XCD</targetCurrency>
+		<targetName>East Caribbean Dollar</targetName>
+		<exchangeRate>2.70493291</exchangeRate>
+		<inverseRate>0.36969494</inverseRate>
+		<inverseDescription>1 East Caribbean Dollar = 0.36969494 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1.79217488 ANG</title>
+		<link>http://www.floatrates.com/usd/ang/</link>
+		<description>1 U.S. Dollar = 1.79217488 Neth. Antillean Guilder</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>ANG</targetCurrency>
+		<targetName>Neth. Antillean Guilder</targetName>
+		<exchangeRate>1.79217488</exchangeRate>
+		<inverseRate>0.55798126</inverseRate>
+		<inverseDescription>1 Neth. Antillean Guilder = 0.55798126 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 54.40547588 DOP</title>
+		<link>http://www.floatrates.com/usd/dop/</link>
+		<description>1 U.S. Dollar = 54.40547588 Dominican Peso</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>DOP</targetCurrency>
+		<targetName>Dominican Peso</targetName>
+		<exchangeRate>54.40547588</exchangeRate>
+		<inverseRate>0.01838050</inverseRate>
+		<inverseDescription>1 Dominican Peso = 0.01838050 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 2,789.37165775 MNT</title>
+		<link>http://www.floatrates.com/usd/mnt/</link>
+		<description>1 U.S. Dollar = 2,789.37165775 Mongolian togrog</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MNT</targetCurrency>
+		<targetName>Mongolian togrog</targetName>
+		<exchangeRate>2,789.37165775</exchangeRate>
+		<inverseRate>0.00035850</inverseRate>
+		<inverseDescription>1 Mongolian togrog = 0.00035850 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 40.29144856 MUR</title>
+		<link>http://www.floatrates.com/usd/mur/</link>
+		<description>1 U.S. Dollar = 40.29144856 Mauritian Rupee</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MUR</targetCurrency>
+		<targetName>Mauritian Rupee</targetName>
+		<exchangeRate>40.29144856</exchangeRate>
+		<inverseRate>0.02481916</inverseRate>
+		<inverseDescription>1 Mauritian Rupee = 0.02481916 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 146.46055479 ISK</title>
+		<link>http://www.floatrates.com/usd/isk/</link>
+		<description>1 U.S. Dollar = 146.46055479 Icelandic Krona</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>ISK</targetCurrency>
+		<targetName>Icelandic Krona</targetName>
+		<exchangeRate>146.46055479</exchangeRate>
+		<inverseRate>0.00682778</inverseRate>
+		<inverseDescription>1 Icelandic Krona = 0.00682778 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 160.74506415 PKR</title>
+		<link>http://www.floatrates.com/usd/pkr/</link>
+		<description>1 U.S. Dollar = 160.74506415 Pakistani Rupee</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>PKR</targetCurrency>
+		<targetName>Pakistani Rupee</targetName>
+		<exchangeRate>160.74506415</exchangeRate>
+		<inverseRate>0.00622103</inverseRate>
+		<inverseDescription>1 Pakistani Rupee = 0.00622103 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1.41466982 LYD</title>
+		<link>http://www.floatrates.com/usd/lyd/</link>
+		<description>1 U.S. Dollar = 1.41466982 Libyan Dinar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>LYD</targetCurrency>
+		<targetName>Libyan Dinar</targetName>
+		<exchangeRate>1.41466982</exchangeRate>
+		<inverseRate>0.70687873</inverseRate>
+		<inverseDescription>1 Libyan Dinar = 0.70687873 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 51.64480198 GMD</title>
+		<link>http://www.floatrates.com/usd/gmd/</link>
+		<description>1 U.S. Dollar = 51.64480198 Gambian dalasi</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>GMD</targetCurrency>
+		<targetName>Gambian dalasi</targetName>
+		<exchangeRate>51.64480198</exchangeRate>
+		<inverseRate>0.01936303</inverseRate>
+		<inverseDescription>1 Gambian dalasi = 0.01936303 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1.81217701 AWG</title>
+		<link>http://www.floatrates.com/usd/awg/</link>
+		<description>1 U.S. Dollar = 1.81217701 Aruban florin</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>AWG</targetCurrency>
+		<targetName>Aruban florin</targetName>
+		<exchangeRate>1.81217701</exchangeRate>
+		<inverseRate>0.55182247</inverseRate>
+		<inverseDescription>1 Aruban florin = 0.55182247 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 18.66234347 ZMW</title>
+		<link>http://www.floatrates.com/usd/zmw/</link>
+		<description>1 U.S. Dollar = 18.66234347 Zambian kwacha</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>ZMW</targetCurrency>
+		<targetName>Zambian kwacha</targetName>
+		<exchangeRate>18.66234347</exchangeRate>
+		<inverseRate>0.05358384</inverseRate>
+		<inverseDescription>1 Zambian kwacha = 0.05358384 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 249.70977201 YER</title>
+		<link>http://www.floatrates.com/usd/yer/</link>
+		<description>1 U.S. Dollar = 249.70977201 Yemeni rial</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>YER</targetCurrency>
+		<targetName>Yemeni rial</targetName>
+		<exchangeRate>249.70977201</exchangeRate>
+		<inverseRate>0.00400465</inverseRate>
+		<inverseDescription>1 Yemeni rial = 0.00400465 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 128.29381554 DZD</title>
+		<link>http://www.floatrates.com/usd/dzd/</link>
+		<description>1 U.S. Dollar = 128.29381554 Algerian Dinar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>DZD</targetCurrency>
+		<targetName>Algerian Dinar</targetName>
+		<exchangeRate>128.29381554</exchangeRate>
+		<inverseRate>0.00779461</inverseRate>
+		<inverseDescription>1 Algerian Dinar = 0.00779461 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 4.17159300 PLN</title>
+		<link>http://www.floatrates.com/usd/pln/</link>
+		<description>1 U.S. Dollar = 4.17159300 Polish Zloty</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>PLN</targetCurrency>
+		<targetName>Polish Zloty</targetName>
+		<exchangeRate>4.17159300</exchangeRate>
+		<inverseRate>0.23971658</inverseRate>
+		<inverseDescription>1 Polish Zloty = 0.23971658 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 5.39702751 BRL</title>
+		<link>http://www.floatrates.com/usd/brl/</link>
+		<description>1 U.S. Dollar = 5.39702751 Brazilian Real</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BRL</targetCurrency>
+		<targetName>Brazilian Real</targetName>
+		<exchangeRate>5.39702751</exchangeRate>
+		<inverseRate>0.18528718</inverseRate>
+		<inverseDescription>1 Brazilian Real = 0.18528718 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1.69785962 AZN</title>
+		<link>http://www.floatrates.com/usd/azn/</link>
+		<description>1 U.S. Dollar = 1.69785962 Azerbaijan Manat</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>AZN</targetCurrency>
+		<targetName>Azerbaijan Manat</targetName>
+		<exchangeRate>1.69785962</exchangeRate>
+		<inverseRate>0.58897684</inverseRate>
+		<inverseDescription>1 Azerbaijan Manat = 0.58897684 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 5.79591716 GHS</title>
+		<link>http://www.floatrates.com/usd/ghs/</link>
+		<description>1 U.S. Dollar = 5.79591716 Ghanaian Cedi</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>GHS</targetCurrency>
+		<targetName>Ghanaian Cedi</targetName>
+		<exchangeRate>5.79591716</exchangeRate>
+		<inverseRate>0.17253525</inverseRate>
+		<inverseDescription>1 Ghanaian Cedi = 0.17253525 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 22.75299891 STN</title>
+		<link>http://www.floatrates.com/usd/stn/</link>
+		<description>1 U.S. Dollar = 22.75299891 São Tomé and Príncipe Dobra</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>STN</targetCurrency>
+		<targetName>São Tomé and Príncipe Dobra</targetName>
+		<exchangeRate>22.75299891</exchangeRate>
+		<inverseRate>0.04395025</inverseRate>
+		<inverseDescription>1 São Tomé and Príncipe Dobra = 0.04395025 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 177.75174646 DJF</title>
+		<link>http://www.floatrates.com/usd/djf/</link>
+		<description>1 U.S. Dollar = 177.75174646 Djiboutian franc</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>DJF</targetCurrency>
+		<targetName>Djiboutian franc</targetName>
+		<exchangeRate>177.75174646</exchangeRate>
+		<inverseRate>0.00562582</inverseRate>
+		<inverseDescription>1 Djiboutian franc = 0.00562582 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 113.62250177 ALL</title>
+		<link>http://www.floatrates.com/usd/all/</link>
+		<description>1 U.S. Dollar = 113.62250177 Albanian lek</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>ALL</targetCurrency>
+		<targetName>Albanian lek</targetName>
+		<exchangeRate>113.62250177</exchangeRate>
+		<inverseRate>0.00880107</inverseRate>
+		<inverseDescription>1 Albanian lek = 0.00880107 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 4,071.12195122 KHR</title>
+		<link>http://www.floatrates.com/usd/khr/</link>
+		<description>1 U.S. Dollar = 4,071.12195122 Cambodian riel</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>KHR</targetCurrency>
+		<targetName>Cambodian riel</targetName>
+		<exchangeRate>4,071.12195122</exchangeRate>
+		<inverseRate>0.00024563</inverseRate>
+		<inverseDescription>1 Cambodian riel = 0.00024563 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1.41086183 BND</title>
+		<link>http://www.floatrates.com/usd/bnd/</link>
+		<description>1 U.S. Dollar = 1.41086183 Brunei Dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BND</targetCurrency>
+		<targetName>Brunei Dollar</targetName>
+		<exchangeRate>1.41086183</exchangeRate>
+		<inverseRate>0.70878663</inverseRate>
+		<inverseDescription>1 Brunei Dollar = 0.70878663 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1.40969774 SGD</title>
+		<link>http://www.floatrates.com/usd/sgd/</link>
+		<description>1 U.S. Dollar = 1.40969774 Singapore Dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SGD</targetCurrency>
+		<targetName>Singapore Dollar</targetName>
+		<exchangeRate>1.40969774</exchangeRate>
+		<inverseRate>0.70937193</inverseRate>
+		<inverseDescription>1 Singapore Dollar = 0.70937193 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 3.50011404 ILS</title>
+		<link>http://www.floatrates.com/usd/ils/</link>
+		<description>1 U.S. Dollar = 3.50011404 Israeli New Sheqel</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>ILS</targetCurrency>
+		<targetName>Israeli New Sheqel</targetName>
+		<exchangeRate>3.50011404</exchangeRate>
+		<inverseRate>0.28570498</inverseRate>
+		<inverseDescription>1 Israeli New Sheqel = 0.28570498 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 79.00275160 KGS</title>
+		<link>http://www.floatrates.com/usd/kgs/</link>
+		<description>1 U.S. Dollar = 79.00275160 Kyrgyzstan Som</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>KGS</targetCurrency>
+		<targetName>Kyrgyzstan Som</targetName>
+		<exchangeRate>79.00275160</exchangeRate>
+		<inverseRate>0.01265779</inverseRate>
+		<inverseDescription>1 Kyrgyzstan Som = 0.01265779 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 0.70870963 JOD</title>
+		<link>http://www.floatrates.com/usd/jod/</link>
+		<description>1 U.S. Dollar = 0.70870963 Jordanian Dinar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>JOD</targetCurrency>
+		<targetName>Jordanian Dinar</targetName>
+		<exchangeRate>0.70870963</exchangeRate>
+		<inverseRate>1.41101512</inverseRate>
+		<inverseDescription>1 Jordanian Dinar = 1.41101512 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 2.24120522 FJD</title>
+		<link>http://www.floatrates.com/usd/fjd/</link>
+		<description>1 U.S. Dollar = 2.24120522 Fiji Dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>FJD</targetCurrency>
+		<targetName>Fiji Dollar</targetName>
+		<exchangeRate>2.24120522</exchangeRate>
+		<inverseRate>0.44618850</inverseRate>
+		<inverseDescription>1 Fiji Dollar = 0.44618850 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1,726.47910633 CDF</title>
+		<link>http://www.floatrates.com/usd/cdf/</link>
+		<description>1 U.S. Dollar = 1,726.47910633 Congolese franc</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>CDF</targetCurrency>
+		<targetName>Congolese franc</targetName>
+		<exchangeRate>1,726.47910633</exchangeRate>
+		<inverseRate>0.00057921</inverseRate>
+		<inverseDescription>1 Congolese franc = 0.00057921 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 18.43968184 SZL</title>
+		<link>http://www.floatrates.com/usd/szl/</link>
+		<description>1 U.S. Dollar = 18.43968184 Swazi lilangeni</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SZL</targetCurrency>
+		<targetName>Swazi lilangeni</targetName>
+		<exchangeRate>18.43968184</exchangeRate>
+		<inverseRate>0.05423087</inverseRate>
+		<inverseDescription>1 Swazi lilangeni = 0.05423087 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 120.78906996 NPR</title>
+		<link>http://www.floatrates.com/usd/npr/</link>
+		<description>1 U.S. Dollar = 120.78906996 Nepalese Rupee</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>NPR</targetCurrency>
+		<targetName>Nepalese Rupee</targetName>
+		<exchangeRate>120.78906996</exchangeRate>
+		<inverseRate>0.00827889</inverseRate>
+		<inverseDescription>1 Nepalese Rupee = 0.00827889 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 3,981.73297941 COP</title>
+		<link>http://www.floatrates.com/usd/cop/</link>
+		<description>1 U.S. Dollar = 3,981.73297941 Colombian Peso</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>COP</targetCurrency>
+		<targetName>Colombian Peso</targetName>
+		<exchangeRate>3,981.73297941</exchangeRate>
+		<inverseRate>0.00025115</inverseRate>
+		<inverseDescription>1 Colombian Peso = 0.00025115 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 613.92916383 XAF</title>
+		<link>http://www.floatrates.com/usd/xaf/</link>
+		<description>1 U.S. Dollar = 613.92916383 Central African CFA Franc</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>XAF</targetCurrency>
+		<targetName>Central African CFA Franc</targetName>
+		<exchangeRate>613.92916383</exchangeRate>
+		<inverseRate>0.00162885</inverseRate>
+		<inverseDescription>1 Central African CFA Franc = 0.00162885 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 3.49877824 TMT</title>
+		<link>http://www.floatrates.com/usd/tmt/</link>
+		<description>1 U.S. Dollar = 3.49877824 New Turkmenistan Manat</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>TMT</targetCurrency>
+		<targetName>New Turkmenistan Manat</targetName>
+		<exchangeRate>3.49877824</exchangeRate>
+		<inverseRate>0.28581406</inverseRate>
+		<inverseDescription>1 New Turkmenistan Manat = 0.28581406 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 42.90239114 UYU</title>
+		<link>http://www.floatrates.com/usd/uyu/</link>
+		<description>1 U.S. Dollar = 42.90239114 Uruguayan Peso</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>UYU</targetCurrency>
+		<targetName>Uruguayan Peso</targetName>
+		<exchangeRate>42.90239114</exchangeRate>
+		<inverseRate>0.02330872</inverseRate>
+		<inverseDescription>1 Uruguayan Peso = 0.02330872 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 198.70952381 LRD</title>
+		<link>http://www.floatrates.com/usd/lrd/</link>
+		<description>1 U.S. Dollar = 198.70952381 Liberian dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>LRD</targetCurrency>
+		<targetName>Liberian dollar</targetName>
+		<exchangeRate>198.70952381</exchangeRate>
+		<inverseRate>0.00503247</inverseRate>
+		<inverseDescription>1 Liberian dollar = 0.00503247 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 160.65681066 SSP</title>
+		<link>http://www.floatrates.com/usd/ssp/</link>
+		<description>1 U.S. Dollar = 160.65681066 South Sudanese pound</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SSP</targetCurrency>
+		<targetName>South Sudanese pound</targetName>
+		<exchangeRate>160.65681066</exchangeRate>
+		<inverseRate>0.00622445</inverseRate>
+		<inverseDescription>1 South Sudanese pound = 0.00622445 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 15.04832312 ERN</title>
+		<link>http://www.floatrates.com/usd/ern/</link>
+		<description>1 U.S. Dollar = 15.04832312 Eritrean nakfa</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>ERN</targetCurrency>
+		<targetName>Eritrean nakfa</targetName>
+		<exchangeRate>15.04832312</exchangeRate>
+		<inverseRate>0.06645259</inverseRate>
+		<inverseDescription>1 Eritrean nakfa = 0.06645259 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 577.56401384 SOS</title>
+		<link>http://www.floatrates.com/usd/sos/</link>
+		<description>1 U.S. Dollar = 577.56401384 Somali shilling</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SOS</targetCurrency>
+		<targetName>Somali shilling</targetName>
+		<exchangeRate>577.56401384</exchangeRate>
+		<inverseRate>0.00173141</inverseRate>
+		<inverseDescription>1 Somali shilling = 0.00173141 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 75.06074847 INR</title>
+		<link>http://www.floatrates.com/usd/inr/</link>
+		<description>1 U.S. Dollar = 75.06074847 Indian Rupee</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>INR</targetCurrency>
+		<targetName>Indian Rupee</targetName>
+		<exchangeRate>75.06074847</exchangeRate>
+		<inverseRate>0.01332254</inverseRate>
+		<inverseDescription>1 Indian Rupee = 0.01332254 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 2.00145374 BBD</title>
+		<link>http://www.floatrates.com/usd/bbd/</link>
+		<description>1 U.S. Dollar = 2.00145374 Barbadian Dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BBD</targetCurrency>
+		<targetName>Barbadian Dollar</targetName>
+		<exchangeRate>2.00145374</exchangeRate>
+		<inverseRate>0.49963683</inverseRate>
+		<inverseDescription>1 Barbadian Dollar = 0.49963683 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 23,368.79118653 VND</title>
+		<link>http://www.floatrates.com/usd/vnd/</link>
+		<description>1 U.S. Dollar = 23,368.79118653 Vietnamese Dong</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>VND</targetCurrency>
+		<targetName>Vietnamese Dong</targetName>
+		<exchangeRate>23,368.79118653</exchangeRate>
+		<inverseRate>0.00004279</inverseRate>
+		<inverseDescription>1 Vietnamese Dong = 0.00004279 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 15.76244573 EGP</title>
+		<link>http://www.floatrates.com/usd/egp/</link>
+		<description>1 U.S. Dollar = 15.76244573 Egyptian Pound</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>EGP</targetCurrency>
+		<targetName>Egyptian Pound</targetName>
+		<exchangeRate>15.76244573</exchangeRate>
+		<inverseRate>0.06344193</inverseRate>
+		<inverseDescription>1 Egyptian Pound = 0.06344193 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 567.62107007 CRC</title>
+		<link>http://www.floatrates.com/usd/crc/</link>
+		<description>1 U.S. Dollar = 567.62107007 Costa Rican Colón</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>CRC</targetCurrency>
+		<targetName>Costa Rican Colón</targetName>
+		<exchangeRate>567.62107007</exchangeRate>
+		<inverseRate>0.00176174</inverseRate>
+		<inverseDescription>1 Costa Rican Colón = 0.00176174 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 3,790.09990917 MGA</title>
+		<link>http://www.floatrates.com/usd/mga/</link>
+		<description>1 U.S. Dollar = 3,790.09990917 Malagasy ariary</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MGA</targetCurrency>
+		<targetName>Malagasy ariary</targetName>
+		<exchangeRate>3,790.09990917</exchangeRate>
+		<inverseRate>0.00026385</inverseRate>
+		<inverseDescription>1 Malagasy ariary = 0.00026385 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 6.75117295 TTD</title>
+		<link>http://www.floatrates.com/usd/ttd/</link>
+		<description>1 U.S. Dollar = 6.75117295 Trinidad Tobago Dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>TTD</targetCurrency>
+		<targetName>Trinidad Tobago Dollar</targetName>
+		<exchangeRate>6.75117295</exchangeRate>
+		<inverseRate>0.14812241</inverseRate>
+		<inverseDescription>1 Trinidad Tobago Dollar = 0.14812241 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 97.72599532 HTG</title>
+		<link>http://www.floatrates.com/usd/htg/</link>
+		<description>1 U.S. Dollar = 97.72599532 Haitian gourde</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>HTG</targetCurrency>
+		<targetName>Haitian gourde</targetName>
+		<exchangeRate>97.72599532</exchangeRate>
+		<inverseRate>0.01023269</inverseRate>
+		<inverseDescription>1 Haitian gourde = 0.01023269 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 7.96963331 MOP</title>
+		<link>http://www.floatrates.com/usd/mop/</link>
+		<description>1 U.S. Dollar = 7.96963331 Macanese pataca</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MOP</targetCurrency>
+		<targetName>Macanese pataca</targetName>
+		<exchangeRate>7.96963331</exchangeRate>
+		<inverseRate>0.12547629</inverseRate>
+		<inverseDescription>1 Macanese pataca = 0.12547629 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 2.73704578 WST</title>
+		<link>http://www.floatrates.com/usd/wst/</link>
+		<description>1 U.S. Dollar = 2.73704578 Samoan tala</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>WST</targetCurrency>
+		<targetName>Samoan tala</targetName>
+		<exchangeRate>2.73704578</exchangeRate>
+		<inverseRate>0.36535743</inverseRate>
+		<inverseDescription>1 Samoan tala = 0.36535743 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 4.31114253 MYR</title>
+		<link>http://www.floatrates.com/usd/myr/</link>
+		<description>1 U.S. Dollar = 4.31114253 Malaysian Ringgit</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MYR</targetCurrency>
+		<targetName>Malaysian Ringgit</targetName>
+		<exchangeRate>4.31114253</exchangeRate>
+		<inverseRate>0.23195707</inverseRate>
+		<inverseDescription>1 Malaysian Ringgit = 0.23195707 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 4.45451544 RON</title>
+		<link>http://www.floatrates.com/usd/ron/</link>
+		<description>1 U.S. Dollar = 4.45451544 Romanian New Leu</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>RON</targetCurrency>
+		<targetName>Romanian New Leu</targetName>
+		<exchangeRate>4.45451544</exchangeRate>
+		<inverseRate>0.22449131</inverseRate>
+		<inverseDescription>1 Romanian New Leu = 0.22449131 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 3.37572469 PEN</title>
+		<link>http://www.floatrates.com/usd/pen/</link>
+		<description>1 U.S. Dollar = 3.37572469 Peruvian Nuevo Sol</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>PEN</targetCurrency>
+		<targetName>Peruvian Nuevo Sol</targetName>
+		<exchangeRate>3.37572469</exchangeRate>
+		<inverseRate>0.29623269</inverseRate>
+		<inverseDescription>1 Peruvian Nuevo Sol = 0.29623269 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1,508.35055997 LBP</title>
+		<link>http://www.floatrates.com/usd/lbp/</link>
+		<description>1 U.S. Dollar = 1,508.35055997 Lebanese Pound</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>LBP</targetCurrency>
+		<targetName>Lebanese Pound</targetName>
+		<exchangeRate>1,508.35055997</exchangeRate>
+		<inverseRate>0.00066298</inverseRate>
+		<inverseDescription>1 Lebanese Pound = 0.00066298 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 8.74088814 SVC</title>
+		<link>http://www.floatrates.com/usd/svc/</link>
+		<description>1 U.S. Dollar = 8.74088814 Salvadoran colon</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SVC</targetCurrency>
+		<targetName>Salvadoran colon</targetName>
+		<exchangeRate>8.74088814</exchangeRate>
+		<inverseRate>0.11440485</inverseRate>
+		<inverseDescription>1 Salvadoran colon = 0.11440485 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 102.52825553 CVE</title>
+		<link>http://www.floatrates.com/usd/cve/</link>
+		<description>1 U.S. Dollar = 102.52825553 Cape Verde escudo</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>CVE</targetCurrency>
+		<targetName>Cape Verde escudo</targetName>
+		<exchangeRate>102.52825553</exchangeRate>
+		<inverseRate>0.00975341</inverseRate>
+		<inverseDescription>1 Cape Verde escudo = 0.00975341 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 736.87091648 MWK</title>
+		<link>http://www.floatrates.com/usd/mwk/</link>
+		<description>1 U.S. Dollar = 736.87091648 Malawian kwacha</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MWK</targetCurrency>
+		<targetName>Malawian kwacha</targetName>
+		<exchangeRate>736.87091648</exchangeRate>
+		<inverseRate>0.00135709</inverseRate>
+		<inverseDescription>1 Malawian kwacha = 0.00135709 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 7.70334133 GTQ</title>
+		<link>http://www.floatrates.com/usd/gtq/</link>
+		<description>1 U.S. Dollar = 7.70334133 Guatemalan Quetzal</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>GTQ</targetCurrency>
+		<targetName>Guatemalan Quetzal</targetName>
+		<exchangeRate>7.70334133</exchangeRate>
+		<inverseRate>0.12981380</inverseRate>
+		<inverseDescription>1 Guatemalan Quetzal = 0.12981380 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1.81817786 BAM</title>
+		<link>http://www.floatrates.com/usd/bam/</link>
+		<description>1 U.S. Dollar = 1.81817786 Bosnia and Herzegovina convertible mark</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BAM</targetCurrency>
+		<targetName>Bosnia and Herzegovina convertible mark</targetName>
+		<exchangeRate>1.81817786</exchangeRate>
+		<inverseRate>0.55000120</inverseRate>
+		<inverseDescription>1 Bosnia and Herzegovina convertible mark = 0.55000120 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 10.28165369 NOK</title>
+		<link>http://www.floatrates.com/usd/nok/</link>
+		<description>1 U.S. Dollar = 10.28165369 Norwegian Krone</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>NOK</targetCurrency>
+		<targetName>Norwegian Krone</targetName>
+		<exchangeRate>10.28165369</exchangeRate>
+		<inverseRate>0.09726062</inverseRate>
+		<inverseDescription>1 Norwegian Krone = 0.09726062 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 6.98684841 TRY</title>
+		<link>http://www.floatrates.com/usd/try/</link>
+		<description>1 U.S. Dollar = 6.98684841 Turkish Lira</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>TRY</targetCurrency>
+		<targetName>Turkish Lira</targetName>
+		<exchangeRate>6.98684841</exchangeRate>
+		<inverseRate>0.14312605</inverseRate>
+		<inverseDescription>1 Turkish Lira = 0.14312605 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 84.93652232 BDT</title>
+		<link>http://www.floatrates.com/usd/bdt/</link>
+		<description>1 U.S. Dollar = 84.93652232 Bangladeshi taka</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BDT</targetCurrency>
+		<targetName>Bangladeshi taka</targetName>
+		<exchangeRate>84.93652232</exchangeRate>
+		<inverseRate>0.01177350</inverseRate>
+		<inverseDescription>1 Bangladeshi taka = 0.01177350 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 2.90180048 TND</title>
+		<link>http://www.floatrates.com/usd/tnd/</link>
+		<description>1 U.S. Dollar = 2.90180048 Tunisian Dinar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>TND</targetCurrency>
+		<targetName>Tunisian Dinar</targetName>
+		<exchangeRate>2.90180048</exchangeRate>
+		<inverseRate>0.34461363</inverseRate>
+		<inverseDescription>1 Tunisian Dinar = 0.34461363 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 0.37750136 BHD</title>
+		<link>http://www.floatrates.com/usd/bhd/</link>
+		<description>1 U.S. Dollar = 0.37750136 Bahrain Dinar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BHD</targetCurrency>
+		<targetName>Bahrain Dinar</targetName>
+		<exchangeRate>0.37750136</exchangeRate>
+		<inverseRate>2.64899710</inverseRate>
+		<inverseDescription>1 Bahrain Dinar = 2.64899710 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 109.60836332 XPF</title>
+		<link>http://www.floatrates.com/usd/xpf/</link>
+		<description>1 U.S. Dollar = 109.60836332 CFP Franc</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>XPF</targetCurrency>
+		<targetName>CFP Franc</targetName>
+		<exchangeRate>109.60836332</exchangeRate>
+		<inverseRate>0.00912339</inverseRate>
+		<inverseDescription>1 CFP Franc = 0.00912339 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1,407.86099865 MMK</title>
+		<link>http://www.floatrates.com/usd/mmk/</link>
+		<description>1 U.S. Dollar = 1,407.86099865 Myanma Kyat</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MMK</targetCurrency>
+		<targetName>Myanma Kyat</targetName>
+		<exchangeRate>1,407.86099865</exchangeRate>
+		<inverseRate>0.00071030</inverseRate>
+		<inverseDescription>1 Myanma Kyat = 0.00071030 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 0.38447860 OMR</title>
+		<link>http://www.floatrates.com/usd/omr/</link>
+		<description>1 U.S. Dollar = 0.38447860 Omani Rial</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>OMR</targetCurrency>
+		<targetName>Omani Rial</targetName>
+		<exchangeRate>0.38447860</exchangeRate>
+		<inverseRate>2.60092502</inverseRate>
+		<inverseDescription>1 Omani Rial = 2.60092502 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 12.04538971 BWP</title>
+		<link>http://www.floatrates.com/usd/bwp/</link>
+		<description>1 U.S. Dollar = 12.04538971 Botswana Pula</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BWP</targetCurrency>
+		<targetName>Botswana Pula</targetName>
+		<exchangeRate>12.04538971</exchangeRate>
+		<inverseRate>0.08301931</inverseRate>
+		<inverseDescription>1 Botswana Pula = 0.08301931 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 73.40026270 RUB</title>
+		<link>http://www.floatrates.com/usd/rub/</link>
+		<description>1 U.S. Dollar = 73.40026270 Russian Rouble</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>RUB</targetCurrency>
+		<targetName>Russian Rouble</targetName>
+		<exchangeRate>73.40026270</exchangeRate>
+		<inverseRate>0.01362393</inverseRate>
+		<inverseDescription>1 Russian Rouble = 0.01362393 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 14,872.11693695 IDR</title>
+		<link>http://www.floatrates.com/usd/idr/</link>
+		<description>1 U.S. Dollar = 14,872.11693695 Indonesian Rupiah</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>IDR</targetCurrency>
+		<targetName>Indonesian Rupiah</targetName>
+		<exchangeRate>14,872.11693695</exchangeRate>
+		<inverseRate>0.00006724</inverseRate>
+		<inverseDescription>1 Indonesian Rupiah = 0.00006724 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 424.77719026 KZT</title>
+		<link>http://www.floatrates.com/usd/kzt/</link>
+		<description>1 U.S. Dollar = 424.77719026 Kazakhstani Tenge</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>KZT</targetCurrency>
+		<targetName>Kazakhstani Tenge</targetName>
+		<exchangeRate>424.77719026</exchangeRate>
+		<inverseRate>0.00235418</inverseRate>
+		<inverseDescription>1 Kazakhstani Tenge = 0.00235418 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 3.20316559 GEL</title>
+		<link>http://www.floatrates.com/usd/gel/</link>
+		<description>1 U.S. Dollar = 3.20316559 Georgian lari</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>GEL</targetCurrency>
+		<targetName>Georgian lari</targetName>
+		<exchangeRate>3.20316559</exchangeRate>
+		<inverseRate>0.31219117</inverseRate>
+		<inverseDescription>1 Georgian lari = 0.31219117 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 2.01258802 BZD</title>
+		<link>http://www.floatrates.com/usd/bzd/</link>
+		<description>1 U.S. Dollar = 2.01258802 Belize dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BZD</targetCurrency>
+		<targetName>Belize dollar</targetName>
+		<exchangeRate>2.01258802</exchangeRate>
+		<inverseRate>0.49687268</inverseRate>
+		<inverseDescription>1 Belize dollar = 0.49687268 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 442.32563070 KMF</title>
+		<link>http://www.floatrates.com/usd/kmf/</link>
+		<description>1 U.S. Dollar = 442.32563070 	Comoro franc</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>KMF</targetCurrency>
+		<targetName>	Comoro franc</targetName>
+		<exchangeRate>442.32563070</exchangeRate>
+		<inverseRate>0.00226078</inverseRate>
+		<inverseDescription>1 	Comoro franc = 0.00226078 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 9,681.90255220 SLL</title>
+		<link>http://www.floatrates.com/usd/sll/</link>
+		<description>1 U.S. Dollar = 9,681.90255220 Sierra Leonean leone</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SLL</targetCurrency>
+		<targetName>Sierra Leonean leone</targetName>
+		<exchangeRate>9,681.90255220</exchangeRate>
+		<inverseRate>0.00010329</inverseRate>
+		<inverseDescription>1 Sierra Leonean leone = 0.00010329 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 15.43803182 MVR</title>
+		<link>http://www.floatrates.com/usd/mvr/</link>
+		<description>1 U.S. Dollar = 15.43803182 Maldivian rufiyaa</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MVR</targetCurrency>
+		<targetName>Maldivian rufiyaa</targetName>
+		<exchangeRate>15.43803182</exchangeRate>
+		<inverseRate>0.06477510</inverseRate>
+		<inverseDescription>1 Maldivian rufiyaa = 0.06477510 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 836.57586326 CLP</title>
+		<link>http://www.floatrates.com/usd/clp/</link>
+		<description>1 U.S. Dollar = 836.57586326 Chilean Peso</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>CLP</targetCurrency>
+		<targetName>Chilean Peso</targetName>
+		<exchangeRate>836.57586326</exchangeRate>
+		<inverseRate>0.00119535</inverseRate>
+		<inverseDescription>1 Chilean Peso = 0.00119535 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 9.81018488 SEK</title>
+		<link>http://www.floatrates.com/usd/sek/</link>
+		<description>1 U.S. Dollar = 9.81018488 Swedish Krona</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SEK</targetCurrency>
+		<targetName>Swedish Krona</targetName>
+		<exchangeRate>9.81018488</exchangeRate>
+		<inverseRate>0.10193488</inverseRate>
+		<inverseDescription>1 Swedish Krona = 0.10193488 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 50.36252061 PHP</title>
+		<link>http://www.floatrates.com/usd/php/</link>
+		<description>1 U.S. Dollar = 50.36252061 Philippine Peso</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>PHP</targetCurrency>
+		<targetName>Philippine Peso</targetName>
+		<exchangeRate>50.36252061</exchangeRate>
+		<inverseRate>0.01985604</inverseRate>
+		<inverseDescription>1 Philippine Peso = 0.01985604 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 10.24035938 TJS</title>
+		<link>http://www.floatrates.com/usd/tjs/</link>
+		<description>1 U.S. Dollar = 10.24035938 Tajikistan Ruble</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>TJS</targetCurrency>
+		<targetName>Tajikistan Ruble</targetName>
+		<exchangeRate>10.24035938</exchangeRate>
+		<inverseRate>0.09765282</inverseRate>
+		<inverseDescription>1 Tajikistan Ruble = 0.09765282 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 6,495.92718160 PYG</title>
+		<link>http://www.floatrates.com/usd/pyg/</link>
+		<description>1 U.S. Dollar = 6,495.92718160 Paraguayan Guaraní</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>PYG</targetCurrency>
+		<targetName>Paraguayan Guaraní</targetName>
+		<exchangeRate>6,495.92718160</exchangeRate>
+		<inverseRate>0.00015394</inverseRate>
+		<inverseDescription>1 Paraguayan Guaraní = 0.00015394 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 141.45423729 JMD</title>
+		<link>http://www.floatrates.com/usd/jmd/</link>
+		<description>1 U.S. Dollar = 141.45423729 Jamaican Dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>JMD</targetCurrency>
+		<targetName>Jamaican Dollar</targetName>
+		<exchangeRate>141.45423729</exchangeRate>
+		<inverseRate>0.00706942</inverseRate>
+		<inverseDescription>1 Jamaican Dollar = 0.00706942 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 0.80221851 GIP</title>
+		<link>http://www.floatrates.com/usd/gip/</link>
+		<description>1 U.S. Dollar = 0.80221851 Gibraltar pound</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>GIP</targetCurrency>
+		<targetName>Gibraltar pound</targetName>
+		<exchangeRate>0.80221851</exchangeRate>
+		<inverseRate>1.24654317</inverseRate>
+		<inverseDescription>1 Gibraltar pound = 1.24654317 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 67.96254072 MZN</title>
+		<link>http://www.floatrates.com/usd/mzn/</link>
+		<description>1 U.S. Dollar = 67.96254072 Mozambican metical</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MZN</targetCurrency>
+		<targetName>Mozambican metical</targetName>
+		<exchangeRate>67.96254072</exchangeRate>
+		<inverseRate>0.01471399</inverseRate>
+		<inverseDescription>1 Mozambican metical = 0.01471399 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 107.18432138 KES</title>
+		<link>http://www.floatrates.com/usd/kes/</link>
+		<description>1 U.S. Dollar = 107.18432138 Kenyan shilling</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>KES</targetCurrency>
+		<targetName>Kenyan shilling</targetName>
+		<exchangeRate>107.18432138</exchangeRate>
+		<inverseRate>0.00932972</inverseRate>
+		<inverseDescription>1 Kenyan shilling = 0.00932972 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 6.85855260 DKK</title>
+		<link>http://www.floatrates.com/usd/dkk/</link>
+		<description>1 U.S. Dollar = 6.85855260 Danish Krone</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>DKK</targetCurrency>
+		<targetName>Danish Krone</targetName>
+		<exchangeRate>6.85855260</exchangeRate>
+		<inverseRate>0.14580336</inverseRate>
+		<inverseDescription>1 Danish Krone = 0.14580336 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 3.67255806 AED</title>
+		<link>http://www.floatrates.com/usd/aed/</link>
+		<description>1 U.S. Dollar = 3.67255806 U.A.E Dirham</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>AED</targetCurrency>
+		<targetName>U.A.E Dirham</targetName>
+		<exchangeRate>3.67255806</exchangeRate>
+		<inverseRate>0.27228977</inverseRate>
+		<inverseDescription>1 U.A.E Dirham = 0.27228977 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 29.75482642 TWD</title>
+		<link>http://www.floatrates.com/usd/twd/</link>
+		<description>1 U.S. Dollar = 29.75482642 New Taiwan Dollar </description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>TWD</targetCurrency>
+		<targetName>New Taiwan Dollar </targetName>
+		<exchangeRate>29.75482642</exchangeRate>
+		<inverseRate>0.03360799</inverseRate>
+		<inverseDescription>1 New Taiwan Dollar  = 0.03360799 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 26.95644726 UAH</title>
+		<link>http://www.floatrates.com/usd/uah/</link>
+		<description>1 U.S. Dollar = 26.95644726 Ukrainian Hryvnia</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>UAH</targetCurrency>
+		<targetName>Ukrainian Hryvnia</targetName>
+		<exchangeRate>26.95644726</exchangeRate>
+		<inverseRate>0.03709688</inverseRate>
+		<inverseDescription>1 Ukrainian Hryvnia = 0.03709688 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 6.87241874 BOB</title>
+		<link>http://www.floatrates.com/usd/bob/</link>
+		<description>1 U.S. Dollar = 6.87241874 Bolivian Boliviano</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BOB</targetCurrency>
+		<targetName>Bolivian Boliviano</targetName>
+		<exchangeRate>6.87241874</exchangeRate>
+		<inverseRate>0.14550918</inverseRate>
+		<inverseDescription>1 Bolivian Boliviano = 0.14550918 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 75.97727728 AFN</title>
+		<link>http://www.floatrates.com/usd/afn/</link>
+		<description>1 U.S. Dollar = 75.97727728 Afghan afghani</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>AFN</targetCurrency>
+		<targetName>Afghan afghani</targetName>
+		<exchangeRate>75.97727728</exchangeRate>
+		<inverseRate>0.01316183</inverseRate>
+		<inverseDescription>1 Afghan afghani = 0.01316183 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 7.46360222 SRD</title>
+		<link>http://www.floatrates.com/usd/srd/</link>
+		<description>1 U.S. Dollar = 7.46360222 Surinamese dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SRD</targetCurrency>
+		<targetName>Surinamese dollar</targetName>
+		<exchangeRate>7.46360222</exchangeRate>
+		<inverseRate>0.13398356</inverseRate>
+		<inverseDescription>1 Surinamese dollar = 0.13398356 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 515.17283951 SYP</title>
+		<link>http://www.floatrates.com/usd/syp/</link>
+		<description>1 U.S. Dollar = 515.17283951 Syrian pound</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SYP</targetCurrency>
+		<targetName>Syrian pound</targetName>
+		<exchangeRate>515.17283951</exchangeRate>
+		<inverseRate>0.00194110</inverseRate>
+		<inverseDescription>1 Syrian pound = 0.00194110 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 2.30546961 TOP</title>
+		<link>http://www.floatrates.com/usd/top/</link>
+		<description>1 U.S. Dollar = 2.30546961 Tongan paʻanga</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>TOP</targetCurrency>
+		<targetName>Tongan paʻanga</targetName>
+		<exchangeRate>2.30546961</exchangeRate>
+		<inverseRate>0.43375111</inverseRate>
+		<inverseDescription>1 Tongan paʻanga = 0.43375111 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 3,800.45537341 UGX</title>
+		<link>http://www.floatrates.com/usd/ugx/</link>
+		<description>1 U.S. Dollar = 3,800.45537341 Ugandan shilling</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>UGX</targetCurrency>
+		<targetName>Ugandan shilling</targetName>
+		<exchangeRate>3,800.45537341</exchangeRate>
+		<inverseRate>0.00026313</inverseRate>
+		<inverseDescription>1 Ugandan shilling = 0.00026313 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 7.05269030 CNY</title>
+		<link>http://www.floatrates.com/usd/cny/</link>
+		<description>1 U.S. Dollar = 7.05269030 Chinese Yuan</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>CNY</targetCurrency>
+		<targetName>Chinese Yuan</targetName>
+		<exchangeRate>7.05269030</exchangeRate>
+		<inverseRate>0.14178986</inverseRate>
+		<inverseDescription>1 Chinese Yuan = 0.14178986 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 0.30873399 KWD</title>
+		<link>http://www.floatrates.com/usd/kwd/</link>
+		<description>1 U.S. Dollar = 0.30873399 Kuwaiti Dinar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>KWD</targetCurrency>
+		<targetName>Kuwaiti Dinar</targetName>
+		<exchangeRate>0.30873399</exchangeRate>
+		<inverseRate>3.23903431</inverseRate>
+		<inverseDescription>1 Kuwaiti Dinar = 3.23903431 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 324.46639483 HUF</title>
+		<link>http://www.floatrates.com/usd/huf/</link>
+		<description>1 U.S. Dollar = 324.46639483 Hungarian Forint</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>HUF</targetCurrency>
+		<targetName>Hungarian Forint</targetName>
+		<exchangeRate>324.46639483</exchangeRate>
+		<inverseRate>0.00308198</inverseRate>
+		<inverseDescription>1 Hungarian Forint = 0.00308198 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 360.22498490 NGN</title>
+		<link>http://www.floatrates.com/usd/ngn/</link>
+		<description>1 U.S. Dollar = 360.22498490 Nigerian Naira</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>NGN</targetCurrency>
+		<targetName>Nigerian Naira</targetName>
+		<exchangeRate>360.22498490</exchangeRate>
+		<inverseRate>0.00277604</inverseRate>
+		<inverseDescription>1 Nigerian Naira = 0.00277604 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1,190.16420403 IQD</title>
+		<link>http://www.floatrates.com/usd/iqd/</link>
+		<description>1 U.S. Dollar = 1,190.16420403 Iraqi dinar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>IQD</targetCurrency>
+		<targetName>Iraqi dinar</targetName>
+		<exchangeRate>1,190.16420403</exchangeRate>
+		<inverseRate>0.00084022</inverseRate>
+		<inverseDescription>1 Iraqi dinar = 0.00084022 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 33.43669872 ETB</title>
+		<link>http://www.floatrates.com/usd/etb/</link>
+		<description>1 U.S. Dollar = 33.43669872 Ethiopian birr</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>ETB</targetCurrency>
+		<targetName>Ethiopian birr</targetName>
+		<exchangeRate>33.43669872</exchangeRate>
+		<inverseRate>0.02990726</inverseRate>
+		<inverseDescription>1 Ethiopian birr = 0.02990726 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 8.22570471 SBD</title>
+		<link>http://www.floatrates.com/usd/sbd/</link>
+		<description>1 U.S. Dollar = 8.22570471 Solomon Islands dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SBD</targetCurrency>
+		<targetName>Solomon Islands dollar</targetName>
+		<exchangeRate>8.22570471</exchangeRate>
+		<inverseRate>0.12157013</inverseRate>
+		<inverseDescription>1 Solomon Islands dollar = 0.12157013 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 8,973.97849462 LAK</title>
+		<link>http://www.floatrates.com/usd/lak/</link>
+		<description>1 U.S. Dollar = 8,973.97849462 Lao kip</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>LAK</targetCurrency>
+		<targetName>Lao kip</targetName>
+		<exchangeRate>8,973.97849462</exchangeRate>
+		<inverseRate>0.00011143</inverseRate>
+		<inverseDescription>1 Lao kip = 0.00011143 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 0.99813428 CUP</title>
+		<link>http://www.floatrates.com/usd/cup/</link>
+		<description>1 U.S. Dollar = 0.99813428 Cuban peso</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>CUP</targetCurrency>
+		<targetName>Cuban peso</targetName>
+		<exchangeRate>0.99813428</exchangeRate>
+		<inverseRate>1.00186920</inverseRate>
+		<inverseDescription>1 Cuban peso = 1.00186920 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 119.79387954 VUV</title>
+		<link>http://www.floatrates.com/usd/vuv/</link>
+		<description>1 U.S. Dollar = 119.79387954 Vanuatu vatu</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>VUV</targetCurrency>
+		<targetName>Vanuatu vatu</targetName>
+		<exchangeRate>119.79387954</exchangeRate>
+		<inverseRate>0.00834767</inverseRate>
+		<inverseDescription>1 Vanuatu vatu = 0.00834767 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1.62881759 NZD</title>
+		<link>http://www.floatrates.com/usd/nzd/</link>
+		<description>1 U.S. Dollar = 1.62881759 New Zealand Dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>NZD</targetCurrency>
+		<targetName>New Zealand Dollar</targetName>
+		<exchangeRate>1.62881759</exchangeRate>
+		<inverseRate>0.61394229</inverseRate>
+		<inverseDescription>1 New Zealand Dollar = 0.61394229 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 6.97031449 HRK</title>
+		<link>http://www.floatrates.com/usd/hrk/</link>
+		<description>1 U.S. Dollar = 6.97031449 Croatian Kuna</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>HRK</targetCurrency>
+		<targetName>Croatian Kuna</targetName>
+		<exchangeRate>6.97031449</exchangeRate>
+		<inverseRate>0.14346555</inverseRate>
+		<inverseDescription>1 Croatian Kuna = 0.14346555 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 2.41686757 BYN</title>
+		<link>http://www.floatrates.com/usd/byn/</link>
+		<description>1 U.S. Dollar = 2.41686757 Belarussian Ruble</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BYN</targetCurrency>
+		<targetName>Belarussian Ruble</targetName>
+		<exchangeRate>2.41686757</exchangeRate>
+		<inverseRate>0.41375871</inverseRate>
+		<inverseDescription>1 Belarussian Ruble = 0.41375871 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 9.90178241 MAD</title>
+		<link>http://www.floatrates.com/usd/mad/</link>
+		<description>1 U.S. Dollar = 9.90178241 Moroccan Dirham</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MAD</targetCurrency>
+		<targetName>Moroccan Dirham</targetName>
+		<exchangeRate>9.90178241</exchangeRate>
+		<inverseRate>0.10099192</inverseRate>
+		<inverseDescription>1 Moroccan Dirham = 0.10099192 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 56.60241716 MKD</title>
+		<link>http://www.floatrates.com/usd/mkd/</link>
+		<description>1 U.S. Dollar = 56.60241716 Macedonian denar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MKD</targetCurrency>
+		<targetName>Macedonian denar</targetName>
+		<exchangeRate>56.60241716</exchangeRate>
+		<inverseRate>0.01766709</inverseRate>
+		<inverseDescription>1 Macedonian denar = 0.01766709 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 1,889.04481666 BIF</title>
+		<link>http://www.floatrates.com/usd/bif/</link>
+		<description>1 U.S. Dollar = 1,889.04481666 Burundian franc</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BIF</targetCurrency>
+		<targetName>Burundian franc</targetName>
+		<exchangeRate>1,889.04481666</exchangeRate>
+		<inverseRate>0.00052937</inverseRate>
+		<inverseDescription>1 Burundian franc = 0.00052937 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 563.90540541 AOA</title>
+		<link>http://www.floatrates.com/usd/aoa/</link>
+		<description>1 U.S. Dollar = 563.90540541 Angolan kwanza</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>AOA</targetCurrency>
+		<targetName>Angolan kwanza</targetName>
+		<exchangeRate>563.90540541</exchangeRate>
+		<inverseRate>0.00177335</inverseRate>
+		<inverseDescription>1 Angolan kwanza = 0.00177335 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 3.63524697 QAR</title>
+		<link>http://www.floatrates.com/usd/qar/</link>
+		<description>1 U.S. Dollar = 3.63524697 Qatari Rial</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>QAR</targetCurrency>
+		<targetName>Qatari Rial</targetName>
+		<exchangeRate>3.63524697</exchangeRate>
+		<inverseRate>0.27508447</inverseRate>
+		<inverseDescription>1 Qatari Rial = 0.27508447 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 3.75475177 SAR</title>
+		<link>http://www.floatrates.com/usd/sar/</link>
+		<description>1 U.S. Dollar = 3.75475177 Saudi Riyal</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SAR</targetCurrency>
+		<targetName>Saudi Riyal</targetName>
+		<exchangeRate>3.75475177</exchangeRate>
+		<inverseRate>0.26632919</inverseRate>
+		<inverseDescription>1 Saudi Riyal = 0.26632919 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 7.75152678 HKD</title>
+		<link>http://www.floatrates.com/usd/hkd/</link>
+		<description>1 U.S. Dollar = 7.75152678 Hong Kong Dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>HKD</targetCurrency>
+		<targetName>Hong Kong Dollar</targetName>
+		<exchangeRate>7.75152678</exchangeRate>
+		<inverseRate>0.12900684</inverseRate>
+		<inverseDescription>1 Hong Kong Dollar = 0.12900684 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 479.26790007 AMD</title>
+		<link>http://www.floatrates.com/usd/amd/</link>
+		<description>1 U.S. Dollar = 479.26790007 Armenia Dram</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>AMD</targetCurrency>
+		<targetName>Armenia Dram</targetName>
+		<exchangeRate>479.26790007</exchangeRate>
+		<inverseRate>0.00208652</inverseRate>
+		<inverseDescription>1 Armenia Dram = 0.00208652 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 108.21387440 RSD</title>
+		<link>http://www.floatrates.com/usd/rsd/</link>
+		<description>1 U.S. Dollar = 108.21387440 Serbian Dinar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>RSD</targetCurrency>
+		<targetName>Serbian Dinar</targetName>
+		<exchangeRate>108.21387440</exchangeRate>
+		<inverseRate>0.00924096</inverseRate>
+		<inverseDescription>1 Serbian Dinar = 0.00924096 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 0.99813428 BSD</title>
+		<link>http://www.floatrates.com/usd/bsd/</link>
+		<description>1 U.S. Dollar = 0.99813428 Bahamian Dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>BSD</targetCurrency>
+		<targetName>Bahamian Dollar</targetName>
+		<exchangeRate>0.99813428</exchangeRate>
+		<inverseRate>1.00186920</inverseRate>
+		<inverseDescription>1 Bahamian Dollar = 1.00186920 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 9,548.97025172 GNF</title>
+		<link>http://www.floatrates.com/usd/gnf/</link>
+		<description>1 U.S. Dollar = 9,548.97025172 Guinean franc</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>GNF</targetCurrency>
+		<targetName>Guinean franc</targetName>
+		<exchangeRate>9,548.97025172</exchangeRate>
+		<inverseRate>0.00010472</inverseRate>
+		<inverseDescription>1 Guinean franc = 0.00010472 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 24.76498516 HNL</title>
+		<link>http://www.floatrates.com/usd/hnl/</link>
+		<description>1 U.S. Dollar = 24.76498516 Honduran Lempira</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>HNL</targetCurrency>
+		<targetName>Honduran Lempira</targetName>
+		<exchangeRate>24.76498516</exchangeRate>
+		<inverseRate>0.04037959</inverseRate>
+		<inverseDescription>1 Honduran Lempira = 0.04037959 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 191.69882396 LKR</title>
+		<link>http://www.floatrates.com/usd/lkr/</link>
+		<description>1 U.S. Dollar = 191.69882396 Sri Lanka Rupee</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>LKR</targetCurrency>
+		<targetName>Sri Lanka Rupee</targetName>
+		<exchangeRate>191.69882396</exchangeRate>
+		<inverseRate>0.00521652</inverseRate>
+		<inverseDescription>1 Sri Lanka Rupee = 0.00521652 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 18.13280020 ZAR</title>
+		<link>http://www.floatrates.com/usd/zar/</link>
+		<description>1 U.S. Dollar = 18.13280020 South African Rand</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>ZAR</targetCurrency>
+		<targetName>South African Rand</targetName>
+		<exchangeRate>18.13280020</exchangeRate>
+		<inverseRate>0.05514868</inverseRate>
+		<inverseDescription>1 South African Rand = 0.05514868 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 23.80236106 MXN</title>
+		<link>http://www.floatrates.com/usd/mxn/</link>
+		<description>1 U.S. Dollar = 23.80236106 Mexican Peso</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MXN</targetCurrency>
+		<targetName>Mexican Peso</targetName>
+		<exchangeRate>23.80236106</exchangeRate>
+		<inverseRate>0.04201264</inverseRate>
+		<inverseDescription>1 Mexican Peso = 0.04201264 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 17.90807556 MDL</title>
+		<link>http://www.floatrates.com/usd/mdl/</link>
+		<description>1 U.S. Dollar = 17.90807556 Moldova Lei</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>MDL</targetCurrency>
+		<targetName>Moldova Lei</targetName>
+		<exchangeRate>17.90807556</exchangeRate>
+		<inverseRate>0.05584073</inverseRate>
+		<inverseDescription>1 Moldova Lei = 0.05584073 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 66.64149696 ARS</title>
+		<link>http://www.floatrates.com/usd/ars/</link>
+		<description>1 U.S. Dollar = 66.64149696 Argentine Peso</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>ARS</targetCurrency>
+		<targetName>Argentine Peso</targetName>
+		<exchangeRate>66.64149696</exchangeRate>
+		<inverseRate>0.01500567</inverseRate>
+		<inverseDescription>1 Argentine Peso = 0.01500567 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 208.85385385 GYD</title>
+		<link>http://www.floatrates.com/usd/gyd/</link>
+		<description>1 U.S. Dollar = 208.85385385 Guyanese dollar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>GYD</targetCurrency>
+		<targetName>Guyanese dollar</targetName>
+		<exchangeRate>208.85385385</exchangeRate>
+		<inverseRate>0.00478804</inverseRate>
+		<inverseDescription>1 Guyanese dollar = 0.00478804 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 951.41358869 RWF</title>
+		<link>http://www.floatrates.com/usd/rwf/</link>
+		<description>1 U.S. Dollar = 951.41358869 Rwandan franc</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>RWF</targetCurrency>
+		<targetName>Rwandan franc</targetName>
+		<exchangeRate>951.41358869</exchangeRate>
+		<inverseRate>0.00105107</inverseRate>
+		<inverseDescription>1 Rwandan franc = 0.00105107 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 18.43968184 LSL</title>
+		<link>http://www.floatrates.com/usd/lsl/</link>
+		<description>1 U.S. Dollar = 18.43968184 Lesotho loti</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>LSL</targetCurrency>
+		<targetName>Lesotho loti</targetName>
+		<exchangeRate>18.43968184</exchangeRate>
+		<inverseRate>0.05423087</inverseRate>
+		<inverseDescription>1 Lesotho loti = 0.05423087 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 17.46714106 SCR</title>
+		<link>http://www.floatrates.com/usd/scr/</link>
+		<description>1 U.S. Dollar = 17.46714106 Seychelles rupee</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>SCR</targetCurrency>
+		<targetName>Seychelles rupee</targetName>
+		<exchangeRate>17.46714106</exchangeRate>
+		<inverseRate>0.05725035</inverseRate>
+		<inverseDescription>1 Seychelles rupee = 0.05725035 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 24.92181715 CZK</title>
+		<link>http://www.floatrates.com/usd/czk/</link>
+		<description>1 U.S. Dollar = 24.92181715 Czech Koruna</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>CZK</targetCurrency>
+		<targetName>Czech Koruna</targetName>
+		<exchangeRate>24.92181715</exchangeRate>
+		<inverseRate>0.04012548</inverseRate>
+		<inverseDescription>1 Czech Koruna = 0.04012548 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 32.36424152 THB</title>
+		<link>http://www.floatrates.com/usd/thb/</link>
+		<description>1 U.S. Dollar = 32.36424152 Thai Baht</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>THB</targetCurrency>
+		<targetName>Thai Baht</targetName>
+		<exchangeRate>32.36424152</exchangeRate>
+		<inverseRate>0.03089830</inverseRate>
+		<inverseDescription>1 Thai Baht = 0.03089830 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 613.28597992 XOF</title>
+		<link>http://www.floatrates.com/usd/xof/</link>
+		<description>1 U.S. Dollar = 613.28597992 West African CFA Franc</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>XOF</targetCurrency>
+		<targetName>West African CFA Franc</targetName>
+		<exchangeRate>613.28597992</exchangeRate>
+		<inverseRate>0.00163056</inverseRate>
+		<inverseDescription>1 West African CFA Franc = 0.00163056 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 10,129.02257824 UZS</title>
+		<link>http://www.floatrates.com/usd/uzs/</link>
+		<description>1 U.S. Dollar = 10,129.02257824 Uzbekistan Sum</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>UZS</targetCurrency>
+		<targetName>Uzbekistan Sum</targetName>
+		<exchangeRate>10,129.02257824</exchangeRate>
+		<inverseRate>0.00009873</inverseRate>
+		<inverseDescription>1 Uzbekistan Sum = 0.00009873 U.S. Dollar</inverseDescription>
+	</item>
+	<item>
+		<title>1 USD = 172,685.41666667 VES</title>
+		<link>http://www.floatrates.com/usd/ves/</link>
+		<description>1 U.S. Dollar = 172,685.41666667 Venezuelan Bolivar</description>
+		<pubDate>Fri, 1 May 2020 00:00:01 GMT</pubDate>
+		<baseCurrency>USD</baseCurrency>
+		<baseName>U.S. Dollar</baseName>
+		<targetCurrency>VES</targetCurrency>
+		<targetName>Venezuelan Bolivar</targetName>
+		<exchangeRate>172,685.41666667</exchangeRate>
+		<inverseRate>0.00000579</inverseRate>
+		<inverseDescription>1 Venezuelan Bolivar = 0.00000579 U.S. Dollar</inverseDescription>
+	</item>
+</channel>
