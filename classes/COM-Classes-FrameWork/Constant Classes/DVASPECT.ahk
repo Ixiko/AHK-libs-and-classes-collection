@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: DVASPECT
 an enumeration class containing flags that specify the desired data or view aspect of the object when drawing or getting data.
 

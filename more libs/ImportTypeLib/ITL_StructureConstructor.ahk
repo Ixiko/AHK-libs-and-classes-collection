@@ -1,4 +1,4 @@
-ITL_StructureConstructor(this, ptr = 0, noInit = false)
+﻿ITL_StructureConstructor(this, ptr = 0, noInit = false)
 {
 	local hr, rcinfo := this.base[ITL.Properties.TYPE_RECORDINFO]
 

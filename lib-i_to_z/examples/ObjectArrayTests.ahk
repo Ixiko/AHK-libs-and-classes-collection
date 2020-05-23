@@ -1,4 +1,4 @@
-#Include ObjectArrayV2_4a.ahk
+﻿#Include ObjectArrayV2_4a.ahk
 
 ; uncomment one of this line to run test
 ;O_DeleteExtractTest()

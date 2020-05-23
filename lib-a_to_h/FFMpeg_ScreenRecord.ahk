@@ -1,4 +1,4 @@
-#SingleInstance Force
+﻿#SingleInstance Force
 
 WinGetClientPos( winTitle, ByRef x, ByRef y, ByRef w, ByRef h ){
     WinGet, hwnd, ID, %winTitle%

@@ -1,4 +1,4 @@
-#SingleInstance force
+﻿#SingleInstance force
 ; #classmemory.ahk ; This is incorrect.
 #Include <classMemory> ; classMemory.ahk must be placed in your 'lib' folder. Refer to the ahk manual
  

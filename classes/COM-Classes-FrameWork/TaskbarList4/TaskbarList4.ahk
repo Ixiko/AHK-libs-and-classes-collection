@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: TaskbarList4
 wraps the *ITaskbarList4* interface and provides a method that allows the caller to control two property values for the tab thumbnail and peek feature.
 

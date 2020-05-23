@@ -1,4 +1,4 @@
-;#include %A_ScriptDir%\class_RemoteBuf.ahk
+﻿;#include %A_ScriptDir%\class_RemoteBuf.ahk
 
 Class _Scintilla {
 	var hModule:=DllCall("LoadLibrary","Str",A_ScriptDir "\SciLexer.dll")

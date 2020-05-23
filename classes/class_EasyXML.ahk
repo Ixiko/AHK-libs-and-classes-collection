@@ -1,4 +1,4 @@
-; TODO: This class with use native, AHK, object syntax for XMLS!!
+﻿; TODO: This class with use native, AHK, object syntax for XMLS!!
 ; First pass at design should be through using Coco's XPath library
 ; I think I should remember to do this project because many people like XML
 ; This could also lead to further data sets such as, EasyCSV and/or EasyDelim (delim being user defined delimiter, including CSV)
@@ -23,19 +23,21 @@ class EasyXML
 /*
 	Current design:
 	--------------------------------------------------------------------------------------------------------------------------------------------------
-	Comments at the top of the section apply to the file as a whole. They could be keyed off an internal section called "Internal_HeaderSection" or something.
-	Comments above section headers apply to the the last key of the previous section
-	If a comment appears between two keys, then it will apply to the key above it -- this is consistent with the solution for comments above section headers.
-	Newlines will be stored in similar fashion to comments
+	Comments at the top of the section apply to the file as a whole. They could be keyed off an internal section called
+	"Internal_HeaderSection" or something. Comments above section headers apply to the the last key of the previous section
+	If a comment appears between two keys, then it will apply to the key above it -- this is consistent with the solution for
+	comments above section headers.	Newlines will be stored in similar fashion to comments
 	--------------------------------------------------------------------------------------------------------------------------------------------------
 	--------------------------------------------------------------------------------------------------------------------------------------------------
 	If full-support for comments needs to be added, then the design below should supersede the design above
 	--------------------------------------------------------------------------------------------------------------------------------------------------
 	--------------------------------------------------------------------------------------------------------------------------------------------------
-	Comments at the top of the section apply to the file as a whole. They could be keyed off an internal section called "Internal_HeaderSection" or something.
-	Comments above section headers apply to the section header. If people dislike this, I may instead chose to make the comments apply to the last key of the previous section if there a newline in-between the comment in question and the next section. I may come up with some decent solution as I experiment
-	If a comment appears between two keys, then it will apply to the key below it -- this is consistent with the solution for comments above section headers.
-	Newlines will be stored in similar fashion to comments
+	Comments at the top of the section apply to the file as a whole. They could be keyed off an internal section called
+	"Internal_HeaderSection" or something.
+	Comments above section headers apply to the section header. If people dislike this, I may instead chose to make the comments
+	apply to the last key of the previous section if there a newline in-between the comment in question and the next section.
+	I may come up with some decent solution as I experiment. If a comment appears between two keys, then it will apply to the key below it
+	-- this is consistent with the solution for comments above section headers. Newlines will be stored in similar fashion to comments
 	--------------------------------------------------------------------------------------------------------------------------------------------------
 */
 
@@ -335,16 +337,14 @@ class EasyXML
 ; For all of the EasyXML_* functions below, much credit is due to Lexikos and Rbrtryn for their work with ordered arrays
 ; See http://www.autohotkey.com/board/topic/61792-ahk-l-for-loop-in-order-of-key-value-pair-creation/?p=389662 for Lexikos's initial work with ordered arrays
 ; See http://www.autohotkey.com/board/topic/94043-ordered-array/#entry592333 for Rbrtryn's OrderedArray lib
-EasyXML_CreateBaseObj(parms*)
-{
+EasyXML_CreateBaseObj(parms*){
 	; Define prototype object for ordered arrays:
 	static base := {__Set: "EasyXML_Set", _NewEnum: "EasyXML_NewEnum", Remove: "EasyXML_Remove", Insert: "EasyXML_Insert", InsertBefore: "EasyXML_InsertBefore"}
 	; Create and return new base object:
 	return Object("_keys", Object(), "base", base, parms*)
 }
 
-EasyXML_Set(obj, parms*)
-{
+EasyXML_Set(obj, parms*){
 	; If this function is called, the key must not already exist.
 	; Sub-class array if necessary then add this new key to the key list, if it doesn't begin with "EasyXML_ReservedFor_"
 	if parms.maxindex() > 2
@@ -357,16 +357,14 @@ EasyXML_Set(obj, parms*)
 	; That is, a new key-value pair is created and stored in the object.
 }
 
-EasyXML_NewEnum(obj)
-{
+EasyXML_NewEnum(obj){
 	; Define prototype object for custom enumerator:
 	static base := Object("Next", "EasyXML_EnumNext")
 	; Return an enumerator wrapping our _keys array's enumerator:
 	return Object("obj", obj, "enum", obj._keys._NewEnum(), "base", base)
 }
 
-EasyXML_EnumNext(e, ByRef k, ByRef v="")
-{
+EasyXML_EnumNext(e, ByRef k, ByRef v=""){
 	; If Enum.Next() returns a "true" value, it has stored a key and
 	; value in the provided variables. In this case, "i" receives the
 	; current index in the _keys array and "k" receives the value at
@@ -379,10 +377,9 @@ EasyXML_EnumNext(e, ByRef k, ByRef v="")
 	return r
 }
 
-EasyXML_Remove(obj, parms*)
-{
+EasyXML_Remove(obj, parms*){
 	r := ObjRemove(obj, parms*)         ; Remove keys from main object
-	Removed := []                     
+	Removed := []
 	for k, v in obj._keys             ; Get each index key pair
 		if not ObjHasKey(obj, v)      ; if key is not in main object
 			Removed.Insert(k)         ; Store that keys index to be removed later
@@ -391,8 +388,7 @@ EasyXML_Remove(obj, parms*)
 	return r
 }
 
-EasyXML_Insert(obj, parms*)
-{
+EasyXML_Insert(obj, parms*){
 	r := ObjInsert(obj, parms*)            ; Insert keys into main object
 	enum := ObjNewEnum(obj)              ; Can't use for-loop because it would invoke EasyXML_NewEnum
 	while enum[k] {                      ; For each key in main object
@@ -404,8 +400,7 @@ EasyXML_Insert(obj, parms*)
 	return r
 }
 
-EasyXML_InsertBefore(obj, key, parms*)
-{
+EasyXML_InsertBefore(obj, key, parms*){
 	OldKeys := obj._keys                 ; Save key list
 	obj._keys := []                      ; Clear key list
 	for idx, k in OldKeys {              ; Put the keys before key

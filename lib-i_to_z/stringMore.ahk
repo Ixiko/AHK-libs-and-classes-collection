@@ -1,4 +1,4 @@
-; String manipulation functions.
+﻿; String manipulation functions.
 
 ; NOTE: this file needs to be in ANSI encoding, to preserve some odd characters.
 

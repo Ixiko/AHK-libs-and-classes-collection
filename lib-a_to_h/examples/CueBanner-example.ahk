@@ -1,4 +1,4 @@
-;================================================================
+﻿;================================================================
 ; EXAMPLE CUE BANNER
 #NoEnv
 #SingleInstance, force
@@ -34,7 +34,7 @@ cT3 := "this is DropDownList, bold, no shadow`t`tand expanded tabs that go beyon
 cT4 := "pay attention to this persistent pink cue!"
 ;cT5 := "blue centered cue for ComboBox"
 ;cT6 := "אדופמסרױױכןפקשرشطقو۳۸ﮎﮐﮕ"
-cT5 := "ความพยายามอยู่�-ี่ไหน ความสำเร็จอยู่�-ี่นั่น"
+cT5 := "ความพยายามอยู่�ี่ไหน ความสำเร็จอยู่�ี่นั่น"
 cT6 := "உலகம் பேச நினைக்கும் போது Unicode பேசுகிறது"
 cT7 := "normal"
 cT8 := "pale shadow"
@@ -67,7 +67,7 @@ Gui, Add, Radio, x+5 yp w100 h16 E0x1000 hwndhRadio2,
 Gui, Add, GroupBox, x2 y2 w456 h230, Cue banner examples
 Gui, Add, Button, w80 h38 Default hwndhBtn,
 Gui, Font, s7, Tahoma
-Gui, Add, Text, x+5 yp w360 hp Center hwndhVer gtt, `nClick me�
+Gui, Add, Text, x+5 yp w360 hp Center hwndhVer gtt, `nClick me�
 Gui, Font, s8, Tahoma
 
 if !A_IsUnicode

@@ -1,4 +1,4 @@
-/*  
+﻿/*  
 Reduces the memory consumption of a process
 Author          : heresy (Thanks!)
 Link            : http://www.autohotkey.com/forum/viewtopic.php?t=71966

@@ -1,4 +1,4 @@
-; Edited by Masonjar13 to be compatible with 32 and 64-bit (2015)
+﻿; Edited by Masonjar13 to be compatible with 32 and 64-bit (2015)
 StdOutToVar( sCmd ) { ;  GAHK32 ; Modified Version : SKAN 05-Jul-2013  http://goo.gl/j8XJXY                             
   Static StrGet := "StrGet"     ; Original Author  : Sean 20-Feb-2007  http://goo.gl/mxCdn  
    

@@ -1,4 +1,7 @@
-﻿
+﻿; EnumComMembers by TLM
+; https://www.autohotkey.com/boards/viewtopic.php?f=6&t=71194&hilit=COM+Object+Reference
+; https://gist.github.com/TLMcode/af02957c667b0b227ef649670ad19159#file-enumcommembers-ahk
+
 EnumComMembers(pti) {
    static InvKind := {1:"method", 2:"get", 4:"put", 8:"putref"}
    if ComObjType(pti)=9 { ; if Com Object, get iTypeInfo Interface
@@ -59,4 +62,21 @@ EnumComMembers(pti) {
 }
 vTable(ptr, n) { ; see ComObjQuery documentation
     return NumGet(NumGet(ptr+0), n*A_PtrSize)
+}
+GetTypeInfo(ptr) {
+    if ComObjType( ptr ) = 9
+        ptr := ComObjValue( ptr )
+
+	; Check if *ptr* has ITypeInfo Interface
+    GetTypeInfoCount := vtable( ptr, 3 )
+    DllCall( GetTypeInfoCount, "ptr",ptr, "ptr*",HasITypeInfo )
+    if Not HasITypeInfo
+    {
+        MsgBox ITypeInfo Interface not supported
+        Exit
+    }
+
+    GetTypeInfo := vTable( ptr, 4 )
+    if DllCall( GetTypeInfo, "ptr",ptr, "uint",0, "uint",0, "ptr*", pti ) = 0
+        Return, pti
 }

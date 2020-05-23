@@ -1,4 +1,4 @@
-ITL_InterfaceConstructor(this, instance)
+﻿ITL_InterfaceConstructor(this, instance)
 {
 	local interfacePtr
 	if (!instance)

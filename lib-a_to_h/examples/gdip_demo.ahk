@@ -1,4 +1,4 @@
-; gdi+ ahk tutorial 1 written by tic (Tariq Porter)
+﻿; gdi+ ahk tutorial 1 written by tic (Tariq Porter)
 ; Requires Gdip.ahk either in your Lib folder as standard library or using #Include
 ;
 ; Tutorial to draw a single ellipse and rectangle to the screen

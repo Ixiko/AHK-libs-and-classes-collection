@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: guiAddonInfo
     Form to edit or create addoninfo.txt files used by source engine addons to display addon information ingame
 

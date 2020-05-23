@@ -1,4 +1,4 @@
-; #Include StdoutToVar.ahk
+﻿; #Include StdoutToVar.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

@@ -1,4 +1,4 @@
-; By: ahklerner & Sean <- he did the hard stuff
+﻿; By: ahklerner & Sean <- he did the hard stuff
 ; see forum post for more info 
 ; http://www.autohotkey.com/forum/viewtopic.php?t=33726
 

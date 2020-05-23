@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ShellItem
 wraps the *IShellItem* interface and exposes methods that retrieve information about a Shell item. IShellItem and IShellItem2 are the preferred representations of items in any new code.
 

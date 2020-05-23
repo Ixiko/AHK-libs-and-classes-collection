@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ShellLinkA
 wraps the *IShellLinkA* interface and exposes methods that create, modify, and resolve Shell links.
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: SequentialStream
 wraps the *ISequentialStream* interface and supports simplified sequential access to stream objects.
 

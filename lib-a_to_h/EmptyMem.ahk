@@ -1,4 +1,4 @@
-/* If you want to check performance difference.
+﻿/* If you want to check performance difference.
 uncomment below benchmark routine. written by derRaphael
 ;-------------------------------------------------------
 SetBatchLines, -1

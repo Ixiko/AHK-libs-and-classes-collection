@@ -1,4 +1,4 @@
-
+﻿
 RichEdit_ATOU( ByRef Unicode, Ansi ) { ; Ansi to Unicode
  VarSetCapacity( Unicode, (Len:=StrLen(Ansi))*2+1, 0 )
  Return DllCall( "MultiByteToWideChar", Int,0,Int,0,Str,Ansi,UInt,Len, Str,Unicode, UInt,Len )
@@ -236,7 +236,7 @@ EM_GETBIDIOPTIONS(hCtrl)  {
   ; }
 
   static BOE_RTLDIR=0x1,BOE_PLAINTEXT=0x2,BOE_NEUTRALOVERRIDE=0x4,BOE_CONTEXTREADING=0x8,BOE_CONTEXTALIGNMENT=0x10,BOE_LEGACYBIDICLASS=0x00000040
-; RTLDIR - Default paragraph direction�implies alignment (obsolete).
+; RTLDIR - Default paragraph direction—implies alignment (obsolete).
 ; PLAINTEXT - Uses plain text layout (obsolete).
 ; NEUTRALOVERRIDE - Overrides neutral layout.
 ; CONTEXTREADING - Context reading order.

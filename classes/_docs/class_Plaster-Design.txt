@@ -1,0 +1,203 @@
+
+                                    Plaster
+
+Plaster can only make minor improvements to AutoHotkey.  I tried to assure that including Plaster would not break existing well-written code.
+
+Some of the improvements it makes are discriminating things AutoHotkey conflates.  Substituting one conflated thing for another will cause programs to malfunction, indicating they should have been different types.  "IsType" discriminates between dictionary, array, exception, and user-defined types, and between integer and Boolean types.  AutoHotkey L v1 provides no way to test the type of a value, and v2 conflates these types and uses nonsensical type names.  "HasProperty" and "HasMethod" discriminate between types that do and do not have the member.  They also discriminate between types that do and do not have /user-defined/ implementations of built-in members.  Neither AutoHotkey L v1 nor v2 provide a feature equivalent to "HasProperty" or "HasMethod".
+
+Other improvements are making similar things behave similarly.  In other words, fixing the opposite problem.  "IsType" organizes the built-in types into a hierarchy based on their similarities.  It also allows user-defined types to appear to inherit from built-in types.  "HasProperty" and "HasMethod" work for built-in and user-defined object types, and non-object types.  They also work for inherited and non-inherited members.  "Repr" allows object types to be converted to strings, like non-object types.
+
+Plaster also makes some minor improvements to error handling, though that is a subject for another library.  "Object" and "Array" needed to be replaced to support the two aforementioned endeavors, so I tried to make the replacement solve all the solvable problems.
+
+
+                             Plaster's Type System
+
+Several alternatives were considered when designing the type hierarchy.
+
+There are at least three different ways one might define what an object is in AutoHotkey:
+
+Definition: Anything that has members (properties and methods).
+
+Problems:   You can define members on the default base object to make numbers and strings have members, though they normally do not have them.
+
+            "IsObject" returns false for numbers and strings; the types that inherit from the default base object.
+
+Definition: Things constructed with "Object", or that match its interface.
+
+Problems:   "IsObject" returns true for many things that do not fit this definition.
+
+Definition: Anything "IsObject" returns true for.
+
+Problems:   None I am aware of.
+
+I chose the definition that seems to have the least problems.
+
+The hierarchy is based on the Liskov Substitution Principle.  If a type makes all the guarantees and has all the members of another type, and makes any additional guarantees or has any additional members, it is a subtype of that type.
+
+Most built-in type names are based on the name of the function that constructs them.  Sometimes the name is directly usable (e.g. "Array").  Other times part of the name must be removed for it to make sense (e.g. "_NewEnum" and "FileOpen").
+
+An empty string is the closest thing AutoHotkey has to an official sentinel value.  That is why it is not the same type as "Str".  If you want to allow the same code to run on empty and non-empty strings you will need to check for both "Null" and "Str".
+
+We cannot have two types named "Object", so instances created by "Object" have to be called something else.  I chose "Dict" because it is a popular abbreviation for the same data structure, it does not conflict with "Map" (a useful function), and it is shorter than the alternatives I am aware of.
+
+
+                          Type System Inconsistencies
+
+It is impossible to make Plaster's type system fully consistent in AutoHotkey L v1, because v1's type system is inconsistent.
+
+While numeric types (including Booleans) /usually/ behave as if they are strings, this is not universally true.
+
+Plaster's "Object" fixes one such inconsistency.  The built-in "Object" function treats the same numeric value as two different keys depending on whether it is quoted or unquoted.  Plaster's "Object" treats them both the same; as if they were unquoted.  This fix is actually impossible to avoid when redefining "Object" in AutoHotkey L v1, since passing or returning a value, or assigning it to a variable, is sufficient.
+
+There are inconsistencies that we can do little about.  For example:
+1 + "1"
+fails silently, and:
+"0"
+is not false (not that you should ever write false that way).
+
+AutoHotkey L v2's type system considers numeric and string types separate, and automatically converts between them as needed.  Therefore the type hierarchy is different in it.
+
+
+                                     Object
+
+The primary motivation for replacing "Object" was to make it tag values created with it for fast identification.
+
+Since functions can have only one implementation, and I prefer crashes due to unhandled exceptions to data corruption, I decided to also fix keys with the same name as built-in methods silently overwriting the method, and silent failure when trying to read a nonexistent key.
+
+
+                                     Array
+
+Like "Object", the primary motivation for replacing "Array" was to make it tag values created with it for fast identification.
+
+Again, since functions can have only one implementation, and I would rather lose current work (to an unhandled exception) than potentially lose all previous work (to data corruption), I decided to also fix arrays accepting indices that are not positive integers, and silent failure when trying to read a nonexistent index.
+
+The 1-based indexing must be retained because some built-in aspects of AutoHotkey (e.g. variadic function and method calls), and most code, depends on it.
+
+Missing elements must be allowed, because when calling most built-in functions and methods variadically the argument array must use missing elements for specifying default values.  Empty strings do not work.
+
+
+                                   Exception
+
+"Exception" cannot be replaced by a user-defined function.  The ability to refer to previous stack frames cannot be replicated.  It is impossible to type-check exceptions without checking all their keys and the types of their values for this reason.
+
+An exception type hierarchy was considered and rejected.  AutoHotkey's "catch" is not type-based, unlike most dynamically type-checked programming languages, and it is impossible to use "IsType" to correct this.  The exception is not in a variable that "IsType" can examine when the catch statement is executed.  So it would not be much safer or more readable than a non-type-based design.
+
+
+                                     IsType
+
+While you can set your object's "base" to an instance of a built-in object type to make your type a subtype of that type and inherit its members, that overwrites the connection to its class definition.  That normally makes it impossible to define your own members, defeating the purpose of subtyping.  You can treat your object like a dictionary, setting appropriate values for "__Class" and member keys, but that is error-prone, and does not work well with the class system.  The result is impossible to "extend", just like built-in types.  That is why using "BuiltInBase" is provided as an alternative.  Most of the time when you define a subtype of a built-in type you want to redefine all the methods anyway, because you want to change their behavior, or at least want acceptable error handling, so this works well in practice.
+
+
+                                  HasProperty
+
+The first parameter is named "Value", not "Obj", because "non-object" types will have properties if the default base object is set to an object with properties.
+
+"HasProperty" does not consider keys or indices to be the collection's properties, because it does not make sense for a type's interface to change based on what is stored in it.
+
+
+                                   HasMethod
+
+As with "HasProperty", the first parameter is named "Value", not "Obj", because "non-object" types will have methods if the default base object is set to an object with methods.
+
+One source of potential errors is someone coincidentally naming a method on their type the same thing the person using "HasMethod" is looking for, but giving it different semantics from what they expect.  In statically type-checked programming languages the chance of this happening is minimized by matching the entire signature (the method name and the types of all of its parameters).  We cannot do that in AutoHotkey, because we cannot ask the types of a method's parameters.  We can, however, match on the parameter count, which reduces the probability of such accidents.  That is why "HasMethod" requires the "MinParams", "MaxParams", and "IsVariadic" values of a method.
+
+"HasMethod" provides no way to ask if a method is built-in or not, because the programmer should not need to care.
+
+"HasMethod" does not provide a way to ask if parameters are "byref", because using "byref" parameters is bad design.  You should return new values rather than mutating your arguments.  Mutating arguments is known to be a common source of errors.
+
+Similar to "HasProperty, "HasMethod" does not consider functions (including methods) stored in a collection to be the collection's methods, because it does not make sense for a type's interface to change based on what is stored in it.
+
+Like "IsType", "HasMethod" does not consider every user-defined type to be a subtype of some array-dictionary-list-stack amalgamation.  It does not report the existence of the built-in "Dict" methods on all user-defined types.  Most do not make sense for most types.  "Clone" would be useful for most types, but it does not exist on built-in object types except for "Dict" and its subtypes, so it would be wrong to report it as if it existed on "Object".  "HasProperty" and "HasMethod" make "HasKey" redundant for anything except "Dict" and its subtypes.  Reporting "_NewEnum" on all user-defined types would be error-prone, since programmers would normally consider it an indication the value is a collection that can be iterated over.
+
+"HasMethod" /will/ report a user-defined "_NewEnum" method, so you /can/ use that as an indication the value is a collection that can be iterated over.
+
+
+                                      Repr
+
+"Repr" is not named "Str" because the representation of a string includes double quotes at the beginning and end, and may include escape sequences.  Converting a string to a string should return the same value.  The representation of a representation is a different value.
+
+The "Repr" function looks for a method (called a "special method") instead of a property because the representation of a value does not meet the criteria for a property.
+
+Properties should:
+* be settable and gettable in any order
+* not affect each other's values
+* have the same effect when set once as when set repeatedly to the same value
+* not have an observable side effect when gotten (lazy evaluation is fine)
+* return the same value when gotten repeatedly without being set to another value between the gets
+* not return mutable internal data structures (return copies if necessary)
+
+Some properties may be read-only (throw an exception when set).  Properties in dataflow/reactive frameworks may affect each other's values.
+
+Setting any property is likely to affect the representation of a value.
+
+It would be nice to be able to cache representations, but that is not safe in the general case when mutation can occur.  If object "A" refers to object "B", and object "B" changes, the cache of the representation of object "A" could become invalid.
+
+
+                          Standard Function References
+
+In well-designed programming languages function and method identifiers can be used directly as function pointers or references.  In AutoHotkey this is only true for user-defined methods.  You have to run "Func" to get a function reference for a function (built-in or user-defined), and you cannot get a function reference for a built-in method.
+
+I discovered that AutoHotkey has a separate namespace for functions, like Common Lisp, and unlike most other programming languages.  That means you can assign a function reference to the same name as the function.
+
+This does not solve the whole problem.  It must be done for every function, and obviously most AutoHotkey programmers are not using this technique.  Further, the syntax for calling a function through a function reference is different than for calling it directly, making techniques like advising functions error-prone, since they will not work correctly if you forget to call the function through its reference at any point.
+
+Still, it is nice for functional programming, and people that are willing to be cautious may be able to use it for techniques like advice.
+
+
+                         Unsolved Type System Problems
+
+Most if not all of the problems in this section are impossible to correct with a library.
+
+A corrected type hierarchy should look similar to this:
+Null
+Object
+    Array
+    ComObj
+    Dict
+    Enum
+    Exception
+    File
+    Float
+    Func
+    Int
+        Bool
+    RegExMatch
+    Str
+
+All types should convert to sensible string representations, preferably ones that would recreate the value, but that is not always possible.  This is critical for debugging.
+
+"null" should be a unique value, with no members, that is unsubtypable, not an empty string.  Strings, empty and not, are commonly used.  There is no way to determine if there is no string, as opposed to there is nothing in the string.  "null"s could be used instead of missing elements in variadic calls.
+
+"Object", and everything under it, should be possible to subtype with user-defined classes, and mutate (for monkey patching).  While monkey patching is usually done in bad taste, it is very useful for debugging or working around someone else's bad design.  I am not sure what members it should have, but a "Clone" method would be sensible.  It should *not* have most of the built-in methods all user-defined types have now.  This makes "IsObject" useless, since you can just check if something is equal to "null".
+
+Arrays should be their own type, not a dictionary abused a certain way.  They should be integer indexed and have no missing elements.  Without these restrictions most array operations have surprising, undesirable, semantics (e.g. reversing an array does not change its length... unless it has leading missing elements).  They should be 0-based to simplify indexing math (e.g. treating an array like a circular buffer by using modulo) and for interoperability.  They should have a method for appending an element to the array, a method for removing the last element of the array, a method to return a new enumerator, and a property that contains the number of elements.  Their indices should not be their members.  They should not have members intended for dictionaries.
+
+There should be a way to ask if a property or method exists on a COM object.  This should be provided by functions like "HasProperty" and "HasMethod", rather than methods on COM objects, to avoid potentially overwriting COM object members.
+
+Dictionaries should be called dictionaries, not objects.  Many things are objects that are not dictionaries.  They should not be the basis for all user-defined types as they are now.  This causes user-defined types to have members that do not make sense for them.  Their keys should not be their members.  Having the keys be the members is both nonsensical (the interface changes based on what is stored in them), and runs the risk of making the dictionary malfunction by accidentally overwriting its members (e.g. when storing AutoHotkey-related information in a programming tool).  They should index floats by their value, not as a formatted string.  Indexing them as formatted strings makes lookup sensitive to changes in the format.  Dictionaries should not case fold their keys.  Case folding the keys makes it impossible to discriminate between two strings that only differ in their case.  They should have a method to insert a key-value pair, a method to set the value of a key, a method to get the value of a key, a method to ask if the dictionary contains a key, a method to remove a key-value pair from the dictionary, a method to return a new enumerator, and a property that contains the number of elements.  It should be possible to customize how instances of a class are hashed.  They should not have members intended for arrays.
+
+v2 considers COM object enumerations and all other enumerations to be separate types, which is wrong, since they have identical guarantees and members.
+
+Exceptions should be their own types, not dictionaries.  They should be arranged in a hierarchy based on similar kinds of errors.  Inspiration should be taken from well-designed exception type hierarchies like the one in Python.  "catch" should be type-based to make it easier to only catch the exceptions you can handle at that point.  Exceptions should have properties that correspond to most of the keys they have now.  The "Message" key should be replaced by throwing an exception of the appropriate type, to eliminate the need to parse strings to see if it is a kind you can handle.  The "Extra" key should become the "Message" property.
+
+The API for files is a mess.  The duplicate position property (there are two) and "Tell" method should be removed.  The "Length" property makes the "AtEOF" property and "Seek" method redundant.  The vast number of ("Raw")"Read"("Line"|Num) and ("Raw")"Write"("Line"|Num) methods should be reduced to one of each, and take appropriate arguments to dictate the specifics.  Properties containing the path and filename should be added.
+
+Floating point numbers should be possible to write and represent in scientific notation, which has been added in v2.
+
+It should never be necessary to run "Func".  It should be removed from AutoHotkey.  A function's or method's (including built-in methods) identifier should be usable directly as a function reference.  Functions and methods should always be called through their references.  Again, this makes techniques like functional programming and Lisp-like advice much easier.
+
+It should be possible to write and represent integers in binary notation (e.g. 0b101).  This is nice for working with binary files which often pack several flags into one or more bytes.  Some integer operations are incorrect (e.g. bitwise-not).
+
+It makes sense for "Bool" to be a subtype of "Int", but having them represented as integers instead of "true" and "false" makes reading things with Boolean values mixed with integers much harder.  That should be fixed.
+
+The duplicated members of "RegExMatch" should be removed.  Like arrays and dictionaries, their indices and keys should not be their properties.
+
+Strings should be indexable like arrays.  This will allow using functions written for arrays on strings, which should eliminate a lot of duplicated code.  They should remain immutable, unlike arrays, so they can be safely used for dictionary keys.
+
+All methods should throw exceptions instead of failing silently.  Each exception message should include the representation of the object, the method name, and the representations of any arguments, along with the expectation that was violated.  This usually makes it easy to reproduce the error in a debugger.  Exceptions do not require manual effort to detect errors (unlike, for example, checking "ErrorLevel" every other line), and minimize the chance of data corruption.
+
+The "." and "[]" "object access" operators should differ, with "." referring to the interface of an object, and "[]" referring to the contents.  This allows all the benefits of the current design (e.g. intentionally monkey patching objects), without any of its problems (e.g. accidentally overwriting members).
+
+It should be possible to overload most operators.  This allows the programming language to be seamlessly extended, such as adding bignum, complex number, or fractional data types.
+
+This only covers type-system-related problems.  There are many other problems with AutoHotkey's design.

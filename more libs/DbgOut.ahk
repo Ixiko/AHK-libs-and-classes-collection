@@ -1,4 +1,4 @@
-/*
+﻿/*
 Name: dbgOut - Prints given String via OutputDebug and indents string according to a given prefix
 Version 0.1 (20161130)
 Created: 20161130

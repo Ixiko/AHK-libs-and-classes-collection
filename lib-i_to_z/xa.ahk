@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 Save/Load Arrays - trueski 
 - original source  : http://www.autohotkey.com/board/topic/85461-ahk-l-saveload-arrays/

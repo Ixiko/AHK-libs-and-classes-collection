@@ -1,4 +1,4 @@
-;; FTP Class Example - http://www.autohotkey.com/forum/viewtopic.php?t=73544
+﻿;; FTP Class Example - http://www.autohotkey.com/forum/viewtopic.php?t=73544
 ;; Synchronous mode example
 
 ;;== USER SETTINGS ===============

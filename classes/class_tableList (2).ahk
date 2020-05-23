@@ -1,4 +1,4 @@
-; Constants.
+﻿; Constants.
 global LIST_ESC_CHAR := 1
 global LIST_PASS_ROW_CHAR := 2
 global LIST_COMMENT_CHAR := 3

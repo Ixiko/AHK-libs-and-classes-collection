@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: IMAGELISTSTATS
 a structure class that contains image list statistics. Used by IImageList2::GetStatistics.
 

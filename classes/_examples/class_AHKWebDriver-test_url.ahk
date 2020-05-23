@@ -1,4 +1,4 @@
-#noenv
+﻿#noenv
 #include AHKWebDriver.ahk
 
 wd := new WDSession()

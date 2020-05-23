@@ -1,4 +1,4 @@
-ReplaceSystemVariables(ByRef fnText)
+﻿ReplaceSystemVariables(ByRef fnText)
 {
 	; replace an occurence of a system variable read from a .ini file with the contents of the variable
 	; MsgBox fnText: %fnText%

@@ -1,4 +1,4 @@
-ITL_ParamToVARIANT(info, tdesc, value, byRef variant, index)
+﻿ITL_ParamToVARIANT(info, tdesc, value, byRef variant, index)
 {
 	static VT_PTR := 26, VT_USERDEFINED := 29, VT_VOID := 24, VT_BYREF := 0x4000, VT_RECORD := 36, VT_UNKNOWN := 13, VT_SAFEARRAY := 27
 		, sizeof_VARIANT := 8 + 2 * A_PtrSize

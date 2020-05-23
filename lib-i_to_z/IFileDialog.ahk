@@ -1,7 +1,6 @@
 ﻿#NoEnv
 
-IFileDialogEvents_new()
-{
+IFileDialogEvents_new(){
 	vtbl := IFileDialogEvents_Vtbl()
 	; VarSetCapacity apparently tries to emulate the peculiarities of stack allocation so use GlobalAlloc here
 	fde := DllCall("GlobalAlloc", "UInt", 0x0000, "Ptr", A_PtrSize + 4, "Ptr") ; A_PtrSize to store the pointer to the vtable struct + sizeof unsigned int to store this object's refcount
@@ -14,12 +13,11 @@ IFileDialogEvents_new()
 	return fde
 }
 
-IFileDialogEvents_Vtbl(ByRef vtblSize := 0)
-{
-	/* This vtable approach is quite rigid and unflexible in its approach. 
+IFileDialogEvents_Vtbl(ByRef vtblSize := 0){
+	/* This vtable approach is quite rigid and unflexible in its approach.
 		I mean, ideally, you'd want each object to have its own set of methods that are called.
 		With this, however, nope - same methods, just a different "this".
-	
+
 		I leave fixing that part up to you. I imagine it involves each object getting its own
 		vtable (you could leave all the callback pointers inside the IFileDialogEvents struct after the vtable pointer)
 		instead of sharing this one, with the functions to be called for each object determined at creation. Or something like that.
@@ -41,8 +39,7 @@ IFileDialogEvents_Vtbl(ByRef vtblSize := 0)
 }
 
 ; Called on a "ComObjQuery"
-IFileDialogEvents_QueryInterface(this_, riid, ppvObject)
-{
+IFileDialogEvents_QueryInterface(this_, riid, ppvObject){
 	static IID_IUnknown, IID_IFileDialogEvents
 	if (!VarSetCapacity(IID_IUnknown))
 		VarSetCapacity(IID_IUnknown, 16), VarSetCapacity(IID_IFileDialogEvents, 16)
@@ -62,8 +59,7 @@ IFileDialogEvents_QueryInterface(this_, riid, ppvObject)
 }
 
 ; Called on an "ObjAddRef"
-IFileDialogEvents_AddRef(this_)
-{
+IFileDialogEvents_AddRef(this_){
 	; get and increment our reference count member inside the IFileDialogEvents struct
 	NumPut((_refCount := NumGet(this_+0, A_PtrSize, "UInt") + 1), this_+0, A_PtrSize, "UInt")
 	return _refCount ; new refcount must be returned
@@ -81,23 +77,19 @@ IFileDialogEvents_Release(this_) {
 	return _refCount ; new refcount must be returned
 }
 
-IFileDialogEvents_OnFileOk(this_, pfd)
-{
+IFileDialogEvents_OnFileOk(this_, pfd){
 	return 0x80004001 ; E_NOTIMPL ("[IFileDialogEvents] methods that are not implemented should return E_NOTIMPL.")
 }
 
-IFileDialogEvents_OnFolderChanging(this_, pfd, psiFolder)
-{
+IFileDialogEvents_OnFolderChanging(this_, pfd, psiFolder){
 	return 0x80004001 ; E_NOTIMPL
 }
 
-IFileDialogEvents_OnFolderChange(this_, pfd)
-{
+IFileDialogEvents_OnFolderChange(this_, pfd){
 	return 0x80004001 ; E_NOTIMPL
 }
 
-IFileDialogEvents_OnSelectionChange(this_, pfd)
-{
+IFileDialogEvents_OnSelectionChange(this_, pfd){
 	if (DllCall(NumGet(NumGet(pfd+0)+14*A_PtrSize), "Ptr", pfd, "Ptr*", psi) >= 0) { ; IFileDialog::GetCurrentSelection
          GetDisplayName := NumGet(NumGet(psi + 0, "UPtr"), A_PtrSize * 5, "UPtr")
          If !DllCall(GetDisplayName, "Ptr", psi, "UInt", 0x80028000, "PtrP", StrPtr) { ; SIGDN_DESKTOPABSOLUTEPARSING
@@ -109,18 +101,15 @@ IFileDialogEvents_OnSelectionChange(this_, pfd)
 	return 0 ; S_OK
 }
 
-IFileDialogEvents_OnShareViolation(this_, pfd, psi, pResponse)
-{
+IFileDialogEvents_OnShareViolation(this_, pfd, psi, pResponse){
 	return 0x80004001 ; E_NOTIMPL
 }
 
-IFileDialogEvents_OnTypeChange(this_, pfd)
-{
+IFileDialogEvents_OnTypeChange(this_, pfd){
 	return 0x80004001 ; E_NOTIMPL
 }
 
-IFileDialogEvents_OnOverwrite(this_, pfd, psi, pResponse)
-{
+IFileDialogEvents_OnOverwrite(this_, pfd, psi, pResponse){
 	return 0x80004001 ; E_NOTIMPL
 }
 
@@ -143,7 +132,7 @@ SelectFolder(fde := 0) {
       Return ""
    VTBL := NumGet(FileDialog + 0, "UPtr")
    DllCall(NumGet(VTBL + SetOptions, "UPtr"), "Ptr", FileDialog, "UInt", 0x00000028, "UInt") ; FOS_NOCHANGEDIR | FOS_PICKFOLDERS
- 
+
 	if (fde) {
 		DllCall(NumGet(NumGet(FileDialog+0)+7*A_PtrSize), "Ptr", FileDialog, "Ptr", fde, "UInt*", dwCookie := 0)
 	}

@@ -1,4 +1,4 @@
-;https://autohotkey.com/board/topic/7471-list-of-filenames-selected-in-panel-of-total-commander/#entry46104
+﻿;https://autohotkey.com/board/topic/7471-list-of-filenames-selected-in-panel-of-total-commander/#entry46104
 QueryActiveWinID( byRef aWin, winText="", excludeTitle="", excludeText="" ) {
 	if( (aWin || aWin:="A") && (aWin <> "A") && (subStr(aWin,1,4) <> "ahk_") ) 
 		aWin:=(( RegExMatch(subStr(aWin,1,1), "\d") && !InStr(aWin, " ")) ? "ahk_class " aWin : "ahk_id " aWin )

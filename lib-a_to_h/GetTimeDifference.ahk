@@ -1,4 +1,4 @@
-GetTimeDifference(fnStartTime,fnEndTime,fnTimeUnits := "Seconds")
+﻿GetTimeDifference(fnStartTime,fnEndTime,fnTimeUnits := "Seconds")
 {
 	; returns difference between two times in the specified units
 	; MsgBox fnStartTime %fnStartTime%`nfnEndTime %fnEndTime%`nfnTimeUnits %fnTimeUnits%

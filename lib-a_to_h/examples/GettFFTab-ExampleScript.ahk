@@ -1,4 +1,4 @@
-/*
+﻿/*
 This example will switch to the "Subsonic" tab, wait a second, then switch back to the last active tab.
 Note that the "last" variable needs to be valued after the first accDoDefaultAction(0) or AHK will throw an error.
 */

@@ -1,4 +1,4 @@
-Affinity_Set( CPU=1, PID=0x0 ) { ; CPU0=1 CPU1=2 | to use both, CPU should be 3
+﻿Affinity_Set( CPU=1, PID=0x0 ) { ; CPU0=1 CPU1=2 | to use both, CPU should be 3
   Process, Exist, %PID%
   IfEqual,ErrorLevel,0,  SetEnv,PID,% DllCall( "GetCurrentProcessId" )
   hPr := DllCall( "OpenProcess",Int,1536,Int,0,Int,PID )  

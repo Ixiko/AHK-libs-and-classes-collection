@@ -1,4 +1,4 @@
-ListLines(NumLines="",endline="",params*)
+﻿ListLines(NumLines="",endline="",params*)
 {
 static hwndEdit, pSFW, pSW, bkpSFW, bkpSW
 ListLines Off

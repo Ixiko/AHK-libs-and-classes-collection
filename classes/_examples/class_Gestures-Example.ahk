@@ -1,4 +1,4 @@
-#SingleInstance force
+﻿#SingleInstance force
 #include gestures.ahk
 
 ; Defining directions for ease of use

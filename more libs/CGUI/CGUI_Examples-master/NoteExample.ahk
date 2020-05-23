@@ -1,4 +1,4 @@
-gui := new NoteExample()
+﻿gui := new NoteExample()
 #include <CGUI>
 ;json modifies #Escapechar and #Commentflag unfortunately so they're restored here
 #include <json>

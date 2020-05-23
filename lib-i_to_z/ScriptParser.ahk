@@ -1,4 +1,4 @@
-
+﻿
 PreprocessScript(ByRef ScriptText, AhkScript, ExtraFiles, FileList="", FirstScriptDir="", Options="", iOption=0) {
 
 	SplitPath, AhkScript, ScriptName, ScriptDir

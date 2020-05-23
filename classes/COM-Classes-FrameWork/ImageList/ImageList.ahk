@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ImageList
 wraps the *IImageList* interface and exposes methods that manipulate and interact with image lists.
 
@@ -612,7 +612,7 @@ class ImageList extends Unknown
 		UINT bmp - the ID of a predefined system bitmap. You can use the fields of the OBM class for convenience.
 
 	Returns:
-		INT index - the new (zero-based) index of the image�
+		INT index - the new (zero-based) index of the image´
 	*/
 	AddSystemBitmap(bmp)
 	{

@@ -1,4 +1,4 @@
-LoadPicture(aFilespec, aWidth:=0, aHeight:=0, ByRef aImageType:="", aIconNumber:=0, aUseGDIPlusIfAvailable:=1){
+ï»¿LoadPicture(aFilespec, aWidth:=0, aHeight:=0, ByRef aImageType:="", aIconNumber:=0, aUseGDIPlusIfAvailable:=1){
 ; Returns NULL on failure.
 ; If aIconNumber > 0, an HICON or HCURSOR is returned (both should be interchangeable), never an HBITMAP.
 ; However, aIconNumber==1 is treated as a special icon upon which LoadImage is given preference over ExtractIcon
@@ -342,7 +342,7 @@ LoadPicture(aFilespec, aWidth:=0, aHeight:=0, ByRef aImageType:="", aIconNumber:
 		; a cursor to be retained if the specified size happens to match the actual size of the
 		; cursor.  This is because normally, it seems that CopyImage() omits cursor animation
 		; from the new object.  MSDN: "LR_COPYRETURNORG returns the original hImage if it satisfies
-		; the criteria for the copy—that is, correct dimensions and color depth—in which case the
+		; the criteria for the copyâ€”that is, correct dimensions and color depthâ€”in which case the
 		; LR_COPYDELETEORG flag is ignored. If this flag is not specified, a new object is always created."
 		; KNOWN BUG: Calling CopyImage() when the source image is tiny and the destination width/height
 		; is also small (e.g. 1) causes a divide-by-zero exception.

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: TaskbarList
 wraps the *ITaskbarList* interface and exposes methods that control the taskbar. It allows you to dynamically add, remove, and activate items on the taskbar.
 

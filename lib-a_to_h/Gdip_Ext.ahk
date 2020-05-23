@@ -1,4 +1,4 @@
-Gdip_TextToGraphics2(pGraphics, Text, Options, Font="Arial", Width="", Height="", Measure=0){
+ï»¿Gdip_TextToGraphics2(pGraphics, Text, Options, Font="Arial", Width="", Height="", Measure=0){
 	IWidth := Width, IHeight:= Height
 	
 	RegExMatch(Options, "i)X([\-\d\.]+)(p*)", xpos)
@@ -177,7 +177,7 @@ Gdip_DrawPath(pGraphics, pPen, pPath){
 
 /*
 ; Function              Gdip_AddPathBeziers
-; Description           Adds a sequence of connected Bézier splines to the current figure of this path.
+; Description           Adds a sequence of connected BÃ©zier splines to the current figure of this path.
 ;
 ; pPath                 Pointer to the GraphicsPath
 ; Points                the coordinates of all the points passed as x1,y1|x2,y2|x3,y3.....
@@ -197,7 +197,7 @@ Gdip_AddPathBeziers(pPath, Points) {
 	return DllCall("gdiplus\GdipAddPathBeziers", "uint", pPath, "uint", &PointF, "int", Points0)
 }
 
-Gdip_AddPathBezier(pPath, x1, y1, x2, y2, x3, y3, x4, y4) {	; Adds a Bézier spline to the current figure of this path
+Gdip_AddPathBezier(pPath, x1, y1, x2, y2, x3, y3, x4, y4) {	; Adds a BÃ©zier spline to the current figure of this path
 	return DllCall("gdiplus\GdipAddPathBezier", "uint", pPath
 	, "float", x1, "float", y1, "float", x2, "float", y2
 	, "float", x3, "float", y3, "float", x4, "float", y4)

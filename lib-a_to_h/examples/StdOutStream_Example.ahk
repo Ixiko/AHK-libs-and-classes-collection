@@ -1,4 +1,4 @@
-File = %A_ScriptDir%\test.ahk
+﻿File = %A_ScriptDir%\test.ahk
 Script =
 (%
 Loop, 10

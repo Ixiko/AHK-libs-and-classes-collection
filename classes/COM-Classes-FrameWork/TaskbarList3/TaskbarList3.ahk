@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: TaskbarList3
 wraps the *ITaskbarList3* interface and exposes methods that support the unified launching and switching taskbar button functionality added in Windows 7. This functionality includes thumbnail representations and switch targets based on individual tabs in a tabbed application, thumbnail toolbars, notification and status overlays, and progress indicators.
 

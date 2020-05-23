@@ -1,4 +1,4 @@
-class OfficeManager{
+﻿class OfficeManager{
 	Path := ""
 	p := ""
 	__New(){

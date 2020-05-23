@@ -1,4 +1,4 @@
-DownloadToString(url, encoding = "utf-8")
+﻿DownloadToString(url, encoding = "utf-8")
 {
     static a := "AutoHotkey/" A_AhkVersion
     if (!DllCall("LoadLibrary", "str", "wininet") || !(h := DllCall("wininet\InternetOpen", "str", a, "uint", 1, "ptr", 0, "ptr", 0, "uint", 0, "ptr")))

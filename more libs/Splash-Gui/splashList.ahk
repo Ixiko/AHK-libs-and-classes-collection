@@ -1,4 +1,4 @@
-splashList(text, list, sorted=1, fontSize = 12){ ; Pass help text and |-separated list
+﻿splashList(text, list, sorted=1, fontSize = 12){ ; Pass help text and |-separated list
   global
   choice =  ; Clear previous choices
   rows = ; Clear previous number of rows

@@ -1,4 +1,4 @@
-; to use this example code first convert the type library UIAutomationClient with TypeLib2AHK
+﻿; to use this example code first convert the type library UIAutomationClient with TypeLib2AHK
 
 #Include UIAutomationClient_1_0_64bit.ahk  ; comment out as necessary
 ;~ #Include UIAutomationClient_1_0_32bit.ahk  ; uncomment as necessary

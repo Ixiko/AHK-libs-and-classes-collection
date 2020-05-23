@@ -1,4 +1,4 @@
-StrPut(String, Address="", Length=-1, Encoding=0)
+﻿StrPut(String, Address="", Length=-1, Encoding=0)
 {
     if A_IsUnicode
     {

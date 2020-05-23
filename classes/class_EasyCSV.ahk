@@ -1,4 +1,4 @@
-class_EasyCSV(sFile="", sLoadFromStr="", bHasHeader=false)
+﻿class_EasyCSV(sFile="", sLoadFromStr="", bHasHeader=false)
 {
 	return new EasyCSV(sFile, sLoadFromStr, bHasHeader)
 }

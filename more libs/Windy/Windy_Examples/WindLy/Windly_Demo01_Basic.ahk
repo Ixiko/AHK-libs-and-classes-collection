@@ -1,4 +1,4 @@
-#include %A_ScriptDir%\..\..\lib\Windy\WindLy.ahk
+﻿#include %A_ScriptDir%\..\..\lib\Windy\WindLy.ahk
 #include %A_ScriptDir%\..\..\lib\Windy\Const_WinUser.ahk
 #include %A_ScriptDir%\..\..\lib\DbgOut.ahk
 

@@ -1,4 +1,4 @@
-;=========================================Total Commander=====================
+﻿;=========================================Total Commander=====================
 TcmdSelByMask(mask) {
 	IfWinActive ahk_class TTOTAL_CMD
 	{

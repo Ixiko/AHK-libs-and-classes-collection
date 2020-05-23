@@ -1,4 +1,4 @@
-printfile(printpath,Copies,FileName){
+﻿printfile(printpath,Copies,FileName){
  	Copies += 0
 	MsgBox, 36, % "Printing Labels", % "You have selected to print " NumCopies " of " FileName " `n`nIf it is not your wish to print these labels, Press [NO]. `n`nIf you do want to print these labels, make sure you have " NumCopies " sheets of labels in the printer."
 	IfMsgBox, Yes

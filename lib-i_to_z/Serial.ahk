@@ -1,4 +1,4 @@
-; from here: http://www.autohotkey.com/forum/viewtopic.php?p=290253#290253
+﻿; from here: http://www.autohotkey.com/forum/viewtopic.php?p=290253#290253
 ;########################################################################
 ;###### Initialize COM Subroutine #######################################
 ;########################################################################

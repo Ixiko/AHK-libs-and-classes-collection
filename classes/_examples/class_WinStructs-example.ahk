@@ -1,4 +1,4 @@
-; Example script
+﻿; Example script
 ; Use a GetWindowRect Dll Call to get a RECT structure containing information on the Size of the window
 ; Use a GetCursorPos Dll Call to get a POINT structure containing mouse position
 ; Pass bits of each to a MoveWindow Dll Call

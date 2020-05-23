@@ -1,4 +1,4 @@
-GlobalVarsScript(var="",size=102400,ByRef object=0){
+﻿GlobalVarsScript(var="",size=102400,ByRef object=0){
   global
   static globalVarsScript
   If (var="")

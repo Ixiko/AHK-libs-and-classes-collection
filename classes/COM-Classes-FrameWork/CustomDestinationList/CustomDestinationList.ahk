@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: CustomDestinationList
 wraps the *ICustomDestinationList* interface and exposes methods that allow an application to provide a custom Jump List, including destinations and tasks, for display in the taskbar.
 

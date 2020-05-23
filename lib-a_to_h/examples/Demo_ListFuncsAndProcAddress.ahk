@@ -1,4 +1,4 @@
-#Warn
+﻿#Warn
 #SingleInstance, Force
 
 pBASE := DllCall( "LoadLibrary", "Str","shell32.dll", "UPtr" )

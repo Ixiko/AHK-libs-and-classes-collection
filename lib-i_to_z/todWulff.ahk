@@ -1,4 +1,4 @@
-#include FcnLib.ahk
+﻿#include FcnLib.ahk
 #include thirdParty/httpQuery.ahk
 ;#include thirdParty/httpQueryInfo.ahk
 #include thirdParty/infogulchEncodings.ahk

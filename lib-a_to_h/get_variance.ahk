@@ -1,4 +1,4 @@
-;get_variance.ahk
+﻿;get_variance.ahk
 
 get_variance(bcolor, fcolor)
 {

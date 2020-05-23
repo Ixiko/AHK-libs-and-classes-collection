@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Makes the Gui window NoActivate but Clickable
 	
 	Usage: 

@@ -1,4 +1,4 @@
-; #Include strPut.ahk
+﻿; #Include strPut.ahk
 ; #Include strGet.ahk
 #NoEnv
 SendMode Input

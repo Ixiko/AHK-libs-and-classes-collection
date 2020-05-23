@@ -1,4 +1,4 @@
-/**
+﻿/**
  * extends functionality for Objects on the base object
  * 
  * @Source    - https://autohotkey.com/board/topic/83081-ahk-l-customizing-object-and-array/

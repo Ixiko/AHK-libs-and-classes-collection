@@ -1,4 +1,4 @@
-/*
+﻿/*
 WinStructs - A class to hold Window Structure Definitions
 
 STYLE GUIDE

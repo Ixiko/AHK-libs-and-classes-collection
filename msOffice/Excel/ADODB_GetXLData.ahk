@@ -1,4 +1,4 @@
-;GXD_Base := A_ScriptDir . "\SampleData.xls" 
+﻿;GXD_Base := A_ScriptDir . "\SampleData.xls" 
 ;GXD_Sheet := "Sheet1"
 ;clipboard := GetXLData(GXD_Base, GXD_Sheet,, "Units", "BETWEEN", 20, "AND",,, 50)
 ;clipboard := GetXLData(GXD_Base, GXD_Sheet, "Region,Rep,Unit Cost,", "Units", "BETWEEN", "20", "AND",,, 60)

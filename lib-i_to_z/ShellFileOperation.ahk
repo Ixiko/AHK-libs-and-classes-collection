@@ -1,5 +1,5 @@
-/*
-	Provides access to Windows� built-in file operation system 
+﻿/*
+	Provides access to Windows’ built-in file operation system 
 	(move / copy / rename / delete files or folders with the standard Windows dialog and error UI).  
 	Utilizes the SHFileOperation shell function in Windows.
 

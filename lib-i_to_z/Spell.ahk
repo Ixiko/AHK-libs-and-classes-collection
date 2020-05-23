@@ -1,4 +1,4 @@
-/*
+﻿/*
 Title: Spell v2.0 (Preview)
 
 Group: Introduction

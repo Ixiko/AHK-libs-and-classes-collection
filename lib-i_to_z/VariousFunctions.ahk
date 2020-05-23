@@ -1,4 +1,4 @@
-; GetActiveObjects v1.0 by Lexikos
+﻿; GetActiveObjects v1.0 by Lexikos
 ; http://ahkscript.org/boards/viewtopic.php?f=6&t=6494
 GetActiveObjects(Prefix:="", CaseSensitive:=false) {
     objects := {}

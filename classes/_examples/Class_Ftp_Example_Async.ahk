@@ -1,4 +1,4 @@
-;; FTP Class Example - http://www.autohotkey.com/forum/viewtopic.php?t=73544
+﻿;; FTP Class Example - http://www.autohotkey.com/forum/viewtopic.php?t=73544
 ;; Asynchronous Mode example
 
 ;; 1. PLEASE READ ASYNCHRONOUS MODE NOTES IN THE DOCUMENTATION FIRST!

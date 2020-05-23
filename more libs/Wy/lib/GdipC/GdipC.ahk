@@ -1,4 +1,4 @@
-class GdipC
+﻿class GdipC
 {
 	_version := "1.0.1"
 	__New()  {

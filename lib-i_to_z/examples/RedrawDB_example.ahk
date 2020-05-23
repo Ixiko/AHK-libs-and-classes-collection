@@ -1,4 +1,4 @@
-#SingleInstance force
+﻿#SingleInstance force
 #NoEnv
 #Include %A_ScriptDir%\..\RedrawDB.ahk
 SetBatchLines -1

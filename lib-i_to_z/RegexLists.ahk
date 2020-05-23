@@ -1,4 +1,4 @@
-; Written by AHK_User 2019-09-26
+﻿; Written by AHK_User 2019-09-26
 ; Updated by AHK_User 2019-10-11
 ; Added Header parameter, if Header is "0", the parameter [parameter] will be interpreted as the number of the column you want to use in the filter
 ; Added List_DifferentValues(List1, List2)

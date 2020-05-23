@@ -1,4 +1,4 @@
-class WinClip extends WinClip_base
+﻿class WinClip extends WinClip_base
 {
   __New()
   {

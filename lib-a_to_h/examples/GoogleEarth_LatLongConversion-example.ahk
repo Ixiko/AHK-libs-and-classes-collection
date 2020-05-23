@@ -1,4 +1,4 @@
-; LatLongConversion.ahk
+ï»¿; LatLongConversion.ahk
 ; by David Tryse   davidtryse@gmail.com
 ; http://david.tryse.net/googleearth/
 ; http://code.google.com/p/googleearth-autohotkey/
@@ -11,7 +11,7 @@
 ;    DMS formats:
 ;	8:32:54S,119:29:28E
 ;	8 deg 32' 54.73" South	119 deg 29' 28.98" East
-;	8°32'54.73"S, 119°29'28.98"E
+;	8Â°32'54.73"S, 119Â°29'28.98"E
 ; 
 ; Needs _libGoogleEarth.ahk library:  http://david.tryse.net/googleearth/
 ; 
@@ -41,7 +41,7 @@ Gui, Font, bold
 Gui, Add, Text, y5 x5, Degrees
 Gui, Add, Text, y5 x250, Decimal
 Gui, Font, norm
-Gui, Add, Text, y25 x5, 10° 29' 41.88'' S, 105° 35' 58.57'' E
+Gui, Add, Text, y25 x5, 10Â° 29' 41.88'' S, 105Â° 35' 58.57'' E
 Gui, Add, Text, y25 x250, -10.494967, 105.599603
 Gui Add, Button, yp-16 xp+160 h32 w40 vAbout gAbout, ?
 Gui, Add, Edit, y50 x5 vDegrees -Wrap W200 R20 -ReadOnly
@@ -146,7 +146,7 @@ About:
   Gui 2:Font,CGray
   Gui 2:Add,Text,xm+20 yp+15, 8:32:54S,119:29:28E
   Gui 2:Add,Text,xm+20 yp+15, 8deg 32min 54.7sec South, 119deg 29min 28.9sec East
-  Gui 2:Add,Text,xm+20 yp+15, 8° 32' 54.73"S	119° 29' 28.98"E
+  Gui 2:Add,Text,xm+20 yp+15, 8Â° 32' 54.73"S	119Â° 29' 28.98"E
   Gui 2:Font
   Gui 2:Add,Text,xm yp+22, License: GPLv2+
   Gui 2:Add,Text,xm yp+26, Check for updates here:

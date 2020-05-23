@@ -1,4 +1,4 @@
-#include getError.ahk
+﻿#include getError.ahk
 
 /* Print Output for AHK v2
 Example:

@@ -1,4 +1,4 @@
-ListLines(PassTrueToTurnOnOrFalseToTurnOff := "") 	; Returns the previous setting of ListLines (prior to this call).
+﻿ListLines(PassTrueToTurnOnOrFalseToTurnOff := "") 	; Returns the previous setting of ListLines (prior to this call).
 { 												; can also return the current setting when no value passed to it
     static sListLines := true  ; The starting default for all scripts is "ListLines On".
     if (PassTrueToTurnOnOrFalseToTurnOff = "")

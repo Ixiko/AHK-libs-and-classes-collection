@@ -1,4 +1,4 @@
-; https://autohotkey.com/boards/viewtopic.php?f=6&t=23164
+﻿; https://autohotkey.com/boards/viewtopic.php?f=6&t=23164
 ; Updated: Sept. 7, 2016
 class OfficeInfo
 {

@@ -1,4 +1,4 @@
-; This script loops through all undread messages in the inbox and asks the user if they want to reply.
+﻿; This script loops through all undread messages in the inbox and asks the user if they want to reply.
 
 ; Constants
 olFolderInbox := 6

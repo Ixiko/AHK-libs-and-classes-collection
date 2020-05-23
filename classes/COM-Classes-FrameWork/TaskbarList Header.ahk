@@ -1,4 +1,4 @@
-/*
+﻿/*
 Header: TaskbarList
 includes all classes related to TaskbarList management
 */

@@ -1,4 +1,4 @@
-; returns True if valid
+﻿; returns True if valid
 isValidEmail(emailstr){
     static regex := "is)^(?:""(?:\\\\.|[^""])*""|[^@]+)@(?=[^()]*(?:\([^)]*\)"
     . "[^()]*)*\z)(?![^ ]* (?=[^)]+(?:\(|\z)))(?:(?:[a-z\d() ]+(?:[a-z\d() -]*[()a-"

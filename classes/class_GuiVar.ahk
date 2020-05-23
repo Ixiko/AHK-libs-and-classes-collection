@@ -1,4 +1,4 @@
-;{ GuiVar
+﻿;{ GuiVar
 ; Fanatic Guru
 ; 2017 11 16
 ; Version: 1.0

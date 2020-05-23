@@ -1,4 +1,4 @@
-; Text = Byref   param1   :=    { 1:"Test" , "Key {2": "" }  ,   param2*  ,   Param3   :=   [ {"t,e[a]s:t{b}":  {1:"t,e[a]s:t{b}","t,e[a]s:t{b}": [4 ] }}]
+﻿; Text = Byref   param1   :=    { 1:"Test" , "Key {2": "" }  ,   param2*  ,   Param3   :=   [ {"t,e[a]s:t{b}":  {1:"t,e[a]s:t{b}","t,e[a]s:t{b}": [4 ] }}]
 ; Text = param1 := { 1:"Test" , "Key {2": "" } , Param3 := [ {"t,e[a]s:t{b}": {1:"t,e[a]s:t{b}","t,e[a]s:t{b}": [4 ] }}]
 ; MsgBox % ">" Text "<`n>" RemoveDefaultDefinitions(Text) "<"
 ExitApp

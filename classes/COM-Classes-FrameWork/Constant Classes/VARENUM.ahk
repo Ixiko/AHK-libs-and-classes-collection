@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: VARENUM
 an enumeration class that defines flags that specifies a variant's type.
 

@@ -1,4 +1,4 @@
-
+﻿
 /*
 WS2.ahk / StdLib WinSock IPv4 Library for AHK
 written and published by derRaphael

@@ -1,4 +1,4 @@
-GetColumnList(fnTableName,fnDatabaseName = "xDatabaseNamex")
+﻿GetColumnList(fnTableName,fnDatabaseName = "xDatabaseNamex")
 {
 	; returns a comma-separated list of the columns for a given table in a database
 	; MsgBox fnTableName: %fnTableName%`nfnDatabaseName: %fnDatabaseName%

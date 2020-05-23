@@ -1,4 +1,4 @@
-;; http://www.autohotkey.com/forum/topic39649.html
+﻿;; http://www.autohotkey.com/forum/topic39649.html
 
 #SingleInstance, Force
 

@@ -1,4 +1,4 @@
-; #Include xpath.ahk
+﻿; #Include xpath.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

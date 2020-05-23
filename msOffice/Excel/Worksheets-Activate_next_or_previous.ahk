@@ -1,4 +1,4 @@
-; F8 hotkey to activate the next sheet.
+﻿; F8 hotkey to activate the next sheet.
 F8::
     ; Get a reference to the active workbook. One (and only one) instance of Excel must be running.
     Wbk := ComObjActive("Excel.Application").ActiveWorkbook

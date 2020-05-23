@@ -1,4 +1,4 @@
-#SingleInstance Force
+ï»¿#SingleInstance Force
 #NoEnv	; Recommended for performance and compatibility with future AutoHotkey releases.
 
 #Include %A_ScriptDir%\..\lib-a_to_h\BinReadWrite.ahk	; http://www.autohotkey.com/forum/viewtopic.php?t=7549
@@ -7,8 +7,8 @@ fileName1 = C:\tmp\Unicode Text.txt
 fileName2 = C:\tmp\Unicode+Bom Text.txt
 textToConvert =
 (
-« This îs à simplé tèxt to çœnvêrt tô Ünïcödë »`r
-It has “Windows™ CP–1252” characters like € — to see how they are translated…
+ï¿½ï¿½This ï¿½ï¿½implï¿½ï¿½ to ï¿½vï¿½ tï¿½ï¿½dë »`r
+It has ï¿½Windowsï¿½ CPï¿½1252ï¿½ characters like ï¿½ ï¿½ to see how they are translatedï¿½
 )
 
 ; Convert the Ansi text to Unicode
@@ -169,7 +169,7 @@ WM_SETTEXT = 0x0C
 
 ; Do you want to display Japanese?
 utf8 = ã‚­ãƒ£ãƒƒã‚·ãƒ¥
-utf8 = æ—¥æœ¬èªžã ®ãƒšãƒ¼ã‚¸ã‚’æ¤œç´¢
+utf8 = æ—¥æœ¬èªžï¿½ãƒšãƒ¼ã‚¸ã‚’æ¤œç´¢
 charNb := StrLen(utf8)
 VarSetCapacity(utf16, charNb * 2 + 1, 0)
 DllCall("SetLastError", "UInt", 0)

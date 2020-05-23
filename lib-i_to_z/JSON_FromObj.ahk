@@ -1,4 +1,4 @@
-; Copyright © 2013 VxE. All rights reserved.
+﻿; Copyright © 2013 VxE. All rights reserved.
 
 ; Serialize an object as JSON-like text OR format a string for inclusion therein.
 ; NOTE: scientific notation is treated as a string and hexadecimal as a number.

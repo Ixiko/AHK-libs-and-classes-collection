@@ -1,4 +1,4 @@
-Gui(do:=""){
+﻿Gui(do:=""){
 
 	static
 	q    	:= Chr(0x22)

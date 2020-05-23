@@ -1,4 +1,4 @@
-guiOffScreenCheck(hwnd) {
+﻿guiOffScreenCheck(hwnd) {
 	DetectHiddenWindows, On
 	WinGetPos, winX, winY, winW, winH, % "ahk_id " hwnd
 

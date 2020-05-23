@@ -1,4 +1,4 @@
-sortArray(byRef a, Ascending := True)
+﻿sortArray(byRef a, Ascending := True)
 {
     for index, value in a
         out .= value "-" index "|" ; "-" allows for sort to work with just the value

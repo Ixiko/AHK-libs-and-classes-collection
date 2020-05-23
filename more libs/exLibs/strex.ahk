@@ -1,4 +1,4 @@
-class strex{
+﻿class strex{
 	concat(sep, str, more*){
 		s := str
 		for k, v in more

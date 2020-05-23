@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: EnumShellItems
 wraps the *IEnumShellItems* interface and exposes enumeration of IShellItem interfaces.
 

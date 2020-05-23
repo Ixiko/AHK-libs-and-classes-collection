@@ -31,7 +31,7 @@ OpenFileDlg_Multi:
                   ;
                   ; This Flag allows multiple Files to be selected
                   ;     0x200   -> OFN_ALLOWMULTISELECT
-                     
+
 
     FileName := DLG_FileOpen( HWND
                             , Filter
@@ -46,7 +46,7 @@ OpenFileDlg_Multi:
       ; Filenames are Pipedelimited when more than one is selected
       ; path\tp\file1.ext|path\to\file2.ext ...
       ; This just replaces Pipe with CR
-      
+
       StringReplace, FileName, FileName, |, `n, All, UseErrorLevel
       FilesTotal := ErrorLevel + 1
       s := ""
@@ -110,4 +110,4 @@ SaveFileDlg:
 return
 
 
-#Include DLG_FileOpenSave.ahk
+#Include %A_ScriptDir%\..\DLG_FileOpenSave.ahk

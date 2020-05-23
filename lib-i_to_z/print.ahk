@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Lib: Print.ahk
  * License:
  *     WTFPL [http://wtfpl.net/]

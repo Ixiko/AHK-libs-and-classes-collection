@@ -42,7 +42,7 @@ OutlookSendMail(to, cc, subject, text, ImageAttachment) {
 
 OutlookRestricted() {
 
-	; This script loops through all undread messages in the inbox and asks the user if they want to reply.
+	; This script loops through all unread messages in the inbox and asks the user if they want to reply.
 
 	; Constants
 	olFolderInbox := 6
@@ -110,27 +110,30 @@ AddAttachments() {
 	Clipboard := ClipSaved
 }
 
-SaveAttachments() {
+SaveAttachments(path) {
+
 	global oOutlook, ClipSaved, ClipVar
-	ClipSaved := Clipboard
-	ClipVar := ""
-	Clipboard := "Deleted attachments: `"
-	oOutlook := ComObjActive("Outlook.Application")
-	myInspector := oOutlook.Application.ActiveInspector
-	VarType := ComObjType(myInspector, "Name")
+
+	ClipSaved    	:= Clipboard
+	ClipVar         	:= ""
+	Clipboard     	:= "Deleted attachments: `"
+	oOutlook     	:= ComObjActive("Outlook.Application")
+	myInspector 	:= oOutlook.Application.ActiveInspector
+	VarType         	:= ComObjType(myInspector, "Name")
+
 	if (VarType = "_Inspector")
 	{
 		myItem := myInspector.CurrentItem
 		myAttachments := myItem.Attachments
 
-		MsgBox, 4, ,Czy chcesz zapisać i usunąć załączniki?
+		MsgBox, 4, ,Do you want to save and delete attachments?
 		IfMsgBox No
 			return
 
 		cnt := myAttachments.Count
 		if (cnt < 1)
 		{
-			MsgBox, Brak załączników w wiadomości.
+			MsgBox, There are no attachments in the message.
 			return
 		}
 		i := cnt
@@ -138,9 +141,10 @@ SaveAttachments() {
 		while (i > 0)
 		{
 			AttachmentName := myAttachments.Item(i).FileName
-			path := "C:\temp1\Załączniki\"
+
 			if !FileExist(path)
 				FileCreateDir, % path
+
 			path = %path%%AttachmentName%
 				myAttachments.Item(i).SaveAsFile(path)
 			i := i-1
@@ -245,6 +249,27 @@ DeleteAttachments() {
 	}
 	oOutlook := ""
 	Clipboard := ClipSaved
+}
+
+ShowHide() {
+
+	global oOutlook
+	oOutlook := ComObjActive("Outlook.Application")
+	myInspector := oOutlook.Application.ActiveInspector
+	VarType := ComObjType(myInspector, "Name")
+
+	if (VarType = "_Inspector")
+	{
+		try
+			myInspector.CommandBars.ExecuteMso("EditMessage")
+		oDoc := myInspector.WordEditor
+		ShowAll := oDoc.Windows(1).View.ShowAll
+		if (ShowAll = 0)
+			oDoc.Windows(1).View.ShowAll := -1
+		else
+			oDoc.Windows(1).View.ShowAll := 0
+	}
+	oOutlook := ""
 }
 
 ;https://github.com/CfKu/autohotkey/blob/2d045c15f4f9c798876da768a6b668e0631ff4c3/apps/ms_outlook.ahk

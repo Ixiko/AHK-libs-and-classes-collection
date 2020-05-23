@@ -1,4 +1,4 @@
-; FFAAS.ahk
+﻿; FFAAS.ahk
 ;==============================================================
 ; Flicker Free and Anti Shake by szujeq
 ; v0.9 BETA

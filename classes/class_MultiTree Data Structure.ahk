@@ -1,4 +1,4 @@
-;================Tree Node & Linked List================
+﻿;================Tree Node & Linked List================
 ;===============Multi-Tree  Data  Structure===============
 ;==                                                                                                                   ==
 ;===https://autohotkey.com/board/topic/147436-multi-tree-data-structure/====

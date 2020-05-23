@@ -1,4 +1,4 @@
-; Get next/free Available File Name by toralf
+﻿; Get next/free Available File Name by toralf
 ; http://www.autohotkey.com/forum/viewtopic.php?t=6297
 
 GetAvailableFileName( GivenFileName, GivenPath = "", StartID = 1 )

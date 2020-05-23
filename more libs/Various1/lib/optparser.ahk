@@ -1,4 +1,4 @@
-class OptParser {
+﻿class OptParser {
 
 	requires() {
 		return [Object, String]

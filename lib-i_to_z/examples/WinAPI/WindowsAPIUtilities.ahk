@@ -1,4 +1,4 @@
-/*
+﻿/*
 Script:	Windows API Utilities
 Desc:		A program to look up an enumeration constant, data type or structure defined in the Windows API,
 				and to parse a structure, which is useful for DllCall in AHK.

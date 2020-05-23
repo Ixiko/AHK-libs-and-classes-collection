@@ -1,4 +1,4 @@
-/* Title:    Toolbar
+﻿/* Title:    Toolbar
 			Toolbar control.
 			(see toolbar.png)
 			The module is designed with following goals in mind :

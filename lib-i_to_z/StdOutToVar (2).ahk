@@ -1,4 +1,4 @@
-StdOutToVar(cmd) {
+﻿StdOutToVar(cmd) {
 	DllCall("CreatePipe", "PtrP", hReadPipe, "PtrP", hWritePipe, "Ptr", 0, "UInt", 0)
 	DllCall("SetHandleInformation", "Ptr", hWritePipe, "UInt", 1, "UInt", 1)
 

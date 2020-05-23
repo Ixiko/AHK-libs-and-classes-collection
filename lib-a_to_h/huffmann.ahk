@@ -1,4 +1,4 @@
-; huffman compression in ahk / v0.5.1b
+﻿; huffman compression in ahk / v0.5.1b
 ; (c|w) 01.07.2008 derRaphael@oleco.net / zLib style released
 ; *************************************************************************
 ;                              compression

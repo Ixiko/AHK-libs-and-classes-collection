@@ -1,4 +1,4 @@
-ValidIP(ByRef IPAddress)
+﻿ValidIP(ByRef IPAddress)
 {
 	if (StrLen(IPAddress) > 15)
 		Valid=0

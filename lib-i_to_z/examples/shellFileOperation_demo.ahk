@@ -1,4 +1,4 @@
-; #Include ShellFileOperation.ahk
+﻿; #Include ShellFileOperation.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

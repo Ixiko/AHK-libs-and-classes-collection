@@ -1,4 +1,4 @@
-#SingleInstance, Force
+﻿#SingleInstance, Force
 SetWorkingDir, % A_ScriptDir
 
 7ZipDLL := (A_PtrSize = 8 ? "7-zip64.dll" : "7-zip32.dll")

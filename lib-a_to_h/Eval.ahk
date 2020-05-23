@@ -1,4 +1,4 @@
-;?add 2010 modified by Tuncay to make it stdlib conform. 
+ï»¿;?add 2010 modified by Tuncay to make it stdlib conform. 
 ;?add Outcommented lines from autoexecution section.
 ;?add Added the prefix Eval_ to all functions now. 
 ;?add Eval1() becomes Eval_1() and Fib() becomes Eval_Fib().
@@ -91,15 +91,15 @@ Eval(x) {                              ; non-recursive PRE/POST PROCESSING: I/O 
          x := y1 . Eval_FromBin(y2) . y3    ; convert binary numbers to decimal: sign = first bit
       Else Break
    x := RegExReplace(x,"(^|[^.\d])(\d+)(e|E)","$1$2.$3") ; add missing '.' before E (1e3 -> 1.e3)
-                                       ; literal scientific numbers between ‘ and ’ chars
-   x := RegExReplace(x,"(\d*\.\d*|\d)([eE][+-]?\d+)","‘$1$2’")
+                                       ; literal scientific numbers between â€˜ and â€™ chars
+   x := RegExReplace(x,"(\d*\.\d*|\d)([eE][+-]?\d+)","â€˜$1$2â€™")
 
    StringReplace x, x,`%, \, All       ; %  -> \ (= MOD)
    StringReplace x, x, **,@, All       ; ** -> @ for easier process
-   StringReplace x, x, +, ±, All       ; ± is addition
-   x := RegExReplace(x,"(‘[^’]*)±","$1+") ; ...not inside literal numbers
-   StringReplace x, x, -, ¬, All       ; ¬ is subtraction
-   x := RegExReplace(x,"(‘[^’]*)¬","$1-") ; ...not inside literal numbers
+   StringReplace x, x, +, Â±, All       ; Â± is addition
+   x := RegExReplace(x,"(â€˜[^â€™]*)Â±","$1+") ; ...not inside literal numbers
+   StringReplace x, x, -, Â¬, All       ; Â¬ is subtraction
+   x := RegExReplace(x,"(â€˜[^â€™]*)Â¬","$1-") ; ...not inside literal numbers
 
    Loop Parse, x, `;
       y := Eval_1(A_LoopField)          ; work on pre-processed sub expressions
@@ -133,15 +133,15 @@ Eval_1(x) {                             ; recursive PREPROCESSING of :=, vars, (
       Return %y% := Eval_1(y2)
    }
                                        ; here: no variable to the left of last ":="
-   x := RegExReplace(x,"([\)’.\w]\s+|[\)’])([a-z_A-Z]+)","$1«$2»")  ; op -> «op»
+   x := RegExReplace(x,"([\)â€™.\w]\s+|[\)â€™])([a-z_A-Z]+)","$1Â«$2Â»")  ; op -> Â«opÂ»
 
    x := RegExReplace(x,"\s+")          ; remove spaces, tabs, newlines
 
    x := RegExReplace(x,"([a-z_A-Z]\w*)\(","'$1'(") ; func( -> 'func'( to avoid atan|tan conflicts
 
-   x := RegExReplace(x,"([a-z_A-Z]\w*)([^\w'»’]|$)","%x$1%$2") ; VAR -> %xVAR%
-   x := RegExReplace(x,"(‘[^’]*)%x[eE]%","$1e") ; in numbers %xe% -> e
-   x := RegExReplace(x,"‘|’")          ; no more need for number markers
+   x := RegExReplace(x,"([a-z_A-Z]\w*)([^\w'Â»â€™]|$)","%x$1%$2") ; VAR -> %xVAR%
+   x := RegExReplace(x,"(â€˜[^â€™]*)%x[eE]%","$1e") ; in numbers %xe% -> e
+   x := RegExReplace(x,"â€˜|â€™")          ; no more need for number markers
    Transform x, Deref, %x%             ; dereference all right-hand-side %var%-s
 
    Loop {                              ; find last innermost (..)
@@ -177,7 +177,7 @@ Eval_@(x) {                             ; EVALUATE PRE-PROCESSED EXPRESSIONS [de
    IfEqual y2,<=, Return Eval_@(y1) <= Eval_@(y3)
    IfEqual y2,>=, Return Eval_@(y1) >= Eval_@(y3)
                                        ; execute rightmost user operator (low precedence)
-   RegExMatch(x, "i)(.*)«(.*?)»(.*)", y)
+   RegExMatch(x, "i)(.*)Â«(.*?)Â»(.*)", y)
    IfEqual y2,choose,Return Eval_Choose(Eval_@(y1),Eval_@(y3))
    IfEqual y2,Gcd,   Return Eval_GCD(   Eval_@(y1),Eval_@(y3))
    IfEqual y2,Min,   Return (y1:=Eval_@(y1)) < (y3:=Eval_@(y3)) ? y1 : y3
@@ -194,9 +194,9 @@ Eval_@(x) {                             ; EVALUATE PRE-PROCESSED EXPRESSIONS [de
    IfEqual y2,<<, Return Eval_@(y1) << Eval_@(y3)
    IfEqual y2,>>, Return Eval_@(y1) >> Eval_@(y3)
                                        ; execute rightmost +- (not unary) operator
-   RegExMatch(x, "(.*[^!\~±¬\@\*/\\])(±|¬)(.*)", y) ; lower precedence ops already handled
-   IfEqual y2,±,  Return Eval_@(y1) + Eval_@(y3)
-   IfEqual y2,¬,  Return Eval_@(y1) - Eval_@(y3)
+   RegExMatch(x, "(.*[^!\~Â±Â¬\@\*/\\])(Â±|Â¬)(.*)", y) ; lower precedence ops already handled
+   IfEqual y2,Â±,  Return Eval_@(y1) + Eval_@(y3)
+   IfEqual y2,Â¬,  Return Eval_@(y1) - Eval_@(y3)
                                        ; execute rightmost */% operator
    RegExMatch(x, "(.*)(\*|/|\\)(.*)", y)
    IfEqual y2,*,  Return Eval_@(y1) * Eval_@(y3)
@@ -206,11 +206,11 @@ Eval_@(x) {                             ; EVALUATE PRE-PROCESSED EXPRESSIONS [de
    StringGetPos i, x, @, R
    IfGreaterOrEqual i,0, Return Eval_@(SubStr(x,1,i)) ** Eval_@(SubStr(x,2+i))
                                        ; execute rightmost function, unary operator
-   If !RegExMatch(x,"(.*)(!|±|¬|~|'(.*)')(.*)", y)
+   If !RegExMatch(x,"(.*)(!|Â±|Â¬|~|'(.*)')(.*)", y)
       Return x                         ; no more function (y1 <> "" only at multiple unaries: --+-)
    IfEqual y2,!,Return Eval_@(y1 . !y4) ; unary !
-   IfEqual y2,±,Return Eval_@(y1 .  y4) ; unary +
-   IfEqual y2,¬,Return Eval_@(y1 . -y4) ; unary - (they behave like functions)
+   IfEqual y2,Â±,Return Eval_@(y1 .  y4) ; unary +
+   IfEqual y2,Â¬,Return Eval_@(y1 . -y4) ; unary - (they behave like functions)
    IfEqual y2,~,Return Eval_@(y1 . ~y4) ; unary ~
    If IsLabel(y3)
       GoTo %y3%                        ; built-in functions are executed last: y4 is number

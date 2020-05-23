@@ -1,4 +1,4 @@
-; Autoexecute
+﻿; Autoexecute
 #NoEnv
 #SingleInstance force
 

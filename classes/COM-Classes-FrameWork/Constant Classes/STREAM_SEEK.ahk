@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: STREAM_SEEK
 an enumeration class specifying the origin from which to calculate the new seek-pointer location.
 

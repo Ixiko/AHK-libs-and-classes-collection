@@ -1,4 +1,4 @@
-SetBatchlines, -1
+﻿SetBatchlines, -1
 MyWindow := new CMyWindow("first") ;Create an instance of this window class
 ;~ MySecondWindow := new CMyWindow("second") ;Create a second instance of this window class
 return

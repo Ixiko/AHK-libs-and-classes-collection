@@ -1,4 +1,4 @@
-CountOfFiles(fnFilePattern,fnMode := "F")
+﻿CountOfFiles(fnFilePattern,fnMode := "F")
 {
 	; returns a count of all files that match the file pattern provided
 	; MsgBox fnFilePattern: %fnFilePattern%`nfnMode: %fnMode%

@@ -1,4 +1,4 @@
-; SGDIPrint-library
+﻿; SGDIPrint-library
 ; Simple GDI-Printing library for AHK_L (32bit & 64bit compatible)
 ; by Zed_Gecko
 ; thanks to: engunneer, Lexikos, closed, controlfreak, just me, fincs, tic

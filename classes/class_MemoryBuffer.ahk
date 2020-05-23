@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Abstraction of basic memory buffer handling
 *
 */

@@ -1,4 +1,4 @@
-; zero-based
+﻿; zero-based
 class ITL_StructureArray
 {
 	__New(type, count)

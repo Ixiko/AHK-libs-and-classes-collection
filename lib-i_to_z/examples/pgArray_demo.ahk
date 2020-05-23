@@ -1,4 +1,4 @@
-; #Include pgArray.ahk
+﻿; #Include pgArray.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

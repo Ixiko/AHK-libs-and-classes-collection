@@ -1,4 +1,4 @@
-;from 7plus.ahk
+﻿;from 7plus.ahk
 ;#NoTrayIcon
 ;DetectHiddenWindows, On
 ;MsgBox % TaskButtons()

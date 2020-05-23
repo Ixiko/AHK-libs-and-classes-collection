@@ -1,4 +1,4 @@
-MakeSQLDynamic(ByRef fnText, fnIncludeControlChars = 0)
+﻿MakeSQLDynamic(ByRef fnText, fnIncludeControlChars = 0)
 {
 	; converts regular SQL into dynamic SQL
 	; MsgBox fnText: %fnText%`nfnIncludeControlChars: %fnIncludeControlChars%

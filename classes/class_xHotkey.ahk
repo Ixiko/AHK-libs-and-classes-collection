@@ -1,4 +1,4 @@
-class xHotkey {
+﻿class xHotkey {
     static hk := {}
     static contexts := new xHotkey_Array
     static context := ""

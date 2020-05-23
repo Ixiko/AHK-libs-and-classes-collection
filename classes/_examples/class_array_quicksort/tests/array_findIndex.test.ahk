@@ -1,4 +1,4 @@
-group := tester.newGroup("array_findIndex(array, callback)")
+﻿group := tester.newGroup("array_findIndex(array, callback)")
 
 array := [10,22,"ca",334,45,"d"]
 array2 := [10,22,123,334,45,"d"]

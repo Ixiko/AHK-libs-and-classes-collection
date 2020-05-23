@@ -1,4 +1,4 @@
-; 2013-01-09: FoxMod Dllpath (search iniread)
+﻿; 2013-01-09: FoxMod Dllpath (search iniread)
 ; http://www.autohotkey.com/forum/topic72459.html
 ;=======================================================================================================================
 ; Function:         Class definitions as wrappers for SQLite3.dll to work with SQLite DBs.

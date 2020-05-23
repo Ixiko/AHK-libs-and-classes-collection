@@ -1,4 +1,4 @@
-/*
+﻿/*
 CopyDirStructure()
 
 Copies a directory structure

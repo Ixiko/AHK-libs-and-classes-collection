@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 ;#NoTrayIcon
 SetBatchLines, -1
 SetControlDelay, -1

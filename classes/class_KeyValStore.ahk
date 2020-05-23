@@ -1,4 +1,4 @@
-KeyValStore(store, options:="")
+﻿KeyValStore(store, options:="")
 {
 	return new KeyValStore(store, options)
 }

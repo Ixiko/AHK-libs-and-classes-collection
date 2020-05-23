@@ -1,4 +1,4 @@
-; #Include EmptyMem.ahk
+﻿; #Include EmptyMem.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

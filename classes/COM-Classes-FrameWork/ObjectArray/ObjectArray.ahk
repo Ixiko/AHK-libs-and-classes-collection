@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ObjectArray
 wraps the *IObjectArray* interface and exposes methods that enable clients to access items in a collection of objects that support IUnknown.
 

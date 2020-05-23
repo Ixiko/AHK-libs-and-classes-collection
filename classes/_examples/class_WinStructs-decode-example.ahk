@@ -1,4 +1,4 @@
-; A simple script to see how Struct interprets various WinStructs structures
+﻿; A simple script to see how Struct interprets various WinStructs structures
 #SingleInstance force
 
 #Include <_Struct>

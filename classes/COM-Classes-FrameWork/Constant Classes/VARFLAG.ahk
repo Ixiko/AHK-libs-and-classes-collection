@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: VARFLAG
 an enumeration class that specifies parameter flags.
 

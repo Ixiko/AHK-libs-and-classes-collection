@@ -1,4 +1,4 @@
-; AHK Structures
+﻿; AHK Structures
 _AHKDerefType := "LPTSTR marker,{_AHKVar *var,_AHKFunc *func},BYTE is_function,BYTE param_count,WORD length"
 _AHKExprTokenType := "{__int64 value_int64,double value_double,struct{{PTR *object,_AHKDerefType *deref,_AHKVar *var,LPTSTR marker},{LPTSTR buf,size_t marker_length}}},UINT symbol,{_AHKExprTokenType *circuit_token,LPTSTR mem_to_free}"
 _AHKArgStruct := "BYTE type,BYTE is_expression,WORD length,LPTSTR text,_AHKDerefType *deref,_AHKExprTokenType *postfix"

@@ -1,4 +1,4 @@
-GetHotkeyList(fnShowFullModifierKeys)
+﻿GetHotkeyList(fnShowFullModifierKeys)
 {
 	; function description
 	; MsgBox fnShowFullModifierKeys: %fnShowFullModifierKeys%

@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 
 /*
 String = MsgBox `% "Hello, World! ""123"" 456" . Hello . World! . "`nTest: " . 123 * 456

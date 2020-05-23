@@ -1,5 +1,5 @@
 ;
-; AutoHotkey Version: 1.1.30.01
+; AutoHotkey Version: 1.1.30.03
 ; Language:       English
 ; Platform:       Optimized for Windows 10
 ; Author:         Sam.
@@ -14,7 +14,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;            PushLog             ;;;;;
 ;;;;;  Copyright (c) 2018-2019 Sam.  ;;;;;
-;;;;;     Last Updated 20190222      ;;;;;
+;;;;;     Last Updated 20190502      ;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
@@ -22,9 +22,9 @@
 ;//////////////// Class PushLog ////////////////
 ;///////////////////////////////////////////////
 ;;; Allows the currently running script to attach to a console window in order to 
-;;; 	display debug information including errors, warning, and other info.
+;;; 	display debug information including errors, warnings, and other info.
 ;;; Also has the ability to save this log to a file.
-;;;
+;;; 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;; New PushLog() ;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -34,8 +34,8 @@
 ;;; AboutInfo defaults to blank but can contain some basic information about the
 ;;; 	program, its version, copyright info, etc. to display initially.
 ;;; 	I recommend something like:  "Program v0.00a, Copyright (c) 2019 YourName"
-;;; SavePath is the path and file name where anything send to PushLog can
-;;; 	be saved to a log file on disk.  Default is blank (do not save to disk).
+;;; SavePath is the path and file name where anything sent to PushLog can
+;;; 	be saved to a log file on disk.  Default is blank (do not save to a file).
 ;;; DebugLevel specifies what classifications of the information sent to PushLog
 ;;; 	should be pushed to the console (or saved to file).  Default is 1.
 ;;; 		Debug Levels:
@@ -43,13 +43,13 @@
 ;;; 		  0 = Silent  (errors only)
 ;;; 		  1 = Normal  (errors and warnings)
 ;;; 		  2 = Verbose (errors, warnings, extra info)
-;;;
+;;; 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;; Send ;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Pushes strings to the console and/or saves them to disk.
+;;; Pushes strings to the console and/or saves them to a file.
 ;;; Syntax:  Instance.Send([data="`r`n", DebugClass="", WriteToFile=1])
-;;; data is the textual data to push to the console and/or save to disk.
+;;; data is the textual data to push to the console and/or save to a file.
 ;;; 	Default is a blank line.
 ;;; DebugClass is the classification of information being pushed.  A
 ;;; 	DebugClass >= the current DebugLevel will be displayed/saved.
@@ -67,7 +67,15 @@
 ;;; 	is sent.  Default is 1.  Valid values are:
 ;;; 		0 Displayed on console but not saved to file.
 ;;; 		1 Displayed on console and saved to file (if specified).
-;;; 		-1 Not displayed on console but saved to file (if specified).
+;;; 	   -1 Not displayed on console but saved to file (if specified).
+;;; 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;; ModifySavePath ;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Modify the path to where the data sent to PushLog will be saved to disk.
+;;; Syntax:  Instance.ModifySavePath([SavePath])
+;;; SavePath is the path and file name where anything sent to PushLog can
+;;; 	be saved to a log file on disk.  Default is blank (do not save to a file).
 ;;; 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -91,21 +99,11 @@ class PushLog{
 		this.DebugLevel:=DebugLevel
 		If (this.DebugLevel<0)
 			Return
-		this.SavePath:=SavePath
 		this.PushLogNewConsole:=DllCall("AttachConsole","UInt",-1)	; Attaches the calling process to the console of the parent process, if one exists.
 		DllCall("AllocConsole")	; Otherwise, allocates a new console for the calling process.
 		;~ this.stdin:=FileOpen("*","r `n")	; Open the application's stdin stream in newline-translated mode.
 		this.stdout:=FileOpen("*","w `n")	; Open the application's stdout stream in newline-translated mode.
-		If this.SavePath
-			{
-			try {
-				this._OSavePath:=FileOpen(this.SavePath,"a-wd")
-			} catch e {
-				this._OSavePath:=""
-				this.Send("`r`n","E")
-				this.Send("Error:  Log will not be saved to file because '" SavePath "' could not be opened.`r`n","E")
-				}
-			}
+		this.ModifySavePath(SavePath)
 		FormatTime, TimeString, ,MMMM dd, yyyy 'at' h:mm.ss tt
 		this.Send("`r`n" AboutInfo "`r`nInitializing logging of errors and warnings on " TimeString ".`r`n")	; Send initial info to console
 	}
@@ -130,7 +128,26 @@ class PushLog{
 				this.stdout.Read(0) ; Flush the write buffer.
 				}
 			If (this.SavePath<>"") AND (WriteToFile<>0)
+				{
 				this._OSavePath.Write(data)	; was FileAppend, %data%, % (this.SavePath)
+				this._OSavePath.Read(0) ; Flush the write buffer.
+				}
+			}
+	}
+	ModifySavePath(SavePath:=""){
+		If (SavePath<>this.SavePath) ; It is changing
+			{
+			this._OSavePath.Close()
+			If (this.SavePath:=SavePath)
+				{
+				try {
+					this._OSavePath:=FileOpen(this.SavePath,"a-wd`n")
+				} catch e {
+					this._OSavePath:=""
+					this.Send("`r`n","E")
+					this.Send("Error:  Log will not be saved to file because '" SavePath "' could not be opened.`r`n","E")
+					}
+				}
 			}
 	}
 	__Delete(){

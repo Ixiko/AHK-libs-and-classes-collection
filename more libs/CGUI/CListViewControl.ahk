@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CListViewControl
 A ListView control. Additionally to its features present in AHK it can use sorting-independent indexing for synchronizing its fields with an array.
 

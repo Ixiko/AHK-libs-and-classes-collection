@@ -1,4 +1,4 @@
-GetConnectionString(fnServerName)
+﻿GetConnectionString(fnServerName)
 {
 	; get the connection string for the corresponding server name
 	; MsgBox fnServerName: %fnServerName%

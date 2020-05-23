@@ -1,4 +1,4 @@
-#include %A_ScriptDir%\..\..\lib\Windy
+﻿#include %A_ScriptDir%\..\..\lib\Windy
 #include WindLy.ahk
 #include Windy.ahk
 

@@ -1,4 +1,4 @@
-/*	Title:	ComboX
+﻿/*	Title:	ComboX
 
 			Impose ComboBox like behavior on arbitrary control.
 			:

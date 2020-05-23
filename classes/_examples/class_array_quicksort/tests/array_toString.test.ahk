@@ -1,4 +1,4 @@
-group := tester.newGroup("array_toString(array)")
+﻿group := tester.newGroup("array_toString(array)")
 
 array := [1,2,3,4,5,6]
 

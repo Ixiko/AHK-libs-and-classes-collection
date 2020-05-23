@@ -1,4 +1,4 @@
-randomiseArray(byRef a)
+﻿randomiseArray(byRef a)
 {
     for index, value in a
         out .= value "-" index "|" ; "-" allows for sort to work with just the value

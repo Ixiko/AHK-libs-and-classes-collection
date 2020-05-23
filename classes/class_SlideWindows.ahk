@@ -1,4 +1,4 @@
-;TODO:
+﻿;TODO:
 ;-When a 7plus dialog is shown while a slide window was activated(not through border), it mostly happens that the window doesn't slide out.
 ;If it does, it sometimes gets activated improperly after confirming the dialog. The window is not lost anymore however. Activating it again in taskbar makes it slide in.
 ;TODO on Return:

@@ -1,4 +1,4 @@
-﻿#include Gdip_All.ahk
+﻿;#include Gdip_All.ahk
 ;****************************
 ;RN_SetOLECallback by DigiDon
 ;Adapted from AutoIt RichEdit class
@@ -46,7 +46,7 @@ global
 		return
 
 	VarSetCapacity($pCall_RichCom, A_PtrSize*20, 0)
-	
+
 	NumPut($__RichCom_Object_QueryInterface, $pCall_RichCom, 0,"Ptr")
 	NumPut($__RichCom_Object_AddRef, $pCall_RichCom, A_PtrSize*1,"Ptr")
 	NumPut($__RichCom_Object_Release, $pCall_RichCom, A_PtrSize*2,"Ptr")
@@ -66,7 +66,7 @@ global
 	;https://wiki.winehq.org/List_Of_Windows_Messages
 	$EM_SETOLECALLBACK = 0x446
 	SendMessage, % $EM_SETOLECALLBACK , 0, &$pObj_RichComObject,,ahk_id %P_HWND%
-	
+
 	if (ErrorLevel ="FAIL" or ErrorLevel=0) {
 		; msgbox EM_SETOLECALLBACK FAILED
 		return false
@@ -101,8 +101,8 @@ global
 	$pCall_RichCom:=""
 	$pObj_RichCom:=""
 	;We could also preload the DLL, is it the right method?
-	; hMod := DllCall( "GetModuleHandle", Str,"kernel32.dll" ) 
-	; $hLib_RichCom_OLE32 := DllCall( "GetProcAddress", Ptr, hMod, Str, "OLE32" ) 
+	; hMod := DllCall( "GetModuleHandle", Str,"kernel32.dll" )
+	; $hLib_RichCom_OLE32 := DllCall( "GetProcAddress", Ptr, hMod, Str, "OLE32" )
 	$__RichCom_Object_QueryInterface := RegisterCallback("__RichCom_Object_QueryInterface")
 	$__RichCom_Object_AddRef := RegisterCallback("__RichCom_Object_AddRef")
 	$__RichCom_Object_Release := RegisterCallback("__RichCom_Object_Release")
@@ -118,24 +118,25 @@ global
 	$__RichCom_Object_GetContextMenu := RegisterCallback("__RichCom_Object_GetContextMenu")
 }
 
-;~ '/////////////////////////////////////
-;~ '// OLE stuff, don't use yourself..
-;~ '/////////////////////////////////////
-;~ '// Useless procedure, never called..
 ; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_QueryInterface
-; Description ...:
-; Syntax.........: __RichCom_Object_QueryInterface($pObject, $REFIID, $ppvObj)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_QueryInterface($pObject, $REFIID, $ppvObj) {
+	;~ '/////////////////////////////////////
+	;~ '// OLE stuff, don't use yourself..
+	;~ '/////////////////////////////////////
+	;~ '// Useless procedure, never called..
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_QueryInterface
+	; Description ...:
+	; Syntax.........: __RichCom_Object_QueryInterface($pObject, $REFIID, $ppvObj)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
 global
 	;AHK COULD BE
 	; msgbox __RichCom_Object_QueryInterface
@@ -143,40 +144,42 @@ global
 	Return $_GCR_S_OK
 }   ;==>__RichCom_Object_QueryInterface
 
-; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_AddRef
-; Description ...:
-; Syntax.........: __RichCom_Object_AddRef($pObject)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_AddRef($pObject) {
 
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_AddRef
+	; Description ...:
+	; Syntax.........: __RichCom_Object_AddRef($pObject)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
+
 	NumPut(NumGet($pObject + 0,A_PtrSize, "Int")+1, $pObject + 0, A_PtrSize, "Int")
-	
+
 	Return NumGet($pObject + 0,A_PtrSize, "Int")
 }   ;==>__RichCom_Object_AddRef
 
-; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_Release
-; Description ...:
-; Syntax.........: __RichCom_Object_Release($pObject)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_Release($pObject) {
+
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_Release
+	; Description ...:
+	; Syntax.........: __RichCom_Object_Release($pObject)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
 
 	If ( NumGet($pObject + 0,A_PtrSize, "Int") > 0 ) {
 		NumPut(NumGet($pObject + 0,A_PtrSize, "Int")-1, $pObject + 0, A_PtrSize, "Int")
@@ -184,199 +187,216 @@ __RichCom_Object_Release($pObject) {
 	}
 }   ;==>__RichCom_Object_Release
 
-; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_GetInPlaceContext
-; Description ...:
-; Syntax.........: __RichCom_Object_GetInPlaceContext($pObject, $lplpFrame, $lplpDoc, $lpFrameInfo)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_GetInPlaceContext($pObject, $lplpFrame, $lplpDoc, $lpFrameInfo) {
+
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_GetInPlaceContext
+	; Description ...:
+	; Syntax.........: __RichCom_Object_GetInPlaceContext($pObject, $lplpFrame, $lplpDoc, $lpFrameInfo)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
+
 global
 	Return $_GCR_E_NOTIMPL
 }   ;==>__RichCom_Object_GetInPlaceContext
 
-; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_ShowContainerUI
-; Description ...:
-; Syntax.........: __RichCom_Object_ShowContainerUI($pObject, $fShow)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_ShowContainerUI($pObject, $fShow) {
+
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_ShowContainerUI
+	; Description ...:
+	; Syntax.........: __RichCom_Object_ShowContainerUI($pObject, $fShow)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
 global
 	Return $_GCR_E_NOTIMPL
 }   ;==>__RichCom_Object_ShowContainerUI
 
-; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_QueryInsertObject
-; Description ...:
-; Syntax.........: __RichCom_Object_QueryInsertObject($pObject, $lpclsid, $lpstg, $cp)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_QueryInsertObject($pObject, $lpclsid, $lpstg, $cp) {
+
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_QueryInsertObject
+	; Description ...:
+	; Syntax.........: __RichCom_Object_QueryInsertObject($pObject, $lpclsid, $lpstg, $cp)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
+
 global
-; msgbox __RichCom_Object_QueryInsertObject
-;MSDN SAYS
-; The member is called when pasting and when reading Rich Text Format (RTF).
+	; msgbox __RichCom_Object_QueryInsertObject
+	;MSDN SAYS
+	; The member is called when pasting and when reading Rich Text Format (RTF).
 	Return $_GCR_S_OK
 }   ;==>__RichCom_Object_QueryInsertObject
 
-; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_DeleteObject
-; Description ...:
-; Syntax.........: __RichCom_Object_DeleteObject($pObject, $lpoleobj)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_DeleteObject($pObject, $lpoleobj) {
+
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_DeleteObject
+	; Description ...:
+	; Syntax.........: __RichCom_Object_DeleteObject($pObject, $lpoleobj)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
+
 global
 	Return $_GCR_S_OK
 	; Return $_GCR_E_NOTIMPL
 }   ;==>__RichCom_Object_DeleteObject
 
-; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_QueryAcceptData
-; Description ...:
-; Syntax.........: __RichCom_Object_QueryAcceptData($pObject, $lpdataobj, $lpcfFormat, $reco, $fReally, $hMetaPict)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_QueryAcceptData($pObject, $lpdataobj, $lpcfFormat, $reco, $fReally, $hMetaPict) {
-global
-$fFormat:=NumGet($lpcfFormat + 0,0,"UInt")
-static CF_BITMAP=2
-static CF_DIB=8
-static CF_DIBV5=17
-static CF_TIFF=6
-static CF_ENHMETAFILE=14
-static CF_METAFILEPICT=3
-static CF_PALETTE=9
-static CF_DSPBITMAP:=0x0082
-static CF_DSPMETAFILEPICT:=0x0083
-static CF_DSPENHMETAFILE:=0x008E
-static CF_GDIOBJFIRST:=0x0300
-static CF_GDIOBJLAST:=0x03FF
-	if (A_OSVersion="WIN_7") {
-		if $bAcceptData
-			Return $_GCR_S_OK
-		else if !$fReally
-		if ($lpcfFormat == CF_DIB || $lpcfFormat == CF_DIBV5
-      || $lpcfFormat == CF_BITMAP || $lpcfFormat == CF_TIFF
-      || $lpcfFormat == CF_ENHMETAFILE || $lpcfFormat == CF_METAFILEPICT
-      || $lpcfFormat == CF_PALETTE || $lpcfFormat == CF_DSPBITMAP
-      || $lpcfFormat == CF_DSPMETAFILEPICT || $lpcfFormat == CF_DSPENHMETAFILE
-      || ($lpcfFormat >= CF_GDIOBJFIRST && $lpcfFormat <= CF_GDIOBJLAST))
-			{
-			; msgbox $lpcfFormat %$lpcfFormat%
-			MsgBox % "If you wish to add an image on Windows 7 or older, you must do a right click and select add image."
-			Return $_GCR_E_INVALIDARG
+
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_QueryAcceptData
+	; Description ...:
+	; Syntax.........: __RichCom_Object_QueryAcceptData($pObject, $lpdataobj, $lpcfFormat, $reco, $fReally, $hMetaPict)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
+
+	global
+	$fFormat:=NumGet($lpcfFormat + 0,0,"UInt")
+	static CF_BITMAP=2
+	static CF_DIB=8
+	static CF_DIBV5=17
+	static CF_TIFF=6
+	static CF_ENHMETAFILE=14
+	static CF_METAFILEPICT=3
+	static CF_PALETTE=9
+	static CF_DSPBITMAP:=0x0082
+	static CF_DSPMETAFILEPICT:=0x0083
+	static CF_DSPENHMETAFILE:=0x008E
+	static CF_GDIOBJFIRST:=0x0300
+	static CF_GDIOBJLAST:=0x03FF
+		if (A_OSVersion="WIN_7") {
+			if $bAcceptData
+				Return $_GCR_S_OK
+			else if !$fReally
+			if ($lpcfFormat == CF_DIB || $lpcfFormat == CF_DIBV5
+		  || $lpcfFormat == CF_BITMAP || $lpcfFormat == CF_TIFF
+		  || $lpcfFormat == CF_ENHMETAFILE || $lpcfFormat == CF_METAFILEPICT
+		  || $lpcfFormat == CF_PALETTE || $lpcfFormat == CF_DSPBITMAP
+		  || $lpcfFormat == CF_DSPMETAFILEPICT || $lpcfFormat == CF_DSPENHMETAFILE
+		  || ($lpcfFormat >= CF_GDIOBJFIRST && $lpcfFormat <= CF_GDIOBJLAST))
+				{
+				; msgbox $lpcfFormat %$lpcfFormat%
+				MsgBox % "If you wish to add an image on Windows 7 or older, you must do a right click and select add image."
+				Return $_GCR_E_INVALIDARG
+				}
+				; msgbox accepted $lpcfFormat %$lpcfFormat%
 			}
-			; msgbox accepted $lpcfFormat %$lpcfFormat%
-		}
-	
-	Return $_GCR_S_OK
+
+Return $_GCR_S_OK
 }   ;==>__RichCom_Object_QueryAcceptData
 
-; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_ContextSensitiveHelp
-; Description ...:
-; Syntax.........: __RichCom_Object_ContextSensitiveHelp($pObject, $fEnterMode)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_ContextSensitiveHelp($pObject, $fEnterMode) {
+
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_ContextSensitiveHelp
+	; Description ...:
+	; Syntax.........: __RichCom_Object_ContextSensitiveHelp($pObject, $fEnterMode)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
+
 global
 	Return $_GCR_E_NOTIMPL
 }   ;==>__RichCom_Object_ContextSensitiveHelp
 
-; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_GetClipboardData
-; Description ...:
-; Syntax.........: __RichCom_Object_GetClipboardData($pObject, $lpchrg, $reco, $lplpdataobj)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_GetClipboardData($pObject, $lpchrg, $reco, $lplpdataobj) {
+
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_GetClipboardData
+	; Description ...:
+	; Syntax.........: __RichCom_Object_GetClipboardData($pObject, $lpchrg, $reco, $lplpdataobj)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
+
 global
 	Return $_GCR_E_NOTIMPL
 }   ;==>__RichCom_Object_GetClipboardData
 
-; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_GetDragDropEffect
-; Description ...:
-; Syntax.........: __RichCom_Object_GetDragDropEffect($pObject, $fDrag, $grfKeyState, $pdwEffect)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_GetDragDropEffect($pObject, $fDrag, $grfKeyState, $pdwEffect) {
+
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_GetDragDropEffect
+	; Description ...:
+	; Syntax.........: __RichCom_Object_GetDragDropEffect($pObject, $fDrag, $grfKeyState, $pdwEffect)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
+
 global
 	Return $_GCR_E_NOTIMPL
 }   ;==>__RichCom_Object_GetDragDropEffect
 
-; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_GetContextMenu
-; Description ...:
-; Syntax.........: __RichCom_Object_GetContextMenu($pObject, $seltype, $lpoleobj, $lpchrg, $lphmenu)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_GetContextMenu($pObject, $seltype, $lpoleobj, $lpchrg, $lphmenu) {
+
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_GetContextMenu
+	; Description ...:
+	; Syntax.........: __RichCom_Object_GetContextMenu($pObject, $seltype, $lpoleobj, $lpchrg, $lphmenu)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
+
 global
 	Menu, ContextMenu,Show
 	Return $_GCR_E_NOTIMPL
@@ -385,7 +405,7 @@ global
 	; msgbox lphmenu %$lphmenu%
 	; NumPut(MenuHdanle,$lphmenu+0,0,"Int")
 	; msgbox % NumGet($lphmenu+0,0,"Int")
-	
+
 	; msgbox % IsObject($pObject)
 	; __RichCom_Object_AddRef($pObject)
 	; msgbox return
@@ -398,20 +418,21 @@ global
 	; Return $_GCR_E_NOTIMPL
 }   ;==>__RichCom_Object_GetContextMenu
 
-; #INTERNAL_USE_ONLY# ===========================================================================================================
-; Name...........: __RichCom_Object_GetNewStorage
-; Description ...:
-; Syntax.........: __RichCom_Object_GetNewStorage($pObject, $lplpstg)
-; Parameters ....:
-; Return values .:
-; Author ........:
-; Modified.......:
-; Remarks .......:
-; Related .......:
-; Link ..........:
-; Example .......:
-; ===============================================================================================================================
 __RichCom_Object_GetNewStorage($pObject, $pPstg) {
+
+	; #INTERNAL_USE_ONLY# ===========================================================================================================
+	; Name...........: __RichCom_Object_GetNewStorage
+	; Description ...:
+	; Syntax.........: __RichCom_Object_GetNewStorage($pObject, $lplpstg)
+	; Parameters ....:
+	; Return values .:
+	; Author ........:
+	; Modified.......:
+	; Remarks .......:
+	; Related .......:
+	; Link ..........:
+	; Example .......:
+	; ===============================================================================================================================
 global
 	; 0x10|2|0x1000
 	; STGM_SHARE_EXCLUSIVE | STGM_CREATE | STGM_READWRITE
@@ -420,26 +441,28 @@ global
 	; STGM_READWRITE or STGM_SHARE_EXCLUSIVE or STGM_CREATE
 	Local $lpLockBytes:=0
 	Local $aSc := DllCall("OLE32\CreateILockBytesOnHGlobal", "Ptr", 0, "int", 1, "ptr*", $lpLockBytes, "Uint")
-	
-	If $aSc 
+
+	If $aSc
 		Return $aSc
-		
+
 	local $ppstgOpen:=0
 	$aSc := DllCall("OLE32\StgCreateDocfileOnILockBytes", "Ptr", $lpLockBytes, "Uint", 0x10 | 2 | 0x1000, "Uint", 0, "ptr*", $ppstgOpen, "Uint")
 	NumPut($ppstgOpen, $pPstg+0, 0, "Ptr")
-	
+
 	If ($aSc) {
 		ObjRelease($lpLockBytes)
 	}
 	Return $aSc
 }   ;==>__RichCom_Object_GetNewStorage
 
-; ================================================================================================================================
-; Insert files as OLE objects
-; How to Use OLE in Rich Edit Controls <- msdn.microsoft.com/en-us/library/windows/desktop/dd387916(v=vs.85).aspx
-; ================================================================================================================================
-RN_InsertObject(HRE, FilePath) {
+RN_InsertObject(HRE, FilePath) { ; Insert files as OLE objects
+
+	; ================================================================================================================================
+	; Insert files as OLE objects
+	; How to Use OLE in Rich Edit Controls <- msdn.microsoft.com/en-us/library/windows/desktop/dd387916(v=vs.85).aspx
+	; ================================================================================================================================
    ; EM_GETOLEINTERFACE := 0x43C
+
    HR := DllCall("SendMessage", "Ptr", HRE, "UInt", 0x043C, "Ptr", 0, "PtrP", IRichEditOle, "UInt")
    If (HR = 0) {
       ErrorLevel := Format("0x{:08X}", HR)
@@ -532,3 +555,5 @@ RN_InsertObject(HRE, FilePath) {
    ObjRelease(IOleObject)
    Return !(ErrorLevel := Format("0x{:08X}", HR))
 }
+
+

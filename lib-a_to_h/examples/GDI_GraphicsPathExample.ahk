@@ -1,4 +1,4 @@
-#NoEnv
+ï»¿#NoEnv
 
 ;=== Create Gui, OnMessage ===
 Gui 1: -Caption +E0x80000 +LastFound +AlwaysOnTop +ToolWindow +OwnDialogs
@@ -82,7 +82,7 @@ PostMessage, 0xA1, 2
 ;#####################################################################################
 
 ; Function Gdip_AddPathBeziers
-; Description Adds a sequence of connected Bézier splines to the current figure of this path.
+; Description Adds a sequence of connected BÃ©zier splines to the current figure of this path.
 ;
 ; pPath Pointer to the GraphicsPath
 ; Points the coordinates of all the points passed as x1,y1|x2,y2|x3,y3.....
@@ -102,7 +102,7 @@ NumPut(Coord1, PointF, 8*(A_Index-1), "float"), NumPut(Coord2, PointF, (8*(A_Ind
 return DllCall("gdiplus\GdipAddPathBeziers", "uint", pPath, "uint", &PointF, "int", Points0)
 }
 
-Gdip_AddPathBezier(pPath, x1, y1, x2, y2, x3, y3, x4, y4) { ; Adds a Bézier spline to the current figure of this path
+Gdip_AddPathBezier(pPath, x1, y1, x2, y2, x3, y3, x4, y4) { ; Adds a BÃ©zier spline to the current figure of this path
 return DllCall("gdiplus\GdipAddPathBezier", "uint", pPath
 , "float", x1, "float", y1, "float", x2, "float", y2
 , "float", x3, "float", y3, "float", x4, "float", y4)

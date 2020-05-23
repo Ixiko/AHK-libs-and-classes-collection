@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Lib: JSON.ahk
  *     JSON lib for AutoHotkey.
  * Version:

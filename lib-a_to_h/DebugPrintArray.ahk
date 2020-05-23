@@ -1,4 +1,4 @@
-DebugPrintArray(Array, Display=1, Level=0, guiWidth=800, guiHeight=900)
+﻿DebugPrintArray(Array, Display=1, Level=0, guiWidth=800, guiHeight=900)
 {
 	Global DebugPrintArray
 			

@@ -1,4 +1,4 @@
-/*
+﻿/*
 DllCallStruct.ahk
 
 Routines to read and write binary data to and from variables.

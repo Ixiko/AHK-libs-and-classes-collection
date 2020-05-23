@@ -76,7 +76,11 @@ Dlg3) will require Windows Vista+ and AutoHotkey v1.1+.
 Group: Functions
 */
 
-;------------------------------
+
+Dlg_ChooseColor(hOwner,ByRef r_Color,p_Flags=0,p_CustomColorsFile="",p_HelpHandler="")     {
+
+/*
+    ;------------------------------
 ;
 ; Function: Dlg_ChooseColor
 ;
@@ -221,8 +225,9 @@ Group: Functions
 ;   be modal.  See the scripts included with this project for an example.
 ;
 ;-------------------------------------------------------------------------------
-Dlg_ChooseColor(hOwner,ByRef r_Color,p_Flags=0,p_CustomColorsFile="",p_HelpHandler="")
-    {
+*/
+
+
     Static Dummy1243
           ,HELPMSGSTRING:="commdlg_help"
                 ;-- Registered message string for the Help button on common
@@ -396,7 +401,9 @@ Dlg_ChooseColor(hOwner,ByRef r_Color,p_Flags=0,p_CustomColorsFile="",p_HelpHandl
     Return True
     }
 
+Dlg_ChooseFont(hOwner=0,ByRef r_Name="",ByRef r_Options="",p_Effects=True,p_Flags=0,p_HelpHandler="")    {
 
+    /*
 ;------------------------------
 ;
 ; Function: Dlg_ChooseFont
@@ -561,8 +568,9 @@ Dlg_ChooseColor(hOwner,ByRef r_Color,p_Flags=0,p_CustomColorsFile="",p_HelpHandl
 ;   be modal.  See the scripts included with this project for an example.
 ;
 ;-------------------------------------------------------------------------------
-Dlg_ChooseFont(hOwner=0,ByRef r_Name="",ByRef r_Options="",p_Effects=True,p_Flags=0,p_HelpHandler="")
-    {
+*/
+
+
     Static Dummy3155
           ,HELPMSGSTRING:="commdlg_help"
                 ;-- Registered message string for the Help button on common
@@ -937,7 +945,9 @@ Dlg_ChooseFont(hOwner=0,ByRef r_Name="",ByRef r_Options="",p_Effects=True,p_Flag
     Return True
     }
 
+Dlg_ChooseIcon(hOwner,ByRef r_IconPath,ByRef r_IconIndex)    {
 
+/*
 ;------------------------------
 ;
 ; Function: Dlg_ChooseIcon
@@ -980,8 +990,8 @@ Dlg_ChooseFont(hOwner=0,ByRef r_Name="",ByRef r_Options="",p_Effects=True,p_Flag
 ;   XP on.  Be sure to test thoroughly.
 ;
 ;-------------------------------------------------------------------------------
-Dlg_ChooseIcon(hOwner,ByRef r_IconPath,ByRef r_IconIndex)
-    {
+*/
+
     Static Dummy9731
           ,CP_ACP  :=0  ;-- The system default Windows ANSI code page.
           ,MAX_PATH:=260
@@ -1043,6 +1053,7 @@ Dlg_ChooseIcon(hOwner,ByRef r_IconPath,ByRef r_IconIndex)
     Return True
     }
 
+Dlg_Convert2Hex(p_Integer,p_MinDigits=0)    {
 
 ;------------------------------
 ;
@@ -1088,8 +1099,7 @@ Dlg_ChooseIcon(hOwner,ByRef r_IconPath,ByRef r_IconIndex)
 ;   6 hexadecimal digits, i.e. "0x0000FF".
 ;
 ;-------------------------------------------------------------------------------
-Dlg_Convert2Hex(p_Integer,p_MinDigits=0)
-    {
+
     ;-- Workaround for AutoHotkey Basic
     PtrType:=(A_PtrSize=8) ? "Ptr":"UInt"
 
@@ -1124,8 +1134,9 @@ Dlg_Convert2Hex(p_Integer,p_MinDigits=0)
     Return l_NegativeChar . "0x" . l_Buffer
     }
 
+Dlg_FindReplaceText(p_Type,hOwner,p_Flags,p_FindWhat,p_ReplaceWith,p_Handler,p_HelpHandler="")     {
 
-;------------------------------
+    ;------------------------------
 ;
 ; Function: Dlg_FindReplaceText
 ;
@@ -1301,8 +1312,7 @@ Dlg_Convert2Hex(p_Integer,p_MinDigits=0)
 ;   be modal.  See the example script for an example.
 ;
 ;-------------------------------------------------------------------------------
-Dlg_FindReplaceText(p_Type,hOwner,p_Flags,p_FindWhat,p_ReplaceWith,p_Handler,p_HelpHandler="")
-    {
+
     Static Dummy3969
           ,HELPMSGSTRING:="commdlg_help"
                 ;-- Registered message string for the Help button on common
@@ -1460,8 +1470,8 @@ Dlg_FindReplaceText(p_Type,hOwner,p_Flags,p_FindWhat,p_ReplaceWith,p_Handler,p_H
     Return hDialog
     }
 
-
-;------------------------------
+Dlg_FindText(hOwner,p_Flags,p_FindWhat,p_Handler,p_HelpHandler="")     {
+    ;------------------------------
 ;
 ; Function: Dlg_FindText
 ;
@@ -1478,13 +1488,12 @@ Dlg_FindReplaceText(p_Type,hOwner,p_Flags,p_FindWhat,p_ReplaceWith,p_Handler,p_H
 ;   <Dlg_FindReplaceText> function.
 ;
 ;-------------------------------------------------------------------------------
-Dlg_FindText(hOwner,p_Flags,p_FindWhat,p_Handler,p_HelpHandler="")
-    {
     Return Dlg_FindReplaceText("F",hOwner,p_Flags,p_FindWhat,"",p_Handler,p_HelpHandler)
     }
 
+Dlg_GetScriptDebugWindow()     {
 
-;------------------------------
+    ;------------------------------
 ;
 ; Function: Dlg_GetScriptDebugWindow
 ;
@@ -1506,8 +1515,7 @@ Dlg_FindText(hOwner,p_Flags,p_FindWhat,p_Handler,p_HelpHandler="")
 ;   danger that a dialog will be prematurely destroyed.
 ;
 ;-------------------------------------------------------------------------------
-Dlg_GetScriptDebugWindow()
-    {
+
     Static hScriptDebugWindow
 
     ;-- Return saved value if already found
@@ -1549,8 +1557,9 @@ Dlg_GetScriptDebugWindow()
     Return hScriptDebugWindow
     }
 
+Dlg_MessageBox(hOwner=0,p_Type=0,p_Title="",p_Text="",p_Timeout=-1,p_HelpHandler="")    {
 
-;------------------------------
+    ;------------------------------
 ;
 ; Function: Dlg_MessageBox
 ;
@@ -1667,9 +1676,7 @@ Dlg_GetScriptDebugWindow()
 ;   either 1) finish quickly or 2) any dialogs displayed via the handler should
 ;   be modal.  See the example script for an example.
 ;
-;-------------------------------------------------------------------------------
-Dlg_MessageBox(hOwner=0,p_Type=0,p_Title="",p_Text="",p_Timeout=-1,p_HelpHandler="")
-    {
+
     Static Dummy8158
 
           ;-- Message Box buttons
@@ -1823,7 +1830,7 @@ Dlg_MessageBox(hOwner=0,p_Type=0,p_Title="",p_Text="",p_Timeout=-1,p_HelpHandler
     Return RC
     }
 
-
+Dlg_OFNHookCallback(hDlg,uiMsg,wParam,lParam)    {
 ;------------------------------
 ;
 ; Function: Dlg_OFNHookCallback
@@ -1877,8 +1884,6 @@ Dlg_MessageBox(hOwner=0,p_Type=0,p_Title="",p_Text="",p_Timeout=-1,p_HelpHandler
 ;   the main function after the dialog is closed.
 ;
 ;-------------------------------------------------------------------------------
-Dlg_OFNHookCallback(hDlg,uiMsg,wParam,lParam)
-    {
     Static Dummy0581
           ,s_ReadOnly:=False
 
@@ -1928,7 +1933,7 @@ Dlg_OFNHookCallback(hDlg,uiMsg,wParam,lParam)
     Return 0  ;-- The default dialog box procedure processes the message
     }
 
-
+Dlg_OnFindReplaceMsg(wParam,lParam,Msg,hWnd)    {
 ;------------------------------
 ;
 ; Function: Dlg_OnFindReplaceMsg
@@ -1989,8 +1994,6 @@ Dlg_OFNHookCallback(hDlg,uiMsg,wParam,lParam)
 ;   an exception with Replace dialog.
 ;
 ;-------------------------------------------------------------------------------
-Dlg_OnFindReplaceMsg(wParam,lParam,Msg,hWnd)
-    {
     Static Dummy5289
           ,s_Handler
                 ;-- Contains the name of the developer-created function that is
@@ -2111,7 +2114,7 @@ Dlg_OnFindReplaceMsg(wParam,lParam,Msg,hWnd)
     Return %s_Handler%(s_hDialog,l_Event,l_EventFlags,l_FindWhat,l_ReplaceWith)
     }
 
-
+Dlg_OnHelpMsg(wParam,lParam,Msg,hWnd)    {
 ;------------------------------
 ;
 ; Function: Dlg_OnHelpMsg
@@ -2162,8 +2165,6 @@ Dlg_OnFindReplaceMsg(wParam,lParam,Msg,hWnd)
 ; * Developer-created help handler
 ;
 ;-------------------------------------------------------------------------------
-Dlg_OnHelpMsg(wParam,lParam,Msg,hWnd)
-    {
     Static Dummy4412
           ,s_Handler
 
@@ -2216,7 +2217,7 @@ Dlg_OnHelpMsg(wParam,lParam,Msg,hWnd)
         }
     }
 
-
+Dlg_OpenFile(hOwner=0,p_Title="",p_Filter="",p_FilterIndex="",p_Root="",p_DfltExt="",ByRef r_Flags=0,p_HelpHandler="")    {
 ;------------------------------
 ;
 ; Function: Dlg_OpenFile
@@ -2233,12 +2234,10 @@ Dlg_OnHelpMsg(wParam,lParam,Msg,hWnd)
 ;   <Dlg_OpenSaveFile> function.
 ;
 ;-------------------------------------------------------------------------------
-Dlg_OpenFile(hOwner=0,p_Title="",p_Filter="",p_FilterIndex="",p_Root="",p_DfltExt="",ByRef r_Flags=0,p_HelpHandler="")
-    {
     Return Dlg_OpenSaveFile("O",hOwner,p_Title,p_Filter,p_FilterIndex,p_Root,p_DfltExt,r_Flags,p_HelpHandler)
     }
 
-
+Dlg_OpenSaveFile(p_Type,hOwner=0,p_Title="",p_Filter="",p_FilterIndex="",p_Root="",p_DfltExt="",ByRef r_Flags=0,p_HelpHandler="")    {
 ;------------------------------
 ;
 ; Function: Dlg_OpenSaveFile
@@ -2452,8 +2451,6 @@ Dlg_OpenFile(hOwner=0,p_Title="",p_Filter="",p_FilterIndex="",p_Root="",p_DfltEx
 ;   be modal.  See the scripts included with this project for an example.
 ;
 ;-------------------------------------------------------------------------------
-Dlg_OpenSaveFile(p_Type,hOwner=0,p_Title="",p_Filter="",p_FilterIndex="",p_Root="",p_DfltExt="",ByRef r_Flags=0,p_HelpHandler="")
-    {
     Static Dummy1696
           ,s_strFileMaxSize:=32768
                 ;-- This is the ANSI byte limit.  For consistency, this value
@@ -2785,6 +2782,7 @@ Dlg_OpenSaveFile(p_Type,hOwner=0,p_Title="",p_Filter="",p_FilterIndex="",p_Root=
     Return l_FileList
     }
 
+Dlg_ReplaceText(hOwner,p_Flags,p_FindWhat,p_ReplaceWith,p_Handler,p_HelpHandler="")    {
 
 ;------------------------------
 ;
@@ -2803,11 +2801,10 @@ Dlg_OpenSaveFile(p_Type,hOwner=0,p_Title="",p_Filter="",p_FilterIndex="",p_Root=
 ;   <Dlg_FindReplaceText> function.
 ;
 ;-------------------------------------------------------------------------------
-Dlg_ReplaceText(hOwner,p_Flags,p_FindWhat,p_ReplaceWith,p_Handler,p_HelpHandler="")
-    {
     Return Dlg_FindReplaceText("R",hOwner,p_Flags,p_FindWhat,p_ReplaceWith,p_Handler,p_HelpHandler)
     }
 
+Dlg_SaveFile(hOwner=0,p_Title="",p_Filter="",p_FilterIndex="",p_Root="",p_DfltExt="",ByRef r_Flags=0,p_HelpHandler="")    {
 
 ;------------------------------
 ;
@@ -2825,7 +2822,5 @@ Dlg_ReplaceText(hOwner,p_Flags,p_FindWhat,p_ReplaceWith,p_Handler,p_HelpHandler=
 ;   <Dlg_OpenSaveFile> function.
 ;
 ;-------------------------------------------------------------------------------
-Dlg_SaveFile(hOwner=0,p_Title="",p_Filter="",p_FilterIndex="",p_Root="",p_DfltExt="",ByRef r_Flags=0,p_HelpHandler="")
-    {
     Return Dlg_OpenSaveFile("S",hOwner,p_Title,p_Filter,p_FilterIndex,p_Root,p_DfltExt,r_Flags,p_HelpHandler)
     }

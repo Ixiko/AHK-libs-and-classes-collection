@@ -1,4 +1,4 @@
-; #Include Affinity.ahk
+﻿; #Include Affinity.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

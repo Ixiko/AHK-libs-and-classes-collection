@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: FileInstallList
 	Builds a list of FileInstall and FileCreateDir commands
 

@@ -1,4 +1,4 @@
-/* Modification class for parsing lists.
+﻿/* Modification class for parsing lists.
 */
 
 global MODOP_REPLACE := "r"

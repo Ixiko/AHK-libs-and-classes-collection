@@ -1,4 +1,4 @@
-; This script shows some actions using CommandBars and CommandBarControl objects. Use the F7 hotkey to display the
+﻿; This script shows some actions using CommandBars and CommandBarControl objects. Use the F7 hotkey to display the
 ; available controls. Then use FindControl, as shown with the F9 and F10 hotkeys below, to execute a control action. The
 ; use of CommandBars in some Microsoft Office applications has been superseded by the ribbon, but CommandBars can be
 ; used nevertheless (tested with Office 2010).

@@ -1,4 +1,4 @@
-SetBatchlines, -1
+﻿SetBatchlines, -1
 MyWindow := new CMenuExample("Menu Example") ;Create an instance of this window class
 return
 

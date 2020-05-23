@@ -1,4 +1,4 @@
-;   Type: MAKEINTRESOURCE(10)   RT_RCDATA/Application-defined resource (raw data).
+﻿;   Type: MAKEINTRESOURCE(10)   RT_RCDATA/Application-defined resource (raw data).
 
 ; scriptResource = a text file stored in RCDATA
 ; if 0

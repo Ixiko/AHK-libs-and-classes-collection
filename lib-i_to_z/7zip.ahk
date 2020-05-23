@@ -1,17 +1,17 @@
-/*           ,---,                                          ,--,    
-           ,--.' |                                        ,--.'|    
-           |  |  :                      .--.         ,--, |  | :    
-  .--.--.  :  :  :                    .--,`|       ,'_ /| :  : '    
- /  /    ' :  |  |,--.  ,--.--.       |  |.   .--. |  | : |  ' |    
-|  :  /`./ |  :  '   | /       \      '--`_ ,'_ /| :  . | '  | |    
-|  :  ;_   |  |   /' :.--.  .-. |     ,--,'||  ' | |  . . |  | :    
- \  \    `.'  :  | | | \__\/: . .     |  | '|  | ' |  | | '  : |__  
-  `----.   \  |  ' | : ," .--.; |     :  | |:  | : ;  ; | |  | '.'| 
- /  /`--'  /  :  :_:,'/  /  ,.  |   __|  : ''  :  `--'   \;  :    ; 
-'--'.     /|  | ,'   ;  :   .'   \.'__/\_: |:  ,      .-./|  ,   /  
-  `--'---' `--''     |  ,     .-./|   :    : `--`----'     ---`-'   
-                      `--`---'     \   \  /                         
-                                    `--`-'  
+﻿/*           ,---,                                          ,--,
+           ,--.' |                                        ,--.'|
+           |  |  :                      .--.         ,--, |  | :
+  .--.--.  :  :  :                    .--,`|       ,'_ /| :  : '
+ /  /    ' :  |  |,--.  ,--.--.       |  |.   .--. |  | : |  ' |
+|  :  /`./ |  :  '   | /       \      '--`_ ,'_ /| :  . | '  | |
+|  :  ;_   |  |   /' :.--.  .-. |     ,--,'||  ' | |  . . |  | :
+ \  \    `.'  :  | | | \__\/: . .     |  | '|  | ' |  | | '  : |__
+  `----.   \  |  ' | : ," .--.; |     :  | |:  | : ;  ; | |  | '.'|
+ /  /`--'  /  :  :_:,'/  /  ,.  |   __|  : ''  :  `--'   \;  :    ;
+'--'.     /|  | ,'   ;  :   .'   \.'__/\_: |:  ,      .-./|  ,   /
+  `--'---' `--''     |  ,     .-./|   :    : `--`----'     ---`-'
+                      `--`---'     \   \  /
+                                    `--`-'
 ------------------------------------------------------------------
 Function: 7-zip32.dll wrapper library
 Author  : shajul (with generous help from Lexikos)
@@ -38,11 +38,11 @@ Overwrite      ;0 - Overwrite All, 1 - Skip extracting of existing, 2 - Auto ren
 IncludeArchive ;Include archive filenames (string);e,x
 ExcludeArchive ;Exclude archive filenames (string);e,x
 Yes            ;assume Yes on all queries;e,x
-------------------------------------------------------------------------------------------------------------------------------- 
+-------------------------------------------------------------------------------------------------------------------------------
 */
 7Zip_Init(sDllPath = "7-zip32.dll") {
 	/*                              	DESCRIPTION
-			
+
 			 Function: 7Zip_Init
 			 Description:
 			      Initiate 7Zip (must be called only if 7-zip32.dll is not in same folder as script)
@@ -56,9 +56,9 @@ Yes            ;assume Yes on all queries;e,x
 			 Related: 7Zip_Close
 			 Example:
 			      file:example.ahk
-			
+
 	*/
-	
+
   global 7Zip_
   If 7Zip_._hModule
     return 7Zip_
@@ -86,7 +86,7 @@ Yes            ;assume Yes on all queries;e,x
   7Zip_.opt.IncludeArchive := ""      ;Include archive filenames (string);e,x
   7Zip_.opt.ExcludeArchive := ""      ;Exclude archive filenames (string);e,x
   7Zip_.opt.Yes            := 0       ;assume Yes on all queries;e,x
-  
+
   7Zip_.FNAME_MAX32 := 512   ;Filename string max
   ;--- File attributes constants ---
   7Zip_.FA_RDONLY    := 0x01 ;Readonly
@@ -101,7 +101,7 @@ Yes            ;assume Yes on all queries;e,x
 }
 7Zip_List(sArcName, hWnd=0) {
 	/*                              	DESCRIPTION
-			
+
 			 Function: 7Zip_List
 			 Description:
 			      List files in an archive
@@ -111,27 +111,27 @@ Yes            ;assume Yes on all queries;e,x
 			      hWnd - handle of window (calling application), can be 0
 			 Return Value:
 			      Response buffer (string) on success, 0 on failure.
-			 Related: 
+			 Related:
 			 Remarks:
 			      Errorlevel is set to returned value of the function on success.
-			
+
 	*/
-	
+
   global 7Zip_
   if !7Zip_Init()
     return 0
-    
-  opt := 7Zip_.opt  
+
+  opt := 7Zip_.opt
   commandline  = l "%sArcName%"
   commandline .= opt.Hide ? " -hide" : ""
   commandline .= opt.Password ? " -p" . opt.Password : ""
-  
+
   return 7Zip__SevenZip(commandline)
-} ;End Function
+}
 7Zip_Add(sArcName, sFileName, hWnd=0) {
   global 7Zip_
   if !7Zip_Init()
-    return 0 , ErrorLevel := -1  
+    return 0 , ErrorLevel := -1
   opt := 7Zip_.opt
   commandline  = a "%sArcName%" "%sFileName%"
   commandline .= opt.Hide ? " -hide" : ""
@@ -142,17 +142,17 @@ Yes            ;assume Yes on all queries;e,x
   commandline .= FileExist(opt.SFX) ? " -sfx" . opt.SFX : ""
   commandline .= opt.VolumeSize ? " -v" . opt.VolumeSize : ""
   commandline .= opt.WorkingDir ? " -w" . opt.WorkingDir : ""
-  
+
   if opt.IncludeFile
     commandline .= ( SubStr(opt.IncludeFile,1,1) = "@" ) ? " -i""" . opt.IncludeFile . """" : " -i!""" . opt.IncludeFile . """"
   if opt.ExcludeFile
     commandline .= ( SubStr(opt.ExcludeFile,1,1) = "@" ) ? " -x""" . opt.ExcludeFile . """" : " -x!""" . opt.ExcludeFile . """"
-  
+
   return 7Zip__SevenZip(commandline)
-} ;End Function
+}
 7Zip_Delete(sArcName, sFileName, hWnd=0) {
 	/*                              	DESCRIPTION
-			
+
 			 Function: 7Zip_Delete
 			 Description:
 			      Add files to archive
@@ -163,30 +163,30 @@ Yes            ;assume Yes on all queries;e,x
 			 Return Value:
 							 Remarks:
 							 Related: 7Zip_Update , 7Zip_Add
-			
+
 	*/
-	
+
   global 7Zip_
   if !7Zip_Init()
-    return 0 , ErrorLevel := -1  
+    return 0 , ErrorLevel := -1
   opt := 7Zip_.opt, nSize := 32768
   commandline  = d "%sArcName%" "%sFileName%"
   commandline .= opt.Hide ? " -hide" : ""
   commandline .= " -mx" . opt.CompressLevel
   commandline .= 7Zip__Recursion()
   commandline .= opt.Password ? " -p" . opt.Password : ""
-  commandline .= opt.WorkingDir ? " -w" . opt.WorkingDir : ""  
-  
+  commandline .= opt.WorkingDir ? " -w" . opt.WorkingDir : ""
+
   if opt.IncludeFile
     commandline .= ( SubStr(opt.IncludeFile,1,1) = "@" ) ? " -i""" . opt.IncludeFile . """" : " -i!""" . opt.IncludeFile . """"
   if opt.ExcludeFile
     commandline .= ( SubStr(opt.ExcludeFile,1,1) = "@" ) ? " -x""" . opt.ExcludeFile . """" : " -x!""" . opt.ExcludeFile . """"
 
   return 7Zip__SevenZip(commandline)
-} ;End Function
+}
 7Zip_Extract(sArcName, hWnd=0) {
 	/*                              	DESCRIPTION
-			
+
 			 Function: 7Zip_Extract
 			 Description:
 			      Extract files from archive
@@ -200,12 +200,12 @@ Yes            ;assume Yes on all queries;e,x
 			      Errorlevel is set to returned value of the function on success.
 			      Note that output folder can be specified as a property
 			 Related: 7Zip_Update , 7Zip_Delete
-			
+
 	*/
-	
+
   global 7Zip_
   if !7Zip_Init()
-    return 0 , ErrorLevel := -1  
+    return 0 , ErrorLevel := -1
   opt := 7Zip_.opt, nSize := 32768
   commandline := opt.ExtractPaths ? "x """ . sArcName . """" : "e """ . sArcName . """"
   commandline .= opt.Hide ? " -hide" : ""
@@ -213,24 +213,24 @@ Yes            ;assume Yes on all queries;e,x
   commandline .= opt.Output ? " -o""" . opt.Output . """" : ""
   commandline .= 7Zip__Overwrite()
   commandline .= opt.Password ? " -p" . opt.Password : ""
-  commandline .= opt.WorkingDir ? " -w" . opt.WorkingDir : ""  
+  commandline .= opt.WorkingDir ? " -w" . opt.WorkingDir : ""
   commandline .= opt.Yes ? " -y" : ""
-  
+
   if opt.IncludeArchive
     commandline .= ( SubStr(opt.IncludeArchive,1,1) = "@" ) ? " -ai""" . opt.IncludeArchive . """" : " -ai!""" . opt.IncludeArchive . """"
   if opt.ExcludeArchive
     commandline .= ( SubStr(opt.ExcludeArchive,1,1) = "@" ) ? " -ax""" . opt.ExcludeArchive . """" : " -ax!""" . opt.ExcludeArchive . """"
-  
+
   if opt.IncludeFile
     commandline .= ( SubStr(opt.IncludeFile,1,1) = "@" ) ? " -i""" . opt.IncludeFile . """" : " -i!""" . opt.IncludeFile . """"
   if opt.ExcludeFile
     commandline .= ( SubStr(opt.ExcludeFile,1,1) = "@" ) ? " -x""" . opt.ExcludeFile . """" : " -x!""" . opt.ExcludeFile . """"
 
   return 7Zip__SevenZip(commandline)
-} ;End Function
+}
 7Zip_Update(sArcName, sFileName, hWnd=0) {
 	/*                              	DESCRIPTION
-			
+
 			 Function: 7Zip_Update
 			 Description:
 			      Update files to an archive
@@ -244,12 +244,12 @@ Yes            ;assume Yes on all queries;e,x
 			 Remarks:
 			      Errorlevel is set to returned value of the function on success.
 			 Related: 7Zip_Add , 7Zip_Delete
-			
+
 	*/
-	
+
   global 7Zip_
   if !7Zip_Init()
-    return 0 , ErrorLevel := -1  
+    return 0 , ErrorLevel := -1
   opt := 7Zip_.opt
   commandline  = a "%sArcName%" "%sFileName%"
   commandline .= opt.Hide ? " -hide" : ""
@@ -258,16 +258,16 @@ Yes            ;assume Yes on all queries;e,x
   commandline .= opt.Password ? " -p" . opt.Password : ""
   commandline .= FileExist(opt.SFX) ? " -sfx" . opt.SFX : ""
   commandline .= opt.WorkingDir ? " -w" . opt.WorkingDir : ""
-  
+
   if opt.IncludeFile
     commandline .= ( SubStr(opt.IncludeFile,1,1) = "@" ) ? " -i""" . opt.IncludeFile . """" : " -i!""" . opt.IncludeFile . """"
   if opt.ExcludeFile
     commandline .= ( SubStr(opt.ExcludeFile,1,1) = "@" ) ? " -x""" . opt.ExcludeFile . """" : " -x!""" . opt.ExcludeFile . """"
   return 7Zip__SevenZip(commandline)
-} ;End Function
+}
 7Zip_SetOwnerWindowEx(sProcFunc, hWnd=0) {
 	/*                              	DESCRIPTION
-			
+
 			 Function: 7Zip_SetOwnerWindowEx
 			 Description:
 			      Appoints the call-back function in order to receive the information of the compressing/unpacking
@@ -280,15 +280,15 @@ Yes            ;assume Yes on all queries;e,x
 			 Related: 7Zip_KillOwnerWindowEx
 			 Example:
 			      file:example_callback.ahk
-			
+
 	*/
-	
+
   Address := RegisterCallback(sProcFunc, "F", 4)
   Return DllCall("7-zip32\SevenZipSetOwnerWindowEx","Ptr", hWnd , "ptr", Address)
-} ;End Function
+}
 7Zip_KillOwnerWindowEx(hWnd) {
 	/*                              	DESCRIPTION
-			
+
 			 Function: 7Zip_KillOwnerWindowEx
 			 Description:
 			      Removes the callback
@@ -298,33 +298,33 @@ Yes            ;assume Yes on all queries;e,x
 			 Return Value:
 			      True on success, false otherwise
 			 Related: 7Zip_SetOwnerWindowEx
-			
+
 	*/
-	
+
   Return DllCall("7-zip32\SevenZipKillOwnerWindowEx" , "Ptr", hWnd)
-} ;End Function
+}
 7Zip_CheckArchive(sArcName) {
 	/*                              	DESCRIPTION
-	
-			
+
+
 			 Function: 7Zip_CheckArchive
 			 Description:
-			      Check archive integrity 
+			      Check archive integrity
 			 Syntax: 7Zip_CheckArchive(sArcName)
 			 Parameters:
 			      sArcName - Name of archive to be created
 			 Return Value:
 			      True on success, false otherwise
-			
-			
+
+
 	*/
-	
+
   Return DllCall("7-zip32\SevenZipCheckArchive", "AStr", sArcName, "int", 0)
-} ;End Function
+}
 7Zip_GetArchiveType(sArcName) {
 	/*                              	DESCRIPTION
-	
-			
+
+
 			 Function: 7Zip_GetArchiveType
 			 Description:
 			      Get the type of archive
@@ -336,16 +336,16 @@ Yes            ;assume Yes on all queries;e,x
 			      1 - ZIP type
 			      2 - 7Z type
 			      -1 - Failure
-			
-			
+
+
 	*/
-	
+
   Return DllCall("7-zip32\SevenZipGetArchiveType", "AStr", sArcName)
-} ;End Function
+}
 7Zip_GetFileCount(sArcName) {
 	/*                              	DESCRIPTION
-	
-			
+
+
 			 Function: 7Zip_GetFileCount
 			 Description:
 			      Get the number of files in archive
@@ -354,76 +354,76 @@ Yes            ;assume Yes on all queries;e,x
 			      sArcName - Name of archive
 			 Return Value:
 			      Count on success, -1 otherwise
-			
-			
+
+
 	*/
-	
+
   Return DllCall("7-zip32\SevenZipGetFileCount", "AStr", sArcName)
-} ;End Function
+}
 7Zip_ConfigDialog(hWnd) {
 	/*                              	DESCRIPTION
-	
-			
+
+
 			 Function: 7Zip_ConfigDialog
 			 Description:
 			      Shows the about dialog for 7-zip32.dll
 			 Syntax: 7Zip_ConfigDialog(hWnd)
 			 Parameters:
 			      hWnd - handle of owner window
-			
-			
+
+
 	*/
-	
+
   Return DllCall("7-zip32\SevenZipConfigDialog", "Ptr", hWnd, "ptr",0, "int",0)
-} ;End Function
+}
 7Zip_QueryFunctionList(iFunction = 0) {
   Return DllCall("7-zip32\SevenZipQueryFunctionList", "int", iFunction)
-} ;End Function
+}
 7Zip_GetVersion() {
 	/*                              	DESCRIPTION
-	
-			
+
+
 			 Function: 7Zip_GetVersion
 			 Description:
 			      Version of 7-zip32.dll
 			 Syntax: 7Zip_GetVersion()
 			 Return Value:
 			      Version string
-			
-			
+
+
 	*/
-	
+
   aRet := DllCall("7-zip32\SevenZipGetVersion", "Short")
   Return SubStr(aRet,1,1) . "." . SubStr(aRet,2)
-} ;End Function
+}
 7Zip_GetSubVersion() {
 	/*                              	DESCRIPTION
-	
-			
+
+
 			 Function: 7Zip_GetSubVersion
 			 Description:
 			      Subversion of 7-zip32.dll
 			 Syntax: 7Zip_GetSubVersion()
 			 Return Value:
 			      Subversion string
-			
-			
+
+
 	*/
-		
+
   return DllCall("7-zip32\SevenZipGetSubVersion", "Short")
-} ;End Function
+}
 7Zip_Close() {
 	/*                              	DESCRIPTION
-	
-			
+
+
 			 Function: 7Zip_Close
 			 Description:
 			      Free 7-zip32.dll library
 			 Syntax: 7Zip_Close()
-			
-			
+
+
 	*/
-	
+
   global 7Zip_
   DllCall("FreeLibrary", "Ptr", 7Zip_._hModule)
   7Zip_ := ""
@@ -431,10 +431,10 @@ Yes            ;assume Yes on all queries;e,x
 
 ; FUNCTIONS BELOW - CREDIT TO LEXIKOS -------------------------------------------------------
 7Zip_OpenArchive(sArcName, hWnd=0) {
-	
+
 	/*                              	DESCRIPTION
-	
-			
+
+
 			 Function: 7Zip_OpenArchive
 			 Description:
 			      Open archive and return handle for use with 7Zip_FindFirst
@@ -449,18 +449,17 @@ Yes            ;assume Yes on all queries;e,x
 			 Related: 7Zip_CloseArchive, 7Zip_FindFirst , File Info Functions
 			 Example:
 			      hArc := 7Zip_OpenArchive("C:\Path\To\Archive.7z")
-			
-			
+
+
 	*/
-	
-	
+
   Return DllCall("7-zip32\SevenZipOpenArchive", "Ptr", hWnd, "AStr", sArcName, "int", 0)
-} ;End Function
+}
 7Zip_CloseArchive(hArc) {
-	
+
 	/*                              	DESCRIPTION
-	
-			
+
+
 			 Function: 7Zip_CloseArchive
 			 Description:
 			      Closes the archive handle
@@ -474,18 +473,18 @@ Yes            ;assume Yes on all queries;e,x
 			 Related: 7Zip_OpenArchive
 			 Example:
 			      7Zip_CloseArchive(hArc)
-			
-			
+
+
 	*/
-	
-	
+
+
   Return DllCall("7-zip32\SevenZipCloseArchive", "Ptr", hArc)
-} ;End Function
+}
 7Zip_FindFirst(hArc, sSearch, o7zip__info="") {
-	
+
 	/*                              	DESCRIPTION
-	
-			
+
+
 			 Function: 7Zip_FindFirst
 			 Description:
 			      Find first file for search criteria in archive
@@ -502,11 +501,11 @@ Yes            ;assume Yes on all queries;e,x
 			 Related: 7Zip_FindNext , 7Zip_OpenArchive , File Info Functions
 			 Example:
 			      file:example_archive_info.ahk
-			
-			
+
+
 	*/
-	
-	
+
+
   if (o7zip__info = 0)
   {
     r := DllCall("7-zip32\SevenZipFindFirst", "Ptr", hArc, "AStr", sSearch, "ptr", 0)
@@ -515,26 +514,26 @@ Yes            ;assume Yes on all queries;e,x
   if !IsObject(o7zip__info)
     o7zip__info := Object()
   VarSetCapacity(tINDIVIDUALINFO , 558, 0)
-  
+
   If DllCall("7-zip32\SevenZipFindFirst", "Ptr", hArc, "AStr", sSearch, "ptr", &tINDIVIDUALINFO)
     Return 0
   o7zip__info.OriginalSize   := NumGet(tINDIVIDUALINFO , 0, "UInt")
   o7zip__info.CompressedSize := NumGet(tINDIVIDUALINFO , 4, "UInt")
   o7zip__info.CRC            := NumGet(tINDIVIDUALINFO , 8, "UInt")
 ; uFlag                      := NumGet(tINDIVIDUALINFO , 12, "UInt") ;always 0
-; uOSType                    := NumGet(tINDIVIDUALINFO , 16, "UInt") ;always 0  
+; uOSType                    := NumGet(tINDIVIDUALINFO , 16, "UInt") ;always 0
   o7zip__info.Ratio          := NumGet(tINDIVIDUALINFO , 20, "UShort")
   o7zip__info.Date           := 7Zip_DosDateTimeToStr(NumGet(tINDIVIDUALINFO , 22, "UShort"),NumGet(tINDIVIDUALINFO , 24, "UShort"))
   o7zip__info.FileName       := StrGet(&tINDIVIDUALINFO+26 ,513,"CP0")
   o7zip__info.Attribute      := StrGet(&tINDIVIDUALINFO+542,8  ,"CP0")
   o7zip__info.Mode           := StrGet(&tINDIVIDUALINFO+550,8  ,"CP0")
-  
+
   return o7zip__info
-} ;End Function
+}
 7Zip_FindNext(hArc, o7zip__info="") {
-	
+
 	/*                              	DESCRIPTION
-				
+
 			 Function: 7Zip_FindNext
 			 Description:
 			      Find next file for search criteria in archive
@@ -545,15 +544,15 @@ Yes            ;assume Yes on all queries;e,x
 			 Return Value:
 			      Object with file details on success. If 2nd param was 0, returns true on success. False on failure.
 			 Remarks:
-			      If second param is omitted, details are returned in a new object. 
+			      If second param is omitted, details are returned in a new object.
 			      If it is set to 0, details are not retrieved. (You can use the other functions to get details.)
 			 Related: 7Zip_FindFirst , 7Zip_OpenArchive, File Info Functions
 			 Example:
 			      file:example_archive_info.ahk
-				
+
 	*/
-	
-	
+
+
   if (o7zip__info = 0)
   {
     r := DllCall("7-zip32\SevenZipFindFirst", "Ptr", hArc, "AStr", sSearch, "ptr", 0)
@@ -563,23 +562,23 @@ Yes            ;assume Yes on all queries;e,x
     o7zip__info := Object()
   VarSetCapacity(tINDIVIDUALINFO , 558, 0)
   if DllCall("7-zip32\SevenZipFindNext","Ptr", hArc, "ptr", &tINDIVIDUALINFO)
-    Return 0 
+    Return 0
 
   o7zip__info.OriginalSize   := NumGet(tINDIVIDUALINFO , 0, "UInt")
   o7zip__info.CompressedSize := NumGet(tINDIVIDUALINFO , 4, "UInt")
   o7zip__info.CRC            := NumGet(tINDIVIDUALINFO , 8, "UInt")
   o7zip__info.Ratio          := NumGet(tINDIVIDUALINFO , 20, "UShort")
-  o7zip__info.Date           := 7Zip_DosDateTimeToStr(NumGet(tINDIVIDUALINFO , 22, "UShort"),NumGet(tINDIVIDUALINFO , 24, "UShort"))  
+  o7zip__info.Date           := 7Zip_DosDateTimeToStr(NumGet(tINDIVIDUALINFO , 22, "UShort"),NumGet(tINDIVIDUALINFO , 24, "UShort"))
   o7zip__info.FileName       := StrGet(&tINDIVIDUALINFO+26 ,513,"CP0")
   o7zip__info.Attribute      := StrGet(&tINDIVIDUALINFO+542,8  ,"CP0")
   o7zip__info.Mode           := StrGet(&tINDIVIDUALINFO+550,8  ,"CP0")
-  
+
   return o7zip__info
-} ;End Function
+}
 
 	/*     DESCRIPTION of Function: File Info Functions
-			
-			
+
+
 			 Description:
 			      Using handle hArc, get info of file(s) in archive.
 			 Syntax: 7Zip_<InfoFunction>(hArc)
@@ -600,41 +599,58 @@ Yes            ;assume Yes on all queries;e,x
 			 Related: 7Zip_OpenArchive , 7Zip_FindFirst
 			 Example:
 			      file:example_archive_info.ahk
-			
-			
+
+
 	*/
-	
+
 7Zip_GetFileName(hArc) {
   VarSetCapacity(tNameBuffer,513)
   If !DllCall("7-zip32\SevenZipGetFileName", "Ptr", hArc, "ptr", &tNameBuffer, "int", 513)
     Return StrGet(&tNameBuffer,513,"CP0")
-} ;End Function
+}
 7Zip_GetArcOriginalSize(hArc) {
   Return DllCall("7-zip32\SevenZipGetArcOriginalSize", "Ptr", hArc)
-} ;End Function
+}
 7Zip_GetArcCompressedSize(hArc) {
   Return DllCall("7-zip32\SevenZipGetArcCompressedSize", "Ptr", hArc)
-} ;End Function
+}
 7Zip_GetArcRatio(hArc) {
   Return DllCall("7-zip32\SevenZipGetArcRatio", "Ptr", hArc, "short")
-} ;End Function
+}
 7Zip_GetDate(hArc) {
   Return 7Zip_DosDate(DllCall("7-zip32\SevenZipGetDate", "Ptr", hArc, "Short"))
-} ;End Function
+}
 7Zip_GetTime(hArc) {
   Return 7Zip_DosTime(DllCall("7-zip32\SevenZipGetTime", "Ptr", hArc, "Short"))
-} ;End Function
+}
 7Zip_GetCRC(hArc) {
   Return DllCall("7-zip32\SevenZipGetCRC", "Ptr", hArc, "UInt")
-} ;End Function
+}
+7Zip_GetMoreCRC(7zipDll, FileName, sSearch := "") {
+	if !hArc := DllCall(7zipDll . "\SevenZipOpenArchive", "ptr", 0, "astr", FileName, "int", 0)
+		throw "SevenZipOpenArchive fail"
+
+	VarSetCapacity(info, 558, 0)
+	ret := DllCall(7zipDll . "\SevenZipFindFirst", "ptr", hArc, "astr", sSearch, "ptr", &info)
+
+	result := []
+	while (ret = 0) {
+		result[A_Index, "CRC"     ] := Format("{:X}", NumGet(info, 8, "uint"))
+		result[A_Index, "FileName"] := StrGet(&info+26, 513, "cp0")
+		ret := DllCall(7zipDll . "\SevenZipFindNext", "ptr", hArc, "ptr", &info)
+	}
+
+	DllCall(7zipDll . "\SevenZipCloseArchive", "ptr", hArc)
+	return result.MaxIndex() ? result : ""
+}
 7Zip_GetAttribute(hArc) {
   return DllCall("7-zip32\SevenZipGetAttribute", "Ptr", hArc)
-} ;End Function
+}
 7Zip_GetMethod(hArc) {
   VarSetCapacity(sBUFFER,8)
   if !DllCall("7-zip32\SevenZipGetMethod" , "Ptr", hArc , "ptr", &sBuffer,"int", 8)
     Return StrGet(&sBUFFER, 8, "CP0")
-} ;End Function
+}
 
 ; FUNCTIONS FOR INTERNAL USE --------------------------------------------------------------------------------------------------
 7Zip__SevenZip(sCommand) {
@@ -648,7 +664,7 @@ Yes            ;assume Yes on all queries;e,x
     return StrGet(&tOutBuffer,nSize,"CP0"), ErrorLevel := aRet
   else
     return 0
-} ;End Function  
+}
 7Zip__Recursion() {
   global 7Zip_
     if 7Zip.opt.Recurse = 1
@@ -657,7 +673,7 @@ Yes            ;assume Yes on all queries;e,x
       Return " -r0"
     Else
       Return " -r-"
-} ;End Function
+}
 7Zip__Overwrite() {
   global 7Zip_
   if (7Zip_.opt.Overwrite = 0)
@@ -670,7 +686,7 @@ Yes            ;assume Yes on all queries;e,x
     Return " -aot"
   Else
     Return " -aoa"
-} ;End Function
+}
 7Zip_DosDate(ByRef DosDate) {
   day   := DosDate & 0x1F
   month := (DosDate<<4) & 0x0F

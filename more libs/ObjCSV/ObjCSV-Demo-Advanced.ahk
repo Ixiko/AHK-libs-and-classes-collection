@@ -1,4 +1,4 @@
-;===============================================
+﻿;===============================================
 /* ObjCSV Demo Advanced v0.1
 Written using AutoHotkey_L v1.1.09.03 (http://l.autohotkey.net/)
 By JnLlnd on AHK forum

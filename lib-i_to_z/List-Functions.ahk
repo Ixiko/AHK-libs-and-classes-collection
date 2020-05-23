@@ -1,4 +1,4 @@
-; General Purpose List functions by Roland
+﻿; General Purpose List functions by Roland
 
 
 

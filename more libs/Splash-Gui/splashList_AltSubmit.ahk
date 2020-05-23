@@ -1,4 +1,4 @@
-splashList_AltSubmit(text, list){ ; Pass help text and |-separated list
+﻿splashList_AltSubmit(text, list){ ; Pass help text and |-separated list
   global
   choice =  ; Clear previous choices
   rows = ; Clear previous number of rows

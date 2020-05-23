@@ -1,4 +1,4 @@
-;~  Huffman-0.5.x testSuite
+﻿;~  Huffman-0.5.x testSuite
 SetBatchLines, -1
 #include %A_ScriptDir%\..\huffmann.ahk
 FileSelectFile,testFile

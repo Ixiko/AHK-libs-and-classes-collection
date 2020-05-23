@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: Stream
 wraps the *IStream* interface and lets you read and write data to stream objects.
 

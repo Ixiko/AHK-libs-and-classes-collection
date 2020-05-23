@@ -1,4 +1,4 @@
-; Title:	TCwdx
+﻿; Title:	TCwdx
 ;			Functions to work with Total Commander content plugins
 
 

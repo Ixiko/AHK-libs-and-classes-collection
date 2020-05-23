@@ -1,4 +1,4 @@
-
+﻿
 WindowPad_Init(WINDOWPAD_INI_PATH)
 
 ; WindowPad v1.52

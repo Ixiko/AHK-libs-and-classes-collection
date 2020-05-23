@@ -1,4 +1,4 @@
-;=========================================
+﻿;=========================================
 ; Name:     	  RichEdit OleCallback
 ; Namespace:      RichEdit
 ; Authors:        just me & DigiDon

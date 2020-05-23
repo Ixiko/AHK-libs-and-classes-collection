@@ -1,4 +1,4 @@
-ResourceIdOfIcon(Filename, IconIndex)
+﻿ResourceIdOfIcon(Filename, IconIndex)
 {
     hmod := DllCall("GetModuleHandle", "str", Filename)
     ; If the DLL isn't already loaded, load it as a data file.

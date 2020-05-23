@@ -1,4 +1,4 @@
-#Include %A_ScriptDir%\..\class_Struct.ahk
+﻿#Include %A_ScriptDir%\..\class_Struct.ahk
 id:
 { ; Struct() examples
         

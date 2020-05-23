@@ -1,4 +1,4 @@
-group := tester.newGroup("array_join(array, delim)")
+﻿group := tester.newGroup("array_join(array, delim)")
 
 array := [1,2,3,4,5]
 

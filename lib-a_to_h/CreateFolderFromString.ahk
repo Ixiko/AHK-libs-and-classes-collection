@@ -1,4 +1,4 @@
-CreateFolderFromString(fnPathString,fnOpenFolderWindow := 0)
+﻿CreateFolderFromString(fnPathString,fnOpenFolderWindow := 0)
 {
 	; creates a new folder from the input string
 	; MsgBox fnPathString: %fnPathString%`nfnOpenFolderWindow: %fnOpenFolderWindow%

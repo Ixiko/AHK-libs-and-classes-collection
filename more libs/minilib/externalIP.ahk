@@ -1,4 +1,4 @@
-externalIP(ip:="me"){
+﻿externalIP(ip:="me"){
     ipInfo:={}
     if(ip="me" || regExMatch(ip,"^(\d{1,3}\.){3}\d{1,3}$")){
         ipInfoList:=["ip","city","country","region","isp","latitude","longitude","hostname","asn"]

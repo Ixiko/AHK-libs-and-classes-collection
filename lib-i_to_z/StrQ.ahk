@@ -1,4 +1,4 @@
-StrQ( List, Item, Max:=10, D:="`n", F:=0  ) { ; by SKAN | 15-Sep-2017 | Topic: goo.gl/R4QrF4
+﻿StrQ( List, Item, Max:=10, D:="`n", F:=0  ) { ; by SKAN | 15-Sep-2017 | Topic: goo.gl/R4QrF4
 Return ( StrLen(Item) ? (Max := InStr( (List := Trim(Item D Trim( StrReplace((List := D List D)
 , (F := InStr(List,D Item D)) ? D Item D : "", D),D),D)),D,,,Max)) ? SubStr(List,1,Max-1) : List : List)
 }

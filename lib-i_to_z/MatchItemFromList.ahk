@@ -1,4 +1,4 @@
-; Written by TheGood - http://www.autohotkey.com/board/topic/35990-string-matching-using-trigrams/
+﻿; Written by TheGood - http://www.autohotkey.com/board/topic/35990-string-matching-using-trigrams/
 
 MatchItemFromList(iPtr, iCount, sItem) {
     

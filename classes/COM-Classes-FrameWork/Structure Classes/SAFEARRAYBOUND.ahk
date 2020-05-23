@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: SAFEARRAYBOUND
 a structure class that represents the bounds of one dimension of an array.
 

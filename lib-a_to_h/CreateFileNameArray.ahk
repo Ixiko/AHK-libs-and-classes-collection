@@ -1,4 +1,4 @@
-CreateFileNameArray(ByRef fnFileNameArrayMaxTime := "19000101000000")
+﻿CreateFileNameArray(ByRef fnFileNameArrayMaxTime := "19000101000000")
 {
 	; creates a global array holding names of files in script directory
 	; MsgBox fnFileNameArrayMaxTime: %fnFileNameArrayMaxTime%

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Line based Parser for AHK Code
  * by just me & toralf 
  * some concepts taken from CoCo's ListClasses scipt (http://ahkscript.org/boards/viewtopic.php?p=43349#p42793)

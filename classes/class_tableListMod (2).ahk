@@ -1,4 +1,4 @@
-; Modification class for parsing lists.
+﻿; Modification class for parsing lists.
 class TableListMod {
 	debugNoRecurse := true
 	debugName := "TableListMod"

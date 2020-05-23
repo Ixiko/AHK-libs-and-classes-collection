@@ -1,4 +1,4 @@
-#include class_EasyXML.ahk
+﻿#include class_EasyXML.ahk
 
 xml := class_EasyXML("xmlTest.xml")
 

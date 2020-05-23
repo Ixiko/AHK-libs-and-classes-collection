@@ -1,4 +1,4 @@
-DateDiff(fnTimeUnits,fnStartDate,fnEndDate)
+﻿DateDiff(fnTimeUnits,fnStartDate,fnEndDate)
 {
 	; returns the difference between two timestamps in the specified units
 	; MsgBox fnTimeUnits: %fnTimeUnits%`nfnStartDate: %fnStartDate%`nfnEndDate: %fnEndDate%

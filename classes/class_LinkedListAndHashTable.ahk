@@ -1,4 +1,4 @@
-;Simple Dictionary/Map/Hashtable and Linked List implementation by icuurd12b42, free to use, have fun
+﻿;Simple Dictionary/Map/Hashtable and Linked List implementation by icuurd12b42, free to use, have fun
 ; Thanks to Brian Kernighan's description on computerphile on yt for the cheap implementation of the idea
 ; https://www.youtube.com/watch?v=qTZJLJ3Gm6Q
 

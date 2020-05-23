@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 
 String = ghdk563dh1000dsd81001h23jdshj400shj200000dsh500ehja2ld122jfkj100000fdjk40000skj200dslkds700
 MsgBox % """" . GreaterThanNumInList(String,500) . """"

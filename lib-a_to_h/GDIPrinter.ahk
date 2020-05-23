@@ -1,4 +1,4 @@
-#Include, gdip.ahk
+﻿#Include, gdip.ahk
 
 EnumPrinters()
 {

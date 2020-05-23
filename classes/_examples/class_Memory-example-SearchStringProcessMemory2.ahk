@@ -1,4 +1,4 @@
-#include classMemory.ahk
+﻿#include classMemory.ahk
 
 
 vlc := new _ClassMemory("ahk_exe vlc.exe", "", hProcessCopy)

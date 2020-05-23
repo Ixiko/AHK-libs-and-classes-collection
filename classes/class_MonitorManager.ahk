@@ -1,4 +1,4 @@
-/*
+﻿/*
 :title:     bug.n/monitormanager
 :copyright: (c) 2019 by joten <https://github.com/joten>
 :license:   GNU General Public License version 3

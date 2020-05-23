@@ -1,4 +1,4 @@
-GetEnvironmentVariables()
+﻿GetEnvironmentVariables()
 {
 	; Creates a set of variables to match Windows environment variables
 	; MsgBox params: %params%

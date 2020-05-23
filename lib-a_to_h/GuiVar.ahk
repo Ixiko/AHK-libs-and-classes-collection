@@ -1,4 +1,4 @@
-;{ GuiVar
+﻿;{ GuiVar
 ; Fanatic Guru
 ; 2014 11 06
 ; Version: 1.1
@@ -11,13 +11,14 @@
 ; GuiVar_List				Get name and text content of all hidden Gui window used by GuiVar
 ; GuiVar_Destroy			Destroy hidden Gui window used by GuiVar
 ; GuiVar_DestroySetTimer	Use SetTimer to check hidden Gui windows to destroy
+;}
 
 ; FUNCTIONS
 ;{-----------------------------------------------
 ;
 
 ; GuiVar_Set
-; 
+;
 ; Method:
 ;   GuiVar_Set(Variable Name, Value)
 ;
@@ -27,9 +28,9 @@
 ;
 ; Example:
 ;   GuiVar_Set("Customer","Fanatic Guru")
-;
-GuiVar_Set(Var,Value)
-{
+;}
+
+GuiVar_Set(Var,Value) {
 	DetectHiddenWindows, % (Setting_A_DetectHiddenWindows := A_DetectHiddenWindows) ? "On" :
 	if WinExist("GuiVar_" Var)
 		ControlSetText,, %Value%, GuiVar_%Var%
@@ -43,7 +44,7 @@ GuiVar_Set(Var,Value)
 }
 
 ; GuiVar_Get
-; 
+;
 ; Method:
 ;   GuiVar_Get(Variable Name)
 ;
@@ -56,8 +57,7 @@ GuiVar_Set(Var,Value)
 ; Example:
 ;   Current_Customer := GuiVar_Get("Customer")
 ;
-GuiVar_Get(Var)
-{
+GuiVar_Get(Var) {
 	DetectHiddenWindows, % (Setting_A_DetectHiddenWindows := A_DetectHiddenWindows) ? "On" :
 	ControlGetText, Value,, GuiVar_%Var%_GuiVar
 	DetectHiddenWindows, %Setting_A_DetectHiddenWindows%
@@ -78,8 +78,7 @@ return Value
 ; ByRef:
 ;   Populates {Array} passed as parameter with Gui window data
 ;
-GuiVar_List(ByRef Array)
-{
+GuiVar_List(ByRef Array) {
 	DetectHiddenWindows, % (Setting_A_DetectHiddenWindows := A_DetectHiddenWindows) ? "On" :
 	Array := {}
 	WinGet, WinList, List, GuiVar_
@@ -96,7 +95,7 @@ return WinList
 }
 
 ; GuiVar_Destroy
-; 
+;
 ; Method:
 ;   GuiVar_Get(Variable Name)
 ;
@@ -105,15 +104,14 @@ return WinList
 ;		default = "" 	destroys all Gui windows used by GuiVar
 ;
 ; Returns:
-;   Number of Gui windows destroyed 
+;   Number of Gui windows destroyed
 ;
 ; Example:
 ;   GuiVar_Destroy("Customer")
 ;
 ; Note:	Only the script that first created a Gui can destroy that Gui
 ;
-GuiVar_Destroy(Var := "")
-{
+GuiVar_Destroy(Var := "") {
 	DetectHiddenWindows, % (Setting_A_DetectHiddenWindows := A_DetectHiddenWindows) ? "On" :
 	if Var
 	{
@@ -136,18 +134,18 @@ GuiVar_Destroy(Var := "")
 }
 
 ; GuiVar_DestroySetTimer
-; 
+;
 ; Method:
 ;   GuiVar_Get(Time, Value)
 ;
 ; Parameters:
 ;   1) 	{Time} 		time in ms to poll for Gui windows to destroy
-;			default = 1000 	
+;			default = 1000
 ;	2)	{Value}		destroy all Gui windows with this value
 ;			default = ""
 ;
 ; Returns:
-;   None 
+;   None
 ;
 ; Global:
 ;   Creates a global variable named Value@GuiVar_DestroySetTimer
@@ -160,12 +158,11 @@ GuiVar_Destroy(Var := "")
 ;
 ; Note:	Only the script that first created a Gui can destroy that Gui
 ;
-GuiVar_DestroySetTimer(Time := 1000, Value := "")
-{
+GuiVar_DestroySetTimer(Time := 1000, Value := "") {
 	global Value@GuiVar_DestroySetTimer := Value
 	SetTimer, GuiVar_DestroySetTimer, %Time%
 	return
-	
+
 	GuiVar_DestroySetTimer:
 	GuiVar_List(List)
 	for var, value in List

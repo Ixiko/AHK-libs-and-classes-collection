@@ -1,4 +1,4 @@
-#noenv
+﻿#noenv
 #include %A_ScriptDir%\..\class_AHKWebDriver.ahk
 #include %A_ScriptDir%\..\class_JSON.ahk
 

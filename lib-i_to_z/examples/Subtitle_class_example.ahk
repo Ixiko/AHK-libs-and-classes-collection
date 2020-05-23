@@ -1,4 +1,4 @@
-#singleinstance force
+﻿#singleinstance force
 ;#include Subtitle.ahk
 ;#include <Gdip_All>
 

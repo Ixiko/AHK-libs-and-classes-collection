@@ -1,4 +1,4 @@
-/*
+﻿/*
 WinSet_NoActivate - Makes a window impossible to take focus.
 
 Paramenters:

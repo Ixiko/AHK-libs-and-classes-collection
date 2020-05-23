@@ -1,4 +1,4 @@
-/*
+﻿/*
 GDIplusWrapper.ahk
 
 Wrappers around some useful GDI+ functions.

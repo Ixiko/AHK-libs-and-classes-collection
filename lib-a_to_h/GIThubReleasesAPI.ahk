@@ -1,4 +1,4 @@
-/*	Requires JSON.ahk
+﻿/*	Requires JSON.ahk
 
 	https://autohotkey.com/boards/viewtopic.php?t=627
 	https://github.com/cocobelgica/AutoHotkey-JSON

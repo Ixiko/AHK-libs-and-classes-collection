@@ -1,4 +1,4 @@
-box(Videox,Videoy,thickness) {
+﻿box(Videox,Videoy,thickness) {
 
 ; gdi+ ahk tutorial 7 written by tic (Tariq Porter)
 ; Requires Gdip.ahk either in your Lib folder as standard library or using #Include

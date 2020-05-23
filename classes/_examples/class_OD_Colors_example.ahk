@@ -25,4 +25,4 @@ Return
 GuiClose:
 ExitApp
 ; ----------------------------------------------------------------------------------------------------------------------
-#Include %A_ScriptDir%\..\classes\Class_OD_Colors.ahk
+#Include %A_ScriptDir%\..\Class_OD_Colors.ahk

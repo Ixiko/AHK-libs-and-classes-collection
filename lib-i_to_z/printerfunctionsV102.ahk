@@ -1,4 +1,4 @@
-;Scriptfile to combine several usefull printerfunction
+﻿;Scriptfile to combine several usefull printerfunction
 ;version 1.0.2 from 18.02.2019
 ;changed by Ixiko for compatibility with AHK V1.3*
 

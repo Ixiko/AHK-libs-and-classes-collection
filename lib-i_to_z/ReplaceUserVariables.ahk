@@ -1,4 +1,4 @@
-ReplaceUserVariables(ByRef fnText)
+﻿ReplaceUserVariables(ByRef fnText)
 {
 	; replaces user defined variables with their current value
 	; MsgBox fnText: %fnText%

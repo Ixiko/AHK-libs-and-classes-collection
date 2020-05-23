@@ -1,4 +1,4 @@
-;~ MyObj:=Main()
+﻿;~ MyObj:=Main()
 ;~ ExitApp
 
 ;~ Main(){

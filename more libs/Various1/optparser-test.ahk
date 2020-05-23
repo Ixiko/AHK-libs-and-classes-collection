@@ -1,4 +1,4 @@
-; ahk: console
+﻿; ahk: console
 #Warn All, StdOut
 #NoEnv
 SetBatchLines -1

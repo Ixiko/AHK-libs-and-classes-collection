@@ -1,4 +1,4 @@
-/*
+﻿/*
 Example: Demonstrates the usage of *ShellItem.ahk*
 
 Authors:

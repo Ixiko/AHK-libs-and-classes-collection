@@ -1,4 +1,4 @@
-/*
+﻿/*
 Name             : DPI
 Purpose          : Return scaling factor or calculate position/values for AHK controls (font size, position (x y), width, height)
 Version          : 0.31

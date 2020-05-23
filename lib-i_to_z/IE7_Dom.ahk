@@ -1,4 +1,4 @@
-
+﻿
 IE7_Get(title,url="http") ;returns DOM window handle
 {
 ;~    title is required and is not case sensitive

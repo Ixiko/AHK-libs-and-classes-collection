@@ -1,4 +1,4 @@
-outputdebug DBGVIEWCLEAR
+﻿outputdebug DBGVIEWCLEAR
 #SingleInstance force
 #include ProfileHandler.ahk
 

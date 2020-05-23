@@ -1,0 +1,992 @@
+# CONTENTS SUMMARY
+- Functions list [v1.82 - 11/03/2020]
+- What is new (a comparision with the original version of GDI+ library wrapper by Tic)
+- Credits [who made what]
+- What is still left to implement
+
+# FUNCTIONS LIST
+
+The following list is an attempt to give you an overview
+of what is available in the Gdip_all.ahk extended compilation.
+
+Please note, this is not a complete list of all the functions.
+
+## 35 GraphicsPath object functions
+ - Gdip_AddPathArc(pPath, x, y, w, h, StartAngle, SweepAngle)
+ - Gdip_AddPathBezier(pPath, x1, y1, x2, y2, x3, y3, x4, y4)
+ - Gdip_AddPathBeziers(pPath, Points)
+ - Gdip_AddPathClosedCurve(pPath, Points, Tension:="")
+ - Gdip_AddPathCurve(pPath, Points, Tension:="")
+ - Gdip_AddPathEllipse(pPath, x, y, w, h)
+ - Gdip_AddPathLine(pPath, x1, y1, x2, y2)
+ - Gdip_AddPathLines(pPath, Points)
+ - Gdip_AddPathPie(pPath, x, y, w, h, StartAngle, SweepAngle)
+ - Gdip_AddPathPolygon(pPath, Points)
+ - Gdip_AddPathRectangle(pPath, x, y, w, h)
+ - Gdip_AddPathRoundedRectangle(pPath, x, y, w, h, r)
+ - Gdip_AddPathString(pPath, String, hFontFamily, Style, Size, hStringFormat, X, Y, W, H)
+ - Gdip_AddPathStringSimplified(pPath, String, FontName, Size, Style, X, Y, Width, Height, Align:=0, NoWrap:=0)
+ - Gdip_AddPathToPath(pPathA, pPathB, fConnect)
+ - Gdip_ClonePath(pPath)
+ - Gdip_ClosePathFigure(pPath)
+ - Gdip_CreatePath(BrushMode:=0)
+ - Gdip_DeletePath(pPath)
+ - Gdip_FlattenPath(pPath, flatness, hMatrix:=0)
+ - Gdip_GetPathFillMode(pPath)
+ - Gdip_GetPathLastPoint(pPath, ByRef X, ByRef Y)
+ - Gdip_GetPathPoints(pPath)
+ - Gdip_GetPathPointsCount(pPath)
+ - Gdip_GetPathWorldBounds(pPath, hMatrix:=0, pPen:=0)
+ - Gdip_IsOutlineVisiblePathPoint(pGraphics, pPath, pPen, X, Y)
+ - Gdip_IsVisiblePathPoint(pPath, x, y, pGraphics)
+ - Gdip_PathOutline(pPath, flatness:=1, hMatrix:=0)
+ - Gdip_ResetPath(pPath)
+ - Gdip_ReversePath(pPath)
+ - Gdip_RotatePathAtCenter(pPath, Angle, MatrixOrder:=1)
+ - Gdip_SetPathFillMode(pPath, FillMode)
+ - Gdip_StartPathFigure(pPath)
+ - Gdip_TransformPath(pPath, hMatrix)
+ - Gdip_WidenPath(pPath, pPen, hMatrix:=0, Flatness:=1)
+
+## 43 Pen object functions
+ - Gdip_ClonePen(pPen)
+ - Gdip_CreatePen(ARGB, w, Unit:=2)
+ - Gdip_CreatePenFromBrush(pBrush, w, Unit:=2)
+ - Gdip_DeletePen(pPen)
+ - Gdip_GetPenAlignment(pPen)
+ - Gdip_GetPenBrushFill(pPen)
+ - Gdip_GetPenColor(pPen)
+ - Gdip_GetPenCompoundArray(pPen)
+ - Gdip_GetPenCompoundCount(pPen)
+ - Gdip_GetPenDashArray(pPen)
+ - Gdip_GetPenDashCaps(pPen)
+ - Gdip_GetPenDashCount(pPen)
+ - Gdip_GetPenDashOffset(pPen)
+ - Gdip_GetPenDashStyle(pPen)
+ - Gdip_GetPenEndCap(pPen)
+ - Gdip_GetPenFillType(pPen)
+ - Gdip_GetPenLineJoin(pPen)
+ - Gdip_GetPenMiterLimit(pPen)
+ - Gdip_GetPenStartCap(pPen)
+ - Gdip_GetPenTransform(pPen)
+ - Gdip_GetPenUnit(pPen)
+ - Gdip_GetPenWidth(pPen)
+ - Gdip_MultiplyPenTransform(pPen, hMatrix, matrixOrder:=0)
+ - Gdip_ResetPenTransform(pPen)
+ - Gdip_RotatePenTransform(pPen, Angle, matrixOrder:=0)
+ - Gdip_ScalePenTransform(pPen, ScaleX, ScaleY, matrixOrder:=0)
+ - Gdip_SetPenAlignment(pPen, Alignment)
+ - Gdip_SetPenBrushFill(pPen, pBrush)
+ - Gdip_SetPenColor(pPen, ARGB)
+ - Gdip_SetPenCompoundArray(pPen, inCompounds)
+ - Gdip_SetPenDashArray(pPen, Dashes)
+ - Gdip_SetPenDashCaps(pPen, LineCap)
+ - Gdip_SetPenDashOffset(pPen, Offset)
+ - Gdip_SetPenDashStyle(pPen, DashStyle)
+ - Gdip_SetPenEndCap(pPen, LineCap)
+ - Gdip_SetPenLineCaps(pPen, StartCap, EndCap, DashCap)
+ - Gdip_SetPenLineJoin(pPen, LineJoin)
+ - Gdip_SetPenMiterLimit(pPen, MiterLimit)
+ - Gdip_SetPenStartCap(pPen, LineCap)
+ - Gdip_SetPenTransform(pPen, pMatrix)
+ - Gdip_SetPenUnit(pPen, Unit)
+ - Gdip_SetPenWidth(pPen, width)
+ - Gdip_TranslatePenTransform(pPen, X, Y, matrixOrder:=0)
+
+## 28 PathGradient brush functions
+ - Gdip_AddPathGradient(pGraphics, x, y, w, h, cX, cY, cClr, sClr, BlendFocus, ScaleX, ScaleY, Shape, Angle:=0)
+ - Gdip_CreatePathGradient(Points, WrapMode)
+ - Gdip_GetPathGradientSurroundColors(pPathGradientBrush)
+ - Gdip_PathGradientCreateFromPath(pPath)
+ - Gdip_PathGradientGetCenterColor(pPathGradientBrush)
+ - Gdip_PathGradientGetCenterPoint(pPathGradientBrush, ByRef X, ByRef Y)
+ - Gdip_PathGradientGetFocusScales(pPathGradientBrush, ByRef X, ByRef Y)
+ - Gdip_PathGradientGetGammaCorrection(pPathGradientBrush)
+ - Gdip_PathGradientGetPointCount(pPathGradientBrush)
+ - Gdip_PathGradientGetRect(pPathGradientBrush)
+ - Gdip_PathGradientGetSurroundColorCount(pPathGradientBrush)
+ - Gdip_PathGradientGetTransform(pPathGradientBrush)
+ - Gdip_PathGradientGetWrapMode(pPathGradientBrush)
+ - Gdip_PathGradientMultiplyTransform(pPathGradientBrush, hMatrix, matrixOrder:=0)
+ - Gdip_PathGradientResetTransform(pPathGradientBrush)
+ - Gdip_PathGradientRotateTransform(pPathGradientBrush, Angle, matrixOrder:=0)
+ - Gdip_PathGradientScaleTransform(pPathGradientBrush, ScaleX, ScaleY, matrixOrder:=0)
+ - Gdip_PathGradientSetCenterColor(pBrush, CenterColor)
+ - Gdip_PathGradientSetCenterPoint(pBrush, X, Y)
+ - Gdip_PathGradientSetFocusScales(pBrush, xScale, yScale)
+ - Gdip_PathGradientSetGammaCorrection(pPathGradientBrush, UseGammaCorrection)
+ - Gdip_PathGradientSetLinearBlend(pBrush, Focus, Scale:=1)
+ - Gdip_PathGradientSetSigmaBlend(pBrush, Focus, Scale:=1)
+ - Gdip_PathGradientSetSurroundColors(pBrush, SurroundColors)
+ - Gdip_PathGradientSetTransform(pPathGradientBrush, pMatrix)
+ - Gdip_PathGradientSetWrapMode(pPathGradientBrush, WrapMode)
+ - Gdip_PathGradientTranslateTransform(pPathGradientBrush, X, Y, matrixOrder:=0)
+ - Gdip_RotatePathGradientAtCenter(pPathGradientBrush, Angle, MatrixOrder:=1)
+
+## 21 LinearGradient brush functions
+ - Gdip_CreateLinearGrBrush(x1, y1, x2, y2, ARGB1, ARGB2, WrapMode:=1)
+ - Gdip_CreateLinearGrBrushFromRect(x, y, w, h, ARGB1, ARGB2, LinearGradientMode:=1, WrapMode:=1)
+ - Gdip_GetLinearGrBrushBlendCount(pLinearGradientBrush)
+ - Gdip_GetLinearGrBrushColors(pLinearGradientBrush, ByRef ARGB1, ByRef ARGB2)
+ - Gdip_GetLinearGrBrushGammaCorrection(pLinearGradientBrush)
+ - Gdip_GetLinearGrBrushRect(pLinearGradientBrush)
+ - Gdip_GetLinearGrBrushTransform(pLineGradientBrush)
+ - Gdip_GetLinearGrBrushWrapMode(pLinearGradientBrush)
+ - Gdip_MultiplyLinearGrBrushTransform(pLinearGradientBrush, hMatrix, matrixOrder:=0)
+ - Gdip_ResetLinearGrBrushTransform(pLinearGradientBrush)
+ - Gdip_RotateLinearGrBrushAtCenter(pLinearGradientBrush, Angle, MatrixOrder:=1)
+ - Gdip_RotateLinearGrBrushTransform(pLinearGradientBrush, Angle, matrixOrder:=0)
+ - Gdip_ScaleLinearGrBrushTransform(pLinearGradientBrush, ScaleX, ScaleY, matrixOrder:=0)
+ - Gdip_SetLinearGrBrushColors(pLinearGradientBrush, ARGB1, ARGB2)
+ - Gdip_SetLinearGrBrushGammaCorrection(pLinearGradientBrush, UseGammaCorrection)
+ - Gdip_SetLinearGrBrushLinearBlend(pLinearGradientBrush, nFocus, nScale)
+ - Gdip_SetLinearGrBrushPresetBlend(pBrush, pA, pB, pC, pD, clr1, clr2, clr3, clr4)
+ - Gdip_SetLinearGrBrushSigmaBlend(pLinearGradientBrush, nFocus, nScale)
+ - Gdip_SetLinearGrBrushTransform(pLinearGradientBrush, pMatrix)
+ - Gdip_SetLinearGrBrushWrapMode(pLinearGradientBrush, WrapMode)
+ - Gdip_TranslateLinearGrBrushTransform(pLinearGradientBrush, X, Y, matrixOrder:=0)
+
+## 11 Texture brush functions
+ - Gdip_CreateTextureBrush(pBitmap, WrapMode:=1, x:=0, y:=0, w:="", h:="", matrix:="", ScaleX:="", ScaleY:="", Angle:=0, ImageAttr:=0)
+ - Gdip_GetTextureImage(pTexBrush)
+ - Gdip_GetTextureTransform(pTexBrush)
+ - Gdip_GetTextureWrapMode(pTexBrush)
+ - Gdip_MultiplyTextureTransform(pTexBrush, hMatrix, matrixOrder:=0)
+ - Gdip_ResetTextureTransform(pTexBrush)
+ - Gdip_RotateTextureTransform(pTexBrush, Angle, MatrixOrder:=0)
+ - Gdip_ScaleTextureTransform(pTexBrush, ScaleX, ScaleY, MatrixOrder:=0)
+ - Gdip_SetTextureTransform(pTexBrush, hMatrix)
+ - Gdip_SetTextureWrapMode(pTexBrush, WrapMode)
+ - Gdip_TranslateTextureTransform(pTexBrush, X, Y, MatrixOrder:=0)
+
+## 10 SolidFill and hatch brush functions
+ - Gdip_BrushCreateSolid(ARGB:=0xff000000)
+ - Gdip_CloneBrush(pBrush)
+ - Gdip_DeleteBrush(pBrush)
+ - Gdip_GetBrushType(pBrush)
+ - Gdip_GetSolidFillColor(pBrush)
+ - Gdip_SetSolidFillColor(pBrush, ARGB)
+ - Gdip_BrushCreateHatch(ARGBfront, ARGBback, HatchStyle:=0)
+ - Gdip_GetHatchBackgroundColor(pHatchBrush)
+ - Gdip_GetHatchForegroundColor(pHatchBrush)
+ - Gdip_GetHatchStyle(pHatchBrush)
+
+## 48 pBitmap functions
+ - Gdip_BitmapApplyEffect(pBitmap, pEffect, x:="", y:="", w:="", h:=0)
+ - Gdip_BitmapConvertFormat(pBitmap, PixelFormat, DitherType, DitherPaletteType, PaletteEntries, PaletteType, OptimalColors, UseTransparentColor:=0, AlphaThresholdPercent:=0)
+ - Gdip_BitmapConvertGray(pBitmap, hue:=0, vibrance:=-40, brightness:=1, contrast:=0, KeepPixelFormat:=0)
+ - Gdip_BitmapFromBase64(ByRef Base64)
+ - Gdip_BitmapFromBRA(ByRef BRAFromMemIn, File, Alternate := 0)
+ - Gdip_BitmapFromHWND(hwnd)
+ - Gdip_BitmapFromScreen(Screen:=0, Raster:="")
+ - Gdip_BitmapSelectActiveFrame(pBitmap, FrameIndex)
+ - Gdip_BitmapSetColorDepth(pBitmap, bitsDepth, useDithering:=1)
+ - Gdip_BitmapSetResolution(pBitmap, dpix, dpiy)
+ - Gdip_BlurBitmap(pBitmap, BlurAmount)
+ - Gdip_CloneBitmap(pBitmap)
+ - Gdip_CloneBitmapArea(pBitmap, x:="", y:="", w:=0, h:=0, PixelFormat:=0, KeepPixelFormat:=0)
+ - Gdip_CompareBitmaps(pBitmapA, pBitmapB, accuracy:=25)
+ - Gdip_CreateBitmap(Width, Height, PixelFormat:=0, Stride:=0, Scan0:=0)
+ - Gdip_CreateBitmapFromClipboard()
+ - Gdip_CreateBitmapFromFile(sFile, IconNumber:=1, IconSize:="", useICM:=0)
+ - Gdip_CreateBitmapFromGdiDib(BITMAPINFO, BitmapData)
+ - Gdip_CreateBitmapFromGraphics(pGraphics, Width, Height)
+ - Gdip_CreateBitmapFromHBITMAP(hBitmap, Palette:=0)
+ - Gdip_CreateBitmapFromHICON(hIcon)
+ - Gdip_CreateHBITMAPFromBitmap(pBitmap, Background:=0xffffffff)
+ - Gdip_DisposeImage(pBitmap, noErr:=0)
+ - Gdip_GetBitmapFramesCount(pBitmap)
+ - Gdip_GetHistogram(pBitmap, whichFormat, ByRef newArrayA, ByRef newArrayB, ByRef newArrayC)
+ - Gdip_GetImageBounds(pBitmap)
+ - Gdip_GetImageDimensions(pBitmap, ByRef Width, ByRef Height)
+ - Gdip_GetImageHeight(pBitmap)
+ - Gdip_GetImagePixelFormat(pBitmap, mode:=0)
+ - Gdip_GetImageRawFormat(pBitmap)
+ - Gdip_GetImageType(pBitmap)
+ - Gdip_BitmapGetDPIResolution(pBitmap, ByRef dpix, ByRef dpiy)
+ - Gdip_CreateBitmapFromHBITMAPalpha(hImage)
+ - Gdip_GetImageWidth(pBitmap)
+ - Gdip_GetPixelColor(pBitmap, x, y, Format)
+ - Gdip_GetImageThumbnail(pBitmap, W, H)
+ - Gdip_ImageRotateFlip(pBitmap, RotateFlipType:=1)
+ - Gdip_LoadImageFromFile(sFile, useICM:=0)
+ - Gdip_PixelateBitmap(pBitmap, ByRef pBitmapOut, BlockSize)
+ - Gdip_RenderPixelsOpaque(pBitmap, pBrush:=0, alphaLevel:=0)
+ - Gdip_ResizeBitmap(pBitmap, givenW, givenH, KeepRatio, InterpolationMode:=7, KeepPixelFormat:=0)
+ - Gdip_RetrieveBitmapChannel(pBitmap, channel)
+ - Gdip_RotateBitmapAtCenter(pBitmap, Angle, pBrush:=0, InterpolationMode:=7, PixelFormat:=0)
+ - Gdip_SaveBitmapToFile(pBitmap, sOutput, Quality:=75)
+ - Gdip_SetBitmapAlphaChannel(pBitmap, AlphaMaskBitmap)
+ - Gdip_SetBitmapToClipboard(pBitmap)
+ - Gdip_SetPixel(pBitmap, x, y, ARGB)
+ - Gdip_TestBitmapUniformity(pBitmap, HistogramFormat:=3, ByRef maxLevelIndex:=0, ByRef maxLevelPixels:=0)
+
+## 16 ImageAttributes and Effects functions
+ - Gdip_CloneImageAttributes(ImageAttr)
+ - Gdip_CreateImageAttributes()
+ - Gdip_DisposeImageAttributes(ImageAttr)
+ - Gdip_ResetImageAttributes(ImageAttr, ColorAdjustType)
+ - GenerateColorMatrix(modus, bright:=1, contrast:=0, saturation:=1, alph:=1, chnRdec:=0, chnGdec:=0, chnBdec:=0)
+ - Gdip_SetImageAttributesColorKeys(ImageAttr, ARGBLow, ARGBHigh, ColorAdjustType:=1, fEnable:=1)
+ - Gdip_SetImageAttributesColorMatrix(clrMatrix, ImageAttr:=0, grayMatrix:=0, ColorAdjustType:=1, fEnable:=1, ColorMatrixFlag:=0)
+ - Gdip_SetImageAttributesGamma(ImageAttr, Gamma, ColorAdjustType:=1, fEnable:=1)
+ - Gdip_SetImageAttributesOutputChannel(ImageAttr, ColorChannelFlags, ColorAdjustType:=1, fEnable:=1)
+ - Gdip_SetImageAttributesResetMatrix(ImageAttr, ColorAdjustType)
+ - Gdip_SetImageAttributesThreshold(ImageAttr, Threshold, ColorAdjustType:=1, fEnable:=1)
+ - Gdip_SetImageAttributesToggle(ImageAttr, ColorAdjustType, fEnable)
+ - Gdip_SetImageAttributesWrapMode(ImageAttr, WrapMode, ARGB)
+ - Gdip_CreateEffect(whichFX, paramA, paramB, paramC:=0)
+ - Gdip_DisposeEffect(pEffect)
+ - Gdip_BitmapApplyEffect(pBitmap, pEffect, x:="", y:="", w:="", h:=0)
+
+## 40 Fonts and StringFormat functions
+ - Gdip_CloneFont(hFont)
+ - Gdip_CloneFontFamily(hFontFamily)
+ - Gdip_CloneStringFormat(hStringFormat)
+ - Gdip_CreateFontFamilyFromFile(FontFile, hFontCollection, FontName:="")
+ - Gdip_CreateFontFromDC(hDC)
+ - Gdip_DeleteFont(hFont)
+ - Gdip_DeleteFontFamily(hFontFamily)
+ - Gdip_DeletePrivateFontCollection(hFontCollection)
+ - Gdip_DeleteStringFormat(hStringFormat)
+ - Gdip_FontCreate(hFontFamily, Size, Style:=0, Unit:=0)
+ - Gdip_FontFamilyCreate(FontName)
+ - Gdip_FontFamilyCreateGeneric(whichStyle)
+ - Gdip_GetFontFamily(hFont)
+ - Gdip_GetFontFamilyCellScents(hFontFamily, ByRef Ascent, ByRef Descent, Style:=0)
+ - Gdip_GetFontFamilyEmHeight(hFontFamily, Style:=0)
+ - Gdip_GetFontFamilyLineSpacing(hFontFamily, Style:=0)
+ - Gdip_GetFontFamilyName(hFontFamily)
+ - Gdip_GetFontHeight(hFont, pGraphics:=0)
+ - Gdip_GetFontHeightGivenDPI(hFont, DPI:=72)
+ - Gdip_GetFontSize(hFont)
+ - Gdip_GetFontStyle(hFont)
+ - Gdip_GetFontUnit(hFont)
+ - Gdip_GetStringFormatAlign(hStringFormat)
+ - Gdip_GetStringFormatDigitSubstitution(hStringFormat)
+ - Gdip_GetStringFormatHotkeyPrefix(hStringFormat)
+ - Gdip_GetStringFormatLineAlign(hStringFormat)
+ - Gdip_GetStringFormatTrimming(hStringFormat)
+ - Gdip_IsFontStyleAvailable(hFontFamily, Style)
+ - Gdip_MeasureString(pGraphics, sString, hFont, hStringFormat, ByRef RectF)
+ - Gdip_NewPrivateFontCollection()
+ - Gdip_SetStringFormatAlign(hStringFormat, Align)
+ - Gdip_SetStringFormatDigitSubstitution(hStringFormat, DigitSubstitute, LangID:=0)
+ - Gdip_SetStringFormatFlags(hStringFormat, Flags)
+ - Gdip_SetStringFormatHotkeyPrefix(hStringFormat, PrefixProcessMode)
+ - Gdip_SetStringFormatLineAlign(hStringFormat, StringAlign)
+ - Gdip_SetStringFormatTrimming(hStringFormat, TrimMode)
+ - Gdip_SetTextContrast(pGraphics, Contrast)
+ - Gdip_SetTextRenderingHint(pGraphics, RenderingHint)
+ - Gdip_StringFormatCreate(FormatFlags:=0, LangID:=0)
+ - Gdip_StringFormatGetGeneric(whichFormat:=0)
+
+## 40 pGraphics functions
+ - Gdip_DeleteGraphics(pGraphics)
+ - Gdip_GetCompositingMode(pGraphics)
+ - Gdip_GetCompositingQuality(pGraphics)
+ - Gdip_GetDC(pGraphics)
+ - Gdip_GetDPI(pGraphics, ByRef DpiX, ByRef DpiY)
+ - Gdip_GetInterpolationMode(pGraphics)
+ - Gdip_GetPageScale(pGraphics)
+ - Gdip_GetPageUnit(pGraphics)
+ - Gdip_GetPixelOffsetMode(pGraphics)
+ - Gdip_GetRenderingOrigin(pGraphics, ByRef X, ByRef Y)
+ - Gdip_GetSmoothingMode(pGraphics)
+ - Gdip_GetTextContrast(pGraphics)
+ - Gdip_GetTextRenderingHint(pGraphics)
+ - Gdip_GetWorldTransform(pGraphics)
+ - Gdip_GraphicsClear(pGraphics, ARGB:=0x00ffffff)
+ - Gdip_GraphicsFlush(pGraphics, intent)
+ - Gdip_GraphicsFromHDC(hDC, InterpolationMode:="", SmoothingMode:="", PageUnit:="", CompositingQuality:="")
+ - Gdip_GraphicsFromHWND(HWND, useICM:=0, InterpolationMode:="", SmoothingMode:="", PageUnit:="", CompositingQuality:="")
+ - Gdip_GraphicsFromImage(pBitmap, InterpolationMode:="", SmoothingMode:="", PageUnit:="", CompositingQuality:="")
+ - Gdip_IsVisibleGraphPoint(pGraphics, X, Y)
+ - Gdip_IsVisibleGraphRect(pGraphics, X, Y, Width, Height)
+ - Gdip_IsVisibleGraphRectEntirely(pGraphics, X, Y, Width, Height)
+ - Gdip_MultiplyWorldTransform(pGraphics, hMatrix, matrixOrder:=0)
+ - Gdip_ReleaseDC(pGraphics, hdc)
+ - Gdip_ResetPageTransform(pGraphics)
+ - Gdip_ResetWorldTransform(pGraphics)
+ - Gdip_RotateWorldTransform(pGraphics, Angle, MatrixOrder:=0)
+ - Gdip_ScaleWorldTransform(pGraphics, x, y, MatrixOrder:=0)
+ - Gdip_SetCompositingMode(pGraphics, CompositingMode)
+ - Gdip_SetCompositingQuality(pGraphics, CompositionQuality)
+ - Gdip_SetInterpolationMode(pGraphics, InterpolationMode)
+ - Gdip_SetPageScale(pGraphics, Scale)
+ - Gdip_SetPageUnit(pGraphics, Unit)
+ - Gdip_SetPixelOffsetMode(pGraphics, PixelOffsetMode)
+ - Gdip_SetRenderingOrigin(pGraphics, X, Y)
+ - Gdip_SetSmoothingMode(pGraphics, SmoothingMode)
+ - Gdip_SetTextContrast(pGraphics, Contrast)
+ - Gdip_SetTextRenderingHint(pGraphics, RenderingHint)
+ - Gdip_SetWorldTransform(pGraphics, hMatrix)
+ - Gdip_TranslateWorldTransform(pGraphics, x, y, MatrixOrder:=0)
+
+## 21 Region functions
+ - Gdip_CloneRegion(Region)
+ - Gdip_CombineRegionPath(Region, pPath, CombineMode)
+ - Gdip_CombineRegionRect(Region, x, y, w, h, CombineMode)
+ - Gdip_CombineRegionRegion(Region, Region2, CombineMode)
+ - Gdip_CreateRegion()
+ - Gdip_CreateRegionPath(pPath)
+ - Gdip_CreateRegionRect(x, y, w, h)
+ - Gdip_DeleteRegion(Region)
+ - Gdip_GetClipRegion(pGraphics)
+ - Gdip_GetRegionBounds(pGraphics, Region)
+ - Gdip_IsEmptyRegion(pGraphics, Region)
+ - Gdip_IsEqualRegion(pGraphics, Region1, Region2)
+ - Gdip_IsInfiniteRegion(pGraphics, Region)
+ - Gdip_IsVisibleRegionPoint(pGraphics, Region, x, y)
+ - Gdip_IsVisibleRegionRect(pGraphics, Region, x, y, width, height)
+ - Gdip_IsVisibleRegionRectEntirely(pGraphics, Region, x, y, width, height)
+ - Gdip_RotateRegionAtCenter(pGraphics, Region, Angle, MatrixOrder:=1)
+ - Gdip_SetEmptyRegion(Region)
+ - Gdip_SetInfiniteRegion(Region)
+ - Gdip_TransformRegion(Region, pMatrix)
+ - Gdip_TranslateRegion(Region, X, Y)
+
+## 10 Clip functions
+ - Gdip_GetClipBounds(pGraphics)
+ - Gdip_GetVisibleClipBounds(pGraphics)
+ - Gdip_IsClipEmpty(pGraphics)
+ - Gdip_IsVisibleClipEmpty(pGraphics)
+ - Gdip_ResetClip(pGraphics)
+ - Gdip_SetClipFromGraphics(pGraphics, pGraphicsSrc, CombineMode:=0)
+ - Gdip_SetClipPath(pGraphics, pPath, CombineMode:=0)
+ - Gdip_SetClipRect(pGraphics, x, y, w, h, CombineMode:=0)
+ - Gdip_SetClipRegion(pGraphics, Region, CombineMode:=0)
+ - Gdip_TranslateClip(pGraphics, dX, dY)
+
+## 14 Transformation Matrix functions
+ - Gdip_CloneMatrix(hMatrix)
+ - Gdip_CreateAffineMatrix(m11, m12, m21, m22, x, y)
+ - Gdip_CreateMatrix()
+ - Gdip_DeleteMatrix(hMatrix)
+ - Gdip_InvertMatrix(hMatrix)
+ - Gdip_IsMatrixEqual(hMatrixA, hMatrixB)
+ - Gdip_IsMatrixIdentity(hMatrix)
+ - Gdip_IsMatrixInvertible(hMatrix)
+ - Gdip_MultiplyMatrix(hMatrixA, hMatrixB, matrixOrder)
+ - Gdip_ResetMatrix(hMatrix)
+ - Gdip_RotateMatrix(hMatrix, Angle, MatrixOrder:=0)
+ - Gdip_ScaleMatrix(hMatrix, ScaleX, ScaleY, MatrixOrder:=0)
+ - Gdip_SetMatrixElements(hMatrix, m11, m12, m21, m22, x, y)
+ - Gdip_TranslateMatrix(hMatrix, offsetX, offsetY, MatrixOrder:=0)
+
+## 35 Draw/Fill on pGraphics functions
+ - Gdip_DrawArc(pGraphics, pPen, x, y, w, h, StartAngle, SweepAngle)
+ - Gdip_DrawBezier(pGraphics, pPen, x1, y1, x2, y2, x3, y3, x4, y4)
+ - Gdip_DrawBezierCurve(pGraphics, pPen, Points)
+ - Gdip_DrawCachedBitmap(pGraphics, pCachedBitmap, X, Y)
+ - Gdip_DrawClosedCurve(pGraphics, pPen, Points, Tension:=1)
+ - Gdip_DrawCurve(pGraphics, pPen, Points, Tension:="")
+ - Gdip_DrawDrivenString(pGraphics, String, hFont, pBrush, DriverPoints, Flags:=1, hMatrix:=0)
+ - Gdip_DrawEllipse(pGraphics, pPen, x, y, w, h)
+ - Gdip_DrawImage(pGraphics, pBitmap, dx:="", dy:="", dw:="", dh:="", sx:="", sy:="", sw:="", sh:="", Matrix:=1, Unit:=2, ImageAttr:=0)
+ - Gdip_DrawImageFast(pGraphics, pBitmap, X:=0, Y:=0)
+ - Gdip_DrawImageFX(pGraphics, pBitmap, dX:="", dY:="", sX:="", sY:="", sW:="", sH:="", matrix:="", pEffect:="", ImageAttr:=0, hMatrix:=0, Unit:=2)
+ - Gdip_DrawImagePointsRect(pGraphics, pBitmap, Points, sx:="", sy:="", sw:="", sh:="", Matrix:=1, Unit:=2, ImageAttr:=0)
+ - Gdip_DrawImageRect(pGraphics, pBitmap, X, Y, W, H)
+ - Gdip_DrawLine(pGraphics, pPen, x1, y1, x2, y2)
+ - Gdip_DrawLines(pGraphics, pPen, Points)
+ - Gdip_DrawOrientedString(pGraphics, String, FontName, Size, Style, X, Y, Width, Height, Angle:=0, pBrush:=0, pPen:=0, Align:=0, ScaleX:=1)
+ - Gdip_DrawPath(pGraphics, pPen, pPath)
+ - Gdip_DrawPie(pGraphics, pPen, x, y, w, h, StartAngle, SweepAngle)
+ - Gdip_DrawPolygon(pGraphics, pPen, Points)
+ - Gdip_DrawRectangle(pGraphics, pPen, x, y, w, h)
+ - Gdip_DrawRoundedLine(G, x1, y1, x2, y2, LineWidth, LineColor)
+ - Gdip_DrawRoundedRectangle(pGraphics, pPen, x, y, w, h, r)
+ - Gdip_DrawRoundedRectangle2(pGraphics, pPen, x, y, w, h, r, angle:=0)
+ - Gdip_DrawString(pGraphics, sString, hFont, hStringFormat, pBrush, ByRef RectF)
+ - Gdip_DrawStringAlongPolygon(pGraphics, String, FontName, FontSize, Style, pBrush, DriverPoints:=0, pPath:=0, minDist:=0, flatness:=4, hMatrix:=0, Unit:=0)
+ - Gdip_FillClosedCurve(pGraphics, pBrush, Points, Tension:="", FillMode:=0)
+ - Gdip_FillEllipse(pGraphics, pBrush, x, y, w, h)
+ - Gdip_FillPath(pGraphics, pBrush, pPath)
+ - Gdip_FillPie(pGraphics, pBrush, x, y, w, h, StartAngle, SweepAngle)
+ - Gdip_FillPolygon(pGraphics, pBrush, Points, FillMode:=0)
+ - Gdip_FillRectangle(pGraphics, pBrush, x, y, w, h)
+ - Gdip_FillRegion(pGraphics, pBrush, Region)
+ - Gdip_FillRoundedRectangle(pGraphics, pBrush, x, y, w, h, r)
+ - Gdip_FillRoundedRectangle2(pGraphics, pBrush, x, y, w, h, r)
+ - Gdip_TextToGraphics(pGraphics, Text, Options, Font:="Arial", Width:="", Height:="", Measure:=0, userBrush:=0, Unit:=0)
+
+## 18 GDI functions [selection]
+ - CreateDIBSection(w, h, hdc:="", bpp:=32, ByRef ppvBits:=0)
+ - Gdi_CreateDIBitmap(hdc, bmpInfoHeader, CBM_INIT, pBits, BITMAPINFO, DIB_COLORS)
+ - Gdi_GetDIBits(hdc, hBitmap, start, cLines, pBits, BITMAPINFO, DIB_COLORS)
+ - Gdi_StretchDIBits(hDestDC, dX, dY, dW, dH, sX, sY, sW, sH, tBITMAPINFO, Usage, pBits, Rop)
+ - Gdi_SetDIBitsToDevice(hDC, dX, dY, Width, Height, sX, sY, StartScan, ScanLines, pBits, BITMAPINFO, DIB_COLORS)
+ - PaintDesktop(hdc)
+ - PrintWindow(hwnd, hdc, Flags:=0)
+ - BitBlt(ddc, dx, dy, dw, dh, sdc, sx, sy, raster:="")
+ - StretchBlt(ddc, dx, dy, dw, dh, sdc, sx, sy, sw, sh, Raster:="")
+ - SetStretchBltMode(hdc, iStretchMode:=4)
+ - UpdateLayeredWindow(hwnd, hdc, x:="", y:="", w:="", h:="", Alpha:=255)
+ - CreateCompatibleDC(hdc:=0)
+ - SelectObject(hdc, hgdiobj)
+ - DeleteObject(hObject)
+ - GetDC(hwnd:=0)
+ - GetDCEx(hwnd, flags:=0, hrgnClip:=0)
+ - ReleaseDC(hdc, hwnd:=0)
+ - DeleteDC(hdc)
+
+## 22 Other functions [selection]
+ - Gdip_CreateCachedBitmap(pBitmap, pGraphics)
+ - Gdip_DeleteCachedBitmap(pCachedBitmap)
+ - Gdip_CreateHICONFromBitmap(pBitmap)
+ - Gdip_GetAllPropertyItems(pImage)
+ - Gdip_GetPropertyCount(pImage)
+ - Gdip_GetPropertyIdList(pImage)
+ - Gdip_GetPropertyItem(pImage, PropID)
+ - Gdip_GetPropertyItemValue(ByRef PropVal, PropLen, PropType, PropAddr)
+ - Gdip_GetPropertyTagName(PropID)
+ - Gdip_GetPropertyTagType(PropType)
+ - Gdip_GetRotatedDimensions(Width, Height, Angle, ByRef RWidth, ByRef RHeight)
+ - Gdip_GetRotatedEllipseDimensions(Width, Height, Angle, ByRef RWidth, ByRef RHeight)
+ - Gdip_GetRotatedTranslation(Width, Height, Angle, ByRef xTranslation, ByRef yTranslation)
+ - Gdip_GetLockBitPixel(Scan0, x, y, Stride)
+ - Gdip_LockBits(pBitmap, x, y, w, h, ByRef Stride, ByRef Scan0, ByRef BitmapData, LockMode := 3, PixelFormat := 0x26200a)
+ - Gdip_SetLockBitPixel(ARGB, Scan0, x, y, Stride)
+ - Gdip_UnlockBits(pBitmap, ByRef BitmapData)
+ - GetIconDimensions(hIcon, ByRef Width, ByRef Height)
+ - GetMonitorCount()
+ - GetMonitorInfo(MonitorNum)
+ - GetPrimaryMonitor()
+ - SetImage(hwnd, hBitmap)
+
+# COMPARISIONS
+
+The following list is comparing Gdip_All.ahk by Tariq Porter and Rseding91 modifications with this new version.
+
+## 23 MODIFIED FUNCTIONS:
+ - Gdip_BitmapFromBRA()
+ - Gdip_BitmapFromHWND()
+ - Gdip_BitmapFromScreen()
+ - Gdip_CloneBitmapArea()
+ - Gdip_CreateBitmap()
+ - Gdip_CreateBitmapFromClipboard()
+ - Gdip_CreateBitmapFromFile()
+ - Gdip_CreateTextureBrush()
+ - Gdip_DrawImage()
+ - Gdip_DrawImagePointsRect()
+ - Gdip_DrawLines()
+ - Gdip_FillPolygon()
+ - Gdip_GetClipRegion()
+ - Gdip_GetImagePixelFormat()
+ - Gdip_GraphicsFromHDC()
+ - Gdip_GraphicsFromImage()
+ - Gdip_SaveBitmapToFile()
+ - Gdip_SetBitmapToClipboard()
+ - Gdip_SetImageAttributesColorMatrix()
+ - Gdip_TextToGraphics()
+ - SetImage()
+ - SetSysColorToControl()
+ - UpdateLayeredWindow()
+
+## ~300 NEW FUNCTIONS [and credits]:
+
+- Unknown source [probably mmikeww]:
+  - Gdip_BitmapFromBase64()
+  - GetIconDimensions()     
+
+- by tmplinshi:
+  - Source: https://www.autohotkey.com/boards/viewtopic.php?f=6&t=813&p=298435#p297794
+  - Gdip_CreateFontFamilyFromFile()
+
+- by Tariq Porter [tic]:
+  - Source:A: https://github.com/tariqporter/Gdip2/blob/master/lib/Object.ahk
+  - Source B: https://autohotkey.com/board/topic/29449-gdi-standard-library-145-by-tic/page-11
+  - Gdip_FillRoundedRectangle2()
+  - Gdip_DrawRoundedRectangle2()
+  - Gdip_CompareBitmaps()
+
+- by iseahound:
+  - Source: https://www.autohotkey.com/boards/viewtopic.php?f=6&t=63345
+  - ... part of: https://github.com/iseahound/Graphics/blob/master/lib/Graphics.ahk
+  - Gdip_CreateBitmapFromHBITMAPalpha()
+
+- by DevX and Rabiator:
+  - Source: https://autohotkey.com/board/topic/29449-gdi-standard-library-145-by-tic/page-11
+  - Gdip_DrawRoundedLine()
+
+- by SBC:
+  - Source: extracted from his «Picture Viewer» script https://autohotkey.com/board/topic/58226-ahk-picture-viewer/
+  - Gdip_GetBitmapFramesCount()
+
+- by jballi:
+  - Source: https://www.autohotkey.com/boards/viewtopic.php?style=7&t=70508
+  - Gdip_GetImageThumbnail()
+
+- by iPhilip:
+  - Gdip_SetPenDashStyle()
+
+- 9 by RazorHalo:
+  - Source: https://www.autohotkey.com/boards/viewtopic.php?f=6&t=6517&start=260
+  - Gdip_RotatePathAtCenter()
+  - Gdip_ResetMatrix()
+  - Gdip_RotateMatrix()
+  - Gdip_GetPathWorldBounds()
+  - Gdip_ScaleMatrix()
+  - Gdip_TranslateMatrix()
+  - Gdip_TransformPath()
+  - Gdip_SetMatrixElements()
+  - Gdip_IsVisiblePathPoint()
+
+- 14 by "Learning one":
+  - Source: https://autohotkey.com/board/topic/29449-gdi-standard-library-145-by-tic/page-75
+  - Gdip_AddPathBeziers()
+  - Gdip_AddPathBezier()
+  - Gdip_AddPathLines()
+  - Gdip_AddPathLine()
+  - Gdip_AddPathArc()
+  - Gdip_AddPathPie()
+  - Gdip_SetPathFillMode()
+  - Gdip_StartPathFigure()
+  - Gdip_ClosePathFigure()
+  - Gdip_DrawPath()
+  - Gdip_WidenPath()
+  - Gdip_ClonePath()
+  - Gdip_CombineRegionRegion()
+  - Gdip_CreateRegionPath()
+
+- 23 by "Just Me":
+  - Source A: [get image metadata using GDI+] https://autohotkey.com/board/topic/85238-get-image-metadata-using-gdi-ahk-l/
+  - Source B: [PathGradient functions] https://autohotkey.com/board/topic/29449-gdi-standard-library-145-by-tic/page-65
+  - Gdip_PathGradientCreateFromPath()
+  - Gdip_PathGradientSetCenterPoint()
+  - Gdip_PathGradientSetCenterColor()
+  - Gdip_PathGradientSetSurroundColors()
+  - Gdip_PathGradientSetSigmaBlend()
+  - Gdip_PathGradientSetLinearBlend()
+  - Gdip_PathGradientSetFocusScales()
+  - Gdip_AddPathGradient()
+  - Gdip_LoadImageFromFile()
+  - Gdip_GetPropertyCount()
+  - Gdip_GetPropertyIdList()
+  - Gdip_GetPropertyItem()
+  - Gdip_GetAllPropertyItems()
+  - Gdip_GetPropertyTagName()
+  - Gdip_GetPropertyTagType()
+  - Gdip_GetPropertyItemValue()
+  - Multiple Display Monitors Functions by "Just me":
+    - Source: https://autohotkey.com/boards/viewtopic.php?f=6&t=4606
+    - GetMonitorCount()
+    - GetMonitorInfo()
+    - GetPrimaryMonitor()
+    - MDMF_FromHWND()
+    - MDMF_FromPoint()
+    - MDMF_FromRect()
+    - MDMF_GetInfo()
+ 
+- 4 by Tidbit:
+  - ConvertHSLtoRGB()
+  - ConvertHueToRGB()
+  - ConvertRGBtoHSL()
+
+- 12 by nnnik [extracted from his GDI+ class]:
+  - Source: https://github.com/nnnik/classGDIp
+  - Gdip_DrawBeziers()
+  - Gdip_SetLinearGrBrushColors()
+  - Gdip_GetLinearGrBrushColors()
+  - Gdip_SetSolidFillColor()
+  - Gdip_GetSolidFillColor()
+  - Gdip_ClonePen()
+  - Gdip_SetPenWidth()
+  - Gdip_GetPenWidth()
+  - Gdip_SetPenColor()
+  - Gdip_GetPenColor()
+  - Gdip_SetPenBrushFill()
+  - Gdip_CreateFontFromDC()
+
+- 228 by Marius Șucan [robodesign.ro]:
+  - Gdip_AddPathRoundedRectangle()
+  - Gdip_GetRotatedEllipseDimensions()
+  - Gdip_NewPrivateFontCollection()
+  - Gdip_DeletePrivateFontCollection()
+  - Gdip_MultiplyPenTransform()
+  - Gdip_PathGradientMultiplyTransform()
+  - Gdip_MultiplyLinearGrBrushTransform()
+  - Gdip_MultiplyTextureTransform()
+  - Gdip_MultiplyWorldTransform()
+  - Gdip_BitmapConvertGray()
+  - Gdip_BitmapSetColorDepth()
+  - Gdip_BitmapConvertFormat()
+  - Gdip_GetImageRawFormat()
+  - Gdip_RenderPixelsOpaque()
+  - Gdip_SetBitmapAlphaChannel()
+  - Gdip_RetrieveBitmapChannel()
+  - Gdip_TestBitmapUniformity()
+  - Gdi_StretchDIBits()
+  - Gdi_SetDIBitsToDevice()
+  - Gdip_ResizeBitmap()
+  - Gdip_CreateBitmapFromGraphics()
+  - Gdip_CreateBitmapFromGdiDib()
+  - Gdip_DrawPolygon()
+  - Gdip_DrawCurve()
+  - Gdip_DrawImageFast()
+  - Gdip_DrawImageRect()
+  - Gdip_SetPenDashCaps()
+  - Gdip_GetPenDashCaps()
+  - Gdip_TranslateTextureTransform()
+  - Gdip_SetWorldTransform()
+  - Gdip_ResetPageTransform()
+  - Gdip_GraphicsFromHWND()
+  - Gdip_CombineRegionRect()
+  - Gdip_AddPathToPath()
+  - Gdip_GetImageType()
+  - Gdip_FlattenPath()
+  - Gdip_PathOutline()
+  - Gdip_BitmapSelectActiveFrame()
+  - Gdip_CreateImageAttributes()
+  - Gdip_CloneImageAttributes()
+  - Gdip_ResetImageAttributes()
+  - Gdip_SetImageAttributesThreshold()
+  - Gdip_SetImageAttributesResetMatrix()
+  - Gdip_SetImageAttributesGamma()
+  - Gdip_SetImageAttributesToggle()
+  - Gdip_SetImageAttributesOutputChannel()
+  - Gdip_SetImageAttributesColorKeys()
+  - Gdip_SetImageAttributesWrapMode()
+  - Gdip_DrawStringAlongPolygon()
+  - Gdip_InvertMatrix()
+  - Gdip_IsMatrixEqual()
+  - Gdip_IsMatrixIdentity()
+  - Gdip_IsMatrixInvertible()
+  - Gdip_MultiplyMatrix()
+  - Gdip_GetPenDashStyle()
+  - Gdip_SetPenEndCap()
+  - Gdip_GetPenEndCap()
+  - Gdip_SetPenAlignment()
+  - Gdip_GetPenAlignment()
+  - Gdip_GetBrushType()
+  - Gdip_GetSmoothingMode()
+  - Gdip_DrawDrivenString()
+  - Gdip_DrawOrientedString()
+  - Gdip_CombineRegionPath()
+  - Gdip_AddPathStringSimplified()
+  - Gdip_CloneFont()
+  - Gdip_GetFontFamily()
+  - Gdip_CloneFontFamily()
+  - Gdip_IsFontStyleAvailable()
+  - Gdip_StringFormatGetGeneric()
+  - Gdip_GetStringFormatAlign()
+  - Gdip_GetStringFormatLineAlign()
+  - Gdip_GetStringFormatDigitSubstitution()
+  - Gdip_GetStringFormatHotkeyPrefix()
+  - Gdip_GetStringFormatTrimming()
+  - Gdip_SetStringFormatLineAlign()
+  - Gdip_SetStringFormatDigitSubstitution()
+  - Gdip_SetStringFormatFlags()
+  - Gdip_SetStringFormatHotkeyPrefix()
+  - Gdip_SetStringFormatTrimming()
+  - Gdip_AddPathString()
+  - Gdip_FontFamilyCreateGeneric()
+  - Gdip_GetFontHeight()
+  - Gdip_GetFontHeightGivenDPI()
+  - Gdip_GetFontSize()
+  - Gdip_GetFontStyle()
+  - Gdip_GetFontUnit()
+  - Gdip_GetFontFamilyCellScents()
+  - Gdip_GetFontFamilyEmHeight()
+  - Gdip_GetFontFamilyLineSpacing()
+  - Gdip_GetFontFamilyName()
+  - Gdip_GetPathGradientSurroundColors()
+  - Gdip_GetPathPoints()
+  - Gdip_CloneMatrix()
+  - Gdip_GetPenCompoundArray()
+  - Gdip_GetPenDashArray()
+  - Gdip_RotateBitmapAtCenter()
+  - Gdip_RotateLinearGrBrushAtCenter()
+  - Gdip_SetLinearGrBrushTransform()
+  - Gdip_RotatePathGradientAtCenter()
+  - Gdip_PathGradientSetTransform()
+  - Gdip_RotateRegionAtCenter()
+  - Gdip_TransformRegion()
+  - Gdip_SetTextureTransform()
+  - Gdip_SetPenTransform()
+  - Gdip_GetLinearGrBrushTransform()
+  - Gdip_PathGradientGetTransform()
+  - Gdip_GetPenTransform()
+  - Gdip_GetTextureTransform()
+  - Gdip_CreatePathGradient()
+  - Gdip_FillClosedCurve()
+  - Gdip_SetPenCompoundArray()
+  - Gdip_SetPenDashArray()
+  - Gdip_SetPenDashOffset()
+  - Gdip_SetPenLineJoin()
+  - Gdip_SetPenMiterLimit()
+  - Gdip_SetPenUnit()
+  - Gdip_GetPenDashCount()
+  - Gdip_GetPenDashOffset()
+  - Gdip_GetPenLineJoin()
+  - Gdip_GetPenMiterLimit()
+  - Gdip_GetPenUnit()
+  - Gdip_GetPenCompoundCount()
+  - Gdip_DrawClosedCurve()
+  - Gdip_AddPathClosedCurve()
+  - Gdip_AddPathCurve()
+  - Gdip_GetLinearGrBrushWrapMode()
+  - Gdip_SetLinearGrBrushLinearBlend()
+  - Gdip_SetLinearGrBrushSigmaBlend()
+  - Gdip_SetLinearGrBrushWrapMode()
+  - Gdip_GetLinearGrBrushBlendCount()
+  - Gdip_PathGradientGetCenterColor()
+  - Gdip_PathGradientGetCenterPoint()
+  - Gdip_PathGradientGetFocusScales()
+  - Gdip_PathGradientGetSurroundColorCount()
+  - Gdip_PathGradientTranslateTransform()
+  - Gdip_ResetPenTransform()
+  - Gdip_RotatePenTransform()
+  - Gdip_ScalePenTransform()
+  - Gdip_TranslatePenTransform()
+  - Gdip_GetPenBrushFill()
+  - Gdip_GetPenFillType()
+  - Gdip_GetPenStartCap()
+  - Gdip_SetPenLineCaps()
+  - Gdip_SetPenStartCap()
+  - Gdip_CreateCachedBitmap()
+  - Gdip_DrawCachedBitmap()
+  - Gdip_DeleteCachedBitmap()
+  - Gdip_GetTextureImage()
+  - Gdip_IsOutlineVisiblePathPoint()
+  - Gdip_IsVisibleRegionRectEntirely()
+  - Gdip_GetLinearGrBrushGammaCorrection()
+  - Gdip_SetLinearGrBrushGammaCorrection()
+  - Gdip_GetLinearGrBrushRect()
+  - Gdip_ResetLinearGrBrushTransform()
+  - Gdip_ScaleLinearGrBrushTransform()
+  - Gdip_RotateLinearGrBrushTransform()
+  - Gdip_TranslateLinearGrBrushTransform()
+  - Gdip_IsClipEmpty()
+  - Gdip_IsVisibleClipEmpty()
+  - Gdip_IsVisibleGraphPoint()
+  - Gdip_IsVisibleGraphRectEntirely()
+  - Gdip_IsVisibleGraphRect()
+  - Gdip_SetClipFromGraphics()
+  - Gdip_GetClipBounds()
+  - Gdip_GetVisibleClipBounds()
+  - Gdip_GetTextContrast()
+  - Gdip_PathGradientGetGammaCorrection()
+  - Gdip_PathGradientGetPointCount()
+  - Gdip_PathGradientGetRect()
+  - Gdip_PathGradientSetGammaCorrection()
+  - Gdip_PathGradientSetWrapMode()
+  - Gdip_PathGradientGetWrapMode()
+  - Gdip_PathGradientResetTransform()
+  - Gdip_PathGradientRotateTransform()
+  - Gdip_PathGradientScaleTransform()
+  - Gdip_GetPathFillMode()
+  - Gdip_GetPathLastPoint()
+  - Gdip_GetPathPointsCount()
+  - Gdip_ResetPath()
+  - Gdip_ReversePath()
+  - Gdip_GetHatchBackgroundColor()
+  - Gdip_GetHatchForegroundColor()
+  - Gdip_GetHatchStyle()
+  - *Gdip_GetHistogram()
+  - Gdip_CreateRegionRect()
+  - Gdip_GetWorldTransform()
+  - Gdip_CloneRegion()
+  - Gdip_SetTextureWrapMode()
+  - Gdip_GetTextureWrapMode()
+  - Gdip_ScaleTextureTransform()
+  - Gdip_RotateTextureTransform()
+  - Gdip_ResetTextureTransform()
+  - Gdip_TranslateRegion()
+  - Gdip_TranslateClip()
+  - Gdip_IsEmptyRegion()
+  - Gdip_IsEqualRegion()
+  - Gdip_IsInfiniteRegion()
+  - Gdip_IsVisibleRegionPoint()
+  - Gdip_IsVisibleRegionRect()
+  - Gdip_SetEmptyRegion()
+  - Gdip_SetInfiniteRegion()
+  - Gdip_GetRegionBounds()
+  - Gdip_GraphicsFlush()
+  - Gdip_GetImageBounds()
+  - Gdip_GetImageDimension()
+  - Gdip_CloneBitmap()
+  - Gdip_SetCompositingQuality()
+  - Gdip_SetPageScale()
+  - Gdip_SetPageUnit()
+  - Gdip_SetPixelOffsetMode()
+  - Gdip_SetRenderingOrigin()
+  - Gdip_SetTextContrast()
+  - Gdip_GetCompositingMode()
+  - Gdip_GetCompositingQuality()
+  - Gdip_GetInterpolationMode()
+  - Gdip_GetPageScale()
+  - Gdip_GetPageUnit()
+  - Gdip_GetPixelOffsetMode()
+  - Gdip_GetRenderingOrigin()
+  - Gdip_GetTextRenderingHint()
+  - Gdip_DrawImageFX()
+  - Gdip_BitmapApplyEffect()
+  - Gdip_CreateEffect()
+  - Gdip_DisposeEffect()
+  - Gdi_CreateDIBitmap()
+  - Gdi_GetDIBits()
+  - GenerateColorMatrix()
+
+(*) mainly written by swagfag, but at my request and modified it further
+    - https://www.autohotkey.com/boards/viewtopic.php?f=6&t=62550
+
+# 155 GDI+ functions still missing
+In short, functions related to Custom Line Caps for lines, ImagePalette management, PathIterator objects and Metafiles... are entirely omitted.
+
+ - GdipAddPathCurve3
+ - GdipAddPathRectangles
+ - GdipBeginContainer
+ - GdipBeginContainer2
+ - GdipClearPathMarkers
+ - GdipCloneCustomLineCap
+ - GdipClosePathFigures
+ - GdipCreateBitmapFromResource
+ - GdipCreateCustomLineCap
+ - GdipCreateFontFromLogfontA
+ - GdipCreateFontFromLogfontW
+ - GdipCreateFromHDC2
+ - GdipCreateHalftonePalette
+ - GdipCreateLineBrushFromRectWithAngle
+ - GdipCreateMatrix3
+ - GdipCreateMetafileFromEmf
+ - GdipCreateMetafileFromFile
+ - GdipCreateMetafileFromStream
+ - GdipCreateMetafileFromWmf
+ - GdipCreateMetafileFromWmfFile
+ - GdipCreatePath2
+ - GdipCreatePathIter
+ - GdipCreateRegionHrgn
+ - GdipCreateRegionRgnData
+ - GdipCreateStreamOnFile
+ - GdipDeletePathIter
+ - GdipDrawCurve3
+ - GdipDrawImagePointRect
+ - GdipDrawRectangles
+ - GdipEmfToWmfBits
+ - GdipEndContainer
+ - GdipEnumerateMetafileDestPoint
+ - GdipEnumerateMetafileDestPoints
+ - GdipEnumerateMetafileDestRect
+ - GdipEnumerateMetafileSrcRectDestPoint
+ - GdipEnumerateMetafileSrcRectDestPoints
+ - GdipEnumerateMetafileSrcRectDestRect
+ - GdipFillRectangles
+ - GdipGetCustomLineCapBaseCap
+ - GdipGetCustomLineCapBaseInset
+ - GdipGetCustomLineCapStrokeCaps
+ - GdipGetCustomLineCapStrokeJoin
+ - GdipGetCustomLineCapType
+ - GdipGetCustomLineCapWidthScale
+ - GdipGetFontCollectionFamilyCount
+ - GdipGetFontCollectionFamilyList
+ - GdipGetHemfFromMetafile
+ - GdipGetImageAttributesAdjustedPalette
+ - GdipGetImagePalette
+ - GdipGetImagePaletteSize
+ - GdipGetLineBlend
+ - GdipGetLinePresetBlend
+ - GdipGetLinePresetBlendCount
+ - GdipGetLogFontA
+ - GdipGetLogFontW
+ - GdipGetMatrixElements
+ - GdipGetMetafileDownLevelRasterizationLimit
+ - GdipGetMetafileHeaderFromEmf
+ - GdipGetMetafileHeaderFromFile
+ - GdipGetMetafileHeaderFromMetafile
+ - GdipGetMetafileHeaderFromStream
+ - GdipGetMetafileHeaderFromWmf
+ - GdipGetNearestColor
+ - GdipGetPathData
+ - GdipGetPathGradientBlend
+ - GdipGetPathGradientBlendCount
+ - GdipGetPathGradientCenterPointI
+ - GdipGetPathGradientPresetBlend
+ - GdipGetPathGradientPresetBlendCount
+ - GdipGetPathPointsI
+ - GdipGetPathTypes
+ - GdipGetPenCustomStartCap
+ - GdipGetRegionData
+ - GdipGetRegionDataSize
+ - GdipGetRegionHRgn
+ - GdipGetRegionScans
+ - GdipGetRegionScansCount
+ - GdipGetStringFormatFlags
+ - GdipGetStringFormatMeasurableCharacterRangeCount
+ - GdipGetStringFormatTabStopCount
+ - GdipGetStringFormatTabStops
+ - GdipImageForceValidation
+ - GdipLoadImageFromStream
+ - GdipLoadImageFromStreamICM
+ - GdipMeasureCharacterRanges
+ - GdipMeasureDriverString
+ - GdipNewInstalledFontCollection
+ - GdipPathIterCopyData
+ - GdipPathIterEnumerate
+ - GdipPathIterGetCount
+ - GdipPathIterGetSubpathCount
+ - GdipPathIterHasCurve
+ - GdipPathIterIsValid
+ - GdipPathIterNextMarker
+ - GdipPathIterNextMarkerPath
+ - GdipPathIterNextPathType
+ - GdipPathIterNextSubpath
+ - GdipPathIterNextSubpathPath
+ - GdipPathIterRewind
+ - GdipPlayMetafileRecord
+ - GdipPrivateAddMemoryFont
+ - GdipRecordMetafile
+ - GdipRecordMetafileFileName
+ - GdipRecordMetafileStream
+ - GdipRemovePropertyItem
+ - GdipRestoreGraphics
+ - GdipSaveAdd
+ - GdipSaveAddImage
+ - GdipSaveGraphics
+ - GdipSaveImageToStream
+ - GdipSetClipHrgn
+ - GdipSetCustomLineCapBaseCap
+ - GdipSetCustomLineCapBaseInset
+ - GdipSetCustomLineCapStrokeCaps
+ - GdipSetCustomLineCapStrokeJoin
+ - GdipSetCustomLineCapWidthScale
+ - GdipSetImageAttributesOutputChannelColorProfile
+ - GdipSetImageAttributesRemapTable
+ - GdipSetImagePalette
+ - GdipSetLineBlend
+ - GdipSetMetafileDownLevelRasterizationLimit
+ - GdipSetPathGradientBlend
+ - GdipSetPathGradientPresetBlend
+ - GdipSetPathMarker
+ - GdipSetPenCustomStartCap
+ - GdipSetPropertyItem
+ - GdipSetStringFormatMeasurableCharacterRanges
+ - GdipSetStringFormatTabStops
+ - GdipShearMatrix
+ - GdipTransformMatrixPoints
+ - GdipTransformMatrixPointsI
+ - GdipTransformPoints
+ - GdipTransformPointsI
+ - GdipVectorTransformMatrixPoints
+ - GdipVectorTransformMatrixPointsI
+ - GdipWarpPath
+ - =======================================
+ - GdipBitmapCreateApplyEffect
+ - GdipCreateAdjustableArrowCap
+ - GdipDeleteCustomLineCap
+ - GdipDrawImagePoints
+ - GdipGetAdjustableArrowCapFillState
+ - GdipGetAdjustableArrowCapHeight
+ - GdipGetAdjustableArrowCapMiddleInset
+ - GdipGetAdjustableArrowCapWidth
+ - GdipGetEffectParameters
+ - GdipGetImageDecoders
+ - GdipGetImageDecodersSize
+ - GdipGetImageFlags
+ - GdipGetPenCustomEndCap
+ - GdipSetAdjustableArrowCapFillState
+ - GdipSetAdjustableArrowCapHeight
+ - GdipSetAdjustableArrowCapMiddleInset
+ - GdipSetAdjustableArrowCapWidth
+ - GdipSetPenCustomEndCap

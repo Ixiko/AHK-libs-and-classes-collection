@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 
 If (!pToken := Gdip_Startup()){
   MsgBox, 48, gdiplus error!, Gdiplus failed to start. Please ensure you have gdiplus on your system!

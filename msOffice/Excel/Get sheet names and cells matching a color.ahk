@@ -1,4 +1,4 @@
-; This script does the following:
+﻿; This script does the following:
 ;   - Open the test workbook (located in the same directory as this script -
 ;     "..\Get sheet names and cells matching a color DATA.xlsx")
 ;   - Loop through each sheet in the workbook. Collect the name and tab-color of each sheet

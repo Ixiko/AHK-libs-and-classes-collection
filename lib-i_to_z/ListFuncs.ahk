@@ -1,4 +1,4 @@
-;
+﻿;
 ; AutoHotkey Version: 1.0.31.04+
 ; Language:  English
 ; Platform:  Win2000/XP

@@ -1,4 +1,4 @@
-StrGet(Address, Length=-1, Encoding=0)
+﻿StrGet(Address, Length=-1, Encoding=0)
 {
     if A_IsUnicode
     {

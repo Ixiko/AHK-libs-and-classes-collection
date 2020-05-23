@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ARRAYDESC
 a structure class that specifies the dimensions of an array and the type of its elements.
 

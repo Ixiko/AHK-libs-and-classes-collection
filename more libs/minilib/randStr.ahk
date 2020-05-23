@@ -1,4 +1,4 @@
-/* Modes
+﻿/* Modes
 
  - Append numbers to combine
 1=lowercase

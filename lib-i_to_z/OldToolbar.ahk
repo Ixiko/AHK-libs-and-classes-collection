@@ -1,4 +1,4 @@
-/* Title:   Toolbar
+﻿/* Title:   Toolbar
 			Toolbar control.
 			The module is designed with following goals in mind :
 			* To allow programmers to quickly create toolbars in intuitive way.

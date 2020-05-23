@@ -1,4 +1,4 @@
-class ddraw_h_parser extends CppWrapper {
+﻿class ddraw_h_parser extends CppWrapper {
 _7thpass()
 {
 	fileappend,	% this.filename ".h: Pass7 - Retriving error constants definitions`n", *

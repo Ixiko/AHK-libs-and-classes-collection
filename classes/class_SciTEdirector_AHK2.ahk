@@ -1,4 +1,4 @@
-/* SciTE Director for AHK v2
+﻿/* SciTE Director for AHK v2
 
 */
 

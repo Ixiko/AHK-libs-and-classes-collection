@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: VARDESC
 a structure class that describes a variable, constant, or data member.
 

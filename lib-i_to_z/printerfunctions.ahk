@@ -1,4 +1,4 @@
-;Scriptfile to combine several usefull printerfunction
+﻿;Scriptfile to combine several usefull printerfunction
 ;version 1.0.1
 ;
 ;GetInstalledPrinters returns a list of all installed printers followed by the delimiter.

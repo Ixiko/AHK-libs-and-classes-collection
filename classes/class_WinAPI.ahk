@@ -1,4 +1,4 @@
-Class WinAPIWrapper 
+﻿Class WinAPIWrapper 
 {
     Win {
         get {

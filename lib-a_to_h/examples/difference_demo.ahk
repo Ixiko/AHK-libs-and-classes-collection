@@ -1,4 +1,4 @@
-; #Include difference.ahk
+﻿; #Include difference.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

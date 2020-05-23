@@ -1,4 +1,4 @@
-isBinFile(Filename,NumBytes=32,Minimum=4,complexunicode=1) {
+﻿isBinFile(Filename,NumBytes=32,Minimum=4,complexunicode=1) {
 	
 	file:=FileOpen(Filename,"r")
 	file.Position:=0 ;force position to 0 (zero)

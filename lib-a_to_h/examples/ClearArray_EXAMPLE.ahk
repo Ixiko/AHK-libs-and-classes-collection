@@ -1,4 +1,4 @@
-#Include ClearArray.ahk
+﻿#Include ClearArray.ahk
 
 Loop, 16
 {

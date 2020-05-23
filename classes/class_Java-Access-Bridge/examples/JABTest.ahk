@@ -1,4 +1,4 @@
-#Include JavaAccessBridge.ahk
+﻿#Include JavaAccessBridge.ahk
 #Include ObjectHandling.ahk
 
 JAB:=new JavaAccessBridge()

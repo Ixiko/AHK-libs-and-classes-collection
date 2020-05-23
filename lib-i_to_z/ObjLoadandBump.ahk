@@ -1,4 +1,4 @@
-ObjDump(obj,ByRef var,mode:=0){
+﻿ObjDump(obj,ByRef var,mode:=0){
 	If IsObject(var)
 	{ ; FileAppend mode
 		If FileExist(obj)

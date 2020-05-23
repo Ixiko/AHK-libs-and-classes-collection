@@ -1,4 +1,4 @@
-#include <mkex>
+﻿#include <mkex>
 #if guiex.tabHelp.focused(guiex.tabHelp.loops) && not mkex.inKW
 #if
 detectHiddenWindows 1

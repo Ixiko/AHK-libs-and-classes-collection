@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #SingleInstance force
 ;#Warn
 ; Windows 8.1 64 bit - Autohotkey v1.1.28.00 32-bit Unicode

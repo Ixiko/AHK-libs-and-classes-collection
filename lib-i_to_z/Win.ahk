@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Title:	Win
 			*Set of window functions*
  */

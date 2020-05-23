@@ -1,4 +1,4 @@
-; Script:    Environment.ahk
+﻿; Script:    Environment.ahk
 ; Author:    iseahound
 ; Date:      2017-02-11
 ; Recent:    2017-11-12

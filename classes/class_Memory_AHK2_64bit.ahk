@@ -1,4 +1,4 @@
-;v1.0 for AutoHotkey v2
+﻿;v1.0 for AutoHotkey v2
 ;#include classMemory_AHK2.ahk
 /*
     A basic memory class by RHCP:

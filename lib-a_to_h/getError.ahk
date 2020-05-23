@@ -1,4 +1,4 @@
-/*	getError(SystemErrorCode) 
+﻿/*	getError(SystemErrorCode) 
 Adapted from:
 	https://www.codeproject.com/reference/800546/windows-system-error-codes
 */

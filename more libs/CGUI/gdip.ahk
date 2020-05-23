@@ -1,4 +1,4 @@
-; Gdip standard library v1.44 by tic (Tariq Porter) 22/08/11
+﻿; Gdip standard library v1.44 by tic (Tariq Porter) 22/08/11
 ; Modified by fincs (30/08/11) to:
 ;  - Support the 64-bit build of AutoHotkey (including recompiling the embedded MCode)
 ;  - Get rid of pesky ANSI<-->Unicode conversions & use the proper DllCall datatype

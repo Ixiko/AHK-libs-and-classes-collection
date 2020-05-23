@@ -1,4 +1,4 @@
-detectHiddenWindows 1
+﻿detectHiddenWindows 1
 winex.setTrayHeight()
 class winex
 	{

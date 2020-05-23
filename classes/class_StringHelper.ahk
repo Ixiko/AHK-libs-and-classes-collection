@@ -1,4 +1,4 @@
-Class StringHelper
+﻿Class StringHelper
 {
     IsValidName(Name)
 	{

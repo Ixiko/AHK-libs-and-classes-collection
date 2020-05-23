@@ -1,4 +1,4 @@
-#Include %A_ScriptDir%\..\RichEdit.ahk
+﻿#Include %A_ScriptDir%\..\RichEdit.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

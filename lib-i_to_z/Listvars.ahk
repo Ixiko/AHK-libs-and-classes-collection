@@ -1,4 +1,4 @@
-ListVars()
+﻿ListVars()
 {
 static hwndEdit,pSFW,pSW,bkpSFW,bkpSW
 if !hwndEdit

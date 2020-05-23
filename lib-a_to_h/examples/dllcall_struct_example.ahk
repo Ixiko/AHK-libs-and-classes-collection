@@ -1,4 +1,4 @@
-#include %a_Scriptdir%\..\lib-a_to_h\dllcall_struct.ahk
+﻿#include %a_Scriptdir%\..\lib-a_to_h\dllcall_struct.ahk
 
 /*
 // the function to call:

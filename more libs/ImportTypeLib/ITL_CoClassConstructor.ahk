@@ -1,4 +1,4 @@
-ITL_CoClassConstructor(this, iid = 0)
+﻿ITL_CoClassConstructor(this, iid = 0)
 {
 	static IMPLTYPEFLAG_FDEFAULT := 1
 	local info, typeAttr := 0, hr, iid_mem, instance := 0, typeName

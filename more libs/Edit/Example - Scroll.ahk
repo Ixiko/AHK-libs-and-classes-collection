@@ -1,4 +1,4 @@
-/*
+ï»¿/*
     Most (all?) of the Edit library's scroll-related functions are demonstrated
     in this example.  There are few scrolling-via-mouse hotkeys hidden in
     the example.  Look in the "Hotkeys" section at the bottom for more
@@ -27,28 +27,28 @@ gui Font
 gui Add,Button,xm +Hidden,1234567890   ;-- Dummy button used to establish width
 
 gui Font,,Wingdings
-gui Add,Button,xp yp wp     gVScrollUp,             á
-gui Add,Button,x+0 wp hp    gVScrollDn,             â
+gui Add,Button,xp yp wp     gVScrollUp,             Ã¡
+gui Add,Button,x+0 wp hp    gVScrollDn,             Ã¢
 gui Font
 gui Add,Button,x+0 wp hp    gVScrollPageUp,         Page Up
 gui Add,Button,x+0 wp hp    gVScrollPageDn,         Page Dn
 
 gui Font,,Wingdings
-gui Add,Button,xm wp hp     gHScrollLeft,           ß
-gui Add,Button,x+0 wp hp    gHScrollRight,          à
+gui Add,Button,xm wp hp     gHScrollLeft,           ÃŸ
+gui Add,Button,x+0 wp hp    gHScrollRight,          Ã 
 gui Font
 gui Add,Button,x+0 wp hp    gHScrollPageLeft,       Page Left
 gui Add,Button,x+0 wp hp    gHScrollPageRight,      Page Right
 
 gui Font,,Wingdings
-gui Add,Button,xm  wp hp    gTop,                   é
-gui Add,Button,x+0 wp hp    gBottom,                ê
-gui Add,Button,xm  wp hp    gLeft,                  ç
-gui Add,Button,x+0 wp hp    gRight,                 è
-gui Add,Button,xm  wp hp    gLeftTop,               ë
-gui Add,Button,x+0 wp hp    gRightTop,              ì
-gui Add,Button,xm  wp hp    gLeftBottom,            í
-gui Add,Button,x+0 wp hp    gRightBottom,           î
+gui Add,Button,xm  wp hp    gTop,                   Ã©
+gui Add,Button,x+0 wp hp    gBottom,                Ãª
+gui Add,Button,xm  wp hp    gLeft,                  Ã§
+gui Add,Button,x+0 wp hp    gRight,                 Ã¨
+gui Add,Button,xm  wp hp    gLeftTop,               Ã«
+gui Add,Button,x+0 wp hp    gRightTop,              Ã¬
+gui Add,Button,xm  wp hp    gLeftBottom,            Ã­
+gui Add,Button,x+0 wp hp    gRightBottom,           Ã®
 gui Font
 gui Add,Button,xm           gDisableAllScrollBars,  %A_Space% Disable Scroll Bars %A_Space%
 gui Add,Button,x+0 wp       gEnableAllScrollBars,   Enable Scroll Bars

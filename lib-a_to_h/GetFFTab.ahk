@@ -1,4 +1,4 @@
-/*
+﻿/*
 This function accepts all or part of a tab's name and returns the relevant actionable object.
 You can then use accDoDefaultAction(0) to activate the tab in Firefox. 
 

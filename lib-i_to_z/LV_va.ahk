@@ -1,4 +1,4 @@
-LV(va=""){
+﻿LV(va=""){
 static hwndEdit,pSFW,pSW,bkpSFW,bkpSW,v
 if !hwndEdit {
 dhw:=A_DetectHiddenWindows

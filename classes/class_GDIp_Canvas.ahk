@@ -1,4 +1,4 @@
-Class Canvas {
+﻿Class Canvas {
 	__New(_name, _options, _x, _y, _width, _height, _smoothing := 4, _interpolation := 7, _hide := 0) {
 		this.x := _x, this.y := _y, this.width := _width, this.height := _height
 

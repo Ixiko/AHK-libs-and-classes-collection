@@ -1,4 +1,4 @@
-#Include Sift.ahk
+﻿#Include Sift.ahk
 
 Data =
 (

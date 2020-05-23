@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: StructBase
 serves as base class for struct classes. Struct classes must derive from it.
 

@@ -1,4 +1,4 @@
-class github{
+﻿class github{
 	static http:=[]
 	__New(){
 		ea:=settings.ea("//github")

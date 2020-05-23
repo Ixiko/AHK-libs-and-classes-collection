@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: RichEditOLE
 wraps the *IRichEditOLE* interface and exposes the COM functionality of a rich edit control.
 

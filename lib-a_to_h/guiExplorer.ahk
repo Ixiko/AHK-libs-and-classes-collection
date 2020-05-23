@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: guiExplorer
     Form to explore and manipulate folders and files
 

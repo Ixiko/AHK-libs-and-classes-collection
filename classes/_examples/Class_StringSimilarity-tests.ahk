@@ -1,4 +1,4 @@
-#Include %A_ScriptDir%\Class_StringSimilarity.ahk
+﻿#Include %A_ScriptDir%\Class_StringSimilarity.ahk
 ;#Include ..\unit-testing.ahk\export.ahk
 #NoTrayIcon
 

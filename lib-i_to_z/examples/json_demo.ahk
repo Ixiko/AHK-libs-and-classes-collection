@@ -1,4 +1,4 @@
-; #Include json.ahk
+﻿; #Include json.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

@@ -1,4 +1,4 @@
-group := tester.newGroup("array_splice(ByRef array, start, deleteCount:=-1, args*)")
+﻿group := tester.newGroup("array_splice(ByRef array, start, deleteCount:=-1, args*)")
 
 
 ; test subgroup 1

@@ -1,4 +1,4 @@
-; ---------------------------------- constants -----------------------------------
+﻿; ---------------------------------- constants -----------------------------------
 ; Property identifiers
 Global PKEY_AppUserModel_ID
 Global PKEY_AppUserModel_IsDestListSeparator

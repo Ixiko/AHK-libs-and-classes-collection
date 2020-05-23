@@ -1,4 +1,4 @@
-ListIncludes(script_file, delim="|")
+﻿ListIncludes(script_file, delim="|")
 {
     if !(attr := FileExist(script_file)) or InStr(attr,"D")
         return

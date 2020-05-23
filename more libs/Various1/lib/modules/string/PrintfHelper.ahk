@@ -1,4 +1,4 @@
-class PrintfHelper {
+﻿class PrintfHelper {
 
 	static INT_TYPES := "di"
 	static FLOAT_TYPES := "fe"

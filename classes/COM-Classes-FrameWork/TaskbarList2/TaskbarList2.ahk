@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: TaskbarList2
 wraps the *ITaskbarList2* interface and exposes a method to mark a window as a full-screen display.
 

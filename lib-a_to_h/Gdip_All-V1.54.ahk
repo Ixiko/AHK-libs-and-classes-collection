@@ -1,4 +1,4 @@
-; Gdip standard library v1.54 on 11/15/2017
+﻿; Gdip standard library v1.54 on 11/15/2017
 ; Gdip standard library v1.53 on 6/19/2017
 ; Gdip standard library v1.52 on 6/11/2017
 ; Gdip standard library v1.51 on 1/27/2017

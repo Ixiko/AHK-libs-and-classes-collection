@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 		Title: XPath Quick Reference
 		
 		License:
@@ -66,7 +66,7 @@ xpath(ByRef doc, step, set = "") {
 	
 	; for unions call each operand seperately and join results:
 	If (InStr(step, "|")) {
-		StringSplit, s, step, |, `n`t  `r
+		StringSplit, s, step, |, `n`t Â `r
 		Loop, %s0%
 			res .= xpath(doc, s%A_Index%, set) . ","
 		Return, SubStr(res, 1, -1)
@@ -366,7 +366,7 @@ xpath_save(ByRef doc, src = "") {
 	StringLen, sl, sp
 	s =
 	VarSetCapacity(sxml, StrLen(xml) * 1.1)
-	Loop, Parse, xml, <, `n`t 	 `r
+	Loop, Parse, xml, <, `n`t 	Â `r
 	{
 		If A_LoopField =
 			Continue

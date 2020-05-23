@@ -1,4 +1,4 @@
-; Made with OfficeInfo - https://autohotkey.com/boards/viewtopic.php?f=6&p=113884
+﻿; Made with OfficeInfo - https://autohotkey.com/boards/viewtopic.php?f=6&p=113884
 _xlDialogChartSourceData:=541
 _xlDialogPhonetic:=538
 BackstageGroupStyleError:=2

@@ -1,4 +1,4 @@
-; source: https://autohotkey.com/board/topic/97113-mute-a-specific-progra/
+﻿; source: https://autohotkey.com/board/topic/97113-mute-a-specific-progra/
 
 ; example VAWrapper_mute("ahk_class Valve001", "enabled")	-- mutes window ahk_class Valve001
 ; example VAWrapper_mute("ahk_class Valve001", "disabled")	-- enables sound on window ahk_class Valve001

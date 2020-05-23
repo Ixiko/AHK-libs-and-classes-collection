@@ -1,4 +1,4 @@
-Global sci_constants
+﻿Global sci_constants
 Global sci_keyboard_commands
 ; Global sci_msg
 

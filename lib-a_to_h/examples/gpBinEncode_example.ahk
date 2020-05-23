@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #Include %A_ScriptDir%\..\gpBinEncode.ahk
 
 ;Create our binary data

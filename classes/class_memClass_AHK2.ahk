@@ -1,4 +1,4 @@
-/* Memory Reader for AHK v2
+﻿/* Memory Reader for AHK v2
 Example:
 	#include memClass.ahk
 	#SingleInstance force

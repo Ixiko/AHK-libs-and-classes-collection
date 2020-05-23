@@ -1,4 +1,4 @@
-/* Example
+﻿/* Example
 #NoEnv
 SetBatchLines, -1
 

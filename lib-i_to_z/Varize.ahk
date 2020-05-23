@@ -1,4 +1,4 @@
-varize(var, autofix = true) 
+﻿varize(var, autofix = true) 
 {
 	;var = "€:\Dév\« ÂùtöH°tkéÿ™ »\¡Dœ©s & Inf¤ß!"
 	;MsgBox, % "var:`t" . var . "`nautofix:`t" . varize(var) . "`nerrors:`t" varize(var, false)

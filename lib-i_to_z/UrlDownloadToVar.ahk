@@ -1,4 +1,4 @@
-;UrlDownloadToVar replacement by Uberi
+﻿;UrlDownloadToVar replacement by Uberi
 #NoEnv
 
 ;MsgBox % Download(Result,"http://google.ca") . "`n" . SubStr(Result,1,100)

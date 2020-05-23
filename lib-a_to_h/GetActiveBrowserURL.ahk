@@ -1,53 +1,48 @@
-﻿; AutoHotkey Version: AutoHotkey 1.1
+﻿/*
+Can be used in Notes plugin, Source @ https://www.autohotkey.com/boards/viewtopic.php?t=3702
+*/
+
+; AutoHotkey Version: AutoHotkey 1.1
 ; Language:           English
-; Platform:           Win7 SP1 / Win8.1
+; Platform:           Win7 SP1 / Win8.1 / Win10
 ; Author:             Antonio Bueno <user atnbueno of Google's popular e-mail service>
 ; Short description:  Gets the URL of the current (active) browser tab for most modern browsers
-; Last Mod:           2014-07-05
-/*
-Menu, Tray, Icon, % A_WinDir "\system32\netshell.dll", 86 ; Shows a world icon in the system tray
+; Last Mod:           2016-05-19
 
-#u::
-	nTime := A_TickCount
-	sURL := GetActiveBrowserURL()
-	WinGetClass, sClass, A
-	If (sURL != "")
-		MsgBox, % "The URL is """ sURL """`nEllapsed time: " (A_TickCount - nTime) " ms (" sClass ")"
-	Else If sClass In IEFrame,MozillaWindowClass,OperaWindowClass,Chrome_WidgetWin_1,Chrome_WidgetWin_0,Maxthon3Cls_MainFrm
-		MsgBox, % "The URL couldn't be determined (" sClass ")"
-	Else
-		MsgBox, % "Not a browser or browser not supported (" sClass ")"
-Return
-*/
-;~ t::
-;~ SetActiveBrowserURL("http://www.google.com")
-;~ return
-
-;~ esc::ExitApp
-
-;~ SetActiveBrowserURL(newUrl){
-	;~ WinGetClass, sClass, A
-	;~ If sClass In Chrome_WidgetWin_1,Chrome_WidgetWin_0,Maxthon3Cls_MainFrm
-	;~ {
-		;~ try (urlAcc:=GetBrowserURL_ACC(sClass, 1)).accValue(0):=newUrl
-		;~ try urlAcc.accDescription(0):=newUrl
-		;~ try acc_Parent(urlAcc).accDoDefaultAction()
-	;~ }Else
-		;~ Return GetBrowserURL_DDE(sClass, 1)
-;~ }
+;Menu, Tray, Icon, % A_WinDir "\system32\netshell.dll", 86 ; Shows a world icon in the system tray
+;
+;
+;^+!u::
+;	nTime := A_TickCount
+;	sURL := GetActiveBrowserURL()
+;	WinGetClass, sClass, A
+;	If (sURL != "")
+;		MsgBox, % "The URL is """ sURL """`nEllapsed time: " (A_TickCount - nTime) " ms (" sClass ")"
+;	Else If sClass In % ModernBrowsers "," LegacyBrowsers
+;		MsgBox, % "The URL couldn't be determined (" sClass ")"
+;	Else
+;		MsgBox, % "Not a browser or browser not supported (" sClass ")"
+;Return
+;
 
 GetActiveBrowserURL() {
+	; global ModernBrowsers, LegacyBrowsers
+	ModernBrowsers := "ApplicationFrameWindow,Chrome_WidgetWin_0,Chrome_WidgetWin_1,Maxthon3Cls_MainFrm,MozillaWindowClass,Slimjet_WidgetWin_1"
+	LegacyBrowsers := "IEFrame,OperaWindowClass"
+
 	WinGetClass, sClass, A
-	If sClass In Chrome_WidgetWin_1,Chrome_WidgetWin_0,Maxthon3Cls_MainFrm
+	If sClass In % ModernBrowsers
 		Return GetBrowserURL_ACC(sClass)
-	Else
+	Else If sClass In % LegacyBrowsers
 		Return GetBrowserURL_DDE(sClass) ; empty string if DDE not supported (or not a browser)
+	Else
+		Return ""
 }
 
 ; "GetBrowserURL_DDE" adapted from DDE code by Sean, (AHK_L version by maraskan_user)
 ; Found at http://autohotkey.com/board/topic/17633-/?p=434518
 
-GetBrowserURL_DDE(sClass, getControl=0) {
+GetBrowserURL_DDE(sClass) {
 	WinGet, sServer, ProcessName, % "ahk_class " sClass
 	StringTrimRight, sServer, sServer, 4
 	iCodePage := A_IsUnicode ? 0x04B0 : 0x03EC ; 0x04B0 = CP_WINUNICODE, 0x03EC = CP_WINANSI
@@ -66,11 +61,11 @@ GetBrowserURL_DDE(sClass, getControl=0) {
 	DllCall("DdeDisconnect", "UPtr", hConv)
 	DllCall("DdeUninitialize", "UPtr", idInst)
 	csvWindowInfo := StrGet(&sData, "CP0")
-	StringSplit, sWindowInfo, csvWindowInfo, `"
+	StringSplit, sWindowInfo, csvWindowInfo, `" ;"; comment to avoid a syntax highlighting issue in autohotkey.com/boards
 	Return sWindowInfo2
 }
 
-GetBrowserURL_ACC(sClass, getControl=0) {
+GetBrowserURL_ACC(sClass) {
 	global nWindow, accAddressBar
 	If (nWindow != WinExist("ahk_class " sClass)) ; reuses accAddressBar if it's the same window
 	{
@@ -78,57 +73,40 @@ GetBrowserURL_ACC(sClass, getControl=0) {
 		accAddressBar := GetAddressBar(Acc_ObjectFromWindow(nWindow))
 	}
 	Try sURL := accAddressBar.accValue(0)
-	urlControl:=accAddressBar
 	If (sURL == "") {
-		sURL := accAddressBar.accDescription(0) ; Origin Chip support
-		If (sURL == "") {
-			WinGet, nWindows, List, % "ahk_class " sClass ; In case of a nested browser window as in CoolNovo
-			If (nWindows > 1) {
-				accAddressBar := GetAddressBar(Acc_ObjectFromWindow(nWindows2))
-				urlControl:=accAddressBar
-				sURL := accAddressBar.accValue(0)
-			}
+		WinGet, nWindows, List, % "ahk_class " sClass ; In case of a nested browser window as in the old CoolNovo (TO DO: check if still needed)
+		If (nWindows > 1) {
+			accAddressBar := GetAddressBar(Acc_ObjectFromWindow(nWindows2))
+			Try sURL := accAddressBar.accValue(0)
 		}
 	}
-	If ((sURL != "") and (SubStr(sURL, 1, 4) != "http")) and (SubStr(sURL,1,4)!="file") ; Chromium-based browsers omit "http://"
+	If ((sURL != "") and (SubStr(sURL, 1, 4) != "http")) ; Modern browsers omit "http://"
 		sURL := "http://" sURL
-	
-	if(getControl)
-		return urlControl
-	else 
-		Return sURL
+	If (sURL == "")
+		nWindow := -1 ; Don't remember the window if there is no URL
+	Return sURL
 }
 
 ; "GetAddressBar" based in code by uname
 ; Found at http://autohotkey.com/board/topic/103178-/?p=637687
+
 GetAddressBar(accObj) {
-	Try If ((accObj.accName(0) != "") and IsURL(accObj.accValue(0)))
+	Try If ((accObj.accRole(0) == 42) and IsURL(accObj.accValue(0)))
 		Return accObj
-	Try If ((accObj.accName(0) != "") and IsURL("http://" accObj.accValue(0))) ; Chromium omits "http://"
-		Return accObj
-	Try If (InStr(accObj.accDescription(0), accObj.accName(0)) and IsURL(accObj.accDescription(0))) ; Origin Chip support
+	Try If ((accObj.accRole(0) == 42) and IsURL("http://" accObj.accValue(0))) ; Modern browsers omit "http://"
 		Return accObj
 	For nChild, accChild in Acc_Children(accObj)
 		If IsObject(accAddressBar := GetAddressBar(accChild))
 			Return accAddressBar
 }
 
-;~ GetWbAcc(accObj=""){
-	
-	;~ try if Trim(href:=accObj.location.href)!=""
-		;~ return accObj
-	;~ for nChild, accChild in Acc_Children(accObj)
-		;~ if IsObject(acc:=GetWbAcc(accChild))
-			;~ return acc
-;~ }
-
 IsURL(sURL) {
-	Return RegExMatch(sURL, "^(?<Protocol>https?|ftp)://(?:(?<Username>[^:]+)(?::(?<Password>[^@]+))?@)?(?<Domain>(?:[\w-]+\.)+\w\w+)(?::(?<Port>\d+))?/?(?<Path>(?:[^/?# ]*/?)+)(?:\?(?<Query>[^#]+)?)?(?:\#(?<Hash>.+)?)?$") || RegExMatch(sURL, "is)^file\:\/\/\/(.+)$")
+	Return RegExMatch(sURL, "^(?<Protocol>https?|ftp)://(?<Domain>(?:[\w-]+\.)+\w\w+)(?::(?<Port>\d+))?/?(?<Path>(?:[^:/?# ]*/?)+)(?:\?(?<Query>[^#]+)?)?(?:\#(?<Hash>.+)?)?$")
 }
 
 ; The code below is part of the Acc.ahk Standard Library by Sean (updated by jethrow)
 ; Found at http://autohotkey.com/board/topic/77303-/?p=491516
-/*
+
 Acc_Init()
 {
 	static h
@@ -157,4 +135,3 @@ Acc_Children(Acc) {
 			ErrorLevel := "AccessibleChildren DllCall Failed"
 	}
 }
-*/

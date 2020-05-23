@@ -1,4 +1,4 @@
-
+﻿
 ; https://autohotkey.com/docs/static/source/data_index.js
 commandList:=object()
 commandList.push(["#AllowSameLineComments","commands/_AllowSameLineComments.htm"])

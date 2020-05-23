@@ -1,4 +1,4 @@
-;===== Functions ==========;
+﻿;===== Functions ==========;
 
 Array(_parameters*) {
 	r := {"base": __Array}

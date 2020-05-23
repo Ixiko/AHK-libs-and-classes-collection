@@ -1,4 +1,4 @@
-; Include lib to test
+﻿; Include lib to test
 #Include, array_quicksort.ahk
 #Include, array_.ahk
 #Include, array_base.ahk

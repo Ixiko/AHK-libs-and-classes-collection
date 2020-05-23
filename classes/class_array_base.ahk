@@ -1,4 +1,4 @@
-/*
+﻿/*
 ; To implement 'native' support, redefine Array() to add custom _Array base object
 Array(prms*) {
     ; Since prms is already an array of the parameters, just give it a

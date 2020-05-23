@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: IMAGELISTDRAWPARAMS
 a structure class that contains information about an image list draw operation and is used with IImageList::Draw.
 

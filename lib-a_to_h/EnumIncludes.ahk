@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Function: EnumIncludes
  *     Enumerates all #Include files in the specified script by passing the
  *     the full path to each included file, in turn, to the specified callback

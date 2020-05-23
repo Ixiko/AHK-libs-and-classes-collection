@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 
 ;MsgBox % ComObjGet("winmgmts:root\cimv2:Win32_Processor='cpu0'").CurrentClockSpeed
 

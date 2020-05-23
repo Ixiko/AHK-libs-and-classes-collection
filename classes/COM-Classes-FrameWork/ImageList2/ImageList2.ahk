@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ImageList2
 wraps the *IImageList2* interface and provides additional methods for manipulating and interacting with image lists.
 

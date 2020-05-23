@@ -1,25 +1,22 @@
-/*
-ƒvƒƒOƒ‰ƒ€ƒtƒ@ƒCƒ‹‚Ìà–¾‚È‚Ç‚ğæ“¾	by—¬s‚ç‚¹‚éƒy[ƒWŠÇ—l
+ï»¿/*
+ï¿½vï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Ìï¿½ï¿½È‚Ç‚ï¿½ï¿½	byï¿½ï¿½ï¿½sï¿½ç‚¹ï¿½ï¿½ï¿½[ï¿½Wï¿½Ç—ï¿½ï¿½l
 GetStringFileInfo(fn,type)
 	fn
-		ƒtƒ@ƒCƒ‹ƒpƒX‚ğw’è
-	type
-		ˆÈ‰º‚Ì‰½‚ê‚©‚ğw’è
-			CompanyName			‰ïĞ–¼
-			FileDescription		à–¾
-			FileVersion			ƒtƒ@ƒCƒ‹Eƒo[ƒWƒ‡ƒ“
-			InternalName		 “à•”–¼
-			LegalCopyright		’˜ìŒ 
-			OriginalFileName	³®ƒtƒ@ƒCƒ‹–¼
-			ProductName			»•i–¼
-			ProductVersion		»•iƒo[ƒWƒ‡ƒ“
-			Comments			ƒRƒƒ“ƒg
-			LegalTrademarks		¤•W
-			PrivateBuild		Ìß×²ÍŞ°ÄEËŞÙÄŞî•ñ
-			SpecialBuild		½Íß¼¬ÙEËŞÙÄŞî•ñ
+		ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½pï¿½Xï¿½ï¿½ï¿½	type
+		ï¿½È‰ï¿½ï¿½Ì‰ï¿½ï¿½ê‚©ï¿½ï¿½ï¿½			CompanyName			ï¿½ï¿½ï¿½ï¿½
+			FileDescription		ï¿½ï¿½
+			FileVersion			ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Eï¿½oï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½
+			InternalName		 ï¿½ï¿½ï¿½ï¿½
+			LegalCopyright		ï¿½ï¿½ï¿½ìŒ 
+			OriginalFileName	ï¿½ï¿½ï¿½ï¿½ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
+			ProductName			ï¿½ï¿½ï¿½iï¿½ï¿½
+			ProductVersion		ï¿½ï¿½ï¿½iï¿½oï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½
+			Comments			ï¿½Rï¿½ï¿½ï¿½ï¿½ï¿½g
+			LegalTrademarks		ï¿½ï¿½ï¿½W
+			PrivateBuild		ï¿½×²ï¿½ï¿½ÄEï¿½ï¿½Şï¿½
+			SpecialBuild		ï¿½ï¿½ï¿½ï¿½ÙEï¿½ï¿½Şï¿½
 
-—á
-MsgBox,% GetStringFileInfo("VERSION.dll","FileDescription")
+ï¿½ï¿½MsgBox,% GetStringFileInfo("VERSION.dll","FileDescription")
 */
 GetStringFileInfo(fn,type){
 	len:=DllCall("VERSION.dll\GetFileVersionInfoSizeA",Str,fn, UIntP,h,	UInt)

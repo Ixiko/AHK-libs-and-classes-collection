@@ -1,4 +1,4 @@
-group := tester.newGroup("array_forEach(array, callback)")
+﻿group := tester.newGroup("array_forEach(array, callback)")
 
 global forEach_sum := 0
 

@@ -1,4 +1,4 @@
-#SingleInstance Force
+﻿#SingleInstance Force
 
 hLVIL := IL_Create(2)
 IL_Add(hLVIL, "shell32.dll", 1)

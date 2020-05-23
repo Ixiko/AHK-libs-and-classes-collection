@@ -1,4 +1,4 @@
-; 1) Disable drawing with "WS_Visible", "LockWindowUpdate" or "WM_SETREDRAW"
+﻿; 1) Disable drawing with "WS_Visible", "LockWindowUpdate" or "WM_SETREDRAW"
 ; 2) Execute ur code
 ; 3) Enable drawing with "WS_Visible", "LockWindowUpdate" or "WM_SETREDRAW"
 ; 4) Call RedrawDB(hWnd) where hWnd is handle to window

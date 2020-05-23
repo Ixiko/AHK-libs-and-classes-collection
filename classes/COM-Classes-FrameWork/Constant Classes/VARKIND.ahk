@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: VARKIND
 an enumeration class that specifies a variable's type.
 

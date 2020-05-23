@@ -1,4 +1,4 @@
-txtList(path){ ; Pass a path to concatenate a string for splashRadio.ahk 
+﻿txtList(path){ ; Pass a path to concatenate a string for splashRadio.ahk 
 	global
 	options = ; Clear previous %options% variable 
 	Loop, read, %path% ; Read file line by line 

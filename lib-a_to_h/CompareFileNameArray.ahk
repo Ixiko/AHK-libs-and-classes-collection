@@ -1,4 +1,4 @@
-CompareFileNameArray()
+﻿CompareFileNameArray()
 {
 	; compares each file to the array and determines if a newer version exists
 	; MsgBox params: %params%

@@ -1,4 +1,4 @@
-;#f::MsgBox, % ShellFolder()
+﻿;#f::MsgBox, % ShellFolder()
 ;#m::ShellNavigate(A_MyDocuments, True)
 ;#p::ShellNavigate(A_ProgramFiles)
 ;#s::ShellNavigate(A_ScriptDir)

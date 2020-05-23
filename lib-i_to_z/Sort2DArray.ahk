@@ -1,4 +1,4 @@
-; Note: This can only be used if you want to order the array
+﻿; Note: This can only be used if you want to order the array
 ; by one key, and you dont care about how any of the other key values
 ; are ordered (when there are multiple sorted keys with the same value)
 ; eg sort could result in something like this:

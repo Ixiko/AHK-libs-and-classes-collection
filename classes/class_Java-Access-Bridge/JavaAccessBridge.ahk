@@ -1,4 +1,4 @@
-GetTextInfo()
+﻿GetTextInfo()
 {
 	global JABVariables
 	txt:=""

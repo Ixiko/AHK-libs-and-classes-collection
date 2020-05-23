@@ -1,4 +1,4 @@
-;{ 	class DList
+﻿;{ 	class DList
 ; zero based index list that can contain var value of number or string
 ; adding of objects to this list is not supported
 ; List is case sensitive

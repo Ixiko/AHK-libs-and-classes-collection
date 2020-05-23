@@ -1,4 +1,4 @@
-adOpenStatic = 3
+﻿adOpenStatic = 3
 adLockOptimistic = 3
 adCmdText = 1
 dataSource := A_ScriptDir . "\SampleData.xls"

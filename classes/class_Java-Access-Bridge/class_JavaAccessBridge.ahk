@@ -1,4 +1,4 @@
-; todo:
+﻿; todo:
 
 ; GetCaretLocation: check if index does anything, else remove
 ; Getvisiblechildren test if retchild:=NumGet(&TempChildren, 0, "Int64") works under 64 bit

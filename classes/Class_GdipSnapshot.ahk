@@ -1,4 +1,4 @@
-/*
+﻿/*
 CGDipSnapShot.ahk
 By evilc@evilc.com
 

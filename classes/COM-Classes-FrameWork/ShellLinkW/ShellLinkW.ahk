@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ShellLinkW
 wraps the *IShellLinkW* interface and exposes methods that create, modify, and resolve Shell links.
 

@@ -1,4 +1,4 @@
-/* Generic, flexible custom class for parsing lists.
+﻿/* Generic, flexible custom class for parsing lists.
 	
 	Throughout this documentation, "tl" will refer to an instance of this class.
 	

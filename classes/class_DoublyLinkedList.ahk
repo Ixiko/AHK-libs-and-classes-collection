@@ -1,4 +1,4 @@
-;~ q:=new Queue
+﻿;~ q:=new Queue
 ;~ q.enqueue([1,2])
 
 ;~ MsgBox % q.dequeue()[2]

@@ -1,4 +1,4 @@
-class CppWrapper {
+﻿class CppWrapper {
 
 __New(file) 
 	{

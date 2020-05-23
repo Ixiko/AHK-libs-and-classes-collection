@@ -1,4 +1,4 @@
-; AutoHotkey Version: 1.0.47.06
+ï»¿; AutoHotkey Version: 1.0.47.06
 ; Platform:       WinXP
 ; Author:         Yonken <yonken@163.com>
 ; Last updated: 2008-12-12
@@ -140,12 +140,11 @@ MSG_GetToolbarButtonText(hToolbar, nButtonIndex, pszText )
 TW_ResetVariables( szToolbarName )
 {
 	Global
-	%szToolbarName%_hToolbar					:= 0		; ¹¤¾ßÀ¸¾ä±ú
-	%szToolbarName%_hProcess					:= 0		; ¹¤¾ßÀ¸ËùÊô½ø³Ì¾ä±ú
-	%szToolbarName%_nProcessId				:= -1		; ¹¤¾ßÀ¸ËùÊô½ø³ÌID
-	%szToolbarName%_pLastAllocatedAddr	:= -1		; ÉÏÒ»´ÎÉêÇë¿Õ¼äÊ±·ÖÅäµÄµØÖ·
-	%szToolbarName%_nLastAllocatedSize		:= -1		; ÉÏÒ»´ÎÉêÇë¿Õ¼äÊ±·ÖÅäµÄ´óĞ¡
-}
+	%szToolbarName%_hToolbar					:= 0		; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	%szToolbarName%_hProcess					:= 0		; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½
+	%szToolbarName%_nProcessId				:= -1		; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½D
+	%szToolbarName%_pLastAllocatedAddr	:= -1		; ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	%szToolbarName%_nLastAllocatedSize		:= -1		; ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}
 
 ; Release the memory of target process
 TW_ReleaseResources( szToolbarName )
@@ -228,7 +227,7 @@ TW_GetToolbarProcessHandle( szToolbarName )
 }
 
 ; Get/Allocate specify size of memory from the process that created the toolbar
-; ´ÓtoolbarËùÊô½ø³ÌÖĞ»ñµÃÖ¸¶¨´óĞ¡µÄÄÚ´æ£¬Èç¹ûÒÑÓĞ×ã¹»´óĞ¡µÄÄÚ´æÔø±»·ÖÅä¹ıÔò²»ÖØĞÂÉêÇë£¬·ñÔòÖØĞÂÉêÇë
+; ï¿½ï¿½oolbarï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´æ£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 TW_GetToolbarProcessMemory( szToolbarName, nSize )
 {
 	Global

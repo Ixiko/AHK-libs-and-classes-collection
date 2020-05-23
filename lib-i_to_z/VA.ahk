@@ -1,4 +1,4 @@
-; Uploaded by Lexikos - https://autohotkey.com/board/topic/21984-vista-audio-control-functions/
+﻿; Uploaded by Lexikos - https://autohotkey.com/board/topic/21984-vista-audio-control-functions/
 ; VA v2.3
 
 ;

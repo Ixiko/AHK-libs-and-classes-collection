@@ -1,4 +1,4 @@
-class CppWrapperB extends CppWrapper {
+﻿class CppWrapperB extends CppWrapper {
 _5thpass()
 {
 	this.interfaces := {}		

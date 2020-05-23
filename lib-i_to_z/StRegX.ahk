@@ -1,4 +1,4 @@
-stRegX(h,BS="",BO=1,BT=0, ES="",ET=0, ByRef N="") {
+﻿stRegX(h,BS="",BO=1,BT=0, ES="",ET=0, ByRef N="") {
 /*	modified version: searches from BS to "   "
 	h = Haystack
 	BS = beginning string

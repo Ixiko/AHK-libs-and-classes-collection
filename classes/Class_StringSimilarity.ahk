@@ -1,4 +1,4 @@
-Class stringsimilarity {
+﻿Class stringsimilarity {
 
 	__New() {
         this.info_Array

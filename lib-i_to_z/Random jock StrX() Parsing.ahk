@@ -1,4 +1,4 @@
-;-- randomjoke with :  activeX / urldownloadtoVar / StrX
+﻿;-- randomjoke with :  activeX / urldownloadtoVar / StrX
 ;-- AHK_L
 ;--------------------------------------------------
 modified=20131226

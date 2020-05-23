@@ -1,4 +1,4 @@
-;-- Example created from code provided by Laszlo
+﻿;-- Example created from code provided by Laszlo
 ;   Post: http://www.autohotkey.com/board/topic/10236-drag-drop-in-edit-controls/page-2#entry303878
 
 #SingleInstance Force

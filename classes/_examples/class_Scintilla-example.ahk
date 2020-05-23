@@ -1,4 +1,4 @@
-;#Include %A_ScriptDir%\..\class_Scintilla.ahk
+﻿;#Include %A_ScriptDir%\..\class_Scintilla.ahk
 #Include %A_ScriptDir%\..\class_ScintillaG.ahk
 #include %A_ScriptDir%\..\class_RemoteBuf.ahk
 ; Assumes Scintilla.ahk is in a lib folder

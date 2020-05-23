@@ -1,4 +1,4 @@
-/**
+﻿/**
  * this class allows us to interact upon strings similar to objects.
  * it gets initialized by String_Set
  * for optimal use place this is the "\lib" folder and include via

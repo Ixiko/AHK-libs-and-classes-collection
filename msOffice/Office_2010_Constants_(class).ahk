@@ -1,4 +1,4 @@
-; Made with OfficeInfo - https://autohotkey.com/boards/viewtopic.php?f=6&p=113884
+﻿; Made with OfficeInfo - https://autohotkey.com/boards/viewtopic.php?f=6&p=113884
 class OfficeConstants
 {
     static _xlDialogChartSourceData:=541

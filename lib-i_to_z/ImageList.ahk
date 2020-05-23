@@ -1,4 +1,4 @@
-; � Drugwash, February-August 2011
+﻿; © Drugwash, February-August 2011
 ; Set of ImageList functions that allow custom icon sizes
 ; Many thanks to SKAN for fixing bitmap stretch issue under XP
 

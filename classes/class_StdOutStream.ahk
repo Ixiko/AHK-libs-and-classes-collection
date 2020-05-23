@@ -1,4 +1,4 @@
-/*  Usage
+﻿/*  Usage
 StdOut := new StdOutStream("ShowTT", 100)
 cmd = %A_AHKPath% /ErrorStdOut "%File%"
 StdOut.Run( cmd )

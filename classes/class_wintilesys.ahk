@@ -1,4 +1,4 @@
-/*
+﻿/*
 Window Tiling system
 Takes the default windows (Win+Arrow) hotkeys and makes them a bit better
 Adds the ability to Tile windows into quarters / halves on both axes

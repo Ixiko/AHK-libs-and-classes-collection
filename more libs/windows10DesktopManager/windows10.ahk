@@ -1,4 +1,4 @@
-#SingleInstance
+﻿#SingleInstance
 
 Menu, Tray, icon, %A_ScriptDir%\virtualDesktopManager.ico, 1
 
