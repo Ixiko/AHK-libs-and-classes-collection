@@ -1,4 +1,4 @@
-; --- demo 2 ---
+﻿; --- demo 2 ---
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #SingleInstance,Force
 SetWorkingDir,%A_ScriptDir%  ; Ensures a consistent starting directory.

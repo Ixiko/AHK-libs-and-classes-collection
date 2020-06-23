@@ -1,5 +1,16 @@
+﻿; Link:   	https://gist.githubusercontent.com/tmplinshi/8428a280bba58d25ef0b/raw/45291743f5a2738c931021eff8d3b044c8107001/CreateFormData.ahk
+; Author:	
+; Date:   	
+; for:     	AHK_L
+
+/*
+
+
+*/
+
 /*
 	CreateFormData - Creates "multipart/form-data" for http post
+	https://www.autohotkey.com/boards/viewtopic.php?t=7647
 
 	Usage: CreateFormData(ByRef retData, ByRef retHeader, objParam)
 
@@ -11,10 +22,11 @@
 		                objParam := { "key1": "value1"
 		                            , "upload[]": ["1.png", "2.png"] }
 
-	Requirement: BinArr.ahk -- https://gist.github.com/tmplinshi/a97d9a99b9aa5a65fd20
-	Version    : 1.20 / 2016-6-17 - Added CreateFormData_WinInet(), which can be used for VxE's HTTPRequest().
-	             1.10 / 2015-6-23 - Fixed a bug
-	             1.00 / 2015-5-14
+	Requirements: BinArr.ahk -- https://gist.github.com/tmplinshi/a97d9a99b9aa5a65fd20
+	Version    : 1.30 / 2019-01-13 - The file parameters are now placed at the end of the retData
+	             1.20 / 2016-06-17 - Added CreateFormData_WinInet(), which can be used for VxE's HTTPRequest().
+	             1.10 / 2015-06-23 - Fixed a bug
+	             1.00 / 2015-05-14
 */
 
 ; Used for WinHttp.WinHttpRequest.5.1, Msxml2.XMLHTTP ...
@@ -44,6 +56,7 @@ Class CreateFormData {
 
 		; Loop input paramters
 		binArrs := []
+		fileArrs := []
 		For k, v in objParam
 		{
 			If IsObject(v) {
@@ -52,9 +65,9 @@ Class CreateFormData {
 					str := BoundaryLine . CRLF
 					     . "Content-Disposition: form-data; name=""" . k . """; filename=""" . FileName . """" . CRLF
 					     . "Content-Type: " . this.MimeType(FileName) . CRLF . CRLF
-					binArrs.Push( BinArr_FromString(str) )
-					binArrs.Push( BinArr_FromFile(FileName) )
-					binArrs.Push( BinArr_FromString(CRLF) )
+					fileArrs.Push( BinArr_FromString(str) )
+					fileArrs.Push( BinArr_FromFile(FileName) )
+					fileArrs.Push( BinArr_FromString(CRLF) )
 				}
 			} Else {
 				str := BoundaryLine . CRLF
@@ -63,6 +76,8 @@ Class CreateFormData {
 				binArrs.Push( BinArr_FromString(str) )
 			}
 		}
+
+		binArrs.push( fileArrs* )
 
 		str := BoundaryLine . "--" . CRLF
 		binArrs.Push( BinArr_FromString(str) )

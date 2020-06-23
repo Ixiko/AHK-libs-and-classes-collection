@@ -1,4 +1,4 @@
-class Base64 {
+﻿class Base64 {
 
 	requires() {
 		return []

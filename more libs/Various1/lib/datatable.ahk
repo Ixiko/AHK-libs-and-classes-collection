@@ -1,4 +1,4 @@
-class DataTable {
+﻿class DataTable {
 
 	requires() {
 		return [Ansi, Arrays, String, Object]

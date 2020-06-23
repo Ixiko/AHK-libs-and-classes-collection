@@ -1,4 +1,4 @@
-; #Include ConsoleApp.ahk
+﻿; #Include ConsoleApp.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

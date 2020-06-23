@@ -1,4 +1,4 @@
-class BitSet {
+﻿class BitSet {
 
 	requires() {
 		return [TestCase, Arrays, System, Math]

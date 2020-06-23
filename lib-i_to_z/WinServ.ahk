@@ -1,4 +1,4 @@
-/* WinServ.ahk
+﻿/* WinServ.ahk
 Version			: 1.0
 Author			: Hardeep Singh <http://swankyleo.googlepages.com>
 Forum Topic	: http://www.autohotkey.com/forum/viewtopic.php?t=21975
@@ -30,8 +30,9 @@ Notes			: Starting a service which is dependent on other services will also star
 ===============================================================================
 */
 
-WinServ(ServiceName, Task="", Silent=False, Computer="")
-{	Global schSCManager, schService
+WinServ(ServiceName, Task="", Silent=False, Computer="") {
+
+Global schSCManager, schService
 	Static SERVICE_QUERY_STATUS=0x4, SERVICE_START=0x10, SERVICE_STOP=0x20, SC_STATUS_PROCESS_INFO=0, SERVICE_CONTROL_STOP=0x1
 	Static SERVICE_STOPPED=0x1, SERVICE_START_PENDING=0x2, SERVICE_STOP_PENDING=0x3, SERVICE_RUNNING=0x4
 	VarSetCapacity(@SSP, 36), VarSetCapacity(BytesNeeded, 4), VarSetCapacity(SvcName ,256)
@@ -84,8 +85,8 @@ WinServ(ServiceName, Task="", Silent=False, Computer="")
 ;Function		: WinServ_ErrMsg
 ;Description	: This function is used internally by WinServ function.
 ;===============================================================================
-WinServ_ErrMsg(Title, ServiceName, Task="", Silent=False, Dummy="")
-{	Global schSCManager, schService
+WinServ_ErrMsg(Title, ServiceName, Task="", Silent=False, Dummy="") {
+	Global schSCManager, schService
 	Progress, 10:Off
 	If !Silent
 	{	If !ErrorLevel

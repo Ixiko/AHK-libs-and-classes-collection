@@ -1,4 +1,4 @@
-;
+﻿;
 ; ConsoleApps v1.2 (converted to StdLib by OceanMachine)
 ;
 ; AutoHotkey Version: 1.x

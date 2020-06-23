@@ -1,4 +1,4 @@
-;
+﻿;
 ; ConsoleApps V2
 ;
 ; AutoHotkey Version: 1.x

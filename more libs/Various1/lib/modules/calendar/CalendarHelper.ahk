@@ -1,4 +1,4 @@
-class CalendarHelper {
+﻿class CalendarHelper {
 
 	static MAX_DAY_OF_MONTH := [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 

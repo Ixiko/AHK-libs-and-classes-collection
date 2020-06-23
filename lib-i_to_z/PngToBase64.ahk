@@ -1,4 +1,4 @@
-;FileSelectFile, File,,, Pick a PNG, Images (*.png)
+﻿;FileSelectFile, File,,, Pick a PNG, Images (*.png)
 ;Clipboard := PngToBase64(File)
 ;MsgBox, % "The image is now on your clipboard. Paste into your browser URL bar."
 ;return

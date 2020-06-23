@@ -1,4 +1,4 @@
-InvBase64(B64val) {
+﻿InvBase64(B64val) {
 	Chars := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/" 
 	StringReplace B64val, B64val, =,,All 
 	Loop Parse, B64val 

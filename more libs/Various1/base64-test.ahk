@@ -1,4 +1,4 @@
-; ahk: console
+﻿; ahk: console
 ; ahklint-ignore-begin: W002
 #NoEnv
 #Warn All, StdOut

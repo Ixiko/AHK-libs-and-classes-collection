@@ -1,4 +1,4 @@
-#Include <modules\struct\TIME_ZONE_INFORMATION>
+﻿#Include <modules\struct\TIME_ZONE_INFORMATION>
 
 #Include %A_LineFile%\..\modules\calendar
 #Include CalendarHelper.ahk

@@ -1,4 +1,4 @@
-class Flimsydata {
+﻿class Flimsydata {
 
 	requires() {
 		return [Random, Calendar]

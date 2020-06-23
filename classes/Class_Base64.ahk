@@ -1,4 +1,4 @@
-
+﻿
 
 Base64enc( ByRef OutData, ByRef InData, InDataLen ) {
     TChars:=""

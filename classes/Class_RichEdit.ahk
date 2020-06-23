@@ -19,6 +19,8 @@
 ;       http://www.autohotkey.com/board/topic/45513-function-he-print-wysiwyg-print-for-the-hiedit-control/
 ;    majkinetor for Dlg:
 ;       http://www.autohotkey.com/board/topic/15836-module-dlg-501/
+;
+; 	MODIFIED VERSION!!
 ; ======================================================================================================================
 Class RichEdit {
    ; ===================================================================================================================
@@ -553,7 +555,7 @@ Class RichEdit {
       NumPut(Max, TEXTRANGE, 4, "UInt")
       NumPut(&Text, TEXTRANGE, 8, "UPtr")
       SendMessage, 0x044B, 0, % &TEXTRANGE, , % "ahk_id " . This.HWND
-      VarSetCapacity(Text, -1) ; Länge des Zeichenspeichers korrigieren 
+      VarSetCapacity(Text, -1) ; Länge des Zeichenspeichers korrigieren
       Return Text
    }
    ; -------------------------------------------------------------------------------------------------------------------
@@ -735,6 +737,22 @@ Class RichEdit {
       SendMessage, 0x4E1, % (Ratio > 0 ? Ratio : 100), 100, , % "ahk_id " . This.HWND
       Return ErrorLevel
    }
+   ; -------------------------------------------------------------------------------------------------------------------
+   AddMargins(x:=0, y:=0, w:=0, h:=0) { ; added - function not checked!
+
+      VarSetCapacity(RECT, 16, 0)
+
+      if !DllCall("GetClientRect", "UPtr", this.HWND, "UPtr", &RECT, "UInt")
+          throw Exception("Couldn't get RichEdit Client RECT")
+
+      NumPut(x	+ NumGet(RECT,  0	, "Int"), RECT,     0, "Int")
+      NumPut(y 	+ NumGet(RECT,  4	, "Int"), RECT,     4, "Int")
+      NumPut(w	+ NumGet(RECT,  8	, "Int"), RECT,     8, "Int")
+      NumPut(h	+ NumGet(RECT, 12, "Int"), RECT,   12, "Int")
+
+      SendMessage, 0xB3, 0, &RECT,, this.HWND
+}
+
    ; -------------------------------------------------------------------------------------------------------------------
    ; Copy, paste, etc.
    ; -------------------------------------------------------------------------------------------------------------------

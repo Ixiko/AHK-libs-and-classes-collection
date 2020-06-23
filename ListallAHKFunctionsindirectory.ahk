@@ -119,8 +119,6 @@ MSOffice\DocX
 functions          	:= Object()
 Dir                    	:= StrSplit(Directorys, "`n", "`r")
 file_readmeMd	:= A_ScriptDir "\readme.md"
-;MDTable          	:= "| **Nr** | **Library**                                               | **Directory**                                              |`n"
-;MDTable          	.= "| :--- | :-------------------------------------- |:----------------------------------------------------|`n"
 MDTable          	:= "| **Nr** | **Library**                                      | **Directory**                                    |`n"
 MDTable          	.= "| :--- | :--------------------------------- | :------------------------------------------- |`n"
 

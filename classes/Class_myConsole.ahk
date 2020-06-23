@@ -1,4 +1,4 @@
-myConsole 			:= new scConsole({"Control Width": 800, "Control Height": 300})
+﻿myConsole 			:= new scConsole({"Control Width": 800, "Control Height": 300})
 ;==========================================================================================================================
 myConsole.addItem("scConsole: [italic 0x00FF00]Thank you for using my software.[/]")
 myConsole.addItem("scConsole: [red]Current Script file:[/] [bold]" A_ScriptFullPath "[/]")

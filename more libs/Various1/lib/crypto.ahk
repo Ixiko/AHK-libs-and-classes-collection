@@ -1,4 +1,4 @@
-; TODO: Refactor
+﻿; TODO: Refactor
 class Crypto {
 
 	requires() {

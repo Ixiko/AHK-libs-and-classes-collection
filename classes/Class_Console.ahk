@@ -1,4 +1,4 @@
-/*
+﻿/*
 Name:			[Class] Console
 Version:			1.8 (Tue March 11, 2014)
 Created:		Tue February 11, 2014

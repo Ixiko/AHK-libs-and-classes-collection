@@ -1,4 +1,4 @@
-; WinHttpRequest
+﻿; WinHttpRequest
 ; Version: 1.00 / 2014-4-3 / tmplinshi
 ; Tested On: [AHK] 1.1.14.03 A32/U32 | [OS] WinXP SP3
 ; 

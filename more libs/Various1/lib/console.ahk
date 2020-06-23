@@ -1,4 +1,4 @@
-#Include <struct>
+﻿#Include <struct>
 
 #Include <modules\struct\CONSOLE_SCREEN_BUFFER_INFO>
 

@@ -1,4 +1,4 @@
-class Dimension {
+﻿class Dimension {
 
 	static units := ""
 	static type := 0

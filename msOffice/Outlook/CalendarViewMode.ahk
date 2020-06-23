@@ -1,4 +1,4 @@
-; This script activates the calendar and changes the view to the month calendar.
+﻿; This script activates the calendar and changes the view to the month calendar.
 
 ; Constants
 olFolderCalendar := 9

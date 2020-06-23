@@ -1,4 +1,4 @@
-;~ #Include C:\dev\autohotkey_libs\Class_Console.ahk
+﻿;~ #Include C:\dev\autohotkey_libs\Class_Console.ahk
 
 Class_Console("a",100,100,400,435,"STDout Test")
 a.show()

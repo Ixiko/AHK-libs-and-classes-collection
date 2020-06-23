@@ -1,4 +1,4 @@
-hashPassword(username,pwd){
+﻿hashPassword(username,pwd){
 	global k0,k1,k2,k3, l0,l1, m0,m1
 	pwString := username pwd
 	Return %  XCBC(Hex(pwString,StrLen(pwString)), 0,0, k0,k1,k2,k3, l0,l1, m0,m1)

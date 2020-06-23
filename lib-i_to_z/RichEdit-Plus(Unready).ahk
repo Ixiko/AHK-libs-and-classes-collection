@@ -17,7 +17,6 @@ EM_GETEVENTMASK(hCtrl)  {
   MsgBox, % errorlevel    ; This message returns the event mask for the rich edit control.
 }
 
-
 ;========================================== PRIVATE ===============================================================
 
 
@@ -72,7 +71,7 @@ EM_GETWORDWRAPMODE
 		      ;----------------- end RE_Get()
 
 EM_HIDESELECTION
-EM_ISIME     
+EM_ISIME
 EM_PASTESPECIAL
 EM_RECONVERSION
 EM_REQUESTRESIZE
@@ -142,7 +141,6 @@ EM_SHOWBALLOONTIP
 */
 
 
-
 EM_DISPLAYBAND(hCtrl)  {
   static EM_DISPLAYBAND=51,WM_USER=0x400
 
@@ -173,15 +171,16 @@ EM_FINDTEXTEX(hCtrl, lpstrText)  {
   MsgBox, % NumGet(FINDTEXTEX, 12, "UInt") " | " NumGet(FINDTEXTEX, 16, "UInt")
 ;   MSGBOX, % ERRORLEVEL
 }
+
 EM_FINDTEXTEXW(hCtrl)  {
 ;   static EM_FINDTEXTEXW=124,WM_USER=0x400
 ;   SendMessage, WM_USER | EM_FINDTEXTEXW, 0,&@??,, ahk_id %hCtrl%
 }
+
 EM_FINDTEXTW(hCtrl)  {
 ;   static EM_FINDTEXTW=123,WM_USER=0x400
 ;   SendMessage, WM_USER | EM_FINDTEXTW, 0,&@??,, ahk_id %hCtrl%
 }
-
 
 ;This message returns the index of the last character that fits in the region, plus 1.
 EM_FORMATRANGE(hCtrl, HDC = 0, W = 0, H = 0, X=0, Y=0)  {
@@ -196,12 +195,12 @@ EM_FORMATRANGE(hCtrl, HDC = 0, W = 0, H = 0, X=0, Y=0)  {
     NumPut(Y, FORMATRANGE, 12, "Int") ;FORMATRANGE_rc_top
     NumPut(W, FORMATRANGE, 16, "Int") ; FORMATRANGE_rc_right
     NumPut(H, FORMATRANGE, 20, "Int") ; FORMATRANGE_rc_bottom
-    
+
 	NumPut(X, FORMATRANGE, 24, "Int") ; FORMATRANGE_rcPage_left
     NumPut(Y, FORMATRANGE, 28, "Int") ; FORMATRANGE_rcPage_top
     NumPut(W, FORMATRANGE, 32, "Int") ; FORMATRANGE_rcPage_right
     NumPut(H, FORMATRANGE, 36, "Int") ; FORMATRANGE_rcPage_bottom
-    
+
 	NumPut(0, FORMATRANGE, 40, "UInt") ; CHARRANGE-min
     NumPut(-1, FORMATRANGE, 44, "UInt") ; ; CHARRANGE-max
 	SendMessage, EM_FORMATRANGE 1,&FORMATRANGE,, ahk_id %hCtrl%
@@ -213,7 +212,6 @@ EM_FORMATRANGE(hCtrl, HDC = 0, W = 0, H = 0, X=0, Y=0)  {
 	SendMessage, EM_FORMATRANGE,,,, ahk_id %hCtrl%
 	return res
 }
-
 
 EM_GETBIDIOPTIONS(hCtrl)  {
   static EM_GETBIDIOPTIONS=201,WM_USER=0x400
@@ -243,6 +241,7 @@ EM_GETBIDIOPTIONS(hCtrl)  {
 ; CONTEXTALIGNMENT - Context alignment.
 ; LEGACYBIDICLASS - Causes the plus and minus characters to be treated as neutral characters with no implied direction. Also causes the slash character to be treated as a common separator.
 }
+
 EM_SETBIDIOPTIONS(hCtrl)  {
   static EM_SETBIDIOPTIONS=200,WM_USER=0x400
   static BOM_DEFPARADIR=0x1,BOM_PLAINTEXT=0x2,BOM_NEUTRALOVERRIDE=0x4,BOM_CONTEXTREADING=0x8,BOM_CONTEXTALIGNMENT=0x10,BOM_LEGACYBIDICLASS=0x0040
@@ -264,7 +263,6 @@ EM_SETBIDIOPTIONS(hCtrl)  {
 ;   MsgBox, % errorlevel    ; This message does not return a value.
 }
 
-
 EM_GETCTFMODEBIAS(hCtrl)  {
   static EM_GETCTFMODEBIAS=237,WM_USER=0x400
   SendMessage, WM_USER | EM_GETCHARFORMAT, 0,0,, ahk_id %hCtrl%
@@ -282,7 +280,6 @@ EM_GETEDITSTYLE(hCtrl)  {
   SendMessage, WM_USER | EM_GETEDITSTYLE, 0,0,, ahk_id %hCtrl%
   MsgBox, % errorlevel    ; The return value can be one or more of the following values...
 }
-
 
 EM_GETHYPHENATEINFO(hCtrl)  {   ; richedit 4.1 only (msftedit.dll)
   static EM_GETHYPHENATEINFO=230,WM_USER=0x400
@@ -304,6 +301,7 @@ EM_GETHYPHENATEINFO(hCtrl)  {   ; richedit 4.1 only (msftedit.dll)
   SendMessage, WM_USER | EM_GETHYPHENATEINFO, &HYPHENATEINFO,0,, ahk_id %hCtrl%
   MsgBox, % errorlevel    ; There is no return value.
 }
+
 EM_SETHYPHENATEINFO(hCtrl)  {
   static EM_SETHYPHENATEINFO=231,WM_USER=0x400
 
@@ -326,13 +324,10 @@ EM_SETHYPHENATEINFO(hCtrl)  {
 
   ;To enable hyphenation, the client must call EM_SETTYPOGRAPHYOPTIONS, specifying TO_ADVANCEDTYPOGRAPHY
 }
+
 RichEdit_hyphenateProc( pszWord, langid, ichExceed, phyphresult )  {
   ToolTip, pszWord = %pszWord% `nlangid = %langid% `nichExceed = %ichExceed% `nphyphresult = %phyphresult%
 }
-
-
-
-
 
 EM_GETIMECOMPMODE(hCtrl)  {
   static EM_GETIMECOMPMODE=122,WM_USER=0x400
@@ -346,7 +341,6 @@ EM_GETIMECOMPMODE(hCtrl)  {
 ; ICM_LEVEL2_5 - 	Level 2.5
 ; ICM_LEVEL2_SUI - Special user interface (UI).
 }
-
 
 EM_GETIMECOMPTEXT(hCtrl)  {
   static EM_GETIMECOMPTEXT=242,WM_USER=0x400
@@ -399,10 +393,9 @@ EM_GETLANGOPTIONS(hCtrl)  {
   static EM_GETLANGOPTIONS=121,WM_USER=0x400
   SendMessage, WM_USER | EM_GETLANGOPTIONS, 0,0,, ahk_id %hCtrl%
   MsgBox, % errorlevel  ; one or more of the following values, which indicate the current language option settings.
-  
+
   static IMF_AUTOFONT=0x2,IMF_AUTOFONTSIZEADJUST=0x10,IMF_AUTOKEYBOARD=0x1,IMF_DUALFONT=0x80,IMF_IMEALWAYSSENDNOTIFY=0x8,IMF_IMECANCELCOMPLETE=0x4,IMF_UIFONTS=0x20
 }
-
 
 EM_GETPAGEROTATE(hCtrl)  {
 
@@ -422,8 +415,6 @@ EM_GETPARAFORMAT(hCtrl)  {
 ;   MsgBox, % errorlevel  ; If the operation succeeds, the return value is a nonzero value.
 }
 
-
-
 EM_GETPUNCTUATION(hCtrl)  {
   static EM_GETPUNCTUATION=101,WM_USER=0x400
   static PC_LEADING=2,PC_FOLLOWING=1,PC_DELIMITER=4,PC_OVERFLOW=3
@@ -439,6 +430,7 @@ EM_GETPUNCTUATION(hCtrl)  {
   szPunctuation:=NumGet(PUNCTUATION, 4, "UInt")
   msgbox, % DllCall("MulDiv", "Int",szPunctuation, "Int",1, "Int",1, "str")
 }
+
 EM_SETPUNCTUATION(hCtrl)  {
   static EM_SETPUNCTUATION=100,WM_USER=0x400
   static PC_LEADING=2,PC_FOLLOWING=1,PC_DELIMITER=4,PC_OVERFLOW=3
@@ -451,13 +443,11 @@ EM_SETPUNCTUATION(hCtrl)  {
   MsgBox, % errorlevel  ; If the operation succeeds, the return value is a nonzero value.
 }
 
-
-
 EM_GETTYPOGRAPHYOPTIONS(hCtrl)  {   ; Rich Edit 3.0
   static EM_GETTYPOGRAPHYOPTIONS=203,WM_USER=0x400
   SendMessage, WM_USER | EM_GETTYPOGRAPHYOPTIONS, 0,0,, ahk_id %hCtrl%
   MsgBox, % errorlevel  ; The return value can be one of the following values.
-  
+
   static TO_ADVANCEDTYPOGRAPHY=1,TO_SIMPLELINEBREAK=2
 }
 
@@ -472,7 +462,6 @@ EM_HIDESELECTION(hCtrl, value=true)  {
   SendMessage, WM_USER | EM_HIDESELECTION, (value ? true : false),0,, ahk_id %hCtrl%
   MsgBox, % errorlevel  ; This message does not return a value.
 }
-
 
 EM_ISIME(hCtrl)  {  ; richedit 4.1 only (msftedit.dll)
   static EM_ISIME=243,WM_USER=0x400
@@ -529,7 +518,6 @@ EM_SETCTFOPENSTATUS(hCtrl)  {
   MsgBox, % ERRORLEVEL ; If successful, this message returns TRUE.
 }
 
-
 EM_SETIMEMODEBIAS(hCtrl)  {
 ;   static EM_SETIMEMODEBIAS=126,WM_USER=0x400
 ;
@@ -558,6 +546,7 @@ EM_SETPAGEROTATE(hCtrl)  {
   SendMessage, WM_USER | EM_GETPAGEROTATE, 0,0,, ahk_id %hCtrl%
   MsgBox, % errorlevel  ; Gets the current text layout.
 }
+
 EM_SETPALETTE(hCtrl)  {
 ;   static EM_SETPALETTE=93,WM_USER=0x400
 ;
@@ -569,7 +558,7 @@ EM_SETTARGETDEVICE(hCtrl, width)  {
 
   ; http://www.codeproject.com/KB/printing/richeditprint.aspx?display=Print
   ; http://msdn.microsoft.com/en-us/library/ms646940(VS.85).aspx
-  
+
   static hModule,PD_RETURNDC=0x100,PD_RETURNDEFAULT=0x400
   static EM_SETTARGETDEVICE=72,WM_USER=0x400
 
@@ -589,7 +578,6 @@ EM_SETTARGETDEVICE(hCtrl, width)  {
   MsgBox, % errorlevel  ; The return value is zero if the operation fails, or nonzero if it succeeds.
 ;   DllCall("DeleteDC","uint",hDC)
 }
-
 
 EM_SETTYPOGRAPHYOPTIONS(hCtrl)  {
   static EM_SETTYPOGRAPHYOPTIONS=202,WM_USER=0x400,TO_ADVANCEDTYPOGRAPHY=1,TO_SIMPLELINEBREAK=2
@@ -615,7 +603,6 @@ EM_STREAMIN(hCtrl)  {
   MsgBox, % errorlevel
 }
 
-
 EM_GETIMECOLOR(hCtrl)  {
 ; This message is available only in Asian-language versions of the operating system.
 ;   static EM_GETIMECOLOR=105,WM_USER=0x400
@@ -627,7 +614,6 @@ EM_SETIMECOLOR(hCtrl)  {
 ;   static EM_SETIMECOLOR=104,WM_USER=0x400
 ;   SendMessage, WM_USER | EM_SETIMECOLOR, 0,&@??,, ahk_id %hCtrl%
 }
-
 
 RichEdit_wordBreakProc(lpch, ichCurrent, cch, code) {
   ;   LPTSTR lpch    - A pointer to the text of the edit control.
@@ -662,7 +648,7 @@ RichEdit_wordBreakProc(lpch, ichCurrent, cch, code) {
 	exp=(s|c| )
    Loop, % cch * 2 ; build the string:
       str .= Chr(*(lpch - 1 + A_Index))
-      
+
  ;       StringReplace, str,str, %a_space%,_,A
  ;   str := DllCall("MulDiv", "Int",lpch, "Int",1, "Int",1, "str")
 	tooltip, lpch=%lpch% `nichCurrent=%ichCurrent% `ncch=%cch% `ncode=%code% `nstr=%str%
@@ -756,7 +742,6 @@ EM_GETCHARFORMAT222(hCtrl, ByRef face="", ByRef style="", ByRef color="")  {
   ;-
    face:=szFaceName, style:=cfeDesc, color:=crTextColor
 }
-
 
 EM_SETWORDBREAKPROC(hCtrl)  {
   static EM_SETWORDBREAKPROC=0xD0

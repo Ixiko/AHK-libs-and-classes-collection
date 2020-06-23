@@ -1,9 +1,9 @@
-/*
+﻿/*
 ###############################################################################################################
 ###                                       HTTPRequest. Version: 2.49                                        ###
 ###############################################################################################################
 
-HTTPRequest. Copyright � 2011-2012 [VxE]. All rights reserved.
+HTTPRequest. Copyright © 2011-2012 [VxE]. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that
 the following conditions are met:

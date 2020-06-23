@@ -1,42 +1,40 @@
-/*
-/*
-/*
-Permite crear nuevas instancias de AutoHotKey y ejecutar un Script espesificado
-Notas:
-	• cuando el proceso principal (el que creo todas las instanacias) es terminado, todas sus instancias son automáticamente terminadas con él
-	• cuando el objeto es destruido, tambien lo és la instancia asociada a él
-	• no podrá utilizar ninguno de estos nombres para funciones: Script_OnExit()
-	• no podrá utilizar ninguno de estos nombres para clases: Class_RegisterActiveObject
-	• no deverá sobreescribir por ningún motivo las siguientes variables: Object_Class_RegisterActiveObject
-	• no deverá utilizar ninguna de estas funciones: OnExit()
+﻿/*
+Allows you to create new instances of AutoHotKey and execute a specified Script
+Notes:
+• when the main process (the one that created all the instances) is terminated, all its instances are automatically terminated with it
+• when the object is destroyed, so is the instance associated with it
+• you will not be able to use any of these names for functions: Script_OnExit ()
+• you will not be able to use any of these names for classes: Class_RegisterActiveObject
+• the following variables should not be overridden for any reason: Object_Class_RegisterActiveObject
+• you should not use any of these functions: OnExit ()
 */
 class ThreadInstance {
 	static Instances := []			;en esta variable almacenamos todas las instancias (processid) creadas
 	static nCLSID := 1000		;esta variable la utilizamos para evitar repetir el CLSID al registrar el objeto activo (siempre debe tener 4 dígitos)
 
 	/*
-	Constructor: crear nueva instancia de AutoHotKey.exe que ejecutará el script espesificado
-	Parámetros:
-		• Script: script a ejecutar
-		• OnExitScript: aquí debera poner el script q se ejecutará al encontrar un ExitApp en la nueva instancia, ya que al crea la nueva instancia, se utiliza la función incorporada de AHK OnExit() para eliminar el objeto al salir.
-		• Wait: determina si se debe esperar hasta que el nuevo proceso termine
-		• AhkPath: si el script está compilado, deberá espesificar la ruta a AutoHotKey.exe (si no se espesifica comprueba AutoHotKey.exe en el directorio en el que se está ejecutando el script o A_AhkPath)
-	Variables de cada instancia o proceso:
-		• ProcessId: PID del proceso nuevo
-	Notas:
-		• si Wait=TRUE, ErrorLevel se establece en el código de salida del proceso y la llamada a __New() devuelve 0
+	Constructor: create new instance of AutoHotKey.exe that will run the specified script
+	Parameters:
+	• Script: script to execute
+	• OnExitScript: here you should put the script that will be executed when an ExitApp is found in the new instance, since when creating the new instance, the built-in function of AHK OnExit () is used to delete the object on exit.
+	• Wait: determines whether to wait until the new process ends
+	• AhkPath: If the script is compiled, you will need to specify the path to AutoHotKey.exe (if it is not specified, check AutoHotKey.exe in the directory where the script is running or A_AhkPath)
+	Variables of each instance or process:
+	• ProcessId: PID of the new process
+	Notes:
+	• if Wait = TRUE, ErrorLevel is set in the process exit code and the call to __New () returns 0
 	*/
 	__New(Script := "", OnExitScript := "", Wait := false, AhkPath := "") {
 		if (A_IsCompiled) {
-			
+
 			;sin terminar. para funcionar, se necesita AutoHotKey.exe
 			AhkPath := FileExist(A_ScriptDir . "\AutoHotKey.exe") ? A_ScriptDir . "\AutoHotKey.exe" : A_AhkPath
-			
+
 		} else AhkPath := A_AhkPath
-		
+
 		if !FileExist(AhkPath)
 			return false
-		
+
 		;creamos un objeto activo para la instancia actual, para poder recibir valores del nuevo proceso
 		this.AppId := "AHK-" . ThreadInstance.nCLSID
 		thisCLSID := this.CLSID := "{B0FA566D-126C-" . ThreadInstance.nCLSID . "-BAF5-D74046AC1F50}"
@@ -47,7 +45,7 @@ class ThreadInstance {
 		RegWrite, REG_SZ, HKCU\Software\Classes\%this.AppId%,, % this.AppId
 		RegWrite, REG_SZ, HKCU\Software\Classes\%this.AppId%\CLSID,, % this.CLSID
 		RegWrite, REG_SZ, HKCU\Software\Classes\CLSID\%this.CLSID%,, % this.AppId
-		
+
 		;1) establecemos la ventana propietaria de la ventana del nuevo script a la del script actual
 			;esto es para que cuando el proceso de éste script (o sea, el principal) termine, automáticamente terminen todos los proceso que éste inició (todo proceso tiene por lo menos una ventana)
 		;2) registramos un objeto activo en el nuevo script para obtener información de éste, desde el script actual (o sea, el principal). Este objeto es manejable desde cualquier proceso sabiendo el CLSID
@@ -59,16 +57,16 @@ class ThreadInstance {
 		Script := "
 		(
 			DllCall('User32.dll\SetParent', 'Ptr', A_ScriptHwnd, 'Ptr', %A_ScriptHwnd%, 'Ptr')
-			
+
 			Object_Class_RegisterActiveObject := new Class_RegisterActiveObject('%CLSID%', '%AppId%')
-			
+
 			#Persistent
 			#NoTrayIcon
 			OnExit, Script_OnExit, 1
 			VarSetCapacity(t, 4, 0), DllCall('Ntdll.dll\RtlAdjustPrivilege', 'UInt', 20, 'UChar', true, 'UChar', false, 'Ptr', &t)
 			DllCall('Kernel32.dll\SetProcessWorkingSetSize', 'Ptr', DllCall('Kernel32.dll\GetCurrentProcess', 'Ptr'), 'UPtr', -1, 'UPtr', -1)
 			%Script%
-			
+
 			Script_OnExit(ExitReason, ExitCode) {
 				global Object_Class_RegisterActiveObject
 				%OnExitScript%
@@ -78,7 +76,7 @@ class ThreadInstance {
 				DllCall('User32.dll\SetParent', 'Ptr', A_ScriptHwnd, 'Ptr', 0, 'Ptr')
 				return 0
 			}
-			
+
 			class Class_RegisterActiveObject {
 				static Owner
 				__New(CLSID, AppId) {
@@ -93,26 +91,26 @@ class ThreadInstance {
 					RegWrite, REG_SZ, HKCU\Software\Classes\`%AppId`%\CLSID,, `% CLSID
 					RegWrite, REG_SZ, HKCU\Software\Classes\CLSID\`%CLSID`%,, `% AppId
 				}
-				
+
 				CallFunc(FuncName, Params*) {
 					try if !Params.MaxIndex(), Result := `%FuncName`%()
 					else Result := `%FuncName`%(Params*)
 					this.Owner.Pipe(Result, ErrorLevel)
 				}
-					
+
 				SetVar(VarName, Value) {
 					global
 					`%VarName`% := Value
 					this.Owner.Pipe()
 				}
-				
+
 				SetVarCapacity(VarName, Capacity, FillByte) {
 					global
 					if (Capacity = ""), Result := VarSetCapacity(`%VarName`%)
 					else Result := VarSetCapacity(`%VarName`%, Capacity, FillByte)
 					this.Owner.Pipe(Result)
 				}
-				
+
 				GetVar(VarName) {
 					global
 					this.Owner.Pipe(`%VarName`%)
@@ -128,7 +126,7 @@ class ThreadInstance {
 			f := FileOpen(AhkScriptFile := A_Temp "\" A_Index ".ahk", "w-rwd")
 		until IsObject(f)
 		f.Write(Script), f.Close()
-		
+
 		;ejecutamos AutoHotKey.exe con la ruta del nuevo script.ahk
 		;Run no modifica ErrorLevel, pero RunWait si, lo establece en el código de salida del proceso ejecutado
 		if (Wait), RunWait, "%AhkPath%" "%AhkScriptFile%",,, PID
@@ -137,7 +135,7 @@ class ThreadInstance {
 		;comprobamos que se haya ejecutado correctamente y guardamos el PID
 		if !(this.ProcessId := PID) || (Wait), return false
 		ThreadInstance.Instances.Push(this.ProcessId)
-		
+
 		;esperamos hasta que la nueva instancia cree el objeto activo y lo guardamos para comunicarnos con la nueva instancia
 		Loop
 			RegRead("HKCU\Software\Classes\" AppId), Sleep(1)
@@ -150,9 +148,9 @@ class ThreadInstance {
 	__Delete() {
 		this.Terminate()
 	}
-	
+
 	/*
-	Terminar proceso y eliminar objeto activo
+	End process and delete active object
 	*/
 	Terminate() {
 		try this.Call("ExitApp")
@@ -161,9 +159,9 @@ class ThreadInstance {
 		RegDeleteKey, HKCU\Software\Classes\CLSID\%this.CLSID%
 		ThreadInstance.GetInstances()
 	}
-	
+
 	/*
-	obtiene un Array con todos los PIDs de procesos existentes actuales iniciados por esta clase
+	gets an Array with all the PIDs of current existing processes started by this class
 	*/
 	GetInstances() {
 		Instances := [] ;primero remueve procesos inexistentes del Array
@@ -171,12 +169,12 @@ class ThreadInstance {
 			if ProcessExist(ProcessId), Instances.Push(ProcessId)
 		return ThreadInstance.Instances := Instances
 	}
-	
+
 	/*
-	Llama a la función espesificada en la nueva instancia
-	Parámetros:
-		• FuncName: nombre de la función a llamar
-		• Params: parámetros a pasar
+	Call the function specified in the new instance
+	Parameters:
+	• FuncName: name of the function to call
+	• Params: parameters to pass
 	*/
 	Call(FuncName, Params*) {
 		this.PipeOk := false
@@ -189,7 +187,7 @@ class ThreadInstance {
 	}
 
 	/*
-	Cambiar valor a una variable
+	change value to a variable
 	*/
 	SetVar(VarName, Value := "") {
 		this.PipeOk := false
@@ -197,9 +195,9 @@ class ThreadInstance {
 		while !this.PipeOk
 			Sleep 0
 	}
-	
+
 	/*
-	Establecer capacidad de una variable
+	Set capacity of a variable
 	*/
 	SetVarCapacity(VarName, Capacity := "", FillByte := "") {
 		this.PipeOk := false
@@ -209,9 +207,9 @@ class ThreadInstance {
 		ErrorLevel := this.Error
 		return this.OutputVar
 	}
-	
+
 	/*
-	Obtener valor de una variable
+	Get value of a variable
 	*/
 	GetVar(VarName) {
 		this.PipeOk := false
@@ -221,11 +219,11 @@ class ThreadInstance {
 		ErrorLevel := this.Error
 		return this.OutputVar
 	}
-	
+
 	;######################################################################################################################################################
-	
+
 	/*
-	Esta función es utilizada por el nuevo proceso para mandar valores a éste proceso
+	This function is used by the new process to send values to this process
 	*/
 	Pipe(OutputVar := "", Error := 0) {
 		this.OutputVar := OutputVar

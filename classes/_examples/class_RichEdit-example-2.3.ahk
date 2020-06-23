@@ -2,7 +2,7 @@
 ; Class RichEdit Demo
 ; This is just me's sample script, modified
 ; by burque505 slightly;
-; Image pasting and table pasting work in 
+; Image pasting and table pasting work in
 ; ======================================================================================================================
 #NoEnv
 SetBatchLines, -1
@@ -12,7 +12,7 @@ SendMode, Input
 ; ======================================================================================================================
 ; Create a Gui with RichEdit controls
 ; ======================================================================================================================
-; SB Helptext ----------------------------------------------------------------------------------------------------------
+; SB Helptext ---------------------------------------------------------------------------------------------------------- ;{
 SBHelp := {"BTSTB": "Bold (Alt+B)"
          , "BTSTI": "Italic (Alt+I)"
          , "BTSTU": "Underline (Alt+U)"
@@ -32,7 +32,9 @@ SBHelp := {"BTSTB": "Bold (Alt+B)"
          , "BTL10": "Linespacing 1 line (Ctrl+1)"
          , "BTL15": "Linespacing 1,5 lines (Ctrl+5)"
          , "BTL20": "Linespacing 2 lines (Ctrl+2)"}
-; Initial values -------------------------------------------------------------------------------------------------------
+;}
+
+; Initial values ------------------------------------------------------------------------------------------------------- ;{
 EditW := 800
 EditH := 400
 MarginX := 10
@@ -52,7 +54,9 @@ ShowWysiwyg := False
 CurrentLine := 0
 CurrentLineCount := 0
 HasFocus := False
-; Menus ----------------------------------------------------------------------------------------------------------------
+;}
+
+; Menus ---------------------------------------------------------------------------------------------------------------- ;{
 Menu, Zoom, Add, 200 `%, Zoom
 Menu, Zoom, Add, 150 `%, Zoom
 Menu, Zoom, Add, 125 `%, Zoom
@@ -207,11 +211,13 @@ Gui Show, , %GuiTitle%
 OnMessage(WM_MOUSEMOVE := 0x200, "ShowSBHelp")
 GuiControl, Focus, % RE2.HWND
 GoSub, UpdateGui
-Return
-; ======================================================================================================================
+Return ;}
+
+======================================================================================================================
 ; End of auto-execute section
 ; ======================================================================================================================
 ; ----------------------------------------------------------------------------------------------------------------------
+
 ; Testing
 ^+f::
    RE2.FindText("Test", ["Down"])
@@ -224,37 +230,22 @@ Return
    WinSet, Redraw, , % "ahk_id " . RE2.HWND
 Return
 ; ======================================================================================================================
-EM_SETMARGINS(Hwnd, Left := "", Right := "") {
-   ; EM_SETMARGINS = 0x00D3 -> http://msdn.microsoft.com/en-us/library/bb761649(v=vs.85).aspx
-   Set := 0 + (Left <> "") + ((Right <> "") * 2)
-   Margins := (Left <> "" ? Left & 0xFFFF : 0) + (Right <> "" ? (Right & 0xFFFF) << 16 : 0)
-   Return DllCall("User32.dll\SendMessage", "Ptr", HWND, "UInt", 0x00D3, "Ptr", Set, "Ptr", Margins, "Ptr")
-}
-
 ; ----------------------------------------------------------------------------------------------------------------------
-ShowSBHelp() {
-   Global SBHelp, GuiNum
-   Static Current := 0
-   If (A_Gui = GuiNum) && (A_GuiControl <> Current)
-      SB_SetText(SBHelp[(Current := A_GuiControl)], 3)
-   Return
-}
-; ----------------------------------------------------------------------------------------------------------------------
-RE2MessageHandler:
-If (A_GuiEvent = "N") && (NumGet(A_EventInfo + 0, A_PtrSize * 2, "Int") = 0x0702) ; EN_SELCHANGE 
-{
-   SetTimer, UpdateGui, -10
-}
-   
+RE2MessageHandler: ;{
 
-Else {
-   If (A_EventInfo = 0x0100) ; EN_SETFOCUS
-      HasFocus := True
-   Else If (A_EventInfo = 0x0200) ; EN_KILLFOCUS
-      HasFocus := False
-}
-Return
-#If (HasFocus)
+      If (A_GuiEvent = "N") && (NumGet(A_EventInfo + 0, A_PtrSize * 2, "Int") = 0x0702) ; EN_SELCHANGE
+      {
+         SetTimer, UpdateGui, -10
+      }
+      Else {
+         If (A_EventInfo = 0x0100) ; EN_SETFOCUS
+            HasFocus := True
+         Else If (A_EventInfo = 0x0200) ; EN_KILLFOCUS
+            HasFocus := False
+      }
+Return ;}
+
+#If (HasFocus) ;{
 ; FontStyles
 ^!b::  ; bold
 ^!h::  ; superscript
@@ -267,44 +258,46 @@ Return
 RE2.ToggleFontStyle(SubStr(A_ThisHotkey, 3))
 GoSub, UpdateGui
 Return
-#If
+#If ;}
 ; ----------------------------------------------------------------------------------------------------------------------
-UpdateGui:
-Font := RE2.GetFont()
-If (FontName != Font.Name || FontCharset != Font.CharSet || FontStyle != Font.Style || FontSize != Font.Size
-|| TextColor != Font.Color || TextBkColor != Font.BkColor) {
-   FontStyle := Font.Style
-   TextColor := Font.Color
-   TextBkColor := Font.BkColor
-   FontCharSet := Font.CharSet
-   If (FontName != Font.Name) {
-      FontName := Font.Name
-      GuiControl, , FNAME, %FontName%
+UpdateGui: ;{
+
+   Font := RE2.GetFont()
+   If (FontName != Font.Name || FontCharset != Font.CharSet || FontStyle != Font.Style || FontSize != Font.Size
+   || TextColor != Font.Color || TextBkColor != Font.BkColor) {
+      FontStyle := Font.Style
+      TextColor := Font.Color
+      TextBkColor := Font.BkColor
+      FontCharSet := Font.CharSet
+      If (FontName != Font.Name) {
+         FontName := Font.Name
+         GuiControl, , FNAME, %FontName%
+      }
+      If (FontSize != Font.Size) {
+         FontSize := Round(Font.Size)
+         GuiControl, , FSIZE, %FontSize%
+      }
+      Font.Size := 8
+      RE1.SetSel(0, -1) ; select all
+      RE1.SetFont(Font)
+      RE1.SetSel(0, 0)  ; deselect all
    }
-   If (FontSize != Font.Size) {
-      FontSize := Round(Font.Size)
-      GuiControl, , FSIZE, %FontSize%
-   }
-   Font.Size := 8
-   RE1.SetSel(0, -1) ; select all
-   RE1.SetFont(Font)
-   RE1.SetSel(0, 0)  ; deselect all
-}
-Stats := RE2.GetStatistics()
-SB_SetText(Stats.Line . " : " . Stats.LinePos . " (" . Stats.LineCount . ")  [" . Stats.CharCount . "]", 2)
-Return
+   Stats := RE2.GetStatistics()
+   SB_SetText(Stats.Line . " : " . Stats.LinePos . " (" . Stats.LineCount . ")  [" . Stats.CharCount . "]", 2)
+
+Return ;}
 ; ======================================================================================================================
 ; Gui related
 ; ======================================================================================================================
-GuiClose:
+GuiClose: ;{
 If IsObject(RE1)
   RE1 := ""
 If IsObject(RE2)
   RE2 := ""
 Gui, %A_Gui%:Destroy
-ExitApp
+ExitApp ;}
 ; ----------------------------------------------------------------------------------------------------------------------
-GuiSize:
+GuiSize: ;{
 Critical
 If (A_EventInfo = 1)
    Return
@@ -320,43 +313,41 @@ If (A_GuiWidth != GuiW || A_GuiHeight != GuiH) {
    GuiW := A_GuiWidth
    GuiH := A_GuiHeight
 }
-Return
+Return ;}
 ; ----------------------------------------------------------------------------------------------------------------------
-RightClick(wParam, lParam)
-{
+RightClick(wParam, lParam) {
     X := lParam & 0xFFFF
     Y := lParam >> 16
 	Gosub, MakeMenu
 	return
 }
 
-
-GuiContextMenu:
+GuiContextMenu: ;{
 MouseGetPos, , , , HControl, 2
 WinGetClass, Class, ahk_id %HControl%
 If (Class = RichEdit.Class)
    Menu, ContextMenu, Show
-Return
+Return ;}
 ; ======================================================================================================================
 ; Text operations
 ; ======================================================================================================================
-SetFontStyle:
+SetFontStyle: ;{
 RE2.ToggleFontStyle(SubStr(A_GuiControl, 0))
 GoSub, UpdateGui
 GuiControl, Focus, % RE2.HWND
-Return
+Return ;}
 ; ----------------------------------------------------------------------------------------------------------------------
-ChangeSize:
+ChangeSize: ;{
 Size := RE2.ChangeFontSize(SubStr(A_GuiControl, 0) = "P" ? 1 : -1)
 GoSub, UpdateGui
 GuiControl, Focus, % RE2.HWND
-Return
+Return ;}
 ; ======================================================================================================================
 ; Menu File
 ; ======================================================================================================================
 FileAppend:
 FileOpen:
-FileInsert:
+FileInsert: ;{
 If (File := RichEditDlgs.FileDlg(RE2, "O")) {
    RE2.LoadFile(File, SubStr(A_ThisLabel, 5))
    If (A_ThisLabel = "FileOpen") {
@@ -370,9 +361,9 @@ If (File := RichEditDlgs.FileDlg(RE2, "O")) {
 }
 RE2.SetModified()
 GuiControl, Focus, % RE2.HWND
-Return
+Return ;}
 ; ----------------------------------------------------------------------------------------------------------------------
-FileClose:
+FileClose: ;{
 If (Open_File) {
    If RE2.IsModified() {
       Gui, +OwnDialogs
@@ -396,9 +387,9 @@ If (Open_File) {
 }
 RE2.SetModified()
 GuiControl, Focus, % RE2.HWND
-Return
+Return ;}
 ; ----------------------------------------------------------------------------------------------------------------------
-FileSave:
+FileSave: ;{
 If !(Open_File) {
    GoSub, FileSaveAs
    Return
@@ -406,9 +397,9 @@ If !(Open_File) {
 RE2.SaveFile(Open_File)
 RE2.SetModified()
 GuiControl, Focus, % RE2.HWND
-Return
+Return ;}
 ; ----------------------------------------------------------------------------------------------------------------------
-FileSaveAs:
+FileSaveAs: ;{
 If (File := RichEditDlgs.FileDlg(RE2, "S")) {
    RE2.SaveFile(File)
    Gui, +LastFound
@@ -418,17 +409,17 @@ If (File := RichEditDlgs.FileDlg(RE2, "S")) {
    Open_File := File
 }
 GuiControl, Focus, % RE2.HWND
-Return
+Return ;}
 ; ----------------------------------------------------------------------------------------------------------------------
-PageSetup:
+PageSetup: ;{
 RichEditDlgs.PageSetup(RE2)
 GuiControl, Focus, % RE2.HWND
-Return
+Return ;}
 ; ----------------------------------------------------------------------------------------------------------------------
-Print:
+Print: ;{
 RE2.Print()
 GuiControl, Focus, % RE2.HWND
-Return
+Return ;}
 ; ======================================================================================================================
 ; Menu Edit
 ; ======================================================================================================================
@@ -622,9 +613,74 @@ Return
 Replace:
 RichEditDlgs.ReplaceText(RE2)
 Return
+
 ; ======================================================================================================================
-; ParaIndentation GUI
+
 ; ======================================================================================================================
+; Additions below by burque505
+; ======================================================================================================================
+MakeMenu: ;{
+Menu, RTE_Menu, Add, &Copy, Copy2  ; Simple context menu
+Menu, RTE_Menu, Add, &Paste, Paste2  ;
+Menu, RTE_Menu, Add, Cu&t, Cut2  ;
+Menu, RTE_Menu, Add, Select &All, All2 ;
+Menu, RTE_Menu, Add, &Undo, Undo2 ;
+Menu, RTE_Menu, Add, &Redo, Redo2 ;
+Menu, RTE_Menu, Add
+Menu, RTE_Menu, Color, e6FFe6
+Menu, RTE_Menu, Add, &Edit, :Edit
+Menu, RTE_Menu, Add, &File, :File
+Menu, RTE_Menu, Add, &Search, :Search
+Menu, RTE_Menu, Add, &Format, :Format
+Menu, RTE_Menu, Add, &View, :View
+Menu, RTE_Menu, Show
+Menu, RTE_Menu, Color, FFFFFF
+return
+
+Copy2:
+Send, ^c
+return
+
+Paste2:
+Send, ^v
+return
+
+Cut2:
+Send, ^x
+return
+
+All2:
+Send, ^a
+return
+
+Undo2:
+Send, ^z
+return
+
+Redo2:
+Send, ^y
+return
+
+^!m::
+gosub, MakeMenu
+;MsgBox Context Menu: %A_ThisLabel%
+return ;}
+
+EM_SETMARGINS(Hwnd, Left := "", Right := "") {
+   ; EM_SETMARGINS = 0x00D3 -> http://msdn.microsoft.com/en-us/library/bb761649(v=vs.85).aspx
+      Set := 0 + (Left <> "") + ((Right <> "") * 2)
+      Margins := (Left <> "" ? Left & 0xFFFF : 0) + (Right <> "" ? (Right & 0xFFFF) << 16 : 0)
+
+   Return DllCall("User32.dll\SendMessage", "Ptr", HWND, "UInt", 0x00D3, "Ptr", Set, "Ptr", Margins, "Ptr")
+}
+ShowSBHelp() {
+   Global SBHelp, GuiNum
+   Static Current := 0
+   If (A_Gui = GuiNum) && (A_GuiControl <> Current)
+      SB_SetText(SBHelp[(Current := A_GuiControl)], 3)
+   Return
+}
+
 ParaIndentGui(RE) {
    Static Owner := ""
         , Success := False
@@ -719,9 +775,6 @@ ParaIndentGui(RE) {
       Gui, Destroy
    Return
 }
-; ======================================================================================================================
-; ParaNumbering GUI
-; ======================================================================================================================
 ParaNumberingGui(RE) {
    Static Owner := ""
         , Bullet := "•"
@@ -787,9 +840,6 @@ ParaNumberingGui(RE) {
       Gui, Destroy
    Return
 }
-; ======================================================================================================================
-; ParaSpacing GUI
-; ======================================================================================================================
 ParaSpacingGui(RE) {
    Static Owner := ""
         , Success := False
@@ -831,9 +881,6 @@ ParaSpacingGui(RE) {
       Gui, Destroy
    Return
 }
-; ======================================================================================================================
-; SetTabStops GUI
-; ======================================================================================================================
 SetTabStopsGui(RE) {
    ; Set paragraph's tabstobs
    ; Call with parameter mode = "Reset" to reset to default tabs
@@ -1005,65 +1052,12 @@ SetTabStopsGui(RE) {
       Gui, Destroy
    Return
 }
-; ======================================================================================================================
-#Include %A_ScriptDir%\..\Class_RichEdit.ahk
-#Include %A_ScriptDir%\..\Class_RichEditDlgs.ahk
-#Include %A_ScriptDir%\..\..\lib-i_to_z\RichEdit OleCallback.ahk
-; ======================================================================================================================
 
-; ======================================================================================================================
-; Additions below by burque505
-; ======================================================================================================================
-;
 
-MakeMenu:
-Menu, RTE_Menu, Add, &Copy, Copy2  ; Simple context menu
-Menu, RTE_Menu, Add, &Paste, Paste2  ; 
-Menu, RTE_Menu, Add, Cu&t, Cut2  ; 
-Menu, RTE_Menu, Add, Select &All, All2 ; 
-Menu, RTE_Menu, Add, &Undo, Undo2 ; 
-Menu, RTE_Menu, Add, &Redo, Redo2 ;
-Menu, RTE_Menu, Add
-Menu, RTE_Menu, Color, e6FFe6
-Menu, RTE_Menu, Add, &Edit, :Edit
-Menu, RTE_Menu, Add, &File, :File
-Menu, RTE_Menu, Add, &Search, :Search
-Menu, RTE_Menu, Add, &Format, :Format
-Menu, RTE_Menu, Add, &View, :View
-Menu, RTE_Menu, Show
-Menu, RTE_Menu, Color, FFFFFF
-return
-
-Copy2:
-Send, ^c
-return
-
-Paste2:
-Send, ^v
-return
-
-Cut2:
-Send, ^x
-return
-
-All2:
-Send, ^a
-return
-
-Undo2:
-Send, ^z
-return
-
-Redo2:
-Send, ^y
-return
-
-^!m::
-gosub, MakeMenu
-;MsgBox Context Menu: %A_ThisLabel%
-return
 
 ^Escape::ExitApp
 
-;return
+#Include %A_ScriptDir%\..\Class_RichEdit.ahk
+#Include %A_ScriptDir%\..\Class_RichEditDlgs.ahk
+#Include %A_ScriptDir%\..\..\lib-i_to_z\RichEdit OleCallback.ahk
 

@@ -1,4 +1,4 @@
-splashConsole(text, default = ""){
+﻿splashConsole(text, default = ""){
 	global 
           ; Set variable as global - rename 'vinput' below if you use 'input' as a variable elsewhere.
 	Gui, splashConsole: -Caption -Border +AlwaysOnTop +OwnDialogs

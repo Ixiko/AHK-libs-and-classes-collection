@@ -1,4 +1,4 @@
-
+﻿
 
 SHA(string, encoding = "UTF-8")
 {
