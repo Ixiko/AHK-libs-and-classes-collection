@@ -1,8 +1,7 @@
-#include %A_ScriptDir%\ActiveX.ahk
+ï»¿#include %A_ScriptDir%\ActiveX.ahk
 ActiveX()
 
-;JScript ‚ÌƒR[ƒh‚ğ–„‚ß‚İ
-script=
+;JScript ï¿½ÌƒRï¿½[ï¿½hï¿½ğ–„‚ßï¿½ï¿½ï¿½script=
 (
 	for(var i=5;i>0;i--){
 		sapi.Speak(i+",");

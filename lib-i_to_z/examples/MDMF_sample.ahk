@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #Include MDMF.ahk
 Monitors := MDMF_Enum()
 Gui, Margin, 20, 20

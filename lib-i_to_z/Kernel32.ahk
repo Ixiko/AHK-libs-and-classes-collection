@@ -1,4 +1,4 @@
-;
+﻿;
 ; AutoHotkey Version: 1.0.47.06
 ; Platform:       WinXP
 ; Author:         Yonken <yonken@163.com>

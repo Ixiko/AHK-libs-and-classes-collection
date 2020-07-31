@@ -1,4 +1,4 @@
-Fuzzy(input, arr){ ; magic happens here
+﻿Fuzzy(input, arr){ ; magic happens here
 	if !(input := RegExReplace(input, " ", "")).length { ; return the array if input is empty
 		for a, b in arr, list:=[]
 			list[a] := {name:b}

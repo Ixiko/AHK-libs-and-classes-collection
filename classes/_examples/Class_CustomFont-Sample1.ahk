@@ -1,4 +1,4 @@
-#Include Class_CustomFont.ahk
+﻿#Include Class_CustomFont.ahk
 font1 := New CustomFont("CHOCD TRIAL___.otf")
 
 Gui, Margin, 30, 10

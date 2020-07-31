@@ -1,4 +1,4 @@
-;from Columbus.ahk
+﻿;from Columbus.ahk
 
 Fuzzy(input, arr){ ; magic happens here
 	if !(input := RegExReplace(input, " ", "")).length { ; return the array if input is empty

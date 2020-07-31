@@ -1,4 +1,4 @@
-#Persistent
+ï»¿#Persistent
 #include *i %A_ScriptDir%\ActiveX.ahk
 ActiveX()
 
@@ -40,7 +40,7 @@ SR_Recognition(this,prm,r){
 	else if txt=ok
 		ControlClick,OK,A
 	else if txt=cancel
-		ControlClick,ƒLƒƒƒ“ƒZƒ‹,A
+		ControlClick,Æ’LÆ’Æ’Æ’â€œÆ’ZÆ’â€¹,A
 	else if txt=close
 		WinClose,A
 	Release(pi)

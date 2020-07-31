@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 SetBatchLines, -1
 #Include TV_SetSelColors.ahk
 Gui, Margin, 20, 20

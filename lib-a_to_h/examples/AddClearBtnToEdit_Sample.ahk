@@ -1,4 +1,4 @@
-; AddClearBtnToEdit_Sample.ahk
+﻿; AddClearBtnToEdit_Sample.ahk
 
 #NoEnv
 #SingleInstance Force

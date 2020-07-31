@@ -1,22 +1,19 @@
-﻿;#Include %A_LineFile%/../acc.ahk
+﻿#Include %A_LineFile%/../acc.ahk
 Class eAutocomplete {
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~ PRIVATE NESTED CLASSES ~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	Class _Proxy extends eAutocomplete._Functor {
-
 		static instances := {}
-
 		call(_k, _params*) {
+			local
+			global eAutocomplete
 			if not (eAutocomplete._Proxy.instances.hasKey(_k)) {
 				eAutocomplete._Proxy.instances[_k] := {}
 			} else if not (_params.length()) {
 				return "", eAutocomplete._Proxy.instances.delete(_k)
 			}
 			_subClass := eAutocomplete[ SubStr(this.__class, InStr(this.__class, ".",, 0) + 1) ]
-			return _inst := new _subClass(_k, _params*), eAutocomplete._Proxy.instances[_k].push(_inst)
+			_inst := new _subClass(_k, _params*)
+		return _inst, eAutocomplete._Proxy.instances[_k].push(_inst)
 		}
-
 	}
 	Class _Functor { ; https://autohotkey.com/boards/viewtopic.php?f=7&t=38151
 		__Call(_newEnum, _k, _params*) {
@@ -24,7 +21,6 @@ Class eAutocomplete {
 				return this.call(_k, _params*)
 		}
 	}
-		; ====================================================================================
 		Class _EventObject extends eAutocomplete._Proxy {
 			__New(_source, _eventName, _callback) {
 				this.source := _source, this.eventName := _eventName
@@ -38,23 +34,24 @@ Class eAutocomplete {
 				}
 			}
 			unregister() {
-			this.source[ this.eventName ] := ""
+				this.source[ this.eventName ] := ""
 			}
 			__Delete() {
-			this.unregister()
+				this.unregister()
 			}
 		}
 		Class _Hotkey extends eAutocomplete._Proxy {
-			__New(_hkIfFuncObject, _keyName, _func) {
-				this.ifFuncObj := _hkIfFuncObject, this.keyName := _keyName
-				Hotkey, If, % _hkIfFuncObject
-					Hotkey % _keyName, % _func, On T1 I0 B0
+			__New(_hkIfFn, _keyName, _fn) {
+				this.ifFn := _hkIfFn, this.keyName := _keyName
+				Hotkey, If, % _hkIfFn
+					Hotkey % _keyName, % _fn, On T1 I0 B0
 				Hotkey, If
 			}
 			unregister() {
+				local
 				static _f := Func("WinActive")
-				_hkIfFuncObject := this.ifFuncObj
-				Hotkey, If, % _hkIfFuncObject
+				_hkIfFn := this.ifFn
+				Hotkey, If, % _hkIfFn
 					Hotkey % this.keyName, % _f, Off
 				Hotkey, If
 			}
@@ -64,13 +61,15 @@ Class eAutocomplete {
 		}
 		Class _Iterator extends eAutocomplete._Proxy {
 			__New(_ID, _fn) {
-			this.callableObject := _fn
+				this.callableObject := _fn
 			}
 			setPeriod(_period) {
-			if (_f:=this.callableObject)
-				SetTimer, % _f, % _period
+				local
+				if (_fn:=this.callableObject)
+					SetTimer, % _fn, % _period
 			}
 			unregister() {
+				local
 				if not (_f:=this.callableObject)
 					return
 				SetTimer, % _f, Off
@@ -81,25 +80,29 @@ Class eAutocomplete {
 			this.unregister()
 			}
 		}
-		; ====================================================================================
 
 	Class _Resource {
-
 		static table := []
-
 		path := ""
 		subsections := {}
 		hapaxLegomena := {}
-
 		_set(_sourceName, _fileFullPath:="", _resource:="") {
-			if not (StrLen(_sourceName))
+			local
+			global eAutocomplete
+			if not (StrLen(_sourceName)) {
 				throw Exception("Invalid source name.")
+			return
+			}
 			if (_fileFullPath <> "") {
-				if not (FileExist(_fileFullPath))
+				if not (FileExist(_fileFullPath)) {
 					throw Exception("The resource could not be found.")
+				return
+				}
 				try _fileObject:=FileOpen(_fileFullPath, 4+8+0, "UTF-8")
-				catch
+				catch {
 					throw Exception("Failed attempt to open the file.")
+				return
+				}
 				_resource := _fileObject.read(), _fileObject.close()
 			}
 			_source := new eAutocomplete._Resource(_sourceName)
@@ -112,7 +115,7 @@ Class eAutocomplete {
 			_resource := "`n" . LTrim(_resource, "`n")
 			_listLines := A_ListLines
 			ListLines, Off
-			while (_letter:=SubStr(_resource, 2, 1)) {
+			while ((_letter:=SubStr(_resource, 2, 1)) <> "") {
 				_position := RegExMatch(_resource, "Psi)\n\Q" . _letter . "\E[^\n]+(?:.*\n\Q" . _letter . "\E.+?(?=\n))?", _length) + _length
 				if _letter is not space
 					_source.subsections[_letter] := SubStr(_resource, 1, _position)
@@ -121,13 +124,13 @@ Class eAutocomplete {
 			ListLines % _listLines ? "On" : "Off"
 			SetBatchLines % _batchLines
 		}
-
 		__New(_sourceName) {
 			static _ := new eAutocomplete._Resource("Default")
 			this.name := _sourceName
 		return eAutocomplete._Resource.table[_sourceName] := this
 		}
 		appendValue(_value) {
+			local
 			_subsections := this.subsections, _letter := SubStr(_value, 1, 1)
 			(_subsections.hasKey(_letter) || _subsections[_letter]:="`n")
 			_subsection := _subsections[_letter] . _value . "`n"
@@ -136,6 +139,7 @@ Class eAutocomplete {
 			_subsections[_letter] := "`n" . LTrim(_subsection, "`n")
 		}
 		update() {
+			local
 			if (this.path <> "") {
 				try _fileObject:=FileOpen(this.path, 4+1, "UTF-8")
 				catch
@@ -146,17 +150,12 @@ Class eAutocomplete {
 				_fileObject.close()
 			}
 		}
-
 	}
 	Class _pendingWordMatchObjectWrapper {
 		match := {value: "", pos: 0, len: 0}
-		leftPart := {value: "", pos: 0, len: 0}
-		isRegEx := {value: "", pos: 0, len: 0}
-		rightPart := {value: "", pos: 0, len: 0}
 		isComplete := {value: "", pos: 0, len: 0}
 	}
 	Class _ListBox {
-
 		static _properties :=
 		(LTrim Join C
 			{
@@ -172,23 +171,17 @@ Class eAutocomplete {
 			}
 		)
 		static _COUNTUPPERTHRESHOLD := 52
-		_lastX := 0
-		_lastY := 0
 		_lastWidth := 0
 		_itemHeight := 0
 		_list := ""
 		_itemCount := 0
 		_visible := false
-
 		_onSelection := ""
-
 		__New(_GUIID, _hHostControl) {
-
-			static _virtualScreenWidth := DllCall("User32.dll\GetSystemMetrics", "UInt", 78)
-			this._overallWidthAlloc := _virtualScreenWidth
-
-			eAutocomplete._setOptions(this,, true)
-
+			local
+			global eAutocomplete
+			this._overallWidthAlloc := DllCall("User32.dll\GetSystemMetrics", "UInt", 78)
+			eAutocomplete._setOptions(this, "_properties",, true)
 			_GUI := A_DefaultGUI
 			GUI, New, % "+Owner" . (this._owner:=_GUIID) . " +hwnd_parent +ToolWindow -Caption +Delimiter`n"
 			this._host := _hHostControl, this._parent := _parent
@@ -198,12 +191,13 @@ Class eAutocomplete {
 			GUI, %_GUI%:Default
 			this.fontName := eAutocomplete._ListBox._properties.fontName
 			this._selection := new eAutocomplete._ListBox._SelectionWrapper(this._HWND)
-
 		}
 		__Set(_k, _v) {
+			local
+			global eAutocomplete
 			if (eAutocomplete._Listbox._properties.hasKey(_k))
 			{
-				if ((_updateFont:=((_k = "fontName") || (_k = "fontSize"))) || (_k = "fontColor")) { ; *
+				if ((_updateFont:=((_k = "fontName") || (_k = "fontSize"))) || (_k = "fontColor")) {
 					this["_" . _k] := _v
 					try GUI % this._parent . ":Font", % Format("c{1} s{2}", this._fontColor, this._fontSize), % this._fontName
 					GuiControl, Font, % this._HWND
@@ -222,20 +216,19 @@ Class eAutocomplete {
 				return this["_" . _k]
 				}
 				else if (_k = "maxSuggestions") {
-					_COUNTUPPERTHRESHOLD := eAutocomplete._ListBox._COUNTUPPERTHRESHOLD
-					if _v between 1 and %_COUNTUPPERTHRESHOLD%
+					if ((1 <= _v) && (_v <= eAutocomplete._ListBox._COUNTUPPERTHRESHOLD))
 						return this._maxSuggestions:=Floor(_v), this._autoWH(this._list)
 					else return this._maxSuggestions
 				}
 				else if (_k = "transparency") {
-					if _v between 0 and 255
+					if _v between 10 and 255 ; +++
 					{
 						this._transparency := _v
 						(this._visible && this._show())
 					}
 				return this._transparency
 				}
-				else if (_k = "bkColor") { ; *
+				else if (_k = "bkColor") {
 					try GUI % this._parent . ":Color",, % this._bkColor:=_v
 				return this._bkColor
 				}
@@ -249,21 +242,21 @@ Class eAutocomplete {
 			}
 		}
 		__Get(_k, _params*) {
+			local
+			global eAutocomplete
 			if (eAutocomplete._Listbox._properties.hasKey(_k))
 				return this["_" . _k]
 		}
-		_hasHScrollBar {
-			get {
-			return !(this._itemCount <= this._maxSuggestions)
-			}
-		}
-
 		setOptions(_opt) {
-		eAutocomplete._setOptions(this, _opt)
+			local
+			global eAutocomplete
+			eAutocomplete._setOptions(this, "_properties", _opt)
 		}
-
 		_setData(_list) {
-			_list := Trim(_list, "`n"), _count := 0
+			local
+			global eAutocomplete
+			_count := 0
+			_list := Trim(_list, "`n")
 			if (_list <> "") {
 				StrReplace(_list, "`n",, _count)
 				_upperThreshold := eAutocomplete._ListBox._COUNTUPPERTHRESHOLD
@@ -276,19 +269,23 @@ Class eAutocomplete {
 			this._autoWH(_list)
 			this._selection := new eAutocomplete._ListBox._SelectionWrapper(this._HWND)
 		}
+		_hasHScrollBar {
+			get {
+			return !(this._itemCount <= this._maxSuggestions)
+			}
+		}
 		_getHeight() {
+			local
 			_rows := (this._hasHScrollBar) ? this._maxSuggestions : this._itemCount
 		return (_rows + 1) * this._itemHeight
 		}
-		Class _SelectionWrapper {
 
+		Class _SelectionWrapper {
 			_index := 0
 			_text := ""
-
 			__New(_parent) {
 			this._parent := _parent
 			}
-
 			index {
 				set {
 					GuiControl, Choose, % this._parent, % this._index:=value
@@ -300,8 +297,9 @@ Class eAutocomplete {
 			}
 			text {
 				get {
+					local
 					ControlGet, _item, Choice,,, % "ahk_id " . this._parent
-				return this._text:=_item
+				return this._text:=Trim(_item, "`r`n") ; ~ ++++
 				}
 				set {
 				return this.text
@@ -316,35 +314,17 @@ Class eAutocomplete {
 				return this.offsetTop
 				}
 			}
-
 		}
-		; =============================================================================================================
-		_getCurrentItemData(_dataMaxIndex:=3) { ; //LB_GETITEMDATA/LB_SETITEMDATA
-			(_tsv:=[])[_dataMaxIndex] := ""
+		_getCurrentItemData(_dataMaxIndex:=3) {
+			local
+			_tsv:=[]
+			_tsv.setCapacity(_dataMaxIndex)
 			for _index, _element in StrSplit(this._selection.text, A_Tab, A_Tab . A_Space, _dataMaxIndex)
 				_tsv[_index] := _element
 		return _tsv
 		}
-		; =============================================================================================================
-
-		_show(_boolean:=true) {
-			_hLastFoundWindow := WinExist()
-			try GUI % this._parent ":+LastFound"
-			WinSet, Transparent, % (this._visible:=_boolean) ? this._transparency : 0
-			WinSet, Redraw
-			WinExist("ahk_id " . _hLastFoundWindow)
-		}
-		_showDropDown() {
-		this._autoXY(), this._show()
-		}
-		_hideDropDown() {
-		this._show(false)
-		}
-		_dismiss() {
-		this._setData(""), this._hideDropDown()
-		}
-
 		__select(_hwnd:="", _event:="") {
+			local
 			_selection := this._selection, _index := _selection._index
 			if (_event = "CustomDown") {
 				((++_index > this._itemCount) && _index:=1)
@@ -360,16 +340,34 @@ Class eAutocomplete {
 			}
 		}
 		_selectUp() {
-		this.__select(, "CustomUp")
+			this.__select(, "CustomUp")
 		}
 		_selectDown() {
-		this.__select(, "CustomDown")
+			this.__select(, "CustomDown")
 		}
-
+		_show(_boolean:=true) {
+			local
+			_hLastFoundWindow := WinExist()
+			try GUI % this._parent ":+LastFound"
+			WinSet, Transparent, % (this._visible:=_boolean) ? this._transparency : 0
+			WinSet, Redraw
+			WinExist("ahk_id " . _hLastFoundWindow)
+		}
+		_showDropDown() {
+			this._autoXY(), this._show()
+		}
+		_hideDropDown() {
+			this._show(false)
+		}
+		_dismiss() {
+			this._setData(""), this._hideDropDown()
+		}
 		_dispose() {
-		try GUI % this._parent . ":-Parent"
-		GuiControl -g, % this._HWND
-		eAutocomplete._EventObject(this)
+			local
+			global eAutocomplete
+			try GUI % this._parent . ":-Parent"
+			GuiControl -g, % this._HWND
+			eAutocomplete._EventObject(this)
 		}
 		__Delete() {
 			; MsgBox % A_ThisFunc
@@ -377,16 +375,15 @@ Class eAutocomplete {
 			DllCall("SelectObject", "UPtr", this._hDC, "UPtr", this._hFont, "UPtr")
 			DllCall("ReleaseDC", "UPtr", this._HWND, "UPtr", this._hDC)
 		}
-
 	}
 	Class _DropDownList extends eAutocomplete._ListBox {
-
 		__New(_GUIID, _hHostControl) {
 			base.__New(_GUIID, _hHostControl)
 			GUI % this._parent . ":+E0x20"
 		}
 		_getWidth(_list) {
 			static SM_CXVSCROLL := DllCall("GetSystemMetrics", "UInt", 2)
+			local
 			_size := "", _w := 0
 			_listLines := A_ListLines
 			ListLines, Off
@@ -401,11 +398,13 @@ Class eAutocomplete {
 		return _w, (_w && _w += 10 + this._hasHScrollBar * SM_CXVSCROLL)
 		}
 		_autoWH(_params*) {
+			local
 			_w := this._lastWidth := this._getWidth(_params.1), _h := this._getHeight()
 			GuiControl, Move, % this._HWND, % "w" . _w . " h" . _h
 			GUI % this._parent . ":Show", % "NA AutoSize"
 		}
 		_autoXY() {
+			local
 			if (A_CaretX <> "") {
 				VarSetCapacity(_POINT_, 8, 0)
 				DllCall("User32.dll\GetCaretPos", "Ptr", &_POINT_)
@@ -413,86 +412,87 @@ Class eAutocomplete {
 				_x1 := NumGet(_POINT_, 0, "Int") + 5, _y := NumGet(_POINT_, 4, "Int") + 30
 				_x2 := _x1 + this._lastWidth
 				_x := (_x2 > this._overallWidthAlloc) ? this._overallWidthAlloc - this._lastWidth : _x1
-				GUI % this._parent . ":Show", % "NA x" . (this._lastX:=_x) . " y" . (this._lastY:=_y)
+				GUI % this._parent . ":Show", % "NA x" . _x . " y" . _y
 			}
 		}
 
 	}
 	Class _ComboBoxList extends eAutocomplete._ListBox {
-
 		__New(_GUIID, _hHostControl) {
+			local
 			base.__New(_GUIID, _hHostControl)
 			GUI % this._parent . ":+Parent" . this._owner
 			_fn := this.__select.bind(this)
 			GuiControl, +g, % this._HWND, % _fn
 		}
 		_getWidth() {
+			local
 			ControlGetPos,,, _w,,, % "ahk_id " . this._host
 		return _w
 		}
 		_autoWH(_params*) {
+			local
+			_lastFoundWindow := WinExist()
 			if not (WinExist("ahk_id " . this._host))
-				return
+				return "", WinExist("ahk_id " . _lastFoundWindow)
 			GuiControl, MoveDraw, % this._HWND, % "h" . (_h:=this._getHeight()) . " w" . (_w:=this._getWidth())
 			GUI % this._parent . ":Show", % "NA AutoSize"
+			WinExist("ahk_id " . _lastFoundWindow)
 		}
 		_autoXY() {
+			local
+			_lastFoundWindow := WinExist()
 			if not (WinExist("ahk_id " . this._host))
-				return
+				return "", WinExist("ahk_id " . _lastFoundWindow)
 			VarSetCapacity(_RECT_, 16, 0) ; https://autohotkey.com/boards/viewtopic.php?f=6&t=38472 - convert coordinates between Client/Screen/Window modes
 			DllCall("User32.dll\GetWindowRect", "Ptr", this._host, "Ptr", &_RECT_)
-			_x := NumGet(&_RECT_, 0, "Int"), _y := NumGet(&_RECT_, 4, "Int"), _h := NumGet(&_RECT_, 12, "Int") - _y
-			this._lastX := _x, this._lastY := _y + _h
 			DllCall("User32.dll\MapWindowPoints", "Ptr", 0, "Ptr", this._owner, "Ptr", &_RECT_, "UInt", 2)
-			_x := NumGet(&_RECT_, 0, "Int"), _y := NumGet(&_RECT_, 4, "Int"), _h := NumGet(&_RECT_, 12, "Int") - _y
-			GUI % this._parent . ":Show", % "NA x" . _x . " y" . _y + _h
+			_x := NumGet(&_RECT_, 0, "Int"), _h := NumGet(&_RECT_, 12, "Int")
+			GUI % this._parent . ":Show", % "NA x" . _x . " y" . _h
+			WinExist("ahk_id " . _lastFoundWindow)
 		}
-
 	}
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~ PRIVATE BASE OBJECT PROPERTIES ~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 	static _instances := {}
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~ PUBLIC PROPERTIES ~~~~~~~~~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		static _properties :=
-		(LTrim Join C
-			{
-				AHKID: "",
-				autoSuggest: true,
-				collectAt: 4,
-				collectWords: true,
-				disabled: false,
-				endKeys: "?!,;.:(){}[\]'""<>\\@=/|", ; +todo subsquenceKeys
-				expandWithSpace: true,
-				HWND: "",
-				learnWords: false,
-				listbox: "",
-				matchModeRegEx: true,
-				minWordLength: 4,
-				onCompletion: "",
-				onReplacement: "",
-				onResize: "",
-				onSuggestionLookUp: "",
-				regExSymbol: "*",
-				source: "",
-				suggestAt: 2 ; +onSuggestionsAvailable: "",
-			}
-		)
+	static _properties :=
+	(LTrim Join C
+		{
+			AHKID: "",
+			autoSuggest: true,
+			collectAt: 4,
+			collectWords: true,
+			disabled: false,
+			endKeys: "?!,;.:(){}[\]'""<>\\@=/|",
+			expandWithSpace: true,
+			HWND: "",
+			learnWords: false,
+			listbox: "",
+			minWordLength: 4,
+			onSearch: "", ; +++
+			onCompletion: "",
+			onReplacement: "",
+			onResize: "",
+			onSuggestionLookUp: "",
+			source: "",
+			suggestAt: 2
+		}
+	)
 	__Set(_k, _v) {
+		local
+		global eAutocomplete
 		if (eAutocomplete._properties.hasKey(_k))
 		{
 			if ((_k = "AHKID") || (_k = "HWND") || (_k = "listbox"))
 				return this["_" . _k]
-			else if ((_k = "autoSuggest") || (_k = "collectWords") || (_k = "expandWithSpace") || (_k = "learnWords") || (_k = "matchModeRegEx"))
+			else if ((_k = "autoSuggest") || (_k = "collectWords") || (_k = "expandWithSpace") || (_k = "learnWords"))
 				return this["_" . _k] := !!_v
 			else if (_k = "source") {
 				if ((_v <> this._source.name) && eAutocomplete._Resource.table.hasKey(_v)) {
-					_state := this._disabled
+					_isDisabled := this._disabled
 					this.disabled := true
 					(this._learnWords && this._source.update())
-				return this._source:=eAutocomplete._Resource.table[_v], this._disabled := _state
+				return this._source:=eAutocomplete._Resource.table[_v], this._disabled := _isDisabled
 				}
 			return this._source.name
 			}
@@ -500,18 +500,15 @@ Class eAutocomplete {
 				((!!_v <> this._disabled) && (this._disabled:=!!_v) && this._listbox._dismiss())
 			return this._disabled
 			}
-			else if ((_k = "onCompletion") || (_k = "onResize")) ; || (_k = "onSuggestionsAvailable")
+			else if ((_k = "onCompletion") || (_k = "onResize"))
 				return _v, eAutocomplete._EventObject(this, "_" . _k, _v)
-			else if ((_k = "onReplacement") || (_k = "onSuggestionLookUp")) {
+			else if ((_k = "onReplacement") || (_k = "onSuggestionLookUp") || (_k = "onSearch")) { ; +++
 				((_v <> "") || _v:=this["__" . _k].bind(this))
 			return _v, eAutocomplete._EventObject(this, "_" . _k, _v)
 			}
 			else if ((_k = "collectAt") || (_k = "minWordLength") || (_k = "suggestAt"))
 				return (not ((_v:=Floor(_v)) > 0)) ? this["_" . _k] : this["_" . _k]:=_v
 			else if (_k = "endKeys") {
-				static _lastEndKeys := eAutocomplete._properties.endKeys
-				if InStr(_v, this._regExSymbol)
-					return this["_endKeys"]
 				_lastEndKeys := "", _endKeys := ""
 				Loop, parse, % RegExReplace(_v, "\s")
 				{
@@ -524,38 +521,35 @@ Class eAutocomplete {
 				}
 				return this["_endKeys"] := _endKeys
 			}
-			else if (_k = "regExSymbol") {
-				_v := Trim(_v, _lastEndKeys . A_Space . "`t`r`n")
-			return (not (StrLen(_v) = 1)) ? this._regExSymbol : this._regExSymbol:=_v
-			}
 		}
 	}
-	setOptions(_opt) {
-	eAutocomplete._setOptions(this, _opt)
-	}
 	__Get(_k, _params*) {
+		local
+		global eAutocomplete
 		if (eAutocomplete._properties.hasKey(_k))
 			return this["_" . _k]
 	}
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~ PUBLIC METHODS ~~~~~~~~~~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	setOptions(_opt) {
+		local
+		global eAutocomplete
+		eAutocomplete._setOptions(this, "_properties", _opt)
+	}
 	dispose() {
+		local
+		global eAutocomplete
 		if not (eAutocomplete._instances.hasKey(this._HWND))
 			return
 		this.disabled := true, eAutocomplete._instances.delete(this._HWND)
-		for _, _instance in eAutocomplete._instances, _noMoreFromProcess := true {
+		for _each, _instance in eAutocomplete._instances, _noMoreFromProcess := true {
 			if (_instance._idProcess = this._idProcess) {
 				_noMoreFromProcess := false
 			break
 			}
 		}
 		(_noMoreFromProcess && eAutocomplete._Value.unregisterProc(this._idProcess))
-		; ========================================
-		eAutocomplete._Hotkey(this._hkIfFuncObject)
+		eAutocomplete._Hotkey(this._hkIfFn)
 		eAutocomplete._EventObject(this)
 		eAutocomplete._Iterator(this._HWND)
-		; ========================================
 		(this._learnWords && this._source.update())
 		if (this.hasKey("_hEditLowerCornerHandle"))
 			GuiControl, -g, % this._hEditLowerCornerHandle
@@ -564,20 +558,25 @@ Class eAutocomplete {
 	__Delete() {
 		; MsgBox % A_ThisFunc
 	}
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~ PUBLIC BASE OBJECT METHODS ~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	create(_GUIID, _editOptions:="", _opt:="") {
+		local _hLastFoundWindow, _hEdit, _plusResize, _isComboBox, _classPath, _className, _obj, _inst
+			, _pos, _posx, _posy, _posw, _posh, _hEditLowerCornerHandle, _fn
 		_hLastFoundWindow := WinExist()
 		try {
 			Gui % _GUIID . ":+LastFoundExist"
 			IfWinNotExist
-				throw Exception("Invalid GUI window.",, _GUIID)
+			{
+				throw Exception("Invalid GUI window.", -1, _GUIID)
+			return
+			} ; +++
 		} finally WinExist("ahk_id " . _hLastFoundWindow)
 		GUI, % _GUIID . ":Add", Edit, % _editOptions . " hwnd_hEdit",
 		_plusResize := ((_editOptions <> "") && (_editOptions ~= "i)(^|\s)\K\+?[^-]?Resize(?=\s|$)"))
 		_isComboBox := (!_plusResize && !(DllCall("GetWindowLong", "UInt", _hEdit, "Int", -16) & 0x4))
-		_inst := new eAutocomplete(_GUIID, _hEdit, _isComboBox, _opt)
+		_classPath := StrSplit(this.__Class, "."), _className := _classPath.removeAt(1) ; +++
+		_obj := (_classPath.count() > 0) ? %_className%[_classPath*] : %_className% ; +++
+		_inst := new _obj(_GUIID, _hEdit, _isComboBox, _opt) ; +++
 		if (_plusResize) {
 			GuiControlGet, _pos, Pos, % _hEdit
 			GUI, % _GUIID . ":Add", Text, % "0x12 w11 h11 " . Format("x{1} y{2}", _posx + _posw - 7, _posy + _posh - 7) . " hwnd_hEditLowerCornerHandle",
@@ -587,89 +586,99 @@ Class eAutocomplete {
 	return _inst
 	}
 	attach(_hHostControl, _opt:="") {
+		local _detectHiddenWindows, _class, _GUIID, _style, _isComboBox, _classPath, _className, _obj, _inst, _hLastFoundWindow
 		_detectHiddenWindows := A_DetectHiddenWindows
 		DetectHiddenWindows, On
 		WinGetClass, _class, % "ahk_id " . _hHostControl
 		DetectHiddenWindows % _detectHiddenWindows
-		if not ((_class = "Edit") || (_class = "RICHEDIT50W"))
-			throw Exception("The host control either does not exist or is not a representative of the class Edit/RICHEDIT50W.")
+		if not ((_class = "Edit") || (_class = "RICHEDIT50W")) {
+			throw Exception("The host control either does not exist or is not a representative of the class Edit/RICHEDIT50W.", -1, _class)
+		return
+		}
 		_GUIID := DllCall("User32.dll\GetAncestor", "Ptr", _hHostControl, "UInt", 2, "Ptr")
 		ControlGet, _style, Style,,, % "ahk_id " . _hHostControl
 		_isComboBox := not (_style & 0x4) ; ES_MULTILINE
-		_inst := new eAutocomplete(_GUIID, _hHostControl, _isComboBox, _opt)
+		_classPath := StrSplit(this.__Class, "."), _className := _classPath.removeAt(1) ; +++
+		_obj := (_classPath.count() > 0) ? %_className%[_classPath*] : %_className% ; +++
+		_inst := new _obj(_GUIID, _hHostControl, _isComboBox, _opt) ; +++
+		_hLastFoundWindow := WinExist()
 		if (WinActive("ahk_id " . _GUIID))
-			eAutocomplete._Value.__sourceChanged(0x8005, _hHostControl)
+			eAutocomplete._Value.__sourceChanged(0x8005, _hHostControl, 0, 0, 0, 0) ; ++++
+		WinExist("ahk_id " . _hLastFoundWindow)
 	return _inst
 	}
 	setSourceFromVar(_sourceName, _list:="") {
-	eAutocomplete._Resource._set(_sourceName, "", _list)
+		local
+		global eAutocomplete
+		try eAutocomplete._Resource._set(_sourceName, "", _list)
+		catch _exception {
+			throw Exception(_exception.message, -1, _exception.extra)
+		} ; +++
 	}
 	setSourceFromFile(_sourceName, _fileFullPath) {
-	eAutocomplete._Resource._set(_sourceName, _fileFullPath)
+		local
+		global eAutocomplete
+		try eAutocomplete._Resource._set(_sourceName, _fileFullPath)
+		catch _exception {
+			throw Exception(_exception.message, -1, _exception.extra)
+		} ; +++
 	}
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~ PRIVATE PROPERTIES ~~~~~~~~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	; <><><><><><><><><><><><><><><><><><><><><><><><><><><><>
 	_hEditLowerCornerHandle := ""
-	_minSize := {w: 51, h: 21}
-	_maxSize := {w: A_ScreenWidth, h: A_ScreenHeight}
+	_minSize := {"w": 51, "h": 21}
+	_maxSize := {"w": A_ScreenWidth, "h": A_ScreenHeight}
 	_content := ""
 	_pendingWord := ""
 	_ready := true
 	_completionData := ""
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~ PRIVATE METHODS ~~~~~~~~~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	__New(_GUIID, _hHostControl, _isComboBox, _opt:="") {
-
-		eAutocomplete._setOptions(this,, true)
-
+		local _idProcess, _classPath, _className, _obj, _listBox, _clone, _listBoxOptions, _hkIfFn
+		eAutocomplete._setOptions(this, "_properties",, true)
 		_idProcess := "", DllCall("User32.dll\GetWindowThreadProcessId", "Ptr", _GUIID, "UIntP", _idProcess, "UInt")
-		if not (_idProcess)
-			throw Exception("Could not retrieve the identifier of the process that created the host window.")
+		if not (_idProcess) {
+			throw Exception("Could not retrieve the identifier of the process that created the host window.", -2) ; +++
+		return
+		}
 		this._idProcess := _idProcess, this._parent := _GUIID, this._AHKID := "ahk_id " . (this._HWND:=_hHostControl)
-
-		_listBox := (this._isComboBox:=_isComboBox) ? eAutocomplete._ComboBoxList : eAutocomplete._DropDownList
+		_classPath := StrSplit(this.__Class, "."), _className := _classPath.removeAt(1) ; +++
+		_obj := (_classPath.count() > 0) ? %_className%[_classPath*] : %_className% ; +++
+		_listBox := (this._isComboBox:=_isComboBox) ? _obj._ComboBoxList : _obj._DropDownList ; +++
 		_listbox := this._listbox := new _listBox(_GUIID, _hHostControl)
 
 		this._source := eAutocomplete._Resource.table["Default"]
-		this.onSuggestionLookUp := "", this.onReplacement := ""
+		this.onSuggestionLookUp := "", this.onReplacement := "", this.onSearch := "" ; +++
 		if (IsObject(_opt)) {
-			_clone := _opt.clone()
+			_clone := ObjClone(_opt) ; +++
 			if (_listBoxOptions:=_clone.remove("listbox"))
 				_listBox.setOptions(_listBoxOptions)
 			this.setOptions(_clone)
 		}
 
-		; ========================================
-		eAutocomplete._Iterator(this._HWND, ObjBindMethod(this, "__valueChanged", _hHostControl))
-		; ========================================
-		eAutocomplete._Value.registerProc(this._idProcess)
+		eAutocomplete._Iterator(this._HWND, ObjBindMethod(this, "__valueChanged")) ; +++
+		_obj._Value.registerProc(this._idProcess) ; +++
+
 		eAutocomplete._EventObject(this._listbox, "_onSelection", ObjBindMethod(this, "_listboxSelectionEventMonitor"))
-		; ========================================
-		_hkIfFuncObject := this._hkIfFuncObject := this._hotkeyPressHandler.bind("", _hHostControl)
-		eAutocomplete._Hotkey(_hkIfFuncObject, "Escape", ObjBindMethod(this._listbox, "_dismiss"))
-		eAutocomplete._Hotkey(_hkIfFuncObject, "Up", ObjBindMethod(_listbox, "_selectUp"))
-		eAutocomplete._Hotkey(_hkIfFuncObject, "Down", ObjBindMethod(_listbox, "_selectDown"))
-		eAutocomplete._Hotkey(_hkIfFuncObject, "Left", Func("WinActive"))
-		eAutocomplete._Hotkey(_hkIfFuncObject, "Right", ObjBindMethod(this, "_completionDataLookUp", 1))
-		eAutocomplete._Hotkey(_hkIfFuncObject, "+Right", ObjBindMethod(this, "_completionDataLookUp", 2))
-		eAutocomplete._Hotkey(_hkIfFuncObject, "Tab", ObjBindMethod(this, "_complete", false, 1))
-		eAutocomplete._Hotkey(_hkIfFuncObject, "+Tab", ObjBindMethod(this, "_complete", false, 2))
-		eAutocomplete._Hotkey(_hkIfFuncObject, "Enter", ObjBindMethod(this, "_complete", true, 1))
-		eAutocomplete._Hotkey(_hkIfFuncObject, "+Enter", ObjBindMethod(this, "_complete", true, 2))
-		; ========================================
+
+		_hkIfFn := this._hkIfFn := this._hotkeyPressHandler.bind("", _hHostControl)
+		eAutocomplete._Hotkey(_hkIfFn, "Escape", ObjBindMethod(this._listbox, "_dismiss"))
+		eAutocomplete._Hotkey(_hkIfFn, "Up", ObjBindMethod(_listbox, "_selectUp"))
+		eAutocomplete._Hotkey(_hkIfFn, "Down", ObjBindMethod(_listbox, "_selectDown"))
+		eAutocomplete._Hotkey(_hkIfFn, "Left", Func("WinActive"))
+		eAutocomplete._Hotkey(_hkIfFn, "Right", ObjBindMethod(this, "_completionDataLookUp", 1))
+		eAutocomplete._Hotkey(_hkIfFn, "+Right", ObjBindMethod(this, "_completionDataLookUp", 2))
+		eAutocomplete._Hotkey(_hkIfFn, "Tab", ObjBindMethod(this, "_complete", false, 1))
+		eAutocomplete._Hotkey(_hkIfFn, "+Tab", ObjBindMethod(this, "_complete", false, 2))
+		eAutocomplete._Hotkey(_hkIfFn, "Enter", ObjBindMethod(this, "_complete", true, 1))
+		eAutocomplete._Hotkey(_hkIfFn, "+Enter", ObjBindMethod(this, "_complete", true, 2))
 
 	return eAutocomplete._instances[_hHostControl] := this
 	}
-
-	; ==================================================================
-
 	__valueChanged() {
+		local
 		this._ready := false
 		_count := this._hasSuggestions
 		if (_count > 0) {
-			(this._autoSuggest && this._suggest()) ; +(this._onSuggestionsAvailable && this._onSuggestionsAvailable.call(this))
+			(this._autoSuggest && this._suggest())
 		} else if (_count = -1) {
 			_match := this._pendingWord.match.value
 			if (_match <> this._listbox._getCurrentItemData().1)
@@ -680,24 +689,8 @@ Class eAutocomplete {
 		}
 		this._ready := true
 	}
-	_capturePendingWord() {
-		_wrapper := new eAutocomplete._pendingWordMatchObjectWrapper
-		_content := this._content, _caretPos := this._getSelection() ; <<<<
-		_caretIsWellPositioned := (StrLen(RegExReplace(SubStr(_content, _caretPos, 2), "\s$")) <= 1) ; <<<<-
-		if not (_caretIsWellPositioned)
-			return _wrapper
-		_leftPart := "?P<leftPart>[^\s" . this._endKeys . this._regExSymbol . "]{" . this._suggestAt - 1 . ",}" ; todo: prebuild the needleRegEx
-		_isRegex := "?P<isRegEx>\Q" . this._regExSymbol . "\E?"
-		_rightPart := "?P<rightPart>[^\s" . this._endKeys . this._regExSymbol . "]+"
-		_match := "?P<match>(" . _leftPart . ")(" . _isRegex . ")(" . _rightPart . ")"
-		_isComplete := "?P<isComplete>[\s" . this._endKeys . "]?"
-		RegExMatch(SubStr(_content, 1, _caretPos), "`aOi)(" . _match . ")(" . _isComplete . ")$", _pendingWord)
-		for _subPatternName, _subPatternObject in _wrapper
-			for _property in _subPatternObject, _o := _wrapper[_subPatternName]
-				_o[_property] := _pendingWord[_property](_subPatternName)
-		return _wrapper
-	}
 	__hapax(_match, _len) {
+		local
 		if (!this._collectWords || (_len < this._minWordLength))
 			return
 		_hapaxLegomena := this._source.hapaxLegomena
@@ -706,46 +699,81 @@ Class eAutocomplete {
 			return
 		this._source.appendValue(_match)
 	}
+	_capturePendingWord() {
+		local
+		global eAutocomplete
+		_wrapper := new eAutocomplete._pendingWordMatchObjectWrapper
+		_content := this._content, _caretPos := this._getSelection()
+		_caretIsWellPositioned := (StrLen(RegExReplace(SubStr(_content, _caretPos, 2), "\s$")) <= 1)
+		if not (_caretIsWellPositioned)
+			return _wrapper
+		_match := "?P<match>[^\s" . this._endKeys . "]{" . this._suggestAt . ",}"
+		_isComplete := "?P<isComplete>[\s" . this._endKeys . "]?"
+		RegExMatch(SubStr(_content, 1, _caretPos), "`aOi)(" . _match . ")(" . _isComplete . ")$", _pendingWord)
+		for _subPatternName, _subPatternObject in _wrapper
+			for _property in _subPatternObject, _o := _wrapper[_subPatternName]
+				_o[_property] := _pendingWord[_property](_subPatternName)
+		return _wrapper
+	}
 	_hasSuggestions {
 		get {
+			local
 			_pendingWord := this._pendingWord := this._capturePendingWord()
 			if not (this._pendingWord.match.len)
 				return 0
 			else if (_pendingWord.isComplete.len)
 				return -1
 			_list := ""
-			if ((_subsection:=this._source.subsections[ SubStr(_pendingWord.match.value, 1, 1) ]) <> "") {
-				if (_pendingWord.isRegEx.len && this._matchModeRegEx) {
-					_substring := _pendingWord.leftPart.value
-					RegExMatch(_subsection, "`nsi)\n\Q" . _substring . "\E[^\n]+(?:.*\n\Q" . _substring . "\E.+?(?=\n))?", _match)
-					_len := _pendingWord.leftPart.len + 1, _rightPart := _pendingWord.rightPart.value
-					_listLines := A_ListLines
-					ListLines, Off
-					Loop, parse, % _match, `n
-					{
-						if (InStr(SubStr(A_LoopField, _len), _rightPart))
-							_list .= A_LoopField . "`n"
-					}
-					ListLines % _listLines ? "On" : "Off"
-				} else {
-					_substring := _pendingWord.match.value
-					RegExMatch(_subsection, "`nsi)\n\Q" . _substring . "\E[^\n]+(?:.*\n\Q" . _substring . "\E.+?(?=\n))?", _list)
-				}
-			}
+			_substring := _pendingWord.match.value
+			this._onSearch.call(this, this._source.subsections[ SubStr(_substring, 1, 1) ], _substring, _list)
 			this._listbox._setData(_list)
 		return this._listbox._itemCount
 		}
-	}
-	_suggest() {
-		; if (!this._isComboBox || !this._listbox._visible)
-			this._listbox._showDropDown()
-		this._listbox._selectDown()
-	}
+	} ; +++
+	__onSearch(_inst, _subsection, _substring, ByRef _list:="") {
+		local
+		if (_subsection <> "") {
+			if not (RegExMatch(_subsection, "`nsi)\n\Q" . _substring . "\E[^\n]+(?:.*\n\Q" . _substring . "\E.+?(?=\n))?", _list)) {
+				this._score(_subsection, _substring, _list)
+			} else _list := RTrim(_list, "`r") ; +++
+		}
+	} ; +++
+		_score(_subsection, _word, ByRef _sortedMatches:="") { ; adapted from Score by Uberi
+			local
+			_listLines := A_ListLines
+			ListLines, Off
+			Loop, Parse, % _subsection, "`r`n"
+			{
+				_score := 100
+				_len := StrLen(_word)
+				; determine prefixing
+				_pos := 1
+				while % (_pos <= _len && SubStr(_word,_pos,1) = SubStr(A_LoopField,_pos,1))
+					_pos ++
+				_score *= _pos ** 8
+				; determine number of superfluous characters
+				; \Q...\E
+				_remaining := "", RegExMatch(A_LoopField, "imS)^" . SubStr(RegExReplace(_word, "S).", "$0.*"), 1, -2), _remaining) ; +++
+				_score *= (1 + StrLen(_remaining) - _len) ** -1.5
+				_score *= StrLen(_word) ** 0.4
 
+				(_score && _sortedMatches .= _score . "`t" . A_LoopField . "`r`n")
+			}
+			ListLines % _listLines ? "On" : "Off"
+			_sortedMatches := SubStr(_sortedMatches, 1, -2)
+			Sort, _sortedMatches, N R ; rank results numerically descending by score
+			_sortedMatches := RegExReplace(_sortedMatches,"`nmS)^[^`t]+`t") ; remove scores
+
+		} ; https://github.com/Uberi/Autocomplete/blob/master/Autocomplete.ahk
+
+	_suggest() {
+		this._listbox._showDropDown(), this._listbox._selectDown()
+	}
 	_listboxSelectionEventMonitor(_selection, _clickEvent, _selectionHasChanged) {
-	(_selectionHasChanged && this._completionData:=""), (_clickEvent && this._complete(false))
+		(_selectionHasChanged && this._completionData:=""), (_clickEvent && this._complete(false))
 	}
 	_completionDataLookUp(_tabIndex) {
+		local
 		static _keys := {}
 		if not (_keys.hasKey(A_ThisHotkey)) {
 			RegExMatch(A_ThisHotkey, "i)(\w+|.)(?:[ `t]Up)?$", _match), _keys[ A_ThisHotkey ] := _match
@@ -754,19 +782,22 @@ Class eAutocomplete {
 		(!this._completionData && this._completionData:=_listbox._getCurrentItemData())
 		_coordModeToolTip := A_CoordModeToolTip
 		CoordMode, ToolTip, Screen
-			_x := _listbox._lastX + 10
-			_y := _listbox._lastY + (_listbox._selection.offsetTop - 0.5) * _listbox._itemHeight
+			WinGetPos, _x, _y,,, % _listBox.AHKID
+			_x += 10
+			_y := _y + (_listbox._selection.offsetTop - 0.5) * _listbox._itemHeight
 			ToolTip % this._onSuggestionLookUp.call(this._completionData.1, _tabIndex), % _x, % _y
 			KeyWait % _keys[ A_ThisHotkey ]
 			ToolTip
 		CoordMode, ToolTip, % _coordModeToolTip
 	}
 	__onSuggestionLookUp(_value, _tabIndex) {
+		local
 		_infoTipText := this._completionData[ _tabIndex + 1 ]
 	return StrReplace(StrReplace(_infoTipText, "``n", "`n"), "``r", "`r")
 	}
-
-	_complete(_goToNewLine, _tabIndex:="") {
+	_complete(_goToNewLine, _tabIndex:=1) {
+		local
+		global eAutocomplete
 		static _keys := {}
 		if (_isReplacement:=A_ThisHotkey <> "") {
 			if not (_keys.hasKey(A_ThisHotkey)) {
@@ -783,38 +814,35 @@ Class eAutocomplete {
 		((_fn:=this._onCompletion) && _fn.call(this, this._completionData[ 1 + _isReplacement * _tabIndex ], _isReplacement))
 	}
 	_expand() {
+		local
+		global eAutocomplete
 		(!this._completionData && this._completionData:=this._listbox._getCurrentItemData())
-		_pendingWord := this._pendingWord
-		if (_pendingWord.isRegEx.len) {
-			StringTrimLeft, _missingPart, % this._completionData.1, % _pendingWord.leftPart.len
-			eAutocomplete._Value._rawSend("{BS " . 1 + _pendingWord.rightPart.len . "}", this._HWND)
-		} else {
-			StringTrimLeft, _missingPart, % this._completionData.1, % StrLen(_pendingWord.match.value)
-		}
-		eAutocomplete._Value._rawPaste(_missingPart, this._HWND) ; <<<<
-	}
+		eAutocomplete._Value._rawSend("{BS " . StrLen(this._pendingWord.match.value) . "}", this._HWND)
+		eAutocomplete._Value._rawPaste(this._completionData.1, this._HWND)
+	} ; +++
 	_replace(_tabIndex) {
+		local
+		global eAutocomplete
 		(!this._completionData && this._completionData:=this._listbox._getCurrentItemData())
 		eAutocomplete._Value._rawSend("{BS " . StrLen(this._pendingWord.match.value) . "}", this._HWND)
 		_value := this._completionData[ _tabIndex + 1 ] := this._onReplacement.call(this._completionData.1, _tabIndex)
 		eAutocomplete._Value._rawPaste(_value, this._HWND)
 	}
 	__onReplacement(_value, _tabIndex) {
-	return this._completionData[ _tabIndex + 1 ]
+		return this._completionData[ _tabIndex + 1 ]
 	}
-
-	; -----------------------------------------------------------------------------------------------
-	_getSelection(ByRef _startSel:="", ByRef _endSel:="") { ; <<<<
+	; --------------------------------------------------------------------------------------------------------------------------------
+	_getSelection(ByRef _startSel:="", ByRef _endSel:="") {
+		local
 		static EM_GETSEL := 0xB0
 		VarSetCapacity(_startPos, 4, 0), VarSetCapacity(_endPos, 4, 0)
 		SendMessage, % EM_GETSEL, &_startPos, &_endPos,, % this._AHKID
 		_startSel := NumGet(_startPos), _endSel := NumGet(_endPos)
 	return _endSel
 	}
-	; -----------------------------------------------------------------------------------------------
-
+	; --------------------------------------------------------------------------------------------------------------------------------
 	__resize(_hEditLowerCornerHandle) {
-
+		local
 		_listLines := A_ListLines
 		ListLines, Off
 		_coordModeMouse := A_CoordModeMouse
@@ -832,8 +860,11 @@ Class eAutocomplete {
 				_h := _minSz.h
 			else if (_h >= _maxSz.h)
 				_h := _maxSz.h
-			if (this._onResize && this._onResize.call(A_GUI, this, _w, _h, _x, _y))
-				Exit
+			if (this._onResize && this._onResize.call(this, A_GUI, _w, _h, _x, _y)) {
+				CoordMode, Mouse, % _coordModeMouse
+				ListLines % _listLines ? "On" : "Off"
+			Exit
+			} ;  +++
 			GuiControl, Move, % _hEdit, % "w" . _w . " h" . _h
 			GuiControlGet, _pos, Pos, % _hEdit
 			GuiControl, MoveDraw, % _hEditLowerCornerHandle, % "x" . (_posx + _posw - 7) . " y" . _posy + _posh - 7
@@ -841,25 +872,25 @@ Class eAutocomplete {
 		}
 		CoordMode, Mouse, % _coordModeMouse
 		ListLines % _listLines ? "On" : "Off"
-
 	}
 
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~ PRIVATE BASE OBJECT METHODS ~~~~~~~~~~~~
-	; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	_setOptions(_obj, _opt:="", _initialize:=false) {
-		_clone := _obj._properties.clone()
+	_setOptions(_obj, _prop, _opt:="", _initialize:=false) {
+		local
+		_properties := _obj[_prop]
 		if (_initialize) {
-			for _key, _defaultValue in _clone {
+			for _key, _defaultValue in _properties {
 				ObjRawSet(_obj, "_" . _key, _defaultValue)
 			}
 		return
 		}
 		if (IsObject(_opt))
 			for _key, _value in _opt
-				(_clone.hasKey(_key) && _obj[_key]:=_value)
-	}
+				(_properties.hasKey(_key) && _obj[_key]:=_value)
+	} ; +++
+
 	_hotkeyPressHandler(_hwnd, _thisHotkey) {
+		local
+		global eAutocomplete
 		if (_hwnd <> eAutocomplete._Value.lastFoundControl)
 			return false
 		_inst := eAutocomplete._instances[_hwnd]
@@ -875,12 +906,12 @@ Class eAutocomplete {
 	}
 
 	Class _Value {
-
 		static processes := {}
 		static lastFoundControl := 0x0
 		static bypassToggle := false
-
 		registerProc(_idProcess) {
+			local
+			global eAutocomplete
 			if not (eAutocomplete._Value.processes.hasKey(_idProcess)) {
 				eAutocomplete._Value.processes[_idProcess] := []
 				_callback := RegisterCallback("eAutocomplete._Value.__valueChange")
@@ -897,37 +928,46 @@ Class eAutocomplete {
 			}
 		}
 		unregisterProc(_idProcess) {
-			for _, _hWinEventHook in eAutocomplete._Value.processes[_idProcess]
+			local
+			global eAutocomplete
+			for _each, _hWinEventHook in eAutocomplete._Value.processes[_idProcess]
 				DllCall("User32.dll\UnhookWinEvent", "Ptr", _hWinEventHook)
 			eAutocomplete._Value.processes.delete(_idProcess)
 		}
+
 		_rawSend(_keys, _hwnd) {
-		_state := eAutocomplete._Value.bypassToggle
-		eAutocomplete._Value.bypassToggle := true
-		_keyDelay := A_KeyDelay
-		SetKeyDelay, 0
-		ControlSend,, % _keys, % "ahk_id " . _hwnd
-		sleep, 300 ;  check messages of the internal message queue
-		SetKeyDelay % _keyDelay
-		eAutocomplete._Value.bypassToggle := _state
+			local
+			global eAutocomplete
+			_state := eAutocomplete._Value.bypassToggle
+			eAutocomplete._Value.bypassToggle := true
+			_keyDelay := A_KeyDelay
+			SetKeyDelay, 0
+			ControlFocus,, % "ahk_id " . _hwnd ; ++++++
+			SendInput, % _keys ; ++++++
+			; ControlSend,, % _keys, % "ahk_id " . _hwnd
+			sleep, 300 ; check messages of the internal message queue
+			SetKeyDelay % _keyDelay
+			eAutocomplete._Value.bypassToggle := _state
 		}
 		_rawPaste(_text, _hwnd) {
-		_state := eAutocomplete._Value.bypassToggle
-		eAutocomplete._Value.bypassToggle := true
-		Control, EditPaste, % StrReplace(StrReplace(_text, "``n", "`n"), "``r", "`r"),, % "ahk_id " . _hwnd
-		sleep, 300 ;  check messages of the internal message queue
-		eAutocomplete._Value.bypassToggle := _state
+			local
+			global eAutocomplete
+			_state := eAutocomplete._Value.bypassToggle
+			eAutocomplete._Value.bypassToggle := true
+			Control, EditPaste, % StrReplace(StrReplace(_text, "``n", "`n"), "``r", "`r"),, % "ahk_id " . _hwnd
+			sleep, 300 ; check messages of the internal message queue
+			eAutocomplete._Value.bypassToggle := _state
 		}
-		; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-		__sourceChanged(_event, _hwnd) {
-			if ((_event = 0x8005) || (_event = 0x0015)) { ; *
+		; <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+		__sourceChanged(_event, _hwnd, _idObject, _idChild, _dwEventThread, _dwmsEventTime) {
+			local
+			global eAutocomplete
+			if ((_event = 0x8005) || (_event = 0x0015)) {
 				ControlGetFocus, _focusedControl, A
 				ControlGet, _hwnd, Hwnd,, % _focusedControl, A
 				if (_hwnd = eAutocomplete._Value.lastFoundControl)
 					return
 			}
-			; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			; f(_hwnd)
 			for _each, _instance in eAutocomplete._instances {
 				if (_instance._listbox._visible) {
@@ -935,33 +975,26 @@ Class eAutocomplete {
 				break
 				}
 			}
-			eAutocomplete._Value.lastFoundControl:=(eAutocomplete._instances.hasKey(_hwnd)) ? _hwnd : 0x0
-			; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			eAutocomplete._Value.lastFoundControl := (eAutocomplete._instances.hasKey(_hwnd)) ? _hwnd : 0x0
 		}
-		__valueChange(_event, _hwnd, _idObject, _idChild) {
+		__valueChange(_event, _hwnd, _idObject, _idChild, _dwEventThread, _dwmsEventTime) {
+			local
+			global eAutocomplete
 			static OBJID_CLIENT := 0xFFFFFFFC
-			if (_idObject <> OBJID_CLIENT) ; for instance > OBJID_VSCROLL = 0xFFFFFFFB
+			if (_idObject <> OBJID_CLIENT)
 				return
 			if not (eAutocomplete._Value.bypassToggle) {
-			; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			; f(_hwnd)
 				if (eAutocomplete._instances.hasKey(_hwnd)) {
 					_inst := eAutocomplete._instances[_hwnd]
 					Critical
-					; ACC ================================================
 					_acc := Acc_ObjectFromEvent(_idChild_, _hwnd, _idObject, _idChild)
 					try _inst._content := _acc.accValue(0)
-					; ACC ================================================
-					; ControlGetText, _text,, % _inst._AHKID
-					; _inst._content := _text
 					if (!_inst._disabled) {
 						eAutocomplete._Iterator.instances[_inst._HWND].1.setPeriod(-(3 + !_inst._ready) * 75)
 					}
 				}
-			; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			}
 		}
-
 	}
-
 }

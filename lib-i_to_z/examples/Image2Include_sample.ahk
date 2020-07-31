@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #Include CreateBitmap_ImgProps_png.ahk ; change the name to what you need
 SetBatchLines, -1
 T := A_TickCount

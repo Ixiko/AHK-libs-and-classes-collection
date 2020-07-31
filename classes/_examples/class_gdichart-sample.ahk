@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #include %A_ScriptDir%\..\class_gdichart.ahk
 
 ;~ 0x2e880c	绿

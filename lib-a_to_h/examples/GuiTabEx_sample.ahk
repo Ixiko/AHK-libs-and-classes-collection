@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #Warn
 #Include %A_ScriptDir%\..\classes\Class_GuiTabEx.ahk
 ; Create an ImageList (sample in the manual)

@@ -1,4 +1,4 @@
-Gui +HwndHGUI
+﻿Gui +HwndHGUI
 	SysMenuItems := "
 	(LTrim
 		-----------------------------

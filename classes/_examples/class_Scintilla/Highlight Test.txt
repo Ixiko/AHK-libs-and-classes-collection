@@ -1,0 +1,550 @@
+/**
+ * For normal Comment Blocks remove second asterisk here at the top or add more than 2 asterisks.
+ * =============================================================================================== *
+ * @Author           : RaptorX   <graptorx@gmail.com>
+ * @Script Name      : Autohotkey Highlight Test
+ * @Script Version   : beta
+ * @Homepage         : http://www.autohotkey.com/board/topic/85928-wrapper-scintilla-wrapper-v1424/
+ *
+ * @Creation Date    : October 29, 2012
+ * @Modification Date: April 28, 2013
+ *
+ * @Description      :
+ * -------------------
+ * This is a small Test file which will check for all Autohotkey Syntax highlighting.
+ * There are some features added to this lexer which are not part of the autohotkey language but
+ * because they are useful and dont interfere with the script I added them.
+ *
+ * One such examples is the @[keyword]: secuence in which any alphanumeric word preceded by an '@' 
+ * and Followed by a ':' inside a documentation comment block will be highlighted. Useful when 
+ * adding titles as shown above.
+ *
+ * As you might have noticed, quoted strings will also be highlighted.
+ * The current quote symbols are: `1` '2' "3".
+ *
+ * If you dont want this kind of highlighting consider using the normal comment blocks by putting
+ * exactly one asterisk at the beginning of the comment block or more than one as shown below.
+ * 
+ * =============================================================================================== *
+ */
+
+; this is a line comment
+
+	; empty spaces dont matter
+
+/**
+ *
+ * This is a Documentation Comment.
+ * They work exactly the same as the normal comment block but you can use @keywords: here.
+ *
+ * To create a Documentation Comment you have to put exactly 2 asterisks at the top.
+ *
+ */
+
+/*
+ *
+ * This is a normal comment block
+ * it works as usual.
+ *
+ * @keywords: wont work here.
+ *
+ * Comment blocks only close when the closing tag is in its own line
+ * so this part */ will continue coloring as comment block
+ *
+ */
+
+/***
+ * This is also a normal comment block because there are more than 2 asterisks at the top
+ */
+
+/**
+ * @Decimal Numbers:
+ * Variable names will not highlight numbers
+ * but they will be highlighted correctly when typing options.
+ *
+ */ 0 1 2 3 4 5 6 7 8 9
+    0var var1 v4r2 x10 y10
+    gui, add, edit, x10 y20 w100 h200
+
+/**
+ * @Hex Numbers:
+ * If the hex number is invalid the string goes back to default and is treated as a variable name.
+ * If option is enabled you can have a different color every 4 digits for easy read.
+ * The exeption is when having 6 digits. Only one color is used regardless of the above option.
+ *
+ */ 0x1122 0x112233 0x11221122 0x0123456789ABCDEF (0x00ffaa) (0x1A5E5B, 0x559EEF) 0xNotaHexNum
+
+/**
+ * @Labels:
+ * It enters Error state after a label because nothing else is allowed after it except for comments.
+ * Almost anything is valid as a Label identifier but keep it simple and clear!
+ *
+ * @Note:
+ * Due to technical difficulties even though the characters '=', '{', '(', '[' and '.' are
+ * recognized by autohotkey as valid label characters the lexer wont lex them correctly.
+ * Will be fixed in later versions.
+ *
+ */ ValidLabel:
+    Valid~!@#$^&*)_+;]\'/<>?|}-":
+    another_valid_label: there cant be anything else in this line ; exept for comments
+    inva`lid:
+    not,valid:
+    no space allowed:
+
+/**
+ * @Variables, Strings, Functions and Expressions:
+ *
+ */ literal = this is a literal string
+
+    var = %variable% and literal text
+    var := variable %var_reference% function()
+    var += array["test"] myvar[12] obj.property obj.Method()
+
+    msgbox %myvar%
+    msgbox % "this is a forced expression so: " var " and " %varref% "will work as shown above"
+
+    var1 := {one : "test"}
+    exp2 := "this is an expression" var + var2 + 10 + 5 func(1, 2, "this is text", "and this 2")
+    exp3 .= this is also "an xpression"
+	 . "this as well" var %varref%
+
+    var4 ? true : "false"
+    
+    dynamic_%var%_name := "this is a dynamic variable name " %ref%_name
+
+    Function(byref param1, param2.hwnd, param3.method(), 4, "text 5")
+
+    var[12] := var + 5 func("Test")
+    sci["new"] = test
+    sci.add()
+    sci.status = 1
+
+    if var = text
+
+    if (myvar = "remember that this is an expression here" %varref% 5+5)
+
+    var =
+    (
+
+        this is a string block and because of that ; this is NOT a comment
+	this is a %variable% reference
+	and `t that is the escape secuence for the tab
+
+    ) Nothing else allowed here ; except for comments and paths
+
+    FileAppend,
+    ( % ` Com
+
+        another block of text but 
+	this time with some options
+	
+    ), c:\this is allowed.txt
+
+/**
+ * @Hotkeys:
+ *
+ */ ^Enter::Send test
+    #Backspace::Msgbox True
+    !+NumpadEnter::var += var
+    ~$a::Msgbox % test + 5
+
+/**
+ * @Hotstrings:
+ *
+ */ ::btw::by the way
+    :*?B0C1K5OP5RSISPSEZ:options::these are all acceptable options
+    :ADFG:invOptions::these are invalid options
+    :RAk5FeSIG*:MixOptions::and here is how it looks with some mixed options
+
+/**
+ * @Escape Sequences:
+ * Only characters that have a special meaning will be highlighted as an escape sequence.
+ *
+ */ `, `% `` `; `n `r `b `t `v `a `f `s `i `]
+
+
+
+/**
+ * =============================================================================================== *
+ * @Keywords:
+ *
+ * This is a comprehensive list of all they keywords handled by the test script at the moment.
+ * The lexer does not contain hard coded keywords. That means that it is up to your program to
+ * pass them to the lexer.
+ *
+ * For an example of how to do this see the source code of the script provided in the forum post
+ * found at the top of the text.
+ * =============================================================================================== *
+ */
+
+/**
+ * @Directives:
+ *
+ */
+
+#allowsamelinecomments #clipboardtimeout #commentflag #errorstdout #escapechar #hotkeyinterval
+#hotkeymodifiertimeout #hotstring #if #iftimeout #ifwinactive #ifwinexist #include #includeagain
+#installkeybdhook #installmousehook #keyhistory #ltrim #maxhotkeysperinterval #maxmem #maxthreads
+#maxthreadsbuffer #maxthreadsperhotkey #menumaskkey #noenv #notrayicon #persistent #singleinstance
+#usehook #warn #winactivateforce
+
+/**
+ * @Commands:
+ * Note that only one Command per line is allowed. Putting more commands would result on
+ * some of them being treated as a Command parameter instead (e.g. mousemove)
+ *
+ */
+
+autotrim
+blockinput
+clipwait
+control
+controlclick
+controlfocus
+controlget
+controlgetfocus
+controlgetpos
+controlgettext
+controlmove
+controlsend
+controlsendraw
+controlsettext
+coordmode
+critical
+detecthiddentext
+detecthiddenwindows
+drive
+driveget
+drivespacefree
+edit
+endrepeat
+envadd
+envdiv
+envget
+envmult
+envset
+envsub
+envupdate
+fileappend
+filecopy
+filecopydir
+filecreatedir
+filecreateshortcut
+filedelete
+filegetattrib
+filegetshortcut
+filegetsize
+filegettime
+filegetversion
+fileinstall
+filemove
+filemovedir
+fileread
+filereadline
+filerecycle
+filerecycleempty
+fileremovedir
+fileselectfile
+fileselectfolder
+filesetattrib
+filesettime
+formattime
+getkeystate
+groupactivate
+groupadd
+groupclose
+groupdeactivate
+gui
+guicontrol
+guicontrolget
+hideautoitwin
+hotkey
+if
+ifequal
+ifexist
+ifgreater
+ifgreaterorequal
+ifinstring
+ifless
+iflessorequal
+ifmsgbox
+ifnotequal
+ifnotexist
+ifnotinstring
+ifwinactive
+ifwinexist
+ifwinnotactive
+ifwinnotexist
+imagesearch
+inidelete
+iniread
+iniwrite
+input
+inputbox
+keyhistory
+keywait
+listhotkeys
+listlines
+listvars
+menu
+mouseclick
+mouseclickdrag
+mousegetpos
+mousemove
+msgbox
+outputdebug
+pixelgetcolor
+pixelsearch
+postmessage
+process
+progress
+random
+regdelete
+regread
+regwrite
+reload
+run
+runas
+runwait
+send
+sendevent
+sendinput
+sendmessage
+sendmode
+sendplay
+sendraw
+setbatchlines
+setcapslockstate
+setcontroldelay
+setdefaultmousespeed
+setenv
+setformat
+setkeydelay
+setmousedelay
+setnumlockstate
+setscrolllockstate
+setstorecapslockmode
+settitlematchmode
+setwindelay
+setworkingdir
+shutdown
+sort
+soundbeep
+soundget
+soundgetwavevolume
+soundplay
+soundset
+soundsetwavevolume
+splashimage
+splashtextoff
+splashtexton
+splitpath
+statusbargettext
+statusbarwait
+stringcasesense
+stringgetpos
+stringleft
+stringlen
+stringlower
+stringmid
+stringreplace
+stringright
+stringsplit
+stringtrimleft
+stringtrimright
+stringupper
+sysget
+thread
+tooltip
+transform
+traytip
+urldownloadtofile
+winactivate
+winactivatebottom
+winclose
+winget
+wingetactivestats
+wingetactivetitle
+wingetclass
+wingetpos
+wingettext
+wingettitle
+winhide
+winkill
+winmaximize
+winmenuselectitem
+winminimize
+winminimizeall
+winminimizeallundo
+winmove
+winrestore
+winset
+winsettitle
+winshow
+winwait
+winwaitactive
+winwaitclose
+winwaitnotactive
+fileencoding
+
+/**
+ * @Command Parameters:
+ * These guys only highlight after a Command or Function.
+ * Later on I will make them to be command specific e.g. Msgbox wont highlight "ahk_id" because
+ * it doesnt take it, but for now they would highlight after any of the mentioned above.
+ *
+ * @Note:
+ * Try removing the Commands/Functions from below, forcing an expression or closing the parenthesis
+ * of a function. The Parameters should not hightlight.
+ *
+ */
+
+Run ltrim rtrim join ahk_id ahk_pid ahk_class ahk_group processname minmax controllist statuscd
+Run filesystem setlabel alwaysontop mainwindow nomainwindow useerrorlevel altsubmit hscroll vscroll
+Run imagelist wantctrla wantf2 vis visfirst wantreturn backgroundtrans minimizebox maximizebox
+Run sysmenu toolwindow exstyle check3 checkedgray readonly notab lastfound lastfoundexist alttab
+Run shiftalttab alttabmenu alttabandmenu alttabmenudismiss controllisthwnd hwnd deref pow bitnot
+Run bitand bitor bitxor bitshiftleft bitshiftright sendandmouse mousemove mousemoveoff
+Run hkey_local_machine hkey_users hkey_current_user hkey_classes_root hkey_current_config hklm hku
+Run hkcu hkcr hkcc reg_sz reg_expand_sz reg_multi_sz reg_dword reg_qword reg_binary reg_link
+Run reg_resource_list reg_full_resource_descriptor caret reg_resource_requirements_list
+Run reg_dword_big_endian regex pixel mouse screen relative rgb low belownormal normal abovenormal
+Run high realtime between contains in is integer float number digit xdigit alpha upper lower alnum
+Run time date not or and topmost top bottom transparent transcolor redraw region id idlast count
+
+; if you force an expression the parameters should not highlight
+Run list % capacity eject lock unlock label serial type status seconds minutes hours days read parse
+
+abs(logoff close error single shutdown menu exit reload tray add rename check uncheck togglecheck
+abs(enable disable toggleenable default nodefault standard nostandard color delete deleteall icon
+abs(noicon tip click show edit progress hotkey text picture pic groupbox button checkbox radio
+abs(dropdownlist ddl combobox statusbar treeview listbox listview datetime monthcal updown slider
+abs(tab tab2 iconsmall tile report sortdesc nosort nosorthdr grid hdr autosize range xm ym ys xs xp
+abs(yp font resize owner submit nohide minimize maximize restore noactivate na cancel destroy
+abs(center margin owndialogs guiescape guiclose guisize guicontextmenu guidropfiles tabstop section
+abs(wrap border top bottom buttons expand first lines number uppercase lowercase limit password
+abs(multi group background bold italic strike underline norm theme caption delimiter flash style
+abs(checked password hidden left right center section move focus hide choose choosestring text pos
+abs(enabled disabled visible notimers interrupt priority waitclose unicode tocodepage fromcodepage
+abs(yes no ok cancel abort retry ignore force on off all send wanttab monitorcount monitorprimary
+
+; Parameters ouside functions should not highlight
+abs(monitorname) monitorworkarea pid base useunsetlocal useunsetglobal localsameasglobal
+
+/**
+ * @Control Flow:
+ *
+ */
+
+break continue else exit exitapp gosub goto loop onexit pause repeat return settimer sleep
+suspend static global local byref while until for
+
+/**
+ * @Functions:
+ *
+ */
+
+abs() acos() asc() asin() atan() ceil() chr() cos() dllcall() exp() fileexist() floor()
+getkeystate() numget() numput() registercallback() il_add() il_create() il_destroy() instr()
+islabel() isfunc() ln() log() lv_add() lv_delete() lv_deletecol() lv_getcount() lv_getnext()
+lv_gettext() lv_insert() lv_insertcol() lv_modify() lv_modifycol() lv_setimagelist() mod()
+onmessage() round() regexmatch() regexreplace() sb_seticon() sb_setparts() sb_settext() sin()
+sqrt() strlen() substr() tan() tv_add() tv_delete() tv_getchild() tv_getcount() tv_getnext()
+tv_get() tv_getparent() tv_getprev() tv_getselection() tv_gettext() tv_modify() varsetcapacity()
+winactive() winexist() trim() ltrim() rtrim() fileopen() strget() strput() object() isobject()
+objinsert() objremove() objminindex() objmaxindex() objsetcapacity() objgetcapacity()
+objgetaddress() objnewenum() objaddref() objrelease() objclone() _insert() _remove() _minindex()
+_maxindex() _setcapacity() _getcapacity() _getaddress() _newenum() _addref() _release() _clone()
+comobjcreate() comobjget() comobjconnect() comobjerror() comobjactive() comobjenwrap()
+comobjunwrap() comobjparameter() comobjmissing() comobjtype() comobjvalue() comobjarray()
+
+/**
+ * @Built-In Variables:
+ *
+ */
+
+a_ahkpath a_ahkversion a_appdata a_appdatacommon a_autotrim a_batchlines a_caretx a_carety
+a_computername a_controldelay a_cursor a_dd a_ddd a_dddd a_defaultmousespeed a_desktop
+a_desktopcommon a_detecthiddentext a_detecthiddenwindows a_endchar a_eventinfo a_exitreason
+a_formatfloat a_formatinteger a_gui a_guievent a_guicontrol a_guicontrolevent a_guiheight
+a_guiwidth a_guix a_guiy a_hour a_iconfile a_iconhidden a_iconnumber a_icontip a_index a_ipaddress1
+a_ipaddress2 a_ipaddress3 a_ipaddress4 a_isadmin a_iscompiled a_issuspended a_keydelay a_language
+a_lasterror a_linefile a_linenumber a_loopfield a_loopfileattrib a_loopfiledir a_loopfileext
+a_loopfilefullpath a_loopfilelongpath a_loopfilename a_loopfileshortname a_loopfileshortpath
+a_loopfilesize a_loopfilesizekb a_loopfilesizemb a_loopfiletimeaccessed a_loopfiletimecreated
+a_loopfiletimemodified a_loopreadline a_loopregkey a_loopregname a_loopregsubkey
+a_loopregtimemodified a_loopregtype a_mday a_min a_mm a_mmm a_mmmm a_mon a_mousedelay a_msec
+a_mydocuments a_now a_nowutc a_numbatchlines a_ostype a_osversion a_priorhotkey a_programfiles
+a_programs a_programscommon a_screenheight a_screenwidth a_scriptdir a_scriptfullpath a_scriptname
+a_sec a_space a_startmenu a_startmenucommon a_startup a_startupcommon a_stringcasesense a_tab a_temp
+a_thishotkey a_thismenu a_thismenuitem a_thismenuitempos a_tickcount a_timeidle a_timeidlephysical
+a_timesincepriorhotkey a_timesincethishotkey a_titlematchmode a_titlematchmodespeed a_username
+a_wday a_windelay a_windir a_workingdir a_yday a_year a_yweek a_yyyy clipboard clipboardall comspec
+programfiles a_thisfunc a_thislabel a_ispaused a_iscritical a_isunicode a_ptrsize errorlevel
+true false
+
+/**
+ * @Keys:
+ *
+ */
+
+{shift} {lshift} {rshift} {alt} {lalt} {ralt} {control} {lcontrol} {rcontrol} {ctrl} {lctrl} {rctrl}
+{lwin} {rwin} {appskey} {altdown} {altup} {shiftdown} {shiftup} {ctrldown} {ctrlup} {lwindown}
+{lwinup} {rwindown} {rwinup} {lbutton} {rbutton} {mbutton} {wheelup} {wheeldown} {xbutton1}
+{xbutton2} {joy1} {joy2} {joy3} {joy4} {joy5} {joy6} {joy7} {joy8} {joy9} {joy10} {joy11} {joy12}
+{joy13} {joy14} {joy15} {joy16} {joy17} {joy18} {joy19} {joy20} {joy21} {joy22} {joy23} {joy24}
+{joy25} {joy26} {joy27} {joy28} {joy29} {joy30} {joy31} {joy32} {joyx} {joyy} {joyz} {joyr} {joyu}
+{joyv} {joypov} {joyname} {joybuttons} {joyaxes} {joyinfo} {space} {tab} {enter} {escape} {esc}
+{backspace} {bs} {delete} {del} {insert} {ins} {pgup} {pgdn} {home} {end} {up} {down} {left} {right}
+{printscreen} {ctrlbreak} {pause} {scrolllock} {capslock} {numlock} {numpad0} {numpad1} {numpad2}
+{numpad3} {numpad4} {numpad5} {numpad6} {numpad7} {numpad8} {numpad9} {numpadmult} {numpadadd}
+{numpadsub} {numpaddiv} {numpaddot} {numpaddel} {numpadins} {numpadclear} {numpadup} {numpaddown}
+{numpadleft} {numpadright} {numpadhome} {numpadend} {numpadpgup} {numpadpgdn} {numpadenter}
+{f1} {f2} {f3} {f4} {f5} {f6} {f7} {f8} {f9} {f10} {f11} {f12} {f13} {f14} {f15} {f16} {f17} {f18}
+{f19} {f20} {f21} {f22} {f23} {f24} {browser_back} {browser_forward} {browser_refresh}
+{browser_stop} {browser_search} {browser_favorites} {browser_home} {volume_mute} {volume_down}
+{volume_up} {media_next} {media_prev} {media_stop} {media_play_pause} {launch_mail} {launch_media}
+{launch_app1} {launch_app2} {blind} {click} {raw} {wheelleft} {wheelright}
+
+/**
+ * =============================================================================================== *
+ * @Folding:
+ *
+ * The following part is for testing folding.
+ * =============================================================================================== *
+ */
+
+/*
+comment blocks
+should fold
+*/
+
+/**
+this should
+fold as well
+*/
+
+if (true) {
+
+	; this is true
+	; this should fold
+
+} else if (false) {
+
+	; this is false
+	; this too
+
+} else {
+	
+	; last thing in the list
+
+}
+	
+
+var =
+(
+	continuation sections
+	should be able to fold as well
+)
+
+

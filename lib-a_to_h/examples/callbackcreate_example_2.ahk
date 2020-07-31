@@ -1,4 +1,4 @@
-#include %a_Scriptdir%\..\lib-a_to_h\callbackcreate.ahk
+﻿#include %a_Scriptdir%\..\lib-a_to_h\callbackcreate.ahk
 ; Class method callback
 i := new myClass("Apple")
 callbackFunc := objbindmethod(i, "myMethod", "BoundParam1")

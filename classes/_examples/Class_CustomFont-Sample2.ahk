@@ -1,4 +1,4 @@
-#Include Class_CustomFont.ahk
+﻿#Include Class_CustomFont.ahk
 font1 := New CustomFont("res:moonhouse.ttf", "moonhouse", 50)
 font2 := New CustomFont("res:Selavy.otf", "Selavy-Regular", 20)
 

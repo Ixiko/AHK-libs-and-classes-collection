@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 ;#Include Class_LV_Colors.ahk
 SetBatchLines, -1
 Gui, Margin, 20, 20

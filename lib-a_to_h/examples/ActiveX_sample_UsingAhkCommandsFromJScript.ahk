@@ -1,4 +1,4 @@
-#include *i %A_ScriptDir%\ActiveX.ahk
+﻿#include *i %A_ScriptDir%\ActiveX.ahk
 ActiveX()
 
 MyClass_WinMaximize(this,prm,res,flags){

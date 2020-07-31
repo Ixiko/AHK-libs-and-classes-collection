@@ -1,37 +1,34 @@
-#Persistent
+ï»¿#Persistent
 
 #include %A_ScriptDir%\ActiveX.ahk
 
-;‰Šú‰»
+;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ActiveX()
 
-;ƒIƒuƒWƒFƒNƒgì¬
+;ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ì¬
 ie:=CreateObject("InternetExplorer.Application")
 
 
-;ƒvƒƒpƒeƒB‚Ö‚Ì‘‚«‚İ
-pp(ie,"Visible","true")
+;ï¿½vï¿½ï¿½ï¿½pï¿½eï¿½Bï¿½Ö‚Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pp(ie,"Visible","true")
 
-;ƒƒ\ƒbƒhŒÄ‚Ño‚µ
+;ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Ä‚Ñoï¿½ï¿½
 inv(ie,"Navigate","about:blank")
 
-;ƒvƒƒpƒeƒBƒIƒuƒWƒFƒNƒg‚Ìæ“¾
+;ï¿½vï¿½ï¿½ï¿½pï¿½eï¿½Bï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Ìæ“¾
 doc:=gp(ie,"Document")
 win:=gp(doc,"parentWindow")
 
 inv(doc,"write","Hello!<br><br>")
 
-;ƒCƒxƒ“ƒg‚ÌŠ„‚è“–‚Ä
-ConnectObject(doc,"Document_")
+;ï¿½Cï¿½xï¿½ï¿½ï¿½gï¿½ÌŠï¿½ï¿½è“–ï¿½ï¿½ConnectObject(doc,"Document_")
 ConnectObject(win,"Window_")
 
-;ƒIƒuƒWƒFƒNƒg‰ğ•ú
-Release(doc)
+;ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½Release(doc)
 Release(win)
 Release(ie)
 return
 
-;ƒCƒxƒ“ƒg‚ÉŠ„‚è“–‚Ä‚ç‚ê‚éŠÖ”
+;ï¿½Cï¿½xï¿½ï¿½ï¿½gï¿½ÉŠï¿½ï¿½è“–ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½
 Document_onfocusin(this,prm,res){
 	inv(this,"write","focuse in<br>")
 }
@@ -39,7 +36,7 @@ Document_onfocusout(this,prm,res){
 	inv(this,"write","focuse out<br>")
 }
 Window_onbeforeunload(this,prm,res){
-	MsgBox,•Â‚¶‚Ü‚·
+	MsgBox,ï¿½Â‚ï¿½ï¿½Ü‚ï¿½
 	SetTimer,quit,-100
 }
 quit:
