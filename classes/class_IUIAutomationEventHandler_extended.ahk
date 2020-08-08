@@ -1,4 +1,4 @@
-#Include %A_ScriptDir%\UIAutomationClient-v1_0-x86_64.ahk
+﻿#Include %A_ScriptDir%\UIAutomationClient-v1_0-x86_64.ahk
 
 ; *************************************************************************
 ; IUIAutomationEventHandler

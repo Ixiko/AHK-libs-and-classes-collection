@@ -1,4 +1,4 @@
-getProcessFileVersion(process)
+﻿getProcessFileVersion(process)
 {
 	process, exist, %process%
 	If (!pid := ErrorLevel)

@@ -1,4 +1,4 @@
-/*
+﻿/*
 Proof of concept for making the .value property of an Object "Persistent" and also allowing Per-Profile values for the Object.
 */
 

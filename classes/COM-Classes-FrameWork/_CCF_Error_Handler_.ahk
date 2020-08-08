@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: _CCF_ErrorHandler_
 serves as base class for all other classes and implements some error handling. The "Unknown" and "StructBase" classes derive from this.
 

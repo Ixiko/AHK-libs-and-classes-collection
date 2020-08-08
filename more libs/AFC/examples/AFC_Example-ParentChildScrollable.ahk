@@ -1,4 +1,4 @@
-#singleinstance force
+﻿#singleinstance force
 #maxhotkeysperinterval 9999
 ;#include <CWindow>
 #include <CScrollableWindow>

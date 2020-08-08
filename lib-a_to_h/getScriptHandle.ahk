@@ -1,4 +1,4 @@
-getScriptHandle()
+﻿getScriptHandle()
 {
 	hideMode := A_DetectHiddenWindows
 	DetectHiddenWindows, on

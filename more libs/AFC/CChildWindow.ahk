@@ -1,4 +1,4 @@
-#include <CWindow>
+﻿#include <CWindow>
 
 Class CChildWindow extends CWindow
 {

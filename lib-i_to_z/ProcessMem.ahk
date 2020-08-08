@@ -1,4 +1,4 @@
-
+ï»¿
 getProcessHandle(pid,mode=0x001F0FFF){
 	return DllCall("OpenProcess",UInt,mode,UInt,0,UInt,pid,UInt)
 }
@@ -10,8 +10,7 @@ getPEName(pid){
 	dwNeed=0
 	l=0
 	max:=VarSetCapacity(s,256,0)
-	hProcess:=getProcessHandle(pid,0x410)	;‚Ê‚é‚¢ƒAƒNƒZƒXŒ ‚Å‚È‚¢‚Æ‹‘”Û‚ç‚ê‚é‚±‚Æ‚ª‚ ‚é
-	if(DllCall("psapi\EnumProcessModules","Int",hProcess,"Int*",hModule,"Int",4,"UInt*",dwNeed,"Int")<>0){
+	hProcess:=getProcessHandle(pid,0x410)	;ï¿½Ê‚é‚¢ï¿½Aï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½Å‚È‚ï¿½ï¿½Æ‹ï¿½ï¿½Û‚ï¿½ï¿½é‚±ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ï¿½	if(DllCall("psapi\EnumProcessModules","Int",hProcess,"Int*",hModule,"Int",4,"UInt*",dwNeed,"Int")<>0){
 		l:=DllCall("psapi\GetModuleFileNameExA","Int",hProcess,"Int",hModule,"Str",s,"Int",max,"Int")
 	}
 	releaseProcessHandle(hProcess)

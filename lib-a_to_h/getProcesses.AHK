@@ -1,4 +1,4 @@
-; searchNames comma separated list. If these processes exist, then 
+﻿; searchNames comma separated list. If these processes exist, then 
 ; they will be retrieved in the array
 getProcesses(ignoreSelf := True, searchNames := "")
 {

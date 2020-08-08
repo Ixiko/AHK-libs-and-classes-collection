@@ -1,4 +1,4 @@
-; More stable rewrite
+﻿; More stable rewrite
 class CFlyoutMenuHandler
 {
 	__New(iX="", iY="", iW="", iMaxRows="", sIni="", sSlideFrom="Left")

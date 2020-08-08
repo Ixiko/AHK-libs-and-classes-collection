@@ -1,4 +1,4 @@
-
+﻿
 ; If the AHK.exe is 64 bit, then function will call GetWindowLongPtr
 ; otherwise  it calls GetWindowLong
 

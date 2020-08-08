@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Title: _WindowHandlerEvent.ahk
 		Helper classes to define constants for different events
 

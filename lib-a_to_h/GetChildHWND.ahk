@@ -1,4 +1,4 @@
-GetChildHWND(ParentHWND, ChildClassNN)
+﻿GetChildHWND(ParentHWND, ChildClassNN)
 {
 	WinGetPos, ParentX, ParentY,,, ahk_id %ParentHWND%
 	if ParentX =

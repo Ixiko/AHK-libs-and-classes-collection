@@ -1,4 +1,4 @@
-; CatchHandler(A_ThisFunc,ThrownValue.Message,ThrownValue.What,ThrownValue.Extra,ThrownValue.File,ThrownValue.Line,0,0,0)
+﻿; CatchHandler(A_ThisFunc,ThrownValue.Message,ThrownValue.What,ThrownValue.Extra,ThrownValue.File,ThrownValue.Line,0,0,0)
 CatchHandler(fnCallingFunctionName, fnMessage, fnWhat, fnExtra, fnFile, fnLine, fnShowInfoTip := 0, fnPromptToOpenFile := 0, fnRethrowError := 0)
 {
 	Global CatchHandlerLogFile

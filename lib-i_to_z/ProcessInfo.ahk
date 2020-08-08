@@ -1,4 +1,4 @@
-GetCurrentProcessID()
+﻿GetCurrentProcessID()
 	{
 		Return DllCall("GetCurrentProcessId")  ; http://msdn2.microsoft.com/ms683180.aspx
 	}
