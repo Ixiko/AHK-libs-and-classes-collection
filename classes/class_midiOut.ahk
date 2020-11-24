@@ -135,6 +135,11 @@ class MidiOut
       }
       return result
     }
+    controlChange(control, value, channel = 0)
+    {
+      channel := (channel<1||channel>16) ? this.defaultChannel : channel
+      this.channel[channel].controlChange(control, value)
+    }     
     noteOn(note, velocity=127, channel=0)
     {
       channel := (channel<1||channel>16) ? this.defaultChannel : channel
@@ -144,7 +149,7 @@ class MidiOut
     {
       channel := (channel<1||channel>16) ? this.defaultChannel : channel
       this.channel[channel].noteOff(note, velocity)
-    }    
+    }
     selectInstrument(instrument=0)
     {
       this.channel[this.defaultChannel].selectInstrument(instrument)
@@ -178,6 +183,10 @@ class MidiOut
             this._notes[note, velocity] := 1
             return this._midiOut._message(((velocity&0xff)<<16)|((note&0xff)<<8)|(this._channelID|0x90))
         }
+        controlChange(control, value)
+        {
+            return this._midiOut._message(((value&0xff)<<16)|((control&0xff)<<8)|(this._channelID|0xB0))
+        }         
         noteOff(note="all", velocity=127)
         {
             note := this._noteValue(note)
