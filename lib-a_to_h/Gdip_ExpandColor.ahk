@@ -1,6 +1,6 @@
-﻿; Link:   	
-; Author:	
-; Date:   	
+﻿; Link:   	https://www.autohotkey.com/boards/viewtopic.php?t=78120
+; Author:	boiler
+; Date:   	03.07.2020
 ; for:     	AHK_L
 
 /*

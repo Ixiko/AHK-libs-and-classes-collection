@@ -1,4 +1,4 @@
-Jxon_Load(ByRef src, args*)
+﻿Jxon_Load(ByRef src, args*)
 {
 	static q := Chr(34)
 

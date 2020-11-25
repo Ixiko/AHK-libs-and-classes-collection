@@ -1,4 +1,4 @@
-class Selectionsort {
+﻿class Selectionsort {
 
 	sort(listToSort, listWithColumnNumbersToSort) {
 		n := listToSort.maxIndex()

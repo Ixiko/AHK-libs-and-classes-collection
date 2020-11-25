@@ -1,4 +1,4 @@
-#Include %A_LineFile%\..\modules\math
+﻿#Include %A_LineFile%\..\modules\math
 #Include MathHelper.ahk
 #Include PrimeFactorProduct.ahk
 

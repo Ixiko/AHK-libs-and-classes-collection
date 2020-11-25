@@ -1,4 +1,4 @@
-; LV_SortArrow by Solar. http://www.autohotkey.com/forum/viewtopic.php?t=69642
+﻿; LV_SortArrow by Solar. http://www.autohotkey.com/forum/viewtopic.php?t=69642
 ; h = ListView handle
 ; c = 1 based index of the column
 ; d = Optional direction to set the arrow. "asc" or "up". "desc" or "down".

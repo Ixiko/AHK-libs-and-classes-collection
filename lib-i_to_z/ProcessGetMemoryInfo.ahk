@@ -27,8 +27,7 @@
             PageFaultCount                The number of page faults.
         If the function fails, the return value is zero. To get extended error information, check A_LastError (WIN32).
 */
-ProcessGetMemoryInfo(Process)
-{
+ProcessGetMemoryInfo(Process) {
     local PROCESS_MEMORY_COUNTERS_EX := BufferAlloc(8+9*A_PtrSize)
     NumPut("UInt", PROCESS_MEMORY_COUNTERS_EX.Size, PROCESS_MEMORY_COUNTERS_EX)  ; DWORD  cb.
     if !DllCall("Psapi.dll\GetProcessMemoryInfo", "UPtr", IsObject(Process) ? Process.Handle : Process

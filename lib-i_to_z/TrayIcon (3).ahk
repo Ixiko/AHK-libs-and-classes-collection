@@ -1,5 +1,5 @@
 ;?add 2010 Modified by Tuncay to work with the stdlib mechanism.
-;?add The function names are changed, mostly a prefix Tray_ is 
+;?add The function names are changed, mostly a prefix Tray_ is
 ;?add added and names changed: TrayIcons() becomes to TrayIcon()
 ;?add and HideTrayIcon() becomes to TrayIcon_Hide().
 ;?add All changed or added lines are commented with ;? comments.
@@ -33,8 +33,7 @@ PostMessage, nMsg, uID, WM_RBUTTONUP  , , ahk_id %hWnd%
 
 
 ;?out TrayIcons(sExeName = "")
-TrayIcon(sExeName = "")
-{
+TrayIcon(sExeName = ""){
 	WinGet,	pidTaskbar, PID, ahk_class Shell_TrayWnd
 	hProc:=	DllCall("OpenProcess", "Uint", 0x38, "int", 0, "Uint", pidTaskbar)
 	pProc:=	DllCall("VirtualAllocEx", "Uint", hProc, "Uint", 0, "Uint", 32, "Uint", 0x1000, "Uint", 0x4)
@@ -73,8 +72,7 @@ TrayIcon(sExeName = "")
 }
 
 ;?out RemoveTrayIcon(hWnd, uID, nMsg = 0, hIcon = 0, nRemove = 2)
-TrayIcon_Remove(hWnd, uID, nMsg = 0, hIcon = 0, nRemove = 2)
-{
+TrayIcon_Remove(hWnd, uID, nMsg = 0, hIcon = 0, nRemove = 2){
 	NumPut(VarSetCapacity(ni,444,0), ni)
 	NumPut(hWnd , ni, 4)
 	NumPut(uID  , ni, 8)
@@ -85,31 +83,27 @@ TrayIcon_Remove(hWnd, uID, nMsg = 0, hIcon = 0, nRemove = 2)
 }
 
 ;?out HideTrayIcon(idn, bHide = True)
-TrayIcon_Hide(idn, bHide = True)
-{
+TrayIcon_Hide(idn, bHide = True){
 	idxTB := TrayIcon_GetTrayBar()
 	SendMessage, 0x404, idn, bHide, ToolbarWindow32%idxTB%, ahk_class Shell_TrayWnd   ; TB_HIDEBUTTON
 	SendMessage, 0x1A, 0, 0, , ahk_class Shell_TrayWnd
 }
 
 ;?out DeleteTrayIcon(idx)
-TrayIcon_Delete(idx)
-{
+TrayIcon_Delete(idx){
 	idxTB := TrayIcon_GetTrayBar()
 	SendMessage, 0x416, idx - 1, 0, ToolbarWindow32%idxTB%, ahk_class Shell_TrayWnd   ; TB_DELETEBUTTON
 	SendMessage, 0x1A, 0, 0, , ahk_class Shell_TrayWnd
 }
 
 ;?out MoveTrayIcon(idxOld, idxNew)
-TrayIcon_Move(idxOld, idxNew)
-{
+TrayIcon_Move(idxOld, idxNew){
 	idxTB := TrayIcon_GetTrayBar()
 	SendMessage, 0x452, idxOld - 1, idxNew - 1, ToolbarWindow32%idxTB%, ahk_class Shell_TrayWnd ; TB_MOVEBUTTON
 }
 
 ;?out GetTrayBar()
-TrayIcon_GetTrayBar()
-{
+TrayIcon_GetTrayBar(){
 	ControlGet, hParent, hWnd,, TrayNotifyWnd1  , ahk_class Shell_TrayWnd
 	ControlGet, hChild , hWnd,, ToolbarWindow321, ahk_id %hParent%
 	Loop

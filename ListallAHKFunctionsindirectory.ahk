@@ -64,7 +64,29 @@ classes\COM-Classes-FrameWork\Unknown
 more libs
 more libs\ActiveScript
 more libs\AFC
+more libs\AHK_DllCall_WinAPI\src\Clipboard Functions
+more libs\AHK_DllCall_WinAPI\src\Cursor Functions
+more libs\AHK_DllCall_WinAPI\src\Directory Management Functions
+more libs\AHK_DllCall_WinAPI\src\Disk Management Functions
+more libs\AHK_DllCall_WinAPI\src\Error Handling Functions
+more libs\AHK_DllCall_WinAPI\src\File Management Functions
+more libs\AHK_DllCall_WinAPI\src\IP Helper Functions
+more libs\AHK_DllCall_WinAPI\src\Keyboard Input Functions
+more libs\AHK_DllCall_WinAPI\src\Memory Management Functions
+more libs\AHK_DllCall_WinAPI\src\Mouse Input Functions
+more libs\AHK_DllCall_WinAPI\src\Multimedia Functions
+more libs\AHK_DllCall_WinAPI\src\National Language Support Functions
+more libs\AHK_DllCall_WinAPI\src\Others
+more libs\AHK_DllCall_WinAPI\src\Process and Thread Functions
+more libs\AHK_DllCall_WinAPI\src\PSAPI Functions
+more libs\AHK_DllCall_WinAPI\src\String Functions
+more libs\AHK_DllCall_WinAPI\src\System Information Functions
+more libs\AHK_DllCall_WinAPI\src\System Shutdown Functions
+more libs\AHK_DllCall_WinAPI\src\Time Functions
+more libs\AHK_DllCall_WinAPI\src\Volume Management Functions
 more libs\AHK-Object-Oriented-GUIs\gui
+more libs\AHK-Object-Oriented-GUIs\gui\controls
+more libs\AHK-OpenCV-master\Lib
 more libs\Canvas
 more libs\CGUI
 more libs\CNG\win7
@@ -72,12 +94,14 @@ more libs\CNG\win10
 more libs\core_audio_interfaces
 more libs\CustomBoxes
 more libs\Dictation-Interface
-more libs\DirectX\AHK Injector
+more libs\DirectX\AHK Injecto
 more libs\DirectX\headers
 more libs\DirectX\Lib
 more libs\DirectX\Lib\TexSwap
 more libs\DoDragAndDrop
 more libs\DX9-Overlay-API\include\ahk
+more libs\EmbedPython.ahk
+more libs\EmbedPython.ahk\Lib
 more libs\exLibs
 more libs\Edit\_Functions
 more libs\ImportTypeLib
@@ -91,6 +115,7 @@ more libs\Mini_Framwork\Framework\src\System\MfStruct
 more libs\Mini_Framwork\Framework\src\System\MfUnicode
 more libs\Mini_Framwork\Framework\src\System\Text
 more libs\minilib
+D:\Autohotkey\GitHub\AHK-libs-and-classes-collection\more libs\MsgBox2
 more libs\ObjCSV\lib
 more libs\RamDisk & CmdReturn
 more libs\SendInput
@@ -99,6 +124,7 @@ more libs\TAB\_Functions
 more libs\Various1\lib
 more libs\windows10DesktopManager
 more libs\windows10DesktopManager\injection dll
+more libs\WindowsScriptingObject
 more libs\Windy
 more libs\WinLogon
 more libs\Wy\lib
@@ -113,8 +139,13 @@ more libs\xlib\xinclude\threads\threadHandler
 more libs\xlib-xdllcall
 more libs\xlib-xdllcall\lib
 more libs\xlib-xdllcall\lib\xinclude
-MSOffice
-MSOffice\DocX
+msOffice
+msOffice\DocX
+msOffice\Excel
+msOffice\more
+msOffice\Outlook
+msOffice\PowerPoint
+msOffice\Word
 )
 functions          	:= Object()
 Dir                    	:= StrSplit(Directorys, "`n", "`r")

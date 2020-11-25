@@ -1,4 +1,4 @@
-StringCaseSense, On
+﻿StringCaseSense, On
 group := tester.newGroup("sort(callback)")
 
 

@@ -1,4 +1,4 @@
-; http://the-automator.com/download/dmp.ahk
+﻿; http://the-automator.com/download/dmp.ahk
 ; dmp Version 1.25
 ; By ObiWanKenobi
 ; Visit guresicpark.de for dmp updates

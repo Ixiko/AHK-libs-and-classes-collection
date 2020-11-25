@@ -1,7 +1,7 @@
 #NoEnv
 SetBatchLines, -1
 
-#Include ..\Socket.ahk
+#Include %A_ScriptDir%\..\..\class_Socket.ahk
 
 /*
 	The purpose of this script is to test the garbage collection.

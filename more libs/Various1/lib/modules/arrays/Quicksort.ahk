@@ -1,4 +1,4 @@
-class Quicksort {
+﻿class Quicksort {
 
 	sort(anArray, compareFunc, left, right) {
 		if (left < right) {

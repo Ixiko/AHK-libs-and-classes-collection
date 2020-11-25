@@ -34,8 +34,7 @@
                 0x100  IsSubsystemProcess    Set when the type of the process subsystem is other than Win32 (like *NIX, such as Ubuntu.).
         If the function fails, the return value is zero. To get extended error information, check A_LastError (NTSTATUS).
 */
-ProcessGetBasicInfo(Process)
-{
+ProcessGetBasicInfo(Process) {
     local PROCESS_EXTENDED_BASIC_INFORMATION := BufferAlloc(A_PtrSize==4?32:64)  ; https://stackoverflow.com/questions/47300622/meaning-of-flags-in-process-extended-basic-information-struct.
     NumPut("UInt", PROCESS_EXTENDED_BASIC_INFORMATION.Size, PROCESS_EXTENDED_BASIC_INFORMATION)
     local NtStatus := DllCall("Ntdll.dll\NtQueryInformationProcess", "UPtr", IsObject(Process) ? Process.Handle : Process

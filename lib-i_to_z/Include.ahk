@@ -18,10 +18,10 @@
  *     OR code. It's up to the caller to keep track and re-Include() them.
  *     - The /restart switch is used when the script is reloaded.
  */
-Include(incl, args*)
-{
-	if FileExist(incl)
-	{
+Include(incl, args*) {
+	
+	if FileExist(incl) {
+		´
 		fspec := incl, incl := ""
 		if (A_AhkVersion < "2")
 			Loop %fspec%, 0, 0

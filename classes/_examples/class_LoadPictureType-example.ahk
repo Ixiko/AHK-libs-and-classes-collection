@@ -1,17 +1,17 @@
 ﻿; Shows a beautful and practical cursor. Press escape to end the fun. (Note, only the arrow cursor is replaced)
-#Include %A_ScriptDir%\class_LoadPictureType.ahk
+#Include %A_ScriptDir%\..\class_LoadPictureType.ahk
 OnExit, restore
 transCol:=0x55FF51
 IMAGE_CURSOR:=2			; Request to recieve a cursor handle
 xHotspot:=153			; Where the click is. In this case, at the tip of the arrow.
 yHotspot:=18
 
-myCursor:= new LoadPictureType("myBmp.bmp", "", IMAGE_CURSOR,transCol,xHotspot,yHotspot)
+myCursor:= new LoadPictureType("hx.bmp", "", IMAGE_CURSOR,transCol,xHotspot,yHotspot)
 SetCursor(myCursor.getHandle())
 
 
 ; If you want this to free the handle,
-; myCursor:="" 
+; myCursor:=""
 ; Then do:
 ; myCursor.setAutoFreeHandles()
 ; Or change the default:

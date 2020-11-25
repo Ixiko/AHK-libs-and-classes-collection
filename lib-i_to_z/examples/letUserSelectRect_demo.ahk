@@ -1,4 +1,4 @@
-; #Include LetUserSelectRect.ahk
+﻿; #Include LetUserSelectRect.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

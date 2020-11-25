@@ -1,25 +1,24 @@
-﻿GetCurrentProcessID()
-	{
+﻿GetCurrentProcessID()	{
 		Return DllCall("GetCurrentProcessId")  ; http://msdn2.microsoft.com/ms683180.aspx
 	}
-GetCurrentParentProcessID()
-	{
+
+GetCurrentParentProcessID()	{
 		Return GetParentProcessID(GetCurrentProcessID())
 	}
-GetProcessName(ProcessID)
-	{
+
+GetProcessName(ProcessID)	{
 		Return GetProcessInformation(ProcessID, "Str", 260 * (A_IsUnicode ? 2 : 1), 32 + A_PtrSize)  ; TCHAR szExeFile[MAX_PATH]
 	}
-GetParentProcessID(ProcessID)
-	{
+
+GetParentProcessID(ProcessID)	{
 		Return GetProcessInformation(ProcessID, "UInt *", 8, 20 + A_PtrSize)  ; DWORD th32ParentProcessID
 	}
-GetProcessThreadCount(ProcessID)
-	{
+
+GetProcessThreadCount(ProcessID)	{
 		Return GetProcessInformation(ProcessID, "UInt *", 8, 16 + A_PtrSize)  ; DWORD cntThreads
 	}
-GetProcessInformation(ProcessID, CallVariableType, VariableCapacity, DataOffset)
-	{
+
+GetProcessInformation(ProcessID, CallVariableType, VariableCapacity, DataOffset)	{
 		static PE32_size := 8 * 4 + A_PtrSize + 260 * (A_IsUnicode ? 2 : 1)
 		hSnapshot := DLLCall("CreateToolhelp32Snapshot", "UInt", 2, "UInt", 0)  ; TH32CS_SNAPPROCESS = 2
   If (hSnapshot >= 0)
@@ -48,8 +47,8 @@ GetProcessInformation(ProcessID, CallVariableType, VariableCapacity, DataOffset)
   }
   Return  ; Cannot find process
 	}
-GetModuleFileNameEx(ProcessID)  ; modIfied version of shimanov's function
-	{
+
+GetModuleFileNameEx(ProcessID)  {; modIfied version of shimanov's function	
 	DetectHiddenWindows, On
   If A_OSVersion in WIN_95, WIN_98, WIN_ME
     Return GetProcessName(ProcessID)

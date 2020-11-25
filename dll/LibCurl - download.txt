@@ -1,0 +1,2 @@
+LibCurl.dll for Win32 and Win64 download link:
+https://curl.se/download.html

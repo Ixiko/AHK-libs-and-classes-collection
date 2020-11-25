@@ -39,20 +39,19 @@ class BSON {
 		}
 	
 		Call(ByteArray) {
-			if !(IsObject(ByteArray)) {
+			
+			if !(IsObject(ByteArray)) 
 				Throw, Exception("BSON.Load() requires an array of bytes as input.")
-			}
 		
 			ByteCount := ByteArray.Count()
-			
 			Scanner := new ManagedScanningBuffer(ByteCount + 1) ; Loads a hex BSON object into memory, and then passes the buffer to the normal Load method
 			
-			for k, Byte in ByteArray {
+			for k, Byte in ByteArray 
 				Scanner.WriteChar(Conversions.HexToInt("0x" Byte))
-			}
 			
 			Scanner.SeekStart(0)
 			return this.FromScanner(Scanner)
+			
 		}
 	}
 	ParseDocument(Scanner) {
@@ -240,5 +239,5 @@ class BSON {
 	}
 }
 
-#Include <ScanningBuffer>
-#Include <Conversions>
+#Include <class_ScanningBuffer>
+#Include <class_Conversions>

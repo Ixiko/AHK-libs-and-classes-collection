@@ -1,4 +1,4 @@
-; This example displays and selects each item in the Inbox in a sorted order.
+﻿; This example displays and selects each item in the Inbox in a sorted order.
 
 ; Constants
 olFolderInbox := 6

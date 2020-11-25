@@ -1,4 +1,4 @@
-selectRows(xl){
+﻿selectRows(xl){
     global
     Gui, +border -caption +AlwaysOnTop +OwnDialogs
     splashUI("p", "Select which rows to merge")

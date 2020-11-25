@@ -1,4 +1,4 @@
-CurlGlobalInit( Location = "", flags = 3 )
+﻿CurlGlobalInit( Location = "", flags = 3 )
 {
 	global hCurlModule := DllCall( "LoadLibrary", "str", Location = "" ? "libcurl.dll" : (Location . ".dll") )
 	if ( !hCurlModule || ErrorLevel )

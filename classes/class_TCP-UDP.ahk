@@ -11,24 +11,31 @@
     this.disconnect()
   }
 
-  connect(host, port) {
+	connect(host, port) {
+
     if ((this.socket!=-1) || (!(next := __nw_getaddrinfo(host, port))))
       return 0
-    while (next)
-    {
-      sockaddrlen := NumGet(next+0, 16, "uint")
-      sockaddr := NumGet(next+0, 16+(2*A_PtrSize), "ptr")
-      if ((this.socket := DllCall("ws2_32\socket", "int", NumGet(next+0, 4, "int"), "int", this.__socketType, "int", this.__protocolId, "ptr"))!=-1)
-      {
-        if ((r := DllCall("ws2_32\WSAConnect", "ptr", this.socket, "ptr", sockaddr, "uint", sockaddrlen, "ptr", 0, "ptr", 0, "ptr", 0, "ptr", 0, "int"))=0)
-          return 1
-        this.disconnect()
+
+	while (next)    {
+
+		sockaddrlen := NumGet(next+0, 16, "uint")
+		sockaddr := NumGet(next+0, 16+(2*A_PtrSize), "ptr")
+
+		if ((this.socket := DllCall("ws2_32\socket", "int", NumGet(next+0, 4, "int"), "int", this.__socketType, "int", this.__protocolId, "ptr"))!=-1)      {
+
+			if ((r := DllCall("ws2_32\WSAConnect", "ptr", this.socket, "ptr", sockaddr, "uint", sockaddrlen, "ptr", 0, "ptr", 0, "ptr", 0, "ptr", 0, "int"))=0)
+				return 1
+
+			this.disconnect()
       }
+
       next := NumGet(next+0, 16+(3*A_PtrSize), "ptr")
     }
+
     this.lastError := DllCall("ws2_32\WSAGetLastError")
-    return 0
-  }
+
+	return 0
+	}
 
   bind(host, port) {
     if ((this.socket!=-1) || (!(next := __nw_getaddrinfo(host, port))))
@@ -54,23 +61,30 @@
   }
 
   accept(host="", port=0) {
-    if (this.socket=-1)
-    {
+
+    if (this.socket=-1)    {
+
       this.bind(host, port)
       this.listen()
+
     }
-    if ((s := DllCall("ws2_32\accept", "ptr", this.socket, "ptr", 0, "int", 0, "ptr"))!=-1)
-    {
-      this.disconnect()
-      this.socket := s
-      return 1
+
+    if ((s := DllCall("ws2_32\accept", "ptr", this.socket, "ptr", 0, "int", 0, "ptr"))!=-1)    {
+
+        this.disconnect()
+        this.socket := s
+
+      return true
     }
-    return 0
-  }
+
+  return false
+ }
 
   onAccept(callback) {
+
     this.__onAccept := callback
-    return __nw_eventProc("register", 8, this, 0)
+
+  return __nw_eventProc("register", 8, this, 0)
   }
 
   disconnect() {

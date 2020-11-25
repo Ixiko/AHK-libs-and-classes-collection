@@ -1,4 +1,4 @@
-/*
+﻿/*
 SetBatchLines,-1
 @:=WinApi("") ;example how to load all available dll functions not using any mapping
 MsgBox

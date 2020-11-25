@@ -1,18 +1,11 @@
-﻿/*
-g := GuiCreate()
-b := g.AddButton(, "hola mundo!")
-a:=ImageButton.Create(b.hwnd, [0, 0x7E8DB6, 'Black', 0x242424, 2, 0x282828, 0x242424, 1], [5, 0x8392B8, 0x98A5C5, 0x242424, 2, 0x282828, 0x242424, 1], [5, 0x8392B8, 0xA9B5CF, 0x242424, 2, 0x282828, 0x242424, 1], [0, 0xCCCCCC, 'Black', 0x4A4A4A, 2, 0x282828, 0xA7B7C9, 1], [0, 0x7E8DB6, 'Black', 0x242424, 2, 0x282828, 0x404040, 2], [5, 0x8392B8, 0x98A5C5, 0x242424, 2, 0x282828, 0x242424, 1])
-g.show("x20 y20")
-WinWaitClose('ahk_id' g.hwnd)
-ExitApp
-*/
-
-; ======================================================================================================================
+﻿; ==============================================================================
 ; Namespace:         ImageButton
 ; Function:          Create images and assign them to pushbuttons.
 ; Tested with:       AHK 1.1.14.03 (A32/U32/U64)
 ; Tested on:         Win 7 (x64)
-; Change history:    1.4.00.00/2014-06-07/just me - fixed bug for button caption = "0", "000", etc.
+; Change history:             /2017-02-05/tmplinshi - added DisableFadeEffect(). Thanks to Klark92.
+;                             /2017-01-21/tmplinshi - added support for icon and checkbox/radio buttons
+;                    1.4.00.00/2014-06-07/just me - fixed bug for button caption = "0", "000", etc.
 ;                    1.3.00.00/2014-02-28/just me - added support for ARGB colors
 ;                    1.2.00.00/2014-02-23/just me - added borders
 ;                    1.1.00.00/2013-12-26/just me - added rounded and bicolored buttons
@@ -71,23 +64,23 @@ ExitApp
 ;        If the the button has a caption it will be drawn above the bitmap.
 ; Credits:           THX tic     for GDIP.AHK     : http://www.autohotkey.com/forum/post-198949.html
 ;                    THX tkoi    for ILBUTTON.AHK : http://www.autohotkey.com/forum/topic40468.html
-; ======================================================================================================================
+; ==============================================================================
 ; This software is provided 'as-is', without any express or implied warranty.
 ; In no event will the authors be held liable for any damages arising from the use of this software.
-; ======================================================================================================================
-; ======================================================================================================================
+; ==============================================================================
+; ==============================================================================
 ; CLASS ImageButton()
-; ======================================================================================================================
+; ==============================================================================
 Class ImageButton {
-   ; ===================================================================================================================
-   ; PUBLIC PROPERTIES =================================================================================================
-   ; ===================================================================================================================
+   ; =================================================================================
+   ; PUBLIC PROPERTIES ====================================================================
+   ; =================================================================================
    Static DefGuiColor  := ""        ; default GUI color                             (read/write)
    Static DefTxtColor := "Black"    ; default caption color                         (read/write)
    Static LastError := ""           ; will contain the last error message, if any   (readonly)
-   ; ===================================================================================================================
-   ; PRIVATE PROPERTIES ================================================================================================
-   ; ===================================================================================================================
+   ; =================================================================================
+   ; PRIVATE PROPERTIES ===================================================================
+   ; =================================================================================
    Static BitMaps := []
    Static GDIPDll := 0
    Static GDIPToken := 0
@@ -98,13 +91,13 @@ Class ImageButton {
                  , YELLOW: 0xFFFF00, LIME: 0x00FF00, NAVY: 0x000080, TEAL: 0x008080, AQUA: 0x00FFFF, BLUE: 0x0000FF}
    ; Initialize
    Static ClassInit := ImageButton.InitClass()
-   ; ===================================================================================================================
-   ; PRIVATE METHODS ===================================================================================================
-   ; ===================================================================================================================
+   ; =================================================================================
+   ; PRIVATE METHODS ====================================================================
+   ; =================================================================================
    __New(P*) {
       Return False
    }
-   ; ===================================================================================================================
+   ; =================================================================================
    InitClass() {
       ; ----------------------------------------------------------------------------------------------------------------
       ; Get AHK's default GUI background color
@@ -112,7 +105,7 @@ Class ImageButton {
       This.DefGuiColor := ((GuiColor >> 16) & 0xFF) | (GuiColor & 0x00FF00) | ((GuiColor & 0xFF) << 16)
       Return True
    }
-   ; ===================================================================================================================
+   ; =================================================================================
    GdiplusStartup() {
       This.GDIPDll := This.GDIPToken := 0
       If (This.GDIPDll := DllCall("Kernel32.dll\LoadLibrary", "Str", "Gdiplus.dll", "Ptr")) {
@@ -125,7 +118,7 @@ Class ImageButton {
       }
       Return This.GDIPToken
    }
-   ; ===================================================================================================================
+   ; =================================================================================
    GdiplusShutdown() {
       If This.GDIPToken
          DllCall("Gdiplus.dll\GdiplusShutdown", "Ptr", This.GDIPToken)
@@ -133,22 +126,22 @@ Class ImageButton {
          DllCall("Kernel32.dll\FreeLibrary", "Ptr", This.GDIPDll)
       This.GDIPDll := This.GDIPToken := 0
    }
-   ; ===================================================================================================================
+   ; =================================================================================
    FreeBitmaps() {
       For I, HBITMAP In This.BitMaps
          DllCall("Gdi32.dll\DeleteObject", "Ptr", HBITMAP)
       This.BitMaps := []
    }
-   ; ===================================================================================================================
+   ; =================================================================================
    GetARGB(RGB) {
       ARGB := This.HTML.HasKey(RGB) ? This.HTML[RGB] : RGB
       Return (ARGB & 0xFF000000) = 0 ? 0xFF000000 | ARGB : ARGB
    }
-   ; ===================================================================================================================
+   ; =================================================================================
    PathAddRectangle(Path, X, Y, W, H) {
       Return DllCall("Gdiplus.dll\GdipAddPathRectangle", "Ptr", Path, "Float", X, "Float", Y, "Float", W, "Float", H)
    }
-   ; ===================================================================================================================
+   ; =================================================================================
    PathAddRoundedRect(Path, X1, Y1, X2, Y2, R) {
       D := (R * 2), X2 -= D, Y2 -= D
       DllCall("Gdiplus.dll\GdipAddPathArc"
@@ -161,30 +154,30 @@ Class ImageButton {
             , "Ptr", Path, "Float", X1, "Float", Y2, "Float", D, "Float", D, "Float", 90, "Float", 90)
       Return DllCall("Gdiplus.dll\GdipClosePathFigure", "Ptr", Path)
    }
-   ; ===================================================================================================================
+   ; =================================================================================
    SetRect(ByRef Rect, X1, Y1, X2, Y2) {
       VarSetCapacity(Rect, 16, 0)
       NumPut(X1, Rect, 0, "Int"), NumPut(Y1, Rect, 4, "Int")
       NumPut(X2, Rect, 8, "Int"), NumPut(Y2, Rect, 12, "Int")
       Return True
    }
-   ; ===================================================================================================================
+   ; =================================================================================
    SetRectF(ByRef Rect, X, Y, W, H) {
       VarSetCapacity(Rect, 16, 0)
       NumPut(X, Rect, 0, "Float"), NumPut(Y, Rect, 4, "Float")
       NumPut(W, Rect, 8, "Float"), NumPut(H, Rect, 12, "Float")
       Return True
    }
-   ; ===================================================================================================================
+   ; =================================================================================
    SetError(Msg) {
       This.FreeBitmaps()
       This.GdiplusShutdown()
       This.LastError := Msg
       Return False
    }
-   ; ===================================================================================================================
-   ; PUBLIC METHODS ====================================================================================================
-   ; ===================================================================================================================
+   ; =================================================================================
+   ; PUBLIC METHODS =====================================================================
+   ; =================================================================================
    Create(HWND, Options*) {
       ; Windows constants
       Static BCM_SETIMAGELIST := 0x1602
@@ -205,14 +198,16 @@ Class ImageButton {
          Return This.SetError("Invalid parameter HWND!")
       ; ----------------------------------------------------------------------------------------------------------------
       ; Check Options
-      If !(IsObject(Options)) || (Options.MinIndex() <> 1) || (Options.MaxIndex() > This.MaxOptions)
+      If !(IsObject(Options)) || (Options.MinIndex() <> 1) ; || (Options.MaxIndex() > This.MaxOptions)
          Return This.SetError("Invalid parameter Options!")
       ; ----------------------------------------------------------------------------------------------------------------
       ; Get and check control's class and styles
-      BtnClass := WinGetClass("ahk_id" . HWND)
-      BtnStyle := ControlGetStyle(, "ahk_id" . HWND)
-      If (BtnClass != "Button") || ((BtnStyle & 0xF ^ BS_GROUPBOX) = 0) || ((BtnStyle & RCBUTTONS) > 1)
+      WinGetClass, BtnClass, ahk_id %HWND%
+      ControlGet, BtnStyle, Style, , , ahk_id %HWND%
+      If (BtnClass != "Button") || ((BtnStyle & 0xF ^ BS_GROUPBOX) = 0)
          Return This.SetError("The control must be a pushbutton!")
+      If ((BtnStyle & RCBUTTONS) > 1)
+         GuiControl, +0x1000, %HWND% ; BS_PUSHLIKE = 0x1000
       ; ----------------------------------------------------------------------------------------------------------------
       ; Load GdiPlus
       If !This.GdiplusStartup()
@@ -236,7 +231,7 @@ Class ImageButton {
       BtnH := NumGet(RECT, 12, "Int") - NumGet(RECT, 4, "Int")
       ; ----------------------------------------------------------------------------------------------------------------
       ; Get the button's caption
-      BtnCaption := ControlGetText(, "ahk_id" . HWND)
+      ControlGetText, BtnCaption, , ahk_id %HWND%
       If (ErrorLevel)
          Return This.SetError("Couldn't get button's caption!")
       ; ----------------------------------------------------------------------------------------------------------------
@@ -247,8 +242,7 @@ Class ImageButton {
             Continue
          BkgColor1 := BkgColor2 := TxtColor := Mode := Rounded := GuiColor := Image := ""
          ; Replace omitted options with the values of Options.1
-         Loop (This.MaxOptions)
-         {
+         Loop, % This.MaxOptions {
             If (Option[A_Index] = "")
                Option[A_Index] := Options.1[A_Index]
          }
@@ -263,12 +257,12 @@ Class ImageButton {
          && (FileExist(Option.2) || (DllCall("Gdi32.dll\GetObjectType", "Ptr", Option.2, "UInt") = OBJ_BITMAP))
             Image := Option.2
          Else {
-            If !(Option.2 + 0) && !This.HTML.HasKey(Option.2)
+            If !(Option.2 + 0) && !This.HTML.HasKey(Option.2) && !Option.Icon
                Return This.SetError("Invalid value for StartColor in Options[" . Index . "]!")
             BkgColor1 := This.GetARGB(Option.2)
             If (Option.3 = "")
                Option.3 := Option.2
-            If !(Option.3 + 0) && !This.HTML.HasKey(Option.3)
+            If !(Option.3 + 0) && !This.HTML.HasKey(Option.3) && !Option.Icon
                Return This.SetError("Invalid value for TargetColor in Options[" . Index . "]!")
             BkgColor2 := This.GetARGB(Option.3)
          }
@@ -288,7 +282,7 @@ Class ImageButton {
             Rounded := 0
          ; GuiColor
          If (Option.6 = "")
-            Option.6 := This.DefGuiColord
+            Option.6 := This.DefGuiColor
          If !(Option.6 + 0) && !This.HTML.HasKey(Option.6)
             Return This.SetError("Invalid value for GuiColor in Options[" . Index . "]!")
          GuiColor := This.GetARGB(Option.6)
@@ -336,12 +330,10 @@ Class ImageButton {
                DllCall("Gdiplus.dll\GdipResetPath", "Ptr", PPATH)
                ; Add a new 'inner' path
                PathX := PathY := BorderWidth, PathW -= BorderWidth, PathH -= BorderWidth, Rounded -= BorderWidth
-
                If (Rounded < 1) ; the path is a rectangular rectangle
                   This.PathAddRectangle(PPATH, PathX, PathY, PathW - PathX, PathH - PathY)
                Else ; the path is a rounded rectangle
                   This.PathAddRoundedRect(PPATH, PathX, PathY, PathW, PathH, Rounded)
-
                ; If a BorderColor has been drawn, BkgColors must be opaque
                BkgColor1 := 0xFF000000 | BkgColor1
                BkgColor2 := 0xFF000000 | BkgColor2
@@ -412,6 +404,33 @@ Class ImageButton {
             ; Free the bitmap
             DllCall("Gdiplus.dll\GdipDisposeImage", "Ptr", PBM)
          }
+
+         if (oIcon := Option.Icon) {
+            DllCall("Gdiplus.dll\GdipCreateBitmapFromFile", "WStr", oIcon.file, "PtrP", PBM)
+
+            If !oIcon.w {
+               DllCall("Gdiplus.dll\GdipGetImageWidth", "Ptr", PBM, "UInt*", __w)
+               oIcon.w := __w
+            }
+            If !oIcon.h {
+               DllCall("Gdiplus.dll\GdipGetImageHeight", "Ptr", PBM, "UInt*", __h)
+               oIcon.h := __h
+            }
+
+            if !oIcon.HasKey("padding")
+               oIcon.padding := 5
+
+            if !oIcon.HasKey("y")
+               oIcon.y := (BtnH - oIcon.h)//2
+
+            icon_x := oIcon.HasKey("x") ? oIcon.x : oIcon.padding
+
+            DllCall("Gdiplus.dll\GdipDrawImageRectI", "Ptr", PGRAPHICS, "Ptr", PBM, "Int", icon_x, "Int", oIcon.y
+                  , "Int", oIcon.w, "Int", oIcon.h)
+            ; Free the bitmap
+            DllCall("Gdiplus.dll\GdipDisposeImage", "Ptr", PBM)
+         }
+
          ; -------------------------------------------------------------------------------------------------------------
          ; Draw the caption
          If (BtnCaption <> "") {
@@ -434,8 +453,21 @@ Class ImageButton {
             DllCall("Gdiplus.dll\GdipSetTextRenderingHint", "Ptr", PGRAPHICS, "Int", 0)
             ; Set the text's rectangle
             VarSetCapacity(RECT, 16, 0)
-            NumPut(BtnW, RECT,  8, "Float")
-            NumPut(BtnH, RECT, 12, "Float")
+
+            If oIcon {
+               If !oIcon.x || (HALIGN = SA_CENTER) {
+                  NumPut( _left := oIcon.w + oIcon.padding*2, RECT,  0, "Float")
+                  NumPut(BtnW - _left                       , RECT,  8, "Float")
+                  NumPut(BtnH          , RECT, 12, "Float")
+               } Else {
+                  NumPut(BtnW, RECT,  8, "Float")
+                  NumPut(BtnH, RECT, 12, "Float")
+               }
+            } Else {
+               NumPut(BtnW, RECT,  8, "Float")
+               NumPut(BtnH, RECT, 12, "Float")
+            }
+
             ; Draw the text
             DllCall("Gdiplus.dll\GdipDrawString", "Ptr", PGRAPHICS, "WStr", BtnCaption, "Int", -1
                   , "Ptr", PFONT, "Ptr", &RECT, "Ptr", HFORMAT, "Ptr", PBRUSH)
@@ -457,8 +489,7 @@ Class ImageButton {
       ; Create the ImageList
       HIL := DllCall("Comctl32.dll\ImageList_Create"
                    , "UInt", BtnW, "UInt", BtnH, "UInt", ILC_COLOR32, "Int", 6, "Int", 0, "Ptr")
-      Loop (This.BitMaps.MaxIndex() > 1 ? 6 : 1)
-      {
+      Loop, % (This.BitMaps.MaxIndex() > 1 ? 6 : 1) {
          HBITMAP := This.BitMaps.HasKey(A_Index) ? This.BitMaps[A_Index] : This.BitMaps.1
          DllCall("Comctl32.dll\ImageList_Add", "Ptr", HIL, "Ptr", HBITMAP, "Ptr", 0)
       }
@@ -467,11 +498,11 @@ Class ImageButton {
       NumPut(HIL, BIL, 0, "Ptr")
       Numput(BUTTON_IMAGELIST_ALIGN_CENTER, BIL, A_PtrSize + 16, "UInt")
       ; Hide buttons's caption
-      ControlSetText("",, "ahk_id" . HWND)
-      ControlSetStyle("+" . BS_BITMAP,, "ahk_id" . HWND)
+      ControlSetText, , , ahk_id %HWND%
+      Control, Style, +%BS_BITMAP%, , ahk_id %HWND%
       ; Assign the ImageList to the button
-      SendMessage(BCM_SETIMAGELIST, 0, 0,, "ahk_id" . HWND)
-      SendMessage(BCM_SETIMAGELIST, 0, &BIL,, "ahk_id" . HWND)
+      SendMessage, %BCM_SETIMAGELIST%, 0, 0, , ahk_id %HWND%
+      SendMessage, %BCM_SETIMAGELIST%, 0, % &BIL, , ahk_id %HWND%
       ; Free the bitmaps
       This.FreeBitmaps()
       ; ----------------------------------------------------------------------------------------------------------------
@@ -479,7 +510,7 @@ Class ImageButton {
       This.GdiplusShutdown()
       Return True
    }
-   ; ===================================================================================================================
+   ; =================================================================================
    ; Set the default GUI color
    SetGuiColor(GuiColor) {
       ; GuiColor     -  RGB integer value (0xRRGGBB) or HTML color name ("Red").
@@ -488,7 +519,7 @@ Class ImageButton {
       This.DefGuiColor := (This.HTML.HasKey(GuiColor) ? This.HTML[GuiColor] : GuiColor) & 0xFFFFFF
       Return True
    }
-   ; ===================================================================================================================
+   ; =================================================================================
    ; Set the default text color
    SetTxtColor(TxtColor) {
       ; TxtColor     -  RGB integer value (0xRRGGBB) or HTML color name ("Red").
@@ -497,42 +528,19 @@ Class ImageButton {
       This.DefTxtColor := (This.HTML.HasKey(TxtColor) ? This.HTML[TxtColor] : TxtColor) & 0xFFFFFF
       Return True
    }
-}
+   ; =================================================================================
+   DisableFadeEffect() {
+      ; SPI_GETCLIENTAREAANIMATION = 0x1042
+      DllCall("SystemParametersInfo", "UInt", 0x1042, "UInt", 0, "UInt*", isEnabled, "UInt", 0)
 
-winGetClass(hwnd) {
-	WinGetClass,cl,ahk_id %hwnd%
-	return cl
+      if isEnabled {
+         ; SPI_SETCLIENTAREAANIMATION = 0x1043
+         DllCall("SystemParametersInfo", "UInt", 0x1043, "UInt", 0, "UInt", 0, "UInt", 0)
+         Progress, 10:P100 Hide
+         Progress, 10:Off
+         DllCall("SystemParametersInfo", "UInt", 0x1043, "UInt", 0, "UInt", 1, "UInt", 0)
+      }
+   }
 }
-ControlGetStyle(Control:="", WinTitle:="", WinText:="", ExcludeTitle:="", ExcludeText:="") {
-
-    local OutputVar
-   ControlGet OutputVar, Style,, %Control%, %WinTitle%, %WinText%, %ExcludeTitle%, %ExcludeText%
-
-return OutputVar
-}
-ControlGetText(Control:="", WinTitle:="", WinText:="", ExcludeTitle:="", ExcludeText:="") {
-    local OutputVar
-    ControlGetText OutputVar, %Control%, %WinTitle%, %WinText%, %ExcludeTitle%, %ExcludeText%
-    if !ErrorLevel
-        return OutputVar
-}
-ControlSetText(NewText, Control:="", WinTitle:="", WinText:="", ExcludeTitle:="", ExcludeText:="") {
-    ControlSetText %Control%, %NewText%, %WinTitle%, %WinText%, %ExcludeTitle%, %ExcludeText%
-    return !ErrorLevel
-}
-ControlSetExStyle(Value, Control:="", WinTitle:="", WinText:="", ExcludeTitle:="", ExcludeText:=""){
-    Control ExStyle, %Value%, %Control%, %WinTitle%, %WinText%, %ExcludeTitle%, %ExcludeText%
-}
-ControlSetStyle(Value, Control:="", WinTitle:="", WinText:="", ExcludeTitle:="", ExcludeText:=""){
-    Control Style, %Value%, %Control%, %WinTitle%, %WinText%, %ExcludeTitle%, %ExcludeText%
-}
-SendMessage(Msg, wParam:="", lParam:="", Control:="", WinTitle:="", WinText:="", ExcludeTitle:="", ExcludeText:="", Timeout:="") {
-    local MsgReply
-    SendMessage %Msg%, %wParam%, %lParam%, %Control%, %WinTitle%, %WinText%, %ExcludeTitle%, %ExcludeText%, %Timeout%
-    MsgReply := (ErrorLevel = "FAIL") ? "" : ErrorLevel
-    ErrorLevel := (ErrorLevel = "FAIL")
-    return MsgReply
-}
-
 
 

@@ -1,0 +1,29 @@
+ Datenträger in Laufwerk D: ist Programme
+ Volumeseriennummer: 8C75-9C1B
+
+ Verzeichnis von D:\Autohotkey\GitHub\AHK-libs-and-classes-collection\more libs\AHK_DllCall_WinAPI\src
+
+23.11.2020  19:25    <DIR>          .
+23.11.2020  19:25    <DIR>          ..
+23.11.2020  04:35    <DIR>          Clipboard Functions
+23.11.2020  04:35    <DIR>          Cursor Functions
+23.11.2020  04:35    <DIR>          Directory Management Functions
+23.11.2020  04:35    <DIR>          Disk Management Functions
+23.11.2020  04:35    <DIR>          Error Handling Functions
+23.11.2020  04:35    <DIR>          File Management Functions
+23.11.2020  04:35    <DIR>          IP Helper Functions
+23.11.2020  04:35    <DIR>          Keyboard Input Functions
+23.11.2020  04:35    <DIR>          Memory Management Functions
+23.11.2020  04:35    <DIR>          Mouse Input Functions
+23.11.2020  04:35    <DIR>          Multimedia Functions
+23.11.2020  04:35    <DIR>          National Language Support Functions
+23.11.2020  04:35    <DIR>          Others
+23.11.2020  04:35    <DIR>          Process and Thread Functions
+23.11.2020  04:35    <DIR>          PSAPI Functions
+23.11.2020  04:35    <DIR>          String Functions
+23.11.2020  04:35    <DIR>          System Information Functions
+23.11.2020  04:35    <DIR>          System Shutdown Functions
+23.11.2020  04:35    <DIR>          Time Functions
+23.11.2020  04:35    <DIR>          Volume Management Functions
+               0 Datei(en),              0 Bytes
+              22 Verzeichnis(se), 482.124.214.272 Bytes frei

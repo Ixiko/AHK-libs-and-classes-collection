@@ -5,18 +5,17 @@
 * https://autohotkey.com/board/topic/80487-ahk-l-matrix-class/
 * Gauss/Pivot Strategies implemented by horst/Babba
 */
-class MatrixStatic
-{
+class MatrixStatic {
    /**
    * Calculates the determinant (scalar) of the given Matrix
    *
    * Implementation Note:
    * The given matrix will be reduced by laplace expansion
-   * until the matrix dimension is (2,2). The determinant of 
+   * until the matrix dimension is (2,2). The determinant of
    * the 2,2 matrix is then directly calculated
    */
    Det(m){
-     
+
       det := 0
 
       colCnt := MatrixStatic.ColumnCount(m)
@@ -29,7 +28,7 @@ class MatrixStatic
       }else{
          ; Laplace expansion
          ; @see: http://en.wikipedia.org/wiki/Laplace_expansion
-         
+
          i := 1 ;row
          k := 1 ;col
          det := 0
@@ -37,9 +36,9 @@ class MatrixStatic
          Loop, % colCnt
          {
             k := A_index
-            
+
             curVal := m[i,k]
-            
+
             if(curVal != 0) ; we can skip coz multiplication by zero
             {
                laplace := MatrixStatic.ExtractLaplace(m, [i,k]) ; extract a sub matrix by laplace
@@ -51,10 +50,10 @@ class MatrixStatic
 
       return det
    }
-    
+
     /**
    * Extract the sub-matrix, by laplace expansion
-   * 
+   *
    * m    -   Matrix   (n,n)       source matrix
    * pnt   -   Point   [row,col]   coord origin of Laplace
    *
@@ -64,18 +63,18 @@ class MatrixStatic
    */
    ExtractLaplace(m, pnt){
       laplace := {}
-      
+
       colCnt := MatrixStatic.ColumnCount(m)
       rowCnt := MatrixStatic.RowCount(m)
-      
+
 
         pntRow := pnt[1]
       pntCol := pnt[2]
-      
+
       laplaceRow := 1
       laplaceCol := 1
       bincRow := false
-        
+
       irow := 1
       Loop, % colCnt
       {
@@ -85,7 +84,7 @@ class MatrixStatic
          Loop, % colCnt
          {
             icol := a_index
-            
+
             if(pntCol != icol && pntRow != irow) ; // omit values in the range of the laplace origin
             {
                laplace[laplaceRow, laplaceCol] := m[irow, icol]
@@ -93,19 +92,18 @@ class MatrixStatic
                     bincRow := true
             }
          }
-            if(bincRow) 
+            if(bincRow)
                laplaceRow++
       }
 
       return laplace
    }
-   
-   
-   
+
+
    /**
    * Multiply each element in the matrix whith the given scalar
    */
-   MultiplyScalar(A, n){   
+   MultiplyScalar(A, n){
       add := {}
 
       isColVector := (MatrixStatic.RowCount(A) == 1)
@@ -123,17 +121,17 @@ class MatrixStatic
       }
       return add
    }
-   
+
    /**
    * Addition of A and B
    */
    Add(A, B){
-      if(MatrixStatic.ColumnCount(A) != MatrixStatic.ColumnCount(B) 
+      if(MatrixStatic.ColumnCount(A) != MatrixStatic.ColumnCount(B)
       || MatrixStatic.RowCount(A) != MatrixStatic.RowCount(B))
       {
          throw Exception("Matrix Addition Error: All dimensions must agree!")
       }
-      
+
       add := {}
 
       isColVector := (MatrixStatic.RowCount(A) == 1)
@@ -151,17 +149,17 @@ class MatrixStatic
       }
       return add
    }
-   
+
    /**
    * Subtraction of B from A
    */
    Sub(A, B){
-      if(MatrixStatic.ColumnCount(A) != MatrixStatic.ColumnCount(B) 
+      if(MatrixStatic.ColumnCount(A) != MatrixStatic.ColumnCount(B)
       || MatrixStatic.RowCount(A) != MatrixStatic.RowCount(B))
       {
          throw Exception("Matrix Addition Error: All dimensions must agree!")
       }
-      
+
       add := {}
 
       isColVector := (MatrixStatic.RowCount(A) == 1)
@@ -179,7 +177,7 @@ class MatrixStatic
       }
       return add
    }
-   
+
 	/*
 	* Inverts the given Matrix
 	* so that: A * inv(A) = I
@@ -187,19 +185,19 @@ class MatrixStatic
 	Inverse(A){
 		if(!MatrixStatic.IsSquare(A))
 			throw Exception("Only square matrices have an inverse! Your given matrix is not square.")
-		
+
 		size := MatrixStatic.ColumnCount(A)
 		identity := MatrixStatic.Eye(size)
-		
+
 		inverse := MatrixStatic.Gauss(A, identity)
 		return inverse
 	}
 
-   
+
    /*
    * Multiplies Matrix A with B.
    *
-   * Note that A*B != B*A 
+   * Note that A*B != B*A
    */
    Multiply(A, B){
       mul := {}
@@ -207,7 +205,7 @@ class MatrixStatic
       {
          throw Exception("Matrix Multiplication Error: Inner dimensions must agree!")
       }
-      
+
       Loop, % MatrixStatic.RowCount(A)
       {
          rowi := A_index
@@ -216,13 +214,13 @@ class MatrixStatic
             aRow := MatrixStatic.RangeRow(A, rowi)
             bCol := MatrixStatic.RangeCol(B, A_index)
             bColT := MatrixStatic.Transpose(bCol)
-            
+
             mul[rowi,A_index] := MatrixStatic.dotP(aRow,bColT)
          }
       }
       return mul
    }
-   
+
    /*
    * Dot-Product (scalar product)
    */
@@ -232,29 +230,35 @@ class MatrixStatic
          dotp += v1[A_index] * v2[A_index]
       return dotp
    }
-   
+
    /**
    * Returns the Column-Vector at the given index
    */
    RangeCol(m, colIndex){
-      col := {}
-      
-      Loop, % MatrixStatic.RowCount(m)
-      {
-         rowi := A_index
-         col[rowi,1] := m[rowi,colIndex]
+
+      rowN := MatrixStatic.RowCount(m)
+      col := []
+      Loop % rowN{
+         if (rowN = 1)
+			col[1,1] := m[colIndex]
+		else
+			col[A_index,1] := m[A_index,colIndex]
       }
-      
-      return col
+
+   return col
    }
-   
+
    /*
    *  Returns the Row-Vector at the given index
    */
    RangeRow(m, rowIndex){
-      return MatrixStatic.Clone(m[rowIndex])
+      rowN := MatrixStatic.RowCount(m)
+		if (rowN = 1)
+			return MatrixStatic.Clone(m)
+		else
+			return MatrixStatic.Clone(m[rowIndex])
    }
-   
+
    /*
    * Returns a transposed Matrix of the given
    */
@@ -270,7 +274,7 @@ class MatrixStatic
          }else{
             if(IsObject(row))
             {
-               for each, item in row   
+               for each, item in row
                   mt[A_index,i] := item
             }else{
                mt[i,1] := row
@@ -279,25 +283,25 @@ class MatrixStatic
       }
       return mt
    }
-   
+
 	IsSquare(m){
 		return IsObject(m) && MatrixStatic.ColumnCount(m) == MatrixStatic.RowCount(m)
 	}
-   
+
    /**
    * Returns the count of columns in the given Matrix
    */
    ColumnCount(m){
 		return IsObject(m[1]) ? m[1].MaxIndex() : m.MaxIndex()
    }
-   
+
    /**
    * Returns the count of rows in the given Matrix
    */
    RowCount(m){
       return IsObject(m[1]) ? m.MaxIndex() : 1
    }
-   
+
    /**
    * Clones the given Matrix
    */
@@ -308,14 +312,14 @@ class MatrixStatic
          if(IsObject(row))
          {
             rIndex := A_index
-            for each, item in row   
+            for each, item in row
                mc[rIndex,A_index] := item
          }else
             mc[A_index] := row
       }
       return mc
    }
-   
+
    /*
    * Generates an quadratic identity matrix with a size of [n]
    */
@@ -327,14 +331,14 @@ class MatrixStatic
          loop, % n
             eye[ri,A_index] := (ri == a_index) ? 1 : 0
       }
-      
+
       return eye
    }
-   
+
    Zeros(n){
       return this.Fill(n, 0)
    }
-   
+
    /*
    * Generates an quadratic matrix with a size of [n]
    * and each element set to [fillNum]
@@ -347,22 +351,22 @@ class MatrixStatic
          loop, % n
             filled[ri,A_index] := fillNum
       }
-      
+
       return filled
    }
-   
+
    /**
    * Checks if the given two matrices are equal
    */
    Equals(m,m2){
       equal := false
-      
+
       mRowCnt := MatrixStatic.RowCount(m)
       mColCnt := MatrixStatic.ColumnCount(m)
-      
-      if(mRowCnt == MatrixStatic.RowCount(m2) 
+
+      if(mRowCnt == MatrixStatic.RowCount(m2)
       && mColCnt == MatrixStatic.ColumnCount(m2)){
-         
+
          equal := true
          isColVector := (mRowCnt == 1)
 
@@ -392,23 +396,23 @@ class MatrixStatic
       }
       return equal
    }
-   
+
    /*
    * Returns a console/msgbox friendly string. Useful for debugging
    */
    ToString(m){
-      
+
       if(!IsObject(m))
       {
          prnt := "No Matrix!"
       }else{
          prnt := "(" MatrixStatic.RowCount(m) "," MatrixStatic.ColumnCount(m) ") Matrix:`n---------`n"
-         
+
          if(MatrixStatic.RowCount(m) != 1)
          {
             for each, row in m
             {
-               for each, item in row   
+               for each, item in row
                   prnt .= item " "
                prnt .= "`n"
             }
@@ -419,10 +423,10 @@ class MatrixStatic
          }
          prnt .= "---------"
       }
-      
+
       return prnt
    }
-   
+
    /**
    * Gets the mirror matrix for the straight line mirror y;
    * y := m*x + b
@@ -436,7 +440,7 @@ class MatrixStatic
    Mirror2D(m){
       angle := this.Mirror2DByAngle(ATan(m))
    }
-   
+
    /**
    * Gets the mirror matrix for the straight line intersection the origin (0,0)
    * angle     =    angle to x axis, in radians
@@ -445,56 +449,56 @@ class MatrixStatic
       angle *= 2
       c := cos(angle)
       s := sin(angle)
-      
+
       M := [[c, s]
            ,[s,-c]]
-           
+
       return M
    }
-   
+
    Rotate2D(angle){
       c := cos(angle)
       s := sin(angle)
-      
+
       R := [[c,-s]
            ,[s, c]]
-           
+
       return R
    }
-   
+
    Rotate3DZ(angle){
       c := cos(angle)
       s := sin(angle)
-      
+
       R := [[c,-s, 0]
            ,[s, c, 0]
            ,[0, 0, 1]]
-           
+
       return R
    }
-   
+
    Rotate3DY(angle){
       c := cos(angle)
       s := sin(angle)
-      
+
       R := [[ c, 0, s]
            ,[ 0, 1, 0]
            ,[-s, 0, c]]
-           
+
       return R
    }
-   
+
    Rotate3DX(angle){
       c := cos(angle)
       s := sin(angle)
-      
+
       R := [[ 1, 0, 0]
            ,[ 0, c,-s]
            ,[ 0, s, c]]
-           
+
       return R
    }
-   
+
    Mirror3D(axis){
 
       m1 := (axis == 1 || axis = "x") ? -1 : 1
@@ -504,13 +508,13 @@ class MatrixStatic
       M := [[ m1, 0,  0]
            ,[ 0, m2,  0]
            ,[ 0,  0, m3]]
-           
+
       return M
    }
-   
 
-   
-   
+
+
+
 	/*
 	* Given a matrix a and an (optional) index pair i,
 	* MatrixStatic.Pivot returns an index pair of a pivot located below and to the right of i if it finds some.
@@ -527,14 +531,14 @@ class MatrixStatic
 		{
 		   i1 := i[1] + 1
 		   i2 := i[2] + 1
-		}  
-		
+		}
+
 		p2 := i2
 		while (p2 <= colnum)
 		{
 			p1 := i1
 			x := abs(a[i1,p2])
-			
+
 			while (i1 + a_index <= rownum){
 				y := abs(a[i1+a_index, p2])
 				if(y > x)
@@ -561,9 +565,9 @@ class MatrixStatic
    ****************************************
    */
    ToRowEchelonForm(aorig, b=""){
-      
+
       a := MatrixStatic.Clone(aorig)
-      
+
       rownum := a.maxindex()
       colnum := a[1].maxindex()
 
@@ -622,23 +626,24 @@ class MatrixStatic
 
 	/**
 	* Given a matrix a in row echelon form and a vector   b   (b is allowed to be a matrix),   mat_RowEchSol   returns a solution if it finds one.
-	* In case b is matrix,   mat_RowEchSol   interprets the columns of   b   to be vectors and searches solutions to those vectors. If a solution to the ith column is found, it is inserted in the   output array   as ith column. Otherwise the   output array   lacks the ith column.
+	* In case b is matrix,   mat_RowEchSol   interprets the columns of   b   to be vectors and searches solutions to those vectors.
+    If a solution to the ith column is found, it is inserted in the   output array   as ith column. Otherwise the   output array   lacks the ith column.
 	*/
 	RowEchelonSolve(a, b, pivot_row2col=""){
 
 		rownum := a.maxindex()
 		colnum := a[1].maxindex()
-		   
+
 		if (!pivot_row2col){
 			pivot_row2col := {}
 			while (pivot := MatrixStatic.Pivot(a,pivot))
 				pivot_row2col[pivot[1]] := pivot[2]
 		}
-		   
+
 		rnk := pivot_row2col.maxindex()
 		if (rnk="")
 		   rnk := 0
-		   
+
 
 		if (!IsObject(b[1])){
 			j1 := rownum
@@ -652,7 +657,7 @@ class MatrixStatic
 				}
 				j1--
 			}
-			  
+
 			sol_vec:={}
 			loop, % colnum
 				sol_vec[a_index] := 0
@@ -665,7 +670,7 @@ class MatrixStatic
 				rnk--
 			}
 		}else{
-		
+
 			valid_ix := {}
 			colnum_b := b[1].maxindex()
 			some_index := 1
@@ -674,7 +679,7 @@ class MatrixStatic
 			{
 				j2 := a_index
 				j1 := rownum
-				
+
 				while (j1 >= 1){
 					if (b[j1,j2] != 0){
 						if (j1 <= rnk){
@@ -712,14 +717,13 @@ class MatrixStatic
    * Gauss solve the System Ax = B.
    * The System A is first transformed into row echolon form (gaussian elimination)
    * Afterwards, the System is solved by substitiution.
-   * 
+   *
    * returns x, the solution of Ax = B
    */
-   Gauss(A, B)
-   {
+   Gauss(A, B)   {
       workerB := this.Clone(B)
       rowechelon := MatrixStatic.ToRowEchelonForm(A, workerB)
-      return MatrixStatic.RowEchelonSolve(rowechelon, workerB)      
+      return MatrixStatic.RowEchelonSolve(rowechelon, workerB)
    }
 
 }
@@ -728,19 +732,18 @@ class MatrixStatic
 * AHK Matrix class
 *
 */
-class Matrix extends MatrixStatic
-{
+class Matrix extends MatrixStatic {
    __new(m)
    {
       this.Prototype(m)
    }
-   
+
    /**
    * Calculates the determinant (scalar) of the given Matrix
    *
    * Implementation Note:
    * The given matrix will be reduced by laplace expansion
-   * until the matrix dimension is (2,2). The determinant of 
+   * until the matrix dimension is (2,2). The determinant of
    * the 2,2 matrix is then directly calculated
    */
    Det(m=0){
@@ -748,51 +751,51 @@ class Matrix extends MatrixStatic
          m := this
       return base.Det(m)
    }
-   
-   
-   
+
+
+
    /**
    * Multiply each element in this matrix whith the given scalar [n] and returns the new matrix
    */
-   MultiplyScalar(m, n=0){   
-      
+   MultiplyScalar(m, n=0){
+
       if (this != Matrix)
       {
          n := m
          m := this
       }
-      
+
       return new Matrix(base.MultiplyScalar(m, n))
    }
-   
+
    /**
    * Add the given matrix to this one and return the new matrix
    */
    Add(m, B=0){
-      
+
       if (this != Matrix)
       {
          B := m
          m := this
       }
-      
+
       return new Matrix(base.Add(m, B))
    }
-   
+
    /**
    * Subtract B from this matrix and returns the new matrix
    */
    Sub(B){
-      
+
       if (this != Matrix)
       {
          B := m
          m := this
       }
-      
+
       return new Matrix(base.Sub(m, B))
    }
-   
+
    /*
    * Returns the Inverse of this Matrix
    * so that: A * inv(A) = I
@@ -802,8 +805,8 @@ class Matrix extends MatrixStatic
          A := this
       return new Matrix(base.Inverse(A))
    }
-   
-   
+
+
    /*
    * Multiplies this Matrix with B from right and returns the new matrix
    *
@@ -811,7 +814,7 @@ class Matrix extends MatrixStatic
    MultiplyRight(B){
       return new Matrix(base.Multiply(this, B))
    }
-   
+
    /*
    * Multiplies this Matrix with B from left and returns the new matrix
    *
@@ -820,35 +823,35 @@ class Matrix extends MatrixStatic
       return new Matrix(base.Multiply(B, this))
    }
 
-   
+
    /**
    * Returns the Column-Vector at the given index
    */
    RangeCol(m, colIndex=0){
-      
+
       if (this != Matrix)
       {
          colIndex := m
          m := this
       }
-      
+
       return new Matrix(base.RangeCol(m, colIndex))
    }
-   
+
    /*
    *  Returns the Row-Vector at the given index
    */
    RangeRow(m,rowIndex=0){
-      
+
       if (this != Matrix)
       {
          rowIndex := m
          m := this
       }
-      
+
       return new Matrix(base.RangeRow(m, rowIndex))
    }
-   
+
    /*
    * Returns a transposed Matrix of this matrix
    */
@@ -857,13 +860,13 @@ class Matrix extends MatrixStatic
          m := this
       return new Matrix(base.Transpose(m))
    }
-   
+
    IsSquare(m=0){
       if (this != Matrix)
          m := this
       return base.IsSquare(m)
    }
-   
+
    /**
    * Returns the count of columns in the given Matrix
    */
@@ -872,7 +875,7 @@ class Matrix extends MatrixStatic
          m := this
       return base.ColumnCount(m)
    }
-   
+
    /**
    * Returns the count of rows in the given Matrix
    */
@@ -881,7 +884,7 @@ class Matrix extends MatrixStatic
          m := this
       return base.RowCount(m)
    }
-   
+
    /**
    * Clones the given Matrix
    */
@@ -890,22 +893,22 @@ class Matrix extends MatrixStatic
          m := this
      return new Matrix(m)
    }
-   
+
    Prototype(m){
       for each, row in m
       {
          if(IsObject(row))
          {
             rIndex := A_index
-            for each, item in row   
+            for each, item in row
                this[rIndex,A_index] := item
          }else
             this[A_index] := row
       }
       return mc
    }
-   
-   
+
+
    Equals(m,m2=0){
       if (this != Matrix)
       {
@@ -914,27 +917,27 @@ class Matrix extends MatrixStatic
       }
       return base.Equals(m,m2)
    }
-   
+
    /*
    * Returns a console/msgbox friendly string. Useful for debugging
    */
    ToString(m=0){
       if (this != Matrix)
          m := this
-      return base.ToString(m)    
+      return base.ToString(m)
    }
-   
+
    /*
    * Generates an quadratic identity matrix with a size of [n]
    */
    Eye(n){
      return new Matrix(base.Eye(n))
    }
-   
+
    Zeros(n){
       return new Matrix(base.Zeros(n))
    }
-   
+
    /*
    * Generates an quadratic matrix with a size of [n]
    * and each element set to [fillNum]
@@ -942,12 +945,12 @@ class Matrix extends MatrixStatic
    Fill(n, fillNum){
       return  new Matrix(base.Fill(n, fillNum))
    }
-   
+
 
    Mirror2D(m){
       return new Matrix(base.Mirror2D(m))
    }
-   
+
    /**
    * Gets the mirror matrix for the straight line intersection the origin (0,0)
    * angle     =    angle to x axis, in radians
@@ -955,27 +958,27 @@ class Matrix extends MatrixStatic
    Mirror2DByAngle(angle){
       return new Matrix(base.Mirror2DByAngle(angle))
    }
-   
+
    Rotate2D(angle){
       return new Matrix(base.Rotate2D(angle))
    }
-   
+
    Rotate3DZ(angle){
       return new Matrix(base.Rotate3DZ(angle))
    }
-   
+
    Rotate3DY(angle){
       return new Matrix(base.Rotate3DY(angle))
    }
-   
+
    Rotate3DX(angle){
       return new Matrix(base.Rotate3DX(angle))
    }
-   
+
    Mirror3D(axis){
       return new Matrix(base.Mirror3D(axis))
    }
-   
+
    Gauss(A, B=""){
       if(B="")
       {
@@ -984,7 +987,7 @@ class Matrix extends MatrixStatic
       }
       return new Matrix(base.Gauss(A,B))
    }
-   
+
    ToRowEchelonForm(a, b=""){
       if (this != Matrix)
       {

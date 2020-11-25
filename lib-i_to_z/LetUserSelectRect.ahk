@@ -1,4 +1,4 @@
-/*
+﻿/*
 #NoEnv
 CoordMode, Mouse ; Required: change coord mode to screen vs relative.
 

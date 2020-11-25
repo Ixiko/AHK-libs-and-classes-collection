@@ -1,4 +1,4 @@
-urlDownloadToFile(url,fileDest="",method=0){
+﻿urlDownloadToFile(url,fileDest="",method=0){
     if(a_batchLines!=-1){
         pBL:=a_batchLines
         setBatchLines -1

@@ -2,7 +2,9 @@
 SetBatchLines, -1
 CoordMode, Mouse, Screen
 
-#Include ..\Socket.ahk
+#Include %A_ScriptDir%\..\..\class_Socket.ahk
+
+; type: http://http://127.0.0.1:1337 in your browser
 
 Template =
 ( Join`r`n
@@ -47,31 +49,31 @@ Content-Type: text/html
 
 Server := new SocketTCP()
 Server.OnAccept := Func("OnAccept")
-Server.Bind(["0.0.0.0", 1337])
+Server.Bind(["127.0.0.1", 1337])
 Server.Listen()
 
 MsgBox, Serving on port 1337`nClose to ExitApp
 ExitApp
 
-OnAccept(Server)
-{
+OnAccept(Server){
+
 	global Template
 	static Counter := 0
-	
+
 	Sock := Server.Accept()
 	Request := StrSplit(Sock.RecvLine(), " ")
-	
+
 	; You need to empty the Recv buffer before responding to the HTTP request whether you use that data or not
 	while Line := Sock.RecvLine()
 		Table .= Format("<tr><td>{}</td><td>{}</td></tr>", StrSplit(Line, ": ")*)
-	
+
 	if (Request[1] != "GET")
 	{
 		Sock.SendText("HTTP/1.0 501 Not Implemented`r`n`r`n")
 		Sock.Disconnect()
 		return
 	}
-	
+
 	if (Request[2] == "/")
 		Sock.SendText(Format(Template, Table, ++Counter))
 	else if (Request[2] == "/mouse")

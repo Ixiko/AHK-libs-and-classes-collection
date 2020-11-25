@@ -1,4 +1,4 @@
-class MathHelper {
+﻿class MathHelper {
 
 	__new() {
 		throw Exception("Instatiation of class '" this.__Class

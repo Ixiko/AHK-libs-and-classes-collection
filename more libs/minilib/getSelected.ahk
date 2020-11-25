@@ -1,4 +1,4 @@
-getSelected(){
+﻿getSelected(){
     cO:=clipboardAll
     clipboard:=
     send ^c

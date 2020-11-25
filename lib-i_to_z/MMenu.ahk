@@ -1,15 +1,15 @@
-/* =========================================================================
+﻿/* =========================================================================
 	developed here by majkinetor:
     http://www.autohotkey.com/board/topic/16248-module-mmenu-10-b1/#entry
-	
+
 	The original file was modified as follows for this toolbar:
 	Line 700 (now commented out) was replaced by line 701 (to remove the space for the checkmark) according to Lexikos' instructions in post 120.
-	
+
 	MMenu													by Miodrag Milic
-													 miodrag.milic@gmail.com	
+													 miodrag.milic@gmail.com
 	Interface
 	---------
-						   
+
 	MMenu_Create	( [options] )
 	MMenu_Destroy	( menu )
 
@@ -20,7 +20,7 @@
 	MMenu_Show		( menu, X, Y, OnClick [,OnSelect, OnInit, OnUninit ])
 	MMenu_Hide		()
 	MMenu_About		()
-	
+
 	MMenu_Count		 ( menu )
 	MMenu_GetPosition(pMenu, ByRef X, ByRef Y) {
 
@@ -45,13 +45,13 @@ MMenu_Create( pOptions="" ) {
 		hMenu += 4294967296
 	MMenu_aMenu[%menu%] := hMenu
 	MMenu_aHandles[%hMenu%] := menu
-	
+
 	MMenu_parseMenuOptions( menu, pOptions )
 
-	
+
 	MMenu_setMaxHeight(menu)
 	MMenu_setBackground(menu)
-	
+
 	return menu
 }
 
@@ -74,8 +74,8 @@ MMenu_GetPosition(pMenu, ByRef X, ByRef Y, pSelection=false) {
 	local item
 
 	item = 0
-	if (pSelection) 
-		loop, % API_GetMenuItemCount(hMenu) 
+	if (pSelection)
+		loop, % API_GetMenuItemCount(hMenu)
 			if API_GetMenuState( hMenu, A_Index-1, 0x400) & 0x80     ;MF_HILITE= 0x80
 			{
 				item := A_Index-1
@@ -85,16 +85,16 @@ MMenu_GetPosition(pMenu, ByRef X, ByRef Y, pSelection=false) {
 	RECT_Set("MMenu_rect")
 	res := DllCall("GetMenuItemRect", "uint", 0, "uint", hMenu, "uint", item, "uint", &MMenu_rect_c)
 	RECT_Get("MMenu_rect")
-	
+
 	X := MMenu_rect_left
 	Y := MMenu_rect_top
 
 	return %res%
 }
- 
+
 ;-----------------------------------------------------------------------------
 ; Add new menu item with specified attributes above pItem
-; If pItem doesn't exist, or if it equals to 0, the new item will be appended 
+; If pItem doesn't exist, or if it equals to 0, the new item will be appended
 ;
 ; Returns false if pMenu is invalid or true if item is added.
 MMenu_Add( pMenu, pTitle="", pIcon="", pItem=0, pOptions="" ) {
@@ -106,15 +106,13 @@ MMenu_Add( pMenu, pTitle="", pIcon="", pItem=0, pOptions="" ) {
 		return 0				;ERR_MENU
 
 	sID++
-	
+
 	if (pIcon . pTitle . pOptions . pItem = 0)	;check for separator
 		pOptions := "s"
-
 
 	;set the item data
 	MMenu_aItem[%sID%]_parent := pMenu
 	MMenu_aItem[%sID%]_title  := pTitle
-
 
 	;get item
 	idx := MMenu_getItemIdx( pMenu, pItem )
@@ -125,7 +123,7 @@ MMenu_Add( pMenu, pTitle="", pIcon="", pItem=0, pOptions="" ) {
 
 	;set item options
 	MMenu_setItemOptions( pMenu, sID, pOptions )
-	
+
 	MMenu_aItem[0] := sID
 	return res
 }
@@ -136,8 +134,8 @@ MMenu_Set( pMenu, pItem, pTitle="", pIcon="", pOptions="" ){
 	local hMenu := MMenu_aMenu[%pMenu%]
 	local idx := MMenu_getItemIdx( pMenu, pItem )
 	local r	:= 1
-	
-	
+
+
 	if !idx				;if invalid item
 		return 0
 
@@ -154,18 +152,18 @@ MMenu_Set( pMenu, pItem, pTitle="", pIcon="", pOptions="" ){
 
 	if (pIcon != "") {
 		if (pIcon = " ")
-			pIcon = 
+			pIcon =
 		r := MMenu_setItemIcon(pMenu, idx, pIcon) AND r
 
 	}
 
 	if (pOptions != "")
 		r := MMenu_setItemOptions( pMenu, idx, pOptions ) AND r
-	
+
 	return r ? 1 : 0
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 
 MMenu_setItemTitle(pMenu, pIdx, pTitle) {
 	local hMenu := MMenu_aMenu[%pMenu%]
@@ -175,12 +173,12 @@ MMenu_setItemTitle(pMenu, pIdx, pTitle) {
 	MMenu_mii_fMask := 0x40				;MIIM_STRING
 	MMenu_mii_dwTypeData := &pTitle
 	MMenu_mii_cch := StrLen(pTitle)
- 
+
 	MENUITEMINFO_Set("MMenu_mii")
  	return, API_SetMenuItemInfo(hMenu, pIdx, false, &MMenu_mii )
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 ; Should set for picon="" too
 ;
 MMenu_setItemIcon(pMenu, pIdx, pIcon) {
@@ -192,14 +190,14 @@ MMenu_setItemIcon(pMenu, pIdx, pIcon) {
 
 	;remove old icon
 	;if (MMenu_aItem[%pIdx%]_separator)
-	
+
 	if (MMenu_aItem[%pIdx%]_hIcon != "")
 		MMenu_destroyIcon( MMenu_aItem[%pIdx%]_hIcon )
 
 	MMenu_aItem[%pIdx%]_icon := pIcon
 	if pIcon is number
 		 MMenu_aItem[%pIdx%]_hIcon := MMenu_mii_dwItemData := pIcon
-	else MMenu_aItem[%pIdx%]_hIcon := MMenu_mii_dwItemData := MMenu_loadIcon(pIcon, iconSize) 
+	else MMenu_aItem[%pIdx%]_hIcon := MMenu_mii_dwItemData := MMenu_loadIcon(pIcon, iconSize)
 
 
 
@@ -212,11 +210,11 @@ MMenu_setItemIcon(pMenu, pIdx, pIcon) {
 	MMenu_mii_hbmpItem	:= -1
 	MENUITEMINFO_Set("MMenu_mii")
 	res := API_SetMenuItemInfo(hMenu, pIdx, false, &MMenu_mii) & res
-	
+
 	return res
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 
 MMenu_setItemOptions(pMenu, pIdx, pOptions) {
 	local hMenu := MMenu_aMenu[%pMenu%], sub
@@ -238,7 +236,7 @@ MMenu_setItemOptions(pMenu, pIdx, pOptions) {
 	else if (MMenu_aItem[%pIdx%]_break)
 			MMenu_mii_fType := 	MMenu_aItem[%pIdx%]_break = 2 ? 0x20 : 0x40		;MFT_MENUBARBREAK :	MFT_MENUBREAK
 
-		 else MMenu_mii_fType := 0	
+		 else MMenu_mii_fType := 0
 
 
 ;STATE OPTIONS, more can be set
@@ -252,7 +250,7 @@ MMenu_setItemOptions(pMenu, pIdx, pOptions) {
 
 	if (MMenu_aItem[%pIdx%]_default)
 		 MMenu_mii_fState |= 0x1000	    ;MFS_DEFAULT
-	else MMenu_mii_fState &= ~0x1000	
+	else MMenu_mii_fState &= ~0x1000
 
 
 ;SUBMENU OPTION
@@ -265,7 +263,7 @@ MMenu_setItemOptions(pMenu, pIdx, pOptions) {
 
 
 	;set type options
-	MMenu_mii_fMask := 0x100			;MIIM_FTYPE	
+	MMenu_mii_fMask := 0x100			;MIIM_FTYPE
 	MENUITEMINFO_Set("MMenu_mii")
 	API_SetMenuItemInfo(hMenu, pIdx, false, &MMenu_mii )
 
@@ -285,12 +283,12 @@ MMenu_setItemOptions(pMenu, pIdx, pOptions) {
 
 ;------------------------------------------------------------------------
 ; return false on failure, true on succes
-MMenu_Remove( pMenu, pItem=0 ) { 
+MMenu_Remove( pMenu, pItem=0 ) {
 	local hMenu := MMenu_aMenu[%pMenu%]
 	local idx := MMenu_getItemIdx( pMenu, pItem )
 	local res
 
- 	res := API_RemoveMenu(hMenu, idx, 0x0)		;MF_BYCOMMAND=0x0	
+ 	res := API_RemoveMenu(hMenu, idx, 0x0)		;MF_BYCOMMAND=0x0
 	MMenu_freeItem( idx )
 
 	return res
@@ -317,21 +315,21 @@ MMenu_getItemIdx( pMenu, pItem ) {
 MMenu_findItemByID( pMenu, pID ) {
 	local res
 
-	res := MMenu_aID[%pID%] 
+	res := MMenu_aID[%pID%]
 	if res =
 		return 0
 
 	return res
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 ; return 0 on failure
 MMenu_findItemByTitle( pMenu, pTitle ) {
 	local hMenu := MMenu_aMenu[%pMenu%]
 	local cnt := API_GetMenuItemCount(hMenu)
 	local buf
 
-	if pTitle = 
+	if pTitle =
 		return 0
 
 	VarSetCapacity(buf, 512)
@@ -345,7 +343,7 @@ MMenu_findItemByTitle( pMenu, pTitle ) {
 	return 0
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 ; return 0 on failure
 MMenu_findItemByPos( pMenu, pPos ) {
 	local hMenu := MMenu_aMenu[%pMenu%]
@@ -361,7 +359,7 @@ MMenu_findItemByPos( pMenu, pPos ) {
 	res := MMenu_GetMenuItemID(hMenu, --pPos)
 	if res = -1
 		return 0
-	
+
 	return res
 
 }
@@ -370,7 +368,7 @@ MMenu_findItemByPos( pMenu, pPos ) {
 MMenu_getMenuItemID(hMenu, pos){
 	global
 
-	MMenu_mii_fMask := 0x2				;MIIM_ID	
+	MMenu_mii_fMask := 0x2				;MIIM_ID
 	MMenu_mii_wID := 0
 	MENUITEMINFO_Set("MMenu_mii")
 	API_GetMenuItemInfo(hMenu, pos, true, &MMenu_mii )
@@ -391,7 +389,7 @@ MMenu_freeMenu( pMenu ){
 			sub := MMenu_aItem[%A_Index%]_submenu
 			if ( sub != "")
 				MMenu_freeMenu( sub )
-			
+
 			MMenu_freeItem( A_Index )
 		}
 
@@ -406,14 +404,14 @@ MMenu_freeMenu( pMenu ){
 	MMenu_aHandles[%hMenu%]			=
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 
 MMenu_freeItem(pIdx){
 	local id :=	MMenu_aItem[%pIdx%]_ID
 
 	if (MMenu_aItem[%pIdx%]_hIcon != "")
 		MMenu_destroyIcon( MMenu_aItem[%pIdx%]_hIcon )
-	
+
 
 	MMenu_aItem[%pIdx%]_hIcon	 =
 	MMenu_aItem[%pIdx%]_title	 =
@@ -422,7 +420,7 @@ MMenu_freeItem(pIdx){
 	MMenu_aItem[%pIdx%]_iconSize =
 	MMenu_aItem[%pIdx%]_parent	 =
 	MMenu_aItem[%pIdx%]_submenu	 =
-	MMenu_aItem[%pIdx%]_break	 = 
+	MMenu_aItem[%pIdx%]_break	 =
 
 	MMenu_aID[%id%]	=
 }
@@ -434,7 +432,7 @@ MMenu_Hide(){
 
 
 MMenu_parseHandlers( pOptions  ){
-	local c, token	
+	local c, token
 
 	MMenu_userInit	:= 	MMenu_userUninit := MMenu_userSelect := ""
 	MMenu_userMiddle := MMenu_userRight := MMenu_userMenuChar := ""
@@ -473,11 +471,11 @@ MMenu_parseHandlers( pOptions  ){
 }
 
 
-MMenu_Show( pMenu, pX, pY, pOnClick, pHandlers="") { 
-	local hMenu := MMenu_aMenu[%pMenu%], itemID 
+MMenu_Show( pMenu, pX, pY, pOnClick, pHandlers="") {
+	local hMenu := MMenu_aMenu[%pMenu%], itemID
 
 	MMenu_parseHandlers(pHandlers)
-	
+
 	if MMenu_hParent =
 	{
 		Gui 77:+LastFound +ToolWindow
@@ -533,7 +531,7 @@ MMenu_parseMenuOptions( pMenu, pOptions ){
 
 		if (c="H")	{
 			if token < 100
-				token := 100 
+				token := 100
 
 			MMenu_aMenu[%pMenu%]_maxHeight := token
 			continue
@@ -563,14 +561,14 @@ MMenu_setMaxHeight( pMenu ) {
 	API_SetMenuInfo( hMenu, &MMenu_mi )
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 
 MMenu_parseItemOptions( idx, pOptions, pMenu  )
 {
-	local c, token, bRemove	
-	
+	local c, token, bRemove
+
 	;default values
-	MMenu_aItem[%idx%]_color := MMenu_aMenu[%pMenu%]_text 
+	MMenu_aItem[%idx%]_color := MMenu_aMenu[%pMenu%]_text
 
     Loop, Parse, pOptions, %A_Space%, +
 	{
@@ -579,7 +577,7 @@ MMenu_parseItemOptions( idx, pOptions, pMenu  )
 
 		if (c="-") {
 			bRemove := true
-			c := chr(*&token) 
+			c := chr(*&token)
 		}
 
 		if (c="I")	{
@@ -648,7 +646,7 @@ MMenu_msgMonitor( on ){
 						OnMessage(WM_ENTERMENULOOP, "MMenu_OnEnterLoop")
 		oldMeasure	:=  OnMessage(WM_MEASUREITEM,	"MMenu_OnMeasure")
 		oldDraw		:=  OnMessage(WM_DRAWITEM,		"MMenu_OnDraw")
-						
+
 						OnMessage(WM_MENUSELECT,    "MMenu_OnSelect")
 						OnMessage(WM_INITMENUPOPUP, "MMenu_OnInit")
 						OnMessage(WM_UNINITMENUPOPUP,"MMenu_OnUninit")
@@ -676,11 +674,11 @@ MMenu_onEnterLoop(){
 	return 1
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 ;MIM_BACKGROUND = 2
 MMenu_setBackground(pmenu){
 	local  hMenu := MMenu_aMenu[%pMenu%]
-	
+
 	MMenu_mi_fMask	 := 0x2		;MIM_MAXHEIGHT
 	MMenu_mi_hbrBack := API_CreateSolidBrush( MMenu_aMenu[%pMenu%]_color )
 
@@ -699,7 +697,7 @@ MMenu_onDraw(wparam, lparam){
 		API_DeleteObject(obj)
 		API_SetTextColor(MMenu_di_hDC, MMenu_aItem[%MMenu_di_itemID%]_color)
 	}
- 	
+
 	;API_DrawIconEx(MMenu_di_hDC, (API_GetMenuCheckMarkDimensions() & 0xFFFF) + 4, MMenu_di_rcItem_Top, MMenu_di_itemData, 0, 0, 0, 0, 3) ;MMenu_di_NORMAL=3	  = MMenu_di_MASK | MMenu_di_IMAGE (1 | 2)
 	API_DrawIconEx(MMenu_di_hDC,  4, MMenu_di_rcItem_Top, MMenu_di_itemData, 0, 0, 0, 0, 3) ;MMenu_di_NORMAL=3	  = MMenu_di_MASK | MMenu_di_IMAGE (1 | 2)
 	return 1
@@ -720,7 +718,7 @@ MMenu_setMenuStyle( pMenu, dwStyle ) {
 
 
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 
 MMenu_onMeasure(wparam, lparam) {
 	local iconSize, textOffset, menu
@@ -739,19 +737,19 @@ MMenu_onMeasure(wparam, lparam) {
 			return 1
 		}
 
-	InsertIntegerAtAddr(iconSize + textOffset, lParam, 12)	
+	InsertIntegerAtAddr(iconSize + textOffset, lParam, 12)
 	InsertIntegerAtAddr(iconSize, lParam, 16)
 
 	return 1
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 
 MMenu_onMenuChar(wparam, lparam){
 	global
 
 	if MMenu_userMenuChar =
-		return 
+		return
 
 	M_CMENU := MMenu_aHandles[%lparam%]
 	M_CHAR  := wparam & 0xFFFF
@@ -760,13 +758,13 @@ MMenu_onMenuChar(wparam, lparam){
 	return 3<<16
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 
 MMenu_onInit(wparam, lparam){
 	global
 
 	if MMenu_userInit =
-		return 
+		return
 
 	if wparam < 0		;convert to unsigned integer
 		wparam += 4294967296
@@ -777,23 +775,23 @@ MMenu_onInit(wparam, lparam){
 	GoSub %MMenu_userInit%
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 ;wParam
 ;
-;The low-order word specifies the menu item or submenu index. 
-;If the selected item is a command item, this parameter contains the identifier of the menu item. 
-;If the selected item opens a drop-down menu or submenu, this parameter contains the index of the 
-;drop-down menu or submenu in the main menu, and the lParam parameter contains the handle to the 
+;The low-order word specifies the menu item or submenu index.
+;If the selected item is a command item, this parameter contains the identifier of the menu item.
+;If the selected item opens a drop-down menu or submenu, this parameter contains the index of the
+;drop-down menu or submenu in the main menu, and the lParam parameter contains the handle to the
 ;main (clicked) menu; use the GetSubMenu function to get the menu handle to the drop-down menu or submenu.
 ;
 MMenu_onSelect(wparam, lparam){
 	local idx  := wparam & 0xFFFF
-	local menuFlag := wparam >> 16 
+	local menuFlag := wparam >> 16
 	local hSub, gg, menu, sub
 
 	;lparam = 0 represents dummy message that is sent when user press ESC
 	if (lparam = 0) or ( MMenu_userSelect = "")
-		return 
+		return
 
 	if lparam < 0		;convert to unsigned integer
 		hMenu += 4294967296
@@ -805,7 +803,7 @@ MMenu_onSelect(wparam, lparam){
 			hSub += 4294967296
 
 
-		menu :=	MMenu_aHandles[%lparam%]	
+		menu :=	MMenu_aHandles[%lparam%]
 		sub :=	MMenu_aHandles[%hSub%]
 		loop, %MMenu_aItem[0]%
 		{
@@ -816,7 +814,7 @@ MMenu_onSelect(wparam, lparam){
 					break
 				}
 		}
-	}		
+	}
 
 	M_SMENU	:= MMenu_aHandles[%lparam%]
 	M_SID	:= MMenu_aItem[%idx%]_id
@@ -825,13 +823,13 @@ MMenu_onSelect(wparam, lparam){
 	GoSub %MMenu_userSelect%
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 
 MMenu_onUninit(wparam){
 	global
 
 	if MMenu_userUninit =
-		return 
+		return
 
 	if wparam < 0		;convert to unsigned integer
 		wparam += 4294967296
@@ -840,25 +838,25 @@ MMenu_onUninit(wparam){
 	GoSub %MMenu_userUninit%
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 
 MMenu_onRButtonDown(wparam, lparam){
 	global
 
 	if MMenu_userRight =
-		return 
+		return
 
 	GoSub %MMenu_userRight%
 }
 
-;- - - - - - - - - - - - - - - -  
+;- - - - - - - - - - - - - - - -
 
 MMenu_OnMButtonDown(wparam, lparam){
 	global
 
 
 	if MMenu_userMiddle =
-		return 
+		return
 
 	GoSub %MMenu_userMiddle%
 }
@@ -888,7 +886,7 @@ MMenu_GetIcon( pPath, pNum=1 ) {
 
 ;--------------------------------------------------------------------------------
 
-#include API_Menu.ahk	
+#include API_Menu.ahk
 
 ;====================================================================================
 ; API_Draw.ahk
@@ -903,12 +901,12 @@ MMenu_loadIcon(pPath, pSize=0)
 		resPath := SubStr( pPath, 1, idx-1)
 		resIdx  := Substr( pPath, idx+1, 8)
 
-		return MMenu_GetIcon( resPath, resIdx ) 
+		return MMenu_GetIcon( resPath, resIdx )
 	}
-	
+
 ;	h := DllCall("GetModuleHandle", "str", "c:\windows\system32\shell32.dll")
-	return,  DllCall( "LoadImage" 
-                     , "uint", 0 
+	return,  DllCall( "LoadImage"
+                     , "uint", 0
                      , "str", pPath
                      , "uint", 2                ; IMAGE_ICON
                      , "int", pSize
@@ -980,21 +978,21 @@ RECT_Set(var)
 {
 	global
 
-	VarSetCapacity(%var%_c, 16 , 0) 
-	InsertInteger(%var%_left,   %var%_c, 0)	
-	InsertInteger(%var%_top,    %var%_c, 4)	
-	InsertInteger(%var%_right,  %var%_c, 8)	  
-	InsertInteger(%var%_bottom, %var%_c, 12)	
+	VarSetCapacity(%var%_c, 16 , 0)
+	InsertInteger(%var%_left,   %var%_c, 0)
+	InsertInteger(%var%_top,    %var%_c, 4)
+	InsertInteger(%var%_right,  %var%_c, 8)
+	InsertInteger(%var%_bottom, %var%_c, 12)
 }
 
 RECT_Get(var)
 {
 	global
 
-	%var%_left   := ExtractInteger(%var%_c, 0)	
-	%var%_top	 := ExtractInteger(%var%_c, 4)	
-	%var%_right	 := ExtractInteger(%var%_c, 8)	  
-	%var%_bottom := ExtractInteger(%var%_c, 12)	
+	%var%_left   := ExtractInteger(%var%_c, 0)
+	%var%_top	 := ExtractInteger(%var%_c, 4)
+	%var%_right	 := ExtractInteger(%var%_c, 8)
+	%var%_bottom := ExtractInteger(%var%_c, 12)
 	%var%_width  := %var%_right - %var%_left
 	%var%_height := %var%_bottom - %var%_top
 }

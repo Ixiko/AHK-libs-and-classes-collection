@@ -18,8 +18,8 @@
         TrayTipEx('TrayTipEx Window Title! #2', 'TrayTipEx Window Text!.', A_WinDir . '\regedit.exe', 't3')
         TrayTipEx('TrayTipEx Window Title! #3', 'TrayTipEx Window Text!.', A_ComSpec)
 */
-TrayTipEx(Title, Message, Icon := '', Options := '')
-{
+TrayTipEx(Title, Message, Icon := '', Options := ''){
+
     Static TrayTips := {}    ; almacena todos los TrayTips activos, la clave es el identificador de la ventana y su valor el objeto GUI
 
     ; sumamos el alto de todas las ventanas TrayTips existentes +2xC/U para luego calcular la posición «Y» de la nueva ventana TrayTip para que no tape a las ya existentes
@@ -42,7 +42,7 @@ TrayTipEx(Title, Message, Icon := '', Options := '')
     Local ImageType := HICON ? (DllCall('Gdi32.dll\GetObjectType', 'Ptr', HICON, 'UInt') == 7 ? 'HBITMAP' : 'HICON') : ''    ; OBJ_BITMAP = 7
     IconIndex := HICON ? '' : ' Icon' . IconIndex
 
-    ; creamos el GUI | nuestra nueva ventana TrayTip :) 
+    ; creamos el GUI | nuestra nueva ventana TrayTip :)
     Local Gui := GuiCreate('-DPIScale +ToolWindow -Caption +AlwaysOnTop' . Owner)
     TrayTips[Gui.Hwnd] := Gui    ; añadimos el GUI a la lista
     Gui.BackColor := 0x282828    ; el color de fondo (oscuro =D)
@@ -82,23 +82,21 @@ TrayTipEx(Title, Message, Icon := '', Options := '')
     ; establecemos el tiempo fuera, si se especificó
     If (Timeout)
         SetTimer(Data.TimeoutFunc := Func('TrayTipEx_Timeout').Bind(Data), Timeout * -1000)
-    
+
     ; establecemos algunos eventos de la ventana y controles
     Gui.OnEvent('Close', Func('TrayTipEx_Close').Bind(Data))    ; al cerrar la ventana
     Gui.Control['X'].OnEvent('Click', Func('TrayTipEx_Close').Bind(Data))    ; al cerrar la ventana desde el botón X
     Gui.Control['pic'].OnEvent('Click', 'TrayTipEx_Move')    ; permite mover la ventana arrastrando la imagen/icono
-    
+
     ; devolvemos el objeto GUI
     Return Gui
 }
 
-TrayTipEx_Move(CtrlObj)
-{
+TrayTipEx_Move(CtrlObj){
     DllCall('User32.dll\PostMessageW', 'Ptr', CtrlObj.Gui.Hwnd, 'UInt', 0x00A1, 'UInt', 2, 'Ptr', 0)    ; permite mover la ventana arrastrando el control especificado (CtrlObj::pic)
 }
 
-TrayTipEx_Timeout(Data)
-{
+TrayTipEx_Timeout(Data){
     Critical    ; previene que el thread actual sea interrumpido por otro, esto evita mensajes de error al manipular el objeto GUI
     ; evitamos cerrar la ventana si el cursor se encuentra sobre ella con un retraso de 500 milisegundos
     Local WindowId
@@ -109,12 +107,12 @@ TrayTipEx_Timeout(Data)
     TrayTipEx_Close(Data)    ; cerramos la ventana
 }
 
-TrayTipEx_Close(Data)    ; EN FUTURAS ACTUALIZACIÓNES SE MEJORARÁ EL ALGORITMO PARA RE-UBICAR LAS VENTANAS TRAYTIPS AL ELIMINAR UNA
-{
+TrayTipEx_Close(Data) {   ; EN FUTURAS ACTUALIZACIÓNES SE MEJORARÁ EL ALGORITMO PARA RE-UBICAR LAS VENTANAS TRAYTIPS AL ELIMINAR UNA
+
     Critical    ; previene que el thread actual sea interrumpido por otro, esto evita mensajes de error al manipular el objeto GUI
     If (IsObject(Data.TimeoutFunc))    ; al cerrar la ventana, comprobamos si se ha establecido un tiempo fuera, si es así, lo eliminamos y liberamos el objeto Func()
         SetTimer(Data.TimeoutFunc, 'Delete')
-    
+
     Data.TrayTips.Delete(Data.Gui.Hwnd)    ; eliminamos esta ventana de la lista de TrayTips
     Try    ; evitamos mostrar un error si la ventana ya ha sido destruida
     {
@@ -122,7 +120,7 @@ TrayTipEx_Close(Data)    ; EN FUTURAS ACTUALIZACIÓNES SE MEJORARÁ EL ALGORITMO
         DllCall('User32.dll\AnimateWindow', 'Ptr', Data.Gui.Hwnd, 'UInt', 500, 'UInt', 0x90000)    ; ocultamos la ventana con una animación de 500 milisegundos
         Data.Gui.Destroy()    ; destruimos la ventana
     }
-    
+
     ; al eliminar la ventana, debemos acomodar a todas las demás ventanas TrayTips para que alguna, si la hay, ocupe su lugar
     Local NY, ClientPos, Y := 0    ; 'Y' almacena la suma de la altura de cada ventana TrayTip en el bucle For
     For WindowId, Gui in Data.TrayTips    ; buscamos en todas las ventanas TrayTips existentes

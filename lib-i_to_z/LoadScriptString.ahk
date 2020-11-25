@@ -4,8 +4,8 @@
 ; if 0
 ;   FileInstall, script.ahk, Ignore
 ; LoadScriptString("script.ahk")
-LoadScriptString(scriptResource)
-{
+LoadScriptString(scriptResource) {
+    
     lib := DllCall("GetModuleHandle", "ptr", 0, "ptr")
     res := DllCall("FindResource", "ptr", lib, "str", scriptResource, "ptr", Type := 10, "ptr")
     DataSize := DllCall("SizeofResource", "ptr", lib, "ptr", res, "uint")

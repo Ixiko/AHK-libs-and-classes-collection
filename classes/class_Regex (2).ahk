@@ -1,18 +1,18 @@
 ; Created by Frankie Bagnardi
 ; Forum topic:
 ; Licenced under the MIT license: http://www.opensource.org/licenses/mit-license.php
-class RegEx
-{
+class RegEx{
+
 	var Needle := "."
 	var EMAIL := "i)(?:\b|^)[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}(?:\b|$)"
-	var EMAIL2 := "[a-z0-9!#$%&'*+/=?^_``{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_``" 
+	var EMAIL2 := "[a-z0-9!#$%&'*+/=?^_``{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_``"
 	. "{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|"
 	. "net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)\b"
-	
+
 	__New(N) {
 		this.Needle := N
 	}
-	
+
 	; All matches are stored in a 2-dimentional object
 	; The format is MyMatches[Match_Number, Group_Name]
 	; In many cases Group_Name is a number
@@ -40,7 +40,7 @@ class RegEx
 		}
 		return Matches
 	}
-	
+
 	; MatchCall is a callout function
 	; It calls function F each time your needle matches
 	;	F can be a string like "MyFuncName", or an object reference, e.g., Class.MyFuncName
@@ -62,7 +62,7 @@ class RegEx
 			F.(M_, P_1, P_2, P_3, P_4, P_5, P_6, P_7, P_8, P_9, P_10, P_11, P_12, P_13, P_14, P_15)
 		}
 	}
-	
+
 	; This is essencially a one line RegExMatch, as apposed to a command
 	; Subpat refers to the numbered or named subpatern to be returned
 	;	For example, 1 or MyNamedPattern
@@ -75,7 +75,7 @@ class RegEx
 		RegExMatch(H, N, M)
 		return M%Subpat%
 	}
-	
+
 	; Returns true if any mach is found
 	; false otherwise
 	Test(H, N=-1) {
@@ -84,7 +84,7 @@ class RegEx
 				N := this.Needle ; Set default
 		Return !!RegExMatch(H, N)
 	}
-	
+
 	; Return all pattern group in the needle
 	; Unnamed subpatterns and named subpatterns will found
 	; Results will be returned in an array
@@ -100,4 +100,7 @@ class RegEx
 		}
 		return Groups
 	}
+
 }
+
+

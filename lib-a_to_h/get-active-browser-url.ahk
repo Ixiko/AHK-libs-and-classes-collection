@@ -1,4 +1,4 @@
-; AutoHotkey Version: AutoHotkey 1.1
+﻿; AutoHotkey Version: AutoHotkey 1.1
 ; Language:           English
 ; Platform:           Win7 SP1 / Win8.1
 ; Author:             Antonio Bueno <user atnbueno of Google's popular e-mail service>

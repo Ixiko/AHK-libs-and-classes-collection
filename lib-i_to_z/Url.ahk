@@ -6,9 +6,10 @@
     Ejemplos:
         MsgBox('UTF-8:`n-----------------`nEncoded: ' . (e:=URLEncode(t:='•ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~ÁÑñ')) . '`n`nDecoded: ' . URLDecode(e) . '`n`nOriginal: ' . t)
         MsgBox('UTF-16:`n-----------------`nEncoded: ' . (e:=URLEncode(t:='•ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~ÁÑñ', 'UTF-16')) . '`n`nDecoded: ' . URLDecode(e) . '`n`nOriginal: ' . t)
+        
 */
-URLEncode(Url, Encoding := 'UTF-8')
-{
+URLEncode(Url, Encoding := 'UTF-8'){
+    
     Static Unreserved := 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~'
     Static Data       := {    Size  : {'UTF-8': 1         , 'UTF-16': 2           }
                             , Type  : {'UTF-8': 'UChar'   , 'UTF-16': 'UShort'    }
@@ -32,8 +33,7 @@ URLEncode(Url, Encoding := 'UTF-8')
     Nota:
         La codificación de la cadena pasada en Url es detectada automáticamente (UTF-8 o UTF-16).
 */
-URLDecode(Url)
-{
+URLDecode(Url) {
     Local R, B, T
         , Encoding := InStr(Url, Chr(37) . 'u') ? 'UTF-16' : 'UTF-8'
         , Trim     := Encoding == 'UTF-16'      ? 2        : 1           ;%u     : %
@@ -42,8 +42,7 @@ URLDecode(Url)
     Loop Parse, Url
         R .= A_LoopField == Chr(37) ? Chr('0x' . SubStr(Url, A_Index + Trim, T:=Length)) : (--T > -Trim ? '' : A_LoopField)
     
-    If (Encoding == 'UTF-8')
-    {
+    If (Encoding == 'UTF-8')    {
         VarSetCapacity(B, StrPut(R, 'UTF-8'))
         Loop Parse, R
             NumPut(Ord(A_LoopField), &B + A_Index - 1, 'UChar')

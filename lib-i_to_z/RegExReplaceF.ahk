@@ -74,8 +74,7 @@ RegExReplaceF(ByRef Haystack, NeedleRegEx, FunctionName, ByRef OutputVarCount :=
 	VarSetCapacity(out, VarSetCapacity(Haystack))
 	OutputVarCount := 0
 
-	while ( pos := RegExMatch(Haystack, NeedleRegEx, match, StartingPosition) )
-	{
+	while ( pos := RegExMatch(Haystack, NeedleRegEx, match, StartingPosition) ) 	{
 		out .= SubStr(Haystack, StartingPosition, pos-StartingPosition)
 		out .= %FunctionName%(match)
 		len := IsObject(match) ? match.Len : StrLen(match)

@@ -6,7 +6,7 @@ RadioBox(Title := "", Prompt := "", List := "", WantNumeric := False) {
 ;-------------------------------------------------------------------------------
     ; show a custom input box with Radio buttons
     ; return the text/index of the selected choice
-    ;---------------------------------------------------------------------------
+    ;
     ; Title is the title for the GUI
     ; Prompt is the text to display
     ; List is a pipe delimited list of choices
@@ -14,11 +14,12 @@ RadioBox(Title := "", Prompt := "", List := "", WantNumeric := False) {
     ;
     ; Note: If the user clicks on the OK button without having made a choice,
     ; the function returns an empty string or 0.
+    ;---------------------------------------------------------------------------
 
     static Index ; used as a GUI control variable
 
     ; create GUI
-    Gui, RadioBox: New,, %Title%
+    Gui, RadioBox: New, +LastFound, %Title%
     Gui, -MinimizeBox
     Gui, Margin, 30, 18
     Gui, Add, Text,, %Prompt%
@@ -26,13 +27,11 @@ RadioBox(Title := "", Prompt := "", List := "", WantNumeric := False) {
         Gui, Add, Radio, % A_Index = 1 ? "vIndex" : "", %A_LoopField%
     Gui, Add, Button, w80 Default, &OK
     Gui, Add, Button, x+m wp, &Cancel
+
+    ; main loop
     Gui, Show
-
-    ; main wait loop
-    Gui, +LastFound
     WinWaitClose
-
-return WantNumeric ? Index : Text ; end of function
+    Return, WantNumeric ? Index : Text
 
 
     ;-----------------------------------

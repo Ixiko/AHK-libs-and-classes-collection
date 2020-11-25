@@ -1,4 +1,4 @@
-#Include RegExSort.ahk
+﻿#Include RegExSort.ahk
 
 TestList =
 (

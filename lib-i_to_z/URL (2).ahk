@@ -1,4 +1,4 @@
-; ; https://autohotkey.com/boards/viewtopic.php?t=3702
+﻿; ; https://autohotkey.com/boards/viewtopic.php?t=3702
 ; CURL(){
 ; DetectHiddenWindows, off
 ; Q(),ret:=GetElementByName(Acc_ObjectFromWindow(Winactive("ahk_class Chrome_WidgetWin_1")),"Address and search bar").accValue(0) Q("END")

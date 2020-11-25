@@ -8,8 +8,8 @@ Credentials := LoginBox("Title")
 If IsObject(Credentials) ; show credentials
 ;-------------------------------------------------------------------------------
     MsgBox,, Test: LoginBox(), % ""
-        . "Username:`t" Credentials.Username "`n"
-        . "Password:`t" Credentials.Password "`n"
+        . "Username:`t"   Credentials.Username "`n"
+        . "Password:`t`t" Credentials.Password "`n"
 
 
 ;-------------------------------------------------------------------------------

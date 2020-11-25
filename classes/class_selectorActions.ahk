@@ -1,4 +1,4 @@
-; Central place for functions called from Selector.
+﻿; Central place for functions called from Selector.
 ; All of them should take just one argument, a SelectorRow object (defined in selectorRow.ahk), generally named actionRow.
 ; There's also a debug mode that most of these should support:
 ;	You can check whether we're in debug mode via the flag actionRow.debugResult (boolean), so you can quit early before actually doing the action.

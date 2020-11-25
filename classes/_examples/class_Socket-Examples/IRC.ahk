@@ -1,7 +1,7 @@
 ﻿#NoEnv
 SetBatchLines, -1
 
-#Include ..\Socket.ahk
+#Include %A_ScriptDir%\..\..\class_Socket.ahk
 
 Random, Rand, 1000, 9999
 
@@ -27,26 +27,23 @@ Client.Connect(Serv, Nick)
 Client.SendText("JOIN " Chan)
 return
 
-GuiClose()
-{
+GuiClose() {
 	ExitApp
 }
 
-Submit()
-{
+Submit() {
 	global Client, Chan, hChat
-	
+
 	; Get the message box contents and empty the message box
 	GuiControlGet, Message
 	GuiControl,, Message
-	
+
 	Client.SendText("PRIVMSG " Chan " :" Message)
 	EditAppend(hChat, Chan " <" Client.Nick "> " Message)
 }
 
 ; Use the windows API to append text to an edit control quickly and efficiently
-EditAppend(hEdit, Text)
-{
+EditAppend(hEdit, Text) {
 	Text .= "`r`n"
 	GuiControl, -Redraw, %hEdit%
 	SendMessage, 0x00E, 0, 0,, ahk_id %hEdit% ; WM_GETTEXTLENGTH
@@ -56,13 +53,13 @@ EditAppend(hEdit, Text)
 	GuiControl, +Redraw, %hEdit%
 }
 
-class IRC extends SocketTCP
-{
+class IRC extends SocketTCP{
+
 	static Blocking := False
 	static Buffer, hLog, hChat
-	
-	Connect(Address, Nick, User:="", Name:="", Pass:="")
-	{
+
+	Connect(Address, Nick, User:="", Name:="", Pass:="") 	{
+
 		this.Nick := Nick
 		this.User := (User == "") ? Nick : User
 		this.Name := (Name == "") ? Nick : Name
@@ -71,28 +68,29 @@ class IRC extends SocketTCP
 			this.SendText("PASS " Pass)
 		this.SendText("NICK " this.Nick)
 		this.SendText("USER " this.User " 0 * :" this.Name)
+
 	}
-	
-	SendText(Text, Encoding:="UTF-8")
-	{
+
+	SendText(Text, Encoding:="UTF-8")	{
+
 		EditAppend(this.hLog, ">" Text)
-		
+
 		; Because we're overriding SendText, we have
 		; to use the SendText from the base class.
 		SocketTCP.SendText.Call(this, Text "`r`n",, Encoding)
 	}
-	
-	OnRecv()
-	{
+
+	OnRecv() 	{
+
 		; Read the incoming bytes as ANSI (single byte encoding)
 		; so we won't accidentally destroy partial UTF-8 multi-byte sequences.
 		this.Buffer .= this.RecvText(,, "CP0")
-		
+
 		; Split the buffer into one or more lines, putting
 		; any remaining text back into the buffer.
 		Lines := StrSplit(this.Buffer, "`n", "`r")
 		this.Buffer := Lines.Pop()
-		
+
 		for Index, Line in Lines
 		{
 			; Convert to UTF-8 now that we have a full line.
@@ -101,36 +99,40 @@ class IRC extends SocketTCP
 			VarSetCapacity(ConvBuf, StrPut(Line, "CP0"))
 			StrPut(Line, &ConvBuf, "CP0")
 			Line := StrGet(&ConvBuf, "UTF-8")
-			
+
 			EditAppend(this.hLog, "<" Line)
 			this.ParseLine(Line)
 		}
+
 	}
-	
-	ParseLine(Line)
-	{
+
+	ParseLine(Line)	{
 		IRCRE := "O)^(?::(\S+?)(?:!(\S+?))?(?:@(\S+?))? )?" ; Nick!User@Host
 		. "(\S+)(?: (?!:)(.+?))?(?: :(.+))?$" ; CMD Params Params :Message
 		if !RegExMatch(Line, IRCRE, Match)
 			EditAppend(this.hLog, "PARSING ERROR")
-		
+
 		; Call the class method by the name OnCMD
 		this["On" Match[4]](Match)
+
 	}
-	
-	OnNICK(Match)
-	{
+
+	OnNICK(Match)	{
+
 		if (Match[1] == this.Nick)
 			this.Nick := Match[6]
+
 	}
-	
-	OnPING(Match)
-	{
+
+	OnPING(Match)	{
+
 		this.SendText("PONG :" Match[6])
+
 	}
-	
-	OnPRIVMSG(Match)
-	{
+
+	OnPRIVMSG(Match)	{
+
 		EditAppend(this.hChat, Match[5] " <" Match[1] "> " Match[6])
+
 	}
 }

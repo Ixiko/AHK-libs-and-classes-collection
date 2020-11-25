@@ -1,4 +1,4 @@
-/* Row data structure class for use in Selector.
+﻿/* Row data structure class for use in Selector.
 	
 	Important pieces that actions will want to interact with:
 		data[]		- Associative array of other data from the choice. Subscripted using the labels set in the input file's model row.

@@ -1,4 +1,4 @@
-class Quicksort {
+﻿class Quicksort {
 
 	sort(listToSort, listWithColumnNumbersToSort
 			, leftBoundary, rightBoundary) {
