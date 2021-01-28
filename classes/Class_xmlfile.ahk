@@ -1,4 +1,4 @@
-class xmlfile {
+﻿class xmlfile {
 	; amazing class by maestrith!! HUGE thanks to him for sharing code and teaching me how it works.
 	__New(name, path := ""){
 		file := path ? path : A_WorkingDir "\" name ".xml"

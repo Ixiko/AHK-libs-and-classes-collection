@@ -1,4 +1,4 @@
-_SimpleOSD()
+﻿_SimpleOSD()
 {
 	return new SimpleOSD()
 }

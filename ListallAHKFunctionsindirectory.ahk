@@ -12,9 +12,10 @@ global fileIdx:=0, lib:= []
 
 Directorys =
 (LTrim
-lib-a_to_h
-lib-a_to_h\core_audio_interfaces
-lib-i_to_z
+libs\a-f
+libs\a-f\core_audio_interfaces
+libs\g-n
+libs\o-z
 classes
 classes\Class_PictureButton-master\lib
 classes\class_Java-Access-Bridge
@@ -100,6 +101,7 @@ more libs\DirectX\Lib
 more libs\DirectX\Lib\TexSwap
 more libs\DoDragAndDrop
 more libs\DX9-Overlay-API\include\ahk
+more libs\eAutocomplete
 more libs\EmbedPython.ahk
 more libs\EmbedPython.ahk\Lib
 more libs\exLibs
@@ -115,7 +117,7 @@ more libs\Mini_Framwork\Framework\src\System\MfStruct
 more libs\Mini_Framwork\Framework\src\System\MfUnicode
 more libs\Mini_Framwork\Framework\src\System\Text
 more libs\minilib
-D:\Autohotkey\GitHub\AHK-libs-and-classes-collection\more libs\MsgBox2
+more libs\MsgBox2
 more libs\ObjCSV\lib
 more libs\RamDisk & CmdReturn
 more libs\SendInput

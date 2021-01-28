@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: FILETIME
 a structure class that contains a 64-bit value representing the number of 100-nanosecond intervals since January 1, 1601 (UTC).
 

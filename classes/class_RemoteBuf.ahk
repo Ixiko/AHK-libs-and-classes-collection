@@ -1,4 +1,4 @@
-Class _RemoteBuf {
+﻿Class _RemoteBuf {
 	var pid:=0,bufAdr:=0,size:=0,hProc:=0,buffer:=0,ptr:=0,Encoding:="CP0"
 	__New(hwnd=0,size=0){
 		this.size:=size

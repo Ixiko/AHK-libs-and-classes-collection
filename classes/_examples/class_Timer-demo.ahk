@@ -1,4 +1,4 @@
-#persistent
+﻿#persistent
 #include timer.ahk
 
 ; Create some timers for the demo

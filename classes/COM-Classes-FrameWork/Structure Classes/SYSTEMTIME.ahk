@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: SYSTEMTIME
 a structure class that specifies a date and time, using individual members for the month, day, year, weekday, hour, minute, second, and millisecond. The time is either in coordinated universal time (UTC) or local time, depending on the function that is being called.
 

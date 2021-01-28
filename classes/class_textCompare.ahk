@@ -1,4 +1,4 @@
-#SingleInstance Force
+﻿#SingleInstance Force
 #Include %A_ScriptDir%\Class_RichEdit.ahk
 ;#Include Print.ahk
 

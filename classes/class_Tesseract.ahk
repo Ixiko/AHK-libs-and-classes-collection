@@ -1,4 +1,4 @@
-class Tesseract 
+﻿class Tesseract 
 {
 	static leptonica := A_ScriptDir "\Helper_ocr\bin\leptonica_util\leptonica_util.exe"
 	static tesseract := A_ScriptDir "\Helper_ocr\bin\tesseract\tesseract.exe"

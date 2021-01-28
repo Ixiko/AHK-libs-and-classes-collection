@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PDTIMER
 an enumeration class containing flags that indicate the action to be taken by the timer.
 

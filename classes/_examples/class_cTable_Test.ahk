@@ -1,4 +1,4 @@
-#include %A_ScriptDir%\..\class_cTable.ahk
+﻿#include %A_ScriptDir%\..\class_cTable.ahk
 
 ;===oTable testing area=================================================================
 Variable =      ; column names are specified as first row

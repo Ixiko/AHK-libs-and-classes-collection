@@ -1,4 +1,4 @@
-class TimeZone {
+﻿class TimeZone {
 
 	static UNKWOWN  :=  0
 	static STANDARD :=  1

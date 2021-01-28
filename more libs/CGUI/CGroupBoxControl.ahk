@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CGroupBoxControl
 A GroupBox control. Nothing special.
 

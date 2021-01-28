@@ -1,4 +1,4 @@
-; timer := timer.new("Function Name", interval, priority)
+﻿; timer := timer.new("Function Name", interval, priority)
 class timer {
     error[] {
         get {

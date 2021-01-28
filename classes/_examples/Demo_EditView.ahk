@@ -1,4 +1,4 @@
-#Include EditView.ahk
+#Include %A_ScriptDir%\..\class_EditView.ahk
 
 ; For the demo, we'll use the script's Main window's Edit control
 DetectHiddenWindows On
@@ -100,7 +100,7 @@ class Console
 					WinShow ahk_id %hCon%
 			}
 		}
-		
+
 		this._IsInstance := true
 		Console.Self := &this
 	}

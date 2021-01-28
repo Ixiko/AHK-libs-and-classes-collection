@@ -1,4 +1,4 @@
-/*!
+ï»¿/*!
 	Library: cTable library, version 0.2.0
 		Simplified handling of tables
 		
@@ -9,7 +9,7 @@
 */
 
 ; ToDo: Automatische Update
-; ToDo: Versionsüberprüfung (Numify der eigenen Version)
+; ToDo: VersionsÃ¼berprÃ¼fung (Numify der eigenen Version)
 
 /*!
    Class: cTable
