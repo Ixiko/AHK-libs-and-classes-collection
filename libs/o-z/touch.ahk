@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 Function : Touch(file = "" [, set = "0", WhichTime = "M", Reference = "0"] )
 Language : AutoHotkey 1.1+

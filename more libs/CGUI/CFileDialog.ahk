@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CFileDialog
 This class is used for open/save file dialogs.
 */

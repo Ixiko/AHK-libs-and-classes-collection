@@ -11,8 +11,7 @@
             List .= WinGetTitle('ahk_id' . WindowID) . '`n'
         MsgBox(Trim(Sort(List, 'U')))
 */
-EnumWindows(ParentID := 0, Visible := FALSE)
-{
+EnumWindows(ParentID := 0, Visible := FALSE){
     If (ParentID && !DllCall('User32.dll\IsWindow', 'Ptr', ParentID))
         Return (FALSE)
 
@@ -28,8 +27,7 @@ EnumWindows(ParentID := 0, Visible := FALSE)
 
 
 
-EnumChildProc(hWnd, pData)
-{
+EnumChildProc(hWnd, pData){
     If (A_EventInfo && !DllCall('User32.dll\IsWindowVisible', 'Ptr', hWnd))
         Return (TRUE)
 
