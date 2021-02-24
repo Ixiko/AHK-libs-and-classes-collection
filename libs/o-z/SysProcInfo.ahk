@@ -10,7 +10,7 @@
 ; ----------------------------------------------------------------------------------------------------------------------
 ; Function .....: SysProcInfo_ToggleTimer
 ; Description ..: Sets itself as a timer and periodically call the library functions, returning the results as object.
-; Parameters ...: aParams* is a variadic required to work with timers. Allowed parameters, to be passed in the following 
+; Parameters ...: aParams* is a variadic required to work with timers. Allowed parameters, to be passed in the following
 ; ..............: strict sequential order, are:
 ; ..............: ACTION - Timer verb, can be "START" or "STOP". If "STOP" avoid the next parameters.
 ; ..............: MODE   - Requested info. Can be 1 for system, 2 for processes, 3 for both.
@@ -25,7 +25,7 @@
 ; How to call ..: The function can be called in two ways, to start and stop the timer:
 ; ..............: 1. SysProcInfo_ToggleTimer("START", MODE, HWND, MSG, TIME, ARRPID)
 ; ..............: 2. SysProcInfo_ToggleTimer("STOP")
-; How to use ...: Write a function to monitor MSG and receive notifications. The notification will be sent with the 
+; How to use ...: Write a function to monitor MSG and receive notifications. The notification will be sent with the
 ; ..............: following value of wParam/lParam:
 ; ..............: wParam - 0
 ; ..............: lParam - Object address, use "obj := Object(lParam)" to get a reference to the object.
@@ -57,7 +57,7 @@
 ; ..............: obj.ProcData[].QuotaPagedPoolUsage        - The current paged pool usage, in bytes.
 ; ..............: obj.ProcData[].QuotaPeakNonPagedPoolUsage - The peak nonpaged pool usage, in bytes.
 ; ..............: obj.ProcData[].QuotaNonPagedPoolUsage     - The current nonpaged pool usage, in bytes.
-; ..............: obj.ProcData[].PagefileUsage              - The Commit Charge value in bytes for this process. 
+; ..............: obj.ProcData[].PagefileUsage              - The Commit Charge value in bytes for this process.
 ; ..............: obj.ProcData[].PeakPagefileUsage          - The peak value in bytes of the process Commit Charge.
 ; ..............: obj.ProcData[].ReadOperationCount         - The number of read operations performed.
 ; ..............: obj.ProcData[].WriteOperationCount        - The number of write operations performed.
@@ -71,10 +71,9 @@
 ; ..............: obj.ProcData[].UserHandles                - Number of USER handles that belong to the process.
 ; ..............: obj.ProcData[].PriorityClass              - Priority class for the process.
 ; ----------------------------------------------------------------------------------------------------------------------
-SysProcInfo_ToggleTimer(aParams*)
-{
+SysProcInfo_ToggleTimer(aParams*){
     Static B_RUNNING, B_FIRSTRUN, N_MODE, H_WND, N_MESSAGE, N_TIME, A_PIDS, A_PROCS, OBJ_INFO, P_TIMER
-    
+
     If ( aParams[1] == "START" )
     {   ; Called by the user.
         If ( B_RUNNING )
@@ -84,14 +83,14 @@ SysProcInfo_ToggleTimer(aParams*)
         || ( aParams[2]  > 1 && aParams.MaxIndex() != 6 )
         || ( aParams[2]  > 1 && !isObject(aParams[6])   )
             Return -2
-        
+
         ; Parameters parsing.
         N_MODE := aParams[2], H_WND := aParams[3], N_MESSAGE := aParams[4], N_TIME := aParams[5], A_PIDS := aParams[6]
-        
+
         B_RUNNING := 1, B_FIRSTRUN := 1, A_PROCS := Object(), OBJ_INFO := Object()
         Loop % A_PIDS.MaxIndex()
             A_PROCS[A_Index] := DllCall( "OpenProcess", UInt,0x0400|0x0010, Int,0, UInt,A_PIDS[A_Index] )
-        
+
         Return P_TIMER := DllCall( "SetTimer", Ptr,0, UInt,0, UInt,N_TIME, Ptr,RegisterCallback(A_ThisFunc) )
     }
     Else If ( aParams[1] == "STOP" )
@@ -100,20 +99,20 @@ SysProcInfo_ToggleTimer(aParams*)
             Return -1
         If ( aParams.MaxIndex() > 1 )
             Return -2
-        
+
         Loop % A_PROCS.MaxIndex()
             DllCall( "CloseHandle", Ptr,A_PROCS[A_Index] )
-        
+
         B_RUNNING := 0
         A_PIDS := "", A_PROCS := "", OBJ_INFO := "" ; Release objects.
-        
+
         Return DllCall( "KillTimer", Ptr,0, Ptr,P_TIMER )
     }
     Else
     {   ; Called by the timer.
         If aParams[1] is not xdigit ; Return an error if the first parameter is not a hwnd.
             Return -3
-        
+
         f := A_FormatInteger
         SetFormat, Float, 6.2
         If ( N_MODE == 1 || N_MODE == 3 )
@@ -133,7 +132,7 @@ SysProcInfo_ToggleTimer(aParams*)
                 Else
                     nOldKernTime := OBJ_INFO.ProcData[A_Index].OldKernTime
                   , nOldUserTime := OBJ_INFO.ProcData[A_Index].OldUserTime
-                
+
                 OBJ_INFO.ProcData[A_Index]              := SysProcInfo_GetProcessMemoryInfo(A_PROCS[A_Index])
                 OBJ_INFO.ProcData[A_Index].Pid          := A_PIDS[A_Index]
                 OBJ_INFO.ProcData[A_Index].ProcessTimes := SysProcInfo_GetProcessTimes( A_PROCS[A_Index], nOldKernTime
@@ -143,7 +142,7 @@ SysProcInfo_ToggleTimer(aParams*)
             }
         }
         SetFormat, Integer, %f%
-        
+
         (B_FIRSTRUN) ? B_FIRSTRUN := 0
                      : DllCall( "SendNotifyMessage", Ptr,H_WND, UInt,N_MESSAGE, Ptr,0, Ptr,Object(OBJ_INFO) )
     }
@@ -154,8 +153,7 @@ SysProcInfo_ToggleTimer(aParams*)
 ; Description ..: Returns the percentage of the total CPU Load. Call it repeateadly for consistent results.
 ; Thanks .......: Sean and Laszlo: http://www.autohotkey.com/community/viewtopic.php?t=18913
 ; ----------------------------------------------------------------------------------------------------------------------
-SysProcInfo_GetSystemTimes()
-{
+SysProcInfo_GetSystemTimes(){
     Static nOldIdleTime, nOldKernTime, nOldUserTime, nNewIdleTime, nNewKernTime, nNewUserTime
     nOldIdleTime := nNewIdleTime, nOldKernTime := nNewKernTime, nOldUserTime := nNewUserTime
     DllCall( "GetSystemTimes", Int64P,nNewIdleTime, Int64P,nNewKernTime, Int64P,nNewUserTime )
@@ -182,8 +180,7 @@ SysProcInfo_GetSystemTimes()
 ; ..............: obj.ProcessCount      - The current number of processes.
 ; ..............: obj.ThreadCount       - The current number of threads.
 ; ----------------------------------------------------------------------------------------------------------------------
-SysProcInfo_GetSystemMemoryStatus()
-{
+SysProcInfo_GetSystemMemoryStatus(){
     nSz := VarSetCapacity(PERFORMANCEINFO, (A_PtrSize == 4) ? 56 : 104), NumPut(nSz, PERFORMANCEINFO, 0)
     DllCall( "psapi.dll\GetPerformanceInfo", Ptr,&PERFORMANCEINFO, UInt,nSz )
     nPhysUsed := NumGet(PERFORMANCEINFO, A_PtrSize*4, "UPtr") - NumGet(PERFORMANCEINFO, A_PtrSize*5, "UPtr")
@@ -213,8 +210,7 @@ SysProcInfo_GetSystemMemoryStatus()
 ; ..............: nOldUserTime - Old user time. Seed 0 on start.
 ; Thanks .......: Sean and Laszlo: http://www.autohotkey.com/community/viewtopic.php?t=18913
 ; ----------------------------------------------------------------------------------------------------------------------
-SysProcInfo_GetProcessTimes(hProc, ByRef nOldKernTime, ByRef nOldUserTime)
-{
+SysProcInfo_GetProcessTimes(hProc, ByRef nOldKernTime, ByRef nOldUserTime){
     DllCall( "GetProcessTimes", Ptr,hProc, Int64P,nCreationTime, Int64P,nExitTime, Int64P,nNewKernTime
                               , Int64P,nNewUserTime )
     nProcTime    := (nNewKernTime-nOldKernTime + nNewUserTime-nOldUserTime)*1.e-5
@@ -236,7 +232,7 @@ SysProcInfo_GetProcessTimes(hProc, ByRef nOldKernTime, ByRef nOldUserTime)
 ; ..............: obj.QuotaPagedPoolUsage        - The current paged pool usage, in bytes.
 ; ..............: obj.QuotaPeakNonPagedPoolUsage - The peak nonpaged pool usage, in bytes.
 ; ..............: obj.QuotaNonPagedPoolUsage     - The current nonpaged pool usage, in bytes.
-; ..............: obj.PagefileUsage              - The Commit Charge value in bytes for this process. 
+; ..............: obj.PagefileUsage              - The Commit Charge value in bytes for this process.
 ; ..............: obj.PeakPagefileUsage          - The peak value in bytes of the process Commit Charge.
 ; ..............: obj.ReadOperationCount         - The number of read operations performed.
 ; ..............: obj.WriteOperationCount        - The number of write operations performed.
@@ -250,8 +246,7 @@ SysProcInfo_GetProcessTimes(hProc, ByRef nOldKernTime, ByRef nOldUserTime)
 ; ..............: obj.UserHandles                - Number of USER handles that belong to the process.
 ; ..............: obj.PriorityClass              - Priority class for the process.
 ; ----------------------------------------------------------------------------------------------------------------------
-SysProcInfo_GetProcessMemoryInfo(hProc)
-{
+SysProcInfo_GetProcessMemoryInfo(hProc){
     nSz := VarSetCapacity( PROCMEMCOUNTERS, (A_PtrSize == 4) ? 40 : 72, 0 ), NumPut( nSz, PROCMEMCOUNTERS, 0 )
     VarSetCapacity( IOCOUNTERS, 48, 0 )
     DllCall( "psapi.dll\GetProcessMemoryInfo",  Ptr,hProc, Ptr,&PROCMEMCOUNTERS, UInt,nSz )
@@ -303,69 +298,69 @@ AHKNOTIFY(wParam, lParam)
 {
     obj := Object(lParam)
     FileAppend, % "`n==="
-                . "`nSystem Times: "               obj.SystemData.SystemTimes
-                . "`nMemoryLoad: "                 obj.SystemData.MemoryLoad
-                . "`nCommitTotal: "                obj.SystemData.CommitTotal
-                . "`nCommitLimit: "                obj.SystemData.CommitLimit
-                . "`nCommitPeak: "                 obj.SystemData.CommitPeak
-                . "`nPhysicalTotal: "              obj.SystemData.PhysicalTotal
-                . "`nPhysicalAvailable: "          obj.SystemData.PhysicalAvailable
-                . "`nPhysicalUsed: "               obj.SystemData.PhysicalUsed
-                . "`nSystemCache: "                obj.SystemData.SystemCache
-                . "`nKernelTotal: "                obj.SystemData.KernelTotal
-                . "`nKernelPaged: "                obj.SystemData.KernelPaged
-                . "`nKernelNonpaged: "             obj.SystemData.KernelNonpaged
-                . "`nPageSize: "                   obj.SystemData.PageSize
-                . "`nHandleCount: "                obj.SystemData.HandleCount
-                . "`nProcessCount: "               obj.SystemData.ProcessCount
-                . "`nThreadCount: "                obj.SystemData.ThreadCount
+                . "`nSystem Times: "                               	obj.SystemData.SystemTimes
+                . "`nMemoryLoad: "                                	obj.SystemData.MemoryLoad
+                . "`nCommitTotal: "                                	obj.SystemData.CommitTotal
+                . "`nCommitLimit: "                                	obj.SystemData.CommitLimit
+                . "`nCommitPeak: "                                	obj.SystemData.CommitPeak
+                . "`nPhysicalTotal: "                                	obj.SystemData.PhysicalTotal
+                . "`nPhysicalAvailable: "                         	obj.SystemData.PhysicalAvailable
+                . "`nPhysicalUsed: "                                	obj.SystemData.PhysicalUsed
+                . "`nSystemCache: "                               	obj.SystemData.SystemCache
+                . "`nKernelTotal: "                                  	obj.SystemData.KernelTotal
+                . "`nKernelPaged: "                                 	obj.SystemData.KernelPaged
+                . "`nKernelNonpaged: "                            	obj.SystemData.KernelNonpaged
+                . "`nPageSize: "                                      	obj.SystemData.PageSize
+                . "`nHandleCount: "                               	obj.SystemData.HandleCount
+                . "`nProcessCount: "                                	obj.SystemData.ProcessCount
+                . "`nThreadCount: "                               	obj.SystemData.ThreadCount
                 , test.txt
     FileAppend, % "`n---"
-                . "`nPid: "                        obj.ProcData[1].Pid
-                . "`nProcessTimes: "               obj.ProcData[1].ProcessTimes
-                . "`nPageFaultCount: "             obj.ProcData[1].PageFaultCount
-                . "`nPeakWorkingSetSize: "         obj.ProcData[1].PeakWorkingSetSize
-                . "`nWorkingSetSize: "             obj.ProcData[1].WorkingSetSize
-                . "`nQuotaPeakPagedPoolUsage: "    obj.ProcData[1].QuotaPeakPagedPoolUsage
-                . "`nQuotaPagedPoolUsage: "        obj.ProcData[1].QuotaPagedPoolUsage
-                . "`nQuotaPeakNonPagedPoolUsage: " obj.ProcData[1].QuotaPeakNonPagedPoolUsage
-                . "`nQuotaNonPagedPoolUsage: "     obj.ProcData[1].QuotaNonPagedPoolUsage
-                . "`nPagefileUsage: "              obj.ProcData[1].PagefileUsage 
-                . "`nPeakPagefileUsage: "          obj.ProcData[1].PeakPagefileUsage
-                . "`nReadOperationCount: "         obj.ProcData[1].ReadOperationCount
-                . "`nWriteOperationCount: "        obj.ProcData[1].WriteOperationCount
-                . "`nOtherOperationCount: "        obj.ProcData[1].OtherOperationCount
-                . "`nReadTransferCount: "          obj.ProcData[1].ReadTransferCount
-                . "`nWriteTransferCount: "         obj.ProcData[1].WriteTransferCount
-                . "`nOtherTransferCount: "         obj.ProcData[1].OtherTransferCount
-                . "`nCycleTime: "                  obj.ProcData[1].CycleTime
-                . "`nHandleCount: "                obj.ProcData[1].HandleCount
-                . "`nGdiHandles: "                 obj.ProcData[1].GdiHandles
-                . "`nUserHandles: "                obj.ProcData[1].UserHandles
-                . "`nPriorityClass: "              obj.ProcData[1].PriorityClass
+                . "`nPid: "                                               	obj.ProcData[1].Pid
+                . "`nProcessTimes: "                               	obj.ProcData[1].ProcessTimes
+                . "`nPageFaultCount: "             	    	    	obj.ProcData[1].PageFaultCount
+                . "`nPeakWorkingSetSize: "            	    	 	obj.ProcData[1].PeakWorkingSetSize
+                . "`nWorkingSetSize: "               	    	 	 	obj.ProcData[1].WorkingSetSize
+                . "`nQuotaPeakPagedPoolUsage: "       		obj.ProcData[1].QuotaPeakPagedPoolUsage
+                . "`nQuotaPagedPoolUsage: "          	     	obj.ProcData[1].QuotaPagedPoolUsage
+                . "`nQuotaPeakNonPagedPoolUsage: "  	obj.ProcData[1].QuotaPeakNonPagedPoolUsage
+                . "`nQuotaNonPagedPoolUsage: "      	  	obj.ProcData[1].QuotaNonPagedPoolUsage
+                . "`nPagefileUsage: "                	    	     	obj.ProcData[1].PagefileUsage
+                . "`nPeakPagefileUsage: "           	    	  	obj.ProcData[1].PeakPagefileUsage
+                . "`nReadOperationCount: "                    	obj.ProcData[1].ReadOperationCount
+                . "`nWriteOperationCount: "                   	obj.ProcData[1].WriteOperationCount
+                . "`nOtherOperationCount: "                   	obj.ProcData[1].OtherOperationCount
+                . "`nReadTransferCount: "                      	obj.ProcData[1].ReadTransferCount
+                . "`nWriteTransferCount: "                      	obj.ProcData[1].WriteTransferCount
+                . "`nOtherTransferCount: "                     	obj.ProcData[1].OtherTransferCount
+                . "`nCycleTime: "                                   	obj.ProcData[1].CycleTime
+                . "`nHandleCount: "                               	obj.ProcData[1].HandleCount
+                . "`nGdiHandles: "                                 	obj.ProcData[1].GdiHandles
+                . "`nUserHandles: "                                 	obj.ProcData[1].UserHandles
+                . "`nPriorityClass: "                                 	obj.ProcData[1].PriorityClass
                 . "`n---"
-                . "`nPid: "                        obj.ProcData[2].Pid
-                . "`nProcessTimes: "               obj.ProcData[2].ProcessTimes
-                . "`nPageFaultCount: "             obj.ProcData[2].PageFaultCount
-                . "`nPeakWorkingSetSize: "         obj.ProcData[2].PeakWorkingSetSize
-                . "`nWorkingSetSize: "             obj.ProcData[2].WorkingSetSize
-                . "`nQuotaPeakPagedPoolUsage: "    obj.ProcData[2].QuotaPeakPagedPoolUsage
-                . "`nQuotaPagedPoolUsage: "        obj.ProcData[2].QuotaPagedPoolUsage
-                . "`nQuotaPeakNonPagedPoolUsage: " obj.ProcData[2].QuotaPeakNonPagedPoolUsage
-                . "`nQuotaNonPagedPoolUsage: "     obj.ProcData[2].QuotaNonPagedPoolUsage
-                . "`nPagefileUsage: "              obj.ProcData[2].PagefileUsage
-                . "`nPeakPagefileUsage: "          obj.ProcData[2].PeakPagefileUsage
-                . "`nReadOperationCount: "         obj.ProcData[2].ReadOperationCount
-                . "`nWriteOperationCount: "        obj.ProcData[2].WriteOperationCount
-                . "`nOtherOperationCount: "        obj.ProcData[2].OtherOperationCount
-                . "`nReadTransferCount: "          obj.ProcData[2].ReadTransferCount
-                . "`nWriteTransferCount: "         obj.ProcData[2].WriteTransferCount
-                . "`nOtherTransferCount: "         obj.ProcData[2].OtherTransferCount
-                . "`nCycleTime: "                  obj.ProcData[2].CycleTime
-                . "`nHandleCount: "                obj.ProcData[2].HandleCount
-                . "`nGdiHandles: "                 obj.ProcData[2].GdiHandles
-                . "`nUserHandles: "                obj.ProcData[2].UserHandles
-                . "`nPriorityClass: "              obj.ProcData[2].PriorityClass
+                . "`nPid: "                           	    	    		obj.ProcData[2].Pid
+                . "`nProcessTimes: "           	    	          	obj.ProcData[2].ProcessTimes
+                . "`nPageFaultCount: "                            	obj.ProcData[2].PageFaultCount
+                . "`nPeakWorkingSetSize: "                        	obj.ProcData[2].PeakWorkingSetSize
+                . "`nWorkingSetSize: "                            	obj.ProcData[2].WorkingSetSize
+                . "`nQuotaPeakPagedPoolUsage: "         	obj.ProcData[2].QuotaPeakPagedPoolUsage
+                . "`nQuotaPagedPoolUsage: "                	obj.ProcData[2].QuotaPagedPoolUsage
+                . "`nQuotaPeakNonPagedPoolUsage: "  	obj.ProcData[2].QuotaPeakNonPagedPoolUsage
+                . "`nQuotaNonPagedPoolUsage: "          	obj.ProcData[2].QuotaNonPagedPoolUsage
+                . "`nPagefileUsage: "                             	obj.ProcData[2].PagefileUsage
+                . "`nPeakPagefileUsage: "                       	obj.ProcData[2].PeakPagefileUsage
+                . "`nReadOperationCount: "                    	obj.ProcData[2].ReadOperationCount
+                . "`nWriteOperationCount: "                   	obj.ProcData[2].WriteOperationCount
+                . "`nOtherOperationCount: "                   	obj.ProcData[2].OtherOperationCount
+                . "`nReadTransferCount: "             	        	obj.ProcData[2].ReadTransferCount
+                . "`nWriteTransferCount: "                       	obj.ProcData[2].WriteTransferCount
+                . "`nOtherTransferCount: "                      	obj.ProcData[2].OtherTransferCount
+                . "`nCycleTime: "                                    	obj.ProcData[2].CycleTime
+                . "`nHandleCount: "                               	obj.ProcData[2].HandleCount
+                . "`nGdiHandles: "                                  	obj.ProcData[2].GdiHandles
+                . "`nUserHandles: "                                   	obj.ProcData[2].UserHandles
+                . "`nPriorityClass: "                                 	obj.ProcData[2].PriorityClass
                 . "`n===`n"
                 , test.txt
 }

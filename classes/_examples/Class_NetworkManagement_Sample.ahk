@@ -6,9 +6,9 @@ SetBatchLines -1
 
 
 ; SCRIPT ========================================================================================================================
+ipaddress := "192.168.178.30"
 
-
-NetUserEnum := NetworkManagement.NetUserEnum("192.168.0.1")
+NetUserEnum := NetworkManagement.NetUserEnum(ipaddress)
 for k, v in NetUserEnum
     MsgBox % "Name:`t`t"      v.Name        "`n"
            . "Password:`t`t"  v.Password    "`n"
@@ -23,7 +23,7 @@ for k, v in NetUserEnum
 ; =======================================================================================
 
 
-NetUserGetGroups := NetworkManagement.NetUserGetGroups(A_UserName, "192.168.0.1")
+NetUserGetGroups := NetworkManagement.NetUserGetGroups(A_UserName, ipaddress)
 for k, v in NetUserGetGroups
     MsgBox % v
 
@@ -31,7 +31,7 @@ for k, v in NetUserGetGroups
 ; =======================================================================================
 
 
-NetUserGetLocalGroups := NetworkManagement.NetUserGetLocalGroups(A_UserName, "EXAMPLE\", "192.168.0.1")
+NetUserGetLocalGroups := NetworkManagement.NetUserGetLocalGroups(A_UserName, "EXAMPLE\", ipaddress)
 for k, v in NetUserGetLocalGroups
     MsgBox % v
 
@@ -39,7 +39,7 @@ for k, v in NetUserGetLocalGroups
 ; =======================================================================================
 
 
-NetWkstaGetInfo := NetworkManagement.NetWkstaGetInfo("192.168.0.1")
+NetWkstaGetInfo := NetworkManagement.NetWkstaGetInfo(ipaddress)
 MsgBox % "Platform_ID:`t"  NetWkstaGetInfo.Platform_ID  "`n"
        . "ComputerName:`t" NetWkstaGetInfo.ComputerName "`n"
        . "LanGroup:`t`t"   NetWkstaGetInfo.LanGroup     "`n"
@@ -52,7 +52,7 @@ MsgBox % "Platform_ID:`t"  NetWkstaGetInfo.Platform_ID  "`n"
 ; =======================================================================================
 
 
-NetWkstaTransportEnum := NetworkManagement.NetWkstaTransportEnum("192.168.0.1")
+NetWkstaTransportEnum := NetworkManagement.NetWkstaTransportEnum(ipaddress)
 MsgBox % "QualityOfService:`t"   NetWkstaTransportEnum.QualityOfService "`n"
        . "NumberOfVcs:`t"        NetWkstaTransportEnum.NumberOfVcs      "`n"
        . "TransportName:`t`t"    NetWkstaTransportEnum.TransportName    "`n"
@@ -63,7 +63,7 @@ MsgBox % "QualityOfService:`t"   NetWkstaTransportEnum.QualityOfService "`n"
 ; =======================================================================================
 
 
-NetWkstaUserEnum := NetworkManagement.NetWkstaUserEnum("192.168.0.1")
+NetWkstaUserEnum := NetworkManagement.NetWkstaUserEnum(ipaddress)
 for k, v in NetWkstaUserEnum
     MsgBox % "UserName:`t"     v.UserName     "`n"
            . "LogonDomain:`t"  v.LogonDomain  "`n"
