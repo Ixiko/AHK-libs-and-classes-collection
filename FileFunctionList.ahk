@@ -1388,7 +1388,13 @@ Line  	|	Function
 0001	|	PlayBink(file, pddraw, pPrimary, h_win, pdSound = "", scale = True, dllpath="binkw32.dll")
 
 }
-[115] f\BinReadWrite.ahk {
+[115] f\BinomialCoefficient.ahk {
+
+Line  	|	Function
+0014	|	BinomialCoefficient(n, k)
+
+}
+[116] f\BinReadWrite.ahk {
 
 Line  	|	Function
 0039	|	OpenFileForRead(_filename)
@@ -1400,36 +1406,42 @@ Line  	|	Function
 0215	|	ReadFromFile(_handle, ByRef @data, _byteNb=0, _moveMethod=-1, _offset=0)
 
 }
-[116] f\BinRun.ahk {
+[117] f\BinRun.ahk {
 
 Line  	|	Function
 
 }
-[117] f\binSearch.ahk {
+[118] f\binSearch.ahk {
 
 Line  	|	Function
 0001	|	binSearch(arr,match,r,l=0)
 
 }
-[118] f\BinStrings.ahk {
+[119] f\BinStrings.ahk {
 
 Line  	|	Function
 0063	|	StringCharCount(ByRef str, char)
 0068	|	Print(string)
 
 }
-[119] f\BinToHex.ahk {
+[120] f\BinToHex.ahk {
 
 Line  	|	Function
 0001	|	BinToHex(addr,len)
 
 }
-[120] f\BinToHexSp.ahk {
+[121] f\BinToHexSp.ahk {
 
 Line  	|	Function
 
 }
-[121] f\Bitmap.ahk {
+[122]  {
+
+Line  	|	Function
+0018	|	Line(ByRef Bitmap,ByRef Color,PosX1,PosY1,PosX2,PosY2)
+
+}
+[123] f\Bitmap.ahk {
 
 Line  	|	Function
 0112	|	SetStretchBltMode(hDC, StretchMode)
@@ -1437,7 +1449,7 @@ Line  	|	Function
 0156	|	BitmapToClipboard(hBitmap)
 
 }
-[122] f\BitmapGradient.ahk {
+[124] f\BitmapGradient.ahk {
 
 Line  	|	Function
 0072	|	CreateBMPGradient(File, RGB1, RGB2, Vertical=1)
@@ -1445,25 +1457,33 @@ Line  	|	Function
 0121	|	RandomHexColor(Range1=0,Range2=255)
 
 }
-[123] f\Bitmap_SetImage.ahk {
+[125] f\Bitmap_SetImage.ahk {
 
 Line  	|	Function
 0017	|	Bitmap_SetImage(hCtrl, hBitmap)
 
 }
-[124] f\Bitmap_WidthAndHeight.ahk {
+[126] f\Bitmap_WidthAndHeight.ahk {
 
 Line  	|	Function
 0014	|	Bitmap_GetWidth(hBitmap)
 0023	|	Bitmap_GetHeight(hBitmap)
 
 }
-[125] f\BlockSysMenu.ahk {
+[127] f\bitrotate.ahk {
+
+Line  	|	Function
+0001	|	BitRotateL(nmb, t="1", type="UChar")
+0015	|	BitRotateR(ByRef nmb, t="1", type="UChar")
+0028	|	BRCheck(a, b)
+
+}
+[128] f\BlockSysMenu.ahk {
 
 Line  	|	Function
 
 }
-[126] f\bmpread.ahk {
+[129] f\bmpread.ahk {
 
 Line  	|	Function
 0002	|	BMPWidth(ByRef bmpdata)
@@ -1474,13 +1494,13 @@ Line  	|	Function
 0059	|	BMPTransform(ByRef bmpdata, ByRef output, transpc=-1)
 
 }
-[127] f\BoxMuller.ahk {
+[130] f\BoxMuller.ahk {
 
 Line  	|	Function
 0001	|	BoxMuller(m,s)
 
 }
-[128] f\BRA.ahk {
+[131] f\BRA.ahk {
 
 Line  	|	Function
 0006	|	BRA_LibraryVersion()
@@ -1497,28 +1517,28 @@ Line  	|	Function
 0598	|	BRA_SaveToDisk(ByRef BRAFromMemIn, Output, Overwrite=0)
 
 }
-[129] f\BrowserEmulation.ahk {
+[132] f\BrowserEmulation.ahk {
 
 Line  	|	Function
 
 }
-[130]  {
+[133]  {
 
 Line  	|	Function
 
 }
-[131] f\buf.ahk {
+[134] f\buf.ahk {
 
 Line  	|	Function
 
 }
-[132]  {
+[135]  {
 
 Line  	|	Function
 0028	|	BufferInput(byref aKeys, Mode="Off", MouseBlocking=1, IgnoreHotkey="")
 
 }
-[133] f\BuildUserAhkApi.ahk {
+[136] f\BuildUserAhkApi.ahk {
 
 Line  	|	Function
 0032	|	if(Labels)
@@ -1527,7 +1547,15 @@ Line  	|	Function
 0073	|	grep(h, n, ByRef v, s = 1, e = 0, d = "")
 
 }
-[134] f\byteWord.ahk {
+[137] f\ByteSwapHex.ahk {
+
+Line  	|	Function
+0018	|	ByteSwapHexD(Num, byteLen)
+0027	|	ByteSwapHex(num, type)
+0034	|	fpToHexLE(float)
+
+}
+[138] f\byteWord.ahk {
 
 Line  	|	Function
 0001	|	LoWord(byref dword)
@@ -1537,19 +1565,19 @@ Line  	|	Function
 0015	|	GET_Y_LPARAM(lp)
 
 }
-[135] f\CalcChecksum.ahk {
+[139] f\CalcChecksum.ahk {
 
 Line  	|	Function
 0001	|	HashFile(filePath,hashType=2)
 
 }
-[136] f\CalculateDistance.ahk {
+[140] f\CalculateDistance.ahk {
 
 Line  	|	Function
 0001	|	CalculateDistance(x1, y1, x2, y2)
 
 }
-[137] f\Calenderfunctions.ahk {
+[141] f\Calenderfunctions.ahk {
 
 Line  	|	Function
 0012	|	easter(year)
@@ -1574,40 +1602,40 @@ Line  	|	Function
 0721	|	LDOM( Dt )
 
 }
-[138] f\callbackcreate.ahk {
+[142] f\callbackcreate.ahk {
 
 Line  	|	Function
 
 }
-[139] f\CallStack_AHK2.ahk {
+[143] f\CallStack_AHK2.ahk {
 
 Line  	|	Function
 
 }
-[140] f\capitalizeString.ahk {
+[144] f\capitalizeString.ahk {
 
 Line  	|	Function
 0001	|	capitalizeString(input)
 
 }
-[141] f\caretViaAcc.ahk {
+[145] f\caretViaAcc.ahk {
 
 Line  	|	Function
 0011	|	caretViaAcc()
 
 }
-[142] f\CaseChange.ahk {
+[146] f\CaseChange.ahk {
 
 Line  	|	Function
 0001	|	caseChange(text,type)
 
 }
-[143] f\CatchHandler.ahk {
+[147] f\CatchHandler.ahk {
 
 Line  	|	Function
 
 }
-[144] f\CB.ahk {
+[148] f\CB.ahk {
 
 Line  	|	Function
 0042	|	CB_Get(Control="ComboBox1", Window="ahk_class AutoHotkeyGUI")
@@ -1625,14 +1653,14 @@ Line  	|	Function
 0119	|	CB_GetText(Pos=-1, Control="ComboBox1", Window="ahk_class AutoHotkeyGUI")
 
 }
-[145] f\CColor.ahk {
+[149] f\CColor.ahk {
 
 Line  	|	Function
 0026	|	CColor(Hwnd, Background="", Foreground="")
 0030	|	CColor_(Wp, Lp, Msg, Hwnd)
 
 }
-[146] f\cControls.ahk {
+[150] f\cControls.ahk {
 
 Line  	|	Function
 0003	|	__New(Name, Options, Text, GUINum)
@@ -1682,35 +1710,35 @@ Line  	|	Function
 0853	|	__New(Name, Options, Text, GUINum)
 
 }
-[147] f\cdomessage.ahk {
+[151] f\cdomessage.ahk {
 
 Line  	|	Function
 0019	|	cdomessage(sFrom, sTo, sSubject, sBody, sAttach, sServer, sUsername, sPassword, bTLS = True, nPort = 25, nSend = 2, nAuth = 1)
 
 }
-[148] f\Censorbox.ahk {
+[152] f\Censorbox.ahk {
 
 Line  	|	Function
 0062	|	WM_LBUTTONDOWN()
 
 }
-[149] f\Center MsgBox To Active Window.ahk {
+[153] f\Center MsgBox To Active Window.ahk {
 
 Line  	|	Function
 
 }
-[150] f\CenterWindow (2).ahk {
+[154] f\CenterWindow (2).ahk {
 
 Line  	|	Function
 0001	|	CenterWindow(aWidth,aHeight)
 
 }
-[151] f\CenterWindow.ahk {
+[155] f\CenterWindow.ahk {
 
 Line  	|	Function
 
 }
-[152] f\cFTP.ahk {
+[156] f\cFTP.ahk {
 
 Line  	|	Function
 0061	|	FTPv2( AsyncMode=0 , Proxy = "" , ProxyBypass = "")
@@ -1741,29 +1769,34 @@ Line  	|	Function
 0912	|	FTP_TestFunction()
 
 }
-[153] f\ChangeCase.ahk {
+[157] f\ChangeBackgroundMode.ahk {
+
+Line  	|	Function
+
+}
+[158] f\ChangeCase.ahk {
 
 Line  	|	Function
 0004	|	ChangeCase(String,Type)
 
 }
-[154] f\ChangeProcessName.ahk {
+[159] f\ChangeProcessName.ahk {
 
 Line  	|	Function
 0005	|	SMExe(file)
 
 }
-[155] f\ChangeResolution.ahk {
+[160] f\ChangeResolution.ahk {
 
 Line  	|	Function
 
 }
-[156] f\changeScreenSize.ahk {
+[161] f\changeScreenSize.ahk {
 
 Line  	|	Function
 
 }
-[157] f\CharWordPos.ahk {
+[162] f\CharWordPos.ahk {
 
 Line  	|	Function
 0022	|	MCode_Bin2Hex(addr, len)
@@ -1772,7 +1805,7 @@ Line  	|	Function
 0089	|	WordToCharPos(ByRef str, ByRef start, ByRef end="", swap=0)
 
 }
-[158] f\chatGUI.ahk {
+[163] f\chatGUI.ahk {
 
 Line  	|	Function
 0020	|	CreateGui()
@@ -1783,57 +1816,63 @@ Line  	|	Function
 0541	|	toLower(v)
 
 }
-[159] f\CheckForUpdates.ahk {
+[164] f\CheckForUpdates.ahk {
 
 Line  	|	Function
 0001	|	CheckForUpdates(installed_version, byRef latestVersion, url)
 
 }
-[160] f\CheckUpdate.ahk {
+[165] f\CheckInput.ahk {
+
+Line  	|	Function
+0023	|	CheckInput(HWND, Msg, wParam, lParam, SubclassID, RefData)
+
+}
+[166] f\CheckUpdate.ahk {
 
 Line  	|	Function
 
 }
-[161] f\Check_ForUpdate.ahk {
+[167] f\Check_ForUpdate.ahk {
 
 Line  	|	Function
 0001	|	Check_ForUpdate(_ReplaceCurrentScript = 1, _SuppressMsgBox = 0, _CallbackFunction = "", ByRef _Information = "")
 
 }
-[162] f\ChooseColor (2).ahk {
+[168] f\ChooseColor (2).ahk {
 
 Line  	|	Function
 0074	|	ChooseColor_Callback(hdlg, uiMsg, wParam, lParam)
 
 }
-[163] f\ChooseColor.ahk {
+[169] f\ChooseColor.ahk {
 
 Line  	|	Function
 0129	|	ColorWindowProc(hwnd, msg, wParam, lParam)
 0160	|	BGR2RGB(Color)
 
 }
-[164] f\ChooseFile.ahk {
+[170] f\ChooseFile.ahk {
 
 Line  	|	Function
 
 }
-[165] f\ChooseFolder.ahk {
+[171] f\ChooseFolder.ahk {
 
 Line  	|	Function
 
 }
-[166] f\ChooseFont.ahk {
+[172] f\ChooseFont.ahk {
 
 Line  	|	Function
 
 }
-[167] f\ChooseIcon.ahk {
+[173] f\ChooseIcon.ahk {
 
 Line  	|	Function
 
 }
-[168] f\ChooseImage.ahk {
+[174] f\ChooseImage.ahk {
 
 Line  	|	Function
 0102	|	ChooseImage_Close(Data, Error)
@@ -1843,46 +1882,51 @@ Line  	|	Function
 0153	|	ChooseImage_Load(Data)
 
 }
-[169] f\Chrome_GetTabList.ahk {
+[175] f\ChromeSavePDF.ahk {
+
+Line  	|	Function
+
+}
+[176] f\Chrome_GetTabList.ahk {
 
 Line  	|	Function
 0007	|	Chrome_GetTabList()
 
 }
-[170] f\cleanClipboard.ahk {
+[177] f\cleanClipboard.ahk {
 
 Line  	|	Function
 0001	|	cleanClipboard()
 
 }
-[171] f\ClearArray.ahk {
+[178] f\ClearArray.ahk {
 
 Line  	|	Function
 0036	|	ClearArray(p_ArrayName,p_Start=0,p_End=0)
 0057	|	varExist(ByRef v)
 
 }
-[172] f\Clip.ahk {
+[179] f\Clip.ahk {
 
 Line  	|	Function
 0004	|	Clip_Get()
 0013	|	Clip(Text="", Reselect="")
 
 }
-[173] f\Clip2Object.ahk {
+[180] f\Clip2Object.ahk {
 
 Line  	|	Function
 0002	|	__Set(key,ByRef raw)
 0008	|	Restore(key,ByRef raw)
 
 }
-[174] f\Clipboard Manager.ahk {
+[181] f\Clipboard Manager.ahk {
 
 Line  	|	Function
 0003	|	handleClip(action)
 
 }
-[175] f\clipboard.ahk {
+[182] f\clipboard.ahk {
 
 Line  	|	Function
 0003	|	copyWithHotkey(hotkeyKeys)
@@ -1898,7 +1942,7 @@ Line  	|	Function
 0112	|	if(clipboard = "")
 
 }
-[176] f\ClipboardHelpers.ahk {
+[183] f\ClipboardHelpers.ahk {
 
 Line  	|	Function
 0001	|	ClipSave(mode = 1)
@@ -1908,34 +1952,34 @@ Line  	|	Function
 0030	|	IsTextSelected()
 
 }
-[177] f\clipHTML.ahk {
+[184] f\clipHTML.ahk {
 
 Line  	|	Function
 0001	|	clipHTML(htmlCode)
 
 }
-[178] f\ClipStore.ahk {
+[185] f\ClipStore.ahk {
 
 Line  	|	Function
 
 }
-[179] f\CloseAllAhkExceptOne.ahk {
+[186] f\CloseAllAhkExceptOne.ahk {
 
 Line  	|	Function
 
 }
-[180] f\CloseHandle.ahk {
+[187] f\CloseHandle.ahk {
 
 Line  	|	Function
 0008	|	CloseHandle(Handle)
 
 }
-[181] f\CloseWindow.ahk {
+[188] f\CloseWindow.ahk {
 
 Line  	|	Function
 
 }
-[182] f\CLR (2).ahk {
+[189] f\CLR (2).ahk {
 
 Line  	|	Function
 0011	|	CLR_LoadLibrary(AssemblyName, AppDomain=0)
@@ -1949,7 +1993,7 @@ Line  	|	Function
 0147	|	CLR_GUID(ByRef GUID, sGUID)
 
 }
-[183] f\CLR.ahk {
+[190] f\CLR.ahk {
 
 Line  	|	Function
 0014	|	CLR_Start()
@@ -1964,7 +2008,7 @@ Line  	|	Function
 0169	|	CLR_CompileAssembly(Code, References, ProviderAssembly, ProviderType, pAppDomain=0, FileName="", CompilerOptions="")
 
 }
-[184] f\cmd.ahk {
+[191] f\cmd.ahk {
 
 Line  	|	Function
 0015	|	cmd_exec(cmd)
@@ -1976,19 +2020,19 @@ Line  	|	Function
 0162	|	cmd_fileRemoveDir(SourceDir)
 
 }
-[185] f\CmdPromptRun.ahk {
+[192] f\CmdPromptRun.ahk {
 
 Line  	|	Function
 0002	|	CmdPromptRun(fnCommands)
 
 }
-[186] f\CMDret.ahk {
+[193] f\CMDret.ahk {
 
 Line  	|	Function
 0026	|	CMDret_RunReturn(CMDin, WorkingDir=0)
 
 }
-[187] f\CMDret_RunReturn.ahk {
+[194] f\CMDret_RunReturn.ahk {
 
 Line  	|	Function
 0001	|	CMDret_RunReturn(CMDin)
@@ -1996,20 +2040,20 @@ Line  	|	Function
 0048	|	GetUInt(ByRef pSource, pOffset = 0, Len = 4)
 
 }
-[188] f\CMDret_stream.ahk {
+[195] f\CMDret_stream.ahk {
 
 Line  	|	Function
 0033	|	CMDret_Stream(CMDin, CMDname="", WorkingDir=0)
 
 }
-[189] f\CMenu.ahk {
+[196] f\CMenu.ahk {
 
 Line  	|	Function
 0026	|	CMenu(HCtrl, MenuName="", Sub="")
 0036	|	CMenu_wndProc(Hwnd, UMsg, WParam, LParam)
 
 }
-[190] f\CMenuBar.ahk {
+[197] f\CMenuBar.ahk {
 
 Line  	|	Function
 0045	|	__New(name = "tray", parent = "", gui="", standard = false, default = "")
@@ -2032,7 +2076,7 @@ Line  	|	Function
 0178	|	if(this.parent)
 
 }
-[191] f\CMenuItem.ahk {
+[198] f\CMenuItem.ahk {
 
 Line  	|	Function
 0046	|	__New(menu, name="", label="")
@@ -2054,20 +2098,20 @@ Line  	|	Function
 0265	|	ReplaceHotkey(newHk)
 
 }
-[192] f\cmp.ahk {
+[199] f\cmp.ahk {
 
 Line  	|	Function
 0002	|	cmp_self(x)
 0007	|	cmp(x, op, y)
 
 }
-[193] f\CMsgbox.ahk {
+[200] f\CMsgbox.ahk {
 
 Line  	|	Function
 0047	|	CMsgBox( title, text, buttons, w="", h="", bsep=3, icon="", icon_h=64, owner=0, rows=8 )
 
 }
-[194] f\CoHelper.ahk {
+[201] f\CoHelper.ahk {
 
 Line  	|	Function
 0003	|	VTable(ppv, idx)
@@ -2103,7 +2147,7 @@ Line  	|	Function
 0237	|	EncodeInteger(ref, val = 0, nSize = 4)
 
 }
-[195] f\Color.ahk {
+[202] f\Color.ahk {
 
 Line  	|	Function
 0010	|	Color_ToDecimal($color)
@@ -2117,21 +2161,21 @@ Line  	|	Function
 0128	|	Color_diff(color1, color2=0)
 
 }
-[196] f\colorbuttons.ahk {
+[203] f\colorbuttons.ahk {
 
 Line  	|	Function
 0030	|	ColorButtons(x,by,ty,w,h,bv,tv,g,bc,tc,text)
 0042	|	CreateUniDIB(Color)
 
 }
-[197] f\Colored_Focus_Control.ahk {
+[204] f\Colored_Focus_Control.ahk {
 
 Line  	|	Function
 0049	|	DrawBorder(wParam, lParam, msg, hWnd)
 0088	|	WindowState(wParam, lParam, msg, hWnd)
 
 }
-[198] f\colors.ahk {
+[205] f\colors.ahk {
 
 Line  	|	Function
 0001	|	RgbToHex(input)
@@ -2139,17 +2183,17 @@ Line  	|	Function
 0038	|	RemoveHexPart(input)
 
 }
-[199] f\ColorSelect_V1.ahk {
+[206] f\ColorSelect_V1.ahk {
 
 Line  	|	Function
 
 }
-[200] f\ColorSelect_V2.ahk {
+[207] f\ColorSelect_V2.ahk {
 
 Line  	|	Function
 
 }
-[201] f\ColURL.ahk {
+[208] f\ColURL.ahk {
 
 Line  	|	Function
 0016	|	ColURL_OpenURL(sURL)
@@ -2157,7 +2201,7 @@ Line  	|	Function
 0063	|	ColURL_ComUnHthml(sHtml)
 
 }
-[202] f\com (2).ahk {
+[209] f\com (2).ahk {
 
 Line  	|	Function
 0007	|	COM_Init()
@@ -2230,7 +2274,7 @@ Line  	|	Function
 0621	|	COM_ScriptControl(sCode, sLang = "", bEval = False, sFunc = "", sName = "", pdisp = 0, bGlobal = False)
 
 }
-[203] f\COM (3).ahk {
+[210] f\COM (3).ahk {
 
 Line  	|	Function
 0007	|	COM_Init(bUn = "")
@@ -2301,7 +2345,7 @@ Line  	|	Function
 0551	|	COM_Unwrap(obj)
 
 }
-[204] f\com.ahk {
+[211] f\com.ahk {
 
 Line  	|	Function
 0007	|	COM_Init()
@@ -2374,7 +2418,7 @@ Line  	|	Function
 0617	|	COM_ScriptControl(sCode, sLang = "", bEval = False, sFunc = "", sName = "", pdisp = 0, bGlobal = False)
 
 }
-[205] f\ComboX.ahk {
+[212] f\ComboX.ahk {
 
 Line  	|	Function
 0023	|	ComboX_Hide( HCtrl )
@@ -2385,7 +2429,7 @@ Line  	|	Function
 0144	|	ComboX_setPosition( HCtrl, Pos, Hwnd, W="", H="" )
 
 }
-[206] f\ComDispatch.ahk {
+[213] f\ComDispatch.ahk {
 
 Line  	|	Function
 0008	|	ComDispatch(this, disptable)
@@ -2395,12 +2439,12 @@ Line  	|	Function
 0186	|	_CoTaskMemFree(mem)
 
 }
-[207] f\CommonDialogs.ahk {
+[214] f\CommonDialogs.ahk {
 
 Line  	|	Function
 
 }
-[208] f\COMo.ahk {
+[215] f\COMo.ahk {
 
 Line  	|	Function
 0002	|	COMo_GetVal(obj, name)
@@ -2410,7 +2454,7 @@ Line  	|	Function
 0030	|	COMo_Delete(obj)
 
 }
-[209] f\CompareCursor.ahk {
+[216] f\CompareCursor.ahk {
 
 Line  	|	Function
 0025	|	CaptureCursor(captureTo="clipboard", cursorSize=32)
@@ -2423,18 +2467,18 @@ Line  	|	Function
 0153	|	GetValidFilePath(filename)
 
 }
-[210] f\CompareFileNameArray.ahk {
+[217] f\CompareFileNameArray.ahk {
 
 Line  	|	Function
 0001	|	CompareFileNameArray()
 
 }
-[211] f\Compass.ahk {
+[218] f\Compass.ahk {
 
 Line  	|	Function
 
 }
-[212] f\compile to vpk.ahk {
+[219] f\compile to vpk.ahk {
 
 Line  	|	Function
 0015	|	vpk_Compile(SourcePath)
@@ -2442,7 +2486,7 @@ Line  	|	Function
 0059	|	vpk_Run(command)
 
 }
-[213] f\complex_numbers.ahk {
+[220] f\complex_numbers.ahk {
 
 Line  	|	Function
 0054	|	JEE_CDisp(obj2)
@@ -2456,31 +2500,31 @@ Line  	|	Function
 0156	|	JEE_CConj(obj)
 
 }
-[214] f\ComVar.ahk {
+[221] f\ComVar.ahk {
 
 Line  	|	Function
 0001	|	ComVar(Type=0xC)
 0017	|	ComVarDel(cv)
 
 }
-[215] f\COM_InvokeDeep.ahk {
+[222] f\COM_InvokeDeep.ahk {
 
 Line  	|	Function
 0017	|	COM_InvokeDeep(obj, path, arg1="vT_NoNe", arg2="vT_NoNe", arg3="vT_NoNe", arg4="vT_NoNe", arg5="vT_NoNe", arg6="vT_NoNe", arg7="vT_NoNe", arg8="vT_NoNe")
 
 }
-[216] f\ConnectedToInternet.ahk {
+[223] f\ConnectedToInternet.ahk {
 
 Line  	|	Function
 0003	|	ConnectedToInternet(flag=0x40)
 
 }
-[217] f\Console.ahk {
+[224] f\Console.ahk {
 
 Line  	|	Function
 
 }
-[218]  {
+[225]  {
 
 Line  	|	Function
 0040	|	ConsoleApp_RunWait(CmdLine, WorkingDir="", byref ExitCode="")
@@ -2497,7 +2541,7 @@ Line  	|	Function
 0477	|	CONSOLEAPPS_PRIVATE_throw(ErrorCode, ErrorMessage="", ParamName="", LastWin32Error="")
 
 }
-[219] f\ConsoleApp.ahk {
+[226] f\ConsoleApp.ahk {
 
 Line  	|	Function
 0040	|	ConsoleApp_RunWait(CmdLine, WorkingDir="", byref ExitCode="")
@@ -2515,17 +2559,17 @@ Line  	|	Function
 0495	|	CONSOLEAPPS_PRIVATE_throw(ErrorCode, ErrorMessage="", ParamName="", LastWin32Error="")
 
 }
-[220] f\Constants.ahk {
+[227] f\Constants.ahk {
 
 Line  	|	Function
 
 }
-[221] f\Const_Theme.ahk {
+[228] f\Const_Theme.ahk {
 
 Line  	|	Function
 
 }
-[222] f\Container.ahk {
+[229] f\Container.ahk {
 
 Line  	|	Function
 0018	|	Container_DefaultPreferences(name)
@@ -2577,52 +2621,52 @@ Line  	|	Function
 0619	|	Container__run(f, line, working_dir="", options="", wait=false)
 
 }
-[223] f\Contains.ahk {
+[230] f\Contains.ahk {
 
 Line  	|	Function
 0024	|	Contains(haystack, needle)
 0037	|	if(v = needle)
 
 }
-[224] f\ContextMenu.ahk {
+[231] f\ContextMenu.ahk {
 
 Line  	|	Function
 
 }
-[225] f\ContextMenuLib.ahk {
+[232] f\ContextMenuLib.ahk {
 
 Line  	|	Function
 0033	|	CM_AddMenuItem( ext, label, command )
 0048	|	CM_DelMenuItem( ext, label )
 
 }
-[226] f\ControlCol.ahk {
+[233] f\ControlCol.ahk {
 
 Line  	|	Function
 0005	|	ControlCol(Control, Window, bc="", tc="", redraw=1)
 0031	|	WindowProc(hwnd, uMsg, wParam, lParam)
 
 }
-[227] f\ControlColor.ahk {
+[234] f\ControlColor.ahk {
 
 Line  	|	Function
 0013	|	WindowProc(hWnd, uMsg, wParam, lParam)
 
 }
-[228] f\ControlFromPoint.ahk {
+[235] f\ControlFromPoint.ahk {
 
 Line  	|	Function
 0021	|	ControlFromPoint(X, Y, WinTitle="", WinText="", ByRef cX="", ByRef cY="", ExcludeTitle="", ExcludeText="")
 0043	|	EnumChildFindPoint(aWnd, lParam)
 
 }
-[229] f\ControlPanel.ahk {
+[236] f\ControlPanel.ahk {
 
 Line  	|	Function
 0013	|	ControlPanel(ControlPanelItem = "")
 
 }
-[230] f\Control_AniGif.ahk {
+[237] f\Control_AniGif.ahk {
 
 Line  	|	Function
 0037	|	AniGif_CreateControl(_guiHwnd, _x, _y, _w, _h, _style="")
@@ -2634,7 +2678,7 @@ Line  	|	Function
 0151	|	AniGif_SetBkColor(_agHwnd, _backColor)
 
 }
-[231] f\Control_AVI.ahk {
+[238] f\Control_AVI.ahk {
 
 Line  	|	Function
 0030	|	AVI_CreateControl(_guiHwnd, _x, _y, _w, _h, _aviRef, _aviDLL="", _style="")
@@ -2643,19 +2687,19 @@ Line  	|	Function
 0144	|	AVI_DestroyControl(_aviHwnd)
 
 }
-[232] f\Convert2Hex.ahk {
+[239] f\Convert2Hex.ahk {
 
 Line  	|	Function
 0036	|	Convert2Hex(p_Integer,p_MinDigits=0)
 
 }
-[233] f\ConvertFile.ahk {
+[240] f\ConvertFile.ahk {
 
 Line  	|	Function
 0034	|	Convert_File(_From_File, _Function_Name, _SplitLength = 16000)
 
 }
-[234] f\ConvertHTMLToText.ahk {
+[241] f\ConvertHTMLToText.ahk {
 
 Line  	|	Function
 0016	|	ConvertToText(string)
@@ -2664,7 +2708,7 @@ Line  	|	Function
 0049	|	DeleteHString(hString)
 
 }
-[235] f\ConvertImage.ahk {
+[242] f\ConvertImage.ahk {
 
 Line  	|	Function
 0016	|	Gdip_Startup()
@@ -2672,7 +2716,7 @@ Line  	|	Function
 0053	|	ConvertImage(sInput, sOutput, Width="", Height="", Method="Percent")
 
 }
-[236] f\ConvertKeyToKeyCode.ahk {
+[243] f\ConvertKeyToKeyCode.ahk {
 
 Line  	|	Function
 0023	|	SetSettingsExecution()
@@ -2684,46 +2728,46 @@ Line  	|	Function
 0139	|	KeyToVK(Key)
 
 }
-[237] f\ConvertToCamelCase.ahk {
+[244] f\ConvertToCamelCase.ahk {
 
 Line  	|	Function
 0001	|	ConvertToCamelCase(ByRef fnCopiedText)
 
 }
-[238] f\ConvertToLoserCase.ahk {
+[245] f\ConvertToLoserCase.ahk {
 
 Line  	|	Function
 0001	|	ConvertToLoserCase(ByRef fnCopiedText)
 
 }
-[239] f\ConvertToMp3.ahk {
+[246] f\ConvertToMp3.ahk {
 
 Line  	|	Function
 
 }
-[240] f\ConvertToPascalCase.ahk {
+[247] f\ConvertToPascalCase.ahk {
 
 Line  	|	Function
 0001	|	ConvertToPascalCase(ByRef fnCopiedText)
 
 }
-[241] f\CopyFilesToClipboard.ahk {
+[248] f\CopyFilesToClipboard.ahk {
 
 Line  	|	Function
 0002	|	CopyFilesToClipboard(arrFilepath, bCopy)
 
 }
-[242] f\CopyImage.ahk {
+[249] f\CopyImage.ahk {
 
 Line  	|	Function
 
 }
-[243] f\CopyMemory.ahk {
+[250] f\CopyMemory.ahk {
 
 Line  	|	Function
 
 }
-[244] f\CornerNotify.ahk {
+[251] f\CornerNotify.ahk {
 
 Line  	|	Function
 0016	|	CornerNotify(secs, title, message, position="b r")
@@ -2734,37 +2778,37 @@ Line  	|	Function
 0079	|	WinMove(hwnd,position)
 
 }
-[245] f\Correlation Coefficient.ahk {
+[252] f\Correlation Coefficient.ahk {
 
 Line  	|	Function
 0044	|	Correl(X,Y)
 
 }
-[246] f\Count.ahk {
+[253] f\Count.ahk {
 
 Line  	|	Function
 0001	|	Count(obj, key = "")
 0008	|	if(key = "")
 
 }
-[247] f\CounterEditor.ahk {
+[254] f\CounterEditor.ahk {
 
 Line  	|	Function
 
 }
-[248] f\CountOfFiles.ahk {
+[255] f\CountOfFiles.ahk {
 
 Line  	|	Function
 
 }
-[249] f\CPUInfo.ahk {
+[256] f\CPUInfo.ahk {
 
 Line  	|	Function
 0013	|	CPUInfo()
 0033	|	MCode(ByRef code, hex)
 
 }
-[250] f\CPULoad.ahk {
+[257] f\CPULoad.ahk {
 
 Line  	|	Function
 0016	|	GetCPULoad_Short()
@@ -2772,7 +2816,7 @@ Line  	|	Function
 0067	|	ReadInteger( Address, Offset, Size )
 
 }
-[251] f\cpumem.ahk {
+[258] f\cpumem.ahk {
 
 Line  	|	Function
 0001	|	GetProcessMemory_CommitSize(ProcID, Units="K")
@@ -2782,13 +2826,13 @@ Line  	|	Function
 0087	|	GetGUIProcessTimes(pid)
 
 }
-[252] f\CpyData.ahk {
+[259] f\CpyData.ahk {
 
 Line  	|	Function
 0045	|	_CpyData_OnRcv(wParam, lParam)
 
 }
-[253] f\CRC.ahk {
+[260] f\CRC.ahk {
 
 Line  	|	Function
 0013	|	CRC32(str)
@@ -2799,12 +2843,12 @@ Line  	|	Function
 0066	|	RSHash(str)
 
 }
-[254] f\CRC32.ahk {
+[261] f\CRC32.ahk {
 
 Line  	|	Function
 
 }
-[255] f\CreateClass.ahk {
+[262] f\CreateClass.ahk {
 
 Line  	|	Function
 0093	|	CreateClass(string, interface, ByRef Class)
@@ -2813,34 +2857,34 @@ Line  	|	Function
 0119	|	WaitForAsync(ByRef Object)
 
 }
-[256] f\CreateDIB.ahk {
+[263] f\CreateDIB.ahk {
 
 Line  	|	Function
 
 }
-[257] f\CreateFileNameArray.ahk {
+[264] f\CreateFileNameArray.ahk {
 
 Line  	|	Function
 
 }
-[258] f\CreateFocusRec.ahk {
+[265] f\CreateFocusRec.ahk {
 
 Line  	|	Function
 0012	|	CreateFocusRec(CtrlhWnd, WinHwnd, Clr)
 
 }
-[259] f\CreateFolderFromString.ahk {
+[266] f\CreateFolderFromString.ahk {
 
 Line  	|	Function
 
 }
-[260] f\CreateFont.ahk {
+[267] f\CreateFont.ahk {
 
 Line  	|	Function
 0015	|	CreateFont(pFont="")
 
 }
-[261] f\CreateFormData.ahk {
+[268] f\CreateFormData.ahk {
 
 Line  	|	Function
 0033	|	CreateFormData(ByRef retData, ByRef retHeader, objParam)
@@ -2850,18 +2894,18 @@ Line  	|	Function
 0096	|	MimeType(FileName)
 
 }
-[262] f\CreateGist.ahk {
+[269] f\CreateGist.ahk {
 
 Line  	|	Function
 
 }
-[263] f\CreateGUID.ahk {
+[270] f\CreateGUID.ahk {
 
 Line  	|	Function
 0001	|	CreateGUID()
 
 }
-[264] f\CreateIconsDll.ahk {
+[271] f\CreateIconsDll.ahk {
 
 Line  	|	Function
 0018	|	CreateIconsDll(File, Folder)
@@ -2869,46 +2913,46 @@ Line  	|	Function
 0078	|	DllCreateEmpty(F="empty.dll")
 
 }
-[265] f\CreateScript.ahk {
+[272] f\CreateScript.ahk {
 
 Line  	|	Function
 
 }
-[266] f\CreateScriptV1.ahk {
+[273] f\CreateScriptV1.ahk {
 
 Line  	|	Function
 0003	|	CreateScript(script)
 
 }
-[267] f\CreateScriptV2.ahk {
+[274] f\CreateScriptV2.ahk {
 
 Line  	|	Function
 0004	|	CreateScript(script)
 
 }
-[268] f\CreateSystemErrorTextList.ahk {
+[275] f\CreateSystemErrorTextList.ahk {
 
 Line  	|	Function
 
 }
-[269] f\create_process_AHKV2.ahk {
+[276] f\create_process_AHKV2.ahk {
 
 Line  	|	Function
 
 }
-[270] f\cRichEdit.ahk {
+[277] f\cRichEdit.ahk {
 
 Line  	|	Function
 0023	|	cRichEdit(_ctrlID, _action, opt1="", opt2="", opt3="", opt4="", opt5="", opt6="")
 0595	|	cRichEdit_RTFout(dwCookie, pbBuff, cb, pcb)
 
 }
-[271] f\CriticalSection.ahk {
+[278] f\CriticalSection.ahk {
 
 Line  	|	Function
 
 }
-[272] f\crypt.ahk {
+[279] f\crypt.ahk {
 
 Line  	|	Function
 0031	|	Encrypt(text)
@@ -2917,12 +2961,12 @@ Line  	|	Function
 0137	|	Stream9(x,y)
 
 }
-[273] f\CryptAES.ahk {
+[280] f\CryptAES.ahk {
 
 Line  	|	Function
 
 }
-[274] f\CryptBy_nnik.ahk {
+[281] f\CryptBy_nnik.ahk {
 
 Line  	|	Function
 0003	|	encryptStr(str="",pass="")
@@ -2934,7 +2978,7 @@ Line  	|	Function
 0096	|	_cryptfrombase64(string,byref bin)
 
 }
-[275] f\CryptFoos.ahk {
+[282] f\CryptFoos.ahk {
 
 Line  	|	Function
 0001	|	b64Encode( ByRef buf, bufLen )
@@ -2944,19 +2988,19 @@ Line  	|	Function
 0055	|	Free(byRef var)
 
 }
-[276] f\CryptHash.ahk {
+[283] f\CryptHash.ahk {
 
 Line  	|	Function
 
 }
-[277] f\CryptHash_AES.ahk {
+[284] f\CryptHash_AES.ahk {
 
 Line  	|	Function
 0001	|	Crypt_Hash(pData, nSize, SID = "CRC32", nInitial = 0)
 0035	|	Crypt_AES(pData, nSize, sPassword, SID = 256, bEncrypt = True)
 
 }
-[278] f\crypto (2).ahk {
+[285] f\crypto (2).ahk {
 
 Line  	|	Function
 0001	|	hashPassword(username,pwd)
@@ -2967,7 +3011,7 @@ Line  	|	Function
 0096	|	Hex(ByRef b, n=0)
 
 }
-[279] f\Crypto.ahk {
+[286] f\Crypto.ahk {
 
 Line  	|	Function
 0003	|	SHA(string, encoding = "UTF-8")
@@ -2975,12 +3019,12 @@ Line  	|	Function
 0017	|	CalcAddrHash(addr, length, algid, byref hash = 0, byref hashlength = 0)
 
 }
-[280] f\CSS.ahk {
+[287] f\CSS.ahk {
 
 Line  	|	Function
 
 }
-[281] f\CSV.ahk {
+[288] f\CSV.ahk {
 
 Line  	|	Function
 0069	|	CSV_Save(FileName, CSV_Identifier, OverWrite="1")
@@ -3014,19 +3058,19 @@ Line  	|	Function
 0582	|	ReturnDSVArray(CurrentDSVLine, ReturnArray="DSVfield", Delimiter=",", Encapsulator="""")
 
 }
-[282] f\CSVMultiTab.ahk {
+[289] f\CSVMultiTab.ahk {
 
 Line  	|	Function
 0001	|	MultiTap(CmdListCSV="", Delay=400, DisplayFunc="")
 
 }
-[283] f\CSV_.ahk {
+[290] f\CSV_.ahk {
 
 Line  	|	Function
 0001	|	CSV_()
 
 }
-[284] f\CSV_Functions AHK_L.ahk {
+[291] f\CSV_Functions AHK_L.ahk {
 
 Line  	|	Function
 0096	|	CSV_Save(FileName, CSV_Identifier, OverWrite="1")
@@ -3059,18 +3103,18 @@ Line  	|	Function
 0614	|	ReturnDSVArray(CurrentDSVLine, ReturnArray="DSVfield", Delimiter=",", Encapsulator="""")
 
 }
-[285] f\CtlColorStatic.ahk {
+[292] f\CtlColorStatic.ahk {
 
 Line  	|	Function
 
 }
-[286] f\CtrlCoOrder.ahk {
+[293] f\CtrlCoOrder.ahk {
 
 Line  	|	Function
 0011	|	CtrlCoOrder(ControlListHwnd)
 
 }
-[287] f\CueBanner.ahk {
+[294] f\CueBanner.ahk {
 
 Line  	|	Function
 0017	|	CueBanner(hwnd, pTxt=0, opt="", clr="", sh="")
@@ -3081,7 +3125,7 @@ Line  	|	Function
 0381	|	CueBanner_GPA(libName, proc="", ord="", ByRef hLib=0)
 
 }
-[288] f\cURL.ahk {
+[295] f\cURL.ahk {
 
 Line  	|	Function
 0001	|	cURL_Download(url, ioData, ByRef ioHdr, options, useFallback = true, critical = false, binaryDL = false, errorMsg = "", ByRef reqHeadersCurl = "", handleAccessForbidden = true, ByRef returnCurl = false)
@@ -3090,24 +3134,24 @@ Line  	|	Function
 0289	|	cURL_ThrowError(e, critical = false, errorMsg = "", PreventErrorMsg = false)
 
 }
-[289] f\currencyToDecimal.ahk {
+[296] f\currencyToDecimal.ahk {
 
 Line  	|	Function
 
 }
-[290] f\Cursor.ahk {
+[297] f\Cursor.ahk {
 
 Line  	|	Function
 0048	|	Ext_Cursor(HCtrl, Shape)
 0055	|	Ext_Cursor_wndProc(Hwnd, UMsg, WParam, LParam)
 
 }
-[291] f\Cycle.ahk {
+[298] f\Cycle.ahk {
 
 Line  	|	Function
 
 }
-[292] f\d2d1.ahk {
+[299] f\d2d1.ahk {
 
 Line  	|	Function
 0003	|	__new(p="")
@@ -3282,7 +3326,7 @@ Line  	|	Function
 1616	|	D2D1_hr(a,ByRef b)
 
 }
-[293] f\d3D.ahk {
+[300] f\d3D.ahk {
 
 Line  	|	Function
 0019	|	releaseDirect3D()
@@ -3303,7 +3347,7 @@ Line  	|	Function
 0459	|	changeViewPortMatrix(byref matrix, x, y, w, h, MaxZ=1, MinZ=0)
 
 }
-[294] f\d3D11.ahk {
+[301] f\d3D11.ahk {
 
 Line  	|	Function
 0006	|	getDirect3D11()
@@ -3312,7 +3356,7 @@ Line  	|	Function
 0120	|	compileShader11(byref pShader, pDevice, ShaderCode, entrypoint = "main", pTarget = "cs_4_1")
 
 }
-[295] f\d3D9.ahk {
+[302] f\d3D9.ahk {
 
 Line  	|	Function
 0006	|	dumpPixelShader(pShader, file)
@@ -3329,7 +3373,7 @@ Line  	|	Function
 0271	|	releaseDirect3D9()
 
 }
-[296] f\d3Dx9.ahk {
+[303] f\d3Dx9.ahk {
 
 Line  	|	Function
 0007	|	__new(dll = "d3dx9_24.dll")
@@ -3341,38 +3385,38 @@ Line  	|	Function
 0133	|	CompileShader(pDevice, byref Shader, entrypoint, byref pShader)
 
 }
-[297]  {
+[304]  {
 
 Line  	|	Function
 0009	|	LDistance(s, t)
 0050	|	DLDistance( a, b )
 
 }
-[298] f\DamerauLevenshteinDistance.ahk {
+[305] f\DamerauLevenshteinDistance.ahk {
 
 Line  	|	Function
 0008	|	DamerauLevenshteinDistance(s, t)
 
 }
-[299] f\DateAdd.ahk {
+[306] f\DateAdd.ahk {
 
 Line  	|	Function
 0001	|	DateAdd(fnCount,fnTimeUnits,fnStartDate)
 
 }
-[300] f\DateDiff.ahk {
+[307] f\DateDiff.ahk {
 
 Line  	|	Function
 0001	|	DateDiff(fnTimeUnits,fnStartDate,fnEndDate)
 
 }
-[301] f\DateParse.ahk {
+[308] f\DateParse.ahk {
 
 Line  	|	Function
 0086	|	DateParse(str, americanOrder=0)
 
 }
-[302] f\dates.ahk {
+[309] f\dates.ahk {
 
 Line  	|	Function
 0001	|	HoursMinutesToDecimal(input, params)
@@ -3386,7 +3430,7 @@ Line  	|	Function
 0087	|	GetDateInFormat(format)
 
 }
-[303] f\dateTime.ahk {
+[310] f\dateTime.ahk {
 
 Line  	|	Function
 0002	|	sendDateTime(format)
@@ -3399,18 +3443,18 @@ Line  	|	Function
 0146	|	splitDateTime(timestamp)
 
 }
-[304] f\DayOfdate.ahk {
+[311] f\DayOfdate.ahk {
 
 Line  	|	Function
 0016	|	DayofDate(Date)
 
 }
-[305] f\DBA.ahk {
+[312] f\DBA.ahk {
 
 Line  	|	Function
 
 }
-[306] f\DBase.ahk {
+[313] f\DBase.ahk {
 
 Line  	|	Function
 0024	|	DBase_CreateDBF(pFileName, bVersion)
@@ -3435,7 +3479,7 @@ Line  	|	Function
 0462	|	DBase_CloseDBF(hBase)
 
 }
-[307] f\DBGP.ahk {
+[314] f\DBGP.ahk {
 
 Line  	|	Function
 0047	|	__New()
@@ -3481,7 +3525,7 @@ Line  	|	Function
 0609	|	DBGp_E(n)
 
 }
-[308] f\dcomp.ahk {
+[315] f\dcomp.ahk {
 
 Line  	|	Function
 0005	|	__new(p=0)
@@ -3579,7 +3623,7 @@ Line  	|	Function
 0825	|	Trim(rectangles,count)
 
 }
-[309] f\DDE.ahk {
+[316] f\DDE.ahk {
 
 Line  	|	Function
 0009	|	DDE_Initialize(idInst = 0, pCallback = 0, nFlags = 0)
@@ -3611,7 +3655,7 @@ Line  	|	Function
 0153	|	DDE_SetUserHandle(hConv, hUser)
 
 }
-[310] f\DDEMessage.ahk {
+[317] f\DDEMessage.ahk {
 
 Line  	|	Function
 0033	|	DDE_ACK(wParam, lParam, MsgID, hWnd)
@@ -3620,7 +3664,7 @@ Line  	|	Function
 0085	|	DDE_EXECUTE(sCmd)
 
 }
-[311] f\DDEML.ahk {
+[318] f\DDEML.ahk {
 
 Line  	|	Function
 0009	|	DdeInitialize(pCallback = 0, nFlags = 0)
@@ -3635,13 +3679,13 @@ Line  	|	Function
 0055	|	DdeClientTransaction(nType, hConv, hItem, sData = "", nFormat = 1, nTimeOut = 10000)
 
 }
-[312] f\DDLManager.ahk {
+[319] f\DDLManager.ahk {
 
 Line  	|	Function
 0163	|	DDLManager(p_Command,p_ListID="",ByRef p_List="",p_Delimiter="",p_Item="",p_MaxItems=0)
 
 }
-[313] f\ddraw.ahk {
+[320] f\ddraw.ahk {
 
 Line  	|	Function
 0017	|	fourCC(code)
@@ -3659,28 +3703,28 @@ Line  	|	Function
 0598	|	getDirectDraw4(h_win = "", software=False)
 
 }
-[314] f\Debug.ahk {
+[321] f\Debug.ahk {
 
 Line  	|	Function
 0001	|	debug(msg, delimiter = False)
 0040	|	arg()
 
 }
-[315] f\DebugPrintArray.ahk {
+[322] f\DebugPrintArray.ahk {
 
 Line  	|	Function
 0001	|	DebugPrintArray(Array, Display=1, Level=0, guiWidth=800, guiHeight=900)
 0073	|	DebugAnchor(i, a = "", r = false)
 
 }
-[316] f\Decodeu.ahk {
+[323] f\Decodeu.ahk {
 
 Line  	|	Function
 0001	|	decodeu(ustr)
 0021	|	Unicode2Ansi(ByRef wString, ByRef sString, CP = 0)
 
 }
-[317] f\Decompiler.ahk {
+[324] f\Decompiler.ahk {
 
 Line  	|	Function
 0060	|	Decompile(Path)
@@ -3688,7 +3732,7 @@ Line  	|	Function
 0217	|	SearchBuffer(pBuffer,BufferSize,ByRef Search,SearchSize)
 
 }
-[318] f\Decrypt.ahk {
+[325] f\Decrypt.ahk {
 
 Line  	|	Function
 0013	|	File_AES(sFileFr, sFileTo, sPassword, SID = 256, bEncrypt = True)
@@ -3696,13 +3740,13 @@ Line  	|	Function
 0051	|	StrPutVar(string, ByRef var, encoding)
 
 }
-[319] f\deepcopy.ahk {
+[326] f\DeepCopy.ahk {
 
 Line  	|	Function
-0001	|	DeepCopy(Array, Objs=0)
+0023	|	DeepCopy(Array, Objs=0)
 
 }
-[320] f\Default.ahk {
+[327] f\Default.ahk {
 
 Line  	|	Function
 0012	|	GetActiveWindowStats()
@@ -3712,37 +3756,43 @@ Line  	|	Function
 0235	|	ClearClipboard()
 
 }
-[321] f\DegreeToRadian.ahk {
+[328] f\DegreeToRadian.ahk {
 
 Line  	|	Function
 
 }
-[322] f\Delay.ahk {
+[329] f\Delay.ahk {
 
 Line  	|	Function
 0001	|	Delay( D=0.001 )
 
 }
-[323] f\DeleteCursor.ahk {
+[330] f\DeleteCursor.ahk {
 
 Line  	|	Function
 0004	|	DeleteCursor(hCursor)
 
 }
-[324] f\DeleteObject.ahk {
+[331] f\DeleteObject.ahk {
 
 Line  	|	Function
 0004	|	DeleteObject(hObject)
 
 }
-[325] f\DeluxeClipboard.ahk {
+[332] f\DeluxeClipboard.ahk {
 
 Line  	|	Function
 0046	|	WINDOW(Actn)
 0157	|	String2Hex(x)
 
 }
-[326] f\Desktophidelib.ahk {
+[333] f\Deref_Umlauts.ahk {
+
+Line  	|	Function
+0013	|	Deref_Umlauts( w, n=1 )
+
+}
+[334] f\Desktophidelib.ahk {
 
 Line  	|	Function
 0001	|	RR(path,name)
@@ -3753,19 +3803,19 @@ Line  	|	Function
 0078	|	IsVisible(id)
 
 }
-[327] f\DesktopScreenCoordinates.ahk {
+[335] f\DesktopScreenCoordinates.ahk {
 
 Line  	|	Function
 0005	|	DesktopScreenCoordinates(byref Xmin, byref Ymin, byref Xmax, byref Ymax)
 
 }
-[328] f\detect_PowerMessage.ahk {
+[336] f\detect_PowerMessage.ahk {
 
 Line  	|	Function
 0081	|	func_WM_POWERBROADCAST(wParam, lParam)
 
 }
-[329] f\DeviceInterfaces.ahk {
+[337] f\DeviceInterfaces.ahk {
 
 Line  	|	Function
 0082	|	ListDeviceInterfaces(ByRef _device="", ByRef _identifier="", ByRef _interfaceGUID="", _flags=0x2)
@@ -3779,13 +3829,13 @@ Line  	|	Function
 0829	|	StructPut(ByRef _data, ByRef _struct, _len, _offset=0)
 
 }
-[330] f\Devices.ahk {
+[338] f\Devices.ahk {
 
 Line  	|	Function
 0089	|	EnumDiskDrives()
 
 }
-[331] f\Dic.ahk {
+[339] f\Dic.ahk {
 
 Line  	|	Function
 0014	|	Dic(Option, pdic="")
@@ -3812,7 +3862,7 @@ Line  	|	Function
 0186	|	Dic_Unicode2Ansi(ByRef wString, ByRef sString, nLen = 0)
 
 }
-[332] f\Dictionary.ahk {
+[340] f\Dictionary.ahk {
 
 Line  	|	Function
 0026	|	Dictionary()
@@ -3834,19 +3884,19 @@ Line  	|	Function
 0229	|	HashVal(pdic, sKey)
 
 }
-[333] f\DictionaryDatabase.ahk {
+[341] f\DictionaryDatabase.ahk {
 
 Line  	|	Function
 0001	|	DDBD(dic="",action="",ByRef Key="",ByRef Item="",skip=0,limit=9223372036854775807)
 
 }
-[334] f\Difference.ahk {
+[342] f\Difference.ahk {
 
 Line  	|	Function
 0010	|	Difference(string1, string2, maxOffset=5)
 
 }
-[335] f\different_functions.ahk {
+[343] f\different_functions.ahk {
 
 Line  	|	Function
 0003	|	Compare(StringA, StringB)
@@ -3866,14 +3916,14 @@ Line  	|	Function
 0093	|	GetLayout()
 
 }
-[336] f\DigitsByRecognition.ahk {
+[344] f\DigitsByRecognition.ahk {
 
 Line  	|	Function
 0052	|	DigitsByImageRecognition(X, Y, W, H, Prefix, Ext, Shades, AltImagesFlag, WinId)
 0266	|	DigitSearchByPixelCount(X,Y,W,H,DigitsType, ByRef PixelCountForAllDigitsStringReturned, WinId)
 
 }
-[337] f\dinput.ahk {
+[345] f\dinput.ahk {
 
 Line  	|	Function
 0006	|	DirectInputCreate(Unicode_ = False)
@@ -3881,30 +3931,30 @@ Line  	|	Function
 0096	|	DIEnumDevicesCallback(lpddi, pvRef)
 
 }
-[338] f\DirGetParent.ahk {
+[346] f\DirGetParent.ahk {
 
 Line  	|	Function
 
 }
-[339] f\DisableFadeEffect.ahk {
+[347] f\DisableFadeEffect.ahk {
 
 Line  	|	Function
 0008	|	DisableFadeEffect()
 
 }
-[340] f\DisableKeyboard.ahk {
+[348] f\DisableKeyboard.ahk {
 
 Line  	|	Function
 0028	|	BlockKeyboard(block=-1)
 0060	|	BlockKeyboard_HookProc(nCode, wParam, lParam)
 
 }
-[341] f\DisplayDecimalTime.ahk {
+[349] f\DisplayDecimalTime.ahk {
 
 Line  	|	Function
 
 }
-[342] f\Display_get_Window_context.ahk {
+[350] f\Display_get_Window_context.ahk {
 
 Line  	|	Function
 0018	|	Display_CreateWindowCapture(ByRef device, ByRef context, ByRef pixels, ByRef id = "")
@@ -3928,7 +3978,7 @@ Line  	|	Function
 0379	|	Display_ReadArea(x, y, w, h, color = 0x000000, variation = 32, ByRef id = "", maxwidth = 0, exclude = "")
 
 }
-[343] f\display_window.ahk {
+[351] f\display_window.ahk {
 
 Line  	|	Function
 0017	|	Display_CreateWindowCapture(ByRef device, ByRef context, ByRef pixels, ByRef id = "")
@@ -3952,7 +4002,7 @@ Line  	|	Function
 0371	|	Display_ReadArea(x, y, w, h, color = 0x000000, variation = 32, ByRef id = "", maxwidth = 0, exclude = "")
 
 }
-[344] f\Dlg.ahk {
+[352] f\Dlg.ahk {
 
 Line  	|	Function
 0016	|	Dlg_Color(ByRef Color, hGui=0)
@@ -3965,7 +4015,7 @@ Line  	|	Function
 0387	|	Dlg_callback(wparam, lparam, msg, hwnd)
 
 }
-[345]  {
+[353]  {
 
 Line  	|	Function
 0078	|	Dlg_ChooseColor(hOwner,ByRef r_Color,p_Flags=0,p_CustomColorsFile="",p_HelpHandler="")
@@ -3985,7 +4035,7 @@ Line  	|	Function
 2778	|	Dlg_SaveFile(hOwner=0,p_Title="",p_Filter="",p_FilterIndex="",p_Root="",p_DfltExt="",ByRef r_Flags=0,p_HelpHandler="")
 
 }
-[346] f\Dlg2_v03.ahk {
+[354] f\Dlg2_v03.ahk {
 
 Line  	|	Function
 0080	|	Dlg_ChooseColor(hOwner,ByRef r_Color,p_Flags=0,p_CustomColorsFile="",p_HelpHandler="")
@@ -4005,13 +4055,13 @@ Line  	|	Function
 2807	|	Dlg_SaveFile(hOwner=0,p_Title="",p_Filter="",p_FilterIndex="",p_Root="",p_DfltExt="",ByRef r_Flags=0,p_HelpHandler="")
 
 }
-[347] f\DLG_FileOpenSave.ahk {
+[355] f\DLG_FileOpenSave.ahk {
 
 Line  	|	Function
 0244	|	__helperFileOpenSaveFlags( flags )
 
 }
-[348] f\dll.ahk {
+[356] f\dll.ahk {
 
 Line  	|	Function
 0019	|	Dll_PackFiles( Folder, DLL, Section="Files" )
@@ -4019,12 +4069,12 @@ Line  	|	Function
 0051	|	Dll_Read( ByRef Var, Filename, Section, Key )
 
 }
-[349] f\DllCall Data Types.ahk {
+[357] f\DllCall Data Types.ahk {
 
 Line  	|	Function
 
 }
-[350] f\DllCallStruct.ahk {
+[358] f\DllCallStruct.ahk {
 
 Line  	|	Function
 0037	|	SetNextUInt(ByRef @struct, _value, _bReset=false)
@@ -4039,7 +4089,7 @@ Line  	|	Function
 0215	|	DumpDWORDsByAddr(_binAddr, _byteNb, _bExtended=false)
 
 }
-[351] f\dllcall_struct.ahk {
+[359] f\dllcall_struct.ahk {
 
 Line  	|	Function
 0137	|	addressof(struct)
@@ -4049,13 +4099,13 @@ Line  	|	Function
 0160	|	verifyAdr()
 
 }
-[352] f\DllExports.ahk {
+[360] f\DllExports.ahk {
 
 Line  	|	Function
 0033	|	DllExports(DllPath)
 
 }
-[353] f\DLLPack.ahk {
+[361] f\DLLPack.ahk {
 
 Line  	|	Function
 0016	|	DllPackFiles( Folder, DLL, Section="Files" )
@@ -4063,7 +4113,7 @@ Line  	|	Function
 0046	|	DllRead( ByRef Var, Filename, Section, Key )
 
 }
-[354] f\DllPackFiles.ahk {
+[362] f\DllPackFiles.ahk {
 
 Line  	|	Function
 0017	|	DllPackFiles( Folder, DLL, Section="Files" )
@@ -4071,7 +4121,7 @@ Line  	|	Function
 0047	|	DllRead( ByRef Var, Filename, Section, Key )
 
 }
-[355] f\dmp.ahk {
+[363] f\dmp.ahk {
 
 Line  	|	Function
 0145	|	_dmpArrayEmpty(paArray)
@@ -4081,13 +4131,13 @@ Line  	|	Function
 0301	|	_dmpListLines()
 
 }
-[356] f\DnsFlushResolverCache.ahk {
+[364] f\DnsFlushResolverCache.ahk {
 
 Line  	|	Function
 0006	|	DnsFlushResolverCache()
 
 }
-[357] f\Dock.ahk {
+[365] f\Dock.ahk {
 
 Line  	|	Function
 0070	|	Dock(pClientID, pDockDef="", reset=0)
@@ -4099,67 +4149,78 @@ Line  	|	Function
 0293	|	API_UnhookWinEvent( hWinEventHook )
 
 }
-[358] f\DockA.ahk {
+[366] f\DockA.ahk {
 
 Line  	|	Function
 0048	|	DockA(HHost="", HClient="", DockDef="")
 0052	|	DockA_(HHost, HClient, DockDef, Hwnd)
 
 }
-[359] f\DoDragDrop.ahk {
+[367] f\DoDragDrop.ahk {
 
 Line  	|	Function
 0011	|	DoDragDrop()
 
 }
-[360]  {
+[368] f\Double2HexLE.ahk {
+
+Line  	|	Function
+0012	|	Double2HexLE(d)
+
+}
+[369]  {
 
 Line  	|	Function
 0005	|	Download(url, file)
 0036	|	DL_Progress( pthis, nP=0, nPMax=0, nSC=0, pST=0 )
 
 }
-[361] f\DownloadBin.ahk {
+[370] f\DownloadBin.ahk {
 
 Line  	|	Function
 0012	|	DownloadBin(url, byref buf)
 
 }
-[362] f\DownloadFile.ahk {
+[371] f\DownloadFile.ahk {
 
 Line  	|	Function
 
 }
-[363] f\DownloadFileV1.ahk {
+[372] f\DownloadFileV1.ahk {
 
 Line  	|	Function
 0001	|	DownloadFile(url, filename)
 
 }
-[364] f\DownloadText.ahk {
+[373] f\DownloadText.ahk {
 
 Line  	|	Function
 
 }
-[365] f\DownloadToFile.ahk {
+[374] f\DownloadToFile.ahk {
 
 Line  	|	Function
 0001	|	DownloadToFile(url, filename)
 
 }
-[366] f\DownloadToString.ahk {
+[375] f\DownloadToString.ahk {
 
 Line  	|	Function
 0001	|	DownloadToString(url, encoding = "utf-8")
 
 }
-[367] f\dpi.ahk {
+[376] f\dpi.ahk {
 
 Line  	|	Function
 0021	|	DPI(in="",setdpi=1)
 
 }
-[368] f\DrawScreen.ahk {
+[377] f\DragBoxGuiDropFiles.ahk {
+
+Line  	|	Function
+
+}
+[378] f\DrawScreen.ahk {
 
 Line  	|	Function
 0004	|	if(monitor = 0)
@@ -4174,7 +4235,7 @@ Line  	|	Function
 0079	|	DrawRectangle(hdc, left, top, right, bottom)
 
 }
-[369] f\DrawShadowText9x.ahk {
+[379] f\DrawShadowText9x.ahk {
 
 Line  	|	Function
 0005	|	DrawShadowText9x(hDC, pTxt, sz, pRect, flags, cTxt=0, cShdw=0xC8C8C8, xOff=0, yOff=0, si=0xFF, e="A")
@@ -4183,25 +4244,30 @@ Line  	|	Function
 0166	|	MCode(ByRef code, hx)
 
 }
-[370] f\DriveGetLabels.ahk {
+[380] f\DriveGetLabels.ahk {
 
 Line  	|	Function
 0001	|	DriveGetLabels(fnDrivesList)
 
 }
-[371] f\dshow.ahk {
+[381] f\DriveGetObj.ahk {
+
+Line  	|	Function
+
+}
+[382] f\dshow.ahk {
 
 Line  	|	Function
 0004	|	getDirectShow()
 
 }
-[372] f\dSleep.ahk {
+[383] f\dSleep.ahk {
 
 Line  	|	Function
 0001	|	dSleep(ms)
 
 }
-[373] f\dsound.ahk {
+[384] f\dsound.ahk {
 
 Line  	|	Function
 0006	|	loadWAV(file_, formatcheck = True)
@@ -4210,40 +4276,40 @@ Line  	|	Function
 0142	|	getDirectSound(hwin = "")
 
 }
-[374] f\dSpeak.ahk {
+[385] f\dSpeak.ahk {
 
 Line  	|	Function
 
 }
-[375] f\DualMid.ahk {
+[386] f\DualMid.ahk {
 
 Line  	|	Function
 0011	|	DualMID()
 
 }
-[376] f\DumpHistory.ahk {
+[387] f\DumpHistory.ahk {
 
 Line  	|	Function
 0023	|	DumpHistory()
 
 }
-[377] f\DuplicateFinderAndCounter.ahk {
+[388] f\DuplicateFinderAndCounter.ahk {
 
 Line  	|	Function
 0044	|	SortingWithRegEx(a1, a2)
 
 }
-[378] f\DuplicateHandle.ahk {
+[389] f\DuplicateHandle.ahk {
 
 Line  	|	Function
 
 }
-[379] f\DuplicateToken.ahk {
+[390] f\DuplicateToken.ahk {
 
 Line  	|	Function
 
 }
-[380] f\dwrite (2).ahk {
+[391] f\dwrite (2).ahk {
 
 Line  	|	Function
 0005	|	__new(ptr)
@@ -4431,7 +4497,7 @@ Line  	|	Function
 1861	|	Resize(width,height)
 
 }
-[381] f\dwrite.ahk {
+[392] f\dwrite.ahk {
 
 Line  	|	Function
 0005	|	__new(ptr)
@@ -4619,7 +4685,7 @@ Line  	|	Function
 1204	|	Resize(width,height)
 
 }
-[382] f\DynaExpr.ahk {
+[393] f\DynaExpr.ahk {
 
 Line  	|	Function
 0003	|	DynaExpr_EvalToVar(sExpr)
@@ -4628,26 +4694,17 @@ Line  	|	Function
 0084	|	DynaExpr_SetMemVar(ByRef this, sVarName, vVal)
 
 }
-[383] f\DynamicInclude.ahk {
+[394] f\DynamicInclude.ahk {
 
 Line  	|	Function
 
 }
-[384] f\DynaRun.ahk {
+[395] f\DynaRun.ahk {
 
 Line  	|	Function
 
 }
-[385]  {
-
-Line  	|	Function
-0009	|	ProcessPedalInput(input)
-0050	|	Mem2Hex( pointer, len )
-0068	|	RegisterHIDDevice(UsagePage,Usage)
-0087	|	InputMessage(wParam, lParam, msg, hwnd)
-
-}
-[386]  {
+[396]  {
 
 Line  	|	Function
 0009	|	ProcessPedalInput(input)
@@ -4656,7 +4713,16 @@ Line  	|	Function
 0087	|	InputMessage(wParam, lParam, msg, hwnd)
 
 }
-[387] f\EditControl.ahk {
+[397]  {
+
+Line  	|	Function
+0009	|	ProcessPedalInput(input)
+0050	|	Mem2Hex( pointer, len )
+0068	|	RegisterHIDDevice(UsagePage,Usage)
+0087	|	InputMessage(wParam, lParam, msg, hwnd)
+
+}
+[398] f\EditControl.ahk {
 
 Line  	|	Function
 0059	|	Edit_CanUndo(hEdit)
@@ -4713,7 +4779,7 @@ Line  	|	Function
 1935	|	Edit_GetActiveHandles(ByRef hEdit="",ByRef hWindow="",p_MsgBox=False)
 
 }
-[388] f\EditFunctions.ahk {
+[399] f\EditFunctions.ahk {
 
 Line  	|	Function
 0015	|	EditFunc_Standard_Params(ByRef Control, ByRef WinTitle)
@@ -4728,7 +4794,7 @@ Line  	|	Function
 0191	|	EditFunc_SCROLLCARET(control="",wintitle="")
 
 }
-[389] f\EditorWin.ahk {
+[400] f\EditorWin.ahk {
 
 Line  	|	Function
 0049	|	if(ControlType = "UpDown")
@@ -4821,7 +4887,7 @@ Line  	|	Function
 2066	|	if(msg = WM_SETCURSOR)
 
 }
-[390] f\Edit_Controls.ahk {
+[401] f\Edit_Controls.ahk {
 
 Line  	|	Function
 0014	|	Edit_Standard_Params(ByRef Control, ByRef WinTitle)
@@ -4837,7 +4903,7 @@ Line  	|	Function
 0155	|	Edit_Undo(Control="",WinTitle="")
 
 }
-[391]  {
+[402]  {
 
 Line  	|	Function
 0059	|	Edit_CanUndo(hEdit)
@@ -4894,7 +4960,7 @@ Line  	|	Function
 1996	|	Edit_GetActiveHandles(ByRef hEdit="",ByRef hWindow="",p_MsgBox=False)
 
 }
-[392]  {
+[403]  {
 
 Line  	|	Function
 0047	|	Edit_ActivateParent(hEdit)
@@ -4998,34 +5064,40 @@ Line  	|	Function
 4016	|	Edit_WriteFile(hEdit,p_File,p_Encoding="",p_Convert="")
 
 }
-[393] f\EjectDevice.ahk {
+[404] f\EjectDevice.ahk {
 
 Line  	|	Function
 
 }
-[394] f\ElapsedTime.ahk {
+[405] f\EjectEx.ahk {
+
+Line  	|	Function
+0019	|	EjectEx(hWnd)
+
+}
+[406] f\ElapsedTime.ahk {
 
 Line  	|	Function
 0093	|	ElapsedTime(p_Timer=1,p_Start=false)
 
 }
-[395] f\EmptyMem.ahk {
+[407] f\EmptyMem.ahk {
 
 Line  	|	Function
 0050	|	EmptyMem(PID="AHK Rocks")
 
 }
-[396] f\EmptyRecycleBin.ahk {
+[408] f\EmptyRecycleBin.ahk {
 
 Line  	|	Function
 
 }
-[397] f\EmptyWorkingSets.ahk {
+[409] f\EmptyWorkingSets.ahk {
 
 Line  	|	Function
 
 }
-[398] f\EnableUIAccess.ahk {
+[410] f\EnableUIAccess.ahk {
 
 Line  	|	Function
 0213	|	IsTrustedLocation(path)
@@ -5034,13 +5106,13 @@ Line  	|	Function
 0341	|	Warn(msg)
 
 }
-[399] f\Encoding.ahk {
+[411] f\Encoding.ahk {
 
 Line  	|	Function
 0002	|	Encoding_IsValid(enc)
 
 }
-[400] f\Encrypt.ahk {
+[412] f\Encrypt.ahk {
 
 Line  	|	Function
 0013	|	File_AES(sFileFr, sFileTo, sPassword, SID = 256, bEncrypt = True)
@@ -5048,18 +5120,31 @@ Line  	|	Function
 0051	|	StrPutVar(string, ByRef var, encoding)
 
 }
-[401] f\EntryForm.ahk {
+[413]  {
+
+Line  	|	Function
+0018	|	__New(FinalValue)
+0022	|	__Get(k)
+
+}
+[414] f\Entropy.ahk {
+
+Line  	|	Function
+0014	|	Entropy(n)
+
+}
+[415] f\EntryForm.ahk {
 
 Line  	|	Function
 
 }
-[402] f\EnumClipFormats.ahk {
+[416] f\EnumClipFormats.ahk {
 
 Line  	|	Function
 0003	|	EnumClipFormats()
 
 }
-[403] f\EnumComMembers.ahk {
+[417] f\EnumComMembers.ahk {
 
 Line  	|	Function
 0005	|	EnumComMembers(pti)
@@ -5067,86 +5152,92 @@ Line  	|	Function
 0066	|	GetTypeInfo(ptr)
 
 }
-[404] f\EnumDiskDrives.ahk {
+[418] f\EnumDiskDrives.ahk {
 
 Line  	|	Function
 0015	|	EnumDiskDrives()
 
 }
-[405] f\enumdisplaydevices.ahk {
+[419] f\enumdisplaydevices.ahk {
 
 Line  	|	Function
 0105	|	EnumDisplayDevices(Index, Adapter = 0, GetInterfaceName=False)
 
 }
-[406] f\EnumerateChildProcesses.ahk {
+[420] f\EnumerateChildProcesses.ahk {
 
 Line  	|	Function
 0024	|	EnumerateChilds(PID)
 
 }
-[407] f\EnumerateDrives.ahk {
+[421] f\EnumerateDrives.ahk {
 
 Line  	|	Function
 0010	|	EnumerateDrives()
 
 }
-[408] f\EnumerateProcesses.ahk {
+[422] f\EnumerateProcesses.ahk {
 
 Line  	|	Function
 0016	|	EnumerateProcesses()
 
 }
-[409] f\EnumerateServices.ahk {
+[423] f\EnumerateServices.ahk {
 
 Line  	|	Function
 
 }
-[410] f\EnumerateVolumes.ahk {
+[424] f\EnumerateVolumes.ahk {
 
 Line  	|	Function
 0010	|	EnumerateVolumes()
 
 }
-[411] f\EnumIncludes.ahk {
+[425] f\EnumIncludes.ahk {
 
 Line  	|	Function
 
 }
-[412] f\EnumToolbarButtons.ahk {
+[426] f\EnumToolbarButtons.ahk {
 
 Line  	|	Function
 0099	|	if(is_apply_scale)
 0127	|	ReadRemoteBuffer(hpRemote, RemoteBuffer, ByRef LocalVar, bytes)
 
 }
-[413] f\EnumWindows.ahk {
+[427]  {
 
 Line  	|	Function
-0031	|	EnumChildProc(hWnd, pData)
+0087	|	EnumFunc(hWnd, vMode)
 
 }
-[414] f\Enum_Explorer.ahk {
+[428] f\EnumWindows.ahk {
+
+Line  	|	Function
+0030	|	EnumChildProc(hWnd, pData)
+
+}
+[429] f\Enum_Explorer.ahk {
 
 Line  	|	Function
 0003	|	Enum_Explorer(hWnd=0, lParam=0)
 0034	|	PathCreateFromURL( URL )
 
 }
-[415] f\Environment.ahk {
+[430] f\Environment.ahk {
 
 Line  	|	Function
 0168	|	RefreshEnvironment()
 0192	|	ExpandEnvironmentStrings(ByRef vInputString)
 
 }
-[416] f\EnvUpdate.ahk {
+[431] f\EnvUpdate.ahk {
 
 Line  	|	Function
 0001	|	EnvUpdate()
 
 }
-[417]  {
+[432]  {
 
 Line  	|	Function
 0006	|	EolTo_Dos(str)
@@ -5154,23 +5245,39 @@ Line  	|	Function
 0014	|	EolToMac(str)
 
 }
-[418] f\eol.ahk {
+[433] f\eol.ahk {
 
 Line  	|	Function
 
 }
-[419] f\ErrMsg.ahk {
+[434] f\Equilibrium_index.ahk {
+
+Line  	|	Function
+0015	|	Equilibrium_index(list, BaseIndex=0)
+
+}
+[435] f\ErrMsg.ahk {
 
 Line  	|	Function
 0014	|	ErrMsg(ErrNum="")
 
 }
-[420] f\ErrorMessage.ahk {
+[436] f\ErrorMessage.ahk {
 
 Line  	|	Function
 
 }
-[421] f\euler.ahk {
+[437]  {
+
+Line  	|	Function
+0015	|	half( x )
+0019	|	double( x )
+0023	|	isEven( x )
+0027	|	Ethiopian( a, b )
+0039	|	Ethiopian2( a, b, r = 0 )
+
+}
+[438] f\euler.ahk {
 
 Line  	|	Function
 0006	|	SumMultsToLimit(baseNum, limit)
@@ -5304,13 +5411,13 @@ Line  	|	Function
 2618	|	Euler57()
 
 }
-[422] f\eval (2).ahk {
+[439] f\eval (2).ahk {
 
 Line  	|	Function
 0001	|	eval(e, byref log=0)
 
 }
-[423] f\eval (3).ahk {
+[440] f\eval (3).ahk {
 
 Line  	|	Function
 0014	|	eval(expr)
@@ -5344,7 +5451,7 @@ Line  	|	Function
 0888	|	__FindGlobalVar(ByRef aliasVar)
 
 }
-[424] f\Eval.ahk {
+[441] f\Eval.ahk {
 
 Line  	|	Function
 0076	|	Eval(x)
@@ -5359,12 +5466,12 @@ Line  	|	Function
 0285	|	Eval_fac(n)
 
 }
-[425] f\EventIsDue.ahk {
+[442] f\EventIsDue.ahk {
 
 Line  	|	Function
 
 }
-[426] f\EventLibrary.ahk {
+[443] f\EventLibrary.ahk {
 
 Line  	|	Function
 0111	|	UnHookEvent(functionname, events)
@@ -5373,68 +5480,68 @@ Line  	|	Function
 0140	|	DeleteWinEventHook(functionname, event)
 
 }
-[427] f\EWinHook.ahk {
+[444] f\EWinHook.ahk {
 
 Line  	|	Function
 0042	|	EWinHook_SetWinEventHook(eventMin, eventMax, hmodWinEventProc, lpfnWinEventProc, idProcess, idThread, dwflags)
 0119	|	EWinHook_UnhookWinEvent(hWinEventHook)
 
 }
-[428] f\Exec.ahk {
+[445] f\Exec.ahk {
 
 Line  	|	Function
 0004	|	Exec(_#_1,_#_2="",_#_3="",_#_4="",_#_5="",_#_6="",_#_7="",_#_8="",_#_9="",_#_10="",_#_11="",_#_12="",_#_13="",_#_14="",_#_15="",_#_16="",_#_17="",_#_18="",_#_19="",_#_20="")
 
 }
-[429] f\ExecScript (2).ahk {
+[446] f\ExecScript (2).ahk {
 
 Line  	|	Function
 
 }
-[430] f\ExecScript.ahk {
+[447] f\ExecScript.ahk {
 
 Line  	|	Function
 
 }
-[431] f\ExecuteSQL.ahk {
+[448] f\ExecuteSQL.ahk {
 
 Line  	|	Function
 
 }
-[432] f\ExecuteSQL_orig.ahk {
+[449] f\ExecuteSQL_orig.ahk {
 
 Line  	|	Function
 
 }
-[433] f\ExeFunctions.ahk {
+[450] f\ExeFunctions.ahk {
 
 Line  	|	Function
 
 }
-[434] f\Expand.ahk {
+[451] f\Expand.ahk {
 
 Line  	|	Function
 0005	|	Expand(string)
 
 }
-[435] f\ExpandEnv.ahk {
+[452] f\ExpandEnv.ahk {
 
 Line  	|	Function
 0001	|	ExpandEnv(str)
 
 }
-[436] f\ExpandEnvironmentStrings.ahk {
+[453] f\ExpandEnvironmentStrings.ahk {
 
 Line  	|	Function
 0004	|	ExpandEnvironmentStrings(string)
 
 }
-[437] f\ExpandNumbersInRangeFormat.ahk {
+[454] f\ExpandNumbersInRangeFormat.ahk {
 
 Line  	|	Function
 
 }
-[438] f\ExpandPostIDs.ahk {
+[455] f\ExpandPostIDs.ahk {
 
 Line  	|	Function
 0004	|	ExpandPostIDs(ByRef query)
@@ -5448,18 +5555,18 @@ Line  	|	Function
 0115	|	Cached_GetTcpipParameters(prmName)
 
 }
-[439] f\ExploreDir.ahk {
+[456] f\ExploreDir.ahk {
 
 Line  	|	Function
 0008	|	ExploreDir(DirName)
 
 }
-[440] f\ExploreObj.ahk {
+[457] f\ExploreObj.ahk {
 
 Line  	|	Function
 
 }
-[441] f\Explorer (2).ahk {
+[458] f\Explorer (2).ahk {
 
 Line  	|	Function
 0025	|	Explorer_GetPath(hwnd="")
@@ -5469,7 +5576,7 @@ Line  	|	Function
 0069	|	Explorer_Get(hwnd="",selection=false)
 
 }
-[442] f\Explorer.ahk {
+[459] f\Explorer.ahk {
 
 Line  	|	Function
 0005	|	Explorer_GetPath(hwnd="")
@@ -5479,7 +5586,7 @@ Line  	|	Function
 0048	|	Explorer_Get(hwnd="",selection=false)
 
 }
-[443] f\ExplorerGrouping.ahk {
+[460] f\ExplorerGrouping.ahk {
 
 Line  	|	Function
 0035	|	GetNewGroupName(dir)
@@ -5491,7 +5598,7 @@ Line  	|	Function
 0112	|	UngroupSelectedFiles()
 
 }
-[444] f\ExplorerHelpers.ahk {
+[461] f\ExplorerHelpers.ahk {
 
 Line  	|	Function
 0002	|	XPGetFocussed()
@@ -5509,7 +5616,7 @@ Line  	|	Function
 0266	|	DeAttachToolWindow(GUINumber)
 
 }
-[445] f\Explorer_Get.ahk {
+[462] f\Explorer_Get.ahk {
 
 Line  	|	Function
 0025	|	Explorer_GetPath(hwnd="")
@@ -5519,43 +5626,43 @@ Line  	|	Function
 0068	|	Explorer_Get(hwnd="",selection=false)
 
 }
-[446] f\Explorer_Navigate.ahk {
+[463] f\Explorer_Navigate.ahk {
 
 Line  	|	Function
 0017	|	Explorer_Navigate(FullPath, hwnd="")
 
 }
-[447] f\explorer_path.ahk {
+[464] f\explorer_path.ahk {
 
 Line  	|	Function
 0002	|	GetWindowsExplorerPath(_hWnd)
 
 }
-[448] f\ExternalHeaderLib.ahk {
+[465] f\ExternalHeaderLib.ahk {
 
 Line  	|	Function
 0092	|	GetExternalHeaderText(_winTitle, _classNN="SysHeader321", MaxName=100)
 0326	|	GetExternalHeaderClassNN(_winTitle, _sysHeader="")
 
 }
-[449] f\externalIP.ahk {
+[466] f\externalIP.ahk {
 
 Line  	|	Function
 
 }
-[450] f\ExtractIconFromExecutable.ahk {
+[467] f\ExtractIconFromExecutable.ahk {
 
 Line  	|	Function
 0001	|	ExtractIconFromExecutable(aFilespec, aIconNumber, aWidth, aHeight)
 
 }
-[451] f\ExtractTableData.ahk {
+[468] f\ExtractTableData.ahk {
 
 Line  	|	Function
 0001	|	ExtractTableData( FilePath, HeadingsArray, Delimiter, SaveDir )
 
 }
-[452] f\Facade_Array.ahk {
+[469] f\Facade_Array.ahk {
 
 Line  	|	Function
 0030	|	Array_Empty(Pred, Array)
@@ -5581,7 +5688,7 @@ Line  	|	Function
 0319	|	_Array_ZipAux(Arrays, Index)
 
 }
-[453] f\Facade_Func.ahk {
+[470] f\Facade_Func.ahk {
 
 Line  	|	Function
 0007	|	__New(Func)
@@ -5609,7 +5716,7 @@ Line  	|	Function
 0409	|	Func_Conv(F)
 
 }
-[454] f\Facade_Ht.ahk {
+[471] f\Facade_Ht.ahk {
 
 Line  	|	Function
 0012	|	Ht_FromObject(Object)
@@ -5633,7 +5740,7 @@ Line  	|	Function
 0203	|	Ht_Values(HashTable)
 
 }
-[455] f\Facade_Math.ahk {
+[472] f\Facade_Math.ahk {
 
 Line  	|	Function
 0004	|	Math_Abs(X)
@@ -5660,7 +5767,7 @@ Line  	|	Function
 0290	|	Math_Float(X)
 
 }
-[456] f\Facade_Nested.ahk {
+[473] f\Facade_Nested.ahk {
 
 Line  	|	Function
 0006	|	_Nested_Blame(Sig, Func)
@@ -5677,7 +5784,7 @@ Line  	|	Function
 0204	|	Nested_Delete(Path, Dict)
 
 }
-[457] f\Facade_Op.ahk {
+[474] f\Facade_Op.ahk {
 
 Line  	|	Function
 0006	|	Op_Get(Obj, Key)
@@ -5703,7 +5810,7 @@ Line  	|	Function
 0233	|	Op_Ne(A, B)
 
 }
-[458] f\Facade_Validate.ahk {
+[475] f\Facade_Validate.ahk {
 
 Line  	|	Function
 0012	|	_Validate_TypeRepr(Value)
@@ -5731,20 +5838,20 @@ Line  	|	Function
 0378	|	_Validate_NonEmptyHashTableArg(Sig, Var, Value)
 
 }
-[459] f\Factor.ahk {
+[476] f\Factor.ahk {
 
 Line  	|	Function
 0012	|	Factor(Number)
 
 }
-[460] f\Factorial.ahk {
+[477] f\Factorial.ahk {
 
 Line  	|	Function
 0004	|	Factorial(Number)
 0020	|	Factorial_R(Number)
 
 }
-[461] f\Fade.ahk {
+[478] f\Fade.ahk {
 
 Line  	|	Function
 0001	|	FadeIn(window = "A", TotalTime = 500, transfinal = 255)
@@ -5753,13 +5860,13 @@ Line  	|	Function
 0032	|	Hide(window = "A")
 
 }
-[462] f\FAILED.ahk {
+[479] f\FAILED.ahk {
 
 Line  	|	Function
 0001	|	FAILED(hr)
 
 }
-[463] f\faststring.ahk {
+[480] f\faststring.ahk {
 
 Line  	|	Function
 0006	|	_UpFirst(input)
@@ -5769,7 +5876,7 @@ Line  	|	Function
 0059	|	if(keyu1==keyuall)
 
 }
-[464] f\FC.ahk {
+[481] f\FC.ahk {
 
 Line  	|	Function
 0006	|	GetDefaultPreferences()
@@ -5920,7 +6027,7 @@ Line  	|	Function
 2078	|	FC_Die(f)
 
 }
-[465]  {
+[482]  {
 
 Line  	|	Function
 0007	|	GitGetCurrentBranchName()
@@ -5928,7 +6035,7 @@ Line  	|	Function
 0022	|	GitGetIssueTitle(issueNumber)
 
 }
-[466]  {
+[483]  {
 
 Line  	|	Function
 0004	|	RunOpera()
@@ -5937,7 +6044,7 @@ Line  	|	Function
 0060	|	WinWaitActiveTitleChange(oldTitle="")
 
 }
-[467]  {
+[484]  {
 
 Line  	|	Function
 0008	|	FileAppend(text, file)
@@ -5974,7 +6081,7 @@ Line  	|	Function
 0493	|	ScriptCheckin(CurrentStatus)
 
 }
-[468] f\FcnLib.ahk {
+[485] f\FcnLib.ahk {
 
 Line  	|	Function
 0035	|	SleepMinutes(minutes)
@@ -6063,12 +6170,12 @@ Line  	|	Function
 1533	|	NightlyStats(title, data)
 
 }
-[469] f\Fct_Get_ClickedItem_MenuContext_AddedItems.ahk {
+[486] f\Fct_Get_ClickedItem_MenuContext_AddedItems.ahk {
 
 Line  	|	Function
 
 }
-[470] f\FE.ahk {
+[487] f\FE.ahk {
 
 Line  	|	Function
 0001	|	FE_load(autobuild=false)
@@ -6081,13 +6188,13 @@ Line  	|	Function
 0106	|	FE_buildMenu()
 
 }
-[471] f\Feiertage.ahk {
+[488] f\Feiertage.ahk {
 
 Line  	|	Function
 0025	|	feiertage(jahr,land,timestrg)
 
 }
-[472] f\FFMpeg_ScreenRecord.ahk {
+[489] f\FFMpeg_ScreenRecord.ahk {
 
 Line  	|	Function
 0003	|	WinGetClientPos( winTitle, ByRef x, ByRef y, ByRef w, ByRef h )
@@ -6103,7 +6210,7 @@ Line  	|	Function
 0116	|	WinGetPosEx(hWindow, ByRef X = "", ByRef Y = "", ByRef Width = "", ByRef Height = "", ByRef Offset_X = "", ByRef Offset_Y = "")
 
 }
-[473] f\FGP.ahk {
+[490] f\FGP.ahk {
 
 Line  	|	Function
 0009	|	FGP_Init()
@@ -6113,12 +6220,12 @@ Line  	|	Function
 0098	|	FGP_Value(FilePath, Property)
 
 }
-[474] f\Fifo.ahk {
+[491] f\Fifo.ahk {
 
 Line  	|	Function
 
 }
-[475] f\File (3).ahk {
+[492] f\File (3).ahk {
 
 Line  	|	Function
 0001	|	File_Hash(sFile, SID = "CRC32")
@@ -6141,7 +6248,7 @@ Line  	|	Function
 0136	|	File_InternetCloseHandle(Handle)
 
 }
-[476]  {
+[493]  {
 
 Line  	|	Function
 0088	|	GetInternetShortcutUrl(sInternetShortcutFile)
@@ -6157,7 +6264,7 @@ Line  	|	Function
 0219	|	GetCanonRelativePathTo(pPath, pFromDir)
 
 }
-[477] f\File.ahk {
+[494] f\File.ahk {
 
 Line  	|	Function
 0020	|	File_Open(sType, sFile)
@@ -6168,12 +6275,18 @@ Line  	|	Function
 0124	|	File_Close(hFile)
 
 }
-[478] f\FileExistZ.ahk {
+[495] f\FileDialog.ahk {
+
+Line  	|	Function
+0053	|	OFNHookProc(hdlg, uiMsg, wParam, lParam)
+
+}
+[496] f\FileExistZ.ahk {
 
 Line  	|	Function
 
 }
-[479] f\FileExtract.ahk {
+[497] f\FileExtract.ahk {
 
 Line  	|	Function
 0021	|	FileExtract(Source, Dest, Flag=0)
@@ -6181,19 +6294,19 @@ Line  	|	Function
 0065	|	FileExtract_ToMem(Source, ByRef pData, ByRef DataSize)
 
 }
-[480] f\FileFunctions_JEE.ahk {
+[498] f\FileFunctions_JEE.ahk {
 
 Line  	|	Function
 0012	|	JEE_FileEmpty(vPath)
 0032	|	JEE_FileGetEncoding(vPath)
 
 }
-[481] f\FileGetInfo.ahk {
+[499] f\FileGetInfo.ahk {
 
 Line  	|	Function
 
 }
-[482] f\FileGetProperties.ahk {
+[500] f\FileGetProperties.ahk {
 
 Line  	|	Function
 0029	|	FGP_Init()
@@ -6203,17 +6316,17 @@ Line  	|	Function
 0118	|	FGP_Value(FilePath, Property)
 
 }
-[483] f\FileGetVersionInfo.ahk {
+[501] f\FileGetVersionInfo.ahk {
 
 Line  	|	Function
 
 }
-[484] f\FileGetVersionInfo_AW.ahk {
+[502] f\FileGetVersionInfo_AW.ahk {
 
 Line  	|	Function
 
 }
-[485] f\FileHelperAndHash.ahk {
+[503] f\FileHelperAndHash.ahk {
 
 Line  	|	Function
 0011	|	File_Hash(sFile, SID = "CRC32")
@@ -6238,47 +6351,47 @@ Line  	|	Function
 0185	|	Crypt_AES(pData, nSize, sPassword, SID = 256, bEncrypt = True)
 
 }
-[486] f\FileInstallList.ahk {
+[504] f\FileInstallList.ahk {
 
 Line  	|	Function
 0018	|	FileInstallList(FI_source, FI_dest, FI_overwrite="")
 
 }
-[487] f\fileIsBinary.ahk {
+[505] f\fileIsBinary.ahk {
 
 Line  	|	Function
 0004	|	fileIsBinary(_filePath)
 
 }
-[488] f\FileIsType.ahk {
+[506] f\FileIsType.ahk {
 
 Line  	|	Function
 0019	|	FileIsType(fPath)
 
 }
-[489] f\FileMD5.ahk {
+[507] f\FileMD5.ahk {
 
 Line  	|	Function
 0070	|	FileMD5(sFile="",cSz=4)
 
 }
-[490] f\FileQ.ahk {
+[508] f\FileQ.ahk {
 
 Line  	|	Function
 
 }
-[491] f\FileReadLines.ahk {
+[509] f\FileReadLines.ahk {
 
 Line  	|	Function
 0014	|	Mbx()
 
 }
-[492] f\FileReplace.ahk {
+[510] f\FileReplace.ahk {
 
 Line  	|	Function
 
 }
-[493] f\FileResData.ahk {
+[511] f\FileResData.ahk {
 
 Line  	|	Function
 0058	|	FileRemoveData(FileName, Name)
@@ -6287,55 +6400,55 @@ Line  	|	Function
 0191	|	DllCreateEmpty(DllPath)
 
 }
-[494] f\FilesearchByCriteria.ahk {
+[512] f\FilesearchByCriteria.ahk {
 
 Line  	|	Function
 0006	|	FileTail(k,file)
 
 }
-[495] f\FileSelectSpecific.ahk {
+[513] f\FileSelectSpecific.ahk {
 
 Line  	|	Function
 
 }
-[496] f\FileStitch.ahk {
+[514] f\FileStitch.ahk {
 
 Line  	|	Function
 
 }
-[497] f\FileTail.ahk {
+[515] f\FileTail.ahk {
 
 Line  	|	Function
 
 }
-[498] f\FileToClipboard.ahk {
+[516] f\FileToClipboard.ahk {
 
 Line  	|	Function
 0011	|	FileToClipboard(PathToCopy)
 
 }
-[499] f\FileVerInfo (2).ahk {
+[517] f\FileVerInfo (2).ahk {
 
 Line  	|	Function
 
 }
-[500] f\FileVerInfo.ahk {
+[518] f\FileVerInfo.ahk {
 
 Line  	|	Function
 
 }
-[501] f\Filexpro.ahk {
+[519] f\Filexpro.ahk {
 
 Line  	|	Function
 
 }
-[502] f\FindClick.ahk {
+[520] f\FindClick.ahk {
 
 Line  	|	Function
 0001	|	FindClick(ImageFile="", Options="", ByRef FoundX="", ByRef FoundY="")
 
 }
-[503] f\findexe.ahk {
+[521] f\findexe.ahk {
 
 Line  	|	Function
 0075	|	GetAppPathFromRegShellKey(exename, regsubKeyShell)
@@ -6343,30 +6456,30 @@ Line  	|	Function
 0111	|	If(exe)
 
 }
-[504] f\FindFunc.ahk {
+[522] f\FindFunc.ahk {
 
 Line  	|	Function
 0001	|	FindFunc(Name)
 
 }
-[505] f\FindInstalled.ahk {
+[523] f\FindInstalled.ahk {
 
 Line  	|	Function
 
 }
-[506] f\FindLabel.ahk {
+[524] f\FindLabel.ahk {
 
 Line  	|	Function
 0001	|	FindLabel(Name)
 
 }
-[507] f\FindLimit.ahk {
+[525] f\FindLimit.ahk {
 
 Line  	|	Function
 0001	|	FindLimit(initW, incPix)
 
 }
-[508] f\FindText on Screen.ahk {
+[526] f\FindText on Screen.ahk {
 
 Line  	|	Function
 0012	|	FindText(x,y,w,h,err1,err0,text)
@@ -6382,7 +6495,7 @@ Line  	|	Function
 0355	|	FindTextOCR(nX, nY, nW, nH, err1, err0, Text, Interval=5)
 
 }
-[509] f\FindText.ahk {
+[527] f\FindText.ahk {
 
 Line  	|	Function
 0288	|	FindText_PicInfo(text)
@@ -6396,7 +6509,7 @@ Line  	|	Function
 0838	|	FindText_SortOK2(ok, px, py)
 
 }
-[510] f\FindTextGui.ahk {
+[528] f\FindTextGui.ahk {
 
 Line  	|	Function
 1590	|	FindText_PicInfo(text)
@@ -6410,13 +6523,85 @@ Line  	|	Function
 2136	|	FindText_SortOK2(ok, px, py)
 
 }
-[511] f\FixURI.ahk {
+[529] f\FixURI.ahk {
 
 Line  	|	Function
 0030	|	FixURI(text,source,sourcedir="")
 
 }
-[512] f\FlightLogMetrics_23.ahk {
+[530] f\FlashWindowEx.ahk {
+
+Line  	|	Function
+
+}
+[531] f\flax.ahk {
+
+Line  	|	Function
+0012	|	RevStr(Str)
+0020	|	EvalLogic(Formula)
+0058	|	EvalForm(Formula,mode="normal")
+0158	|	proofreadingratwikireg(Text,Rule)
+0192	|	screenshot_full(dest_path)
+0196	|	screenshot(dest_path, sx, sy, ex, ey)
+0202	|	NumToAlp(Num)
+0247	|	AlignDigit(Value, NoD)
+0258	|	RetFuncArgument(Str,FuncName,Index=1,Offset=0)
+0268	|	RetAoT(Str,Target,Length=1,Index=1,Offset=0)
+0287	|	SearchPrime(Limit)
+0318	|	RetGCF(K, L)
+0335	|	RetLCM(K, L)
+0342	|	FillStr(Str, NoD, Char, RL="L")
+0355	|	Hex2Dec(Value, NoD=0)
+0365	|	Dec2Hex(Value, NoD=0)
+0373	|	MsgVars(VarList)
+0382	|	CmdRun(Command,msg=1, auth="normal")
+0402	|	RetMousePos()
+0406	|	RetPointsDist(M1, M2)
+0409	|	RetKeyState(KeyName,Mode="P")
+0413	|	atan2(X1, Y1, X2, Y2)
+0437	|	ToolSplash(Text="")
+0449	|	JoinObj(Obj, Depth=0)
+0464	|	RetAllMatch(Target, Pattern)
+0489	|	KeyDown(Key, Second)
+0501	|	RetNCKey(Obj, Key)
+0509	|	RetMaxDepth(Obj, Depth=1)
+0520	|	SolveObj(Obj)
+0530	|	JudgePath(Path)
+0533	|	SolvePath(Path)
+0540	|	RapidButton(Button)
+0544	|	RetCopy(param="Value", SecondsToWait="")
+0555	|	GetCurrentDirectory()
+0562	|	JudgeDir(Path)
+0573	|	Follow_a_Link(Path)
+0580	|	DeepCopy(Array, Objs=0)
+0591	|	msgobj(obj)
+0595	|	RetRLDU(Radian)
+0614	|	RetMPatan2(MP1, MP2)
+0617	|	GestureCandidate(MR, gFD)
+0635	|	EvalConfig(cFD)
+0650	|	GetMP3TagsFunc(FilePath)
+0657	|	EditMP3TagsFunc(FilePath, data_dict, new_name)
+0689	|	GetLastUpdate(FilePath)
+0693	|	CheckLastUpdate(FilePath, LastUpdate)
+0699	|	MakeSymbolicLink(Source, Dest)
+0708	|	GetProcessName()
+0712	|	GetProcessPath()
+0716	|	AGUIClose(GuiHwnd)
+0720	|	AGUIEscape(GuiHwnd)
+0724	|	AGuiSize(GuiHwnd)
+0728	|	AGuiDropFiles(GuiHwnd)
+0732	|	AGuiContextMenu(GuiHwnd)
+0740	|	nircmd_mute(process_name, mode)
+0744	|	reg_test()
+0784	|	reg_test_edit_changed()
+0815	|	push_key(key, time=100)
+0821	|	read_font_from_config(name="")
+0830	|	is_zero(target)
+0833	|	is_not_minus_one(target)
+0836	|	switch_key(key)
+
+}
+[532] f\FlightLogMetrics_23.ahk {
 
 Line  	|	Function
 0001	|	PitchRollCorrectStrong(Pitch,Roll,Heading,FoV)
@@ -6440,19 +6625,24 @@ Line  	|	Function
 0747	|	GPS_LatLon2UTM_Zone(Latitude, Longitude)
 
 }
-[513] f\FloatToFraction.ahk {
+[533] f\FloatToFraction.ahk {
 
 Line  	|	Function
 0036	|	FloatToFraction(p_Input,p_MinRep=2,p_MinPatLen=1,p_MaxPatLen=15)
 
 }
-[514] f\FlushDNS.ahk {
+[534] f\FlushDNS.ahk {
 
 Line  	|	Function
 0005	|	FlushDNS()
 
 }
-[515] f\Fnt.ahk {
+[535] f\FmtSecs.ahk {
+
+Line  	|	Function
+
+}
+[536] f\Fnt.ahk {
 
 Line  	|	Function
 0096	|	Fnt_AddFontFile(p_File,p_Private,p_Hidden=False)
@@ -6524,12 +6714,12 @@ Line  	|	Function
 4376	|	Fnt_VertDTUs2Pixels(hFont,p_VertDTUs)
 
 }
-[516] f\fn_CMsgBox.ahk {
+[537] f\fn_CMsgBox.ahk {
 
 Line  	|	Function
 
 }
-[517] f\Focusless Scroll.ahk {
+[538] f\Focusless Scroll.ahk {
 
 Line  	|	Function
 0061	|	FocuslessScroll(MinLinesPerNotch, MaxLinesPerNotch, AccelerationThreshold, AccelerationType, StutterThreshold)
@@ -6537,7 +6727,7 @@ Line  	|	Function
 0121	|	If(AccelerationType = "P")
 
 }
-[518] f\Font.ahk {
+[539] f\Font.ahk {
 
 Line  	|	Function
 0049	|	GetFontName(hFont)
@@ -6547,23 +6737,23 @@ Line  	|	Function
 0248	|	CloneFont(hFont)
 
 }
-[519] f\FontSelect_V1.ahk {
+[540] f\FontSelect_V1.ahk {
 
 Line  	|	Function
 
 }
-[520] f\FontSelect_V2.ahk {
+[541] f\FontSelect_V2.ahk {
 
 Line  	|	Function
 
 }
-[521] f\Form Filler.ahk {
+[542] f\Form Filler.ahk {
 
 Line  	|	Function
 0015	|	FillForm(winTitle, formInfo, GetOrPost = "GET")
 
 }
-[522] f\Form.ahk {
+[543] f\Form.ahk {
 
 Line  	|	Function
 0087	|	Form_Add(HParent, Ctrl, Txt="", Opt="", E1="",E2="",E3="",E4="",E5="",E6="",E7="")
@@ -6582,24 +6772,24 @@ Line  	|	Function
 0506	|	Form_setEsc(Hwnd, Type)
 
 }
-[523] f\format.ahk {
+[544] f\format.ahk {
 
 Line  	|	Function
 0031	|	format_v(f, v)
 
 }
-[524] f\Format4Csv.ahk {
+[545] f\Format4Csv.ahk {
 
 Line  	|	Function
 0005	|	Format4CSV(F4C_String)
 
 }
-[525] f\FormatAHK.ahk {
+[546] f\FormatAHK.ahk {
 
 Line  	|	Function
 
 }
-[526] f\FormatDword.ahk {
+[547] f\FormatDword.ahk {
 
 Line  	|	Function
 0017	|	HIWORD(Dword,Hex=0)
@@ -6607,32 +6797,38 @@ Line  	|	Function
 0029	|	MAKELONG(LOWORD,HIWORD,Hex=0)
 
 }
-[527] f\FormatHRESULT.ahk {
+[548] f\FormatHRESULT.ahk {
 
 Line  	|	Function
 0001	|	FormatHRESULT(hr)
 
 }
-[528] f\FormatNumberCommas.ahk {
+[549] f\FormatNumberCommas.ahk {
 
 Line  	|	Function
 0001	|	FormatNumberCommas(fnInputNumber)
 
 }
-[529] f\formatTickCount.ahk {
+[550] f\FormatSeconds.ahk {
+
+Line  	|	Function
+0012	|	FormatSeconds( s_ )
+
+}
+[551] f\formatTickCount.ahk {
 
 Line  	|	Function
 0001	|	FormatTickCount(ms)
 
 }
-[530] f\FormData.ahk {
+[552] f\FormData.ahk {
 
 Line  	|	Function
 0009	|	FormData(ByRef body, Param)
 0043	|	FormData_Memory(ByRef f,ByRef k,ByRef p,ByRef s,t)
 
 }
-[531] f\ForumFunctions.ahk {
+[553] f\ForumFunctions.ahk {
 
 Line  	|	Function
 0015	|	ForumSearch(BaseURL = "",Keywords = "",Author = "",ForumIndex = 0,ResultLimit = 0,SearchAny = 0,PreviousDays = 0)
@@ -6641,7 +6837,7 @@ Line  	|	Function
 0109	|	ConvertEntities(HTML)
 
 }
-[532] f\FreeImage.ahk {
+[554] f\FreeImage.ahk {
 
 Line  	|	Function
 0053	|	FreeImage_FoxInit(isInit=True)
@@ -6708,7 +6904,7 @@ Line  	|	Function
 0399	|	FreeImage_Paste(hImageDst, hImageSrc, nLeft, nTop, nAlpha)
 
 }
-[533] f\FS.ahk {
+[555] f\FS.ahk {
 
 Line  	|	Function
 0002	|	FS_Exists(path)
@@ -6734,7 +6930,7 @@ Line  	|	Function
 0154	|	FS_DesktopShortcutRemove(TargetFileName, Description = "")
 
 }
-[534] f\ftp.ahk {
+[556] f\ftp.ahk {
 
 Line  	|	Function
 0008	|	FTP_CreateDirectory(hConnect,DirName)
@@ -6756,21 +6952,21 @@ Line  	|	Function
 0292	|	FTP_GetCurrentDirectory(hConnect,ByRef DirName)
 
 }
-[535] f\FuncAutokeyWord.ahk {
+[557] f\FuncAutokeyWord.ahk {
 
 Line  	|	Function
 0021	|	if(doFirstWord)
 0023	|	if(firstWord)
 
 }
-[536] f\funcs.ahk {
+[558] f\funcs.ahk {
 
 Line  	|	Function
 0001	|	Funcs()
 0005	|	CoMode(p1,p2="")
 
 }
-[537] f\funcStrRegEx.ahk {
+[559] f\funcStrRegEx.ahk {
 
 Line  	|	Function
 0049	|	ObjHasVal(ByRef obj, val)
@@ -6789,7 +6985,7 @@ Line  	|	Function
 0497	|	evalCalloutLen(val)
 
 }
-[538] f\Functions (2).ahk {
+[560] f\Functions (2).ahk {
 
 Line  	|	Function
 0036	|	LoadLibrary(sDllName)
@@ -6805,7 +7001,7 @@ Line  	|	Function
 0496	|	fRandItem(oInput)
 
 }
-[539] f\Functions.ahk {
+[561] f\Functions.ahk {
 
 Line  	|	Function
 0008	|	Functions()
@@ -6868,35 +7064,35 @@ Line  	|	Function
 0232	|	WinGetTitle(WinTitle = "", WinText = "", ExcludeTitle = "", ExcludeText = "")
 
 }
-[540] f\Func_IniSettingsEditor_v6.ahk {
+[562] f\Func_IniSettingsEditor_v6.ahk {
 
 Line  	|	Function
 0156	|	IniSettingsEditor(ProgName,IniFile,OwnedBy = 0,DisableGui = 0)
 0556	|	GuiIniSettingsEditorAnchor(ctrl, a, draw = false)
 
 }
-[541] f\Fuzzy.ahk {
+[563] f\Fuzzy.ahk {
 
 Line  	|	Function
 0003	|	Fuzzy(input, arr)
 0046	|	FuzzyWrap(input, arr)
 
 }
-[542] f\FuzzyN.ahk {
+[564] f\FuzzyN.ahk {
 
 Line  	|	Function
 0001	|	Fuzzy(input, arr)
 0044	|	FuzzyWrap(input, arr)
 
 }
-[543] f\FuzzySearch.ahk {
+[565] f\FuzzySearch.ahk {
 
 Line  	|	Function
 0030	|	FuzzySearch(dict, query)
 0082	|	FuzzySearchMin(a,b)
 
 }
-[544] f\_.ahk {
+[566] f\_.ahk {
 
 Line  	|	Function
 0049	|	_(opt="")
@@ -6905,7 +7101,7 @@ Line  	|	Function
 0388	|	Fatal(Message, E=1, ExitCode="")
 
 }
-[545] f\_filesystem.ahk {
+[567] f\_filesystem.ahk {
 
 Line  	|	Function
 0001	|	MountVirtualDisk(path = "")
@@ -6920,50 +7116,50 @@ Line  	|	Function
 0172	|	CreateShortCutsFolder(folder, icon, index=0)
 
 }
-[546] f\_Forms.ahk {
+[568] f\_Forms.ahk {
 
 Line  	|	Function
 
 }
-[547]  {
+[569]  {
 
 Line  	|	Function
 
 }
-[548] n\g.ahk {
+[570] n\g.ahk {
 
 Line  	|	Function
 
 }
-[549] n\GActiveXCtl.ahk {
+[571] n\GActiveXCtl.ahk {
 
 Line  	|	Function
 
 }
-[550] n\gamma.ahk {
+[572] n\gamma.ahk {
 
 Line  	|	Function
 0011	|	gamma(n)
 
 }
-[551] n\Gaussian.ahk {
+[573] n\Gaussian.ahk {
 
 Line  	|	Function
 0001	|	Gaussian(lower = 0.0, upper = 1.0)
 
 }
-[552] n\GButtonCtl.ahk {
+[574] n\GButtonCtl.ahk {
 
 Line  	|	Function
 
 }
-[553] n\GCD.ahk {
+[575] n\GCD.ahk {
 
 Line  	|	Function
 0004	|	GCD(X, Y)
 
 }
-[554] n\Gdip.ahk {
+[576] n\Gdip.ahk {
 
 Line  	|	Function
 0069	|	UpdateLayeredWindow(hwnd, hdc, x="", y="", w="", h="", Alpha=255)
@@ -7103,7 +7299,7 @@ Line  	|	Function
 2622	|	StrGetB(Address, Length=-1, Encoding=0)
 
 }
-[555] n\GDIPlusHelper.ahk {
+[577] n\GDIPlusHelper.ahk {
 
 Line  	|	Function
 0020	|	FormatHexNumber(_value, _digitNb)
@@ -7130,7 +7326,7 @@ Line  	|	Function
 0840	|	GDIplus_AddEncoderParameter(ByRef @encoderParameters, _categoryGUID, ByRef @value)
 
 }
-[556] n\GDIplusWrapper.ahk {
+[578] n\GDIplusWrapper.ahk {
 
 Line  	|	Function
 0165	|	GDIplus_Start()
@@ -7148,7 +7344,7 @@ Line  	|	Function
 0584	|	GDIplus_AddEncoderParameter(ByRef @encoderParameters, _categoryGUID, ByRef @value)
 
 }
-[557] n\gdiplus_outlinedtext.ahk {
+[579] n\gdiplus_outlinedtext.ahk {
 
 Line  	|	Function
 0078	|	WM_LBUTTONDOWN()
@@ -7157,7 +7353,7 @@ Line  	|	Function
 0206	|	Gdip_SetLineJoin(pPen, linejoin=2)
 
 }
-[558] n\GDIPrinter.ahk {
+[580] n\GDIPrinter.ahk {
 
 Line  	|	Function
 0003	|	EnumPrinters()
@@ -7166,7 +7362,7 @@ Line  	|	Function
 0032	|	EndPrintDocument(hDC)
 
 }
-[559] n\Gdip_AddPathBeziers.ahk {
+[581] n\Gdip_AddPathBeziers.ahk {
 
 Line  	|	Function
 0017	|	Gdip_AddPathBeziers(pPath, Points)
@@ -7182,7 +7378,7 @@ Line  	|	Function
 0094	|	Gdip_ClonePath(pPath)
 
 }
-[560]  {
+[582]  {
 
 Line  	|	Function
 0069	|	UpdateLayeredWindow(hwnd, hdc, x="", y="", w="", h="", Alpha=255)
@@ -7322,7 +7518,7 @@ Line  	|	Function
 2673	|	StrGetB(Address, Length=-1, Encoding=0)
 
 }
-[561]  {
+[583]  {
 
 Line  	|	Function
 0222	|	SetImage(hwnd, hBitmap)
@@ -7428,7 +7624,7 @@ Line  	|	Function
 2809	|	MDMF_GetInfo(HMON)
 
 }
-[562]  {
+[584]  {
 
 Line  	|	Function
 0235	|	SetImage(hwnd, hBitmap)
@@ -7537,7 +7733,7 @@ Line  	|	Function
 2707	|	MDMF_GetInfo(HMON)
 
 }
-[563] n\Gdip_All.ahk {
+[585] n\Gdip_All.ahk {
 
 Line  	|	Function
 0309	|	SetImage(hwnd, hBitmap)
@@ -7871,26 +8067,26 @@ Line  	|	Function
 8386	|	ConvertHueToRGB(v1, v2, vH)
 
 }
-[564] n\Gdip_box.ahk {
+[586] n\Gdip_box.ahk {
 
 Line  	|	Function
 0001	|	box(Videox,Videoy,thickness)
 0090	|	AlwaysAtBottom(Child_ID)
 
 }
-[565] n\Gdip_draw_n_Gui.ahk {
+[587] n\Gdip_draw_n_Gui.ahk {
 
 Line  	|	Function
 
 }
-[566] n\Gdip_ExpandColor.ahk {
+[588] n\Gdip_ExpandColor.ahk {
 
 Line  	|	Function
 0026	|	Gdip_ExpandColor(pBitmap, color)
 0066	|	BentschiMCode(mcode)
 
 }
-[567] n\Gdip_Ext.ahk {
+[589] n\Gdip_Ext.ahk {
 
 Line  	|	Function
 0001	|	Gdip_TextToGraphics2(pGraphics, Text, Options, Font="Arial", Width="", Height="", Measure=0)
@@ -7912,44 +8108,44 @@ Line  	|	Function
 0251	|	Gdip_ClonePath(pPath)
 
 }
-[568] n\Gdip_GrayScale.ahk {
+[590] n\Gdip_GrayScale.ahk {
 
 Line  	|	Function
 0042	|	Gdip_GrayScale(pBitmap)
 0109	|	MCode(mcode)
 
 }
-[569] n\Gdip_ImageSearch.ahk {
+[591] n\Gdip_ImageSearch.ahk {
 
 Line  	|	Function
 0192	|	Gdip_SetBitmapTransColor(pBitmap,TransColor)
 0404	|	Gdip_LockedBitsSearch(hStride,hScan,hWidth,hHeight,nStride,nScan,nWidth,nHeight,ByRef x="",ByRef y="",sx1=0,sy1=0,sx2=0,sy2=0,Variation=0,sd=1)
 
 }
-[570] n\Gdip_TilePicture.ahk {
+[592] n\Gdip_TilePicture.ahk {
 
 Line  	|	Function
 0001	|	TilePicture(guiName, TilehWnd, desiredW, desiredH)
 
 }
-[571] n\GEditCtl.ahk {
+[593] n\GEditCtl.ahk {
 
 Line  	|	Function
 
 }
-[572] n\genrandom.ahk {
+[594] n\genrandom.ahk {
 
 Line  	|	Function
 0001	|	genrand()
 
 }
-[573] n\Geolocation.ahk {
+[595] n\Geolocation.ahk {
 
 Line  	|	Function
 0005	|	GetLocation(RefreshNetworkList = 0)
 
 }
-[574] n\Get Scintilla Constants and Message Numbers.ahk {
+[596] n\Get Scintilla Constants and Message Numbers.ahk {
 
 Line  	|	Function
 0005	|	load_sci_constants()
@@ -7957,7 +8153,7 @@ Line  	|	Function
 0068	|	load_sci_keyboard_commands()
 
 }
-[575]  {
+[597]  {
 
 Line  	|	Function
 0021	|	GetActiveBrowserURL()
@@ -7971,7 +8167,7 @@ Line  	|	Function
 0115	|	Acc_Children(Acc)
 
 }
-[576] n\GetActiveBrowserURL.ahk {
+[598] n\GetActiveBrowserURL.ahk {
 
 Line  	|	Function
 0028	|	GetActiveBrowserURL()
@@ -7985,73 +8181,79 @@ Line  	|	Function
 0125	|	Acc_Children(Acc)
 
 }
-[577] n\GetActiveKeyboardLayout.ahk {
+[599] n\GetActiveExplorerPath.ahk {
+
+Line  	|	Function
+0012	|	GetActiveExplorerPath()
+
+}
+[600] n\GetActiveKeyboardLayout.ahk {
 
 Line  	|	Function
 0024	|	langNameThis()
 0029	|	langName(window)
 
 }
-[578] n\GetActiveObjects.ahk {
+[601] n\GetActiveObjects.ahk {
 
 Line  	|	Function
 
 }
-[579] n\GetActiveWindow.ahk {
+[602] n\GetActiveWindow.ahk {
 
 Line  	|	Function
 0006	|	GetActiveWindow()
 
 }
-[580] n\GetAdapterAdresses.ahk {
+[603] n\GetAdapterAdresses.ahk {
 
 Line  	|	Function
 0023	|	GetAdaptersAddresses()
 
 }
-[581] n\GetAddressOfData.ahk {
+[604] n\GetAddressOfData.ahk {
 
 Line  	|	Function
 0006	|	GetAddressOfData(hProcess, Data, Size)
 
 }
-[582] n\GetAllResponseHeaders.ahk {
+[605] n\GetAllResponseHeaders.ahk {
 
 Line  	|	Function
 
 }
-[583] n\GetAppsInfo.ahk {
+[606] n\GetAppsInfo.ahk {
 
 Line  	|	Function
 0035	|	GetAppsInfo(infoType)
 
 }
-[584] n\GetAvailableFileName.ahk {
+[607] n\GetAvailableFileName.ahk {
 
 Line  	|	Function
 0004	|	GetAvailableFileName( GivenFileName, GivenPath = "", StartID = 1 )
 0096	|	GetAvailableFileName_fast( GivenFileName, GivenPath = "", StartID = 1 )
 
 }
-[585] n\GetBinaryType (2).ahk {
+[608] n\GetBinaryType (2).ahk {
 
 Line  	|	Function
 0007	|	GetBinaryType(Application)
 
 }
-[586] n\GetBinaryType.ahk {
+[609] n\GetBinaryType.ahk {
 
 Line  	|	Function
 0017	|	GetBinaryType(ApplicationName)
 
 }
-[587] n\GetBitRate.ahk {
+[610] n\GetBitRate.ahk {
 
 Line  	|	Function
 0007	|	GetBitrate(FileName)
 
 }
-[588] n\GetBrowserURL.ahk {
+[611] n\GetBrowserURL.ahk {
 
 Line  	|	Function
 0033	|	GetActiveBrowserURL()
@@ -8061,95 +8263,109 @@ Line  	|	Function
 0108	|	IsURL(sURL)
 
 }
-[589] n\GetChildHWND.ahk {
+[612] n\GetChildHWND.ahk {
 
 Line  	|	Function
 0001	|	GetChildHWND(ParentHWND, ChildClassNN)
 
 }
-[590] n\GetClipboardData.ahk {
+[613] n\GetClipboardData.ahk {
 
 Line  	|	Function
 0001	|	GetClipboardData(_format, ByRef @data)
 
 }
-[591] n\GetColor.ahk {
+[614] n\GetColor.ahk {
 
 Line  	|	Function
 0055	|	GetCursorPos(byref x,byref y)
 
 }
-[592] n\GetColumnList.ahk {
+[615] n\getColorName.ahk {
+
+Line  	|	Function
+
+}
+[616] n\GetColumnList.ahk {
 
 Line  	|	Function
 0001	|	GetColumnList(fnTableName,fnDatabaseName = "xDatabaseNamex")
 
 }
-[593] n\GetCOMError.ahk {
+[617] n\GetCOMError.ahk {
 
 Line  	|	Function
 0004	|	GetSysErrorText(errNr)
 
 }
-[594] n\GetCommonPath.ahk {
+[618] n\GetCommonPath.ahk {
 
 Line  	|	Function
 0003	|	GetCommonPath( csidl )
 
 }
-[595] n\GetConnectionString.ahk {
+[619] n\GetConnectionString.ahk {
 
 Line  	|	Function
 0001	|	GetConnectionString(fnServerName)
 
 }
-[596] n\GetControlsInfo.ahk {
+[620] n\GetControlsInfo.ahk {
 
 Line  	|	Function
 0037	|	GetControlsInfo(p_WinTitle="",p_WinText="",p_ExcludeTitle="",p_ExcludeText="")
 
 }
-[597] n\GetCurrencyFormat.ahk {
+[621] n\GetCurrencyFormat.ahk {
 
 Line  	|	Function
 
 }
-[598] n\GetCurrencyFormatEx.ahk {
+[622] n\GetCurrencyFormatEx.ahk {
 
 Line  	|	Function
 
 }
-[599] n\GetCurrentProcess.ahk {
+[623] n\GetCurrentProcess.ahk {
 
 Line  	|	Function
 0006	|	GetCurrentProcess()
 
 }
-[600] n\GetDesktopIconUnderMouse.ahk {
+[624] n\getDateYYMMDD_fromString.ahk {
+
+Line  	|	Function
+0037	|	getDateYYMMDD_fromString(string)
+0107	|	dateMonthStringToMM(monthString)
+0137	|	dateMMtoMonthString(MM)
+0157	|	StrUnmark(string)
+
+}
+[625] n\GetDesktopIconUnderMouse.ahk {
 
 Line  	|	Function
 0033	|	GetDesktopIconUnderMouse()
 
 }
-[601] n\GetDesktopIconUnderMouse_AHKV2.ahk {
+[626] n\GetDesktopIconUnderMouse_AHKV2.ahk {
 
 Line  	|	Function
 0033	|	GetDesktopIconUnderMouse()
 
 }
-[602] n\GetDesktopWallpaper.ahk {
+[627] n\GetDesktopWallpaper.ahk {
 
 Line  	|	Function
 0006	|	GetDesktopWallpaper()
 
 }
-[603] n\GetDirParent.ahk {
+[628] n\GetDirParent.ahk {
 
 Line  	|	Function
 0008	|	GetDirParent(DirName)
 
 }
-[604] n\GetDllBase (2).ahk {
+[629] n\GetDllBase (2).ahk {
 
 Line  	|	Function
 0028	|	GetDllBase(DllName, PID = 0)
@@ -8158,153 +8374,153 @@ Line  	|	Function
 0119	|	ReadMemory_Str(MADDRESS, pOffset = 0, PID = "")
 
 }
-[605] n\GetDllBase.ahk {
+[630] n\GetDllBase.ahk {
 
 Line  	|	Function
 0001	|	GetDllBase(DllName, PID = 0)
 
 }
-[606] n\GetDllBitness.ahk {
+[631] n\GetDllBitness.ahk {
 
 Line  	|	Function
 
 }
-[607] n\GetDnsAddress.ahk {
+[632] n\GetDnsAddress.ahk {
 
 Line  	|	Function
 0005	|	GetDnsAddress()
 
 }
-[608] n\GetDriveLetter.ahk {
+[633] n\GetDriveLetter.ahk {
 
 Line  	|	Function
 0001	|	GetDriveLetter(fnVolumeIdentifier)
 
 }
-[609] n\GetDriveType.ahk {
+[634] n\GetDriveType.ahk {
 
 Line  	|	Function
 
 }
-[610] n\GetDurationFormat.ahk {
+[635] n\GetDurationFormat.ahk {
 
 Line  	|	Function
 
 }
-[611] n\GetDurationFromMilliseconds.ahk {
+[636] n\GetDurationFromMilliseconds.ahk {
 
 Line  	|	Function
 0001	|	GetDurationFromMilliseconds(fnMilliseconds,fnIncludeMilliseconds = "0",fnPreserveNegative = "0")
 
 }
-[612] n\GetEnv.ahk {
+[637] n\GetEnv.ahk {
 
 Line  	|	Function
 0001	|	GetEnv()
 
 }
-[613] n\GetEnvironmentVariables.ahk {
+[638] n\GetEnvironmentVariables.ahk {
 
 Line  	|	Function
 0001	|	GetEnvironmentVariables()
 
 }
-[614] n\getError.ahk {
+[639] n\getError.ahk {
 
 Line  	|	Function
 0006	|	getError(SystemErrorCode)
 
 }
-[615] n\GetExeMachine.ahk {
+[640] n\GetExeMachine.ahk {
 
 Line  	|	Function
 0005	|	GetExeMachine(exepath)
 
 }
-[616] n\GetFFTab.ahk {
+[641] n\GetFFTab.ahk {
 
 Line  	|	Function
 0015	|	GetFFTab(TabName="")
 
 }
-[617] n\GetFileAttributes.ahk {
+[642] n\GetFileAttributes.ahk {
 
 Line  	|	Function
 
 }
-[618] n\GetFileAttributesEx.ahk {
+[643] n\GetFileAttributesEx.ahk {
 
 Line  	|	Function
 0143	|	FileTimeToSystemTime(ptr)
 
 }
-[619] n\GetFileEncoding (2).ahk {
+[644] n\GetFileEncoding (2).ahk {
 
 Line  	|	Function
 0017	|	GetFileEncoding(FileName)
 
 }
-[620] n\GetFileEncoding.ahk {
+[645] n\GetFileEncoding.ahk {
 
 Line  	|	Function
 0007	|	GetFileEncoding(File)
 
 }
-[621] n\GetFileFolderSize.ahk {
+[646] n\GetFileFolderSize.ahk {
 
 Line  	|	Function
 0018	|	GetFileFolderSize(fPath)
 
 }
-[622] n\GetFileOwner.ahk {
+[647] n\GetFileOwner.ahk {
 
 Line  	|	Function
 
 }
-[623]  {
+[648]  {
 
 Line  	|	Function
 0004	|	FileGetVersionInfo(peFile="", StringFileInfo="")
 0043	|	GetLocaleInfo(LCID=0x800, type=0x1)
 
 }
-[624] n\GetFileVersionInfo.ahk {
+[649] n\GetFileVersionInfo.ahk {
 
 Line  	|	Function
 0014	|	GetFileVersionInfo(FileName)
 
 }
-[625] n\GetFocusedHwnd.ahk {
+[650] n\GetFocusedHwnd.ahk {
 
 Line  	|	Function
 0001	|	getFocusedHwnd()
 
 }
-[626] n\GetFocusedThread.ahk {
+[651] n\GetFocusedThread.ahk {
 
 Line  	|	Function
 
 }
-[627] n\GetFreeDriveSpace.ahk {
+[652] n\GetFreeDriveSpace.ahk {
 
 Line  	|	Function
 0016	|	GetFreeDriveSpace(fPath)
 
 }
-[628] n\GetFullSysVer.ahk {
+[653] n\GetFullSysVer.ahk {
 
 Line  	|	Function
 0003	|	GetFullSysVer(ByRef osfn, ByRef cos, ByRef kver)
 
 }
-[629] n\getGateway.ahk {
+[654] n\getGateway.ahk {
 
 Line  	|	Function
 0015	|	getGateway()
 0025	|	getIP()
 
 }
-[630] n\GetHeaderDate.ahk {
+[655] n\GetHeaderDate.ahk {
 
 Line  	|	Function
 0020	|	GetHeaderDate(url)
@@ -8312,24 +8528,24 @@ Line  	|	Function
 0097	|	DateParse(str, americanOrder=0)
 
 }
-[631] n\GetHotkeyList.ahk {
+[656] n\GetHotkeyList.ahk {
 
 Line  	|	Function
 0001	|	GetHotkeyList(fnShowFullModifierKeys)
 
 }
-[632] n\GetIEWindowInfo.ahk {
+[657] n\GetIEWindowInfo.ahk {
 
 Line  	|	Function
 
 }
-[633] n\GetImageSize (2).ahk {
+[658] n\GetImageSize (2).ahk {
 
 Line  	|	Function
 1168	|	IMG_SystemMessage(p_MessageNbr)
 
 }
-[634] n\getInfoFromContextMenu.ahk {
+[659] n\getInfoFromContextMenu.ahk {
 
 Line  	|	Function
 0109	|	GetContextMenuCount(hWnd)
@@ -8338,50 +8554,50 @@ Line  	|	Function
 0200	|	GetContextMenuText(hWnd, Position)
 
 }
-[635] n\GetInputLanguage.ahk {
+[660] n\GetInputLanguage.ahk {
 
 Line  	|	Function
 0015	|	GetInputLangID(hWnd)
 0032	|	GetInputLangName(langId)
 
 }
-[636] n\getInstalledPrograms.ahk {
+[661] n\getInstalledPrograms.ahk {
 
 Line  	|	Function
 0001	|	getInstalledPrograms()
 
 }
-[637] n\GetJScriptObject.ahk {
+[662] n\GetJScriptObject.ahk {
 
 Line  	|	Function
 0011	|	GetJScripObject()
 0028	|	CreateScriptObj()
 
 }
-[638] n\getKey.ahk {
+[663] n\getKey.ahk {
 
 Line  	|	Function
 0001	|	getKey(aCol)
 
 }
-[639] n\GetKeyChar.ahk {
+[664] n\GetKeyChar.ahk {
 
 Line  	|	Function
 
 }
-[640] n\getKeyFromValue.ahk {
+[665] n\getKeyFromValue.ahk {
 
 Line  	|	Function
 0001	|	getKey(aCol)
 
 }
-[641] n\GetKnownFolderPath.ahk {
+[666] n\GetKnownFolderPath.ahk {
 
 Line  	|	Function
 0028	|	GetKnownFolderPath(GUID)
 
 }
-[642] n\GetListViewItems.ahk {
+[667] n\GetListViewItems.ahk {
 
 Line  	|	Function
 0001	|	GetListViewItemText(item_index, sub_index, ctrl_id, win_id)
@@ -8390,357 +8606,363 @@ Line  	|	Function
 0127	|	InsertIntegerSL(pInteger, ByRef pDest, pOffset = 0, pSize = 4)
 
 }
-[643] n\GetLogText.ahk {
+[668] n\GetLogText.ahk {
 
 Line  	|	Function
 
 }
-[644] n\GetMacAddress.ahk {
+[669] n\GetMacAddress.ahk {
 
 Line  	|	Function
 
 }
-[645] n\GetMachineType.ahk {
+[670] n\GetMachineType.ahk {
 
 Line  	|	Function
 0044	|	GetMachineType(ApplicationName)
 
 }
-[646] n\getmilliseconds.ahk {
+[671] n\getmilliseconds.ahk {
 
 Line  	|	Function
 0024	|	fs(NumberOfSeconds)
 0031	|	gms(time)
 
 }
-[647] n\GetModuleBaseAddr.ahk {
+[672] n\GetModuleBaseAddr.ahk {
 
 Line  	|	Function
 0005	|	GetModuleBaseAddr(ModuleName, ProcessID)
 
 }
-[648] n\GetMonthNum.ahk {
+[673] n\GetMonthNum.ahk {
 
 Line  	|	Function
 0001	|	GetMonthNum(fnText)
 
 }
-[649] n\GetMostRecentTime.ahk {
+[674] n\GetMostRecentTime.ahk {
 
 Line  	|	Function
 0001	|	GetMostRecentTime(fnFirstTime,fnSecondTime)
 
 }
-[650] n\GetNetSpeed.ahk {
+[675] n\GetNestedTag.ahk {
+
+Line  	|	Function
+0011	|	GetNestedTag(data,tag,occurrence="1")
+
+}
+[676] n\GetNetSpeed.ahk {
 
 Line  	|	Function
 0001	|	GetNetSpeed()
 
 }
-[651] n\GetNumberFormat.ahk {
+[677] n\GetNumberFormat.ahk {
 
 Line  	|	Function
 
 }
-[652] n\GetNumberFormatEx.ahk {
+[678] n\GetNumberFormatEx.ahk {
 
 Line  	|	Function
 
 }
-[653] n\GetObject.ahk {
+[679] n\GetObject.ahk {
 
 Line  	|	Function
 
 }
-[654] n\GetObjectType.ahk {
+[680] n\GetObjectType.ahk {
 
 Line  	|	Function
 0004	|	GetObjectType(hObject)
 
 }
-[655] n\GetOpenedFiles.ahk {
+[681] n\GetOpenedFiles.ahk {
 
 Line  	|	Function
 0019	|	GetOpenedFiles(PID)
 
 }
-[656] n\GetOSVersion.ahk {
+[682] n\GetOSVersion.ahk {
 
 Line  	|	Function
 0039	|	GetOSVersion(ByRef sOSName, ByRef bIs64 = 0, ByRef iServicePack = 0, ByRef bIsNT = 0, ByRef iBuildNumber = 0)
 
 }
-[657] n\GetParentDir.ahk {
+[683] n\GetParentDir.ahk {
 
 Line  	|	Function
 0001	|	GetParentDir(path,parent=1)
 
 }
-[658] n\GetPathFromHandle.ahk {
+[684] n\GetPathFromHandle.ahk {
 
 Line  	|	Function
 0011	|	GetPathFromHandle(hFile)
 
 }
-[659]  {
+[685]  {
 
 Line  	|	Function
 0005	|	getProcessBaseAddress(WindowTitle, MatchMode=3)
 
 }
-[660] n\getProcessBassAddressFromModules.ahk {
+[686] n\getProcessBassAddressFromModules.ahk {
 
 Line  	|	Function
 0010	|	getProcessBassAddressFromModules(process)
 
 }
-[661] n\GetProcessCommandLine.ahk {
+[687] n\GetProcessCommandLine.ahk {
 
 Line  	|	Function
 0012	|	GetProcessCommandLine(hProcess)
 0073	|	RTL_USER_PROCESS_PARAMETERS_From_PEB(hProcess, pPEB)
 
 }
-[662]  {
+[688]  {
 
 Line  	|	Function
 
 }
-[663] n\getProcessFileVersion.ahk {
+[689] n\getProcessFileVersion.ahk {
 
 Line  	|	Function
 0001	|	getProcessFileVersion(process)
 
 }
-[664] n\GetProcessMemoryInfo.ahk {
+[690] n\GetProcessMemoryInfo.ahk {
 
 Line  	|	Function
 0025	|	GetProcessMemoryInfo(hProcess)
 
 }
-[665] n\GetProcessModules.ahk {
+[691] n\GetProcessModules.ahk {
 
 Line  	|	Function
 0005	|	GetProcessModules(ProcessID)
 
 }
-[666] n\GetProcessPath.ahk {
+[692] n\GetProcessPath.ahk {
 
 Line  	|	Function
 0012	|	GetProcessPath(hProcess)
 
 }
-[667] n\GetProcessPebAddr.ahk {
+[693] n\GetProcessPebAddr.ahk {
 
 Line  	|	Function
 0008	|	GetProcessPebAddr(hProcess)
 
 }
-[668] n\GetProcessPriority.ahk {
+[694] n\GetProcessPriority.ahk {
 
 Line  	|	Function
 
 }
-[669] n\GetProcessThreads.ahk {
+[695] n\GetProcessThreads.ahk {
 
 Line  	|	Function
 0005	|	GetProcessThreads(ProcessID)
 
 }
-[670] n\GetProcessWorkingDir.ahk {
+[696] n\GetProcessWorkingDir.ahk {
 
 Line  	|	Function
 0005	|	GetProcessWorkingDir(PID)
 
 }
-[671] n\GetProcessWorkingSetSize.ahk {
+[697] n\GetProcessWorkingSetSize.ahk {
 
 Line  	|	Function
 0014	|	GetProcessWorkingSetSize(hProcess)
 
 }
-[672]  {
+[698]  {
 
 Line  	|	Function
 
 }
-[673] n\getScreenAspectRatio.ahk {
+[699] n\getScreenAspectRatio.ahk {
 
 Line  	|	Function
 0001	|	getScreenAspectRatio()
 
 }
-[674] n\getScriptHandle.ahk {
+[700] n\getScriptHandle.ahk {
 
 Line  	|	Function
 0001	|	getScriptHandle()
 
 }
-[675] n\GetServerName.ahk {
+[701] n\GetServerName.ahk {
 
 Line  	|	Function
 0001	|	GetServerName(fnServerNameLabel)
 
 }
-[676] n\GetStockObject.ahk {
+[702] n\GetStockObject.ahk {
 
 Line  	|	Function
 0006	|	GetStockObject(StockObjectType)
 
 }
-[677] n\GetSystemDateFormat.ahk {
+[703] n\GetSystemDateFormat.ahk {
 
 Line  	|	Function
 0002	|	GetSystemDateFormat()
 
 }
-[678] n\GetSystemErrorText.ahk {
+[704] n\GetSystemErrorText.ahk {
 
 Line  	|	Function
 0001	|	GetSystemErrorText(fnErrorCode)
 
 }
-[679] n\getSystemLanguage.ahk {
+[705] n\getSystemLanguage.ahk {
 
 Line  	|	Function
 0003	|	getSystemLanguage()
 
 }
-[680] n\GetSystemVersion.ahk {
+[706] n\GetSystemVersion.ahk {
 
 Line  	|	Function
 0018	|	GetSystemVersion()
 
 }
-[681] n\GetTaskInfos.ahk {
+[707] n\GetTaskInfos.ahk {
 
 Line  	|	Function
 0007	|	GetTaskInfos()
 
 }
-[682] n\GetTcpTable.ahk {
+[708] n\GetTcpTable.ahk {
 
 Line  	|	Function
 0005	|	GetTcpTable()
 
 }
-[683] n\GetTempFile.ahk {
+[709] n\GetTempFile.ahk {
 
 Line  	|	Function
 
 }
-[684] n\GetTextExtentPoint.ahk {
+[710] n\GetTextExtentPoint.ahk {
 
 Line  	|	Function
 0024	|	GetTextExtentPoint(sString, sFaceName, nHeight = 9, bBold = False, bItalic = False, bUnderline = False, bStrikeOut = False, nCharSet = 0)
 
 }
-[685] n\GetThreadStartAddr.ahk {
+[711] n\GetThreadStartAddr.ahk {
 
 Line  	|	Function
 0005	|	GetThreadStartAddr(ProcessID)
 
 }
-[686] n\GetTimeDifference.ahk {
+[712] n\GetTimeDifference.ahk {
 
 Line  	|	Function
 
 }
-[687] n\GetToolbarItems.ahk {
+[713] n\GetToolbarItems.ahk {
 
 Line  	|	Function
 0022	|	GetToolbarItems(hToolbar)
 
 }
-[688] n\GetTuples.ahk {
+[714] n\GetTuples.ahk {
 
 Line  	|	Function
 
 }
-[689] n\GetUdpTable.ahk {
+[715] n\GetUdpTable.ahk {
 
 Line  	|	Function
 0005	|	GetUdpTable()
 
 }
-[690] n\GetVolumePathNames.ahk {
+[716] n\GetVolumePathNames.ahk {
 
 Line  	|	Function
 0018	|	GetVolumePathNames(VolumeName)
 
 }
-[691] n\GetWanIp.ahk {
+[717] n\GetWanIp.ahk {
 
 Line  	|	Function
 0001	|	GetWanIp(pDnsIp)
 
 }
-[692] n\GetWeekDay_TwoLang.ahk {
+[718] n\GetWeekDay_TwoLang.ahk {
 
 Line  	|	Function
 
 }
-[693] n\GetWindowClassStyle.ahk {
+[719] n\GetWindowClassStyle.ahk {
 
 Line  	|	Function
 0002	|	GetWindowClassStyle(hWnd)
 
 }
-[694] n\GetWindowInfo.ahk {
+[720] n\GetWindowInfo.ahk {
 
 Line  	|	Function
 0018	|	GetWindowInfo(HWND)
 
 }
-[695] n\GetWindowParent.ahk {
+[721] n\GetWindowParent.ahk {
 
 Line  	|	Function
 0009	|	GetWindowParent(hWnd)
 
 }
-[696] n\GetWindowPos.ahk {
+[722] n\GetWindowPos.ahk {
 
 Line  	|	Function
 0013	|	GetWindowPos(hWnd)
 
 }
-[697] n\GetWindowProcessPath.ahk {
+[723] n\GetWindowProcessPath.ahk {
 
 Line  	|	Function
 0011	|	GetWindowProcessPath(hWnd)
 
 }
-[698] n\GetWindowThreadProcessId.ahk {
+[724] n\GetWindowThreadProcessId.ahk {
 
 Line  	|	Function
 0013	|	GetWindowThreadProcessId(hWnd)
 
 }
-[699] n\GetWindowTitle.ahk {
+[725] n\GetWindowTitle.ahk {
 
 Line  	|	Function
 0010	|	GetWindowTitle(hWnd)
 
 }
-[700] n\GetWindowtOwner.ahk {
+[726] n\GetWindowtOwner.ahk {
 
 Line  	|	Function
 0009	|	GetWindowtOwner(hWnd)
 
 }
-[701] n\GetWindowTransparency.ahk {
+[727] n\GetWindowTransparency.ahk {
 
 Line  	|	Function
 0010	|	GetWindowTransparency(hWnd)
 
 }
-[702] n\GetYIQ.ahk {
+[728] n\GetYIQ.ahk {
 
 Line  	|	Function
 0011	|	GetYIQ(n)
 
 }
-[703] n\GET_Devices.ahk {
+[729] n\GET_Devices.ahk {
 
 Line  	|	Function
 0040	|	GetDevices_from_SetupAPI()
@@ -8748,7 +8970,7 @@ Line  	|	Function
 0238	|	notify_change()
 
 }
-[704] n\Get_Explorer_Paths.ahk {
+[730] n\Get_Explorer_Paths.ahk {
 
 Line  	|	Function
 0025	|	Explorer_GetPath(hwnd="")
@@ -8758,27 +8980,27 @@ Line  	|	Function
 0069	|	Explorer_Get(hwnd="",selection=false)
 
 }
-[705] n\Get_TextCtrlSize.ahk {
+[731] n\Get_TextCtrlSize.ahk {
 
 Line  	|	Function
 0001	|	Get_TextCtrlSize(txt, fontName, fontSize, maxWidth="", params="")
 0036	|	Get_ControlCoords(guiName, ctrlHandler)
 
 }
-[706] n\get_variance.ahk {
+[732] n\get_variance.ahk {
 
 Line  	|	Function
 0003	|	get_variance(bcolor, fcolor)
 
 }
-[707]  {
+[733]  {
 
 Line  	|	Function
 0017	|	GET_X_LPARAM(lParam)
 0021	|	GET_Y_LPARAM(lParam)
 
 }
-[708] n\GitHubAPI.ahk {
+[734] n\GitHubAPI.ahk {
 
 Line  	|	Function
 0007	|	GitHubAPI_GetLatestRelease(user, repo)
@@ -8788,7 +9010,7 @@ Line  	|	Function
 0077	|	GitHubAPI_IsRateLimitExceeded(html, headers)
 
 }
-[709] n\GIThubReleasesAPI.ahk {
+[735] n\GIThubReleasesAPI.ahk {
 
 Line  	|	Function
 0007	|	GetLatestPreRelease_Version(user, repo)
@@ -8797,7 +9019,7 @@ Line  	|	Function
 0055	|	GetLatestPreRelease_Infos(user, repo)
 
 }
-[710] n\GitHub_UpdateCheck.ahk {
+[736] n\GitHub_UpdateCheck.ahk {
 
 Line  	|	Function
 0001	|	UpdateCheck(force=false, prompt=false, preRelease=false)
@@ -8805,7 +9027,7 @@ Line  	|	Function
 0064	|	Run_Updater(downloadLink)
 
 }
-[711] n\gl.ahk {
+[737] n\gl.ahk {
 
 Line  	|	Function
 0916	|	glClearIndex(c)
@@ -9231,7 +9453,7 @@ Line  	|	Function
 2194	|	glSamplePass(pass)
 
 }
-[712] n\glext.ahk {
+[738] n\glext.ahk {
 
 Line  	|	Function
 5509	|	glDebugProcARB(source, type, id, severity, length, message, userParam)
@@ -11157,7 +11379,7 @@ Line  	|	Function
 8027	|	glVDPAUUnmapSurfacesNV(numSurface, surfaces)
 
 }
-[713] n\glLite.ahk {
+[739] n\glLite.ahk {
 
 Line  	|	Function
 0001	|	glShadeModel(mode="smooth")
@@ -11182,19 +11404,19 @@ Line  	|	Function
 0148	|	glLineWidth(width)
 
 }
-[714] n\GlobalStruct.ahk {
+[740] n\GlobalStruct.ahk {
 
 Line  	|	Function
 0001	|	GlobalStruct()
 
 }
-[715] n\GlobalVarsScript.ahk {
+[741] n\GlobalVarsScript.ahk {
 
 Line  	|	Function
 0001	|	GlobalVarsScript(var="",size=102400,ByRef object=0)
 
 }
-[716] n\glScreensaver.ahk {
+[742] n\glScreensaver.ahk {
 
 Line  	|	Function
 0107	|	ScreensaverMain(argv)
@@ -11212,7 +11434,7 @@ Line  	|	Function
 0492	|	ScreensaverTiming()
 
 }
-[717] n\glu.ahk {
+[743] n\glu.ahk {
 
 Line  	|	Function
 0039	|	gluErrorStringWIN(errCode)
@@ -11267,7 +11489,7 @@ Line  	|	Function
 0345	|	gluNurbsCallback(nobj, which, fn)
 
 }
-[718] n\glVideo.ahk {
+[744] n\glVideo.ahk {
 
 Line  	|	Function
 0001	|	glLoadVideo(texid, filename)
@@ -11283,13 +11505,13 @@ Line  	|	Function
 0335	|	_glVideo(texid, set=0, del=0)
 
 }
-[719] n\googl.ahk {
+[745] n\googl.ahk {
 
 Line  	|	Function
 0001	|	googl(url)
 
 }
-[720] n\GoogleEarth.ahk {
+[746] n\GoogleEarth.ahk {
 
 Line  	|	Function
 0048	|	Deg2Dec(DegCoord, mode = "both")
@@ -11313,7 +11535,7 @@ Line  	|	Function
 0528	|	findFile(filetofind)
 
 }
-[721] n\GoogleEarthCOM.ahk {
+[747] n\GoogleEarthCOM.ahk {
 
 Line  	|	Function
 0119	|	GetGEpos(byref FocusPointLatitude, byref FocusPointLongitude, byref FocusPointAltitude, byref FocusPointAltitudeMode, byref Range, byref Tilt, byref Azimuth)
@@ -11325,14 +11547,14 @@ Line  	|	Function
 0194	|	GEfeature(layer,display)
 
 }
-[722] n\GoogleTranslate_perJS.ahk {
+[748] n\GoogleTranslate_perJS.ahk {
 
 Line  	|	Function
 0173	|	SendRequest(JS, str, tl, sl, proxy)
 0238	|	GetJScripObject()
 
 }
-[723] n\gpBinEncode.ahk {
+[749] n\gpBinEncode.ahk {
 
 Line  	|	Function
 0093	|	gpStoreBinString(ByRef var, binString)
@@ -11342,7 +11564,7 @@ Line  	|	Function
 0155	|	Bin(x)
 
 }
-[724] n\GPF.ahk {
+[750] n\GPF.ahk {
 
 Line  	|	Function
 0017	|	GPF_SetSingleLine(ObjNum,PosX,PosY,Text,ARGB,UseBlackBG,FontSize,UseBold,FontFamily)
@@ -11358,24 +11580,24 @@ Line  	|	Function
 0138	|	GPF_AuxGetFilledStr(str,multiline)
 
 }
-[725] n\grep.ahk {
+[751] n\grep.ahk {
 
 Line  	|	Function
 
 }
-[726] n\GroupBox.ahk {
+[752] n\GroupBox.ahk {
 
 Line  	|	Function
 0037	|	GroupBox(GBvName ,Title ,Piped_CtrlvNames,Margin=10 ,TitleHeight=10 ,FixedWidth="" ,FixedHeight="")
 
 }
-[727] n\gswin32.ahk {
+[753] n\gswin32.ahk {
 
 Line  	|	Function
 0003	|	gswin32c_bbox_info(input_file)
 
 }
-[728] n\GTranslate.ahk {
+[754] n\GTranslate.ahk {
 
 Line  	|	Function
 0010	|	__New()
@@ -11383,14 +11605,14 @@ Line  	|	Function
 0037	|	getLangCode(Lang="")
 
 }
-[729] n\GuiAddColorPalette.ahk {
+[755] n\GuiAddColorPalette.ahk {
 
 Line  	|	Function
 0014	|	GuiAddColorPalette(Gui, X, Y)
 0026	|	__New(Gui, X, Y)
 
 }
-[730] n\GuiAddF.ahk {
+[756] n\GuiAddF.ahk {
 
 Line  	|	Function
 0039	|	AddControl(oText = "", oEdit = "", oFSel = "")
@@ -11402,35 +11624,35 @@ Line  	|	Function
 0123	|	KillFocus(HCTRL)
 
 }
-[731] n\guiAddonInfo.ahk {
+[757] n\guiAddonInfo.ahk {
 
 Line  	|	Function
 0023	|	guiAddonInfo(SourceFile="")
 
 }
-[732] n\GuiButtonIcon.ahk {
+[758] n\GuiButtonIcon.ahk {
 
 Line  	|	Function
 
 }
-[733] n\guiCompile.ahk {
+[759] n\guiCompile.ahk {
 
 Line  	|	Function
 0014	|	guiCompile(SourceScriptFile="")
 
 }
-[734] n\GuiControl.ahk {
+[760] n\GuiControl.ahk {
 
 Line  	|	Function
 
 }
-[735] n\GuiControlAddBox.ahk {
+[761] n\GuiControlAddBox.ahk {
 
 Line  	|	Function
 0075	|	GuiControlRemoveBox(HBOX)
 
 }
-[736] n\GuiControlTips.ahk {
+[762] n\GuiControlTips.ahk {
 
 Line  	|	Function
 0062	|	__Delete()
@@ -11439,18 +11661,18 @@ Line  	|	Function
 0206	|	GetDelayTimes()
 
 }
-[737] n\guiCreate.ahk {
+[763] n\guiCreate.ahk {
 
 Line  	|	Function
 
 }
-[738] n\GuiCtl.ahk {
+[764] n\GuiCtl.ahk {
 
 Line  	|	Function
 0074	|	SetFocus()
 
 }
-[739] n\GUID.ahk {
+[765] n\GUID.ahk {
 
 Line  	|	Function
 0001	|	GUID_ToString(guid)
@@ -11459,13 +11681,13 @@ Line  	|	Function
 0016	|	GUID_Create(byRef guid)
 
 }
-[740] n\guids.ahk {
+[766] n\guids.ahk {
 
 Line  	|	Function
 0021	|	GUID()
 
 }
-[741] n\GUID_and_UUID.ahk {
+[767] n\GUID_and_UUID.ahk {
 
 Line  	|	Function
 0074	|	CreateGUID()
@@ -11475,7 +11697,7 @@ Line  	|	Function
 0106	|	UuidEqual(uuid1, uuid2)
 
 }
-[742] n\guiExplorer.ahk {
+[768] n\guiExplorer.ahk {
 
 Line  	|	Function
 0016	|	guiExplorer(exploreDir)
@@ -11484,14 +11706,14 @@ Line  	|	Function
 0343	|	getIcon(FilePath, ByRef ImageList)
 
 }
-[743] n\GUIHider.ahk {
+[769] n\GUIHider.ahk {
 
 Line  	|	Function
 0021	|	GUI_AutoHide(Hide_Direction, Gui_Num_To_Hide_Clone=1, Delay_Before_Hide=3000, Number_Of_Offset_Pixels=5, Enabled_Disabled_Flag=1)
 0171	|	WM_MOUSEMOVE(wParam,lParam)
 
 }
-[744] n\GuiLayout.ahk {
+[770] n\GuiLayout.ahk {
 
 Line  	|	Function
 0036	|	if(ParentComponent)
@@ -11504,29 +11726,29 @@ Line  	|	Function
 0211	|	if(Component.ControlHwnd)
 
 }
-[745] n\GuiList.ahk {
+[771] n\GuiList.ahk {
 
 Line  	|	Function
 0011	|	GuiList()
 
 }
-[746] n\guiOffscreenCheck.ahk {
+[772] n\guiOffscreenCheck.ahk {
 
 Line  	|	Function
 0001	|	guiOffScreenCheck(hwnd)
 
 }
-[747] n\GuiSettings.ahk {
+[773] n\GuiSettings.ahk {
 
 Line  	|	Function
 
 }
-[748] n\GuiShow.ahk {
+[774] n\GuiShow.ahk {
 
 Line  	|	Function
 
 }
-[749] n\GUIUniqueDefault().ahk {
+[775] n\GUIUniqueDefault().ahk {
 
 Line  	|	Function
 0003	|	GUIUniqueDestroy(key = "")
@@ -11535,7 +11757,7 @@ Line  	|	Function
 0113	|	MeasureText(text, ByRef Width, ByRef Height, fontName = "", fontOptions = "")
 
 }
-[750] n\GuiVar.ahk {
+[776] n\GuiVar.ahk {
 
 Line  	|	Function
 0033	|	GuiVar_Set(Var,Value)
@@ -11543,7 +11765,7 @@ Line  	|	Function
 0081	|	GuiVar_List(ByRef Array)
 
 }
-[751] n\GuiWnd.ahk {
+[777] n\GuiWnd.ahk {
 
 Line  	|	Function
 0014	|	__Delete()
@@ -11559,26 +11781,32 @@ Line  	|	Function
 0224	|	GWnd_OnEscape(h)
 
 }
-[752] n\handle_AHKV2.ahk {
+[778] n\handle_AHKV2.ahk {
 
 Line  	|	Function
 0016	|	GetStdHandle(nStdHandle)
 0027	|	CloseHandle(hObject)
 
 }
-[753] n\Hash.ahk {
+[779] n\Hash.ahk {
 
 Line  	|	Function
 0001	|	Hash(pData, nSize, SID = "CRC32", nInitial = 0)
 
 }
-[754] n\HashFile.ahk {
+[780] n\HashFile.ahk {
 
 Line  	|	Function
 0024	|	HashFile(filePath,hashType=2)
 
 }
-[755] n\Help.ahk {
+[781] n\HeaderCustomDraw.ahk {
+
+Line  	|	Function
+0051	|	LV_HeaderCustomDraw(H, M, W, L, IdSubclass, RefData)
+
+}
+[782] n\Help.ahk {
 
 Line  	|	Function
 0087	|	setHTMLData(help_file)
@@ -11590,7 +11818,7 @@ Line  	|	Function
 0747	|	RunAsAdmin()
 
 }
-[756] n\HelperFunctions.ahk {
+[783] n\HelperFunctions.ahk {
 
 Line  	|	Function
 0008	|	HotKeyFormat(input)
@@ -11600,31 +11828,40 @@ Line  	|	Function
 0133	|	MsgBox(Text,Title="",Options=0,Timeout=0)
 
 }
-[757] n\Hex2Bin.ahk {
+[784] n\Hex2Bin.ahk {
 
 Line  	|	Function
 0024	|	Hex_Bin(ByRef bin, hex)
 
 }
-[758] n\HexToBin.ahk {
+[785] n\HexToBin.ahk {
 
 Line  	|	Function
 0001	|	HexToBin(ByRef bin,hex)
 
 }
-[759] n\HexToDecColor.ahk {
+[786] n\HexToDecColor.ahk {
 
 Line  	|	Function
 0011	|	HexToDecColor(hex)
 
 }
-[760] n\HexToRgb.ahk {
+[787] n\HexToFloat.ahk {
+
+Line  	|	Function
+0035	|	HexToFloat(x)
+0039	|	HexToDouble(x)
+0043	|	FloatToHex(f)
+0051	|	DoubleToHex(d)
+
+}
+[788] n\HexToRgb.ahk {
 
 Line  	|	Function
 0011	|	HexToRgb(hex)
 
 }
-[761] n\HexView.ahk {
+[789] n\HexView.ahk {
 
 Line  	|	Function
 0045	|	HexView( pAdr, pByteNo="", pActiveTab="")
@@ -11653,30 +11890,30 @@ Line  	|	Function
 0930	|	HexView_About()
 
 }
-[762] n\HIBYTE.ahk {
+[790] n\HIBYTE.ahk {
 
 Line  	|	Function
 0001	|	HIBYTE(a)
 
 }
-[763] n\HideFocusBorder.ahk {
+[791] n\HideFocusBorder.ahk {
 
 Line  	|	Function
 
 }
-[764] n\HideInfotipOnMouseOver.ahk {
+[792] n\HideInfotipOnMouseOver.ahk {
 
 Line  	|	Function
 0001	|	HideInfotipOnMouseOver(fnInfotipText,ByRef fnInfotipID)
 
 }
-[765] n\hideTaskbar.ahk {
+[793] n\hideTaskbar.ahk {
 
 Line  	|	Function
 0001	|	hideTaskbar(toggle)
 
 }
-[766] n\HiEdit.ahk {
+[794] n\HiEdit.ahk {
 
 Line  	|	Function
 0023	|	HE_Add(HParent, X, Y, W, H, Style="", DllPath="")
@@ -11739,25 +11976,25 @@ Line  	|	Function
 1145	|	HiEdit_add2Form(hParent, Txt, Opt)
 
 }
-[767] n\HimetricToPixel.ahk {
+[795] n\HimetricToPixel.ahk {
 
 Line  	|	Function
 0001	|	HimetricToPixel(Pixel)
 
 }
-[768] n\HIWORD.ahk {
+[796] n\HIWORD.ahk {
 
 Line  	|	Function
 0001	|	HIWORD(a)
 
 }
-[769] n\hkswap.ahk {
+[797] n\hkswap.ahk {
 
 Line  	|	Function
 0027	|	hkSwap(byref key, type = 0)
 
 }
-[770] n\HL7.ahk {
+[798] n\HL7.ahk {
 
 Line  	|	Function
 0011	|	initHL7()
@@ -11766,27 +12003,27 @@ Line  	|	Function
 0125	|	Base64Dec( ByRef B64, ByRef Bin )
 
 }
-[771] n\HLink.ahk {
+[799] n\HLink.ahk {
 
 Line  	|	Function
 0064	|	HLink_onNotify(Wparam, Lparam, Msg, Hwnd)
 0102	|	HLink_add2Form(hParent, Txt, Opt)
 
 }
-[772] n\Hook.ahk {
+[800] n\Hook.ahk {
 
 Line  	|	Function
 0009	|	hook(hWndTarget)
 0030	|	unhook(hWndTarget)
 
 }
-[773] n\hotcorners.ahk {
+[801] n\hotcorners.ahk {
 
 Line  	|	Function
 0001	|	hotcorners()
 
 }
-[774] n\HotkeyControl.ahk {
+[802] n\HotkeyControl.ahk {
 
 Line  	|	Function
 0001	|	HotkeyControl(QuotedVarName, GuiNameOrHwnd, ControlOptions="w180 h20", InitialText="", InitialTextColor="Gray")
@@ -11794,20 +12031,20 @@ Line  	|	Function
 0212	|	HotkeyControl_UpdateVar(VarName, Value)
 
 }
-[775] n\HotkeyGUI.ahk {
+[803] n\HotkeyGUI.ahk {
 
 Line  	|	Function
 0174	|	HotkeyGUI(p_GUI="",p_ParentGUI="",p_Title="",p_Limit="",p_LimitMsg="",p_OptionalAttrib="",p_filter="",p_exclude="")
 
 }
-[776] n\Hotkey_Functions.ahk {
+[804] n\Hotkey_Functions.ahk {
 
 Line  	|	Function
 0003	|	Hotkey_Init(Func, Options = "")
 0012	|	Hotkey_Main(In)
 
 }
-[777] n\Hotkey_IfControlActive.ahk {
+[805] n\Hotkey_IfControlActive.ahk {
 
 Line  	|	Function
 0032	|	Hotkey_IfControlActive(ControlDesc, KeyName, VariantType="IfWinActive", VariantTitle="", VariantText="")
@@ -11819,12 +12056,12 @@ Line  	|	Function
 0184	|	Hotkey_IfControlActive_GetFocus()
 
 }
-[778] n\Hotstring.ahk {
+[806] n\Hotstring.ahk {
 
 Line  	|	Function
 
 }
-[779] n\Hotstrings (2).ahk {
+[807] n\Hotstrings (2).ahk {
 
 Line  	|	Function
 0021	|	hotstrings(k, a = "", bsCnt = "", chMode = "e")
@@ -11837,13 +12074,13 @@ Line  	|	Function
 0213	|	isKoreanState()
 
 }
-[780] n\Hotstrings.ahk {
+[808] n\Hotstrings.ahk {
 
 Line  	|	Function
 0019	|	hotstrings(k, a = "")
 
 }
-[781] n\HoverScroll.ahk {
+[809] n\HoverScroll.ahk {
 
 Line  	|	Function
 0098	|	HoverScroll(Lines=1, Axis=1, Ctrl=0, Shift=0)
@@ -11852,7 +12089,7 @@ Line  	|	Function
 0350	|	ScrollLines_3(MinLines=1, MaxLines=5, Threshold=50, Curve=0)
 
 }
-[782] n\HPDF.ahk {
+[810] n\HPDF.ahk {
 
 Line  	|	Function
 0004	|	HPDF_LinkAnnot_SetHighlightMode(ByRef annot,mode)
@@ -12033,32 +12270,32 @@ Line  	|	Function
 1104	|	HPDF_GetPoint(ByRef point, ByRef x, ByRef y)
 
 }
-[783] n\HtmDlg.ahk {
+[811] n\HtmDlg.ahk {
 
 Line  	|	Function
 0014	|	HtmDlg( _URL="", _Owner=0, _Options="", _ODL="," )
 
 }
-[784] n\HTML2RTF.ahk {
+[812] n\HTML2RTF.ahk {
 
 Line  	|	Function
 0006	|	sRTF_To_HTML(ByRef sRTF)
 0041	|	sHTML_To_RTF(ByRef sHTML)
 
 }
-[785] n\HTMLmodule.ahk {
+[813] n\HTMLmodule.ahk {
 
 Line  	|	Function
 0060	|	GrabWidget()
 0101	|	IE_GetWindow(hWnd)
 
 }
-[786] n\HTMLUpload.ahk {
+[814] n\HTMLUpload.ahk {
 
 Line  	|	Function
 
 }
-[787] n\HTML_Util.ahk {
+[815] n\HTML_Util.ahk {
 
 Line  	|	Function
 0003	|	Util_ReplaceHtmlEntities(string)
@@ -12072,13 +12309,13 @@ Line  	|	Function
 0090	|	Util_GetPars()
 
 }
-[788] n\hToMs.ahk {
+[816] n\hToMs.ahk {
 
 Line  	|	Function
 0001	|	hToMs(h)
 
 }
-[789]  {
+[817]  {
 
 Line  	|	Function
 0019	|	url(url)
@@ -12160,31 +12397,31 @@ Line  	|	Function
 0953	|	query(tagname, options)
 
 }
-[790] n\httpQuery.ahk {
+[818] n\httpQuery.ahk {
 
 Line  	|	Function
 0004	|	httpQuery(byref Result, lpszUrl, POSTDATA="", HEADERS="")
 
 }
-[791] n\HttpQueryInfo.ahk {
+[819] n\HttpQueryInfo.ahk {
 
 Line  	|	Function
 0027	|	HttpQueryInfo(URL, QueryInfoFlag=21, Proxy="", ProxyBypass="")
 
 }
-[792] n\HTTPRequest.ahk {
+[820] n\HTTPRequest.ahk {
 
 Line  	|	Function
 0029	|	HTTPRequest( URL, byref In_POST__Out_Data="", byref In_Out_HEADERS="", Options="" )
 
 }
-[793] n\HTTP_Login.ahk {
+[821] n\HTTP_Login.ahk {
 
 Line  	|	Function
 0011	|	HTTP_Login(UserName,UserPass)
 
 }
-[794] n\huffmann.ahk {
+[822] n\huffmann.ahk {
 
 Line  	|	Function
 0006	|	aHC_Compress(ByRef Data, ByRef compressedData, Size = 0, aHC_InfoStyle = 1)
@@ -12194,7 +12431,7 @@ Line  	|	Function
 0205	|	d2b(i, s = 0, c = 0)
 
 }
-[795] n\hwmonitor.ahk {
+[823] n\hwmonitor.ahk {
 
 Line  	|	Function
 0002	|	GetCPUClock()
@@ -12207,42 +12444,42 @@ Line  	|	Function
 0050	|	ListSensors(filter)
 
 }
-[796] n\hwnd.ahk {
+[824] n\hwnd.ahk {
 
 Line  	|	Function
 0001	|	hwnd(win,hwnd="")
 
 }
-[797] n\hwndHung.ahk {
+[825] n\hwndHung.ahk {
 
 Line  	|	Function
 0001	|	hwndHung(id)
 
 }
-[798] n\hwnd_to_hBmp.ahk {
+[826] n\hwnd_to_hBmp.ahk {
 
 Line  	|	Function
 
 }
-[799] n\hXfromHBITMAP.ahk {
+[827] n\hXfromHBITMAP.ahk {
 
 Line  	|	Function
 
 }
-[800] n\hyde.ahk {
+[828] n\hyde.ahk {
 
 Line  	|	Function
 0050	|	exit()
 
 }
-[801] n\Icon.ahk {
+[829] n\Icon.ahk {
 
 Line  	|	Function
 0053	|	Icon_Load(sBinFile, sResName, nWidth)
 0090	|	Icon_Destroy(hIcon)
 
 }
-[802] n\IconChanger.ahk {
+[830] n\IconChanger.ahk {
 
 Line  	|	Function
 0004	|	ReplaceAhkIcon(re, IcoFile, ExeFile)
@@ -12250,7 +12487,7 @@ Line  	|	Function
 0093	|	EnumIcons_Enum(hModule, type, name, lParam)
 
 }
-[803] n\IconEx.ahk {
+[831] n\IconEx.ahk {
 
 Line  	|	Function
 0050	|	IconEx(StartFile="", Pos="", Settings="", GuiNum=69)
@@ -12278,7 +12515,7 @@ Line  	|	Function
 0534	|	IconEx_defaultGui()
 
 }
-[804] n\Icon_speciale.ahk {
+[832] n\Icon_speciale.ahk {
 
 Line  	|	Function
 0008	|	DeleteIcon(hIcon)
@@ -12290,12 +12527,12 @@ Line  	|	Function
 0121	|	GetIconFileInfo(IconPath)
 
 }
-[805] n\IDragSourceHelper.ahk {
+[833] n\IDragSourceHelper.ahk {
 
 Line  	|	Function
 
 }
-[806] n\IDropSource.ahk {
+[834] n\IDropSource.ahk {
 
 Line  	|	Function
 0014	|	IDropSource_Create()
@@ -12307,7 +12544,7 @@ Line  	|	Function
 0068	|	IDropSource_GiveFeedback(IDropSource, dwEffect)
 
 }
-[807] n\IE.ahk {
+[835] n\IE.ahk {
 
 Line  	|	Function
 0027	|	IE_FangWei(ASK, ASW, AddPD="")
@@ -12333,7 +12570,7 @@ Line  	|	Function
 0350	|	IE_tanchu2(daima, text="??", cishu=1)
 
 }
-[808] n\IE7_Dom.ahk {
+[836] n\IE7_Dom.ahk {
 
 Line  	|	Function
 0002	|	IE7_Get(title,url="http")
@@ -12348,7 +12585,7 @@ Line  	|	Function
 0216	|	IE7_Set_DOM(parentWindow,ID1,val="innerHTML")
 
 }
-[809] n\IECom.ahk {
+[837] n\IECom.ahk {
 
 Line  	|	Function
 0195	|	wait(x="")
@@ -12363,7 +12600,7 @@ Line  	|	Function
 0386	|	WB_OnKeyPress(wParam, lParam, nMsg, hWnd)
 
 }
-[810] n\IEControl.ahk {
+[838] n\IEControl.ahk {
 
 Line  	|	Function
 0001	|	IEAdd(mgH, x, y, w, h, u)
@@ -12404,14 +12641,14 @@ Line  	|	Function
 0286	|	CGID_MSHTML(nCmd, nOpt = 0)
 
 }
-[811] n\IEGet.ahk {
+[839] n\IEGet.ahk {
 
 Line  	|	Function
 0004	|	WBGet(WinTitle="ahk_class IEFrame", Svr#=1)
 0018	|	IEGet(name="",url="")
 
 }
-[812] n\IEL.ahk {
+[840] n\IEL.ahk {
 
 Line  	|	Function
 0013	|	IEL_new(url="", option="")
@@ -12423,7 +12660,7 @@ Line  	|	Function
 0121	|	IEL_daili(daili="")
 
 }
-[813] n\IELib.ahk {
+[841] n\IELib.ahk {
 
 Line  	|	Function
 0010	|	IEGet(Name="")
@@ -12438,13 +12675,13 @@ Line  	|	Function
 0333	|	ClickLast(ElementID, Browser, iframe)
 
 }
-[814] n\IEReady.ahk {
+[842] n\IEReady.ahk {
 
 Line  	|	Function
 0038	|	IEReady(hIESvr = 0)
 
 }
-[815] n\IfControlActive.ahk {
+[843] n\IfControlActive.ahk {
 
 Line  	|	Function
 0030	|	Hotkey_IfControlActive(ControlDesc, KeyName, VariantType="IfWinActive", VariantTitle="", VariantText="")
@@ -12456,7 +12693,7 @@ Line  	|	Function
 0186	|	Hotkey_IfControlActive_GetFocus()
 
 }
-[816] n\IFileDialog.ahk {
+[844] n\IFileDialog.ahk {
 
 Line  	|	Function
 0003	|	IFileDialogEvents_new()
@@ -12472,7 +12709,7 @@ Line  	|	Function
 0112	|	IFileDialogEvents_OnOverwrite(this_, pfd, psi, pResponse)
 
 }
-[817] n\Ignore.ahk {
+[845] n\Ignore.ahk {
 
 Line  	|	Function
 0003	|	Ignore_GetPatterns(ignorefile)
@@ -12480,7 +12717,7 @@ Line  	|	Function
 0075	|	Ignore_DirTree(dir,patterns)
 
 }
-[818] n\IL.ahk {
+[846] n\IL.ahk {
 
 Line  	|	Function
 0001	|	ImageList_Create(cx,cy,flags,cInitial,cGrow)
@@ -12491,13 +12728,13 @@ Line  	|	Function
 0022	|	LoadIcon(Filename, IconNumber, IconSize)
 
 }
-[819] n\ILButton.ahk {
+[847] n\ILButton.ahk {
 
 Line  	|	Function
 0037	|	ILButton(HBtn, Images, Cx=16, Cy=16, Align="Left", Margin="1 1 1 1")
 
 }
-[820] n\IL_EX.ahk {
+[848] n\IL_EX.ahk {
 
 Line  	|	Function
 0021	|	IL_EX_Copy(ILID, From, To)
@@ -12510,19 +12747,19 @@ Line  	|	Function
 0182	|	IL_EX_SetSize(ILID, W, H)
 
 }
-[821]  {
+[849]  {
 
 Line  	|	Function
 0011	|	IL_Save(HIL, File)
 0029	|	IL_Load(File)
 
 }
-[822] n\Image2Include.ahk {
+[850] n\Image2Include.ahk {
 
 Line  	|	Function
 
 }
-[823] n\Image2Text.ahk {
+[851] n\Image2Text.ahk {
 
 Line  	|	Function
 0001	|	FindText(x,y,w,h,err1,err0,text)
@@ -12540,7 +12777,7 @@ Line  	|	Function
 0496	|	PicFind2(color, offsetX, offsetY , Scan0, Stride, sx, sy, sw, sh, ByRef ss, ByRef text, ByRef s1, ByRef s0, ByRef in, num, ByRef allpos)
 
 }
-[824] n\ImageList.ahk {
+[852] n\ImageList.ahk {
 
 Line  	|	Function
 0008	|	ILC_Create(i, g="1", s="16x16", f="M24")
@@ -12556,13 +12793,19 @@ Line  	|	Function
 0133	|	ILC_Add(hIL, icon, idx="1")
 
 }
-[825] n\implode.ahk {
+[853] n\IMG_GIS.ahk {
+
+Line  	|	Function
+1358	|	IMG_SystemMessage(p_MessageNbr)
+
+}
+[854] n\implode.ahk {
 
 Line  	|	Function
 0001	|	implode(array, sep = "")
 
 }
-[826] n\ImportTypeLib.ahk {
+[855] n\ImportTypeLib.ahk {
 
 Line  	|	Function
 0011	|	ImportTypeLib(lib, version = "1.0")
@@ -12632,22 +12875,22 @@ Line  	|	Function
 1844	|	ITL_ArrayGetBounds(obj, byRef lBound = 0, byRef uBound = 0)
 
 }
-[827] n\Include.ahk {
+[856] n\Include.ahk {
 
 Line  	|	Function
 
 }
-[828] n\inc_mf_0_3.ahk {
+[857] n\inc_mf_0_3.ahk {
 
 Line  	|	Function
 
 }
-[829] n\inc_mf_System_IO_0_3.ahk {
+[858] n\inc_mf_System_IO_0_3.ahk {
 
 Line  	|	Function
 
 }
-[830] n\INet.ahk {
+[859] n\INet.ahk {
 
 Line  	|	Function
 0051	|	INetOpen(Proxy="", ProxyBypass="", Agent="")
@@ -12665,13 +12908,13 @@ Line  	|	Function
 0314	|	FtpDeleteFile(hConnection, File)
 
 }
-[831] n\InfoGUI.ahk {
+[860] n\InfoGUI.ahk {
 
 Line  	|	Function
 0208	|	InfoGUI(p_Owner="",p_Text="",p_Title="",p_GUIOptions="",p_ObjectType="",p_ObjectOptions="",p_BGColor="",p_Font="",p_FontOptions="",p_Timeout="")
 
 }
-[832] n\infogulchEncodings.ahk {
+[861] n\infogulchEncodings.ahk {
 
 Line  	|	Function
 0009	|	Dec_XML(str)
@@ -12682,12 +12925,12 @@ Line  	|	Function
 0088	|	Dec_Hex(x)
 
 }
-[833] n\InfoTip.ahk {
+[862] n\InfoTip.ahk {
 
 Line  	|	Function
 
 }
-[834] n\ini.ahk {
+[863] n\ini.ahk {
 
 Line  	|	Function
 0315	|	ini_getValue(ByRef _Content, _Section, _Key, _PreserveSpace = False)
@@ -12712,26 +12955,26 @@ Line  	|	Function
 1680	|	Ini_Delete(ByRef _Content, _Section, _Key = "")
 
 }
-[835] n\IniFile.ahk {
+[864] n\IniFile.ahk {
 
 Line  	|	Function
 0181	|	__ini_trim__(f, start, end, len)
 
 }
-[836] n\IniParser.ahk {
+[865] n\IniParser.ahk {
 
 Line  	|	Function
 0011	|	IniParser(sFile)
 
 }
-[837] n\IniSettingsEditor.ahk {
+[866] n\IniSettingsEditor.ahk {
 
 Line  	|	Function
 0001	|	IniSettingsEditor(ProgName,IniFile,OwnedBy = 0,DisableGui = 0, HelpText = 0)
 0405	|	GuiIniSettingsEditorAnchor(ctrl, a, draw = false)
 
 }
-[838] n\iniWrapper.ahk {
+[867] n\iniWrapper.ahk {
 
 Line  	|	Function
 0024	|	iniWrapper_loadAllSections(ByRef iniVar)
@@ -12742,32 +12985,32 @@ Line  	|	Function
 0231	|	iniWrapper_saveSection(ByRef iniVar, section)
 
 }
-[839] n\InjectAhkDll.ahk {
+[868] n\InjectAhkDll.ahk {
 
 Line  	|	Function
 0008	|	InjectAhkDll(PID,dll="AutoHotkey.dll",script=0)
 
 }
-[840] n\InjectDll (2).ahk {
+[869] n\InjectDll (2).ahk {
 
 Line  	|	Function
 0008	|	Inject_CleanUp(pMsg, pHandle, pLibrary)
 0022	|	Inject_Dll(pID, dllPath)
 
 }
-[841] n\InjectDll.ahk {
+[870] n\InjectDll.ahk {
 
 Line  	|	Function
 0001	|	InjectDll(pid,dllpath)
 
 }
-[842] n\InjectDllA.ahk {
+[871] n\InjectDllA.ahk {
 
 Line  	|	Function
 0003	|	InjectDllA(pid,dllpath)
 
 }
-[843] n\InMemoryWindowCapture.ahk {
+[872] n\InMemoryWindowCapture.ahk {
 
 Line  	|	Function
 0020	|	Display_CreateWindowCapture(ByRef device, ByRef context, ByRef pixels, ByRef id = "")
@@ -12791,49 +13034,55 @@ Line  	|	Function
 0370	|	Display_ReadArea(x, y, w, h, color = 0x000000, variation = 32, ByRef id = "", maxwidth = 0, exclude = "")
 
 }
-[844] n\InputBox.ahk {
+[873] n\InputBox.ahk {
 
 Line  	|	Function
 0081	|	InputBox_Close(Data, Error)
 
 }
-[845] n\InputBoxEx.ahk {
+[874] n\InputBoxEx.ahk {
 
 Line  	|	Function
 
 }
-[846] n\InsertionSort.ahk {
+[875] n\InsertionSort.ahk {
 
 Line  	|	Function
 0010	|	InsertionSort(ByRef array)
 
 }
-[847] n\Install.ahk {
+[876] n\InsertText.ahk {
+
+Line  	|	Function
+0012	|	InsertText(hEdit, ptrText, iPos = -1)
+
+}
+[877] n\Install.ahk {
 
 Line  	|	Function
 0021	|	Install_ExitCode(e)
 
 }
-[848] n\Instance.ahk {
+[878] n\Instance.ahk {
 
 Line  	|	Function
 0021	|	Instance(Label="", Params="", WM="0x1357")
 0064	|	Instance_(wParam, lParam)
 
 }
-[849] n\internet.ahk {
+[879] n\internet.ahk {
 
 Line  	|	Function
 0028	|	netStatus()
 0102	|	netNotifyShow(title,msg,col,h,t,s)
 
 }
-[850] n\InternetCheckConnection.ahk {
+[880] n\InternetCheckConnection.ahk {
 
 Line  	|	Function
 
 }
-[851] n\InternetFileRead.ahk {
+[881] n\InternetFileRead.ahk {
 
 Line  	|	Function
 0066	|	InternetFileRead( ByRef V, URL="", RB=0, bSz=1024, DLP="DLP", F=0x84000000 )
@@ -12841,38 +13090,43 @@ Line  	|	Function
 0121	|	VarZ_Save( byRef V, File="" )
 
 }
-[852] n\InternetGetCookieEx.ahk {
+[882] n\InternetGetCookieEx.ahk {
 
 Line  	|	Function
 0008	|	InternetGetCookieEx(URL)
 
 }
-[853] n\InternetGetRedirect 20110825.ahk {
+[883] n\InternetGetRedirect 20110825.ahk {
 
 Line  	|	Function
 0001	|	InternetGetRedirect( URL )
 0016	|	GoogleGetRedirect( SearchFor, Site="" )
 
 }
-[854] n\InvBase64.ahk {
+[884] n\InvBase64.ahk {
 
 Line  	|	Function
 0001	|	InvBase64(B64val)
 
 }
-[855] n\invertCaseStr.ahk {
+[885] n\Inverse_FormatTime.ahk {
+
+Line  	|	Function
+
+}
+[886] n\invertCaseStr.ahk {
 
 Line  	|	Function
 0001	|	invertCaseStr(str)
 
 }
-[856] n\InvokeVerb.ahk {
+[887] n\InvokeVerb.ahk {
 
 Line  	|	Function
 0011	|	InvokeVerb(path, menu)
 
 }
-[857] n\IPC.ahk {
+[888] n\IPC.ahk {
 
 Line  	|	Function
 0031	|	IPC_Send(Hwnd, Data="", Port=100, DataSize="")
@@ -12880,19 +13134,19 @@ Line  	|	Function
 0076	|	IPC_onCopyData(WParam, LParam)
 
 }
-[858] n\IPToInt().ahk {
+[889] n\IPToInt().ahk {
 
 Line  	|	Function
 0006	|	IPToInt(ip, fmt)
 
 }
-[859] n\Is.ahk {
+[890] n\Is.ahk {
 
 Line  	|	Function
 0001	|	Is(Value, Type)
 
 }
-[860] n\is2.ahk {
+[891] n\is2.ahk {
 
 Line  	|	Function
 0003	|	OffscreenSnap(wid)
@@ -12919,83 +13173,89 @@ Line  	|	Function
 0236	|	GetLastError()
 
 }
-[861] n\isBinFile.ahk {
+[892] n\IsAlphaBitmap.ahk {
+
+Line  	|	Function
+0012	|	IsAlphaBitmap(sBM)
+
+}
+[893] n\isBinFile.ahk {
 
 Line  	|	Function
 0001	|	isBinFile(Filename,NumBytes=32,Minimum=4,complexunicode=1)
 
 }
-[862] n\IsBom.ahk {
+[894] n\IsBom.ahk {
 
 Line  	|	Function
 
 }
-[863] n\iscmp.ahk {
+[895] n\iscmp.ahk {
 
 Line  	|	Function
 0062	|	Is(ByRef String_1, Operator, ByRef String_2)
 
 }
-[864] n\IsControlFocused.ahk {
+[896] n\IsControlFocused.ahk {
 
 Line  	|	Function
 0026	|	IsControlFocused(hwnd)
 
 }
-[865] n\IsDirectory.ahk {
+[897] n\IsDirectory.ahk {
 
 Line  	|	Function
 0010	|	IsDirectory(DirName)
 
 }
-[866] n\IsEmpty.ahk {
+[898] n\IsEmpty.ahk {
 
 Line  	|	Function
 0028	|	IsEmpty(var)
 
 }
-[867] n\IsFileInUse.ahk {
+[899] n\IsFileInUse.ahk {
 
 Line  	|	Function
 
 }
-[868] n\IsFilePathTooLong.ahk {
+[900] n\IsFilePathTooLong.ahk {
 
 Line  	|	Function
 
 }
-[869] n\isFullDisplay.ahk {
+[901] n\isFullDisplay.ahk {
 
 Line  	|	Function
 0011	|	IsFullDisplay(hWnd)
 
 }
-[870] n\IsFullScreen.ahk {
+[902] n\IsFullScreen.ahk {
 
 Line  	|	Function
 0015	|	IsFullscreen(sWinTitle = "A", bRefreshRes = False)
 
 }
-[871] n\IsFuncObj.ahk {
+[903] n\IsFuncObj.ahk {
 
 Line  	|	Function
 0003	|	IsFuncObj(Value)
 
 }
-[872] n\IsJsonValid.ahk {
+[904] n\IsJsonValid.ahk {
 
 Line  	|	Function
 0016	|	isJsonValid(string)
 
 }
-[873] n\isLikeHotkey.ahk {
+[905] n\isLikeHotkey.ahk {
 
 Line  	|	Function
 0046	|	isLikeHotkey(str)
 0080	|	assert(condition, fn, arg)
 
 }
-[874] n\IsMouseOverTaskbar.ahk {
+[906] n\IsMouseOverTaskbar.ahk {
 
 Line  	|	Function
 0001	|	IsMouseOverStartButton()
@@ -13010,74 +13270,74 @@ Line  	|	Function
 0136	|	while(true)
 
 }
-[875] n\IsPrime.ahk {
+[907] n\IsPrime.ahk {
 
 Line  	|	Function
 0008	|	IsPrime(Number)
 
 }
-[876] n\IsProcess.ahk {
+[908] n\IsProcess.ahk {
 
 Line  	|	Function
 0013	|	IsProcess(Process)
 
 }
-[877] n\IsProcessElevated.ahk {
+[909] n\IsProcessElevated.ahk {
 
 Line  	|	Function
 0011	|	IsProcessElevated(ProcessID)
 
 }
-[878] n\IsService.ahk {
+[910] n\IsService.ahk {
 
 Line  	|	Function
 0010	|	IsService(ServiceName)
 
 }
-[879] n\IsType.ahk {
+[911] n\IsType.ahk {
 
 Line  	|	Function
 0003	|	Type(Value)
 
 }
-[880] n\IsUpdated.ahk {
+[912] n\IsUpdated.ahk {
 
 Line  	|	Function
 0001	|	IsUpdated()
 
 }
-[881] n\isValidEmail.ahk {
+[913] n\isValidEmail.ahk {
 
 Line  	|	Function
 0002	|	isValidEmail(emailstr)
 
 }
-[882] n\IsValidFileName.ahk {
+[914] n\IsValidFileName.ahk {
 
 Line  	|	Function
 0031	|	isValidFileName(_fileName, _isLong=true)
 
 }
-[883] n\IsWindow.ahk {
+[915] n\IsWindow.ahk {
 
 Line  	|	Function
 0010	|	IsWindow(hWnd)
 0027	|	IsWindowActive(hWnd)
 
 }
-[884] n\IsWindowCloaked.ahk {
+[916] n\IsWindowCloaked.ahk {
 
 Line  	|	Function
 0011	|	IsWindowCloaked(hwnd)
 
 }
-[885] n\IsWow64Process.ahk {
+[917] n\IsWow64Process.ahk {
 
 Line  	|	Function
 0013	|	IsWow64Process(hProcess)
 
 }
-[886] n\iWeb.ahk {
+[918] n\iWeb.ahk {
 
 Line  	|	Function
 0040	|	iWeb_Init()
@@ -13109,7 +13369,7 @@ Line  	|	Function
 0487	|	iWeb_Activate(sTitle)
 
 }
-[887] n\iWeb_L.ahk {
+[919] n\iWeb_L.ahk {
 
 Line  	|	Function
 0043	|	iWeb_newIe()
@@ -13141,13 +13401,13 @@ Line  	|	Function
 0389	|	iWeb_TabWinID(tabName)
 
 }
-[888] n\JEEGetAllText.ahk {
+[920] n\JEEGetAllText.ahk {
 
 Line  	|	Function
 0001	|	JEE_StrRept(vText, vNum)
 
 }
-[889] n\JEEGuiText.ahk {
+[921] n\JEEGuiText.ahk {
 
 Line  	|	Function
 0008	|	JEEGuiText_Load()
@@ -13181,7 +13441,7 @@ Line  	|	Function
 1034	|	JEE_SciSetText(hCtl, vText)
 
 }
-[890] n\JEE_BinToDec.ahk {
+[922] n\JEE_BinToDec.ahk {
 
 Line  	|	Function
 0014	|	JEE_BinToDec(vBin)
@@ -13191,7 +13451,7 @@ Line  	|	Function
 0097	|	JEE_BinToDouble(vBin)
 
 }
-[891] n\JEE_DateAddFriendly.ahk {
+[923] n\JEE_DateAddFriendly.ahk {
 
 Line  	|	Function
 0042	|	JEE_DateAddFriendly(vDate, vDiff)
@@ -13199,12 +13459,12 @@ Line  	|	Function
 0131	|	DateDiff(DateTime1, DateTime2, TimeUnits)
 
 }
-[892] n\JEE_ExpWinGetFoc.ahk {
+[924] n\JEE_ExpWinGetFoc.ahk {
 
 Line  	|	Function
 
 }
-[893] n\JEE_Functions.ahk {
+[925] n\JEE_Functions.ahk {
 
 Line  	|	Function
 0007	|	JEEGuiText_Load()
@@ -13238,7 +13498,7 @@ Line  	|	Function
 0963	|	JEE_SciSetText(hCtl, vText)
 
 }
-[894] n\JEE_GuiText.ahk {
+[926] n\JEE_GuiText.ahk {
 
 Line  	|	Function
 0295	|	JEEGuiText_Load()
@@ -13272,7 +13532,23 @@ Line  	|	Function
 0970	|	JEE_SciSetText(hCtl, vText)
 
 }
-[895] n\JEE_StrManipulations.ahk {
+[927] n\JEE_RichEditGetText.ahk {
+
+Line  	|	Function
+0062	|	JEE_RichEditGetText(hCtl)
+0108	|	JEE_DCOpenProcess(vAccess, hInherit, vPID)
+0111	|	JEE_DCVirtualAllocEx(hProc, vAddress, vSize, vAllocType, vProtect)
+0114	|	JEE_DCWriteProcessMemory(hProc, vBAddress, pBuf, vSize, vWritten)
+0117	|	JEE_DCReadProcessMemory(hProc, vBAddress, pBuf, vSize, vRead)
+0120	|	JEE_DCVirtualFreeEx(hProc, vAddress, vSize, vFreeType)
+0123	|	JEE_DCCloseHandle(hObject)
+0129	|	JEE_RichEditGetStream(hCtl, vFormat)
+0142	|	JEE_RichEditGetStreamCallback(dwCookie, pbBuff, cb, pcb)
+0163	|	JEE_RichEditSetStream(hCtl, vFormat, ByRef vText)
+0182	|	JEE_RichEditSetStreamCallback(dwCookie, pbBuff, cb, pcb)
+
+}
+[928] n\JEE_StrManipulations.ahk {
 
 Line  	|	Function
 0073	|	JEE_StrFreqCIA(ByRef vText)
@@ -13298,49 +13574,49 @@ Line  	|	Function
 0820	|	JEE_StrTextToHtml(vText)
 
 }
-[896] n\JoinScript.ahk {
+[929] n\JoinScript.ahk {
 
 Line  	|	Function
 0011	|	JoinLib(scriptFullPath,workingDir="",keepLib=0)
 0100	|	JoinScript(scriptFullPath,workingDir="",keepLib=0)
 
 }
-[897] n\JoystickTest.ahk {
+[930] n\JoystickTest.ahk {
 
 Line  	|	Function
 
 }
-[898] n\json.ahk {
+[931] n\json.ahk {
 
 Line  	|	Function
 0016	|	json(ByRef js, s, v = "")
 
 }
-[899] n\JSON2AHK.ahk {
+[932] n\JSON2AHK.ahk {
 
 Line  	|	Function
 
 }
-[900] n\Json4Ahk.ahk {
+[933] n\Json4Ahk.ahk {
 
 Line  	|	Function
 0017	|	Json4Ahk_Encode(objAhk)
 
 }
-[901] n\JSON_AHk_Parsing_for_ahk2.ahk {
+[934] n\JSON_AHk_Parsing_for_ahk2.ahk {
 
 Line  	|	Function
 0055	|	DoVariant(ByRef Src, ByRef Pos, ByRef Ch)
 0078	|	Next( ByRef Src, ByRef pos )
 
 }
-[902] n\JSON_Beautify.ahk {
+[935] n\JSON_Beautify.ahk {
 
 Line  	|	Function
 0012	|	JSON_Uglify(JSON)
 
 }
-[903]  {
+[936]  {
 
 Line  	|	Function
 0019	|	BuildJson(obj)
@@ -13350,32 +13626,32 @@ Line  	|	Function
 0099	|	IsNumber(Num)
 
 }
-[904] n\JSON_FromObj.ahk {
+[937] n\JSON_FromObj.ahk {
 
 Line  	|	Function
 0006	|	json_fromobj( obj )
 
 }
-[905] n\JSON_Library.ahk {
+[938] n\JSON_Library.ahk {
 
 Line  	|	Function
 0017	|	_Json_Parse(sJson)
 
 }
-[906] n\JSON_parse.ahk {
+[939] n\JSON_parse.ahk {
 
 Line  	|	Function
 0007	|	JSON_parse(jsonStr)
 0033	|	convertJScriptObj2AHK(jsObj)
 
 }
-[907] n\JSON_ToObj.ahk {
+[940] n\JSON_ToObj.ahk {
 
 Line  	|	Function
 0004	|	json_toobj( str )
 
 }
-[908] n\JumpList.ahk {
+[941] n\JumpList.ahk {
 
 Line  	|	Function
 0033	|	DEFINE_PROPERTYKEY(byref PropertyKeyStruct, byref fmtid, byref propertyid)
@@ -13435,17 +13711,17 @@ Line  	|	Function
 0294	|	Clear()
 
 }
-[909] n\Jxon.ahk {
+[942] n\Jxon.ahk {
 
 Line  	|	Function
 
 }
-[910]  {
+[943]  {
 
 Line  	|	Function
 
 }
-[911] n\Kernel32.ahk {
+[944] n\Kernel32.ahk {
 
 Line  	|	Function
 0064	|	OpenProcess(dwDesiredAccess, bInheritHandle, dwProcessId)
@@ -13459,20 +13735,20 @@ Line  	|	Function
 0161	|	MultiByteToWideChar(CodePage, dwFlags, lpMultiByteStr, cbMultiByte, lpWideCharStr, cchWideChar)
 
 }
-[912] n\Keyboard.ahk {
+[945] n\Keyboard.ahk {
 
 Line  	|	Function
 0113	|	SetKeyboardLayout(LocaleID)
 
 }
-[913] n\KeyboardLayout.ahk {
+[946] n\KeyboardLayout.ahk {
 
 Line  	|	Function
 0013	|	KeyboardLayout_Set(hkl, hWnd = 0)
 0041	|	KeyboardLayout_Get(hWnd = 0)
 
 }
-[914] n\KeyboardLED.ahk {
+[947] n\KeyboardLED.ahk {
 
 Line  	|	Function
 0013	|	KeyboardLED(LEDvalue, Cmd, Kbd=0)
@@ -13482,7 +13758,7 @@ Line  	|	Function
 0071	|	SetUnicodeStr(ByRef out, str_)
 
 }
-[915] n\Lastkey.ahk {
+[948] n\Lastkey.ahk {
 
 Line  	|	Function
 0027	|	LastKey(nCode, wParam, lParam)
@@ -13490,7 +13766,7 @@ Line  	|	Function
 0194	|	StrTrimRight(string, count)
 
 }
-[916] n\LBDDLib.ahk {
+[949] n\LBDDLib.ahk {
 
 Line  	|	Function
 0253	|	LBDDLib_Init(Options=0)
@@ -13520,7 +13796,7 @@ Line  	|	Function
 1017	|	LBDDLib_moveLB2LB(ItemToMove, NewPosition, hWnd_source, ArrayNum)
 
 }
-[917] n\LBEX.ahk {
+[950] n\LBEX.ahk {
 
 Line  	|	Function
 0001	|	LBEX_Add(HLB, ByRef String)
@@ -13548,12 +13824,19 @@ Line  	|	Function
 0470	|	LBEX_SetTopIndex(HLB, Index)
 
 }
-[918] n\LCC.ahk {
+[951] n\LButtonOnEditScriptMenuItem.ahk {
+
+Line  	|	Function
+0021	|	LButtonOnEditScriptMenuItem()
+0051	|	WM_COMMAND(MyEditor, wp)
+
+}
+[952] n\LCC.ahk {
 
 Line  	|	Function
 
 }
-[919] n\LedControl.ahk {
+[953] n\LedControl.ahk {
 
 Line  	|	Function
 0072	|	KeyboardLED(LEDvalue, Cmd, Kbd=1)
@@ -13563,19 +13846,19 @@ Line  	|	Function
 0130	|	SetUnicodeStr(ByRef out, str_)
 
 }
-[920] n\LetterVariations.ahk {
+[954] n\LetterVariations.ahk {
 
 Line  	|	Function
-0015	|	LetterVariations(text,c=0)
+0026	|	LetterVariations(text,c=0)
 
 }
-[921] n\LetUserSelectRect.ahk {
+[955] n\LetUserSelectRect.ahk {
 
 Line  	|	Function
 0011	|	LetUserSelectRect(ByRef X1, ByRef Y1, ByRef X2, ByRef Y2)
 
 }
-[922] n\LibCon.ahk {
+[956] n\LibCon.ahk {
 
 Line  	|	Function
 0070	|	SmartStartConsole()
@@ -13649,7 +13932,7 @@ Line  	|	Function
 1076	|	ReadConsoleOutput(x, y, w, h)
 
 }
-[923] n\libcrypt.ahk {
+[957] n\libcrypt.ahk {
 
 Line  	|	Function
 0040	|	LC_Ascii2Bin2(Ascii)
@@ -13741,7 +14024,7 @@ Line  	|	Function
 1241	|	LC_XOR(byref OutData,byref EncData,EncLen,byref PassData,PassLen)
 
 }
-[924] n\libcurl.ahk {
+[958] n\libcurl.ahk {
 
 Line  	|	Function
 0001	|	CurlGlobalInit( Location = "", flags = 3 )
@@ -13769,7 +14052,7 @@ Line  	|	Function
 0310	|	CurlEasyDefineOptions( All = true )
 
 }
-[925] n\libHaruUnicode.ahk {
+[959] n\libHaruUnicode.ahk {
 
 Line  	|	Function
 0006	|	HPDF_LoadDLL(dll)
@@ -13956,18 +14239,18 @@ Line  	|	Function
 0869	|	HPDF_ResetStream(ByRef hDoc)
 
 }
-[926] n\Limit.ahk {
+[960] n\Limit.ahk {
 
 Line  	|	Function
 
 }
-[927] n\LinearGradient.ahk {
+[961] n\LinearGradient.ahk {
 
 Line  	|	Function
 0029	|	LinearGradient(HWND, oColors, oPositions = "", D = 0, GC = 0, BW = 0, BH = 0)
 
 }
-[928]  {
+[962]  {
 
 Line  	|	Function
 0015	|	isIn(var, matchlist)
@@ -13989,7 +14272,7 @@ Line  	|	Function
 0239	|	ListMax(list, del=",")
 
 }
-[929] n\List.ahk {
+[963] n\List.ahk {
 
 Line  	|	Function
 0001	|	List_AddItem(list, item, select = false)
@@ -14006,7 +14289,7 @@ Line  	|	Function
 0146	|	List_MsgBox(list)
 
 }
-[930] n\ListboxFunctions.ahk {
+[964] n\ListboxFunctions.ahk {
 
 Line  	|	Function
 0002	|	QueryActiveWinID( byRef aWin, winText="", excludeTitle="", excludeText="" )
@@ -14019,7 +14302,7 @@ Line  	|	Function
 0057	|	LB_QueryText( cID, cPos )
 
 }
-[931] n\ListCompare.ahk {
+[965] n\ListCompare.ahk {
 
 Line  	|	Function
 0008	|	GreaterThanNumInList(ByRef NumList,Num)
@@ -14027,7 +14310,7 @@ Line  	|	Function
 0043	|	BetweenNumInList(ByRef NumList,LowerBound,UpperBound)
 
 }
-[932] n\ListFuncs.ahk {
+[966] n\ListFuncs.ahk {
 
 Line  	|	Function
 0034	|	ListAdd(item,pos,list)
@@ -14057,24 +14340,24 @@ Line  	|	Function
 0462	|	TEST2(A,x)
 
 }
-[933] n\ListIncludes.ahk {
+[967] n\ListIncludes.ahk {
 
 Line  	|	Function
 0038	|	ListIncludes_Recursive(ByRef list, script_file, script_dir, delim)
 0097	|	ListIncludes_GetFullPathName(relative_path)
 
 }
-[934] n\listlines (2).ahk {
+[968] n\listlines (2).ahk {
 
 Line  	|	Function
 
 }
-[935] n\ListLines.ahk {
+[969] n\ListLines.ahk {
 
 Line  	|	Function
 
 }
-[936] n\ListOfAllExcelConstants.ahk {
+[970] n\ListOfAllExcelConstants.ahk {
 
 Line  	|	Function
 0034	|	__New()
@@ -14151,19 +14434,19 @@ Line  	|	Function
 1964	|	ITL_ArrayGetBounds(obj, byRef lBound = 0, byRef uBound = 0)
 
 }
-[937] n\Listvars.ahk {
+[971] n\Listvars.ahk {
 
 Line  	|	Function
 0001	|	ListVars()
 
 }
-[938] n\ListViewFromFileList.ahk {
+[972] n\ListViewFromFileList.ahk {
 
 Line  	|	Function
 0021	|	ListViewFromFileList(ByRef fileList)
 
 }
-[939] n\LoadFile.ahk {
+[973] n\LoadFile.ahk {
 
 Line  	|	Function
 0058	|	CreateGUID()
@@ -14171,7 +14454,7 @@ Line  	|	Function
 0103	|	__delete()
 
 }
-[940] n\loadimage.ahk {
+[974] n\loadimage.ahk {
 
 Line  	|	Function
 0001	|	loadfromfile(filename)
@@ -14179,99 +14462,99 @@ Line  	|	Function
 0024	|	loadimage2(num)
 
 }
-[941] n\LoadLib.ahk {
+[975] n\LoadLib.ahk {
 
 Line  	|	Function
 
 }
-[942] n\LoadLibExtended.ahk {
+[976] n\LoadLibExtended.ahk {
 
 Line  	|	Function
 
 }
-[943] n\LoadLibrary.ahk {
+[977] n\LoadLibrary.ahk {
 
 Line  	|	Function
 0001	|	LoadLibrary(filename)
 0024	|	FreeLibrary(lib)
 
 }
-[944] n\LoadPicture.ahk {
+[978] n\LoadPicture.ahk {
 
 Line  	|	Function
 
 }
-[945] n\LoadScriptString.ahk {
+[979] n\LoadScriptString.ahk {
 
 Line  	|	Function
 0007	|	LoadScriptString(scriptResource)
 
 }
-[946] n\LoadString.ahk {
+[980] n\LoadString.ahk {
 
 Line  	|	Function
 0019	|	LoadString(hInstance, uID)
 
 }
-[947] n\LOBYTE.ahk {
+[981] n\LOBYTE.ahk {
 
 Line  	|	Function
 0001	|	LOBYTE(a)
 
 }
-[948] n\LongOperationInit.ahk {
+[982] n\LongOperationInit.ahk {
 
 Line  	|	Function
 0001	|	LongOperationInit(ByRef msg,ByRef tick_now)
 
 }
-[949] n\LongOperationUpdate.ahk {
+[983] n\LongOperationUpdate.ahk {
 
 Line  	|	Function
 0001	|	LongOperationUpdate(ByRef msg,ByRef tick_now)
 
 }
-[950] n\LongOperationUpdateForSendKeys.ahk {
+[984] n\LongOperationUpdateForSendKeys.ahk {
 
 Line  	|	Function
 0001	|	LongOperationUpdateForSendKeys(ByRef msg,ByRef tick_now)
 
 }
-[951] n\LookupLanguageName.ahk {
+[985] n\LookupLanguageName.ahk {
 
 Line  	|	Function
 0010	|	LookupLanguageName(LangCP)
 
 }
-[952] n\LookupLanguageValue.ahk {
+[986] n\LookupLanguageValue.ahk {
 
 Line  	|	Function
 0013	|	LookupLanguageValue(LanguageName)
 
 }
-[953] n\LookupPrivilegeName.ahk {
+[987] n\LookupPrivilegeName.ahk {
 
 Line  	|	Function
 
 }
-[954] n\LookupPrivilegeValue.ahk {
+[988] n\LookupPrivilegeValue.ahk {
 
 Line  	|	Function
 
 }
-[955] n\Lower.ahk {
+[989] n\Lower.ahk {
 
 Line  	|	Function
 0011	|	Lower(Text)
 
 }
-[956] n\LowerReplaceSpace.ahk {
+[990] n\LowerReplaceSpace.ahk {
 
 Line  	|	Function
 0011	|	LowerReplaceSpace(Text)
 
 }
-[957] n\LowLevel.ahk {
+[991] n\LowLevel.ahk {
 
 Line  	|	Function
 0004	|	LowLevel_init()
@@ -14301,7 +14584,7 @@ Line  	|	Function
 0416	|	__addVar(var, func)
 
 }
-[958] n\LowLevel_code.ahk {
+[992] n\LowLevel_code.ahk {
 
 Line  	|	Function
 0044	|	code_gen()
@@ -14352,13 +14635,13 @@ Line  	|	Function
 1098	|	code_ensure_buf_capacity(buf_info_ptr, min_buf_size, init_buf_size, max_buf_size, item_size, growth_factor=0)
 
 }
-[959] n\LOWORD.ahk {
+[993] n\LOWORD.ahk {
 
 Line  	|	Function
 0001	|	LOWORD(a)
 
 }
-[960] n\LSON.ahk {
+[994] n\LSON.ahk {
 
 Line  	|	Function
 0015	|	LSON( obj_text )
@@ -14372,7 +14655,7 @@ Line  	|	Function
 0219	|	format_v(f, v)
 
 }
-[961] n\lua.ahk {
+[995] n\lua.ahk {
 
 Line  	|	Function
 0001	|	lua_LoadDLL(dll)
@@ -14674,7 +14957,7 @@ Line  	|	Function
 3012	|	ahkGetVar(L)
 
 }
-[962] n\LV.ahk {
+[996] n\LV.ahk {
 
 Line  	|	Function
 0009	|	LV_SetDefault(sGUI, sLV)
@@ -14685,12 +14968,12 @@ Line  	|	Function
 0048	|	LV_SetSelText(sToSel, sOptsOverride="", iCol=1, bPartialMatch=false, bCaseSensitive=false)
 
 }
-[963] n\LVOrder.ahk {
+[997] n\LVOrder.ahk {
 
 Line  	|	Function
 
 }
-[964] n\LV_A.ahk {
+[998] n\LV_A.ahk {
 
 Line  	|	Function
 0230	|	LVA_OnNotify(wParam, lParam, msg, hwnd)
@@ -14714,7 +14997,7 @@ Line  	|	Function
 0871	|	lva_Subclass(hCtrl, Fun, Opt="", ByRef $WndProc="")
 
 }
-[965] n\LV_Color.ahk {
+[999] n\LV_Color.ahk {
 
 Line  	|	Function
 0048	|	LV_ColorInitiate(Gui_Number=1, Control="")
@@ -14724,7 +15007,7 @@ Line  	|	Function
 0109	|	EncodeInteger( p_value, p_size, p_address, p_offset )
 
 }
-[966] n\LV_Colors.ahk {
+[1000] n\LV_Colors.ahk {
 
 Line  	|	Function
 0043	|	On_NM_CUSTOMDRAW(H, L)
@@ -14735,7 +15018,7 @@ Line  	|	Function
 0370	|	LV_Colors_SubclassProc(H, M, W, L, S, R)
 
 }
-[967] n\LV_CustomColors.ahk {
+[1001] n\LV_CustomColors.ahk {
 
 Line  	|	Function
 0004	|	LV_Initialize(Gui_Number="", Control="", Column="")
@@ -14750,7 +15033,7 @@ Line  	|	Function
 0363	|	WM_NOTIFY( p_w, p_l, p_m )
 
 }
-[968] n\LV_EDIT.ahk {
+[1002] n\LV_EDIT.ahk {
 
 Line  	|	Function
 0027	|	LVEDIT_INIT(LVHWND, BlankSubItem = False)
@@ -14758,7 +15041,7 @@ Line  	|	Function
 0084	|	LVEDIT_NOTIFY(W, L)
 
 }
-[969] n\LV_EX.ahk {
+[1003] n\LV_EX.ahk {
 
 Line  	|	Function
 0100	|	LV_EX_GetColumnOrder(HLV)
@@ -14794,7 +15077,7 @@ Line  	|	Function
 0687	|	LV_EX_PWSTR(Str, ByRef WSTR)
 
 }
-[970] n\LV_ExtListView.ahk {
+[1004] n\LV_ExtListView.ahk {
 
 Line  	|	Function
 0020	|	ExtListView_GetSingleItem(ByRef objLV, sState, nCol)
@@ -14805,7 +15088,7 @@ Line  	|	Function
 0267	|	__ExtListView_DeAllocateMemory(ByRef objLV)
 
 }
-[971] n\LV_EX_2.ahk {
+[1005] n\LV_EX_2.ahk {
 
 Line  	|	Function
 0101	|	LV_EX_GetColumnOrder(HLV)
@@ -14843,7 +15126,7 @@ Line  	|	Function
 0775	|	LV_EX_PWSTR(Str, ByRef WSTR)
 
 }
-[972] n\LV_G.ahk {
+[1006] n\LV_G.ahk {
 
 Line  	|	Function
 0195	|	LVG_Search(Gui_nr=1,mode="Selected",mode2="Count",rows="all",cols="all",srch_str="")
@@ -14855,7 +15138,7 @@ Line  	|	Function
 0663	|	LVG_Delete(Gui_nr=1,mode="Selected")
 
 }
-[973] n\LV_GetListViewText.ahk {
+[1007] n\LV_GetListViewText.ahk {
 
 Line  	|	Function
 0001	|	GetListViewItemText(item_index, sub_index, ctrl_id, win_id)
@@ -14864,13 +15147,13 @@ Line  	|	Function
 0128	|	InsertIntegerSL(pInteger, ByRef pDest, pOffset = 0, pSize = 4)
 
 }
-[974] n\LV_GetStateImagelist.ahk {
+[1008] n\LV_GetStateImagelist.ahk {
 
 Line  	|	Function
 0016	|	LV_GetStateImagelist()
 
 }
-[975] n\LV_Group.ahk {
+[1009] n\LV_Group.ahk {
 
 Line  	|	Function
 0034	|	LVGroupCompare(id1, id2, this)
@@ -14894,14 +15177,14 @@ Line  	|	Function
 0350	|	_SendMsg(uMsg, wParam=0, lParam=0)
 
 }
-[976] n\LV_GroupView.ahk {
+[1010] n\LV_GroupView.ahk {
 
 Line  	|	Function
 0013	|	LV_SetGroup(hLV, Row, GroupID)
 0027	|	UTF16(String, ByRef Var)
 
 }
-[977] n\LV_InCellEdit.ahk {
+[1011] n\LV_InCellEdit.ahk {
 
 Line  	|	Function
 0107	|	__Delete()
@@ -14915,13 +15198,13 @@ Line  	|	Function
 0483	|	RegisterHotkeys(Register = True)
 
 }
-[978] n\LV_IsClickOnIcon.ahk {
+[1012] n\LV_IsClickOnIcon.ahk {
 
 Line  	|	Function
 0014	|	LV_IsClickOnIcon(HLV, POINTS, ByRef Row, ByRef Col)
 
 }
-[979]  {
+[1013]  {
 
 Line  	|	Function
 0036	|	LVM_GetCount(h)
@@ -14934,7 +15217,7 @@ Line  	|	Function
 0112	|	LVM_Delete(h, i=0)
 
 }
-[980] n\LV_M.ahk {
+[1014] n\LV_M.ahk {
 
 Line  	|	Function
 0035	|	LVM_GetCount(hLV)
@@ -14948,7 +15231,7 @@ Line  	|	Function
 0175	|	LVM_SetSubItemImage(hLV, Row, Col, iIL)
 
 }
-[981] n\LV_S.ahk {
+[1015] n\LV_S.ahk {
 
 Line  	|	Function
 0099	|	LVS_Selected()
@@ -14959,19 +15242,19 @@ Line  	|	Function
 0264	|	LVS_Add(RowContents)
 
 }
-[982] n\LV_SetSI.ahk {
+[1016] n\LV_SetSI.ahk {
 
 Line  	|	Function
 0045	|	LV_SetSI(hList, iItem, iSubItem, iImage)
 
 }
-[983] n\LV_SortArrow.ahk {
+[1017] n\LV_SortArrow.ahk {
 
 Line  	|	Function
 0005	|	LV_SortArrow(h, c, d="")
 
 }
-[984] n\LV_SpecialFunctions.ahk {
+[1018] n\LV_SpecialFunctions.ahk {
 
 Line  	|	Function
 0001	|	CompileList(Find, Criteria, Col, LV, ColumnList)
@@ -14991,7 +15274,7 @@ Line  	|	Function
 0469	|	hasValue(haystack, needle)
 
 }
-[985] n\LV_TV_CustomColors.ahk {
+[1019] n\LV_TV_CustomColors.ahk {
 
 Line  	|	Function
 0004	|	LV_Initialize(Gui_Number="", Control="", Column="")
@@ -15014,13 +15297,13 @@ Line  	|	Function
 0747	|	WM_NOTIFY( p_w, p_l, p_m )
 
 }
-[986] n\LV_va.ahk {
+[1020] n\LV_va.ahk {
 
 Line  	|	Function
 0001	|	LV(va="")
 
 }
-[987] n\LV_X.ahk {
+[1021] n\LV_X.ahk {
 
 Line  	|	Function
 0025	|	LVX_Setup(name)
@@ -15033,12 +15316,12 @@ Line  	|	Function
 0242	|	WM_NOTIFY(wParam, lParam, msg, hwnd)
 
 }
-[988] n\m.ahk {
+[1022] n\m.ahk {
 
 Line  	|	Function
 
 }
-[989] n\majkinetor_Dock.ahk {
+[1023] n\majkinetor_Dock.ahk {
 
 Line  	|	Function
 0070	|	Dock(pClientID, pDockDef="", reset=0)
@@ -15050,56 +15333,56 @@ Line  	|	Function
 0247	|	API_UnhookWinEvent( hWinEventHook )
 
 }
-[990] n\MakeIco.ahk {
+[1024] n\MakeIco.ahk {
 
 Line  	|	Function
 0054	|	ImgGetDimensions(fileFullPath)
 0062	|	FileGetProperty(FilePath, Property)
 
 }
-[991] n\MAKELANGID.ahk {
+[1025] n\MAKELANGID.ahk {
 
 Line  	|	Function
 0001	|	MAKELANGID(p, s)
 
 }
-[992] n\MAKELCID.ahk {
+[1026] n\MAKELCID.ahk {
 
 Line  	|	Function
 0001	|	MAKELCID(lgid, srtid)
 
 }
-[993] n\MAKELONG.ahk {
+[1027] n\MAKELONG.ahk {
 
 Line  	|	Function
 0001	|	MAKELONG(a, b)
 
 }
-[994] n\MAKELPARAM.ahk {
+[1028] n\MAKELPARAM.ahk {
 
 Line  	|	Function
 0001	|	MAKELPARAM(a, b)
 
 }
-[995] n\MAKELRESULT.ahk {
+[1029] n\MAKELRESULT.ahk {
 
 Line  	|	Function
 0001	|	MAKELRESULT(a, b)
 
 }
-[996] n\MAKEWORD.ahk {
+[1030] n\MAKEWORD.ahk {
 
 Line  	|	Function
 0001	|	MAKEWORD(a, b)
 
 }
-[997] n\MAKEWPARAM.ahk {
+[1031] n\MAKEWPARAM.ahk {
 
 Line  	|	Function
 0001	|	MAKEWPARAM(a, b)
 
 }
-[998] n\ManageFonts.ahk {
+[1032] n\ManageFonts.ahk {
 
 Line  	|	Function
 0001	|	InstallFonts(runAgain=False)
@@ -15108,7 +15391,7 @@ Line  	|	Function
 0091	|	Load_Or_Unload_Fonts(whatDo)
 
 }
-[999] n\Manifest.ahk {
+[1033] n\Manifest.ahk {
 
 Line  	|	Function
 0002	|	Manifest_FromPackage(fileName)
@@ -15119,13 +15402,13 @@ Line  	|	Function
 0067	|	_ManValidateField(out, man, field)
 
 }
-[1000] n\Map.ahk {
+[1034] n\Map.ahk {
 
 Line  	|	Function
 0071	|	Map_Z(func, args)
 
 }
-[1001] n\Markdown2HTML.ahk {
+[1035] n\Markdown2HTML.ahk {
 
 Line  	|	Function
 0023	|	MD_IsMultiP(ByRef htmQ)
@@ -15142,14 +15425,14 @@ Line  	|	Function
 0298	|	StrStartsWith(ByRef v, ByRef w)
 
 }
-[1002] n\MatchItemFromList.ahk {
+[1036] n\MatchItemFromList.ahk {
 
 Line  	|	Function
 0003	|	MatchItemFromList(iPtr, iCount, sItem)
 0072	|	InStrCount(ByRef Haystack, Trigram)
 
 }
-[1003] n\Math.ahk {
+[1037] n\Math.ahk {
 
 Line  	|	Function
 0049	|	SM_Solve(expression, ahk=false)
@@ -15178,7 +15461,7 @@ Line  	|	Function
 1036	|	SM_FixExpression(expression)
 
 }
-[1004] n\MCI.ahk {
+[1038] n\MCI.ahk {
 
 Line  	|	Function
 0199	|	MCI_Open(p_MediaFile,p_Alias="",p_Flags="")
@@ -15208,25 +15491,25 @@ Line  	|	Function
 1624	|	MCI_SendString(p_lpszCommand,ByRef p_lpszReturnString,p_hwndCallback=0)
 
 }
-[1005] n\MCode.ahk {
+[1039] n\MCode.ahk {
 
 Line  	|	Function
 0008	|	MCode(ByRef cBuf, ByRef sHex)
 0020	|	MCode_2(ByRef sMcode)
 
 }
-[1006] n\MCodeH.ahk {
+[1040] n\MCodeH.ahk {
 
 Line  	|	Function
 
 }
-[1007] n\MCODE_GetServerName.ahk {
+[1041] n\MCODE_GetServerName.ahk {
 
 Line  	|	Function
 0038	|	MCode(ByRef code, hex)
 
 }
-[1008] n\MCOde_InBuf.ahk {
+[1042] n\MCOde_InBuf.ahk {
 
 Line  	|	Function
 0021	|	substrBufZ(bufAddr, Length="")
@@ -15237,20 +15520,20 @@ Line  	|	Function
 0077	|	InBufRev(haystackAddr, needleAddr, haystackSize, needleSize, StartOffsetOfLastNeedleByte=-1)
 
 }
-[1009] n\MCode_InFile.ahk {
+[1043] n\MCode_InFile.ahk {
 
 Line  	|	Function
 0011	|	InFile( fileName, needleAddr, needleLen, StartOffset=0 )
 
 }
-[1010] n\MCode_returnInt.ahk {
+[1044] n\MCode_returnInt.ahk {
 
 Line  	|	Function
 0011	|	returnInt(n)
 0034	|	VirtualFree(lpAddress)
 
 }
-[1011] n\md5.ahk {
+[1045] n\md5.ahk {
 
 Line  	|	Function
 0035	|	MD5(string, encoding = "UTF-8")
@@ -15263,7 +15546,7 @@ Line  	|	Function
 0107	|	CalcFileHash(filename, algid, continue = 0, byref hash = 0, byref hashlength = 0)
 
 }
-[1012] n\MD5_2.ahk {
+[1046] n\MD5_2.ahk {
 
 Line  	|	Function
 0033	|	Encrypt(text, password)
@@ -15273,20 +15556,20 @@ Line  	|	Function
 0098	|	Crypt_Replace(baselist, parsedlist, text)
 
 }
-[1013] n\MD5_File.ahk {
+[1047] n\MD5_File.ahk {
 
 Line  	|	Function
 0010	|	MD5_File(FileName)
 
 }
-[1014] n\md5_L.ahk {
+[1048] n\md5_L.ahk {
 
 Line  	|	Function
 0003	|	MD5_File( sFile="", cSz=4 )
 0018	|	MD5( ByRef V, L=0 )
 
 }
-[1015] n\MDMF.ahk {
+[1049] n\MDMF.ahk {
 
 Line  	|	Function
 0019	|	MDMF_EnumProc(HMON, HDC, PRECT, ObjectAddr)
@@ -15295,13 +15578,13 @@ Line  	|	Function
 0058	|	MDMF_GetInfo(HMON)
 
 }
-[1016] n\MeasureText.ahk {
+[1050] n\MeasureText.ahk {
 
 Line  	|	Function
 0004	|	MeasureText(hwnd,text,Font,size, layout)
 
 }
-[1017] n\Mem.ahk {
+[1051] n\Mem.ahk {
 
 Line  	|	Function
 0013	|	Mem_Dump(_binAddr, _byteNb=0, _bExtended=false)
@@ -15315,7 +15598,7 @@ Line  	|	Function
 0238	|	Mem_Copy(src, dest, bytes)
 
 }
-[1018] n\MemLib.ahk {
+[1052] n\MemLib.ahk {
 
 Line  	|	Function
 0006	|	OpenMemoryfromProcess(process,right=0x1F0FFF)
@@ -15328,7 +15611,7 @@ Line  	|	Function
 0072	|	Resumeprocess(hwnd)
 
 }
-[1019] n\Memmngmnt.ahk {
+[1053] n\Memmngmnt.ahk {
 
 Line  	|	Function
 0024	|	HeapAlloc(Size)
@@ -15341,7 +15624,7 @@ Line  	|	Function
 0171	|	HeapRemove(ptr,offset=0,type="ptr")
 
 }
-[1020] n\memory.ahk {
+[1054] n\memory.ahk {
 
 Line  	|	Function
 0001	|	Memory(Type=3,Param1=0,Param2=0,Param3=0)
@@ -15351,7 +15634,7 @@ Line  	|	Function
 0058	|	DoubleToHex(d)
 
 }
-[1021] n\MemoryBuffer.ahk {
+[1055] n\MemoryBuffer.ahk {
 
 Line  	|	Function
 0023	|	Create(srcPtr, size)
@@ -15368,7 +15651,7 @@ Line  	|	Function
 0152	|	AllocMemory(size)
 
 }
-[1022] n\MemoryMore.ahk {
+[1056] n\MemoryMore.ahk {
 
 Line  	|	Function
 0017	|	Memory_GetProcessID(process_name)
@@ -15388,7 +15671,7 @@ Line  	|	Function
 0188	|	Memory_WriteBytes(process_handle, address, bytes)
 
 }
-[1023] n\Menu.ahk {
+[1057] n\Menu.ahk {
 
 Line  	|	Function
 0033	|	Menu_BarRightJustify(HWND, ItemPos)
@@ -15406,18 +15689,18 @@ Line  	|	Function
 0230	|	Menu_ShowAligned(HMENU, HWND, X, Y, XAlign, YAlign)
 
 }
-[1024] n\Menu_SetSysMenu.ahk {
+[1058] n\Menu_SetSysMenu.ahk {
 
 Line  	|	Function
 
 }
-[1025] n\MetricTime.ahk {
+[1059] n\MetricTime.ahk {
 
 Line  	|	Function
 0016	|	MetricTime(DateTime)
 
 }
-[1026] n\mg.ahk {
+[1060] n\mg.ahk {
 
 Line  	|	Function
 0053	|	MG_GetMove(Angle)
@@ -15426,7 +15709,7 @@ Line  	|	Function
 0101	|	MG_Recognize(MGHotkey="", ToolTip=0, MaxMoves=3, ExecuteMGFunction=1, SendIfNoDrag=1)
 
 }
-[1027] n\MGR.ahk {
+[1061] n\MGR.ahk {
 
 Line  	|	Function
 0048	|	mgr_Wheel()
@@ -15444,7 +15727,7 @@ Line  	|	Function
 0252	|	mgr_GetMonitorNbr()
 
 }
-[1028] n\MGR_UDF.ahk {
+[1062] n\MGR_UDF.ahk {
 
 Line  	|	Function
 0002	|	Win_Minimize()
@@ -15466,7 +15749,7 @@ Line  	|	Function
 0197	|	MClick(x=0, y=0)
 
 }
-[1029] n\MI (2).ahk {
+[1063] n\MI (2).ahk {
 
 Line  	|	Function
 0047	|	MI_SetMenuItemIcon(MenuNameOrHandle, ItemPos, FilenameOrHICON, IconNumber=1, IconSize=0, ByRef unused1="", ByRef unused2="")
@@ -15481,7 +15764,7 @@ Line  	|	Function
 0472	|	MI_GetBitmapFromIcon32Bit(h_icon, width=0, height=0)
 
 }
-[1030] n\MI.ahk {
+[1064] n\MI.ahk {
 
 Line  	|	Function
 0047	|	MI_SetMenuItemIcon(MenuNameOrHandle, ItemPos, FilenameOrHICON, IconNumber=1, IconSize=0, ByRef unused1="", ByRef unused2="")
@@ -15497,7 +15780,7 @@ Line  	|	Function
 0551	|	MI_DllProcAorW(dll, func)
 
 }
-[1031] n\Midi.ahk {
+[1065] n\Midi.ahk {
 
 Line  	|	Function
 0089	|	__New()
@@ -15518,18 +15801,18 @@ Line  	|	Function
 0636	|	__MidiEventDebug( midiEvent )
 
 }
-[1032] n\MimeTypes.ahk {
+[1066] n\MimeTypes.ahk {
 
 Line  	|	Function
 0001	|	getMimeTypes()
 
 }
-[1033] n\MiniDump.ahk {
+[1067] n\MiniDump.ahk {
 
 Line  	|	Function
 
 }
-[1034] n\minizip.ahk {
+[1068] n\minizip.ahk {
 
 Line  	|	Function
 0101	|	MiniZIP_Init( DllFile )
@@ -15553,13 +15836,13 @@ Line  	|	Function
 0269	|	MZ_MemUnpack( memPointerSource, memPointerTarget )
 
 }
-[1035] n\Misc Functions.ahk {
+[1069] n\Misc Functions.ahk {
 
 Line  	|	Function
 0169	|	hexToDecimal(str)
 
 }
-[1036] n\misc.ahk {
+[1070] n\misc.ahk {
 
 Line  	|	Function
 0058	|	FAIL(msg)
@@ -15573,7 +15856,7 @@ Line  	|	Function
 0245	|	repeat(x, y)
 
 }
-[1037] n\MiscFunctions.ahk {
+[1071] n\MiscFunctions.ahk {
 
 Line  	|	Function
 0008	|	TranslateMUI(resDll, resID)
@@ -15694,7 +15977,7 @@ Line  	|	Function
 2072	|	if(ext = "bmp")
 
 }
-[1038] n\MMenu.ahk {
+[1072] n\MMenu.ahk {
 
 Line  	|	Function
 0033	|	MMenu_Create( pOptions="" )
@@ -15746,30 +16029,30 @@ Line  	|	Function
 0988	|	RECT_Get(var)
 
 }
-[1039] n\Monitor.ahk {
+[1073] n\Monitor.ahk {
 
 Line  	|	Function
 0024	|	GetMonitorInfo(hMonitor)
 0132	|	GetDpiForWindow(Hwnd)
 
 }
-[1040] n\Monitorconfig.ahk {
+[1074] n\Monitorconfig.ahk {
 
 Line  	|	Function
 
 }
-[1041] n\MonitorConstants.ahk {
+[1075] n\MonitorConstants.ahk {
 
 Line  	|	Function
 
 }
-[1042] n\Months.ahk {
+[1076] n\Months.ahk {
 
 Line  	|	Function
 0011	|	Months(date,months)
 
 }
-[1043] n\Mount.ahk {
+[1077] n\Mount.ahk {
 
 Line  	|	Function
 0136	|	Mount(SourcePath = "", Mountpoint = "", Options = "")
@@ -15778,19 +16061,19 @@ Line  	|	Function
 0297	|	Mount_GetMount(pPath = "")
 
 }
-[1044] n\Mouse.ahk {
+[1078] n\Mouse.ahk {
 
 Line  	|	Function
 0110	|	MoveCursorR(X, Y)
 
 }
-[1045] n\MouseExtras.ahk {
+[1079] n\MouseExtras.ahk {
 
 Line  	|	Function
 0026	|	MouseExtras(HoldSub, HoldTime="200", DoubleSub="", DClickTime="0.2", Button="")
 
 }
-[1046] n\MouseKeyboardCounter.ahk {
+[1080] n\MouseKeyboardCounter.ahk {
 
 Line  	|	Function
 0459	|	Format_To_7(Temp_Number)
@@ -15798,24 +16081,24 @@ Line  	|	Function
 1131	|	AddNumpadKeys()
 
 }
-[1047] n\MouseMove_Ellipse.ahk {
+[1081] n\MouseMove_Ellipse.ahk {
 
 Line  	|	Function
 0036	|	MouseMove_Ellipse(pos_X1, pos_Y1, param_Options="")
 
 }
-[1048] n\MoveTaskbar.ahk {
+[1082] n\MoveTaskbar.ahk {
 
 Line  	|	Function
 0004	|	MoveTaskbar(dspNumber, edge)
 
 }
-[1049]  {
+[1083]  {
 
 Line  	|	Function
 
 }
-[1050] n\mpgc.ahk {
+[1084] n\mpgc.ahk {
 
 Line  	|	Function
 0065	|	update_mpgc()
@@ -15824,61 +16107,61 @@ Line  	|	Function
 0106	|	if(mpgcPBitmap)
 
 }
-[1051] n\msg.ahk {
+[1085] n\msg.ahk {
 
 Line  	|	Function
 0003	|	Msg(Msg)
 
 }
-[1052]  {
+[1086]  {
 
 Line  	|	Function
 0442	|	MsgBox2event(CtrlHwnd, GuiEvent, EventInfo)
 0450	|	MsgBox2InputHookKeyDown(iHook, VK, SC)
 
 }
-[1053]  {
+[1087]  {
 
 Line  	|	Function
 0454	|	MsgBox2InputHookKeyDown(iHook, VK, SC)
 
 }
-[1054] n\MsgBox_SKAN.ahk {
+[1088] n\MsgBox_SKAN.ahk {
 
 Line  	|	Function
 
 }
-[1055] n\msTill.ahk {
+[1089] n\msTill.ahk {
 
 Line  	|	Function
 0004	|	msTill(Time)
 
 }
-[1056] n\msToH.ahk {
+[1090] n\msToH.ahk {
 
 Line  	|	Function
 0001	|	msToH(ms)
 
 }
-[1057] n\msToM.ahk {
+[1091] n\msToM.ahk {
 
 Line  	|	Function
 0001	|	msToM(ms)
 
 }
-[1058] n\msToS.ahk {
+[1092] n\msToS.ahk {
 
 Line  	|	Function
 0001	|	msToS(ms)
 
 }
-[1059] n\mToMs.ahk {
+[1093] n\mToMs.ahk {
 
 Line  	|	Function
 0001	|	mToMs(m)
 
 }
-[1060] n\Music.ahk {
+[1094] n\Music.ahk {
 
 Line  	|	Function
 0053	|	__New()
@@ -15904,7 +16187,7 @@ Line  	|	Function
 0377	|	Reset()
 
 }
-[1061] n\mySQL.ahk {
+[1095] n\mySQL.ahk {
 
 Line  	|	Function
 0023	|	MySQL_CreateConnectionData(connectionString)
@@ -15939,7 +16222,7 @@ Line  	|	Function
 0415	|	OrgTable()
 
 }
-[1062] n\NetGetControl.ahk {
+[1096] n\NetGetControl.ahk {
 
 Line  	|	Function
 0003	|	listAccChildProperty(hwnd)
@@ -15954,12 +16237,12 @@ Line  	|	Function
 0245	|	getControlDescription(winHwnd,controlHwnd)
 
 }
-[1063] n\NetShareEnum.ahk {
+[1097] n\NetShareEnum.ahk {
 
 Line  	|	Function
 
 }
-[1064] n\NetworkAPI.ahk {
+[1098] n\NetworkAPI.ahk {
 
 Line  	|	Function
 0050	|	API_ValidateSource(domain)
@@ -15971,7 +16254,7 @@ Line  	|	Function
 0152	|	API_GetDependencies(pack_ahkp)
 
 }
-[1065] n\network_functions.ahk {
+[1099] n\network_functions.ahk {
 
 Line  	|	Function
 0028	|	GetMyIps()
@@ -15985,7 +16268,7 @@ Line  	|	Function
 0146	|	FlushDNS()
 
 }
-[1066] n\NewChromeWin.ahk {
+[1100] n\NewChromeWin.ahk {
 
 Line  	|	Function
 0006	|	NewChromeWin(x, y, w, h)
@@ -15993,29 +16276,51 @@ Line  	|	Function
 0027	|	LastChromeProcessId()
 
 }
-[1067] n\newestFile.ahk {
+[1101] n\newestFile.ahk {
 
 Line  	|	Function
 0018	|	newestFile(folder)
 
 }
-[1068] n\NormaliseLineEndings.ahk {
+[1102] n\NewItem.ahk {
+
+Line  	|	Function
+0080	|	IIDFromString(String)
+0087	|	CreateIFileOperationProgressSink()
+
+}
+[1103] n\NewItem_V2.ahk {
+
+Line  	|	Function
+0025	|	CreateMenu(MyMenu, FunctionName, Extensions)
+0060	|	MyMenuFunc(ItemName, ItemPos, MenuName)
+0075	|	GetWindowPath(hwnd)
+0089	|	GetTemplateName(FilenameOrPath)
+0107	|	SelectItem(hwnd, NameOrPath, Flags)
+
+}
+[1104] n\NormaliseLineEndings.ahk {
 
 Line  	|	Function
 0001	|	NormaliseLineEndings(ByRef fnText)
 
 }
-[1069] n\Notify.ahk {
+[1105] n\Notify.ahk {
 
 Line  	|	Function
 
 }
-[1070] n\NotifyOnTray.ahk {
+[1106] n\NotifyOnTray.ahk {
 
 Line  	|	Function
 
 }
-[1071] n\NoTrayOrphans.ahk {
+[1107] n\NotifyTrayClick.ahk {
+
+Line  	|	Function
+
+}
+[1108] n\NoTrayOrphans.ahk {
 
 Line  	|	Function
 0001	|	NoTrayOrphans()
@@ -16025,12 +16330,12 @@ Line  	|	Function
 0075	|	StrX( H,BS="",ES="",Tr=1,ByRef OS=1)
 
 }
-[1072] n\NotStr.ahk {
+[1109] n\NotStr.ahk {
 
 Line  	|	Function
 
 }
-[1073] n\NPPM.ahk {
+[1110] n\NPPM.ahk {
 
 Line  	|	Function
 0001	|	NPPM_GETCURRENTSCINTILLA()
@@ -16123,20 +16428,20 @@ Line  	|	Function
 1279	|	Nppm_IsSingleView()
 
 }
-[1074] n\NumBase.ahk {
+[1111] n\NumBase.ahk {
 
 Line  	|	Function
 0010	|	ToBase(n, b)
 0023	|	FromBase(s, b)
 
 }
-[1075] n\Numeral System Conversion of really arbitrary integers.ahk {
+[1112] n\Numeral System Conversion of really arbitrary integers.ahk {
 
 Line  	|	Function
 0020	|	NuSyCo(N1,S1,S2)
 
 }
-[1076] n\NumGet_.ahk {
+[1113] n\NumGet_.ahk {
 
 Line  	|	Function
 0001	|	NumGet_BE(ByRef VarOrAddress, Offset=0, Type = "UPtr")
@@ -16146,24 +16451,24 @@ Line  	|	Function
 0048	|	AHK_DataType()
 
 }
-[1077]  {
+[1114]  {
 
 Line  	|	Function
 
 }
-[1078] n\NumSize.ahk {
+[1115] n\NumSize.ahk {
 
 Line  	|	Function
 0001	|	NumSize(v)
 
 }
-[1079] n\NumType.ahk {
+[1116] n\NumType.ahk {
 
 Line  	|	Function
 0001	|	NumType(v)
 
 }
-[1080] z\7zip.ahk {
+[1117] z\7zip.ahk {
 
 Line  	|	Function
 0043	|	7Zip_Init(sDllPath = "7-zip32.dll")
@@ -16203,7 +16508,7 @@ Line  	|	Function
 0702	|	7Zip_DosDateTimeToStr( ByRef DosDate, ByRef DosTime)
 
 }
-[1081] z\OAuth.ahk {
+[1118] z\OAuth.ahk {
 
 Line  	|	Function
 0076	|	OAuth_Authorization( Credentials, URL, Extra_Parameters = "", Method = "GET" )
@@ -16215,7 +16520,7 @@ Line  	|	Function
 0288	|	HMAC( hashfunc, key, msg )
 
 }
-[1082] z\Obj.ahk {
+[1119] z\Obj.ahk {
 
 Line  	|	Function
 0001	|	Obj_Print(obj, indent = 0)
@@ -16223,13 +16528,13 @@ Line  	|	Function
 0052	|	Obj_IsPureArray(obj, zeroBased = false)
 
 }
-[1083] z\ObjByRef.ahk {
+[1120] z\ObjByRef.ahk {
 
 Line  	|	Function
 0013	|	__GET(key)
 
 }
-[1084] z\ObjCSV.ahk {
+[1121] z\ObjCSV.ahk {
 
 Line  	|	Function
 1129	|	SaveBatch(strData, strFilePath, intProgressType, strFileEncoding)
@@ -16245,12 +16550,12 @@ Line  	|	Function
 1216	|	GetEolCharacters(strData)
 
 }
-[1085] z\ObjDump.ahk {
+[1122] z\ObjDump.ahk {
 
 Line  	|	Function
 
 }
-[1086] z\object.ahk {
+[1123] z\object.ahk {
 
 Line  	|	Function
 0052	|	TO_DEPTH(x)
@@ -16260,7 +16565,7 @@ Line  	|	Function
 0288	|	object_test()
 
 }
-[1087]  {
+[1124]  {
 
 Line  	|	Function
 0045	|	string_length(this)
@@ -16312,7 +16617,7 @@ Line  	|	Function
 0589	|	string_isVarLetter(this)
 
 }
-[1088] z\ObjectBundles.ahk {
+[1125] z\ObjectBundles.ahk {
 
 Line  	|	Function
 0007	|	WhichBundle()
@@ -16326,7 +16631,7 @@ Line  	|	Function
 0388	|	FixPreview(in)
 
 }
-[1089] z\ObjectHandling.ahk {
+[1126] z\ObjectHandling.ahk {
 
 Line  	|	Function
 0106	|	ObjGetCount(BaseObject)
@@ -16339,19 +16644,19 @@ Line  	|	Function
 0419	|	ObjLoad(BaseObject, FileName)
 
 }
-[1090] z\ObjectRotateTable.ahk {
+[1127] z\ObjectRotateTable.ahk {
 
 Line  	|	Function
 0012	|	RotateTable(oTable)
 
 }
-[1091] z\ObjectSort.ahk {
+[1128] z\ObjectSort.ahk {
 
 Line  	|	Function
 0015	|	objectSort(obj, keyName="", callbackFunc="", reverse=false)
 
 }
-[1092] z\ObjectTools.ahk {
+[1129] z\ObjectTools.ahk {
 
 Line  	|	Function
 0077	|	GetAll(list, KeyOrValue, value = "")
@@ -16367,28 +16672,28 @@ Line  	|	Function
 0346	|	Count(Object, KeyOrValue, value = "")
 
 }
-[1093] z\ObjLoad.ahk {
+[1130] z\ObjLoad.ahk {
 
 Line  	|	Function
 
 }
-[1094] z\ObjLoadandBump.ahk {
+[1131] z\ObjLoadandBump.ahk {
 
 Line  	|	Function
 
 }
-[1095] z\ObjRegisterActive.ahk {
+[1132] z\ObjRegisterActive.ahk {
 
 Line  	|	Function
 
 }
-[1096] z\ObjShare.ahk {
+[1133] z\ObjShare.ahk {
 
 Line  	|	Function
 0001	|	ObjShare(obj)
 
 }
-[1097] z\ObjToFile.ahk {
+[1134] z\ObjToFile.ahk {
 
 Line  	|	Function
 0014	|	ObjToFile(Obj,Filename)
@@ -16398,12 +16703,12 @@ Line  	|	Function
 0152	|	GetClassName(C)
 
 }
-[1098] z\objtostring.ahk {
+[1135] z\objtostring.ahk {
 
 Line  	|	Function
 
 }
-[1099] z\ObjTree.ahk {
+[1136] z\ObjTree.ahk {
 
 Line  	|	Function
 0598	|	ObjTree_Expand(TV_Item,OnlyOneItem=0,Collapse=0)
@@ -16413,40 +16718,40 @@ Line  	|	Function
 0664	|	ObjTree_LoadList(obj,text,G)
 
 }
-[1100] z\objTreeView.ahk {
+[1137] z\objTreeView.ahk {
 
 Line  	|	Function
 0029	|	isEmpty(obj)
 
 }
-[1101] z\OCR.ahk {
+[1138] z\OCR.ahk {
 
 Line  	|	Function
 0029	|	GetOCR(topLeftX="", topLeftY="", widthToScan="", heightToScan="", options="")
 0163	|	CMDret(CMD)
 
 }
-[1102] z\ocrBWCompare.ahk {
+[1139] z\ocrBWCompare.ahk {
 
 Line  	|	Function
 
 }
-[1103] z\ocrBWconverter.ahk {
+[1140] z\ocrBWconverter.ahk {
 
 Line  	|	Function
 
 }
-[1104] z\ocrGetDigit.ahk {
+[1141] z\ocrGetDigit.ahk {
 
 Line  	|	Function
 
 }
-[1105] z\ocrLeftToRight.ahk {
+[1142] z\ocrLeftToRight.ahk {
 
 Line  	|	Function
 
 }
-[1106] z\OCRwithUWP_API.ahk {
+[1143] z\OCRwithUWP_API.ahk {
 
 Line  	|	Function
 0129	|	CreateClass(string, interface, ByRef Class)
@@ -16455,12 +16760,12 @@ Line  	|	Function
 0155	|	WaitForAsync(ByRef Object)
 
 }
-[1107] z\OH.ahk {
+[1144] z\OH.ahk {
 
 Line  	|	Function
 
 }
-[1108] z\oIE.ahk {
+[1145] z\oIE.ahk {
 
 Line  	|	Function
 0005	|	waiting(oIE)
@@ -16474,7 +16779,7 @@ Line  	|	Function
 0150	|	IWebBrowserApp_from_Internet_Explorer_Server_HWND( hwnd, Svr#=1 )
 
 }
-[1109] z\OldToolbar.ahk {
+[1146] z\OldToolbar.ahk {
 
 Line  	|	Function
 0075	|	Toolbar_Add(hGui, Handler, Style="", ImageList="", Pos="")
@@ -16513,7 +16818,7 @@ Line  	|	Function
 1106	|	Toolbar_add2Form(hParent, Txt, Opt)
 
 }
-[1110] z\On.ahk {
+[1147] z\On.ahk {
 
 Line  	|	Function
 0133	|	On_ActiveWindow(Label, Interval=200)
@@ -16528,30 +16833,30 @@ Line  	|	Function
 0355	|	On_WinClose(WinTitle, Label, TitleMatchMode=3, DetectHidden=0, Interval=200)
 
 }
-[1111] z\OnExitF.ahk {
+[1148] z\OnExitF.ahk {
 
 Line  	|	Function
 
 }
-[1112] z\OnMenuHilite.ahk {
+[1149] z\OnMenuHilite.ahk {
 
 Line  	|	Function
 0029	|	WM_ENTERMENULOOP()
 0033	|	WM_MENUSELECT( wParam, lParam, Msg, hWnd )
 
 }
-[1113] z\OnMessageEx.ahk {
+[1150] z\OnMessageEx.ahk {
 
 Line  	|	Function
 
 }
-[1114] z\OnPBMsg.ahk {
+[1151] z\OnPBMsg.ahk {
 
 Line  	|	Function
 0043	|	OnPBMsg(wParam, lParam, msg, hwnd)
 
 }
-[1115] z\OnWin.ahk {
+[1152] z\OnWin.ahk {
 
 Line  	|	Function
 0119	|	Watch()
@@ -16566,7 +16871,7 @@ Line  	|	Function
 0321	|	Assert()
 
 }
-[1116] z\OOPFunctions.ahk {
+[1153] z\OOPFunctions.ahk {
 
 Line  	|	Function
 0001	|	hasClass( obj, classObj )
@@ -16576,50 +16881,50 @@ Line  	|	Function
 0028	|	isFuncOrBoundFunc(P)
 
 }
-[1117] z\OpenFileLocation.ahk {
+[1154] z\OpenFileLocation.ahk {
 
 Line  	|	Function
 0001	|	OpenFileLocation(fnFilePath)
 
 }
-[1118] z\OpenFilepaths.ahk {
+[1155] z\OpenFilepaths.ahk {
 
 Line  	|	Function
 
 }
-[1119] z\OpenFolderAndSelectItems.ahk {
+[1156] z\OpenFolderAndSelectItems.ahk {
 
 Line  	|	Function
 
 }
-[1120] z\OpenFolderAndSelectItems_V1.ahk {
+[1157] z\OpenFolderAndSelectItems_V1.ahk {
 
 Line  	|	Function
 
 }
-[1121] z\OpenFolderAndSelectItems_V2.ahk {
+[1158] z\OpenFolderAndSelectItems_V2.ahk {
 
 Line  	|	Function
 
 }
-[1122] z\OpenProcess.ahk {
+[1159] z\OpenProcess.ahk {
 
 Line  	|	Function
 
 }
-[1123] z\OpenProcessToken.ahk {
+[1160] z\OpenProcessToken.ahk {
 
 Line  	|	Function
 0025	|	OpenProcessToken(hProcess, DesiredAccess)
 
 }
-[1124] z\OpenWith.ahk {
+[1161] z\OpenWith.ahk {
 
 Line  	|	Function
 0008	|	OpenWith(Owner, FileName)
 
 }
-[1125] z\Operators_Fct.ahk {
+[1162] z\Operators_Fct.ahk {
 
 Line  	|	Function
 0319	|	INCREM_FU(ByRef var1)
@@ -16629,20 +16934,25 @@ Line  	|	Function
 0374	|	BITRIGHT_FU(var1,var2)
 
 }
-[1126] z\OrderedArray.ahk {
+[1163] z\OrderedArray.ahk {
 
 Line  	|	Function
 0024	|	oaNewEnum(obj)
 0032	|	oaEnumNext(e, ByRef k, ByRef v="")
 
 }
-[1127] z\OSTest.ahk {
+[1164] z\OSDTIP.ahk {
+
+Line  	|	Function
+
+}
+[1165] z\OSTest.ahk {
 
 Line  	|	Function
 0011	|	OSTest(nm, cin="E")
 
 }
-[1128] z\Package.ahk {
+[1166] z\Package.ahk {
 
 Line  	|	Function
 0002	|	Package_Build(outFile, baseDir, jfile="")
@@ -16653,7 +16963,7 @@ Line  	|	Function
 0147	|	_Package_ExtractTreeObj(ptr, tmpdir, Obj)
 
 }
-[1129] z\PackingASentence.ahk {
+[1167] z\PackingASentence.ahk {
 
 Line  	|	Function
 0004	|	boxit(z)
@@ -16661,7 +16971,7 @@ Line  	|	Function
 0028	|	Flip(in)
 
 }
-[1130] z\Panel.ahk {
+[1168] z\Panel.ahk {
 
 Line  	|	Function
 0033	|	Panel_Add(HParent, X="", Y="", W="", H="", Style="", Text="")
@@ -16671,24 +16981,24 @@ Line  	|	Function
 0179	|	Panel_add2Form(hParent, Txt, Opt)
 
 }
-[1131] z\para.ahk {
+[1169] z\para.ahk {
 
 Line  	|	Function
 
 }
-[1132] z\pArr.ahk {
+[1170] z\pArr.ahk {
 
 Line  	|	Function
 0002	|	pArr(Array, Parent="",ExpandK="")
 
 }
-[1133] z\Parse.ahk {
+[1171] z\Parse.ahk {
 
 Line  	|	Function
 0061	|	Parse(O, pQ, ByRef o1="",ByRef o2="",ByRef o3="",ByRef o4="",ByRef o5="",ByRef o6="",ByRef o7="",ByRef o8="", ByRef o9="", ByRef o10="")
 
 }
-[1134] z\ParseAHK.ahk {
+[1172] z\ParseAHK.ahk {
 
 Line  	|	Function
 0582	|	AddBaseNode(Tree, Caption, Image)
@@ -16697,7 +17007,7 @@ Line  	|	Function
 0650	|	FillTreeView(File)
 
 }
-[1135] z\ParseAHK_V2.ahk {
+[1173] z\ParseAHK_V2.ahk {
 
 Line  	|	Function
 0015	|	RemoveDefaultDefinitions(Line)
@@ -16705,29 +17015,29 @@ Line  	|	Function
 0548	|	RemoveQuotedStrings(Line)
 
 }
-[1136] z\ParseCmdLine.ahk {
+[1174] z\ParseCmdLine.ahk {
 
 Line  	|	Function
 
 }
-[1137] z\ParseScriptCommandLine.ahk {
+[1175] z\ParseScriptCommandLine.ahk {
 
 Line  	|	Function
 
 }
-[1138] z\PasteAsCSV.ahk {
+[1176] z\PasteAsCSV.ahk {
 
 Line  	|	Function
 0001	|	PasteAsCSV(fnInputText,fnInclLetters,fnExtraSpace,fnIncludeNewLine,fnIncludeQuotes,fnNoSeperator)
 
 }
-[1139]  {
+[1177]  {
 
 Line  	|	Function
 0002	|	PathWinToUnix(clipVal)
 
 }
-[1140] z\Path.ahk {
+[1178] z\Path.ahk {
 
 Line  	|	Function
 0011	|	Path(p1,p2="",p3="",p4="",p5="",p6="",p7="",p8="",p9="")
@@ -16735,17 +17045,17 @@ Line  	|	Function
 0042	|	Path_getter(self, key)
 
 }
-[1141] z\Path2.ahk {
+[1179] z\Path2.ahk {
 
 Line  	|	Function
 
 }
-[1142] z\PathX.ahk {
+[1180] z\PathX.ahk {
 
 Line  	|	Function
 
 }
-[1143] z\Path_API.ahk {
+[1181] z\Path_API.ahk {
 
 Line  	|	Function
 0001	|	PathIsFileSpec( pPath )
@@ -16781,20 +17091,20 @@ Line  	|	Function
 0277	|	isEmpty( var )
 
 }
-[1144] z\patternScan.ahk {
+[1182] z\patternScan.ahk {
 
 Line  	|	Function
 0019	|	patternScan(pattern, haystackAddress, haystackSize)
 0128	|	hexToBinaryBuffer(hexString, byRef buffer)
 
 }
-[1145] z\PauseOtherScripts.ahk {
+[1183] z\PauseOtherScripts.ahk {
 
 Line  	|	Function
 0011	|	PauseOtherScripts()
 
 }
-[1146] z\PBhash.ahk {
+[1184] z\PBhash.ahk {
 
 Line  	|	Function
 0011	|	StrDecryptToFile(EncryptedHash,pFileOut,password,CryptAlg = 1, HashAlg = 1)
@@ -16820,12 +17130,12 @@ Line  	|	Function
 0807	|	Free(byRef var)
 
 }
-[1147] z\PBhashtype.ahk {
+[1185] z\PBhashtype.ahk {
 
 Line  	|	Function
 
 }
-[1148] z\pbkdf2.ahk {
+[1186] z\pbkdf2.ahk {
 
 Line  	|	Function
 0012	|	PBKDF2(sPassword, sSalt, nIterations = 10000, nLength = 0, sAlgo = "SHA1")
@@ -16835,24 +17145,24 @@ Line  	|	Function
 0118	|	Hex2Bin(sInput, ByRef Output)
 
 }
-[1149] z\PBtimeserver.ahk {
+[1187] z\PBtimeserver.ahk {
 
 Line  	|	Function
 
 }
-[1150]  {
+[1188]  {
 
 Line  	|	Function
 0015	|	RE_Match(string,offset,pattern,options,ByRef res)
 
 }
-[1151]  {
+[1189]  {
 
 Line  	|	Function
 0014	|	RE_Replace(ByRef string,offset,pattern,options,replace)
 
 }
-[1152] z\Pebwa.ahk {
+[1190] z\Pebwa.ahk {
 
 Line  	|	Function
 0083	|	EncodeQuantity(_quantity)
@@ -16861,44 +17171,44 @@ Line  	|	Function
 0260	|	Pebwa2Bin(ByRef @bin, _pebwa)
 
 }
-[1153] z\PECreateEmpty.ahk {
+[1191] z\PECreateEmpty.ahk {
 
 Line  	|	Function
 0011	|	PECreateEmpty(sFile)
 
 }
-[1154] z\Percent.ahk {
+[1192] z\Percent.ahk {
 
 Line  	|	Function
 0009	|	Percent(Number, Percent)
 
 }
-[1155] z\PercentChange.ahk {
+[1193] z\PercentChange.ahk {
 
 Line  	|	Function
 0008	|	PercentChange(Number1, Number2)
 
 }
-[1156] z\PercentDiff.ahk {
+[1194] z\PercentDiff.ahk {
 
 Line  	|	Function
 0005	|	PercentDiff(Number1, Number2)
 
 }
-[1157] z\PerfectPunctuation.ahk {
+[1195] z\PerfectPunctuation.ahk {
 
 Line  	|	Function
 0011	|	Punctuate(str)
 0054	|	__StringUpper(str)
 
 }
-[1158] z\Permutate.ahk {
+[1196] z\Permutate.ahk {
 
 Line  	|	Function
 0004	|	Permutate(set,delimeter="",trim="", presc="")
 
 }
-[1159] z\Permutation.ahk {
+[1197] z\Permutation.ahk {
 
 Line  	|	Function
 0012	|	perm_NextObj(obj)
@@ -16906,19 +17216,19 @@ Line  	|	Function
 0049	|	ObjDisp(obj)
 
 }
-[1160] z\PE_Checksum.ahk {
+[1198] z\PE_Checksum.ahk {
 
 Line  	|	Function
 0011	|	PE_CheckSum( PEfile )
 
 }
-[1161] z\PE_CompilationTime.ahk {
+[1199] z\PE_CompilationTime.ahk {
 
 Line  	|	Function
 0011	|	PE_CompilationTime( PEfile )
 
 }
-[1162] z\pgArray.ahk {
+[1200] z\pgArray.ahk {
 
 Line  	|	Function
 0018	|	pgArray_Insert( ArrayName, Idx, p1, p2="", p3="", p4="", p5="" )
@@ -16927,7 +17237,7 @@ Line  	|	Function
 0072	|	pgArray_Swap( ByRef Var1, ByRef Var2 )
 
 }
-[1163] z\PHY.ahk {
+[1201] z\PHY.ahk {
 
 Line  	|	Function
 0010	|	PHY_INIT(w,h,n = 1000)
@@ -16951,13 +17261,13 @@ Line  	|	Function
 0460	|	PHY_EVENT_CORRECT_POSITION(SYS_PHY_OBJ1,EVENT,SYS_PHY_OBJ2)
 
 }
-[1164] z\Ping (2).ahk {
+[1202] z\Ping (2).ahk {
 
 Line  	|	Function
 0003	|	Ping(Address="8.8.8.8",Timeout = 1000,ByRef Data = "",Length = 0,ByRef Result = "",ByRef ResultLength = 0)
 
 }
-[1165] z\ping.ahk {
+[1203] z\ping.ahk {
 
 Line  	|	Function
 0007	|	ping_(adr, data, timeout)
@@ -16967,14 +17277,14 @@ Line  	|	Function
 0113	|	ping(addr, data="AHK ping test", timeout="500")
 
 }
-[1166] z\ping2.ahk {
+[1204] z\ping2.ahk {
 
 Line  	|	Function
 0007	|	GetTextLines(FilePath)
 0027	|	Ping(SiteOrIP, ByRef AverageVar, ByRef MinimumVar, ByRef MaximumVar, ByRef StatusVar, ByRef LossVar, PingCount = 1, AltIP = 0, Timeout = 0)
 
 }
-[1167] z\ping_by_Uberi.ahk {
+[1205] z\ping_by_Uberi.ahk {
 
 Line  	|	Function
 0063	|	Ping(Address,Timeout = 800,ByRef Data = "",Length = 0,ByRef Result = "",ByRef ResultLength = 0)
@@ -16983,19 +17293,19 @@ Line  	|	Function
 0266	|	RoundTripTimeList(AddressList,Timeout = 800)
 
 }
-[1168] z\PipeRun.ahk {
+[1206] z\PipeRun.ahk {
 
 Line  	|	Function
 
 }
-[1169] z\pipe_AHKV2.ahk {
+[1207] z\pipe_AHKV2.ahk {
 
 Line  	|	Function
 0025	|	WriteToPipe()
 0048	|	ReadFromPipe()
 
 }
-[1170] z\PivotArraySort.ahk {
+[1208] z\PivotArraySort.ahk {
 
 Line  	|	Function
 0001	|	PivotSortArray(Array, Order="A")
@@ -17004,26 +17314,26 @@ Line  	|	Function
 0110	|	SimpleSortArray(Array)
 
 }
-[1171] z\PixelGetColorWithinTolerance.ahk {
+[1209] z\PixelGetColorWithinTolerance.ahk {
 
 Line  	|	Function
 0031	|	ColorWithinTolerance(SampleColor, TestColor, Tolerance)
 0052	|	ColorGetAtXY(X,Y)
 
 }
-[1172] z\PixelToHimetric.ahk {
+[1210] z\PixelToHimetric.ahk {
 
 Line  	|	Function
 0001	|	PixelToHimetric(Pixel)
 
 }
-[1173] z\PixelToTwip.ahk {
+[1211] z\PixelToTwip.ahk {
 
 Line  	|	Function
 0001	|	PixelToTwip(Pixel)
 
 }
-[1174] z\PixPut.ahk {
+[1212] z\PixPut.ahk {
 
 Line  	|	Function
 0012	|	PixPut( Hwnd, ColorRef=0, X=0, Y=0, W=1, H=1, IsChild=0 )
@@ -17033,14 +17343,14 @@ Line  	|	Function
 0053	|	PixLst( Hwnd )
 
 }
-[1175] z\PlaySound.ahk {
+[1213] z\PlaySound.ahk {
 
 Line  	|	Function
 0006	|	PlaySound(PlaySound,Action)
 0061	|	PlayBeep(in)
 
 }
-[1176] z\PleasantNotify.ahk {
+[1214] z\PleasantNotify.ahk {
 
 Line  	|	Function
 0001	|	PleasantNotify(title, message, pnW=700, pnH=300, position="b r", time=10)
@@ -17050,7 +17360,7 @@ Line  	|	Function
 0050	|	WinMove(hwnd,position)
 
 }
-[1177] z\PluginHelper.ahk {
+[1215] z\PluginHelper.ahk {
 
 Line  	|	Function
 0010	|	GrabPlugin(data,tag="",level="1")
@@ -17058,31 +17368,31 @@ Line  	|	Function
 0045	|	CountString(String, Char)
 
 }
-[1178] z\plugins.ahk {
+[1216] z\plugins.ahk {
 
 Line  	|	Function
 
 }
-[1179] z\PngToBase64.ahk {
+[1217] z\PngToBase64.ahk {
 
 Line  	|	Function
 0006	|	PngToBase64(file)
 0012	|	Base64enc(bin, size)
 
 }
-[1180] z\PolynomialRouteSolver.ahk {
+[1218] z\PolynomialRouteSolver.ahk {
 
 Line  	|	Function
 0011	|	PolyRoots(A)
 
 }
-[1181] z\PopupXY.ahk {
+[1219] z\PopupXY.ahk {
 
 Line  	|	Function
 0067	|	PopupXY(p_Parent,p_Child,ByRef p_ChildX,ByRef p_ChildY)
 
 }
-[1182] z\portallib.ahk {
+[1220] z\portallib.ahk {
 
 Line  	|	Function
 0019	|	#(byref pwb,id)
@@ -17199,7 +17509,7 @@ Line  	|	Function
 3312	|	getPacsHx(sid,patientIdorChartNo)
 
 }
-[1183] z\portallib_cleared.ahk {
+[1221] z\portallib_cleared.ahk {
 
 Line  	|	Function
 0009	|	#(byref pwb,id)
@@ -17316,13 +17626,13 @@ Line  	|	Function
 3214	|	getPacsHx(sid,patientIdorChartNo)
 
 }
-[1184] z\PostClick.ahk {
+[1222] z\PostClick.ahk {
 
 Line  	|	Function
 0001	|	PostClick(x, y, class, title)
 
 }
-[1185] z\potplayer.ahk {
+[1223] z\potplayer.ahk {
 
 Line  	|	Function
 0007	|	PotPlayer(msg)
@@ -17349,12 +17659,17 @@ Line  	|	Function
 0111	|	PotPlayer_AOT()
 
 }
-[1186] z\PowerShell.ahk {
+[1224] z\PowerShell.ahk {
 
 Line  	|	Function
 
 }
-[1187] z\Prefs.ahk {
+[1225] z\PowerShellEx.ahk {
+
+Line  	|	Function
+
+}
+[1226] z\Prefs.ahk {
 
 Line  	|	Function
 0012	|	Prefs_init(b,default_func)
@@ -17365,7 +17680,7 @@ Line  	|	Function
 0123	|	Prefs_override(prefs,n1,v1="",n2="",v2="",n3="",v3="",n4="",v4="",n5="",v5="",n6="",v6="")
 
 }
-[1188] z\prettyReport.ahk {
+[1227] z\prettyReport.ahk {
 
 Line  	|	Function
 0026	|	parseReport(byref input, returnArr=0)
@@ -17393,12 +17708,12 @@ Line  	|	Function
 0573	|	exclude(ByRef styles, style, start, End)
 
 }
-[1189] z\print.ahk {
+[1228] z\print.ahk {
 
 Line  	|	Function
 
 }
-[1190] z\Printer.ahk {
+[1229] z\Printer.ahk {
 
 Line  	|	Function
 0015	|	EnumPrinters()
@@ -17406,47 +17721,47 @@ Line  	|	Function
 0066	|	SetDefaultPrinter(PrinterName)
 
 }
-[1191] z\printerfunctions.ahk {
+[1230] z\printerfunctions.ahk {
 
 Line  	|	Function
 0040	|	GetDefaultPrinter()
 0048	|	SetDefaultPrinter(sPrinter)
 
 }
-[1192] z\printerfunctionsV102.ahk {
+[1231] z\printerfunctionsV102.ahk {
 
 Line  	|	Function
 0041	|	GetDefaultPrinter()
 0047	|	SetDefaultPrinter(sPrinter)
 
 }
-[1193] z\printer_status.ahk {
+[1232] z\printer_status.ahk {
 
 Line  	|	Function
 0021	|	GetDefaultPrinter()
 0030	|	printerstatus(pn)
 
 }
-[1194] z\Process.ahk {
+[1233] z\Process.ahk {
 
 Line  	|	Function
 0016	|	Process_GetImageFileName(nPid)
 0058	|	Process_GetParentPid(nPid)
 
 }
-[1195] z\ProcessEnum.ahk {
+[1234] z\ProcessEnum.ahk {
 
 Line  	|	Function
 
 }
-[1196] z\ProcessEnumHandles.ahk {
+[1235] z\ProcessEnumHandles.ahk {
 
 Line  	|	Function
 0032	|	ProcessEnumHandles()
 0083	|	ProcessEnumHandles2(Process)
 
 }
-[1197] z\processes.ahk {
+[1236] z\processes.ahk {
 
 Line  	|	Function
 0010	|	assoc_query_app(p_ext)
@@ -17456,41 +17771,41 @@ Line  	|	Function
 0160	|	get_running_processes2()
 
 }
-[1198] z\ProcessGetBasicInfo.ahk {
+[1237] z\ProcessGetBasicInfo.ahk {
 
 Line  	|	Function
 0037	|	ProcessGetBasicInfo(Process)
 
 }
-[1199] z\ProcessGetImageName.ahk {
+[1238] z\ProcessGetImageName.ahk {
 
 Line  	|	Function
 
 }
-[1200] z\ProcessGetList.ahk {
+[1239] z\ProcessGetList.ahk {
 
 Line  	|	Function
 0031	|	ProcessGetList()
 
 }
-[1201] z\ProcessGetList2.ahk {
+[1240] z\ProcessGetList2.ahk {
 
 Line  	|	Function
 0033	|	ProcessGetList2()
 
 }
-[1202] z\ProcessGetMemoryInfo.ahk {
+[1241] z\ProcessGetMemoryInfo.ahk {
 
 Line  	|	Function
 0030	|	ProcessGetMemoryInfo(Process)
 
 }
-[1203] z\ProcessHandleClose.ahk {
+[1242] z\ProcessHandleClose.ahk {
 
 Line  	|	Function
 
 }
-[1204] z\ProcessInfo.ahk {
+[1243] z\ProcessInfo.ahk {
 
 Line  	|	Function
 0001	|	GetCurrentProcessID()
@@ -17501,25 +17816,25 @@ Line  	|	Function
 0021	|	GetProcessInformation(ProcessID, CallVariableType, VariableCapacity, DataOffset)
 
 }
-[1205] z\ProcessInfoFromFilename.ahk {
+[1244] z\ProcessInfoFromFilename.ahk {
 
 Line  	|	Function
 0025	|	ProcessInfoFromFilename(FileName)
 
 }
-[1206] z\ProcessIs32bit.ahk {
+[1245] z\ProcessIs32bit.ahk {
 
 Line  	|	Function
 0011	|	ProcessIs32bit(hwnd)
 
 }
-[1207] z\ProcessList.ahk {
+[1246] z\ProcessList.ahk {
 
 Line  	|	Function
 0005	|	ProcessList()
 
 }
-[1208] z\ProcessMem.ahk {
+[1247] z\ProcessMem.ahk {
 
 Line  	|	Function
 0002	|	getProcessHandle(pid,mode=0x001F0FFF)
@@ -17530,7 +17845,7 @@ Line  	|	Function
 0044	|	writeProcMem(pid,addr,val)
 
 }
-[1209] z\ProcessOpen.ahk {
+[1248] z\ProcessOpen.ahk {
 
 Line  	|	Function
 0106	|	__New(hProcess)
@@ -17540,7 +17855,7 @@ Line  	|	Function
 0224	|	ProcessGetID(Process)
 
 }
-[1210] z\ProfileHandler.ahk {
+[1249] z\ProfileHandler.ahk {
 
 Line  	|	Function
 0105	|	SetPreLoadCallback(callback)
@@ -17560,7 +17875,7 @@ Line  	|	Function
 0305	|	ObjFullyClone(obj)
 
 }
-[1211] z\Progress.ahk {
+[1250] z\Progress.ahk {
 
 Line  	|	Function
 0008	|	PB_GetRange(PB)
@@ -17573,12 +17888,12 @@ Line  	|	Function
 0144	|	PB_SetBkColor(PB, Color)
 
 }
-[1212] z\progressBox.ahk {
+[1251] z\progressBox.ahk {
 
 Line  	|	Function
 
 }
-[1213] z\Progress_Lib.ahk {
+[1252] z\Progress_Lib.ahk {
 
 Line  	|	Function
 0015	|	Progress_Add(Gui,Position,Range="0-100",Value=0,Text="",Vertical=0)
@@ -17593,14 +17908,14 @@ Line  	|	Function
 0250	|	Progress_CopyFiles(Gui,Position,SourceFolder,DestFolder,Pattern="",Sleep=10)
 
 }
-[1214] z\Progress_Struct.ahk {
+[1253] z\Progress_Struct.ahk {
 
 Line  	|	Function
 0001	|	Progress_Struct()
 0008	|	Progress_OnMessage(wParam,lParam,msg,hwnd)
 
 }
-[1215] z\Property.ahk {
+[1254] z\Property.ahk {
 
 Line  	|	Function
 0041	|	Property_Add(HParent, X=0, Y=0, W=200, H=100, Style="", Handler="")
@@ -17626,7 +17941,7 @@ Line  	|	Function
 0573	|	Property_initSheet(hCtrl)
 
 }
-[1216] z\PropertyWin.ahk {
+[1255] z\PropertyWin.ahk {
 
 Line  	|	Function
 0029	|	PropertyWinActivateListView(ListView)
@@ -17703,14 +18018,14 @@ Line  	|	Function
 1529	|	if(HwndFrom = PropertyWinHeaderHwnd)
 
 }
-[1217] z\psTool.ahk {
+[1256] z\psTool.ahk {
 
 Line  	|	Function
 0001	|	psTool_get()
 0016	|	psTool_set(tool)
 
 }
-[1218] z\PS_BMP.ahk {
+[1257] z\PS_BMP.ahk {
 
 Line  	|	Function
 0052	|	LoadBMPFromFile(InputPath)
@@ -17733,7 +18048,7 @@ Line  	|	Function
 0834	|	_Flip(ByRef FrameObj,Width,Height)
 
 }
-[1219] z\PS_ExceptionHandler.ahk {
+[1258] z\PS_ExceptionHandler.ahk {
 
 Line  	|	Function
 0088	|	ExceptionErrorDlg(Content)
@@ -17742,7 +18057,7 @@ Line  	|	Function
 0141	|	GetSourceCode()
 
 }
-[1220] z\PS_GIF.ahk {
+[1259] z\PS_GIF.ahk {
 
 Line  	|	Function
 0022	|	LoadGIFFromFile(InputPath)
@@ -17781,7 +18096,7 @@ Line  	|	Function
 1245	|	_InsertRC(ByRef FrameObj,PalEntry,Top,Bottom,Left,Right)
 
 }
-[1221] z\PS_PAL.ahk {
+[1260] z\PS_PAL.ahk {
 
 Line  	|	Function
 0022	|	ImportPaletteFromPalObj(PalObj)
@@ -17790,7 +18105,7 @@ Line  	|	Function
 0299	|	GetPaletteObj()
 
 }
-[1222] z\PS_Quantization.ahk {
+[1261] z\PS_Quantization.ahk {
 
 Line  	|	Function
 0028	|	__New()
@@ -17813,7 +18128,7 @@ Line  	|	Function
 0423	|	Quantize(CountOfPaletteEntries)
 
 }
-[1223] z\PUM_API.ahk {
+[1262] z\PUM_API.ahk {
 
 Line  	|	Function
 0009	|	Err( msg )
@@ -17891,7 +18206,7 @@ Line  	|	Function
 0522	|	_msgMonitor( state )
 
 }
-[1224] z\QA.ahk {
+[1263] z\QA.ahk {
 
 Line  	|	Function
 0001	|	QA_Create(ByRef arr, capacity="4")
@@ -17957,7 +18272,7 @@ Line  	|	Function
 0588	|	QA_PerfTest_Sort(length=500, testCnt=5)
 
 }
-[1225] z\Qhtm.ahk {
+[1264] z\Qhtm.ahk {
 
 Line  	|	Function
 0040	|	QHTM_Add(Hwnd, X, Y, W, H, Text="", Style="", Handler="", DllPath="")
@@ -17993,7 +18308,7 @@ Line  	|	Function
 0627	|	QHTM_strAtAdr(adr)
 
 }
-[1226] z\QMsgBox.ahk {
+[1265] z\QMsgBox.ahk {
 
 Line  	|	Function
 0001	|	QMsgBoxF( title = "", msg = "", sBtns = "OK", icon = "", centered = True, modal = False )
@@ -18009,7 +18324,7 @@ Line  	|	Function
 0163	|	Show( pGuis = "" )
 
 }
-[1227] z\QMsgBox_foos.ahk {
+[1266] z\QMsgBox_foos.ahk {
 
 Line  	|	Function
 0001	|	HBITMAPfromHICON( hIcon )
@@ -18024,18 +18339,18 @@ Line  	|	Function
 0099	|	IsInteger( var )
 
 }
-[1228] z\QPX.ahk {
+[1267] z\QPX.ahk {
 
 Line  	|	Function
 0001	|	QPX( N=0 )
 
 }
-[1229] z\qSortErrorLookup.ahk {
+[1268] z\qSortErrorLookup.ahk {
 
 Line  	|	Function
 
 }
-[1230] z\Query.ahk {
+[1269] z\Query.ahk {
 
 Line  	|	Function
 0016	|	Query_Interface(pobj, IID = "", bRaw = "")
@@ -18043,30 +18358,30 @@ Line  	|	Function
 0027	|	Query_String4Guid(pGUID)
 
 }
-[1231] z\QueryDosDevice.ahk {
+[1270] z\QueryDosDevice.ahk {
 
 Line  	|	Function
 0010	|	QueryDosDevice(DeviceName)
 
 }
-[1232] z\QueryRecycleBin.ahk {
+[1271] z\QueryRecycleBin.ahk {
 
 Line  	|	Function
 
 }
-[1233] z\QueryTokenPrivileges.ahk {
+[1272] z\QueryTokenPrivileges.ahk {
 
 Line  	|	Function
 0024	|	QueryTokenPrivileges(hToken)
 
 }
-[1234] z\QuickTextMenu.ahk {
+[1273] z\QuickTextMenu.ahk {
 
 Line  	|	Function
 0264	|	QuickTextMenuHandler(InsertText, NextMenu)
 
 }
-[1235] z\quick_sort_array.ahk {
+[1274] z\quick_sort_array.ahk {
 
 Line  	|	Function
 0016	|	QuickSortRange(arr, beginIndex, endIndex, cmpFunc)
@@ -18074,26 +18389,26 @@ Line  	|	Function
 0062	|	SimpleCmp(a, b)
 
 }
-[1236] z\quick_sort_array_no_recursion.ahk {
+[1275] z\quick_sort_array_no_recursion.ahk {
 
 Line  	|	Function
 0021	|	q_sort(ByRef input,Dim)
 0077	|	SwapElement(ByRef arr,left,right)
 
 }
-[1237] z\Quoted String Replace.ahk {
+[1276] z\Quoted String Replace.ahk {
 
 Line  	|	Function
 0011	|	StringCodeReplace(String,RegularExpression,Replacement = "",ByRef OutputCount = "")
 0019	|	StringLiteralReplace(String,RegularExpression,Replacement = "",ByRef OutputCount = "")
 
 }
-[1238] z\RadianToDegree.ahk {
+[1277] z\RadianToDegree.ahk {
 
 Line  	|	Function
 
 }
-[1239] z\RaGrid.ahk {
+[1278] z\RaGrid.ahk {
 
 Line  	|	Function
 0046	|	RG_Add(HParent,X,Y,W,H, Style="", Handler="", DllPath="")
@@ -18143,32 +18458,32 @@ Line  	|	Function
 0837	|	RaGrid_add2Form(hParent, Txt, Opt)
 
 }
-[1240] z\RandBezier.ahk {
+[1279] z\RandBezier.ahk {
 
 Line  	|	Function
 0001	|	RandomBezier( X0, Y0, Xf, Yf, O="" )
 
 }
-[1241] z\Random jock StrX() Parsing.ahk {
+[1280] z\Random jock StrX() Parsing.ahk {
 
 Line  	|	Function
 0062	|	StrX( H, BS="",BO=0,BT=1, ES="",EO=0,ET=1, ByRef N="" )
 
 }
-[1242] z\RandomBezier.ahk {
+[1281] z\RandomBezier.ahk {
 
 Line  	|	Function
 0034	|	RandomBezier( X0, Y0, Xf, Yf, O="" )
 
 }
-[1243] z\RandomCurve.ahk {
+[1282] z\RandomCurve.ahk {
 
 Line  	|	Function
 0019	|	RandomCurve(min,max)
 0033	|	Rand(min,max)
 
 }
-[1244] z\randomdotorg.ahk {
+[1283] z\randomdotorg.ahk {
 
 Line  	|	Function
 0058	|	randomdotorg_integer(num,min,max,base="10",rnd="new")
@@ -18187,71 +18502,76 @@ Line  	|	Function
 0951	|	Bin2Hex(ByRef @hex, ByRef @bin, _byteNb=0)
 
 }
-[1245] z\RandomEx.ahk {
+[1284] z\RandomEx.ahk {
 
 Line  	|	Function
 
 }
-[1246] z\RandomiseArray.ahk {
+[1285] z\RandomiseArray.ahk {
 
 Line  	|	Function
 0001	|	randomiseArray(byRef a)
 
 }
-[1247] z\RandomName(2).ahk {
+[1286] z\RandomName(2).ahk {
 
 Line  	|	Function
 0001	|	RandomName(MinLength=4, MaxLength=0)
 
 }
-[1248] z\RandomName.ahk {
+[1287] z\RandomName.ahk {
 
 Line  	|	Function
 0004	|	RandomName(MinLength=4, MaxLength=0)
 
 }
-[1249]  {
+[1288] z\RandomPW.ahk {
 
 Line  	|	Function
 
 }
-[1250] z\RandomUniqNum.ahk {
+[1289]  {
+
+Line  	|	Function
+
+}
+[1290] z\RandomUniqNum.ahk {
 
 Line  	|	Function
 0003	|	RandomUniqNum(Min,Max,N)
 
 }
-[1251] z\RandomVar.ahk {
+[1291] z\RandomVar.ahk {
 
 Line  	|	Function
 0034	|	RandomVar(p_MinLength,p_MaxLength,p_Type="",p_MinAsc=32,p_MaxAsc=126)
 
 }
-[1252] z\RandSleep.ahk {
+[1292] z\RandSleep.ahk {
 
 Line  	|	Function
 0001	|	SleepRand(min,max)
 
 }
-[1253] z\range.ahk {
+[1293] z\range.ahk {
 
 Line  	|	Function
 0022	|	_RangeNewEnum(r)
 
 }
-[1254] z\RapidHotkey (2).ahk {
+[1294] z\RapidHotkey (2).ahk {
 
 Line  	|	Function
 
 }
-[1255] z\RapidHotkey.ahk {
+[1295] z\RapidHotkey.ahk {
 
 Line  	|	Function
 0973	|	RapidHotkey(keystroke, times="2", delay=0.2, IsLabel=0)
 1035	|	Morse(timeout = 400)
 
 }
-[1256] z\RAW_POS_interpretation_for_QL_Swath_KMLs.ahk {
+[1296] z\RAW_POS_interpretation_for_QL_Swath_KMLs.ahk {
 
 Line  	|	Function
 0004	|	GPS_UTM2LatLon(UTMEast, UTMNorth, Hemisphere, Longitude_Zone)
@@ -18268,58 +18588,58 @@ Line  	|	Function
 0388	|	Bilinear_Interpolation_Point(xLeft,xRight,yLower,X,Y,yUpper,valueUL,valueLL,valueUR,valueLR)
 
 }
-[1257] z\RA_StringSort.ahk {
+[1297] z\RA_StringSort.ahk {
 
 Line  	|	Function
 0003	|	RA_StringSort(as)
 
 }
-[1258] z\ReadFileLine.ahk {
+[1298] z\ReadFileLine.ahk {
 
 Line  	|	Function
 
 }
-[1259] z\readHotkeys.ahk {
+[1299] z\readHotkeys.ahk {
 
 Line  	|	Function
 0023	|	if(retObj)
 
 }
-[1260] z\ReadIni.ahk {
+[1300] z\ReadIni.ahk {
 
 Line  	|	Function
 
 }
-[1261] z\ReadLocalizedString.ahk {
+[1301] z\ReadLocalizedString.ahk {
 
 Line  	|	Function
 
 }
-[1262] z\ReadMemory.ahk {
+[1302] z\ReadMemory.ahk {
 
 Line  	|	Function
 0013	|	ReadMemory(MADDRESS=0,PROGRAM="",BYTES=4)
 
 }
-[1263] z\ReadMemory_Str.ahk {
+[1303] z\ReadMemory_Str.ahk {
 
 Line  	|	Function
 0009	|	ReadMemory_Str(MADDRESS=0, PROGRAM = "", length = 0 , terminator = "")
 
 }
-[1264]  {
+[1304]  {
 
 Line  	|	Function
 0001	|	ReadRawMemory(MADDRESS=0,PROGRAM="", byref Buffer="", BYTES=4)
 
 }
-[1265] z\readResource.ahk {
+[1305] z\readResource.ahk {
 
 Line  	|	Function
 0001	|	readResource(ByRef Var, Name, Type="#10")
 
 }
-[1266] z\Rebar.ahk {
+[1306] z\Rebar.ahk {
 
 Line  	|	Function
 0039	|	Rebar_Add(hGui, Style="", hIL="", Pos="", Handler="")
@@ -18348,7 +18668,7 @@ Line  	|	Function
 0712	|	Rebar_mfree(pAdr)
 
 }
-[1267] z\RecordSetADO.ahk {
+[1307] z\RecordSetADO.ahk {
 
 Line  	|	Function
 0011	|	__New(sql, adoConnection, editable = false)
@@ -18365,7 +18685,7 @@ Line  	|	Function
 0095	|	__Get(propertyName)
 
 }
-[1268] z\RecordSetMySQL.ahk {
+[1308] z\RecordSetMySQL.ahk {
 
 Line  	|	Function
 0016	|	__New(db, requestResult)
@@ -18377,7 +18697,7 @@ Line  	|	Function
 0097	|	Close()
 
 }
-[1269] z\RecordSetSqlLite.ahk {
+[1309] z\RecordSetSqlLite.ahk {
 
 Line  	|	Function
 0016	|	__New(db, query)
@@ -18390,36 +18710,36 @@ Line  	|	Function
 0146	|	Close()
 
 }
-[1270] z\RedrawDB.ahk {
+[1310] z\RedrawDB.ahk {
 
 Line  	|	Function
 0016	|	RedrawDB(hWnd)
 
 }
-[1271] z\RedrawWindow.ahk {
+[1311] z\RedrawWindow.ahk {
 
 Line  	|	Function
 
 }
-[1272] z\ReduceWorkingSetSize.ahk {
+[1312] z\ReduceWorkingSetSize.ahk {
 
 Line  	|	Function
 0004	|	ReduceWorkingSetSize()
 
 }
-[1273] z\ReFormatTime.ahk {
+[1313] z\ReFormatTime.ahk {
 
 Line  	|	Function
 0002	|	ReFormatTime( Time, Format, Delimiters )
 
 }
-[1274] z\RefreshExplorer.ahk {
+[1314] z\RefreshExplorer.ahk {
 
 Line  	|	Function
-0011	|	RefreshExplorer()
+0012	|	RefreshExplorer()
 
 }
-[1275] z\REG to VBS.ahk {
+[1315] z\REG to VBS.ahk {
 
 Line  	|	Function
 0029	|	Convert_REG(_SourceFile)
@@ -18433,7 +18753,7 @@ Line  	|	Function
 0276	|	Compile_Statement(_HKEY, _Key, _Name, _Type, _Value)
 
 }
-[1276] z\RegEasy.ahk {
+[1316] z\RegEasy.ahk {
 
 Line  	|	Function
 0041	|	RegWriteUser(User, ValueType, KeyName , ValueName="", Value="")
@@ -18442,34 +18762,41 @@ Line  	|	Function
 0065	|	GetUserSID(UserName)
 
 }
-[1277] z\RegEx.ahk {
+[1317] z\RegEx.ahk {
 
 Line  	|	Function
 0126	|	RegEx_Help(Function)
 
 }
-[1278] z\RegExDebug.ahk {
+[1318] z\RegExByte.ahk {
+
+Line  	|	Function
+0058	|	RegExByte(s)
+0067	|	RegExUnicode(s)
+
+}
+[1319] z\RegExDebug.ahk {
 
 Line  	|	Function
 0002	|	RegExDebug(fnMatch,fnCalloutNumber,fnFoundPos,fnHaystack,fnNeedleRegEx)
 
 }
-[1279] z\RegExEscape.ahk {
+[1320] z\RegExEscape.ahk {
 
 Line  	|	Function
 
 }
-[1280] z\RegExFileSearch.ahk {
+[1321] z\RegExFileSearch.ahk {
 
 Line  	|	Function
 
 }
-[1281] z\RegExGrep.ahk {
+[1322] z\RegExGrep.ahk {
 
 Line  	|	Function
 
 }
-[1282] z\RegexLists.ahk {
+[1323] z\RegexLists.ahk {
 
 Line  	|	Function
 0144	|	if(Arr_list1[A_LoopField]=1)
@@ -18477,44 +18804,44 @@ Line  	|	Function
 0196	|	if(Arr_list1[Arr_Value2[Parameter_Index]]=1)
 
 }
-[1283] z\RegExMatchAll.ahk {
+[1324] z\RegExMatchAll.ahk {
 
 Line  	|	Function
 
 }
-[1284] z\regExMatchI.ahk {
+[1325] z\regExMatchI.ahk {
 
 Line  	|	Function
 0001	|	regExMatchI(haystack,needleRegEx,byref unquotedOutputVar="",startingPosition=1)
 
 }
-[1285] z\RegExOptions.ahk {
+[1326] z\RegExOptions.ahk {
 
 Line  	|	Function
 
 }
-[1286] z\RegExReplaceF.ahk {
+[1327] z\RegExReplaceF.ahk {
 
 Line  	|	Function
 
 }
-[1287] z\RegExSort.ahk {
+[1328] z\RegExSort.ahk {
 
 Line  	|	Function
 
 }
-[1288] z\RegExSplit.ahk {
+[1329] z\RegExSplit.ahk {
 
 Line  	|	Function
 
 }
-[1289] z\RegEx_HotString.ahk {
+[1330] z\RegEx_HotString.ahk {
 
 Line  	|	Function
 0030	|	RegExFindHotstrings(text)
 
 }
-[1290]  {
+[1331]  {
 
 Line  	|	Function
 0077	|	regionGetColor(x, y, w, h, hwnd=0)
@@ -18536,7 +18863,7 @@ Line  	|	Function
 0228	|	PrintWindow(hwnd, hdc, Flags=0)
 
 }
-[1291] z\RegionWaitChange.ahk {
+[1332] z\RegionWaitChange.ahk {
 
 Line  	|	Function
 0019	|	RegionWaitChange(x, y, w = 1, h = 1, t = "", f = 500, s = 67108864, inv = false)
@@ -18544,41 +18871,41 @@ Line  	|	Function
 0048	|	DCCBitmapHash(hwnd, x, y, w = 1, h = 1, s = 67108864)
 
 }
-[1292] z\RegisterSyncCallback.ahk {
+[1333] z\RegisterSyncCallback.ahk {
 
 Line  	|	Function
 0093	|	RegisterSyncCallback_Msg(wParam, lParam)
 
 }
-[1293] z\releaseKeyspSend.ahk {
+[1334] z\releaseKeyspSend.ahk {
 
 Line  	|	Function
 0005	|	releaseKeyspSend()
 
 }
-[1294] z\reloadAsAdmin.ahk {
+[1335] z\reloadAsAdmin.ahk {
 
 Line  	|	Function
 0065	|	_reloadAsAdmin_Error(e,force)
 
 }
-[1295] z\ReloadScriptOnEdit.ahk {
+[1336] z\ReloadScriptOnEdit.ahk {
 
 Line  	|	Function
 
 }
-[1296] z\RelToAbs.ahk {
+[1337] z\RelToAbs.ahk {
 
 Line  	|	Function
 
 }
-[1297] z\RemapRange.ahk {
+[1338] z\RemapRange.ahk {
 
 Line  	|	Function
-0016	|	RemapRange(x,in_min,in_max,out_min,out_max)
+0034	|	RemapRange(x,in_min,in_max,out_min,out_max)
 
 }
-[1298] z\RemoteBuf.ahk {
+[1339] z\RemoteBuf.ahk {
 
 Line  	|	Function
 0028	|	RemoteBuf_Close(ByRef H)
@@ -18586,7 +18913,7 @@ Line  	|	Function
 0289	|	RemoteBuf_SystemMessage(p_MessageNbr)
 
 }
-[1299] z\RemoteInvocation.ahk {
+[1340] z\RemoteInvocation.ahk {
 
 Line  	|	Function
 0031	|	InvokeVariable(title, variable, value)
@@ -18601,7 +18928,7 @@ Line  	|	Function
 0130	|	GetPID()
 
 }
-[1300] z\RemoteResource.ahk {
+[1341] z\RemoteResource.ahk {
 
 Line  	|	Function
 0023	|	remoteResource(Resource, URL="", Directory="", TT="Display", MD5Sum="")
@@ -18609,7 +18936,7 @@ Line  	|	Function
 0127	|	URLStatus(URL="")
 
 }
-[1301] z\RemoteScintilla.ahk {
+[1342] z\RemoteScintilla.ahk {
 
 Line  	|	Function
 0018	|	__New(hwnd)
@@ -18651,131 +18978,131 @@ Line  	|	Function
 0228	|	Do(command)
 
 }
-[1302] z\RemoveDuplicates.ahk {
+[1343] z\RemoveDuplicates.ahk {
 
 Line  	|	Function
 0001	|	RemoveDuplicates(list)
 
 }
-[1303] z\RemoveIllegalFilenameCharacters.ahk {
+[1344] z\RemoveIllegalFilenameCharacters.ahk {
 
 Line  	|	Function
 0001	|	RemoveIllegalFilenameCharacters(fnText)
 
 }
-[1304] z\rename.ahk {
+[1345] z\rename.ahk {
 
 Line  	|	Function
 
 }
-[1305] z\rename_script.ahk {
+[1346] z\rename_script.ahk {
 
 Line  	|	Function
 
 }
-[1306] z\ReplaceHtmlDecodedChars.ahk {
+[1347] z\ReplaceHtmlDecodedChars.ahk {
 
 Line  	|	Function
 0001	|	ReplaceHtmlDecodedChars(fnText)
 
 }
-[1307] z\ReplaceHtmlEncodedChars.ahk {
+[1348] z\ReplaceHtmlEncodedChars.ahk {
 
 Line  	|	Function
 0001	|	ReplaceHtmlEncodedChars(fnText)
 
 }
-[1308] z\ReplaceIllegalFilenameCharacters.ahk {
+[1349] z\ReplaceIllegalFilenameCharacters.ahk {
 
 Line  	|	Function
 0001	|	ReplaceIllegalFilenameCharacters(fnText)
 
 }
-[1309] z\replaceList.ahk {
+[1350] z\replaceList.ahk {
 
 Line  	|	Function
 0003	|	replaceList(def, opt)
 
 }
-[1310] z\ReplaceSystemVariables.ahk {
+[1351] z\ReplaceSystemVariables.ahk {
 
 Line  	|	Function
 0001	|	ReplaceSystemVariables(ByRef fnText)
 
 }
-[1311] z\ReplaceUrlEncodedChars.ahk {
+[1352] z\ReplaceUrlEncodedChars.ahk {
 
 Line  	|	Function
 0001	|	ReplaceUrlEncodedChars(fnText)
 
 }
-[1312] z\ReplaceUserVariables.ahk {
+[1353] z\ReplaceUserVariables.ahk {
 
 Line  	|	Function
 0001	|	ReplaceUserVariables(ByRef fnText)
 
 }
-[1313] z\Replicate.ahk {
+[1354] z\Replicate.ahk {
 
 Line  	|	Function
 0001	|	Replicate(Str,Count)
 
 }
-[1314] z\ResDelete.ahk {
+[1355] z\ResDelete.ahk {
 
 Line  	|	Function
 
 }
-[1315] z\ResDllCreate.ahk {
+[1356] z\ResDllCreate.ahk {
 
 Line  	|	Function
 0001	|	ResDllCreate(path)
 
 }
-[1316] z\ResExist.ahk {
+[1357] z\ResExist.ahk {
 
 Line  	|	Function
 
 }
-[1317] z\ResGet.ahk {
+[1358] z\ResGet.ahk {
 
 Line  	|	Function
 
 }
-[1318] z\ResizeandConvert_ICO.ahk {
+[1359] z\ResizeandConvert_ICO.ahk {
 
 Line  	|	Function
 0031	|	ResConICO(ImageArray, NewName, NewDir)
 
 }
-[1319] z\ResolveHostname.ahk {
+[1360] z\ResolveHostname.ahk {
 
 Line  	|	Function
 0005	|	ResolveHostname(hostname)
 
 }
-[1320] z\ResourceID.ahk {
+[1361] z\ResourceID.ahk {
 
 Line  	|	Function
 0002	|	ResourceIdOfIcon(Filename, IconIndex)
 0028	|	ResourceIdOfIcon_EnumIconResources(hModule, lpszType, lpszName, lParam)
 
 }
-[1321] z\ResourceIDOfIcon.ahk {
+[1362] z\ResourceIDOfIcon.ahk {
 
 Line  	|	Function
 0001	|	ResourceIdOfIcon(Filename, IconIndex)
 0024	|	_EnumIconResources(hModule, lpszType, lpszName, lParam)
 
 }
-[1322] z\ResourceIndexToId.ahk {
+[1363] z\ResourceIndexToId.ahk {
 
 Line  	|	Function
 0001	|	ResourceIndexToId(aModule, aType, aIndex)
 0012	|	ResourceIndexToIdEnumProc(hModule, lpszType, lpszName, lParam)
 
 }
-[1323] z\ResourceMonitor.ahk {
+[1364] z\ResourceMonitor.ahk {
 
 Line  	|	Function
 0016	|	ResourceMonitor_init()
@@ -18790,69 +19117,94 @@ Line  	|	Function
 0134	|	ResourceMonitor_getText()
 
 }
-[1324] z\ResourHackIcons.ahk {
+[1365] z\ResourHackIcons.ahk {
 
 Line  	|	Function
 0001	|	ResourHackIcons(dotIcoFile)
 
 }
-[1325] z\ResPut.ahk {
+[1366] z\ResPut.ahk {
 
 Line  	|	Function
 
 }
-[1326] z\ResPutFile.ahk {
+[1367] z\ResPutFile.ahk {
 
 Line  	|	Function
 
 }
-[1327] z\RestartNetwork.ahk {
+[1368] z\RestartExplorer.ahk {
 
 Line  	|	Function
 
 }
-[1328] z\RestartWindowsExplorer.ahk {
+[1369] z\RestartNetwork.ahk {
+
+Line  	|	Function
+
+}
+[1370] z\RestartWindowsExplorer.ahk {
 
 Line  	|	Function
 0004	|	RestartWindowsExplorer()
 
 }
-[1329] z\ResumeProcess.ahk {
+[1371] z\ResumeProcess.ahk {
 
 Line  	|	Function
 0012	|	ResumeProcess(hProcess)
 
 }
-[1330]  {
+[1372]  {
 
 Line  	|	Function
 0008	|	reverseArray(Byref a)
 
 }
-[1331] z\ReverseBytes.ahk {
+[1373] z\ReverseBytes.ahk {
 
 Line  	|	Function
 
 }
-[1332] z\ReverseLookup.ahk {
+[1374] z\ReverseLookup.ahk {
 
 Line  	|	Function
 0005	|	ReverseLookup(ipaddr)
 
 }
-[1333] z\ReverseSign.ahk {
+[1375] z\ReverseSign.ahk {
 
 Line  	|	Function
 0001	|	ReverseSign(value)
 
 }
-[1334] z\RgbBgrSwap.ahk {
+[1376] z\RE_SetOleCallback.ahk {
+
+Line  	|	Function
+0028	|	RE_SetOleCallback(HRE)
+0040	|	IREOleCB_Create()
+0068	|	IREOleCB_QueryInterface(IREOleCB, REFIID, ByRef IFPtr)
+0075	|	IREOleCB_AddRef(IREOleCB)
+0084	|	IREOleCB_Release(IREOleCB)
+0098	|	IREOleCB_GetNewStorage(IREOleCB, IStoragePtr)
+0114	|	IREOleCB_GetInPlaceContext(IREOleCB, Frame, Doc, FrameInfo)
+0121	|	IREOleCB_ShowContainerUI(IREOleCB, Show)
+0128	|	IREOleCB_QueryInsertObject(IREOleCB, CLSID, STG, CP)
+0135	|	IREOleCB_DeleteObject(IREOleCB, OleObj)
+0142	|	IREOleCB_QueryAcceptData(IREOleCB, DataObj, Format, Operation, Really, MetaPic)
+0149	|	IREOleCB_ContextSensitiveHelp(IREOleCB, EnterMode)
+0156	|	IREOleCB_GetClipboardData(IREOleCB, CharRange, Operation, DataObj)
+0163	|	IREOleCB_GetDragDropEffect(IREOleCB, Drag, KeyState, Effect)
+0170	|	IREOleCB_GetContextMenu(IREOleCB, SelType, OleObj, CharRange, HMENU)
+
+}
+[1377] z\RgbBgrSwap.ahk {
 
 Line  	|	Function
 0011	|	RgbBgrSwap(n)
 
 }
-[1335] z\rgbToHex.ahk {
+[1378] z\rgbToHex.ahk {
 
 Line  	|	Function
 0003	|	rgbToHex(s, d = "")
@@ -18860,13 +19212,13 @@ Line  	|	Function
 0019	|	CheckHexC(s, d = "")
 
 }
-[1336] z\RgbToHex2.ahk {
+[1379] z\RgbToHex2.ahk {
 
 Line  	|	Function
 0011	|	RgbToHex(r,g,b)
 
 }
-[1337] z\RI.ahk {
+[1380] z\RI.ahk {
 
 Line  	|	Function
 0035	|	RI_GetDeviceList()
@@ -18880,7 +19232,7 @@ Line  	|	Function
 0318	|	RI_RIDEV_ForType(DevType)
 
 }
-[1338] z\Ribbon.ahk {
+[1381] z\Ribbon.ahk {
 
 Line  	|	Function
 0004	|	Ribbon()
@@ -18894,7 +19246,7 @@ Line  	|	Function
 0122	|	MyAnsiToUnicode(ByRef wString, sString, nSize = "")
 
 }
-[1339] z\RichEdit OleCallback.ahk {
+[1382] z\RichEdit OleCallback.ahk {
 
 Line  	|	Function
 0017	|	RE_SetOleCallback(HRE)
@@ -18914,7 +19266,7 @@ Line  	|	Function
 0159	|	IREOleCB_GetContextMenu(IREOleCB, SelType, OleObj, CharRange, HMENU)
 
 }
-[1340]  {
+[1383]  {
 
 Line  	|	Function
 0002	|	RichEdit_ATOU( ByRef Unicode, Ansi )
@@ -18970,7 +19322,7 @@ Line  	|	Function
 0773	|	RichEdit_StreamOut(hCtrl, ByRef Out, Flags="RTF")
 
 }
-[1341] z\RichEdit.ahk {
+[1384] z\RichEdit.ahk {
 
 Line  	|	Function
 0050	|	RichEdit_Add(HParent, X="", Y="", W="", H="", Style="", Text="")
@@ -19033,7 +19385,7 @@ Line  	|	Function
 2067	|	RichEdit_editStreamCallBack(dwCookie, pbBuff, cb, pcb)
 
 }
-[1342] z\RichEdit_OLECallback.ahk {
+[1385] z\RichEdit_OLECallback.ahk {
 
 Line  	|	Function
 0042	|	RN_SetOLECallback(P_HWND)
@@ -19054,7 +19406,7 @@ Line  	|	Function
 0458	|	RN_InsertObject(HRE, FilePath)
 
 }
-[1343] z\RIni.ahk {
+[1386] z\RIni.ahk {
 
 Line  	|	Function
 0024	|	RIni_Create(RVar, Correct_Errors=1)
@@ -19108,7 +19460,7 @@ Line  	|	Function
 2208	|	RIni_CalcMD5(_String)
 
 }
-[1344] z\RisImpax.ahk {
+[1387] z\RisImpax.ahk {
 
 Line  	|	Function
 0014	|	RisImpaxMsgProtocol()
@@ -19177,7 +19529,7 @@ Line  	|	Function
 1337	|	if(caretToEnd)
 
 }
-[1345] z\RM2.ahk {
+[1388] z\RM2.ahk {
 
 Line  	|	Function
 0231	|	RM2_Version()
@@ -19243,7 +19595,7 @@ Line  	|	Function
 1981	|	RM2_hook_module_preinit(extendedby)
 
 }
-[1346] z\RMO.ahk {
+[1389] z\RMO.ahk {
 
 Line  	|	Function
 0071	|	RMO_Free(RMO)
@@ -19251,32 +19603,32 @@ Line  	|	Function
 0147	|	RMO_CheckParams(RMO, Offset, Size)
 
 }
-[1347] z\RoboCopy.ahk {
+[1390] z\RoboCopy.ahk {
 
 Line  	|	Function
 
 }
-[1348] z\RomanNumbers.ahk {
+[1391] z\RomanNumbers.ahk {
 
 Line  	|	Function
 0034	|	Dec2Roman(p_Number,p_AllowNegative=false)
 0052	|	Roman2Dec(p_RomanStr,p_AllowNegative=false)
 
 }
-[1349] z\RotaryKnob.ahk {
+[1392] z\RotaryKnob.ahk {
 
 Line  	|	Function
 0057	|	RotaryKnob(hWnd,Size,angle,tn)
 0071	|	GetXY(Byref x0, byref y0, r, angle)
 
 }
-[1350] z\RotateTable.ahk {
+[1393] z\RotateTable.ahk {
 
 Line  	|	Function
 0011	|	RotateTable(oTable)
 
 }
-[1351] z\RoundWindowFrame.ahk {
+[1394] z\RoundWindowFrame.ahk {
 
 Line  	|	Function
 0019	|	AddWindow()
@@ -19284,23 +19636,32 @@ Line  	|	Function
 0049	|	HB_BITMAP_MAKER(Obj)
 
 }
-[1352] z\round_near.ahk {
+[1395] z\round_near.ahk {
 
 Line  	|	Function
 0001	|	round_near(n,r)
 
 }
-[1353] z\RPath.ahk {
+[1396] z\RPath.ahk {
 
 Line  	|	Function
 
 }
-[1354] z\RSHash.ahk {
+[1397] z\RS232_Initialize.ahk {
+
+Line  	|	Function
+0055	|	RS232_Initialize(RS232_Settings)
+0142	|	RS232_Close(RS232_FileHandle)
+0154	|	RS232_Write(RS232_FileHandle,Message)
+0170	|	RS232_Read(RS232_FileHandle,Num_Bytes,ByRef RS232_Bytes_Received)
+
+}
+[1398] z\RSHash.ahk {
 
 Line  	|	Function
 
 }
-[1355] z\rtf.ahk {
+[1399] z\rtf.ahk {
 
 Line  	|	Function
 0013	|	RTF_Table(Rows, Cols, ColWidths)
@@ -19309,7 +19670,7 @@ Line  	|	Function
 0052	|	RTF(Text)
 
 }
-[1356] z\RTV.ahk {
+[1400] z\RTV.ahk {
 
 Line  	|	Function
 0021	|	TV_Initialise( hwParent, hwTV )
@@ -19324,40 +19685,46 @@ Line  	|	Function
 0367	|	TV_expandEnvVars(ppath)
 
 }
-[1357] z\RunAsAdmin.ahk {
+[1401] z\RunAsAdmin.ahk {
 
 Line  	|	Function
 
 }
-[1358] z\RunFileDlg.ahk {
+[1402] z\RunFileDlg.ahk {
 
 Line  	|	Function
 
 }
-[1359] z\RunGetStdout.ahk {
+[1403] z\RunGetStdout.ahk {
 
 Line  	|	Function
 
 }
-[1360]  {
+[1404] z\RunJsFromChromeAddressBar.ahk {
+
+Line  	|	Function
+0042	|	AccSearchElement(parentElement, params)
+
+}
+[1405]  {
 
 Line  	|	Function
 0017	|	runRemoteScript()
 
 }
-[1361] z\RunWithTaskSheduler.ahk {
+[1406] z\RunWithTaskSheduler.ahk {
 
 Line  	|	Function
 
 }
-[1362] z\RXMS.ahk {
+[1407] z\RXMS.ahk {
 
 Line  	|	Function
 0022	|	RXMS(ByRef _String, _Needle, _Options="")
 0211	|	CSV(Text, Delimiter=",", Literal="""")
 
 }
-[1363]  {
+[1408]  {
 
 Line  	|	Function
 0012	|	getIP()
@@ -19416,7 +19783,7 @@ Line  	|	Function
 0555	|	IntToHex(int)
 
 }
-[1364]  {
+[1409]  {
 
 Line  	|	Function
 0203	|	isInChat()
@@ -19582,23 +19949,23 @@ Line  	|	Function
 2729	|	tobin(byref addr, str)
 
 }
-[1365] z\SaveFile.ahk {
+[1410] z\SaveFile.ahk {
 
 Line  	|	Function
 
 }
-[1366] z\SaveHICONtoFile.ahk {
+[1411] z\SaveHICONtoFile.ahk {
 
 Line  	|	Function
 0001	|	SaveHICONtoFile( hicon, iconFile )
 
 }
-[1367] z\SaveLoadGuiPosition.ahk {
+[1412] z\SaveLoadGuiPosition.ahk {
 
 Line  	|	Function
 
 }
-[1368] z\SB (2).ahk {
+[1413] z\SB (2).ahk {
 
 Line  	|	Function
 0027	|	SB_GetPos(hwnd, Which="V")
@@ -19614,13 +19981,13 @@ Line  	|	Function
 0083	|	SB_Bottom(hwnd, Which="V")
 
 }
-[1369] z\SB.ahk {
+[1414] z\SB.ahk {
 
 Line  	|	Function
 0005	|	SB_SetProgress(Value=0,Seg=1,Ops="")
 
 }
-[1370] z\SBAR.ahk {
+[1415] z\SBAR.ahk {
 
 Line  	|	Function
 0236	|	SBAR_ColorName2RGB(p_ColorName)
@@ -19643,30 +20010,30 @@ Line  	|	Function
 2157	|	SBAR_SystemMessage(p_MessageNbr)
 
 }
-[1371] z\SBAR_AVI.ahk {
+[1416] z\SBAR_AVI.ahk {
 
 Line  	|	Function
 0619	|	SBAR_AVI_IsPlaying(hAVI)
 0779	|	SBAR_AVI_Stop(hAVI)
 
 }
-[1372] z\SBAR_ProgressBar.ahk {
+[1417] z\SBAR_ProgressBar.ahk {
 
 Line  	|	Function
 
 }
-[1373] z\SBAR_SetTextEx.ahk {
+[1418] z\SBAR_SetTextEx.ahk {
 
 Line  	|	Function
 
 }
-[1374] z\SB_SETPROGRESS.ahk {
+[1419] z\SB_SETPROGRESS.ahk {
 
 Line  	|	Function
 0005	|	SB_SetProgress(Value=0,Seg=1,Ops="")
 
 }
-[1375] z\sc.ahk {
+[1420] z\sc.ahk {
 
 Line  	|	Function
 0029	|	sc_CaptureScreen(aRect = 0, bCursor = False, sFile = "", nQuality = "")
@@ -19680,7 +20047,7 @@ Line  	|	Function
 0227	|	sc_Ansi4Unicode(pString)
 
 }
-[1376] z\SC2_MemoryAndGeneralFunctions.ahk {
+[1421] z\SC2_MemoryAndGeneralFunctions.ahk {
 
 Line  	|	Function
 0472	|	IsInControlGroup(group, unitIndex)
@@ -19760,12 +20127,12 @@ Line  	|	Function
 3896	|	getCurrentHpAndShields(unit, byRef result)
 
 }
-[1377] z\ScanSubnet.ahk {
+[1422] z\ScanSubnet.ahk {
 
 Line  	|	Function
 
 }
-[1378] z\Scheduler.ahk {
+[1423] z\Scheduler.ahk {
 
 Line  	|	Function
 0043	|	Scheduler_Create( v, bForce=false )
@@ -19779,12 +20146,12 @@ Line  	|	Function
 0242	|	Scheduler_run(Cmd, Dir = "", Skip=0, Input = "", Stream = "")
 
 }
-[1379] z\SCI.ahk {
+[1424] z\SCI.ahk {
 
 Line  	|	Function
 
 }
-[1380] z\ScINTILLA.ahk {
+[1425] z\ScINTILLA.ahk {
 
 Line  	|	Function
 0073	|	SCI_Add(hParent, x=5, y=15, w=390, h=270, Styles="", MsgHandler="", DllPath="")
@@ -19847,7 +20214,7 @@ Line  	|	Function
 2814	|	keywords(x)
 
 }
-[1381] z\Scintilla_CharWordPos.ahk {
+[1426] z\Scintilla_CharWordPos.ahk {
 
 Line  	|	Function
 0022	|	MCode_Bin2Hex(addr, len)
@@ -19856,12 +20223,12 @@ Line  	|	Function
 0089	|	WordToCharPos(ByRef str, ByRef start, ByRef end="", swap=0)
 
 }
-[1382] z\SciTEOutput.ahk {
+[1427] z\SciTEOutput.ahk {
 
 Line  	|	Function
 
 }
-[1383] z\SciX.ahk {
+[1428] z\SciX.ahk {
 
 Line  	|	Function
 0003	|	GetSciTEInstance()
@@ -19903,12 +20270,18 @@ Line  	|	Function
 0366	|	Sci_LineHistory(bForward, iRecordMode = 0)
 
 }
-[1384] z\ScrCmp.ahk {
+[1429] z\SCI_FnSearchSciControl.ahk {
+
+Line  	|	Function
+0013	|	FnSearchSciControl()
+
+}
+[1430] z\ScrCmp.ahk {
 
 Line  	|	Function
 
 }
-[1385] z\ScreenCapture.ahk {
+[1431] z\ScreenCapture.ahk {
 
 Line  	|	Function
 0046	|	CaptureScreen(aRect = 0, bCursor = False, sFile = "", nQuality = "")
@@ -19922,18 +20295,23 @@ Line  	|	Function
 0242	|	Ansi4Unicode(pString)
 
 }
-[1386] z\ScreenResolution.ahk {
+[1432] z\ScreenResolution.ahk {
 
 Line  	|	Function
 
 }
-[1387] z\scriptCompile.ahk {
+[1433] z\ScreenResolution_Get.ahk {
+
+Line  	|	Function
+
+}
+[1434] z\scriptCompile.ahk {
 
 Line  	|	Function
 0032	|	scriptCompile(c_SourceFile, c_DestFile, c_SourceIcon="", c_IncludeDir="", c_IncludeDirTarget="")
 
 }
-[1388] z\scriptlib.ahk {
+[1435] z\scriptlib.ahk {
 
 Line  	|	Function
 0136	|	GetAllKVFromFile(file_path)
@@ -19980,13 +20358,13 @@ Line  	|	Function
 1692	|	StrPutVar(Str, ByRef Var, Enc = "")
 
 }
-[1389]  {
+[1436]  {
 
 Line  	|	Function
 0023	|	ScriptMem()
 
 }
-[1390] z\ScriptParser.ahk {
+[1437] z\ScriptParser.ahk {
 
 Line  	|	Function
 0002	|	PreprocessScript(ByRef ScriptText, AhkScript, ExtraFiles, FileList="", FirstScriptDir="", Options="", iOption=0)
@@ -19998,20 +20376,20 @@ Line  	|	Function
 0225	|	AHKType(exeName)
 
 }
-[1391] z\ScriptStruct.ahk {
+[1438] z\ScriptStruct.ahk {
 
 Line  	|	Function
 0001	|	ScriptStruct()
 
 }
-[1392] z\Scrollable GUI.ahk {
+[1439] z\Scrollable GUI.ahk {
 
 Line  	|	Function
 0036	|	UpdateScrollBars(GuiNum, GuiWidth, GuiHeight)
 0090	|	OnScroll(wParam, lParam, msg, hwnd)
 
 }
-[1393] z\ScrollBar.ahk {
+[1440] z\ScrollBar.ahk {
 
 Line  	|	Function
 0037	|	ScrollBar_Add(HParent, X, Y, W="", H="", Handler="", o1="", o2="", o3="", o4="", o5="")
@@ -20024,7 +20402,7 @@ Line  	|	Function
 0218	|	ScrollBar_onScroll(Wparam, Lparam, Msg)
 
 }
-[1394] z\Scroller.ahk {
+[1441] z\Scroller.ahk {
 
 Line  	|	Function
 0012	|	Scroller_Init()
@@ -20033,18 +20411,18 @@ Line  	|	Function
 0114	|	Scroller_onScroll(WParam, LParam, Msg, Hwnd)
 
 }
-[1395] z\ScrollWindow.ahk {
+[1442] z\ScrollWindow.ahk {
 
 Line  	|	Function
 
 }
-[1396] z\SecondsToHHMMSS.ahk {
+[1443] z\SecondsToHHMMSS.ahk {
 
 Line  	|	Function
 0054	|	SecondsToHHMMSS(p_Seconds,p_MinimumSize=4)
 
 }
-[1397] z\SecureHash.ahk {
+[1444] z\SecureHash.ahk {
 
 Line  	|	Function
 0070	|	TEA(ByRef y,ByRef z, k0,k1,k2,k3)
@@ -20057,23 +20435,23 @@ Line  	|	Function
 0203	|	HexRead(file, ByRef data, n=0, offset=0)
 
 }
-[1398]  {
+[1445]  {
 
 Line  	|	Function
 
 }
-[1399] z\SelectObject.ahk {
+[1446] z\SelectObject.ahk {
 
 Line  	|	Function
 0004	|	SelectObject(hDC, hObject)
 
 }
-[1400] z\selfCompile.ahk {
+[1447] z\selfCompile.ahk {
 
 Line  	|	Function
 
 }
-[1401] z\semver.ahk {
+[1448] z\semver.ahk {
 
 Line  	|	Function
 0001	|	semver_validate(version)
@@ -20081,39 +20459,49 @@ Line  	|	Function
 0009	|	semver_compare(version1, version2)
 
 }
-[1402] z\SendEmail.ahk {
+[1449] z\SendEmail.ahk {
 
 Line  	|	Function
 
 }
-[1403] z\SendGUI.ahk {
+[1450] z\SendGUI.ahk {
 
 Line  	|	Function
 
 }
-[1404] z\sendmail.ahk {
+[1451] z\sendmail.ahk {
 
 Line  	|	Function
 0004	|	SendMail(SMTPServer, SMTPPort, USESSL, Sender, Receiver, Subject, TextBody, Attachments="", SendUserName="username", SendPassword="password", SendUsing=2, SMTPAuthenticate=1, SMTPTimeout=60, ReplyTo=FALSE)
 
 }
-[1405]  {
+[1452]  {
 
 Line  	|	Function
 
 }
-[1406] z\SendMSG.ahk {
+[1453] z\SendMSG.ahk {
 
 Line  	|	Function
 0001	|	SendMSG(Msg,wParam="",byref lParam="",Control="",WinTitle="",WinText="",ExcludeTitle="",ExcludeText="",Timeout="")
 
 }
-[1407] z\SerDes.ahk {
+[1454] z\SendWithUDP.ahk {
+
+Line  	|	Function
+0051	|	ToggleGui(isConnected)
+0109	|	OnRecieve()
+0118	|	AddDialog(ptrText, bYou = True)
+0142	|	InsertText(hEdit, ptrText, iPos = -1)
+0155	|	Anchor(i, a = "", r = false)
+
+}
+[1455] z\SerDes.ahk {
 
 Line  	|	Function
 
 }
-[1408] z\Serial.ahk {
+[1456] z\Serial.ahk {
 
 Line  	|	Function
 0005	|	Serial_Initialize(SERIAL_Settings)
@@ -20123,12 +20511,12 @@ Line  	|	Function
 0204	|	Serial_Read_Raw(SERIAL_FileHandle, Num_Bytes, mode = "",byref Bytes_Received = "")
 
 }
-[1409] z\serverTime.ahk {
+[1457] z\serverTime.ahk {
 
 Line  	|	Function
 
 }
-[1410] z\Service.ahk {
+[1458] z\Service.ahk {
 
 Line  	|	Function
 0089	|	Service_Start(ServiceName)
@@ -20139,7 +20527,7 @@ Line  	|	Function
 0231	|	_GetName_(DisplayName)
 
 }
-[1411] z\Services.ahk {
+[1459] z\Services.ahk {
 
 Line  	|	Function
 0228	|	Service_Start(ServiceName)
@@ -20147,7 +20535,7 @@ Line  	|	Function
 0284	|	Service_State(ServiceName)
 
 }
-[1412] z\Service_List.ahk {
+[1460] z\Service_List.ahk {
 
 Line  	|	Function
 0163	|	Service_Start(ServiceName)
@@ -20155,71 +20543,71 @@ Line  	|	Function
 0329	|	_GetName_(DisplayName)
 
 }
-[1413]  {
+[1461]  {
 
 Line  	|	Function
 0003	|	SetTimerF( Function, Period=0, ParmObject=0, Priority=0 )
 
 }
-[1414] z\SetAcrylicGlassEffect.ahk {
+[1462] z\SetAcrylicGlassEffect.ahk {
 
 Line  	|	Function
 0031	|	ConvertToBGRfromRGB(RGB)
 0037	|	SetAcrylicGlassEffect(thisColor, thisAlpha, hWindow)
 
 }
-[1415] z\SetBtnTxtColor.ahk {
+[1463] z\SetBtnTxtColor.ahk {
 
 Line  	|	Function
 0020	|	SetBtnTxtColor(HWND, TxtColor)
 
 }
-[1416] z\SetButtonF.ahk {
+[1464] z\SetButtonF.ahk {
 
 Line  	|	Function
 0030	|	if(A_EventInfo == tmr.CBA)
 
 }
-[1417] z\SetClipboardHTML.ahk {
+[1465] z\SetClipboardHTML.ahk {
 
 Line  	|	Function
 
 }
-[1418] z\SetDesktopWallpaper.ahk {
+[1466] z\SetDesktopWallpaper.ahk {
 
 Line  	|	Function
 0010	|	SetDesktopWallpaper(FileName)
 
 }
-[1419] z\SetEditPlaceholder.ahk {
+[1467] z\SetEditPlaceholder.ahk {
 
 Line  	|	Function
 0011	|	SetEditPlaceholder(control, string, showalways = 0)
 
 }
-[1420] z\SetExeSubsystem.ahk {
+[1468] z\SetExeSubsystem.ahk {
 
 Line  	|	Function
 0005	|	SetExeSubsystem(exepath, subSys)
 
 }
-[1421] z\SetFileAttributes.ahk {
+[1469] z\SetFileAttributes.ahk {
 
 Line  	|	Function
 
 }
-[1422] z\SetHostsFile.ahk {
+[1470] z\SetHostsFile.ahk {
 
 Line  	|	Function
 
 }
-[1423] z\SetIcon.ahk {
+[1471] z\SetIcon.ahk {
 
 Line  	|	Function
 0020	|	SetIcon(text,script)
 
 }
-[1424] z\setLowLevelInputHooks.ahk {
+[1472] z\setLowLevelInputHooks.ahk {
 
 Line  	|	Function
 0048	|	swapMonitoringForBlockingHooks(Install)
@@ -20234,45 +20622,52 @@ Line  	|	Function
 0195	|	CallNextHookEx(nCode, wParam, lParam, hHook = 0)
 
 }
-[1425] z\SetProcessPriority.ahk {
+[1473] z\SetProcessPriority.ahk {
 
 Line  	|	Function
 0019	|	SetProcessPriority(hProcess, Priority)
 
 }
-[1426] z\SetProcessWorkingSetSize.ahk {
+[1474] z\SetProcessWorkingSetSize.ahk {
 
 Line  	|	Function
 
 }
-[1427] z\SetSeDebugPrivileg.ahk {
+[1475] z\SetSeDebugPrivileg.ahk {
 
 Line  	|	Function
 
 }
-[1428] z\SetShortcuts.ahk {
+[1476] z\SetShortcuts.ahk {
 
 Line  	|	Function
 
 }
-[1429] z\SetSystemCursor (2).ahk {
+[1477] z\SetSysColors.ahk {
+
+Line  	|	Function
+0012	|	SetSysColors()
+0069	|	ReadIni( filename = 0 )
+
+}
+[1478] z\SetSystemCursor (2).ahk {
 
 Line  	|	Function
 0012	|	SetSystemCursor( Cursor = "", cx = 0, cy = 0 )
 
 }
-[1430] z\SetSystemCursor.ahk {
+[1479] z\SetSystemCursor.ahk {
 
 Line  	|	Function
 
 }
-[1431] z\SetTaskbarProcess.ahk {
+[1480] z\SetTaskbarProcess.ahk {
 
 Line  	|	Function
 0020	|	SetTaskbarProgress(pct, state="", hwnd="")
 
 }
-[1432] z\SetTimer.ahk {
+[1481] z\SetTimer.ahk {
 
 Line  	|	Function
 0050	|	setHWND()
@@ -20285,13 +20680,13 @@ Line  	|	Function
 0216	|	ResolveFunction(name)
 
 }
-[1433] z\SetTimerF.ahk {
+[1482] z\SetTimerF.ahk {
 
 Line  	|	Function
 0040	|	SetTimerF( Function, Period=0, ParmObject=0, Priority=0 )
 
 }
-[1434] z\Settings.ahk {
+[1483] z\Settings.ahk {
 
 Line  	|	Function
 0010	|	Settings_Get()
@@ -20302,38 +20697,38 @@ Line  	|	Function
 0071	|	Settings_InstallSave(f,j)
 
 }
-[1435] z\SetWindowClassStyle.ahk {
+[1484] z\SetWindowClassStyle.ahk {
 
 Line  	|	Function
 0007	|	SetWindowClassStyle(hWnd, Style)
 
 }
-[1436] z\SetWindowIcon.ahk {
+[1485] z\SetWindowIcon.ahk {
 
 Line  	|	Function
 
 }
-[1437] z\SetWindowOwner.ahk {
+[1486] z\SetWindowOwner.ahk {
 
 Line  	|	Function
 
 }
-[1438] z\SetWindowParent.ahk {
+[1487] z\SetWindowParent.ahk {
 
 Line  	|	Function
 
 }
-[1439] z\SetWindowPos.ahk {
+[1488] z\SetWindowPos.ahk {
 
 Line  	|	Function
 
 }
-[1440] z\SetWindowProgress.ahk {
+[1489] z\SetWindowProgress.ahk {
 
 Line  	|	Function
 
 }
-[1441] z\SetWindowsHookEx.ahk {
+[1490] z\SetWindowsHookEx.ahk {
 
 Line  	|	Function
 0010	|	SetWindowsHookEx(idHook, pfn)
@@ -20341,22 +20736,22 @@ Line  	|	Function
 0046	|	CallNextHookEx(nCode, wParam, lParam, hHook = 0)
 
 }
-[1442] z\SetWindowTitle.ahk {
+[1491] z\SetWindowTitle.ahk {
 
 Line  	|	Function
 
 }
-[1443] z\SetWindowTransparency.ahk {
+[1492] z\SetWindowTransparency.ahk {
 
 Line  	|	Function
 
 }
-[1444] z\setWindowVol.ahk {
+[1493] z\setWindowVol.ahk {
 
 Line  	|	Function
 
 }
-[1445] z\SGDIPrint.ahk {
+[1494] z\SGDIPrint.ahk {
 
 Line  	|	Function
 0051	|	SGDIPrint_GDIPStartup()
@@ -20377,7 +20772,7 @@ Line  	|	Function
 0484	|	SGDIPrint_GDIPShutdown(pToken)
 
 }
-[1446] z\SGL_Ahk_H_v1.ahk {
+[1495] z\SGL_Ahk_H_v1.ahk {
 
 Line  	|	Function
 0103	|	SglAuthent(AuthentCode )
@@ -20389,27 +20784,27 @@ Line  	|	Function
 0286	|	SglTeaDecipher(InData,OutData,Key)
 
 }
-[1447] z\SHA256 WITH HMAC.ahk {
+[1496] z\SHA256 WITH HMAC.ahk {
 
 Line  	|	Function
 0022	|	SHA256( byref data, bytes )
 0126	|	SHA256_HMAC( byref key, keyLen, byref message, messageLen )
 
 }
-[1448] z\Shader.ahk {
+[1497] z\Shader.ahk {
 
 Line  	|	Function
 0083	|	ToBase(n,b)
 
 }
-[1449]  {
+[1498]  {
 
 Line  	|	Function
 0008	|	ShellNavigate(sPath, bExplore=False, hWnd=0)
 0020	|	ShellFolder(hWnd=0)
 
 }
-[1450] z\shell.ahk {
+[1499] z\shell.ahk {
 
 Line  	|	Function
 0001	|	GetCommandLineAsList(index = 0)
@@ -20423,12 +20818,12 @@ Line  	|	Function
 0122	|	GetCommonPath( csidl )
 
 }
-[1451] z\ShellAbout.ahk {
+[1500] z\ShellAbout.ahk {
 
 Line  	|	Function
 
 }
-[1452] z\ShellContextMenu.ahk {
+[1501] z\ShellContextMenu.ahk {
 
 Line  	|	Function
 0093	|	WindowProc(hWnd, nMsg, wParam, lParam)
@@ -20436,7 +20831,7 @@ Line  	|	Function
 0115	|	GUID4String(ByRef CLSID, String)
 
 }
-[1453] z\ShellContextMenu2.ahk {
+[1502] z\ShellContextMenu2.ahk {
 
 Line  	|	Function
 0030	|	ShellContextMenu(sPath,idn)
@@ -20451,30 +20846,40 @@ Line  	|	Function
 0131	|	Unicode4Ansi(ByRef wString, sString, nSize = "")
 
 }
-[1454] z\ShellFileOperation.ahk {
+[1503] z\ShellContextMenuA.ahk {
+
+Line  	|	Function
+0012	|	ShellContextMenu( sPath, win_hwnd = 0 )
+0089	|	WindowProc(hWnd, nMsg, wParam, lParam)
+0102	|	VTable(ppv, idx)
+0106	|	GUID4String(ByRef CLSID, String)
+0111	|	CoTaskMemFree(pv)
+
+}
+[1504] z\ShellFileOperation.ahk {
 
 Line  	|	Function
 0014	|	ShellFileOperation( fileO=0x0, fSource="", fTarget="", flags=0x0, ghwnd=0x0 )
 
 }
-[1455] z\ShellRun.ahk {
+[1505] z\ShellRun.ahk {
 
 Line  	|	Function
 
 }
-[1456] z\ShellRunEx.ahk {
+[1506] z\ShellRunEx.ahk {
 
 Line  	|	Function
 0003	|	ShellRunEx(cmdLine, workingDir)
 0034	|	EnvVars(str)
 
 }
-[1457] z\SHELLSTATE.ahk {
+[1507] z\SHELLSTATE.ahk {
 
 Line  	|	Function
 
 }
-[1458] z\ShellTrayHelper.ahk {
+[1508] z\ShellTrayHelper.ahk {
 
 Line  	|	Function
 0043	|	_TD_hWnd(ByRef td)
@@ -20491,53 +20896,58 @@ Line  	|	Function
 0163	|	LeftDbClickShellTrayToolbarButton(ByRef pTRAYDATA)
 
 }
-[1459] z\ShortcutCreate.ahk {
+[1509] z\SHGetKnownFolderPath.ahk {
+
+Line  	|	Function
+
+}
+[1510] z\ShortcutCreate.ahk {
 
 Line  	|	Function
 0001	|	ShortcutCreate()
 
 }
-[1460] z\ShortcutDelete.ahk {
+[1511] z\ShortcutDelete.ahk {
 
 Line  	|	Function
 0001	|	ShortcutDelete()
 
 }
-[1461] z\ShortcutExists.ahk {
+[1512] z\ShortcutExists.ahk {
 
 Line  	|	Function
 0001	|	ShortcutExists()
 
 }
-[1462] z\ShortURL.ahk {
+[1513] z\ShortURL.ahk {
 
 Line  	|	Function
 0012	|	ShortURL(p,l=50)
 
 }
-[1463] z\Show menu.ahk {
+[1514] z\Show menu.ahk {
 
 Line  	|	Function
 0092	|	ShowMenu(mDef, options = "", r=0)
 
 }
-[1464] z\showabout.ahk {
+[1515] z\showabout.ahk {
 
 Line  	|	Function
 
 }
-[1465] z\ShowDesktop.ahk {
+[1516] z\ShowDesktop.ahk {
 
 Line  	|	Function
 0006	|	ShowDesktop()
 
 }
-[1466] z\ShowGif().ahk {
+[1517] z\ShowGif().ahk {
 
 Line  	|	Function
 
 }
-[1467] z\ShowHide.ahk {
+[1518] z\ShowHide.ahk {
 
 Line  	|	Function
 0024	|	ToggleHiddenFiles()
@@ -20548,96 +20958,107 @@ Line  	|	Function
 0055	|	UpdateWindows()
 
 }
-[1468] z\ShowHideTaskbar.ahk {
+[1519] z\ShowHideTaskbar.ahk {
 
 Line  	|	Function
 
 }
-[1469] z\ShowHtmlDialog.ahk {
+[1520] z\ShowHtmlDialog.ahk {
 
 Line  	|	Function
 0030	|	ShowHTMLDialog(URL, argIn="", Options="", hwndParent=0)
 
 }
-[1470] z\ShowMenu.ahk {
+[1521] z\ShowMenu.ahk {
 
 Line  	|	Function
 
 }
-[1471] z\ShowOCRUnderMouse.ahk {
+[1522] z\ShowMenu_SKAN.ahk {
+
+Line  	|	Function
+0064	|	TrayMenuParams()
+
+}
+[1523] z\ShowOCRUnderMouse.ahk {
 
 Line  	|	Function
 0100	|	RunWaitEx(CMD, CMDdir, CMDin, ByRef CMDout, ByRef CMDerr)
 
 }
-[1472] z\ShowStartMenu.ahk {
+[1524] z\ShowStartMenu.ahk {
 
 Line  	|	Function
 0004	|	ShowStartMenu()
 
 }
-[1473] z\ShuffleString.ahk {
+[1525] z\ShuffleString.ahk {
 
 Line  	|	Function
 0005	|	Shuffle(string)
 
 }
-[1474] z\Sift.ahk {
+[1526] z\ShutdownDialog.ahk {
+
+Line  	|	Function
+
+}
+[1527] z\Sift.ahk {
 
 Line  	|	Function
 0174	|	Sift_Ngram_Compare(ByRef Hay, ByRef Needle)
 0199	|	Sift_SortResults(ByRef Data)
 
 }
-[1475] z\SignFile.ahk {
+[1528] z\SignFile.ahk {
 
 Line  	|	Function
 0001	|	SignFile(File, CertCtx, Name)
 
 }
-[1476] z\sizeof.ahk {
+[1529] z\sizeof.ahk {
 
 Line  	|	Function
 0021	|	sizeof(_TYPE_,parent_offset=0,ByRef _align_total_=0)
 0190	|	sizeof_maxsize(s)
 
 }
-[1477] z\sleepMode.ahk {
+[1530] z\sleepMode.ahk {
 
 Line  	|	Function
 
 }
-[1478] z\SleepWithoutInterruption.ahk {
+[1531] z\SleepWithoutInterruption.ahk {
 
 Line  	|	Function
 0001	|	SleepWithoutInterruption(aSleepTime)
 
 }
-[1479] z\sleipnir.ahk {
+[1532] z\sleipnir.ahk {
 
 Line  	|	Function
 0001	|	getSlpWb()
 0025	|	renewSlpUrl(wb,sid)
 
 }
-[1480] z\slots.ahk {
+[1533] z\slots.ahk {
 
 Line  	|	Function
 
 }
-[1481] z\SmartZip.ahk {
+[1534] z\SmartZip.ahk {
 
 Line  	|	Function
 0029	|	SmartZip(s, o, t = 4)
 0084	|	CreateZip(n)
 
 }
-[1482] z\SnapFolderWindows.ahk {
+[1535] z\SnapFolderWindows.ahk {
 
 Line  	|	Function
 
 }
-[1483] z\SnapX_Functions.ahk {
+[1536] z\SnapX_Functions.ahk {
 
 Line  	|	Function
 0001	|	GetMonitorId(hwnd)
@@ -20653,7 +21074,7 @@ Line  	|	Function
 0131	|	Max(a, b)
 
 }
-[1484] z\socket.ahk {
+[1537] z\socket.ahk {
 
 Line  	|	Function
 0023	|	__Delete()
@@ -20672,12 +21093,12 @@ Line  	|	Function
 0238	|	SetBroadcast(Enable)
 
 }
-[1485] z\SoftModalMessageBox.ahk {
+[1538] z\SoftModalMessageBox.ahk {
 
 Line  	|	Function
 
 }
-[1486] z\SoftwareProtectionLibrary.ahk {
+[1539] z\SoftwareProtectionLibrary.ahk {
 
 Line  	|	Function
 0123	|	SWP_Initialize( mk0=0x11111111, mk1=0x22222222, mk2=0x33333333, mk3=0x44444444,ml0=0x12345678, ml1=0x12345678, mm0=0x87654321, mm1=0x87654321 )
@@ -20698,35 +21119,35 @@ Line  	|	Function
 0531	|	SWP_ReadRegFile( iniFilename )
 
 }
-[1487] z\Sort.ahk {
+[1540] z\Sort.ahk {
 
 Line  	|	Function
 
 }
-[1488] z\Sort2DArray.ahk {
+[1541] z\Sort2DArray.ahk {
 
 Line  	|	Function
 
 }
-[1489] z\SortArray.ahk {
+[1542] z\SortArray.ahk {
 
 Line  	|	Function
 
 }
-[1490] z\SortArray_o.ahk {
+[1543] z\SortArray_o.ahk {
 
 Line  	|	Function
 0028	|	SortArray(Array, Order="A")
 
 }
-[1491] z\sort_len.ahk {
+[1544] z\sort_len.ahk {
 
 Line  	|	Function
 0015	|	init()
 0026	|	getProcAddress(dll, fn)
 
 }
-[1492] z\sound.ahk {
+[1545] z\sound.ahk {
 
 Line  	|	Function
 0024	|	Sound_Open(File, Alias="")
@@ -20743,12 +21164,12 @@ Line  	|	Function
 0205	|	Sound_SendString(string, UseSend=0, ReturnTemp=0)
 
 }
-[1493] z\SoundCardCapabilities.ahk {
+[1546] z\SoundCardCapabilities.ahk {
 
 Line  	|	Function
 
 }
-[1494] z\sourcegrab.ahk {
+[1547] z\sourcegrab.ahk {
 
 Line  	|	Function
 0028	|	DoGrab()
@@ -20758,7 +21179,7 @@ Line  	|	Function
 0142	|	HideConfirmation()
 
 }
-[1495] z\SpeechRecognition.ahk {
+[1548] z\SpeechRecognition.ahk {
 
 Line  	|	Function
 0104	|	__New()
@@ -20772,7 +21193,7 @@ Line  	|	Function
 0236	|	SpeechRecognizer_Recognition(StreamNumber, StreamPosition, RecognitionType, cResult, cContext)
 
 }
-[1496] z\Spell.ahk {
+[1549] z\Spell.ahk {
 
 Line  	|	Function
 0123	|	Spell_Add(ByRef hSpell,p_Word,p_AddCase="")
@@ -20785,19 +21206,19 @@ Line  	|	Function
 0808	|	Spell_Uninit(ByRef hSpell)
 
 }
-[1497] z\Splash.ahk {
+[1550] z\Splash.ahk {
 
 Line  	|	Function
 
 }
-[1498] z\SplashImage.ahk {
+[1551] z\SplashImage.ahk {
 
 Line  	|	Function
 0001	|	SplashImage_Struct()
 0008	|	SplashImage_OnMessage(wParam,lParam,msg,hwnd)
 
 }
-[1499] z\SplashOn.ahk {
+[1552] z\SplashOn.ahk {
 
 Line  	|	Function
 0162	|	Splash(p_MainText="" ,p_SubText="" ,p_MinimumSplashTime="" ,p_Font="" ,p_Options="")
@@ -20805,18 +21226,18 @@ Line  	|	Function
 0564	|	Splash_Preserve(p_Splash_Preserve="")
 
 }
-[1500] z\SplashTextOff.ahk {
+[1553] z\SplashTextOff.ahk {
 
 Line  	|	Function
 0001	|	SplashTextOff()
 
 }
-[1501] z\SplashTextOn.ahk {
+[1554] z\SplashTextOn.ahk {
 
 Line  	|	Function
 
 }
-[1502] z\Splitter.ahk {
+[1555] z\Splitter.ahk {
 
 Line  	|	Function
 0045	|	Splitter_Add(Opt="", Text="", Handler="")
@@ -20831,12 +21252,12 @@ Line  	|	Function
 0261	|	Splitter_updateFocus( HSep="" )
 
 }
-[1503] z\SplitTextByDelim.ahk {
+[1556] z\SplitTextByDelim.ahk {
 
 Line  	|	Function
 
 }
-[1504] z\SpreadSheet.ahk {
+[1557] z\SpreadSheet.ahk {
 
 Line  	|	Function
 0007	|	SS_ScrollCell(hCtrl)
@@ -20888,7 +21309,7 @@ Line  	|	Function
 0617	|	SS_CreateCombo(hCtrl, string="")
 
 }
-[1505] z\SQLite.ahk {
+[1558] z\SQLite.ahk {
 
 Line  	|	Function
 0132	|	_SQLite_Startup()
@@ -20915,7 +21336,7 @@ Line  	|	Function
 1105	|	_#SQLite_CheckQuery($hQuery)
 
 }
-[1506] z\SQLiteDB_Class.ahk {
+[1559] z\SQLiteDB_Class.ahk {
 
 Line  	|	Function
 0035	|	__New()
@@ -20947,7 +21368,7 @@ Line  	|	Function
 0834	|	StoreBLOB(SQL, BlobArray)
 
 }
-[1507] z\SQLite_L.ahk {
+[1560] z\SQLite_L.ahk {
 
 Line  	|	Function
 0099	|	SQLite_Startup()
@@ -20991,36 +21412,36 @@ Line  	|	Function
 0985	|	_SQLite_ReturnCode(RC)
 
 }
-[1508] z\Sql_AddDelimiters.ahk {
+[1561] z\Sql_AddDelimiters.ahk {
 
 Line  	|	Function
 0001	|	AddSqlDelimiters(fnCopiedText)
 
 }
-[1509] z\Sql_FormatSQL.ahk {
+[1562] z\Sql_FormatSQL.ahk {
 
 Line  	|	Function
 
 }
-[1510] z\Sql_LineBreakOnSqlKeyword.ahk {
+[1563] z\Sql_LineBreakOnSqlKeyword.ahk {
 
 Line  	|	Function
 0001	|	LineBreakOnSqlKeyword(ByRef fnText)
 
 }
-[1511] z\Sql_MakeSQLDynamic.ahk {
+[1564] z\Sql_MakeSQLDynamic.ahk {
 
 Line  	|	Function
 0001	|	MakeSQLDynamic(ByRef fnText, fnIncludeControlChars = 0)
 
 }
-[1512] z\SrtSynch.ahk {
+[1565] z\SrtSynch.ahk {
 
 Line  	|	Function
 0006	|	SrtSynch(delay_or_framerate, input_subtitle, output_subtitle, delay, is_delay_positive, input_fps, output_fps)
 
 }
-[1513] z\st.ahk {
+[1566] z\st.ahk {
 
 Line  	|	Function
 0009	|	ST_Dim(ByRef Stack)
@@ -21035,24 +21456,24 @@ Line  	|	Function
 0135	|	ST_IsValid(ByRef Stack,Dim=0)
 
 }
-[1514] z\StartServiceCtrlDispatcher.ahk {
+[1567] z\StartServiceCtrlDispatcher.ahk {
 
 Line  	|	Function
 
 }
-[1515] z\start_with_windows.ahk {
+[1568] z\start_with_windows.ahk {
 
 Line  	|	Function
 0001	|	start_with_windows(seperator="", menu_name="tray")
 
 }
-[1516] z\StaticVar.ahk {
+[1569] z\StaticVar.ahk {
 
 Line  	|	Function
 0001	|	StaticVar(name,func)
 
 }
-[1517] z\StayOnMonitor.ahk {
+[1570] z\StayOnMonitor.ahk {
 
 Line  	|	Function
 0008	|	StayOnMonXY(GW, GH, Mouse = 0, MouseAlternative = 1, Center = 0)
@@ -21060,44 +21481,52 @@ Line  	|	Function
 0110	|	If_Between(Var, Low, High, Reverse = 0)
 
 }
-[1518] z\StdOutStream.ahk {
+[1571] z\StayOnMonXY.ahk {
+
+Line  	|	Function
+0019	|	StayOnMonXY(GW, GH, Mouse = 0, MouseAlternative = 1, Center = 0)
+0123	|	ReturnXY(X,Y)
+0140	|	If_Between(Var, Low, High, Reverse = 0)
+
+}
+[1572] z\StdOutStream.ahk {
 
 Line  	|	Function
 0001	|	StdOutStream( sCmd, Callback = "" )
 0008	|	if(a_ptrSize=8)
 
 }
-[1519] z\StdOutToVar (2).ahk {
+[1573] z\StdOutToVar (2).ahk {
 
 Line  	|	Function
 0001	|	StdOutToVar(cmd)
 
 }
-[1520] z\StdOutToVar.ahk {
+[1574] z\StdOutToVar.ahk {
 
 Line  	|	Function
 0002	|	StdOutToVar( sCmd )
 0008	|	if(a_ptrSize=8)
 
 }
-[1521] z\StdoutToVar_CreateProcess.ahk {
+[1575] z\StdoutToVar_CreateProcess.ahk {
 
 Line  	|	Function
 0032	|	StdoutToVar_CreateProcess(sCmd, bStream = "", sDir = "", sInput = "")
 
 }
-[1522] z\sToMs.ahk {
+[1576] z\sToMs.ahk {
 
 Line  	|	Function
 0001	|	sToMs(s)
 
 }
-[1523] z\stopwatch.ahk {
+[1577] z\stopwatch.ahk {
 
 Line  	|	Function
 
 }
-[1524] z\Str.ahk {
+[1578] z\Str.ahk {
 
 Line  	|	Function
 0003	|	Str_ManuallyWrapArray(ByRef asToWrap, iMaxWidth, hFont)
@@ -21110,40 +21539,45 @@ Line  	|	Function
 0244	|	1Str_SurroundWithStr(s)
 
 }
-[1525] z\StrCmpI.ahk {
+[1579] z\StrCmpI.ahk {
 
 Line  	|	Function
 
 }
-[1526] z\StRegX.ahk {
+[1580] z\StRegX.ahk {
 
 Line  	|	Function
 0001	|	stRegX(h,BS="",BO=1,BT=0, ES="",ET=0, ByRef N="")
 
 }
-[1527] z\StrFormatByteSize.ahk {
+[1581] z\StrFormatByteSize.ahk {
 
 Line  	|	Function
 
 }
-[1528] z\StrFormatByteSize64.ahk {
+[1582] z\StrFormatByteSize64.ahk {
 
 Line  	|	Function
 0006	|	StrFormatByteSizeEx(int)
 
 }
-[1529] z\StrFormatByteSizeEx.ahk {
+[1583] z\StrFormatByteSizeEx.ahk {
 
 Line  	|	Function
 
 }
-[1530] z\StrGet.ahk {
+[1584] z\StrGet.ahk {
 
 Line  	|	Function
 0001	|	StrGet(Address, Length=-1, Encoding=0)
 
 }
-[1531]  {
+[1585] z\strHash.ahk {
+
+Line  	|	Function
+
+}
+[1586]  {
 
 Line  	|	Function
 0245	|	Auto(Input,SaveToFileFullPath="")
@@ -21152,12 +21586,12 @@ Line  	|	Function
 0440	|	StrObj(Input,SaveToFileFullPath="")
 
 }
-[1532]  {
+[1587]  {
 
 Line  	|	Function
 
 }
-[1533] z\String.ahk {
+[1588] z\String.ahk {
 
 Line  	|	Function
 0001	|	String_Fill(char, count)
@@ -21170,29 +21604,29 @@ Line  	|	Function
 0084	|	String_IsEqual(haystack, needle, caseSensitive=true)
 
 }
-[1534] z\StringCounter.ahk {
+[1589] z\StringCounter.ahk {
 
 Line  	|	Function
 
 }
-[1535] z\stringify.ahk {
+[1590] z\stringify.ahk {
 
 Line  	|	Function
 0001	|	stringify(obj)
 
 }
-[1536] z\StringIndent_JEE_.ahk {
+[1591] z\StringIndent_JEE_.ahk {
 
 Line  	|	Function
 
 }
-[1537] z\StringM.ahk {
+[1592] z\StringM.ahk {
 
 Line  	|	Function
 0008	|	StringM( _String, _Option, _Param1 = "", _Param2 = "" )
 
 }
-[1538] z\stringMore.ahk {
+[1593] z\stringMore.ahk {
 
 Line  	|	Function
 0014	|	isValidPhoneNumber(formattedNum)
@@ -21224,7 +21658,7 @@ Line  	|	Function
 0343	|	appendCharIfMissing(inputString, charToAppend)
 
 }
-[1539] z\StringThings.ahk {
+[1594] z\StringThings.ahk {
 
 Line  	|	Function
 0081	|	ST_Insert(insert,input,pos=1)
@@ -21233,19 +21667,19 @@ Line  	|	Function
 1102	|	st_randomArr(array, min=0, max=0, timeout=3000)
 
 }
-[1540] z\StrLen2.ahk {
+[1595] z\StrLen2.ahk {
 
 Line  	|	Function
 0012	|	StrLen2(String)
 
 }
-[1541] z\StrLower.ahk {
+[1596] z\StrLower.ahk {
 
 Line  	|	Function
 0002	|	StrLower(String)
 
 }
-[1542] z\StrObj.ahk {
+[1597] z\StrObj.ahk {
 
 Line  	|	Function
 0244	|	Auto(Input,SaveToFileFullPath="")
@@ -21254,54 +21688,54 @@ Line  	|	Function
 0433	|	StrObj(Input,SaveToFileFullPath="")
 
 }
-[1543] z\StrPut.ahk {
+[1598] z\StrPut.ahk {
 
 Line  	|	Function
 0001	|	StrPut(String, Address="", Length=-1, Encoding=0)
 
 }
-[1544] z\StrPutVar.ahk {
+[1599] z\StrPutVar.ahk {
 
 Line  	|	Function
 0001	|	StrPutVar(string,ByRef var,encoding)
 
 }
-[1545] z\StrQ.ahk {
+[1600] z\StrQ.ahk {
 
 Line  	|	Function
 
 }
-[1546] z\StrRepeat.ahk {
+[1601] z\StrRepeat.ahk {
 
 Line  	|	Function
 0009	|	StrRepeat(String, Count)
 
 }
-[1547] z\StrReplace.ahk {
+[1602] z\StrReplace.ahk {
 
 Line  	|	Function
 
 }
-[1548] z\StrReplicate.ahk {
+[1603] z\StrReplicate.ahk {
 
 Line  	|	Function
 0001	|	StrReplicate(fnStr,fnCount)
 
 }
-[1549] z\StrReverse.ahk {
+[1604] z\StrReverse.ahk {
 
 Line  	|	Function
 0010	|	StrReverse(fnString)
 
 }
-[1550] z\strTail.ahk {
+[1605] z\strTail.ahk {
 
 Line  	|	Function
 0004	|	strTail(_Str, _LineNum = 1)
 0012	|	strTail_last(ByRef _Str)
 
 }
-[1551] z\Struct.ahk {
+[1606] z\Struct.ahk {
 
 Line  	|	Function
 0030	|	Struct(_def,_obj="",_name="",_offset=0,_TypeArray=0,_Encoding=0)
@@ -21309,20 +21743,20 @@ Line  	|	Function
 0362	|	Struct_getVar(var)
 
 }
-[1552] z\StrX.ahk {
+[1607] z\StrX.ahk {
 
 Line  	|	Function
 0002	|	StrX( H, BS="",BO=0,BT=1, ES="",EO=0,ET=1, ByRef N="" )
 
 }
-[1553]  {
+[1608]  {
 
 Line  	|	Function
 0011	|	EditSubclass( HWND, Msg, wParam, lParam, SubclassID, RefData )
 0023	|	EM_HideBalloonTip( HWND )
 
 }
-[1554] z\Subprocess.ahk {
+[1609] z\Subprocess.ahk {
 
 Line  	|	Function
 0068	|	__Delete()
@@ -21338,18 +21772,18 @@ Line  	|	Function
 0187	|	RawWrite(Address, Bytes)
 
 }
-[1555] z\SubTitle.ahk {
+[1610] z\SubTitle.ahk {
 
 Line  	|	Function
 
 }
-[1556] z\SUCCEEDED.ahk {
+[1611] z\SUCCEEDED.ahk {
 
 Line  	|	Function
 0001	|	SUCCEEDED(hr)
 
 }
-[1557] z\SuperMaxWindow.ahk {
+[1612] z\SuperMaxWindow.ahk {
 
 Line  	|	Function
 0001	|	SuperMaxWindow(fnWindowId,fnSuperMax)
@@ -21358,25 +21792,25 @@ Line  	|	Function
 0123	|	GetLastPosn(fnWindowId,ByRef X,ByRef Y,ByRef W,ByRef H)
 
 }
-[1558] z\SuppressRuntimeErrors.ahk {
+[1613] z\SuppressRuntimeErrors.ahk {
 
 Line  	|	Function
 0005	|	SuppressRuntimeErrors(NewErrorFormat)
 0011	|	SuppressRuntimeErrors_(wParam, lParam, msg, hwnd)
 
 }
-[1559] z\SuspendAfterDelay.ahk {
+[1614] z\SuspendAfterDelay.ahk {
 
 Line  	|	Function
 
 }
-[1560] z\SuspendProcess.ahk {
+[1615] z\SuspendProcess.ahk {
 
 Line  	|	Function
 0012	|	SuspendProcess(hProcess)
 
 }
-[1561] z\SuspendThread_ResumeThread.ahk {
+[1616] z\SuspendThread_ResumeThread.ahk {
 
 Line  	|	Function
 0006	|	SuspendThread(ThreadID)
@@ -21384,7 +21818,7 @@ Line  	|	Function
 0026	|	ResumeThread(ThreadID)
 
 }
-[1562] z\SVGraph.ahk {
+[1617] z\SVGraph.ahk {
 
 Line  	|	Function
 0004	|	if(ActiveX)
@@ -21398,41 +21832,47 @@ Line  	|	Function
 0196	|	ObjectToString(obj)
 
 }
-[1563] z\SwapBytesInt.ahk {
+[1618] z\SwapBytesInt.ahk {
 
 Line  	|	Function
 0013	|	JEE_SwapBytesInt(vNum, vOrder)
 
 }
-[1564] z\switch_subsystem.ahk {
+[1619] z\switch_subsystem.ahk {
 
 Line  	|	Function
 
 }
-[1565] z\sXMLget.ahk {
+[1620] z\sXMLget.ahk {
 
 Line  	|	Function
 0003	|	sXMLget( xml, node, attr = "" )
 
 }
-[1566] z\SysProcInfo.ahk {
+[1621] z\SymmetricDifference.ahk {
+
+Line  	|	Function
+0020	|	SymmetricDifference(A, B)
+
+}
+[1622] z\SysProcInfo.ahk {
 
 Line  	|	Function
 
 }
-[1567] z\SystemCursor.ahk {
+[1623] z\SystemCursor.ahk {
 
 Line  	|	Function
 0003	|	SystemCursor(OnOff=1)
 
 }
-[1568] z\SystemMessage.ahk {
+[1624] z\SystemMessage.ahk {
 
 Line  	|	Function
 0001	|	SystemMessage(p_MessageNbr)
 
 }
-[1569] z\SystemMonitor.ahk {
+[1625] z\SystemMonitor.ahk {
 
 Line  	|	Function
 0202	|	SAlloc(size)
@@ -21460,7 +21900,7 @@ Line  	|	Function
 0456	|	if(hModulePDH)
 
 }
-[1570] z\SystemTime.ahk {
+[1626] z\SystemTime.ahk {
 
 Line  	|	Function
 0045	|	FromString(str)
@@ -21471,7 +21911,7 @@ Line  	|	Function
 0090	|	__GetSet(name, value="")
 
 }
-[1571] z\Tab.ahk {
+[1627] z\Tab.ahk {
 
 Line  	|	Function
 0116	|	Tab_GetSelection(Tab)
@@ -21481,26 +21921,26 @@ Line  	|	Function
 0310	|	Tab_GetImageList(Tab)
 
 }
-[1572] z\TabActivate.ahk {
+[1628] z\TabActivate.ahk {
 
 Line  	|	Function
 0011	|	TabActivate(TabName, WinTitle)
 
 }
-[1573] z\TabAlign.ahk {
+[1629] z\TabAlign.ahk {
 
 Line  	|	Function
 0006	|	TabAlign(data)
 0024	|	tabs(n)
 
 }
-[1574] z\TabbedCBB.ahk {
+[1630] z\TabbedCBB.ahk {
 
 Line  	|	Function
 0047	|	TabbedCBB_DrawItem(wParam, lParam)
 
 }
-[1575] z\Table.ahk {
+[1631] z\Table.ahk {
 
 Line  	|	Function
 0265	|	Table_Append( TableA, TableB, Mode=0 )
@@ -21530,12 +21970,12 @@ Line  	|	Function
 2940	|	Table_Width( Table )
 
 }
-[1576] z\TabsToSpaces.ahk {
+[1632] z\TabsToSpaces.ahk {
 
 Line  	|	Function
 
 }
-[1577] z\TakingObjectsInOrder.ahk {
+[1633] z\TakingObjectsInOrder.ahk {
 
 Line  	|	Function
 0036	|	__New()
@@ -21549,7 +21989,7 @@ Line  	|	Function
 0100	|	HasKey(key)
 
 }
-[1578] z\talk.ahk {
+[1634] z\talk.ahk {
 
 Line  	|	Function
 0044	|	__New(Client)
@@ -21560,7 +22000,7 @@ Line  	|	Function
 0156	|	talk_send(ByRef StringToSend, ByRef TargetScriptTitle)
 
 }
-[1579] z\Taskbar.ahk {
+[1635] z\Taskbar.ahk {
 
 Line  	|	Function
 0017	|	Taskbar_Count()
@@ -21574,14 +22014,14 @@ Line  	|	Function
 0281	|	Taskbar_Remove(Position)
 
 }
-[1580] z\TaskBarHelper.ahk {
+[1636] z\TaskBarHelper.ahk {
 
 Line  	|	Function
 0023	|	TaskBar_FindToolbar()
 0059	|	GetTaskBarButtonBuddyWindowHandle(szToolbarName, ByRef pTBBUTTON)
 
 }
-[1581] z\taskbarInterface.ahk {
+[1637] z\taskbarInterface.ahk {
 
 Line  	|	Function
 0033	|	showButton(n)
@@ -21670,7 +22110,7 @@ Line  	|	Function
 1513	|	min(x,y)
 
 }
-[1582] z\taskbarInterface_v2.ahk {
+[1638] z\taskbarInterface_v2.ahk {
 
 Line  	|	Function
 0034	|	showButton(n)
@@ -21758,19 +22198,19 @@ Line  	|	Function
 1524	|	min(x,y)
 
 }
-[1583] z\TaskbarMove.ahk {
+[1639] z\TaskbarMove.ahk {
 
 Line  	|	Function
 0015	|	TaskbarMove(p_pos)
 0037	|	WinMove(p_x, p_y, p_w="", p_h="", p_hwnd="")
 
 }
-[1584] z\TaskBar_SetAttr.ahk {
+[1640] z\TaskBar_SetAttr.ahk {
 
 Line  	|	Function
 
 }
-[1585] z\TaskButton(differentVersion).ahk {
+[1641] z\TaskButton(differentVersion).ahk {
 
 Line  	|	Function
 0007	|	TaskButtons(sExeName = "")
@@ -21780,7 +22220,7 @@ Line  	|	Function
 0056	|	GetTaskSwBar()
 
 }
-[1586] z\TaskButton.ahk {
+[1642] z\TaskButton.ahk {
 
 Line  	|	Function
 0019	|	TaskButton(sExeName = "")
@@ -21790,7 +22230,7 @@ Line  	|	Function
 0076	|	TaskButton_GetTaskSwBar()
 
 }
-[1587] z\TaskDialog (2).ahk {
+[1643] z\TaskDialog (2).ahk {
 
 Line  	|	Function
 0132	|	TaskDialog(hParent = 0, sText = "", sButtons = "", iFlags = 0, sIcons = "", sRadios = "", sCallback = "", iWidth = 0, hNavigate = 0)
@@ -21801,14 +22241,14 @@ Line  	|	Function
 0460	|	_TaskDialog_ResolveIcon(sIcon)
 
 }
-[1588] z\TaskDialog and more.ahk {
+[1644] z\TaskDialog and more.ahk {
 
 Line  	|	Function
 0130	|	TaskDialogToUnicode(String, ByRef Var)
 0136	|	TaskDialogCallback(H, N, W, L, D)
 
 }
-[1589] z\TaskDialog.ahk {
+[1645] z\TaskDialog.ahk {
 
 Line  	|	Function
 0180	|	TaskDialog_CommonButtons(Value, TASKDIALOGCONFIG, ByRef DefaultButton)
@@ -21816,14 +22256,14 @@ Line  	|	Function
 0214	|	TaskDialog_CallbackProc(Hwnd, Notification, wParam, lParam, RefData)
 
 }
-[1590] z\TaskDialogEx.ahk {
+[1646] z\TaskDialogEx.ahk {
 
 Line  	|	Function
 0131	|	TaskDialogToUnicode(String, ByRef Var)
 0137	|	TaskDialogCallback(H, N, W, L, D)
 
 }
-[1591] z\TaskTrayIcon.ahk {
+[1647] z\TaskTrayIcon.ahk {
 
 Line  	|	Function
 0018	|	Tray_GetCount()
@@ -21836,7 +22276,7 @@ Line  	|	Function
 0075	|	Tray_MoveButton(from,to)
 
 }
-[1592]  {
+[1648]  {
 
 Line  	|	Function
 0030	|	TbMenu_Create(Style=0x80800044, ExStyle=0, Owner=0)
@@ -21849,7 +22289,7 @@ Line  	|	Function
 0145	|	TbMenu_WndProc(hwnd, Msg, wParam, lParam)
 
 }
-[1593]  {
+[1649]  {
 
 Line  	|	Function
 0005	|	__New(s=-1)
@@ -21873,7 +22313,7 @@ Line  	|	Function
 0206	|	disableBroadcast()
 
 }
-[1594] z\TCP.ahk {
+[1650] z\TCP.ahk {
 
 Line  	|	Function
 0002	|	TCP_Startup(OnExit = True, OnMessage = "")
@@ -21893,7 +22333,7 @@ Line  	|	Function
 0237	|	TCP_HiWord(DWORD)
 
 }
-[1595] z\TCPUDP.ahk {
+[1651] z\TCPUDP.ahk {
 
 Line  	|	Function
 0003	|	__New()
@@ -21930,7 +22370,7 @@ Line  	|	Function
 0326	|	__nw_eventProc(wParam, lParam, msg, hwnd)
 
 }
-[1596] z\TCwdx.ahk {
+[1652] z\TCwdx.ahk {
 
 Line  	|	Function
 0012	|	TCwdx_FindIni()
@@ -21944,7 +22384,7 @@ Line  	|	Function
 0253	|	TCwdx_SetDefaultParams(tcplug)
 
 }
-[1597] z\TC_EX.ahk {
+[1653] z\TC_EX.ahk {
 
 Line  	|	Function
 0041	|	TC_EX_CreateTCITEM(ByRef TCITEM)
@@ -21966,7 +22406,7 @@ Line  	|	Function
 0299	|	TC_EX_SetText(HTC, TabIndex, TabText)
 
 }
-[1598] z\TEA.ahk {
+[1654] z\TEA.ahk {
 
 Line  	|	Function
 0008	|	Encrypt( _String, _Password )
@@ -21977,7 +22417,7 @@ Line  	|	Function
 0124	|	Stream9( x, y )
 
 }
-[1599] z\TEA_Encryption.ahk {
+[1655] z\TEA_Encryption.ahk {
 
 Line  	|	Function
 0049	|	EncryptFile( inputFile, password, outputFile="" )
@@ -21990,32 +22430,32 @@ Line  	|	Function
 0206	|	TEA_Stream9(x,y)
 
 }
-[1600] z\TerminateProcess.ahk {
+[1656] z\TerminateProcess.ahk {
 
 Line  	|	Function
 
 }
-[1601] z\TermWait.ahk {
+[1657] z\TermWait.ahk {
 
 Line  	|	Function
 0045	|	TermWait_StopWaiting(pGlobal)
 0058	|	__TermWait_TermNotifier(pGlobal)
 
 }
-[1602] z\TermWaitLibs.ahk {
+[1658] z\TermWaitLibs.ahk {
 
 Line  	|	Function
 0095	|	__TermWait_TermNotifier(pGlobal)
 
 }
-[1603]  {
+[1659]  {
 
 Line  	|	Function
 0002	|	TTS(oVoice, command, param1="", param2="")
 0122	|	TTS_CreateVoice(VoiceName="", VoiceRate="", VoiceVolume="", VoicePitch="")
 
 }
-[1604] z\Text2Number.ahk {
+[1660] z\Text2Number.ahk {
 
 Line  	|	Function
 0087	|	Number2Name(Number)
@@ -22024,19 +22464,19 @@ Line  	|	Function
 0421	|	TTS_CreateVoice(VoiceName="", VoiceRate="", VoiceVolume="", VoicePitch="")
 
 }
-[1605] z\TextAreaDetect.ahk {
+[1661] z\TextAreaDetect.ahk {
 
 Line  	|	Function
 0011	|	caretViaAcc()
 
 }
-[1606] z\TextCompare.ahk {
+[1662] z\TextCompare.ahk {
 
 Line  	|	Function
 0023	|	TextCompare(Text1, Text2, Options = "")
 
 }
-[1607] z\Textlists.ahk {
+[1663] z\Textlists.ahk {
 
 Line  	|	Function
 0034	|	ListAdd(item,pos,list)
@@ -22066,7 +22506,7 @@ Line  	|	Function
 0462	|	TEST2(A,x)
 
 }
-[1608] z\tf.ahk {
+[1664] z\tf.ahk {
 
 Line  	|	Function
 0048	|	TF_CountLines(Text)
@@ -22121,25 +22561,25 @@ Line  	|	Function
 1530	|	_AscendingLinesL(a1, a2)
 
 }
-[1609] z\ThousandPoint.ahk {
+[1665] z\ThousandPoint.ahk {
 
 Line  	|	Function
 0018	|	ts(number)
 
 }
-[1610] z\ThousandsSep.ahk {
+[1666] z\ThousandsSep.ahk {
 
 Line  	|	Function
 0003	|	ThousandsSep(x, s=",")
 
 }
-[1611] z\threadFunc.ahk {
+[1667] z\threadFunc.ahk {
 
 Line  	|	Function
 0062	|	GlobalFree(hMem)
 
 }
-[1612] z\Threads.ahk {
+[1668] z\Threads.ahk {
 
 Line  	|	Function
 0008	|	Threads_GetProcessThreadOrList( processID, byRef list="" )
@@ -22147,7 +22587,7 @@ Line  	|	Function
 0076	|	Threads_GetThreadOfWindowCallBack( hWnd, lParam )
 
 }
-[1613] z\Thumbnail.ahk {
+[1669] z\Thumbnail.ahk {
 
 Line  	|	Function
 0040	|	Thumbnail_Create(hDestination, hSource)
@@ -22159,45 +22599,45 @@ Line  	|	Function
 0176	|	Thumbnail_SetOpacity(hThumb, opacity)
 
 }
-[1614] z\thumbnailer.ahk {
+[1670] z\thumbnailer.ahk {
 
 Line  	|	Function
 0002	|	thumbnailer(_guiID, _percent=.25, _transColor="", _guiNum=99)
 
 }
-[1615] z\Time.ahk {
+[1671] z\Time.ahk {
 
 Line  	|	Function
 0039	|	Time(to,from="",units="d",params="")
 
 }
-[1616] z\TimeConvert.ahk {
+[1672] z\TimeConvert.ahk {
 
 Line  	|	Function
 0026	|	Time(to,from="",units="d",params="")
 
 }
-[1617] z\Timer.ahk {
+[1673] z\Timer.ahk {
 
 Line  	|	Function
 
 }
-[1618] z\TimeStampAHK.ahk {
+[1674] z\TimeStampAHK.ahk {
 
 Line  	|	Function
 
 }
-[1619] z\TimeStampSQL.ahk {
+[1675] z\TimeStampSQL.ahk {
 
 Line  	|	Function
 
 }
-[1620] z\Tinify.ahk {
+[1676] z\Tinify.ahk {
 
 Line  	|	Function
 
 }
-[1621] z\Tippy.ahk {
+[1677] z\Tippy.ahk {
 
 Line  	|	Function
 0015	|	Tippy(Text = "", Duration = 1000)
@@ -22206,13 +22646,13 @@ Line  	|	Function
 0042	|	ToolTipFM(Text="", WhichToolTip=16, xOffset=16, yOffset=16)
 
 }
-[1622] z\Title.ahk {
+[1678] z\Title.ahk {
 
 Line  	|	Function
 0010	|	Title(Text)
 
 }
-[1623] z\tlg_wrapper.ahk {
+[1679] z\tlg_wrapper.ahk {
 
 Line  	|	Function
 0078	|	get_input()
@@ -22226,7 +22666,7 @@ Line  	|	Function
 0329	|	tlg_wrapper(safe_arr, def_row, def_col, last_col)
 
 }
-[1624] z\TLLib.ahk {
+[1680] z\TLLib.ahk {
 
 Line  	|	Function
 0046	|	EnumVarName(control)
@@ -22265,7 +22705,7 @@ Line  	|	Function
 0607	|	_cybar()
 
 }
-[1625] z\TO TextOverlay.ahk {
+[1681] z\TO TextOverlay.ahk {
 
 Line  	|	Function
 0096	|	TO_GenerateTree(charstring,fontinfo,forest)
@@ -22304,7 +22744,7 @@ Line  	|	Function
 1534	|	TO_DebugBitmap(pBitmap)
 
 }
-[1626] z\TO.ahk {
+[1682] z\TO.ahk {
 
 Line  	|	Function
 0096	|	TO_GenerateTree(charstring,fontinfo,forest)
@@ -22343,18 +22783,18 @@ Line  	|	Function
 1534	|	TO_DebugBitmap(pBitmap)
 
 }
-[1627] z\ToBase.ahk {
+[1683] z\ToBase.ahk {
 
 Line  	|	Function
 0002	|	ToBase(n,b)
 
 }
-[1628] z\ToChar.ahk {
+[1684] z\ToChar.ahk {
 
 Line  	|	Function
 
 }
-[1629] z\todWulff.ahk {
+[1685] z\todWulff.ahk {
 
 Line  	|	Function
 0014	|	Paste2(Paste_Content, Paste_Description="", Paste_Language="text")
@@ -22363,29 +22803,35 @@ Line  	|	Function
 0155	|	Goo_gl(url)
 
 }
-[1630] z\ToggleTouchkeyboard.ahk {
+[1686] z\ToggleTouchkeyboard.ahk {
 
 Line  	|	Function
 
 }
-[1631] z\ToGreyscale.ahk {
+[1687] z\ToggleWindows10DefaultAppMode.ahk {
+
+Line  	|	Function
+0014	|	ToggleWindows10DefaultAppMode()
+
+}
+[1688] z\ToGreyscale.ahk {
 
 Line  	|	Function
 0011	|	ToGrayscale(sBM)
 
 }
-[1632] z\ToInt.ahk {
+[1689] z\ToInt.ahk {
 
 Line  	|	Function
 
 }
-[1633] z\TokenIsElevated.ahk {
+[1690] z\TokenIsElevated.ahk {
 
 Line  	|	Function
 0013	|	TokenIsElevated(hToken)
 
 }
-[1634] z\Toolbar.ahk {
+[1691] z\Toolbar.ahk {
 
 Line  	|	Function
 0078	|	Toolbar_Add(hGui, Handler, Style="", ImageList="", Pos="")
@@ -22424,7 +22870,7 @@ Line  	|	Function
 1081	|	Toolbar_add2Form(hParent, Txt, Opt)
 
 }
-[1635] z\ToolbarWrapper.ahk {
+[1692] z\ToolbarWrapper.ahk {
 
 Line  	|	Function
 0035	|	_TB_iBitmap(ByRef tbb)
@@ -22461,7 +22907,7 @@ Line  	|	Function
 0345	|	_FreeTBProcessMemory( szToolbarName )
 
 }
-[1636] z\ToolTip.ahk {
+[1693] z\ToolTip.ahk {
 
 Line  	|	Function
 0199	|	ToolTip(ID="", text="", title="",options="")
@@ -22469,36 +22915,36 @@ Line  	|	Function
 0653	|	ToolTip_GetAssociatedIcon(File)
 
 }
-[1637] z\ToolTipEx.ahk {
+[1694] z\ToolTipEx.ahk {
 
 Line  	|	Function
 
 }
-[1638] z\ToolTipG.ahk {
+[1695] z\ToolTipG.ahk {
 
 Line  	|	Function
 
 }
-[1639] z\ToolTipOpt.ahk {
+[1696] z\ToolTipOpt.ahk {
 
 Line  	|	Function
 0037	|	_TTHook()
 0045	|	_TTWndProc(nCode, _wp, _lp)
 
 }
-[1640] z\ToShort.ahk {
+[1697] z\ToShort.ahk {
 
 Line  	|	Function
 
 }
-[1641] z\tostring.ahk {
+[1698] z\tostring.ahk {
 
 Line  	|	Function
 0008	|	ToString(this)
 0025	|	_multab(str)
 
 }
-[1642] z\TotalCmdFuncs.ahk {
+[1699] z\TotalCmdFuncs.ahk {
 
 Line  	|	Function
 0002	|	TcmdSelByMask(mask)
@@ -22511,28 +22957,28 @@ Line  	|	Function
 0097	|	CDX(args, arg1)
 
 }
-[1643] z\touch.ahk {
+[1700] z\touch.ahk {
 
 Line  	|	Function
 0049	|	Touch(file = "" , set = "0", WhichTime = "M", Reference = "0")
 
 }
-[1644] z\ToUChar.ahk {
+[1701] z\ToUChar.ahk {
 
 Line  	|	Function
 
 }
-[1645] z\ToUInt.ahk {
+[1702] z\ToUInt.ahk {
 
 Line  	|	Function
 
 }
-[1646] z\ToUShort.ahk {
+[1703] z\ToUShort.ahk {
 
 Line  	|	Function
 
 }
-[1647] z\TransButtonsv1.ahk {
+[1704] z\TransButtonsv1.ahk {
 
 Line  	|	Function
 0046	|	TransButton_Subclass(HBTN)
@@ -22540,13 +22986,13 @@ Line  	|	Function
 0131	|	TransButton_SubclassProc(HWND, Message, wParam, lParam, IdSubclass, RefData)
 
 }
-[1648] z\Transform_AHKHotkeyStrings.ahk {
+[1705] z\Transform_AHKHotkeyStrings.ahk {
 
 Line  	|	Function
 0036	|	Transform_AHKHotkeyString_Into_InputSring(_hotkey)
 
 }
-[1649] z\translate.ahk {
+[1706] z\translate.ahk {
 
 Line  	|	Function
 0008	|	if(from = to)
@@ -22556,19 +23002,19 @@ Line  	|	Function
 0132	|	if(lang)
 
 }
-[1650] z\translate_google_api AHKV2.ahk {
+[1707] z\translate_google_api AHKV2.ahk {
 
 Line  	|	Function
 
 }
-[1651] z\TransSplashText.ahk {
+[1708] z\TransSplashText.ahk {
 
 Line  	|	Function
 0024	|	TransSplashText_On(Text="",Font="",TC="",SC="",TS="",xPos="",yPos="",TimeOut="")
 0064	|	TransSplashText_Off()
 
 }
-[1652] z\Tray.ahk {
+[1709] z\Tray.ahk {
 
 Line  	|	Function
 0031	|	Tray_Add( hGui, Handler, Icon, Tooltip="")
@@ -22586,12 +23032,12 @@ Line  	|	Function
 0412	|	Tray_onShellIcon(Wparam, Lparam)
 
 }
-[1653] z\TrayIcon (2).ahk {
+[1710] z\TrayIcon (2).ahk {
 
 Line  	|	Function
 
 }
-[1654] z\TrayIcon (3).ahk {
+[1711] z\TrayIcon (3).ahk {
 
 Line  	|	Function
 0036	|	TrayIcon(sExeName = "")
@@ -22602,25 +23048,25 @@ Line  	|	Function
 0106	|	TrayIcon_GetTrayBar()
 
 }
-[1655] z\TrayIcon.ahk {
+[1712] z\TrayIcon.ahk {
 
 Line  	|	Function
 0159	|	TrayIcon_Remove(hWnd, uId)
 0247	|	TrayIcon_GetHotItem()
 
 }
-[1656] z\TrayIconInfo.ahk {
+[1713] z\TrayIconInfo.ahk {
 
 Line  	|	Function
 
 }
-[1657] z\TrayRefresh.ahk {
+[1714] z\TrayRefresh.ahk {
 
 Line  	|	Function
 0001	|	Tray_Refresh()
 
 }
-[1658] z\TrayTipEx.ahk {
+[1715] z\TrayTipEx.ahk {
 
 Line  	|	Function
 0095	|	TrayTipEx_Move(CtrlObj)
@@ -22628,7 +23074,7 @@ Line  	|	Function
 0110	|	TrayTipEx_Close(Data)
 
 }
-[1659] z\TreeView.ahk {
+[1716] z\TreeView.ahk {
 
 Line  	|	Function
 0061	|	TV_DeleteAll(TV)
@@ -22647,18 +23093,18 @@ Line  	|	Function
 0850	|	TV_DragDrop(TV)
 
 }
-[1660] z\TrimStr.ahk {
+[1717] z\TrimStr.ahk {
 
 Line  	|	Function
 0011	|	TrimStr(str)
 
 }
-[1661] z\TskDlg.ahk {
+[1718] z\TskDlg.ahk {
 
 Line  	|	Function
 
 }
-[1662] z\TT.ahk {
+[1719] z\TT.ahk {
 
 Line  	|	Function
 0148	|	TT_Init()
@@ -22683,12 +23129,12 @@ Line  	|	Function
 0761	|	TTM_WINDOWFROMPOINT(T,pPOINT)
 
 }
-[1663] z\TVDAD.ahk {
+[1720] z\TVDAD.ahk {
 
 Line  	|	Function
 
 }
-[1664] z\TVX.ahk {
+[1721] z\TVX.ahk {
 
 Line  	|	Function
 0004	|	TVX( pTree, pSub, pOptions="", pUserData="" )
@@ -22700,37 +23146,37 @@ Line  	|	Function
 0364	|	TVX_OnKeyPress(pKey)
 
 }
-[1665] z\TVX_Walk.ahk {
+[1722] z\TVX_Walk.ahk {
 
 Line  	|	Function
 0019	|	TVX_Walk_Recursive(WalkHandlerFunc, FirstItem, OnlySubItemsOfFirstItem, RelativeIndentation)
 
 }
-[1666] z\TV_SetSelColors.ahk {
+[1723] z\TV_SetSelColors.ahk {
 
 Line  	|	Function
 
 }
-[1667] z\TwipToPixel.ahk {
+[1724] z\TwipToPixel.ahk {
 
 Line  	|	Function
 0001	|	TwipToPixel(Twip)
 
 }
-[1668] z\txtList.ahk {
+[1725] z\txtList.ahk {
 
 Line  	|	Function
 0001	|	txtList(path)
 
 }
-[1669] z\type.ahk {
+[1726] z\type.ahk {
 
 Line  	|	Function
 0004	|	type(v)
 0011	|	com_type(ByRef v)
 
 }
-[1670] z\TypeFunctions.ahk {
+[1727] z\TypeFunctions.ahk {
 
 Line  	|	Function
 0039	|	IsType( p_Input , p_Type )
@@ -22740,7 +23186,7 @@ Line  	|	Function
 0156	|	CommonTypes( p_InputList )
 
 }
-[1671] z\TypeLibHelperFunctions.ahk {
+[1728] z\TypeLibHelperFunctions.ahk {
 
 Line  	|	Function
 0047	|	TypeLibToHeadingsObj(TypeLib)
@@ -22758,7 +23204,7 @@ Line  	|	Function
 0400	|	GetTypeObjPostProcessing(TypeObj)
 
 }
-[1672] z\TypeLibInterfaces.ahk {
+[1729] z\TypeLibInterfaces.ahk {
 
 Line  	|	Function
 0051	|	GetTypeInfoCount()
@@ -22818,7 +23264,7 @@ Line  	|	Function
 0640	|	VTSize(kind, bitness=0)
 
 }
-[1673] z\UDec.ahk {
+[1730] z\UDec.ahk {
 
 Line  	|	Function
 0092	|	UDec(i)
@@ -22827,7 +23273,7 @@ Line  	|	Function
 0108	|	UHexToInt64(x)
 
 }
-[1674] z\uia.ahk {
+[1731] z\uia.ahk {
 
 Line  	|	Function
 0007	|	__new()
@@ -23186,7 +23632,7 @@ Line  	|	Function
 3544	|	GUID(ByRef GUID, sGUID)
 
 }
-[1675] z\UIA2.ahk {
+[1732] z\UIA2.ahk {
 
 Line  	|	Function
 0007	|	__new(p=0)
@@ -23548,7 +23994,7 @@ Line  	|	Function
 2784	|	GUID(ByRef GUID, sGUID)
 
 }
-[1676] z\UIAutomationClient_1_0_64bit.ahk {
+[1733] z\UIAutomationClient_1_0_64bit.ahk {
 
 Line  	|	Function
 0031	|	CUIAutomation()
@@ -23982,7 +24428,7 @@ Line  	|	Function
 8752	|	__Delete()
 
 }
-[1677] z\UIA_Interface.ahk {
+[1734] z\UIA_Interface.ahk {
 
 Line  	|	Function
 0020	|	__New(p="", flag=1)
@@ -24071,7 +24517,7 @@ Line  	|	Function
 0756	|	MsgBox(msg)
 
 }
-[1678] z\UINT64.ahk {
+[1735] z\UINT64.ahk {
 
 Line  	|	Function
 0092	|	UDec(i)
@@ -24080,13 +24526,13 @@ Line  	|	Function
 0108	|	UHexToInt64(x)
 
 }
-[1679] z\UnHTM.ahk {
+[1736] z\UnHTM.ahk {
 
 Line  	|	Function
 0007	|	UnHTM( HTM )
 
 }
-[1680] z\unhtml.ahk {
+[1737] z\unhtml.ahk {
 
 Line  	|	Function
 0012	|	unHTML(html)
@@ -24096,26 +24542,26 @@ Line  	|	Function
 0084	|	Deref_Umlauts( w, n=1 )
 
 }
-[1681] z\UnHTML_by_SKAN.ahk {
+[1738] z\UnHTML_by_SKAN.ahk {
 
 Line  	|	Function
 
 }
-[1682] z\Unidecode.ahk {
+[1739] z\Unidecode.ahk {
 
 Line  	|	Function
 0072	|	RegExMatchGlobal(ByRef Haystack, NeedleRegEx)
 0081	|	UnidecodeTable()
 
 }
-[1683] z\Unique_IDentifiers.ahk {
+[1740] z\Unique_IDentifiers.ahk {
 
 Line  	|	Function
 0005	|	CreateUUID()
 0020	|	CreateGUID()
 
 }
-[1684] z\uniscribe.ahk {
+[1741] z\uniscribe.ahk {
 
 Line  	|	Function
 0002	|	ScriptIsComplex(pTxt, sz=0, flags=1)
@@ -24125,52 +24571,58 @@ Line  	|	Function
 0055	|	ScriptStringFree(ByRef pssa)
 
 }
-[1685] z\UnRar.ahk {
+[1742] z\unpaired.ahk {
+
+Line  	|	Function
+0013	|	UniquePairs(list)
+
+}
+[1743] z\UnRar.ahk {
 
 Line  	|	Function
 0031	|	UnRar(RarFile, DestPath="")
 0224	|	RarCallback(Msg, User, P1, P2)
 
 }
-[1686] z\Update.ahk {
+[1744] z\Update.ahk {
 
 Line  	|	Function
 0139	|	VersionCompare(version1, version2)
 0173	|	CopyFilesAndFolders(SourcePattern, DestinationFolder, DoOverwrite = false)
 
 }
-[1687] z\UpdateCursors.ahk {
+[1745] z\UpdateCursors.ahk {
 
 Line  	|	Function
 0004	|	UpdateCursors()
 
 }
-[1688] z\UpdateDesktop.ahk {
+[1746] z\UpdateDesktop.ahk {
 
 Line  	|	Function
 0004	|	UpdateDesktop()
 
 }
-[1689] z\UpdateFolderTime.ahk {
+[1747] z\UpdateFolderTime.ahk {
 
 Line  	|	Function
 0009	|	GetLastModified(file, ByRef _lastModified)
 
 }
-[1690] z\UpdateIcons.ahk {
+[1748] z\UpdateIcons.ahk {
 
 Line  	|	Function
 0004	|	UpdateIcons()
 
 }
-[1691] z\updateLibPath.ahk {
+[1749] z\updateLibPath.ahk {
 
 Line  	|	Function
 0001	|	updateLibPath(createNew=1)
 0003	|	if(createNew)
 
 }
-[1692] z\Updater_v2.ahk {
+[1750] z\Updater_v2.ahk {
 
 Line  	|	Function
 0031	|	Start_Script()
@@ -24185,13 +24637,13 @@ Line  	|	Function
 0245	|	Exit_Func(ExitReason, ExitCode)
 
 }
-[1693] z\UpdateSysAssoc.ahk {
+[1751] z\UpdateSysAssoc.ahk {
 
 Line  	|	Function
 0004	|	UpdateSysAssoc()
 
 }
-[1694] z\UpdRes.ahk {
+[1752] z\UpdRes.ahk {
 
 Line  	|	Function
 0024	|	UpdRes_LockResource(sBinFile, sResName, nResType, ByRef szData)
@@ -24202,61 +24654,61 @@ Line  	|	Function
 0221	|	__UpdRes_EnumeratorCallback(hModule, lpszType, lpszName, lParam)
 
 }
-[1695] z\Upper.ahk {
+[1753] z\Upper.ahk {
 
 Line  	|	Function
 0011	|	Upper(Text)
 
 }
-[1696] z\uriencode.ahk {
+[1754] z\uriencode.ahk {
 
 Line  	|	Function
 0001	|	uriEncode(str)
 
 }
-[1697]  {
+[1755]  {
 
 Line  	|	Function
 0030	|	uriDecode(str)
 0039	|	uriEncode(str)
 
 }
-[1698] z\URL (2).ahk {
+[1756] z\URL (2).ahk {
 
 Line  	|	Function
 
 }
-[1699] z\Url.ahk {
+[1757] z\Url.ahk {
 
 Line  	|	Function
 0036	|	URLDecode(Url)
 
 }
-[1700] z\UrlDownload.ahk {
+[1758] z\UrlDownload.ahk {
 
 Line  	|	Function
 0009	|	urlDownload_Call(ptrThis, intProgCur = 0, intProgMax = 0, intStatCode = 0, ptrStatText = 0)
 0038	|	urlDownload_File(strUrl, strDest = ".", blnOver = True)
 
 }
-[1701] z\urlDownloadToFile.ahk {
+[1759] z\urlDownloadToFile.ahk {
 
 Line  	|	Function
 
 }
-[1702] z\UrlDownloadToJson.ahk {
+[1760] z\UrlDownloadToJson.ahk {
 
 Line  	|	Function
 0022	|	UrlDownloadToJson(input)
 
 }
-[1703] z\UrlDownloadToVar.ahk {
+[1761] z\UrlDownloadToVar.ahk {
 
 Line  	|	Function
 0006	|	Download(ByRef Result,URL)
 
 }
-[1704] z\USBD.ahk {
+[1762] z\USBD.ahk {
 
 Line  	|	Function
 0004	|	USBD_SafelyRemove( Drv )
@@ -24265,7 +24717,7 @@ Line  	|	Function
 0045	|	USBD_DeviceEject( DeviceID )
 
 }
-[1705] z\USBUIRT.ahk {
+[1763] z\USBUIRT.ahk {
 
 Line  	|	Function
 0035	|	USBUIRT_LoadDLL()
@@ -24282,13 +24734,13 @@ Line  	|	Function
 0165	|	USBUIRT_Abort(LearnPID)
 
 }
-[1706] z\UseGDIP.ahk {
+[1764] z\UseGDIP.ahk {
 
 Line  	|	Function
 0034	|	UseGDIP_Error(ErrorMsg)
 
 }
-[1707] z\User32.ahk {
+[1765] z\User32.ahk {
 
 Line  	|	Function
 0101	|	GetWindowThreadProcessId(hWnd, lpdwProcessId)
@@ -24305,14 +24757,14 @@ Line  	|	Function
 0221	|	GetClassLong(hWnd, nIndex)
 
 }
-[1708] z\UTF8IniFile.ahk {
+[1766] z\UTF8IniFile.ahk {
 
 Line  	|	Function
 0046	|	JEE_StrUtf8BytesToText(vUtf8)
 0057	|	JEE_StrTextToUtf8Bytes(vText)
 
 }
-[1709] z\Util.ahk {
+[1767] z\Util.ahk {
 
 Line  	|	Function
 0002	|	Util_VersionCompare(other,local)
@@ -24330,7 +24782,7 @@ Line  	|	Function
 0155	|	Util_isASCII(s)
 
 }
-[1710] z\Utils.ahk {
+[1768] z\Utils.ahk {
 
 Line  	|	Function
 0022	|	OpenWindowProcess(dwDesiredAccess, bInheritHandle, hWnd)
@@ -24346,18 +24798,18 @@ Line  	|	Function
 0108	|	CopyVar(ByRef dest, ByRef source, nSize, UnitType = "UInt" )
 
 }
-[1711] z\uuid.ahk {
+[1769] z\uuid.ahk {
 
 Line  	|	Function
 0003	|	uuid(c = false)
 
 }
-[1712] z\UUIDCreate.ahk {
+[1770] z\UUIDCreate.ahk {
 
 Line  	|	Function
 
 }
-[1713] z\UxTheme.ahk {
+[1771] z\UxTheme.ahk {
 
 Line  	|	Function
 0024	|	UxTheme_Init()
@@ -24399,7 +24851,7 @@ Line  	|	Function
 0344	|	UxTheme_EnableThemeDialogTexture(hWnd, dwFlags)
 
 }
-[1714] z\VA (2).ahk {
+[1772] z\VA (2).ahk {
 
 Line  	|	Function
 0005	|	VA_GetMasterVolume(channel="", device_desc="playback")
@@ -24493,7 +24945,7 @@ Line  	|	Function
 0680	|	VA_IAudioMeterInformation_QueryHardwareSupport(this, ByRef HardwareSupportMask)
 
 }
-[1715] z\VA.ahk {
+[1773] z\VA.ahk {
 
 Line  	|	Function
 0008	|	VA_GetMasterVolume(channel="", device_desc="playback")
@@ -24639,7 +25091,7 @@ Line  	|	Function
 0934	|	GetVolumeObject(Param = 0)
 
 }
-[1716] z\ValidIP.ahk {
+[1774] z\ValidIP.ahk {
 
 Line  	|	Function
 0001	|	ValidIP(ByRef IPAddress)
@@ -24647,38 +25099,38 @@ Line  	|	Function
 0047	|	ValidIP(a)
 
 }
-[1717] z\VarHistory.ahk {
+[1775] z\VarHistory.ahk {
 
 Line  	|	Function
 0042	|	VarHistory(p_Dest,p_Orig="",p_Show=0,p_Func="")
 0090	|	SumAll(x="")
 
 }
-[1718] z\VARIANT.ahk {
+[1776] z\VARIANT.ahk {
 
 Line  	|	Function
 0001	|	VARIANT_Create(value, byRef buffer)
 0015	|	VARIANT_GetValue(variant)
 
 }
-[1719] z\VariemClick.ahk {
+[1777] z\VariemClick.ahk {
 
 Line  	|	Function
 0044	|	VariemClick(ImageFile, NumberOfTries=10, Start_Vari=0, Max_Vari=80, Click_X_Offset=0, Click_Y_Offset=0, WaitBetweenClicks=100)
 
 }
-[1720] z\VariousFunctions.ahk {
+[1778] z\VariousFunctions.ahk {
 
 Line  	|	Function
 
 }
-[1721] z\Varize.ahk {
+[1779] z\Varize.ahk {
 
 Line  	|	Function
 0001	|	varize(var, autofix = true)
 
 }
-[1722] z\VarZ_Compress.ahk {
+[1780] z\VarZ_Compress.ahk {
 
 Line  	|	Function
 0064	|	VarZ_Uncompress( ByRef D )
@@ -24687,7 +25139,7 @@ Line  	|	Function
 0127	|	VarZ_Save( ByRef Data, DataSize, TrgFile )
 
 }
-[1723] z\VAWrapper.ahk {
+[1781] z\VAWrapper.ahk {
 
 Line  	|	Function
 0007	|	VAWrapper_mute(winTitle="", action="")
@@ -24698,13 +25150,13 @@ Line  	|	Function
 0102	|	VA_ISimpleAudioVolume_GetMute(this, ByRef Muted)
 
 }
-[1724] z\VersionCompare.ahk {
+[1782] z\VersionCompare.ahk {
 
 Line  	|	Function
 0008	|	VersionCompare(version1, version2)
 
 }
-[1725] z\VersionRes.ahk {
+[1783] z\VersionRes.ahk {
 
 Line  	|	Function
 0034	|	_NewEnum()
@@ -24716,19 +25168,19 @@ Line  	|	Function
 0072	|	Save(addr)
 
 }
-[1726] z\VerticalTextAlign.ahk {
+[1784] z\VerticalTextAlign.ahk {
 
 Line  	|	Function
 0001	|	VerticalTextAlign(ByRef fnSqlText)
 
 }
-[1727]  {
+[1785]  {
 
 Line  	|	Function
 0032	|	View( Text, Options= "" )
 
 }
-[1728] z\VJoy_lib.ahk {
+[1786] z\VJoy_lib.ahk {
 
 Line  	|	Function
 0025	|	VJoy_LoadLibrary()
@@ -24804,13 +25256,13 @@ Line  	|	Function
 0835	|	parse_rel_val(invar, curval, max)
 
 }
-[1729] z\VKSend.ahk {
+[1787] z\VKSend.ahk {
 
 Line  	|	Function
 0001	|	VKSend(Sequence)
 
 }
-[1730] z\VLCHTTP3.ahk {
+[1788] z\VLCHTTP3.ahk {
 
 Line  	|	Function
 0026	|	VLCHTTP3_Start(VLC_path, plist = "")
@@ -24883,7 +25335,7 @@ Line  	|	Function
 0734	|	uriDecode(str)
 
 }
-[1731] z\VOL.ahk {
+[1789] z\VOL.ahk {
 
 Line  	|	Function
 0008	|	VOL_GetMasterVolume(channel="", device_desc="playback")
@@ -25013,7 +25465,7 @@ Line  	|	Function
 0842	|	VOL_IAudioSessionEnumerator_GetSession(this, SessionCount, ByRef Session)
 
 }
-[1732] z\vpk.ahk {
+[1790] z\vpk.ahk {
 
 Line  	|	Function
 0015	|	vpk_Compile(SourcePath)
@@ -25021,12 +25473,12 @@ Line  	|	Function
 0059	|	vpk_Run(command)
 
 }
-[1733] z\vtype.ahk {
+[1791] z\vtype.ahk {
 
 Line  	|	Function
 
 }
-[1734] z\WaitForEvent.ahk {
+[1792] z\WaitForEvent.ahk {
 
 Line  	|	Function
 0039	|	WaitForEvent(Parameter, Timeout = 0, Incremental = 0, FinishWaiting = false)
@@ -25035,20 +25487,25 @@ Line  	|	Function
 0098	|	RaiseEvent(Parameter)
 
 }
-[1735] z\WaitForIEPageLoad.ahk {
+[1793] z\WaitForIEPageLoad.ahk {
 
 Line  	|	Function
 0025	|	IE_DocumentComplete(prms, sink)
 0037	|	IEReady(hIESvr = 0)
 
 }
-[1736] z\WaitPixelColor.ahk {
+[1794] z\WaitForServer.ahk {
+
+Line  	|	Function
+
+}
+[1795] z\WaitPixelColor.ahk {
 
 Line  	|	Function
 0036	|	WaitPixelColor(p_DesiredColor,p_PosX,p_PosY,p_TimeOut=0,p_GetMode="",p_ReturnColor=0)
 
 }
-[1737] z\WakeOnLan.ahk {
+[1796] z\WakeOnLan.ahk {
 
 Line  	|	Function
 0006	|	WakeOnLAN(mac)
@@ -25056,7 +25513,16 @@ Line  	|	Function
 0020	|	CreateBinary(hexString, ByRef var)
 
 }
-[1738] z\WAnim.ahk {
+[1797] z\WakeTimer.ahk {
+
+Line  	|	Function
+0021	|	PutToSleep()
+0028	|	ButtonOK()
+0057	|	WM_WAKEUP(hTimer)
+0063	|	GuiClose()
+
+}
+[1798] z\WAnim.ahk {
 
 Line  	|	Function
 0005	|	WAnim_SlideIn(sFrom, iX, iY, hWnd, sGUI="", iInc=20)
@@ -25067,13 +25533,13 @@ Line  	|	Function
 0219	|	WAnim_ShrinkExpand(bShrink, sDir, iX, iY, iW, iH, hwnd, iInc, sGUIName="")
 
 }
-[1739] z\WatchDirectory.ahk {
+[1799] z\WatchDirectory.ahk {
 
 Line  	|	Function
 0038	|	WatchDirectory(WatchFolder="", WatchSubDirs=true)
 
 }
-[1740] z\WatchFolder.ahk {
+[1800] z\WatchFolder.ahk {
 
 Line  	|	Function
 0092	|	stop_watch()
@@ -25081,19 +25547,19 @@ Line  	|	Function
 0162	|	next_record()
 
 }
-[1741] z\watchfolder_AHKV2.ahk {
+[1801] z\watchfolder_AHKV2.ahk {
 
 Line  	|	Function
 0082	|	stop_watch()
 0099	|	set_sleep_timer(count)
 
 }
-[1742] z\WBImg.ahk {
+[1802] z\WBImg.ahk {
 
 Line  	|	Function
 
 }
-[1743] z\web.ahk {
+[1803] z\web.ahk {
 
 Line  	|	Function
 0040	|	web_headers()
@@ -25106,7 +25572,7 @@ Line  	|	Function
 0254	|	web_get_resume(resume_id)
 
 }
-[1744] z\Webapp.ahk {
+[1804] z\Webapp.ahk {
 
 Line  	|	Function
 0142	|	NavigateComplete2(wb, NewURL)
@@ -25136,12 +25602,12 @@ Line  	|	Function
 0463	|	GET_KEYSTATE_WPARAM(wparam)
 
 }
-[1745] z\WebBrowserCtl.ahk {
+[1805] z\WebBrowserCtl.ahk {
 
 Line  	|	Function
 
 }
-[1746] z\WebCamCapture_MMF.ahk {
+[1806] z\WebCamCapture_MMF.ahk {
 
 Line  	|	Function
 0704	|	LOAD_DLL_Mf_Mfplat_Mfreadwrite()
@@ -25217,12 +25683,12 @@ Line  	|	Function
 1308	|	ID2D1HwndRenderTarget_DrawBitmap(this, bitmap, destinationRectangle, opacity, interpolationMode, sourceRectangle)
 
 }
-[1747] z\WebPic.ahk {
+[1807] z\WebPic.ahk {
 
 Line  	|	Function
 
 }
-[1748] z\websocket.ahk {
+[1808] z\websocket.ahk {
 
 Line  	|	Function
 0036	|	websocket_connect(hostStr)
@@ -25232,7 +25698,7 @@ Line  	|	Function
 0056	|	websocket_registerCallback(id, func)
 
 }
-[1749]  {
+[1809]  {
 
 Line  	|	Function
 0022	|	If(minMax == -1)
@@ -25249,7 +25715,7 @@ Line  	|	Function
 0131	|	If(a_lasterror)
 
 }
-[1750] z\wgl.ahk {
+[1810] z\wgl.ahk {
 
 Line  	|	Function
 0010	|	wglCopyContext(hglrcSrc, hglrcDst, mask)
@@ -25281,7 +25747,7 @@ Line  	|	Function
 0253	|	SetPixelFormat(hdc, iPixelFormat, ppfd)
 
 }
-[1751] z\WIA.ahk {
+[1811] z\WIA.ahk {
 
 Line  	|	Function
 0028	|	WIA_CreateImage(PxWidth, PxHeight, ARGBData)
@@ -25294,7 +25760,7 @@ Line  	|	Function
 0273	|	WIA_ImageProcess()
 
 }
-[1752] z\wic.ahk {
+[1812] z\wic.ahk {
 
 Line  	|	Function
 0008	|	__new()
@@ -25377,7 +25843,13 @@ Line  	|	Function
 1231	|	WIC_hr(a,b)
 
 }
-[1753] z\Win.ahk {
+[1813] z\Wildcards2RegEx.ahk {
+
+Line  	|	Function
+0033	|	Wildcards2RegEx(strDosWildcards)
+
+}
+[1814] z\Win.ahk {
 
 Line  	|	Function
 0040	|	Win_Animate(Hwnd, Type="", Time=100)
@@ -25398,32 +25870,32 @@ Line  	|	Function
 0695	|	Win_Subclass(hCtrl, Fun, Opt="", ByRef $WndProc="")
 
 }
-[1754] z\WinApi.ahk {
+[1815] z\WinApi.ahk {
 
 Line  	|	Function
 0017	|	WinApi(mapping="advapi32.dll comctl32.dll comdlg32.dll gdi32.dll kernel32.dll ole32.dll oleaut32.dll psapi.dll shell32.dll user32.dll version.dll winmm.dll wsock32.dll",object="advapi32.dll comctl32.dll comdlg32.dll gdi32.dll kernel32.dll ole32.dll oleaut32.dll psapi.dll shell32.dll user32.dll version.dll winmm.dll wsock32.dll")
 
 }
-[1755] z\WinApiDef.ahk {
+[1816] z\WinApiDef.ahk {
 
 Line  	|	Function
 0001	|	WinApiDef(def)
 
 }
-[1756] z\WinArrange.ahk {
+[1817] z\WinArrange.ahk {
 
 Line  	|	Function
 0003	|	WinArrange( TC=1, aStr="", VH=0x1, Rect="", hWnd=0x0 )
 0017	|	CreateArray( ByRef Arr, aStr="", Size=4 )
 
 }
-[1757] z\WinCaption.ahk {
+[1818] z\WinCaption.ahk {
 
 Line  	|	Function
 0001	|	WinCaption(Hwnd)
 
 }
-[1758] z\WinClip.ahk {
+[1819] z\WinClip.ahk {
 
 Line  	|	Function
 0012	|	__New()
@@ -25502,7 +25974,7 @@ Line  	|	Function
 0974	|	SaveBitmap( filePath, format )
 
 }
-[1759] z\WinClipAPI.ahk {
+[1820] z\WinClipAPI.ahk {
 
 Line  	|	Function
 0018	|	Err( msg )
@@ -25543,22 +26015,22 @@ Line  	|	Function
 0242	|	GetEncoderClsid( format, ByRef CLSID )
 
 }
-[1760] z\WinCloseAuto.ahk {
+[1821] z\WinCloseAuto.ahk {
 
 Line  	|	Function
 
 }
-[1761] z\WINDERS.ahk {
+[1822] z\WINDERS.ahk {
 
 Line  	|	Function
 
 }
-[1762] z\Window Roller.ahk {
+[1823] z\Window Roller.ahk {
 
 Line  	|	Function
 
 }
-[1763] z\Window.ahk {
+[1824] z\Window.ahk {
 
 Line  	|	Function
 0016	|	Window_activate(wndId)
@@ -25583,7 +26055,7 @@ Line  	|	Function
 0322	|	Window_toggleDecor(wndId = 0)
 
 }
-[1764] z\WindowFilter.ahk {
+[1825] z\WindowFilter.ahk {
 
 Line  	|	Function
 0002	|	WindowFilter_Init(WindowFilter)
@@ -25597,19 +26069,19 @@ Line  	|	Function
 0128	|	WindowFilter_GuiSubmit(WindowFilter, TriggerGUI)
 
 }
-[1765] z\WindowFromPoint.ahk {
+[1826] z\WindowFromPoint.ahk {
 
 Line  	|	Function
 0048	|	WindowFromPoint_EnumChildProc(hWnd, pData)
 
 }
-[1766] z\WindowFromRect.ahk {
+[1827] z\WindowFromRect.ahk {
 
 Line  	|	Function
 0037	|	WindowFromRect_EnumChildProc(hWnd, pData)
 
 }
-[1767] z\WindowPad.ahk {
+[1828] z\WindowPad.ahk {
 
 Line  	|	Function
 0039	|	WindowPad_LoadSettings(ininame)
@@ -25631,7 +26103,7 @@ Line  	|	Function
 0655	|	GetLastMinimizedWindow()
 
 }
-[1768] z\WindowsBase.ahk {
+[1829] z\WindowsBase.ahk {
 
 Line  	|	Function
 0008	|	GUID2Str(guid)
@@ -25652,37 +26124,37 @@ Line  	|	Function
 0213	|	SizeOf()
 
 }
-[1769] z\windowscalepos.ahk {
+[1830] z\windowscalepos.ahk {
 
 Line  	|	Function
 0023	|	WindowScaledPos(ByRef PosX, ByRef PosY, ByRef ClientScaleFactor, ScaleType="Screen", WinId="")
 
 }
-[1770] z\WindowShellEvent.ahk {
+[1831] z\WindowShellEvent.ahk {
 
 Line  	|	Function
 0007	|	WindowShellEvent(funcName)
 
 }
-[1771] z\WindowsLogs.ahk {
+[1832] z\WindowsLogs.ahk {
 
 Line  	|	Function
 0018	|	WinEvents_RegisterForEvents(sLogName)
 0028	|	WinEvents_DeregisterForEvents(hSource)
 
 }
-[1772] z\WindowSuperMaxStatus.ahk {
+[1833] z\WindowSuperMaxStatus.ahk {
 
 Line  	|	Function
 0001	|	WindowSuperMaxStatus(fnX,fnY,fnW,fnH)
 
 }
-[1773] z\WinEnum.ahk {
+[1834] z\WinEnum.ahk {
 
 Line  	|	Function
 
 }
-[1774] z\WinEvents.ahk {
+[1835] z\WinEvents.ahk {
 
 Line  	|	Function
 0106	|	UnHookEvent(functionname, events)
@@ -25691,77 +26163,77 @@ Line  	|	Function
 0135	|	DeleteWinEventHook(functionname, event)
 
 }
-[1775] z\WinFade.ahk {
+[1836] z\WinFade.ahk {
 
 Line  	|	Function
 0026	|	If( A_DetectHiddenWindows = "On" )
 
 }
-[1776] z\WinGetAll (2).ahk {
+[1837] z\WinGetAll (2).ahk {
 
 Line  	|	Function
 0001	|	WinGetAll(Which="Title", DetectHidden="Off")
 
 }
-[1777] z\WinGetAll.ahk {
+[1838] z\WinGetAll.ahk {
 
 Line  	|	Function
 0001	|	WinGetAll(TextFile = True, DetHidden = False)
 
 }
-[1778] z\WinGetAtCoords.ahk {
+[1839] z\WinGetAtCoords.ahk {
 
 Line  	|	Function
 0001	|	WinGetAtCoords(x,y,what="Title")
 0023	|	CoordGetConrol(xCoord, yCoord)
 
 }
-[1779] z\WinGetChildPos.ahk {
+[1840] z\WinGetChildPos.ahk {
 
 Line  	|	Function
 0012	|	WinGetChildPos( childHwnd, parentHwnd )
 
 }
-[1780] z\WinGetClientPos.ahk {
+[1841] z\WinGetClientPos.ahk {
 
 Line  	|	Function
 0011	|	WinGetClientPos( Hwnd )
 
 }
-[1781] z\WinGetPidList.ahk {
+[1842] z\WinGetPidList.ahk {
 
 Line  	|	Function
 
 }
-[1782] z\WinGetPos.ahk {
+[1843] z\WinGetPos.ahk {
 
 Line  	|	Function
 
 }
-[1783] z\WinGetPosEx.ahk {
+[1844] z\WinGetPosEx.ahk {
 
 Line  	|	Function
 0087	|	WinGetPosEx(hWindow,ByRef X="",ByRef Y="",ByRef Width="",ByRef Height="",ByRef Offset_Left="",ByRef Offset_Top="",ByRef Offset_Right="",ByRef Offset_Bottom="")
 
 }
-[1784] z\WinGroup.ahk {
+[1845] z\WinGroup.ahk {
 
 Line  	|	Function
 
 }
-[1785] z\WinHttpRequest Object with Cookies.ahk {
+[1846] z\WinHttpRequest Object with Cookies.ahk {
 
 Line  	|	Function
 0011	|	SaveCookies(ByRef WebRequest, ByRef cookies)
 0016	|	SetCookies(ByRef WebRequest, ByRef cookies)
 
 }
-[1786] z\winInfo.ahk {
+[1847] z\winInfo.ahk {
 
 Line  	|	Function
 
 }
-[1787] z\WinIniNet.ahk {
+[1848] z\WinIniNet.ahk {
 
 Line  	|	Function
 0013	|	WININET_Init()
@@ -25785,7 +26257,7 @@ Line  	|	Function
 0229	|	UrlGetContents(sUrl,sUserName="",sPassword="",sPostData="",sUserAgent="Autohotkey")
 
 }
-[1788] z\WinIsOverlay.ahk {
+[1849] z\WinIsOverlay.ahk {
 
 Line  	|	Function
 0028	|	WindowIsOverlayed(WinId)
@@ -25794,25 +26266,25 @@ Line  	|	Function
 0158	|	ClassOnTopAtXY(X,Y)
 
 }
-[1789] z\WinMoveGetPos.ahk {
+[1850] z\WinMoveGetPos.ahk {
 
 Line  	|	Function
 
 }
-[1790] z\WinMovePos.ahk {
+[1851] z\WinMovePos.ahk {
 
 Line  	|	Function
 0019	|	WinMovePos(winHwnd, pos)
 
 }
-[1791] z\winos.ahk {
+[1852] z\winos.ahk {
 
 Line  	|	Function
 0014	|	winos_GetTimestampUTC()
 0025	|	winos_isotime_now()
 
 }
-[1792] z\WinProps.ahk {
+[1853] z\WinProps.ahk {
 
 Line  	|	Function
 0015	|	EnumWindowProps(hWnd)
@@ -25821,19 +26293,19 @@ Line  	|	Function
 0079	|	RemoveWindowProp(hWnd, String)
 
 }
-[1793] z\WinServ.ahk {
+[1854] z\WinServ.ahk {
 
 Line  	|	Function
 0033	|	WinServ(ServiceName, Task="", Silent=False, Computer="")
 0088	|	WinServ_ErrMsg(Title, ServiceName, Task="", Silent=False, Dummy="")
 
 }
-[1794] z\WinServW.ahk {
+[1855] z\WinServW.ahk {
 
 Line  	|	Function
 
 }
-[1795] z\WinSet_Click_Through.ahk {
+[1856] z\WinSet_Click_Through.ahk {
 
 Line  	|	Function
 0021	|	WinSet_Click_Through(I="", T="150")
@@ -25846,14 +26318,14 @@ Line  	|	Function
 0357	|	WinSet_Click_Through_Click()
 
 }
-[1796] z\WinSet_NoActivate.ahk {
+[1857] z\WinSet_NoActivate.ahk {
 
 Line  	|	Function
 0020	|	WinSet_NoActivate(I="", T="On")
 0071	|	WinGet_NoActivate(I="")
 
 }
-[1797] z\WinSock2.ahk {
+[1858] z\WinSock2.ahk {
 
 Line  	|	Function
 0040	|	WS2_Connect(lpszUrl)
@@ -25878,7 +26350,7 @@ Line  	|	Function
 0496	|	__WinINet_InternetCrackURL(lpszUrl,arrayName="URL")
 
 }
-[1798] z\WinSysMenuApi.ahk {
+[1859] z\WinSysMenuApi.ahk {
 
 Line  	|	Function
 0028	|	GetSystemMenu(ByRef hWnd, Revert = False)
@@ -25910,13 +26382,13 @@ Line  	|	Function
 0110	|	EnableWindowClosing(hWnd = "")
 
 }
-[1799] z\WinVer.ahk {
+[1860] z\WinVer.ahk {
 
 Line  	|	Function
 0005	|	WinVer()
 
 }
-[1800] z\winvisible (2).ahk {
+[1861] z\winvisible (2).ahk {
 
 Line  	|	Function
 0001	|	WinVisible(hwnd)
@@ -25927,25 +26399,25 @@ Line  	|	Function
 0073	|	WinStack(ByRef arr)
 
 }
-[1801] z\WinVisible.ahk {
+[1862] z\WinVisible.ahk {
 
 Line  	|	Function
 0001	|	WinVisible(Title)
 
 }
-[1802] z\Win_SKAN.ahk {
+[1863] z\Win_SKAN.ahk {
 
 Line  	|	Function
 0023	|	WinPos_Get(hWnd)
 
 }
-[1803] z\Win__Fling.ahk {
+[1864] z\Win__Fling.ahk {
 
 Line  	|	Function
 0032	|	Win__Fling(FlingDirection = 1, WinID = "A")
 
 }
-[1804] z\WLAN.ahk {
+[1865] z\WLAN.ahk {
 
 Line  	|	Function
 0170	|	WLAN_WlanAllocateMemory(dwMemorySize)
@@ -25993,40 +26465,40 @@ Line  	|	Function
 0400	|	Wlan_Unicode4Ansi(ByRef wString, sString)
 
 }
-[1805] z\Wmic_Win32_FunctionLog.ahk {
+[1866] z\Wmic_Win32_FunctionLog.ahk {
 
 Line  	|	Function
 0005	|	wmic_Win32_Group()
 0035	|	wmic_Win32_GroupUser()
 
 }
-[1806] z\wmi_hdd.ahk {
+[1867] z\wmi_hdd.ahk {
 
 Line  	|	Function
 0016	|	wmi_hdd()
 
 }
-[1807] z\WMI_Ping.ahk {
+[1868] z\WMI_Ping.ahk {
 
 Line  	|	Function
 0011	|	Ping(addresses)
 0021	|	Ping0(addr)
 
 }
-[1808] z\WM_NCCALCSIZE.ahk {
+[1869] z\WM_NCCALCSIZE.ahk {
 
 Line  	|	Function
 0035	|	WM_NCCALCSIZE(wParam, lParam, msg, hwnd)
 0061	|	Dwm_SetWindowAttributeAllowNCPaint(hwnd,onOff)
 
 }
-[1809] z\wordcount.ahk {
+[1870] z\wordcount.ahk {
 
 Line  	|	Function
 0032	|	WordCount(String)
 
 }
-[1810] z\WorkerThread.ahk {
+[1871] z\WorkerThread.ahk {
 
 Line  	|	Function
 0042	|	__new(WorkerFunction, CanPause = 0, CanStop = 0, ExitAfterTask = 1)
@@ -26055,7 +26527,7 @@ Line  	|	Function
 0494	|	Send_WM_COPYDATA(ByRef StringToSend, hwnd)
 
 }
-[1811] z\WPD.ahk {
+[1872] z\WPD.ahk {
 
 Line  	|	Function
 0009	|	GetDevices()
@@ -26223,19 +26695,19 @@ Line  	|	Function
 1671	|	WPD_hr(a,b)
 
 }
-[1812] z\WRandom.ahk {
+[1873] z\WRandom.ahk {
 
 Line  	|	Function
 0037	|	WRandom(p_FieldStr,ByRef out_Chance=0,ByRef out_P2D=0,ByRef out_D2P=0)
 
 }
-[1813] z\WrapText (2).ahk {
+[1874] z\WrapText (2).ahk {
 
 Line  	|	Function
 0183	|	If(WrapText_currentBreakType == "before")
 
 }
-[1814] z\WrapText.ahk {
+[1875] z\WrapText.ahk {
 
 Line  	|	Function
 0100	|	WrapText_Force(TextToWrap,LengthLim,delims="")
@@ -26243,18 +26715,18 @@ Line  	|	Function
 0266	|	ExtractInteger(ByRef pSource, pOffset = 0, pIsSigned = false, pSize = 4)
 
 }
-[1815] z\WriteFileLine.ahk {
+[1876] z\WriteFileLine.ahk {
 
 Line  	|	Function
 
 }
-[1816] z\WriteMemory.ahk {
+[1877] z\WriteMemory.ahk {
 
 Line  	|	Function
 0031	|	WriteMemory(WriteAddress = "", PROGRAM="", Data="", TypeOrLength = "")
 
 }
-[1817] z\Writer.ahk {
+[1878] z\Writer.ahk {
 
 Line  	|	Function
 0002	|	Writer_Add(hParent, X, Y, W, H, Style="", Text="", Font="")
@@ -26266,12 +26738,12 @@ Line  	|	Function
 0167	|	Writer_enumFontsProc(lplf, lptm, dwType, lpData)
 
 }
-[1818] z\WriteToLogs.ahk {
+[1879] z\WriteToLogs.ahk {
 
 Line  	|	Function
 
 }
-[1819] z\ws.ahk {
+[1880] z\ws.ahk {
 
 Line  	|	Function
 0074	|	WS_HandleEvents(socket, events="READ ACCEPT CONNECT CLOSE")
@@ -26302,7 +26774,7 @@ Line  	|	Function
 0862	|	WS_GetLog()
 
 }
-[1820] z\WS2.ahk {
+[1881] z\WS2.ahk {
 
 Line  	|	Function
 0035	|	WS2_Connect(lpszUrl)
@@ -26326,7 +26798,7 @@ Line  	|	Function
 0442	|	__WinINet_InternetCrackURL(lpszUrl,arrayName="URL")
 
 }
-[1821] z\ws4ahk.ahk {
+[1882] z\ws4ahk.ahk {
 
 Line  	|	Function
 0113	|	WS_Initialize(sLanguage = "VBScript", sMSScriptOCX="")
@@ -26375,7 +26847,7 @@ Line  	|	Function
 2820	|	__WS_IUnknown_Release(ppv)
 
 }
-[1822] z\WS_CoEvent.ahk {
+[1883] z\WS_CoEvent.ahk {
 
 Line  	|	Function
 0035	|	GetDefaultConnection(pdisp)
@@ -26387,7 +26859,7 @@ Line  	|	Function
 0130	|	DispInterface(pthis, prm1=0, prm2=0, prm3=0, prm4=0, prm5=0, prm6=0, prm7=0, prm8=0)
 
 }
-[1823] z\WS_DEControl.ahk {
+[1884] z\WS_DEControl.ahk {
 
 Line  	|	Function
 0128	|	DE_Add(hWnd, x, y, w, h)
@@ -26409,7 +26881,7 @@ Line  	|	Function
 0261	|	DE_DOM(sDHtmlEdit)
 
 }
-[1824] z\WS_DEControl2.ahk {
+[1885] z\WS_DEControl2.ahk {
 
 Line  	|	Function
 0129	|	DE_Add(hWnd, x, y, w, h)
@@ -26451,19 +26923,19 @@ Line  	|	Function
 0436	|	GetSelection()
 
 }
-[1825] z\WS_RemoveErrChk.ahk {
+[1886] z\WS_RemoveErrChk.ahk {
 
 Line  	|	Function
 0047	|	LineBeginsErrorChecking(sLine)
 0056	|	LineEndsErrorChecking(sLine)
 
 }
-[1826] z\WTSProcessEnum.ahk {
+[1887] z\WTSProcessEnum.ahk {
 
 Line  	|	Function
 
 }
-[1827] z\xa.ahk {
+[1888] z\xa.ahk {
 
 Line  	|	Function
 0019	|	XA_Save(Array, Path)
@@ -26476,7 +26948,7 @@ Line  	|	Function
 0177	|	XA_CleanInvalidChars(text, replace="")
 
 }
-[1828] z\XButton.ahk {
+[1889] z\XButton.ahk {
 
 Line  	|	Function
 0137	|	XButton_Add(hCtrl,xFunc,xType,xStyle,xText="",xImage="",xPos="",xSize=1)
@@ -26498,18 +26970,18 @@ Line  	|	Function
 0671	|	xButton_OnCommand(wparam,lparam)
 
 }
-[1829] z\XGraph.ahk {
+[1890] z\XGraph.ahk {
 
 Line  	|	Function
 0268	|	XGraph_Detach( pGraph )
 
 }
-[1830] z\xHotkeyNormalize.ahk {
+[1891] z\xHotkeyNormalize.ahk {
 
 Line  	|	Function
 
 }
-[1831] z\Xinput.ahk {
+[1892] z\Xinput.ahk {
 
 Line  	|	Function
 0001	|	XinputSetState(index = 1, left_ = 0, right_ = 0)
@@ -26518,13 +26990,13 @@ Line  	|	Function
 0137	|	XinputGetEvent(index)
 
 }
-[1832]  {
+[1893]  {
 
 Line  	|	Function
 0039	|	XMLDecode(value)
 
 }
-[1833] z\XML.ahk {
+[1894] z\XML.ahk {
 
 Line  	|	Function
 0167	|	__Delete()
@@ -26539,25 +27011,25 @@ Line  	|	Function
 0481	|	style()
 
 }
-[1834] z\XMLHTTP_Post.ahk {
+[1895] z\XMLHTTP_Post.ahk {
 
 Line  	|	Function
 0069	|	XMLHTTP_EchoWrongArg(arg)
 
 }
-[1835] z\XMLHTTP_Request.ahk {
+[1896] z\XMLHTTP_Request.ahk {
 
 Line  	|	Function
 
 }
-[1836] z\xmlPrettify.ahk {
+[1897] z\xmlPrettify.ahk {
 
 Line  	|	Function
 0001	|	XmlPrettify(input, params)
 0006	|	XmlUglify(input, params)
 
 }
-[1837] z\xpath.ahk {
+[1898] z\xpath.ahk {
 
 Line  	|	Function
 0032	|	xpath(ByRef doc, step, set = "")
@@ -26565,12 +27037,12 @@ Line  	|	Function
 0406	|	xpath_load(ByRef doc, src = "")
 
 }
-[1838] z\xStr.ahk {
+[1899] z\xStr.ahk {
 
 Line  	|	Function
 
 }
-[1839] z\Yaml.ahk {
+[1900] z\Yaml.ahk {
 
 Line  	|	Function
 0001	|	Yaml(YamlText,IsFile=1,YamlObj=0)
@@ -26594,7 +27066,7 @@ Line  	|	Function
 0639	|	Yaml_IsSeqMap(value)
 
 }
-[1840] z\youtube (not tested).ahk {
+[1901] z\youtube (not tested).ahk {
 
 Line  	|	Function
 0017	|	Youtube_GetVideoInfo(TrackId, ByRef Clip)
@@ -26602,26 +27074,26 @@ Line  	|	Function
 0156	|	Youtube_GetCMD(VideoLink, FileName, ByRef CommandLine)
 
 }
-[1841] z\Zip.ahk {
+[1902] z\Zip.ahk {
 
 Line  	|	Function
 0017	|	Zip_Add(sZip, sFiles)
 0051	|	Zip_Extract(sZip, sDir)
 
 }
-[1842] z\ZipFile.ahk {
+[1903] z\ZipFile.ahk {
 
 Line  	|	Function
 0029	|	__New(zip)
 0189	|	__Delete()
 
 }
-[1843] z\ZipFileRaw.ahk {
+[1904] z\ZipFileRaw.ahk {
 
 Line  	|	Function
 
 }
-[1844] z\zlib.ahk {
+[1905] z\zlib.ahk {
 
 Line  	|	Function
 0001	|	zlib_Compress(Byref Compressed, Byref Data, DataLen, level = -1)
@@ -26630,7 +27102,7 @@ Line  	|	Function
 0045	|	gz_decompress(infilename, outfilename)
 
 }
-[1845] classes\class_3DMatrix.ahk {
+[1906] classes\class_3DMatrix.ahk {
 
 Line  	|	Function
 0004	|	__New()
@@ -26646,7 +27118,7 @@ Line  	|	Function
 0089	|	newRotate(angle,x,y,z)
 
 }
-[1846] classes\class_7zip.ahk {
+[1907] classes\class_7zip.ahk {
 
 Line  	|	Function
 0064	|	__New( archiveFile )
@@ -26702,7 +27174,7 @@ Line  	|	Function
 0614	|	_output()
 
 }
-[1847] classes\class_Acc.ahk {
+[1908] classes\class_Acc.ahk {
 
 Line  	|	Function
 0366	|	byDefaultAction(oAcc,action)
@@ -26743,7 +27215,7 @@ Line  	|	Function
 0801	|	accSelect(flagsSelect)
 
 }
-[1848] classes\class_accessibility.ahk {
+[1909] classes\class_accessibility.ahk {
 
 Line  	|	Function
 0068	|	single_get(uiAction)
@@ -26754,7 +27226,7 @@ Line  	|	Function
 0266	|	build_audiodescription_struct()
 
 }
-[1849] classes\class_AccObj.ahk {
+[1910] classes\class_AccObj.ahk {
 
 Line  	|	Function
 0034	|	AccObj_GetRoleText(Role)
@@ -26775,7 +27247,7 @@ Line  	|	Function
 0589	|	_VTBL(Index)
 
 }
-[1850] classes\class_AccObjObject.ahk {
+[1911] classes\class_AccObjObject.ahk {
 
 Line  	|	Function
 0095	|	__Delete()
@@ -26790,7 +27262,7 @@ Line  	|	Function
 0460	|	_VTBL(Index)
 
 }
-[1851] classes\class_AccV2.ahk {
+[1912] classes\class_AccV2.ahk {
 
 Line  	|	Function
 0366	|	byDefaultAction(oAcc,action)
@@ -26831,7 +27303,7 @@ Line  	|	Function
 0801	|	accSelect(flagsSelect)
 
 }
-[1852] classes\class_actionObject.ahk {
+[1913] classes\class_actionObject.ahk {
 
 Line  	|	Function
 0037	|	do(input, type = "", action = "", subType = "", subAction = "")
@@ -26850,7 +27322,7 @@ Line  	|	Function
 0163	|	if(subType = SUBTYPE_FILEPATH)
 
 }
-[1853] classes\class_ActiveScript.ahk {
+[1914] classes\class_ActiveScript.ahk {
 
 Line  	|	Function
 0012	|	__New(Language)
@@ -26873,7 +27345,7 @@ Line  	|	Function
 0285	|	_AS_GUIDToString(pGUID)
 
 }
-[1854] classes\class_AddClearBtnToEdit.ahk {
+[1915] classes\class_AddClearBtnToEdit.ahk {
 
 Line  	|	Function
 0071	|	Init()
@@ -26884,7 +27356,7 @@ Line  	|	Function
 0266	|	ShowHideBtn(HEDIT)
 
 }
-[1855] classes\class_adhdlib.ahk {
+[1916] classes\class_adhdlib.ahk {
 
 Line  	|	Function
 0034	|	__New()
@@ -26986,7 +27458,7 @@ Line  	|	Function
 2497	|	adhd_mouse_move()
 
 }
-[1856] classes\class_AES_und_CBC.ahk {
+[1917] classes\class_AES_und_CBC.ahk {
 
 Line  	|	Function
 0020	|	encrypt(string, iv, key)
@@ -27002,7 +27474,7 @@ Line  	|	Function
 0216	|	b64Decode(ByRef string, ByRef buf)
 
 }
-[1857]  {
+[1918]  {
 
 Line  	|	Function
 0052	|	__New(TargetPID = -1)
@@ -27033,7 +27505,7 @@ Line  	|	Function
 0282	|	EmbedConsole(GuiHWnd, X=10, Y=10)
 
 }
-[1858] classes\class_AhkPedal.ahk {
+[1919] classes\class_AhkPedal.ahk {
 
 Line  	|	Function
 0010	|	__New(press)
@@ -27043,7 +27515,7 @@ Line  	|	Function
 0123	|	_RegisterHIDDevice(usagePage, usage)
 
 }
-[1859] classes\class_AHKWebDriver.ahk {
+[1920] classes\class_AHKWebDriver.ahk {
 
 Line  	|	Function
 0059	|	url(url)
@@ -27094,7 +27566,7 @@ Line  	|	Function
 0386	|	getScreenshot()
 
 }
-[1860] classes\class_AHSock_RemoteObj.ahk {
+[1921] classes\class_AHSock_RemoteObj.ahk {
 
 Line  	|	Function
 0037	|	__New(Port)
@@ -27110,12 +27582,12 @@ Line  	|	Function
 0153	|	rObjClient(sEvent, iSocket = 0, sName = 0, sAddr = 0, sPort = 0, ByRef bData = 0, iLength = 0)
 
 }
-[1861] classes\class_ALD.ahk {
+[1922] classes\class_ALD.ahk {
 
 Line  	|	Function
 
 }
-[1862]  {
+[1923]  {
 
 Line  	|	Function
 0007	|	__New(URL)
@@ -27131,7 +27603,7 @@ Line  	|	Function
 0140	|	uploadItem(package, user, password)
 
 }
-[1863]  {
+[1924]  {
 
 Line  	|	Function
 0036	|	SaveToFile(file)
@@ -27154,7 +27626,7 @@ Line  	|	Function
 0225	|	_createNamespaceElement(name)
 
 }
-[1864]  {
+[1925]  {
 
 Line  	|	Function
 0005	|	__New(defFile)
@@ -27162,7 +27634,13 @@ Line  	|	Function
 0019	|	_getFileList()
 
 }
-[1865] classes\class_Animation.ahk {
+[1926] classes\class_AllKeyBinder.ahk {
+
+Line  	|	Function
+0050	|	KeyEvent(type, code, name, state)
+
+}
+[1927] classes\class_Animation.ahk {
 
 Line  	|	Function
 0064	|	__Delete()
@@ -27173,7 +27651,7 @@ Line  	|	Function
 0110	|	Stop()
 
 }
-[1866] classes\class_ansi.ahk {
+[1928] classes\class_ansi.ahk {
 
 Line  	|	Function
 0003	|	requires()
@@ -27218,7 +27696,7 @@ Line  	|	Function
 0330	|	mapColor(color)
 
 }
-[1867] classes\class_AppFactory.ahk {
+[1929] classes\class_AppFactory.ahk {
 
 Line  	|	Function
 0010	|	AddInputButton(guid, options, callback)
@@ -27253,12 +27731,12 @@ Line  	|	Function
 0422	|	InputEvent(ControlGUID, e)
 
 }
-[1868]  {
+[1930]  {
 
 Line  	|	Function
 
 }
-[1869] classes\class_arrays.ahk {
+[1931] classes\class_arrays.ahk {
 
 Line  	|	Function
 0004	|	requires()
@@ -27287,7 +27765,7 @@ Line  	|	Function
 0268	|	isCallbackFunction(callbackFunc)
 
 }
-[1870] classes\class_array_base.ahk {
+[1932] classes\class_array_base.ahk {
 
 Line  	|	Function
 0033	|	every(callback)
@@ -27304,7 +27782,7 @@ Line  	|	Function
 0445	|	swap(index1, index2)
 
 }
-[1871] classes\class_array_quicksort.ahk {
+[1933] classes\class_array_quicksort.ahk {
 
 Line  	|	Function
 0014	|	_compare_alphanum(a, b)
@@ -27313,7 +27791,7 @@ Line  	|	Function
 0052	|	_swap(array, idx1, idx2)
 
 }
-[1872] classes\class_AsyncHttp.ahk {
+[1934] classes\class_AsyncHttp.ahk {
 
 Line  	|	Function
 0033	|	__new(callbacks = "")
@@ -27329,7 +27807,7 @@ Line  	|	Function
 0111	|	Emit()
 
 }
-[1873] classes\class_audioRouter.ahk {
+[1935] classes\class_audioRouter.ahk {
 
 Line  	|	Function
 0023	|	__new(path)
@@ -27341,7 +27819,7 @@ Line  	|	Function
 0113	|	LVM_GETITEMPOSITION(itemIdx,hwnd)
 
 }
-[1874]  {
+[1936]  {
 
 Line  	|	Function
 0321	|	Delete(item_name)
@@ -27365,7 +27843,7 @@ Line  	|	Function
 0606	|	DummyFunc()
 
 }
-[1875] classes\class_AutoPath_AHK2.ahk {
+[1937] classes\class_AutoPath_AHK2.ahk {
 
 Line  	|	Function
 0062	|	onSubmit()
@@ -27376,7 +27854,7 @@ Line  	|	Function
 0172	|	findFile(p)
 
 }
-[1876] classes\class_Base64.ahk {
+[1938] classes\class_Base64.ahk {
 
 Line  	|	Function
 0003	|	Base64enc( ByRef OutData, ByRef InData, InDataLen )
@@ -27386,7 +27864,7 @@ Line  	|	Function
 0089	|	Decode(ByRef VarIn, ByRef VarOut, Use = "A")
 
 }
-[1877] classes\class_bcrypt.ahk {
+[1939] classes\class_bcrypt.ahk {
 
 Line  	|	Function
 0008	|	hash(String, AlgID)
@@ -27406,7 +27884,7 @@ Line  	|	Function
 0228	|	CalcHash(Byref HASH_DATA, HASH_LENGTH)
 
 }
-[1878] classes\class_BinaryHeap.ahk {
+[1940] classes\class_BinaryHeap.ahk {
 
 Line  	|	Function
 0043	|	__New()
@@ -27417,7 +27895,7 @@ Line  	|	Function
 0118	|	Compare(Value1,Value2)
 
 }
-[1879] classes\class_BindModeThread.ahk {
+[1941] classes\class_BindModeThread.ahk {
 
 Line  	|	Function
 0016	|	__New(CallbackPtr)
@@ -27439,7 +27917,7 @@ Line  	|	Function
 0226	|	HatWatcher()
 
 }
-[1880] classes\class_BinRun.ahk {
+[1942] classes\class_BinRun.ahk {
 
 Line  	|	Function
 0300	|	__New(pData,cmdLine="",cmdLineScript="",ExeToUse="")
@@ -27447,14 +27925,14 @@ Line  	|	Function
 0396	|	BinRun_Uncompress( ByRef D )
 
 }
-[1881] classes\class_Bound.ahk {
+[1943] classes\class_Bound.ahk {
 
 Line  	|	Function
 0012	|	__Call(_callee)
 0018	|	_isCallableObject(ByRef _callback)
 
 }
-[1882] classes\class_BrightnessAndVolumeSetter.ahk {
+[1944] classes\class_BrightnessAndVolumeSetter.ahk {
 
 Line  	|	Function
 0005	|	__New()
@@ -27476,7 +27954,7 @@ Line  	|	Function
 0237	|	BrightnessAndVolumeSetter_new()
 
 }
-[1883] classes\class_BrightnessSetter.ahk {
+[1945] classes\class_BrightnessSetter.ahk {
 
 Line  	|	Function
 0006	|	__New()
@@ -27496,7 +27974,7 @@ Line  	|	Function
 0209	|	BrightnessSetter_new()
 
 }
-[1884] classes\class_BSON.ahk {
+[1946] classes\class_BSON.ahk {
 
 Line  	|	Function
 0024	|	FromHexString(String)
@@ -27516,7 +27994,19 @@ Line  	|	Function
 0233	|	Merge(ArrayOne, ArrayTwo)
 
 }
-[1885] classes\class_BufferAlloc.ahk {
+[1947] classes\class_BTT.ahk {
+
+Line  	|	Function
+0101	|	__New()
+0152	|	__Delete()
+0334	|	_CheckStylesAndOptions(Styles, Options)
+0525	|	NonNull(Value1, Value2)
+0530	|	Range(Value, MinValue, MaxValue)
+0599	|	Fnt_GetTooltipFontName()
+0605	|	Fnt_GetNonClientMetrics()
+
+}
+[1948] classes\class_BufferAlloc.ahk {
 
 Line  	|	Function
 0035	|	BufferAlloc(ByteCount)
@@ -27529,7 +28019,7 @@ Line  	|	Function
 0184	|	PutNum(Value, Offset, Type)
 
 }
-[1886] classes\class_C.ahk {
+[1949] classes\class_C.ahk {
 
 Line  	|	Function
 0285	|	defineType(command)
@@ -27639,7 +28129,7 @@ Line  	|	Function
 3376	|	test_typeComparisons()
 
 }
-[1887] classes\class_CApplication.ahk {
+[1950] classes\class_CApplication.ahk {
 
 Line  	|	Function
 0044	|	__New()
@@ -27679,7 +28169,7 @@ Line  	|	Function
 0571	|	Unsubscribe(handler, e)
 
 }
-[1888] classes\class_CaseSensitiveObject.ahk {
+[1951] classes\class_CaseSensitiveObject.ahk {
 
 Line  	|	Function
 0027	|	__new(base = "")
@@ -27695,14 +28185,14 @@ Line  	|	Function
 0131	|	Next(ByRef key, ByRef value = "")
 
 }
-[1889] classes\class_cconsole.ahk {
+[1952] classes\class_cconsole.ahk {
 
 Line  	|	Function
 0077	|	show()
 0082	|	clear()
 
 }
-[1890] classes\class_CDataBase.ahk {
+[1953] classes\class_CDataBase.ahk {
 
 Line  	|	Function
 0009	|	__New(fileName)
@@ -27724,7 +28214,7 @@ Line  	|	Function
 0303	|	Reset()
 
 }
-[1891] classes\class_CDialogs.ahk {
+[1954] classes\class_CDialogs.ahk {
 
 Line  	|	Function
 0059	|	__New(Mode="")
@@ -27733,21 +28223,21 @@ Line  	|	Function
 0086	|	if(Multi)
 
 }
-[1892] classes\class_CDirectory.ahk {
+[1955] classes\class_CDirectory.ahk {
 
 Line  	|	Function
 0015	|	Exists(DirName)
 0035	|	Create(DirName)
 
 }
-[1893] classes\class_CEnumerator.ahk {
+[1956] classes\class_CEnumerator.ahk {
 
 Line  	|	Function
 0013	|	__New(Object)
 0017	|	Next(byref key, byref value)
 
 }
-[1894] classes\class_Cert.ahk {
+[1957] classes\class_Cert.ahk {
 
 Line  	|	Function
 0169	|	OpenStore(pStoreProvider, dwMsgAndCertEncodingType, dwFlags, ParamType="Ptr", Param=0)
@@ -27765,13 +28255,13 @@ Line  	|	Function
 0380	|	Cert_GetStoreNames_Callback(pvSystemStore, dwFlags, pStoreInfo, pvReserved, pvArg)
 
 }
-[1895] classes\class_CFile.ahk {
+[1958] classes\class_CFile.ahk {
 
 Line  	|	Function
 0021	|	Create(fileName, encoding="")
 
 }
-[1896] classes\class_CFlyout.ahk {
+[1959] classes\class_CFlyout.ahk {
 
 Line  	|	Function
 0009	|	Show()
@@ -27815,7 +28305,7 @@ Line  	|	Function
 1422	|	Anchor2(ctrl, a, d = false)
 
 }
-[1897] classes\class_CFlyoutMenuHandler.ahk {
+[1960] classes\class_CFlyoutMenuHandler.ahk {
 
 Line  	|	Function
 0004	|	__New(iX="", iY="", iW="", iMaxRows="", sIni="", sSlideFrom="Left")
@@ -27855,7 +28345,7 @@ Line  	|	Function
 0736	|	FlyoutMenuHandler_GetMonitorRectAt(x, y, default=1)
 
 }
-[1898] classes\class_CFlyout_New.ahk {
+[1961] classes\class_CFlyout_New.ahk {
 
 Line  	|	Function
 0104	|	__Delete()
@@ -27886,12 +28376,12 @@ Line  	|	Function
 0758	|	StdCBProc(iEventInfo, iMsg)
 
 }
-[1899] classes\class_CFunction.ahk {
+[1962] classes\class_CFunction.ahk {
 
 Line  	|	Function
 
 }
-[1900] classes\class_CGui.ahk {
+[1963] classes\class_CGui.ahk {
 
 Line  	|	Function
 0039	|	__New(app, n = "", options = "", title = "", isLocalizable = true)
@@ -27931,7 +28421,7 @@ Line  	|	Function
 0349	|	Localize()
 
 }
-[1901] classes\class_CGuiCtrl.ahk {
+[1964] classes\class_CGuiCtrl.ahk {
 
 Line  	|	Function
 0054	|	__New(gui, Type, Options = "", Text = "", tabControl = "", tabPage = 0, isLocalizable = true, setDefaultGlabel = true)
@@ -27970,7 +28460,18 @@ Line  	|	Function
 0465	|	RemoveOption(option)
 
 }
-[1902] classes\class_Check.ahk {
+[1965] classes\class_CharsetTranslator.ahk {
+
+Line  	|	Function
+0051	|	__New(dict)
+0066	|	encode(sequence)
+0079	|	decode(sequence)
+0108	|	_translater(sequence, dict)
+0124	|	_translaterByChar(sequence, dict)
+0141	|	_initialise()
+
+}
+[1966] classes\class_Check.ahk {
 
 Line  	|	Function
 0124	|	__Get(key)
@@ -27979,7 +28480,7 @@ Line  	|	Function
 0152	|	__Set(key, ByRef val)
 
 }
-[1903] classes\class_CHotKey.ahk {
+[1967] classes\class_CHotKey.ahk {
 
 Line  	|	Function
 0011	|	__New(hk, label, up=true)
@@ -27991,7 +28492,7 @@ Line  	|	Function
 0092	|	_ToString()
 
 }
-[1904] classes\class_CHotstringOptions.ahk {
+[1968] classes\class_CHotstringOptions.ahk {
 
 Line  	|	Function
 0021	|	ToOptions(x)
@@ -27999,7 +28500,7 @@ Line  	|	Function
 0041	|	ToHotstring(x)
 
 }
-[1905] classes\class_Chrome (2).ahk {
+[1969] classes\class_Chrome (2).ahk {
 
 Line  	|	Function
 0008	|	CliEscape(Param)
@@ -28011,7 +28512,7 @@ Line  	|	Function
 0338	|	Disconnect()
 
 }
-[1906] classes\class_Chrome (3).ahk {
+[1970] classes\class_Chrome (3).ahk {
 
 Line  	|	Function
 0012	|	CliEscape(Param)
@@ -28029,7 +28530,7 @@ Line  	|	Function
 0650	|	Jxon_False()
 
 }
-[1907] classes\class_Chrome.ahk {
+[1971] classes\class_Chrome.ahk {
 
 Line  	|	Function
 0010	|	CliEscape(Param)
@@ -28046,7 +28547,7 @@ Line  	|	Function
 0472	|	Jxon_False()
 
 }
-[1908] classes\class_CIniFile.ahk {
+[1972] classes\class_CIniFile.ahk {
 
 Line  	|	Function
 0008	|	CIniFile_New(fileName)
@@ -28075,7 +28576,7 @@ Line  	|	Function
 0685	|	if(Section = "")
 
 }
-[1909] classes\class_CInputDetector.ahk {
+[1973] classes\class_CInputDetector.ahk {
 
 Line  	|	Function
 0018	|	EnableHooks()
@@ -28090,7 +28591,7 @@ Line  	|	Function
 0236	|	_UnhookWindowsHookEx(idHook)
 
 }
-[1910] classes\class_CircleProgressClass.ahk {
+[1974] classes\class_CircleProgressClass.ahk {
 
 Line  	|	Function
 0004	|	__New(Options="")
@@ -28099,7 +28600,7 @@ Line  	|	Function
 0055	|	__Delete()
 
 }
-[1911] classes\class_Classifier.ahk {
+[1975] classes\class_Classifier.ahk {
 
 Line  	|	Function
 0005	|	__New()
@@ -28111,14 +28612,14 @@ Line  	|	Function
 0112	|	Probability(Feature,Category)
 
 }
-[1912] classes\class_Clip2Object.ahk {
+[1976] classes\class_Clip2Object.ahk {
 
 Line  	|	Function
 0002	|	__Set(key,ByRef raw)
 0008	|	Restore(key,ByRef raw)
 
 }
-[1913] classes\class_ClipboardHistory.ahk {
+[1977] classes\class_ClipboardHistory.ahk {
 
 Line  	|	Function
 0009	|	InitClipboardHistory(MaxItemCount = 100)
@@ -28147,7 +28648,7 @@ Line  	|	Function
 0415	|	CClipboardHistory_PumHandler_(Msg, Obj)
 
 }
-[1914] classes\class_CLocalizer.ahk {
+[1978] classes\class_CLocalizer.ahk {
 
 Line  	|	Function
 0018	|	__New(dir)
@@ -28159,7 +28660,7 @@ Line  	|	Function
 0181	|	GetLanguageList()
 
 }
-[1915] classes\class_CmdLine.ahk {
+[1979] classes\class_CmdLine.ahk {
 
 Line  	|	Function
 0037	|	__New(programPath)
@@ -28168,7 +28669,7 @@ Line  	|	Function
 0050	|	GetCommand()
 
 }
-[1916] classes\class_Collection.ahk {
+[1980] classes\class_Collection.ahk {
 
 Line  	|	Function
 0011	|	Add(obj)
@@ -28184,7 +28685,7 @@ Line  	|	Function
 0099	|	__New(enum = 0)
 
 }
-[1917] classes\class_ColorPicker.ahk {
+[1981] classes\class_ColorPicker.ahk {
 
 Line  	|	Function
 0023	|	__New(RGBv = "", Av = "", PickerTitle = "Color Picker", bgImage = "")
@@ -28194,7 +28695,12 @@ Line  	|	Function
 0246	|	ValidateOpacity(Opacity, Default)
 
 }
-[1918] classes\class_ComboBoxEx.ahk {
+[1982] classes\class_ColorTip.ahk {
+
+Line  	|	Function
+
+}
+[1983] classes\class_ComboBoxEx.ahk {
 
 Line  	|	Function
 0143	|	Destroy()
@@ -28216,7 +28722,28 @@ Line  	|	Function
 0580	|	Focus()
 
 }
-[1919] classes\class_ComImplementationBase.ahk {
+[1984] classes\class_COMDict.ahk {
+
+Line  	|	Function
+0072	|	setAnew(keyvalArr)
+0084	|	invert()
+0104	|	add(key, value)
+0118	|	item(key)
+0149	|	remove(key)
+0161	|	updateKey(key, newKey)
+0174	|	exists(key)
+0188	|	HasKey(key)
+0199	|	count()
+0210	|	items()
+0221	|	keys()
+0231	|	removeAll()
+0244	|	isCOMDict(subject)
+0258	|	_setFromArr(keyvalArr)
+0283	|	_NewEnum()
+0310	|	__New(cd)
+
+}
+[1985] classes\class_ComImplementationBase.ahk {
 
 Line  	|	Function
 0053	|	Allocate(bytes)
@@ -28234,7 +28761,7 @@ Line  	|	Function
 0208	|	__Delete()
 
 }
-[1920] classes\class_Compass.ahk {
+[1986] classes\class_Compass.ahk {
 
 Line  	|	Function
 0141	|	ToggleSnap()
@@ -28243,12 +28770,12 @@ Line  	|	Function
 0203	|	gcd(a, b)
 
 }
-[1921] classes\class_Console.ahk {
+[1987] classes\class_Console.ahk {
 
 Line  	|	Function
 
 }
-[1922] classes\class_ControlMonitor.ahk {
+[1988] classes\class_ControlMonitor.ahk {
 
 Line  	|	Function
 0022	|	__New()
@@ -28259,7 +28786,7 @@ Line  	|	Function
 0152	|	Check(wParam, hCtrl, msg, hWnd)
 
 }
-[1923] classes\class_Conversions.ahk {
+[1989] classes\class_Conversions.ahk {
 
 Line  	|	Function
 0002	|	HexToInt(HexString)
@@ -28272,7 +28799,33 @@ Line  	|	Function
 0110	|	SplitIntoBytes64(Integer)
 
 }
-[1924]  {
+[1990] classes\class_ConvexHull.ahk {
+
+Line  	|	Function
+0004	|	__New()
+0009	|	CreatePointsList()
+0013	|	CreateGrahamScanner()
+0017	|	CreateJarvisMarcher()
+0021	|	CreateListWrapper(list)
+0028	|	__New(list)
+0036	|	__Get(i)
+0042	|	_NewEnum()
+0047	|	Next(ByRef k, ByRef v)
+0058	|	Count()
+0062	|	MaxIndex()
+0066	|	Length()
+0082	|	CLR_LoadLibrary(AssemblyName, AppDomain=0)
+0116	|	CLR_CompileC#(Code, References="", AppDomain=0, FileName="", CompilerOptions="")
+0121	|	CLR_CompileVB(Code, References="", AppDomain=0, FileName="", CompilerOptions="")
+0126	|	CLR_StartDomain(ByRef AppDomain, BaseDirectory="")
+0134	|	CLR_StopDomain(ByRef AppDomain)
+0141	|	CLR_Start(Version="")
+0165	|	CLR_GetDefaultDomain()
+0176	|	CLR_CompileAssembly(Code, References, ProviderAssembly, ProviderType, AppDomain=0, FileName="", CompilerOptions="")
+0218	|	CLR_GUID(ByRef GUID, sGUID)
+
+}
+[1991]  {
 
 Line  	|	Function
 0025	|	__New(payload)
@@ -28308,12 +28861,12 @@ Line  	|	Function
 0252	|	AddComment(comment)
 
 }
-[1925] classes\class_CP.ahk {
+[1992] classes\class_CP.ahk {
 
 Line  	|	Function
 
 }
-[1926]  {
+[1993]  {
 
 Line  	|	Function
 0027	|	CreateFormData(ByRef retData, ByRef retHeader, objParam)
@@ -28323,7 +28876,7 @@ Line  	|	Function
 0087	|	MimeType(FileName)
 
 }
-[1927] classes\class_CreateFormData.ahk {
+[1994] classes\class_CreateFormData.ahk {
 
 Line  	|	Function
 0005	|	CreateFormData(ByRef retData, ByRef retHeader, objParam)
@@ -28334,7 +28887,7 @@ Line  	|	Function
 0076	|	MimeType(FileName)
 
 }
-[1928] classes\class_CreateFormData2.ahk {
+[1995] classes\class_CreateFormData2.ahk {
 
 Line  	|	Function
 0028	|	CreateFormData(ByRef retData, ByRef retHeader, objParam)
@@ -28347,7 +28900,7 @@ Line  	|	Function
 0153	|	BinArr_ToFile(BinArr, FileName)
 
 }
-[1929] classes\class_Crypt (2).ahk {
+[1996] classes\class_Crypt (2).ahk {
 
 Line  	|	Function
 0056	|	AcquireContext(Container, Provider, dwProvType, dwFlags)
@@ -28361,7 +28914,7 @@ Line  	|	Function
 0155	|	Dispose()
 
 }
-[1930] classes\class_Crypt.ahk {
+[1997] classes\class_Crypt.ahk {
 
 Line  	|	Function
 0119	|	StrDecryptToFile(EncryptedHash,pFileOut,password,CryptAlg = 1, HashAlg = 1)
@@ -28382,12 +28935,12 @@ Line  	|	Function
 0584	|	GetKeySalt(hKey)
 
 }
-[1931] classes\class_CryptConst.ahk {
+[1998] classes\class_CryptConst.ahk {
 
 Line  	|	Function
 
 }
-[1932] classes\class_CryptWin.ahk {
+[1999] classes\class_CryptWin.ahk {
 
 Line  	|	Function
 0439	|	__Get(key)
@@ -28425,7 +28978,7 @@ Line  	|	Function
 1134	|	SafeFileOverwrite(FilePath, NewFileText="", Encoding = "")
 
 }
-[1933] classes\class_CStruct.ahk {
+[2000] classes\class_CStruct.ahk {
 
 Line  	|	Function
 0102	|	__New()
@@ -28469,7 +29022,7 @@ Line  	|	Function
 1345	|	__New()
 
 }
-[1934] classes\class_cTable.ahk {
+[2001] classes\class_cTable.ahk {
 
 Line  	|	Function
 0160	|	Col2Num(ColumnsToSearch)
@@ -28484,7 +29037,7 @@ Line  	|	Function
 0943	|	_cTable_multab(str)
 
 }
-[1935] classes\class_CTLCOLORS.ahk {
+[2002] classes\class_CTLCOLORS.ahk {
 
 Line  	|	Function
 0099	|	__New()
@@ -28501,7 +29054,7 @@ Line  	|	Function
 0350	|	CTLCOLORS_OnMessage(wParam, lParam)
 
 }
-[1936] classes\class_Cursor.ahk {
+[2003] classes\class_Cursor.ahk {
 
 Line  	|	Function
 0097	|	__Delete()
@@ -28527,7 +29080,7 @@ Line  	|	Function
 0425	|	_Timer()
 
 }
-[1937] classes\class_CustomFont.ahk {
+[2004] classes\class_CustomFont.ahk {
 
 Line  	|	Function
 0024	|	__New(FontFile, FontName="", FontSize=30)
@@ -28538,7 +29091,7 @@ Line  	|	Function
 0062	|	ResRead( ByRef Var, Key )
 
 }
-[1938] classes\class_CustomImageList.ahk {
+[2005] classes\class_CustomImageList.ahk {
 
 Line  	|	Function
 0014	|	__Destroy()
@@ -28549,12 +29102,12 @@ Line  	|	Function
 0094	|	ScaleBitmap(pBitmap)
 
 }
-[1939] classes\class_CutWindowSquare.ahk {
+[2006] classes\class_CutWindowSquare.ahk {
 
 Line  	|	Function
 
 }
-[1940] classes\class_DateTools.ahk {
+[2007] classes\class_DateTools.ahk {
 
 Line  	|	Function
 0005	|	SyntaxExamples()
@@ -28585,7 +29138,7 @@ Line  	|	Function
 0941	|	ResolveDateTime(DateTime, ThisProperty="DateTime", ParseProperty="DateTime", Default="")
 
 }
-[1941] classes\class_db.ahk {
+[2008] classes\class_db.ahk {
 
 Line  	|	Function
 0015	|	__delete()
@@ -28599,7 +29152,7 @@ Line  	|	Function
 0140	|	strPutVar(string,byRef var,encoding)
 
 }
-[1942] classes\class_DD.ahk {
+[2009] classes\class_DD.ahk {
 
 Line  	|	Function
 0087	|	btn(param)
@@ -28620,7 +29173,7 @@ Line  	|	Function
 0244	|	_whl(sParam)
 
 }
-[1943] classes\class_debugWindow.ahk {
+[2010] classes\class_debugWindow.ahk {
 
 Line  	|	Function
 0021	|	MsgBox(Text)
@@ -28644,7 +29197,7 @@ Line  	|	Function
 0313	|	DebugWindow_GuiEscape()
 
 }
-[1944] classes\class_Dictionary.ahk {
+[2011] classes\class_Dictionary.ahk {
 
 Line  	|	Function
 0055	|	__Delete()
@@ -28658,7 +29211,7 @@ Line  	|	Function
 0207	|	Clone()
 
 }
-[1945] classes\class_DigestAuth.ahk {
+[2012] classes\class_DigestAuth.ahk {
 
 Line  	|	Function
 0004	|	Build(username, password, method, uri, ByRef WWWAuthenticate)
@@ -28667,7 +29220,7 @@ Line  	|	Function
 0049	|	create_cnonce()
 
 }
-[1946] classes\class_DllCallCheck.ahk {
+[2013] classes\class_DllCallCheck.ahk {
 
 Line  	|	Function
 0079	|	_DllCall_Test()
@@ -28679,7 +29232,7 @@ Line  	|	Function
 0304	|	MAKELANGID(p, s)
 
 }
-[1947] classes\class_Dock.ahk {
+[2014] classes\class_Dock.ahk {
 
 Line  	|	Function
 0092	|	Unhook()
@@ -28697,7 +29250,7 @@ Line  	|	Function
 0331	|	_DockHookProcAdr(hWinEventHook, event, hwnd, idObject, idChild, dwEventThread, dwmsEventTime)
 
 }
-[1948] classes\class_DoublyLinkedList.ahk {
+[2015] classes\class_DoublyLinkedList.ahk {
 
 Line  	|	Function
 0014	|	__New(data)
@@ -28723,7 +29276,7 @@ Line  	|	Function
 0365	|	isEmpty()
 
 }
-[1949] classes\class_DragDrop.ahk {
+[2016] classes\class_DragDrop.ahk {
 
 Line  	|	Function
 0045	|	__New(sCallback, hDropWnd)
@@ -28736,19 +29289,19 @@ Line  	|	Function
 0262	|	DD_CallNextHookEx(nCode, wParam, lParam)
 
 }
-[1950] classes\class_DriveMap.ahk {
+[2017] classes\class_DriveMap.ahk {
 
 Line  	|	Function
 0126	|	Get(Drive)
 
 }
-[1951] classes\class_DSVParser.ahk {
+[2018] classes\class_DSVParser.ahk {
 
 Line  	|	Function
 0239	|	FormatCell(InputString)
 
 }
-[1952] classes\class_dual.ahk {
+[2019] classes\class_dual.ahk {
 
 Line  	|	Function
 0017	|	__New(settings=false)
@@ -28784,12 +29337,12 @@ Line  	|	Function
 0424	|	contains(array, searchItem)
 
 }
-[1953] classes\class_dual_defaults.ahk {
+[2020] classes\class_dual_defaults.ahk {
 
 Line  	|	Function
 
 }
-[1954] classes\class_DWM.ahk {
+[2021] classes\class_DWM.ahk {
 
 Line  	|	Function
 0003	|	__new()
@@ -28820,7 +29373,7 @@ Line  	|	Function
 0093	|	DwmGetTransportAttributes(ByRef pfIsRemoting,ByRef pfIsConnected,ByRef pDwGeneration)
 
 }
-[1955] classes\class_EasyCSV.ahk {
+[2022] classes\class_EasyCSV.ahk {
 
 Line  	|	Function
 0001	|	class_EasyCSV(sFile="", sLoadFromStr="", bHasHeader=false)
@@ -28849,7 +29402,7 @@ Line  	|	Function
 0482	|	EasyCSV_EnumNext(e, ByRef k, ByRef v="")
 
 }
-[1956] classes\class_EasyIni.ahk {
+[2023] classes\class_EasyIni.ahk {
 
 Line  	|	Function
 0001	|	class_EasyIni(sFile="", sLoadFromStr="")
@@ -28877,7 +29430,7 @@ Line  	|	Function
 0533	|	EasyIni_EnumNext(e, ByRef k, ByRef v="")
 
 }
-[1957] classes\class_EasyProgressbar.ahk {
+[2024] classes\class_EasyProgressbar.ahk {
 
 Line  	|	Function
 0161	|	ShowProgress()
@@ -28885,7 +29438,7 @@ Line  	|	Function
 0226	|	__Delete()
 
 }
-[1958] classes\class_EasyXML.ahk {
+[2025] classes\class_EasyXML.ahk {
 
 Line  	|	Function
 0006	|	class_EasyXML(sFile="", sLoadFromStr="")
@@ -28907,7 +29460,7 @@ Line  	|	Function
 0367	|	EasyXML_EnumNext(e, ByRef k, ByRef v="")
 
 }
-[1959] classes\class_eAutocomplete.ahk {
+[2026] classes\class_eAutocomplete.ahk {
 
 Line  	|	Function
 0025	|	__New(_source, _eventName, _callback)
@@ -28916,12 +29469,22 @@ Line  	|	Function
 0481	|	__Set(_k, _v)
 
 }
-[1960] classes\class_EditView.ahk {
+[2027] classes\class_EditView.ahk {
 
 Line  	|	Function
 
 }
-[1961] classes\class_ExpandView.ahk {
+[2028] classes\class_ExceptionsPlus.ahk {
+
+Line  	|	Function
+0071	|	toShortStr()
+0082	|	toStr()
+0092	|	toLongStr()
+0102	|	printDebug()
+0115	|	_extraToStr(extra)
+
+}
+[2029] classes\class_ExpandView.ahk {
 
 Line  	|	Function
 0039	|	Show()
@@ -28934,7 +29497,7 @@ Line  	|	Function
 0149	|	__hasExpanded()
 
 }
-[1962] classes\class_ExplorerInfo.ahk {
+[2030] classes\class_ExplorerInfo.ahk {
 
 Line  	|	Function
 0008	|	__New()
@@ -28945,7 +29508,7 @@ Line  	|	Function
 0071	|	getWindow(hwnd="")
 
 }
-[1963] classes\class_ExplorerTool.ahk {
+[2031] classes\class_ExplorerTool.ahk {
 
 Line  	|	Function
 0053	|	Init()
@@ -28961,7 +29524,7 @@ Line  	|	Function
 0269	|	Match( pItem, pFilter )
 
 }
-[1964] classes\class_ExtObj.ahk {
+[2032] classes\class_ExtObj.ahk {
 
 Line  	|	Function
 0120	|	IsCircle(Objs=0)
@@ -28977,7 +29540,7 @@ Line  	|	Function
 0546	|	Oct(x)
 
 }
-[1965] classes\class_fancy.ahk {
+[2033] classes\class_fancy.ahk {
 
 Line  	|	Function
 0046	|	__New(file, line, function, offset)
@@ -28989,7 +29552,7 @@ Line  	|	Function
 0326	|	_initialize()
 
 }
-[1966] classes\class_FFAAS.ahk {
+[2034] classes\class_FFAAS.ahk {
 
 Line  	|	Function
 0031	|	_OnMessage()
@@ -29024,7 +29587,7 @@ Line  	|	Function
 0589	|	_FFAAS_BitBlt(ddc, dx, dy, dw, dh, sdc, sx, sy, Raster="")
 
 }
-[1967] classes\class_FileMapping.ahk {
+[2035] classes\class_FileMapping.ahk {
 
 Line  	|	Function
 0020	|	Write(szMsg)
@@ -29033,7 +29596,7 @@ Line  	|	Function
 0039	|	__Delete()
 
 }
-[1968] classes\class_FileUtil.ahk {
+[2036] classes\class_FileUtil.ahk {
 
 Line  	|	Function
 0005	|	_init()
@@ -29059,7 +29622,7 @@ Line  	|	Function
 0304	|	_sortArray( Array )
 
 }
-[1969] classes\class_filey.ahk {
+[2037] classes\class_filey.ahk {
 
 Line  	|	Function
 0037	|	delete(whatfile)
@@ -29098,7 +29661,7 @@ Line  	|	Function
 0386	|	time()
 
 }
-[1970] classes\class_FireFox.ahk {
+[2038] classes\class_FireFox.ahk {
 
 Line  	|	Function
 0013	|	__New(aUrl = "current", aMake = 1, pwb = "")
@@ -29145,7 +29708,7 @@ Line  	|	Function
 0409	|	__FF_urlCheck(url)
 
 }
-[1971] classes\class_flexTable.ahk {
+[2039] classes\class_flexTable.ahk {
 
 Line  	|	Function
 0147	|	addRow()
@@ -29161,7 +29724,7 @@ Line  	|	Function
 0258	|	debugToString(debugBuilder)
 
 }
-[1972] classes\class_Flyout.ahk {
+[2040] classes\class_Flyout.ahk {
 
 Line  	|	Function
 0011	|	Show()
@@ -29203,7 +29766,12 @@ Line  	|	Function
 1380	|	Anchor2(ctrl, a, d = false)
 
 }
-[1973] classes\class_FTP.ahk {
+[2041] classes\class_FTimer.ahk {
+
+Line  	|	Function
+
+}
+[2042] classes\class_FTP.ahk {
 
 Line  	|	Function
 0012	|	InternetOpen(Agent)
@@ -29221,7 +29789,7 @@ Line  	|	Function
 0173	|	InternetCloseHandle(HINTERNET)
 
 }
-[1974] classes\class_FTPv2.ahk {
+[2043] classes\class_FTPv2.ahk {
 
 Line  	|	Function
 0019	|	FTPv2( AsyncMode=0 , Proxy = "" , ProxyBypass = "")
@@ -29252,7 +29820,7 @@ Line  	|	Function
 0870	|	FTP_TestFunction()
 
 }
-[1975] classes\class_gdichart.ahk {
+[2044] classes\class_gdichart.ahk {
 
 Line  	|	Function
 0010	|	__New(hwnd)
@@ -29269,7 +29837,7 @@ Line  	|	Function
 0249	|	version()
 
 }
-[1976] classes\class_GDIp.ahk {
+[2045] classes\class_GDIp.ahk {
 
 Line  	|	Function
 0017	|	__New()
@@ -29344,7 +29912,7 @@ Line  	|	Function
 0737	|	getGraphics()
 
 }
-[1977] classes\class_gdipChart.ahk {
+[2046] classes\class_gdipChart.ahk {
 
 Line  	|	Function
 0029	|	__Delete()
@@ -29434,7 +30002,7 @@ Line  	|	Function
 0974	|	fitNr( nr, significants )
 
 }
-[1978] classes\class_GdipSnapshot.ahk {
+[2047] classes\class_GdipSnapshot.ahk {
 
 Line  	|	Function
 0039	|	TakeSnapshot()
@@ -29457,7 +30025,7 @@ Line  	|	Function
 0293	|	HexToRGB(color)
 
 }
-[1979] classes\class_GdipTooltip.ahk {
+[2048] classes\class_GdipTooltip.ahk {
 
 Line  	|	Function
 0074	|	ShowGdiTooltip(fontSize, String, XCoord, YCoord, relativeCoords = true, parentWindowHwnd = "", fixedCoords = false)
@@ -29481,7 +30049,7 @@ Line  	|	Function
 0484	|	GetActiveMonitorInfo(ByRef X, ByRef Y, ByRef Width, ByRef Height)
 
 }
-[1980] classes\class_GDIp_Canvas.ahk {
+[2049] classes\class_GDIp_Canvas.ahk {
 
 Line  	|	Function
 0029	|	RotateX(_degrees)
@@ -29491,7 +30059,7 @@ Line  	|	Function
 0097	|	ShutDown()
 
 }
-[1981] classes\class_GDIP_Geometry.ahk {
+[2050] classes\class_GDIP_Geometry.ahk {
 
 Line  	|	Function
 0002	|	Degrees(_radians)
@@ -29504,7 +30072,7 @@ Line  	|	Function
 0060	|	Foci(_ellipse)
 
 }
-[1982] classes\class_geometry.ahk {
+[2051] classes\class_geometry.ahk {
 
 Line  	|	Function
 0004	|	angle(p1,p2)
@@ -29514,7 +30082,7 @@ Line  	|	Function
 0026	|	range(a1,a2)
 
 }
-[1983] classes\class_Gestures.ahk {
+[2052] classes\class_Gestures.ahk {
 
 Line  	|	Function
 0044	|	end()
@@ -29523,7 +30091,7 @@ Line  	|	Function
 0095	|	matchStroke(g,i,p_i,opt)
 
 }
-[1984] classes\class_getopt.ahk {
+[2053] classes\class_getopt.ahk {
 
 Line  	|	Function
 0083	|	long_has_args(ByRef opt, longopts, opts_flag)
@@ -29533,7 +30101,7 @@ Line  	|	Function
 0183	|	ThrowMsg(Options="",Title="",Text="",Timeout="")
 
 }
-[1985] classes\class_getOpts.ahk {
+[2054] classes\class_getOpts.ahk {
 
 Line  	|	Function
 0470	|	isNum()
@@ -29552,7 +30120,16 @@ Line  	|	Function
 0677	|	init(argsPrm, ignoreEmptyVals)
 
 }
-[1986] classes\class_Github (2).ahk {
+[2055] classes\class_gif.ahk {
+
+Line  	|	Function
+0069	|	GetFrameDelay(pImage)
+0088	|	Play()
+0095	|	Pause()
+0113	|	__Delete()
+
+}
+[2056] classes\class_Github (2).ahk {
 
 Line  	|	Function
 0003	|	__New()
@@ -29571,7 +30148,7 @@ Line  	|	Function
 0109	|	utf8(info)
 
 }
-[1987] classes\class_Github.ahk {
+[2057] classes\class_Github.ahk {
 
 Line  	|	Function
 0172	|	get()
@@ -29593,12 +30170,12 @@ Line  	|	Function
 0514	|	markdown_raw(md)
 
 }
-[1988] classes\class_Github_Gui.ahk {
+[2058] classes\class_Github_Gui.ahk {
 
 Line  	|	Function
 
 }
-[1989] classes\class_Graphics.ahk {
+[2059] classes\class_Graphics.ahk {
 
 Line  	|	Function
 0072	|	Startup()
@@ -29640,7 +30217,7 @@ Line  	|	Function
 1396	|	height()
 
 }
-[1990] classes\class_GroupSort.ahk {
+[2060] classes\class_GroupSort.ahk {
 
 Line  	|	Function
 0022	|	__New(object, options="")
@@ -29648,7 +30225,15 @@ Line  	|	Function
 0116	|	Genitem(item, N)
 
 }
-[1991] classes\class_Gui.ahk {
+[2061] classes\class_GTranslate.ahk {
+
+Line  	|	Function
+0010	|	__New()
+0020	|	Translate(str, lng)
+0037	|	getLangCode(Lang="")
+
+}
+[2062] classes\class_Gui.ahk {
 
 Line  	|	Function
 0003	|	__new(Name)
@@ -29678,13 +30263,13 @@ Line  	|	Function
 0244	|	LV_ImageSetup(Size)
 
 }
-[1992] classes\class_GUIClass.ahk {
+[2063] classes\class_GUIClass.ahk {
 
 Line  	|	Function
 0066	|	if(i.1="ComboBox")
 
 }
-[1993] classes\class_GuiControlTips.ahk {
+[2064] classes\class_GuiControlTips.ahk {
 
 Line  	|	Function
 0054	|	__New(HGUI)
@@ -29697,7 +30282,7 @@ Line  	|	Function
 0198	|	SetDelayTimes(Init = -1, PopUp = -1, ReShow = -1)
 
 }
-[1994] classes\class_Guid.ahk {
+[2065] classes\class_Guid.ahk {
 
 Line  	|	Function
 0006	|	Guid_New()
@@ -29705,7 +30290,7 @@ Line  	|	Function
 0036	|	Guid_ToStr(ByRef VarOrAddress)
 
 }
-[1995] classes\class_GuiDropFiles.ahk {
+[2066] classes\class_GuiDropFiles.ahk {
 
 Line  	|	Function
 0005	|	config(GuiHwnd, BeginLable = "", EndLable = "")
@@ -29716,7 +30301,7 @@ Line  	|	Function
 0099	|	GetClipboardFormatName(nFormat)
 
 }
-[1996] classes\class_GuiPrompt.ahk {
+[2067] classes\class_GuiPrompt.ahk {
 
 Line  	|	Function
 0031	|	__New(optionObject)
@@ -29726,7 +30311,7 @@ Line  	|	Function
 0115	|	OnCancel()
 
 }
-[1997] classes\class_GuiTabEx.ahk {
+[2068] classes\class_GuiTabEx.ahk {
 
 Line  	|	Function
 0017	|	__New(HWND)
@@ -29748,7 +30333,7 @@ Line  	|	Function
 0280	|	SetText(Item, ItemText)
 
 }
-[1998] classes\class_GuiVar.ahk {
+[2069] classes\class_GuiVar.ahk {
 
 Line  	|	Function
 0072	|	__New(Var)
@@ -29756,7 +30341,7 @@ Line  	|	Function
 0087	|	List(ByRef Array)
 
 }
-[1999] classes\class_Gui_NoActivate.ahk {
+[2070] classes\class_Gui_NoActivate.ahk {
 
 Line  	|	Function
 0036	|	WM_NCLBUTTONDOWN(wParam, lParam, msg, hwnd)
@@ -29766,7 +30351,7 @@ Line  	|	Function
 0067	|	Disable_RButton()
 
 }
-[2000] classes\class_hashTable.ahk {
+[2071] classes\class_hashTable.ahk {
 
 Line  	|	Function
 0005	|	hasKey(byref k)
@@ -29812,7 +30397,7 @@ Line  	|	Function
 0627	|	__new(r)
 
 }
-[2001] classes\class_HashTable_small.ahk {
+[2072] classes\class_HashTable_small.ahk {
 
 Line  	|	Function
 0043	|	_GetHash(Key)
@@ -29826,7 +30411,7 @@ Line  	|	Function
 0259	|	Clone()
 
 }
-[2002] classes\class_hashTable_v1.ahk {
+[2073] classes\class_hashTable_v1.ahk {
 
 Line  	|	Function
 0003	|	hasKey(byref k)
@@ -29872,7 +30457,7 @@ Line  	|	Function
 0643	|	__new(r)
 
 }
-[2003] classes\class_HBVector.ahk {
+[2074] classes\class_HBVector.ahk {
 
 Line  	|	Function
 0015	|	Add(Other_HB_Vector)
@@ -29886,7 +30471,7 @@ Line  	|	Function
 0098	|	Norm()
 
 }
-[2004] classes\class_Highlight.ahk {
+[2075] classes\class_Highlight.ahk {
 
 Line  	|	Function
 0042	|	Copy()
@@ -29895,14 +30480,14 @@ Line  	|	Function
 0282	|	ReNormalize(abstract)
 
 }
-[2005] classes\class_HL7.ahk {
+[2076] classes\class_HL7.ahk {
 
 Line  	|	Function
 0086	|	parse(p_HL7_Text)
 0305	|	Clean_HL7(p_HL7_Text, p_Array_Of_Delimiter_Needles, p_Escaped_Escape_Character)
 
 }
-[2006] classes\class_HotClass.ahk {
+[2077] classes\class_HotClass.ahk {
 
 Line  	|	Function
 0067	|	EnableHotkeys()
@@ -29920,12 +30505,12 @@ Line  	|	Function
 0506	|	_RenderNamedHotkeys(hk)
 
 }
-[2007] classes\class_HotCorners.ahk {
+[2078] classes\class_HotCorners.ahk {
 
 Line  	|	Function
 
 }
-[2008] classes\class_Hotkey (2).ahk {
+[2079] classes\class_Hotkey (2).ahk {
 
 Line  	|	Function
 0063	|	Delete()
@@ -29940,7 +30525,7 @@ Line  	|	Function
 0138	|	CallAll(Method)
 
 }
-[2009] classes\class_Hotkey.ahk {
+[2080] classes\class_Hotkey.ahk {
 
 Line  	|	Function
 0088	|	delete()
@@ -29949,7 +30534,7 @@ Line  	|	Function
 0186	|	_apply(_func)
 
 }
-[2010] classes\class_Hotstrings.ahk {
+[2081] classes\class_Hotstrings.ahk {
 
 Line  	|	Function
 0027	|	__New()
@@ -29958,7 +30543,7 @@ Line  	|	Function
 0101	|	Register(RegEx, Action, AutoBS=1)
 
 }
-[2011] classes\class_HotVoice.ahk {
+[2082] classes\class_HotVoice.ahk {
 
 Line  	|	Function
 0004	|	GetChoices(name)
@@ -29984,7 +30569,7 @@ Line  	|	Function
 0253	|	CLR_GUID(ByRef GUID, sGUID)
 
 }
-[2012] classes\class_iAutoComplete.ahk {
+[2083] classes\class_iAutoComplete.ahk {
 
 Line  	|	Function
 0034	|	IAutoComplete_SubclassProc(HWND, Msg, wParam, lParam, ID, Data)
@@ -30003,7 +30588,7 @@ Line  	|	Function
 0270	|	IEnumString_Clone(IES, ObjPtr)
 
 }
-[2013] classes\class_ICLRRuntimeHost.ahk {
+[2084] classes\class_ICLRRuntimeHost.ahk {
 
 Line  	|	Function
 0043	|	__Delete()
@@ -30017,7 +30602,7 @@ Line  	|	Function
 0096	|	ExecuteInDefaultAppDomain(AssemblyPath, TypeName, MethodName, Argument, ByRef ReturnValue)
 
 }
-[2014] classes\class_ICorRuntimeHost.ahk {
+[2085] classes\class_ICorRuntimeHost.ahk {
 
 Line  	|	Function
 0044	|	__Delete()
@@ -30025,7 +30610,7 @@ Line  	|	Function
 0058	|	Stop()
 
 }
-[2015] classes\class_IDesktopWallpaper.ahk {
+[2086] classes\class_IDesktopWallpaper.ahk {
 
 Line  	|	Function
 0014	|	__New()
@@ -30048,7 +30633,7 @@ Line  	|	Function
 0232	|	Enable(Enable)
 
 }
-[2016] classes\class_IDropTarget.ahk {
+[2087] classes\class_IDropTarget.ahk {
 
 Line  	|	Function
 0110	|	RegisterDragDrop()
@@ -30060,7 +30645,7 @@ Line  	|	Function
 0238	|	DragLeave()
 
 }
-[2017] classes\class_IDropTarget_AHKV2.ahk {
+[2088] classes\class_IDropTarget_AHKV2.ahk {
 
 Line  	|	Function
 0039	|	DragEnter(p)
@@ -30071,7 +30656,7 @@ Line  	|	Function
 0116	|	__delete()
 
 }
-[2018] classes\class_IEObj.ahk {
+[2089] classes\class_IEObj.ahk {
 
 Line  	|	Function
 0004	|	__new()
@@ -30082,7 +30667,7 @@ Line  	|	Function
 0092	|	err(desc)
 
 }
-[2019] classes\class_iexplorerClass.ahk {
+[2090] classes\class_iexplorerClass.ahk {
 
 Line  	|	Function
 0003	|	__new(iExplorer)
@@ -30094,7 +30679,7 @@ Line  	|	Function
 0058	|	getElementsByClassName(name)
 
 }
-[2020] classes\Class_ImageButton.ahk {
+[2091] classes\class_ImageButton.ahk {
 
 Line  	|	Function
 0101	|	InitClass()
@@ -30112,7 +30697,7 @@ Line  	|	Function
 0532	|	DisableFadeEffect()
 
 }
-[2021] classes\class_ImageConverter.ahk {
+[2092] classes\class_ImageConverter.ahk {
 
 Line  	|	Function
 0008	|	__New(Action)
@@ -30141,12 +30726,12 @@ Line  	|	Function
 0399	|	if(ImageConverter.Picture.Picture = from)
 
 }
-[2022] classes\class_ImageEqual.ahk {
+[2093] classes\class_ImageEqual.ahk {
 
 Line  	|	Function
 
 }
-[2023] classes\class_ImageMagickAPI_Test.ahk {
+[2094] classes\class_ImageMagickAPI_Test.ahk {
 
 Line  	|	Function
 0114	|	__Delete()
@@ -30175,7 +30760,7 @@ Line  	|	Function
 0263	|	WriteImage(pImage_Info, pImage, pException)
 
 }
-[2024] classes\class_ImageProcessing.ahk {
+[2095] classes\class_ImageProcessing.ahk {
 
 Line  	|	Function
 0042	|	Startup()
@@ -30248,7 +30833,7 @@ Line  	|	Function
 2739	|	height()
 
 }
-[2025] classes\class_ImagePut.ahk {
+[2096] classes\class_ImagePut.ahk {
 
 Line  	|	Function
 0020	|	ImagePutBitmap(ByRef image)
@@ -30278,7 +30863,7 @@ Line  	|	Function
 1031	|	put_wallpaper(ByRef pBitmap)
 
 }
-[2026] classes\class_indirectReference.ahk {
+[2097] classes\class_indirectReference.ahk {
 
 Line  	|	Function
 0068	|	DeleteObject()
@@ -30286,7 +30871,7 @@ Line  	|	Function
 0129	|	__New( reference )
 
 }
-[2027] classes\class_Ini.ahk {
+[2098] classes\class_Ini.ahk {
 
 Line  	|	Function
 0004	|	__New(File, Default = "")
@@ -30297,21 +30882,21 @@ Line  	|	Function
 0079	|	Save(File = "")
 
 }
-[2028] classes\class_Input(HotkeyIt).ahk {
+[2099] classes\class_Input(HotkeyIt).ahk {
 
 Line  	|	Function
 0089	|	__New(EndKeys,WatchInput="",Options="MIA",MatchList="")
 0139	|	Input(ByRef Input="",Timer=25,Options="",MatchList="",AlwaysNotify=0)
 
 }
-[2029] classes\class_Input.ahk {
+[2100] classes\class_Input.ahk {
 
 Line  	|	Function
 0107	|	setLastLeftClickPos()
 0150	|	revertKeyState()
 
 }
-[2030] classes\class_InputBlocker.ahk {
+[2101] classes\class_InputBlocker.ahk {
 
 Line  	|	Function
 0023	|	__Delete()
@@ -30325,7 +30910,7 @@ Line  	|	Function
 0096	|	_callNextHookEx(nCode, wParam, lParam, kHook = 0)
 
 }
-[2031] classes\class_InputThread.ahk {
+[2102] classes\class_InputThread.ahk {
 
 Line  	|	Function
 0009	|	__New(ProfileID, CallbackPtr)
@@ -30360,7 +30945,7 @@ Line  	|	Function
 0406	|	IsEmptyAssoc(assoc)
 
 }
-[2032] classes\class_InsertBinToPNG.ahk {
+[2103] classes\class_InsertBinToPNG.ahk {
 
 Line  	|	Function
 0007	|	init()
@@ -30383,7 +30968,7 @@ Line  	|	Function
 0334	|	strGetVar(ByRef var)
 
 }
-[2033] classes\class_IntShortening.ahk {
+[2104] classes\class_IntShortening.ahk {
 
 Line  	|	Function
 0072	|	stdFloor(int)
@@ -30391,7 +30976,21 @@ Line  	|	Function
 0146	|	__Get(vKey)
 
 }
-[2034] classes\class_IPC.ahk {
+[2105] classes\class_iOSVSliderProvider.ahk {
+
+Line  	|	Function
+0016	|	initialize()
+0042	|	volUp(individually, repeated, maxDiffRepeat)
+0052	|	volDown(individually, repeated, maxDiffRepeat)
+0062	|	_chooseRepeated(individually, repeated, maxTime)
+0069	|	volMute()
+0120	|	_alert(message)
+0125	|	_chooseVariant(oldVol)
+0136	|	_getVariant()
+0151	|	_getWinAttributes(title)
+
+}
+[2106] classes\class_IPC.ahk {
 
 Line  	|	Function
 0017	|	__Delete()
@@ -30402,7 +31001,7 @@ Line  	|	Function
 0123	|	monitor()
 
 }
-[2035] classes\class_IPHelper.ahk {
+[2107] classes\class_IPHelper.ahk {
 
 Line  	|	Function
 0030	|	ResolveHostname(hostname)
@@ -30419,7 +31018,12 @@ Line  	|	Function
 0163	|	IcmpCloseHandle(hIcmpFile)
 
 }
-[2036] classes\class_ItemTree.ahk {
+[2108]  {
+
+Line  	|	Function
+
+}
+[2109] classes\class_ItemTree.ahk {
 
 Line  	|	Function
 0036	|	if(noChildren == true)
@@ -30431,7 +31035,7 @@ Line  	|	Function
 0168	|	if(currentNode.children == "No Children")
 
 }
-[2037] classes\class_IUIAnimationManager.ahk {
+[2110] classes\class_IUIAnimationManager.ahk {
 
 Line  	|	Function
 0006	|	__new()
@@ -30525,7 +31129,7 @@ Line  	|	Function
 0930	|	WAM_hr(a,ByRef b)
 
 }
-[2038] classes\class_IUIAutomationEventHandler.ahk {
+[2111] classes\class_IUIAutomationEventHandler.ahk {
 
 Line  	|	Function
 0015	|	__New(p="", flag=1)
@@ -30534,7 +31138,7 @@ Line  	|	Function
 0035	|	HandleAutomationEvent(sender, eventId)
 
 }
-[2039] classes\class_IUIAutomationEventHandler_extended.ahk {
+[2112] classes\class_IUIAutomationEventHandler_extended.ahk {
 
 Line  	|	Function
 0048	|	Allocate(bytes)
@@ -30557,17 +31161,17 @@ Line  	|	Function
 0299	|	UIA_Exit()
 
 }
-[2040] classes\class_Joystick.ahk {
+[2113] classes\class_Joystick.ahk {
 
 Line  	|	Function
 
 }
-[2041] classes\class_JSON.ahk {
+[2114] classes\class_JSON.ahk {
 
 Line  	|	Function
 
 }
-[2042] classes\class_jsonAttachV2.ahk {
+[2115] classes\class_jsonAttachV2.ahk {
 
 Line  	|	Function
 0059	|	auto(input)
@@ -30589,13 +31193,13 @@ Line  	|	Function
 0516	|	cleanUp(_cPid)
 
 }
-[2043] classes\class_JSONData.ahk {
+[2116] classes\class_JSONData.ahk {
 
 Line  	|	Function
 0003	|	Init()
 
 }
-[2044] classes\class_JSONFile.ahk {
+[2117] classes\class_JSONFile.ahk {
 
 Line  	|	Function
 0028	|	__New(File)
@@ -30604,17 +31208,17 @@ Line  	|	Function
 0102	|	__Get(Key)
 
 }
-[2045]  {
+[2118]  {
 
 Line  	|	Function
 
 }
-[2046]  {
+[2119]  {
 
 Line  	|	Function
 
 }
-[2047] classes\class_JSON_Diff.ahk {
+[2120] classes\class_JSON_Diff.ahk {
 
 Line  	|	Function
 0114	|	_ObjToString(obj)
@@ -30623,13 +31227,13 @@ Line  	|	Function
 0168	|	_CreateObject(jsObj)
 
 }
-[2048] classes\class_Json_Parse.ahk {
+[2121] classes\class_Json_Parse.ahk {
 
 Line  	|	Function
 0027	|	_Json_Parse(sJson)
 
 }
-[2049] classes\class_JsRT.ahk {
+[2122] classes\class_JsRT.ahk {
 
 Line  	|	Function
 0010	|	__New()
@@ -30645,7 +31249,7 @@ Line  	|	Function
 0105	|	Eval(code)
 
 }
-[2050] classes\class_JSWrapper.ahk {
+[2123] classes\class_JSWrapper.ahk {
 
 Line  	|	Function
 0015	|	__New(obj)
@@ -30654,7 +31258,7 @@ Line  	|	Function
 0034	|	__Get(key)
 
 }
-[2051] classes\class_kbhook.ahk {
+[2124] classes\class_kbhook.ahk {
 
 Line  	|	Function
 0057	|	start()
@@ -30674,7 +31278,7 @@ Line  	|	Function
 0256	|	returnInt(n)
 
 }
-[2052] classes\class_KeyValStore.ahk {
+[2125] classes\class_KeyValStore.ahk {
 
 Line  	|	Function
 0042	|	Call(self, key, value)
@@ -30687,7 +31291,7 @@ Line  	|	Function
 0203	|	TypeOf(value)
 
 }
-[2053] classes\class_LastError.ahk {
+[2126] classes\class_LastError.ahk {
 
 Line  	|	Function
 0037	|	_FormattedCompleteInfo(id)
@@ -30695,12 +31299,12 @@ Line  	|	Function
 0057	|	_LoadErrorTable()
 
 }
-[2054] classes\class_LayeredWindow.ahk {
+[2127] classes\class_LayeredWindow.ahk {
 
 Line  	|	Function
 
 }
-[2055] classes\class_Layout.ahk {
+[2128] classes\class_Layout.ahk {
 
 Line  	|	Function
 0016	|	Get_Layouts_List()
@@ -30711,7 +31315,7 @@ Line  	|	Function
 0167	|	Get_Index_By_Name(Full_Name)
 
 }
-[2056] classes\class_LeapMenu.ahk {
+[2129] classes\class_LeapMenu.ahk {
 
 Line  	|	Function
 0005	|	__New(ByRef rFlyoutMenuHandler_c, ByRef rLeap_c)
@@ -30726,7 +31330,7 @@ Line  	|	Function
 0244	|	TimeSinceLastCall(id=1, reset=0)
 
 }
-[2057] classes\class_lexer.ahk {
+[2130] classes\class_lexer.ahk {
 
 Line  	|	Function
 0189	|	generateEnums()
@@ -30748,12 +31352,38 @@ Line  	|	Function
 0346	|	cacheMoreTokens(failOnFailure = 1, holdTokens = 0)
 
 }
-[2058] classes\class_Linear.ahk {
+[2131] classes\class_LibCurl.ahk {
+
+Line  	|	Function
+0059	|	Deinitialize()
+0108	|	GetVersion()
+0115	|	GetVersionInfo()
+0237	|	_Free(ptr)
+0310	|	_WriteCallback(size, sizeBytes, userdata)
+0335	|	_HeaderCallback(size, sizeBytes, userdata)
+0356	|	_ReadCallback(size, sizeBytes, userdata)
+0405	|	_DebugCallback(infoType, dataPtr, size, userdata)
+0445	|	__New()
+0462	|	__Delete()
+0468	|	_FreeUsedLists()
+0477	|	Reset()
+0538	|	GetInfo(infoId)
+0580	|	WriteToFile(filename)
+0588	|	WriteToNone()
+0593	|	HeaderToFile(filename)
+0601	|	HeaderToNone()
+0606	|	ReadFromFile(filename)
+0610	|	ReadFromMem(dataPtr, dataSize)
+0614	|	ReadFromNone()
+0620	|	Perform()
+
+}
+[2132] classes\class_Linear.ahk {
 
 Line  	|	Function
 
 }
-[2059] classes\class_LineReader.ahk {
+[2133] classes\class_LineReader.ahk {
 
 Line  	|	Function
 0084	|	__New(buffer)
@@ -30769,7 +31399,7 @@ Line  	|	Function
 0252	|	__Delete()
 
 }
-[2060] classes\class_LinkedListAndHashTable.ahk {
+[2134] classes\class_LinkedListAndHashTable.ahk {
 
 Line  	|	Function
 0021	|	__New(data)
@@ -30826,7 +31456,7 @@ Line  	|	Function
 0415	|	if(item)
 
 }
-[2061] classes\class_LLMouse.ahk {
+[2135] classes\class_LLMouse.ahk {
 
 Line  	|	Function
 0030	|	accurateSleep(t,res)
@@ -30834,12 +31464,12 @@ Line  	|	Function
 0056	|	getQPF()
 
 }
-[2062] classes\class_LoaderBar.ahk {
+[2136] classes\class_LoaderBar.ahk {
 
 Line  	|	Function
 
 }
-[2063] classes\class_LoadPictureType.ahk {
+[2137] classes\class_LoadPictureType.ahk {
 
 Line  	|	Function
 0020	|	getBitmap()
@@ -30848,7 +31478,7 @@ Line  	|	Function
 0045	|	__Delete()
 
 }
-[2064] classes\class_LocalWorker.ahk {
+[2138] classes\class_LocalWorker.ahk {
 
 Line  	|	Function
 0005	|	__New(Job,WorkerCode)
@@ -30858,7 +31488,7 @@ Line  	|	Function
 0174	|	LocalWorkerReceiveData(hWindow,pCopyDataStruct)
 
 }
-[2065] classes\class_log4ahk.ahk {
+[2139] classes\class_log4ahk.ahk {
 
 Line  	|	Function
 0016	|	getLogger(name = "")
@@ -30893,7 +31523,7 @@ Line  	|	Function
 0314	|	Level2Name(level)
 
 }
-[2066] classes\class_Logger.ahk {
+[2140] classes\class_Logger.ahk {
 
 Line  	|	Function
 0067	|	__New()
@@ -30909,7 +31539,7 @@ Line  	|	Function
 0188	|	Logger_getInstance(this)
 
 }
-[2067] classes\class_Log_class.ahk {
+[2141] classes\class_Log_class.ahk {
 
 Line  	|	Function
 0027	|	__New(aLogBaseFilename, aLogDir="", aLogExten="", aMaxSizeMBLogFile="", aMaxNumbOldLogs="")
@@ -30941,7 +31571,7 @@ Line  	|	Function
 0902	|	printStack(maxNumbCalls=2, numbCallsToSkipOver=1 )
 
 }
-[2068] classes\class_longhotkey.ahk {
+[2142] classes\class_longhotkey.ahk {
 
 Line  	|	Function
 0094	|	ThisLongHotkey()
@@ -30963,7 +31593,7 @@ Line  	|	Function
 0435	|	Send(str)
 
 }
-[2069] classes\class_LV_Colors.ahk {
+[2143] classes\class_LV_Colors.ahk {
 
 Line  	|	Function
 0091	|	__Delete()
@@ -30972,7 +31602,7 @@ Line  	|	Function
 0373	|	MapIndexToID(Row)
 
 }
-[2070] classes\class_LV_InCellEdit.ahk {
+[2144] classes\class_LV_InCellEdit.ahk {
 
 Line  	|	Function
 0098	|	GetOsVersion()
@@ -30987,7 +31617,7 @@ Line  	|	Function
 0543	|	LV_InCellEdit_WM_NOTIFY(W, L)
 
 }
-[2071] classes\class_LV_Rows.ahk {
+[2145] classes\class_LV_Rows.ahk {
 
 Line  	|	Function
 0129	|	__Call(Func)
@@ -31016,14 +31646,14 @@ Line  	|	Function
 1228	|	PWSTR(Str, ByRef WSTR)
 
 }
-[2072] classes\class_Lyt.ahk {
+[2146] classes\class_Lyt.ahk {
 
 Line  	|	Function
 0090	|	ChangeGlobal(HKL, INPUTLANGCHANGE)
 0101	|	ChangeLocal(HKL, INPUTLANGCHANGE, hWnd)
 
 }
-[2073] classes\class_Mailslot.ahk {
+[2147] classes\class_Mailslot.ahk {
 
 Line  	|	Function
 0141	|	__Delete()
@@ -31031,7 +31661,7 @@ Line  	|	Function
 0234	|	FWrite(ByRef buf, bytes)
 
 }
-[2074] classes\class_MailslotEx.ahk {
+[2148] classes\class_MailslotEx.ahk {
 
 Line  	|	Function
 0064	|	ReadLine()
@@ -31040,7 +31670,7 @@ Line  	|	Function
 0128	|	RawWrite(ByRef buf, bytes)
 
 }
-[2075] classes\class_ManagedGuis.ahk {
+[2149] classes\class_ManagedGuis.ahk {
 
 Line  	|	Function
 0043	|	__New(ManagedVariableObject="")
@@ -31109,7 +31739,7 @@ Line  	|	Function
 1257	|	GuiDropFiles(GuiHwnd, FileArray, CtrlHwnd, X, Y)
 
 }
-[2076] classes\class_ManagedResources.ahk {
+[2150] classes\class_ManagedResources.ahk {
 
 Line  	|	Function
 0046	|	__New(ResourceFile, Language="English", DefaultLanguage="English")
@@ -31126,7 +31756,7 @@ Line  	|	Function
 0281	|	__Delete()
 
 }
-[2077] classes\class_Matrix.ahk {
+[2151] classes\class_Matrix.ahk {
 
 Line  	|	Function
 0017	|	Det(m)
@@ -31195,19 +31825,19 @@ Line  	|	Function
 0991	|	ToRowEchelonForm(a, b="")
 
 }
-[2078] classes\class_MemBlk (2).ahk {
+[2152] classes\class_MemBlk (2).ahk {
 
 Line  	|	Function
 0223	|	RawRead(ByRef dest, bytes)
 0247	|	RawWrite(ByRef src, bytes)
 
 }
-[2079] classes\class_MemBlk.ahk {
+[2153] classes\class_MemBlk.ahk {
 
 Line  	|	Function
 
 }
-[2080] classes\class_memClass_AHK2.ahk {
+[2154] classes\class_memClass_AHK2.ahk {
 
 Line  	|	Function
 0050	|	__Delete()
@@ -31220,7 +31850,7 @@ Line  	|	Function
 0168	|	_donothing(x)
 
 }
-[2081] classes\class_Memory (2).ahk {
+[2155] classes\class_Memory (2).ahk {
 
 Line  	|	Function
 0317	|	__delete()
@@ -31242,7 +31872,7 @@ Line  	|	Function
 1338	|	sizeOf()
 
 }
-[2082] classes\class_Memory (3).ahk {
+[2156] classes\class_Memory (3).ahk {
 
 Line  	|	Function
 0003	|	__New(program)
@@ -31250,7 +31880,7 @@ Line  	|	Function
 0047	|	_Read(address)
 
 }
-[2083] classes\class_Memory.ahk {
+[2157] classes\class_Memory.ahk {
 
 Line  	|	Function
 0276	|	__delete()
@@ -31275,7 +31905,7 @@ Line  	|	Function
 1390	|	sizeOf()
 
 }
-[2084] classes\class_MemoryBuffer.ahk {
+[2158] classes\class_MemoryBuffer.ahk {
 
 Line  	|	Function
 0023	|	Create(srcPtr, size)
@@ -31292,7 +31922,7 @@ Line  	|	Function
 0152	|	AllocMemory(size)
 
 }
-[2085] classes\class_MemoryFileIO.ahk {
+[2159] classes\class_MemoryFileIO.ahk {
 
 Line  	|	Function
 0287	|	ReadUInt()
@@ -31340,7 +31970,7 @@ Line  	|	Function
 0630	|	_BCopy(Source,Destination,Length)
 
 }
-[2086] classes\class_MemoryLibrary.ahk {
+[2160] classes\class_MemoryLibrary.ahk {
 
 Line  	|	Function
 0275	|	__New(DataPTR)
@@ -31352,7 +31982,7 @@ Line  	|	Function
 0462	|	BuildImportTable()
 
 }
-[2087] classes\class_Memory_AHK2_64bit.ahk {
+[2161] classes\class_Memory_AHK2_64bit.ahk {
 
 Line  	|	Function
 0279	|	__delete()
@@ -31381,7 +32011,7 @@ Line  	|	Function
 1512	|	sizeOf()
 
 }
-[2088] classes\class_Mem_Injection.ahk {
+[2162] classes\class_Mem_Injection.ahk {
 
 Line  	|	Function
 0003	|	__New(Name, ID_)
@@ -31429,7 +32059,7 @@ Line  	|	Function
 0766	|	Get_module_memory_space(hprocess, module)
 
 }
-[2089] classes\class_Menu.ahk {
+[2163] classes\class_Menu.ahk {
 
 Line  	|	Function
 0007	|	__New(kwargs)
@@ -31454,7 +32084,7 @@ Line  	|	Function
 0502	|	Menu(kwargs)
 
 }
-[2090] classes\class_MenuEnumOption.ahk {
+[2164] classes\class_MenuEnumOption.ahk {
 
 Line  	|	Function
 0018	|	__New(name, label)
@@ -31468,7 +32098,7 @@ Line  	|	Function
 0121	|	remove()
 
 }
-[2091]  {
+[2165]  {
 
 Line  	|	Function
 0011	|	Cut()
@@ -31480,7 +32110,7 @@ Line  	|	Function
 0056	|	GetInfoUnderCursor()
 
 }
-[2092] classes\class_MenuToggleOption.ahk {
+[2166] classes\class_MenuToggleOption.ahk {
 
 Line  	|	Function
 0025	|	__New(menuName, itemName, labelName, variableName, addImmediately=true)
@@ -31492,12 +32122,12 @@ Line  	|	Function
 0102	|	setEnabled(enabled)
 
 }
-[2093] classes\class_menu_drop_AHKV2.ahk {
+[2167] classes\class_menu_drop_AHKV2.ahk {
 
 Line  	|	Function
 
 }
-[2094] classes\class_microWindows.ahk {
+[2168] classes\class_microWindows.ahk {
 
 Line  	|	Function
 0040	|	dllLoad()
@@ -31510,7 +32140,7 @@ Line  	|	Function
 0125	|	mouseOver()
 
 }
-[2095] classes\class_midiOut.ahk {
+[2169] classes\class_midiOut.ahk {
 
 Line  	|	Function
 0016	|	__new(devID=-1)
@@ -31540,7 +32170,7 @@ Line  	|	Function
 0190	|	_noteValue(note)
 
 }
-[2096] classes\class_Monitor.ahk {
+[2170] classes\class_Monitor.ahk {
 
 Line  	|	Function
 0021	|	__New()
@@ -31555,7 +32185,7 @@ Line  	|	Function
 0126	|	Monitor_setDimensions()
 
 }
-[2097] classes\class_MonitorManager.ahk {
+[2171] classes\class_MonitorManager.ahk {
 
 Line  	|	Function
 0012	|	__New()
@@ -31564,7 +32194,7 @@ Line  	|	Function
 0066	|	getDpiForMonitor()
 
 }
-[2098] classes\class_MonitorManager_A.ahk {
+[2172] classes\class_MonitorManager_A.ahk {
 
 Line  	|	Function
 0005	|	SaveCurrentResolution()
@@ -31577,7 +32207,7 @@ Line  	|	Function
 0113	|	TabletModeController_GetMode(TabletModeController, ByRef mode)
 
 }
-[2099] classes\class_Mouse.ahk {
+[2173] classes\class_Mouse.ahk {
 
 Line  	|	Function
 0010	|	__New()
@@ -31589,7 +32219,7 @@ Line  	|	Function
 0095	|	Mouse_getMonitorNumber()
 
 }
-[2100] classes\class_MouseDelta.ahk {
+[2174] classes\class_MouseDelta.ahk {
 
 Line  	|	Function
 0016	|	__New(callback)
@@ -31601,7 +32231,7 @@ Line  	|	Function
 0114	|	__new(xVector, yVector, timeStamp)
 
 }
-[2101] classes\class_MouseHook.ahk {
+[2175] classes\class_MouseHook.ahk {
 
 Line  	|	Function
 0026	|	hook()
@@ -31609,7 +32239,7 @@ Line  	|	Function
 0037	|	__new(callbackFunc)
 
 }
-[2102] classes\class_MouseManager.ahk {
+[2176] classes\class_MouseManager.ahk {
 
 Line  	|	Function
 0003	|	SetMouseSpeed(MouseSpeed)
@@ -31618,7 +32248,7 @@ Line  	|	Function
 0029	|	InsertInteger(pInteger, ByRef pDest, pOffset = 0, pSize = 4)
 
 }
-[2103] classes\class_Mousetracker.ahk {
+[2177] classes\class_Mousetracker.ahk {
 
 Line  	|	Function
 0129	|	__New( )
@@ -31627,7 +32257,7 @@ Line  	|	Function
 0252	|	__MT_MOUSELEAVE( wParam, lParam, Msg, hWnd )
 
 }
-[2104] classes\class_MsgBox.ahk {
+[2178] classes\class_MsgBox.ahk {
 
 Line  	|	Function
 0027	|	__New()
@@ -31643,21 +32273,21 @@ Line  	|	Function
 0224	|	centerMsgToWinow($wParam)
 
 }
-[2105] classes\class_MS_SAPI.ahk {
+[2179] classes\class_MS_SAPI.ahk {
 
 Line  	|	Function
 0479	|	SAPIDecodeErrorFromExceptionString(ExceptionString)
 0483	|	if(err == "0x80045001")
 
 }
-[2106] classes\class_MS_XMLDOM.ahk {
+[2180] classes\class_MS_XMLDOM.ahk {
 
 Line  	|	Function
 0062	|	DOMDecodeErrorFromExceptionString(ExceptionString)
 0065	|	if(err == "0xC00CE200")
 
 }
-[2107] classes\class_Multipart.ahk {
+[2181] classes\class_Multipart.ahk {
 
 Line  	|	Function
 0055	|	MimeType(ByRef binData)
@@ -31665,7 +32295,7 @@ Line  	|	Function
 0074	|	RandomBoundary()
 
 }
-[2108] classes\class_MultiTree Data Structure.ahk {
+[2182] classes\class_MultiTree Data Structure.ahk {
 
 Line  	|	Function
 0019	|	__New(data)
@@ -31695,7 +32325,7 @@ Line  	|	Function
 0418	|	getPath(node)
 
 }
-[2109] classes\class_Mustache.ahk {
+[2183] classes\class_Mustache.ahk {
 
 Line  	|	Function
 0047	|	Compile(template)
@@ -31729,7 +32359,7 @@ Line  	|	Function
 0844	|	Flush()
 
 }
-[2110] classes\Class_myConsole.ahk {
+[2184] classes\Class_myConsole.ahk {
 
 Line  	|	Function
 0104	|	changeLine( data, lineNum )
@@ -31741,7 +32371,7 @@ Line  	|	Function
 0145	|	Resize(width,height)
 
 }
-[2111] classes\Class_MySQLAPI.ahk {
+[2185] classes\Class_MySQLAPI.ahk {
 
 Line  	|	Function
 0093	|	__Delete()
@@ -31802,7 +32432,7 @@ Line  	|	Function
 0720	|	Warning_Count()
 
 }
-[2112] classes\class_MyTextAnalysisTool.ahk {
+[2186] classes\class_MyTextAnalysisTool.ahk {
 
 Line  	|	Function
 0011	|	CountCharacters(vText)
@@ -31812,7 +32442,7 @@ Line  	|	Function
 0068	|	CountLines(vText)
 
 }
-[2113] classes\class_NetRequest.ahk {
+[2187] classes\class_NetRequest.ahk {
 
 Line  	|	Function
 0021	|	__New()
@@ -31822,14 +32452,14 @@ Line  	|	Function
 0209	|	searchForMatches(browser_obj, item)
 
 }
-[2114] classes\class_NetworkManagement.ahk {
+[2188] classes\class_NetworkManagement.ahk {
 
 Line  	|	Function
 0225	|	NetWkstaUserGetInfo()
 0251	|	NetApiBufferFree(buffer)
 
 }
-[2115] classes\class_NotifyTitle.ahk {
+[2189] classes\class_NotifyTitle.ahk {
 
 Line  	|	Function
 0045	|	ModMessage(newMsg)
@@ -31844,7 +32474,7 @@ Line  	|	Function
 0406	|	ModTextControl(hwnd, newTxt, fontStyle, fontFamily)
 
 }
-[2116] classes\class_NppSci.ahk {
+[2190] classes\class_NppSci.ahk {
 
 Line  	|	Function
 0014	|	__New()
@@ -31979,7 +32609,7 @@ Line  	|	Function
 0851	|	DeleteRange(pos, deleteLength)
 
 }
-[2117] classes\class_ObjectCheck.ahk {
+[2191] classes\class_ObjectCheck.ahk {
 
 Line  	|	Function
 0052	|	TO_DEPTH(x)
@@ -31989,7 +32619,7 @@ Line  	|	Function
 0287	|	object_test()
 
 }
-[2118] classes\class_OD_Colors.ahk {
+[2192] classes\class_OD_Colors.ahk {
 
 Line  	|	Function
 0056	|	Attach(HWND, Colors)
@@ -31999,7 +32629,7 @@ Line  	|	Function
 0127	|	DrawItem(lParam, Msg, Hwnd)
 
 }
-[2119]  {
+[2193]  {
 
 Line  	|	Function
 0021	|	__New(vX, vY)
@@ -32085,7 +32715,7 @@ Line  	|	Function
 1223	|	RotateZ(theta)
 
 }
-[2120]  {
+[2194]  {
 
 Line  	|	Function
 0018	|	__Init()
@@ -32148,7 +32778,7 @@ Line  	|	Function
 1188	|	RandomSeed(vSeed)
 
 }
-[2121] classes\class_OGDIp.ahk {
+[2195] classes\class_OGDIp.ahk {
 
 Line  	|	Function
 0020	|	CreatePoint(oData, ByRef vPoint)
@@ -32194,12 +32824,12 @@ Line  	|	Function
 0635	|	__Set(vKey, vValue)
 
 }
-[2122] classes\class_OnExitConst.ahk {
+[2196] classes\class_OnExitConst.ahk {
 
 Line  	|	Function
 
 }
-[2123] classes\class_On_WM_Command.ahk {
+[2197] classes\class_On_WM_Command.ahk {
 
 Line  	|	Function
 0056	|	__New()
@@ -32208,7 +32838,7 @@ Line  	|	Function
 0113	|	On_WM_COMMAND_Handler(W, L)
 
 }
-[2124] classes\class_On_WM_Notify.ahk {
+[2198] classes\class_On_WM_Notify.ahk {
 
 Line  	|	Function
 0057	|	__New()
@@ -32217,7 +32847,7 @@ Line  	|	Function
 0114	|	On_WM_NOTIFY_Handler(W, L)
 
 }
-[2125] classes\class_OrderedAssociateArray.ahk {
+[2199] classes\class_OrderedAssociateArray.ahk {
 
 Line  	|	Function
 0012	|	__New()
@@ -32231,7 +32861,7 @@ Line  	|	Function
 0067	|	__New(Data, Order)
 
 }
-[2126] classes\class_Ordered_Associative_Array.ahk {
+[2200] classes\class_Ordered_Associative_Array.ahk {
 
 Line  	|	Function
 0012	|	__New()
@@ -32245,7 +32875,7 @@ Line  	|	Function
 0067	|	__New(Data, Order)
 
 }
-[2127] classes\class_particles.ahk {
+[2201] classes\class_particles.ahk {
 
 Line  	|	Function
 0058	|	__New(FPS=30)
@@ -32257,7 +32887,7 @@ Line  	|	Function
 0280	|	step()
 
 }
-[2128] classes\class_pastebin.ahk {
+[2202] classes\class_pastebin.ahk {
 
 Line  	|	Function
 0012	|	__New(username="", password="")
@@ -32278,7 +32908,7 @@ Line  	|	Function
 0185	|	BrowserRun(site)
 
 }
-[2129] classes\class_PerfomanceCounter.ahk {
+[2203] classes\class_PerfomanceCounter.ahk {
 
 Line  	|	Function
 0008	|	__initialiaze_frequency()
@@ -32288,7 +32918,7 @@ Line  	|	Function
 0064	|	reset()
 
 }
-[2130] classes\Class_Permissions.ahk {
+[2204] classes\Class_Permissions.ahk {
 
 Line  	|	Function
 0097	|	__Get(key)
@@ -32298,7 +32928,7 @@ Line  	|	Function
 0136	|	__Get(key)
 
 }
-[2131] classes\Class_PictureControl.ahk {
+[2205] classes\Class_PictureControl.ahk {
 
 Line  	|	Function
 0012	|	__New(Name, Options, Text, GUINum)
@@ -32308,7 +32938,7 @@ Line  	|	Function
 0158	|	HandleEvent(Event)
 
 }
-[2132] classes\class_PIN.ahk {
+[2206] classes\class_PIN.ahk {
 
 Line  	|	Function
 0020	|	__delete()
@@ -32331,7 +32961,7 @@ Line  	|	Function
 0180	|	strPutVar(string,byRef var,encoding)
 
 }
-[2133] classes\class_PIN_INI.ahk {
+[2207] classes\class_PIN_INI.ahk {
 
 Line  	|	Function
 0014	|	if(iniName)
@@ -32346,7 +32976,7 @@ Line  	|	Function
 0092	|	_decryptTempKey()
 
 }
-[2134] classes\class_PixelState.ahk {
+[2208] classes\class_PixelState.ahk {
 
 Line  	|	Function
 0012	|	BackgroundTasksMain(options=false)
@@ -32373,7 +33003,7 @@ Line  	|	Function
 0801	|	PlayerHP()
 
 }
-[2135] classes\class_Plaster.ahk {
+[2209] classes\class_Plaster.ahk {
 
 Line  	|	Function
 0015	|	__Set(Key, Value)
@@ -32390,7 +33020,7 @@ Line  	|	Function
 0588	|	Repr(Value)
 
 }
-[2136] classes\class_PlasterInternals.ahk {
+[2210] classes\class_PlasterInternals.ahk {
 
 Line  	|	Function
 0012	|	__Set(Key, Value)
@@ -32403,7 +33033,7 @@ Line  	|	Function
 0193	|	FuncCallRepr(Function, Args)
 
 }
-[2137] classes\class_PopUpMenuFix.ahk {
+[2211] classes\class_PopUpMenuFix.ahk {
 
 Line  	|	Function
 0051	|	if(X=-100000 and Y = -100000)
@@ -32414,7 +33044,7 @@ Line  	|	Function
 0117	|	PopUpMenuFix_SendKeys()
 
 }
-[2138] classes\class_PowerPlanManager.ahk {
+[2212] classes\class_PowerPlanManager.ahk {
 
 Line  	|	Function
 0003	|	SetBalancedPlan()
@@ -32422,7 +33052,7 @@ Line  	|	Function
 0021	|	SetPowerSaverPlan()
 
 }
-[2139] classes\class_Printers.ahk {
+[2213] classes\class_Printers.ahk {
 
 Line  	|	Function
 0009	|	AddConnection(printer)
@@ -32435,7 +33065,7 @@ Line  	|	Function
 0134	|	SetDefault(printer)
 
 }
-[2140] classes\class_print_AHK2.ahk {
+[2214] classes\class_print_AHK2.ahk {
 
 Line  	|	Function
 0009	|	print(msg)
@@ -32451,7 +33081,7 @@ Line  	|	Function
 0110	|	__Delete()
 
 }
-[2141] classes\class_ProcessExplorer.ahk {
+[2215] classes\class_ProcessExplorer.ahk {
 
 Line  	|	Function
 0010	|	__New()
@@ -32472,7 +33102,7 @@ Line  	|	Function
 0233	|	__Delete()
 
 }
-[2142] classes\class_ProcessMonitor.ahk {
+[2216] classes\class_ProcessMonitor.ahk {
 
 Line  	|	Function
 0017	|	Init()
@@ -32502,7 +33132,7 @@ Line  	|	Function
 0337	|	if(ControlHasChanged)
 
 }
-[2143] classes\class_progress.ahk {
+[2217] classes\class_progress.ahk {
 
 Line  	|	Function
 0004	|	__New(MainText = "", ProgressBar = "", SubText = "", ProgressBar2 = "", SubText2 = "")
@@ -32520,7 +33150,7 @@ Line  	|	Function
 0114	|	__Delete()
 
 }
-[2144] classes\class_progress_slider.ahk {
+[2218] classes\class_progress_slider.ahk {
 
 Line  	|	Function
 0032	|	Add_pSlider()
@@ -32528,7 +33158,7 @@ Line  	|	Function
 0066	|	SET_pSlider(NEW_pSlider_Value)
 
 }
-[2145] classes\class_Properties.ahk {
+[2219] classes\class_Properties.ahk {
 
 Line  	|	Function
 0015	|	__New(gLabel, W=400, H=23, X=0, Y=0, Gui=1)
@@ -32536,7 +33166,7 @@ Line  	|	Function
 0046	|	EditProperty()
 
 }
-[2146] classes\Class_PureNotify.ahk {
+[2220] classes\Class_PureNotify.ahk {
 
 Line  	|	Function
 0046	|	Text(Head, Body)
@@ -32544,13 +33174,13 @@ Line  	|	Function
 0093	|	Destroy()
 
 }
-[2147] classes\class_PushLog.ahk {
+[2221] classes\class_PushLog.ahk {
 
 Line  	|	Function
 0153	|	__Delete()
 
 }
-[2148] classes\class_queue.ahk {
+[2222] classes\class_queue.ahk {
 
 Line  	|	Function
 0006	|	__new(callback, limit = "", type = "fifo")
@@ -32560,7 +33190,7 @@ Line  	|	Function
 0029	|	Emit()
 
 }
-[2149] classes\class_quicktimer.ahk {
+[2223] classes\class_quicktimer.ahk {
 
 Line  	|	Function
 0013	|	start()
@@ -32574,7 +33204,7 @@ Line  	|	Function
 0061	|	quickFn()
 
 }
-[2150] classes\class_Radial_Menu.ahk {
+[2224] classes\class_Radial_Menu.ahk {
 
 Line  	|	Function
 0044	|	__New()
@@ -32592,7 +33222,7 @@ Line  	|	Function
 0425	|	ExitFunc()
 
 }
-[2151] classes\class_radical.ahk {
+[2225] classes\class_radical.ahk {
 
 Line  	|	Function
 0010	|	__New()
@@ -32612,7 +33242,19 @@ Line  	|	Function
 0249	|	ControlChanged()
 
 }
-[2152] classes\class_rcopy.ahk {
+[2226] classes\class_Range.ahk {
+
+Line  	|	Function
+0056	|	toArray()
+0076	|	_NewEnum()
+0096	|	_pEval(now, max)
+0111	|	_nEval(now, min)
+0133	|	__New(start, ending, step, provider)
+0156	|	_pEval(now, max)
+0159	|	_nEval(now, min)
+
+}
+[2227] classes\class_rcopy.ahk {
 
 Line  	|	Function
 0015	|	set_defaults()
@@ -32632,7 +33274,7 @@ Line  	|	Function
 0334	|	Run(args)
 
 }
-[2153] classes\Class_Rebar.ahk {
+[2228] classes\Class_Rebar.ahk {
 
 Line  	|	Function
 0064	|	DeleteBand(Band)
@@ -32654,7 +33296,7 @@ Line  	|	Function
 0610	|	DefineBarStruct(ByRef BandVar, himl)
 
 }
-[2154] classes\class_RebrandlyApi.ahk {
+[2229] classes\class_RebrandlyApi.ahk {
 
 Line  	|	Function
 0039	|	callDelay()
@@ -32664,7 +33306,7 @@ Line  	|	Function
 0323	|	UrlParams(ParamObj)
 
 }
-[2155] classes\class_ref_StringsNumbersObjects.ahk {
+[2230] classes\class_ref_StringsNumbersObjects.ahk {
 
 Line  	|	Function
 0196	|	isRef(ByRef var)
@@ -32675,7 +33317,7 @@ Line  	|	Function
 0503	|	ref_example()
 
 }
-[2156] classes\class_reg.ahk {
+[2231] classes\class_reg.ahk {
 
 Line  	|	Function
 0019	|	load()
@@ -32686,7 +33328,7 @@ Line  	|	Function
 0083	|	if(errorlevel = "ERROR")
 
 }
-[2157] classes\class_Regex (2).ahk {
+[2232] classes\class_Regex (2).ahk {
 
 Line  	|	Function
 0012	|	__New(N)
@@ -32697,7 +33339,7 @@ Line  	|	Function
 0091	|	GetGroups(N)
 
 }
-[2158] classes\class_Regex.ahk {
+[2233] classes\class_Regex.ahk {
 
 Line  	|	Function
 0012	|	__New(N)
@@ -32708,7 +33350,7 @@ Line  	|	Function
 0091	|	GetGroups(N)
 
 }
-[2159] classes\class_Registry.ahk {
+[2234] classes\class_Registry.ahk {
 
 Line  	|	Function
 0014	|	__New()
@@ -32724,7 +33366,7 @@ Line  	|	Function
 0224	|	_restartAsAdmin()
 
 }
-[2160] classes\class_RemoteBuf.ahk {
+[2235] classes\class_RemoteBuf.ahk {
 
 Line  	|	Function
 0003	|	__New(hwnd=0,size=0)
@@ -32735,7 +33377,7 @@ Line  	|	Function
 0064	|	NumPut(value,offset=0,Type="UInt")
 
 }
-[2161] classes\class_RemoteObj.ahk {
+[2236] classes\class_RemoteObj.ahk {
 
 Line  	|	Function
 0003	|	__New(Obj, Address)
@@ -32746,7 +33388,7 @@ Line  	|	Function
 0053	|	RemoteObjSend(Addr, Obj)
 
 }
-[2162] classes\class_RemoteTreeView.ahk {
+[2237] classes\class_RemoteTreeView.ahk {
 
 Line  	|	Function
 0046	|	__New(TVHnd)
@@ -32776,7 +33418,7 @@ Line  	|	Function
 0703	|	ReadProcessMemory(hProcess, BaseAddress, ByRef Buffer, Size, ByRef NumberOfBytesRead = 0)
 
 }
-[2163] classes\class_RHotkey.ahk {
+[2238] classes\class_RHotkey.ahk {
 
 Line  	|	Function
 0068	|	Delete()
@@ -32791,7 +33433,7 @@ Line  	|	Function
 0162	|	CallAll(Method)
 
 }
-[2164] classes\class_RichCode.ahk {
+[2239] classes\class_RichCode.ahk {
 
 Line  	|	Function
 0046	|	BGRFromRGB(RGB)
@@ -32801,7 +33443,7 @@ Line  	|	Function
 0466	|	SendMsg(Msg, wParam, lParam)
 
 }
-[2165] classes\Class_RichEdit.ahk {
+[2240] classes\Class_RichEdit.ahk {
 
 Line  	|	Function
 0130	|	__Delete()
@@ -32868,7 +33510,7 @@ Line  	|	Function
 1640	|	RE_GetDocObj(HRE)
 
 }
-[2166] classes\Class_RichEditDlgs.ahk {
+[2241] classes\Class_RichEditDlgs.ahk {
 
 Line  	|	Function
 0037	|	ChooseFont(RE)
@@ -32879,7 +33521,7 @@ Line  	|	Function
 0321	|	ReplaceTextProc(L, M, H)
 
 }
-[2167] classes\class_Rotary_Knob.ahk {
+[2242] classes\class_Rotary_Knob.ahk {
 
 Line  	|	Function
 0013	|	__New(hControl,size,angle)
@@ -32888,7 +33530,7 @@ Line  	|	Function
 0039	|	UpdateSize(size)
 
 }
-[2168] classes\class_ScanningBuffer.ahk {
+[2243] classes\class_ScanningBuffer.ahk {
 
 Line  	|	Function
 0002	|	__Get(Key)
@@ -32905,17 +33547,17 @@ Line  	|	Function
 0075	|	SeekStart(Offset)
 
 }
-[2169] classes\class_scintilla (2).ahk {
+[2244] classes\class_scintilla (2).ahk {
 
 Line  	|	Function
 
 }
-[2170] classes\class_scintilla(3).ahk {
+[2245] classes\class_scintilla(3).ahk {
 
 Line  	|	Function
 
 }
-[2171] classes\class_Scintilla.ahk {
+[2246] classes\class_Scintilla.ahk {
 
 Line  	|	Function
 0086	|	__Delete()
@@ -32924,7 +33566,7 @@ Line  	|	Function
 0344	|	__Get(key)
 
 }
-[2172] classes\class_ScintillaG.ahk {
+[2247] classes\class_ScintillaG.ahk {
 
 Line  	|	Function
 0006	|	__New(hWnd,x,y,w,h)
@@ -33512,7 +34154,7 @@ Line  	|	Function
 1844	|	StyleSet(style,set)
 
 }
-[2173] classes\class_SciTEdirector_AHK2.ahk {
+[2248] classes\class_SciTEdirector_AHK2.ahk {
 
 Line  	|	Function
 0009	|	__New(exeSciTE)
@@ -33520,7 +34162,7 @@ Line  	|	Function
 0046	|	strPutVar(string, ByRef var, encoding)
 
 }
-[2174] classes\class_scriptobj.ahk {
+[2249] classes\class_scriptobj.ahk {
 
 Line  	|	Function
 0056	|	getparams()
@@ -33532,7 +34174,7 @@ Line  	|	Function
 0389	|	DL_Progress( pthis, nP=0, nPMax=0, nSC=0, pST=0 )
 
 }
-[2175] classes\Class_ScrollGUI.ahk {
+[2250] classes\Class_ScrollGUI.ahk {
 
 Line  	|	Function
 0128	|	__Delete()
@@ -33551,7 +34193,7 @@ Line  	|	Function
 0473	|	Wheel(WP, LP, Msg, HWND)
 
 }
-[2176] classes\class_selector.ahk {
+[2251] classes\class_selector.ahk {
 
 Line  	|	Function
 0072	|	doSelect(filePath, actionType = "", iconPath = "")
@@ -33593,7 +34235,7 @@ Line  	|	Function
 0708	|	debugToString(debugBuilder)
 
 }
-[2177] classes\class_selectorActions.ahk {
+[2252] classes\class_selectorActions.ahk {
 
 Line  	|	Function
 0025	|	RET(actionRow, subToReturn = "DOACTION")
@@ -33617,7 +34259,7 @@ Line  	|	Function
 0294	|	SEND_SNAPPER_EXCLUDE_ITEMS(actionRow)
 
 }
-[2178] classes\class_selectorRow.ahk {
+[2253] classes\class_selectorRow.ahk {
 
 Line  	|	Function
 0015	|	__New(arr = "", name = "", abbrev = "", action = "", addActionToTitle = false)
@@ -33627,7 +34269,7 @@ Line  	|	Function
 0045	|	debugToString(debugBuilder)
 
 }
-[2179] classes\class_SerialPort.ahk {
+[2254] classes\class_SerialPort.ahk {
 
 Line  	|	Function
 0009	|	__New( _Number, _Baud, _Parity, _Data, _Stop )
@@ -33639,7 +34281,7 @@ Line  	|	Function
 0191	|	_Error( _Message, _Close = false, _Exit = true )
 
 }
-[2180] classes\class_ShellHook.ahk {
+[2255] classes\class_ShellHook.ahk {
 
 Line  	|	Function
 0064	|	__New(hWnd)
@@ -33648,7 +34290,7 @@ Line  	|	Function
 0083	|	ShellProc(hookCode, id)
 
 }
-[2181] classes\class_SideMenu.ahk {
+[2256] classes\class_SideMenu.ahk {
 
 Line  	|	Function
 0034	|	__New()
@@ -33658,7 +34300,7 @@ Line  	|	Function
 0082	|	WM_MOUSEMOVE()
 
 }
-[2182] classes\class_SimpleOSD.ahk {
+[2257] classes\class_SimpleOSD.ahk {
 
 Line  	|	Function
 0001	|	_SimpleOSD()
@@ -33668,7 +34310,7 @@ Line  	|	Function
 0108	|	Dismiss()
 
 }
-[2183] classes\class_SlideWindows.ahk {
+[2258] classes\class_SlideWindows.ahk {
 
 Line  	|	Function
 0030	|	__New(hwnd, Direction)
@@ -33708,7 +34350,7 @@ Line  	|	Function
 0709	|	while(true)
 
 }
-[2184] classes\class_Socket.ahk {
+[2259] classes\class_Socket.ahk {
 
 Line  	|	Function
 0023	|	__Delete()
@@ -33727,7 +34369,7 @@ Line  	|	Function
 0238	|	SetBroadcast(Enable)
 
 }
-[2185]  {
+[2260]  {
 
 Line  	|	Function
 0050	|	CompareAscending(left, right)
@@ -33750,7 +34392,7 @@ Line  	|	Function
 0305	|	GetList(in_str, ByRef list, ByRef delim)
 
 }
-[2186] classes\class_Soundcard.ahk {
+[2261] classes\class_Soundcard.ahk {
 
 Line  	|	Function
 0011	|	initlib()
@@ -33760,7 +34402,7 @@ Line  	|	Function
 0091	|	soundcard(option)
 
 }
-[2187] classes\class_SpellCorrect.ahk {
+[2262] classes\class_SpellCorrect.ahk {
 
 Line  	|	Function
 0043	|	__New()
@@ -33771,7 +34413,7 @@ Line  	|	Function
 0117	|	Correct(Word)
 
 }
-[2188] classes\class_Spinner.ahk {
+[2263] classes\class_Spinner.ahk {
 
 Line  	|	Function
 0066	|	__Delete()
@@ -33781,7 +34423,7 @@ Line  	|	Function
 0110	|	Stop()
 
 }
-[2189] classes\class_Spotify.ahk {
+[2264] classes\class_Spotify.ahk {
 
 Line  	|	Function
 0003	|	__New()
@@ -33844,7 +34486,7 @@ Line  	|	Function
 0635	|	GetPlaylists()
 
 }
-[2190] classes\class_SpreadSheet.ahk {
+[2265] classes\class_SpreadSheet.ahk {
 
 Line  	|	Function
 0047	|	SS_Add(HParent,X,Y,W,H, Style="", Handler="", DllPath="")
@@ -33914,7 +34556,7 @@ Line  	|	Function
 1502	|	SS_strAtAdr(adr)
 
 }
-[2191] classes\Class_sqlite3.ahk {
+[2266] classes\Class_sqlite3.ahk {
 
 Line  	|	Function
 0081	|	__new(Path_SQLDLL, Path_DB)
@@ -33923,7 +34565,7 @@ Line  	|	Function
 0116	|	QueryCallback(ParamFromCaller, Columns, Values, Names)
 
 }
-[2192] classes\Class_SQLiteDB (2).ahk {
+[2267] classes\Class_SQLiteDB (2).ahk {
 
 Line  	|	Function
 0055	|	__New()
@@ -33957,7 +34599,7 @@ Line  	|	Function
 0898	|	StoreBLOB(SQL, BlobArray)
 
 }
-[2193] classes\Class_SQLiteDB.ahk {
+[2268] classes\Class_SQLiteDB.ahk {
 
 Line  	|	Function
 0052	|	__New()
@@ -33990,7 +34632,7 @@ Line  	|	Function
 0837	|	StoreBLOB(SQL, BlobArray)
 
 }
-[2194] classes\class_StdOutStream.ahk {
+[2269] classes\class_StdOutStream.ahk {
 
 Line  	|	Function
 0055	|	Exists()
@@ -33998,13 +34640,13 @@ Line  	|	Function
 0063	|	ReadStdOut()
 
 }
-[2195] classes\class_String.ahk {
+[2270] classes\class_String.ahk {
 
 Line  	|	Function
 0004	|	__New( string )
 
 }
-[2196] classes\class_String2.ahk {
+[2271] classes\class_String2.ahk {
 
 Line  	|	Function
 0105	|	count(needle)
@@ -34014,7 +34656,7 @@ Line  	|	Function
 0306	|	String_Set(byref this, key, value)
 
 }
-[2197] classes\class_StringHelper.ahk {
+[2272] classes\class_StringHelper.ahk {
 
 Line  	|	Function
 0003	|	IsValidName(Name)
@@ -34026,7 +34668,7 @@ Line  	|	Function
 0055	|	WTFAreTheInvalidChars(Text)
 
 }
-[2198] classes\class_StringObject.ahk {
+[2273] classes\class_StringObject.ahk {
 
 Line  	|	Function
 0245	|	Auto(Input,SaveToFileFullPath="")
@@ -34035,7 +34677,7 @@ Line  	|	Function
 0434	|	StrObj(Input,SaveToFileFullPath="")
 
 }
-[2199] classes\class_StringSimilarity.ahk {
+[2274] classes\class_StringSimilarity.ahk {
 
 Line  	|	Function
 0003	|	__New()
@@ -34044,7 +34686,7 @@ Line  	|	Function
 0050	|	simpleBestMatch(para_string,para_array)
 
 }
-[2200] classes\class_Struct.ahk {
+[2275] classes\class_Struct.ahk {
 
 Line  	|	Function
 0090	|	___InitField(_this,N,offset=" ",encoding=0,AHKType=0,isptr=" ",type=0,arrsize=0,memory=0)
@@ -34061,7 +34703,7 @@ Line  	|	Function
 0401	|	___Clone(offset)
 
 }
-[2201] classes\class_Structure.ahk {
+[2276] classes\class_Structure.ahk {
 
 Line  	|	Function
 0013	|	version()
@@ -34089,7 +34731,7 @@ Line  	|	Function
 0226	|	typeLength(type)
 
 }
-[2202] classes\class_Subclass.ahk {
+[2277] classes\class_Subclass.ahk {
 
 Line  	|	Function
 0012	|	__New()
@@ -34099,7 +34741,7 @@ Line  	|	Function
 0046	|	Subclass_Dispatch(Hwnd, Message, wParam, lParam, IdSubclass, RefData)
 
 }
-[2203] classes\class_Subprocess.ahk {
+[2278] classes\class_Subprocess.ahk {
 
 Line  	|	Function
 0055	|	__Delete()
@@ -34114,7 +34756,7 @@ Line  	|	Function
 0204	|	RawWrite(ByRef var_or_address, bytes)
 
 }
-[2204] classes\class_Subtitle.ahk {
+[2279] classes\class_Subtitle.ahk {
 
 Line  	|	Function
 0032	|	__Delete()
@@ -34142,7 +34784,7 @@ Line  	|	Function
 1182	|	height()
 
 }
-[2205] classes\class_SyntaxTree.ahk {
+[2280] classes\class_SyntaxTree.ahk {
 
 Line  	|	Function
 0008	|	__New( fileNameOrXMLText )
@@ -34198,7 +34840,7 @@ Line  	|	Function
 0900	|	indentText( str, amount )
 
 }
-[2206] classes\class_SystemTime.ahk {
+[2281] classes\class_SystemTime.ahk {
 
 Line  	|	Function
 0045	|	FromString(str)
@@ -34209,7 +34851,7 @@ Line  	|	Function
 0090	|	__GetSet(name, value="")
 
 }
-[2207] classes\class_tableList (2).ahk {
+[2282] classes\class_tableList (2).ahk {
 
 Line  	|	Function
 0031	|	__New(lines, chars = "")
@@ -34228,7 +34870,7 @@ Line  	|	Function
 0248	|	applyMods(row)
 
 }
-[2208] classes\class_tableList.ahk {
+[2283] classes\class_tableList.ahk {
 
 Line  	|	Function
 0146	|	__New(fileName, settings = "")
@@ -34259,7 +34901,7 @@ Line  	|	Function
 0489	|	debugToString(debugBuilder)
 
 }
-[2209] classes\class_tableListMod (2).ahk {
+[2284] classes\class_tableListMod (2).ahk {
 
 Line  	|	Function
 0014	|	__New(m, s, l, t, a, o)
@@ -34267,7 +34909,7 @@ Line  	|	Function
 0056	|	toDebugString()
 
 }
-[2210] classes\class_tableListMod.ahk {
+[2285] classes\class_tableListMod.ahk {
 
 Line  	|	Function
 0014	|	__New(b, o, t, l)
@@ -34275,7 +34917,7 @@ Line  	|	Function
 0042	|	debugToString(debugBuilder)
 
 }
-[2211] classes\class_taskbarInterface.ahk {
+[2286] classes\class_taskbarInterface.ahk {
 
 Line  	|	Function
 0033	|	showButton(n)
@@ -34364,7 +35006,7 @@ Line  	|	Function
 1513	|	min(x,y)
 
 }
-[2212] classes\class_taskbarInterface_v2.ahk {
+[2287] classes\class_taskbarInterface_v2.ahk {
 
 Line  	|	Function
 0034	|	showButton(n)
@@ -34452,7 +35094,7 @@ Line  	|	Function
 1524	|	min(x,y)
 
 }
-[2213] classes\class_TaskDialog.ahk {
+[2288] classes\class_TaskDialog.ahk {
 
 Line  	|	Function
 0093	|	SetParent(Parent)
@@ -34483,19 +35125,19 @@ Line  	|	Function
 0681	|	TaskDialogCallback(H, N, W, L, D)
 
 }
-[2214] classes\class_TaskView.ahk {
+[2289] classes\class_TaskView.ahk {
 
 Line  	|	Function
 
 }
-[2215] classes\class_Task_Sheduler.ahk {
+[2290] classes\class_Task_Sheduler.ahk {
 
 Line  	|	Function
 0037	|	Create_Task_From_XML( ByRef Task_Name, ByRef Task_XML )
 0045	|	Delete_Task( ByRef Task_Name )
 
 }
-[2216]  {
+[2291]  {
 
 Line  	|	Function
 0003	|	__New()
@@ -34531,14 +35173,14 @@ Line  	|	Function
 0301	|	__nw_eventProc(wParam, lParam, msg, hwnd)
 
 }
-[2217] classes\class_Tesseract.ahk {
+[2292] classes\class_Tesseract.ahk {
 
 Line  	|	Function
 0034	|	cleanup()
 0178	|	readlines(lines)
 
 }
-[2218] classes\class_tesseract_dll.ahk {
+[2293] classes\class_tesseract_dll.ahk {
 
 Line  	|	Function
 0003	|	__new(perfix, lang, tessdll="", leptdll="")
@@ -34558,7 +35200,7 @@ Line  	|	Function
 0098	|	UTF8ToStr(UTF8)
 
 }
-[2219] classes\class_textCompare.ahk {
+[2294] classes\class_textCompare.ahk {
 
 Line  	|	Function
 0035	|	copy(list)
@@ -34569,7 +35211,7 @@ Line  	|	Function
 0169	|	lcs(a, b)
 
 }
-[2220] classes\class_TextFader.ahk {
+[2295] classes\class_TextFader.ahk {
 
 Line  	|	Function
 0004	|	__New(text_color = 0x000000, background_color = 0xf0f0f0, step = 15)
@@ -34578,19 +35220,19 @@ Line  	|	Function
 0089	|	__Set(aName, aValue)
 
 }
-[2221] classes\class_threadFunc.ahk {
+[2296] classes\class_threadFunc.ahk {
 
 Line  	|	Function
 0041	|	newThread(params, retId)
 
 }
-[2222] classes\class_threadFunc_v1.ahk {
+[2297] classes\class_threadFunc_v1.ahk {
 
 Line  	|	Function
 0063	|	GlobalFree(hMem)
 
 }
-[2223] classes\Class_ThreadInstance.ahk {
+[2298] classes\Class_ThreadInstance.ahk {
 
 Line  	|	Function
 0148	|	__Delete()
@@ -34599,7 +35241,7 @@ Line  	|	Function
 0214	|	GetVar(VarName)
 
 }
-[2224] classes\class_threadMan.ahk {
+[2299] classes\class_threadMan.ahk {
 
 Line  	|	Function
 0011	|	__New(ahkDllPath,isResource=0)
@@ -34623,7 +35265,7 @@ Line  	|	Function
 0178	|	varGet(varName,pointer=0)
 
 }
-[2225] classes\class_threefishCrypt.ahk {
+[2300] classes\class_threefishCrypt.ahk {
 
 Line  	|	Function
 0022	|	threefishSetKey(stateSize, keyData, tweak)
@@ -34635,7 +35277,7 @@ Line  	|	Function
 1722	|	threefishDecryption1024(keyC,data)
 
 }
-[2226] classes\class_Thumbnail.ahk {
+[2301] classes\class_Thumbnail.ahk {
 
 Line  	|	Function
 0060	|	__New(hDestination, hSource)
@@ -34654,7 +35296,7 @@ Line  	|	Function
 0338	|	Unload()
 
 }
-[2227] classes\class_Tiling.ahk {
+[2302] classes\class_Tiling.ahk {
 
 Line  	|	Function
 0011	|	__New(leftBound, topBound, rightBound, bottomBound, taskbarLeft, taskbarRight, taskbarTop, taskbarBottom, BorHor, BorVert, PadHor, PadVert, PortWin)
@@ -34682,7 +35324,7 @@ Line  	|	Function
 0347	|	if(wParam = 1)
 
 }
-[2228] classes\class_timer.ahk {
+[2303] classes\class_timer.ahk {
 
 Line  	|	Function
 0087	|	Start()
@@ -34693,13 +35335,29 @@ Line  	|	Function
 0113	|	_Tick()
 
 }
-[2229] classes\class_Toast.ahk {
+[2304] classes\class_TimerL.ahk {
+
+Line  	|	Function
+0022	|	P()
+0038	|	S()
+0047	|	B()
+0061	|	__Set(_k,_v)
+0064	|	__Delete()
+0123	|	R(_d)
+0152	|	U(_d)
+0162	|	if(_i)
+0180	|	ObjLength(ByRef o)
+0187	|	ObjRemoveAt(ByRef o,ByRef i)
+0194	|	ObjRawSet(ByRef o,ByRef k,ByRef v)
+
+}
+[2305] classes\class_Toast.ahk {
 
 Line  	|	Function
 0044	|	show(byRef param)
 
 }
-[2230] classes\class_tokelex.ahk {
+[2306] classes\class_tokelex.ahk {
 
 Line  	|	Function
 0388	|	__New(lexerName, keepWhiteSpace=0)
@@ -34727,7 +35385,7 @@ Line  	|	Function
 1064	|	test()
 
 }
-[2231] classes\class_Toolbar (2).ahk {
+[2307] classes\class_Toolbar (2).ahk {
 
 Line  	|	Function
 0129	|	EventHandler(NotifyCode, GuiControl, lParam)
@@ -34762,7 +35420,7 @@ Line  	|	Function
 0728	|	GetDisabledImageList()
 
 }
-[2232] classes\Class_Toolbar.ahk {
+[2308] classes\Class_Toolbar.ahk {
 
 Line  	|	Function
 0140	|	AutoSize()
@@ -34792,7 +35450,16 @@ Line  	|	Function
 1260	|	MakeShort(Long, ByRef LoWord, ByRef HiWord)
 
 }
-[2233] classes\Class_TransparentListBox.ahk {
+[2309] classes\class_ToolbarClass.ahk {
+
+Line  	|	Function
+0088	|	__New(Menus)
+0105	|	WM_MOUSEMOVE(wParam, lParam, Msg, Hwnd)
+0113	|	WM_LBUTTONUP(wParam, lParam, Msg, Hwnd)
+0149	|	CreateToolbar()
+
+}
+[2310] classes\Class_TransparentListBox.ahk {
 
 Line  	|	Function
 0085	|	__Delete()
@@ -34801,7 +35468,7 @@ Line  	|	Function
 0375	|	SetRedraw(Mode)
 
 }
-[2234] classes\class_TrayNotifications.ahk {
+[2311] classes\class_TrayNotifications.ahk {
 
 Line  	|	Function
 0003	|	Set()
@@ -34812,7 +35479,7 @@ Line  	|	Function
 0275	|	Get_Control_Coords(guiName, ctrlHandler)
 
 }
-[2235] classes\class_TreeList.ahk {
+[2312] classes\class_TreeList.ahk {
 
 Line  	|	Function
 0084	|	SetColumnText(ColN, NewText)
@@ -34843,7 +35510,7 @@ Line  	|	Function
 0295	|	_TreeListHandler(hWnd, msg, wParam, lParam)
 
 }
-[2236] classes\class_TreeOf.ahk {
+[2313] classes\class_TreeOf.ahk {
 
 Line  	|	Function
 0051	|	__New(dataPrototype)
@@ -34861,7 +35528,7 @@ Line  	|	Function
 0377	|	_rawReturn()
 
 }
-[2237] classes\Class_Trie.ahk {
+[2314] classes\Class_Trie.ahk {
 
 Line  	|	Function
 0013	|	__Get(key)
@@ -34875,7 +35542,7 @@ Line  	|	Function
 0154	|	ObjectToString(obj)
 
 }
-[2238] classes\class_tv.ahk {
+[2315] classes\class_tv.ahk {
 
 Line  	|	Function
 0068	|	selection()
@@ -34919,7 +35586,7 @@ Line  	|	Function
 0410	|	if(setsubfamilies)
 
 }
-[2239] classes\class_UploadToImgur.ahk {
+[2316] classes\class_UploadToImgur.ahk {
 
 Line  	|	Function
 0022	|	UploadToImgur(FileName, ClientID = "fbf77ff49c42c8a")
@@ -34928,7 +35595,59 @@ Line  	|	Function
 0051	|	Http(Method, Url, PostData="", Obj_Headers="")
 
 }
-[2240] classes\class_Viewport.ahk {
+[2317] classes\class_v2GuiMenu_to_V1.ahk {
+
+Line  	|	Function
+0127	|	__New()
+0188	|	Check(MenuItemName)
+0191	|	Delete(MenuItemName)
+0194	|	Disable(MenuItemName)
+0197	|	Enable(MenuItemName)
+0203	|	Rename(MenuItemName, NewName)
+0209	|	SetIcon(MenuItemName, FileName, IconNumber, IconWidth)
+0212	|	Show(X, Y)
+0215	|	ToggleCheck(MenuItemName)
+0218	|	ToggleEnable(MenuItemName)
+0221	|	Uncheck(MenuItemName)
+0233	|	__New(Options, Title, EventObj)
+0257	|	_NewEnum()
+0281	|	Next(ByRef Key, ByRef Value)
+0295	|	Cancel()
+0298	|	Destroy()
+0304	|	Hide()
+0307	|	Maximize()
+0310	|	Minimize()
+0318	|	Opt(Options)
+0321	|	Options(Options)
+0324	|	Restore()
+0327	|	SetFont(Options, FontName)
+0435	|	__New(hWnd, ControlType, Options, Text)
+0597	|	Choose(Value)
+0635	|	Focus()
+0650	|	Opt(Options)
+0653	|	Options(Options)
+0656	|	SetFont(Options, FontName)
+0660	|	SetFormat(DateTime)
+0687	|	DeleteCol(ColumnNumber)
+0692	|	Get(ItemID, Attribute)
+0697	|	GetChild(ParentItemID)
+0710	|	GetNext(Item, Type)
+0720	|	GetParent(ItemID)
+0725	|	GetPrev(ItemID)
+0730	|	GetSelection()
+0735	|	GetText(Item, ColumnNumber)
+0828	|	GuiClose(GuiHwnd)
+0832	|	GuiContextMenu(GuiHwnd, CtrlHwnd, Item, IsRightClick, X, Y)
+0835	|	GuiDropFiles(GuiHwnd, FileArray, CtrlHwnd, X, Y)
+0839	|	GuiEscape(GuiHwnd)
+0846	|	GuiSize(GuiHwnd, MinMax, Width, Height)
+0869	|	GuiCtrlFromHwnd(hCtrl)
+0877	|	MenuCreate()
+0886	|	MenuFromHandle(hMenu)
+0895	|	Gui_ControlHwndGetClassNN(hCtrl)
+
+}
+[2318] classes\class_Viewport.ahk {
 
 Line  	|	Function
 0024	|	__New(hWindow)
@@ -34941,7 +35660,7 @@ Line  	|	Function
 0163	|	CheckStatus(Result,Name,Message)
 
 }
-[2241] classes\class_VirtualDesktopAccessor.ahk {
+[2319] classes\class_VirtualDesktopAccessor.ahk {
 
 Line  	|	Function
 0003	|	__New()
@@ -34960,7 +35679,7 @@ Line  	|	Function
 0082	|	UnPinApp(windowHwnd)
 
 }
-[2242] classes\class_Vis.ahk {
+[2320] classes\class_Vis.ahk {
 
 Line  	|	Function
 0012	|	start()
@@ -34981,7 +35700,7 @@ Line  	|	Function
 0467	|	NameThatColor(hex)
 
 }
-[2243] classes\class_Vis2.ahk {
+[2321] classes\class_Vis2.ahk {
 
 Line  	|	Function
 0035	|	google()
@@ -34992,14 +35711,30 @@ Line  	|	Function
 0183	|	selectImageAdvanced()
 
 }
-[2244] classes\Class_VisualStyle.ahk {
+[2322] classes\Class_VisualStyle.ahk {
 
 Line  	|	Function
 0032	|	__New()
 0051	|	__Delete()
 
 }
-[2245] classes\class_WBClientSite.ahk {
+[2323] classes\class_VSliderGUI.ahk {
+
+Line  	|	Function
+0026	|	update(vol, icon)
+0034	|	if(this.playSound)
+0042	|	show(vol, icon)
+0067	|	hide()
+0079	|	_transmation(target, steps, x)
+0084	|	_testVol()
+0090	|	_tempTimer(timer, period, prio)
+0097	|	_registerGui()
+0113	|	_addControls()
+0142	|	_finaliseGui()
+0151	|	__Delete()
+
+}
+[2324] classes\class_WBClientSite.ahk {
 
 Line  	|	Function
 0003	|	__New(self)
@@ -35011,12 +35746,12 @@ Line  	|	Function
 0120	|	_GUID2String(pGUID)
 
 }
-[2246] classes\class_WBImg.ahk {
+[2325] classes\class_WBImg.ahk {
 
 Line  	|	Function
 
 }
-[2247] classes\class_WebRequest.ahk {
+[2326] classes\class_WebRequest.ahk {
 
 Line  	|	Function
 0051	|	AscToHex(str)
@@ -35047,7 +35782,7 @@ Line  	|	Function
 0271	|	StrPutVar(Str, ByRef Var, Enc = "")
 
 }
-[2248] classes\class_WebSocket.ahk {
+[2327] classes\class_WebSocket.ahk {
 
 Line  	|	Function
 0003	|	__New(WS_URL)
@@ -35056,12 +35791,12 @@ Line  	|	Function
 0056	|	Disconnect()
 
 }
-[2249] classes\class_Win32.ahk {
+[2328] classes\class_Win32.ahk {
 
 Line  	|	Function
 
 }
-[2250] classes\class_WinAPI.ahk {
+[2329] classes\class_WinAPI.ahk {
 
 Line  	|	Function
 0022	|	AllowSetForegroundWindow(dwProcessId)
@@ -35128,7 +35863,7 @@ Line  	|	Function
 0277	|	VkKeyScanEx(ch, dwhkl)
 
 }
-[2251] classes\class_WinClip.ahk {
+[2330] classes\class_WinClip.ahk {
 
 Line  	|	Function
 0003	|	__New()
@@ -35242,7 +35977,7 @@ Line  	|	Function
 1271	|	GetEncoderClsid( format, ByRef CLSID )
 
 }
-[2252] classes\class_WinClipAPI.ahk {
+[2331] classes\class_WinClipAPI.ahk {
 
 Line  	|	Function
 0009	|	Err( msg )
@@ -35283,7 +36018,7 @@ Line  	|	Function
 0233	|	GetEncoderClsid( format, ByRef CLSID )
 
 }
-[2253] classes\class_WindowFader.ahk {
+[2332] classes\class_WindowFader.ahk {
 
 Line  	|	Function
 0003	|	__New(hwnd)
@@ -35294,7 +36029,7 @@ Line  	|	Function
 0045	|	_tick()
 
 }
-[2254] classes\class_WindowsSettings.ahk {
+[2333] classes\class_WindowsSettings.ahk {
 
 Line  	|	Function
 0020	|	GetShowAllNotifications()
@@ -35329,7 +36064,7 @@ Line  	|	Function
 0256	|	SetDisableMinimizeAnim(Disabled)
 
 }
-[2255] classes\class_Window_Ext_Monitor.ahk {
+[2334] classes\class_Window_Ext_Monitor.ahk {
 
 Line  	|	Function
 0020	|	__New()
@@ -35357,7 +36092,7 @@ Line  	|	Function
 0394	|	Window_CenterMouse($WinTitle)
 
 }
-[2256] classes\class_WinEventHook.ahk {
+[2335] classes\class_WinEventHook.ahk {
 
 Line  	|	Function
 0053	|	__New(_hWinEventHook)
@@ -35371,7 +36106,7 @@ Line  	|	Function
 0205	|	_unset(_idProcess, _event)
 
 }
-[2257] classes\Class_WinEvents.ahk {
+[2336] classes\Class_WinEvents.ahk {
 
 Line  	|	Function
 0005	|	AutoInit()
@@ -35380,13 +36115,13 @@ Line  	|	Function
 0033	|	Destroy(wParam, lParam, Msg, hWnd)
 
 }
-[2258] classes\class_WinHttpRequest.ahk {
+[2337] classes\class_WinHttpRequest.ahk {
 
 Line  	|	Function
 0023	|	WinHttpRequest( URL, ByRef In_POST__Out_Data="", ByRef In_Out_HEADERS="", Options="" )
 
 }
-[2259] classes\Class_WinRing0.ahk {
+[2338] classes\Class_WinRing0.ahk {
 
 Line  	|	Function
 0030	|	GetDllVersion()
@@ -35403,12 +36138,12 @@ Line  	|	Function
 0330	|	_Del()
 
 }
-[2260] classes\class_WinStructs.ahk {
+[2339] classes\class_WinStructs.ahk {
 
 Line  	|	Function
 
 }
-[2261] classes\class_wintilesys.ahk {
+[2340] classes\class_wintilesys.ahk {
 
 Line  	|	Function
 0050	|	__New()
@@ -35445,7 +36180,7 @@ Line  	|	Function
 0562	|	Invert(vector)
 
 }
-[2262] classes\class_WMCommand_and_Notify.ahk {
+[2341] classes\class_WMCommand_and_Notify.ahk {
 
 Line  	|	Function
 0021	|	__New()
@@ -35458,7 +36193,7 @@ Line  	|	Function
 0196	|	On_WM_NOTIFY_Handler(W, L)
 
 }
-[2263] classes\class_wmp.ahk {
+[2342] classes\class_wmp.ahk {
 
 Line  	|	Function
 0074	|	__New(file)
@@ -35473,7 +36208,7 @@ Line  	|	Function
 0142	|	__Delete()
 
 }
-[2264] classes\class_WM_Dlg.ahk {
+[2343] classes\class_WM_Dlg.ahk {
 
 Line  	|	Function
 0008	|	__New()
@@ -35554,7 +36289,7 @@ Line  	|	Function
 2314	|	IntroDlg_LeapMsgHandler(sMsg, ByRef rLeapData, ByRef rasGestures, ByRef rsOutput)
 
 }
-[2265] classes\class_WorkerThread.ahk {
+[2344] classes\class_WorkerThread.ahk {
 
 Line  	|	Function
 0041	|	__new(WorkerFunction, CanPause = 0, CanStop = 0, ExitAfterTask = 1)
@@ -35583,14 +36318,14 @@ Line  	|	Function
 0493	|	Send_WM_COPYDATA(ByRef StringToSend, hwnd)
 
 }
-[2266] classes\class_Worker_Network.ahk {
+[2345] classes\class_Worker_Network.ahk {
 
 Line  	|	Function
 0003	|	__New(Job,WorkerCode)
 0008	|	Send(ByRef Data,Length)
 
 }
-[2267] classes\class_XBOX360.ahk {
+[2346] classes\class_XBOX360.ahk {
 
 Line  	|	Function
 0076	|	__New()
@@ -35631,7 +36366,7 @@ Line  	|	Function
 0440	|	PowerOffController(index)
 
 }
-[2268] classes\class_xcall.ahk {
+[2347] classes\class_xcall.ahk {
 
 Line  	|	Function
 0010	|	checkIfParamsNeedsToBeSaved()
@@ -35639,7 +36374,7 @@ Line  	|	Function
 0088	|	callbackRouter( callbackNumber, task )
 
 }
-[2269] classes\class_xHotkey.ahk {
+[2348] classes\class_xHotkey.ahk {
 
 Line  	|	Function
 0077	|	Fire(KeyName)
@@ -35653,7 +36388,7 @@ Line  	|	Function
 0173	|	v1()
 
 }
-[2270] classes\class_Xml.ahk {
+[2349] classes\class_Xml.ahk {
 
 Line  	|	Function
 0167	|	__Delete()
@@ -35668,7 +36403,7 @@ Line  	|	Function
 0481	|	style()
 
 }
-[2271] classes\Class_xmlfile.ahk {
+[2350] classes\Class_xmlfile.ahk {
 
 Line  	|	Function
 0015	|	__Get()
@@ -35686,7 +36421,7 @@ Line  	|	Function
 0152	|	ssn(node,path)
 
 }
-[2272] classes\Class_XmlHelper.ahk {
+[2351] classes\Class_XmlHelper.ahk {
 
 Line  	|	Function
 0036	|	__New()
@@ -35698,7 +36433,7 @@ Line  	|	Function
 0701	|	xpath_load(ByRef doc, src = "")
 
 }
-[2273] classes\class_XNet.ahk {
+[2352] classes\class_XNet.ahk {
 
 Line  	|	Function
 0086	|	__Delete()
@@ -35706,7 +36441,7 @@ Line  	|	Function
 0146	|	__Get( Member )
 
 }
-[2274] classes\class_ZeeGrid.ahk {
+[2353] classes\class_ZeeGrid.ahk {
 
 Line  	|	Function
 0028	|	__Delete()
@@ -35714,7 +36449,7 @@ Line  	|	Function
 0112	|	__Get(key)
 
 }
-[2275] classes\class__ini.ahk {
+[2354] classes\class__ini.ahk {
 
 Line  	|	Function
 0086	|	_Def(kind, value="")
@@ -35723,7 +36458,7 @@ Line  	|	Function
 0158	|	__Delete()
 
 }
-[2276] classes\clsss_Array.ahk {
+[2355] classes\clsss_Array.ahk {
 
 Line  	|	Function
 0019	|	__Get(key)
@@ -35733,20 +36468,20 @@ Line  	|	Function
 0242	|	removeEmpty()
 
 }
-[2277] classes\ComDispTable.ahk {
+[2356] classes\ComDispTable.ahk {
 
 Line  	|	Function
 0008	|	ComDispTable(methods)
 
 }
-[2278] classes\ComVar.ahk {
+[2357] classes\ComVar.ahk {
 
 Line  	|	Function
 0011	|	ComVar()
 0036	|	ComVarDel(cv)
 
 }
-[2279] classes\DataBaseAbstract.ahk {
+[2358] classes\DataBaseAbstract.ahk {
 
 Line  	|	Function
 0020	|	Count()
@@ -35793,7 +36528,7 @@ Line  	|	Function
 0293	|	__Get(param)
 
 }
-[2280] classes\DataBaseADO.ahk {
+[2359] classes\DataBaseADO.ahk {
 
 Line  	|	Function
 0011	|	__New(connectionString)
@@ -35816,7 +36551,7 @@ Line  	|	Function
 0200	|	Insert(record, tableName)
 
 }
-[2281] classes\DataBaseFactory.ahk {
+[2360] classes\DataBaseFactory.ahk {
 
 Line  	|	Function
 0008	|	OpenDataBase(dbType, connectionString)
@@ -35824,7 +36559,7 @@ Line  	|	Function
 0033	|	__New()
 
 }
-[2282] classes\DataBaseMySQL.ahk {
+[2361] classes\DataBaseMySQL.ahk {
 
 Line  	|	Function
 0011	|	__New(connectionData)
@@ -35850,7 +36585,7 @@ Line  	|	Function
 0189	|	_GetTableObj(sql, maxResult = -1)
 
 }
-[2283] classes\DataBaseSQLLite.ahk {
+[2362] classes\DataBaseSQLLite.ahk {
 
 Line  	|	Function
 0005	|	GetVersion()
@@ -35879,19 +36614,19 @@ Line  	|	Function
 0311	|	ReturnCode(RC)
 
 }
-[2284] classes\DBA.ahk {
+[2363] classes\DBA.ahk {
 
 Line  	|	Function
 
 }
-[2285] classes\Delegate.ahk {
+[2364] classes\Delegate.ahk {
 
 Line  	|	Function
 0015	|	if(target == "")
 0037	|	if(i == 1)
 
 }
-[2286] classes\RecordSetADO.ahk {
+[2365] classes\RecordSetADO.ahk {
 
 Line  	|	Function
 0011	|	__New(sql, adoConnection, editable = false)
@@ -35908,7 +36643,7 @@ Line  	|	Function
 0095	|	__Get(propertyName)
 
 }
-[2287] classes\RecordSetMySQL.ahk {
+[2366] classes\RecordSetMySQL.ahk {
 
 Line  	|	Function
 0016	|	__New(db, requestResult)
@@ -35920,7 +36655,7 @@ Line  	|	Function
 0097	|	Close()
 
 }
-[2288] classes\RecordSetSqlLite.ahk {
+[2367] classes\RecordSetSqlLite.ahk {
 
 Line  	|	Function
 0016	|	__New(db, query)
@@ -35933,7 +36668,7 @@ Line  	|	Function
 0146	|	Close()
 
 }
-[2289] classes\SQL_new.ahk {
+[2368] classes\SQL_new.ahk {
 
 Line  	|	Function
 0031	|	__New(databaseType,connectionString)
@@ -35958,7 +36693,7 @@ Line  	|	Function
 0318	|	close()
 
 }
-[2290] lib\Class_PictureButton_v1.ahk {
+[2369] lib\Class_PictureButton_v1.ahk {
 
 Line  	|	Function
 0004	|	__New()
@@ -35971,7 +36706,7 @@ Line  	|	Function
 0079	|	LBUTTONUP(hwnd)
 
 }
-[2291] lib\Class_PictureButton_v2.ahk {
+[2370] lib\Class_PictureButton_v2.ahk {
 
 Line  	|	Function
 0131	|	__New()
@@ -35985,7 +36720,7 @@ Line  	|	Function
 0282	|	LBUTTONUP(hwnd)
 
 }
-[2292] Bridge\class_JavaAccessBridge.ahk {
+[2371] Bridge\class_JavaAccessBridge.ahk {
 
 Line  	|	Function
 0121	|	GetAccessibleContextAt(hwnd, x, y)
@@ -36060,7 +36795,7 @@ Line  	|	Function
 1264	|	GetJavaString(byref Struct, byref BaseOffset, Length)
 
 }
-[2293] Bridge\JavaAccessBridge.ahk {
+[2372] Bridge\JavaAccessBridge.ahk {
 
 Line  	|	Function
 0001	|	GetTextInfo()
@@ -36152,12 +36887,12 @@ Line  	|	Function
 2229	|	setPropertyTableModelChangeFP(fp)
 
 }
-[2294] FrameWork\CCF.ahk {
+[2373] FrameWork\CCF.ahk {
 
 Line  	|	Function
 
 }
-[2295] FrameWork\CCFramework.ahk {
+[2374] FrameWork\CCFramework.ahk {
 
 Line  	|	Function
 0035	|	GUID2String(guid)
@@ -36173,377 +36908,377 @@ Line  	|	Function
 0237	|	HasEnumFlag(var, flag)
 
 }
-[2296] FrameWork\ImageList Header.ahk {
+[2375] FrameWork\ImageList Header.ahk {
 
 Line  	|	Function
 
 }
-[2297] FrameWork\SaveHImage2File.ahk {
+[2376] FrameWork\SaveHImage2File.ahk {
 
 Line  	|	Function
 
 }
-[2298] FrameWork\TaskbarList Header.ahk {
+[2377] FrameWork\TaskbarList Header.ahk {
 
 Line  	|	Function
 
 }
-[2299] FrameWork\Type Information Header.ahk {
+[2378] FrameWork\Type Information Header.ahk {
 
 Line  	|	Function
 
 }
-[2300] FrameWork\UIAutomation Header.ahk {
+[2379] FrameWork\UIAutomation Header.ahk {
 
 Line  	|	Function
 
 }
-[2301] FrameWork\_CCF_Error_Handler_.ahk {
+[2380] FrameWork\_CCF_Error_Handler_.ahk {
 
 Line  	|	Function
 
 }
-[2302] Classes\CALLCONV.ahk {
+[2381] Classes\CALLCONV.ahk {
 
 Line  	|	Function
 
 }
-[2303] Classes\CF.ahk {
+[2382] Classes\CF.ahk {
 
 Line  	|	Function
 
 }
-[2304] Classes\CLR.ahk {
+[2383] Classes\CLR.ahk {
 
 Line  	|	Function
 
 }
-[2305] Classes\CLSCTX.ahk {
+[2384] Classes\CLSCTX.ahk {
 
 Line  	|	Function
 
 }
-[2306] Classes\DESCKIND.ahk {
+[2385] Classes\DESCKIND.ahk {
 
 Line  	|	Function
 
 }
-[2307] Classes\DEVICE_STATE.ahk {
+[2386] Classes\DEVICE_STATE.ahk {
 
 Line  	|	Function
 
 }
-[2308] Classes\DISPATCHF.ahk {
+[2387] Classes\DISPATCHF.ahk {
 
 Line  	|	Function
 
 }
-[2309] Classes\DISPID.ahk {
+[2388] Classes\DISPID.ahk {
 
 Line  	|	Function
 
 }
-[2310] Classes\DVASPECT.ahk {
+[2389] Classes\DVASPECT.ahk {
 
 Line  	|	Function
 
 }
-[2311] Classes\EDataFlow.ahk {
+[2390] Classes\EDataFlow.ahk {
 
 Line  	|	Function
 
 }
-[2312] Classes\ERole.ahk {
+[2391] Classes\ERole.ahk {
 
 Line  	|	Function
 
 }
-[2313] Classes\FILE_ATTRIBUTE.ahk {
+[2392] Classes\FILE_ATTRIBUTE.ahk {
 
 Line  	|	Function
 
 }
-[2314] Classes\FUNCFLAG.ahk {
+[2393] Classes\FUNCFLAG.ahk {
 
 Line  	|	Function
 
 }
-[2315] Classes\FUNCKIND.ahk {
+[2394] Classes\FUNCKIND.ahk {
 
 Line  	|	Function
 
 }
-[2316] Classes\IDC.ahk {
+[2395] Classes\IDC.ahk {
 
 Line  	|	Function
 
 }
-[2317] Classes\IDI.ahk {
+[2396] Classes\IDI.ahk {
 
 Line  	|	Function
 
 }
-[2318] Classes\IDLFLAG.ahk {
+[2397] Classes\IDLFLAG.ahk {
 
 Line  	|	Function
 
 }
-[2319] Classes\ILC.ahk {
+[2398] Classes\ILC.ahk {
 
 Line  	|	Function
 
 }
-[2320] Classes\ILCF.ahk {
+[2399] Classes\ILCF.ahk {
 
 Line  	|	Function
 
 }
-[2321] Classes\ILD.ahk {
+[2400] Classes\ILD.ahk {
 
 Line  	|	Function
 
 }
-[2322] Classes\ILDI.ahk {
+[2401] Classes\ILDI.ahk {
 
 Line  	|	Function
 
 }
-[2323] Classes\ILFIP.ahk {
+[2402] Classes\ILFIP.ahk {
 
 Line  	|	Function
 
 }
-[2324] Classes\ILGOS.ahk {
+[2403] Classes\ILGOS.ahk {
 
 Line  	|	Function
 
 }
-[2325] Classes\ILIF.ahk {
+[2404] Classes\ILIF.ahk {
 
 Line  	|	Function
 
 }
-[2326] Classes\ILR.ahk {
+[2405] Classes\ILR.ahk {
 
 Line  	|	Function
 
 }
-[2327] Classes\ILS.ahk {
+[2406] Classes\ILS.ahk {
 
 Line  	|	Function
 
 }
-[2328] Classes\IMPLTYPEFLAG.ahk {
+[2407] Classes\IMPLTYPEFLAG.ahk {
 
 Line  	|	Function
 
 }
-[2329] Classes\INVOKEKIND.ahk {
+[2408] Classes\INVOKEKIND.ahk {
 
 Line  	|	Function
 
 }
-[2330] Classes\KDC.ahk {
+[2409] Classes\KDC.ahk {
 
 Line  	|	Function
 
 }
-[2331] Classes\KNOWNFOLDERID.ahk {
+[2410] Classes\KNOWNFOLDERID.ahk {
 
 Line  	|	Function
 
 }
-[2332] Classes\LIBFLAGS.ahk {
+[2411] Classes\LIBFLAGS.ahk {
 
 Line  	|	Function
 
 }
-[2333] Classes\LOCKTYPE.ahk {
+[2412] Classes\LOCKTYPE.ahk {
 
 Line  	|	Function
 
 }
-[2334] Classes\MEMBERID.ahk {
+[2413] Classes\MEMBERID.ahk {
 
 Line  	|	Function
 
 }
-[2335] Classes\OBM.ahk {
+[2414] Classes\OBM.ahk {
 
 Line  	|	Function
 
 }
-[2336] Classes\PARAMFLAG.ahk {
+[2415] Classes\PARAMFLAG.ahk {
 
 Line  	|	Function
 
 }
-[2337] Classes\PDOPSTATUS.ahk {
+[2416] Classes\PDOPSTATUS.ahk {
 
 Line  	|	Function
 
 }
-[2338] Classes\PDTIMER.ahk {
+[2417] Classes\PDTIMER.ahk {
 
 Line  	|	Function
 
 }
-[2339] Classes\PICTUREATTRIBUTES.ahk {
+[2418] Classes\PICTUREATTRIBUTES.ahk {
 
 Line  	|	Function
 
 }
-[2340] Classes\PICTYPE.ahk {
+[2419] Classes\PICTYPE.ahk {
 
 Line  	|	Function
 
 }
-[2341] Classes\PMODE.ahk {
+[2420] Classes\PMODE.ahk {
 
 Line  	|	Function
 
 }
-[2342] Classes\PROGDLG.ahk {
+[2421] Classes\PROGDLG.ahk {
 
 Line  	|	Function
 
 }
-[2343] Classes\PSC.ahk {
+[2422] Classes\PSC.ahk {
 
 Line  	|	Function
 
 }
-[2344] Classes\RECO.ahk {
+[2423] Classes\RECO.ahk {
 
 Line  	|	Function
 
 }
-[2345] Classes\REGKIND.ahk {
+[2424] Classes\REGKIND.ahk {
 
 Line  	|	Function
 
 }
-[2346] Classes\REO.ahk {
+[2425] Classes\REO.ahk {
 
 Line  	|	Function
 
 }
-[2347] Classes\SFGAO.ahk {
+[2426] Classes\SFGAO.ahk {
 
 Line  	|	Function
 
 }
-[2348] Classes\SICHINT.ahk {
+[2427] Classes\SICHINT.ahk {
 
 Line  	|	Function
 
 }
-[2349] Classes\SIGDN.ahk {
+[2428] Classes\SIGDN.ahk {
 
 Line  	|	Function
 
 }
-[2350] Classes\SLGP.ahk {
+[2429] Classes\SLGP.ahk {
 
 Line  	|	Function
 
 }
-[2351] Classes\SLR.ahk {
+[2430] Classes\SLR.ahk {
 
 Line  	|	Function
 
 }
-[2352] Classes\SPACTION.ahk {
+[2431] Classes\SPACTION.ahk {
 
 Line  	|	Function
 
 }
-[2353] Classes\STATFLAG.ahk {
+[2432] Classes\STATFLAG.ahk {
 
 Line  	|	Function
 
 }
-[2354] Classes\STGC.ahk {
+[2433] Classes\STGC.ahk {
 
 Line  	|	Function
 
 }
-[2355] Classes\STGM.ahk {
+[2434] Classes\STGM.ahk {
 
 Line  	|	Function
 
 }
-[2356] Classes\STGMOVE.ahk {
+[2435] Classes\STGMOVE.ahk {
 
 Line  	|	Function
 
 }
-[2357] Classes\STGTY.ahk {
+[2436] Classes\STGTY.ahk {
 
 Line  	|	Function
 
 }
-[2358] Classes\STPFLAG.ahk {
+[2437] Classes\STPFLAG.ahk {
 
 Line  	|	Function
 
 }
-[2359] Classes\STREAM_SEEK.ahk {
+[2438] Classes\STREAM_SEEK.ahk {
 
 Line  	|	Function
 
 }
-[2360] Classes\SW.ahk {
+[2439] Classes\SW.ahk {
 
 Line  	|	Function
 
 }
-[2361] Classes\SYSKIND.ahk {
+[2440] Classes\SYSKIND.ahk {
 
 Line  	|	Function
 
 }
-[2362] Classes\TBPFLAG.ahk {
+[2441] Classes\TBPFLAG.ahk {
 
 Line  	|	Function
 
 }
-[2363] Classes\THUMBBUTTONFLAGS.ahk {
+[2442] Classes\THUMBBUTTONFLAGS.ahk {
 
 Line  	|	Function
 
 }
-[2364] Classes\THUMBBUTTONMASK.ahk {
+[2443] Classes\THUMBBUTTONMASK.ahk {
 
 Line  	|	Function
 
 }
-[2365] Classes\TYPEFLAG.ahk {
+[2444] Classes\TYPEFLAG.ahk {
 
 Line  	|	Function
 
 }
-[2366] Classes\TYPEKIND.ahk {
+[2445] Classes\TYPEKIND.ahk {
 
 Line  	|	Function
 
 }
-[2367] Classes\VARENUM.ahk {
+[2446] Classes\VARENUM.ahk {
 
 Line  	|	Function
 
 }
-[2368] Classes\VARFLAG.ahk {
+[2447] Classes\VARFLAG.ahk {
 
 Line  	|	Function
 
 }
-[2369] Classes\VARKIND.ahk {
+[2448] Classes\VARKIND.ahk {
 
 Line  	|	Function
 
 }
-[2370] CustomDestinationList\CustomDestinationList.ahk {
+[2449] CustomDestinationList\CustomDestinationList.ahk {
 
 Line  	|	Function
 0046	|	SetAppID(id)
@@ -36555,14 +37290,14 @@ Line  	|	Function
 0195	|	AbortList()
 
 }
-[2371] Dispatch\Dispatch.ahk {
+[2450] Dispatch\Dispatch.ahk {
 
 Line  	|	Function
 0036	|	FromOBJECT(obj)
 0050	|	GetTypeInfoCount()
 
 }
-[2372] EnumShellItems\EnumShellItems.ahk {
+[2451] EnumShellItems\EnumShellItems.ahk {
 
 Line  	|	Function
 0070	|	Skip(count)
@@ -36570,7 +37305,7 @@ Line  	|	Function
 0094	|	Clone()
 
 }
-[2373] EnumSTATSTG\EnumSTATSTG.ahk {
+[2452] EnumSTATSTG\EnumSTATSTG.ahk {
 
 Line  	|	Function
 0073	|	Skip(count)
@@ -36578,7 +37313,7 @@ Line  	|	Function
 0097	|	Clone()
 
 }
-[2374] ImageList\ImageList.ahk {
+[2453] ImageList\ImageList.ahk {
 
 Line  	|	Function
 0137	|	SetOverlayImage(image, overlay)
@@ -36613,7 +37348,7 @@ Line  	|	Function
 0659	|	Unload()
 
 }
-[2375] ImageList2\ImageList2.ahk {
+[2454] ImageList2\ImageList2.ahk {
 
 Line  	|	Function
 0050	|	Resize(width, height)
@@ -36626,7 +37361,7 @@ Line  	|	Function
 0185	|	Initialize(width, height, flags, initial, max)
 
 }
-[2376] MMDevice\MMDevice.ahk {
+[2455] MMDevice\MMDevice.ahk {
 
 Line  	|	Function
 0072	|	OpenPropertyStore(access)
@@ -36634,14 +37369,14 @@ Line  	|	Function
 0100	|	GetState()
 
 }
-[2377] MMDeviceCollection\MMDeviceCollection.ahk {
+[2456] MMDeviceCollection\MMDeviceCollection.ahk {
 
 Line  	|	Function
 0042	|	GetCount()
 0059	|	Item(index)
 
 }
-[2378] MMDeviceEnumerator\MMDeviceEnumerator.ahk {
+[2457] MMDeviceEnumerator\MMDeviceEnumerator.ahk {
 
 Line  	|	Function
 0047	|	EnumAudioEndpoints(dataFlow, mask)
@@ -36651,14 +37386,14 @@ Line  	|	Function
 0115	|	UnregisterEndpointNotificationCallback(client)
 
 }
-[2379] ObjectArray\ObjectArray.ahk {
+[2458] ObjectArray\ObjectArray.ahk {
 
 Line  	|	Function
 0042	|	GetCount()
 0060	|	GetAt(index, type)
 
 }
-[2380] ObjectCollection\ObjectCollection.ahk {
+[2459] ObjectCollection\ObjectCollection.ahk {
 
 Line  	|	Function
 0038	|	AddObject(obj)
@@ -36667,7 +37402,7 @@ Line  	|	Function
 0084	|	Clear()
 
 }
-[2381] OperationsProgressDialog\OperationsProgressDialog.ahk {
+[2460] OperationsProgressDialog\OperationsProgressDialog.ahk {
 
 Line  	|	Function
 0058	|	StopProgressDialog()
@@ -36681,13 +37416,13 @@ Line  	|	Function
 0203	|	GetOperationStatus()
 
 }
-[2382] Persist\Persist.ahk {
+[2461] Persist\Persist.ahk {
 
 Line  	|	Function
 0042	|	GetClassID()
 
 }
-[2383] PersistFile\PersistFile.ahk {
+[2462] PersistFile\PersistFile.ahk {
 
 Line  	|	Function
 0042	|	IsDirty()
@@ -36697,7 +37432,7 @@ Line  	|	Function
 0101	|	GetCurFile()
 
 }
-[2384] Picture\Picture.ahk {
+[2463] Picture\Picture.ahk {
 
 Line  	|	Function
 0053	|	FromPICTDESC(src)
@@ -36717,7 +37452,7 @@ Line  	|	Function
 0405	|	get_Attributes()
 
 }
-[2385] ProgressDialog\ProgressDialog.ahk {
+[2464] ProgressDialog\ProgressDialog.ahk {
 
 Line  	|	Function
 0072	|	StopProgressDialog()
@@ -36732,7 +37467,7 @@ Line  	|	Function
 0246	|	ResumeTimer()
 
 }
-[2386] PropertyStore\PropertyStore.ahk {
+[2465] PropertyStore\PropertyStore.ahk {
 
 Line  	|	Function
 0042	|	GetCount()
@@ -36742,7 +37477,7 @@ Line  	|	Function
 0110	|	Commit()
 
 }
-[2387] PropertyStoreCache\PropertyStoreCache.ahk {
+[2466] PropertyStoreCache\PropertyStoreCache.ahk {
 
 Line  	|	Function
 0040	|	GetState(key)
@@ -36751,13 +37486,13 @@ Line  	|	Function
 0102	|	SetValueAndState(key, value, state)
 
 }
-[2388] ProvideClassInfo\ProvideClassInfo.ahk {
+[2467] ProvideClassInfo\ProvideClassInfo.ahk {
 
 Line  	|	Function
 0042	|	GetClassInfo()
 
 }
-[2389] RichEditOLE\RichEditOLE.ahk {
+[2468] RichEditOLE\RichEditOLE.ahk {
 
 Line  	|	Function
 0053	|	FromHWND(ctrl)
@@ -36778,19 +37513,19 @@ Line  	|	Function
 0299	|	GetClipboardData(range, reco)
 
 }
-[2390] SequentialStream\SequentialStream.ahk {
+[2469] SequentialStream\SequentialStream.ahk {
 
 Line  	|	Function
 
 }
-[2391] ShellItem\ShellItem.ahk {
+[2470] ShellItem\ShellItem.ahk {
 
 Line  	|	Function
 0171	|	GetParent()
 0206	|	GetAttributes(requested, byRef attr)
 
 }
-[2392] ShellLinkA\ShellLinkA.ahk {
+[2471] ShellLinkA\ShellLinkA.ahk {
 
 Line  	|	Function
 0067	|	GetIDList(ByRef idlist)
@@ -36810,7 +37545,7 @@ Line  	|	Function
 0313	|	SetPath(path)
 
 }
-[2393] ShellLinkW\ShellLinkW.ahk {
+[2472] ShellLinkW\ShellLinkW.ahk {
 
 Line  	|	Function
 0067	|	GetIDList(ByRef idlist)
@@ -36830,7 +37565,7 @@ Line  	|	Function
 0313	|	SetPath(path)
 
 }
-[2394] Storage\Storage.ahk {
+[2473] Storage\Storage.ahk {
 
 Line  	|	Function
 0053	|	CreateStream(name, access)
@@ -36847,7 +37582,7 @@ Line  	|	Function
 0302	|	SetStateBits(state, mask)
 
 }
-[2395] Stream\Stream.ahk {
+[2474] Stream\Stream.ahk {
 
 Line  	|	Function
 0067	|	Seek(move, dwOrigin)
@@ -36859,138 +37594,138 @@ Line  	|	Function
 0193	|	Clone()
 
 }
-[2396] Classes\ARRAYDESC.ahk {
+[2475] Classes\ARRAYDESC.ahk {
 
 Line  	|	Function
 
 }
-[2397] Classes\CHARRANGE.ahk {
+[2476] Classes\CHARRANGE.ahk {
 
 Line  	|	Function
 
 }
-[2398] Classes\CUSTDATA.ahk {
+[2477] Classes\CUSTDATA.ahk {
 
 Line  	|	Function
 
 }
-[2399] Classes\CUSTDATAITEM.ahk {
+[2478] Classes\CUSTDATAITEM.ahk {
 
 Line  	|	Function
 
 }
-[2400] Classes\DISPPARAMS.ahk {
+[2479] Classes\DISPPARAMS.ahk {
 
 Line  	|	Function
 
 }
-[2401] Classes\ELEMDESC.ahk {
+[2480] Classes\ELEMDESC.ahk {
 
 Line  	|	Function
 
 }
-[2402] Classes\EXCEPINFO.ahk {
+[2481] Classes\EXCEPINFO.ahk {
 
 Line  	|	Function
 
 }
-[2403] Classes\FILETIME.ahk {
+[2482] Classes\FILETIME.ahk {
 
 Line  	|	Function
 0116	|	FromSYSTEMTIME(src)
 
 }
-[2404] Classes\FUNCDESC.ahk {
+[2483] Classes\FUNCDESC.ahk {
 
 Line  	|	Function
 
 }
-[2405] Classes\IDLDESC.ahk {
+[2484] Classes\IDLDESC.ahk {
 
 Line  	|	Function
 
 }
-[2406] Classes\IMAGEINFO.ahk {
+[2485] Classes\IMAGEINFO.ahk {
 
 Line  	|	Function
 
 }
-[2407] Classes\IMAGELISTDRAWPARAMS.ahk {
+[2486] Classes\IMAGELISTDRAWPARAMS.ahk {
 
 Line  	|	Function
 
 }
-[2408] Classes\IMAGELISTSTATS.ahk {
+[2487] Classes\IMAGELISTSTATS.ahk {
 
 Line  	|	Function
 
 }
-[2409] Classes\INTERFACEDATA.ahk {
+[2488] Classes\INTERFACEDATA.ahk {
 
 Line  	|	Function
 
 }
-[2410] Classes\METHODDATA.ahk {
+[2489] Classes\METHODDATA.ahk {
 
 Line  	|	Function
 
 }
-[2411] Classes\PARAMDATA.ahk {
+[2490] Classes\PARAMDATA.ahk {
 
 Line  	|	Function
 
 }
-[2412] Classes\PARAMDESC.ahk {
+[2491] Classes\PARAMDESC.ahk {
 
 Line  	|	Function
 
 }
-[2413] Classes\PARAMDESCEX.ahk {
+[2492] Classes\PARAMDESCEX.ahk {
 
 Line  	|	Function
 
 }
-[2414] Classes\PICTDESC.ahk {
+[2493] Classes\PICTDESC.ahk {
 
 Line  	|	Function
 
 }
-[2415] Classes\POINT.ahk {
+[2494] Classes\POINT.ahk {
 
 Line  	|	Function
 
 }
-[2416] Classes\PROPERTYKEY.ahk {
+[2495] Classes\PROPERTYKEY.ahk {
 
 Line  	|	Function
 
 }
-[2417] Classes\RECT.ahk {
+[2496] Classes\RECT.ahk {
 
 Line  	|	Function
 
 }
-[2418] Classes\REOBJECT.ahk {
+[2497] Classes\REOBJECT.ahk {
 
 Line  	|	Function
 
 }
-[2419] Classes\SAFEARRAYBOUND.ahk {
+[2498] Classes\SAFEARRAYBOUND.ahk {
 
 Line  	|	Function
 
 }
-[2420] Classes\SIZE.ahk {
+[2499] Classes\SIZE.ahk {
 
 Line  	|	Function
 
 }
-[2421] Classes\STATSTG.ahk {
+[2500] Classes\STATSTG.ahk {
 
 Line  	|	Function
 
 }
-[2422] Classes\StructBase.ahk {
+[2501] Classes\StructBase.ahk {
 
 Line  	|	Function
 0040	|	FindBufferKey(buffer)
@@ -37001,43 +37736,43 @@ Line  	|	Function
 0200	|	GetOriginalPointer()
 
 }
-[2423] Classes\SYSTEMTIME.ahk {
+[2502] Classes\SYSTEMTIME.ahk {
 
 Line  	|	Function
 0159	|	FromFILETIME(src)
 
 }
-[2424] Classes\THUMBBUTTON.ahk {
+[2503] Classes\THUMBBUTTON.ahk {
 
 Line  	|	Function
 
 }
-[2425] Classes\TLIBATTR.ahk {
+[2504] Classes\TLIBATTR.ahk {
 
 Line  	|	Function
 
 }
-[2426] Classes\TYPEATTR.ahk {
+[2505] Classes\TYPEATTR.ahk {
 
 Line  	|	Function
 
 }
-[2427] Classes\TYPEDESC.ahk {
+[2506] Classes\TYPEDESC.ahk {
 
 Line  	|	Function
 
 }
-[2428] Classes\VARDESC.ahk {
+[2507] Classes\VARDESC.ahk {
 
 Line  	|	Function
 
 }
-[2429] Classes\WIN32_FIND_DATA.ahk {
+[2508] Classes\WIN32_FIND_DATA.ahk {
 
 Line  	|	Function
 
 }
-[2430] TaskbarList\TaskbarList.ahk {
+[2509] TaskbarList\TaskbarList.ahk {
 
 Line  	|	Function
 0041	|	HrInit()
@@ -37047,13 +37782,13 @@ Line  	|	Function
 0136	|	SetActiveAlt(hWin)
 
 }
-[2431] TaskbarList2\TaskbarList2.ahk {
+[2510] TaskbarList2\TaskbarList2.ahk {
 
 Line  	|	Function
 0053	|	MarkFullScreen(hWin, ApplyRemove)
 
 }
-[2432] TaskbarList3\TaskbarList3.ahk {
+[2511] TaskbarList3\TaskbarList3.ahk {
 
 Line  	|	Function
 0055	|	SetProgressValue(hWin, value)
@@ -37067,18 +37802,18 @@ Line  	|	Function
 0331	|	ParseArray(array)
 
 }
-[2433] TaskbarList4\TaskbarList4.ahk {
+[2512] TaskbarList4\TaskbarList4.ahk {
 
 Line  	|	Function
 0056	|	SetTabProperties(hTab, properties)
 
 }
-[2434] TypeComp\TypeComp.ahk {
+[2513] TypeComp\TypeComp.ahk {
 
 Line  	|	Function
 
 }
-[2435] TypeInfo\TypeInfo.ahk {
+[2514] TypeInfo\TypeInfo.ahk {
 
 Line  	|	Function
 0046	|	GetTypeAttr()
@@ -37095,7 +37830,7 @@ Line  	|	Function
 0407	|	ReleaseVarDesc(attr)
 
 }
-[2436] TypeInfo2\TypeInfo2.ahk {
+[2515] TypeInfo2\TypeInfo2.ahk {
 
 Line  	|	Function
 0044	|	ClearCustData(data)
@@ -37115,7 +37850,7 @@ Line  	|	Function
 0330	|	GetAllImplTypeCustData(index)
 
 }
-[2437] TypeLib\TypeLib.ahk {
+[2516] TypeLib\TypeLib.ahk {
 
 Line  	|	Function
 0069	|	FromRegistry(guid, vMajor, vMinor)
@@ -37130,7 +37865,7 @@ Line  	|	Function
 0250	|	ReleaseTLibAttr(attr)
 
 }
-[2438] TypeLib2\TypeLib2.ahk {
+[2517] TypeLib2\TypeLib2.ahk {
 
 Line  	|	Function
 0044	|	ClearCustData(data)
@@ -37138,19 +37873,19 @@ Line  	|	Function
 0118	|	GetAllCustData()
 
 }
-[2439] UIAutomationBoolCondition\UIAutomationBoolCondition.ahk {
+[2518] UIAutomationBoolCondition\UIAutomationBoolCondition.ahk {
 
 Line  	|	Function
 0041	|	get_BooleanValue()
 0054	|	__Get(property)
 
 }
-[2440] UIAutomationCondition\UIAutomationCondition.ahk {
+[2519] UIAutomationCondition\UIAutomationCondition.ahk {
 
 Line  	|	Function
 
 }
-[2441] UIAutomationElementArray\UIAutomationElementArray.ahk {
+[2520] UIAutomationElementArray\UIAutomationElementArray.ahk {
 
 Line  	|	Function
 0041	|	get_Length()
@@ -37158,13 +37893,13 @@ Line  	|	Function
 0071	|	__Get(property)
 
 }
-[2442] UIAutomationNotCondition\UIAutomationNotCondition.ahk {
+[2521] UIAutomationNotCondition\UIAutomationNotCondition.ahk {
 
 Line  	|	Function
 0041	|	GetChild()
 
 }
-[2443] Unknown\Unknown.ahk {
+[2522] Unknown\Unknown.ahk {
 
 Line  	|	Function
 0098	|	__Delete()
@@ -37175,17 +37910,17 @@ Line  	|	Function
 0171	|	Release()
 
 }
-[2444] libs\DbgOut.ahk {
+[2523] libs\DbgOut.ahk {
 
 Line  	|	Function
 
 }
-[2445] libs\Windy.ahk {
+[2524] libs\Windy.ahk {
 
 Line  	|	Function
 
 }
-[2446] ActiveScript\ActiveScript.ahk {
+[2525] ActiveScript\ActiveScript.ahk {
 
 Line  	|	Function
 0012	|	__New(Language)
@@ -37208,7 +37943,7 @@ Line  	|	Function
 0285	|	_AS_GUIDToString(pGUID)
 
 }
-[2447] ActiveScript\ComDispatch0.ahk {
+[2526] ActiveScript\ComDispatch0.ahk {
 
 Line  	|	Function
 0007	|	ComDispatch0(this)
@@ -37217,7 +37952,7 @@ Line  	|	Function
 0190	|	cd0_BSTR(ByRef a)
 
 }
-[2448] ActiveScript\JsRT.ahk {
+[2527] ActiveScript\JsRT.ahk {
 
 Line  	|	Function
 0010	|	__New()
@@ -37233,14 +37968,14 @@ Line  	|	Function
 0105	|	Eval(code)
 
 }
-[2449] AFC\AFC.ahk {
+[2528] AFC\AFC.ahk {
 
 Line  	|	Function
 0077	|	__AFC_AppArgs()
 0154	|	AFC_AtExit(method)
 
 }
-[2450] AFC\CChildWindow.ahk {
+[2529] AFC\CChildWindow.ahk {
 
 Line  	|	Function
 0005	|	__New(parent, title, options)
@@ -37248,7 +37983,7 @@ Line  	|	Function
 0018	|	GetSize()
 
 }
-[2451] AFC\CControl.ahk {
+[2530] AFC\CControl.ahk {
 
 Line  	|	Function
 0037	|	__Gui()
@@ -37270,77 +38005,77 @@ Line  	|	Function
 0225	|	Visible(v)
 
 }
-[2452] AFC\CCtrlActiveX.ahk {
+[2531] AFC\CCtrlActiveX.ahk {
 
 Line  	|	Function
 
 }
-[2453] AFC\CCtrlButton.ahk {
+[2532] AFC\CCtrlButton.ahk {
 
 Line  	|	Function
 
 }
-[2454] AFC\CCtrlCalendar.ahk {
+[2533] AFC\CCtrlCalendar.ahk {
 
 Line  	|	Function
 
 }
-[2455] AFC\CCtrlCheckBox.ahk {
+[2534] AFC\CCtrlCheckBox.ahk {
 
 Line  	|	Function
 
 }
-[2456] AFC\CCtrlComboBox.ahk {
+[2535] AFC\CCtrlComboBox.ahk {
 
 Line  	|	Function
 
 }
-[2457] AFC\CCtrlDateTime.ahk {
+[2536] AFC\CCtrlDateTime.ahk {
 
 Line  	|	Function
 
 }
-[2458] AFC\CCtrlDropDown.ahk {
+[2537] AFC\CCtrlDropDown.ahk {
 
 Line  	|	Function
 
 }
-[2459] AFC\CCtrlEdit.ahk {
+[2538] AFC\CCtrlEdit.ahk {
 
 Line  	|	Function
 
 }
-[2460] AFC\CCtrlGroupBox.ahk {
+[2539] AFC\CCtrlGroupBox.ahk {
 
 Line  	|	Function
 
 }
-[2461] AFC\CCtrlHotkey.ahk {
+[2540] AFC\CCtrlHotkey.ahk {
 
 Line  	|	Function
 
 }
-[2462] AFC\CCtrlImage.ahk {
+[2541] AFC\CCtrlImage.ahk {
 
 Line  	|	Function
 
 }
-[2463] AFC\CCtrlLabel.ahk {
+[2542] AFC\CCtrlLabel.ahk {
 
 Line  	|	Function
 
 }
-[2464] AFC\CCtrlLink.ahk {
+[2543] AFC\CCtrlLink.ahk {
 
 Line  	|	Function
 
 }
-[2465] AFC\CCtrlListBox.ahk {
+[2544] AFC\CCtrlListBox.ahk {
 
 Line  	|	Function
 
 }
-[2466] AFC\CCtrlListView.ahk {
+[2545] AFC\CCtrlListView.ahk {
 
 Line  	|	Function
 0018	|	_SelectLV()
@@ -37360,35 +38095,35 @@ Line  	|	Function
 0534	|	Next(ByRef k, ByRef v)
 
 }
-[2467] AFC\CCtrlProgress.ahk {
+[2546] AFC\CCtrlProgress.ahk {
 
 Line  	|	Function
 
 }
-[2468] AFC\CCtrlRadio.ahk {
+[2547] AFC\CCtrlRadio.ahk {
 
 Line  	|	Function
 
 }
-[2469] AFC\CCtrlSlider.ahk {
+[2548] AFC\CCtrlSlider.ahk {
 
 Line  	|	Function
 
 }
-[2470] AFC\CCtrlStatusBar.ahk {
+[2549] AFC\CCtrlStatusBar.ahk {
 
 Line  	|	Function
 0032	|	_SelectSB()
 0105	|	OnEvent(oCtrl, guiEvent, eventInfo)
 
 }
-[2471] AFC\CCtrlTab.ahk {
+[2550] AFC\CCtrlTab.ahk {
 
 Line  	|	Function
 0054	|	EndDef()
 
 }
-[2472] AFC\CCtrlTreeView.ahk {
+[2551] AFC\CCtrlTreeView.ahk {
 
 Line  	|	Function
 0033	|	_SelectTV()
@@ -37420,23 +38155,23 @@ Line  	|	Function
 0528	|	Next(ByRef k, ByRef v)
 
 }
-[2473] AFC\CCtrlUpDown.ahk {
+[2552] AFC\CCtrlUpDown.ahk {
 
 Line  	|	Function
 
 }
-[2474] AFC\CDefaultBase.ahk {
+[2553] AFC\CDefaultBase.ahk {
 
 Line  	|	Function
 
 }
-[2475] AFC\CImageList.ahk {
+[2554] AFC\CImageList.ahk {
 
 Line  	|	Function
 0028	|	__Delete()
 
 }
-[2476] AFC\CMsgDispatch.ahk {
+[2555] AFC\CMsgDispatch.ahk {
 
 Line  	|	Function
 0030	|	__New(obj, msg, handler)
@@ -37445,7 +38180,7 @@ Line  	|	Function
 0065	|	__CMsgDispatchProc(wParam, lParam, msg, hWnd)
 
 }
-[2477] AFC\CParentWindow.ahk {
+[2556] AFC\CParentWindow.ahk {
 
 Line  	|	Function
 0016	|	AddChild(type)
@@ -37456,12 +38191,12 @@ Line  	|	Function
 0071	|	AllocateSpace(window)
 
 }
-[2478] AFC\CPropImpl.ahk {
+[2557] AFC\CPropImpl.ahk {
 
 Line  	|	Function
 
 }
-[2479] AFC\CScrollableWindow.ahk {
+[2558] AFC\CScrollableWindow.ahk {
 
 Line  	|	Function
 0013	|	OnSize()
@@ -37470,7 +38205,7 @@ Line  	|	Function
 0150	|	OnScroll(wParam, lParam, msg, hwnd)
 
 }
-[2480] AFC\CWindow.ahk {
+[2559] AFC\CWindow.ahk {
 
 Line  	|	Function
 0039	|	Close()
@@ -37495,431 +38230,431 @@ Line  	|	Function
 0417	|	__CWindow_GuiHandler()
 
 }
-[2481] Functions\CloseClipboard.ahk {
+[2560] Functions\CloseClipboard.ahk {
 
 Line  	|	Function
 0011	|	CloseClipboard()
 
 }
-[2482] Functions\EmptyClipboard.ahk {
+[2561] Functions\EmptyClipboard.ahk {
 
 Line  	|	Function
 0011	|	EmptyClipboard()
 
 }
-[2483] Functions\OpenClipboard.ahk {
+[2562] Functions\OpenClipboard.ahk {
 
 Line  	|	Function
 0011	|	OpenClipboard(NewOwner = 0)
 
 }
-[2484] Functions\GetCursorInfo.ahk {
+[2563] Functions\GetCursorInfo.ahk {
 
 Line  	|	Function
 0011	|	GetCursorInfo()
 
 }
-[2485] Functions\GetCursorPos.ahk {
+[2564] Functions\GetCursorPos.ahk {
 
 Line  	|	Function
 0011	|	GetCursorPos()
 
 }
-[2486] Functions\GetPhysicalCursorPos.ahk {
+[2565] Functions\GetPhysicalCursorPos.ahk {
 
 Line  	|	Function
 0011	|	GetPhysicalCursorPos()
 
 }
-[2487] Functions\SetCursorPos.ahk {
+[2566] Functions\SetCursorPos.ahk {
 
 Line  	|	Function
 0011	|	SetCursorPos(X, Y)
 
 }
-[2488] Functions\SetPhysicalCursorPos.ahk {
+[2567] Functions\SetPhysicalCursorPos.ahk {
 
 Line  	|	Function
 0011	|	SetPhysicalCursorPos(X, Y)
 
 }
-[2489] Functions\CreateDirectory.ahk {
+[2568] Functions\CreateDirectory.ahk {
 
 Line  	|	Function
 0011	|	CreateDirectory(PathName)
 
 }
-[2490] Functions\RemoveDirectory.ahk {
+[2569] Functions\RemoveDirectory.ahk {
 
 Line  	|	Function
 0011	|	RemoveDirectory(PathName)
 
 }
-[2491] Functions\SetCurrentDirectory.ahk {
+[2570] Functions\SetCurrentDirectory.ahk {
 
 Line  	|	Function
 0011	|	SetCurrentDirectory(PathName)
 
 }
-[2492] Functions\GetDiskFreeSpace.ahk {
+[2571] Functions\GetDiskFreeSpace.ahk {
 
 Line  	|	Function
 0011	|	GetDiskFreeSpace(path)
 
 }
-[2493] Functions\GetDiskFreeSpaceEx.ahk {
+[2572] Functions\GetDiskFreeSpaceEx.ahk {
 
 Line  	|	Function
 0011	|	GetDiskFreeSpaceEx(directory)
 
 }
-[2494] Functions\Beep.ahk {
+[2573] Functions\Beep.ahk {
 
 Line  	|	Function
 0011	|	Beep(Freq, Duration)
 
 }
-[2495] Functions\FormatMessage.ahk {
+[2574] Functions\FormatMessage.ahk {
 
 Line  	|	Function
 0011	|	FormatMessage(MessageId)
 0022	|	DeleteFile(FileName)
 
 }
-[2496] Functions\GetLastError.ahk {
+[2575] Functions\GetLastError.ahk {
 
 Line  	|	Function
 0011	|	GetLastError()
 0020	|	DeleteFile(FileName)
 
 }
-[2497] Functions\CopyFile.ahk {
+[2576] Functions\CopyFile.ahk {
 
 Line  	|	Function
 0011	|	CopyFile(ExistingFileName, NewFileName, FailIfExists)
 
 }
-[2498] Functions\DeleteFile.ahk {
+[2577] Functions\DeleteFile.ahk {
 
 Line  	|	Function
 0011	|	DeleteFile(FileName)
 
 }
-[2499] Functions\GetFileAttributes.ahk {
+[2578] Functions\GetFileAttributes.ahk {
 
 Line  	|	Function
 0011	|	GetFileAttributes(FileName)
 
 }
-[2500] Functions\GetFileSize.ahk {
+[2579] Functions\GetFileSize.ahk {
 
 Line  	|	Function
 0011	|	GetFileSize(File)
 
 }
-[2501] Functions\GetFileSizeEx.ahk {
+[2580] Functions\GetFileSizeEx.ahk {
 
 Line  	|	Function
 0010	|	GetFileSizeEx(File)
 
 }
-[2502] Functions\GetTempPath.ahk {
+[2581] Functions\GetTempPath.ahk {
 
 Line  	|	Function
 0011	|	GetTempPath()
 
 }
-[2503] Functions\MoveFile.ahk {
+[2582] Functions\MoveFile.ahk {
 
 Line  	|	Function
 0011	|	MoveFile(ExistingFileName, NewFileName)
 
 }
-[2504] Functions\MoveFileEx.ahk {
+[2583] Functions\MoveFileEx.ahk {
 
 Line  	|	Function
 0011	|	MoveFileEx(ExistingFileName, NewFileName, Flags)
 
 }
-[2505] Functions\GetIpStatistics.ahk {
+[2584] Functions\GetIpStatistics.ahk {
 
 Line  	|	Function
 0011	|	GetIpStatistics()
 
 }
-[2506] Functions\GetIpStatisticsEx.ahk {
+[2585] Functions\GetIpStatisticsEx.ahk {
 
 Line  	|	Function
 0011	|	GetIpStatisticsEx()
 
 }
-[2507] Functions\GetTcpStatistics.ahk {
+[2586] Functions\GetTcpStatistics.ahk {
 
 Line  	|	Function
 0011	|	GetTcpStatistics()
 
 }
-[2508] Functions\GetTcpStatisticsEx.ahk {
+[2587] Functions\GetTcpStatisticsEx.ahk {
 
 Line  	|	Function
 0011	|	GetTcpStatisticsEx()
 
 }
-[2509] Functions\GetUdpStatistics.ahk {
+[2588] Functions\GetUdpStatistics.ahk {
 
 Line  	|	Function
 0011	|	GetUdpStatistics()
 
 }
-[2510] Functions\GetUdpStatisticsEx.ahk {
+[2589] Functions\GetUdpStatisticsEx.ahk {
 
 Line  	|	Function
 0011	|	GetUdpStatisticsEx()
 
 }
-[2511] Functions\BlockInput.ahk {
+[2590] Functions\BlockInput.ahk {
 
 Line  	|	Function
 
 }
-[2512] Functions\GetKBCodePage.ahk {
+[2591] Functions\GetKBCodePage.ahk {
 
 Line  	|	Function
 0011	|	GetKBCodePage()
 
 }
-[2513] Functions\GetKeyboardLayout.ahk {
+[2592] Functions\GetKeyboardLayout.ahk {
 
 Line  	|	Function
 
 }
-[2514] Functions\GetPhysicallyInstalledSystemMemory.ahk {
+[2593] Functions\GetPhysicallyInstalledSystemMemory.ahk {
 
 Line  	|	Function
 0011	|	GetPhysicallyInstalledSystemMemory()
 
 }
-[2515] Functions\GlobalMemoryStatusEx.ahk {
+[2594] Functions\GlobalMemoryStatusEx.ahk {
 
 Line  	|	Function
 0011	|	GlobalMemoryStatusEx()
 
 }
-[2516] Functions\ClipCursor.ahk {
+[2595] Functions\ClipCursor.ahk {
 
 Line  	|	Function
 
 }
-[2517] Functions\GetCapture.ahk {
+[2596] Functions\GetCapture.ahk {
 
 Line  	|	Function
 0011	|	GetCapture()
 
 }
-[2518] Functions\GetDoubleClickTime.ahk {
+[2597] Functions\GetDoubleClickTime.ahk {
 
 Line  	|	Function
 0011	|	GetDoubleClickTime()
 
 }
-[2519] Functions\ReleaseCapture.ahk {
+[2598] Functions\ReleaseCapture.ahk {
 
 Line  	|	Function
 0011	|	ReleaseCapture()
 
 }
-[2520] Functions\SetDoubleClickTime.ahk {
+[2599] Functions\SetDoubleClickTime.ahk {
 
 Line  	|	Function
 0011	|	SetDoubleClickTime(Interval)
 
 }
-[2521] Functions\SwapMouseButton.ahk {
+[2600] Functions\SwapMouseButton.ahk {
 
 Line  	|	Function
 0011	|	SwapMouseButton(Swap)
 
 }
-[2522] Functions\timeGetTime.ahk {
+[2601] Functions\timeGetTime.ahk {
 
 Line  	|	Function
 0011	|	timeGetTime()
 
 }
-[2523] Functions\GetDurationFormat.ahk {
+[2602] Functions\GetDurationFormat.ahk {
 
 Line  	|	Function
 
 }
-[2524] Others\ZwDelayExecution.ahk {
+[2603] Others\ZwDelayExecution.ahk {
 
 Line  	|	Function
 0010	|	ZwDelayExecution(Alertable, Interval)
 
 }
-[2525] Functions\GetActiveProcessorCount.ahk {
+[2604] Functions\GetActiveProcessorCount.ahk {
 
 Line  	|	Function
 
 }
-[2526] Functions\GetActiveProcessorGroupCount.ahk {
+[2605] Functions\GetActiveProcessorGroupCount.ahk {
 
 Line  	|	Function
 0011	|	GetActiveProcessorGroupCount()
 
 }
-[2527] Functions\GetCommandLine.ahk {
+[2606] Functions\GetCommandLine.ahk {
 
 Line  	|	Function
 0011	|	GetCommandLine()
 
 }
-[2528] Functions\GetCurrentProcess.ahk {
+[2607] Functions\GetCurrentProcess.ahk {
 
 Line  	|	Function
 0011	|	GetCurrentProcess()
 
 }
-[2529] Functions\GetCurrentProcessId.ahk {
+[2608] Functions\GetCurrentProcessId.ahk {
 
 Line  	|	Function
 0011	|	GetCurrentProcessId()
 
 }
-[2530] Functions\GetCurrentProcessorNumber.ahk {
+[2609] Functions\GetCurrentProcessorNumber.ahk {
 
 Line  	|	Function
 0011	|	GetCurrentProcessorNumber()
 
 }
-[2531] Functions\GetCurrentThread.ahk {
+[2610] Functions\GetCurrentThread.ahk {
 
 Line  	|	Function
 0011	|	GetCurrentThread()
 
 }
-[2532] Functions\GetCurrentThreadId.ahk {
+[2611] Functions\GetCurrentThreadId.ahk {
 
 Line  	|	Function
 0011	|	GetCurrentThreadId()
 
 }
-[2533] Functions\GetMaximumProcessorCount.ahk {
+[2612] Functions\GetMaximumProcessorCount.ahk {
 
 Line  	|	Function
 0011	|	GetMaximumProcessorCount(GroupNumber)
 
 }
-[2534] Functions\GetMaximumProcessorGroupCount.ahk {
+[2613] Functions\GetMaximumProcessorGroupCount.ahk {
 
 Line  	|	Function
 0011	|	GetMaximumProcessorGroupCount()
 
 }
-[2535] Functions\GetProcessVersion.ahk {
+[2614] Functions\GetProcessVersion.ahk {
 
 Line  	|	Function
 
 }
-[2536] Functions\Sleep.ahk {
+[2615] Functions\Sleep.ahk {
 
 Line  	|	Function
 0011	|	Sleep(Milliseconds)
 
 }
-[2537] Functions\SleepEx.ahk {
+[2616] Functions\SleepEx.ahk {
 
 Line  	|	Function
 0011	|	SleepEx(Milliseconds, Alertable)
 
 }
-[2538] Functions\GetModuleFileNameEx.ahk {
+[2617] Functions\GetModuleFileNameEx.ahk {
 
 Line  	|	Function
 0010	|	GetModuleFileNameEx(PID)
 0025	|	GetCurrentProcessId()
 
 }
-[2539] Functions\GetProcessMemoryInfo.ahk {
+[2618] Functions\GetProcessMemoryInfo.ahk {
 
 Line  	|	Function
 0010	|	GetProcessMemoryInfo_PMCEX(PID)
 0030	|	GetProcessMemoryInfo_PMC(PID)
 
 }
-[2540] Functions\CharLower.ahk {
+[2619] Functions\CharLower.ahk {
 
 Line  	|	Function
 0011	|	CharLower(str)
 
 }
-[2541] Functions\CharLowerBuff.ahk {
+[2620] Functions\CharLowerBuff.ahk {
 
 Line  	|	Function
 0011	|	CharLowerBuff(str, len)
 
 }
-[2542] Functions\CharUpper.ahk {
+[2621] Functions\CharUpper.ahk {
 
 Line  	|	Function
 0011	|	CharUpper(str)
 
 }
-[2543] Functions\CharUpperBuff.ahk {
+[2622] Functions\CharUpperBuff.ahk {
 
 Line  	|	Function
 0011	|	CharUpperBuff(str, len)
 
 }
-[2544] Functions\GetComputerName.ahk {
+[2623] Functions\GetComputerName.ahk {
 
 Line  	|	Function
 0011	|	GetComputerName()
 
 }
-[2545] Functions\GetProductInfo.ahk {
+[2624] Functions\GetProductInfo.ahk {
 
 Line  	|	Function
 0011	|	GetProductInfo(OSMaj, OSMin, SpMaj, SpMin)
 0019	|	GetVersionEx()
 
 }
-[2546] Functions\GetSystemDirectory.ahk {
+[2625] Functions\GetSystemDirectory.ahk {
 
 Line  	|	Function
 0011	|	GetSystemDirectory()
 
 }
-[2547] Functions\GetSystemRegistryQuota.ahk {
+[2626] Functions\GetSystemRegistryQuota.ahk {
 
 Line  	|	Function
 0011	|	GetSystemRegistryQuota()
 
 }
-[2548] Functions\GetSystemWindowsDirectory.ahk {
+[2627] Functions\GetSystemWindowsDirectory.ahk {
 
 Line  	|	Function
 0011	|	GetSystemWindowsDirectory()
 
 }
-[2549] Functions\GetSystemWow64Directory.ahk {
+[2628] Functions\GetSystemWow64Directory.ahk {
 
 Line  	|	Function
 0011	|	GetSystemWow64Directory()
 
 }
-[2550] Functions\GetUserName.ahk {
+[2629] Functions\GetUserName.ahk {
 
 Line  	|	Function
 0011	|	GetUserName()
 
 }
-[2551] Functions\GetUserNameEx.ahk {
+[2630] Functions\GetUserNameEx.ahk {
 
 Line  	|	Function
 
 }
-[2552] Functions\GetVersion.ahk {
+[2631] Functions\GetVersion.ahk {
 
 Line  	|	Function
 0011	|	GetVersion()
@@ -37929,76 +38664,76 @@ Line  	|	Function
 0029	|	HIBYTE(w)
 
 }
-[2553] Functions\GetVersionEx.ahk {
+[2632] Functions\GetVersionEx.ahk {
 
 Line  	|	Function
 0011	|	GetVersionEx()
 
 }
-[2554] Functions\GetWindowsDirectory.ahk {
+[2633] Functions\GetWindowsDirectory.ahk {
 
 Line  	|	Function
 0011	|	GetWindowsDirectory()
 
 }
-[2555] Functions\QueryPerformanceCounter.ahk {
+[2634] Functions\QueryPerformanceCounter.ahk {
 
 Line  	|	Function
 0011	|	QueryPerformanceCounter()
 
 }
-[2556] Functions\QueryPerformanceFrequency.ahk {
+[2635] Functions\QueryPerformanceFrequency.ahk {
 
 Line  	|	Function
 0011	|	QueryPerformanceFrequency()
 
 }
-[2557] Functions\LockWorkStation.ahk {
+[2636] Functions\LockWorkStation.ahk {
 
 Line  	|	Function
 0011	|	LockWorkStation()
 
 }
-[2558] Functions\GetLocalTime.ahk {
+[2637] Functions\GetLocalTime.ahk {
 
 Line  	|	Function
 0011	|	GetLocalTime()
 
 }
-[2559] Functions\GetSystemTime.ahk {
+[2638] Functions\GetSystemTime.ahk {
 
 Line  	|	Function
 0011	|	GetSystemTime()
 
 }
-[2560] Functions\GetTickCount.ahk {
+[2639] Functions\GetTickCount.ahk {
 
 Line  	|	Function
 0011	|	GetTickCount()
 
 }
-[2561] Functions\GetTickCount64.ahk {
+[2640] Functions\GetTickCount64.ahk {
 
 Line  	|	Function
 0011	|	GetTickCount64()
 
 }
-[2562] Functions\SetLocalTime.ahk {
+[2641] Functions\SetLocalTime.ahk {
 
 Line  	|	Function
 
 }
-[2563] Functions\SetSystemTime.ahk {
+[2642] Functions\SetSystemTime.ahk {
 
 Line  	|	Function
 
 }
-[2564] Functions\GetDriveType.ahk {
+[2643] Functions\GetDriveType.ahk {
 
 Line  	|	Function
 
 }
-[2565] gui\Events.ahk {
+[2644] gui\Events.ahk {
 
 Line  	|	Function
 0001	|	GuiClose(GuiHwnd)
@@ -38008,7 +38743,7 @@ Line  	|	Function
 0023	|	GuiContextMenu(GuiHwnd, CtrlHwnd, EventInfo, IsRightClick, X, Y)
 
 }
-[2566] gui\GuiBase.ahk {
+[2645] gui\GuiBase.ahk {
 
 Line  	|	Function
 0005	|	Type(cls)
@@ -38033,13 +38768,13 @@ Line  	|	Function
 0318	|	Print(Text)
 
 }
-[2567] gui\ImageList.ahk {
+[2646] gui\ImageList.ahk {
 
 Line  	|	Function
 0013	|	__Delete()
 
 }
-[2568] gui\IndirectReferenceHolder.ahk {
+[2647] gui\IndirectReferenceHolder.ahk {
 
 Line  	|	Function
 0009	|	__New(Object)
@@ -38049,7 +38784,7 @@ Line  	|	Function
 0038	|	IndirectReferenceDelete(this)
 
 }
-[2569] gui\PositionType.ahk {
+[2648] gui\PositionType.ahk {
 
 Line  	|	Function
 0002	|	Set(Coord, Val)
@@ -38061,12 +38796,12 @@ Line  	|	Function
 0034	|	Next(ByRef k, ByRef v)
 
 }
-[2570] controls\Button.ahk {
+[2649] controls\Button.ahk {
 
 Line  	|	Function
 
 }
-[2571] controls\ChoiceControlType.ahk {
+[2650] controls\ChoiceControlType.ahk {
 
 Line  	|	Function
 0007	|	_NewEnum()
@@ -38076,14 +38811,14 @@ Line  	|	Function
 0033	|	GetSelected()
 
 }
-[2572] controls\ContentControlType.ahk {
+[2651] controls\ContentControlType.ahk {
 
 Line  	|	Function
 0002	|	SetText(Text)
 0006	|	GetText()
 
 }
-[2573] controls\ControlType.ahk {
+[2652] controls\ControlType.ahk {
 
 Line  	|	Function
 0017	|	__Delete()
@@ -38091,19 +38826,19 @@ Line  	|	Function
 0043	|	MoveDraw(Options)
 
 }
-[2574] controls\DropDownList.ahk {
+[2653] controls\DropDownList.ahk {
 
 Line  	|	Function
 0004	|	SetSelectionHeight(Px)
 0008	|	SetItemHeight(Px)
 
 }
-[2575] controls\Edit.ahk {
+[2654] controls\Edit.ahk {
 
 Line  	|	Function
 
 }
-[2576] controls\ListView.ahk {
+[2655] controls\ListView.ahk {
 
 Line  	|	Function
 0040	|	GetSelected()
@@ -38113,17 +38848,17 @@ Line  	|	Function
 0092	|	SetDefault()
 
 }
-[2577] controls\StatusBar.ahk {
+[2656] controls\StatusBar.ahk {
 
 Line  	|	Function
 
 }
-[2578] controls\Text.ahk {
+[2657] controls\Text.ahk {
 
 Line  	|	Function
 
 }
-[2579] Lib\OpenCV.ahk {
+[2658] Lib\OpenCV.ahk {
 
 Line  	|	Function
 0003	|	__New()
@@ -38162,7 +38897,7 @@ Line  	|	Function
 0942	|	ReleaseMat(cvmat)
 
 }
-[2580] Canvas\Brush.ahk {
+[2659] Canvas\Brush.ahk {
 
 Line  	|	Function
 0024	|	__New(Color = 0xFFFFFFFF)
@@ -38173,7 +38908,7 @@ Line  	|	Function
 0071	|	CheckStatus(Result,Name,Message)
 
 }
-[2581] Canvas\Canvas.ahk {
+[2660] Canvas\Canvas.ahk {
 
 Line  	|	Function
 0089	|	Initialize()
@@ -38181,7 +38916,7 @@ Line  	|	Function
 0111	|	Lenient()
 
 }
-[2582] Canvas\Font.ahk {
+[2661] Canvas\Font.ahk {
 
 Line  	|	Function
 0005	|	Initialize()
@@ -38196,7 +38931,7 @@ Line  	|	Function
 0180	|	CheckStatus(Result,Name,Message)
 
 }
-[2583] Canvas\Pen.ahk {
+[2662] Canvas\Pen.ahk {
 
 Line  	|	Function
 0024	|	__New(Color = 0xFFFFFFFF,Width = 1)
@@ -38207,7 +38942,7 @@ Line  	|	Function
 0125	|	CheckStatus(Result,Name,Message)
 
 }
-[2584] Canvas\Surface.ahk {
+[2663] Canvas\Surface.ahk {
 
 Line  	|	Function
 0024	|	__New(Width = 1,Height = 1)
@@ -38260,7 +38995,7 @@ Line  	|	Function
 0528	|	CheckPoints(Points,ByRef PointArray)
 
 }
-[2585] Canvas\Viewport.ahk {
+[2664] Canvas\Viewport.ahk {
 
 Line  	|	Function
 0024	|	__New(hWindow)
@@ -38273,7 +39008,7 @@ Line  	|	Function
 0163	|	CheckStatus(Result,Name,Message)
 
 }
-[2586] CGUI\CActiveXControl.ahk {
+[2665] CGUI\CActiveXControl.ahk {
 
 Line  	|	Function
 0015	|	__New(Name, Options, Text, GUINum)
@@ -38281,7 +39016,7 @@ Line  	|	Function
 0031	|	__New(GUINum, ControlName, hwnd)
 
 }
-[2587] CGUI\CButtonControl.ahk {
+[2666] CGUI\CButtonControl.ahk {
 
 Line  	|	Function
 0012	|	__New(Name, Options, Text, GUINum)
@@ -38289,7 +39024,7 @@ Line  	|	Function
 0044	|	HandleEvent(Event)
 
 }
-[2588] CGUI\CCheckBoxControl.ahk {
+[2667] CGUI\CCheckBoxControl.ahk {
 
 Line  	|	Function
 0013	|	__New(Name, Options, Text, GUINum, Type)
@@ -38303,7 +39038,7 @@ Line  	|	Function
 0184	|	HandleEvent(Event)
 
 }
-[2589] CGUI\CChoiceControl.ahk {
+[2668] CGUI\CChoiceControl.ahk {
 
 Line  	|	Function
 0015	|	__New(Name, Options, Text, GUINum, Type)
@@ -38328,7 +39063,7 @@ Line  	|	Function
 0472	|	if(Name = "Text")
 
 }
-[2590] CGUI\CCompoundControl.ahk {
+[2669] CGUI\CCompoundControl.ahk {
 
 Line  	|	Function
 0007	|	AddContainerControl(GUI, Type, Name, Options, Text)
@@ -38339,7 +39074,7 @@ Line  	|	Function
 0044	|	CalculateBoundaries()
 
 }
-[2591] CGUI\CControl.ahk {
+[2670] CGUI\CControl.ahk {
 
 Line  	|	Function
 0012	|	__New(Name, Options, Text, GUINum)
@@ -38372,7 +39107,7 @@ Line  	|	Function
 0694	|	if(SetIcon)
 
 }
-[2592] CGUI\CEditControl.ahk {
+[2671] CGUI\CEditControl.ahk {
 
 Line  	|	Function
 0012	|	__New(Name, Options, Text, GUINum)
@@ -38381,14 +39116,14 @@ Line  	|	Function
 0121	|	HandleEvent(Event)
 
 }
-[2593] CGUI\CEnumerator.ahk {
+[2672] CGUI\CEnumerator.ahk {
 
 Line  	|	Function
 0012	|	__New(Object)
 0016	|	Next(byref key, byref value)
 
 }
-[2594] CGUI\CFileDialog.ahk {
+[2673] CGUI\CFileDialog.ahk {
 
 Line  	|	Function
 0055	|	__New(Mode="")
@@ -38397,14 +39132,14 @@ Line  	|	Function
 0082	|	if(Multi)
 
 }
-[2595] CGUI\CFolderDialog.ahk {
+[2674] CGUI\CFolderDialog.ahk {
 
 Line  	|	Function
 0029	|	__New()
 0044	|	Show()
 
 }
-[2596] CGUI\CGroupBoxControl.ahk {
+[2675] CGUI\CGroupBoxControl.ahk {
 
 Line  	|	Function
 0011	|	__New(Name, Options, Text, GUINum)
@@ -38415,7 +39150,7 @@ Line  	|	Function
 0091	|	Enable()
 
 }
-[2597] CGUI\CGUI.ahk {
+[2676] CGUI\CGUI.ahk {
 
 Line  	|	Function
 0064	|	__New(instance)
@@ -38474,21 +39209,21 @@ Line  	|	Function
 1379	|	CGUI_ClientToWin(hwnd, ByRef x, ByRef y)
 
 }
-[2598] CGUI\CHotkeyControl.ahk {
+[2677] CGUI\CHotkeyControl.ahk {
 
 Line  	|	Function
 0013	|	__New(Name, Options, Text, GUINum)
 0038	|	HandleEvent(Event)
 
 }
-[2599] CGUI\CLinkControl.ahk {
+[2678] CGUI\CLinkControl.ahk {
 
 Line  	|	Function
 0014	|	__New(Name, Options, Text, GUINum)
 0038	|	HandleEvent(Event)
 
 }
-[2600] CGUI\CListViewControl.ahk {
+[2679] CGUI\CListViewControl.ahk {
 
 Line  	|	Function
 0032	|	__New(Name, ByRef Options, Text, GUINum)
@@ -38514,7 +39249,7 @@ Line  	|	Function
 0985	|	HandleEvent(Event)
 
 }
-[2601] CGUI\CMenu.ahk {
+[2680] CGUI\CMenu.ahk {
 
 Line  	|	Function
 0014	|	__New(Name)
@@ -38538,7 +39273,7 @@ Line  	|	Function
 0339	|	if(Value)
 
 }
-[2602] CGUI\CPathPickerControl.ahk {
+[2681] CGUI\CPathPickerControl.ahk {
 
 Line  	|	Function
 0007	|	__New(Name, Options, InitialPath, GUINum)
@@ -38546,7 +39281,7 @@ Line  	|	Function
 0023	|	__Set(Key, Value)
 
 }
-[2603] CGUI\CPictureControl.ahk {
+[2682] CGUI\CPictureControl.ahk {
 
 Line  	|	Function
 0014	|	__New(Name, Options, Text, GUINum)
@@ -38557,20 +39292,20 @@ Line  	|	Function
 0159	|	HandleEvent(Event)
 
 }
-[2604] CGUI\CProgressControl.ahk {
+[2683] CGUI\CProgressControl.ahk {
 
 Line  	|	Function
 0011	|	__New(Name, Options, Text, GUINum)
 
 }
-[2605] CGUI\CSliderControl.ahk {
+[2684] CGUI\CSliderControl.ahk {
 
 Line  	|	Function
 0013	|	__New(Name, Options, Text, GUINum)
 0130	|	HandleEvent(Event)
 
 }
-[2606] CGUI\CStatusBarControl.ahk {
+[2685] CGUI\CStatusBarControl.ahk {
 
 Line  	|	Function
 0016	|	__New(Name, Options, Text, GUINum)
@@ -38583,7 +39318,7 @@ Line  	|	Function
 0156	|	_NewEnum()
 
 }
-[2607] CGUI\CTabControl.ahk {
+[2686] CGUI\CTabControl.ahk {
 
 Line  	|	Function
 0016	|	__New(Name, Options, Text, GUINum)
@@ -38599,14 +39334,14 @@ Line  	|	Function
 0358	|	SetIcon(Filename, IconNumber = 1)
 
 }
-[2608] CGUI\CTextControl.ahk {
+[2687] CGUI\CTextControl.ahk {
 
 Line  	|	Function
 0014	|	__New(Name, Options, Text, GUINum)
 0042	|	HandleEvent(Event)
 
 }
-[2609] CGUI\CTreeViewControl.ahk {
+[2688] CGUI\CTreeViewControl.ahk {
 
 Line  	|	Function
 0023	|	__New(Name, ByRef Options, Text, GUINum)
@@ -38632,14 +39367,14 @@ Line  	|	Function
 0603	|	if(Value = 1)
 
 }
-[2610] CGUI\Delegate.ahk {
+[2689] CGUI\Delegate.ahk {
 
 Line  	|	Function
 0015	|	if(target == "")
 0037	|	if(i == 1)
 
 }
-[2611] CGUI\EventHandler.ahk {
+[2690] CGUI\EventHandler.ahk {
 
 Line  	|	Function
 0005	|	Register(handler)
@@ -38652,7 +39387,7 @@ Line  	|	Function
 0040	|	__New()
 
 }
-[2612] CGUI\gdip.ahk {
+[2691] CGUI\gdip.ahk {
 
 Line  	|	Function
 0067	|	UpdateLayeredWindow(hwnd, hdc, x="", y="", w="", h="", Alpha=255)
@@ -38789,7 +39524,7 @@ Line  	|	Function
 2352	|	Gdip_BFromARGB(ARGB)
 
 }
-[2613] CGUI\json.ahk {
+[2692] CGUI\json.ahk {
 
 Line  	|	Function
 0006	|	__json_init()
@@ -38810,174 +39545,174 @@ Line  	|	Function
 0280	|	JSON_reduce(symbols, ret)
 
 }
-[2614] CGUI\Parse.ahk {
+[2693] CGUI\Parse.ahk {
 
 Line  	|	Function
 0060	|	Parse(O, pQ, ByRef o1="",ByRef o2="",ByRef o3="",ByRef o4="",ByRef o5="",ByRef o6="",ByRef o7="",ByRef o8="", ByRef o9="", ByRef o10="")
 
 }
-[2615] win7\bcrypt_md2.ahk {
+[2694] win7\bcrypt_md2.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md2(string)
 
 }
-[2616] win7\bcrypt_md2_file.ahk {
+[2695] win7\bcrypt_md2_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md2_file(filename)
 
 }
-[2617] win7\bcrypt_md2_hmac.ahk {
+[2696] win7\bcrypt_md2_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md2_hmac(string, hmac)
 
 }
-[2618] win7\bcrypt_md4.ahk {
+[2697] win7\bcrypt_md4.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md4(string)
 
 }
-[2619] win7\bcrypt_md4_file.ahk {
+[2698] win7\bcrypt_md4_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md4_file(filename)
 
 }
-[2620] win7\bcrypt_md4_hmac.ahk {
+[2699] win7\bcrypt_md4_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md4_hmac(string, hmac)
 
 }
-[2621] win7\bcrypt_md5.ahk {
+[2700] win7\bcrypt_md5.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md5(string)
 
 }
-[2622] win7\bcrypt_md5_file.ahk {
+[2701] win7\bcrypt_md5_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md5_file(filename)
 
 }
-[2623] win7\bcrypt_md5_hmac.ahk {
+[2702] win7\bcrypt_md5_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md5_hmac(string, hmac)
 
 }
-[2624] win7\bcrypt_pbkdf2_md2.ahk {
+[2703] win7\bcrypt_pbkdf2_md2.ahk {
 
 Line  	|	Function
 
 }
-[2625] win7\bcrypt_pbkdf2_md4.ahk {
+[2704] win7\bcrypt_pbkdf2_md4.ahk {
 
 Line  	|	Function
 
 }
-[2626] win7\bcrypt_pbkdf2_md5.ahk {
+[2705] win7\bcrypt_pbkdf2_md5.ahk {
 
 Line  	|	Function
 
 }
-[2627] win7\bcrypt_pbkdf2_sha1.ahk {
+[2706] win7\bcrypt_pbkdf2_sha1.ahk {
 
 Line  	|	Function
 
 }
-[2628] win7\bcrypt_pbkdf2_sha256.ahk {
+[2707] win7\bcrypt_pbkdf2_sha256.ahk {
 
 Line  	|	Function
 
 }
-[2629] win7\bcrypt_pbkdf2_sha384.ahk {
+[2708] win7\bcrypt_pbkdf2_sha384.ahk {
 
 Line  	|	Function
 
 }
-[2630] win7\bcrypt_pbkdf2_sha512.ahk {
+[2709] win7\bcrypt_pbkdf2_sha512.ahk {
 
 Line  	|	Function
 
 }
-[2631] win7\bcrypt_sha1.ahk {
+[2710] win7\bcrypt_sha1.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha1(string)
 
 }
-[2632] win7\bcrypt_sha1_file.ahk {
+[2711] win7\bcrypt_sha1_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha1_file(filename)
 
 }
-[2633] win7\bcrypt_sha1_hmac.ahk {
+[2712] win7\bcrypt_sha1_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha1_hmac(string, hmac)
 
 }
-[2634] win7\bcrypt_sha256.ahk {
+[2713] win7\bcrypt_sha256.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha256(string)
 
 }
-[2635] win7\bcrypt_sha256_file.ahk {
+[2714] win7\bcrypt_sha256_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha256_file(filename)
 
 }
-[2636] win7\bcrypt_sha256_hmac.ahk {
+[2715] win7\bcrypt_sha256_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha256_hmac(string, hmac)
 
 }
-[2637] win7\bcrypt_sha384.ahk {
+[2716] win7\bcrypt_sha384.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha384(string)
 
 }
-[2638] win7\bcrypt_sha384_file.ahk {
+[2717] win7\bcrypt_sha384_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha384_file(filename)
 
 }
-[2639] win7\bcrypt_sha384_hmac.ahk {
+[2718] win7\bcrypt_sha384_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha384_hmac(string, hmac)
 
 }
-[2640] win7\bcrypt_sha512.ahk {
+[2719] win7\bcrypt_sha512.ahk {
 
 Line  	|	Function
 0002	|	bcrypt_sha512(string)
 
 }
-[2641] win7\bcrypt_sha512_file.ahk {
+[2720] win7\bcrypt_sha512_file.ahk {
 
 Line  	|	Function
 0002	|	bcrypt_sha512_file(filename)
 
 }
-[2642] win7\bcrypt_sha512_hmac.ahk {
+[2721] win7\bcrypt_sha512_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha512_hmac(string, hmac)
 
 }
-[2643] win7\class_bcrypt.ahk {
+[2722] win7\class_bcrypt.ahk {
 
 Line  	|	Function
 0031	|	hash(String, AlgID)
@@ -38997,133 +39732,133 @@ Line  	|	Function
 0251	|	CalcHash(Byref HASH_DATA, HASH_LENGTH)
 
 }
-[2644] win10\bcrypt_md2.ahk {
+[2723] win10\bcrypt_md2.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md2(string)
 
 }
-[2645] win10\bcrypt_md2_file.ahk {
+[2724] win10\bcrypt_md2_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md2_file(filename)
 
 }
-[2646] win10\bcrypt_md2_hmac.ahk {
+[2725] win10\bcrypt_md2_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md2_hmac(string, hmac)
 
 }
-[2647] win10\bcrypt_md4.ahk {
+[2726] win10\bcrypt_md4.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md4(string)
 
 }
-[2648] win10\bcrypt_md4_file.ahk {
+[2727] win10\bcrypt_md4_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md4_file(filename)
 
 }
-[2649] win10\bcrypt_md4_hmac.ahk {
+[2728] win10\bcrypt_md4_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md4_hmac(string, hmac)
 
 }
-[2650] win10\bcrypt_md5.ahk {
+[2729] win10\bcrypt_md5.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md5(string)
 
 }
-[2651] win10\bcrypt_md5_file.ahk {
+[2730] win10\bcrypt_md5_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md5_file(filename)
 
 }
-[2652] win10\bcrypt_md5_hmac.ahk {
+[2731] win10\bcrypt_md5_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_md5_hmac(string, hmac)
 
 }
-[2653] win10\bcrypt_sha1.ahk {
+[2732] win10\bcrypt_sha1.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha1(string)
 
 }
-[2654] win10\bcrypt_sha1_file.ahk {
+[2733] win10\bcrypt_sha1_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha1_file(filename)
 
 }
-[2655] win10\bcrypt_sha1_hmac.ahk {
+[2734] win10\bcrypt_sha1_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha1_hmac(string, hmac)
 
 }
-[2656] win10\bcrypt_sha256.ahk {
+[2735] win10\bcrypt_sha256.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha256(string)
 
 }
-[2657] win10\bcrypt_sha256_file.ahk {
+[2736] win10\bcrypt_sha256_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha256_file(filename)
 
 }
-[2658] win10\bcrypt_sha256_hmac.ahk {
+[2737] win10\bcrypt_sha256_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha256_hmac(string, hmac)
 
 }
-[2659] win10\bcrypt_sha384.ahk {
+[2738] win10\bcrypt_sha384.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha384(string)
 
 }
-[2660] win10\bcrypt_sha384_file.ahk {
+[2739] win10\bcrypt_sha384_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha384_file(filename)
 
 }
-[2661] win10\bcrypt_sha384_hmac.ahk {
+[2740] win10\bcrypt_sha384_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha384_hmac(string, hmac)
 
 }
-[2662] win10\bcrypt_sha512.ahk {
+[2741] win10\bcrypt_sha512.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha512(string)
 
 }
-[2663] win10\bcrypt_sha512_file.ahk {
+[2742] win10\bcrypt_sha512_file.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha512_file(filename)
 
 }
-[2664] win10\bcrypt_sha512_hmac.ahk {
+[2743] win10\bcrypt_sha512_hmac.ahk {
 
 Line  	|	Function
 0006	|	bcrypt_sha512_hmac(string, hmac)
 
 }
-[2665] win10\class_bcrypt.ahk {
+[2744] win10\class_bcrypt.ahk {
 
 Line  	|	Function
 0029	|	hash(String, AlgID)
@@ -39140,12 +39875,12 @@ Line  	|	Function
 0203	|	CalcHash(Byref HASH_DATA, HASH_LENGTH)
 
 }
-[2666] core_audio_interfaces\header.ahk {
+[2745] core_audio_interfaces\header.ahk {
 
 Line  	|	Function
 
 }
-[2667] core_audio_interfaces\IAudioEndpointVolume.ahk {
+[2746] core_audio_interfaces\IAudioEndpointVolume.ahk {
 
 Line  	|	Function
 0006	|	__New(ptr)
@@ -39163,7 +39898,7 @@ Line  	|	Function
 0168	|	GetVolumeRange(ByRef LevelMinDB, ByRef LevelMaxDB, ByRef VolumeIncrementDB)
 
 }
-[2668] core_audio_interfaces\IAudioSessionControl.ahk {
+[2747] core_audio_interfaces\IAudioSessionControl.ahk {
 
 Line  	|	Function
 0006	|	__New(ptr)
@@ -39172,7 +39907,7 @@ Line  	|	Function
 0047	|	GetDisplayName(ByRef DisplayName)
 
 }
-[2669] core_audio_interfaces\IAudioSessionControl2.ahk {
+[2748] core_audio_interfaces\IAudioSessionControl2.ahk {
 
 Line  	|	Function
 0006	|	__New(ptr)
@@ -39181,7 +39916,7 @@ Line  	|	Function
 0044	|	GetProcessId(ByRef ProcessId)
 
 }
-[2670] core_audio_interfaces\IAudioSessionEnumerator.ahk {
+[2749] core_audio_interfaces\IAudioSessionEnumerator.ahk {
 
 Line  	|	Function
 0006	|	__New(ptr)
@@ -39190,7 +39925,7 @@ Line  	|	Function
 0038	|	GetSession(SessionNumber, ByRef oIAudioSessionControl)
 
 }
-[2671] core_audio_interfaces\IAudioSessionManager2.ahk {
+[2750] core_audio_interfaces\IAudioSessionManager2.ahk {
 
 Line  	|	Function
 0006	|	__New(ptr)
@@ -39198,7 +39933,7 @@ Line  	|	Function
 0030	|	GetSessionEnumerator(ByRef oIAudioSessionEnumerator)
 
 }
-[2672] core_audio_interfaces\IMMDevice.ahk {
+[2751] core_audio_interfaces\IMMDevice.ahk {
 
 Line  	|	Function
 0006	|	__New(ptr)
@@ -39209,7 +39944,7 @@ Line  	|	Function
 0102	|	GetState(ByRef State)
 
 }
-[2673] core_audio_interfaces\IMMDeviceCollection.ahk {
+[2752] core_audio_interfaces\IMMDeviceCollection.ahk {
 
 Line  	|	Function
 0006	|	__New(ptr)
@@ -39218,7 +39953,7 @@ Line  	|	Function
 0043	|	Item(Device, ByRef oIMMDevice)
 
 }
-[2674] core_audio_interfaces\IMMDeviceEnumerator.ahk {
+[2753] core_audio_interfaces\IMMDeviceEnumerator.ahk {
 
 Line  	|	Function
 0006	|	__New()
@@ -39231,7 +39966,7 @@ Line  	|	Function
 0101	|	UnregisterEndpointNotificationCallback(oIMMNotificationClient)
 
 }
-[2675] core_audio_interfaces\IPropertyStore.ahk {
+[2754] core_audio_interfaces\IPropertyStore.ahk {
 
 Line  	|	Function
 0006	|	__New(ptr)
@@ -39244,7 +39979,7 @@ Line  	|	Function
 0113	|	Commit()
 
 }
-[2676] core_audio_interfaces\ISimpleAudioVolume.ahk {
+[2755] core_audio_interfaces\ISimpleAudioVolume.ahk {
 
 Line  	|	Function
 0006	|	__New(ptr)
@@ -39253,7 +39988,7 @@ Line  	|	Function
 0054	|	GetMute(ByRef Mute)
 
 }
-[2677] CustomBoxes\BarsBox.ahk {
+[2756] CustomBoxes\BarsBox.ahk {
 
 Line  	|	Function
 0070	|	Norm(Value, A, B)
@@ -39261,88 +39996,88 @@ Line  	|	Function
 0078	|	Map(Value, A1, B1, A2, B2)
 
 }
-[2678] CustomBoxes\BetterBox.ahk {
+[2757] CustomBoxes\BetterBox.ahk {
 
 Line  	|	Function
 
 }
-[2679] CustomBoxes\BtnBox.ahk {
+[2758] CustomBoxes\BtnBox.ahk {
 
 Line  	|	Function
 
 }
-[2680] CustomBoxes\ButtonBox.ahk {
+[2759] CustomBoxes\ButtonBox.ahk {
 
 Line  	|	Function
 
 }
-[2681] CustomBoxes\EditBox.ahk {
+[2760] CustomBoxes\EditBox.ahk {
 
 Line  	|	Function
 
 }
-[2682] CustomBoxes\IconBox.ahk {
+[2761] CustomBoxes\IconBox.ahk {
 
 Line  	|	Function
 
 }
-[2683] CustomBoxes\ListBox.ahk {
+[2762] CustomBoxes\ListBox.ahk {
 
 Line  	|	Function
 
 }
-[2684] CustomBoxes\LoginBox.ahk {
+[2763] CustomBoxes\LoginBox.ahk {
 
 Line  	|	Function
 
 }
-[2685] CustomBoxes\LV_Box.ahk {
+[2764] CustomBoxes\LV_Box.ahk {
 
 Line  	|	Function
 
 }
-[2686] CustomBoxes\MonoBox.ahk {
+[2765] CustomBoxes\MonoBox.ahk {
 
 Line  	|	Function
 
 }
-[2687] CustomBoxes\MultiBox.ahk {
+[2766] CustomBoxes\MultiBox.ahk {
 
 Line  	|	Function
 
 }
-[2688] CustomBoxes\NumberBox.ahk {
+[2767] CustomBoxes\NumberBox.ahk {
 
 Line  	|	Function
 0052	|	EditHandler(hEdit)
 
 }
-[2689] CustomBoxes\PassBox.ahk {
+[2768] CustomBoxes\PassBox.ahk {
 
 Line  	|	Function
 
 }
-[2690] CustomBoxes\PictureBox.ahk {
+[2769] CustomBoxes\PictureBox.ahk {
 
 Line  	|	Function
 
 }
-[2691] CustomBoxes\RadioBox.ahk {
+[2770] CustomBoxes\RadioBox.ahk {
 
 Line  	|	Function
 
 }
-[2692] CustomBoxes\RadioBoxEx.ahk {
+[2771] CustomBoxes\RadioBoxEx.ahk {
 
 Line  	|	Function
 
 }
-[2693] CustomBoxes\TreeBox.ahk {
+[2772] CustomBoxes\TreeBox.ahk {
 
 Line  	|	Function
 
 }
-[2694] Interface\Dictation.ahk {
+[2773] Interface\Dictation.ahk {
 
 Line  	|	Function
 0019	|	Init()
@@ -39358,67 +40093,67 @@ Line  	|	Function
 0321	|	saveToClipboard(_result)
 
 }
-[2695]  {
+[2774]  {
 
 Line  	|	Function
 
 }
-[2696]  {
+[2775]  {
 
 Line  	|	Function
 
 }
-[2697]  {
+[2776]  {
 
 Line  	|	Function
 
 }
-[2698]  {
+[2777]  {
 
 Line  	|	Function
 
 }
-[2699]  {
+[2778]  {
 
 Line  	|	Function
 
 }
-[2700] headers\d3DX9.ahk {
+[2779] headers\d3DX9.ahk {
 
 Line  	|	Function
 
 }
-[2701]  {
+[2780]  {
 
 Line  	|	Function
 
 }
-[2702]  {
+[2781]  {
 
 Line  	|	Function
 
 }
-[2703]  {
+[2782]  {
 
 Line  	|	Function
 
 }
-[2704]  {
+[2783]  {
 
 Line  	|	Function
 
 }
-[2705]  {
+[2784]  {
 
 Line  	|	Function
 
 }
-[2706]  {
+[2785]  {
 
 Line  	|	Function
 
 }
-[2707] headers\HeaderParser.ahk {
+[2786] headers\HeaderParser.ahk {
 
 Line  	|	Function
 0003	|	__New(file)
@@ -39434,7 +40169,7 @@ Line  	|	Function
 0290	|	patch()
 
 }
-[2708]  {
+[2787]  {
 
 Line  	|	Function
 0002	|	_7thpass()
@@ -39444,48 +40179,48 @@ Line  	|	Function
 0113	|	_6thpass()
 
 }
-[2709]  {
+[2788]  {
 
 Line  	|	Function
 0002	|	_5thpass()
 
 }
-[2710]  {
+[2789]  {
 
 Line  	|	Function
 
 }
-[2711] headers\_d3D11.ahk {
+[2790] headers\_d3D11.ahk {
 
 Line  	|	Function
 
 }
-[2712]  {
+[2791]  {
 
 Line  	|	Function
 
 }
-[2713]  {
+[2792]  {
 
 Line  	|	Function
 
 }
-[2714]  {
+[2793]  {
 
 Line  	|	Function
 
 }
-[2715] headers\_dshow.ahk {
+[2794] headers\_dshow.ahk {
 
 Line  	|	Function
 
 }
-[2716]  {
+[2795]  {
 
 Line  	|	Function
 
 }
-[2717] Lib\DDSFile.ahk {
+[2796] Lib\DDSFile.ahk {
 
 Line  	|	Function
 0016	|	setFilePixelFormat(format = "RGB")
@@ -39498,14 +40233,14 @@ Line  	|	Function
 0238	|	compareSurfaceData(byref dump, byref desc, samples = 8, optimized = False)
 
 }
-[2718] Lib\DInputEmu.ahk {
+[2797] Lib\DInputEmu.ahk {
 
 Line  	|	Function
 0006	|	InitDInputEmu(byref config, _unicode = true)
 0025	|	IDirectInputDeviceW_GetDeviceState(p1, p2, p3)
 
 }
-[2719] Lib\FileHooks.ahk {
+[2798] Lib\FileHooks.ahk {
 
 Line  	|	Function
 0009	|	initFileHooks(byref config)
@@ -39526,7 +40261,7 @@ Line  	|	Function
 0313	|	GetModuleFileNameW(p1, p2, p3)
 
 }
-[2720] Lib\hRes.ahk {
+[2799] Lib\hRes.ahk {
 
 Line  	|	Function
 0012	|	ComputeResolutionCorrections(p2, p3)
@@ -39562,7 +40297,7 @@ Line  	|	Function
 0553	|	IDirect3DDevice7_DrawPrimitiveVB(p1, p2, p3, p4, p5, p6)
 
 }
-[2721] Lib\Lib.ahk {
+[2800] Lib\Lib.ahk {
 
 Line  	|	Function
 0007	|	__New(byref definition, ppInterface, version8 = False)
@@ -39583,13 +40318,13 @@ Line  	|	Function
 0272	|	parseConfig(item = "")
 
 }
-[2722] Lib\ref.ahk {
+[2801] Lib\ref.ahk {
 
 Line  	|	Function
 0005	|	IDirectDrawSurface2_lock(p1, p2, p3, p4, p5)
 
 }
-[2723] Lib\SurfaceHooks.ahk {
+[2802] Lib\SurfaceHooks.ahk {
 
 Line  	|	Function
 0001	|	CheckSurface(p1)
@@ -39597,7 +40332,7 @@ Line  	|	Function
 0039	|	IDirectDrawSurface_Unlock(p1, p2)
 
 }
-[2724] TexSwap\TexSwapLib.ahk {
+[2803] TexSwap\TexSwapLib.ahk {
 
 Line  	|	Function
 0004	|	initTextSwapHooks(byref config)
@@ -39615,14 +40350,14 @@ Line  	|	Function
 0433	|	TextSwapUpdate(pIDirectDraw)
 
 }
-[2725] TexSwap\TexSwapLibGL.ahk {
+[2804] TexSwap\TexSwapLibGL.ahk {
 
 Line  	|	Function
 0003	|	InitTextSwapHooksGl(byref config)
 0024	|	LoadTextureDumpsGl(path = "")
 
 }
-[2726] TexSwap\TextureHooks.ahk {
+[2805] TexSwap\TextureHooks.ahk {
 
 Line  	|	Function
 0001	|	IDirect3DTexture_GetHandle(p1, p2, p3)
@@ -39638,13 +40373,13 @@ Line  	|	Function
 0190	|	IDirect3DDevice7_Load(p1, p2, p3, p4, p5, p6)
 
 }
-[2727] DoDragAndDrop\DoDragDrop.ahk {
+[2806] DoDragAndDrop\DoDragDrop.ahk {
 
 Line  	|	Function
 0050	|	DoDragDrop_GetBitmapSize(HBITMAP, ByRef W, ByRef H)
 
 }
-[2728] DoDragAndDrop\IDataObject.ahk {
+[2807] DoDragAndDrop\IDataObject.ahk {
 
 Line  	|	Function
 0006	|	IDataObject_GetData(pDataObj, ByRef FORMATETC, ByRef Size, ByRef Data)
@@ -39662,12 +40397,12 @@ Line  	|	Function
 0176	|	IDataObject_SetText(pDataObj, ByRef Txt)
 
 }
-[2729] DoDragAndDrop\IDragSourceHelper.ahk {
+[2808] DoDragAndDrop\IDragSourceHelper.ahk {
 
 Line  	|	Function
 
 }
-[2730] DoDragAndDrop\IDropSource.ahk {
+[2809] DoDragAndDrop\IDropSource.ahk {
 
 Line  	|	Function
 0014	|	IDropSource_Create()
@@ -39679,12 +40414,12 @@ Line  	|	Function
 0068	|	IDropSource_GiveFeedback(IDropSource, dwEffect)
 
 }
-[2731] DoDragAndDrop\IDropSource_Sample.ahk {
+[2810] DoDragAndDrop\IDropSource_Sample.ahk {
 
 Line  	|	Function
 
 }
-[2732] DoDragAndDrop\IDropTarget.ahk {
+[2811] DoDragAndDrop\IDropTarget.ahk {
 
 Line  	|	Function
 0112	|	RegisterDragDrop()
@@ -39696,13 +40431,13 @@ Line  	|	Function
 0251	|	DragLeave()
 
 }
-[2733] DoDragAndDrop\IDropTarget_Sample.ahk {
+[2812] DoDragAndDrop\IDropTarget_Sample.ahk {
 
 Line  	|	Function
 0045	|	IDropTargetOnDrop_LV(TargetObject, pDataObj, KeyState, X, Y, DropEffect)
 
 }
-[2734] DoDragAndDrop\IEnumFORMATETC.ahk {
+[2813] DoDragAndDrop\IEnumFORMATETC.ahk {
 
 Line  	|	Function
 0005	|	IEnumFORMATETC_Next(pEnumObj, ByRef FORMATETC)
@@ -39710,23 +40445,23 @@ Line  	|	Function
 0020	|	IEnumFORMATETC_Skip(pEnumObj, ItemCount)
 
 }
-[2735] DoDragAndDrop\SHDataObject.ahk {
+[2814] DoDragAndDrop\SHDataObject.ahk {
 
 Line  	|	Function
 0026	|	SHDataObject_DragImageFromBitmap(DataObj, HBITMAP)
 
 }
-[2736] DoDragAndDrop\SHDoDragDrop.ahk {
+[2815] DoDragAndDrop\SHDoDragDrop.ahk {
 
 Line  	|	Function
 
 }
-[2737] DoDragAndDrop\SHDoDragDrop_Sample.ahk {
+[2816] DoDragAndDrop\SHDoDragDrop_Sample.ahk {
 
 Line  	|	Function
 
 }
-[2738] ahk\DX9_overlay.ahk {
+[2817] ahk\DX9_overlay.ahk {
 
 Line  	|	Function
 0060	|	Init()
@@ -39769,12 +40504,12 @@ Line  	|	Function
 0320	|	SetOverlayPriority(id, priority)
 
 }
-[2739] eAutocomplete\eAutocomplete.ahk {
+[2818] eAutocomplete\eAutocomplete.ahk {
 
 Line  	|	Function
 
 }
-[2740] eAutocomplete\_BaseMenu.ahk {
+[2819] eAutocomplete\_BaseMenu.ahk {
 
 Line  	|	Function
 0002	|	__New()
@@ -39785,12 +40520,12 @@ Line  	|	Function
 0062	|	WM_MOUSEACTIVATE(_wParam, _lParam, _uMsg, _hWnd)
 
 }
-[2741] eAutocomplete\_Functor.ahk {
+[2820] eAutocomplete\_Functor.ahk {
 
 Line  	|	Function
 
 }
-[2742] eAutocomplete\_HostControlWrapper.ahk {
+[2821] eAutocomplete\_HostControlWrapper.ahk {
 
 Line  	|	Function
 0047	|	unwrapAll()
@@ -39805,13 +40540,13 @@ Line  	|	Function
 0129	|	ObjectFromEvent(ByRef _idChild_, _hWnd, _idObject, _idChild)
 
 }
-[2743]  {
+[2822]  {
 
 Line  	|	Function
 0004	|	__New(_control)
 
 }
-[2744]  {
+[2823]  {
 
 Line  	|	Function
 0004	|	__New(_hwnd)
@@ -39827,7 +40562,7 @@ Line  	|	Function
 0095	|	__focus(_event, _hwnd, _idObject, _idChild, _dwEventThread, _dwmsEventTime)
 
 }
-[2745] eAutocomplete\_Hotkeys.ahk {
+[2824] eAutocomplete\_Hotkeys.ahk {
 
 Line  	|	Function
 0002	|	__New(_hkIfFn, _keyName, _fn)
@@ -39838,7 +40573,7 @@ Line  	|	Function
 0044	|	__New(_key, _timeout, _fn)
 
 }
-[2746] eAutocomplete\_InfoTip.ahk {
+[2825] eAutocomplete\_InfoTip.ahk {
 
 Line  	|	Function
 0020	|	__New(_hTooltip)
@@ -39849,7 +40584,7 @@ Line  	|	Function
 0060	|	show()
 
 }
-[2747] eAutocomplete\_Menu.ahk {
+[2826] eAutocomplete\_Menu.ahk {
 
 Line  	|	Function
 0002	|	__New()
@@ -39859,7 +40594,7 @@ Line  	|	Function
 0024	|	hasSuggestions()
 
 }
-[2748]  {
+[2827]  {
 
 Line  	|	Function
 0007	|	__New(_GUIID)
@@ -39867,7 +40602,7 @@ Line  	|	Function
 0054	|	autoWH()
 
 }
-[2749]  {
+[2828]  {
 
 Line  	|	Function
 0002	|	__New(_GUIID, _x, _y)
@@ -39879,7 +40614,7 @@ Line  	|	Function
 0078	|	_itemClickHandler()
 
 }
-[2750] eAutocomplete\_OnEvent.ahk {
+[2829] eAutocomplete\_OnEvent.ahk {
 
 Line  	|	Function
 0002	|	__New(_source, _eventName, _callback)
@@ -39891,7 +40626,7 @@ Line  	|	Function
 0037	|	__Delete()
 
 }
-[2751] eAutocomplete\_Window.ahk {
+[2830] eAutocomplete\_Window.ahk {
 
 Line  	|	Function
 0002	|	move(_x, _y)
@@ -39899,7 +40634,7 @@ Line  	|	Function
 0016	|	isVisible()
 
 }
-[2752]  {
+[2831]  {
 
 Line  	|	Function
 0002	|	__New(_GUIID)
@@ -39909,14 +40644,14 @@ Line  	|	Function
 0042	|	_releaseHandle()
 
 }
-[2753]  {
+[2832]  {
 
 Line  	|	Function
 0002	|	__New(_GUIID, _x, _y)
 0008	|	__Delete()
 
 }
-[2754] eAutocomplete\_WordList.ahk {
+[2833] eAutocomplete\_WordList.ahk {
 
 Line  	|	Function
 0068	|	hasSource(_sourceName)
@@ -39924,18 +40659,18 @@ Line  	|	Function
 0098	|	_buildSubsections(_format, ByRef _resource)
 
 }
-[2755]  {
+[2834]  {
 
 Line  	|	Function
 0004	|	__New(_Word)
 
 }
-[2756]  {
+[2835]  {
 
 Line  	|	Function
 
 }
-[2757] libs\EmbedPython.ahk {
+[2836] libs\EmbedPython.ahk {
 
 Line  	|	Function
 0041	|	Main()
@@ -39951,7 +40686,7 @@ Line  	|	Function
 0377	|	OnMessageClosure(wParam, lParam, msg, hwnd)
 
 }
-[2758] libs\EmbedPython.ahk {
+[2837] libs\EmbedPython.ahk {
 
 Line  	|	Function
 0017	|	_A_ScriptDir()
@@ -40132,7 +40867,7 @@ Line  	|	Function
 1149	|	_WinWaitNotActive(WinTitle="",WinText="",Seconds="",ExcludeTitle="",ExcludeText="")
 
 }
-[2759] libs\EmbedPython.ahk {
+[2838] libs\EmbedPython.ahk {
 
 Line  	|	Function
 0001	|	LoadPython()
@@ -40179,12 +40914,12 @@ Line  	|	Function
 0278	|	PyUnicode_FromString(string)
 
 }
-[2760] libs\EmbedPython.ahk {
+[2839] libs\EmbedPython.ahk {
 
 Line  	|	Function
 
 }
-[2761] exLibs\arr.ahk {
+[2840] exLibs\arr.ahk {
 
 Line  	|	Function
 0003	|	contained(sub, sup)
@@ -40194,54 +40929,54 @@ Line  	|	Function
 0096	|	sum(array)
 
 }
-[2762] exLibs\guiex.ahk {
+[2841] exLibs\guiex.ahk {
 
 Line  	|	Function
 
 }
-[2763] exLibs\hkex.ahk {
+[2842] exLibs\hkex.ahk {
 
 Line  	|	Function
 0005	|	SSSend()
 
 }
-[2764] exLibs\http.ahk {
+[2843] exLibs\http.ahk {
 
 Line  	|	Function
 0003	|	get(url)
 
 }
-[2765] exLibs\iniex.ahk {
+[2844] exLibs\iniex.ahk {
 
 Line  	|	Function
 0004	|	create(sections)
 0035	|	update()
 
 }
-[2766] exLibs\mkex.ahk {
+[2845] exLibs\mkex.ahk {
 
 Line  	|	Function
 
 }
-[2767] exLibs\strex.ahk {
+[2846] exLibs\strex.ahk {
 
 Line  	|	Function
 0008	|	rep(str, times)
 
 }
-[2768] exLibs\winex.ahk {
+[2847] exLibs\winex.ahk {
 
 Line  	|	Function
 0005	|	setTrayHeight()
 
 }
-[2769] _Functions\AddTooltip.ahk {
+[2848] _Functions\AddTooltip.ahk {
 
 Line  	|	Function
 0052	|	AddToolTip(hControl,p_Text="")
 
 }
-[2770] _Functions\Dlg2.ahk {
+[2849] _Functions\Dlg2.ahk {
 
 Line  	|	Function
 0224	|	Dlg_ChooseColor(hOwner,ByRef r_Color,p_Flags=0,p_CustomColorsFile="",p_HelpHandler="")
@@ -40261,7 +40996,7 @@ Line  	|	Function
 2758	|	Dlg_SaveFile(hOwner=0,p_Title="",p_Filter="",p_FilterIndex="",p_Root="",p_DfltExt="",ByRef r_Flags=0,p_HelpHandler="")
 
 }
-[2771] _Functions\Edit.ahk {
+[2850] _Functions\Edit.ahk {
 
 Line  	|	Function
 0065	|	Edit_ActivateParent(hEdit)
@@ -40365,55 +41100,55 @@ Line  	|	Function
 4019	|	Edit_WriteFile(hEdit,p_File,p_Encoding="",p_Convert="")
 
 }
-[2772] _Functions\Edit_AutoSetTabStops.ahk {
+[2851] _Functions\Edit_AutoSetTabStops.ahk {
 
 Line  	|	Function
 0064	|	Edit_AutoSetTabStops(hEdit,p_ColumnGap=6,p_MaxSample=0)
 
 }
-[2773] _Functions\Edit_BlockMove.ahk {
+[2852] _Functions\Edit_BlockMove.ahk {
 
 Line  	|	Function
 0043	|	Edit_BlockMove(hEdit,p_Command="")
 
 }
-[2774] _Functions\Edit_CutLine.ahk {
+[2853] _Functions\Edit_CutLine.ahk {
 
 Line  	|	Function
 0033	|	Edit_CutLine(hEdit,p_LineIdx=-1)
 
 }
-[2775] _Functions\Edit_DeleteLine.ahk {
+[2854] _Functions\Edit_DeleteLine.ahk {
 
 Line  	|	Function
 0032	|	Edit_DeleteLine(hEdit,p_LineIdx=-1)
 
 }
-[2776] _Functions\Edit_Duplicate.ahk {
+[2855] _Functions\Edit_Duplicate.ahk {
 
 Line  	|	Function
 0038	|	Edit_Duplicate(hEdit)
 
 }
-[2777] _Functions\Edit_SelectLine.ahk {
+[2856] _Functions\Edit_SelectLine.ahk {
 
 Line  	|	Function
 0040	|	Edit_SelectLine(hEdit,p_LineIdx=-1,p_IncludeEOL=False)
 
 }
-[2778] _Functions\Edit_Sort.ahk {
+[2857] _Functions\Edit_Sort.ahk {
 
 Line  	|	Function
 0038	|	Edit_Sort(hEdit,p_SortOptions="")
 
 }
-[2779] _Functions\Edit_SpellCheckGUI.ahk {
+[2858] _Functions\Edit_SpellCheckGUI.ahk {
 
 Line  	|	Function
 0165	|	Edit_SpellCheckGUI(p_Owner,hEdit,byRef hSpell,p_CustomDic="",p_Title="",p_Font="")
 
 }
-[2780] _Functions\Edit_TTSGUI.ahk {
+[2859] _Functions\Edit_TTSGUI.ahk {
 
 Line  	|	Function
 0156	|	Edit_TTSGUI(p_Owner,hEdit,p_Options="",p_Title="")
@@ -40421,7 +41156,7 @@ Line  	|	Function
 1121	|	Edit_TTSGUI_OnEndStream(StreamNumber,StreamPosition)
 
 }
-[2781] _Functions\Fnt.ahk {
+[2860] _Functions\Fnt.ahk {
 
 Line  	|	Function
 0085	|	Fnt_AddFontFile(p_File,p_Private,p_Hidden=False)
@@ -40493,25 +41228,25 @@ Line  	|	Function
 4488	|	Fnt_VertDTUs2Pixels(hFont,p_VertDTUs)
 
 }
-[2782] _Functions\Fnt_RandomTTFont.ahk {
+[2861] _Functions\Fnt_RandomTTFont.ahk {
 
 Line  	|	Function
 0029	|	Fnt_RandomTTFont()
 
 }
-[2783] _Functions\MoveChildWindow.ahk {
+[2862] _Functions\MoveChildWindow.ahk {
 
 Line  	|	Function
 0111	|	MoveChildWindow(p_Parent,p_Child,p_Options="")
 
 }
-[2784] _Functions\SortOptionsGUI.ahk {
+[2863] _Functions\SortOptionsGUI.ahk {
 
 Line  	|	Function
 0092	|	SortOptionsGUI(p_Owner="",p_SortOptions="",p_Title="",p_Font="")
 
 }
-[2785] _Functions\Spell.ahk {
+[2864] _Functions\Spell.ahk {
 
 Line  	|	Function
 0118	|	Spell_Add(ByRef hSpell,p_Word,p_AddCase="")
@@ -40524,41 +41259,41 @@ Line  	|	Function
 0785	|	Spell_Uninit(ByRef hSpell)
 
 }
-[2786] _Functions\WinGetPosEx.ahk {
+[2865] _Functions\WinGetPosEx.ahk {
 
 Line  	|	Function
 0076	|	WinGetPosEx(hWindow,ByRef X="",ByRef Y="",ByRef Width="",ByRef Height="",ByRef Offset_X="",ByRef Offset_Y="")
 
 }
-[2787] ImportTypeLib\ImportTypeLib.ahk {
+[2866] ImportTypeLib\ImportTypeLib.ahk {
 
 Line  	|	Function
 0011	|	ImportTypeLib(lib, version = "1.0")
 
 }
-[2788] ImportTypeLib\ITL.ahk {
+[2867] ImportTypeLib\ITL.ahk {
 
 Line  	|	Function
 
 }
-[2789] ImportTypeLib\ITL_AbstractClassConstructor.ahk {
+[2868] ImportTypeLib\ITL_AbstractClassConstructor.ahk {
 
 Line  	|	Function
 
 }
-[2790] ImportTypeLib\ITL_CoClassConstructor.ahk {
+[2869] ImportTypeLib\ITL_CoClassConstructor.ahk {
 
 Line  	|	Function
 0001	|	ITL_CoClassConstructor(this, iid = 0)
 
 }
-[2791] ImportTypeLib\ITL_CoClassWrapper.ahk {
+[2870] ImportTypeLib\ITL_CoClassWrapper.ahk {
 
 Line  	|	Function
 0003	|	__New(typeInfo, lib)
 
 }
-[2792] ImportTypeLib\ITL_ConstantMemberWrapperBaseClass.ahk {
+[2871] ImportTypeLib\ITL_ConstantMemberWrapperBaseClass.ahk {
 
 Line  	|	Function
 0007	|	__Get(field)
@@ -40566,19 +41301,19 @@ Line  	|	Function
 0168	|	NewEnum()
 
 }
-[2793] ImportTypeLib\ITL_EnumWrapper.ahk {
+[2872] ImportTypeLib\ITL_EnumWrapper.ahk {
 
 Line  	|	Function
 0003	|	__New(typeInfo, lib)
 
 }
-[2794] ImportTypeLib\ITL_InterfaceConstructor.ahk {
+[2873] ImportTypeLib\ITL_InterfaceConstructor.ahk {
 
 Line  	|	Function
 0001	|	ITL_InterfaceConstructor(this, instance)
 
 }
-[2795] ImportTypeLib\ITL_InterfaceWrapper.ahk {
+[2874] ImportTypeLib\ITL_InterfaceWrapper.ahk {
 
 Line  	|	Function
 0007	|	__New(typeInfo, lib)
@@ -40586,13 +41321,13 @@ Line  	|	Function
 0204	|	__Set(property, value)
 
 }
-[2796] ImportTypeLib\ITL_ModuleWrapper.ahk {
+[2875] ImportTypeLib\ITL_ModuleWrapper.ahk {
 
 Line  	|	Function
 0003	|	__New(typeInfo, lib)
 
 }
-[2797] ImportTypeLib\ITL_StructureArray.ahk {
+[2876] ImportTypeLib\ITL_StructureArray.ahk {
 
 Line  	|	Function
 0004	|	__New(type, count)
@@ -40603,13 +41338,13 @@ Line  	|	Function
 0088	|	SetCapacity(newCount)
 
 }
-[2798] ImportTypeLib\ITL_StructureConstructor.ahk {
+[2877] ImportTypeLib\ITL_StructureConstructor.ahk {
 
 Line  	|	Function
 0001	|	ITL_StructureConstructor(this, ptr = 0, noInit = false)
 
 }
-[2799] ImportTypeLib\ITL_StructureWrapper.ahk {
+[2878] ImportTypeLib\ITL_StructureWrapper.ahk {
 
 Line  	|	Function
 0003	|	__New(typeInfo, lib)
@@ -40624,7 +41359,7 @@ Line  	|	Function
 0224	|	Clear()
 
 }
-[2800] ImportTypeLib\ITL_TypeLibWrapper.ahk {
+[2879] ImportTypeLib\ITL_TypeLibWrapper.ahk {
 
 Line  	|	Function
 0003	|	__New(lib)
@@ -40632,20 +41367,20 @@ Line  	|	Function
 0140	|	GetGUID(obj = -1, returnRaw = false, passRaw = false)
 
 }
-[2801] ImportTypeLib\ITL_WrapperBaseClass.ahk {
+[2880] ImportTypeLib\ITL_WrapperBaseClass.ahk {
 
 Line  	|	Function
 0003	|	__New(typeInfo, lib)
 0036	|	__Delete()
 
 }
-[2802] ImportTypeLib\Main.ahk {
+[2881] ImportTypeLib\Main.ahk {
 
 Line  	|	Function
 0011	|	ImportTypeLib(lib, version = "1.0")
 
 }
-[2803] ImportTypeLib\Misc.ahk {
+[2882] ImportTypeLib\Misc.ahk {
 
 Line  	|	Function
 0003	|	ITL_IsSafeArray(obj)
@@ -40661,31 +41396,31 @@ Line  	|	Function
 0166	|	ITL_ArrayGetBounds(obj, byRef lBound = 0, byRef uBound = 0)
 
 }
-[2804] ImportTypeLib\Properties.ahk {
+[2883] ImportTypeLib\Properties.ahk {
 
 Line  	|	Function
 0024	|	IsInternalProperty(property)
 
 }
-[2805] Lib\ITL_FAILED.ahk {
+[2884] Lib\ITL_FAILED.ahk {
 
 Line  	|	Function
 0001	|	ITL_FAILED(hr)
 
 }
-[2806] Lib\ITL_FormatError.ahk {
+[2885] Lib\ITL_FormatError.ahk {
 
 Line  	|	Function
 0001	|	ITL_FormatError(hr)
 
 }
-[2807] Lib\ITL_FormatException.ahk {
+[2886] Lib\ITL_FormatException.ahk {
 
 Line  	|	Function
 0001	|	ITL_FormatException(msg, detail, error, hr = "", special = false, special_msg = "")
 
 }
-[2808] Lib\ITL_GUID.ahk {
+[2887] Lib\ITL_GUID.ahk {
 
 Line  	|	Function
 0001	|	ITL_GUID_ToString(guid)
@@ -40694,24 +41429,24 @@ Line  	|	Function
 0019	|	ITL_GUID_Create(byRef guid)
 
 }
-[2809] Lib\ITL_HasEnumFlag.ahk {
+[2888] Lib\ITL_HasEnumFlag.ahk {
 
 Line  	|	Function
 0001	|	ITL_HasEnumFlag(combi, flag)
 
 }
-[2810] Lib\ITL_IsComObject.ahk {
+[2889] Lib\ITL_IsComObject.ahk {
 
 Line  	|	Function
 0001	|	ITL_IsComObject(obj)
 
 }
-[2811] Lib\ITL_Max.ahk {
+[2890] Lib\ITL_Max.ahk {
 
 Line  	|	Function
 
 }
-[2812] Lib\ITL_Mem.ahk {
+[2891] Lib\ITL_Mem.ahk {
 
 Line  	|	Function
 0001	|	ITL_Mem_Allocate(bytes)
@@ -40720,24 +41455,24 @@ Line  	|	Function
 0015	|	ITL_Mem_Copy(src, dest, bytes)
 
 }
-[2813] Lib\ITL_Min.ahk {
+[2892] Lib\ITL_Min.ahk {
 
 Line  	|	Function
 
 }
-[2814] Lib\ITL_ParamToVARIANT.ahk {
+[2893] Lib\ITL_ParamToVARIANT.ahk {
 
 Line  	|	Function
 0001	|	ITL_ParamToVARIANT(info, tdesc, value, byRef variant, index)
 
 }
-[2815] Lib\ITL_SUCCEEDED.ahk {
+[2894] Lib\ITL_SUCCEEDED.ahk {
 
 Line  	|	Function
 0001	|	ITL_SUCCEEDED(hr)
 
 }
-[2816] Lib\ITL_VARIANT.ahk {
+[2895] Lib\ITL_VARIANT.ahk {
 
 Line  	|	Function
 0001	|	ITL_VARIANT_Create(value, byRef buffer)
@@ -40746,7 +41481,7 @@ Line  	|	Function
 0063	|	ITL_VARIANT_GetByteCount(variant)
 
 }
-[2817] src\Binary.ahk {
+[2896] src\Binary.ahk {
 
 Line  	|	Function
 0008	|	getSize()
@@ -40759,7 +41494,7 @@ Line  	|	Function
 0069	|	numPut(number, offsetInBytes, sizeInBytes)
 
 }
-[2818] src\CompileResult.ahk {
+[2897] src\CompileResult.ahk {
 
 Line  	|	Function
 0002	|	__New()
@@ -40784,7 +41519,7 @@ Line  	|	Function
 0158	|	_Delete()
 
 }
-[2819] src\MCodeCompileChain.ahk {
+[2898] src\MCodeCompileChain.ahk {
 
 Line  	|	Function
 0014	|	select(attribute, value)
@@ -40793,12 +41528,12 @@ Line  	|	Function
 0058	|	compile(inputFile, outputFile)
 
 }
-[2820] Compiler\gcc.ahk {
+[2899] Compiler\gcc.ahk {
 
 Line  	|	Function
 
 }
-[2821] Compiler\VSCompiler.ahk {
+[2900] Compiler\VSCompiler.ahk {
 
 Line  	|	Function
 0008	|	compile()
@@ -40824,7 +41559,7 @@ Line  	|	Function
 0212	|	RunWaitMany(commands)
 
 }
-[2822] Lib\MinHook.ahk {
+[2901] Lib\MinHook.ahk {
 
 Line  	|	Function
 0006	|	__New(ModuleName, ModuleFunction, CallbackFunction)
@@ -40842,7 +41577,7 @@ Line  	|	Function
 0223	|	MH_StatusToString(status)
 
 }
-[2823] Lib\MinHook_Memory.ahk {
+[2902] Lib\MinHook_Memory.ahk {
 
 Line  	|	Function
 0007	|	__New(ModuleName, ModuleFunction, CallbackFunction)
@@ -40860,41 +41595,41 @@ Line  	|	Function
 0241	|	MH_StatusToString(status)
 
 }
-[2824] Lib\sizeof.ahk {
+[2903] Lib\sizeof.ahk {
 
 Line  	|	Function
 0021	|	sizeof(_TYPE_,parent_offset=0)
 
 }
-[2825]  {
+[2904]  {
 
 Line  	|	Function
 
 }
-[2826]  {
+[2905]  {
 
 Line  	|	Function
 
 }
-[2827]  {
+[2906]  {
 
 Line  	|	Function
 
 }
-[2828]  {
+[2907]  {
 
 Line  	|	Function
 0057	|	__New(message = "", innerException = "")
 
 }
-[2829]  {
+[2908]  {
 
 Line  	|	Function
 0044	|	__New()
 0074	|	CompareTo(obj)
 
 }
-[2830]  {
+[2909]  {
 
 Line  	|	Function
 0078	|	AddEnums()
@@ -40902,7 +41637,7 @@ Line  	|	Function
 0120	|	GetInstance()
 
 }
-[2831]  {
+[2910]  {
 
 Line  	|	Function
 0241	|	Add(Value)
@@ -40940,7 +41675,7 @@ Line  	|	Function
 2255	|	HasAttribute(attrib)
 
 }
-[2832]  {
+[2911]  {
 
 Line  	|	Function
 0220	|	StaticInit()
@@ -41010,7 +41745,7 @@ Line  	|	Function
 2526	|	Is(ObjType)
 
 }
-[2833]  {
+[2912]  {
 
 Line  	|	Function
 0023	|	BitAnd(bitsA, bitsB)
@@ -41071,7 +41806,7 @@ Line  	|	Function
 2934	|	__new(hv, hf, b, bf, i, iFlip, Neg = false)
 
 }
-[2834]  {
+[2913]  {
 
 Line  	|	Function
 0047	|	__new(Size=0, default=0)
@@ -41087,7 +41822,7 @@ Line  	|	Function
 0630	|	_AutoIncrease()
 
 }
-[2835]  {
+[2914]  {
 
 Line  	|	Function
 0353	|	CompareTo(obj)
@@ -41107,7 +41842,7 @@ Line  	|	Function
 1112	|	_TrimWhiteSpaceAndNullLeft(value)
 
 }
-[2836]  {
+[2915]  {
 
 Line  	|	Function
 0124	|	Add(value)
@@ -41134,7 +41869,7 @@ Line  	|	Function
 1292	|	_TryParse(s, style, info, ByRef Out)
 
 }
-[2837]  {
+[2916]  {
 
 Line  	|	Function
 0026	|	CompareUnsignedByteList(objA, objB)
@@ -41209,7 +41944,7 @@ Line  	|	Function
 2712	|	_Int64ToFloat(input)
 
 }
-[2838]  {
+[2917]  {
 
 Line  	|	Function
 0047	|	__new(Size=0, default=0)
@@ -41224,12 +41959,12 @@ Line  	|	Function
 0599	|	_ToStringRev(returnAsObj, startIndex, length, Format)
 
 }
-[2839]  {
+[2918]  {
 
 Line  	|	Function
 
 }
-[2840]  {
+[2919]  {
 
 Line  	|	Function
 0445	|	CompareTo(obj)
@@ -41269,7 +42004,7 @@ Line  	|	Function
 2564	|	__Delete()
 
 }
-[2841]  {
+[2920]  {
 
 Line  	|	Function
 0046	|	__new(Size=0, Encoding="")
@@ -41304,7 +42039,7 @@ Line  	|	Function
 2406	|	_NewEnum()
 
 }
-[2842]  {
+[2921]  {
 
 Line  	|	Function
 0065	|	__New()
@@ -41313,13 +42048,13 @@ Line  	|	Function
 0612	|	_GetCharFromString(s, index)
 
 }
-[2843]  {
+[2922]  {
 
 Line  	|	Function
 0029	|	__New()
 
 }
-[2844]  {
+[2923]  {
 
 Line  	|	Function
 0036	|	__New()
@@ -41345,7 +42080,7 @@ Line  	|	Function
 0588	|	ToString()
 
 }
-[2845]  {
+[2924]  {
 
 Line  	|	Function
 0167	|	ToSByte(obj, ReturnAsObject = false)
@@ -41376,7 +42111,7 @@ Line  	|	Function
 1214	|	_DoubleToInt64(inputNum)
 
 }
-[2846]  {
+[2925]  {
 
 Line  	|	Function
 0066	|	__New(MfDateTime, returnAsObj = false)
@@ -41386,13 +42121,13 @@ Line  	|	Function
 0132	|	GetType()
 
 }
-[2847]  {
+[2926]  {
 
 Line  	|	Function
 0031	|	__New()
 
 }
-[2848]  {
+[2927]  {
 
 Line  	|	Function
 0040	|	__New(capacity = 0)
@@ -41414,13 +42149,13 @@ Line  	|	Function
 0419	|	Remove(key)
 
 }
-[2849]  {
+[2928]  {
 
 Line  	|	Function
 0041	|	__New(key, value)
 
 }
-[2850]  {
+[2929]  {
 
 Line  	|	Function
 0084	|	AddEnums()
@@ -41433,13 +42168,13 @@ Line  	|	Function
 0216	|	HasAttribute(attrib)
 
 }
-[2851]  {
+[2930]  {
 
 Line  	|	Function
 0061	|	__New(message = "", innerException = "")
 
 }
-[2852]  {
+[2931]  {
 
 Line  	|	Function
 0198	|	AddAttributes()
@@ -41500,7 +42235,7 @@ Line  	|	Function
 2411	|	if(this._hasFlagsAttributeValue = -1)
 
 }
-[2853]  {
+[2932]  {
 
 Line  	|	Function
 0039	|	__New()
@@ -41509,7 +42244,7 @@ Line  	|	Function
 0082	|	GetHashCode()
 
 }
-[2854]  {
+[2933]  {
 
 Line  	|	Function
 0036	|	__New()
@@ -41523,7 +42258,7 @@ Line  	|	Function
 0270	|	HasAttribute(attrib)
 
 }
-[2855]  {
+[2934]  {
 
 Line  	|	Function
 0035	|	__New()
@@ -41531,7 +42266,7 @@ Line  	|	Function
 0103	|	GetHashCode(obj)
 
 }
-[2856]  {
+[2935]  {
 
 Line  	|	Function
 0091	|	AddAttribute(attrib)
@@ -41541,7 +42276,7 @@ Line  	|	Function
 0171	|	DestroyInstance()
 
 }
-[2857]  {
+[2936]  {
 
 Line  	|	Function
 0077	|	__New(message = "", innerException = "")
@@ -41559,7 +42294,7 @@ Line  	|	Function
 0810	|	Is(ObjType)
 
 }
-[2858]  {
+[2937]  {
 
 Line  	|	Function
 0038	|	__New()
@@ -41572,7 +42307,7 @@ Line  	|	Function
 0164	|	HasAttribute(attrib)
 
 }
-[2859]  {
+[2938]  {
 
 Line  	|	Function
 0182	|	Add(value)
@@ -41621,20 +42356,20 @@ Line  	|	Function
 2175	|	if(ex)
 
 }
-[2860]  {
+[2939]  {
 
 Line  	|	Function
 0060	|	__New(message = "", innerException = "")
 
 }
-[2861]  {
+[2940]  {
 
 Line  	|	Function
 0034	|	__New()
 0063	|	GetFormat(formatType)
 
 }
-[2862]  {
+[2941]  {
 
 Line  	|	Function
 0064	|	AddAttributes()
@@ -41643,7 +42378,7 @@ Line  	|	Function
 0110	|	DestroyInstance()
 
 }
-[2863]  {
+[2942]  {
 
 Line  	|	Function
 0045	|	__New(genericType)
@@ -41656,7 +42391,7 @@ Line  	|	Function
 0324	|	Remove(obj)
 
 }
-[2864]  {
+[2943]  {
 
 Line  	|	Function
 0032	|	__New(capacity = 0)
@@ -41673,13 +42408,13 @@ Line  	|	Function
 0313	|	Next(ByRef key, ByRef value)
 
 }
-[2865]  {
+[2944]  {
 
 Line  	|	Function
 0065	|	__New(message = "", innerException = "")
 
 }
-[2866]  {
+[2945]  {
 
 Line  	|	Function
 0062	|	__New()
@@ -41687,7 +42422,7 @@ Line  	|	Function
 0110	|	GetProgInstallLocation()
 
 }
-[2867]  {
+[2946]  {
 
 Line  	|	Function
 0123	|	Add(value)
@@ -41715,7 +42450,7 @@ Line  	|	Function
 1485	|	_ReturnInt16(obj)
 
 }
-[2868]  {
+[2947]  {
 
 Line  	|	Function
 0124	|	Add(value)
@@ -41742,7 +42477,7 @@ Line  	|	Function
 1329	|	_TryParse(s, style, info, ByRef Out)
 
 }
-[2869]  {
+[2948]  {
 
 Line  	|	Function
 0141	|	Add(value)
@@ -41770,25 +42505,25 @@ Line  	|	Function
 1355	|	_TryParse(s, style, info, ByRef Out)
 
 }
-[2870]  {
+[2949]  {
 
 Line  	|	Function
 
 }
-[2871]  {
+[2950]  {
 
 Line  	|	Function
 0060	|	__New(message = "", innerException = "")
 
 }
-[2872]  {
+[2951]  {
 
 Line  	|	Function
 0030	|	__New()
 0037	|	Clone()
 
 }
-[2873]  {
+[2952]  {
 
 Line  	|	Function
 0039	|	__New()
@@ -41813,7 +42548,7 @@ Line  	|	Function
 0756	|	Next(ByRef key, ByRef value)
 
 }
-[2874]  {
+[2953]  {
 
 Line  	|	Function
 0029	|	__new(Size=0, default=0, IgnoreCase=true)
@@ -41827,7 +42562,7 @@ Line  	|	Function
 0467	|	SubList(startIndex=0, endIndex="", leftToRight=true)
 
 }
-[2875]  {
+[2954]  {
 
 Line  	|	Function
 0065	|	Abs(obj, ReturnAsObject = false)
@@ -41861,13 +42596,13 @@ Line  	|	Function
 1485	|	_CompareLongIntStrings(FirstLongString, SecondLongString)
 
 }
-[2876]  {
+[2955]  {
 
 Line  	|	Function
 0065	|	__New(message = "", innerException = "")
 
 }
-[2877]  {
+[2956]  {
 
 Line  	|	Function
 0288	|	_NewEnum()
@@ -41999,7 +42734,7 @@ Line  	|	Function
 8283	|	ToByteList(startIndex=0, length=-1, littleEndian=true)
 
 }
-[2878]  {
+[2957]  {
 
 Line  	|	Function
 0069	|	AddEnums()
@@ -42007,22 +42742,22 @@ Line  	|	Function
 0094	|	GetInstance()
 
 }
-[2879]  {
+[2958]  {
 
 Line  	|	Function
 
 }
-[2880]  {
+[2959]  {
 
 Line  	|	Function
 
 }
-[2881]  {
+[2960]  {
 
 Line  	|	Function
 
 }
-[2882]  {
+[2961]  {
 
 Line  	|	Function
 0047	|	__New()
@@ -42034,7 +42769,7 @@ Line  	|	Function
 0204	|	Reset()
 
 }
-[2883]  {
+[2962]  {
 
 Line  	|	Function
 0047	|	__new(Size=0, default=0)
@@ -42049,7 +42784,7 @@ Line  	|	Function
 0646	|	_AutoIncrease()
 
 }
-[2884]  {
+[2963]  {
 
 Line  	|	Function
 0024	|	GetNibbles(obj)
@@ -42128,24 +42863,24 @@ Line  	|	Function
 2933	|	__new(hv, hf, c,Neg = false)
 
 }
-[2885]  {
+[2964]  {
 
 Line  	|	Function
 
 }
-[2886]  {
-
-Line  	|	Function
-0059	|	__New(message = "", innerException = "")
-
-}
-[2887]  {
+[2965]  {
 
 Line  	|	Function
 0059	|	__New(message = "", innerException = "")
 
 }
-[2888]  {
+[2966]  {
+
+Line  	|	Function
+0059	|	__New(message = "", innerException = "")
+
+}
+[2967]  {
 
 Line  	|	Function
 0038	|	__New()
@@ -42165,13 +42900,13 @@ Line  	|	Function
 0443	|	HasAttribute(attrib)
 
 }
-[2889]  {
+[2968]  {
 
 Line  	|	Function
 0059	|	__New(message = "", innerException = "")
 
 }
-[2890]  {
+[2969]  {
 
 Line  	|	Function
 0064	|	__new(BufferLen)
@@ -42206,7 +42941,7 @@ Line  	|	Function
 1473	|	TryParseUInt64(s, style, info, ByRef result)
 
 }
-[2891]  {
+[2970]  {
 
 Line  	|	Function
 0087	|	__New()
@@ -42226,13 +42961,13 @@ Line  	|	Function
 0497	|	HasAttribute(attrib)
 
 }
-[2892]  {
+[2971]  {
 
 Line  	|	Function
 0038	|	__New()
 
 }
-[2893]  {
+[2972]  {
 
 Line  	|	Function
 0084	|	AddAttributes()
@@ -42241,7 +42976,7 @@ Line  	|	Function
 0156	|	DestroyInstance()
 
 }
-[2894]  {
+[2973]  {
 
 Line  	|	Function
 0055	|	__New()
@@ -42267,7 +43002,7 @@ Line  	|	Function
 1149	|	if(A_StringCaseSense = "On")
 
 }
-[2895]  {
+[2974]  {
 
 Line  	|	Function
 0031	|	__New(ignoreCase)
@@ -42276,19 +43011,19 @@ Line  	|	Function
 0096	|	GetHashCode(obj)
 
 }
-[2896]  {
+[2975]  {
 
 Line  	|	Function
 0059	|	__New(message = "", innerException = "")
 
 }
-[2897]  {
+[2976]  {
 
 Line  	|	Function
 0062	|	__New(message = "", innerException = "")
 
 }
-[2898]  {
+[2977]  {
 
 Line  	|	Function
 0147	|	AddBool(value)
@@ -42317,7 +43052,7 @@ Line  	|	Function
 1021	|	_LoadKeyValueParam(value)
 
 }
-[2899]  {
+[2978]  {
 
 Line  	|	Function
 0053	|	__New(value, returnAsObject = false, SetReadOnly = false)
@@ -42334,12 +43069,12 @@ Line  	|	Function
 0359	|	_ErrorCheckParameter(index, pArgs, AllowUndefined = true)
 
 }
-[2900]  {
+[2979]  {
 
 Line  	|	Function
 
 }
-[2901]  {
+[2980]  {
 
 Line  	|	Function
 0032	|	__New()
@@ -42354,7 +43089,7 @@ Line  	|	Function
 0222	|	Peek()
 
 }
-[2902]  {
+[2981]  {
 
 Line  	|	Function
 0048	|	__New(lang = "en-US")
@@ -42363,7 +43098,7 @@ Line  	|	Function
 0433	|	GetResourceString(key, Section="CORE")
 
 }
-[2903]  {
+[2982]  {
 
 Line  	|	Function
 0040	|	__New()
@@ -42371,7 +43106,7 @@ Line  	|	Function
 0145	|	GetInstance()
 
 }
-[2904]  {
+[2983]  {
 
 Line  	|	Function
 0123	|	Add(value)
@@ -42399,7 +43134,7 @@ Line  	|	Function
 1358	|	_ReturnSByte(obj)
 
 }
-[2905]  {
+[2984]  {
 
 Line  	|	Function
 0069	|	__New(value = 2)
@@ -42408,7 +43143,7 @@ Line  	|	Function
 0133	|	GetInstance()
 
 }
-[2906]  {
+[2985]  {
 
 Line  	|	Function
 0040	|	__New()
@@ -42416,7 +43151,7 @@ Line  	|	Function
 0083	|	GetInstance()
 
 }
-[2907]  {
+[2986]  {
 
 Line  	|	Function
 0032	|	__New()
@@ -42431,7 +43166,7 @@ Line  	|	Function
 0230	|	Peek()
 
 }
-[2908]  {
+[2987]  {
 
 Line  	|	Function
 0146	|	Append(value)
@@ -42496,7 +43231,7 @@ Line  	|	Function
 4877	|	_ReturnString(obj)
 
 }
-[2909]  {
+[2988]  {
 
 Line  	|	Function
 0079	|	__New(value = 5)
@@ -42505,7 +43240,7 @@ Line  	|	Function
 0168	|	GetInstance()
 
 }
-[2910]  {
+[2989]  {
 
 Line  	|	Function
 0086	|	AddAttributes()
@@ -42514,13 +43249,13 @@ Line  	|	Function
 0147	|	GetInstance()
 
 }
-[2911]  {
+[2990]  {
 
 Line  	|	Function
 0059	|	__New(message = "", innerException = "")
 
 }
-[2912]  {
+[2991]  {
 
 Line  	|	Function
 0271	|	Add(ts)
@@ -42543,7 +43278,7 @@ Line  	|	Function
 1174	|	ToString()
 
 }
-[2913]  {
+[2992]  {
 
 Line  	|	Function
 0086	|	__New(obj, TypeName = "")
@@ -42565,7 +43300,7 @@ Line  	|	Function
 0716	|	GetType()
 
 }
-[2914]  {
+[2993]  {
 
 Line  	|	Function
 0077	|	AddEnums()
@@ -42573,7 +43308,7 @@ Line  	|	Function
 0121	|	GetInstance()
 
 }
-[2915]  {
+[2994]  {
 
 Line  	|	Function
 0123	|	Add(value)
@@ -42601,7 +43336,7 @@ Line  	|	Function
 1343	|	_ReturnUInt32(obj)
 
 }
-[2916]  {
+[2995]  {
 
 Line  	|	Function
 0123	|	Add(value)
@@ -42632,7 +43367,7 @@ Line  	|	Function
 1405	|	_ReturnUInt32(obj)
 
 }
-[2917]  {
+[2996]  {
 
 Line  	|	Function
 0271	|	Add(value)
@@ -42669,7 +43404,7 @@ Line  	|	Function
 2168	|	_ReturnUInt64(obj)
 
 }
-[2918]  {
+[2997]  {
 
 Line  	|	Function
 0039	|	__New()
@@ -42752,7 +43487,7 @@ Line  	|	Function
 4878	|	IsFloat(num)
 
 }
-[2919]  {
+[2998]  {
 
 Line  	|	Function
 0244	|	AddEnums()
@@ -42760,13 +43495,13 @@ Line  	|	Function
 0308	|	GetInstance()
 
 }
-[2920]  {
+[2999]  {
 
 Line  	|	Function
 0039	|	__New()
 
 }
-[2921]  {
+[3000]  {
 
 Line  	|	Function
 0097	|	__New(arg1="",arg2="",arg3="",arg4="")
@@ -42792,32 +43527,32 @@ Line  	|	Function
 0820	|	Is(ObjType)
 
 }
-[2922] IO\MfDirectoryNotFoundException.ahk {
+[3001] IO\MfDirectoryNotFoundException.ahk {
 
 Line  	|	Function
 0126	|	Is(ObjType)
 
 }
-[2923] IO\MfDriveNotFoundException.ahk {
+[3002] IO\MfDriveNotFoundException.ahk {
 
 Line  	|	Function
 0129	|	Is(ObjType)
 
 }
-[2924] IO\MfFileNotFoundException.ahk {
+[3003] IO\MfFileNotFoundException.ahk {
 
 Line  	|	Function
 0167	|	Is(ObjType)
 0211	|	ToString()
 
 }
-[2925] IO\MfIOException.ahk {
+[3004] IO\MfIOException.ahk {
 
 Line  	|	Function
 0140	|	Is(ObjType)
 
 }
-[2926] MfStruct\MfStruct.ahk {
+[3005] MfStruct\MfStruct.ahk {
 
 Line  	|	Function
 0065	|	sizeof(_TYPE_,parent_offset=0,_align_total_=0)
@@ -42835,7 +43570,7 @@ Line  	|	Function
 0634	|	___Clone(offset)
 
 }
-[2927] MfUnicode\MfDataBaseFactory.ahk {
+[3006] MfUnicode\MfDataBaseFactory.ahk {
 
 Line  	|	Function
 0010	|	OpenDataBase(dbType, connectionString)
@@ -42844,7 +43579,7 @@ Line  	|	Function
 0039	|	__New()
 
 }
-[2928] MfUnicode\MfDbUcdAbstract.ahk {
+[3007] MfUnicode\MfDbUcdAbstract.ahk {
 
 Line  	|	Function
 0043	|	_intiColumnsFields(columns, fields)
@@ -42895,7 +43630,7 @@ Line  	|	Function
 0621	|	Is(ObjType)
 
 }
-[2929] MfUnicode\MfRecordSetSqlLite.ahk {
+[3008] MfUnicode\MfRecordSetSqlLite.ahk {
 
 Line  	|	Function
 0040	|	__New(db, query)
@@ -42908,7 +43643,7 @@ Line  	|	Function
 0183	|	Close()
 
 }
-[2930] MfUnicode\MfSQLite_L.ahk {
+[3009] MfUnicode\MfSQLite_L.ahk {
 
 Line  	|	Function
 0096	|	__New()
@@ -42966,7 +43701,7 @@ Line  	|	Function
 1290	|	ToString()
 
 }
-[2931] MfUnicode\MfUcdDb.ahk {
+[3010] MfUnicode\MfUcdDb.ahk {
 
 Line  	|	Function
 0005	|	GetVersion()
@@ -42996,7 +43731,7 @@ Line  	|	Function
 0406	|	ReturnCode(RC)
 
 }
-[2932] MfUnicode\UCDSqlite.ahk {
+[3011] MfUnicode\UCDSqlite.ahk {
 
 Line  	|	Function
 0008	|	__New()
@@ -43013,7 +43748,7 @@ Line  	|	Function
 0340	|	RunSQL(SQL)
 
 }
-[2933] Text\MfStringBuilder.ahk {
+[3012] Text\MfStringBuilder.ahk {
 
 Line  	|	Function
 0503	|	AppendString(str)
@@ -43060,12 +43795,12 @@ Line  	|	Function
 3364	|	_newIntIntSb(size, maxCapacity, previousBlock="")
 
 }
-[2934] Text\MfText.ahk {
+[3013] Text\MfText.ahk {
 
 Line  	|	Function
 
 }
-[2935] minilib\audioRouter.ahk {
+[3014] minilib\audioRouter.ahk {
 
 Line  	|	Function
 0023	|	__new(path)
@@ -43077,32 +43812,32 @@ Line  	|	Function
 0113	|	LVM_GETITEMPOSITION(itemIdx,hwnd)
 
 }
-[2936] minilib\borderlessMode.ahk {
+[3015] minilib\borderlessMode.ahk {
 
 Line  	|	Function
 0001	|	borderlessMode(winId="")
 
 }
-[2937] minilib\borderlessMove.ahk {
+[3016] minilib\borderlessMove.ahk {
 
 Line  	|	Function
 0001	|	borderlessMove(winId="",key="LButton")
 
 }
-[2938] minilib\checkSession.ahk {
+[3017] minilib\checkSession.ahk {
 
 Line  	|	Function
 0045	|	checkSession(_msgHandler,_params=0)
 0051	|	checkSession_msgHandler(wParam,lParam,msg,hwnd)
 
 }
-[2939] minilib\commaFormat.ahk {
+[3018] minilib\commaFormat.ahk {
 
 Line  	|	Function
 0001	|	commaFormat(num)
 
 }
-[2940] minilib\compileScript.ahk {
+[3019] minilib\compileScript.ahk {
 
 Line  	|	Function
 0001	|	compileScript(file,out="",bin="",icon="",mpress=0)
@@ -43110,125 +43845,125 @@ Line  	|	Function
 0011	|	if(icon)
 
 }
-[2941] minilib\CopyDirStructure.ahk {
+[3020] minilib\CopyDirStructure.ahk {
 
 Line  	|	Function
 0017	|	CopyDirStructure(_inpath,_outpath,_i=true)
 
 }
-[2942] minilib\CreateOpenWithMenu.ahk {
+[3021] minilib\CreateOpenWithMenu.ahk {
 
 Line  	|	Function
 
 }
-[2943] minilib\dpiOffset.ahk {
+[3022] minilib\dpiOffset.ahk {
 
 Line  	|	Function
 0001	|	dpiOffset(val)
 
 }
-[2944] minilib\EmptyMem.ahk {
+[3023] minilib\EmptyMem.ahk {
 
 Line  	|	Function
 0008	|	EmptyMem(PID=0)
 
 }
-[2945] minilib\externalIP.ahk {
+[3024] minilib\externalIP.ahk {
 
 Line  	|	Function
 
 }
-[2946] minilib\externalIP_old.ahk {
+[3025] minilib\externalIP_old.ahk {
 
 Line  	|	Function
 0001	|	externalIP_old()
 
 }
-[2947] minilib\FileCountLines.ahk {
+[3026] minilib\FileCountLines.ahk {
 
 Line  	|	Function
 0005	|	FileCountLines(FileName)
 
 }
-[2948] minilib\FileFindWord.ahk {
+[3027] minilib\FileFindWord.ahk {
 
 Line  	|	Function
 0005	|	FileFindWord(FileName, Search)
 
 }
-[2949] minilib\FileGetVersionInfo.ahk {
+[3028] minilib\FileGetVersionInfo.ahk {
 
 Line  	|	Function
 0004	|	FileGetVersionInfo( peFile="", StringFileInfo="" )
 
 }
-[2950] minilib\FileReadLastLines.ahk {
+[3029] minilib\FileReadLastLines.ahk {
 
 Line  	|	Function
 
 }
-[2951] minilib\fileUnblock.ahk {
+[3030] minilib\fileUnblock.ahk {
 
 Line  	|	Function
 0001	|	fileUnblock(path)
 
 }
-[2952] minilib\getCurrentTime.ahk {
+[3031] minilib\getCurrentTime.ahk {
 
 Line  	|	Function
 0008	|	if(countryIsTimezone)
 
 }
-[2953] minilib\getImageSize.ahk {
+[3032] minilib\getImageSize.ahk {
 
 Line  	|	Function
 0001	|	getImageSize(imagePath)
 
 }
-[2954] minilib\getPosFromAngle.ahk {
+[3033] minilib\getPosFromAngle.ahk {
 
 Line  	|	Function
 0001	|	getPosFromAngle(ByRef x2,ByRef y2,x1,y1,len,ang)
 
 }
-[2955] minilib\getSelected.ahk {
+[3034] minilib\getSelected.ahk {
 
 Line  	|	Function
 0001	|	getSelected()
 0006	|	if(errorlevel)
 
 }
-[2956] minilib\GetStringFileInfo.ahk {
+[3035] minilib\GetStringFileInfo.ahk {
 
 Line  	|	Function
 0021	|	GetStringFileInfo(fn,type)
 
 }
-[2957] minilib\getUTCOffset.ahk {
+[3036] minilib\getUTCOffset.ahk {
 
 Line  	|	Function
 0002	|	getUTCOffset(timezone)
 
 }
-[2958] minilib\getWinClientSize.ahk {
+[3037] minilib\getWinClientSize.ahk {
 
 Line  	|	Function
 0001	|	getWinClientSize(hwnd)
 
 }
-[2959] minilib\hour.ahk {
+[3038] minilib\hour.ahk {
 
 Line  	|	Function
 0001	|	hour(hr)
 
 }
-[2960] minilib\httpQuery.ahk {
+[3039] minilib\httpQuery.ahk {
 
 Line  	|	Function
 0002	|	httpQuery(byref Result, lpszUrl, POSTDATA="", HEADERS="")
 
 }
-[2961] minilib\IEObj.ahk {
+[3040] minilib\IEObj.ahk {
 
 Line  	|	Function
 0004	|	__new()
@@ -43239,232 +43974,232 @@ Line  	|	Function
 0092	|	err(desc)
 
 }
-[2962] minilib\ifContains.ahk {
+[3041] minilib\ifContains.ahk {
 
 Line  	|	Function
 0001	|	ifContains(haystack,needle)
 
 }
-[2963] minilib\ifIn.ahk {
+[3042] minilib\ifIn.ahk {
 
 Line  	|	Function
 0001	|	ifIn(needle,haystack)
 
 }
-[2964] minilib\imageSearchc.ahk {
+[3043] minilib\imageSearchc.ahk {
 
 Line  	|	Function
 0003	|	imageSearchc(byRef out1,byRef out2,x1,y1,x2,y2,image,vari=0,trans="",direction=5,debug=0)
 0013	|	if(errorlev)
 
 }
-[2965] minilib\internetConnected.ahk {
+[3044] minilib\internetConnected.ahk {
 
 Line  	|	Function
 
 }
-[2966] minilib\invertCaseChr.ahk {
+[3045] minilib\invertCaseChr.ahk {
 
 Line  	|	Function
 0001	|	invertCaseChr(char)
 
 }
-[2967] minilib\invertCaseStr.ahk {
+[3046] minilib\invertCaseStr.ahk {
 
 Line  	|	Function
 0001	|	invertCaseStr(str)
 
 }
-[2968] minilib\is64bitExe.ahk {
+[3047] minilib\is64bitExe.ahk {
 
 Line  	|	Function
 0001	|	is64bitExe(path)
 
 }
-[2969] minilib\isAlpha.ahk {
+[3048] minilib\isAlpha.ahk {
 
 Line  	|	Function
 0001	|	isAlpha(in)
 
 }
-[2970] minilib\isAlphaNum.ahk {
+[3049] minilib\isAlphaNum.ahk {
 
 Line  	|	Function
 0001	|	isAlphaNum(in)
 
 }
-[2971] minilib\isBetween.ahk {
+[3050] minilib\isBetween.ahk {
 
 Line  	|	Function
 0001	|	isBetween(lower,check,upper)
 
 }
-[2972] minilib\isDigit.ahk {
+[3051] minilib\isDigit.ahk {
 
 Line  	|	Function
 0001	|	isDigit(in)
 
 }
-[2973] minilib\isFloat.ahk {
+[3052] minilib\isFloat.ahk {
 
 Line  	|	Function
 0001	|	isFloat(in)
 
 }
-[2974] minilib\isHex.ahk {
+[3053] minilib\isHex.ahk {
 
 Line  	|	Function
 0001	|	isHex(in)
 
 }
-[2975] minilib\isInt.ahk {
+[3054] minilib\isInt.ahk {
 
 Line  	|	Function
 0001	|	isInt(in)
 
 }
-[2976] minilib\isLower.ahk {
+[3055] minilib\isLower.ahk {
 
 Line  	|	Function
 0001	|	isLower(in)
 
 }
-[2977] minilib\isNum.ahk {
+[3056] minilib\isNum.ahk {
 
 Line  	|	Function
 0001	|	isNum(in)
 
 }
-[2978] minilib\isSpace.ahk {
+[3057] minilib\isSpace.ahk {
 
 Line  	|	Function
 0001	|	isSpace(in)
 
 }
-[2979] minilib\isUpper.ahk {
+[3058] minilib\isUpper.ahk {
 
 Line  	|	Function
 0001	|	isUpper(in)
 
 }
-[2980] minilib\json.ahk {
+[3059] minilib\json.ahk {
 
 Line  	|	Function
 0016	|	json(ByRef js, s, v = "")
 
 }
-[2981] minilib\lanConnected.ahk {
+[3060] minilib\lanConnected.ahk {
 
 Line  	|	Function
 0001	|	lanConnected()
 
 }
-[2982] minilib\min.ahk {
+[3061] minilib\min.ahk {
 
 Line  	|	Function
 0001	|	min(min)
 
 }
-[2983] minilib\mouseOverWin.ahk {
+[3062] minilib\mouseOverWin.ahk {
 
 Line  	|	Function
 0001	|	mouseOverWin(winName,winText="")
 
 }
-[2984] minilib\mtoh.ahk {
+[3063] minilib\mtoh.ahk {
 
 Line  	|	Function
 0001	|	mtoh(hr)
 
 }
-[2985] minilib\mtom.ahk {
+[3064] minilib\mtom.ahk {
 
 Line  	|	Function
 0001	|	mtom(mil)
 
 }
-[2986] minilib\mtos.ahk {
+[3065] minilib\mtos.ahk {
 
 Line  	|	Function
 0001	|	mtos(sec)
 
 }
-[2987] minilib\muteWindow.ahk {
+[3066] minilib\muteWindow.ahk {
 
 Line  	|	Function
 0003	|	muteWindow(winName="A",mode="t")
 0007	|	if(mode=t)
 
 }
-[2988] minilib\nicRestart.ahk {
+[3067] minilib\nicRestart.ahk {
 
 Line  	|	Function
 0001	|	nicRestart(adapter)
 
 }
-[2989] minilib\nicSetState.ahk {
+[3068] minilib\nicSetState.ahk {
 
 Line  	|	Function
 0004	|	nicSetState(adapter,state)
 
 }
-[2990] minilib\processExist.ahk {
+[3069] minilib\processExist.ahk {
 
 Line  	|	Function
 0001	|	processExist(im)
 
 }
-[2991] minilib\processPriority.ahk {
+[3070] minilib\processPriority.ahk {
 
 Line  	|	Function
 0001	|	processPriority(PID)
 
 }
-[2992] minilib\rand.ahk {
+[3071] minilib\rand.ahk {
 
 Line  	|	Function
 0001	|	rand(lowerBound,upperBound)
 
 }
-[2993] minilib\randStr.ahk {
+[3072] minilib\randStr.ahk {
 
 Line  	|	Function
 0016	|	randStr(lowerBound,upperBound,mode=1)
 
 }
-[2994] minilib\regExMatchI.ahk {
+[3073] minilib\regExMatchI.ahk {
 
 Line  	|	Function
 0001	|	regExMatchI(haystack,needleRegEx,byref unquotedOutputVar="",startingPosition=1)
 
 }
-[2995] minilib\regExReplaceI.ahk {
+[3074] minilib\regExReplaceI.ahk {
 
 Line  	|	Function
 0001	|	regExReplaceI(haystack,needleRegEx,replacement="",byref outputVarCount="",limit=-1,startingPosition=1)
 
 }
-[2996] minilib\sec.ahk {
+[3075] minilib\sec.ahk {
 
 Line  	|	Function
 0001	|	sec(sec)
 
 }
-[2997] minilib\StdOutStream.ahk {
+[3076] minilib\StdOutStream.ahk {
 
 Line  	|	Function
 0001	|	StdOutStream( sCmd, Callback = "" )
 0008	|	if(a_ptrSize=8)
 
 }
-[2998] minilib\StdOutToVar.ahk {
+[3077] minilib\StdOutToVar.ahk {
 
 Line  	|	Function
 0002	|	StdOutToVar( sCmd )
 0008	|	if(a_ptrSize=8)
 
 }
-[2999] minilib\StealFuncFromLib.ahk {
+[3078] minilib\StealFuncFromLib.ahk {
 
 Line  	|	Function
 0025	|	stealFunc(funcs, file, islist=1)
@@ -43476,31 +44211,31 @@ Line  	|	Function
 0153	|	stealFunc_gui()
 
 }
-[3000] minilib\strI.ahk {
+[3079] minilib\strI.ahk {
 
 Line  	|	Function
 0001	|	strI(str)
 
 }
-[3001] minilib\strReplaceI.ahk {
+[3080] minilib\strReplaceI.ahk {
 
 Line  	|	Function
 0001	|	strReplaceI(haystack,searchText,replaceText="",byref outputVarCount="",limit=-1)
 
 }
-[3002] minilib\strToLower.ahk {
+[3081] minilib\strToLower.ahk {
 
 Line  	|	Function
 0001	|	strToLower(str)
 
 }
-[3003] minilib\strToUpper.ahk {
+[3082] minilib\strToUpper.ahk {
 
 Line  	|	Function
 0001	|	strToUpper(str)
 
 }
-[3004] minilib\threadMan.ahk {
+[3083] minilib\threadMan.ahk {
 
 Line  	|	Function
 0011	|	__New(ahkDllPath,isResource=0)
@@ -43518,41 +44253,41 @@ Line  	|	Function
 0088	|	varGet(varName,pointer=0)
 
 }
-[3005] minilib\tool.ahk {
+[3084] minilib\tool.ahk {
 
 Line  	|	Function
 0001	|	tool(content,wait=2500,x="",y="")
 
 }
-[3006] minilib\toolSpeak.ahk {
+[3085] minilib\toolSpeak.ahk {
 
 Line  	|	Function
 
 }
-[3007] minilib\urlDownloadToFile.ahk {
+[3086] minilib\urlDownloadToFile.ahk {
 
 Line  	|	Function
 0001	|	urlDownloadToFile(url,fileDest="",method=0)
 
 }
-[3008] minilib\urlDownloadToVar.ahk {
+[3087] minilib\urlDownloadToVar.ahk {
 
 Line  	|	Function
 
 }
-[3009] minilib\urlFileGetSize.ahk {
+[3088] minilib\urlFileGetSize.ahk {
 
 Line  	|	Function
 0010	|	urlFileGetSize(url,units=0)
 
 }
-[3010] minilib\winInfo.ahk {
+[3089] minilib\winInfo.ahk {
 
 Line  	|	Function
 0001	|	winInfo(winName="A")
 
 }
-[3011] lib\ObjCSV.ahk {
+[3090] lib\ObjCSV.ahk {
 
 Line  	|	Function
 1108	|	SaveBatch(strData, strFilePath, intProgressType, strFileEncoding)
@@ -43568,12 +44303,12 @@ Line  	|	Function
 1235	|	GetEolCharacters(strData)
 
 }
-[3012] CmdReturn\MainScript.ahk {
+[3091] CmdReturn\MainScript.ahk {
 
 Line  	|	Function
 
 }
-[3013] CmdReturn\RamDrive.ahk {
+[3092] CmdReturn\RamDrive.ahk {
 
 Line  	|	Function
 0011	|	RamDrivePath()
@@ -43583,12 +44318,12 @@ Line  	|	Function
 0099	|	CMDReturn(CommandtoRun, params)
 
 }
-[3014] SendInput\cSendInputW.ahk {
+[3093] SendInput\cSendInputW.ahk {
 
 Line  	|	Function
 
 }
-[3015] SendInput\hookSend.ahk {
+[3094] SendInput\hookSend.ahk {
 
 Line  	|	Function
 0004	|	__new(str)
@@ -43596,13 +44331,13 @@ Line  	|	Function
 0023	|	__delete()
 
 }
-[3016] SendInput\inputUnicode.ahk {
+[3095] SendInput\inputUnicode.ahk {
 
 Line  	|	Function
 0053	|	process(str,sod)
 
 }
-[3017] SendInput\SendInput.ahk {
+[3096] SendInput\SendInput.ahk {
 
 Line  	|	Function
 0003	|	__new(inputArray)
@@ -43616,90 +44351,90 @@ Line  	|	Function
 0142	|	__Delete()
 
 }
-[3018] Gui\splashConsole.ahk {
+[3097] Gui\splashConsole.ahk {
 
 Line  	|	Function
 0001	|	splashConsole(text, default = "")
 
 }
-[3019] Gui\splashDir.ahk {
+[3098] Gui\splashDir.ahk {
 
 Line  	|	Function
 
 }
-[3020] Gui\splashImageGUI.ahk {
+[3099] Gui\splashImageGUI.ahk {
 
 Line  	|	Function
 0001	|	splashImageGUI(Picture, X, Y, tColor, Transparent = true)
 
 }
-[3021] Gui\splashList.ahk {
+[3100] Gui\splashList.ahk {
 
 Line  	|	Function
 0001	|	splashList(text, list, sorted=1, fontSize = 12)
 
 }
-[3022] Gui\splashList_AltSubmit.ahk {
+[3101] Gui\splashList_AltSubmit.ahk {
 
 Line  	|	Function
 0001	|	splashList_AltSubmit(text, list)
 
 }
-[3023] Gui\splashNote.ahk {
+[3102] Gui\splashNote.ahk {
 
 Line  	|	Function
 0001	|	splashNoteFull(rows = 10, defaultTxt = "")
 
 }
-[3024] Gui\splashNoteFull.ahk {
+[3103] Gui\splashNoteFull.ahk {
 
 Line  	|	Function
 0001	|	splashNoteFull(rows = 10, defaultTxt = "")
 
 }
-[3025] Gui\splashNoteSmall.ahk {
+[3104] Gui\splashNoteSmall.ahk {
 
 Line  	|	Function
 0001	|	splashNoteSmall(rows = 10, defaultTxt = "")
 
 }
-[3026] Gui\splashNotify.ahk {
+[3105] Gui\splashNotify.ahk {
 
 Line  	|	Function
 0004	|	splashNotify(text, position="top", timeout=2000, fontSize= 12, transparency=200)
 
 }
-[3027] Gui\splashProgress.ahk {
+[3106] Gui\splashProgress.ahk {
 
 Line  	|	Function
 0001	|	splashProgress(text, timeout=0)
 
 }
-[3028] Gui\splashRadio.ahk {
+[3107] Gui\splashRadio.ahk {
 
 Line  	|	Function
 0001	|	splashRadio(text, options)
 
 }
-[3029] Gui\splashRadio2.ahk {
+[3108] Gui\splashRadio2.ahk {
 
 Line  	|	Function
 0001	|	splashRadio2(text, options)
 
 }
-[3030] Gui\splashText.ahk {
+[3109] Gui\splashText.ahk {
 
 Line  	|	Function
 0001	|	splashText(text, rows = 1, helptext = "", defaultTxt = "", timeout = "")
 
 }
-[3031] Gui\splashUI.ahk {
+[3110] Gui\splashUI.ahk {
 
 Line  	|	Function
 0001	|	splashUI(type, option1, option2 = "", option3 = "")
 
 }
-[3032] _Functions\Edit.ahk {
+[3111] _Functions\Edit.ahk {
 
 Line  	|	Function
 0069	|	Edit_ActivateParent(hEdit)
@@ -43803,7 +44538,7 @@ Line  	|	Function
 4048	|	Edit_WriteFile(hEdit,p_File,p_Encoding="",p_Convert="")
 
 }
-[3033] _Functions\Fnt.ahk {
+[3112] _Functions\Fnt.ahk {
 
 Line  	|	Function
 1876	|	Fnt_Color2RGB(p_Color)
@@ -43870,14 +44605,14 @@ Line  	|	Function
 8809	|	Fnt_VertDTUs2Pixels(hFont,p_VertDTUs)
 
 }
-[3034] _Functions\HSV.ahk {
+[3113] _Functions\HSV.ahk {
 
 Line  	|	Function
 0047	|	HSV_Convert2HSV(r,g,b)
 0111	|	HSV_Convert2RGB(h,s,v)
 
 }
-[3035] _Functions\TAB.ahk {
+[3114] _Functions\TAB.ahk {
 
 Line  	|	Function
 0833	|	TAB_DeleteAllItems(hTab)
@@ -43917,7 +44652,7 @@ Line  	|	Function
 3303	|	TAB_Tooltips_SetText(hTab,iTab,p_Text)
 
 }
-[3036] lib\ansi.ahk {
+[3115] lib\ansi.ahk {
 
 Line  	|	Function
 0003	|	requires()
@@ -43962,14 +44697,14 @@ Line  	|	Function
 0330	|	mapColor(color)
 
 }
-[3037] lib\app.ahk {
+[3116] lib\app.ahk {
 
 Line  	|	Function
 0003	|	requires()
 0008	|	checkRequiredClasses(forClass="")
 
 }
-[3038] lib\arrays.ahk {
+[3117] lib\arrays.ahk {
 
 Line  	|	Function
 0004	|	requires()
@@ -43998,7 +44733,7 @@ Line  	|	Function
 0268	|	isCallbackFunction(callbackFunc)
 
 }
-[3039] lib\base64.ahk {
+[3118] lib\base64.ahk {
 
 Line  	|	Function
 0003	|	requires()
@@ -44008,7 +44743,7 @@ Line  	|	Function
 0086	|	decode(pszString, cchString, dwFlags, ByRef pbBinary, ByRef pcbBinary=0, ByRef pdwSkip=0, ByRef pdwFlags=0)
 
 }
-[3040] lib\bitset.ahk {
+[3119] lib\bitset.ahk {
 
 Line  	|	Function
 0003	|	requires()
@@ -44044,7 +44779,7 @@ Line  	|	Function
 0479	|	toString()
 
 }
-[3041] lib\calendar.ahk {
+[3120] lib\calendar.ahk {
 
 Line  	|	Function
 0039	|	__new(dateTime="")
@@ -44091,7 +44826,7 @@ Line  	|	Function
 0387	|	formatTime(pattern="")
 
 }
-[3042] lib\console.ahk {
+[3121] lib\console.ahk {
 
 Line  	|	Function
 0104	|	__new(pwAttributes, pstrText="")
@@ -44119,7 +44854,7 @@ Line  	|	Function
 0457	|	refreshBufferInfo()
 
 }
-[3043] lib\cron.ahk {
+[3122] lib\cron.ahk {
 
 Line  	|	Function
 0004	|	requires()
@@ -44134,7 +44869,7 @@ Line  	|	Function
 0168	|	value2Expr(value)
 
 }
-[3044] lib\crypto.ahk {
+[3123] lib\crypto.ahk {
 
 Line  	|	Function
 0004	|	requires()
@@ -44150,7 +44885,7 @@ Line  	|	Function
 0183	|	isValidAlgorithm(iAlgorithm)
 
 }
-[3045] lib\datatable.ahk {
+[3124] lib\datatable.ahk {
 
 Line  	|	Function
 0003	|	requires()
@@ -44179,7 +44914,7 @@ Line  	|	Function
 0306	|	setSortAlgorithm(algorithm)
 
 }
-[3046] lib\dimension.ahk {
+[3125] lib\dimension.ahk {
 
 Line  	|	Function
 0006	|	proper(instance, ByRef number, initialDimension="", factor=0)
@@ -44192,7 +44927,7 @@ Line  	|	Function
 0089	|	properString(pValue, pstStartDimension="", pstSeparate=" ", pfPrecision="0.1")
 
 }
-[3047] lib\flimsydata.ahk {
+[3126] lib\flimsydata.ahk {
 
 Line  	|	Function
 0003	|	requires()
@@ -44204,7 +44939,7 @@ Line  	|	Function
 0053	|	getLanguage(inputLocale)
 
 }
-[3048] lib\ldap.ahk {
+[3127] lib\ldap.ahk {
 
 Line  	|	Function
 0007	|	requires()
@@ -44234,7 +44969,7 @@ Line  	|	Function
 0452	|	LDAPMod(ByRef mod_data, mod_op, ByRef mod_type, ByRef mod_values)
 
 }
-[3049] lib\long.ahk {
+[3128] lib\long.ahk {
 
 Line  	|	Function
 0003	|	requires()
@@ -44244,7 +44979,7 @@ Line  	|	Function
 0039	|	toOctalString(i)
 
 }
-[3050] lib\math.ahk {
+[3129] lib\math.ahk {
 
 Line  	|	Function
 0007	|	requires()
@@ -44275,7 +45010,7 @@ Line  	|	Function
 0373	|	SL(l)
 
 }
-[3051] lib\object.ahk {
+[3130] lib\object.ahk {
 
 Line  	|	Function
 0007	|	__new(pstFileName)
@@ -44292,7 +45027,7 @@ Line  	|	Function
 0163	|	object_Deserialize(poObject, poData, pstId="")
 
 }
-[3052] lib\optparser.ahk {
+[3131] lib\optparser.ahk {
 
 Line  	|	Function
 0003	|	requires()
@@ -44314,7 +45049,7 @@ Line  	|	Function
 0263	|	testIfValidLongOrShortOption(argumentToParse)
 
 }
-[3053] lib\pager.ahk {
+[3132] lib\pager.ahk {
 
 Line  	|	Function
 0009	|	requires()
@@ -44328,7 +45063,7 @@ Line  	|	Function
 0106	|	getMaxConsoleWidth()
 
 }
-[3054] lib\queue.ahk {
+[3133] lib\queue.ahk {
 
 Line  	|	Function
 0006	|	__new(queueSize=0)
@@ -44338,7 +45073,7 @@ Line  	|	Function
 0050	|	clear()
 
 }
-[3055] lib\random.ahk {
+[3134] lib\random.ahk {
 
 Line  	|	Function
 0012	|	__new(p1, p2="")
@@ -44360,7 +45095,7 @@ Line  	|	Function
 0164	|	generateRes53()
 
 }
-[3056] lib\string.ahk {
+[3135] lib\string.ahk {
 
 Line  	|	Function
 0065	|	__new()
@@ -44412,7 +45147,7 @@ Line  	|	Function
 0702	|	hyphenate(hyphenateAt=-1, hyphenChar="")
 
 }
-[3057] lib\system.ahk {
+[3136] lib\system.ahk {
 
 Line  	|	Function
 0013	|	__new()
@@ -44430,7 +45165,7 @@ Line  	|	Function
 0370	|	typeOf(var, type="")
 
 }
-[3058] lib\testcase.ahk {
+[3137] lib\testcase.ahk {
 
 Line  	|	Function
 0009	|	requires()
@@ -44483,7 +45218,7 @@ Line  	|	Function
 0594	|	logTestResultSummaryToDebugOut()
 
 }
-[3059] windows10DesktopManager\commonFunctions.ahk {
+[3138] windows10DesktopManager\commonFunctions.ahk {
 
 Line  	|	Function
 0001	|	debugger(message)
@@ -44498,7 +45233,7 @@ Line  	|	Function
 0086	|	if(array[A_index] == searchFor)
 
 }
-[3060] windows10DesktopManager\desktopChanger.ahk {
+[3139] windows10DesktopManager\desktopChanger.ahk {
 
 Line  	|	Function
 0008	|	__new()
@@ -44510,7 +45245,7 @@ Line  	|	Function
 0098	|	_doesDesktopHaveFocus()
 
 }
-[3061] windows10DesktopManager\desktopManager.ahk {
+[3140] windows10DesktopManager\desktopManager.ahk {
 
 Line  	|	Function
 0003	|	__new()
@@ -44528,7 +45263,7 @@ Line  	|	Function
 0097	|	_setupDefaultHotkeys()
 
 }
-[3062] windows10DesktopManager\desktopMapper.ahk {
+[3141] windows10DesktopManager\desktopMapper.ahk {
 
 Line  	|	Function
 0005	|	__new(virtualDesktopManager)
@@ -44544,7 +45279,7 @@ Line  	|	Function
 0102	|	_setupGui()
 
 }
-[3063] windows10DesktopManager\dllWindowMover.ahk {
+[3142] windows10DesktopManager\dllWindowMover.ahk {
 
 Line  	|	Function
 0006	|	__new()
@@ -44559,7 +45294,7 @@ Line  	|	Function
 0091	|	moveWindowToDesktop(desktopNumber, windowHwnd)
 
 }
-[3064] windows10DesktopManager\hotkeyManager.ahk {
+[3143] windows10DesktopManager\hotkeyManager.ahk {
 
 Line  	|	Function
 0004	|	JPGIncDesktopManagerCallback(desktopManager, functionName, keyCombo)
@@ -44569,14 +45304,14 @@ Line  	|	Function
 0044	|	_doesHotkeyRequireCustomHotkeySyntax(key)
 
 }
-[3065] windows10DesktopManager\monitorMapper.ahk {
+[3144] windows10DesktopManager\monitorMapper.ahk {
 
 Line  	|	Function
 0006	|	getRequiredTabCount(hwnd)
 0033	|	getWindowsMonitorNumber(hwnd)
 
 }
-[3066] windows10DesktopManager\virtualDesktopManager.ahk {
+[3145] windows10DesktopManager\virtualDesktopManager.ahk {
 
 Line  	|	Function
 0003	|	__new()
@@ -44587,7 +45322,7 @@ Line  	|	Function
 0069	|	moveWindowToDesktop(hWnd, ByRef desktopId)
 
 }
-[3067] windows10DesktopManager\windowMover.ahk {
+[3146] windows10DesktopManager\windowMover.ahk {
 
 Line  	|	Function
 0009	|	__new()
@@ -44600,12 +45335,12 @@ Line  	|	Function
 0091	|	_deActivateActiveWindow()
 
 }
-[3068] windows10DesktopManager\windows10.ahk {
+[3147] windows10DesktopManager\windows10.ahk {
 
 Line  	|	Function
 
 }
-[3069] dll\dllCaller.ahk {
+[3148] dll\dllCaller.ahk {
 
 Line  	|	Function
 0021	|	setupMoveDesktopCallback(functionHandle, libraryHandle)
@@ -44618,7 +45353,7 @@ Line  	|	Function
 0120	|	alertErrorAndDie(msg)
 
 }
-[3070] WindowsScriptingObject\ActiveScript.ahk {
+[3149] WindowsScriptingObject\ActiveScript.ahk {
 
 Line  	|	Function
 0012	|	__New(Language)
@@ -44641,24 +45376,24 @@ Line  	|	Function
 0285	|	_AS_GUIDToString(pGUID)
 
 }
-[3071] WindowsScriptingObject\ascript.ahk {
+[3150] WindowsScriptingObject\ascript.ahk {
 
 Line  	|	Function
 
 }
-[3072] WindowsScriptingObject\NonRectGui.ahk {
+[3151] WindowsScriptingObject\NonRectGui.ahk {
 
 Line  	|	Function
 0065	|	TimerExecute(This)
 0070	|	Bail(this)
 
 }
-[3073] WindowsScriptingObject\WSOConsts.ahk {
+[3152] WindowsScriptingObject\WSOConsts.ahk {
 
 Line  	|	Function
 
 }
-[3074] WindowsScriptingObject\WsoEdit.ahk {
+[3153] WindowsScriptingObject\WsoEdit.ahk {
 
 Line  	|	Function
 0079	|	EditUndoUpdate(this)
@@ -44680,20 +45415,20 @@ Line  	|	Function
 0163	|	CloseFormHandler(this)
 
 }
-[3075] WindowsScriptingObject\WsoEdit1.ahk {
+[3154] WindowsScriptingObject\WsoEdit1.ahk {
 
 Line  	|	Function
 0164	|	ShowInfo(object, objname)
 
 }
-[3076] Windy\Mony.ahk {
+[3155] Windy\Mony.ahk {
 
 Line  	|	Function
 0474	|	rectToPercent(rect)
 0498	|	__idHide()
 
 }
-[3077] Windy\Mousy.ahk {
+[3156] Windy\Mousy.ahk {
 
 Line  	|	Function
 0318	|	dump()
@@ -44704,7 +45439,7 @@ Line  	|	Function
 0513	|	RandomBezier( X0, Y0, Xf, Yf, O="")
 
 }
-[3078] Windy\MultiMony.ahk {
+[3157] Windy\MultiMony.ahk {
 
 Line  	|	Function
 0175	|	coordVirtualScreenToDisplay(x,y)
@@ -44717,7 +45452,7 @@ Line  	|	Function
 0512	|	__New(_debug=false)
 
 }
-[3079] Windy\Pointy.ahk {
+[3158] Windy\Pointy.ahk {
 
 Line  	|	Function
 0050	|	Dump()
@@ -44728,7 +45463,7 @@ Line  	|	Function
 0120	|	__New(x=0, y=0, debug=false)
 
 }
-[3080] Windy\Recty.ahk {
+[3159] Windy\Recty.ahk {
 
 Line  	|	Function
 0157	|	Dump()
@@ -44740,7 +45475,7 @@ Line  	|	Function
 0249	|	__New(x=0, y=0, w=0, h=0, debug=false)
 
 }
-[3081] Windy\WindLy.ahk {
+[3160] Windy\WindLy.ahk {
 
 Line  	|	Function
 0052	|	byMonitorId(id=1)
@@ -44762,7 +45497,7 @@ Line  	|	Function
 0346	|	__decStr(i)
 
 }
-[3082] Windy\Windy.ahk {
+[3161] Windy\Windy.ahk {
 
 Line  	|	Function
 1278	|	border2percent(border="")
@@ -44784,7 +45519,7 @@ Line  	|	Function
 1728	|	ClassWindy_EventHook(hWinEventHook, Event, hWnd, idObject, idChild, dwEventThread, dwmsEventTime )
 
 }
-[3083] WinLogon\AHKLogonMediaKeys.ahk {
+[3162] WinLogon\AHKLogonMediaKeys.ahk {
 
 Line  	|	Function
 0027	|	main()
@@ -44804,7 +45539,7 @@ Line  	|	Function
 0460	|	ConnectNamedPipe(hNamedPipe)
 
 }
-[3084] WinLogon\Logon.ahk {
+[3163] WinLogon\Logon.ahk {
 
 Line  	|	Function
 0005	|	LogonDesktop_AddTask(runNow, runOnStartup)
@@ -44855,7 +45590,7 @@ Line  	|	Function
 0803	|	GetParentProcessName()
 
 }
-[3085] WinLogon\LogonDesktop.ahk {
+[3164] WinLogon\LogonDesktop.ahk {
 
 Line  	|	Function
 0005	|	LogonDesktop_AddTask(runNow, runOnStartup)
@@ -44906,24 +45641,24 @@ Line  	|	Function
 0825	|	GetParentProcessName()
 
 }
-[3086] WinLogon\StartVC.ahk {
+[3165] WinLogon\StartVC.ahk {
 
 Line  	|	Function
 0007	|	CanWeWorkWithThisSystemToken(proc, ByRef hNonDuplicatedToken, wantedSystemTokenPrivs)
 
 }
-[3087] WinLogon\TermWait.ahk {
+[3166] WinLogon\TermWait.ahk {
 
 Line  	|	Function
 0095	|	__TermWait_TermNotifier(pGlobal)
 
 }
-[3088] lib\Const_WinUser.ahk {
+[3167] lib\Const_WinUser.ahk {
 
 Line  	|	Function
 
 }
-[3089] lib\Wy.ahk {
+[3168] lib\Wy.ahk {
 
 Line  	|	Function
 0055	|	__New()
@@ -44932,7 +45667,7 @@ Line  	|	Function
 0092	|	ToJSON()
 
 }
-[3090] GdipC\GdipC.ahk {
+[3169] GdipC\GdipC.ahk {
 
 Line  	|	Function
 0004	|	__New()
@@ -44952,7 +45687,7 @@ Line  	|	Function
 0371	|	isEmptyArea()
 
 }
-[3091] Wy\Colory.ahk {
+[3170] Wy\Colory.ahk {
 
 Line  	|	Function
 0059	|	dump()
@@ -44960,24 +45695,24 @@ Line  	|	Function
 0092	|	fromJSON(str)
 
 }
-[3092] Wy\DbgOut.ahk {
+[3171] Wy\DbgOut.ahk {
 
 Line  	|	Function
 
 }
-[3093] Wy\JSON.ahk {
+[3172] Wy\JSON.ahk {
 
 Line  	|	Function
 
 }
-[3094] Wy\Mony.ahk {
+[3173] Wy\Mony.ahk {
 
 Line  	|	Function
 0468	|	rectToPercent(rect)
 0487	|	__idHide()
 
 }
-[3095] Wy\MultiMony.ahk {
+[3174] Wy\MultiMony.ahk {
 
 Line  	|	Function
 0165	|	coordVirtualScreenToDisplay(x,y)
@@ -44989,24 +45724,24 @@ Line  	|	Function
 0461	|	monitors()
 
 }
-[3096] Wy\ScreenSavy.ahk {
+[3175] Wy\ScreenSavy.ahk {
 
 Line  	|	Function
 
 }
-[3097] xlib\xlib.ahk {
+[3176] xlib\xlib.ahk {
 
 Line  	|	Function
 
 }
-[3098] common\bases.ahk {
+[3177] common\bases.ahk {
 
 Line  	|	Function
 0019	|	setCleanUpFunction(cleanUpFn)
 0032	|	__delete()
 
 }
-[3099] common\callback.ahk {
+[3178] common\callback.ahk {
 
 Line  	|	Function
 0016	|	getFn(fn)
@@ -45017,18 +45752,18 @@ Line  	|	Function
 0138	|	getStrGetParams(arr, ind, strPtr)
 
 }
-[3100] common\common_includes.ahk {
+[3179] common\common_includes.ahk {
 
 Line  	|	Function
 
 }
-[3101] common\constants.ahk {
+[3180] common\constants.ahk {
 
 Line  	|	Function
 0028	|	cleanup()
 
 }
-[3102] common\core.ahk {
+[3181] common\core.ahk {
 
 Line  	|	Function
 0004	|	createEvent(lpEventAttributes, bManualReset, bInitialState, lpName)
@@ -45036,24 +45771,24 @@ Line  	|	Function
 0034	|	closeHandle(hObject)
 
 }
-[3103] common\createlib.ahk {
+[3182] common\createlib.ahk {
 
 Line  	|	Function
 
 }
-[3104] common\error.ahk {
+[3183] common\error.ahk {
 
 Line  	|	Function
 0005	|	exception(msg,r,depth,output)
 0034	|	getCallStack()
 
 }
-[3105] common\jit.ahk {
+[3184] common\jit.ahk {
 
 Line  	|	Function
 
 }
-[3106] common\malloc.ahk {
+[3185] common\malloc.ahk {
 
 Line  	|	Function
 0004	|	globalAlloc(dwBytes)
@@ -45064,7 +45799,7 @@ Line  	|	Function
 0068	|	rawPut(raw32, raw64)
 
 }
-[3107] common\misc.ahk {
+[3186] common\misc.ahk {
 
 Line  	|	Function
 0006	|	getEnvironmentVersion()
@@ -45073,7 +45808,7 @@ Line  	|	Function
 0072	|	verifyCallback(callbackFunction)
 
 }
-[3108] common\struct.ahk {
+[3187] common\struct.ahk {
 
 Line  	|	Function
 0069	|	get(memberName)
@@ -45082,7 +45817,7 @@ Line  	|	Function
 0105	|	cleanUp()
 
 }
-[3109] common\type.ahk {
+[3188] common\type.ahk {
 
 Line  	|	Function
 0017	|	outOfBounds(val)
@@ -45098,7 +45833,7 @@ Line  	|	Function
 0281	|	GetSystemTime(ByRef st)
 
 }
-[3110] common\typeArr.ahk {
+[3189] common\typeArr.ahk {
 
 Line  	|	Function
 0020	|	push(val)
@@ -45114,13 +45849,13 @@ Line  	|	Function
 0073	|	next(byref k,byref v)
 
 }
-[3111] common\ui.ahk {
+[3190] common\ui.ahk {
 
 Line  	|	Function
 0007	|	nLogicalCores()
 
 }
-[3112] pool\poolbase.ahk {
+[3191] pool\poolbase.ahk {
 
 Line  	|	Function
 0024	|	getPointer()
@@ -45134,7 +45869,7 @@ Line  	|	Function
 0318	|	isTimerSet()
 
 }
-[3113] pool\poolCallback.ahk {
+[3192] pool\poolCallback.ahk {
 
 Line  	|	Function
 0023	|	getEntryBin()
@@ -45153,7 +45888,7 @@ Line  	|	Function
 0315	|	messageUnreg()
 
 }
-[3114] pool\poolcore.ahk {
+[3193] pool\poolcore.ahk {
 
 Line  	|	Function
 0077	|	closeThreadpoolWait(pwa)
@@ -45191,12 +45926,12 @@ Line  	|	Function
 0771	|	setEventWhenCallbackReturns(pci, evt)
 
 }
-[3115] pool\pool_includes.ahk {
+[3194] pool\pool_includes.ahk {
 
 Line  	|	Function
 
 }
-[3116] threadPool\threadPool.ahk {
+[3195] threadPool\threadPool.ahk {
 
 Line  	|	Function
 0020	|	initThreadPool(min, max, pfng)
@@ -45213,7 +45948,7 @@ Line  	|	Function
 0198	|	cleanUp()
 
 }
-[3117] threads\coreThreads.ahk {
+[3196] threads\coreThreads.ahk {
 
 Line  	|	Function
 0030	|	resumeThread(hThread)
@@ -45221,18 +45956,18 @@ Line  	|	Function
 0109	|	waitOnAddress(Address,CompareAddress,AddressSize,dwMilliseconds)
 
 }
-[3118] threads\threads_includes.ahk {
+[3197] threads\threads_includes.ahk {
 
 Line  	|	Function
 
 }
-[3119] threadHandler\ccore.ahk {
+[3198] threadHandler\ccore.ahk {
 
 Line  	|	Function
 0003	|	taskCallbackBin()
 
 }
-[3120] threadHandler\threadHandler.ahk {
+[3199] threadHandler\threadHandler.ahk {
 
 Line  	|	Function
 0014	|	restartAllTasks()
@@ -45255,12 +45990,12 @@ Line  	|	Function
 0328	|	__Delete()
 
 }
-[3121] xdllcall\xDllCall.ahk {
+[3200] xdllcall\xDllCall.ahk {
 
 Line  	|	Function
 
 }
-[3122] lib\xcall.ahk {
+[3201] lib\xcall.ahk {
 
 Line  	|	Function
 0010	|	checkIfParamsNeedsToBeSaved()
@@ -45268,72 +46003,72 @@ Line  	|	Function
 0088	|	callbackRouter( callbackNumber, task )
 
 }
-[3123] lib\xlib.ahk {
+[3202] lib\xlib.ahk {
 
 Line  	|	Function
 
 }
-[3124] msOffice\Office_2010_Constants_(class).ahk {
+[3203] msOffice\Office_2010_Constants_(class).ahk {
 
 Line  	|	Function
 
 }
-[3125] msOffice\Office_2010_Constants_(global).ahk {
+[3204] msOffice\Office_2010_Constants_(global).ahk {
 
 Line  	|	Function
 
 }
-[3126] msOffice\Office_2010_Constants_(super_global).ahk {
+[3205] msOffice\Office_2010_Constants_(super_global).ahk {
 
 Line  	|	Function
 
 }
-[3127] DocX\DahkX2.ahk {
+[3206] DocX\DahkX2.ahk {
 
 Line  	|	Function
 
 }
-[3128] Excel\ActiveCell.ahk {
+[3207] Excel\ActiveCell.ahk {
 
 Line  	|	Function
 
 }
-[3129] Excel\ActiveCell_2.ahk {
+[3208] Excel\ActiveCell_2.ahk {
 
 Line  	|	Function
 
 }
-[3130]  {
+[3209]  {
 
 Line  	|	Function
 
 }
-[3131] Excel\ADODB_GetXLData.ahk {
+[3210] Excel\ADODB_GetXLData.ahk {
 
 Line  	|	Function
 
 }
-[3132] Excel\Borders_and_other_formatting.ahk {
+[3211] Excel\Borders_and_other_formatting.ahk {
 
 Line  	|	Function
 
 }
-[3133] Excel\Cells.ahk {
+[3212] Excel\Cells.ahk {
 
 Line  	|	Function
 
 }
-[3134] Excel\Cells_in_a_column.ahk {
+[3213] Excel\Cells_in_a_column.ahk {
 
 Line  	|	Function
 
 }
-[3135] Excel\Cells_in_a_column_2.ahk {
+[3214] Excel\Cells_in_a_column_2.ahk {
 
 Line  	|	Function
 
 }
-[3136] Excel\class_Excel.ahk {
+[3215] Excel\class_Excel.ahk {
 
 Line  	|	Function
 0027	|	CreateByArray(outputFile, arr, colCount="")
@@ -45349,29 +46084,29 @@ Line  	|	Function
 0199	|	LV_GetHeaderText(hwndLV, ColumnNumber)
 
 }
-[3137] Excel\Copy_from_one_sheet_to_another.ahk {
+[3216] Excel\Copy_from_one_sheet_to_another.ahk {
 
 Line  	|	Function
 
 }
-[3138] Excel\Copy_from_one_workbook_to_another.ahk {
+[3217] Excel\Copy_from_one_workbook_to_another.ahk {
 
 Line  	|	Function
 
 }
-[3139] Excel\Copy_rows_to_new_workbooks.ahk {
+[3218] Excel\Copy_rows_to_new_workbooks.ahk {
 
 Line  	|	Function
 0087	|	FindContinuousRange(rCell)
 
 }
-[3140] Excel\DetectExcelCellData.ahk {
+[3219] Excel\DetectExcelCellData.ahk {
 
 Line  	|	Function
 0027	|	ComExcelConnect( WinTitle )
 
 }
-[3141] Excel\Excel COM Function Set.ahk {
+[3220] Excel\Excel COM Function Set.ahk {
 
 Line  	|	Function
 0064	|	XL_ToPDF(Name, Sht, Range, PDFPath, Display)
@@ -45384,7 +46119,7 @@ Line  	|	Function
 0274	|	XLCheck(Name)
 
 }
-[3142]  {
+[3221]  {
 
 Line  	|	Function
 0091	|	Excel_Get(_WinTitle="ahk_class XLMAIN")
@@ -45418,26 +46153,26 @@ Line  	|	Function
 0952	|	Excel_Acc_ObjectFromWindow(hWnd, idObject = -4)
 
 }
-[3143] Excel\ExcelSetPrint.ahk {
+[3222] Excel\ExcelSetPrint.ahk {
 
 Line  	|	Function
 0263	|	Excel_Get(WinTitle="ahk_class XLMAIN")
 0281	|	ExcelStatus(WinTitle="ahk_class XLMAIN")
 
 }
-[3144] Excel\ExcelToObj.ahk {
+[3223] Excel\ExcelToObj.ahk {
 
 Line  	|	Function
 0009	|	ExcelToObj(ExcelFile, ByRef ResultObj, Format = "csv")
 
 }
-[3145] Excel\Excel_categorySheets.ahk {
+[3224] Excel\Excel_categorySheets.ahk {
 
 Line  	|	Function
 0001	|	categorySheets(xl)
 
 }
-[3146] Excel\Excel_COM.ahk {
+[3225] Excel\Excel_COM.ahk {
 
 Line  	|	Function
 0091	|	Excel_Get(_WinTitle="ahk_class XLMAIN")
@@ -45471,23 +46206,23 @@ Line  	|	Function
 0952	|	Excel_Acc_ObjectFromWindow(hWnd, idObject = -4)
 
 }
-[3147] Excel\Excel_Constants.ahk {
+[3226] Excel\Excel_Constants.ahk {
 
 Line  	|	Function
 
 }
-[3148] Excel\Excel_csv2xlsx.ahk {
+[3227] Excel\Excel_csv2xlsx.ahk {
 
 Line  	|	Function
 
 }
-[3149] Excel\Excel_filenameColumn.ahk {
+[3228] Excel\Excel_filenameColumn.ahk {
 
 Line  	|	Function
 0001	|	filenameColumn(xl, refColumns)
 
 }
-[3150] Excel\Excel_Funcs.ahk {
+[3229] Excel\Excel_Funcs.ahk {
 
 Line  	|	Function
 0098	|	XL_ToPDF(Name, Sht, Range, PDFPath, Display)
@@ -45516,7 +46251,7 @@ Line  	|	Function
 0808	|	Acc_ObjectFromWindow(hWnd, idObject = 0)
 
 }
-[3151] Excel\Excel_Functions.ahk {
+[3230] Excel\Excel_Functions.ahk {
 
 Line  	|	Function
 0069	|	Excel_Get(_WinTitle="ahk_class XLMAIN")
@@ -45550,60 +46285,60 @@ Line  	|	Function
 0822	|	Excel_Acc_ObjectFromWindow(hWnd, idObject = -4)
 
 }
-[3152] Excel\Excel_Get.ahk {
+[3231] Excel\Excel_Get.ahk {
 
 Line  	|	Function
 
 }
-[3153] Excel\Excel_radarChart.ahk {
+[3232] Excel\Excel_radarChart.ahk {
 
 Line  	|	Function
 
 }
-[3154] Excel\Excel_selectRows.ahk {
+[3233] Excel\Excel_selectRows.ahk {
 
 Line  	|	Function
 0001	|	selectRows(xl)
 
 }
-[3155] Excel\Excel_titleColumn.ahk {
+[3234] Excel\Excel_titleColumn.ahk {
 
 Line  	|	Function
 0001	|	titleColumn(xl)
 
 }
-[3156] Excel\Excel_xls2arr.ahk {
+[3235] Excel\Excel_xls2arr.ahk {
 
 Line  	|	Function
 0001	|	xls2arr(xlsFile, ByRef retArr)
 
 }
-[3157] Excel\Find.ahk {
+[3236] Excel\Find.ahk {
 
 Line  	|	Function
 
 }
-[3158] Excel\Find_2.ahk {
+[3237] Excel\Find_2.ahk {
 
 Line  	|	Function
 
 }
-[3159] Excel\Find_3.ahk {
+[3238] Excel\Find_3.ahk {
 
 Line  	|	Function
 
 }
-[3160]  {
+[3239]  {
 
 Line  	|	Function
 
 }
-[3161]  {
+[3240]  {
 
 Line  	|	Function
 
 }
-[3162] Excel\Function_Table.ahk {
+[3241] Excel\Function_Table.ahk {
 
 Line  	|	Function
 0012	|	Function_Table()
@@ -45613,7 +46348,7 @@ Line  	|	Function
 0190	|	Add(Var1, Var2)
 
 }
-[3163] Excel\Get sheet names and cells matching a color.ahk {
+[3242] Excel\Get sheet names and cells matching a color.ahk {
 
 Line  	|	Function
 0049	|	__New()
@@ -45621,67 +46356,67 @@ Line  	|	Function
 0059	|	GetColumn()
 
 }
-[3164] Excel\GetActiveWorkbook.ahk {
+[3243] Excel\GetActiveWorkbook.ahk {
 
 Line  	|	Function
 0029	|	GetActiveWorkbook()
 
 }
-[3165] Excel\IsInEditMode.ahk {
+[3244] Excel\IsInEditMode.ahk {
 
 Line  	|	Function
 0016	|	IsInEditMode(App)
 
 }
-[3166] Excel\make_table.ahk {
+[3245] Excel\make_table.ahk {
 
 Line  	|	Function
 0012	|	make_table(file_path, sheet)
 
 }
-[3167] Excel\MSExcel_RotateTable.ahk {
+[3246] Excel\MSExcel_RotateTable.ahk {
 
 Line  	|	Function
 0013	|	MSExcel_RotateTable()
 
 }
-[3168] Excel\Open_or_add_a_workbook.ahk {
+[3247] Excel\Open_or_add_a_workbook.ahk {
 
 Line  	|	Function
 
 }
-[3169] Excel\PageSetup.ahk {
+[3248] Excel\PageSetup.ahk {
 
 Line  	|	Function
 
 }
-[3170] Excel\Range (Loop).ahk {
+[3249] Excel\Range (Loop).ahk {
 
 Line  	|	Function
 
 }
-[3171] Excel\Range.ahk {
+[3250] Excel\Range.ahk {
 
 Line  	|	Function
 
 }
-[3172]  {
+[3251]  {
 
 Line  	|	Function
 
 }
-[3173] Excel\Save sheets as new workbooks.ahk {
+[3252] Excel\Save sheets as new workbooks.ahk {
 
 Line  	|	Function
 0047	|	FindFreeName(FileDir, FileName, FileExt)
 
 }
-[3174]  {
+[3253]  {
 
 Line  	|	Function
 
 }
-[3175] Excel\Xl.ahk {
+[3254] Excel\Xl.ahk {
 
 Line  	|	Function
 0044	|	XL_RangeFind(Name,Sht,Range,What, After, LookIn,LookAt,Order,Direction,Dtype)
@@ -45689,7 +46424,7 @@ Line  	|	Function
 0175	|	XL_GetHPageBreaks(Name,Sht)
 
 }
-[3176] more\class_OfficeInfo.ahk {
+[3255] more\class_OfficeInfo.ahk {
 
 Line  	|	Function
 0005	|	__New()
@@ -45701,13 +46436,13 @@ Line  	|	Function
 0077	|	GetFlatTypeLib()
 
 }
-[3177] more\class_OfficeManager.ahk {
+[3256] more\class_OfficeManager.ahk {
 
 Line  	|	Function
 0004	|	__New()
 
 }
-[3178] more\class_OutlookExt.ahk {
+[3257] more\class_OutlookExt.ahk {
 
 Line  	|	Function
 0010	|	__New()
@@ -45725,12 +46460,12 @@ Line  	|	Function
 0135	|	SaveAttachement(newname = "", location = "")
 
 }
-[3179] Outlook\CalendarViewMode.ahk {
+[3258] Outlook\CalendarViewMode.ahk {
 
 Line  	|	Function
 
 }
-[3180] Outlook\collectedOutlookFunctions.ahk {
+[3259] Outlook\collectedOutlookFunctions.ahk {
 
 Line  	|	Function
 0004	|	OutlookConnect()
@@ -45748,7 +46483,7 @@ Line  	|	Function
 0459	|	Email(Send, To, Subject, BodyClearText, BodyHTML="", BodyFormat=2, From="", CC="", Bcc="", ReplyRecipients="", FlagText="", ReminderTFalse=False, ReminderDateTime="", Importance=1, ReadReceipt=False, DeferredDeliveryDateTime="", AccountToSendFrom="")
 
 }
-[3181] Outlook\COMAddIns.ahk {
+[3260] Outlook\COMAddIns.ahk {
 
 Line  	|	Function
 0010	|	GuiClose()
@@ -45757,7 +46492,7 @@ Line  	|	Function
 0032	|	ToggleSelected()
 
 }
-[3182] Outlook\Events.ahk {
+[3261] Outlook\Events.ahk {
 
 Line  	|	Function
 0059	|	ItemSend(Item, Cancel, olApp)
@@ -45765,34 +46500,34 @@ Line  	|	Function
 0082	|	RemoveTT()
 
 }
-[3183] Outlook\Extract Attactmentc from outlook.ahk {
+[3262] Outlook\Extract Attactmentc from outlook.ahk {
 
 Line  	|	Function
 0004	|	ExtractAttactmentcoutlook(folderName,EmailSubject,attachmentname,PathToSaveTo)
 
 }
-[3184] Outlook\HTMLBody.ahk {
+[3263] Outlook\HTMLBody.ahk {
 
 Line  	|	Function
 
 }
-[3185] Outlook\HTML_email_and_mailmerge.ahk {
+[3264] Outlook\HTML_email_and_mailmerge.ahk {
 
 Line  	|	Function
 
 }
-[3186] Outlook\Hyperlink.ahk {
+[3265] Outlook\Hyperlink.ahk {
 
 Line  	|	Function
 
 }
-[3187] Outlook\Outlook COM loop through Folders.ahk {
+[3266] Outlook\Outlook COM loop through Folders.ahk {
 
 Line  	|	Function
 0018	|	olLoopFolder(olFolder)
 
 }
-[3188]  {
+[3267]  {
 
 Line  	|	Function
 0018	|	copy_to_clipboard()
@@ -45807,12 +46542,12 @@ Line  	|	Function
 0095	|	get_ticket_number_from_outlook_subject()
 
 }
-[3189]  {
+[3268]  {
 
 Line  	|	Function
 
 }
-[3190]  {
+[3269]  {
 
 Line  	|	Function
 0001	|	AddAttachments()
@@ -45827,7 +46562,7 @@ Line  	|	Function
 0312	|	ForwardForm()
 
 }
-[3191] Outlook\Outlook.ahk {
+[3270] Outlook\Outlook.ahk {
 
 Line  	|	Function
 0058	|	AddAttachments()
@@ -45842,23 +46577,23 @@ Line  	|	Function
 0378	|	ForwardForm()
 
 }
-[3192] Outlook\Outlook_tableAddHTML.ahk {
+[3271] Outlook\Outlook_tableAddHTML.ahk {
 
 Line  	|	Function
 
 }
-[3193] Outlook\ReceiveEmailFromOL.ahk {
+[3272] Outlook\ReceiveEmailFromOL.ahk {
 
 Line  	|	Function
 0027	|	ReceiveEmailFromOL()
 
 }
-[3194] Outlook\Restrict.ahk {
+[3273] Outlook\Restrict.ahk {
 
 Line  	|	Function
 
 }
-[3195] Outlook\SaveAs.ahk {
+[3274] Outlook\SaveAs.ahk {
 
 Line  	|	Function
 0016	|	OutLookSaveAs2(FolderPath)
@@ -45866,54 +46601,54 @@ Line  	|	Function
 0059	|	RemoveIllegalChars(FileName)
 
 }
-[3196] Outlook\Sent.ahk {
+[3275] Outlook\Sent.ahk {
 
 Line  	|	Function
 
 }
-[3197] Outlook\SmtpAddress.ahk {
+[3276] Outlook\SmtpAddress.ahk {
 
 Line  	|	Function
 0024	|	ResolveDisplayNameToSMTP(MailItem)
 
 }
-[3198] Outlook\Sort items.ahk {
+[3277] Outlook\Sort items.ahk {
 
 Line  	|	Function
 
 }
-[3199] Outlook\Subject.ahk {
+[3278] Outlook\Subject.ahk {
 
 Line  	|	Function
 
 }
-[3200] PowerPoint\BulletFormat.ahk {
+[3279] PowerPoint\BulletFormat.ahk {
 
 Line  	|	Function
 
 }
-[3201] PowerPoint\Find_and_replace_on_all_slides.ahk {
+[3280] PowerPoint\Find_and_replace_on_all_slides.ahk {
 
 Line  	|	Function
 0007	|	ppFindReplace(ppApp, sFindMe, sSwapme)
 
 }
-[3202] PowerPoint\Set_line_spacing.ahk {
+[3281] PowerPoint\Set_line_spacing.ahk {
 
 Line  	|	Function
 
 }
-[3203] Word\Bookmarks.ahk {
+[3282] Word\Bookmarks.ahk {
 
 Line  	|	Function
 
 }
-[3204] Word\CommandBars.ahk {
+[3283] Word\CommandBars.ahk {
 
 Line  	|	Function
 
 }
-[3205]  {
+[3284]  {
 
 Line  	|	Function
 0029	|	IsNamedProcess(name)
@@ -45926,70 +46661,70 @@ Line  	|	Function
 0087	|	Main()
 
 }
-[3206] Word\Document_collect_clipboard_data.ahk {
+[3285] Word\Document_collect_clipboard_data.ahk {
 
 Line  	|	Function
 
 }
-[3207] Word\docx2xl.ahk {
+[3286] Word\docx2xl.ahk {
 
 Line  	|	Function
 0026	|	sentences2XL()
 
 }
-[3208] Word\IsDocOpened.ahk {
+[3287] Word\IsDocOpened.ahk {
 
 Line  	|	Function
 0008	|	IsDocOpened(FileName)
 
 }
-[3209] Word\Is_file_open.ahk {
+[3288] Word\Is_file_open.ahk {
 
 Line  	|	Function
 
 }
-[3210] Word\MSWord_CompareStringsOrFiles.ahk {
+[3289] Word\MSWord_CompareStringsOrFiles.ahk {
 
 Line  	|	Function
 0014	|	MSWord_CompareStringsOrFiles(StringOrFile1, StringOrFile2, options="")
 
 }
-[3211] Word\Open_a_password_protected_document.ahk {
+[3290] Word\Open_a_password_protected_document.ahk {
 
 Line  	|	Function
 
 }
-[3212] Word\Word_addComment.ahk {
+[3291] Word\Word_addComment.ahk {
 
 Line  	|	Function
 0001	|	addComment(text)
 
 }
-[3213] Word\Word_Comment.ahk {
+[3292] Word\Word_Comment.ahk {
 
 Line  	|	Function
 0001	|	wComment(text, header="", URL = "", title = "")
 
 }
-[3214] Word\Word_compare.ahk {
+[3293] Word\Word_compare.ahk {
 
 Line  	|	Function
 0001	|	MSWord_CompareStringsOrFiles(StringOrFile1, StringOrFile2, options="")
 
 }
-[3215] Word\Word_docMergeGUI.ahk {
+[3294] Word\Word_docMergeGUI.ahk {
 
 Line  	|	Function
 0001	|	docMergeGUI()
 
 }
-[3216] Word\Word_editComment.ahk {
+[3295] Word\Word_editComment.ahk {
 
 Line  	|	Function
 0001	|	eComment()
 
 }
-[3217] Word\word_functionlibrary.ahk {
+[3296] Word\word_functionlibrary.ahk {
 
 Line  	|	Function
 0021	|	HideSelectedText()
@@ -46009,48 +46744,48 @@ Line  	|	Function
 1054	|	References(ins, out, name, ByRef flag, title, type)
 
 }
-[3218] Word\Word_Link.ahk {
+[3297] Word\Word_Link.ahk {
 
 Line  	|	Function
 0001	|	wLink(text = 0, URL = 0)
 
 }
-[3219] Word\Word_Link2.ahk {
+[3298] Word\Word_Link2.ahk {
 
 Line  	|	Function
 0001	|	wordLink()
 
 }
-[3220] Word\Word_LinkParagraph.ahk {
+[3299] Word\Word_LinkParagraph.ahk {
 
 Line  	|	Function
 0001	|	wordLinkParagraph(URL, text)
 
 }
-[3221] Word\Word_NewLine.ahk {
+[3300] Word\Word_NewLine.ahk {
 
 Line  	|	Function
 0001	|	wNewLine()
 
 }
-[3222] Word\Word_printfile.ahk {
+[3301] Word\Word_printfile.ahk {
 
 Line  	|	Function
 0001	|	printfile(printpath,Copies,FileName)
 
 }
-[3223]  {
+[3302]  {
 
 Line  	|	Function
 
 }
-[3224] Word\Word_Text.ahk {
+[3303] Word\Word_Text.ahk {
 
 Line  	|	Function
 0001	|	wText(text)
 
 }
-[3225] Word\Word_xlComment.ahk {
+[3304] Word\Word_xlComment.ahk {
 
 Line  	|	Function
 0001	|	xlWordComment(text, header="", URL = "", title = "")
