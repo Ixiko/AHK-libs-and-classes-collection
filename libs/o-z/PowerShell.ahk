@@ -13,8 +13,7 @@
     Ejemplo:
         MsgBox(PowerShell('Start-Process -FilePath notepad'))
 */
-PowerShell(Script, Params := '', Options := '')
-{
+PowerShell(Script, Params := '', Options := '') {
     Run('PowerShell.exe -Command &{' . Script . '} ' . Params,, Options, PID)
     Return (PID)
 }

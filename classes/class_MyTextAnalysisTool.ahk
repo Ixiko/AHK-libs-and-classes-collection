@@ -7,81 +7,81 @@
 ;SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 Class MyTextAnalysisTool {
-	
+
 	CountCharacters(vText) {
 		; Counts the complete amount of characters
 	}
-	
+
 	CountNonWhitespaceCharacters(vText) {
 		; Counts and returns the numbers of characters present in a given text.
 		; Does not include spaces or tabs.
-		
+
 		vLength := StrLen(vText)
-		
+
 		vLines := 0
 		vSpaces := 0
 		vTabs := 0
-		
+
 		Loop, Parse, vText, `n, `r
 		{
 			vLines += 1
 			vLine := A_LoopField
 			vLength += StrLen(vLine)
-			
+
 			Loop, Parse, vLine
 			{
 				if ( A_loopField == A_Space )
 					vSpaces += 1
-				
+
 				if ( A_loopField == A_Tab )
 					vTabs += 1
 			}
 		}
-		
+
 		return vLength - vSpaces - vTab
 	}
-	
+
 	CountSpaces(vText) {
 		; Counts and returns the total amount of whitespace count
-		
+
 		vSpaces := 0
-		
+
 		Loop, Parse, vText
 			If A_loopField=%A_Space%
 				vSpaces += 1
-			
+
 		return vSpaces
 	}
-	
+
 	CountTabs(vText) {
 		; Counts and returns the total amount of tabs counted
-		
+
 		vTabs := 0
-		
+
 		Loop, Parse, vText
 			if ( A_loopField == A_Tab )
 				vTabs += 1
-		
+
 		return vTabs
 	}
-	
+
 	CountLines(vText) {
 		; Counts and returns the total number of lines counted
-		
+
 		if ( StrLen(vText) == 0 )
 			return 0
-		
+
 		vLines := 0
 		Loop, Parse, vText, `n, `r
 			vLines += 1
-		
+
 		return vLines
 	}
 }
 
 ; TESTING
 
-myTAT := New MyTextAnalysisTool
+;myTAT := New MyTextAnalysisTool
 ;MsgBox % myTAT.CountSpaces("One Two Three Four`nFive Six`n Seven Eight Nine")
 
 ;MsgBox % "Preceeding tab: " myTAT.CountTabs("	Tab1	Tab2	Tab3")

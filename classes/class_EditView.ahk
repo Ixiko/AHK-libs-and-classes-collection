@@ -7,36 +7,34 @@
  * License:
  *     WTFPL [http://wtfpl.net]
  */
-class EditView
-{
+class EditView {
 	/* Constructor: __New
 	 *     Creates an object representing a view to the Edit control's buffer.
 	 * Syntax:
 	 *     view := new EditView( hWnd [ , nn := 1 ] )
 	 * Parameter(s):
-	 *     view     [retval] - an EditView object
-	 *     hWnd         [in] - handle to the Edit control or a parent window with
-	 *                         a child Edit control
-	 *     nn      [in, opt] - if 'hWnd' is a handle to a parent window, 'nn' is
-	 *                         the instance number of the child Edit control.
+	 *     view    	[retval] 	- 	an EditView object
+	 *     hWnd 	[in] 		- 	handle to the Edit control or a parent window with
+	 *                         			a child Edit control
+	 *     nn      	[in, opt]	- 	if 'hWnd' is a handle to a parent window, 'nn' is
+	 *                         			the instance number of the child Edit control.
 	 * Remarks:
 	 *     For convenience, the user may call the EditView() function. This is
 	 *     to avoid having to use the 'new' keyword and also for auto-inclusion
 	 *     in scripts if EditView.ahk is in a function library.
 	 */
-	__New(hWnd, nn:=1)
-	{
+	__New(hWnd, nn:=1)	{
 		prev_DHW := A_DetectHiddenWindows
 		DetectHiddenWindows On
-		
+
 		WinGetClass, WinClass, ahk_id %hWnd%
 		if (WinClass != "Edit")
 			ControlGet hWnd, Hwnd,, Edit%nn%, ahk_id %hWnd%
-		
+
 		DetectHiddenWindows %prev_DHW%
 		if !DllCall("IsWindow", "Ptr", hWnd)
 			throw Exception("Invalid window handle", -1, hWnd)
-		
+
 		this.__Handle := hWnd + 0
 	}
 	/* Property: Len
@@ -204,10 +202,9 @@ class EditView
 	 *     If both 'row' and 'col' are omitted, the current 0-based position of
 	 *     the caret is returned.
 	 */
-	Point(row:=0, col*)
-	{
+	Point(row:=0, col*)	{
 		col := ObjHasKey(col, 1) ? col[1] : row ? 1 : ""
-		
+
 		if !row
 			row := this.EM_LINEFROMCHAR(-1) + 1
 		else if (row < 0)
@@ -232,8 +229,7 @@ class EditView
 	 *                          the column number.
 	 *     point    [in, opt] - 0-based point/position
 	 */
-	RowCol(pos:="")
-	{
+	RowCol(pos:="")	{
 		if (pos == "")
 			pos := this.Point()
 		row := this.EM_LINEFROMCHAR(pos)
@@ -260,8 +256,7 @@ class EditView
 	 *     To see which messages are defined, see static class variables defined
 	 *     at the bottom of the class definition.
 	 */
-	_SendMsg(msg, wParam:=0, lParam:=0)
-	{
+	_SendMsg(msg, wParam:=0, lParam:=0)	{
 		static integer := "integer" ; v1.1+ and v2.0a+ compatibility
 		if msg is %integer%
 			return this._SendMsgN.Call(this, msg, wParam, lParam) ; bypass __Call
@@ -272,48 +267,43 @@ class EditView
 ; END OF PUBLIC INTERFACE
 
 ; METHODS and/or PROPERTIES DEFINED BELOW ARE PRIVATE TO THE CLASS
-	_SendMsgN(msg, wParam:=0, lParam:=0) ; internal
-	{
+	_SendMsgN(msg, wParam:=0, lParam:=0) { ; internal
 		hEdit := this.__Handle
 		return DllCall("SendMessage", "Ptr", hEdit, "UInt", msg, "Ptr", wParam, "Ptr", lParam, "Ptr")
 	}
 
-	__Call(name, args*)
-	{
+	__Call(name, args*)	{
 		static integer := "integer"
 		nMsg := this[name] + 0
 		if nMsg is %integer%
 			return this._SendMsgN.Call(this, nMsg, args*) ; bypass __Call
 	}
 
-	__Get(name, args*)
-	{
+	__Get(name, args*)	{
 		if InStr(",LineCount,CurrentLine,CurrentCol,Selected,", Format(",{},", name))
 			return this._Cmd.Call(this, "Get", name, args*)
 	}
 
-	_Cmd(GetOrSet, cmd, value:="")
-	{
+	_Cmd(GetOrSet, cmd, value:="")	{
 		prev_DHW := A_DetectHiddenWindows
 		DetectHiddenWindows On
 		hEdit := this.__Handle
 		out := ""
 
-		if (GetOrSet = "Get") ; cmd := "Text,LineCount,CurrentLine,CurrentCol,(Line,N),Selected"
-		{
+		if (GetOrSet = "Get") { ;  cmd := "Text,LineCount,CurrentLine,CurrentCol,(Line,N),Selected"
+
 			if (cmd != "Text")
 				ControlGet out, %cmd%, %value%,, ahk_id %hEdit%
 			else
 				ControlGetText out,, ahk_id %hEdit%
 		}
-		else if (GetOrSet = "Set")
-		{
+		else if (GetOrSet = "Set")		{
 			if (cmd != "Text")
 				Control %cmd%, %value%,, ahk_id %hEdit%
 			else
 				ControlSetText,, %value%, ahk_id %hEdit%
 		}
-		
+
 		DetectHiddenWindows %prev_DHW%
 		return out
 	}
@@ -340,7 +330,6 @@ class EditView
  *     Utility function to allow auto-inclusion. Provided for convenience. For
  *     usage, see EditView.__New().
  */
-EditView(hWnd, nn:=1)
-{
+EditView(hWnd, nn:=1) {
 	return new EditView(hWnd, nn)
 }
