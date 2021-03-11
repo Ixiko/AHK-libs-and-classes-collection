@@ -29,6 +29,7 @@ return
 
 Esc::ExitApp
 
+
 */
 
 
@@ -61,7 +62,7 @@ CurrPos:=1
 TextToWrapNew:=TextToWrap
 ; msgbox % "text is of size " StrLen(TextToWrapNew))
 	While (StrLen(SubStr(TextToWrapNew,CurrPos))>LengthLim) {
-		
+
 		; msgbox current pos CurrPos %CurrPos%
 		; msgbox % StrLen(SubStr(TextToWrapNew,CurrPos)) " char remaining"
 		TempFoundPos:=regexmatch(TextToWrapNew,"\s",,CurrPos)
@@ -98,12 +99,12 @@ TextToWrapNew:=TextToWrap
 }
 
 WrapText_Force(TextToWrap,LengthLim,delims="") {
-	
+
 	; DESCRIPTION
 	;Returns a new wrapped text variables
 	;delimiters can be specified in delims array parameters, or will be ["[","/","\",A_Space,A_Tab,".","-","_"] by default
-	
-	
+
+
 ;we round the LengthLim
 LengthLim:=Round(LengthLim)
 ;if LengthLim too small or TextToWrap<LengthLim we return the original text
@@ -142,7 +143,7 @@ Loop, %TextToWrap_Arr0%
 	WrapText_Force_Recurse:
 	loop 1
 		{
-		;if the current TextWraped_Arr<LengthLim we build the TextWraped and we break the loop 
+		;if the current TextWraped_Arr<LengthLim we build the TextWraped and we break the loop
 		;to append the current wrapped part to the TextWrapedFinal var and continue to next line
 		Text_StrLen := StrLen(TextWraped_Arr[count])
 		if (Text_StrLen<LengthLim)
@@ -153,27 +154,27 @@ Loop, %TextToWrap_Arr0%
 				}
 			break
 			}
-		;Otherwise 
+		;Otherwise
 		;[OPTIONAL - can be replaced by] LengthLimVar:=LengthLim
 		;We Check if the current part is at least >1.5*LengthLim, otherwise we assign a new LengthLim of LengthLim//2
 		if (Text_StrLen<(LengthLim*1.5))
 			LengthLimVar:=LengthLim//2
 		else
 			LengthLimVar:=LengthLim
-			
+
 		;we look in the current remaining part the positions of delimiters until LengthLim
 		PartToLookDelim:=SubStr(TextWraped_Arr[count], 1, LengthLimVar)
 		for index,delim in delims
 			{
 			Delim_Pos_Arr[index]:=InStr(PartToLookDelim, delim,,0)
 			}
-		
+
 		;We get the farest delimiter pos into Delim_Pos
 		Delim_Pos:=0
 		for k,v in Delim_Pos_Arr
 			if (v > Delim_Pos)
 				Delim_Pos := v
-		
+
 		;if no delimiter was found or its position is not close enough to the intended Length (set to 90%)
 		if (Delim_Pos=0 or Delim_Pos<(LengthLimVar*0.9))
 			{
@@ -224,34 +225,34 @@ GetTextSize(pStr, pFont="", pHeight=false, pAdd=0) {
 		height := 10
 
 
-	RegRead, LogPixels, HKEY_LOCAL_MACHINE, SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontDPI, LogPixels 
+	RegRead, LogPixels, HKEY_LOCAL_MACHINE, SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontDPI, LogPixels
 	Height := -DllCall("MulDiv", "int", Height, "int", LogPixels, "int", 72)
 	;face
-	RegExMatch(pFont, "(?<=,).+", fontFace)	
+	RegExMatch(pFont, "(?<=,).+", fontFace)
 	if (fontFace != "")
-		 fontFace := RegExReplace( fontFace, "(^\s*)|(\s*$)")		;trim 
+		 fontFace := RegExReplace( fontFace, "(^\s*)|(\s*$)")		;trim
 	else fontFace := "MS Sans Serif"
 
  ;create font
 	hFont	:= DllCall("CreateFont", "int",  height,	"int",  0,		  "int",  0, "int", 0
 									,"int",  weight,	"Uint", italic,   "Uint", underline
-									,"uint", strikeOut, "Uint", nCharSet, "Uint", 0, "Uint", 0, "Uint", 0, "Uint", 0, "str", fontFace) 
-	hOldFont := DllCall("SelectObject", "Uint", hDC, "Uint", hFont) 										
+									,"uint", strikeOut, "Uint", nCharSet, "Uint", 0, "Uint", 0, "Uint", 0, "Uint", 0, "str", fontFace)
+	hOldFont := DllCall("SelectObject", "Uint", hDC, "Uint", hFont)
 
 	VarSetCapacity(SIZE, 16)
 	curW=0
 	Loop,  parse, pStr, `n
 	{
-		DllCall("DrawTextA", "Uint", hDC, "str", A_LoopField, "int", StrLen(pStr), "uint", &SIZE, "uint", 0x400) 
+		DllCall("DrawTextA", "Uint", hDC, "str", A_LoopField, "int", StrLen(pStr), "uint", &SIZE, "uint", 0x400)
 		resW := ExtractInteger(SIZE, 8)
 		curW := resW > curW ? resW : curW
 	}
-	DllCall("DrawTextA", "Uint", hDC, "str", pStr, "int", StrLen(pStr), "uint", &SIZE, "uint", 0x400) 
- ;clean	
-	
-	DllCall("SelectObject", "Uint", hDC, "Uint", hOldFont) 
-	DllCall("DeleteObject", "Uint", hFont) 
-	DllCall("ReleaseDC", "Uint", 0, "Uint", hDC) 
+	DllCall("DrawTextA", "Uint", hDC, "str", pStr, "int", StrLen(pStr), "uint", &SIZE, "uint", 0x400)
+ ;clean
+
+	DllCall("SelectObject", "Uint", hDC, "Uint", hOldFont)
+	DllCall("DeleteObject", "Uint", hFont)
+	DllCall("ReleaseDC", "Uint", 0, "Uint", hDC)
 
 	resW := ExtractInteger(SIZE, 8) + pAdd
   	resH := ExtractInteger(SIZE, 12) + pAdd
@@ -267,6 +268,6 @@ ExtractInteger(ByRef pSource, pOffset = 0, pIsSigned = false, pSize = 4) {
     Loop %pSize%
         result += *(&pSource + pOffset + A_Index-1) << 8*(A_Index-1)
     if (!pIsSigned OR pSize > 4 OR result < 0x80000000)
-        return result 
+        return result
     return -(0xFFFFFFFF - result + 1)
 }
