@@ -1,6 +1,7 @@
 SetBatchLines, -1
 Window := new CActiveXDemo("ActiveXDemo")
-#include <CGUI>
+#include ..\ ;<CGUI>
+#include CGUI.ahk
 Class CActiveXDemo Extends CGUI
 {
 	;Add an ActiveX control, subclass style!
@@ -11,7 +12,7 @@ Class CActiveXDemo Extends CGUI
 		static Text := "Shell.Explorer"
 		__New(GUI)
 		{
-			this.Navigate("D:\Eigene Dateien\Eigene Bilder\Praxis\PraxisWebSeite\index.html")
+			this.Navigate("https://www.bundesgesundheitsministerium.de")
 		}
 		NavigateComplete2(GUI, pDisp, URL)
 		{
@@ -19,20 +20,20 @@ Class CActiveXDemo Extends CGUI
 				this.Navigate("http://www.microsoft.com")
 		}
 	}
-	
+
 	;Alternatively, define it as class property. Comment subclass above and uncomment code below then
 	;~ ie := this.AddControl("ActiveX", "ie", "w800 h600", "Shell.Explorer")
 	__New(title)
 	{
 		this.Title := Title
-		
+
 		;Calling functions of the ActiveX control is done directly on the control object.
 		;~ this.ie.Navigate("http://www.google.com")
-		
+
 		this.DestroyOnClose := true
 		this.Show()
 	}
-	
+
 	;ActiveX control events are implemented like regular events of other controls
 	;~ ie_NavigateComplete2(pDisp, URL)
 	;~ {

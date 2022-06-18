@@ -1,4 +1,4 @@
-; ahk: console
+﻿; ahk: console
 #include <logging>
 #include <testcase>
 #include <string>

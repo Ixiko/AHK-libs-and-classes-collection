@@ -1,4 +1,4 @@
-/* Function: Cursor
+﻿/* Function: Cursor
 			Set cursor shape for control or window.
  
  Dependencies: 

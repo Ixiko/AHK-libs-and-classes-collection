@@ -1,6 +1,8 @@
 gui := new CSharpGuiConverter()
-#include <CGUI>
-#include <Regex>
+#include ..\
+
+#include CGUI.ahk
+#include Regex.ahk
 Class CSharpGuiConverter Extends CGUI
 {
 	label1			:= this.AddControl("Text", "label1", "x12 y15 w53 h13", "Input File:")
@@ -16,19 +18,19 @@ Class CSharpGuiConverter Extends CGUI
 	{
 		IniRead, in, %A_ScriptName%.ini,Settings, In, %A_Space%
 		IniRead, out, %A_ScriptName%.ini,Settings, Out, %A_Space%
-		
+
 		this.txtInput.Text := in
 		this.txtOutput.Text := out
-		
-		this.btnConvert.Enabled := FileExist(in) && strlen(out) > 1		
-		this.btnRun.Enabled := 0			
+
+		this.btnConvert.Enabled := FileExist(in) && strlen(out) > 1
+		this.btnRun.Enabled := 0
 		this.btnEdit.Enabled := 0
-		
+
 		this.height := 116
 		this.Title := "C# GUI Converter"
 		this.Width := 401
 		this.DestroyOnClose := true
-		this.Show()		
+		this.Show()
 	}
 	btnInput_Click()
 	{
@@ -155,7 +157,7 @@ Class CSharpGuiConverter Extends CGUI
 					}
 			}
 		}
-		
+
 		;Find control->tabpage relationship
 		Loop, Parse, InputFile, `n, %A_Space%%A_Tab%
 		{
@@ -164,16 +166,16 @@ Class CSharpGuiConverter Extends CGUI
 				TabPage := Regex.MatchSimple(A_LoopField, "Name", "this\.(?P<Name>.*?)\.Controls\.Add\(")
 				if(IsObject(TabPages[TabPage]))
 				{
-					SubControl := Regex.MatchSimple(A_LoopField, "Control", "\(this\.(?P<Control>.*?)\);")  
+					SubControl := Regex.MatchSimple(A_LoopField, "Control", "\(this\.(?P<Control>.*?)\);")
 					for Name, Control in Controls
 						if(IsObject(Control.TabPages))
 							for index, TabPage2 in Control.TabPages
 								if(TabPage2.Name = TabPage)
 								{
-									Controls[SubControl].TabControl := Control									
+									Controls[SubControl].TabControl := Control
 									Controls[SubControl].Tab := index
 									break 2
-								}					
+								}
 				}
 			}
 			;~ this.tabPage2.Controls.Add(this.txtTags);
@@ -360,7 +362,7 @@ Class CSharpGuiConverter Extends CGUI
 		TabPages := {}
 		this.ReadTabs(InputFile, Controls, TabPages)
 		this.ReadGroupBoxes(InputFile, Controls)
-		
+
 		;Now that all info is available, write the file
 		OutputFile := "gui := new " Class "()`n#include <CGUI>`nClass " Class " Extends CGUI`n{`n"
 		for Name, Control in Controls ;Write static control definitions
@@ -371,7 +373,7 @@ Class CSharpGuiConverter Extends CGUI
 				OutputFile .= "`t" Control.Name " := this.AddControl(""" Control.Type """, """ Control.Name """, """ Options """, """ Control.Text """)`n"
 			}
 		}
-		
+
 		/*
 		Tab Class
 		*/
@@ -383,7 +385,7 @@ Class CSharpGuiConverter Extends CGUI
 					Text .= A_Index = 1 ? TabPage.Text : "|" TabPage.Text
 				Options := (Control.HasKey("x") ? "x" Control.x " " : "" ) (Control.HasKey("y") ? "y" Control.y " " : "" ) (Control.HasKey("width") ? "w" Control.width " " : "" ) (Control.HasKey("height") ? "h" Control.height : "" )
 				OutputFile .= "`tClass " Control.Name "`n`t{`n`t`tstatic Type := ""Tab""`n`t`tstatic Options := """ Options """`n`t`tstatic Text := """ Text """`n`t`t__New(GUI)`n`t`t{`n"
-				
+
 				for Name2, Control2 in Controls
 					if(Control2.TabControl = Control && !Control2.GroupBox)
 					{
@@ -391,7 +393,7 @@ Class CSharpGuiConverter Extends CGUI
 						Control2.y := Control2.y + 36
 						this.WriteControl(OutputFile, Control2, "this.Tabs[" Control2.Tab "].AddControl", "this.Tabs[" Control2.Tab "].Controls." Control2.Name, 3)
 						;~ Options := (Control2.HasKey("x") ? "x" Control2.x + 22 " " : "" ) (Control2.HasKey("y") ? "y" Control2.y + 36 " " : "" ) (Control2.HasKey("width") ? "w" Control2.width " " : "" ) (Control2.HasKey("height") ? "h" Control2.height : "" )
-						;~ OutputFile .= "`t`t`tthis.Tabs[" Control2.Tab "].AddControl(""" Control2.Type """, """ Control2.Name """, """ Options """, """ Control2.Text """)`n"						
+						;~ OutputFile .= "`t`t`tthis.Tabs[" Control2.Tab "].AddControl(""" Control2.Type """, """ Control2.Name """, """ Options """, """ Control2.Text """)`n"
 						if(Control2.Type = "GroupBox")
 							this.WriteGroupBox(OutputFile, Controls, Control2, "this.Tabs[" Control2.Tab "].Controls." Control2.Name ".AddControl", "this.Tabs[" Control2.Tab "].Controls." Control2.Name ".Controls", 3)
 					}
@@ -401,14 +403,14 @@ Class CSharpGuiConverter Extends CGUI
 		/*
 		//Tab Class
 		*/
-		
+
 		OutputFile .= "`t__New()`n`t{`n"
 		for Name, Control in Controls
 			if(Control.Type = "GroupBox" && !Control.HasKey(TabControl))
 				this.WriteGroupBox(OutputFile, Controls, Control, "this." Control.Name ".AddControl", "this." Control.Name, 2)
 			else if(!Control.HasKey("TabControl") && Control.HasKey("UpDown"))
-				this.WriteControl(OutputFile, Control, "this." Control.Name " := this.AddControl", "this." Control.Name, 2) 
-		
+				this.WriteControl(OutputFile, Control, "this." Control.Name " := this.AddControl", "this." Control.Name, 2)
+
 		for, Name, Control in Controls
 		{
 			for Property, Value in Control
@@ -435,7 +437,7 @@ Class CSharpGuiConverter Extends CGUI
 					OutputFile .= "`t`tthis." WindowProperty " := """ Value """`n"
 			}
 		}
-		OutputFile .= "`t`tthis.Show()`n"		
+		OutputFile .= "`t`tthis.Show()`n"
 		OutputFile .= "`t}"
 		for EventIndex, GUIEvent in Window.Events
 			OutputFile .= "`n`t" GUIEvent "`n`t{`n`t`t`n`t}"
@@ -460,7 +462,7 @@ Class CSharpGuiConverter Extends CGUI
 			OutputFile .= "`t"
 		OutputFile .= PreText "(""" Control.Type """, """ Control.Name """, """ Options """, """ Control.Text """)`n"
 		if(Control.UpDown)
-		{	
+		{
 			Loop % IndentLevel
 				OutputFile .= "`t"
 			OutputFile .= AccessText ".AddUpDown(" Control.Min ", " Control.Max ")`n"
@@ -472,7 +474,7 @@ Class CSharpGuiConverter Extends CGUI
 		{
 			Control := Controls[ControlName]
 			if(!PreText)
-				PreText := "this." ControlName " := this." GroupBoxControl.Name ".AddControl"			
+				PreText := "this." ControlName " := this." GroupBoxControl.Name ".AddControl"
 			AccessText .= ".Controls." ControlName
 			Control.X := Control.X + GroupBoxControl.X
 			Control.Y := Control.Y + GroupBoxControl.Y
@@ -622,7 +624,7 @@ Class CSharpGuiConverter Extends CGUI
 		else if(InStr(line, "this." CurrentControl.Name ".LabelEdit"))
 			CurrentControl.ReadOnly := 0
 	}
-	
+
 	Picture(CurrentControl, line)
 	{
 		if(InStr(line, "new System.EventHandler"))

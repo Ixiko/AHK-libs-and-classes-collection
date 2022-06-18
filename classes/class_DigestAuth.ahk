@@ -1,4 +1,4 @@
-; https://en.wikipedia.org/wiki/Digest_access_authentication
+﻿; https://en.wikipedia.org/wiki/Digest_access_authentication
 class DigestAuth
 {
 	Build(username, password, method, uri, ByRef WWWAuthenticate) {

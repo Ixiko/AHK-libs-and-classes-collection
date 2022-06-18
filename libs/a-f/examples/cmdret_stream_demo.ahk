@@ -1,4 +1,4 @@
-; #Include CMDret_stream.ahk
+﻿; #Include CMDret_stream.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

@@ -1,4 +1,4 @@
-class constants extends xlib.bases.setgetErrorCleanup {
+﻿class constants extends xlib.bases.setgetErrorCleanup {
 	
 	pPostMessage[] {
 		get {

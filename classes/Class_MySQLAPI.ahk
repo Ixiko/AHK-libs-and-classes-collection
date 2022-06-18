@@ -47,7 +47,7 @@ Class MySQLAPI {
    ; Parameters:    LibPath  - Optional: Absolute path of libmysql.dll
    ; ===================================================================================================================
    __New(LibPath := "") {
-      Static LibMySQL := A_ScriptDir . "\libmysql.dll"
+      Static LibMySQL := A_ScriptDir . "\..\..\dll\libmysql.dll"
       ; Do not instantiate unstances!
       If (This.Base.Base.__Class = "MySQLAPI") {
          MsgBox, 16, MySQL Error!, You must not instantiate instances of MySQLDB!

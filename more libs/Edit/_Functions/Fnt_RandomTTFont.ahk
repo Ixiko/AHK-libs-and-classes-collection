@@ -26,8 +26,8 @@
 ;   template for a custom function to collect a random font.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_RandomTTFont()
-    {
+Fnt_RandomTTFont()    {
+
     Static Dummy7282
 
           ;-- Character sets

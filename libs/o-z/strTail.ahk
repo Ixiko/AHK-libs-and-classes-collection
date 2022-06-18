@@ -1,4 +1,4 @@
-; StrTail: Return the last lines of string by Tuncay
+﻿; StrTail: Return the last lines of string by Tuncay
 ; http://www.autohotkey.com/forum/viewtopic.php?p=262371#262371
 ; Creative Commons Attribution 3.0 Unported, http://creativecommons.org/licenses/by/3.0/
 strTail(_Str, _LineNum = 1)

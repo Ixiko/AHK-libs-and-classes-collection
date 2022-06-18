@@ -1,4 +1,4 @@
-PasteAsCSV(fnInputText,fnInclLetters,fnExtraSpace,fnIncludeNewLine,fnIncludeQuotes,fnNoSeperator)
+﻿PasteAsCSV(fnInputText,fnInclLetters,fnExtraSpace,fnIncludeNewLine,fnIncludeQuotes,fnNoSeperator)
 {
 	; turns text string into a formatted comma separated list
 	; MsgBox fnInputText: %fnInputText%

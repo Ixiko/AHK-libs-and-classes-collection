@@ -1,4 +1,4 @@
-#Include C:\LastError.ahk ; full path
+﻿#Include C:\LastError.ahk ; full path
 ; #Include <LastError> ; or include from the ahk LIB folder 
 
 DllCall("LoadLibrary", "Str", "doesntexisthopefully")

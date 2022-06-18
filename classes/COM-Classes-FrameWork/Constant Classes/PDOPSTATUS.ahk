@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PDOPSTATUS
 an enumeration class containing the possible return values for IOperationsProgressDialog::GetOperationStatus().
 

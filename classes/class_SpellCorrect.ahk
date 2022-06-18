@@ -38,21 +38,17 @@ MsgBox % SubStr(Result,1,-1)
 Return
 */
 
-class Spell
-{
-    __New()
-    {
+class Spell{
+
+    __New()    {
         this.Model := Object()
     }
 
-    Load(Model,Replace = 1)
-    {
+    Load(Model,Replace = 1)    {
         If Replace
             this.Model := Model
-        Else
-        {
-            For Word, Occurrences In Model
-            {
+        Else        {
+            For Word, Occurrences In Model            {
                 If ObjHasKey(this.Model,Word)
                     this.Model[Word] += Occurrences
                 Else
@@ -61,24 +57,22 @@ class Spell
         }
     }
 
-    Train(Word)
-    {
+    Train(Word)    {
         If !ObjHasKey(this.Model,Word)
             this.Model[Word] := 1
         Else
             this.Model[Word] ++
     }
 
-    Edits1(Word)
-    {
-        CharSet := "abcdefghijklmnopqrstuvwxyz"
+    Edits1(Word)    {
+        CharSet := "abcdefghijklmnopqrstuvwxyzäöüß"
 
         Result := Object()
         Length := StrLen(Word)
 
         Index := 0
-        Loop, %Length%
-        {
+        Loop, % Length       {
+
             Result[SubStr(Word,1,Index) . SubStr(Word,Index + 2)] := 1 ;deletes
             Loop, Parse, CharSet
             {
@@ -97,13 +91,12 @@ class Spell
         Return, Result
     }
 
-    Rank(Values)
-    {
+    Rank(Values)    {
+
         Candidates := []
         For Word, Occurrences In Values
             Candidates.Insert(Object("Word",Word,"Occurrences",Occurrences))
-        Loop, % Candidates.MaxIndex() - 1
-        {
+        Loop, % (Candidates.MaxIndex() - 1)   {
             Index := A_Index
             While, Index > 0 && Candidates[Index].Occurrences < Candidates[Index + 1].Occurrences
                 Value := Candidates[Index + 1], Candidates[Index + 1] := Candidates[Index], Candidates[Index] := Value, Index --
@@ -114,25 +107,21 @@ class Spell
         Return, Result
     }
 
-    Correct(Word)
-    {
+    Correct(Word)    {
         If ObjHasKey(this.Model,Word)
             Return, [Word]
 
         Result := Object()
 
-        For Value In this.Edits1(Word)
-        {
+        For Value In this.Edits1(Word)        {
             If ObjHasKey(this.Model,Value)
                 Result[Value] := this.Model[Value]
         }
         For Value In Result
             Return, this.Rank(Result)
 
-        For Edit1 In this.Edits1(Word)
-        {
-            For Value In this.Edits1(Edit1)
-            {
+        For Edit1 In this.Edits1(Word)        {
+            For Value In this.Edits1(Edit1)            {
                 If ObjHasKey(this.Model,Value)
                     Result[Value] := this.Model[Value]
             }
@@ -142,4 +131,5 @@ class Spell
 
         Return, [Word]
     }
+
 }

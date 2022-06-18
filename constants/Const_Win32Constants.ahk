@@ -1,4 +1,4 @@
-/*
+﻿/*
 Source: http://mysite.verizon.net/portals/constant.htm
 
 ----------------------------------------------------------------------

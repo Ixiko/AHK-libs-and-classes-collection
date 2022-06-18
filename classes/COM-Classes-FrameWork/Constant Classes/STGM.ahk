@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: STGM
 an enumeration class specifying the conditions for creating and deleting the object and access modes for the object.
 

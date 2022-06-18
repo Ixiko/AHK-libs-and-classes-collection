@@ -22,101 +22,101 @@ Group: Credit:
 Group: Functions:
 */
 
-;------------------------------
-;
-; Function: Spell_Add
-;
-; Description:
-;
-;   Add a word or list or words to the dictionary which is/are valid until the
-;   spell object is destroyed.
-;
-; Parameters:
-;
-;   hSpell - Variable that contains the current dictionary information.
-;
-;   p_Word - Word or list of words (delimited by a LF (line feed) or CR+LF
-;       (carriage return and line feed)) to add to the dictionary.
-;
-;   p_AddCase - [Optional] See the *Add Case* section for more information.
-;
-; Add Case:
-;
-;   Preface: For the most part, the affix file (Ex: en_US.aff) contains the
-;   rules that determine how words in a dictionary are treated.  What may be
-;   true for words in one dictionary (Ex: en_US) may not be true for words in
-;   other dictionaries (Ex: en_GB).  The p_AddCase parameter was added to deal
-;   with possible shortcomings in all dictionaries but it has only been tested
-;   using the en_US dictionary files.  Be sure to test thoroughly.
-;
-;   Mixed case words (Ex: "Kevin" or "KevinWasHere") added to the dictionary may
-;   be treated as case sensitive.  Under most circumstances this is the desired
-;   behavior.  However, there are certain words or group of words that are
-;   commonly (and validly) used in other forms.  One example is a list of
-;   commands and/or key words for a programming language.  For many programming
-;   languages, the commands and/or key words are not case sensitive, so adding
-;   different variations of the command/key word to the dictionary might reduce
-;   the number of "word not found" errors when running a spell check on the
-;   source code.
-;
-;   The p_AddCase parameter will add up to 3 additional words to the dictionary
-;   for every word found in the p_Word parameter.  The following options are
-;   available.
-;
-;   U - Add an all uppercase version of the word(s) to the dictionary.  Ex:
-;       "KEVIN".  Note: Most dictionaries automatically recognize an all
-;       uppercase version of every word so this option is usually superfluous.
-;       Be sure to test your dictionary to be sure.
-;
-;   L - Add an all lowercase version of the word(s) to the dictionary.  Ex:
-;       "kevin".  Observation: For the English (US) dictionary, this option
-;       provides the most value out of all the options.  I suspect this may be
-;       true for other dictionaries.
-;
-;   T - Add a title case (first letter is uppercase, all others are lowercase)
-;       version of the word(s) to the dictionary.  Ex: "Kevin".  Note:  Most
-;       dictionaries automatically recognize a title case version of a word if a
-;       lowercase version of the word exists so this option may be unnecessary
-;       if the word is already all lowercase or if the "L" option is specified.  Be sure to test your dictionary to be sure.
-;
-;   A - Add an all uppercase, an all lowercase, and a title case version of the
-;       word(s) to the dictionary.  This option is the same as "ULT".
-;
-;   To use more than one option, just add it next to the previous option.  For
-;   example, "UL".
-;
-;   The additional word will not be added if the original word is already in
-;   that case.  For example, if the original word is already all lowercase (Ex:
-;   "kevin"), then the all lowercase version of the word is not added.
-;
-;   Important: This function uses the AutoHotkey
-;   <StringUpper at http://www.autohotkey.com/docs/commands/StringLower.htm> and
-;   <StringLower at http://www.autohotkey.com/docs/commands/StringLower.htm>
-;   commands to convert the word(s) to uppercase, lowercase, and title case.
-;   The rules and limitations of these commands could affect the results for
-;   some words.
-;
-; Returns:
-;
-;   The number of words added to the dictionary.
-;
-; Remarks:
-;
-;   The performance of this function is excellent under almost all
-;   circumstances.  However, when adding a very large number of words (>2000?),
-;   performance can be improved by setting
-;   *<SetBatchLines at http://ahkscript.org/docs/commands/SetBatchLines.htm>*
-;   to a higher value before calling this function.  For example:
-;
-;       (start code)
-;       SetBatchLines 100ms
-;       Spell_Add(hSpell,...)
-;       SetBatchLines 10ms  ;-- This is the system default
-;       (end)
-;
-;-------------------------------------------------------------------------------
-Spell_Add(ByRef hSpell,p_Word,p_AddCase="")
-    {
+Spell_Add(ByRef hSpell,p_Word,p_AddCase="")    {
+
+    ;------------------------------
+    ;
+    ; Function: Spell_Add
+    ;
+    ; Description:
+    ;
+    ;   Add a word or list or words to the dictionary which is/are valid until the
+    ;   spell object is destroyed.
+    ;
+    ; Parameters:
+    ;
+    ;   hSpell - Variable that contains the current dictionary information.
+    ;
+    ;   p_Word - Word or list of words (delimited by a LF (line feed) or CR+LF
+    ;       (carriage return and line feed)) to add to the dictionary.
+    ;
+    ;   p_AddCase - [Optional] See the *Add Case* section for more information.
+    ;
+    ; Add Case:
+    ;
+    ;   Preface: For the most part, the affix file (Ex: en_US.aff) contains the
+    ;   rules that determine how words in a dictionary are treated.  What may be
+    ;   true for words in one dictionary (Ex: en_US) may not be true for words in
+    ;   other dictionaries (Ex: en_GB).  The p_AddCase parameter was added to deal
+    ;   with possible shortcomings in all dictionaries but it has only been tested
+    ;   using the en_US dictionary files.  Be sure to test thoroughly.
+    ;
+    ;   Mixed case words (Ex: "Kevin" or "KevinWasHere") added to the dictionary may
+    ;   be treated as case sensitive.  Under most circumstances this is the desired
+    ;   behavior.  However, there are certain words or group of words that are
+    ;   commonly (and validly) used in other forms.  One example is a list of
+    ;   commands and/or key words for a programming language.  For many programming
+    ;   languages, the commands and/or key words are not case sensitive, so adding
+    ;   different variations of the command/key word to the dictionary might reduce
+    ;   the number of "word not found" errors when running a spell check on the
+    ;   source code.
+    ;
+    ;   The p_AddCase parameter will add up to 3 additional words to the dictionary
+    ;   for every word found in the p_Word parameter.  The following options are
+    ;   available.
+    ;
+    ;   U - Add an all uppercase version of the word(s) to the dictionary.  Ex:
+    ;       "KEVIN".  Note: Most dictionaries automatically recognize an all
+    ;       uppercase version of every word so this option is usually superfluous.
+    ;       Be sure to test your dictionary to be sure.
+    ;
+    ;   L - Add an all lowercase version of the word(s) to the dictionary.  Ex:
+    ;       "kevin".  Observation: For the English (US) dictionary, this option
+    ;       provides the most value out of all the options.  I suspect this may be
+    ;       true for other dictionaries.
+    ;
+    ;   T - Add a title case (first letter is uppercase, all others are lowercase)
+    ;       version of the word(s) to the dictionary.  Ex: "Kevin".  Note:  Most
+    ;       dictionaries automatically recognize a title case version of a word if a
+    ;       lowercase version of the word exists so this option may be unnecessary
+    ;       if the word is already all lowercase or if the "L" option is specified.  Be sure to test your dictionary to be sure.
+    ;
+    ;   A - Add an all uppercase, an all lowercase, and a title case version of the
+    ;       word(s) to the dictionary.  This option is the same as "ULT".
+    ;
+    ;   To use more than one option, just add it next to the previous option.  For
+    ;   example, "UL".
+    ;
+    ;   The additional word will not be added if the original word is already in
+    ;   that case.  For example, if the original word is already all lowercase (Ex:
+    ;   "kevin"), then the all lowercase version of the word is not added.
+    ;
+    ;   Important: This function uses the AutoHotkey
+    ;   <StringUpper at http://www.autohotkey.com/docs/commands/StringLower.htm> and
+    ;   <StringLower at http://www.autohotkey.com/docs/commands/StringLower.htm>
+    ;   commands to convert the word(s) to uppercase, lowercase, and title case.
+    ;   The rules and limitations of these commands could affect the results for
+    ;   some words.
+    ;
+    ; Returns:
+    ;
+    ;   The number of words added to the dictionary.
+    ;
+    ; Remarks:
+    ;
+    ;   The performance of this function is excellent under almost all
+    ;   circumstances.  However, when adding a very large number of words (>2000?),
+    ;   performance can be improved by setting
+    ;   *<SetBatchLines at http://ahkscript.org/docs/commands/SetBatchLines.htm>*
+    ;   to a higher value before calling this function.  For example:
+    ;
+    ;       (start code)
+    ;       SetBatchLines 100ms
+    ;       Spell_Add(hSpell,...)
+    ;       SetBatchLines 10ms  ;-- This is the system default
+    ;       (end)
+    ;
+    ;-------------------------------------------------------------------------------
     ;-- Initialize
     PtrType:=(A_PtrSize=8) ? "Ptr":"UInt"
     StrType:=A_IsUnicode ? "Str":A_PtrSize ? "WStr":"UInt"
@@ -179,95 +179,78 @@ Spell_Add(ByRef hSpell,p_Word,p_AddCase="")
     Return l_Count
     }
 
+Spell_AddCustom(pCustomDic,pWord,pEOL="`r`n")    {
 
-;------------------------------
-;
-; Function: Spell_AddCustom
-;
-; Description:
-;
-;   Add a word to a custom dictionary file.
-;
-; Parameters:
-;
-;   p_CustomDic - Path to a custom dictionary file.
-;
-;   p_Word - Word or list of words (delimited by a LF (line feed) or CR+LF
-;       (carriage return and line feed)) to add.
-;
-;   p_EOL - End-Of-Line (EOL) characters. [Optional] The default is CR+LF.
-;
-; Returns:
-;
-;   The number of words loaded to the custom dictionary file if successful
-;   (can be 0) or -1 if there was an error (custom dictionary file not found or
-;   error writing to the custom dictionary file).
-;
-; Remarks:
-;
-; * This function does _not_ update the active dictionary.  If needed, call
-;   <Spell_Add> to add the word(s) to the active dictionary.
-;
-; * The custom dictionary file must already exist, even if it's empty.  The file
-;   must be in a Unix (EOL=LF) or DOS/Windows (EOL=CR+LF) format.  This function
-;   will add a word followed by the characters in p_EOL parameter
-;   (default=CR+LR) to the end of the file.  If editing the custom dictionary
-;   file manually, make sure there is a LF or CR+LF after the last word.
-;
-; * This function (via the
-;   *<FileAppend at http://ahkscript.org/docs/commands/FileAppend.htm>* command)
-;   uses the default file encoding which is the system default ANSI code page.
-;   For AutoHotkey v1.1+, this default can be changed by calling the
-;   *<FileEncoding at http://ahkscript.org/docs/commands/FileEncoding.htm>*
-;   command any time before calling this function.
-;
-;-------------------------------------------------------------------------------
-Spell_AddCustom(p_CustomDic,p_Word,p_EOL="`r`n")
-    {
-    IfNotExist %p_CustomDic%
-        {
-        outputdebug,
-           (ltrim join`s
-            Function: %A_ThisFunc% -
-            Custom dictionary file not found: %p_CustomDic%
-           )
+    /*  Function: Spell_AddCustom
 
-        Return -1
-        }
+     Description:
 
-    ;-- Initialize
-    l_Count:=0
+       Add a word to a custom dictionary file.
 
-    ;-- Process p_Word
-    Loop Parse,p_Word,`n,`r
-        {
-        ;-- Drop null/blank words
-        if A_LoopField is Space
-            Continue
+     Parameters:
 
-        ;-- Assign and AutoTrim
-        l_Word=%A_LoopField%
+       pCustomDic - Path to a custom dictionary file.
 
-        ;-- Count it
-        l_Count++
+       pWord - Word or list of words (delimited by a LF (line feed) or CR+LF
+           (carriage return and line feed)) to add.
 
-        ;-- Save it
-        FileAppend % l_Word . p_EOL,*%p_CustomDic%
-        if ErrorLevel
-            {
-            outputdebug,
-               (ltrim join`s
-                Function: %A_ThisFunc% -
-                Unable to add word to custom dictionary file: %p_CustomDic%
-               )
+       pEOL - End-Of-Line (EOL) characters. [Optional] The default is CR+LF.
 
-            Return -1
-            }
-        }
+     Returns:
 
-    Return l_Count
+       The number of words loaded to the custom dictionary file if successful
+       (can be 0) or -1 if there was an error (custom dictionary file not found or
+       error writing to the custom dictionary file).
+
+     Remarks:
+
+     * This function does _not_ update the active dictionary.  If needed, call
+       <Spell_Add> to add the word(s) to the active dictionary.
+
+     * The custom dictionary file must already exist, even if it's empty.  The file
+       must be in a Unix (EOL=LF) or DOS/Windows (EOL=CR+LF) format.  This function
+       will add a word followed by the characters in pEOL parameter
+       (default=CR+LR) to the end of the file.  If editing the custom dictionary
+       file manually, make sure there is a LF or CR+LF after the last word.
+
+     * This function (via the
+       *<FileAppend at http://ahkscript.org/docs/commands/FileAppend.htm>* command)
+       uses the default file encoding which is the system default ANSI code page.
+       For AutoHotkey v1.1+, this default can be changed by calling the
+       *<FileEncoding at http://ahkscript.org/docs/commands/FileEncoding.htm>*
+       command any time before calling this function.
+
+    */
+
+    If !FileExist(pCustomDic)        {
+        Msgbox, 0x1024, Error, % "Function: " A_ThisFunc "`n`nCustom dictionary file not found: " pCustomDic
+		Return -1
     }
 
+    ;-- Process pWord
+		lCount:=0
+		For idx, word in StrSplit(pWord, "`n","`r")  {
+
+			;-- Drop null/blank words
+				lWord := Trim(word)
+				if (StrLen(lWord) = 0)
+					Continue
+				else
+					lCount++           ;-- Count  it
+
+			;-- Save it
+				FileAppend % lWord . pEOL,*%pCustomDic%
+				if ErrorLevel            {
+					MsgBox, 0x1024, Error, % "Function: " A_ThisFunc "`nUnable to add word to custom dictionary file: " pCustomDic
+					Return -1
+				}
+
+		}
+
+Return lCount
+}
+
+Spell_ANSI2Unicode(lpMultiByteStr,ByRef WideCharStr)    {
 
 ;-----------------------------
 ;
@@ -288,8 +271,6 @@ Spell_AddCustom(p_CustomDic,p_Word,p_EOL="`r`n")
 ;   WideCharStr - Variable to store the UTF-16 (wide character) string.
 ;
 ;-------------------------------------------------------------------------------
-Spell_ANSI2Unicode(lpMultiByteStr,ByRef WideCharStr)
-    {
     Static CP_ACP:=0    ;-- The system default Windows ANSI code page.
 
     ;-- Workaround for AutoHotkey Basic
@@ -337,83 +318,81 @@ Spell_ANSI2Unicode(lpMultiByteStr,ByRef WideCharStr)
                 ;-- cchWideChar [Int,in].  Size, in characters, of the buffer
                 ;   indicated by lpWideCharStr.
 
-    Return &WideCharStr
-    }
+Return &WideCharStr
+}
 
+Spell_Init(ByRef hSpell,p_Aff,p_Dic,DLLPath="")    {
 
-;------------------------------
-;
-; Function: Spell_Init
-;
-; Description:
-;
-;   Initialize Hunspell.
-;
-; Parameters:
-;
-;   hSpell - Variable that will contain the current dictionary information.
-;
-;   p_Aff - Path to affix file.
-;
-;   p_Dic - Path to dictionary file.
-;
-;   DLLPath - Path to the folder of the Hunspell DLL files (Ex: "lib\") or the
-;       full path and file name of the Hunspell DLL file (Ex:
-;       "lib\Hunspellx86.dll") . [Optional]  If null or not specified, the
-;       Hunspell DLL files must be located in the local folder or in the path.
-;
-; Returns:
-;
-;   TRUE if initialization was successful, otherwise FALSE.
-;
-; Calls To Other Functions:
-;
-; * <Spell_InitCustom>
-;
-; Remarks:
-;
-;   hSpell map :
-;
-;       (begin code)
-;       Offset  Description
-;       ------  -----------
-;
-;          0    Handle to the spell object
-;          8    Handle to the Hunspell DLL library module
-;         16    Address to the HunspellAdd function
-;         24    Address to the HunspellAddWithAffix function
-;         32    Address to the HunspellAnalyze function
-;         40    Address to the HunspellFree function
-;         48    Address to the HunspellGenerate function
-;         56    Address to the HunspellInit function
-;         64    Address to the HunspellSpell function
-;         72    Address to the HunspellStem function
-;         80    Address to the HunspellSuggest function
-;         88    Address to the HyphenFree function
-;         96    Address to the HyphenHyphenate function
-;        104    Address to the HyphenInit function
-;        112    Address to the MyThesFree function
-;        120    Address to the MyThesInit function
-;        128    Address to the MyThesLookup function
-;        ---
-;        136    Total bytes
-;       (end code)
-;
-;   This map is the same for all versions of AutoHotkey.  Addresses and handles
-;   are 4 bytes for the 32-bit versions of AutoHotkey and 8 bytes for the 64-bit
-;   version.  All of the API functions are mapped but only key spell functions
-;   are used by the Spell library.
-;
-;   As the name implies, this function should be called first.  If key
-;   dictionary or library files are not found, this function will display a
-;   strong error message and will return FALSE.  If this function returns FALSE,
-;   _do not_ call any other library function.  Calling other library functions
-;   when Hunspell has not been initialized may (read: will) cause AutoHotkey to
-;   crash.
-;
-;-------------------------------------------------------------------------------
-Spell_Init(ByRef hSpell,p_Aff,p_Dic,DLLPath="")
-    {
+    /*   Function: Spell_Init
+
+        Description:
+
+        Initialize Hunspell.
+
+        Parameters:
+
+        hSpell - Variable that will contain the current dictionary information.
+
+        p_Aff - Path to affix file.
+
+        p_Dic - Path to dictionary file.
+
+        DLLPath - Path to the folder of the Hunspell DLL files (Ex: "lib\") or the
+            full path and file name of the Hunspell DLL file (Ex:
+            "lib\Hunspellx86.dll") . [Optional]  If null or not specified, the
+            Hunspell DLL files must be located in the local folder or in the path.
+
+        Returns:
+
+        TRUE if initialization was successful, otherwise FALSE.
+
+        Calls To Other Functions:
+
+        * <Spell_InitCustom>
+
+        Remarks:
+
+        hSpell map :
+
+            (begin code)
+            Offset  Description
+            ------  -----------
+
+                0    Handle to the spell object
+                8    Handle to the Hunspell DLL library module
+                16    Address to the HunspellAdd function
+                24    Address to the HunspellAddWithAffix function
+                32    Address to the HunspellAnalyze function
+                40    Address to the HunspellFree function
+                48    Address to the HunspellGenerate function
+                56    Address to the HunspellInit function
+                64    Address to the HunspellSpell function
+                72    Address to the HunspellStem function
+                80    Address to the HunspellSuggest function
+                88    Address to the HyphenFree function
+                96    Address to the HyphenHyphenate function
+                104    Address to the HyphenInit function
+                112    Address to the MyThesFree function
+                120    Address to the MyThesInit function
+                128    Address to the MyThesLookup function
+                ---
+                136    Total bytes
+            (end code)
+
+        This map is the same for all versions of AutoHotkey.  Addresses and handles
+        are 4 bytes for the 32-bit versions of AutoHotkey and 8 bytes for the 64-bit
+        version.  All of the API functions are mapped but only key spell functions
+        are used by the Spell library.
+
+        As the name implies, this function should be called first.  If key
+        dictionary or library files are not found, this function will display a
+        strong error message and will return FALSE.  If this function returns FALSE,
+        _do not_ call any other library function.  Calling other library functions
+        when Hunspell has not been initialized may (read: will) cause AutoHotkey to
+        crash.
+
+    */
+
     ;-- Initialize
     PtrType:=(A_PtrSize=8) ? "Ptr":"UInt"
     VarSetCapacity(hSpell,136,0)
@@ -422,22 +401,19 @@ Spell_Init(ByRef hSpell,p_Aff,p_Dic,DLLPath="")
     if DLLPath is Space  ;-- Null or not specified
         DLLPath:=(A_PtrSize=8) ? "Hunspellx64.dll":"Hunspellx86.dll"
      else
-        if InStr(FileExist(DLLPath),"D")  ;-- Path is a folder
-            {
+        if InStr(FileExist(DLLPath),"D") { ;-- Path is a folder
+
             ;-- Append backslash if needed
             if (SubStr(DLLPath,0)<>"\")
                 DllPath.="\"
 
             ;-- Add DLL
             DLLPath.=(A_PtrSize=8) ? "Hunspellx64.dll":"Hunspellx86.dll"
-            }
+        }
 
     ;-- Check to see if the files exist
-    IfNotExist %DLLPath%
-        {
-        MsgBox
-            ,0x10  ;-- 0x0 (OK button) + 0x10 (Stop icon)
-            ,Spell Library Error,
+    If !FileExist(DLLPath)         {
+        MsgBox, 0x10,Spell Library Error,
                (ltrim join`s
                 Function: %A_ThisFunc% -
                 Unable to find the Hunspell DLL file.  Initialization
@@ -447,11 +423,8 @@ Spell_Init(ByRef hSpell,p_Aff,p_Dic,DLLPath="")
         Return False
         }
 
-    if !FileExist(p_Aff) or !FileExist(p_Dic)
-        {
-        MsgBox
-            ,0x10  ;-- 0x0 (OK button) + 0x10 (Stop icon)
-            ,Spell Library Error,
+    if !FileExist(p_Aff) || !FileExist(p_Dic)        {
+        MsgBox,0x10,Spell Library Error,
                (ltrim join`s
                 Function: %A_ThisFunc% -
                 Unable to find the dictionary and/or affix file.  Initialization
@@ -461,8 +434,7 @@ Spell_Init(ByRef hSpell,p_Aff,p_Dic,DLLPath="")
         Return False
         }
 
-    if p_CustomDic and !FileExist(p_CustomDic)
-        {
+    if p_CustomDic and !FileExist(p_CustomDic)        {
         MsgBox
             ,0x10  ;-- 0x0 (OK button) + 0x10 (Stop icon)
             ,Spell Library Error,
@@ -477,8 +449,7 @@ Spell_Init(ByRef hSpell,p_Aff,p_Dic,DLLPath="")
 
     ;-- Load DLL library into the address space of the current process
     ;   Programming note: Return type is necessary for x64
-    if not hModule:=DllCall("LoadLibrary","Str",DLLPath,PtrType)
-        {
+    if not hModule:=DllCall("LoadLibrary","Str",DLLPath,PtrType)        {
         MsgBox
             ,0x10  ;-- 0x0 (OK button) + 0x10 (Stop icon)
             ,Spell Library Error,
@@ -524,52 +495,50 @@ Spell_Init(ByRef hSpell,p_Aff,p_Dic,DLLPath="")
     Return True
     }
 
+Spell_InitCustom(ByRef hSpell,p_CustomDic,p_AddCase="")    {
 
-;------------------------------
-;
-; Function: Spell_InitCustom
-;
-; Description:
-;
-;   Add words from a custom dictionary file to the dictionary.  Words are valid
-;   until spell object is destroyed.
-;
-; Parameters:
-;
-;   hSpell - Variable that contains the current dictionary information.
-;
-;   p_CustomDic - Path to a custom dictionary file.
-;
-;   p_AddCase - See <Spell_Add> for the syntax/rules of this parameter.
-;       [Optional]
-;
-; Returns:
-;
-;   The number of words loaded to the spell object if successful (can be 0) or
-;   -1 if the custom dictionary file is not found.
-;
-; Calls To Other Functions:
-;
-; * <Spell_Add>
-;
-; Remarks:
-;
-; * This function must be called _after_ <Spell_Init>.
-;
-; * The custom dictionary file must be in Unix (EOL=LF) or DOS/Windows
-;   (EOL=CR+LF) format.
-;
-; * Call this function directly to load more than one custom dictionary or if
-;   use of the p_AddCase parameter is required.  Otherwise, specify the custom
-;   dictionary when calling <Spell_Init>.
-;
-;-------------------------------------------------------------------------------
-Spell_InitCustom(ByRef hSpell,p_CustomDic,p_AddCase="")
-    {
-    FileRead l_ListOfWords,%p_CustomDic%
-    if ErrorLevel
-        {
-        outputdebug,
+    ;------------------------------
+    ;
+    ; Function: Spell_InitCustom
+    ;
+    ; Description:
+    ;
+    ;   Add words from a custom dictionary file to the dictionary.  Words are valid
+    ;   until spell object is destroyed.
+    ;
+    ; Parameters:
+    ;
+    ;   hSpell - Variable that contains the current dictionary information.
+    ;
+    ;   p_CustomDic - Path to a custom dictionary file.
+    ;
+    ;   p_AddCase - See <Spell_Add> for the syntax/rules of this parameter.
+    ;       [Optional]
+    ;
+    ; Returns:
+    ;
+    ;   The number of words loaded to the spell object if successful (can be 0) or
+    ;   -1 if the custom dictionary file is not found.
+    ;
+    ; Calls To Other Functions:
+    ;
+    ; * <Spell_Add>
+    ;
+    ; Remarks:
+    ;
+    ; * This function must be called _after_ <Spell_Init>.
+    ;
+    ; * The custom dictionary file must be in Unix (EOL=LF) or DOS/Windows
+    ;   (EOL=CR+LF) format.
+    ;
+    ; * Call this function directly to load more than one custom dictionary or if
+    ;   use of the p_AddCase parameter is required.  Otherwise, specify the custom
+    ;   dictionary when calling <Spell_Init>.
+    ;
+    ;-------------------------------------------------------------------------------
+    FileRead l_ListOfWords, % p_CustomDic
+    if ErrorLevel        {
+        MsgBox, 0x1024, Error,
            (ltrim join`s
             Function: %A_ThisFunc% -
             Unable to read from custom dictionary: %p_CustomDic%
@@ -581,30 +550,28 @@ Spell_InitCustom(ByRef hSpell,p_CustomDic,p_AddCase="")
     Return Spell_Add(hSpell,l_ListOfWords,p_AddCase)
     }
 
+Spell_Spell(ByRef hSpell,p_Word)    {
 
-;------------------------------
-;
-; Function: Spell_Spell
-;
-; Description:
-;
-;   Check the spelling of the specified word.
-;
-; Returns:
-;
-;   TRUE if the word was found in the active dictionary, otherwise FALSE.
-;
-;-------------------------------------------------------------------------------
-Spell_Spell(ByRef hSpell,p_Word)
-    {
+    ;------------------------------
+    ;
+    ; Function: Spell_Spell
+    ;
+    ; Description:
+    ;
+    ;   Check the spelling of the specified word.
+    ;
+    ; Returns:
+    ;
+    ;   TRUE if the word was found in the active dictionary, otherwise FALSE.
+    ;
+    ;-------------------------------------------------------------------------------
     Static Dummy0250
           ,FirstCall:=True
           ,PtrType
           ,StrType
 
     ;-- Set values for the dynamic static variables
-    if FirstCall
-        {
+    if FirstCall        {
         PtrType:=(A_PtrSize=8) ? "Ptr":"UInt"
         StrType:=A_IsUnicode ? "Str":A_PtrSize ? "WStr":"UInt"
         FirstCall:=False
@@ -617,30 +584,31 @@ Spell_Spell(ByRef hSpell,p_Word)
         ,"Cdecl")
     }
 
-;------------------------------
-;
-; Function: Spell_Suggest
-;
-; Description:
-;
-;   Suggest words for word.
-;
-; Parameters:
-;
-;   hSpell - Variable that contains the current dictionary information.
-;
-;   p_Word - Word for which to look up for suggestions.
-;
-;   r_SuggestList - [Output] Variable that is loaded with a newline ("`n")
-;       delimited list of suggest words.
-;
-; Returns:
-;
-;   Number of words in r_SuggestList.
-;
-;-------------------------------------------------------------------------------
-Spell_Suggest(ByRef hSpell,p_Word,ByRef r_SuggestList)
-    {
+Spell_Suggest(ByRef hSpell,p_Word,ByRef r_SuggestList)    {
+
+    ;------------------------------
+    ;
+    ; Function: Spell_Suggest
+    ;
+    ; Description:
+    ;
+    ;   Suggest words for word.
+    ;
+    ; Parameters:
+    ;
+    ;   hSpell - Variable that contains the current dictionary information.
+    ;
+    ;   p_Word - Word for which to look up for suggestions.
+    ;
+    ;   r_SuggestList - [Output] Variable that is loaded with a newline ("`n")
+    ;       delimited list of suggest words.
+    ;
+    ; Returns:
+    ;
+    ;   Number of words in r_SuggestList.
+    ;
+    ;-------------------------------------------------------------------------------
+
     ;-- Initialize
     PtrType:=(A_PtrSize=8) ? "Ptr":"UInt"
     PtrSize:=(A_PtrSize=8) ? 8:4
@@ -694,28 +662,21 @@ Spell_Suggest(ByRef hSpell,p_Word,ByRef r_SuggestList)
     Return l_Count
     }
 
+Spell_Unicode2ANSI(lpWideCharStr,ByRef MultiByteStr)    {
 
-;-----------------------------
-;
-; Function: Spell_Unicode2ANSI
-;
-; Description:
-;
-;   Maps a UTF-16 (wide character) string to a character string (ANSI).
-;
-; Type:
-;
-;   Internal function.  Subject to change.  Do not use.
-;
-; Parameters:
-;
-;   lpWideCharStr - Address to a UTF-16 (wide character) string.
-;
-;   MultiByteStr - Variable to store character string (ANSI).
-;
-;-------------------------------------------------------------------------------
-Spell_Unicode2ANSI(lpWideCharStr,ByRef MultiByteStr)
-    {
+    ;-----------------------------
+    ;
+    ; Function: Spell_Unicode2ANSI
+    ;
+    ; Description:
+    ;   Maps a UTF-16 (wide character) string to a character string (ANSI).
+    ; Type:
+    ;   Internal function.  Subject to change.  Do not use.
+    ; Parameters:
+    ;   lpWideCharStr - Address to a UTF-16 (wide character) string.
+    ;   MultiByteStr - Variable to store character string (ANSI).
+    ;
+    ;-------------------------------------------------------------------------------
     Static CP_ACP:=0    ;-- The system default Windows ANSI code page.
 
     ;-- Workaround for AutoHotkey Basic
@@ -771,6 +732,7 @@ Spell_Unicode2ANSI(lpWideCharStr,ByRef MultiByteStr)
     Return &MultiByteStr
     }
 
+Spell_Uninit(ByRef hSpell)    {
 
 ;------------------------------
 ;
@@ -782,9 +744,9 @@ Spell_Unicode2ANSI(lpWideCharStr,ByRef MultiByteStr)
 ;   (DLL) (unless the DLL was loaded outside of this function library).
 ;
 ;-------------------------------------------------------------------------------
-Spell_Uninit(ByRef hSpell)
-    {
     PtrType:=(A_PtrSize=8) ? "Ptr":"UInt"
     RC:=DllCall(NumGet(hSpell,40),PtrType,NumGet(hSpell,0),"Cdecl")
     RC:=DllCall("FreeLibrary",PtrType,NumGet(hSpell,8))
-    }
+}
+
+

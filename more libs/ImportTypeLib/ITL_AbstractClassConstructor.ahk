@@ -1,4 +1,4 @@
-; Function: ITL_AbstractClassConstructor
+﻿; Function: ITL_AbstractClassConstructor
 ; This is simply a wrapper for "abstract classes", i.e. an exception is thrown when it is called.
 ; "Abstract" classes set this as their constructor.
 ITL_AbstractClassConstructor(this, p*)

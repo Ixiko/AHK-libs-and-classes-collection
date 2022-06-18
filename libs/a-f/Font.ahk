@@ -11,8 +11,7 @@
     Return:
         Si tuvo éxito devuelve el identificador de la fuente, caso contrario devuelve 0.
 */
-CreateFont(Options := '', FontName := 'Arial')
-{
+CreateFont(Options := '', FontName := 'Arial'){
     Local t
         , hDC := DllCall('Gdi32.dll\CreateDCW', 'Str', 'DISPLAY', 'Ptr', 0, 'Ptr', 0, 'Ptr', 0, 'Ptr')
         , n   := DllCall('Gdi32.dll\GetDeviceCaps', 'Ptr', hDC, 'Int', 90)
@@ -36,9 +35,6 @@ CreateFont(Options := '', FontName := 'Arial')
                                             , 'Ptr') )                                                                                           ;ReturnType
 } ;https://msdn.microsoft.com/en-us/library/dd183499(v=vs.85).aspx
 
-
-
-
 /*
     Recupera el nombre de la fuente especificada.
     Parámetros:
@@ -46,8 +42,7 @@ CreateFont(Options := '', FontName := 'Arial')
     Return:
         Si tuvo éxito devuelve el nombre de la fuente, caso contrario devuelve una cadena vacía.
 */
-GetFontName(hFont)
-{
+GetFontName(hFont){
     Local hDC, hObject, Buffer, Size
 
     If (!(hDC := DllCall('User32.dll\GetDC', 'Ptr', 0, 'Ptr')))
@@ -65,15 +60,12 @@ GetFontName(hFont)
     VarSetCapacity(Buffer, Size * 2)
 
     Size := DllCall('Gdi32.dll\GetTextFace', 'Ptr', hDC, 'Ptr', Size, 'UPtr', &Buffer)
-    
+
     DllCall('Gdi32.dll\SelectObject', 'Ptr', hDC, 'Ptr', hObject, 'Ptr')
     DllCall('User32.dll\ReleaseDC', 'Ptr', 0, 'Ptr', hDC)
 
     Return (Size ? StrGet(&Buffer, Size, 'UTF-16') : '')
 } ;https://msdn.microsoft.com/en-us/library/dd144940(v=vs.85).aspx
-
-
-
 
 /*
     Enumera todas las fuentes instaladas en el sistema.
@@ -101,8 +93,7 @@ GetFontName(hFont)
         WinWaitClose('ahk_id' . Gui.Hwnd)
         ExitApp
 */
-EnumFontFamilies(FontName := '', CharSet := 1)
-{
+EnumFontFamilies(FontName := '', CharSet := 1){
     Local hDC, LOGFONT, Address, Data
 
     If (!(hDC := DllCall('User32.dll\GetDC', 'Ptr', 0, 'Ptr')))
@@ -111,7 +102,7 @@ EnumFontFamilies(FontName := '', CharSet := 1)
     VarSetCapacity(LOGFONT, 92, 0)
     NumPut(CharSet , &LOGFONT + 23, 'UChar')
     StrPut(FontName, &LOGFONT + 28, 'UTF-16')
-    
+
     Address := RegisterCallback('EnumFontFamExProc',,, DllCall('Gdi32.dll\GetDeviceCaps', 'Ptr', hDC, 'Int', 90))
     Data    := []
 
@@ -127,8 +118,7 @@ EnumFontFamilies(FontName := '', CharSet := 1)
     Return (Data.Length() ? Data : FALSE)
 } ;https://msdn.microsoft.com/en-us/library/dd162620(v=vs.85).aspx
 
-EnumFontFamExProc(LOGFONT, TEXTMETRIC, FontType, lParam)
-{
+EnumFontFamExProc(LOGFONT, TEXTMETRIC, FontType, lParam){
     Object(lParam).Push({ Height        : NumGet(LOGFONT      , 'Int')    ;lfHeight
                         , Width         : NumGet(LOGFONT +   4, 'Int')    ;lfWidth
                         , Escapement    : NumGet(LOGFONT +   8, 'Int')    ;Escapement
@@ -154,9 +144,6 @@ EnumFontFamExProc(LOGFONT, TEXTMETRIC, FontType, lParam)
     Return (TRUE)
 } ;https://msdn.microsoft.com/en-us/library/dd162618(v=vs.85).aspx
 
-
-
-
 /*
     Calcula el ancho y el alto que requiere un texto para ser mostrado completamente en una fuente específica y recupera información adicional de la fuente.
     Parámetros:
@@ -175,8 +162,7 @@ EnumFontFamExProc(LOGFONT, TEXTMETRIC, FontType, lParam)
     Test:
         MsgBox(IsObject(GetFontTextSize(CreateFont(), 'Hola Mundo!')))
 */
-GetFontTextSize(hFont, String)
-{
+GetFontTextSize(hFont, String){
     Local hDC, hObject, Size, TEXTMETRIC, n
 
     hDC     := DllCall('User32.dll\GetDC', 'Ptr', 0, 'Ptr')
@@ -206,9 +192,6 @@ GetFontTextSize(hFont, String)
             , CharSet  : NumGet(&TEXTMETRIC + 56, 'UChar') })
 }
 
-
-
-
 /*
     Calcula el ancho y el alto de la cadena especificada.
     Parámetros:
@@ -218,8 +201,7 @@ GetFontTextSize(hFont, String)
         0     = Error.
         [obj] = Si tuvo éxito devuelve un objeto con las claves W y H.
 */
-GetTextExtentPoint(hDC, String)
-{
+GetTextExtentPoint(hDC, String){
     Local SIZE
 
     String .= ''
@@ -235,9 +217,6 @@ GetTextExtentPoint(hDC, String)
             , H: NumGet(&SIZE + 4, 'Int') })
 } ;https://msdn.microsoft.com/en-us/library/dd144938(v=vs.85).aspx
 
-
-
-
 /*
     Clona una fuente.
     Parámetros:
@@ -245,14 +224,13 @@ GetTextExtentPoint(hDC, String)
     Return:
         Si tuvo éxito devuelve el identificador de la nueva fuente, caso contrario devuelve 0.
 */
-CloneFont(hFont)
-{
+CloneFont(hFont){
     Local LOGFONT, Size
 
     VarSetCapacity(LOGFONT, 92, 0)
     If (!(Size := DllCall('Gdi32.dll\GetObjectW', 'Ptr', hFont, 'Int', 0, 'Ptr', 0, 'UInt')))
         Return (FALSE)
-    
+
     DllCall('Gdi32.dll\GetObjectW', 'Ptr', hFont, 'Int', Size, 'UPtr', &LOGFONT, 'UInt')
 
     Return (DllCall('Gdi32.dll\CreateFontIndirect', 'UPtr', &LOGFONT, 'Ptr'))

@@ -1,4 +1,4 @@
-group := tester.newGroup("splice(start, deleteCount:=-1, args*)")
+﻿group := tester.newGroup("splice(start, deleteCount:=-1, args*)")
 
 
 ; test subgroup 1

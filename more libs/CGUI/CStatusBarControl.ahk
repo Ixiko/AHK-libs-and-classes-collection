@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CStatusBarControl
 The status bar. Can only be used once per window.
 

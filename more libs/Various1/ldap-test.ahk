@@ -1,4 +1,4 @@
-; ahk: console
+﻿; ahk: console
 ; ahk: x86
 #NoEnv
 SetBatchLines -1

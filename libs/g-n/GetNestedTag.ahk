@@ -1,4 +1,4 @@
-/*
+﻿/*
 Function       : GetNestedTag() v1
 Author         : hi5
 Doc + Examples : https://github.com/hi5/GetNestedTag/

@@ -1,4 +1,4 @@
-#Warn ClassOverwrite
+﻿#Warn ClassOverwrite
 
 class LastError
 {

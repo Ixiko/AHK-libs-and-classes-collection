@@ -15,7 +15,7 @@ AddWindow()
 
 Return
 
-	
+
 AddWindow(){
 	static WinName:=0
 	WinName++
@@ -26,17 +26,17 @@ AddWindow(){
 	Gui % WinName ":Font",cwhite s10 Bold ,Segoe UI
 	Gui % WinName ":Add",Picture,xm ym BackgroundTrans 0xE hwndhwnd,
 	HB_BITMAP_MAKER(%OBJ% := {w:650, h:950, Hwnd:hwnd})
-	
+
 	; Gui % WinName ":Add",Text,% "x30 ym w" %OBJ%.W-60 " h" %OBJ%.H " Center BackgroundTrans 0x200", Your Text Here
-	
+
 	Gui % WinName ":Font", cwhite s12 Normal
 	Gui % WinName ":Add",Text, % "x30 y30 Left", Information
 	; The Editfield
 	Gui % WinName ":Font", cBlue s14 Bold
 	; Gui % WinName ":Edit", % "x30 y32 w200 h24 center vTestField1"
 
-	
-	
+
+
 	Gui % WinName ":Show",% "w" %OBJ%.W " h" %OBJ%.H
 	%OBJ%:=""
 }
@@ -48,7 +48,7 @@ Ran(Min,Max){
 
 HB_BITMAP_MAKER(Obj){
 	;Bitmap Created Using: HB Bitmap Maker
-	pBitmap:=Gdip_CreateBitmap( Obj.W , Obj.H ) 
+	pBitmap:=Gdip_CreateBitmap( Obj.W , Obj.H )
 	G := Gdip_GraphicsFromImage( pBitmap )
 	Gdip_SetSmoothingMode( G , 2 )
 	Pen := Gdip_CreatePen( "0xFF000000" , 10 )
@@ -78,3 +78,5 @@ GuiContextMenu:
 *ESC::
 	Gdip_Shutdown(pToken)
 	ExitApp
+
+#include %A_ScriptDir%\..\g-n\gdip_all.ahk

@@ -1,4 +1,4 @@
-#SingleInstance, force
+﻿#SingleInstance, force
 #Persistent
 try  ; Attempts to execute code.
 {

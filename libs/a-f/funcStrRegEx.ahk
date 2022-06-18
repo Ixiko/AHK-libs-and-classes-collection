@@ -1,4 +1,4 @@
-/**
+﻿/**
  * String and RegEx manipulation functions
  *
  * FeatShare v0.2 - Text integration tool

@@ -1,4 +1,4 @@
-; This file is auto-included on AutoHotkey v1.
+﻿; This file is auto-included on AutoHotkey v1.
 StrReplace(Input, SearchText, ReplaceText:="", ByRef OutputVarCount:="", Limit:="") {
     ErrLvl := ErrorLevel
     if (Limit != 1 && Limit != "")

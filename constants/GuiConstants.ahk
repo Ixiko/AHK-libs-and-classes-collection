@@ -1,4 +1,4 @@
-; Source: http://www.autohotkey.com/community/viewtopic.php?f=13&t=85383
+﻿; Source: http://www.autohotkey.com/community/viewtopic.php?f=13&t=85383
 ; Just packed all super global gui constants into a single function.
 ; 23.4.2012
 

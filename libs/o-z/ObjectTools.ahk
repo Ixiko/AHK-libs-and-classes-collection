@@ -1,4 +1,4 @@
-;Example: zip([a,b,c],[d,e,f]) = [[a,d],[b,e],[c,f]]
+﻿;Example: zip([a,b,c],[d,e,f]) = [[a,d],[b,e],[c,f]]
 zip(lists*)
 {
 	zipped := []

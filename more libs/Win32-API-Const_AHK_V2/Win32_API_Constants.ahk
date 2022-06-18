@@ -1,4 +1,4 @@
-; AHK v2
+﻿; AHK v2
 
 ; great win32 api constant sources:
 ; https://raw.githubusercontent.com/GroggyOtter/GroggyRepo/master/Files/List%20-%20Win32%20Constants

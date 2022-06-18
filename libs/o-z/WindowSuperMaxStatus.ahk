@@ -1,4 +1,4 @@
-WindowSuperMaxStatus(fnX,fnY,fnW,fnH)
+﻿WindowSuperMaxStatus(fnX,fnY,fnW,fnH)
 {
 	; determines supermax (maxed across dual monitors) status of a window
 	; MsgBox fnX: %fnX%`nfnY: %fnY%`nfnW: %fnW%`nfnH: %fnH%

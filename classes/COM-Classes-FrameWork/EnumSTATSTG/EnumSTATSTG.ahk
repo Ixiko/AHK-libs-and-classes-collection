@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: EnumSTATSTG
 wraps the *IEnumSTATSTG* interface and enumerates an array of STATSTG structures.
 

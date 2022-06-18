@@ -1,4 +1,4 @@
-class CryptConst
+﻿class CryptConst
 {
 static ALG_CLASS_ANY := (0)
 static ALG_CLASS_SIGNATURE := (1 << 13)

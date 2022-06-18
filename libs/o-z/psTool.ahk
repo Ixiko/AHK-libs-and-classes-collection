@@ -1,4 +1,4 @@
-psTool_get() { ; http://stackoverflow.com/questions/29109677/photoshop-javascript-how-to-get-set-current-tool
+﻿psTool_get() { ; http://stackoverflow.com/questions/29109677/photoshop-javascript-how-to-get-set-current-tool
 	app := ComObjActive("Photoshop.Application")
 	actRef := ComObjCreate("Photoshop.ActionReference")
 

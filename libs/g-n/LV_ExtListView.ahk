@@ -5,17 +5,110 @@
 ; Author .......: Cyruz - http://ciroprincipe.info
 ; License ......: WTFPL - http://www.wtfpl.net/txt/copying/
 ; Changelog ....: May  18, 2013 - v0.1 - First revision.
-; ..............: Jun. 28, 2013 - v0.2 - Added resizable buffer option.
-; ..............: Feb. 04, 2014 - v0.3 - Unicode and x64 compatibility.
-; ..............: Apr. 10, 2014 - v1.0 - Code refactoring. Added encoding option and simple error management.
-; ..............: May  04, 2014 - v1.1 - Detached the handles and memory allocation code.
-; ..............: May  05, 2014 - v1.2 - Created ExtListView_GetAllItems and ExtListView_ToggleSelection functions.
-; ..............: May  06, 2014 - v2.0 - Complete rewrite of the library. Code more modular and updateable. Separated
-; ..............:                        code for De/Initialization, GetNextItem and GetItemText.
-; ..............: Jul  24, 2017 - v2.1 - Fixed LVITEM size issue.
-
+; ..............: Jun. 28, 2013  	- v0.2 - 	Added resizable buffer option.
+; ..............: Feb. 04, 2014  	- v0.3 - 	Unicode and x64 compatibility.
+; ..............: Apr. 10, 2014  	- v1.0 - 	Code refactoring. Added encoding option and simple error management.
+; ..............: May  04, 2014 	- v1.1 - 	Detached the handles and memory allocation code.
+; ..............: May  05, 2014 	- v1.2 - 	Created ExtListView_GetAllItems and ExtListView_ToggleSelection functions.
+; ..............: May  06, 2014	- v2.0 - 	Complete rewrite of the library. Code more modular and updateable. Separated
+;                                        				  code for De/Initialization
+; 														  ExtListView_GetNextItem()
+; 														  ExtListView_GetItemText()
+; ..............: Jul  24, 2017   	- v2.1 - 	Fixed LVITEM size issue.
+; ..............: Dec  04, 2020   	- v2.2 -	just me gaves us a function to set item text
+;														 ExtListView_SetItemText()
+;                                                       	 https://www.autohotkey.com/boards/viewtopic.php?f=76&t=84027
+; ..............: Oct  23, 2021   	- v2.3 - found 2 more functions in forum post (see the link above)
+; 														  ExtListView_ToggleFocusAndSelection()
+; 														  ExtListView_ToggleFocus()
+;														4 functions added by MrDoge (see the link above)
+;														  ExtListView_RestoreFocus()
+; 														  ExtListView_ClickRow
+; 														  ExtListView_EnsureVisible()
+; 														  ExtListView_getFocusedControl()
 ;
 ; ----------------------------------------------------------------------------------------------------------------------
+
+ExtListView_CheckInitObject(ByRef objLV) {                                      ; Check if the object is still referring to a valid ListView
+
+    ; ----------------------------------------------------------------------------------------------------------------------
+    ; Function .....: ExtListView_CheckInitObject
+    ; Description ..: Check if the object is still referring to a valid ListView.
+    ; Parameters ...: objLV - External ListView initialized object.
+    ; Return .......: 0 if false, handle of the window containing the ListView if true.
+    ; ----------------------------------------------------------------------------------------------------------------------
+
+    Return WinExist("ahk_id " objLV.hwnd)
+}
+
+ExtListView_ClickRow(ByRef objLV, Row) {                      							; clicks with the left mouse button on the position of the listview row
+
+	; just me -> https://www.autohotkey.com/board/topic/86490-click-listview-row/#entry550767
+    HLV   	:= objLV.hlv
+    rectbuf	:= objLV.rectbuf
+    ; HLV : ListView's HWND, Row : 0-based row number
+
+    SendMessage, 0x100E, % Row, % rectbuf,, % "ahk_id " HLV ; LVM_GETITEMRECT
+    VarSetCapacity(RECT, 16)
+    If ( !DllCall( "ReadProcessMemory", "Ptr",objLV.hproc, "Ptr",objLV.rectbuf, "Ptr",&RECT, UInt,16, UInt,0 ) )
+        Throw Exception("objLV.rectbuf: error reading memory", "ReadProcessMemory", "LastError: " A_LastError)
+
+    short1:=NumGet(RECT, 0, "Short")
+    short2:=NumGet(RECT, 4, "Short")
+    POINT := short1 | (short2 << 16)
+
+    PostMessage, 0x0201, 0, POINT,, % "ahk_id " HLV ; WM_LBUTTONDOWN
+    PostMessage, 0x0202, 0, POINT,, % "ahk_id " HLV ; WM_LBUTTONUP
+
+}
+
+ExtListView_EnsureVisible(ByRef objLV, Row, fPartialOK:=false) {
+
+	; https://www.autohotkey.com/board/topic/8194-double-click-on-listview-selection/#post_id_51730
+    ; fPartialOK - A value specifying whether the item must be entirely visible.
+    ; If this parameter is TRUE, no scrolling occurs if the item is at least partially visible.
+    HLV:=objLV.hlv
+    ; PostMessage, 0x1013, Row, fPartialOK,, % "ahk_id " HLV ; LVM_ENSUREVISIBLE
+    SendMessage, 0x1013, Row, fPartialOK,, % "ahk_id " HLV ; LVM_ENSUREVISIBLE
+}
+
+ExtListView_getFocusedControl(ByRef objLV) {
+    ; https://www.autohotkey.com/boards/viewtopic.php?t=37120
+    static vTIDAhk := DllCall("GetCurrentThreadId", "UInt")
+    static GuiThreadInfo_Size:=24 + 6*A_PtrSize ;4 + 4 + 6*A_PtrSize + 16
+    static offset_hwndFocus := 8 + 1*A_PtrSize
+    ;   typedef struct tagGUITHREADINFO {
+    ; DWORD cbSize; 0
+    ; DWORD flags; 4
+    ; HWND hwndActive;    8
+    ; HWND hwndFocus;     8 + 1*A_PtrSize
+    ; HWND hwndCapture;   8 + 2*A_PtrSize
+    ; HWND hwndMenuOwner; 8 + 3*A_PtrSize
+    ; HWND hwndMoveSize;  8 + 4*A_PtrSize
+    ; HWND hwndCaret;     8 + 5*A_PtrSize
+    ; RECT rcCaret;       8 + 6*A_PtrSize
+    ;   }
+    ; DWORD is Uint
+    ; BOOL AttachThreadInput(
+    ;   [in] DWORD idAttach,
+    ;   [in] DWORD idAttachTo,
+    ;   [in] BOOL  fAttach
+    ; );
+    ; BOOL -> Int
+    vTID := DllCall("GetWindowThreadProcessId", "Ptr",objLV.hwnd, "Ptr",0, "UInt")
+
+
+    VarSetCapacity(GuiThreadInfo, GuiThreadInfo_Size, 0)
+	; GuiThreadInfo.cbSize = sizeof(GuiThreadInfo);
+    NumPut(GuiThreadInfo_Size, GuiThreadInfo,0,"Uint")
+    ; GetGuiThreadInfo(vTID, &GuiThreadInfo)
+    DllCall("GetGUIThreadInfo", "Uint",vTID, "Ptr",&GuiThreadInfo)
+
+    hwndFocus:=NumGet(GuiThreadInfo, offset_hwndFocus, "Ptr")
+
+    return hwndFocus
+}
+
 
 ExtListView_GetSingleItem(ByRef objLV, sState, nCol) {                  	; Get the first item with the desired state.
 
@@ -79,29 +172,56 @@ ExtListView_GetAllItems(ByRef objLV, sState:=0x0000) {                 	; Get al
     Return ( objList.MaxIndex() ) ? objList : 0
 }
 
+
 ExtListView_ToggleSelection(ByRef objLV, bSelect:=1, nItem:=-1) {	; Select/deselect items in the target ListView.
 
 	; ----------------------------------------------------------------------------------------------------------------------
 	; Function .....: ExtListView_ToggleSelection
 	; Description ..: Select/deselect items in the target ListView.
-	; Parameters ...: objLV   - External ListView initializated object.
+	; Parameters ...: objLV   - External ListView initialized object.
 	; ..............: bSelect - 1 for selection, 0 for deselection.
 	; ..............: nItem   - -1 for all items or "n" (0-based) for a specific ListView item.
 	; ----------------------------------------------------------------------------------------------------------------------
 
     VarSetCapacity( LVITEM, objLV.szwritebuf, 0 )
-    NumPut( 0x0008,                             	LVITEM, 0  ) 	; mask      	= LVIF_STATE    	= 0x0008.
-    NumPut( nItem,                               	LVITEM, 4  ) 	; item
-    NumPut( 0,                                      	LVITEM, 8  ) 	; iSubItem
-    NumPut( (bSelect) ? 0x0002 : 0x0000, LVITEM, 12 ) 	; state       	= LVIS_SELECTED	= 0x0002 or 0x0000 (reset mask).
-    NumPut( 0x0002,                             	LVITEM, 16 ) 	; stateMask	= LVIS_SELECTED	= 0x0002.
+    NumPut( 0x0008,                      LVITEM, 0  ) ; mask = LVIF_STATE = 0x0008.
+    NumPut( nItem,                       LVITEM, 4  ) ; iItem.
+    NumPut( 0,                           LVITEM, 8  ) ; iSubItem.
+    NumPut( (bSelect) ? 0x0002 : 0x0000, LVITEM, 12 ) ; state = LVIS_SELECTED = 0x0002 or 0x0000 (reset mask).
+    NumPut( 0x0002,                      LVITEM, 16 ) ; stateMask = LVIS_SELECTED = 0x0002.
 
-    If ( !DllCall( "WriteProcessMemory", Ptr,objLV.hproc, Ptr,objLV.pwritebuf, Ptr,&LVITEM, UInt,objLV.szwritebuf, UInt,0 ) )
+    If ( !DllCall( "WriteProcessMemory", "Ptr",objLV.hproc, "Ptr",objLV.pwritebuf, "Ptr",&LVITEM, UInt,20, UInt,0 ) )
+        Throw Exception("objLV.pwritebuf: error writing memory", "WriteProcessMemory", "LastError: " A_LastError)
+    SendMessage, 0x102B, % nItem, % objLV.pwritebuf,, % "ahk_id " objLV.hlv ;LVM_SETITEMSTATE
+    ;#####, this works because it's reading from it's OWN MEMORY objLV.pwritebuf
+}
+
+ExtListView_ToggleFocusAndSelection(ByRef objLV, bSelect:=1, nItem:=-1) {
+    VarSetCapacity( LVITEM, objLV.szwritebuf, 0 )
+    NumPut( 0x0008,                      LVITEM, 0  ) ; mask = LVIF_STATE = 0x0008.
+    NumPut( nItem,                       LVITEM, 4  ) ; iItem.
+    NumPut( 0,                           LVITEM, 8  ) ; iSubItem.
+    NumPut( (bSelect) ? 0x0003 : 0x0000, LVITEM, 12 ) ; state = LVIS_SELECTED =  0x0002 or 0x0000 (reset mask).
+    NumPut( 0x0003,                      LVITEM, 16 ) ; stateMask = LVIS_SELECTED = 0x0002.
+
+    If ( !DllCall( "WriteProcessMemory", Ptr,objLV.hproc, Ptr,objLV.pwritebuf, Ptr,&LVITEM, UInt,20, UInt,0 ) )
         Throw Exception("objLV.pwritebuf: error writing memory", "WriteProcessMemory", "LastError: " A_LastError)
     SendMessage, 0x102B, % nItem, % objLV.pwritebuf,, % "ahk_id " objLV.hlv
-
-return ErrorLevel
 }
+
+ExtListView_ToggleFocus(ByRef objLV, bSelect:=1, nItem:=-1) {
+    VarSetCapacity( LVITEM, objLV.szwritebuf, 0 )
+    NumPut( 0x0008,                      LVITEM, 0  ) ; mask = LVIF_STATE = 0x0008.
+    NumPut( nItem,                       LVITEM, 4  ) ; iItem.
+    NumPut( 0,                           LVITEM, 8  ) ; iSubItem.
+    NumPut( (bSelect) ? 0x0001 : 0x0000, LVITEM, 12 ) ; state = LVIS_SELECTED =  0x0002 or 0x0000 (reset mask).
+    NumPut( 0x0001,                      LVITEM, 16 ) ; stateMask = LVIS_SELECTED = 0x0002.
+
+    If ( !DllCall( "WriteProcessMemory", Ptr,objLV.hproc, Ptr,objLV.pwritebuf, Ptr,&LVITEM, UInt,20, UInt,0 ) )
+        Throw Exception("objLV.pwritebuf: error writing memory", "WriteProcessMemory", "LastError: " A_LastError)
+    SendMessage, 0x102B, % nItem, % objLV.pwritebuf,, % "ahk_id " objLV.hlv
+}
+
 
 ExtListView_GetNextItem(ByRef objLV, nRow, lParam:=0x0000) {   	; Get the next item in the target ListView
 
@@ -160,6 +280,60 @@ ExtListView_GetItemText(ByRef objLV, nRow, nCol) {                        	; Get
 
     Return StrGet(&cRecvBuf, objLV.szreadbuf, objLV.senc)
 }
+
+
+ExtListView_RestoreFocus(objLV) {													; Focus and clicks last focused row || first row
+    focusedControl:=ExtListView_getFocusedControl(objLV)
+    ;if not already focused
+    if (focusedControl!=objLV.hlv+0) {
+        FocusedRow:=ExtListView_GetNextItem(objLV,, 1)
+        if (FocusedRow==-1) {
+            ; default to first row if no row Focused
+            FocusedRow:=0
+        }
+        ExtListView_EnsureVisible(objLV, FocusedRow)
+        ExtListView_ClickRow(objLV, FocusedRow)
+    }
+}
+
+ExtListView_SetItemText(ByRef objLV, ByRef sText, nRow, nCol) {        ; Set the text of the desired item.
+
+    ; ----------------------------------------------------------------------------------------------------------------------
+    ; Function .....: ExtListView_SetItemText
+    ; Description ..: Set the text of the desired item.
+    ; Parameters ...: objLV - External ListView initialized object.
+    ; ..............: sText - The text to set.
+    ; ..............: nRow  - Row of the desired item (0-based index).
+    ; ..............: nCol  - Column of the desired item (0-based index).
+    ; Return .......: Item content as a string.
+    ; ----------------------------------------------------------------------------------------------------------------------
+
+    VarSetCapacity( LVITEM, objLV.szwritebuf, 0 )
+    NumPut( 0x0001,          LVITEM, 0                          ) ; mask = LVIF_TEXT = 0x0001.
+    NumPut( nRow,            LVITEM, 4                          ) ; iItem = Row to retrieve (0 = 1st row).
+    NumPut( nCol,            LVITEM, 8                          ) ; iSubItem = The column index of the item to retrieve.
+    NumPut( objLV.preadbuf,  LVITEM, 20 + (A_PtrSize - 4)       ) ; pszText = Pointer to item text string.
+    NumPut( objLV.szreadbuf, LVITEM, 20 + ((A_PtrSize * 2) - 4) ) ; cchTextMax = Number of TCHARs in the buffer.
+
+    VarSetCapacity( sBuf, objLV.szreadbuf, 0 )
+    StrPut( sText, &sBuf, objLV.senc )
+
+    If ( !DllCall( "WriteProcessMemory", Ptr,objLV.hproc, Ptr,objLV.pwritebuf, Ptr,&LVITEM, UInt,objLV.szwritebuf
+                                       , UInt,0 ) )
+        Throw Exception("objLV.pwritebuf: error writing memory", "WriteProcessMemory", "LastError: " A_LastError)
+
+    If ( !DllCall( "WriteProcessMemory", Ptr,objLV.hproc, Ptr,objLV.preadbuf, Ptr,&sBuf, UInt,objLV.szreadbuf
+                                       , UInt,0 ) )
+        Throw Exception("objLV.preadbuf: error writing memory", "WriteProcessMemory", "LastError: " A_LastError)
+
+    ; LVM_SETITEMTEXTA = 0x102E ; (LVM_FIRST + 46)
+    ; LVM_SETITEMTEXTW = 0x1074 ; (LVM_FIRST + 116)
+
+    LVM_SETITEMTEXT := (objLV.senc == "UTF-8" || objLV.senc == "UTF-16") ? 0x1074 : 0x102E
+    SendMessage, %LVM_SETITEMTEXT%, %nRow%, % objLV.pwritebuf,, % "ahk_id " objLV.hlv
+    Return ErrorLevel
+}
+
 
 ExtListView_Initialize(sWnd, szReadBuf:=1024, sEnc:="CP0") {       	; Initialize the object containing ListView's related data
 
@@ -301,3 +475,11 @@ ExtListView_DeInitialize(objLV)
 ExitApp
 
 */
+
+; additions
+
+
+
+
+
+

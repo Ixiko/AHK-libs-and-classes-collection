@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="jasc2v8" />
+  <meta name="dcterms.date" content="2021-03-19" />
+  <title>Class_StringList</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="ahk-theme.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="top"></header>
+<header id="title-block-header">
+<h1 class="title">Class_StringList</h1>
+<p class="author">jasc2v8</p>
+<p class="date">March 19, 2021</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#built-in-methods-for-an-ahk-object">Built-in Methods for an AHK Object</a></li>
+</ul>
+</nav>
+<!-- reminder: replace = \"\" with = \\"\\" -->
+<h1 id="about">About</h1>
+<p>An Object to manage a list of strings</p>
+<p>To Use:</p>
+<pre class="autohotkey"><code>
+  #Include &lt;AHKEZ&gt;  
+  #Include &lt;Class_StringList&gt;
+  SL := New StringList
+  index := Add(&quot;String&quot;)
+  index := Add(&quot;Name:Value&quot;)
+
+</code></pre>
+<p>A StringList can be used in two ways:</p>
+<ol type="1">
+<li>An array of Strings (Strings with integer indexes)<br />
+</li>
+<li>An array of Name:Value pairs (String “Values” with “Name” indexes)</li>
+</ol>
+<p>All Strings and Name:Value pairs are added without a line terminator (no CRLF)<br />
+It’s recommended to use the StringList for Strings or Name:Value pairs, not both in the same instance</p>
+<p>Inspired by:</p>
+<ul>
+<li><a href="https://www.autohotkey.com/docs/objects/Object.htm">AutoHotkey</a><br />
+</li>
+<li><a href="http://docwiki.embarcadero.com/Libraries/Sydney/en/System.Classes.TStringList_Methods">Delphi</a><br />
+</li>
+<li><a href="https://www.freepascal.org/docs-html/rtl/classes/tstringlist.html">FreePascal</a><br />
+</li>
+<li><a href="https://processing.github.io/processing-javadocs/core/index.html?processing/data/StringList.html">Java</a></li>
+</ul>
+<p>License: Dedicated to the public domain without warranty or liability <a href="http://creativecommons.org/publicdomain/zero/1.0">(CC0 1.0)</a></p>
+<p><a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a></p>
+<h1 id="properties">Properties</h1>
+<pre class="autohotkey"><code>
+  Count                     count of items in the StringList with either integer or string indexes
+  CaseSensitive             default is False
+  NameValueSeparator        default is colon &quot;:&quot;
+
+</code></pre>
+<p><a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a></p>
+<h1 id="methods">Methods</h1>
+<pre class="autohotkey"><code>
+    [index]                   Return the String or Value: String[index] or Value[&quot;Name&quot;]
+    Add(String)               Add String to end of StringList
+                              Add String, CSV String, Text with LF/CRLF, or array of Strings (StringList)
+                              Return the index of added String
+                              AddArray([Array])
+                              AddCSV(CSV)
+                              AddString(String)
+                              AddText(String . CRLF)
+    Append(String)            Appends to end of StringList, Return = none
+    Clear()                   Clears all items without destroying the StringList
+    GetText()                 Return all Strings or Name:Value pairs as Text. CRLF
+    IndexOf(String or Value)  IndexOf(String) Return the integer index of the String
+                              IndexOf(Value)  Return the Name index of the Value
+    LoadFromFile(Filename)    Loads from text file, see Add() for supported values
+    SaveToFile(Filename)      Saves to text file: String . CRLF or Name:Value . CRLF
+    SetText(Text)             Loads from Text variable, see Add() for supported values
+    Sort(Ascending := True)   Sorts an integer indexed StringList. Ignores if Name:Value StringList
+    Value(Index or &quot;Name&quot;)    Value(1) Returns the string value at integer (Index)
+                              Value(&quot;1&quot;) (Index) can be an integer String
+                              Value(&quot;Name&quot;) Returns the Value part of Name:Value pair
+                              Value(1) Returns &quot;&quot; if attempt to Integer index a Name:Value pair
+
+</code></pre>
+<p><a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a></p>
+<h1 id="built-in-methods-for-an-ahk-object">Built-in Methods for an AHK Object</h1>
+<p>The following are AHK Object built-in methods, hence no duplicate methods in Class_StringList.<br />
+See the AHK docs for an <a href="https://www.autohotkey.com/docs/objects/Object.htm">Object</a></p>
+<pre class="autohotkey"><code>
+    Properties:
+      Base                                    See AHK docs
+
+    Methods:
+      InsertAt / RemoveAt                     See AHK docs - doesn&#39;t leave blanks
+      Push / Pop                              To/From end of StringList
+      Delete                                  See AHK docs - leaves blanks
+      MinIndex / MaxIndex / Length / Count    Use .Count property instead - see above and AHK docs
+      SetCapacity / GetCapacity               See AHK docs
+      GetAddress                              See AHK docs
+      _NewEnum                                See AHK docs
+      HasKey                                  HasKey(Index) or HasKey(&quot;Name&quot;)
+      Clone                                   See AHK docs - returns a shallow copy of StringList
+
+    Functions:
+      ObjRawGet                               See AHK docs
+      ObjRawSet                               See AHK docs
+      ObjGetBase                              See AHK docs
+      ObjSetBase                              See AHK docs
+
+</code></pre>
+<p><a href="#top" class="back-to-top-link" aria-label="Scroll to Top">🔝</a></p>
+<div id="footer">
+	Dedicated to the public domain without warranty or liability (CC0 1.0) <http://creativecommons.org/publicdomain/zero/1.0/>
+</div>
+
+</body>
+</html>

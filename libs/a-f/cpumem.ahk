@@ -1,4 +1,4 @@
-GetProcessMemory_CommitSize(ProcID, Units="K") {
+﻿GetProcessMemory_CommitSize(ProcID, Units="K") {
   Process, Exist, %ProcID%
   pid := Errorlevel
 

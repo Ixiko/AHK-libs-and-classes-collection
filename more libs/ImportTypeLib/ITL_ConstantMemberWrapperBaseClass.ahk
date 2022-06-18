@@ -1,4 +1,4 @@
-; class: ITL_ConstantMemberWrapperBaseClass
+﻿; class: ITL_ConstantMemberWrapperBaseClass
 ; This is the base class for types that have constant variable members, i.e. enums and modules.
 class ITL_ConstantMemberWrapperBaseClass extends ITL.ITL_WrapperBaseClass
 {

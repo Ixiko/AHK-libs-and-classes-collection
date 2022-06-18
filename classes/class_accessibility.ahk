@@ -1,4 +1,4 @@
-
+﻿
 class Accessibility {
 
 	; use the Accessibility APi

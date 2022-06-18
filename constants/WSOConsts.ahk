@@ -1,4 +1,4 @@
-; #WindowSystemObject (WSO) Python Support File
+﻿; #WindowSystemObject (WSO) Python Support File
 ; #Copyright (C) Veretennikov A. B. 2004
 
 ; #WindowSystemObject (WSO) IDL file

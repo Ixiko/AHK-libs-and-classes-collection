@@ -1,4 +1,4 @@
-; d:={ title:{color:"0x0000FF"} , margin:[100,100]}
+﻿; d:={ title:{color:"0x0000FF"} , margin:[100,100]}
 ; t:=new toast(d)
 ; p:={ title:{text:"hi",color:"0x0000FF"} , margin:[100,50] ,message:{ text:["hello","2","3"], def_size:18, size:[9,10], color:["0xFF00FF","0x00FF00"], offset:["",1] },life:0 }
 ; t.show(p)

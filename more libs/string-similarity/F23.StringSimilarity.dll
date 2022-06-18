@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="nofollow" />
+    <title>String.Similarity 3.0.0 - FuGet Gallery</title>
+        <meta name="twitter:card" content="summary" />
+        <meta name="og:url" content="https://www.fuget.org/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll" />
+        <meta name="og:title" content="String.Similarity 3.0.0" />
+        <meta name="og:description" content="A library implementing different string similarity and distance measures. A dozen of algorithms (including Levenshtein edit distance and sibblings, Jaro-Winkler, Longest Common Subsequence, cosine similarity etc.) are currently implemented. Based upon F23.StringSimilarity" />
+        <meta name="og:image" content="https://github.com/glienard/StringSimilarity.NET/master/logo.png" />
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.205/distr/fira_code.css" />
+    <link rel="stylesheet" href="/css/site.css?v=KuL0ttxsXT_E3mtX0qD4UnPcuzJkWDcSliISTWpjSVI" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118756821-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-118756821-1');
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> -->
+                <a href="/" class="navbar-brand" style="padding-right:2em">fuget.org</a>
+                <form id="searchForm" class="input-group" action="/packages" method="GET" style="margin-top:0.6em;width:20em">
+                    <input name="q" id="packageSearch" type="text" class="form-control" placeholder="Search Packages"
+                           style="background-color:#444;border-color:#444;color:#fff;border-radius:0.5em;outline:none;box-shadow:none;"
+                           autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        
+
+<header>
+    <h1>
+        <a href="/packages/String.Similarity">
+            <img src="https://github.com/glienard/StringSimilarity.NET/master/logo.png" class="package-icon" width="64" height="64" onError="this.onerror=null;this.src='/images/no-icon.png';" />
+        </a>
+        <a href="/packages/String.Similarity">String.Similarity</a>
+        <small>by James Blair, Paul Irwin, Gregory Li&#xE9;nard</small>
+        <a href="/packages/String.Similarity/badges"><img src="/packages/String.Similarity/badge.svg?v=3.0.0" /></a>
+    </h1>
+    <nav>
+        <div class="btn-group" style="display: inline-block">
+            <button type="button" class="btn btn-default version">3.0.0 <small>21 Aug 18</small></button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                    <li><strong style="padding-left:0.5em">Version 3</strong></li>
+                        <li><a href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity" class="version">3.0.0 <small>21 Aug 18</small></a></li>
+            </ul>
+        </div>
+        <div class="btn-group" style="display: inline-block">
+            <button type="button" class="btn btn-default">
+                API Diff
+            </button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                    <li><strong style="padding-left:0.5em">Version 3</strong></li>
+                        <li><a href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/diff/3.0.0/" class="version">3.0.0 <small>21 Aug 18</small></a></li>
+            </ul>
+        </div>
+        <a href="https://www.nuget.org/api/v2/package/string.similarity/3.0.0" type="button" class="btn btn-default" style="color:#777">
+            <span class="glyphicon glyphicon-download" aria-hidden="true"></span>&nbsp;String.Similarity.3.0.0.nupkg
+        </a>
+        <a href="https://www.nuget.org/packages/String.Similarity/3.0.0" type="button" class="btn btn-default" style="color: #777">
+            <span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;nuget.org
+        </a>
+            <a href="https://github.com/glienard/StringSimilarity.NET" type="button" class="btn btn-default" style="color:#777">
+                <span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;github.com
+            </a>
+                            <a href="https://github.com/glienard/StringSimilarity.NET/master/LICENSE" type="button" class="btn btn-default" style="color: #777">
+                <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>&nbsp;License
+            </a>
+    </nav>
+
+    <div class="code add-package-code">&lt;<span class="c-pr">PackageReference</span> <span class="c-tr">Include</span>=<span class="c-st" style="font-weight:bold">"String.Similarity"</span> <span class="c-tr">Version</span>=<span class="c-st" style="font-weight:bold">"3.0.0"</span> /&gt;</div>
+
+
+        <nav style="margin-top:0em;line-height:2.75em;">
+            <h4 style="margin-top:0.5em;color:#777;display:inline-block;margin-right:0.5em;padding:0;">Frameworks</h4>
+                <a class="btn btn-success btn-sm active" style="font-weight:bold;color:#fff" role="button"
+                   href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity">netstandard1.0</a>
+        </nav>
+
+        <nav style="margin-top:0em;line-height:2.75em;">
+            <h4 style="margin-top:0.5em;color:#777;display:inline-block;margin-right:0.5em;padding:0;">Dependencies</h4>
+                <a class="btn btn-default btn-sm" style="color:#777"
+                   href="/packages/NETStandard.Library/1.6.1">
+                    <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;NETStandard.Library&nbsp;1.6.1
+                </a>
+        </nav>
+
+
+    <hr style="margin-top:2em;" />
+</header>
+
+    <div id="api" class="row" style="margin-bottom:4em;">
+        <div class="col-xs-12 col-sm-3 sidenav">
+                <h3 style="color:#777;margin-top:0em;margin-bottom:0em">.NET API <small style="color:#777;">18,432 bytes</small></h3>
+
+            <form class="form-inline" style="margin-top: 0.5em;">
+                <input id="asearch" type="search" class="form-control" placeholder="Search"
+                       autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                       style="margin-bottom:1em;" />
+            </form>
+
+            <nav id="anav">
+
+                    <h4>Assemblies</h4>
+                    <ul class="pkglist">
+                            <li>
+                                <a class="active public-api"
+                                   href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll"
+                                   title="1.0.0.0">
+                                    <span class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;F23.StringSimilarity.dll
+                                </a>
+                            </li>
+                    </ul>
+                                                    <h4>Namespaces</h4>
+                    <ul class="pkglist">
+                                <li>
+                                    <a class="active public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity">
+                                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;F23.StringSimilarity
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity.Experimental">
+                                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;F23.StringSimilarity.Experimental
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity.Interfaces">
+                                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;F23.StringSimilarity.Interfaces
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="private-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity.Support">
+                                        <span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;F23.StringSimilarity.Support
+                                    </a>
+                                </li>
+                    </ul>
+                                    <h4 id="types">Types</h4>
+                    <ul class="long-item-list">
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/Cosine">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;Cosine
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/Damerau">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;Damerau
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/ICharacterSubstitution">
+                                        <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>&nbsp;ICharacterSubstitution
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/Jaccard">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;Jaccard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/JaroWinkler">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;JaroWinkler
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/Levenshtein">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;Levenshtein
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/LongestCommonSubsequence">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;LongestCommonSubsequence
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/MetricLCS">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;MetricLCS
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/NGram">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;NGram
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/NormalizedLevenshtein">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;NormalizedLevenshtein
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/OptimalStringAlignment">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;OptimalStringAlignment
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/QGram">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;QGram
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/ShingleBased">
+                                        <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>&nbsp;ShingleBased
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/SorensenDice">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;SorensenDice
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="public-api"
+                                       href="/packages/String.Similarity/3.0.0/lib/netstandard1.0/F23.StringSimilarity.dll/F23.StringSimilarity/WeightedLevenshtein">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;WeightedLevenshtein
+                                    </a>
+                                </li>
+                    </ul>
+                                            </nav>
+            <br/>
+            <hr/>
+            <h4>Legend</h4>
+            <ul class="pkglist">
+                <li class="public-api"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>&nbsp;Assembly</li>
+                <li class="public-api"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;Namespace</li>
+                <li class="public-api"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;Class</li>
+                <li class="public-api"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>&nbsp;Interface or Abstract Class</li>
+                <li class="public-api"><span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>&nbsp;Static Class</li>
+                <li class="public-api"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>&nbsp;Struct</li>
+                <li class="public-api"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>&nbsp;Enum</li>
+                <li class="public-api"><span class="glyphicon glyphicon-flash" aria-hidden="true"></span>&nbsp;Delegate</li>
+                <li class="private-api"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;Grayed out == non-public</li>
+            </ul>
+        </div>
+        <div class="col-xs-12 col-sm-9" id="code">
+            <article>
+                    <h1 id="package" style="margin-top:0"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;String.Similarity <small>3.0.0</small></h1>
+                    <p class="description-section">A library implementing different string similarity and distance measures. A dozen of algorithms (including Levenshtein edit distance and sibblings, Jaro-Winkler, Longest Common Subsequence, cosine similarity etc.) are currently implemented. Based upon F23.StringSimilarity</p>
+                    <pre><code>&lt;package xmlns=&quot;http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd&quot;&gt;&#xD;&#xA;  &lt;metadata&gt;&#xD;&#xA;    &lt;id&gt;String.Similarity&lt;/id&gt;&#xD;&#xA;    &lt;version&gt;3.0.0&lt;/version&gt;&#xD;&#xA;    &lt;title&gt;StringSimilarity.NET&lt;/title&gt;&#xD;&#xA;    &lt;authors&gt;James Blair, Paul Irwin, Gregory Li&#xE9;nard&lt;/authors&gt;&#xD;&#xA;    &lt;owners&gt;James Blair, Paul Irwin, Gregory Li&#xE9;nard&lt;/owners&gt;&#xD;&#xA;    &lt;requireLicenseAcceptance&gt;false&lt;/requireLicenseAcceptance&gt;&#xD;&#xA;    &lt;licenseUrl&gt;https://github.com/glienard/StringSimilarity.NET/master/LICENSE&lt;/licenseUrl&gt;&#xD;&#xA;    &lt;projectUrl&gt;https://github.com/glienard/StringSimilarity.NET&lt;/projectUrl&gt;&#xD;&#xA;    &lt;iconUrl&gt;https://github.com/glienard/StringSimilarity.NET/master/logo.png&lt;/iconUrl&gt;&#xD;&#xA;    &lt;description&gt;A library implementing different string similarity and distance measures. A dozen of algorithms (including Levenshtein edit distance and sibblings, Jaro-Winkler, Longest Common Subsequence, cosine similarity etc.) are currently implemented. Based upon F23.StringSimilarity&lt;/description&gt;&#xD;&#xA;    &lt;copyright&gt;Copyright 2018&lt;/copyright&gt;&#xD;&#xA;    &lt;tags&gt;string similarity distance cosine damerau jaccard jaro-winkler levenshtein ngram qgram shingle sift4&lt;/tags&gt;&#xD;&#xA;    &lt;dependencies&gt;&#xD;&#xA;      &lt;group targetFramework=&quot;.NETStandard1.0&quot;&gt;&#xD;&#xA;        &lt;dependency id=&quot;NETStandard.Library&quot; version=&quot;1.6.1&quot; exclude=&quot;Build,Analyzers&quot; /&gt;&#xD;&#xA;      &lt;/group&gt;&#xD;&#xA;    &lt;/dependencies&gt;&#xD;&#xA;  &lt;/metadata&gt;&#xD;&#xA;&lt;/package&gt;</code></pre>
+            </article>
+        </div>
+    </div>
+<script>
+    var packageId = "String.Similarity";
+    var packageIconUrl = "https://github.com/glienard/StringSimilarity.NET/master/logo.png";
+    var packageAuthors = "James Blair, Paul Irwin, Gregory Liénard";
+    var packageDescription = "A library implementing different string similarity and distance measures. A dozen of algorithms (including Levenshtein edit distance and sibblings, Jaro-Winkler, Longest Common Subsequence, cosine similarity etc.) are currently implemented. Based upon F23.StringSimilarity";
+
+    var asearch = document.getElementById("asearch");
+    var anav = document.getElementById("anav");
+    if (asearch && anav) {
+        var searchResults = {};
+        var rhtml = null;
+        function showResults(r) {
+            function c(t) { return document.createElement(t); }
+            function getIcon(t) {
+                if (t == "type") return "star";
+                if (t == "method") return "flash";
+                return "minus";
+            }
+            function getColor(t) {
+                if (t == "type") return "c-tr";
+                if (t == "method") return "c-mr";
+                if (t == "event") return "c-er";
+                return "";
+            }
+            if (rhtml) rhtml.remove();
+            rhtml = c("div");
+            var h = c("h4");
+            h.appendChild(document.createTextNode (r.results.length >= 100 ? "100+ Results" : r.results.length + " Results"));
+            var ul = c("ul");
+            ul.className = "long-item-list";
+            rhtml.appendChild(h);
+            rhtml.appendChild(ul);
+            r.results.forEach(function(e) {
+                var li = c("li");
+                var a = c("a");
+                var g = c("span");
+                var sm = c("small");
+                sm.appendChild(document.createTextNode (e.parent));
+                g.className = "glyphicon glyphicon-" + getIcon(e.type);
+                li.appendChild(a);
+                a.className = "link " + getColor(e.type);
+                a.appendChild(g);
+                a.appendChild(document.createTextNode (" " + e.name + " "));
+                a.appendChild(sm);
+                a.href = e.link;
+                ul.appendChild(li);
+            });
+            anav.hidden = true;
+            asearch.parentElement.appendChild (rhtml);
+        }
+        function hideResults() {
+            if (rhtml) rhtml.remove ();
+            anav.hidden = false;
+        }
+        function queryResults(text, k) {
+            var req = new XMLHttpRequest();
+            req.addEventListener("load", function (e) {
+                if (req.readyState == 4) {
+                    var r = JSON.parse(req.responseText);
+                    k(r);
+                }
+            });
+            req.open("GET", "/api/searchpackage?p=String.Similarity&v=3.0.0&q=" + encodeURIComponent(text));
+            req.send();
+        }
+        function doSearch() {
+            var text = (asearch.value+"").trim();
+            if (text.length == 0) {
+                hideResults();
+            }
+            else if (searchResults[text]) {
+                showResults(searchResults[text]);
+            }
+            else {
+                queryResults(text, function(r) {
+                    searchResults[text] = r;
+                    if ((asearch.value+"").trim() == text) {
+                        showResults(r);
+                    }
+                });
+            }
+        }
+        asearch.addEventListener("input", function (e) {
+            doSearch();
+        });
+    }
+</script>
+
+
+        <footer>
+            <hr />
+            <p><a href="/">fuget.org</a> is &copy; 2021 Frank A. Krueger</p>
+            <p>help me <a href="https://github.com/praeclarum/FuGetGallery">build this on github</a></p>
+            <p><a href="/privacy">privacy policy</a></p>
+        </footer>
+    </div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+            crossorigin="anonymous"
+            integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+    </script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+            crossorigin="anonymous"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+    </script>
+    <script src="/js/site.js?v=TUSX9gj7pobx4tCVLEUgOl9MPQMot5Yw0iZ_rLks-S4"></script>
+
+    
+</body>
+</html>

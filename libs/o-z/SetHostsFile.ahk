@@ -1,4 +1,4 @@
-SetHostsFile(fnHostsFileLabel,fnOpenFile := 0)
+﻿SetHostsFile(fnHostsFileLabel,fnOpenFile := 0)
 {
 	; set the hosts file from an existing text file
 	; write permission on the hosts file may need to be provided

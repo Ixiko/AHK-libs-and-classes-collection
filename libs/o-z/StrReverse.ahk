@@ -1,4 +1,4 @@
-; StrReverse(fnString)
+﻿; StrReverse(fnString)
 ; {
 	; ReversedString := ""
 	; Loop, Parse, fnString

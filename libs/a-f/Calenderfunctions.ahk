@@ -665,8 +665,7 @@ YearOfPreviousMonth( date ) { ;very good name
 AGE(B,E) {  ; SKAN, http://www.autohotkey.com/forum/topic21456.html
   X := E
   X -= B,s ; seconds difference
-  If X < 0 ; change startDate with endDate
-    {
+  If (X < 0) { ; change startDate with endDate
       X := B
       B := E
       E := X

@@ -1,4 +1,4 @@
-#Include %A_ScriptDir%\..\..\classes\class_gdipChart.ahk
+﻿#Include %A_ScriptDir%\..\..\classes\class_gdipChart.ahk
 gosub, examples
 class dataField {
 	; requires gdipChart.ahk by nnnik, see https://github.com/nnnik/gdiChartLib or https://autohotkey.com/boards/viewtopic.php?f=6&t=31533

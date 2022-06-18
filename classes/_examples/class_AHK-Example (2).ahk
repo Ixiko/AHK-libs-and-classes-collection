@@ -1,4 +1,4 @@
-#Include, Console.ahk
+﻿#Include, Console.ahk
 
 MyConsole := new Console()
 MyConsole.WriteLine("Hey, what's your name?!")

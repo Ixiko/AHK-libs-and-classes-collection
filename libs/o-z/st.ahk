@@ -1,4 +1,4 @@
-; ST - Stack Library by Banane
+﻿; ST - Stack Library by Banane
 ; http://www.autohotkey.com/forum/viewtopic.php?t=54153
 
 ;-----------------------------------------------------------------------------------------------------------------------------

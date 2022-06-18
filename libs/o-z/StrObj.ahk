@@ -1,4 +1,4 @@
-/*==Description=========================================================================
+﻿/*==Description=========================================================================
 String-object-file (data structures in YAML-like style)
 Author:		Learning one (Boris Mudrinić)
 Contact:	https://dl.dropboxusercontent.com/u/171417982/AHK/Learning one contact.png

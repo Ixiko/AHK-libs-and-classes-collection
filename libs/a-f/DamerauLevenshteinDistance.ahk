@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Function: DamerauLevenshteinDistance
 		Performs fuzzy string searching, see <http://en.wikipedia.org/wiki/Damerau-Levenshtein_distance>
 

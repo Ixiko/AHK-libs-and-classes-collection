@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Function: OnWin
  *     Specifies a function to call when the specified window event for the
  *     specified window occurs.

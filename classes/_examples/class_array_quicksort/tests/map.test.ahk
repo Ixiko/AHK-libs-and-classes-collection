@@ -1,4 +1,4 @@
-group := tester.newGroup("map(callback)")
+﻿group := tester.newGroup("map(callback)")
 
 arrayInt := [1, 5, 10]
 arrayObj := [{"name": "bob", "age": 22}, {"name": "tom", "age": 51}]

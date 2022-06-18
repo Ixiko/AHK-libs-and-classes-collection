@@ -1,4 +1,4 @@
-;: Title: Struct.ahk by HotKeyIt
+﻿;: Title: Struct.ahk by HotKeyIt
 ;
 
 ; Function: Struct

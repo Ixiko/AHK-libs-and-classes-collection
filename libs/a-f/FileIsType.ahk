@@ -1,4 +1,4 @@
-/*
+﻿/*
 /*
 Evaluates and classifies file type based on it's extension as;
 Audio,Video,Raster Image, Vector Image, 3D Image, Backup file, CAD file, RAW Camera file, Compressed, Data file, Developer file, Disk Image, eBook, Encoded, Executable, Font, Game file, 

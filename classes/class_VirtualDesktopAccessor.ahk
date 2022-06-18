@@ -1,4 +1,4 @@
-class VirtualDesktopAccessor
+﻿class VirtualDesktopAccessor
 {
     __New()
     {

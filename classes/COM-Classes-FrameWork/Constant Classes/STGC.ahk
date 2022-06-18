@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: STGC
 an enumeration class specifying the conditions for performing the commit operation in the IStorage::Commit and IStream::Commit methods.
 

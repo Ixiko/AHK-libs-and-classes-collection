@@ -1,4 +1,4 @@
-RT_CURSOR := 1
+﻿RT_CURSOR := 1
 RT_BITMAP := 2
 RT_ICON := 3
 RT_MENU := 4

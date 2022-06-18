@@ -1,4 +1,4 @@
-/*
+﻿/*
 Author: IsNull
 http://www.autohotkey.com/forum/topic59244.html
 license: not specified 

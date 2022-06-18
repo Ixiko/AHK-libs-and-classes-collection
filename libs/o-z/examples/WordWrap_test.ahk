@@ -1,4 +1,4 @@
-;
+﻿;
 ; AutoHotkey Version: 1.1.07.03
 ; Author:        Rainer Friebel
 ;				 rainer.friebel@googlemail.com

@@ -1,4 +1,4 @@
-; Instance() - 0.41 - gwarble
+﻿; Instance() - 0.41 - gwarble
 ;  creates another instance to perform a task
 ;    help: http://www.autohotkey.com/forum/viewtopic.php?p=310694
 ;

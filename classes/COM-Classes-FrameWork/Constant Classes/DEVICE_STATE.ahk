@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: DEVICE_STATE
 an enumeration class containing constants that indicate the current state of an audio endpoint device.
 
@@ -44,7 +44,7 @@ class DEVICE_STATE
 
 	/*
 	Field: MASK_ALL
-	Includes audio endpoint devices in all states�active, disabled, not present, and unplugged.
+	Includes audio endpoint devices in all states—active, disabled, not present, and unplugged.
 	*/
 	static MASK_ALL := 0x0000000F
 }

@@ -1,4 +1,4 @@
-; http://www.autohotkey.com/board/topic/51488-treeviews-color-individual-rows-multiple-tv-support/
+﻿; http://www.autohotkey.com/board/topic/51488-treeviews-color-individual-rows-multiple-tv-support/
 
 ;LV functions
 LV_Initialize(Gui_Number="", Control="", Column="") {

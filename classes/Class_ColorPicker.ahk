@@ -1,4 +1,4 @@
-; AutoHotkey Version: 1.1.12.00
+﻿; AutoHotkey Version: 1.1.12.00
 ; Language:       	English
 ; Dev Platform:   	Windows 7 Home Premium x64
 ; Original Author:	Joe DF  |  http://joedf.co.nr  |  joedf@users.sourceforge.net

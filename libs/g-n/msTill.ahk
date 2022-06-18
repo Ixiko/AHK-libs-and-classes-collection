@@ -1,4 +1,4 @@
-; Get milliseconds from a 4 to 6 digit time "hhmmss or "hhmmss"
+﻿; Get milliseconds from a 4 to 6 digit time "hhmmss or "hhmmss"
 ; by None
 ; http://www.autohotkey.com/forum/viewtopic.php?p=340991#340991
 msTill(Time) {

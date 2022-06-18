@@ -1,4 +1,4 @@
-/*
+﻿/*
     This example shows the difference between disabling and enabling an Edit
     control versus setting or removing the ReadOnly style.  Although a disabled
     Edit control is visually similar to an Edit control using the ReadOnly

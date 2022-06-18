@@ -85,7 +85,7 @@ return
 ;*****************************
 Spell_Init:
 ;-- Initialize Hunspell and load the primary dictionary
-if not Spell_Init(hSpell,"dic\en_US.aff","dic\en_US.dic","lib\")
+if !Spell_Init(hSpell,"dic\en_US.aff","dic\en_US.dic", A_ScriptDir "\..\..\dll\")
     return
 
 ;-- Load the custom dictionary
@@ -96,13 +96,13 @@ return
 
 
 Spell_Uninit:
-if $SpellInit
-    {
-    Spell_Uninit(hSpell)
-        ;-- This step also flushes all the "Ignore All" words from the
-        ;   dictionary
 
-    $SpellInit:=False
+    if $SpellInit    {
+
+        Spell_Uninit(hSpell)
+            ;-- This step also flushes all the "Ignore All" words from the
+            ;   dictionary
+        $SpellInit:=False
     }
 
 return

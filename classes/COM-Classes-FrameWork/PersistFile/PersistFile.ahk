@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PersistFile
 wraps the *IPersistFile* interface and enables an object to be loaded from or saved to a disk file, rather than a storage object or stream.
 

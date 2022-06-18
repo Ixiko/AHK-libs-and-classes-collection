@@ -1,4 +1,4 @@
-; This script demonstrates a single initial word ("Test"), followed by a choice of "Up", "Down", "Left" or "Right"
+﻿; This script demonstrates a single initial word ("Test"), followed by a choice of "Up", "Down", "Left" or "Right"
 
 #SingleInstance force
 #Persistent ; You will need this if your script creates no hotkeys or has no GUI

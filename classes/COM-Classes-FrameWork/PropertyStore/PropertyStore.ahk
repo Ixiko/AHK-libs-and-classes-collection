@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PropertyStore
 wraps the *IPropertyStore* interface and exposes methods for enumerating, getting, and setting property values.
 

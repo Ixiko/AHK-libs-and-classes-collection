@@ -1,4 +1,4 @@
-/*
+﻿/*
     EnableUIAccess.ahk v1.01 by Lexikos
     
     USE AT YOUR OWN RISK

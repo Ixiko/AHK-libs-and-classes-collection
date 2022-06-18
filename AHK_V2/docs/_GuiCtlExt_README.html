@@ -1,0 +1,346 @@
+﻿<html><head><style>
+:root{
+    --link: #00ACAF;
+    --link-hover: cyan;
+    --link-special: orange;
+    --link-visited: #006bcf;
+    --text: #999;
+    --header: #00ACAF;
+    --border: #00ACAF;
+    --blockquote: #0000FF;
+    --blockquote-text: #DDD;
+    --row-HL: #000C67;
+    --bg: #000C17;
+    --bg1-5: #000C27;
+    --bg2: #000C37;
+    --bg3: #000C57;
+    --so1: yellow;
+    --so2: orange;
+    --so3: red;
+    --so4: magenta;
+    --emphasis: #EEE; /* was #0077CC */
+}
+
+html, body {
+    background-color: var(--bg);
+    /* font-family: Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; */
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+body {
+    color: var(--text);
+    line-height: 1.6em;
+}
+
+#body-container {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    max-width: 1280px;
+    margin: auto;
+    height: 90%;
+    padding: 45px 45px;
+    overflow-y: scroll;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+}
+
+#toc-container {
+    background-color: var(--bg);
+    overflow: hidden;
+    position: fixed;
+    display: block;
+    float: right;
+    right: 30px;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 10px 10px;
+    transition-duration: 0.25s;
+}
+
+@media screen and (min-width: 1383px) {
+    #toc-container { right: calc(50% - 640px - 25px); }
+}
+
+#toc-icon {
+    font-size: 24px;
+    padding-right: 5px;
+    color: var(--link);
+}
+
+#toc-contents {
+    overflow: hidden;
+    display: none;
+}
+
+.toc-item {
+    padding: 2px 15px;
+}
+
+#toc-container:hover {
+    overflow-y: auto;
+    width: 25px;
+    /* height: initial; */
+    height: 0px;
+    max-height: calc(100vh - 40px);
+    transition-duration: 0.25s;
+}
+
+#toc-container:hover #toc-contents {
+    display: block;
+}
+
+#toc-container:hover a {
+    text-decoration: none;
+}
+
+#toc-container:hover .toc-item:hover {
+    background-color: var(--row-HL);
+    color: cyan;
+}
+
+:target a:visited { color: var(--so4); }
+:target a:visited:hover, :target a:visited:hover .link { color: var(--link-hover); }
+:target.underline { border-color: var(--so4); }
+
+img { opacity: 0.5; }
+
+table.normal tr th { background: var(--bg3); color: var(--header); }
+table.normal tr td { background: var(--bg2); }
+table.normal tr th, table tr td { padding: 5px; }
+table.normal tr:hover td { background: var(--row-HL); }
+
+a, a:link { color: var(--link); }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+a:visited { color: var(--link); }
+
+h1, h2, h3, h4, h5, h6
+{ font-weight:bold; color:var(--header); margin-top: 24px; margin-bottom: 16px; }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+h1:hover a, h2:hover a, h3:hover a, h4:hover a, h5:hover a, h6:hover a
+{ text-decoration: none; }
+
+h1 a .link, h2 a .link, h3 a .link, h4 a .link, h5 a .link, h6 a .link
+{ position: relative; float: left; margin-left: -20px; display: none; }
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover
+{ border-color: var(--link-hover); color: var(--link-hover); }
+
+h1:hover a .link, h2:hover a .link, h3:hover a .link, h4:hover a .link, h5:hover a .link, h6:hover a .link
+{ display: inline; }
+
+.underline { border-bottom: 1px solid #00ACAF; }
+h1.underline { padding-bottom: 10px; }
+h2.underline { padding-bottom: 8px; }
+h3.underline { padding-bottom: 6px; }
+h4.underline { padding-bottom: 4px; }
+h5.underline { padding-bottom: 2px; }
+h1 { font-size:1.75em; }
+h2 { font-size:1.5em; }
+h3 { font-size:1.30em; }
+h4 { font-size:1.15em; }
+h5 { font-size:1em; }
+h6 { font-size:0.75em; }
+
+em, strong { color: var(--emphasis); }
+del { font-weight: 400; }
+hr {
+    color: transparent;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: var(--border);
+}
+
+blockquote {
+    border-left: 4px solid var(--blockquote);
+    padding: 0 15px;
+    color: var(--blockquote-text);
+    margin-top: 0px;
+    margin-bottom: 16px;
+}
+
+p { margin-bottom: 16px; margin-top: 0px; }
+/* ul, ol { margin: 0; padding: 0; } */
+
+pre {
+    margin-top: 10px;
+    margin-bottom: 16px;
+    background-color: var(--b1-5);
+    padding: 2px 4px;
+    border: 1px solid var(--so1);
+    border-radius: 5px;
+    font-family: Consolas;
+    font-size: 16px;
+}
+
+code {
+    margin: 0px 3px 0px 0px;
+    padding: 2px 4px;
+    background-color: var(--b1-5);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-family: Consolas;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+pre code { border:none; padding:0px; }
+
+/* ul { margin: 4px 0; } */
+li { margin: 4px 0; }
+
+.header-menu {
+  position: fixed;
+  background-color: var(--bg2);
+  top: 0px;
+  max-width: 1280px;
+  display: inline-block; 
+}
+.header-menu-cell { border: none; }
+.header-menu-cell {
+  border-right: 1px solid var(--bg);
+  padding: 10px 20px;
+}
+.header-menu-cell:hover {
+  background-color: var(--row-HL);
+}
+.header-menu-cell:hover a,
+.header-menu-cell a 
+{ text-decoration: none; }
+
+.spoiler {
+    color: var(--so2)
+}
+
+summary { margin-bottom: 16px; }
+</style></head>
+
+<body><div id="body-container"><div id="main">
+<h1 id="guictlext_ahk2" >GuiCtlExt_ahk2<a href="#guictlext_ahk2"><span class="link">•</span></a></h1>
+<p>GuiControl extensions for AHK v2 controls</p>
+<pre><code>Contributions:
+
+AHK_user
+iPhilip
+just me
+teadrinker
+
+See comments in GuiCtlExt.ahk for details.
+</code></pre>
+<p><br></p>
+<h2 id="latest-updates" >Latest Updates<a href="#latest-updates"><span class="link">•</span></a></h2>
+<ul>
+<li>added props/methods to Edit: SelText, SelStart, SelEnd, SetSel(), SetCueText()</li>
+<li>added props/methods to Combo: SelText, SelStart, SelEnd, SetSel() check_match()</li>
+<li>added prop to Combo: AutoComplete (true/false)</li>
+<li>added an extension for Gui to facilitate AutoComplete for combo, and other fututre expansions</li>
+<li>fixed credits & comments (if I miss one please let me know)</li>
+<li>renamed a few internal properties/methods for these changes</li>
+<li>changed behavior of .SetSel() for Edit and ComboBox</li>
+<li>updated README</li></ul>
+
+<p><br></p>
+<h2 id="picture-button" >Picture Button<a href="#picture-button"><span class="link">•</span></a></h2>
+<h3 id="gui-addpicbuttonsoptions-:=-"",-spicfile-:=-"",-spicfileopt-:=-"",-text-:=-""" >Gui.AddPicButton(sOptions := "", sPicFile := "", sPicFileOpt := "", Text := "")<a href="#gui-addpicbuttonsoptions-:=-"",-spicfile-:=-"",-spicfileopt-:=-"",-text-:=-"""><span class="link">•</span></a></h3>
+<p><code>sOptions</code> are the normal options you would specify for any <code>Gui</code> control when invoking <code>Gui.Add()</code>.</p>
+<p>The sPicFile and sPicFileOpt parameters are the same as the first 2 parameters of LoadPicture().  For more info, see <code>ctl.SetImg()</code> below, or the AHK help files for LoadPicture().</p>
+<p>Text is optional.</p>
+<h3 id="ctl-setimgsfile,-soptions-:=-""" >ctl.SetImg(sFile, sOptions := "")<a href="#ctl-setimgsfile,-soptions-:=-"""><span class="link">•</span></a></h3>
+<p>Sets or changes the image for a button.  Specify no text if you want an image button only.  Otherwise you will get the image and text.</p>
+<p>sOptions is the same as <code>LoadPicture()</code>.</p>
+<p>Example:  <code>Icon5 w32 h-1</code></p>
+<p>NOTE:  Specify <code>*w32 *h-1</code> to use filtering when scaling an image.</p>
+<p>The type of image loaded is always auto-detected.</p>
+<p>If you change a Button Pic image, then the previous image handle is automatically destroyed.</p>
+<p>This method does not return a value.</p>
+<h3 id="ctl-type" >ctl.Type<a href="#ctl-type"><span class="link">•</span></a></h3>
+<p>Returns <code>"PicButton"</code>.</p>
+<p><br> </p>
+<h2 id="splitbutton" >SplitButton<a href="#splitbutton"><span class="link">•</span></a></h2>
+<h3 id="gui-addsplitbuttonsoptions-:=-"",-stext-:=-"",-callback-:=-""" >Gui.AddSplitButton(sOptions := "", sText := "", callback := "")<a href="#gui-addsplitbuttonsoptions-:=-"",-stext-:=-"",-callback-:=-"""><span class="link">•</span></a></h3>
+<p><code>sOptions</code> are the normal options you would specify for any <code>Gui</code> control when invoking <code>Gui.Add()</code>.</p>
+<p>Callback format:</p>
+<pre><code>callback(ctl, coords) {
+    msgbox ctl.name "`r`n" coords.x " / " coords.y
+}</code></pre>
+<p>The <code>coords</code> parameter is an <code>{object}</code> with properties X and Y.  The X/Y is the client coords needed to properly position a menu for the split button.</p>
+<h3 id="ctl-setimgsfile,-soptions:=""" >ctl.SetImg(sFile, sOptions:="")<a href="#ctl-setimgsfile,-soptions:="""><span class="link">•</span></a></h3>
+<p>Same as PicButton above.</p>
+<h3 id="ctl-type" >ctl.Type<a href="#ctl-type"><span class="link">•</span></a></h3>
+<p>Returns <code>"SplitButton"</code>.</p>
+<p><br></p>
+<h2 id="togglebutton" >ToggleButton<a href="#togglebutton"><span class="link">•</span></a></h2>
+<h3 id="gui-addtogglebuttonsoptions-:=-"",-stext-:=-""" >Gui.AddToggleButton(sOptions := "", sText := "")<a href="#gui-addtogglebuttonsoptions-:=-"",-stext-:=-"""><span class="link">•</span></a></h3>
+<p><code>sOptions</code> are the normal options you would specify for any <code>Gui</code> control when invoking <code>Gui.Add()</code>.</p>
+<p><code>sText</code> is the button text, if any.  You can also use .SetImg() to make this toggle button a pic button as well.</p>
+<h3 id="ctl-setimgsfile,-soptions-:=-""" >ctl.SetImg(sFile, sOptions := "")<a href="#ctl-setimgsfile,-soptions-:=-"""><span class="link">•</span></a></h3>
+<p><br></p>
+<h2 id="listbox" >ListBox<a href="#listbox"><span class="link">•</span></a></h2>
+<h3 id="ctl-getcount" >ctl.GetCount()<a href="#ctl-getcount"><span class="link">•</span></a></h3>
+<p>Returns number of items in Listbox or ComboBox drop window.</p>
+<h3 id="ctl-gettextrow" >ctl.GetText(row)<a href="#ctl-gettextrow"><span class="link">•</span></a></h3>
+<p>Gets the text of the specified row.</p>
+<h3 id="ctl-getitems" >ctl.GetItems()<a href="#ctl-getitems"><span class="link">•</span></a></h3>
+<p>Gets a linear array of all the items in the ListBox or ComboBox drop window.</p>
+<p><br></p>
+<h2 id="combobox" >ComboBox<a href="#combobox"><span class="link">•</span></a></h2>
+<h3 id="ctl-getcount" >ctl.GetCount()<a href="#ctl-getcount"><span class="link">•</span></a></h3>
+<p>Returns number of items in Listbox or ComboBox drop window.</p>
+<h3 id="ctl-gettextrow" >ctl.GetText(row)<a href="#ctl-gettextrow"><span class="link">•</span></a></h3>
+<p>Gets the text of the specified row.</p>
+<h3 id="ctl-getitems" >ctl.GetItems()<a href="#ctl-getitems"><span class="link">•</span></a></h3>
+<p>Gets a linear array of all the items in the ListBox or ComboBox drop window.</p>
+<h3 id="ctl-cuetext" >ctl.CueText<a href="#ctl-cuetext"><span class="link">•</span></a></h3>
+<p>Sets/Gets cue text for the ComboBox control.</p>
+<h3 id="ctl-selend" >ctl.SelEnd<a href="#ctl-selend"><span class="link">•</span></a></h3>
+<p>Gets the end pos of the current selection.  This property may act as the "cursor position" when there is no selection.</p>
+<h3 id="ctl-selstart" >ctl.SelStart<a href="#ctl-selstart"><span class="link">•</span></a></h3>
+<p>Gets the start pos of the current selection.  This property may act as the "cursor position" when there is no selection.</p>
+<h3 id="ctl-seltext" >ctl.SelText<a href="#ctl-seltext"><span class="link">•</span></a></h3>
+<p>Gets the selected text.</p>
+<h3 id="ctl-setselstart-:=-"",-end-:=-""" >ctl.SetSel(start := "", end := "")<a href="#ctl-setselstart-:=-"",-end-:=-"""><span class="link">•</span></a></h3>
+<p>Sets the cursor position or selection, depending on usage.</p>
+<p>Note that both start and end are zero based.</p>
+<p>End can be larger than Start.</p>
+<table class="normal"><tr></tr><tr><th align="center">Value(s)</th><th align="left">Result</th></tr><tr><td align="center"><code>0</code></td><td align="left">Sets cursor to beginning of text.</td></tr><tr><td align="center"><code>-1</code></td><td align="left">Sets cursor to end of text.</td></tr><tr><td align="center"><code>0, -1</code></td><td align="left">Select all text.</td></tr><tr><td align="center"><code>start, end</code></td><td align="left">Sets selection according to given values.</td></tr><tr><td align="center"><em>blank</em></td><td align="left">Removes selection, cursor is moved to selection start.</td></tr></table>
+<p><br></p>
+<h2 id="listview" >ListView<a href="#listview"><span class="link">•</span></a></h2>
+<h3 id="ctl-checkedrow" >ctl.Checked(row)<a href="#ctl-checkedrow"><span class="link">•</span></a></h3>
+<p>Returns true if checked, false if not, for specified row.</p>
+<h3 id="ctl-iconindexrow" >ctl.IconIndex(row)<a href="#ctl-iconindexrow"><span class="link">•</span></a></h3>
+<p>Returns the icon index for the row.  Note that the default index for all rows, even without an icon is 1.</p>
+<h3 id="ctl-getcolwidthcol" >ctl.GetColWidth(col)<a href="#ctl-getcolwidthcol"><span class="link">•</span></a></h3>
+<p>Returns the width of the specified column.</p>
+<p><br></p>
+<h2 id="edit" >Edit<a href="#edit"><span class="link">•</span></a></h2>
+<h3 id="ctl-appendtext,-top-:=-false" >ctl.Append(text, top := false)<a href="#ctl-appendtext,-top-:=-false"><span class="link">•</span></a></h3>
+<p>Appends text to the bottom of the edit control, unless <code>top := true</code>, then text is prepended.</p>
+<h3 id="ctl-setcuetexttxt,-option-:=-false" >ctl.SetCueText(txt, Option := false)<a href="#ctl-setcuetexttxt,-option-:=-false"><span class="link">•</span></a></h3>
+<p>Sets cue text and option.</p>
+<table class="normal"><tr></tr><tr><th align="left">Value</th><th align="left">Result</th></tr><tr><td align="left">Option = true</td><td align="left">Cue text will persist on control focus.</td></tr><tr><td align="left">Option = false</td><td align="left">Cue text will disappear on control focus (default).</td></tr></table>
+<h3 id="ctl-cuetext" >ctl.CueText<a href="#ctl-cuetext"><span class="link">•</span></a></h3>
+<p>Sets/Gets the cue text for the edit control.  You can also set the <code>Option</code> described in <code>ctl.SetCueText()</code> above.</p>
+<pre><code>ctl.CueText := "new cue text"
+
+; This will set the cue text and set the Option to true.  The option can also be set to false.
+ctl.CueText[true] := "new cue text"</code></pre>
+<p>Keep in mind that you must specify either only the text, or the text and the option.  You can't only set the option.</p>
+<h3 id="ctl-selend" >ctl.SelEnd<a href="#ctl-selend"><span class="link">•</span></a></h3>
+<p>Gets the end pos of the current selection.  This property may act as the "cursor position" when there is no selection.</p>
+<h3 id="ctl-selstart" >ctl.SelStart<a href="#ctl-selstart"><span class="link">•</span></a></h3>
+<p>Gets the start pos of the current selection.  This property may act as the "cursor position" when there is no selection.</p>
+<h3 id="ctl-seltext" >ctl.SelText<a href="#ctl-seltext"><span class="link">•</span></a></h3>
+<p>Gets the selected text.</p>
+<h3 id="ctl-setselstart-:=-"",-end-:=-""" >ctl.SetSel(start := "", end := "")<a href="#ctl-setselstart-:=-"",-end-:=-"""><span class="link">•</span></a></h3>
+<p>Sets the cursor position or selection, depending on usage.</p>
+<p>Note that both start and end are zero based.</p>
+<p>End can be larger than Start.</p>
+<table class="normal"><tr></tr><tr><th align="center">Value(s)</th><th align="left">Result</th></tr><tr><td align="center"><code>0</code></td><td align="left">Sets cursor to beginning of text.</td></tr><tr><td align="center"><code>-1</code></td><td align="left">Sets cursor to end of text.</td></tr><tr><td align="center"><code>0, -1</code></td><td align="left">Select all text.</td></tr><tr><td align="center"><code>start, end</code></td><td align="left">Sets selection according to given values.</td></tr><tr><td align="center"><em>blank</em></td><td align="left">Removes selection, cursor is moved to selection start.</td></tr></table></div></div></body></html>

@@ -82,8 +82,8 @@ Group: Functions
 ;   additional considerations can be found <here at http://tinyurl.com/j3nrbw2>.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_AddFontFile(p_File,p_Private,p_Hidden=False)
-    {
+Fnt_AddFontFile(p_File,p_Private,p_Hidden=False)    {
+
     Static Dummy0661
 
           ;-- Font Resource flags
@@ -260,8 +260,7 @@ Fnt_AddFontFile(p_File,p_Private,p_Hidden=False)
 ;   error and will return without showing the Font dialog box.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_ChooseFont(hOwner=0,ByRef r_Name="",ByRef r_Options="",p_Effects=True,p_Flags=0)
-    {
+Fnt_ChooseFont(hOwner=0,ByRef r_Name="",ByRef r_Options="",p_Effects=True,p_Flags=0)    {
     Static Dummy3155
 
           ;-- ChooseFont flags
@@ -639,8 +638,7 @@ Fnt_ChooseFont(hOwner=0,ByRef r_Name="",ByRef r_Options="",p_Effects=True,p_Flag
 ; * <Fnt_GetWindowTextColor>
 ;
 ;-------------------------------------------------------------------------------
-Fnt_ColorName2RGB(p_ColorName)
-    {
+Fnt_ColorName2RGB(p_ColorName)    {
     Static Dummy3054
 
           ;-- Supported color names
@@ -708,8 +706,7 @@ Fnt_ColorName2RGB(p_ColorName)
 ;   from the PathCompactPath function.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_CompactPath(hFont,p_Path,p_MaxW,p_Strict=False)
-    {
+Fnt_CompactPath(hFont,p_Path,p_MaxW,p_Strict=False)    {
     Static Dummy6513
           ,DEFAULT_GUI_FONT:=17
           ,HWND_DESKTOP    :=0
@@ -801,8 +798,7 @@ Fnt_CompactPath(hFont,p_Path,p_MaxW,p_Strict=False)
 ;   When no longer needed, call <Fnt_DeleteFont> to delete the font.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_CreateFont(p_Name="",p_Options="")
-    {
+Fnt_CreateFont(p_Name="",p_Options="")    {
     Static Dummy3436
 
           ;-- Device constants
@@ -915,10 +911,9 @@ Fnt_CreateFont(p_Name="",p_Options="")
 ;   When no longer needed, call <Fnt_DeleteFont> to delete the font.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_CreateCaptionFont()
-    {
-    Return DllCall("CreateFontIndirect","Ptr",Fnt_GetNonClientMetrics()+24)
-    }
+Fnt_CreateCaptionFont()    {
+Return DllCall("CreateFontIndirect","Ptr",Fnt_GetNonClientMetrics()+24)
+}
 
 
 ;------------------------------
@@ -943,10 +938,9 @@ Fnt_CreateCaptionFont()
 ;   When no longer needed, call <Fnt_DeleteFont> to delete the font.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_CreateMenuFont()
-    {
+Fnt_CreateMenuFont()    {
     Return DllCall("CreateFontIndirect","Ptr",Fnt_GetNonClientMetrics()+(A_IsUnicode ? 224:160))
-    }
+}
 
 
 ;------------------------------
@@ -971,10 +965,9 @@ Fnt_CreateMenuFont()
 ;   When no longer needed, call <Fnt_DeleteFont> to delete the font.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_CreateMessageFont()
-    {
+Fnt_CreateMessageFont()    {
     Return DllCall("CreateFontIndirect","Ptr",Fnt_GetNonClientMetrics()+(A_IsUnicode ? 408:280))
-    }
+}
 
 
 ;------------------------------
@@ -998,8 +991,7 @@ Fnt_CreateMessageFont()
 ;   When no longer needed, call <Fnt_DeleteFont> to delete the font.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_CreateSmCaptionFont()
-    {
+Fnt_CreateSmCaptionFont()    {
     Return DllCall("CreateFontIndirect","Ptr",Fnt_GetNonClientMetrics()+(A_IsUnicode ? 124:92))
     }
 
@@ -1026,8 +1018,7 @@ Fnt_CreateSmCaptionFont()
 ;   When no longer needed, call <Fnt_DeleteFont> to delete the font.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_CreateStatusFont()
-    {
+Fnt_CreateStatusFont()    {
     Return DllCall("CreateFontIndirect","Ptr",Fnt_GetNonClientMetrics()+(A_IsUnicode ? 316:220))
     }
 
@@ -1054,8 +1045,7 @@ Fnt_CreateStatusFont()
 ;   It is not necessary (but it is not harmful) to delete stock objects.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_DeleteFont(hFont)
-    {
+Fnt_DeleteFont(hFont)    {
     if not hFont  ;-- Zero or null
         Return True
 
@@ -1092,8 +1082,7 @@ Fnt_DeleteFont(hFont)
 ; * <Fnt_GetDialogBaseUnits>
 ;
 ;-------------------------------------------------------------------------------
-Fnt_DialogTemplateUnits2Pixels(hFont,p_HorzDTUs,p_VertDTUs=0,ByRef r_Width="",ByRef r_Height="")
-    {
+Fnt_DialogTemplateUnits2Pixels(hFont,p_HorzDTUs,p_VertDTUs=0,ByRef r_Width="",ByRef r_Height="")    {
     Static Dummy0741
           ,SIZE
           ,s_hFont:=-1
@@ -1158,8 +1147,7 @@ Fnt_DialogTemplateUnits2Pixels(hFont,p_HorzDTUs,p_VertDTUs=0,ByRef r_Width="",By
 ;   request.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_EnumFontFamExProc(lpelfe,lpntme,FontType,p_Flags)
-    {
+Fnt_EnumFontFamExProc(lpelfe,lpntme,FontType,p_Flags)    {
     Global Fnt_EnumFontFamExProc_List
     Static Dummy6247
 
@@ -1332,8 +1320,7 @@ Fnt_EnumFontFamExProc(lpelfe,lpntme,FontType,p_Flags)
 ;   'Segoe UI', Verdana"
 ;
 ;-------------------------------------------------------------------------------
-Fnt_FontExists(p_Name*)
-    {
+Fnt_FontExists(p_Name*)    {
     ;-- Initialize
     FontNames:=Object()
 
@@ -1467,8 +1454,7 @@ Fnt_FontExists(p_Name*)
 ;       (end)
 ;
 ;-------------------------------------------------------------------------------
-Fnt_FontSizeToFit(hFont,p_String,p_Width)
-    {
+Fnt_FontSizeToFit(hFont,p_String,p_Width)    {
     Static s_MaxFontSize:=1500
 
     ;-- Collect font name and font options
@@ -1620,8 +1606,7 @@ Fnt_FontSizeToFit(hFont,p_String,p_Width)
 ;   is available.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_FontSizeToFitHeight(hFont,p_Height)
-    {
+Fnt_FontSizeToFitHeight(hFont,p_Height)    {
     Static Dummy3851
           ,s_MaxFontSize:=1500
 
@@ -1783,8 +1768,7 @@ Fnt_FontSizeToFitHeight(hFont,p_Height)
 ; * <Fnt_FOSetSize>
 ;
 ;-------------------------------------------------------------------------------
-Fnt_FODecrementSize(ByRef r_FO,p_DecrementValue=1,p_MinSize=1)
-    {
+Fnt_FODecrementSize(ByRef r_FO,p_DecrementValue=1,p_MinSize=1)    {
     if l_Size:=Fnt_FOGetSize(r_FO)
         if (l_Size-p_DecrementValue>=p_MinSize)
             {
@@ -1835,8 +1819,7 @@ Fnt_FODecrementSize(ByRef r_FO,p_DecrementValue=1,p_MinSize=1)
 ;   for a null/not null value or check the length of the return value.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_FOGetColor(p_FO,p_DefaultColor="",p_ColorName2RGB=False)
-    {
+Fnt_FOGetColor(p_FO,p_DefaultColor="",p_ColorName2RGB=False)    {
     l_Color   :=""
     l_FoundPos:=1
     Loop
@@ -1883,8 +1866,7 @@ Fnt_FOGetColor(p_FO,p_DefaultColor="",p_ColorName2RGB=False)
 ;   of the p_DefaultSize parameter which if not specified is FALSE (0).
 ;
 ;-------------------------------------------------------------------------------
-Fnt_FOGetSize(p_FO,p_DefaultSize=0)
-    {
+Fnt_FOGetSize(p_FO,p_DefaultSize=0)    {
     Static s_RegExPattern:="i) s[0-9]+ "
     l_Size    :=""
     l_FoundPos:=1
@@ -2111,8 +2093,7 @@ Fnt_FOSetSize(ByRef r_FO,p_Size)
 ;   This function gets the typeface name of the caption font creating the font.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_GetCaptionFontName()
-    {
+Fnt_GetCaptionFontName()    {
     Static LF_FACESIZE:=32  ;-- In TCHARS
     Return StrGet(Fnt_GetNonClientMetrics()+24+28,LF_FACESIZE)
     }
@@ -2136,8 +2117,7 @@ Fnt_GetCaptionFontName()
 ;   the font.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_GetCaptionFontSize()
-    {
+Fnt_GetCaptionFontSize()    {
     Static LOGPIXELSY:=90
 
     ;-- Collect the number of pixels per logical inch along the screen height
@@ -2820,8 +2800,7 @@ Fnt_GetFontMetrics(hFont=0)
 ;   The typeface name of the font.
 ;
 ;-------------------------------------------------------------------------------
-Fnt_GetFontName(hFont=0)
-    {
+Fnt_GetFontName(hFont=0)    {
     Static Dummy8789
           ,DEFAULT_GUI_FONT    :=17
           ,HWND_DESKTOP        :=0
@@ -3235,7 +3214,7 @@ Fnt_GetMultilineStringSize(hFont,p_String,ByRef r_Width="",ByRef r_Height="",ByR
     Static Dummy4723
           ,DEFAULT_GUI_FONT:=17
           ,HWND_DESKTOP    :=0
-          ,SIZE  
+          ,SIZE
 
     ;-- Initialize
     r_Width:=r_Height:=r_LineCount:=0

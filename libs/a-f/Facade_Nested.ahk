@@ -1,4 +1,4 @@
-#Include <IsFuncObj>
+﻿#Include <IsFuncObj>
 #Include <Validate>
 #Include <Op>
 #Include <Array>

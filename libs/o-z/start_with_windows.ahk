@@ -1,4 +1,4 @@
-start_with_windows(seperator="", menu_name="tray") {
+﻿start_with_windows(seperator="", menu_name="tray") {
     global sww_shortcut, sww_menu
 
     sww_menu := menu_name

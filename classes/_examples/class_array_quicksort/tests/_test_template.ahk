@@ -1,4 +1,4 @@
-group := tester.newGroup("func(arg1, arg2)")
+﻿group := tester.newGroup("func(arg1, arg2)")
 
 ; Setup data structures here
 array := [1,2]

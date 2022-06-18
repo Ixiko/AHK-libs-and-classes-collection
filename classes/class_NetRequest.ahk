@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Allows us to requests data from the web.
  * You can use either WinHttpRequests or create a com instance of a browser
  * 

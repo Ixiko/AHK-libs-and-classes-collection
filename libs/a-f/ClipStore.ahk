@@ -1,4 +1,4 @@
-ClipStore(fnClipAction,ByRef fnClipContentsVar := "",ByRef fnClipStorageVar := "")
+﻿ClipStore(fnClipAction,ByRef fnClipContentsVar := "",ByRef fnClipStorageVar := "")
 {
 	; stores the current clipboard and captures the selected text
 	; uses atypical return values to make call syntax more intuitive e.g. If !ClipStore("Copy",xVarx) means 'if text was not copied to xVarx successfully'

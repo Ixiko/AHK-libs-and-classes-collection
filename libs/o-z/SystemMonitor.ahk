@@ -1,24 +1,24 @@
-/*
-ƒVƒXƒeƒ€ƒ‚ƒjƒ^—pŠÖ”ŒQ	by—¬s‚ç‚¹‚éƒy[ƒWŠÇ—l
+ï»¿/*
+ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½ï¿½ï¿½jï¿½^ï¿½pï¿½Öï¿½ï¿½Q	byï¿½ï¿½ï¿½sï¿½ç‚¹ï¿½ï¿½ï¿½[ï¿½Wï¿½Ç—ï¿½ï¿½l
 
 
-œŽæ“¾‚Å‚«‚é•¨
-ƒVƒXƒeƒ€‘S‘Ì‚ÌCPUŽg—p—¦
+ï¿½ï¿½ï¿½æ“¾ï¿½Å‚ï¿½ï¿½é•¨
+ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½Sï¿½Ì‚ï¿½PUï¿½gï¿½pï¿½ï¿½
     GetCPUState
-ƒVƒXƒeƒ€‘S‘Ì‚Ìƒƒ‚ƒŠ‘—e—ÊA‹ó‚«—e—Ê
+ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½Sï¿½Ì‚Ìƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½eï¿½ÊAï¿½ó‚«—eï¿½ï¿½
     GetMemoryState
-ƒoƒbƒeƒŠ‚Ìó‘ÔAŽc—Ê
+ï¿½oï¿½bï¿½eï¿½ï¿½ï¿½Ìï¿½Aï¿½cï¿½ï¿½
     GetSystemPowerStatus
-ƒvƒƒZƒX‚²‚Æ‚ÌCPUŽg—p—¦
+ï¿½vï¿½ï¿½ï¿½Zï¿½Xï¿½ï¿½ï¿½Æ‚ï¿½PUï¿½gï¿½pï¿½ï¿½
     GetProcessCPUState
-ƒvƒƒZƒX‚²‚Æ‚Ìƒƒ‚ƒŠŽg—pó‹µ
+ï¿½vï¿½ï¿½ï¿½Zï¿½Xï¿½ï¿½ï¿½Æ‚Ìƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½
     GetProcessMemoryState
-ƒlƒbƒgƒ[ƒN‚Ì‘—ŽóM‘¬“x(B/s)
-ƒVƒXƒeƒ€‹N“®Žž‚©‚ç‚Ìƒlƒbƒgƒ[ƒN‘“]‘——Ê(Bytes)
+ï¿½lï¿½bï¿½gï¿½ï¿½ï¿½[ï¿½Nï¿½Ì‘ï¿½ï¿½ï¿½ï¿½ï¿½x(B/s)
+ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½lï¿½bï¿½gï¿½ï¿½ï¿½[ï¿½Nï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½Bytes)
     OpenNetworkMonitor
     GetNetWorkMonitor
     CloseNetworkMonitor
-ƒpƒtƒH[ƒ}ƒ“ƒXƒ‚ƒjƒ^‚ÅŽæ“¾‚Å‚«‚éŠeŽí‚Ìî•ñ
+ï¿½pï¿½tï¿½Hï¿½[ï¿½}ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½jï¿½^ï¿½ÅŽæ“¾ï¿½Å‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     SelectCounter
     OpenCounter
     GetCounter
@@ -28,176 +28,152 @@
 
 
 
-œŠÖ”Žd—l
+ï¿½ï¿½ï¿½Öï¿½ï¿½dï¿½l
 
-›ƒVƒXƒeƒ€‘S‘Ì—p
+ï¿½ï¿½ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½Sï¿½Ì—p
 GetCPUState(period=0)
-  Žw’è‚µ‚½ŠúŠÔ‚ÌƒVƒXƒeƒ€‘S‘Ì‚ÌCPUŽg—p—¦‚ðŽæ“¾‚·‚é
-  ˆø”
+  ï¿½wï¿½è‚µï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ÌƒVï¿½Xï¿½eï¿½ï¿½ï¿½Sï¿½Ì‚ï¿½PUï¿½gï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½
     period
-      Œv‘ª‚·‚éŽžŠÔ‚ðƒ~ƒŠ•b‚ÅŽw’è
-      ‚±‚±‚ÅŽw’è‚µ‚½ŽžŠÔ‚¾‚¯AŠÖ”“à‚ÅSleep‚·‚é
-      0(È—ªŽž)‚ÍA‘O‰ñŽæ“¾Žž‚©‚ç¡‰ñŽæ“¾‚ÌŠÔ‚ÌCPUŽg—p—¦‚ªŽæ“¾‚³‚ê‚é
-  •Ô‚è’l
-    Žw’è‚µ‚½ŽžŠÔ‚ÌŠÔ‚ÌCPUŽg—p—¦‚ð¬”‚Å
+      ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½éŽžï¿½Ô‚ï¿½ï¿½ï¿½bï¿½ÅŽwï¿½ï¿½      ï¿½ï¿½ï¿½ï¿½ï¿½ÅŽwï¿½è‚µï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ï¿½ï¿½ï¿½ï¿½Aï¿½Öï¿½ï¿½ï¿½Sleepï¿½ï¿½ï¿½ï¿½      0(ï¿½È—ï¿½ï¿½ï¿½)ï¿½ÍAï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç¡ï¿½ï¿½ï¿½ï¿½ÌŠÔ‚ï¿½PUï¿½gï¿½pï¿½ï¿½ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½
+  ï¿½Ô‚ï¿½
+    ï¿½wï¿½è‚µï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ÌŠÔ‚ï¿½PUï¿½gï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 GetMemoryState(type=0,mode=1)
-  ƒVƒXƒeƒ€‘S‘Ì‚Ìƒƒ‚ƒŠŽg—p—Ê‚â‹ó‚«—e—Ê‚ðŽæ“¾‚·‚é
-  ˆø”
+  ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½Sï¿½Ì‚Ìƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½pï¿½Ê‚ï¿½ï¿½ï¿½ï¿½eï¿½Ê‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½
     type
-      0 •¨—ƒƒ‚ƒŠ
-      1 ƒy[ƒWƒtƒ@ƒCƒ‹
-      2 ‰¼‘zƒAƒhƒŒƒX‹óŠÔ
+      0 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+      1 ï¿½yï¿½[ï¿½Wï¿½tï¿½@ï¿½Cï¿½ï¿½
+      2 ï¿½ï¿½ï¿½zï¿½Aï¿½hï¿½ï¿½ï¿½Xï¿½ï¿½
     mode
-      0 ‘—e—Ê
-      1 ‹ó‚«—e—Ê
-  •Ô‚è’l
-    —v‹‚³‚ê‚½’l(Bytes)
+      0 ï¿½ï¿½ï¿½eï¿½ï¿½
+      1 ï¿½ó‚«—eï¿½ï¿½
+  ï¿½Ô‚ï¿½
+    ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½l(Bytes)
 
 GetSystemPowerStatus(type=0)
-  ƒm[ƒgPC‚È‚Ç‚ÌƒoƒbƒeƒŠ[ó‘Ô‚âŽc—Ê‚ðŽæ“¾‚·‚é
-  ˆø”
+  ï¿½mï¿½[ï¿½gPCï¿½È‚Ç‚Ìƒoï¿½bï¿½eï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½Ê‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½
     type
-      Žæ“¾‚·‚éî•ñ‚ÌŽí—Þ‚ðŽw’è
-        0 ƒoƒbƒeƒŠ[‚Ì—L–³‚Æó‘Ô‚ðŽæ“¾
-          •Ô‚è’l‚ÍˆÈ‰º‚Ì•¨‚É‚È‚é
-            0 ƒoƒbƒeƒŠ[–³‚µ
-            1 •ú“d’†
-            2 [“d’†
-            3 AC“dŒ¹Žg—p’†
-        1 ƒoƒbƒeƒŠ[‚ÌŽc—Ê‚ð%‚ÅŽæ“¾(•s–¾‚ÌŽž255)
-        2 ƒoƒbƒeƒŠ[‚ÌŽc‚è•b”‚ðŽæ“¾(Žæ“¾•s”\‚ÌŽž0xFFFFFFFF)
-        3 ƒoƒbƒeƒŠ[‚ÌÅ‘å•b”‚ðŽæ“¾(Žæ“¾•s”\‚ÌŽž0xFFFFFFFF)
-  •Ô‚è’l
-    Žæ“¾‚µ‚½’l
+      ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½        0 ï¿½oï¿½bï¿½eï¿½ï¿½ï¿½[ï¿½Ì—Lï¿½ï¿½ï¿½Æï¿½ï¿½ï¿½
+          ï¿½Ô‚ï¿½ï¿½ÍˆÈ‰ï¿½ï¿½Ì•ï¿½ï¿½É‚È‚ï¿½            0 ï¿½oï¿½bï¿½eï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½
+            1 ï¿½ï¿½ï¿½dï¿½ï¿½
+            2 ï¿½[ï¿½dï¿½ï¿½
+            3 ACï¿½dï¿½ï¿½ï¿½gï¿½pï¿½ï¿½
+        1 ï¿½oï¿½bï¿½eï¿½ï¿½ï¿½[ï¿½ÌŽcï¿½Ê‚ï¿½ï¿½æ“¾(ï¿½sï¿½ï¿½ï¿½ÌŽï¿½255)
+        2 ï¿½oï¿½bï¿½eï¿½ï¿½ï¿½[ï¿½ÌŽcï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½æ“¾ï¿½sï¿½\ï¿½ÌŽï¿½0xFFFFFFFF)
+        3 ï¿½oï¿½bï¿½eï¿½ï¿½ï¿½[ï¿½ÌÅ‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½æ“¾ï¿½sï¿½\ï¿½ÌŽï¿½0xFFFFFFFF)
+  ï¿½Ô‚ï¿½
+    ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½ï¿½l
 
-›“Á’èƒvƒƒZƒX—p
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½Xï¿½p
 GetProcessCPUState(pid,period=0)
-  Žw’èƒvƒƒZƒX‚ÌCPUŽg—p—¦‚ðŽæ“¾‚·‚é
-  ˆø”
+  ï¿½wï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½Xï¿½ï¿½PUï¿½gï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½
     pid
-      ƒvƒƒZƒXID(WinGet,var,PID‚È‚Ç‚ÅŽæ“¾‚Å‚«‚é)
+      ï¿½vï¿½ï¿½ï¿½Zï¿½XID(WinGet,var,PIDï¿½È‚Ç‚ÅŽæ“¾ï¿½Å‚ï¿½ï¿½ï¿½
     period
-      Œv‘ª‚·‚éŽžŠÔ‚ðƒ~ƒŠ•b‚ÅŽw’è
-      ‚±‚±‚ÅŽw’è‚µ‚½ŽžŠÔ‚¾‚¯AŠÖ”“à‚ÅSleep‚·‚é
-      0(È—ªŽž)‚ÍA‘O‰ñŽæ“¾Žž‚©‚ç¡‰ñŽæ“¾‚ÌŠÔ‚ÌCPUŽg—p—¦‚ªŽæ“¾‚³‚ê‚é
-  •Ô‚è’l
-    Žw’è‚µ‚½ŽžŠÔ‚ÌŠÔ‚ÌCPUŽg—p—¦‚ð¬”‚Å
+      ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½éŽžï¿½Ô‚ï¿½ï¿½ï¿½bï¿½ÅŽwï¿½ï¿½      ï¿½ï¿½ï¿½ï¿½ï¿½ÅŽwï¿½è‚µï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ï¿½ï¿½ï¿½ï¿½Aï¿½Öï¿½ï¿½ï¿½Sleepï¿½ï¿½ï¿½ï¿½      0(ï¿½È—ï¿½ï¿½ï¿½)ï¿½ÍAï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç¡ï¿½ï¿½ï¿½ï¿½ÌŠÔ‚ï¿½PUï¿½gï¿½pï¿½ï¿½ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½
+  ï¿½Ô‚ï¿½
+    ï¿½wï¿½è‚µï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ÌŠÔ‚ï¿½PUï¿½gï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
 GetProcessMemoryState(pid,type=8)
-  Žw’èƒvƒƒZƒX‚Ìƒƒ‚ƒŠŽg—pó‘Ô‚ðŽæ“¾‚·‚é
-  ˆø”
+  ï¿½wï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½Xï¿½Ìƒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½pï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½
     pid
-      ƒvƒƒZƒXID(WinGet,var,PID‚È‚Ç‚ÅŽæ“¾‚Å‚«‚é)
+      ï¿½vï¿½ï¿½ï¿½Zï¿½XID(WinGet,var,PIDï¿½È‚Ç‚ÅŽæ“¾ï¿½Å‚ï¿½ï¿½ï¿½
     type
-      1 ƒy[ƒWƒtƒHƒ‹ƒgƒJƒEƒ“ƒg
-      2 ƒ[ƒLƒ“ƒOƒZƒbƒgÅ‚’l
-      3 ƒ[ƒLƒ“ƒOƒZƒbƒgŒ»Ý’l
-      4 ƒy[ƒWƒv[ƒ‹Å‘å’l
-      5 ƒy[ƒWƒv[ƒ‹Œ»Ý’l
-      6 ”ñƒy[ƒWƒv[ƒ‹Å‘å’l
-      7 ”ñƒy[ƒWƒv[ƒ‹Œ»Ý’l
-      8 ‰¼‘zƒƒ‚ƒŠƒTƒCƒYŒ»Ý’l(ƒfƒtƒHƒ‹ƒg)
-      9 ‰¼‘zƒƒ‚ƒŠƒTƒCƒYÅ‘å’l
-  •Ô‚è’l
-    Žæ“¾‚µ‚½’l
+      1 ï¿½yï¿½[ï¿½Wï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½Jï¿½Eï¿½ï¿½ï¿½g
+      2 ï¿½ï¿½ï¿½[ï¿½Lï¿½ï¿½ï¿½Oï¿½Zï¿½bï¿½gï¿½Åï¿½ï¿½l
+      3 ï¿½ï¿½ï¿½[ï¿½Lï¿½ï¿½ï¿½Oï¿½Zï¿½bï¿½gï¿½ï¿½ï¿½Ý’l
+      4 ï¿½yï¿½[ï¿½Wï¿½vï¿½[ï¿½ï¿½ï¿½Å‘ï¿½
+      5 ï¿½yï¿½[ï¿½Wï¿½vï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Ý’l
+      6 ï¿½ï¿½[ï¿½Wï¿½vï¿½[ï¿½ï¿½ï¿½Å‘ï¿½
+      7 ï¿½ï¿½[ï¿½Wï¿½vï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Ý’l
+      8 ï¿½ï¿½ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Tï¿½Cï¿½Yï¿½ï¿½ï¿½Ý’l(ï¿½fï¿½tï¿½Hï¿½ï¿½ï¿½g)
+      9 ï¿½ï¿½ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Tï¿½Cï¿½Yï¿½Å‘ï¿½
+  ï¿½Ô‚ï¿½
+    ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½ï¿½l
 
 
-›ƒlƒbƒgƒ[ƒNƒ‚ƒjƒ^[
-Žæ“¾‚µ‚½’l‚ÍˆÈ‰º‚ÌƒOƒ[ƒoƒ‹•Ï”‚ÉŠi”[‚³‚ê‚é
+ï¿½ï¿½ï¿½lï¿½bï¿½gï¿½ï¿½ï¿½[ï¿½Nï¿½ï¿½ï¿½jï¿½^ï¿½[
+ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ÍˆÈ‰ï¿½ï¿½ÌƒOï¿½ï¿½ï¿½[ï¿½oï¿½ï¿½ï¿½Ïï¿½ï¿½ÉŠiï¿½[ï¿½ï¿½ï¿½ï¿½
 Network_InPS
-    1•b‚ ‚½‚è‚ÌŽóMƒf[ƒ^—Ê(B/s)
+    1ï¿½bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½B/s)
 Network_OutPS
-    1•b‚ ‚½‚è‚Ì‘—Mƒf[ƒ^—Ê(B/s)
+    1ï¿½bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Mï¿½fï¿½[ï¿½^ï¿½ï¿½B/s)
 Network_In
-    ƒVƒXƒeƒ€‹N“®Žž‚©‚ç‚ÌŽóMƒf[ƒ^‘—Ê
+    ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½
 Network_Out
-    ƒVƒXƒeƒ€‹N“®Žž‚©‚ç‚Ì‘—Mƒf[ƒ^‘—Ê
+    ï¿½Vï¿½Xï¿½eï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Mï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½ï¿½
 NumNetwork
-    ƒlƒbƒgƒ[ƒNƒCƒ“ƒ^[ƒtƒFƒCƒX‚Ì”
+    ï¿½lï¿½bï¿½gï¿½ï¿½ï¿½[ï¿½Nï¿½Cï¿½ï¿½ï¿½^ï¿½[ï¿½tï¿½Fï¿½Cï¿½Xï¿½Ìï¿½
 Network_1_InPS
 Network_1_OutPS
 Network_1_In
 Network_1_Out
-    ƒlƒbƒgƒ[ƒNƒCƒ“ƒ^[ƒtƒFƒCƒXŒÂ•Ê‚Ì”’l
+    ï¿½lï¿½bï¿½gï¿½ï¿½ï¿½[ï¿½Nï¿½Cï¿½ï¿½ï¿½^ï¿½[ï¿½tï¿½Fï¿½Cï¿½Xï¿½Â•Ê‚Ìï¿½ï¿½l
 
 
 OpenNetworkMonitor()
-  ƒlƒbƒgƒ[ƒNƒ‚ƒjƒ^[‚Ì‰Šú‰»‚ðs‚¤
+  ï¿½lï¿½bï¿½gï¿½ï¿½ï¿½[ï¿½Nï¿½ï¿½ï¿½jï¿½^ï¿½[ï¿½Ìï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 GetNetWorkMonitor(period=0)
-  ƒlƒbƒgƒ[ƒNƒ‚ƒjƒ^[‚Ì’l‚ðXV‚·‚é
-  ˆø”
+  ï¿½lï¿½bï¿½gï¿½ï¿½ï¿½[ï¿½Nï¿½ï¿½ï¿½jï¿½^ï¿½[ï¿½Ì’lï¿½ï¿½Vï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½
     period
-      Œv‘ª‚·‚éŽžŠÔ‚ðƒ~ƒŠ•b‚ÅŽw’è
-      ‚±‚±‚ÅŽw’è‚µ‚½ŽžŠÔ‚¾‚¯AŠÖ”“à‚ÅSleep‚·‚é
-      0(È—ªŽž)‚ÍA‘O‰ñŽæ“¾Žž‚©‚ç¡‰ñŽæ“¾‚ÌŠÔ‚ÌB/s‚É‚È‚é
-
+      ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½éŽžï¿½Ô‚ï¿½ï¿½ï¿½bï¿½ÅŽwï¿½ï¿½      ï¿½ï¿½ï¿½ï¿½ï¿½ÅŽwï¿½è‚µï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ï¿½ï¿½ï¿½ï¿½Aï¿½Öï¿½ï¿½ï¿½Sleepï¿½ï¿½ï¿½ï¿½      0(ï¿½È—ï¿½ï¿½ï¿½)ï¿½ÍAï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç¡ï¿½ï¿½ï¿½ï¿½ÌŠÔ‚ï¿½/sï¿½É‚È‚ï¿½
 CloseNetworkMonitor()
-  ƒlƒbƒgƒ[ƒNƒ‚ƒjƒ^[‚ðI—¹‚µADLL‚Æ\‘¢‘Ì‚ð‰ð•ú‚·‚é
+  ï¿½lï¿½bï¿½gï¿½ï¿½ï¿½[ï¿½Nï¿½ï¿½ï¿½jï¿½^ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ADLLï¿½Æ\ï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 
-
-›ƒpƒtƒH[ƒ}ƒ“ƒXƒJƒEƒ“ƒ^[
-ƒpƒtƒH[ƒ}ƒ“ƒXƒJƒEƒ“ƒ^[‚Å‚ÍA—lX‚Èî•ñ‚ðŠÄŽ‹‚Å‚«‚éB
-Žæ“¾‚µ‚½‚¢î•ñ‚ÍƒJƒEƒ“ƒ^[–¼‚ÅŽw’è‚·‚éB
-SelectCounterŠÖ”‚ðŽg—p‚·‚ê‚ÎA—˜—p‰Â”\‚ÈƒJƒEƒ“ƒ^[‚ðƒ_ƒCƒAƒƒO‚Å‘I‘ð‚µ‚ÄA
-ƒJƒEƒ“ƒ^[–¼‚ðŽæ“¾‚Å‚«‚éB
-ƒJƒEƒ“ƒ^[–¼‚Ì—á‚Æ‚µ‚Ä‚ÍAˆÈ‰º‚Ì‚æ‚¤‚È•¨‚ª‚ ‚éB
+ï¿½ï¿½ï¿½pï¿½tï¿½Hï¿½[ï¿½}ï¿½ï¿½ï¿½Xï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[
+ï¿½pï¿½tï¿½Hï¿½[ï¿½}ï¿½ï¿½ï¿½Xï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½Å‚ÍAï¿½lï¿½Xï¿½Èï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½
+ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÍƒJï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½ï¿½ÅŽwï¿½è‚·ï¿½ï¿½
+SelectCounterï¿½Öï¿½ï¿½ï¿½pï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½pï¿½Â”\ï¿½ÈƒJï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½Å‘Iï¿½ï¿½ÄA
+ï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½
+ï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½ï¿½Ì—ï¿½ï¿½ï¿½ï¿½Ä‚ÍAï¿½È‰ï¿½ï¿½Ì‚æ‚¤ï¿½È•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 \LogicalDisk(_Total)\% Disk Read Time
-    ƒfƒBƒXƒN‚ª“Ç‚Ýž‚Ý‚ðs‚Á‚Ä‚¢‚½ŽžŠÔ‚ÌŠ„‡
+    ï¿½fï¿½Bï¿½Xï¿½Nï¿½ï¿½ï¿½Ç‚Ýï¿½ï¿½Ý‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ÌŠï¿½ï¿½ï¿½
 \LogicalDisk(_Total)\% Disk Write Time
-    ƒfƒBƒXƒN‚ª‘‚«ž‚Ý‚ðs‚Á‚Ä‚¢‚½ŽžŠÔ‚ÌŠ„‡
+    ï¿½fï¿½Bï¿½Xï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ÌŠï¿½ï¿½ï¿½
 \LogicalDisk(_Total)\% Disk Time
-    ƒfƒBƒXƒN‚ÉƒAƒNƒZƒX‚ðs‚Á‚Ä‚¢‚½ŽžŠÔ‚ÌŠ„‡
+    ï¿½fï¿½Bï¿½Xï¿½Nï¿½ÉƒAï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ÌŠï¿½ï¿½ï¿½
 \LogicalDisk(_Total)\% Idle Time
-    ƒfƒBƒXƒN‚ÉƒAƒNƒZƒX‚ðs‚Á‚Ä‚¢‚È‚©‚Á‚½ŽžŠÔ‚ÌŠ„‡
+    ï¿½fï¿½Bï¿½Xï¿½Nï¿½ÉƒAï¿½Nï¿½Zï¿½Xï¿½ï¿½ï¿½Ä‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ÌŠï¿½ï¿½ï¿½
 
-u_Totalv‚Ì‘ã‚í‚è‚ÉuD:v‚Ì‚æ‚¤‚Èƒhƒ‰ƒCƒu–¼‚àŽw’è‚Å‚«‚é(HDD‚Ì‚Ý)B
-Disk Time+Idle Time ‚Í100‚É‚È‚é‚Æ‚ÍŒÀ‚ç‚È‚¢B
-ƒXƒNƒŠƒvƒg’†‚É‹Lq‚·‚é‚Æ‚«‚ÍAu%v‚ðu`%v‚ÆƒGƒXƒP[ƒv‚µ‚È‚¯‚ê‚Î‚È‚ç‚È‚¢ê‡‚ª‚ ‚é‚±‚Æ‚É’ˆÓB
+ï¿½u_Totalï¿½vï¿½Ì‘ï¿½ï¿½ï¿½ï¿½uD:ï¿½vï¿½Ì‚æ‚¤ï¿½Èƒhï¿½ï¿½ï¿½Cï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½DDï¿½Ì‚ï¿½ï¿½B
+Disk Time+Idle Time ï¿½ï¿½00ï¿½É‚È‚ï¿½ï¿½ÍŒï¿½ï¿½ï¿½ï¿½ï¿½B
+ï¿½Xï¿½Nï¿½ï¿½ï¿½vï¿½gï¿½ï¿½ï¿½É‹Lï¿½qï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÍAï¿½u%ï¿½vï¿½ï¿½%ï¿½vï¿½ÆƒGï¿½Xï¿½Pï¿½[ï¿½vï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½ê‡ï¿½ï¿½ï¿½ï¿½ï¿½é‚±ï¿½Æ‚É’ï¿½ï¿½ÓB
 
-ƒJƒEƒ“ƒ^[–¼‚ð‰üs‹æØ‚è‚Å—ñ‹“‚µ‚½‚à‚Ì‚ðOpenCounter‚Ìˆø”‚É“n‚µ‚Ä“o˜^‚·‚éB
-GetCounter‚ðŽÀs‚·‚é‚ÆAƒOƒ[ƒoƒ‹•Ï”‚ÉƒJƒEƒ“ƒ^[‚Ì’l‚ªŠi”[‚³‚ê‚éB
-1s–Ú‚ÅŽw’è‚µ‚½ƒJƒEƒ“ƒ^[‚Ì’l‚ÍuCounter_1v‚ÉA2s–Ú‚ÍuCounter_2v‚ÉŠi”[‚³‚ê‚éB
+ï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ñ‹“‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½nCounterï¿½Ìˆï¿½ï¿½ï¿½ï¿½É“nï¿½ï¿½ï¿½Ä“oï¿½^ï¿½ï¿½ï¿½ï¿½
+GetCounterï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Oï¿½ï¿½ï¿½[ï¿½oï¿½ï¿½ï¿½Ïï¿½ï¿½ÉƒJï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½Ì’lï¿½ï¿½ï¿½iï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½B
+1ï¿½sï¿½Ú‚ÅŽwï¿½è‚µï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½Ì’lï¿½ÍuCounter_1ï¿½vï¿½ÉA2ï¿½sï¿½Ú‚ÍuCounter_2ï¿½vï¿½ÉŠiï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½B
 
 
 
 SelectCounter(default="")
-  ƒJƒEƒ“ƒ^[‘I‘ðƒ_ƒCƒAƒƒO‚ð•\Ž¦‚µAƒ†[ƒU[‚ª“ü—Í‚µ‚½ƒJƒEƒ“ƒ^[–¼‚ð•Ô‚·B
-  ƒ_ƒCƒAƒƒO‚ª•\Ž¦‚³‚ê‚é‚Ü‚Å‚É”•b’ö“x‚©‚©‚éê‡‚ª‚ ‚é
-
-  ˆø”
+  ï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½Iï¿½ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½[ï¿½Uï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ï¿½ï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½B
+  ï¿½_ï¿½Cï¿½Aï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚Å‚Éï¿½ï¿½bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  ï¿½ï¿½ï¿½ï¿½
     default
-      Å‰‚É•\Ž¦‚·‚éƒJƒEƒ“ƒ^[–¼
-  •Ô‚è’l
-    ‘I‘ð‚³‚ê‚½ƒJƒEƒ“ƒ^[–¼
-    ƒLƒƒƒ“ƒZƒ‹‚³‚ê‚½ê‡AÅ‰‚É•\Ž¦‚³‚ê‚Ä‚¢‚½‚à‚Ì‚É‚È‚éB
+      ï¿½Åï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½
+  ï¿½Ô‚ï¿½
+    ï¿½Iï¿½ï¿½ê‚½ï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½
+    ï¿½Lï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ê‡ï¿½Aï¿½Åï¿½ï¿½É•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‚È‚ï¿½
 
 OpenCounter(Counters="")
-  ƒpƒtƒH[ƒ}ƒ“ƒXƒJƒEƒ“ƒ^[‚ð‰Šú‰»‚·‚é
-  ‰Šú‰»‚É‚Í”•b’ö“x‚©‚©‚éê‡‚ª‚ ‚é
-
-  ˆø”
+  ï¿½pï¿½tï¿½Hï¿½[ï¿½}ï¿½ï¿½ï¿½Xï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É‚Íï¿½ï¿½bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  ï¿½ï¿½ï¿½ï¿½
     Counters
-      ƒJƒEƒ“ƒ^[–¼‚ð‰üs‹æØ‚è‚Å—ñ‹“‚µ‚½•¶Žš—ñ
-  •Ô‚è’l
-    DLL‚Ìƒ[ƒh‚É¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
+      ï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ñ‹“‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô‚ï¿½
+    DLLï¿½Ìƒï¿½ï¿½[ï¿½hï¿½Éï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½
 
 GetCounter(period=0)
-  ƒpƒtƒH[ƒ}ƒ“ƒXƒJƒEƒ“ƒ^[‚Ì’l‚ðŽæ“¾‚·‚é
-
-  ˆø”
+  ï¿½pï¿½tï¿½Hï¿½[ï¿½}ï¿½ï¿½ï¿½Xï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½Ì’lï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  ï¿½ï¿½ï¿½ï¿½
     period
-      Œv‘ª‚·‚éŽžŠÔ‚ðƒ~ƒŠ•b‚ÅŽw’è
-      ‚±‚±‚ÅŽw’è‚µ‚½ŽžŠÔ‚¾‚¯AŠÖ”“à‚ÅSleep‚·‚é
-      0(È—ªŽž)‚ÍA‘O‰ñŽæ“¾Žž‚©‚ç¡‰ñŽæ“¾‚ÌŠÔ‚ÌCPUŽg—p—¦‚ªŽæ“¾‚³‚ê‚é
+      ï¿½vï¿½ï¿½ï¿½ï¿½ï¿½éŽžï¿½Ô‚ï¿½ï¿½ï¿½bï¿½ÅŽwï¿½ï¿½      ï¿½ï¿½ï¿½ï¿½ï¿½ÅŽwï¿½è‚µï¿½ï¿½ï¿½ï¿½ï¿½Ô‚ï¿½ï¿½ï¿½ï¿½Aï¿½Öï¿½ï¿½ï¿½Sleepï¿½ï¿½ï¿½ï¿½      0(ï¿½È—ï¿½ï¿½ï¿½)ï¿½ÍAï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç¡ï¿½ï¿½ï¿½ï¿½ÌŠÔ‚ï¿½PUï¿½gï¿½pï¿½ï¿½ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½
 
 CloseCounter()
-  ƒpƒtƒH[ƒ}ƒ“ƒXƒJƒEƒ“ƒ^[‚ðI—¹‚µADLL‚Æƒnƒ“ƒhƒ‹‚ð‰ð•ú‚·‚é
-
+  ï¿½pï¿½tï¿½Hï¿½[ï¿½}ï¿½ï¿½ï¿½Xï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ADLLï¿½Æƒnï¿½ï¿½ï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 */
 SAlloc(size){
 	return DllCall("GlobalAlloc",UInt,0x40,UInt,size,UInt)

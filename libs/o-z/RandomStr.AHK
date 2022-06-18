@@ -1,4 +1,4 @@
-RandomStr(length := 12, OnlyAlphaNum := 1, lowCharacter := 48, HiCharacter := 122)
+﻿RandomStr(length := 12, OnlyAlphaNum := 1, lowCharacter := 48, HiCharacter := 122)
 {
 	loop % length
 	{

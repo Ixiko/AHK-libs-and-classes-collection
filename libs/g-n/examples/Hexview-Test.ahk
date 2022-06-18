@@ -1,4 +1,4 @@
-#SingleInstance, force
+﻿#SingleInstance, force
 
 s := "123456789ABCDEF0 This is some very nice binary data"
 s := s s s s s s s s s

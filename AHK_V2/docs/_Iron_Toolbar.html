@@ -1,0 +1,776 @@
+<html><head><style>/*
+Copyright (c) 2017 Chris Patuzzo
+https://twitter.com/chrispatuzzo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px;
+  color: #333;
+}
+
+body > *:first-child {
+  margin-top: 0 !important;
+}
+
+body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a.absent {
+  color: #cc0000;
+}
+
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative;
+}
+
+h2:first-child, h1:first-child, h1:first-child + h2, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  text-decoration: none;
+}
+
+h1 tt, h1 code {
+  font-size: inherit;
+}
+
+h2 tt, h2 code {
+  font-size: inherit;
+}
+
+h3 tt, h3 code {
+  font-size: inherit;
+}
+
+h4 tt, h4 code {
+  font-size: inherit;
+}
+
+h5 tt, h5 code {
+  font-size: inherit;
+}
+
+h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: black;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777777;
+  font-size: 14px;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0;
+}
+
+hr {
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h1:first-child + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0;
+}
+
+li p.first {
+  display: inline-block;
+}
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul :first-child, ol :first-child {
+  margin-top: 0;
+}
+
+ul :last-child, ol :last-child {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt > :first-child {
+  margin-top: 0;
+}
+
+dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd > :first-child {
+  margin-top: 0;
+}
+
+dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777;
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+table {
+  padding: 0;
+  border-collapse:collapse;
+}
+table tr {
+  border-top: 1px solid #cccccc;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+table tr th {
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr td {
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr th :first-child, table tr td :first-child {
+  margin-top: 0;
+}
+
+table tr th :last-child, table tr td :last-child {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+span.frame > span {
+  border: 1px solid #dddddd;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+span.frame span img {
+  display: block;
+  float: left;
+}
+
+span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+span.float-left span {
+  margin: 13px 0 0;
+}
+
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+</style><style>/*
+    Paraíso (dark)
+    Created by Jan T. Sott (http://github.com/idleberg)
+    Inspired by the art of Rubens LP (http://www.rubenslp.com.br)
+*/
+
+/* Paraíso Comment */
+.hljs-comment,
+.hljs-title {
+  color: #8d8687;
+}
+
+/* Paraíso Red */
+.hljs-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-regexp,
+.hljs-name,
+.ruby .hljs-constant,
+.xml .hljs-tag .hljs-title,
+.xml .hljs-pi,
+.xml .hljs-doctype,
+.html .hljs-doctype,
+.css .hljs-id,
+.css .hljs-class,
+.css .hljs-pseudo {
+  color: #ef6155;
+}
+
+/* Paraíso Orange */
+.hljs-number,
+.hljs-preprocessor,
+.hljs-built_in,
+.hljs-literal,
+.hljs-params,
+.hljs-constant {
+  color: #f99b15;
+}
+
+/* Paraíso Yellow */
+.ruby .hljs-class .hljs-title,
+.css .hljs-rule .hljs-attribute {
+  color: #fec418;
+}
+
+/* Paraíso Green */
+.hljs-string,
+.hljs-value,
+.hljs-inheritance,
+.hljs-header,
+.ruby .hljs-symbol,
+.xml .hljs-cdata {
+  color: #48b685;
+}
+
+/* Paraíso Aqua */
+.css .hljs-hexcolor {
+  color: #5bc4bf;
+}
+
+/* Paraíso Blue */
+.hljs-function,
+.python .hljs-decorator,
+.python .hljs-title,
+.ruby .hljs-function .hljs-title,
+.ruby .hljs-title .hljs-keyword,
+.perl .hljs-sub,
+.javascript .hljs-title,
+.coffeescript .hljs-title {
+  color: #06b6ef;
+}
+
+/* Paraíso Purple */
+.hljs-keyword,
+.javascript .hljs-function {
+  color: #815ba4;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #2f1e2e;
+  color: #a39e9b;
+  padding: 0.5em;
+  -webkit-text-size-adjust: none;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+  opacity: 0.5;
+}
+</style><style>/* Style for the menu, possible positions/visibility */
+#__markdown-viewer__tools {
+  margin:0;
+  padding:0;
+  background:#555;
+  color:#eee;
+  box-shadow:0 -1px rgba(0,0,0,.5) inset;
+  border-radius: .5em;
+  max-width: 25%;
+  min-width: 2.8em;
+  min-height: 3em;
+  z-index: 2147483647;
+  position: relative;
+}
+
+#__markdown-viewer__tools.floating {
+  float:right;
+  margin: 0 0 .5em .5em;
+}
+
+#__markdown-viewer__tools.fixed {
+  max-height: calc(100vh - 1em);
+  overflow-y: auto;
+  position:fixed;
+  top:.5em;
+  right:1em;
+}
+
+#__markdown-viewer__tools.hidden {
+  display:none;
+}
+
+@media print {
+  #__markdown-viewer__tools {
+    display: none;
+  }
+}
+
+#__markdown-viewer__tools a[href]:after {
+  content: "";
+}
+
+/* Style for the menu top */
+label[for=__markdown-viewer__show-tools] {
+  display:block;
+  padding:0 18px 0 12px;
+  line-height:3em;
+  background:#333;
+  cursor:pointer;
+  border-radius: .5em;
+  min-height: 3em;
+  width: .9em;
+  position: absolute;
+  right: 0;
+}
+
+input#__markdown-viewer__show-tools:not(:checked) ~ label {
+  margin-left: -.9em;
+}
+
+input#__markdown-viewer__show-tools:checked ~ label {
+}
+
+label[for=__markdown-viewer__show-tools]:before{
+}
+
+label[for=__markdown-viewer__show-tools]:after {
+  content:"";
+  display:inline-block;
+  float:right;
+  margin-top:1.5em;
+  right:5px;
+  width:0;
+  height:0;
+  border-style: solid;
+  border-color: rgba(255,255,255,.5) transparent;
+  border-width: 4px 4px 0 4px;
+  transition:border-bottom .1s, border-top .1s .1s;
+}
+
+input#__markdown-viewer__show-tools:checked ~ label:after {
+  border-top-width:0;
+  border-bottom-width:4px;
+  transition:border-top .1s, border-bottom .1s .1s;
+}
+
+/* hide the input that tracks the menu's visibility */
+input#__markdown-viewer__show-tools {
+  display:none;
+}
+
+/* style, and hide/show menu items based on the input being checked */
+#__markdown-viewer__tools > .toggleable {
+  overflow:hidden;
+  transition-property:max-height, max-width, padding-top, padding-bottom, margin-top, margin-bottom;
+  transition-duration:0.5s;
+}
+
+input#__markdown-viewer__show-tools:checked ~ .toggleable {
+  /* maxes should be 'none' or infinite values, however those are not aniimatable, so just put something big enough. */
+  max-width: 2000px;
+  max-height: 2000px;
+  overflow-y: auto;
+  transition-timing-function:ease-in;
+}
+
+input#__markdown-viewer__show-tools:not(:checked) ~ .toggleable {
+  max-height:0;
+  max-width:0;
+  transition-timing-function:ease-out;
+  padding-top:0;
+  padding-bottom:0;
+  margin-top:0;
+  margin-bottom:0;
+}
+
+/* style the table of contents and its items */
+#__markdown-viewer__toc {
+  display:block;
+  padding: .5em;
+  border:0;
+}
+
+#__markdown-viewer__toc::before {
+  content: "Table of Contents";
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#__markdown-viewer__toc {
+  margin-top: 2em;
+}
+
+#__markdown-viewer__tools.fixed input#__markdown-viewer__show-tools:checked ~ #__markdown-viewer__toc {
+  max-height: calc(100vh - 16em);
+}
+
+input#__markdown-viewer__show-tools:checked ~ #__markdown-viewer__toc::before {
+  position: absolute;
+  top: .5em;
+  left: 0;
+  right: 3em;
+}
+
+#__markdown-viewer__tools select {
+  max-width: 40%;
+  margin: 0 .5em;
+}
+
+#__markdown-viewer__tools select,
+#__markdown-viewer__toc * {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+#__markdown-viewer__toc a {
+  color: white;
+  text-decoration: none;
+}
+
+#__markdown-viewer__toc ul {
+  list-style: inside "• ";
+  padding: 0;
+  margin: 0;
+}
+
+#__markdown-viewer__toc ul ul {
+  padding-left: 1.5em;
+}
+
+
+/* Style the "Download Source" button at the end of the menu */
+#__markdown-viewer__tools > p {
+  text-align:center;
+  padding: 0 .5em;
+}
+
+#__markdown-viewer__download {
+  /* appearance: button; */
+  -moz-appearance: button !important;
+  display:inline-block;
+  text-align: center;
+  text-decoration:none;
+  color:#000;
+  margin: .5em auto;
+}
+</style><meta name="viewport" content="width=device-width, initial-scale=1"><title>IronToolbar for AHK2</title><style>html, body, table tr td, table tr th
+{
+  background-color: #000C17;
+  color: #AAAAAA;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-size: 16px;
+  height: 100%;
+}
+img {opacity: 0.5}
+body {
+  max-width: 1280px;
+  border-right: 1px solid #00ACAF;
+  border-left: 1px solid #00ACAF;
+  padding: 45px;
+  margin:auto;
+}
+a:link { color:cyan; }
+a:visited { color:cyan; }
+a:hover { color:lime; text-decoration: underline; }
+hr {
+  background-color: #00ACAF;
+  height: 1px;
+}
+h1, h2 {
+  color: cyan;
+  border-bottom: 1px solid #00ACAF;
+}
+h3, h4, h5, h6 {
+  color: cyan;
+}
+
+pre {
+  background-color: #000C27;
+  border: 1px solid yellow;
+  padding: 10px;
+  font-family: Consolas;
+  font-size: 16px;
+}
+code {
+  /* color: yellow; */
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #000C27;
+  border: 1px solid #00ACAF;
+  font-family: Consolas;
+  font-size: 16px;
+}
+
+table tr th, table tr td {
+  border-color: #00ACAF
+}
+
+blockquote {
+  border-color: #0000FF;
+}</style></head><body><div id="__markdown-viewer__tools" class="fixed"><input type="checkbox" id="__markdown-viewer__show-tools"><label for="__markdown-viewer__show-tools"></label><div id="__markdown-viewer__toc" class="toggleable"><ul><li><a href="#irontoolbar-for-ahk2">IronToolbar for AHK2</a></li></ul></div><p class="toggleable">Pick a markdown and code style:<br><select id="__markdown-viewer__mdselect"><option value="sss">default</option><option value="github">github</option></select><select id="__markdown-viewer__hlselect"><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/agate.css">agate</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/androidstudio.css">androidstudio</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/arduino-light.css">arduino-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/arta.css">arta</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/ascetic.css">ascetic</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-cave.dark.css">atelier-cave.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-cave.light.css">atelier-cave.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-cave-dark.css">atelier-cave-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-cave-light.css">atelier-cave-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-dune.dark.css">atelier-dune.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-dune.light.css">atelier-dune.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-dune-dark.css">atelier-dune-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-dune-light.css">atelier-dune-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-estuary.dark.css">atelier-estuary.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-estuary.light.css">atelier-estuary.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-estuary-dark.css">atelier-estuary-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-estuary-light.css">atelier-estuary-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-forest.dark.css">atelier-forest.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-forest.light.css">atelier-forest.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-forest-dark.css">atelier-forest-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-forest-light.css">atelier-forest-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-heath.dark.css">atelier-heath.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-heath.light.css">atelier-heath.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-heath-dark.css">atelier-heath-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-heath-light.css">atelier-heath-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-lakeside.dark.css">atelier-lakeside.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-lakeside.light.css">atelier-lakeside.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-lakeside-dark.css">atelier-lakeside-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-lakeside-light.css">atelier-lakeside-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-plateau.dark.css">atelier-plateau.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-plateau.light.css">atelier-plateau.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-plateau-dark.css">atelier-plateau-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-plateau-light.css">atelier-plateau-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-savanna.dark.css">atelier-savanna.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-savanna.light.css">atelier-savanna.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-savanna-dark.css">atelier-savanna-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-savanna-light.css">atelier-savanna-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-seaside.dark.css">atelier-seaside.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-seaside.light.css">atelier-seaside.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-seaside-dark.css">atelier-seaside-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-seaside-light.css">atelier-seaside-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-sulphurpool.dark.css">atelier-sulphurpool.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-sulphurpool.light.css">atelier-sulphurpool.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-sulphurpool-dark.css">atelier-sulphurpool-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-sulphurpool-light.css">atelier-sulphurpool-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atom-one-dark.css">atom-one-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atom-one-light.css">atom-one-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/brown-paper.css">brown-paper</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/brown_paper.css">brown_paper</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/codepen-embed.css">codepen-embed</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/color-brewer.css">color-brewer</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/darcula.css">darcula</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/dark.css">dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/darkula.css">darkula</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/default.css">default</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/docco.css">docco</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/dracula.css">dracula</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/far.css">far</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/foundation.css">foundation</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/github.css">github</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/github-gist.css">github-gist</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/googlecode.css">googlecode</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/grayscale.css">grayscale</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/gruvbox-dark.css">gruvbox-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/gruvbox-light.css">gruvbox-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/hopscotch.css">hopscotch</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/hybrid.css">hybrid</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/idea.css">idea</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/ir-black.css">ir-black</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/ir_black.css">ir_black</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/kimbie.dark.css">kimbie.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/kimbie.light.css">kimbie.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/magula.css">magula</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/monokai.css">monokai</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/monokai-sublime.css">monokai-sublime</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/monokai_sublime.css">monokai_sublime</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/mono-blue.css">mono-blue</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/obsidian.css">obsidian</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/ocean.css">ocean</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/paraiso.dark.css">paraiso.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/paraiso.light.css">paraiso.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/paraiso-dark.css">paraiso-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/paraiso-light.css">paraiso-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/pojoaque.css">pojoaque</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/purebasic.css">purebasic</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/qtcreator_dark.css">qtcreator_dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/qtcreator_light.css">qtcreator_light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/railscasts.css">railscasts</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/rainbow.css">rainbow</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/routeros.css">routeros</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/school-book.css">school-book</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/school_book.css">school_book</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/solarized-dark.css">solarized-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/solarized-light.css">solarized-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/solarized_dark.css">solarized_dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/solarized_light.css">solarized_light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/sunburst.css">sunburst</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/tomorrow.css">tomorrow</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/tomorrow-night.css">tomorrow-night</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/tomorrow-night-blue.css">tomorrow-night-blue</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/tomorrow-night-bright.css">tomorrow-night-bright</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/tomorrow-night-eighties.css">tomorrow-night-eighties</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/vs.css">vs</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/vs2015.css">vs2015</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/xcode.css">xcode</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/xt256.css">xt256</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/zenburn.css">zenburn</option></select></p><p class="toggleable"><a id="__markdown-viewer__download" download="markdown.html" style="display: none;">Download as HTML</a></p></div><div class="markdownRoot"><table>
+<thead>
+<tr>
+<th><a href="https://thearkive.github.io/IronToolbar_AHK/">IronToolbar Home</a></th>
+<th><a href="site/docs.html">Documentation</a></th>
+<th><a href="https://github.com/TheArkive/IronToolbar_AHK/archive/refs/heads/master.zip">Download</a></th>
+<th><a href="https://github.com/TheArkive/IronToolbar_AHK">Source</a></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<hr>
+<h2 id="irontoolbar-for-ahk2">IronToolbar for AHK2</h2>
+<p>Why IronToolbar?</p>
+<p>Two reasons:</p>
+<ol type="1">
+<li>This class script has turned out pretty solid and reliable.</li>
+<li>It was a struggle getting there, due to the Toolbar API's "iron will" to defy my attempts to make this not only accessible for AHK v2, but hopefully more accessible and usable if converted to AHK v1.</li>
+</ol>
+<p>The latter is my attempt at a light-hearted joke, reflecting on my journey to getting this class script ready for a release.</p>
+<hr>
+<p>I designed this class around <code>tb.easyMode := true</code>.  EasyMode is on by default and allows maximimum flexibility with minimal code.  If you want, after creating a toolbar object, set <code>tb.easyMode := false</code> to have more granular control over adding styles.  You can also exercise more control by simply using <code>tb.SendMsg()</code> with or without EasyMode.  Please note that EasyMode does take care of MANY frustrating aspects of managing a toolbar.</p>
+<p>For a minimalist example of usage, please see the included example.</p>
+<p>Please note that according to the Microsoft docs, the "image index" is always zero-based.  In this script, in true AHK style, the icon index is always 1-based (starting with 1, not zero).  If you decide to send your own messages to the toolbar, when an image index is required, it needs to be zero-based.</p>
+<p><a href="site/preview.gif"><img src="site/preview.gif" height="200"></a>
+<a href="site/preview_2.gif"><img src="site/preview_2.gif" height="200"></a></p>
+</div></body></html>

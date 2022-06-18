@@ -1,4 +1,4 @@
-
+﻿
 class gdichart
 {
 	static Margin:=Object()

@@ -1,4 +1,4 @@
-; ======================================================================================================================
+﻿; ======================================================================================================================
 ; Function:          Constants for ComboBoxEx controls.
 ;                    ComboBoxEx controls are combo box controls that provide native support for item images.
 ; AHK version:       1.1.05+

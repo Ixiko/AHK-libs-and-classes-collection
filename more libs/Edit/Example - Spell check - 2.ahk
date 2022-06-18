@@ -79,7 +79,7 @@ return
 ;*****************************
 Spell_Init:
 ;-- Initialize Hunspell and load the primary dictionary
-if not Spell_Init(hSpell,"dic\en_US.aff","dic\en_US.dic","lib\")
+if !Spell_Init(hSpell,"dic\de_DE_neu.aff", "dic\de_DE_neu.dic",A_ScriptDir "\..\..\dll\")
     return
 
 ;-- Load the custom dictionary
@@ -90,14 +90,13 @@ return
 
 
 Spell_Uninit:
-if $SpellInit
-    {
+if $SpellInit    {
     Spell_Uninit(hSpell)
         ;-- This step also flushes all the "Ignore All" words from the
         ;   dictionary
 
     $SpellInit:=False
-    }
+}
 
 return
 
@@ -107,8 +106,7 @@ SpellCheck:
 if not Edit_GetActiveHandles(hEdit,hWindow,True)
     return
 
-if not $SpellInit
-    {
+if !$SpellInit    {
     gosub Spell_Init
     if not $SpellInit  ;-- Just in case Spell_Init failed
         return
@@ -116,9 +114,9 @@ if not $SpellInit
 
 SetBatchLines 200ms ;-- Significant bump in priority
 Edit_SetReadOnly(hEdit,True)
-Edit_SpellCheckGUI(0,hEdit,hSPell,CustomDic)
+Edit_SpellCheckGUI(0,hEdit,hSPell,$CustomDic)
 Edit_SetReadOnly(hEdit,False)
-SetBatchLines 10ms  ;-- System default
+SetBatchLines ,-1  ;-- System default
 return
 
 

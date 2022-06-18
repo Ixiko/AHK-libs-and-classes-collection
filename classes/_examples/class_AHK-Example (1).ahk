@@ -1,4 +1,4 @@
-DetectHiddenWindows, On ;required for Embedding Console.. If not used, then add style 0x2000000 manually
+﻿DetectHiddenWindows, On ;required for Embedding Console.. If not used, then add style 0x2000000 manually
 
 #Include, Console.ahk
 

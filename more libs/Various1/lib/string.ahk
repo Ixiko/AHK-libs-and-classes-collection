@@ -1,4 +1,4 @@
-; ahk: console
+﻿; ahk: console
 #Include %A_LineFile%\..\modules\string\
 #Include HyphenationHelper.ahk
 #Include PrintfHelper.ahk

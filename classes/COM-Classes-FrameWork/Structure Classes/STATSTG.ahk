@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: STATSTG
 a structure class that contains statistical data about an open storage, stream, or byte-array object. This is used by he IEnumSTATSTG, ILockBytes, IStorage, and IStream interfaces.
 

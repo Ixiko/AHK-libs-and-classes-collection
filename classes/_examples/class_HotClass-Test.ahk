@@ -1,4 +1,4 @@
-; Proof of concept for replacement for HotClass
+﻿; Proof of concept for replacement for HotClass
 #include hotclass.ahk
 
 OutputDebug, DBGVIEWCLEAR

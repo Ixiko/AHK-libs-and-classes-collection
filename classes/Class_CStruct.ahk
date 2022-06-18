@@ -1,4 +1,4 @@
-
+﻿
 /******************************************************************************
 
 	; ahk forum : http://www.autohotkey.com/community/viewtopic.php?f=2&t=84054

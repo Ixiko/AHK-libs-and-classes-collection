@@ -1,4 +1,4 @@
-/*
+﻿/*
 Tested On		Autohotkey_L version  1.1.13.00 U32
 Author 			Nick McCoy (Ronins)
 Initial Release Date	May 6, 2014

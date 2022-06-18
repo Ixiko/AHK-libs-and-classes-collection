@@ -1,4 +1,4 @@
-/*
+﻿/*
     RegisterSyncCallback
     
     A replacement for RegisterCallback for use with APIs that will call

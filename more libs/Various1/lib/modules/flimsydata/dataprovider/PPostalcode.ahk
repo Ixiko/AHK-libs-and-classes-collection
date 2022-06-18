@@ -1,4 +1,4 @@
-class PPostalcode extends Flimsydata.Provider {
+﻿class PPostalcode extends Flimsydata.Provider {
 
 	getDE(randomizer) {
 		1stChar := Flimsydata.getRandomInt(randomizer, 0, 9)

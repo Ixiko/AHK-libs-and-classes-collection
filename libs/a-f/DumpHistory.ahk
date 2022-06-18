@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 Plugin            : DumpHistory()
 Purpose           : Export history to plain text file

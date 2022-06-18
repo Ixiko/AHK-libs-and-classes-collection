@@ -1,4 +1,4 @@
-; ===== Autohotkey script for Windows Explorer ===== 
+﻿; ===== Autohotkey script for Windows Explorer ===== 
 ; Sets two hotkeys:
 ;   Ctrl+G - Moves the selected files to a GroupNN folder 
 ;   Ctrl+Shift+G - Moves the files from selected folders to an upper level, 

@@ -1,4 +1,4 @@
-#SingleInstance force
+﻿#SingleInstance force
 #Persistent
 
 ; Load the HotVoice Library

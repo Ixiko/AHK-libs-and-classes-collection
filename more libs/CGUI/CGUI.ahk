@@ -113,7 +113,7 @@ Class CGUI {
 			}
 		}
 
-		Gui, % instance.GUINum ":Show", Hide Autosize Center
+		Gui, % instance.GUINum ": Show", Hide Autosize Center
 		;~ WinGetPos, x, y, w, h, % "ahk_id " instance.hwnd
 		;~ msgbox % "w " w " h " h
 		;Register for WM_COMMAND and WM_NOTIFY messages since they are commonly used for various purposes.

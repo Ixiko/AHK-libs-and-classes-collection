@@ -1,4 +1,4 @@
-; Superglobal constants for monitor arrangement
+﻿; Superglobal constants for monitor arrangement
 
 global MAINMONITOR := 1
 global BASICMONITOR := 4

@@ -1,4 +1,4 @@
-Class HotVoice {
+﻿Class HotVoice {
 	_grammarCallbacks := {}
 	
 	GetChoices(name){

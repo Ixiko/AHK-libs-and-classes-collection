@@ -1,5 +1,5 @@
-; A simple function to compare OS version in a flexible and easy way
-; � Drugwash, June 2015-Nov2016 v1.1
+﻿; A simple function to compare OS version in a flexible and easy way
+; © Drugwash, June 2015-Nov2016 v1.1
 
 ; EXAMPLE (uncomment to run)
 /*

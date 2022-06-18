@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: STATFLAG
 an enumeration class containing flags that indicate whether the method should try to return a name in the pwcsName member of the STATSTG structure. The values are used in the ILockBytes::Stat, IStorage::Stat, and IStream::Stat methods to save memory when the pwcsName member is not required.
 

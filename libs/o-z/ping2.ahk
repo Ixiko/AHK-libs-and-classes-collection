@@ -1,4 +1,4 @@
-;http://www.autohotkey.com/forum/topic10260.html
+﻿;http://www.autohotkey.com/forum/topic10260.html
 
 ; GetTextLines
 ; Gets the number of lines in a specified text file.

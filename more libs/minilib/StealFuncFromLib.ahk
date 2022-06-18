@@ -1,4 +1,4 @@
-/*
+﻿/*
 stealFunc v0.12
 	by Avi Aryan (http://avi.uco.im)
 DOC - http://avi.uco.im/ahk/tools/stealfunc.html

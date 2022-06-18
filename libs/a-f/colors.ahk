@@ -1,4 +1,4 @@
-RgbToHex(input) {
+﻿RgbToHex(input) {
 	; Format:
 	; RGB(255, 0, 125)
 	; RGBA(255, 0, 125, 0.5)

@@ -1,4 +1,4 @@
-group := tester.newGroup("lastIndexOf(searchElement, fromIndex:=0)")
+﻿group := tester.newGroup("lastIndexOf(searchElement, fromIndex:=0)")
 
 array := ["a", "b", "c", "d", "d", "d", "e", "e", "f"]
 

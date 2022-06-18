@@ -1,4 +1,4 @@
-group := tester.newGroup("find(callback)")
+﻿group := tester.newGroup("find(callback)")
 
 find_fn := objBindMethod(Assert, "equal", 5)
 

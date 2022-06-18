@@ -16,6 +16,7 @@ libs\a-f
 libs\a-f\core_audio_interfaces
 libs\g-n
 libs\o-z
+AHK_V2
 classes
 classes\Class_PictureButton-master\lib
 classes\class_Java-Access-Bridge
@@ -102,12 +103,13 @@ more libs\DirectX\Lib\TexSwap
 more libs\DoDragAndDrop
 more libs\DX9-Overlay-API\include\ahk
 more libs\eAutocomplete
+more libs\Edit\_Functions
 more libs\EmbedPython.ahk
 more libs\EmbedPython.ahk\Lib
 more libs\exLibs
-more libs\Edit\_Functions
 more libs\ImportTypeLib
 more libs\ImportTypeLib\Lib
+more libs\MCLib
 more libs\MCode-Ex\src
 more libs\MCode-Ex\src\Compiler
 more libs\MinHook\Lib
@@ -124,6 +126,7 @@ more libs\SendInput
 more libs\Splash-Gui
 more libs\TAB\_Functions
 more libs\Various1\lib
+more libs\VMR
 more libs\windows10DesktopManager
 more libs\windows10DesktopManager\injection dll
 more libs\WindowsScriptingObject

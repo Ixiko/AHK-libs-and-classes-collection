@@ -1,4 +1,4 @@
-; ahk: console
+﻿; ahk: console
 #NoEnv
 #Warn All, StdOut
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 	CustomFont v2.00 (2016-2-24)
 	---------------------------------------------------------
 	Description: Load font from file or resource, without needed install to system.

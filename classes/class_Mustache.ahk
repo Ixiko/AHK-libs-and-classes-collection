@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Class:
  *     Mustache.ahk - AutoHotkey based mustache template system.
  *

@@ -1,4 +1,4 @@
-CreateGist(content, description:="", filename:="file1.ahk", token:="", public:=true) {
+﻿CreateGist(content, description:="", filename:="file1.ahk", token:="", public:=true) {
 	url := "https://api.github.com/gists"
 	obj := { "description": description
 	       , "public": (public ? "true" : "false")

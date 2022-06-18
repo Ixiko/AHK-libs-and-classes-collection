@@ -1,9 +1,8 @@
-class Font
-{
+class Font{
+
     static _ := Canvas.Font.Initialize()
 
-    Initialize()
-    {
+    Initialize()    {
         ;create device context for graphics object
         this.hDC := DllCall("CreateCompatibleDC","UPtr",0,"UPtr")
         If !this.hDC
@@ -16,8 +15,7 @@ class Font
         this.pGraphics := pGraphics
     }
 
-    __New(Typeface,Size)
-    {
+    __New(Typeface,Size)    {
         If Size Is Not Number
             throw Exception("INVALID_INPUT",-1,"Invalid size: " . Size)
         If Size <= 0
@@ -44,8 +42,7 @@ class Font
         this.UpdateFont()
     }
 
-    UpdateFontFamily()
-    {
+    UpdateFontFamily()    {
         ;delete previous font family if present
         If this.hFontFamily
             this.CheckStatus(DllCall("gdiplus\GdipDeleteFontFamily","UPtr",this.hFontFamily)
@@ -58,8 +55,7 @@ class Font
         this.hFontFamily := hFontFamily
     }
 
-    UpdateFont()
-    {
+    UpdateFont()    {
         ;delete previous font if present
         If this.hFont
             this.CheckStatus(DllCall("gdiplus\GdipDeleteFont","UPtr",this.hFont)
@@ -82,8 +78,7 @@ class Font
         this.hFont := hFont
     }
 
-    __Delete()
-    {
+    __Delete()    {
         ;delete font
         Result := DllCall("gdiplus\GdipDeleteFont","UPtr",this.hFont)
         If Result != 0
@@ -108,14 +103,12 @@ class Font
             ,"GdipDeleteStringFormat","Could not delete string format")
     }
 
-    __Get(Key)
-    {
+    __Get(Key)    {
         If (Key != "" && Key != "base")
             Return, this[""][Key]
     }
 
-    __Set(Key,Value)
-    {
+    __Set(Key,Value)    {
         static AlignStyles := Object("Left",  0  ;StringAlignment.StringAlignmentNear
                                     ,"Center",1  ;StringAlignment.StringAlignmentCenter
                                     ,"Right", 2) ;StringAlignment.StringAlignmentFar
@@ -152,8 +145,7 @@ class Font
         Return, Value
     }
 
-    Measure(Value,ByRef Width,ByRef Height)
-    {
+    Measure(Value,ByRef Width,ByRef Height)    {
         VarSetCapacity(Rectangle,16,0)
         VarSetCapacity(Bounds,16)
         this.CheckStatus(DllCall("gdiplus\GdipMeasureString"
@@ -172,13 +164,11 @@ class Font
         Return, this
     }
 
-    StubCheckStatus(Result,Name,Message)
-    {
+    StubCheckStatus(Result,Name,Message)    {
         Return, this
     }
 
-    CheckStatus(Result,Name,Message)
-    {
+    CheckStatus(Result,Name,Message)    {
         static StatusValues := ["Status.GenericError"
                                ,"Status.InvalidParameter"
                                ,"Status.OutOfMemory"

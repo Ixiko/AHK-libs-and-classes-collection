@@ -1,4 +1,4 @@
-#Include <app>
+﻿#Include <app>
 
 #Include %A_LineFile%\..\modules\testcase\
 #Include TestData.ahk

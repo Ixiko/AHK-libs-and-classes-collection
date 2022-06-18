@@ -42,9 +42,6 @@
  *     opening brace or bracket. See diagram below:
  *     1    2
  *     {"a":["string"], "b":$2} -> '$2' references the object stored in 'a'
- *
- * Source
- * https://github.com/cocobelgica/AutoHotkey-SerDes
  */
 SerDes(src, out:="", indent:="") {
 	if IsObject(src) {
@@ -94,7 +91,7 @@ SerDes(src, out:="", indent:="") {
 		while (k := InStr(str, "``",, k+1)) {
 			if InStr(q "``nrbtvaf", ch := SubStr(str, k+1, 1))
 				str := SubStr(str, 1, k-1) . esc_seq[ch] . SubStr(str, k+2)
-			else throw "Invalid escape sequence: '``" . ch . "'" 
+			else throw "Invalid escape sequence: '``" . ch . "'"
 		}
 		%push%(strings, str) ;// strings.Insert(str) / strings.Push(str)
 	}
@@ -161,7 +158,7 @@ SerDes(src, out:="", indent:="") {
 ;// Helper function, serialize object to string -> internal use only
 _SerDes(obj, indent:="", lvl:=1, refs:=false) { ;// lvl,refs=internal parameters
 	static q := Chr(34) ;// Double quote, for v1.1 & v2.0-a compatibility
-	
+
 	if IsObject(obj) {
 		/* In v2, an exception is thrown when using ObjGetCapacity() on a
 		 * non-standard AHK object (e.g. COM, Func, RegExMatch, File)
@@ -200,10 +197,10 @@ _SerDes(obj, indent:="", lvl:=1, refs:=false) { ;// lvl,refs=internal parameters
 		}
 		return is_array ? "[" out "]" : "{" out "}"
 	}
-	
+
 	else if (ObjGetCapacity([obj], 1) == "")
 		return obj
-	
+
 	static esc_seq := { ;// AHK escape sequences
 	(Join Q C
 		(q):  "``" . q,  ;// double quote

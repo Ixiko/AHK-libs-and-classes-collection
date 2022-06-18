@@ -1,4 +1,4 @@
-class TestRunner {
+﻿class TestRunner {
 
 	groups := []
 

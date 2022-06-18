@@ -1,4 +1,4 @@
-/*
+﻿/*
 Name: String Things - Common String & Array Functions
 Version 2.6 (Fri May 30, 2014)
 Created: Sat March 02, 2013

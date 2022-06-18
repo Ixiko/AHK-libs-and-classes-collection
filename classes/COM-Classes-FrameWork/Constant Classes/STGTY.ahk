@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: STGTY
 an enumeration class containing flags used in the type member of the STATSTG structure to indicate the type of the storage element. A storage element is a storage object, a stream object, or a byte-array object (LOCKBYTES).
 

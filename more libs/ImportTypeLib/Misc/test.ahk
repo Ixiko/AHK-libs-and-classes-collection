@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #SingleInstance off
 #Warn
 #KeyHistory 0

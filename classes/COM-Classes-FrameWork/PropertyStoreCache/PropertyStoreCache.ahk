@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PropertyStoreCache
 wraps the *IPropertyStoreCache* interface and exposes methods that allow a handler to manage various states for each property.
 

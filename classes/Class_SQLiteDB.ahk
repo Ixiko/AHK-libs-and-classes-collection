@@ -9,7 +9,7 @@
 ;                   0.0.05.00/2013-08-03/just me   -  Changed base class assignment
 ; Remarks:          Names of "private" properties / methods are prefixed with an underscore,
 ;                   they must not be set / called by the script!
-;                   
+;
 ;                   SQLite3.dll file is assumed to be in the script's folder, otherwise you have to
 ;                   provide an INI-File SQLiteDB.ini in the script's folder containing the path:
 ;                   [Main]
@@ -36,7 +36,8 @@ Class SQLiteDB Extends SQLiteDB.BaseClass {
    ; ===================================================================================================================
    Class BaseClass {
       Static Version := ""
-      Static _SQLiteDLL := A_ScriptDir . "\SQLite3.dll"
+      ;Static _SQLiteDLL := A_ScriptDir . "\..\..\dll\SQLite3.dll"
+      Static _SQLiteDLL := "D:\Autohotkey\GitHub\AHK-libs-and-classes-collection\classes\SQLite3.dll"
       Static _RefCount := 0
       Static _MinVersion := 36
    }
@@ -51,7 +52,7 @@ Class SQLiteDB Extends SQLiteDB.BaseClass {
       ; ----------------------------------------------------------------------------------------------------------------
       __New() {
           This.ColumnCount := 0          ; Number of coumns in the result table          (Integer)
-          This.RowCount := 0             ; Number of rows in the result table            (Integer)     
+          This.RowCount := 0             ; Number of rows in the result table            (Integer)
           This.ColumnNames := []         ; Names of columns in the result table          (Array)
           This.Rows := []                ; Rows of the result table                      (Array of Arrays)
           This.HasNames := False         ; Does var ColumnNames contain names?           (Bool)
@@ -102,7 +103,7 @@ Class SQLiteDB Extends SQLiteDB.BaseClass {
          This._CurrentRow := 0
          Return True
       }
-   }  
+   }
    ; ===================================================================================================================
    ; CLASS _RecordSet
    ; Object returned from method Query()
@@ -124,7 +125,7 @@ Class SQLiteDB Extends SQLiteDB.BaseClass {
           This.ErrorMsg := ""            ; Last error message                            (String)
           This.ErrorCode := 0            ; Last SQLite error code / ErrorLevel           (Variant)
           This._Handle := 0              ; Query handle                                  (Pointer)
-          This._DB := {}                 ; SQLiteDB object                               (Object) 
+          This._DB := {}                 ; SQLiteDB object                               (Object)
       }
       ; ----------------------------------------------------------------------------------------------------------------
       ; METHOD Next        Get next row of query result
@@ -381,7 +382,7 @@ Class SQLiteDB Extends SQLiteDB.BaseClass {
    ; ===================================================================================================================
    ; Properties
    ; ===================================================================================================================
-    ErrorMsg := ""              ; Error message                           (String) 
+    ErrorMsg := ""              ; Error message                           (String)
     ErrorCode := 0              ; SQLite error code / ErrorLevel          (Variant)
     Changes := 0                ; Changes made by last call of Exec()     (Integer)
     SQL := ""                   ; Last executed SQL statement             (String)
@@ -503,7 +504,7 @@ Class SQLiteDB Extends SQLiteDB.BaseClass {
    ;                                     The address of the current SQL string is passed in A_EventInfo.
    ;                                     If the callback function returns non-zero, DB.Exec() returns SQLITE_ABORT
    ;                                     without invoking the callback again and without running any subsequent
-   ;                                     SQL statements.  
+   ;                                     SQL statements.
    ; Return values:        On success  - True, the number of changed rows is given in property Changes
    ;                       On failure  - False, ErrorMsg / ErrorCode contain additional information
    ; ===================================================================================================================

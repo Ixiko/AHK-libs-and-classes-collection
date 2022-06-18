@@ -1,4 +1,4 @@
-group := tester.newGroup("reduce(callback, initialValue:='__NULL__')")
+﻿group := tester.newGroup("reduce(callback, initialValue:='__NULL__')")
 
 names := ["tom", "jerry", "morty", "rick"]
 array := [1,2,3,6,4,5]

@@ -1,4 +1,4 @@
-; CreateFormData() by tmplinshi, AHK Topic: https://autohotkey.com/boards/viewtopic.php?t=7647
+﻿; CreateFormData() by tmplinshi, AHK Topic: https://autohotkey.com/boards/viewtopic.php?t=7647
 ; Thanks to Coco: https://autohotkey.com/boards/viewtopic.php?p=41731#p41731
 ; Modified version by SKAN, 09/May/2016
 

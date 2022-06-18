@@ -1,4 +1,4 @@
-#include %A_ScriptDir%\..\lib\CallStack.ahk
+﻿#include %A_ScriptDir%\..\lib\CallStack.ahk
 
 foo1()
 return

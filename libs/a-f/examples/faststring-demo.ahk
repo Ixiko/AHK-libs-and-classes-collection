@@ -1,4 +1,4 @@
-#include faststring.ahk
+﻿#include faststring.ahk
 
 ; btw = by the way
 ; B(t|T)(w|W) = By the way

@@ -1,4 +1,4 @@
-group := tester.newGroup("includes(searchElement, fromIndex:=0)")
+﻿group := tester.newGroup("includes(searchElement, fromIndex:=0)")
 
 array := [1,2,3,4,5]
 

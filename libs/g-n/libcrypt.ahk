@@ -1,27 +1,4 @@
-/**
- * The MIT License (MIT)
- * 
- * Copyright (c) 2014 The ahkscript community (ahkscript.org)
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
-LC_Version := "0.0.24.01"
+﻿LC_Version := "0.0.21.01"
 
 LC_ASCII2Bin(s,pretty:=0) {
 	r:=""
@@ -91,220 +68,6 @@ LC_BinStr_Decode(ByRef Out, ByRef In) {
 	}
 }
 
-
-; implemented in ahk by joedf
-; based on https://github.com/cryptii/cryptii/blob/4a0a58318d093c4c6e3333b3f296ad7c96309629/src/Encoder/Ascii85.js
-
-/**
- * Performs encode on given content.
- * @param {String} content
- * @param {String} variant 
- * @return {String} Encoded content
- */
-LC_ASCII85_Encode(content, variant="") {
-	; Check for <~ ~> wrappers often used to wrap ascii85 encoded data
-	; Decode wrapped data only
-	content:=StrReplace(content,"<~")
-	content:=StrReplace(content,"~>")
-	
-	; get bytes
-	bytes := StrSplit(content)
-	Loop % bytes.MaxIndex()
-		bytes[A_Index] := Asc( bytes[A_Index] )
-
-	; get variant
-	variant := __LC_ASCII85_getVariant(variant)
-
-	; get number of bytes
-	n := bytes.Length()
-
-	; Encode each tuple of 4 bytes
-	string := ""
-	i := 1
-	while (i <= n)
-	{
-		; Read 32-bit unsigned integer from bytes following the
-		; big-endian convention (most significant byte first)
-		/*
-		tuple = (
-			((bytes[i]) << 24) +
-			((bytes[i + 1] || 0) << 16) +
-			((bytes[i + 2] || 0) << 8) +
-			((bytes[i + 3] || 0))
-		) >>> 0
-		*/
-		if (i-1 + 4 > n) ; handles the js-hack for falsy||0 test
-			bytes.Push(0,0,0)
-		tuple := ( ((bytes[i]) << 24)
-			+ ((bytes[i + 1]) << 16)
-			+ ((bytes[i + 2]) << 8)
-			+ ((bytes[i + 3]))) >> 0
-		
-		if ( (variant["zeroTupleChar"] == "null") || (tuple > 0) )
-		{
-			; Calculate 5 digits by repeatedly dividing
-			; by 85 and taking the remainder
-			digits := []
-			Loop, 5
-			{
-				digits.Push( mod(tuple,85) )
-				tuple := tuple // 85
-			}
-
-			; Take most significant digit first
-			; >>>> digits = digits.reverse()
-			; following is based method by jNizM from https://github.com/jNizM/AHK_Scripts/blob/master/src/arrays/RevArr.ahk
-			newarr := []
-			for t_idx, t_val in digits
-				newarr.InsertAt(1, t_val)
-			digits := newarr
-
-			if (n < (i-1 + 4)) {
-				; Omit final characters added due to bytes of padding
-				; >>>> digits.splice(n - (i + 4), 4)
-				digits := __LC_ASCII85_splice(digits,n - (i-1 + 4), 4)
-			}
-
-			; Convert digits to characters and glue them together
-			for t_k, t_v in digits
-				string .= (variant["alphabet"] == "null")
-					? chr(t_v + 33)
-					: SubStr(variant["alphabet"],t_v+1,1)
-
-		} else {
-			; An all-zero tuple is encoded as a single character
-			string .= variant["zeroTupleChar"]
-		}
-
-		i += 4
-	}
-
-	return string
-}
-
-/*
- * Performs decode on given content.
- * @param {String} content
- * @return {String} Decoded content
- */
-LC_ASCII85_Decode(content, variant="") {
-	; Remove whitespaces
-	string := Trim(content)
-	
-	; Get variant
-	variant := __LC_ASCII85_getVariant(variant)
-	
-	; get length
-	n := StrLen(string)
-
-	; Decode each tuple of 5 characters
-	bytes := []
-	i := 1
-	while (i <= n) {
-		if (SubStr(string,i,1) == variant.zeroTupleChar) {
-			; A single character encodes an all-zero tuple
-			bytes.Push(0, 0, 0, 0)
-			i++
-		} else {
-			; Retrieve radix-85 digits of tuple
-			digits := StrSplit(SubStr(string,i,5))
-			newarr := []
-			for index, character in digits
-			{
-				digit := (variant["alphabet"] == "null")
-					? digit := Asc(character) - 33
-					: digit := InStr(variant["alphabet"],character)-1
-				if (digit < 0 || digit > 84) {
-					throw Format("Invalid character '{1}' at index {2}", character, index)
-				}
-				newarr.Push(digit)
-			}
-			digits := newarr
-
-			; Create 32-bit binary number from digits and handle padding
-			; tuple = a * 85^4 + b * 85^3 + c * 85^2 + d * 85 + e
-			tuple := 0
-				+ digits[1] * 52200625
-				+ digits[2] * 614125
-				+ (i-1 + 2 < n ? digits[3] : 84) * 7225
-				+ (i-1 + 3 < n ? digits[4] : 84) * 85
-				+ (i-1 + 4 < n ? digits[5] : 84)
-
-			; Get bytes from tuple
-			tupleBytes := [(tuple >> 24) & 0xff
-						,  (tuple >> 16) & 0xff
-						,  (tuple >> 8) & 0xff
-						,   tuple & 0xff ]
-
-			; Remove bytes of padding
-			if (n < i-1 + 5) {
-				tupleBytes := __LC_ASCII85_splice(tupleBytes, n - (i-1 + 5), 5)
-			}
-
-			; Append bytes to result
-			for t_k, t_v in tupleBytes
-				bytes.Push(t_v)
-
-			i += 5
-		}
-	}
-
-	; joedf: transform bytes array to string
-	decoded := ""
-	for k, v in bytes
-		decoded .= Chr(v)
-	
-	return decoded
-}
-
-; Helper function (not to create global vars), to return the variant associated information
-__LC_ASCII85_getVariant(variant="") {
-	if InStr(variant, "z")
-		return { "name": "Z85"
-				,"label": "Z85 (ZeroMQ)"
-				,"alphabet": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^!/*?&<>()[]{}@%$#"
-				,"zeroTupleChar": "null"}
-	return { "name": "original"
-			,"label": "Original"
-			,"alphabet": "null"
-			,"zeroTupleChar": "z"}
-}
-
-; AHK minimum (no add-item feature) Polyfill for javascript's Array.prototype.splice()
-; uses 0-based index, not ahk's default count starting at 1 instead of 0.
-__LC_ASCII85_splice(arr, start, deleteCount="") {
-	len := arr.Length()
-	newarr := []
-
-	startIndex := start
-	if (start > len) {
-		startIndex := len
-	} else if (start < 0) {
-		startIndex := len + start
-	}
-
-	if (len + start < 0)
-		startIndex := 0
-	
-	Loop % startIndex
-		newarr.push( arr[A_Index] )
-
-	; check if deleteCount is specified
-	if (StrLen(deleteCount)) {
-		
-		; dont omit anything if deleteCount <= 0
-		if (deleteCount<0)
-			deleteCount:=0
-		
-		j := 1 + startIndex+deleteCount
-		while (j <= len) {
-			newarr.push( arr[j] )
-			j++
-		}
-	}
-
-	return newarr
-}
 
 LC_Base64_EncodeText(Text,Encoding="UTF-8")
 {
@@ -673,75 +436,6 @@ LC_HMAC(Key, Message, Algo := "MD5") {
 	return LC_CalcAddrHash(&opad, BlockSize + InnerHashLen, AlgID)
 }
 
-/* from AHK forums
-Fast 64- and 128-bit hash functions
-Originally created by Laszlo , Jan 01 2007 06:59 PM 
-
-https://autohotkey.com/board/topic/14040-fast-64-and-128-bit-hash-functions/
-
-Here are two of hash functions, which
-- are programmed fully in AHK
-- are much faster than cryptographic hash functions
-- provide long enough hash values (64 or 128 bits), so a collision is very unlikely
-
-They are modeled after Linear Feedback Shift Register (LFSR) based hash functions, like CRC-32.
-
-joedf: modified/updated for inclusion in libcrypt.ahk
-The dynamic __LC_LHashTable global array variable is kept global in the interest of speed for successive calls.
-*/
-
-LC_L64Hash(x) {                        ; 64-bit generalized LFSR hash of string x
-	Local i, R = 0
-	__LC_LHash_LHashInit()             ; 1st time set LHASH0..LHAS256 global table
-	Loop Parse, x
-	{
-		i := (R >> 56) & 255           ; dynamic vars are global
-		R := (R << 8) + Asc(A_LoopField) ^ __LC_LHashTable%i%
-	}
-	Return __LC_LHash_Hex8(R>>32) . __LC_LHash_Hex8(R)
-}
-
-LC_L128Hash(x) {                       ; 128-bit generalized LFSR hash of string x
-	Local i, S = 0, R = -1
-	__LC_LHash_LHashInit()             ; 1st time set LHASH0..LHAS256 global table
-	Loop Parse, x
-	{
-		i := (R >> 56) & 255           ; dynamic vars are global
-		R := (R << 8) + Asc(A_LoopField) ^ __LC_LHashTable%i%
-		i := (S >> 56) & 255
-		S := (S << 8) + Asc(A_LoopField) - __LC_LHashTable%i%
-	}
-	Return __LC_LHash_Hex8(R>>32) . __LC_LHash_Hex8(R) . __LC_LHash_Hex8(S>>32) . __LC_LHash_Hex8(S)
-}
-
-__LC_LHash_Hex8(i) {                   ; integer -> LS 8 hex digits
-	SetFormat Integer, Hex
-	i:= 0x100000000 | i & 0xFFFFFFFF   ; mask LS word, set bit32 for leading 0's --> hex
-	SetFormat Integer, D
-	Return SubStr(i,-7)                ; 8 LS digits = 32 unsigned bits
-}
-
-__LC_LHash_LHashInit() {               ; build pseudorandom substitution table
-	Local i, u = 0, v = 0
-	If __LC_LHashTable0=
-		Loop 256 {
-			i := A_Index - 1
-			__LC_LHASH_TEA(u,v, 1,22,333,4444, 8) ; <- to be portable, no Random()
-			__LC_LHashTable%i% := (u<<32) | v
-		}
-}
-;                                      ; [y,z] = 64-bit I/0 block, [k0,k1,k2,k3] = 128-bit key
-__LC_LHASH_TEA(ByRef y,ByRef z, k0,k1,k2,k3, n = 32) { ; n = #Rounds
-	s := 0, d := 0x9E3779B9
-	Loop %n% {                         ; standard = 32, 8 for speed
-		k := "k" . s & 3               ; indexing the key
-		y := 0xFFFFFFFF & (y + ((z << 4 ^ z >> 5) + z  ^  s + %k%))
-		s := 0xFFFFFFFF & (s + d)      ; simulate 32 bit operations
-		k := "k" . s >> 11 & 3
-		z := 0xFFFFFFFF & (z + ((y << 4 ^ y >> 5) + y  ^  s + %k%))
-	}
-}
-
 LC_MD2(string, encoding = "UTF-8") {
 	return LC_CalcStringHash(string, 0x8001, encoding)
 }
@@ -962,8 +656,8 @@ LC_RSHash(str) {
 
 LC_SecureSalted(salt, message, algo := "md5") {
 	hash := ""
-	saltedHash := LC_%algo%(message . salt) 
-	saltedHashR := LC_%algo%(salt . message)
+	saltedHash := %algo%(message . salt) 
+	saltedHashR := %algo%(salt . message)
 	len := StrLen(saltedHash)
 	loop % len / 2
 	{
@@ -1028,9 +722,6 @@ LC_AddrSHA512(addr, length) {
 	return LC_CalcAddrHash(addr, length, 0x800e)
 }
 
-; analogous to encodeURIComponent() / decodeURIComponent() in javascript
-; see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
-
 ; Modified by GeekDude from http://goo.gl/0a0iJq
 LC_UriEncode(Uri, RE="[0-9A-Za-z]") {
 	VarSetCapacity(Var, StrPut(Uri, "UTF-8"), 0), StrPut(Uri, &Var, "UTF-8")
@@ -1055,13 +746,8 @@ LC_UriDecode(Uri) {
 
 ;----------------------------------
 
-; analogous to encodeURI() / decodeURI() in javascript
-; see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
-
-LC_UrlEncode(Url) {
-	; keep certain symbols like ":/;?@,&=+$#.", as per the standard js implementation
-	; see https://github.com/ahkscript/libcrypt.ahk/issues/30
-	return LC_UriEncode(Url, "[!#$&-;=?-Z_a-z~]")
+LC_UrlEncode(Url) { ; keep ":/;?@,&=+$#."
+	return LC_UriEncode(Url, "[0-9a-zA-Z:/;?@,&=+$#.]")
 }
 
 LC_UrlDecode(url) {

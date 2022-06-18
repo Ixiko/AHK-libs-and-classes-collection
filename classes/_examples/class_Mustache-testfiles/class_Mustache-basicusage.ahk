@@ -1,4 +1,4 @@
-; This really speeds up compiling big files
+﻿; This really speeds up compiling big files
 SetBatchLines -1
 
 ; Import the lib

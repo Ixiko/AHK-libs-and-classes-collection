@@ -1,4 +1,4 @@
-class System {
+﻿class System {
 
 	static FORMAT_MESSAGE_ALLOCATE_BUFFER := 0x00000100
 	static FORMAT_MESSAGE_ARGUMENT_ARRAY  := 0x00002000

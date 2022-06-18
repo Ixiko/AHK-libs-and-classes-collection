@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: STPFLAG
 an enumeration class used by ITaskbarList4::SetTabProperties to specify tab properties.
 

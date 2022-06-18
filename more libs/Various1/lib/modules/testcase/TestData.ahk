@@ -1,4 +1,4 @@
-class TestData {
+﻿class TestData {
 
 	static testNames := {}
 	static beforeClassFixtureNames := {}

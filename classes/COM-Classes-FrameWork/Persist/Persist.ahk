@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: Persist
 wraps the *IPersist* interface and provides the CLSID of an object that can be stored persistently in the system.
 

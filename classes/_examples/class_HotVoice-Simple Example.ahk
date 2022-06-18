@@ -1,4 +1,4 @@
-; This script demonstrates a single initial word ("Test")
+﻿; This script demonstrates a single initial word ("Test")
 
 #SingleInstance force
 #Persistent ; You will need this if your script creates no hotkeys or has no GUI

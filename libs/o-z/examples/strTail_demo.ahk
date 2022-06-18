@@ -1,4 +1,4 @@
-; #Include strTail.ahk
+﻿; #Include strTail.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

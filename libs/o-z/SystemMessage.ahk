@@ -1,4 +1,4 @@
-SystemMessage(p_MessageNbr)
+﻿SystemMessage(p_MessageNbr)
     {
     if p_MessageNbr is not Integer
         return

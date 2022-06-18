@@ -1,4 +1,4 @@
-class Postalcode extends Flimsydata.Formatter {
+﻿class Postalcode extends Flimsydata.Formatter {
 
 	get(dataProvider, locale="de_DE") {
 		country := Flimsydata.getCountry(locale)

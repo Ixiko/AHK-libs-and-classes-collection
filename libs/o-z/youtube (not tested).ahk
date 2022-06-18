@@ -1,4 +1,4 @@
-;	Raljeta AHK, version: 0.3.x
+﻿;	Raljeta AHK, version: 0.3.x
 ;	Copyright (C) 2011-2014  Litew <litew9@gmail.com>
 ;
 ;	This program is free software: you can redistribute it and/or modify

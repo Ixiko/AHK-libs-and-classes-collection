@@ -1,4 +1,4 @@
-class String extends OptParser.Option {
+﻿class String extends OptParser.Option {
 
 	__new(option1Dash, option2Dashes, optionClass, optionProperty=""
 			, argumentDescription="", description="", flags=1

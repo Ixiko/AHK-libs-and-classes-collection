@@ -1,4 +1,4 @@
-;https://autohotkey.com/board/topic/93305-filemapping-class/?p=588218
+﻿;https://autohotkey.com/board/topic/93305-filemapping-class/?p=588218
 
 Class FileMappingClass {
 	; http://msdn.microsoft.com/en-us/library/windows/desktop/aa366556(v=vs.85).aspx

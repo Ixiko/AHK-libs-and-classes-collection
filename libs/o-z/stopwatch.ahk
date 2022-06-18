@@ -1,4 +1,4 @@
-; returns elapsed time in ms - very accurate
+﻿; returns elapsed time in ms - very accurate
 ; Can keep track of multiple events
 ; doesn't use any resources (cpu time) between function calls
 

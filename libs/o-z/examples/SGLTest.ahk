@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #Include SGL.ahk
 
 ; This is the DEMO authentication code, every  regular SG−Lock user gets its own unique authentication code.

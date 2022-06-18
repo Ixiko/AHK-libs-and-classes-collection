@@ -1,4 +1,4 @@
-ShortcutExists()
+﻿ShortcutExists()
 {
 	; determines if a shortcut for the script exists
 	; MsgBox params: %params%

@@ -1,4 +1,4 @@
-; #Include StrX.ahk
+﻿; #Include StrX.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

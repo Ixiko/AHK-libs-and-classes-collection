@@ -1,4 +1,4 @@
-;?add Modified by Tuncay, 2010
+﻿;?add Modified by Tuncay, 2010
 ;?add Prefix ping_ added to all functions besides the main two functions.
 ;?add User function A_ping() renamed to ping() and internal Ping() renamed to ping_().
 ; Originally Ping function by Drugwash May 28, 2009

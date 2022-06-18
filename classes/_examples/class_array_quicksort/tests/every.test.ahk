@@ -1,4 +1,4 @@
-group := tester.newGroup("every(callback)")
+﻿group := tester.newGroup("every(callback)")
 
 array_even := [2,4,6]
 array_odd := [1,2,4,6]

@@ -1,11 +1,14 @@
 ; Parameters
-; pattern 		
+;
+; pattern
 ;			A string of two digit numbers representing the hex value of each byte of the pattern. The '0x' hex-prefix is not required
 ;			?? Represents a wildcard byte (can be any value)
 ;			All of the digit groups must be 2 characters long i.e 05, 0F, and ??, NOT 5, F or ?
-;			Spaces, tabs, and 0x hex-prefixes are optional  
-; haystackAddress	
+;			Spaces, tabs, and 0x hex-prefixes are optional
+;
+; haystackAddress
 ;			The memory address of the binary haystack eg &haystack
+;
 ; haystackAddress
 ;			The byte length of the binary haystack
 
@@ -16,15 +19,14 @@
 ; -2   	No valid bytes in the needle/pattern
 ; int 	The offset from haystackAddress of the start of the found pattern
 
-patternScan(pattern, haystackAddress, haystackSize)
-{
+patternScan(pattern, haystackAddress, haystackSize) {
 		StringReplace, pattern, pattern, 0x,, All
 		StringReplace, pattern, pattern, %A_Space%,, All
 		StringReplace, pattern, pattern, %A_Tab%,, All
 		pattern := RTrim(pattern, "?")				; can pass patterns beginning with ?? ?? - but why not just start the pattern with the first known byte
 		loopCount := bufferSize := StrLen(pattern) / 2
 		if Mod(StrLen(pattern), 2)
-			return -1  
+			return -1
 		VarSetCapacity(binaryNeedle, bufferSize)
 		aOffsets := [], startGap := 0
 		loop, % loopCount
@@ -32,7 +34,7 @@ patternScan(pattern, haystackAddress, haystackSize)
 			hexChar := SubStr(pattern, 1 + 2 * (A_Index - 1), 2)
 			if (hexChar != "??") && (prevChar = "??" || A_Index = 1)
 				binNeedleStartOffset := A_index - 1
-			else if (hexChar = "??" && prevChar != "??" && A_Index != 1) 
+			else if (hexChar = "??" && prevChar != "??" && A_Index != 1)
 			{
 
 				aOffsets.Insert({ "binNeedleStartOffset": binNeedleStartOffset
@@ -61,10 +63,10 @@ patternScan(pattern, haystackAddress, haystackSize)
 		{
 			if (-1 != foundOffset := scanInBuf(haystackAddress, &binaryNeedle + aOffset.binNeedleStartOffset, haystackSize, aOffset.binNeedleSize, haystackOffset))
 			{
-				; either the first subneedle was found, or the current subneedle is the correct distance from the previous subneedle 
+				; either the first subneedle was found, or the current subneedle is the correct distance from the previous subneedle
 				; The scanInBuf returned 'foundOffset' is relative to haystackAddr regardless of haystackOffset
 				if (arrayIndex = 1 || foundOffset = haystackOffset)
-				{		
+				{
 					if (arrayIndex = 1)
 					{
 						currentStartOffstet := aOffset.binNeedleSize + foundOffset ; save the offset of the match for the first part of the needle - if remainder of needle doesn't match,  resume search from here
@@ -81,7 +83,7 @@ patternScan(pattern, haystackAddress, haystackSize)
 			}
 			if (arrayIndex = 1) ; couldn't find the first part of the needle
 				return 0
-			; the subsequent subneedle couldn't be found. 
+			; the subsequent subneedle couldn't be found.
 			; So resume search from the address immediately next to where the first subneedle was found
 			aOffset := aOffsets[arrayIndex := 1]
 			haystackOffset := currentStartOffstet
@@ -129,7 +131,7 @@ hexToBinaryBuffer(hexString, byRef buffer)
 {
 	StringReplace, hexString, hexString, 0x,, All
 	StringReplace, hexString, hexString, %A_Space%,, All
-	StringReplace, hexString, hexString, %A_Tab%,, All	
+	StringReplace, hexString, hexString, %A_Tab%,, All
 	if !length := strLen(hexString)
 	{
 		msgbox nothing was passed to hexToBinaryBuffer
@@ -137,7 +139,7 @@ hexToBinaryBuffer(hexString, byRef buffer)
 	}
 	if mod(length, 2)
 	{
-		msgbox Odd Number of characters passed to hexToBinaryBuffer`nEnsure two digits are used for each byte e.g. 0E 
+		msgbox Odd Number of characters passed to hexToBinaryBuffer`nEnsure two digits are used for each byte e.g. 0E
 		return 0
 	}
 	byteCount := length/ 2

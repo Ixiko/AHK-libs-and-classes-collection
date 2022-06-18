@@ -1,4 +1,4 @@
-; this works under both ANSI/Unicode build of AHK
+﻿; this works under both ANSI/Unicode build of AHK
 CopyFilesToClipboard(arrFilepath, bCopy) {
 	; set drop effect to determine whether the files are copied or moved.
 	uDropEffect := DllCall("RegisterClipboardFormat", "str", "Preferred DropEffect", "uint")	

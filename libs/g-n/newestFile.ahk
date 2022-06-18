@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: newestFile
     Retrieve latest modified file path in a folder
 

@@ -1,0 +1,1104 @@
+<html><head><style>/*
+Copyright (c) 2017 Chris Patuzzo
+https://twitter.com/chrispatuzzo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px;
+  color: #333;
+}
+
+body > *:first-child {
+  margin-top: 0 !important;
+}
+
+body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a.absent {
+  color: #cc0000;
+}
+
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative;
+}
+
+h2:first-child, h1:first-child, h1:first-child + h2, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  text-decoration: none;
+}
+
+h1 tt, h1 code {
+  font-size: inherit;
+}
+
+h2 tt, h2 code {
+  font-size: inherit;
+}
+
+h3 tt, h3 code {
+  font-size: inherit;
+}
+
+h4 tt, h4 code {
+  font-size: inherit;
+}
+
+h5 tt, h5 code {
+  font-size: inherit;
+}
+
+h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: black;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777777;
+  font-size: 14px;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0;
+}
+
+hr {
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h1:first-child + h2 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0;
+}
+
+li p.first {
+  display: inline-block;
+}
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul :first-child, ol :first-child {
+  margin-top: 0;
+}
+
+ul :last-child, ol :last-child {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt > :first-child {
+  margin-top: 0;
+}
+
+dl dt > :last-child {
+  margin-bottom: 0;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd > :first-child {
+  margin-top: 0;
+}
+
+dl dd > :last-child {
+  margin-bottom: 0;
+}
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777;
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+table {
+  padding: 0;
+  border-collapse:collapse;
+}
+table tr {
+  border-top: 1px solid #cccccc;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+table tr th {
+  font-weight: bold;
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr td {
+  border: 1px solid #cccccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px;
+}
+
+table tr th :first-child, table tr td :first-child {
+  margin-top: 0;
+}
+
+table tr th :last-child, table tr td :last-child {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+span.frame > span {
+  border: 1px solid #dddddd;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 13px 0 0;
+  padding: 7px;
+  width: auto;
+}
+
+span.frame span img {
+  display: block;
+  float: left;
+}
+
+span.frame span span {
+  clear: both;
+  color: #333333;
+  display: block;
+  padding: 5px 0 0;
+}
+
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+span.align-center > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: center;
+}
+
+span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+span.align-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px 0 0;
+  text-align: right;
+}
+
+span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left;
+}
+
+span.float-left span {
+  margin: 13px 0 0;
+}
+
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right;
+}
+
+span.float-right > span {
+  display: block;
+  overflow: hidden;
+  margin: 13px auto 0;
+  text-align: right;
+}
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+</style><style>/*
+    Paraíso (dark)
+    Created by Jan T. Sott (http://github.com/idleberg)
+    Inspired by the art of Rubens LP (http://www.rubenslp.com.br)
+*/
+
+/* Paraíso Comment */
+.hljs-comment,
+.hljs-title {
+  color: #8d8687;
+}
+
+/* Paraíso Red */
+.hljs-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-regexp,
+.hljs-name,
+.ruby .hljs-constant,
+.xml .hljs-tag .hljs-title,
+.xml .hljs-pi,
+.xml .hljs-doctype,
+.html .hljs-doctype,
+.css .hljs-id,
+.css .hljs-class,
+.css .hljs-pseudo {
+  color: #ef6155;
+}
+
+/* Paraíso Orange */
+.hljs-number,
+.hljs-preprocessor,
+.hljs-built_in,
+.hljs-literal,
+.hljs-params,
+.hljs-constant {
+  color: #f99b15;
+}
+
+/* Paraíso Yellow */
+.ruby .hljs-class .hljs-title,
+.css .hljs-rule .hljs-attribute {
+  color: #fec418;
+}
+
+/* Paraíso Green */
+.hljs-string,
+.hljs-value,
+.hljs-inheritance,
+.hljs-header,
+.ruby .hljs-symbol,
+.xml .hljs-cdata {
+  color: #48b685;
+}
+
+/* Paraíso Aqua */
+.css .hljs-hexcolor {
+  color: #5bc4bf;
+}
+
+/* Paraíso Blue */
+.hljs-function,
+.python .hljs-decorator,
+.python .hljs-title,
+.ruby .hljs-function .hljs-title,
+.ruby .hljs-title .hljs-keyword,
+.perl .hljs-sub,
+.javascript .hljs-title,
+.coffeescript .hljs-title {
+  color: #06b6ef;
+}
+
+/* Paraíso Purple */
+.hljs-keyword,
+.javascript .hljs-function {
+  color: #815ba4;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #2f1e2e;
+  color: #a39e9b;
+  padding: 0.5em;
+  -webkit-text-size-adjust: none;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+  opacity: 0.5;
+}
+</style><style>/* Style for the menu, possible positions/visibility */
+#__markdown-viewer__tools {
+  margin:0;
+  padding:0;
+  background:#555;
+  color:#eee;
+  box-shadow:0 -1px rgba(0,0,0,.5) inset;
+  border-radius: .5em;
+  max-width: 25%;
+  min-width: 2.8em;
+  min-height: 3em;
+  z-index: 2147483647;
+  position: relative;
+}
+
+#__markdown-viewer__tools.floating {
+  float:right;
+  margin: 0 0 .5em .5em;
+}
+
+#__markdown-viewer__tools.fixed {
+  max-height: calc(100vh - 1em);
+  overflow-y: auto;
+  position:fixed;
+  top:.5em;
+  right:1em;
+}
+
+#__markdown-viewer__tools.hidden {
+  display:none;
+}
+
+@media print {
+  #__markdown-viewer__tools {
+    display: none;
+  }
+}
+
+#__markdown-viewer__tools a[href]:after {
+  content: "";
+}
+
+/* Style for the menu top */
+label[for=__markdown-viewer__show-tools] {
+  display:block;
+  padding:0 18px 0 12px;
+  line-height:3em;
+  background:#333;
+  cursor:pointer;
+  border-radius: .5em;
+  min-height: 3em;
+  width: .9em;
+  position: absolute;
+  right: 0;
+}
+
+input#__markdown-viewer__show-tools:not(:checked) ~ label {
+  margin-left: -.9em;
+}
+
+input#__markdown-viewer__show-tools:checked ~ label {
+}
+
+label[for=__markdown-viewer__show-tools]:before{
+}
+
+label[for=__markdown-viewer__show-tools]:after {
+  content:"";
+  display:inline-block;
+  float:right;
+  margin-top:1.5em;
+  right:5px;
+  width:0;
+  height:0;
+  border-style: solid;
+  border-color: rgba(255,255,255,.5) transparent;
+  border-width: 4px 4px 0 4px;
+  transition:border-bottom .1s, border-top .1s .1s;
+}
+
+input#__markdown-viewer__show-tools:checked ~ label:after {
+  border-top-width:0;
+  border-bottom-width:4px;
+  transition:border-top .1s, border-bottom .1s .1s;
+}
+
+/* hide the input that tracks the menu's visibility */
+input#__markdown-viewer__show-tools {
+  display:none;
+}
+
+/* style, and hide/show menu items based on the input being checked */
+#__markdown-viewer__tools > .toggleable {
+  overflow:hidden;
+  transition-property:max-height, max-width, padding-top, padding-bottom, margin-top, margin-bottom;
+  transition-duration:0.5s;
+}
+
+input#__markdown-viewer__show-tools:checked ~ .toggleable {
+  /* maxes should be 'none' or infinite values, however those are not aniimatable, so just put something big enough. */
+  max-width: 2000px;
+  max-height: 2000px;
+  overflow-y: auto;
+  transition-timing-function:ease-in;
+}
+
+input#__markdown-viewer__show-tools:not(:checked) ~ .toggleable {
+  max-height:0;
+  max-width:0;
+  transition-timing-function:ease-out;
+  padding-top:0;
+  padding-bottom:0;
+  margin-top:0;
+  margin-bottom:0;
+}
+
+/* style the table of contents and its items */
+#__markdown-viewer__toc {
+  display:block;
+  padding: .5em;
+  border:0;
+}
+
+#__markdown-viewer__toc::before {
+  content: "Table of Contents";
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#__markdown-viewer__toc {
+  margin-top: 2em;
+}
+
+#__markdown-viewer__tools.fixed input#__markdown-viewer__show-tools:checked ~ #__markdown-viewer__toc {
+  max-height: calc(100vh - 16em);
+}
+
+input#__markdown-viewer__show-tools:checked ~ #__markdown-viewer__toc::before {
+  position: absolute;
+  top: .5em;
+  left: 0;
+  right: 3em;
+}
+
+#__markdown-viewer__tools select {
+  max-width: 40%;
+  margin: 0 .5em;
+}
+
+#__markdown-viewer__tools select,
+#__markdown-viewer__toc * {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+#__markdown-viewer__toc a {
+  color: white;
+  text-decoration: none;
+}
+
+#__markdown-viewer__toc ul {
+  list-style: inside "• ";
+  padding: 0;
+  margin: 0;
+}
+
+#__markdown-viewer__toc ul ul {
+  padding-left: 1.5em;
+}
+
+
+/* Style the "Download Source" button at the end of the menu */
+#__markdown-viewer__tools > p {
+  text-align:center;
+  padding: 0 .5em;
+}
+
+#__markdown-viewer__download {
+  /* appearance: button; */
+  -moz-appearance: button !important;
+  display:inline-block;
+  text-align: center;
+  text-decoration:none;
+  color:#000;
+  margin: .5em auto;
+}
+</style><meta name="viewport" content="width=device-width, initial-scale=1"><title>Creating the Toolbar</title><style>html, body, table tr td, table tr th
+{
+  background-color: #000C17;
+  color: #AAAAAA;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-size: 16px;
+  height: 100%;
+}
+img {opacity: 0.5}
+body {
+  max-width: 1280px;
+  border-right: 1px solid #00ACAF;
+  border-left: 1px solid #00ACAF;
+  padding: 45px;
+  margin:auto;
+}
+a:link { color:cyan; }
+a:visited { color:cyan; }
+a:hover { color:lime; text-decoration: underline; }
+hr {
+  background-color: #00ACAF;
+  height: 1px;
+}
+h1, h2 {
+  color: cyan;
+  border-bottom: 1px solid #00ACAF;
+}
+h3, h4, h5, h6 {
+  color: cyan;
+}
+
+pre {
+  background-color: #000C27;
+  border: 1px solid yellow;
+  padding: 10px;
+  font-family: Consolas;
+  font-size: 16px;
+}
+code {
+  /* color: yellow; */
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #000C27;
+  border: 1px solid #00ACAF;
+  font-family: Consolas;
+  font-size: 16px;
+}
+
+table tr th, table tr td {
+  border-color: #00ACAF
+}
+
+blockquote {
+  border-color: #0000FF;
+}</style></head><body><div id="__markdown-viewer__tools" class="fixed"><input type="checkbox" id="__markdown-viewer__show-tools"><label for="__markdown-viewer__show-tools"></label><div id="__markdown-viewer__toc" class="toggleable"><ul><li><a href="#creating-the-toolbar">Creating the Toolbar</a></li><li><a href="#methods">Methods</a><ul><li><a href="#tbadd">tb.Add()</a></li><li><a href="#tbautosize">tb.AutoSize()</a></li><li><a href="#tbchangebitmap">tb.ChangeBitmap()</a></li><li><a href="#tbclearbuttons">tb.ClearButtons()</a></li><li><a href="#tbcount">tb.Count()</a></li><li><a href="#tbcmdtoindex">tb.CmdToIndex()</a></li><li><a href="#tbcheck">tb.Check()</a></li><li><a href="#tbcount-1">tb.Count()</a></li><li><a href="#tbcustomizer">tb.Customizer()</a></li><li><a href="#tbdelete">tb.Delete()</a></li><li><a href="#tbenablebutton">tb.EnableButton()</a></li><li><a href="#tbexport">tb.Export()</a></li><li><a href="#tbgetallbuttons">tb.GetAllButtons()</a></li><li><a href="#tbgetbitmap">tb.GetBitmap()</a></li><li><a href="#tbgetmetrics">tb.GetMetrics()</a></li><li><a href="#tbgetrows">tb.GetRows()</a></li><li><a href="#tbhittest">tb.HitTest()</a></li><li><a href="#tbhidebutton">tb.HideButton()</a></li><li><a href="#tbil_add">tb.IL_Add()</a></li><li><a href="#tbil_create">tb.IL_Create()</a></li><li><a href="#tbil_destroy">tb.IL_Destroy()</a></li><li><a href="#tbimport">tb.Import()</a></li><li><a href="#tbinsert">tb.Insert()</a></li><li><a href="#tbischecked">tb.IsChecked()</a></li><li><a href="#tbisenabled">tb.IsEnabled()</a></li><li><a href="#tbishidden">tb.IsHidden()</a></li><li><a href="#ispressed">IsPressed()</a></li><li><a href="#tbmovebutton">tb.MoveButton()</a></li><li><a href="#tbposition">tb.Position()</a></li><li><a href="#tbsendmsg">tb.SendMsg()</a></li><li><a href="#tbsetimagelist">tb.SetImageList()</a></li><li><a href="#tbsetmetrics">tb.SetMetrics()</a></li><li><a href="#tbshowtext">tb.ShowText()</a></li></ul></li><li><a href="#properties">Properties</a><ul><li><a href="#tbcallback">tb.callback</a></li><li><a href="#tbeasymode">tb.easyMode</a></li><li><a href="#tbh-tbw">tb.h / tb.w</a></li><li><a href="#tbhotitem">tb.hotItem</a></li><li><a href="#tbhotitemid">tb.hotItemID</a></li><li><a href="#tbhwnd">tb.hwnd</a></li><li><a href="#tbname">tb.name</a></li><li><a href="#tbpadding">tb.padding</a></li><li><a href="#tbtxtspacing">tb.txtSpacing</a></li><li><a href="#tbtype">tb.type</a></li></ul></li><li><a href="#to-do-list">To-Do List:</a></li><li><a href="#easy-mode">Easy Mode</a><ul><li><a href="#for-the-toolbar">For the Toolbar</a></li><li><a href="#for-the-toolbar-buttons">For the Toolbar Buttons</a></li></ul></li><li><a href="#automatic-toolbar-sizing">Automatic Toolbar Sizing</a></li></ul></div><p class="toggleable">Pick a markdown and code style:<br><select id="__markdown-viewer__mdselect"><option value="sss">default</option><option value="github">github</option></select><select id="__markdown-viewer__hlselect"><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/agate.css">agate</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/androidstudio.css">androidstudio</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/arduino-light.css">arduino-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/arta.css">arta</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/ascetic.css">ascetic</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-cave.dark.css">atelier-cave.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-cave.light.css">atelier-cave.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-cave-dark.css">atelier-cave-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-cave-light.css">atelier-cave-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-dune.dark.css">atelier-dune.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-dune.light.css">atelier-dune.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-dune-dark.css">atelier-dune-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-dune-light.css">atelier-dune-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-estuary.dark.css">atelier-estuary.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-estuary.light.css">atelier-estuary.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-estuary-dark.css">atelier-estuary-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-estuary-light.css">atelier-estuary-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-forest.dark.css">atelier-forest.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-forest.light.css">atelier-forest.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-forest-dark.css">atelier-forest-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-forest-light.css">atelier-forest-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-heath.dark.css">atelier-heath.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-heath.light.css">atelier-heath.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-heath-dark.css">atelier-heath-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-heath-light.css">atelier-heath-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-lakeside.dark.css">atelier-lakeside.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-lakeside.light.css">atelier-lakeside.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-lakeside-dark.css">atelier-lakeside-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-lakeside-light.css">atelier-lakeside-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-plateau.dark.css">atelier-plateau.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-plateau.light.css">atelier-plateau.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-plateau-dark.css">atelier-plateau-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-plateau-light.css">atelier-plateau-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-savanna.dark.css">atelier-savanna.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-savanna.light.css">atelier-savanna.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-savanna-dark.css">atelier-savanna-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-savanna-light.css">atelier-savanna-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-seaside.dark.css">atelier-seaside.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-seaside.light.css">atelier-seaside.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-seaside-dark.css">atelier-seaside-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-seaside-light.css">atelier-seaside-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-sulphurpool.dark.css">atelier-sulphurpool.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-sulphurpool.light.css">atelier-sulphurpool.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-sulphurpool-dark.css">atelier-sulphurpool-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atelier-sulphurpool-light.css">atelier-sulphurpool-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atom-one-dark.css">atom-one-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/atom-one-light.css">atom-one-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/brown-paper.css">brown-paper</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/brown_paper.css">brown_paper</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/codepen-embed.css">codepen-embed</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/color-brewer.css">color-brewer</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/darcula.css">darcula</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/dark.css">dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/darkula.css">darkula</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/default.css">default</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/docco.css">docco</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/dracula.css">dracula</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/far.css">far</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/foundation.css">foundation</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/github.css">github</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/github-gist.css">github-gist</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/googlecode.css">googlecode</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/grayscale.css">grayscale</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/gruvbox-dark.css">gruvbox-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/gruvbox-light.css">gruvbox-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/hopscotch.css">hopscotch</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/hybrid.css">hybrid</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/idea.css">idea</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/ir-black.css">ir-black</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/ir_black.css">ir_black</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/kimbie.dark.css">kimbie.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/kimbie.light.css">kimbie.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/magula.css">magula</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/monokai.css">monokai</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/monokai-sublime.css">monokai-sublime</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/monokai_sublime.css">monokai_sublime</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/mono-blue.css">mono-blue</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/obsidian.css">obsidian</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/ocean.css">ocean</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/paraiso.dark.css">paraiso.dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/paraiso.light.css">paraiso.light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/paraiso-dark.css">paraiso-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/paraiso-light.css">paraiso-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/pojoaque.css">pojoaque</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/purebasic.css">purebasic</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/qtcreator_dark.css">qtcreator_dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/qtcreator_light.css">qtcreator_light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/railscasts.css">railscasts</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/rainbow.css">rainbow</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/routeros.css">routeros</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/school-book.css">school-book</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/school_book.css">school_book</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/solarized-dark.css">solarized-dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/solarized-light.css">solarized-light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/solarized_dark.css">solarized_dark</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/solarized_light.css">solarized_light</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/sunburst.css">sunburst</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/tomorrow.css">tomorrow</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/tomorrow-night.css">tomorrow-night</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/tomorrow-night-blue.css">tomorrow-night-blue</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/tomorrow-night-bright.css">tomorrow-night-bright</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/tomorrow-night-eighties.css">tomorrow-night-eighties</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/vs.css">vs</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/vs2015.css">vs2015</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/xcode.css">xcode</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/xt256.css">xt256</option><option value="moz-extension://af34e2b1-104a-4793-afc5-1051e7c0251d/lib/highlightjs/styles/zenburn.css">zenburn</option></select></p><p class="toggleable"><a id="__markdown-viewer__download" download="markdown.html" style="display: none;">Download as HTML</a></p></div><div class="markdownRoot"><table>
+<thead>
+<tr>
+<th><a href="https://thearkive.github.io/IronToolbar_AHK/">IronToolbar Home</a></th>
+<th><a href="site/docs.html">Documentation</a></th>
+<th><a href="https://github.com/TheArkive/IronToolbar_AHK/archive/refs/heads/master.zip">Download</a></th>
+<th><a href="https://github.com/TheArkive/IronToolbar_AHK">Source</a></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<hr>
+<div style="font-size:12px; position:fixed; right:70px; top:10px; background-color:#000C17; padding:12px; z-index:100; border:1px solid #00ACAF; ">&nbsp;&nbsp;Table of Contents&nbsp;&nbsp;</div>
+<h2 id="creating-the-toolbar">Creating the Toolbar</h2>
+<p>Create the toolbar as follows:
+<code>tb := gui.AddToolbar(sOptions, Styles, MixedButtons:=true, EasyMode:=true)</code></p>
+<p>Creates a new toolbar.  Many styles are applied to toolbars and the buttons automatically.  See the "Easy Mode" section below for a detailed description of toolbar and button styles that are automatically applied/removed when certain actions are triggered.</p>
+<ul>
+<li>sOptions: A string of options, formatted the same as AHK GUI options.</li>
+<li>Styles: A string of Styles and ExStyles to apply to the toolbar.</li>
+<li>MixedBtns: Boolean, true by default.<br>
+By default, toolbar style "MixedButtons" is automatically set.  This has no effect unless the user also sets the "List" style.  To use a mix of text buttons and image buttons simply pass the "List" style in the 2nd parameter.</li>
+<li>EasyMode: Boolean, true by default.<br>
+Turning off Easy Mode disables all automatic toolbar and button styles.  Use with caution!  Use tb.SendMsg() to send your own messages to the toolbar.</li>
+</ul>
+<blockquote>
+<p>Toolbar Styles:</p>
+<p><a href="https://docs.microsoft.com/en-us/windows/win32/controls/toolbar-control-and-button-styles">Toolbar Styles Reference - MS.docs</a><br>
+AltDrag, CustomErase, Flat, List, RegisterDrop, ToolTips, Transparent, Wrapable</p>
+<p><a href="https://docs.microsoft.com/en-us/windows/win32/winmsg/window-styles">Window Styles Reference - also affects the toolbar - MS.docs</a><br>
+Border, TabStop, ThickFrame, Child (these styles are rarely used directly with toolbars)</p>
+<p><a href="https://docs.microsoft.com/en-us/windows/win32/controls/common-control-styles">Common Control Styles Reference - MS.docs</a><br>
+Adjustable, Bottom, Left, Right, Top, NoDivider, NoMoveX, NoMoveY, NoParentAlign, NoResize, Vert</p>
+<p><a href="https://docs.microsoft.com/en-us/windows/win32/controls/toolbar-extended-styles">Toolbar ExStyles Reference - MS.docs</a><br>
+DoubleBuffer, DrawDDArrows, HideClippedButtons, MixedButtons<br>
+MultiColumn, Vertical (suggested to NOT use MultiColumn and Vertical)</p>
+</blockquote>
+<h2 id="methods">Methods</h2>
+<h3 id="tbadd">tb.Add()</h3>
+<p>Usage: <code>tb.Add( [ {btn_obj}, {btn_obj}, ... ] )</code></p>
+<p>Adds buttons and separators to the toolbar.  When adding a separator, you only need to specify <code>{label:""}</code>.  Other buttons can be specified with nothing more than specifying <code>{label:"txt", icon:#}</code>, unless you want to add the other types of buttons that toolbar supports (ie. DropDown button, Check button, etc).  In this case you would need to specify all necessary <code>styles</code> and <code>states</code> to get the button and behavior you want.  See the example for how to create check buttons, and DropDown buttons with a menu.</p>
+<p>The format for the btn_array is as follows:</p>
+<pre><code><span class="hljs-string">btnArray :</span>= [ { <span class="hljs-string">label:</span><span class="hljs-string">"str"</span>, <span class="hljs-string">icon:</span><span class="hljs-keyword">int</span>, <span class="hljs-string">styles:</span><span class="hljs-string">"str"</span>, <span class="hljs-string">states:</span><span class="hljs-string">"str"</span> }
+            , { ... }
+            , { ... } ]
+</code></pre>
+<ul>
+<li>label: Any string for button text.</li>
+<li>icon: Image List index for which icon to use (not zero-based).<br>
+Specify <code>icon:-1</code> to make a text-only button (without an icon).</li>
+<li>styles: A space separated list of styles and exStyles to apply.</li>
+<li>states: A space separated list of states to apply.</li>
+</ul>
+<blockquote>
+<p><a href="https://docs.microsoft.com/en-us/windows/win32/controls/toolbar-control-and-button-styles">Toolbar Button Styles Reference</a><br>
+AutoSize, Button, Check, CheckGroup, DropDown, Group, NoPrefix, Sep, ShowText, WholeDropDown</p>
+<p><a href="https://docs.microsoft.com/en-us/windows/win32/controls/toolbar-button-states">Toolbar Button States Reference</a><br>
+Checked, Ellipses, Enabled, Hidden, Marked, Pressed, Wrap, Grayed</p>
+</blockquote>
+<h3 id="tbautosize">tb.AutoSize()</h3>
+<p>Usage: <code>tb.AutoSize()</code></p>
+<p>Automatically resizes the toolbar, but not usually "good enough".  This script employs a combination of tb.AutoSize() and tb.Position() to quickly and easily get ideal resized dimensions.</p>
+<h3 id="tbchangebitmap">tb.ChangeBitmap()</h3>
+<p>Usage: <code>tb.ChangeBitmap(_in, img_idx)</code></p>
+<ul>
+<li>_in: The button text string, or the 1-based index number of the button.</li>
+<li>img_idx: The new 1-based image index to apply to the button.</li>
+</ul>
+<p>Changes the picture index of the specified button.  The new index corresponds to the applied ImageList.  The index is 1-based.</p>
+<h3 id="tbclearbuttons">tb.ClearButtons()</h3>
+<p>Usage: <code>tb.ClearButtons()</code></p>
+<p>Deletes all buttons on the toolbar.</p>
+<h3 id="tbcount">tb.Count()</h3>
+<p>Usage: <code>result := tb.BtnCount()</code></p>
+<p>Returns the number of elements in the toolbar (including separators).</p>
+<h3 id="tbcmdtoindex">tb.CmdToIndex()</h3>
+<p>Usage: <code>idx := tb.CmdToIndex(idCmd)</code></p>
+<ul>
+<li>idCmd: The button ID specified.  Use <code>tb.GetButton(idx)</code> to find a button's idCmd.</li>
+</ul>
+<p>This is useful when using <code>tb.SendMsg()</code>.  Sometimes wParam or lParam will require the idCmd of a button instead of it's index.</p>
+<h3 id="tbcheck">tb.Check()</h3>
+<p>Usage: <code>tb.Check(_in,status:=false)</code></p>
+<ul>
+<li>_in: The button text string, or the 1-based index number of the button.</li>
+<li>status: TRUE checks the button, FALSE unchecks the button.</li>
+</ul>
+<h3 id="tbcount-1">tb.Count()</h3>
+<p>Usage: <code>btn_count := tb.Count()</code></p>
+<p>Retrieves the number of elements (buttons and separators) in the toolbar, including hidden elements.</p>
+<h3 id="tbcustomizer">tb.Customizer()</h3>
+<p>Usage: <code>tb.Customizer()</code></p>
+<p>Invokes the improved Toolbar Customizer.  This customizer does everything the <code>OldCustomizer()</code> does, except that it will only hide buttons, not delete, when "removing" them.  You can still delete buttons with <code>tb.Delete(_in)</code>.</p>
+<h3 id="tbdelete">tb.Delete()</h3>
+<p>Usage: <code>tb.Delete(_in)</code></p>
+<ul>
+<li>_in: The button text string, or the 1-based index number of the button.</li>
+</ul>
+<p>Delete a toolbar element.  The element can be a separator, a button, hidden, or visible.</p>
+<h3 id="tbenablebutton">tb.EnableButton()</h3>
+<p>Usage: <code>tb.EnableButton(_in, status)</code></p>
+<ul>
+<li>_in: The button text string, or the 1-based index number of the button.</li>
+<li>status: TRUE or FALSE.  TRUE to enable the button, FALSE to disable it.</li>
+</ul>
+<p>Enables or disables a button</p>
+<h3 id="tbexport">tb.Export()</h3>
+<p>Usage: <code>map := tb.Export()</code></p>
+<p>Exports the current layout of the buttons to a Map() object.  States and styles are also preserved.  The output map is meant to be used with an object serializer in order to save it to disk.</p>
+<blockquote>
+<p>Recommended serializer: <a href="https://www.autohotkey.com/boards/viewtopic.php?f=83&amp;t=74799&amp;sid=3c11c9a47a6500664963402ec9ccb082">JSON</a></p>
+</blockquote>
+<h3 id="tbgetallbuttons">tb.GetAllButtons()</h3>
+<p>Usage: <code>btn_array := tb.GetAllButtons()</code></p>
+<p>The output is a button array, the same as what is used to input into <code>tb.Add()</code>.  The main difference is that the <code>styles</code> and <code>states</code> members of each button are integers, not text strings, and there are a few more properties.</p>
+<p>With this button array you can iterate through the buttons and inspect each propery of the buttons.</p>
+<p>Available properties: <code>label, icon, styles, states, index, checked, idCmd</code></p>
+<h3 id="tbgetbitmap">tb.GetBitmap()</h3>
+<p>Usage: <code>index := tb.GetBitmap(_in)</code></p>
+<ul>
+<li>_in: The button text string, or the 1-based index number of the button.</li>
+</ul>
+<p>The returned index is the 1-based index of the corresponding image in the currently active ImageList.</p>
+<h3 id="tbgetmetrics">tb.GetMetrics()</h3>
+<p>Usage: <code>obj := tb.GetMetrics(type:="external")</code></p>
+<ul>
+<li>obj: {x, y}<br>
+The x value is the internal/external horizontal spacing.
+The y value is the internal/external vertical spacing.</li>
+<li>Type:<br>
+External metrics represent the spacing of buttons from each other.  Vertical spacing only applies when the toolbar is vertical.<br>
+Internal metrics represent the spacing between the image and the edge of the button.</li>
+</ul>
+<h3 id="tbgetrows">tb.GetRows()</h3>
+<p>Usage: <code>rows.GetRows()</code></p>
+<p>Mostly used internally for resizing.  This returns the number of rows the toolbar is currently taking up.  This value is only greater than 1 when using the Wrapable style and resizing the window to a size that requires the toolbar to use more than one row.</p>
+<p>For some reason, the function natively returns the value as <code>(rows*2-1)</code>, resulting in values of 1, 3, 5, 7, etc.  This function attempts to fix this and output the proper number of rows.</p>
+<h3 id="tbhittest">tb.HitTest()</h3>
+<p>Usage: <code>btn := tb.HitTest()</code></p>
+<ul>
+<li>btn: The number of the button the mouse is currently hovering over.  If the mouse is over a separator or blank toolbar space, the result is negative and representes the absolute value of the closest button control on the toolbar.</li>
+</ul>
+<h3 id="tbhidebutton">tb.HideButton()</h3>
+<p>Usage: <code>tb.HideButton(_in, status)</code></p>
+<ul>
+<li>_in: The button text string, or the 1-based index number of the button.</li>
+<li>status: TRUE or FALSE.  TRUE to hide the button, FALSE to show it.</li>
+</ul>
+<h3 id="tbil_add">tb.IL_Add()</h3>
+<p>Usage: <code>tb.IL_Add(ILname, file_array)</code></p>
+<ul>
+<li>ILname: The name of an existing ImageList created with <code>tb.IL_Create()</code>.</li>
+<li>file_array: <code>["file/icon_index", "file/icon_index", ...].</code></li>
+</ul>
+<p>Adds images to an existing ImageList.</p>
+<h3 id="tbil_create">tb.IL_Create()</h3>
+<p>Usage: <code>tb.IL_Create("IL_name", file_array [, Large_Icons := false])</code></p>
+<ul>
+<li>IL_name: Any name you want to give to the image list.</li>
+<li>file_array: <code>["file/icon_index", "file/icon_index", ...].</code></li>
+<li>Large_Icons: false by default.</li>
+</ul>
+<p>Creates an image list and populates it with specified files.</p>
+<h3 id="tbil_destroy">tb.IL_Destroy()</h3>
+<p>Usage: <code>tb.IL_Destroy("IL_name")</code></p>
+<ul>
+<li>IL_name: The string name of the specified Image List to destroy.</li>
+</ul>
+<h3 id="tbimport">tb.Import()</h3>
+<p>Usage: <code>tb.Import(map)</code></p>
+<ul>
+<li>map: A previously exported map using <code>map := tb.Export()</code>.</li>
+</ul>
+<p>Imports the specified layout of the buttons.  States and styles are also preserved.  The input map is meant to be first loaded from a text file with an object serializer.</p>
+<blockquote>
+<p>Recommended serializer: <a href="https://www.autohotkey.com/boards/viewtopic.php?f=83&amp;t=74799&amp;sid=3c11c9a47a6500664963402ec9ccb082">JSON</a></p>
+</blockquote>
+<h3 id="tbinsert">tb.Insert()</h3>
+<p>Usage: <code>tb.Insert(btn_obj, index)</code></p>
+<ul>
+<li>btn_obj: this is the same as [btn_array] with <code>tb.Add()</code>, but you only pass one element.  If you try to pass more than one element you will get an error.<br>
+EX: <code>[ { label:"str", icon:# } ]</code></li>
+</ul>
+<p>Inserts the specified button at the specified index.  The button at the index, and all buttons with a higher index, will be moved to the left.</p>
+<h3 id="tbischecked">tb.IsChecked()</h3>
+<p>Usage: <code>boolean := tb.IsChecked(_in)</code></p>
+<ul>
+<li>_in: The button text string, or the 1-based index number of the button.</li>
+</ul>
+<h3 id="tbisenabled">tb.IsEnabled()</h3>
+<p>Usage: <code>boolean := tb.IsEnabled(_in)</code></p>
+<ul>
+<li>_in: The button text string, or the 1-based index number of the button.</li>
+</ul>
+<h3 id="tbishidden">tb.IsHidden()</h3>
+<p>Usage: <code>boolean := tb.IsHidden(_in)</code></p>
+<ul>
+<li>_in: The button text string, or the 1-based index number of the button.</li>
+</ul>
+<h3 id="ispressed">IsPressed()</h3>
+<p>Usage: <code>boolean := tb.IsPressed(_in)</code></p>
+<ul>
+<li>_in: The button text string, or the 1-based index number of the button.</li>
+</ul>
+<h3 id="tbmovebutton">tb.MoveButton()</h3>
+<p>Usage: <code>tb.MoveButton(_in, pos)</code></p>
+<ul>
+<li>_in: The button text string, or the 1-based index number of the button.</li>
+<li>pos: The 1-based index of the position to move the button to.<br>
+Note that separators also have an index position.</li>
+</ul>
+<h3 id="tbposition">tb.Position()</h3>
+<p>Usage: <code>tb.Position(pos)</code></p>
+<ul>
+<li>pos: One of the following strings:  top, bottom, left, right<br>
+Default value is "top".</li>
+</ul>
+<h3 id="tbsendmsg">tb.SendMsg()</h3>
+<p>Usage: <code>result := tb.SendMsg(msg, wParam, lParam)</code></p>
+<p>Intended for advanced use.  You can exercise very precise control over the toolbar and buttons by sending your own messages if desired.</p>
+<h3 id="tbsetimagelist">tb.SetImageList()</h3>
+<p>Usage: <code>tb.SetImageList(Default [, Hot := "", Pressed := "", Disabled := ""])</code></p>
+<p>Each parameter here is the string name of the ImageList specified when initially created with <code>tb.IL_Create()</code>.</p>
+<ul>
+<li>Default: The main image list for button icons.</li>
+<li>Hot: The image list that is used when the mouse hovers over a button. (Optional)</li>
+<li>Pressed: The image list used when a button is pressed. (Optional)</li>
+<li>Disabled: The image list used when a button is disabled. (Optional)</li>
+</ul>
+<p>For most simple implementations, you only need to specify "Default".  All other parameters are optional.  Simply pass the "IL_name" used with <code>tb.IL_Create()</code> for any of the parameters you wish to use.  See <code>IL_Create()</code> above for more info.  If you want to change button icons, you can specify a different <code>Default</code> image list.  This is useful if you want to have small and large icons ready for on-the-fly switching.</p>
+<h3 id="tbsetmetrics">tb.SetMetrics()</h3>
+<p>Usage: <code>tb.SetMetrics(x, y, type:="external")</code></p>
+<ul>
+<li>x, y: The x/y values to pass for the internal or external padding.</li>
+<li>Type:<br>
+External metrics represent the spacing of buttons from each other.  Vertical spacing only applies when the toolbar is vertical.<br>
+Internal metrics represent the spacing between the image and the edge of the button.</li>
+</ul>
+<h3 id="tbshowtext">tb.ShowText()</h3>
+<p>Usage: <code>tb.ShowText(status)</code></p>
+<ul>
+<li>status:  TRUE or FALSE.  TRUE to show text, FALSE to hide text.</li>
+</ul>
+<h2 id="properties">Properties</h2>
+<p>In addition to all the usual properties of a GUI control, you also have the following properties you can access and modify:</p>
+<h3 id="tbcallback">tb.callback</h3>
+<p>Function object.  The default callback function is <code>tbEvent</code>.  When a Toolbar is created, the creation function will attempt only once to resolve the string-name of the function to a Func object.  Any future changes to the callback should be of type Func, BoundFunc, or a Class with a Call() method.</p>
+<p>Changing the default callback:</p>
+<pre><code>tb := gui.AddToolbar(<span class="hljs-built_in">..</span>.)       ; Create the control.
+tb.callback := my_callback      ; <span class="hljs-builtin-name">Set</span> the Function object used <span class="hljs-keyword">for</span> the Toolbar callback.  <span class="hljs-builtin-name">Set</span> per toolbar.
+                                ; Note, the callback func name is <span class="hljs-keyword">NOT</span> quoted.
+
+my_callback(<span class="hljs-built_in">..</span>.) {              ;<span class="hljs-built_in"> User </span>defined function.
+                                ; See AHK v2 help on Function objects <span class="hljs-keyword">for</span> more info. 
+}
+</code></pre>
+<p>Default callback and parameters:</p>
+<pre><code><span class="hljs-function"><span class="hljs-title">tbEvent</span><span class="hljs-params">(tb, lParam, dataObj)</span></span> {
+    ...
+}
+</code></pre>
+<ul>
+<li>tb: Toolbar Gui Control object resulting from <code>gui.AddToolbar()</code></li>
+<li>lParam: Only provided for advanced usage.</li>
+<li>dataObj: Contains lots of info regarding the specified event.</li>
+</ul>
+<p>dataObj Properties:</p>
+<pre><code><span class="hljs-string">dtaObj :</span>= { <span class="hljs-string">event:</span>str, <span class="hljs-string">eventInt:</span><span class="hljs-keyword">int</span>                      Event info
+          , <span class="hljs-string">index:</span><span class="hljs-keyword">int</span>, <span class="hljs-string">idCmd:</span><span class="hljs-keyword">int</span>, <span class="hljs-string">label:</span>str              Button ID info
+          , <span class="hljs-string">dims:</span>{x,y,h,w,b}                             X/Y are relative to the toolbar, b is the same <span class="hljs-keyword">as</span> y+h
+          , <span class="hljs-string">hoverFlags:</span>str, <span class="hljs-string">hoverFlagsInt:</span><span class="hljs-keyword">int</span>            Hover info
+          , <span class="hljs-string">vKey:</span><span class="hljs-keyword">int</span>, <span class="hljs-string">char:</span><span class="hljs-keyword">int</span>                           Keypress info
+          , <span class="hljs-string">oldIndex:</span><span class="hljs-keyword">int</span>, <span class="hljs-string">oldIdCmd:</span><span class="hljs-keyword">int</span>, <span class="hljs-string">oldLabel:</span>str }   More hover info <span class="hljs-keyword">for</span> button the mouse WAS hovering over.
+</code></pre>
+<blockquote>
+<p><a href="https://docs.microsoft.com/en-us/windows/win32/controls/bumper-toolbar-control-reference-notifications">Toolbar WM_NOTIFY Events Reference - MS.docs</a></p>
+</blockquote>
+<p>dataObj Events:</p>
+<pre><code><span class="hljs-symbol">events:</span> LClick, LDClick, LDown, RClick, RDClick
+<span class="hljs-built_in">        Char,</span> KeyDown
+<span class="hljs-built_in">        BeginDrag,</span> DragOut, EndDrag
+        DropDown
+        DeletingButton
+        HotItemChange
+        
+        - The following events fire but do <span class="hljs-literal">not</span> currently populate data in dataObj.
+<span class="hljs-built_in">        CustomDraw,</span> DupAccelerator, GetDispInfo, GetObject, GetTipInfo, MapAccelerator
+<span class="hljs-built_in">        ReleasedCapture,</span> ToolTipsCreated, WrapAccelerator, WrapHotItem
+</code></pre>
+<p>NOTE:  A few events have been renamed for consistency, ie. <code>LClick</code> was originally <code>NM_CLICK</code>, and <code>LDClick</code> was <code>NM_LDBLCLK</code>, etc.</p>
+<h3 id="tbeasymode">tb.easyMode</h3>
+<p>Boolean.  This is <code>true</code> by default.  If you set this to <code>false</code> then all the automatic handling and sizing of the toolbar is disabled.  You will mostly need to use <code>tb.SendMsg()</code> in several manual contexts in order to manage the toolbar with easyMode disabled, but all the built-in methods will still work for basic management.</p>
+<p>Generally speaking you should disable EasyMode on toolbar creation, not on the fly.  But you can if you want to!</p>
+<h3 id="tbh-tbw">tb.h / tb.w</h3>
+<p>Integer.</p>
+<p><code>tb.h</code> describes the height of the toolbar when set to TOP or BOTTOM orientation with <code>tb.Position()</code>.</p>
+<p><code>tb.w</code> describes the width of the toolbar when set to LEFT or RIGHT orientation with <code>tb.Position()</code>.</p>
+<p>These properties are most useful in a sizing event callback function.</p>
+<h3 id="tbhotitem">tb.hotItem</h3>
+<p>Integer.  Contains the current hot-item 1-based index.</p>
+<h3 id="tbhotitemid">tb.hotItemID</h3>
+<p>Integer.  Contains the current hot-item idCmd.</p>
+<h3 id="tbhwnd">tb.hwnd</h3>
+<p>Pointer.  Stores the toolbar hwnd.</p>
+<h3 id="tbname"><a href="http://tb.name">tb.name</a></h3>
+<p>String.  Stores the <code>vName</code> of the control if specified in options when calling <code>gui.AddToolbar()</code>.</p>
+<h3 id="tbpadding">tb.padding</h3>
+<p>Integer.  Number of pixels/2 to add to the toolbar height.  For most consistent results, this should be 7 or 8 pixels on most systems.  This value has more effect when the Wrapping style is used.  If this setting is too small or large, then you will either see the buttons cut off on wrapping, or you will see too much extra space on the toolbar.</p>
+<p>The default value is 7.</p>
+<h3 id="tbtxtspacing">tb.txtSpacing</h3>
+<p>Integer.  Stores the number of spaces to automatically add to the left of button text (label) when <code>easyMode</code> is enabled and when <code>icon:-1</code> is specified on button creation with <code>tb.Add()</code> (which creates a text-only button, without icon).  For most non-fixed width fonts, 2 spaces should suffice.  The default value is 2.  Without adding these spaces, the button text (without an icon) would not appear centered and ends up left-aligned.</p>
+<p>Please see the example script.</p>
+<h3 id="tbtype">tb.type</h3>
+<p>String.  This is always "Toolbar".</p>
+<h2 id="to-do-list">To-Do List:</h2>
+<ul>
+<li>Implement <code>CreateWindowEx()</code> to be able to add non-toolbar controls.  This will likely be in a separate class extension.</li>
+<li>Testing for icons larger than 32 x 32.</li>
+<li>Attempt to support Drop targets and TBN_GETOBJECT for drag-drop onto a toolbar.</li>
+</ul>
+<p>Please let me know if you have any suggestions for different ways of handling things.  Setting <code>easyMode := false</code> has not been tested, but it is squirrly.  The toolbar is a fairly complex and unforgiving control.  Disable easyMode at your own risk!</p>
+<h2 id="easy-mode">Easy Mode</h2>
+<p>Please read the rest of the docs above and study the included script example for appropriate context, especially if you want to deviate from "easyMode".</p>
+<p>By default, <code>tb.easyMode := true</code> and will apply the following Styles/ExStyles automatically:</p>
+<h3 id="for-the-toolbar">For the Toolbar</h3>
+<ul>
+<li>Flat Style (TBSTYLE_FLAT)<br>
+Makes separators appear as bars.</li>
+<li>List Style (TBSTYLE_LIST)<br>
+Makes text appear to the right of the icon.</li>
+<li>MixedButtons (TBSTYLE_EX_MIXEDBUTTONS)<br>
+Hides all button text, except for buttons that have the TBSTYLE_SHOWTEXT style.</li>
+<li>Vertical style (CSS_VERT)<br>
+Automatically applied when setting the toolbar orientation to RIGHT or LEFT with <code>tb.Position()</code>, or when specifying LEFT or RIGHT as a style when calling <code>Gui.AddToolbar()</code>.  When toolbar orientation is changed to TOP or BOTTOM this style is automatically removed.</li>
+</ul>
+<h3 id="for-the-toolbar-buttons">For the Toolbar Buttons</h3>
+<ul>
+<li>AutoSize Style (TBSTYLE_AUTOSIZE)<br>
+Causes the buttons with this style to automatically resize according to the displayed icon, text, and whether or not button text should be displayed.</li>
+<li>ShowText Style (TBSTYLE_SHOWTEXT) if <code>icon:-1</code> is specified on button creation<br>
+This is a shorthand in easy mode to create a text button with no icon.</li>
+<li>Enabled State (TBSTATE_ENABED)<br>
+This is added to every button by default.  If you want to save/restore all states of toolbar buttons easily, see <code>tb.Import()</code> and <code>tb.Export()</code> above.</li>
+<li>Wrap State (TBSTYLE_WRAPABLE)<br>
+This is set to all toolbar elements when the toolbar orientation is set to RIGHT or LEFT with <code>tb.Position()</code>, or when specifying LEFT or RIGHT as a style when calling <code>Gui.AddToolbar()</code>.  When toolbar orientation is changed to TOP or BOTTOM, this style is automatically removed from all toolbar elements.</li>
+</ul>
+<h2 id="automatic-toolbar-sizing">Automatic Toolbar Sizing</h2>
+<p>To ensure your toolbar(s) are automatically sized or positioned in any orientation, simply use <code>Gui.OnEvent()</code> to bind a callback function to the "size" event, and add <code>Toolbar.SizeToolbar(tb, w, h)</code> to that sizing callback function.</p>
+<p>This is not required.  You can still control the sizing of the toolbar manually.  In this case you will want to make use of <code>tb.GetRows()</code> when you have the Wrapable style set with a horizontal toolbar.  You will also want to use <code>tb.h</code> and <code>tb.w</code> depending on the orientation of your toolbar (top, bottom, left, right).</p>
+<pre><code>GuiSize(gui, MinMax, w, h) {
+    tb := gui[<span class="hljs-string">"MyToolbar"</span>]          ; Per toolbar, <span class="hljs-keyword">for</span> fully docked <span class="hljs-built_in">in</span>
+    Toolbar.SizeToolbar(tb, w, h)   ; <span class="hljs-built_in">top</span>/<span class="hljs-built_in">bottom</span>/<span class="hljs-built_in">left</span>/<span class="hljs-built_in">right</span> orientation only.
+}
+</code></pre>
+</div></body></html>

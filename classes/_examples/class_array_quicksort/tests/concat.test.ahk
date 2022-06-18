@@ -1,4 +1,4 @@
-group := tester.newGroup("concat(arrays*)")
+﻿group := tester.newGroup("concat(arrays*)")
 
 arrays := [[1,2,3]
 	, [4,5,6]

@@ -1,4 +1,4 @@
-; #Include ping.ahk
+﻿; #Include ping.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

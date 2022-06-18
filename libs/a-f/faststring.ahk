@@ -1,4 +1,4 @@
-#SingleInstance force
+﻿#SingleInstance force
 
 
 _list_hotstring := ComObjCreate("Scripting.Dictionary")

@@ -1,4 +1,4 @@
- ; Get the name of the system's default language.
+﻿ ; Get the name of the system's default language.
  ; not the current keyboard/input language!
 getSystemLanguage()
 {

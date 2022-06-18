@@ -1,5 +1,5 @@
-﻿;MsgBox % boxit("EVERYWHERE IS WITHIN WALKING DISTANCE IF YOU HAVE THE TIME")
-;MsgBox % boxit("IT IS RAINING CATS AND DOGS OUT THERE")
+﻿MsgBox % boxit("EVERYWHERE IS WITHIN WALKING DISTANCE IF YOU HAVE THE TIME")
+MsgBox % boxit("IT IS RAINING CATS AND DOGS OUT THERE")
 
 boxit(z) {
 	StringReplace, z, z, %A_SPACE%, , All ;remove spaces

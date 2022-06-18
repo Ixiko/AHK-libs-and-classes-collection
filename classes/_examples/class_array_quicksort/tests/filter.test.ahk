@@ -1,4 +1,4 @@
-group := tester.newGroup("filter(callback)")
+﻿group := tester.newGroup("filter(callback)")
 
 array := [1,2,3,4,5,6]
 

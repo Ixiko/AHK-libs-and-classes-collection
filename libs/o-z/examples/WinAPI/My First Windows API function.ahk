@@ -1,4 +1,4 @@
-; Language:       English
+﻿; Language:       English
 ; Platform:       Win9x/NT
 ; Author:         Dr. Shajul <mail@shajul.net>
 ;

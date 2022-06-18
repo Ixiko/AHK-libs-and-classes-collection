@@ -1,4 +1,4 @@
-#Include <Is>
+﻿#Include <Is>
 
 Type(Value)
 {

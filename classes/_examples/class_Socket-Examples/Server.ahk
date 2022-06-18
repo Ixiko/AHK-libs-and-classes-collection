@@ -67,8 +67,7 @@ OnAccept(Server){
 	while Line := Sock.RecvLine()
 		Table .= Format("<tr><td>{}</td><td>{}</td></tr>", StrSplit(Line, ": ")*)
 
-	if (Request[1] != "GET")
-	{
+	if (Request[1] != "GET")	{
 		Sock.SendText("HTTP/1.0 501 Not Implemented`r`n`r`n")
 		Sock.Disconnect()
 		return
@@ -76,8 +75,7 @@ OnAccept(Server){
 
 	if (Request[2] == "/")
 		Sock.SendText(Format(Template, Table, ++Counter))
-	else if (Request[2] == "/mouse")
-	{
+	else if (Request[2] == "/mouse")	{
 		MouseGetPos, x, y
 		Sock.SendText("HTTP/1.0 200 OK`r`n`r`n" x "," y)
 	}
