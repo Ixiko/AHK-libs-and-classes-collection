@@ -2,7 +2,7 @@
 
 ![lbc-logo](/lbc.png)
 
-#### This is currently a collection of around 3400 Autohotkey libraries and classes.
+#### This is currently a collection of around 3600 Autohotkey libraries and classes.
 
 ------
 
