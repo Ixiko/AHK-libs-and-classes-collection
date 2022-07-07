@@ -1,4 +1,4 @@
-; This script changes the line spacing of selected text.
+﻿; This script changes the line spacing of selected text.
 
 #IfWinActive ahk_class PPTFrameClass
 

@@ -1,4 +1,4 @@
-; VLC Media Player HTTP Functions Library.
+ï»¿; VLC Media Player HTTP Functions Library.
 ; Developed by Richard Wells, AHK handle Specter333. - fixed by szapp
 ;
 ; Most transport functions are one way, received by VLC.  They can be
@@ -282,14 +282,14 @@ VLCHTTP3_PlaylistDeleteID(id)  ; Delete the entry coresponding the the Playlist 
 	cmd = status.xml?command=pl_delete&id=%id%
 	SendRequest(cmd)
 	}
-VLCHTTP3_PlaylistTracks() ; Retrieve the title of all media in the playlist seperated with ¥.
+VLCHTTP3_PlaylistTracks() ; Retrieve the title of all media in the playlist seperated with Â¥.
 	{
 	AllTitles =
 	cmd := VLCHTTP3_PlayList()
-	StringReplace, cmd, cmd, <leaf, ¥, A
+	StringReplace, cmd, cmd, <leaf, Â¥, A
 	StringReplace, cmd, cmd, ]]>, , A
 	StringReplace, cmd, cmd, <![CDATA[, , A
-	StringSplit, Section, cmd, ¥
+	StringSplit, Section, cmd, Â¥
 	Loop, %Section0%
 		{
 		Sect := % Section%A_Index%
@@ -302,7 +302,7 @@ VLCHTTP3_PlaylistTracks() ; Retrieve the title of all media in the playlist sepe
 			title := UnHTM(title)
 			If AllTitles =
 				ReturnTitle = %title%
-			Else, ReturnTitle = ¥%title%
+			Else, ReturnTitle = Â¥%title%
 
 			}
 
@@ -310,14 +310,14 @@ VLCHTTP3_PlaylistTracks() ; Retrieve the title of all media in the playlist sepe
 		}
 	Return, %AllTitles%
 	}
-VLCHTTP3_PlaylistArtist() ; Retrieve the artist of all media in the playlist seperated with ¥.
+VLCHTTP3_PlaylistArtist() ; Retrieve the artist of all media in the playlist seperated with Â¥.
 	{
 	AllArtist=
 	cmd := VLCHTTP3_PlayList()
-	StringReplace, cmd, cmd, <leaf, ¥, A
+	StringReplace, cmd, cmd, <leaf, Â¥, A
 	StringReplace, cmd, cmd, ]]>, , A
 	StringReplace, cmd, cmd, <![CDATA[, , A
-	StringSplit, Section, cmd, ¥
+	StringSplit, Section, cmd, Â¥
 	Loop, %Section0%
 		{
 		Sect := % Section%A_Index%
@@ -328,20 +328,20 @@ VLCHTTP3_PlaylistArtist() ; Retrieve the artist of all media in the playlist sep
 			Artist := UnHTM(Artist)
 			If AllArtist =
 				ReturnArtist = %Artist%
-			Else, ReturnArtist = ¥%Artist%
+			Else, ReturnArtist = Â¥%Artist%
 			}
 		AllArtist = %AllArtist%%ReturnArtist%
 		}
 	Return, %AllArtist%
 	}
-VLCHTTP3_PlayListAlbum() ; Retrieve the album of all media in the playlist seperated with ¥.
+VLCHTTP3_PlayListAlbum() ; Retrieve the album of all media in the playlist seperated with Â¥.
 	{
 	AllAlbums =
 	cmd := VLCHTTP3_PlayList()
-		StringReplace, cmd, cmd, <leaf, ¥, A
+		StringReplace, cmd, cmd, <leaf, Â¥, A
 	StringReplace, cmd, cmd, ]]>, , A
 	StringReplace, cmd, cmd, <![CDATA[, , A
-	StringSplit, Section, cmd, ¥
+	StringSplit, Section, cmd, Â¥
 	Loop, %Section0%
 		{
 		Sect := % Section%A_Index%
@@ -352,7 +352,7 @@ VLCHTTP3_PlayListAlbum() ; Retrieve the album of all media in the playlist seper
 			Album := UnHTM(Album)
 			If AllAlbums =
 				ReturnAlbum = %Album%
-			Else, ReturnAlbum = ¥%Album%
+			Else, ReturnAlbum = Â¥%Album%
 			}
 		AllAlbums = %AllAlbums%%ReturnAlbum%
 
@@ -362,10 +362,10 @@ VLCHTTP3_PlayListAlbum() ; Retrieve the album of all media in the playlist seper
 VLCHTTP3_PlayListFilePathID(id) ; Get filepath by playlist ID
 	{
 	cmd := VLCHTTP3_PlayList()
-	StringReplace, cmd, cmd, <leaf, %A_Space%¥, A
+	StringReplace, cmd, cmd, <leaf, %A_Space%Â¥, A
 	StringReplace, cmd, cmd, ]]>, , A
 	StringReplace, cmd, cmd, <![CDATA[, , A
-	StringSplit, Section, cmd, ¥
+	StringSplit, Section, cmd, Â¥
 	Loop, %Section0%
 		{
 		Sect := % Section%A_Index%
@@ -388,10 +388,10 @@ VLCHTTP3_PlayListFilePathID(id) ; Get filepath by playlist ID
 VLCHTTP3_CurrentPlayListIDTESTPURPOSE() ; Gets playlist ID of currently playing item
 	{
 	cmd := VLCHTTP3_PlayList()
-	StringReplace, cmd, cmd, <leaf, %A_Space%¥, A
+	StringReplace, cmd, cmd, <leaf, %A_Space%Â¥, A
 	StringReplace, cmd, cmd, ]]>, , A
 	StringReplace, cmd, cmd, <![CDATA[, , A
-	StringSplit, Section, cmd, ¥
+	StringSplit, Section, cmd, Â¥
 	Return %cmd%
 	Loop, %Section0%
 		{
@@ -418,10 +418,10 @@ VLCHTTP3_CurrentPlayListIDTESTPURPOSE() ; Gets playlist ID of currently playing 
 VLCHTTP3_CurrentPlayListID() ; Gets playlist ID of currently playing item
 	{
 	cmd := VLCHTTP3_PlayList()
-	StringReplace, cmd, cmd, <leaf, %A_Space%¥, A
+	StringReplace, cmd, cmd, <leaf, %A_Space%Â¥, A
 	StringReplace, cmd, cmd, ]]>, , A
 	StringReplace, cmd, cmd, <![CDATA[, , A
-	StringSplit, Section, cmd, ¥
+	StringSplit, Section, cmd, Â¥
 	Loop, %Section0%
 		{
 		Sect := % Section%A_Index%
@@ -441,26 +441,26 @@ VLCHTTP3_CurrentPlayListID() ; Gets playlist ID of currently playing item
 		}
 	Return, %ID%
 	}
-VLCHTTP3_PlayListID() ; Retrieve the playlist ID of all media in the playlist seperated with ¥.
+VLCHTTP3_PlayListID() ; Retrieve the playlist ID of all media in the playlist seperated with Â¥.
 	{ ; Use this ID to play or delete a playist item.
 	AllIDs =
 	cmd := VLCHTTP3_PlayList()
-		StringReplace, cmd, cmd, <leaf, ¥ µ, A
+		StringReplace, cmd, cmd, <leaf, Â¥ Âµ, A
 	StringReplace, cmd, cmd, ]]>, , A
 	StringReplace, cmd, cmd, <![CDATA[, , A
-	StringSplit, Section, cmd, ¥
+	StringSplit, Section, cmd, Â¥
 	Loop, %Section0%
 		{
 		Sect := % Section%A_Index%
 		Loop, parse, Sect, `n, `r
 			{
-			IfInString, A_LoopField,  µ id=
+			IfInString, A_LoopField,  Âµ id=
 				ID = %A_LoopField%
 			StringSplit, ID, ID, "
 			ID := UnHTM(ID2)
 			If AllIDs =
 				ReturnID = %ID%
-			Else, ReturnID = ¥%ID%
+			Else, ReturnID = Â¥%ID%
 			}
 		AllIDs = %AllIDs%%ReturnID%
 
@@ -710,14 +710,14 @@ return, res
 
  UnHTM( HTM ) {   ; Remove HTML formatting / Convert to ordinary text   by SKAN 19-Nov-2009
  Static HT,C=";" ; Forum Topic: www.autohotkey.com/forum/topic51342.html  Mod: 16-Sep-2010
- IfEqual,HT,,   SetEnv,HT, % "&aacuteá&acircâ&acute´&aeligæ&agraveà&amp&aringå&atildeã&au"
- . "mlä&bdquo„&brvbar¦&bull•&ccedilç&cedil¸&cent¢&circˆ&copy©&curren¤&dagger†&dagger‡&deg"
- . "°&divide÷&eacuteé&ecircê&egraveè&ethð&eumlë&euro€&fnofƒ&frac12½&frac14¼&frac34¾&gt>&h"
- . "ellip…&iacuteí&icircî&iexcl¡&igraveì&iquest¿&iumlï&laquo«&ldquo“&lsaquo‹&lsquo‘&lt<&m"
- . "acr¯&mdash—&microµ&middot·&nbsp &ndash–&not¬&ntildeñ&oacuteó&ocircô&oeligœ&ograveò&or"
- . "dfª&ordmº&oslashø&otildeõ&oumlö&para¶&permil‰&plusmn±&pound£&quot""&raquo»&rdquo”&reg"
- . "®&rsaquo›&rsquo’&sbquo‚&scaronš&sect§&shy &sup1¹&sup2²&sup3³&szligß&thornþ&tilde˜&tim"
- . "es×&trade™&uacuteú&ucircû&ugraveù&uml¨&uumlü&yacuteý&yen¥&yumlÿ"
+ IfEqual,HT,,   SetEnv,HT, % "&aacuteÃ¡&acircÃ¢&acuteÂ´&aeligÃ¦&agraveÃ &amp&aringÃ¥&atildeÃ£&au"
+ . "mlÃ¤&bdquoâ€ž&brvbarÂ¦&bullâ€¢&ccedilÃ§&cedilÂ¸&centÂ¢&circË†&copyÂ©&currenÂ¤&daggerâ€ &daggerâ€¡&deg"
+ . "Â°&divideÃ·&eacuteÃ©&ecircÃª&egraveÃ¨&ethÃ°&eumlÃ«&euroâ‚¬&fnofÆ’&frac12Â½&frac14Â¼&frac34Â¾&gt>&h"
+ . "ellipâ€¦&iacuteÃ­&icircÃ®&iexclÂ¡&igraveÃ¬&iquestÂ¿&iumlÃ¯&laquoÂ«&ldquoâ€œ&lsaquoâ€¹&lsquoâ€˜&lt<&m"
+ . "acrÂ¯&mdashâ€”&microÂµ&middotÂ·&nbsp &ndashâ€“&notÂ¬&ntildeÃ±&oacuteÃ³&ocircÃ´&oeligÅ“&ograveÃ²&or"
+ . "dfÂª&ordmÂº&oslashÃ¸&otildeÃµ&oumlÃ¶&paraÂ¶&permilâ€°&plusmnÂ±&poundÂ£&quot""&raquoÂ»&rdquoâ€&reg"
+ . "Â®&rsaquoâ€º&rsquoâ€™&sbquoâ€š&scaronÅ¡&sectÂ§&shy &sup1Â¹&sup2Â²&sup3Â³&szligÃŸ&thornÃ¾&tildeËœ&tim"
+ . "esÃ—&tradeâ„¢&uacuteÃº&ucircÃ»&ugraveÃ¹&umlÂ¨&uumlÃ¼&yacuteÃ½&yenÂ¥&yumlÃ¿"
  $ := RegExReplace( HTM,"<[^>]+>" )               ; Remove all tags between  "<" and ">"
  Loop, Parse, $, &`;                              ; Create a list of special characters
    L := "&" A_LoopField C, R .= (!(A_Index&1)) ? ( (!InStr(R,L,1)) ? L:"" ) : ""

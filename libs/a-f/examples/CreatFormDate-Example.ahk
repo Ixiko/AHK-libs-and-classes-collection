@@ -1,4 +1,4 @@
-objParam := { "btSubmit": "Upload It!"
+﻿objParam := { "btSubmit": "Upload It!"
             , "adult": "no"
             , "mode": "local"
             , "forumurl": "http://postimage.org/"

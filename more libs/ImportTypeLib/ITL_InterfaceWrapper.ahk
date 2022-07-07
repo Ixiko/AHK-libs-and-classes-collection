@@ -1,4 +1,4 @@
-; class: ITL_InterfaceWrapper
+﻿; class: ITL_InterfaceWrapper
 ; This class enwraps COM interfaces and provides the ability to call methods, set and retrieve properties.
 class ITL_InterfaceWrapper extends ITL.ITL_WrapperBaseClass
 {

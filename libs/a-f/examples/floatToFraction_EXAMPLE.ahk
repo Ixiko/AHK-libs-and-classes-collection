@@ -1,4 +1,4 @@
-#Include FloatToFraction.ahk
+﻿#Include FloatToFraction.ahk
 
 InputBox, UserInput, Decimal to fraction, Insert a positive float, , 320, 120
 If ErrorLevel OR ( UserInput = "" )

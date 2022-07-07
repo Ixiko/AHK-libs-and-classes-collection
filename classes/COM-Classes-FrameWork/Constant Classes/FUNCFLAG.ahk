@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: FUNCFLAG
 an enumeration class that specifies function flags.
 

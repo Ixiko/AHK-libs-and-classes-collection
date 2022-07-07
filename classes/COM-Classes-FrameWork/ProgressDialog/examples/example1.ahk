@@ -1,4 +1,4 @@
-/*
+﻿/*
 Example: Demonstrates the usage of *ProgressDialog.ahk*
 	* Showing a system progress dialog
 	* Setting custom messages

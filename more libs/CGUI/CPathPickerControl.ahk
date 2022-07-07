@@ -1,4 +1,4 @@
-#include <Parse>
+﻿#include <Parse>
 #include <CCompoundControl>
 Class CPathPickerControl extends CCompoundControl
 {

@@ -1,4 +1,4 @@
-SendGUI()
+﻿SendGUI()
 ;-----------------------------
 ; 
 ; Function: SendGUI

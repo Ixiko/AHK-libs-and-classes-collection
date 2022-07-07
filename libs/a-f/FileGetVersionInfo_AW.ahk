@@ -1,4 +1,4 @@
-FileGetVersionInfo_AW( peFile="", StringFileInfo="", Delimiter="|") {    ; Written by SKAN
+﻿FileGetVersionInfo_AW( peFile="", StringFileInfo="", Delimiter="|") {    ; Written by SKAN
  ; www.autohotkey.com/forum/viewtopic.php?t=64128          CD:24-Nov-2008 / LM:28-May-2010
  Static CS, HexVal, Sps="                        ", DLL="Version\"
  If ( CS = "" )

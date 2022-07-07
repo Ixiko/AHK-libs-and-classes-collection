@@ -1,4 +1,4 @@
-/* Title:	Dlg
+﻿/* Title:	Dlg
 			*Common Operating System Dialogs*
  */
 

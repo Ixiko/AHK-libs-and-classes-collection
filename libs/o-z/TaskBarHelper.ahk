@@ -1,4 +1,4 @@
-; AutoHotkey Version: 1.0.47.06
+ï»¿; AutoHotkey Version: 1.0.47.06
 ; Platform:       WinXP
 ; Author:         Yonken <yonken@163.com>
 ; Last updated: 2008-12-11
@@ -19,23 +19,23 @@
 ; ##################################################
 
 ; Find the TaskBar toolbar
-; »ñµÃÍÐÅÌÇøÓò¹¤¾ßÀ¸¾ä±ú
+; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 TaskBar_FindToolbar()
 {
 ; Shelltray/TaskBar under WinXP:
 
 ; Shell_TrayWnd
-; 	|- Button ("Start" button/"¿ªÊ¼"²Ëµ¥)
-; 	|- TrayNotifyWnd (ShellTray area/ÍÐÅÌÇøÓò)
-; 	|		|- TrayClockWClass (SysClock/ÏµÍ³Ê±ÖÓ)
+; 	|- Button ("Start" button/"ï¿½ï¿½Ê¼"ï¿½Ëµï¿½)
+; 	|- TrayNotifyWnd (ShellTray area/ï¿½ï¿½ï¿½ï¿½)
+; 	|		|- TrayClockWClass (SysClock/ÏµÍ³Ê±ï¿½)
 ; 	|		|- SysPager
-; 	|		|		|- ToolbarWindow32 (ShellTray Toolbar/Ä¿±ê¹¤¾ßÀ¸£¬°üº¬ËùÓÐÍÐÅÌÍ¼±ê)  ***
+; 	|		|		|- ToolbarWindow32 (ShellTray Toolbar/Ä¿ï¿½ê¹¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ ***
 ; 	|		|- Button
-; 	|- ReBarWindow32 (Quick Launch, Language Bar.../°üÀ¨¿ìËÙÆô¶¯À¸¡¢ÈÎÎñÀ¸Í¼±ê¹¤¾ßÀ¸¡¢ÓïÑÔÀ¸µÈ)
+; 	|- ReBarWindow32 (Quick Launch, Language Bar.../ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ê¹¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 ;			|- CiceroUIWndFrame (TF_FloatingLangBar_WndTitle)
-;			|- ToolbarWindow32 ("Desktop"/×ÀÃæ)
+;			|- ToolbarWindow32 ("Desktop"/ï¿½ï¿½)
 ;			|- MSTaskSwWClass
-;					|- ToolbarWindow32 (TaskBar/ÈÎÎñÀ¸) ***
+;					|- ToolbarWindow32 (TaskBar/ï¿½ï¿½ï¿½) ***
 ;			|- ToolbarWindow32 (Quick Launch)
 
 	hToolbar := FindWindow( "Shell_TrayWnd", 0)

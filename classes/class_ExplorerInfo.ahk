@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  retrieves info from a specific explorer window (if window handle not specified, 
  *  the currently active window will be used).  Requires AHK_L or similar.  
  *  Works with the desktop. Does not currently work with save dialogs and such.

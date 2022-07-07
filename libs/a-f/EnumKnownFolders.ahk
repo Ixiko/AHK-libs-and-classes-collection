@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 KFPROPS := ["Name", "ID", "CSIDL", "LocalizedName", "Category", "Path", "ParsingName", "Parent", "RelativePath"
           , "Description", "ToolTip", "Icon", "Security", "Attributes", "Flags", "Type"]
 ; ---------------------------------------------------------------------------------------------------

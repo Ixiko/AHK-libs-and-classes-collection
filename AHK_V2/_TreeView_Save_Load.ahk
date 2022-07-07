@@ -1,4 +1,4 @@
-; AHK v2
+﻿; AHK v2
 ; ==========================================================
 ;
 ; Inspired by user "just me"s post here: https://www.autohotkey.com/boards/viewtopic.php?p=121483#p121483

@@ -1,4 +1,4 @@
-; v1.32 (2017-3-12) - Added nCount prameter to _btn_press()
+﻿; v1.32 (2017-3-12) - Added nCount prameter to _btn_press()
 ; v1.31 (2017-3-11) - Added _key_pressEx(); Added x, y paramaters to _btn() and _btn_press()
 ; v1.30 (2017-3-11) - Added _btn_press()
 ; v1.20 (2017-1-18) - Added 4 methods: GetActiveWindow/MouseMove/SnapPic/PickColor

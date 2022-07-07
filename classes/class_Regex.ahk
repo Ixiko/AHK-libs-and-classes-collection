@@ -1,4 +1,4 @@
-; Created by Frankie Bagnardi
+﻿; Created by Frankie Bagnardi
 ; Forum topic:
 ; Licenced under the MIT license: http://www.opensource.org/licenses/mit-license.php
 class RegEx

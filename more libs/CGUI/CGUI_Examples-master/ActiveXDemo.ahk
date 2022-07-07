@@ -1,4 +1,4 @@
-SetBatchLines, -1
+﻿SetBatchLines, -1
 Window := new CActiveXDemo("ActiveXDemo")
 #include ..\ ;<CGUI>
 #include CGUI.ahk

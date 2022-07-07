@@ -1,4 +1,4 @@
-
+﻿
 /*
 MsgBox % crypt := bcrypt.encrypt("Doc", "1234567890123456", "1234567890123456")      ; -> M2cFdiHmDWH4GOQkOkJ8SAhvctZtGEKFIlDH8WMGgXM=
 MsgBox % bcrypt.decrypt(crypt, "1234567890123456", "1234567890123456")                            ; -> abcdefghijklmnop

@@ -1,4 +1,4 @@
-;
+﻿;
 ; AutoHotkey Version: 1.0.47.00
 ; Language:       Anyone
 ; Author:         Fincs <fernandoincs@hotmail.com>

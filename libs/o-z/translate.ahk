@@ -1,4 +1,4 @@
-GoogleTranslate(str, from := "auto", to := 0) {
+﻿GoogleTranslate(str, from := "auto", to := 0) {
     ret := Array(str, "Unknown Error", "")
     static JS := GetJScripObject(), _ := JS.( GetJScript() ) := JS.("delete ActiveXObject; delete GetObject;")
     if(!to){

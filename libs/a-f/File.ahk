@@ -1,4 +1,4 @@
-/*  TheGood
+﻿/*  TheGood
     Simple file functions
     
     File_Open:      Opens a file for subsequent operations

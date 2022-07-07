@@ -1,4 +1,4 @@
-class NetworkWorker
+﻿class NetworkWorker
 {
     __New(Job,WorkerCode)
     {

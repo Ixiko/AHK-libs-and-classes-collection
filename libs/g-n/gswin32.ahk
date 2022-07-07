@@ -1,4 +1,4 @@
-global GSWIN32C := A_ScriptDir . "\Ghostscript\bin\gswin32c.exe"
+﻿global GSWIN32C := A_ScriptDir . "\Ghostscript\bin\gswin32c.exe"
 
 gswin32c_bbox_info(input_file){
 	global GSWIN32C

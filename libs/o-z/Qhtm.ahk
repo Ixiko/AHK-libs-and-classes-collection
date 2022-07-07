@@ -1,4 +1,4 @@
-/*  
+﻿/*  
 	Title:  QHTM
 			Ultra small Win32 HTML control.
  :
@@ -653,6 +653,6 @@ QHTM(var="", value="~`a", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", By
 /* 
  Group: About 
  	o AHK module ver 1.04 by majkinetor.
-	o QHTML copyright � GipsySoft. See http://www.gipsysoft.com/qhtm/
+	o QHTML copyright © GipsySoft. See http://www.gipsysoft.com/qhtm/
 	o Licensed under Creative Commons Attribution-Noncommercial <http://creativecommons.org/licenses/by-nc/3.0/>.
  */

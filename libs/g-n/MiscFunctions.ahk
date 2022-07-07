@@ -1,4 +1,4 @@
-;This file contains various functions for all kinds of things. YAY!
+﻿;This file contains various functions for all kinds of things. YAY!
 
 #include *i %A_ScriptDir%\lib\Array.ahk
 

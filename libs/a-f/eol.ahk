@@ -1,4 +1,4 @@
-/* Function: eol
+﻿/* Function: eol
  *     Convert newline in strings to/from "`r`n", "`n", "`r"
  * Requirements:
  *     AutoHotkey v1.1+ OR v2.0-a+

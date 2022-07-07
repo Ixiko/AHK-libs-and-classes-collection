@@ -1,4 +1,4 @@
-/*
+﻿/*
 This script demonstrates the usage of ListViews and CFolderDialog
 */
 gui := new ScriptLauncher()

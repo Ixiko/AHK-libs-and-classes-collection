@@ -1,4 +1,4 @@
-RapidHotkey(keystroke, times:="2", delay:=0.2, IsLabel:=0)
+﻿RapidHotkey(keystroke, times:="2", delay:=0.2, IsLabel:=0)
 {
   hotkey := RegExReplace(A_ThisHotkey, "[\*\~\$\#\+\!\^]")
   ,thishotkey:=A_ThisHotkey

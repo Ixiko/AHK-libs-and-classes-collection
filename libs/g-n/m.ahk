@@ -1,4 +1,4 @@
-m(x*){
+﻿m(x*){
 	for a,b in x
 		list.=b "`n"
 	msgbox %list%

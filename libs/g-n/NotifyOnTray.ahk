@@ -1,9 +1,9 @@
-;——————————————————————————————————————————————————————
-;————————      Notify() 0.4993 by gwarble      ————————
-;—————                                            —————
-;———      easy multiple tray area notifications     ———
-;——        http://www.gwarble.com/ahk/Notify/        ——
-;——————————————————————————————————————————————————————
+ï»¿;â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
+;â€”â€”â€”â€”â€”â€”â€”â€”      Notify() 0.4993 by gwarble      â€”â€”â€”â€”â€”â€”â€”â€”
+;â€”â€”â€”â€”â€”                                            â€”â€”â€”â€”â€”
+;â€”â€”â€”      easy multiple tray area notifications     â€”â€”â€”
+;â€”â€”        http://www.gwarble.com/ahk/Notify/        â€”â€”
+;â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 ;
 ; Notify( [ Title, Message, Duration, Options ] )
 ;
@@ -23,7 +23,7 @@
 ; Return   ID (Gui Number used)
 ;          0 if failed (too many open most likely)
 ;          VarValue if Options includes: Return=VarName
-;——————————————————————————————————————————————————————
+;â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 
 Notify(Title="Notify()",Message="",Duration="",Options="")
 {
@@ -40,7 +40,7 @@ Notify(Title="Notify()",Message="",Duration="",Options="")
   {
    AutoTrim, On
    _AutoTrim = 1
-  } ; ¶
+  } ; Â¶
   Options = %Options%
   Options.=" "						; poor whitespace handling for next parsing step (ensures last option is parsed)
   Loop,Parse,Options,= 					; parse options string at "="s, needs better whitespace handling
@@ -148,7 +148,7 @@ Notify(Title="Notify()",Message="",Duration="",Options="")
     Return % Notify(Title,Message,Duration,Saved)
   }
  }
-;—————— end if options ————————————————————————————————————————————————————————————————————————————
+;â€”â€”â€”â€”â€”â€” end if options â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
 
   GC_ := GC_<>"" ? GC_ : GC := GC<>"" ? GC : "FFFFAA"	; defaults are set here, and static overrides are used and saved
   GR_ := GR_<>"" ? GR_ : GR := GR<>"" ? GR : 9		; and non static options (with OP_=) are used but not saved
@@ -190,7 +190,7 @@ Notify(Title="Notify()",Message="",Duration="",Options="")
   hGH := ((GH<>"") ? ("h" GH) : (""))
   wGW_ := ((GW<>"") ? ("w" GW - 20) : (""))
   hGH_ := ((GH<>"") ? ("h" GH - 20) : (""))
-;————————————————————————————————————————————————————————————————————————
+;â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”â€”
  If Duration =						; default if duration is not used or set to ""
   Duration = 30
  GN := GF						; find the next available gui number to use, starting from GF (default 50)
@@ -261,8 +261,8 @@ Notify(Title="Notify()",Message="",Duration="",Options="")
  If AX <>							; add the corner "X" for closing with a different action than otherwise clicked
  {
   GW += 10
-  Gui, %GN%:Font, w%XW_% s%XS_% c%XC_%, Arial Black  		; × (multiply) is the character used for the X-Button
-  Gui, %GN%:Add, Text, % "x" GW-15 " y-2 Center w12 h20 g_Notify_Kill_" GN - GF + 1, % chr(0x00D7) ;××
+  Gui, %GN%:Font, w%XW_% s%XS_% c%XC_%, Arial Black  		; Ã— (multiply) is the character used for the X-Button
+  Gui, %GN%:Add, Text, % "x" GW-15 " y-2 Center w12 h20 g_Notify_Kill_" GN - GF + 1, % chr(0x00D7) ;Ã—Ã—
  }
  Gui, %GN%:Add, Text, x0 y0 w%GW% h%GH% BackgroundTrans g_Notify_Action_Clicked_ 	; to catch clicks anywhere on the gui
  If (GR_)							; may have to be removed for seperate title/message/etc actions

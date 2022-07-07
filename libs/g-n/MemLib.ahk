@@ -1,4 +1,4 @@
-;--V1.1   Written by AmA-- 
+﻿;--V1.1   Written by AmA-- 
 ;--V1.1.1 Written by Maupa
 ;~ 		ReadMemoryPointer
 ;~ 		WriteMemoryPointer

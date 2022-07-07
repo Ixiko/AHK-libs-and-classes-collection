@@ -1,4 +1,4 @@
-; #Include TrayIcon.ahk
+﻿; #Include TrayIcon.ahk
 #NoEnv
 #NoTrayIcon
 SendMode Input

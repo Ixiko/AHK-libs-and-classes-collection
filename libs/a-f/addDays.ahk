@@ -1,4 +1,4 @@
-
+﻿
 /* 
 	I have put all functions here so as to make my examples clear. You may want to reuse these functions later
 	add_days and month_days work together. created by MartinThuku

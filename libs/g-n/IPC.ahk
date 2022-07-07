@@ -1,4 +1,4 @@
-/* Title:	IPC
+﻿/* Title:	IPC
 			*Inter-Process Communication*.
  :
 			An AHK script or DotNet application can use this module to send text or binary data to another AHK script or DotNet application using WM_COPYDATA message.

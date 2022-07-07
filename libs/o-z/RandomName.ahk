@@ -1,4 +1,4 @@
-;MinLength is the shortest allowed name, defaulting to 4.
+﻿;MinLength is the shortest allowed name, defaulting to 4.
 ;MaxLength is the longest allowed name.  It defaults to 0, indicating no maximum length.
 
 RandomName(MinLength=4, MaxLength=0) {

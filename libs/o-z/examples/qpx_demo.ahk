@@ -1,4 +1,4 @@
-; #Include QPX.ahk
+﻿; #Include QPX.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

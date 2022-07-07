@@ -1,4 +1,4 @@
-; Function: FTPv2
+﻿; Function: FTPv2
 ; Description:
 ;      Initializes and returns the FTP object. It is an alias for the FTP Class.
 ; Syntax: oFTP := FTPv2([AsyncMode, Proxy, ProxyBypass])

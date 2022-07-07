@@ -1,4 +1,4 @@
-ConvertToCamelCase(ByRef fnCopiedText)
+﻿ConvertToCamelCase(ByRef fnCopiedText)
 {
 	; converts text to camelCase
 	; MsgBox fnCopiedText: %fnCopiedText%

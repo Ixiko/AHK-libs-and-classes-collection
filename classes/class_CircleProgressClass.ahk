@@ -1,4 +1,4 @@
-class CircleProgressClass {		; http://ahkscript.org/boards/viewtopic.php?p=41794#p41794
+﻿class CircleProgressClass {		; http://ahkscript.org/boards/viewtopic.php?p=41794#p41794
 	; Credits: Bruttosozialprodukt, Learning one. This code is public domain.
 	static Version := 1.04
 	__New(Options="") {

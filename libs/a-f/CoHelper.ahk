@@ -1,4 +1,4 @@
-;By Sean
+﻿;By Sean
 
 VTable(ppv, idx) {
    Return   NumGet(NumGet(1*ppv)+4*idx)

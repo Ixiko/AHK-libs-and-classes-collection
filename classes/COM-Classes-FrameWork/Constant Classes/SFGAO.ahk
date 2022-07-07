@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: SFGAO
 an enumeration class containing flags that specify attributes that can be retrieved on an item (file or folder) or set of items.
 
@@ -137,7 +137,7 @@ class SFGAO
 
 	/*
 	Field: NEWCONTENT
-	The items contain new content, as defined by the particular application.�
+	The items contain new content, as defined by the particular application.´
 	*/
 	static NEWCONTENT := 0x00200000
 

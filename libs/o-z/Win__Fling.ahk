@@ -1,4 +1,4 @@
-;; -----------------------------------------------------------------------
+﻿;; -----------------------------------------------------------------------
 ;; Fling (or shift) a window from one monitor to the next in a multi-monitor system.
 ;;
 ;; Function Parameters:

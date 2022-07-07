@@ -1,4 +1,4 @@
-; #Include PixPut.ahk
+﻿; #Include PixPut.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

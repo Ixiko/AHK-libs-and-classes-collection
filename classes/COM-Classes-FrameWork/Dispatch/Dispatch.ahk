@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: Dispatch
 wraps the *IDispatch* interface and exposes objects, methods and properties to programming tools and other applications that support Automation. COM components implement the IDispatch interface to enable access by Automation clients, such as Visual Basic.
 

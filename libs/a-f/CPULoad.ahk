@@ -1,4 +1,4 @@
-;Get CPU load
+﻿;Get CPU load
 ;by shimanov
 ;www.autohotkey.com/forum/viewtopic.php?t=5064
 ;https://autohotkey.com/board/topic/7127-monitor-when-cpu-becomes-idle/

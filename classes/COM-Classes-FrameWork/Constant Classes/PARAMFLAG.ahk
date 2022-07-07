@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PARAMFLAG
 an enumeration class that specifies parameter flags.
 

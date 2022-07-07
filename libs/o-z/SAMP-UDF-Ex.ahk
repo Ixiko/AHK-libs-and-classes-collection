@@ -1,4 +1,4 @@
-; #### SAMP UDF EX ####
+﻿; #### SAMP UDF EX ####
 ; SAMP Version: 0.3.7 R1
 ; by democrazy
 ; ugbase.eu

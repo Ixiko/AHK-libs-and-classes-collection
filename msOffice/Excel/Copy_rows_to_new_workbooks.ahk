@@ -1,4 +1,4 @@
-; This script copies rows from one workbook into new workbooks. This was originally made for an "Ask for Help" question
+﻿; This script copies rows from one workbook into new workbooks. This was originally made for an "Ask for Help" question
 ; posted at: https://autohotkey.com/boards/viewtopic.php?f=5&t=34083
 ; To run this script you will need to set up an example workbook. You can look at the link above for details, but
 ; basically the workbook looks like this:

@@ -1,4 +1,4 @@
-; #Include Crypt.ahk
+﻿; #Include Crypt.ahk
 ; #Include File.ahk
 #NoEnv
 SendMode Input

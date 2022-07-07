@@ -1,4 +1,4 @@
-/*
+﻿/*
 Months(date,months):
 This function accepts a date in the YYYYMMDD(...) format, goes forward or backward a
 given number of months, and then returns the new date in the original format.

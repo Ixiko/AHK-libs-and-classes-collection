@@ -1,4 +1,4 @@
-; Example - Drag and drop highlight
+﻿; Example - Drag and drop highlight
 
 #NoEnv
 #Include %A_ScriptDir%\..\class_GuiDropFiles.ahk

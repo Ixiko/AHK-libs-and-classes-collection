@@ -1,4 +1,4 @@
-/*
+﻿/*
     Crea una imágen Bitmap.
     Parámetros:
         PixelData   : Un Array con colores RGB.

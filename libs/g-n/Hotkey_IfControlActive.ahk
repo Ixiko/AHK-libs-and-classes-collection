@@ -1,4 +1,4 @@
-/*					Facilitates making hotkeys specific to a control or class of control
+﻿/*					Facilitates making hotkeys specific to a control or class of control
 ; AutoHotkey Version: 1.0.47
 ; Language:       English
 ; Platform:       Win98/NT

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: MMDeviceEnumerator
 wraps the *IMMDeviceEnumerator* interface and provides methods for enumerating multimedia device resources.
 

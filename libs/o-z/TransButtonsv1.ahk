@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 SetBatchLines, -1
 Gui, Margin, 10, 10
 Gui, Color, C00000

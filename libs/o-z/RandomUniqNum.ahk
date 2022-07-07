@@ -1,4 +1,4 @@
-; Generating unique random integers by Laszlo
+﻿; Generating unique random integers by Laszlo
 ; http://www.autohotkey.com/forum/viewtopic.php?p=30664#30664
 RandomUniqNum(Min,Max,N)
 {

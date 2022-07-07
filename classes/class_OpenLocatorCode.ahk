@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 	Ported to AutoHotkey by RaptorX
 	November 30, 2016

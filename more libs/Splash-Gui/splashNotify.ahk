@@ -1,4 +1,4 @@
-; Pass text to display splash notification. 
+﻿; Pass text to display splash notification. 
 ; Position defaults to top. Timeout to 2000 ms. Font size to 12.Transparency to 200 (255 = none).
 
 splashNotify(text, position="top", timeout=2000, fontSize= 12, transparency=200){ 

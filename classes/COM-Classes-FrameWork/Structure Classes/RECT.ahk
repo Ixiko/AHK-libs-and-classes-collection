@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: RECT
 a structure class that defines the coordinates of the upper-left and lower-right corners of a rectangle.
 

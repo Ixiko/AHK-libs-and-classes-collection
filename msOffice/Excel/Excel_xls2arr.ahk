@@ -1,4 +1,4 @@
-xls2arr(xlsFile, ByRef retArr) {
+﻿xls2arr(xlsFile, ByRef retArr) {
 	ComObjError(0)
 
 	Loop, % xlsFile

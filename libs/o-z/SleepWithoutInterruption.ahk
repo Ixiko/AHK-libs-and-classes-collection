@@ -1,4 +1,4 @@
-SleepWithoutInterruption(aSleepTime){
+﻿SleepWithoutInterruption(aSleepTime){
 	static g_MainThreadID,g_AllowInterruption
 	if !g_MainThreadID
     g_MainThreadID:=Struct("bool",A_MemoryModule?MemoryGetProcAddress(A_MemoryModule,"g_MainThreadID"):GetProcAddress(A_ModuleHandle,"g_MainThreadID"))

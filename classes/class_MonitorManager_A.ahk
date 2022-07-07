@@ -1,4 +1,4 @@
-Class MonitorManager
+﻿Class MonitorManager
 {
 	static WIDTH
 	static HEIGHT

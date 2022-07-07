@@ -1,4 +1,4 @@
-; #Include Delay.ahk
+﻿; #Include Delay.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

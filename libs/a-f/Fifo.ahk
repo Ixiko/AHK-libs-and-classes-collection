@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 Plugin            : FIFO (Reverse paste)
 Purpose           : Paste back in the order in which the entries were added to the clipboard history

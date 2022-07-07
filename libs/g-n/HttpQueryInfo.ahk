@@ -1,4 +1,4 @@
-; HttpQueryInfo - Get HTTP headers by olfen
+﻿; HttpQueryInfo - Get HTTP headers by olfen
 ; http://www.autohotkey.com/forum/topic10510.html
 /* ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; HttpQueryInfo ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 QueryInfoFlag:

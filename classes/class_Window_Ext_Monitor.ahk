@@ -1,4 +1,4 @@
-;#SingleInstance force
+﻿;#SingleInstance force
 ;#NoTrayIcon
 
 /** Class Window

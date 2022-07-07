@@ -1,4 +1,4 @@
-/*
+﻿/*
 Native AutoHotkey SHA2 (256 bit) with HMAC. Copyright © 2013 VxE. All rights reserved.
 
 Copyright © 2011-2014 VxE. All rights reserved.

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: TYPEATTR
 a structure class that contains attributes of an ITypeInfo.
 

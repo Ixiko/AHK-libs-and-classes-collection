@@ -1,4 +1,4 @@
-;~ This library is the Product of tank
+﻿;~ This library is the Product of tank
 ;~ based on COM.ahk from Sean http://www.autohotkey.com/forum/topic22923.html
 ;~ standard library is the work of tank and updates may be downloaded from
 ;~ http://www.autohotkey.net/~tank/iWeb.zip

@@ -1,4 +1,4 @@
-; Open a new chrome window and get process ID
+﻿; Open a new chrome window and get process ID
 ;		wait until the window is ready to move
 ; 	For some reason the Chrome --window-size and --window-position arguments don't work
 ; https://autohotkey.com/boards/viewtopic.php?p=78778#p78778

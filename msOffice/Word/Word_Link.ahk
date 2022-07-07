@@ -1,4 +1,4 @@
-wLink(text = 0, URL = 0){
+﻿wLink(text = 0, URL = 0){
 	if text or URL <> 0
 	{
 		oWord := ComObjActive("Word.Application") 

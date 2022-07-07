@@ -1,4 +1,4 @@
-DriveGetLabels(fnDrivesList)
+﻿DriveGetLabels(fnDrivesList)
 {
 	; creates an array for each attached drive to store the label of that drive
 	; MsgBox fnDrivesList: %fnDrivesList%

@@ -1,4 +1,4 @@
-#Include "*i TheArkive_Debug.ahk"
+﻿#Include "*i TheArkive_Debug.ahk"
 #Include _Iron_Toolbar.ahk
 
 Global g := "", tb:=""

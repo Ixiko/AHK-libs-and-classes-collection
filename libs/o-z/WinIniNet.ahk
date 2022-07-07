@@ -1,4 +1,4 @@
-; ==========
+﻿; ==========
 ; Origional FTP Functions by Olfen & Andreone
 ; See the following post:
 ; http://www.autohotkey.com/forum/viewtopic.php?t=10393

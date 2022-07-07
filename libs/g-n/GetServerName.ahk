@@ -1,4 +1,4 @@
-GetServerName(fnServerNameLabel)
+﻿GetServerName(fnServerNameLabel)
 {
 	; get the server name for the corresponding label
 	; MsgBox fnServerNameLabel: %fnServerNameLabel%

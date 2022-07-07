@@ -1,4 +1,4 @@
-; #Include tooltip.ahk
+﻿; #Include tooltip.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

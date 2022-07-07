@@ -1,4 +1,4 @@
-; AHK Version : 1.1.16.05 ANSI 32-bit (latest from http://ahkscripts.org)
+﻿; AHK Version : 1.1.16.05 ANSI 32-bit (latest from http://ahkscripts.org)
 ; Date        : 2014-10-01
 ; Platform    : Windows 7 x64 (tested)
 ; Author      : Me, though most of it borrowed from the Forums

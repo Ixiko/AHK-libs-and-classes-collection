@@ -1,4 +1,4 @@
-parser_by_compiler() { ; total header files: 3,505
+﻿parser_by_compiler() { ; total header files: 3,505
     ; Static q := Chr(34)
     root := g["ApiPath"].Text
     SplitPath root, rootFile, rootDir

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: SYSKIND
 an enumeration class that identifies a target operating system platform.
 

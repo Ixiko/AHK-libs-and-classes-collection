@@ -1,4 +1,4 @@
-LineBreakOnSqlKeyword(ByRef fnText)
+﻿LineBreakOnSqlKeyword(ByRef fnText)
 {
 	; insert a linebreak before each SQL keyword
 	; MsgBox fnText: %fnText%

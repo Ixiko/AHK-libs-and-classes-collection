@@ -1,4 +1,4 @@
-If not A_IsAdmin {
+﻿If not A_IsAdmin {
    Run *RunAs "%A_AhkPath%" "%A_ScriptFullPath%" "%1%"
    ExitApp
 }

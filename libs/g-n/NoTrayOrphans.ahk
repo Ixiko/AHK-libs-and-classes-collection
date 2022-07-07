@@ -1,4 +1,4 @@
-NoTrayOrphans() {
+﻿NoTrayOrphans() {
     TrayInfo:= TrayIcons(sExeName,"ahk_class Shell_TrayWnd","ToolbarWindow32" . GetTrayBar()) "`n"
         . TrayIcons(sExeName,"ahk_class NotifyIconOverflowWindow","ToolbarWindow321")
     Loop, Parse, TrayInfo, `n

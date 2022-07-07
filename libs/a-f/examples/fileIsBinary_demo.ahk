@@ -1,4 +1,4 @@
-; #Include fileIsBinary.ahk
+﻿; #Include fileIsBinary.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

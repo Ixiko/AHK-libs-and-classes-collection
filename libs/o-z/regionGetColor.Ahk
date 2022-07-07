@@ -1,4 +1,4 @@
-/*                        	Example
+﻿/*                        	Example
 #NoEnv
 #SingleInstance, Force
 SetBatchLines, -1

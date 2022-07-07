@@ -1,4 +1,4 @@
-#SingleInstance force
+﻿#SingleInstance force
 #NoEnv
 ;#Include AppFactory.ahk
 

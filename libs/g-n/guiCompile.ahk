@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: guiCompile
     Provides a GUI for scriptCompile()
 

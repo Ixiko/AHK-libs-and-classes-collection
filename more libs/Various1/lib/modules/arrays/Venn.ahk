@@ -1,4 +1,4 @@
-class Union extends Arrays.Venn {
+﻿class Union extends Arrays.Venn {
 	processOperation() {
 		base.retrieveElementsInSetA()
 		base.retrieveElementsInSetB()

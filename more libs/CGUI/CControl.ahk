@@ -1,4 +1,4 @@
-#include EventHandler.ahk
+﻿#include EventHandler.ahk
 #include Delegate.ahk
 /*
 Class: CControl

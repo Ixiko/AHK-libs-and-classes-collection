@@ -1,4 +1,4 @@
-#Persistent
+﻿#Persistent
 ;http://www.autohotkey.com/forum/viewtopic.php?p=93526#93526
 
 SetBatchlines, -1

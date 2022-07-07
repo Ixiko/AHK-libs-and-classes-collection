@@ -1,4 +1,4 @@
-;?add 2010 Modified by Tuncay to work with the stdlib mechanism.
+﻿;?add 2010 Modified by Tuncay to work with the stdlib mechanism.
 ;?add The function names are changed, mostly a prefix Tray_ is 
 ;?add added and names changed: TaskButtons() becomes to TaskButton()
 ;?add and HideButton() becomes to TaskButton_Hide().

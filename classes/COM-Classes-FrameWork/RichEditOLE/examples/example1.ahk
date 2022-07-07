@@ -1,4 +1,4 @@
-/*
+﻿/*
 	THIS EXAMPLE IS INCOMPLETE!!!
 */
 #SingleInstance force

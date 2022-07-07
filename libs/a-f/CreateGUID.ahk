@@ -1,4 +1,4 @@
-CreateGUID()
+﻿CreateGUID()
 {
     VarSetCapacity(pguid, 16, 0)
     if !(DllCall("ole32.dll\CoCreateGuid", "ptr", &pguid)) {

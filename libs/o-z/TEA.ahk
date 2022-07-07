@@ -1,4 +1,4 @@
-/*
+﻿/*
 ---------------------------------------------------------------------------
 Function:
     To encrypt/decrypt string using Tiny Encryption Algorithm

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ProgressDialog
 wraps the *IProgressDialog* interface and exposes methods to create, control and display a progress dialog.
 

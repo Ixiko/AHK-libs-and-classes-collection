@@ -1,4 +1,4 @@
-; Return the current Window Version
+﻿; Return the current Window Version
 ; [Used in FileExtensionToggle, HiddenFilesToggle.ahk, SnippingShortcut.ahk]
 
 

@@ -1,4 +1,4 @@
-CompileList(Find, Criteria, Col, LV, ColumnList) {
+﻿CompileList(Find, Criteria, Col, LV, ColumnList) {
   /*
   Find: What do you want to be in "Criteria" Column? (All means ALL)
   Criteria: What Column do you want to find "Find"?

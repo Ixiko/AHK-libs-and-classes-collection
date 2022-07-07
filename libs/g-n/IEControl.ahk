@@ -1,4 +1,4 @@
-IEAdd(mgH, x, y, w, h, u)
+﻿IEAdd(mgH, x, y, w, h, u)
 {
    Global pwb, hCtrl
 

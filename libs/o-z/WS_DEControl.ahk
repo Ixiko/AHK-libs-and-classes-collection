@@ -1,4 +1,4 @@
-
+﻿
 #Include ws4ahk.ahk ; designed for ws4ahk.ahk v0.01
 
 ;        Command IDs

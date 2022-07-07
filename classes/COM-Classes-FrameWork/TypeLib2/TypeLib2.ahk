@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: TypeLib2
 wraps the *ITypeLib2* interface and represents a type library, the data that describes a set of objects.
 

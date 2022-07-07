@@ -1,4 +1,4 @@
-Array2INI(iniArray,Saveto)
+﻿Array2INI(iniArray,Saveto)
 {
 	for Sec, Seclines in iniArray
 		for k, v in Seclines

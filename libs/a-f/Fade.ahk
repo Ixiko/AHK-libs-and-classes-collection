@@ -1,4 +1,4 @@
-FadeIn(window = "A", TotalTime = 500, transfinal = 255)
+﻿FadeIn(window = "A", TotalTime = 500, transfinal = 255)
 {
 	StartTime := A_TickCount
 	Loop

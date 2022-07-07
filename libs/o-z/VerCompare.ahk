@@ -1,4 +1,4 @@
-/*
+﻿/*
 Library: VerCompare.ahk
 Author: Animan8000, original by joedf
 Description: VerCompare() function for AutoHotkey v1.1 - Compare two semantic version strings similar like the function in v2 of AutoHotkey! For more information see: https://lexikos.github.io/v2/docs/commands/VerCompare.htm

@@ -1,4 +1,4 @@
-;;; Destroys the GUI and removes the key.
+﻿;;; Destroys the GUI and removes the key.
 ;;; Returns the GUI index, or 0 if not found.
 GUIUniqueDestroy(key = "") {
 	

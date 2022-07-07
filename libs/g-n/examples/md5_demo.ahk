@@ -1,4 +1,4 @@
-; #Include md5.ahk
+﻿; #Include md5.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

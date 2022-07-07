@@ -1,4 +1,4 @@
-; Base class for custom "Function" objects
+﻿; Base class for custom "Function" objects
 class CFunction
 {
 	__Call(method, args*)

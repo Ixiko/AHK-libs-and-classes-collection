@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #Include ActiveScript.ahk
 ; Requires Lib\ComDispatch.ahk - https://github.com/cocobelgica/AutoHotkey-ComDispatch
 #Include <ComDispatch>

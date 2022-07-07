@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 SetBatchLines, -1
 
 #Include %A_ScriptDir%\..\..\classes\class_Classifier.ahk

@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Dictionary CLASS
 
 	Link: https://msdn.microsoft.com/en-us/library/x4k5wbx4.

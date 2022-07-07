@@ -1,4 +1,4 @@
-decodeu(ustr){
+﻿decodeu(ustr){
    Loop
     {
         if !ustr

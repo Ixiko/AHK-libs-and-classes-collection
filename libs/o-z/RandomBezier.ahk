@@ -1,6 +1,6 @@
-/*
+ï»¿/*
     RandomBezier.ahk
-    Copyright (C) 2012,2013 Antonio França
+    Copyright (C) 2012,2013 Antonio FranÃ§a
 
     This script is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -19,7 +19,7 @@
 ;========================================================================
 ; 
 ; Function:     RandomBezier
-; Description:  Moves the mouse through a random Bézier path
+; Description:  Moves the mouse through a random BÃ©zier path
 ; URL (+info):  --------------------
 ;
 ; Last Update:  30/May/2013 03:00h BRT

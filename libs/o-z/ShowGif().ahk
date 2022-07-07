@@ -1,4 +1,4 @@
-/*		Example Code
+﻿/*		Example Code
 VarSetCapacity(GdiplusStartupInput,3*A_PtrSize,0),NumPut(1,GdiplusStartupInput ,0,"UInt")
 GdiplusStartup(getvar(token:=0), &GdiplusStartupInput, 0)
 

@@ -1,4 +1,4 @@
-; http://www.autohotkey.com/forum/viewtopic.php?p=170587#170587
+﻿; http://www.autohotkey.com/forum/viewtopic.php?p=170587#170587
 
 ;Origional FTP Functions by Olfen & Andreone
 ;See the following post:

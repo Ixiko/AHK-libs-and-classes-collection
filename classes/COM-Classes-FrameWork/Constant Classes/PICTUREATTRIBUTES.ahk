@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PICTUREATTRIBUTES
 an enumeration class specifying attributes of a picture object as returned through IPicture::get_Attributes.
 

@@ -1,4 +1,4 @@
-/* Function: WinEnum
+﻿/* Function: WinEnum
  *     Wrapper for Enum(Child)Windows [http://goo.gl/5eCy9 | http://goo.gl/FMXit]
  * License:
  *     WTFPL [http://wtfpl.net/]

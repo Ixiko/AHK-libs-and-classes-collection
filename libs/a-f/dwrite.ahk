@@ -1,4 +1,4 @@
-#Include base.ahk
+﻿#Include base.ahk
 class IDWriteFactory extends IUnknown
 {
   iid := "{b859ee5a-d838-4b5b-a2e8-1adc7d93db48}"

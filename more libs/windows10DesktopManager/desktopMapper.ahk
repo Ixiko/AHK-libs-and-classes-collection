@@ -1,4 +1,4 @@
-class DesktopMapperClass
+﻿class DesktopMapperClass
 {	
 	desktopIds := []
 	

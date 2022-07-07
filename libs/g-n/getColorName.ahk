@@ -1,4 +1,4 @@
-getColorName(hexRGB := "") {
+﻿getColorName(hexRGB := "") {
 	static COLORS := {}
 		, STIF_SUPPORT_HEX := 0x00000001
 		, TYPE := A_AhkVersion < "2" ? "xdigit" : "TYPE_V2"

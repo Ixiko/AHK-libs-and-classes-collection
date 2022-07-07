@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: METHODDATA
 a structure class that describes a method or property.
 

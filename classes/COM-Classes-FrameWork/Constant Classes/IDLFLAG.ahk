@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: IDLFLAG
 an enumeration class that contains parameter flags. This is a subset of the PARAMFLAG enumeration.
 

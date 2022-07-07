@@ -1,4 +1,4 @@
-lines =
+﻿lines =
 (
 |$|$|$|$|$|$|$|$|$|$|$|
 Given$a$text$file$of$many$lines,$where$fields$within$a$line$

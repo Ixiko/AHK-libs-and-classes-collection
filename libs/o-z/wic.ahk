@@ -1,4 +1,4 @@
-#Include Base.ahk
+﻿#Include Base.ahk
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;IWICImagingFactory;;
 ;;;;;;;;;;;;;;;;;;;;;;

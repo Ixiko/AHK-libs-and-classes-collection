@@ -1,4 +1,4 @@
-ObjLoad(addr,objects:=0){
+﻿ObjLoad(addr,objects:=0){
   If (addr+0=""){ ; FileRead Mode
     If !FileExist(addr)
       return

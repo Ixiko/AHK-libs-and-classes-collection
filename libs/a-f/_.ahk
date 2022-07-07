@@ -1,4 +1,4 @@
-/* Title:	_
+ï»¿/* Title:	_
 			Useful stdlib functions.
  */
 
@@ -206,12 +206,12 @@ m(o1="~`a", o2="~`a", o3="~`a", o4="~`a", o5="~`a", o6="~`a", o7="~`a", o8="~`a"
 			S(b:=&buf,"RECT( left right", x,y)	; x := *b.left , y := *b.right
 	(end code)
  */
-S(ByRef S,pQ,ByRef o1="~`a ",ByRef o2="",ByRef o3="",ByRef  o4="",ByRef o5="",ByRef  o6="",ByRef o7="",ByRef  o8=""){
+S(ByRef S,pQ,ByRef o1="~`aÂ ",ByRef o2="",ByRef o3="",ByRef  o4="",ByRef o5="",ByRef  o6="",ByRef o7="",ByRef  o8=""){
 	static
 	static 1="UChar", 2="UShort", 4="Uint", 004="Float", 8="Uint64", 008="Double", 01="Char", 02="Short", 04="Int", 08="Int64"
 	local last_offset:=-4, last_type := 4, i, j, R
 
-	if (o1 = "~`a ")
+	if (o1 = "~`aÂ ")
 	{		
 		j := InStr(pQ, ":"), R := SubStr(pQ, 1, j-1), pQ := SubStr(pQ, j+2)
 		if i := InStr(R, "=")
@@ -282,7 +282,7 @@ S(ByRef S,pQ,ByRef o1="~`a ",ByRef o2="",ByRef o3="",ByRef  o4="",ByRef o5="",By
  			v("", "prefix_)x y z", x, y, z)	; get values of prefix_x, prefix_y and prefix_z into x, y and z
 	(end code)
  */
-v(var="", value="~`a ", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o5="", ByRef o6="") { 
+v(var="", value="~`aÂ ", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o5="", ByRef o6="") { 
 	static
 	ifEqual,___, ,gosub %A_ThisFunc%
 
@@ -293,7 +293,7 @@ v(var="", value="~`a ", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRe
 			_ := %__%%A_LoopField%,  o%A_Index% := _ != "" ? _ : %A_LoopField%
 		return
 	} else _ := %var%
-	ifNotEqual, value,~`a , SetEnv, %var%, %value%
+	ifNotEqual, value,~`aÂ , SetEnv, %var%, %value%
 	return _
 v:
 	;Initialize externally, try several places
@@ -332,9 +332,9 @@ return
 			(end code)
 			
  */
-t(ByRef v="~`a "){
+t(ByRef v="~`aÂ "){
 	static t
-	ifEqual, v, ~`a ,SetEnv, t, %A_TickCount%
+	ifEqual, v, ~`aÂ ,SetEnv, t, %A_TickCount%
 	return v := A_TickCount - t
 }
 /*

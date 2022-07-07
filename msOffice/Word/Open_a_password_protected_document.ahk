@@ -1,4 +1,4 @@
-; This script opens a Word document and prompts the user for a password if it is password protected.
+﻿; This script opens a Word document and prompts the user for a password if it is password protected.
 
 ; Try to open the Word document using this password. If the document is password protected this password should fail and
 ; the user will be prompted to enter a password. If the document is not password protected Word will ignore this

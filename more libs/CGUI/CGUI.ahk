@@ -1,4 +1,4 @@
-#NoEnv ;Leave this here if you don't want weird ListView icon behavior (and possibly other side effects)
+﻿#NoEnv ;Leave this here if you don't want weird ListView icon behavior (and possibly other side effects)
 /*
    Class: CGUI
    The main GUI class. User created GUIs need to extend this class and call Base.__New() in their constructor before doing anything related to this class.

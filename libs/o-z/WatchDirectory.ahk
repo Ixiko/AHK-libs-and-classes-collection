@@ -1,4 +1,4 @@
-;Function WatchDirectory()
+﻿;Function WatchDirectory()
 ;
 ;Parameters
 ;      WatchFolder         - Specify a valid path to watch for changes in.

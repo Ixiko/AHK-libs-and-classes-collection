@@ -1,4 +1,4 @@
-; This script demonstrates several ways to specify a Range. After each example, this script selects the Range and
+﻿; This script demonstrates several ways to specify a Range. After each example, this script selects the Range and
 ; displays a MsgBox. 
 
 ; Note: There is usually no need to Activate/Select a range in order to get or set the value.

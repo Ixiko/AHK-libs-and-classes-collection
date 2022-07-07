@@ -1,4 +1,4 @@
-/*! TheGood
+﻿/*! TheGood
     GetOSVersion()
     Last Updated: June 9th, 2010
     

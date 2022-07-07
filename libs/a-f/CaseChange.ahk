@@ -1,4 +1,4 @@
-caseChange(text,type){ ; type: U=UPPER, L=Lower, T=Title, S=Sentence, I=Invert
+﻿caseChange(text,type){ ; type: U=UPPER, L=Lower, T=Title, S=Sentence, I=Invert
     static X:= ["I","AHK","AutoHotkey","Dr","Mr","Ms","Mrs","AKJ"] ;list of words that should not be modified for S,T
     if (type="S") { ;Sentence case.
         text := RegExReplace(RegExReplace(text, "(.*)", "$L{1}"), "(?<=[^a-zA-Z0-9_-]\s|\n).|^.", "$U{0}")

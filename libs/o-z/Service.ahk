@@ -1,4 +1,4 @@
-/* Windows Service Control Functions
+﻿/* Windows Service Control Functions
 -heresy
 
 - Return Values

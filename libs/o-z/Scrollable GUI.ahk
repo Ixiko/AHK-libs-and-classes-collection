@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 ; www.autohotkey.com/board/topic/26033-scrollable-gui-proof-of-concept/
 /*
 OnMessage(0x115, "OnScroll") ; WM_VSCROLL

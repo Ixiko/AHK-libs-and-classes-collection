@@ -1,4 +1,4 @@
-gui := new CSharpGuiConverter()
+﻿gui := new CSharpGuiConverter()
 #include ..\
 
 #include CGUI.ahk

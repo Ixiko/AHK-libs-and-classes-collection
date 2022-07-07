@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 Title: Edit Library v1.1
 
 Group: Introduction
@@ -1127,7 +1127,7 @@ Edit_SetStyle(hEdit,p_Style,p_Option="+")
 ; Parameters:
 ;
 ;   p_CharPos - The character index of the character contained in the line
-;       whose number is to be retrieved. [Optional] If –1 (the default), the
+;       whose number is to be retrieved. [Optional] If â€“1 (the default), the
 ;       function retrieves either the line number of the current line (the line
 ;       containing the caret) or, if there is a selection, the line number of
 ;       the line containing the beginning of the selection.
@@ -1582,7 +1582,7 @@ Edit_ScrollCaret(hEdit)
 ;
 ;   p_Limit - The maximum number of characters the user can enter.  
 ;       Windows NT+: If this parameter is zero, the text length is set to
-;       0x7FFFFFFE characters for single-line edit controls or –1 for multiline
+;       0x7FFFFFFE characters for single-line edit controls or â€“1 for multiline
 ;       edit controls.
 ;
 ;

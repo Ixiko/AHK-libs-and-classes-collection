@@ -1,4 +1,4 @@
-; ----------------------------------------------------------------------------------------------------------------------
+﻿; ----------------------------------------------------------------------------------------------------------------------
 ; Function .....: NetShareEnum
 ; Description ..: Implements the NetShareEnum Win32 API. Retrieves information about each shared resource on a server.
 ; Parameters ...: sName - DNS name of the computer where to run the function. If empty, will be localhost.

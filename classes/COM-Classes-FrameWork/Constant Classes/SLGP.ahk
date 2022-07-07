@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: SLGP
 an enumeration class containing flags that specify the type of path information to retrieve.
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 #####################################################################################
 General Purpose Binary Encode - "gpBinEncode" - v0.2 by Alibaba - 19 August 2015
 http://ahkscript.org/boards/viewtopic.php?f=10&t=9209

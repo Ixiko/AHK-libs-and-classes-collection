@@ -1,4 +1,4 @@
-; String version info for execs by SKAN, wOxxOm
+﻿; String version info for execs by SKAN, wOxxOm
 ; http://www.autohotkey.com/forum/viewtopic.php?p=233188#233188
 ; http://www.autohotkey.com/forum/viewtopic.php?p=52148#52148
 FileGetVersionInfo( peFile="", StringFileInfo="" ) {

@@ -1,0 +1,262 @@
+﻿[
+	[
+		[
+			{
+				"caption": "abc",
+				"f": "altEntryModeProc",
+				"params": [
+					"a",
+					"b",
+					"c"
+				]
+			},
+			{
+				"caption": "def",
+				"f": "altEntryModeProc",
+				"params": [
+					"d",
+					"e",
+					"f"
+				]
+			},
+			{
+				"caption": "ghi",
+				"f": "altEntryModeProc",
+				"params": [
+					"g",
+					"h",
+					"i"
+				]
+			},
+			{
+				"caption": "⌫",
+				"f": "sendBackSpaceProc",
+				"accessKey": "BackSpace"
+			}
+		],
+		[
+			{
+				"caption": "jkl",
+				"f": "altEntryModeProc",
+				"params": [
+					"j",
+					"k",
+					"l"
+				]
+			},
+			{
+				"caption": "mno",
+				"f": "altEntryModeProc",
+				"params": [
+					"m",
+					"n",
+					"o"
+				]
+			},
+			{
+				"caption": "pqr",
+				"f": "altEntryModeProc",
+				"params": [
+					"p",
+					"q",
+					"r"
+				]
+			},
+			"*"
+		],
+		[
+			{
+				"caption": "stu",
+				"f": "altEntryModeProc",
+				"params": [
+					"s",
+					"t",
+					"u"
+				]
+			},
+			{
+				"caption": "vwx",
+				"f": "altEntryModeProc",
+				"params": [
+					"v",
+					"w",
+					"x"
+				]
+			},
+			{
+				"caption": "◀",
+				"f": "setCaretPosProc",
+				"params": [
+					-1
+				],
+				"accessKey": null
+			},
+			{
+				"caption": "▶",
+				"f": "setCaretPosProc",
+				"params": [
+					1
+				],
+				"accessKey": null
+			}
+		],
+		[
+			{
+				"caption": "↑",
+				"f": "toLayerProc",
+				"params": [
+					2
+				],
+				"accessKey": "CapsLock"
+			},
+			{
+				"caption": "yz'",
+				"f": "altEntryModeProc",
+				"params": [
+					"y",
+					"z",
+					"'"
+				]
+			},
+			{
+				"caption": "◢",
+				"f": "submitProc"
+			},
+			{
+				"caption": "↵",
+				"f": "keyWithAccessProc",
+				"accessKey": "NumpadEnter"
+			}
+		]
+	],
+	[
+		[
+			{
+				"caption": "ABC",
+				"f": "altEntryModeProc",
+				"params": [
+					"A",
+					"B",
+					"C"
+				]
+			},
+			{
+				"caption": "DEF",
+				"f": "altEntryModeProc",
+				"params": [
+					"D",
+					"E",
+					"F"
+				]
+			},
+			{
+				"caption": "GHI",
+				"f": "altEntryModeProc",
+				"params": [
+					"G",
+					"H",
+					"I"
+				]
+			},
+			{
+				"caption": "⌫",
+				"f": "sendBackSpaceProc",
+				"accessKey": "BackSpace"
+			}
+		],
+		[
+			{
+				"caption": "JKL",
+				"f": "altEntryModeProc",
+				"params": [
+					"J",
+					"K",
+					"L"
+				]
+			},
+			{
+				"caption": "MNO",
+				"f": "altEntryModeProc",
+				"params": [
+					"M",
+					"N",
+					"O"
+				]
+			},
+			{
+				"caption": "PQR",
+				"f": "altEntryModeProc",
+				"params": [
+					"P",
+					"Q",
+					"R"
+				]
+			},
+			"*"
+		],
+		[
+			{
+				"caption": "STU",
+				"f": "altEntryModeProc",
+				"params": [
+					"S",
+					"T",
+					"U"
+				]
+			},
+			{
+				"caption": "VWX",
+				"f": "altEntryModeProc",
+				"params": [
+					"V",
+					"W",
+					"X"
+				]
+			},
+			{
+				"caption": "◀",
+				"f": "setCaretPosProc",
+				"params": [
+					-1
+				],
+				"accessKey": null
+			},
+			{
+				"caption": "▶",
+				"f": "setCaretPosProc",
+				"params": [
+					1
+				],
+				"accessKey": null
+			}
+		],
+		[
+			{
+				"caption": "↑",
+				"f": "toLayerProc",
+				"params": [
+					1
+				],
+				"accessKey": "CapsLock"
+			},
+			{
+				"caption": "YZ'",
+				"f": "altEntryModeProc",
+				"params": [
+					"Y",
+					"Z",
+					"'"
+				]
+			},
+			{
+				"caption": "◢",
+				"f": "submitProc"
+			},
+			{
+				"caption": "↵",
+				"f": "keyWithAccessProc",
+				"accessKey": "NumpadEnter"
+			}
+		]
+	]
+]

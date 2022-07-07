@@ -1,4 +1,4 @@
-/* Function: CpyData_Send
+﻿/* Function: CpyData_Send
  *     Send a string to another script using WM_COPYDATA
  * Syntax:
  *     el := CpyData_Send( str, rcvr [ , data := 0 ] )

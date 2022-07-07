@@ -1,4 +1,4 @@
-;?add Modified by Tuncay. Just renamed functions, so it have the "DLL_" prefix.
+﻿;?add Modified by Tuncay. Just renamed functions, so it have the "DLL_" prefix.
 /*
        |~) _  _ _     _ _ _ __/~\ _ |    |~\| |    |` _  _  |~\    _ _  _ _ . _  _|
        |~\(/__\(_)|_|| (_(/_  \_/| ||\/  |_/|_|_  ~|~(_)|   |_/|_|| | || | ||(/__\.

@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 
 /*
 Search := ForumSearch("","","Uberi",2) ;search the "Scripts & Functions" forum for topics by Uberi

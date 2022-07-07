@@ -1,4 +1,4 @@
-ConvertToLoserCase(ByRef fnCopiedText)
+﻿ConvertToLoserCase(ByRef fnCopiedText)
 {
 	; converts object name from PascalCase to loser_case
 	; MsgBox fnCopiedText: %fnCopiedText%

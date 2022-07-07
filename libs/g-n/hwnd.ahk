@@ -1,4 +1,4 @@
-hwnd(win,hwnd=""){
+﻿hwnd(win,hwnd=""){
 	static window:=[]
 	if (win.rem){
 		Gui,% win.rem ":Destroy"

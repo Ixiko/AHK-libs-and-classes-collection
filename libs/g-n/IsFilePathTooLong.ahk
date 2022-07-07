@@ -1,4 +1,4 @@
-IsFilePathTooLong(fnFilePath,ByRef fnFilePathLength := 0)
+﻿IsFilePathTooLong(fnFilePath,ByRef fnFilePathLength := 0)
 {
 	; returns boolean to indicate if fnFilePath is longer than Windows allowed maximum
 	; https://msdn.microsoft.com/en-us/library/windows/desktop/aa365247(v=vs.85).aspx#maxpath

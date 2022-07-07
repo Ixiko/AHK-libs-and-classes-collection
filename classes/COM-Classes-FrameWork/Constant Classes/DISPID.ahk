@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: DISPID
 an enumeration class containing special values for DISPID variables. They are used to identify methods, properties, and arguments.
 

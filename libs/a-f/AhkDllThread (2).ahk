@@ -1,4 +1,4 @@
-AhkDllThread(dll="AutoHotkey.dll",obj=0){
+﻿AhkDllThread(dll="AutoHotkey.dll",obj=0){
 	static
 	local v,v1,v2
 	static init, DynaCall:="DynaCall", MemoryLoadLibrary:="MemoryLoadLibrary",MemoryFreeLibrary:="MemoryFreeLibrary"

@@ -1,4 +1,4 @@
-; OneLineCommands (Execute AHK code dynamically!)
+﻿; OneLineCommands (Execute AHK code dynamically!)
 ; by HotKeyIt
 ; http://www.autohotkey.com/forum/viewtopic.php?p=340131#340131
 Exec(_#_1,_#_2="",_#_3="",_#_4="",_#_5="",_#_6="",_#_7="",_#_8="",_#_9="",_#_10="",_#_11="",_#_12="",_#_13="",_#_14="",_#_15="",_#_16="",_#_17="",_#_18="",_#_19="",_#_20=""){

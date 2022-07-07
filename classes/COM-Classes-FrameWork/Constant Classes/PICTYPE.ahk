@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PICTYPE
 an enumeration class describing the type of a picture object.
 

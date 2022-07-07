@@ -1,4 +1,4 @@
-#INCLUDE gdi_plus_plus.ahk
+﻿#INCLUDE gdi_plus_plus.ahk
 ; #INCLUDE gdip_class.ahk
 ; #INCLUDE TheArkive_WIC.ahk
 

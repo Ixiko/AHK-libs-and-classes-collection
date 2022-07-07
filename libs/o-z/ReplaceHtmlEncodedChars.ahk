@@ -1,4 +1,4 @@
-ReplaceHtmlEncodedChars(fnText)
+ÔªøReplaceHtmlEncodedChars(fnText)
 {
 	; MsgBox fnText:`n%fnText%
 	StringReplace, fnText, fnText, &#32;     ,%A_Space%, All
@@ -103,212 +103,212 @@ ReplaceHtmlEncodedChars(fnText)
 	  
 	StringReplace, fnText, fnText, &#160;    ,   , All
 	StringReplace, fnText, fnText, &nbsp;    ,   , All
-	StringReplace, fnText, fnText, &#161;    , ° , All
-	StringReplace, fnText, fnText, &iexcl;   , ° , All
-	StringReplace, fnText, fnText, &#162;    , ¢ , All
-	StringReplace, fnText, fnText, &cent;    , ¢ , All
-	StringReplace, fnText, fnText, &#163;    , £ , All
-	StringReplace, fnText, fnText, &pound;   , £ , All
-	StringReplace, fnText, fnText, &#164;    , § , All
-	StringReplace, fnText, fnText, &curren;  , § , All
-	StringReplace, fnText, fnText, &#165;    , • , All
-	StringReplace, fnText, fnText, &yen;     , • , All
-	StringReplace, fnText, fnText, &#166;    , ¶ , All
-	StringReplace, fnText, fnText, &brvbar;  , ¶ , All
-	StringReplace, fnText, fnText, &#167;    , ß , All
-	StringReplace, fnText, fnText, &sect;    , ß , All
-	StringReplace, fnText, fnText, &#168;    , ® , All
-	StringReplace, fnText, fnText, &uml;     , ® , All
-	StringReplace, fnText, fnText, &#169;    , © , All
-	StringReplace, fnText, fnText, &copy;    , © , All
-	StringReplace, fnText, fnText, &#170;    , ™ , All
-	StringReplace, fnText, fnText, &ordf;    , ™ , All
-	StringReplace, fnText, fnText, &#171;    , ´ , All
-	StringReplace, fnText, fnText, &laquo;   , ´ , All
-	StringReplace, fnText, fnText, &#172;    , ¨ , All
-	StringReplace, fnText, fnText, &not;     , ¨ , All
+	StringReplace, fnText, fnText, &#161;    , ¬° , All
+	StringReplace, fnText, fnText, &iexcl;   , ¬° , All
+	StringReplace, fnText, fnText, &#162;    , ¬¢ , All
+	StringReplace, fnText, fnText, &cent;    , ¬¢ , All
+	StringReplace, fnText, fnText, &#163;    , ¬£ , All
+	StringReplace, fnText, fnText, &pound;   , ¬£ , All
+	StringReplace, fnText, fnText, &#164;    , ¬§ , All
+	StringReplace, fnText, fnText, &curren;  , ¬§ , All
+	StringReplace, fnText, fnText, &#165;    , ¬• , All
+	StringReplace, fnText, fnText, &yen;     , ¬• , All
+	StringReplace, fnText, fnText, &#166;    , ¬¶ , All
+	StringReplace, fnText, fnText, &brvbar;  , ¬¶ , All
+	StringReplace, fnText, fnText, &#167;    , ¬ß , All
+	StringReplace, fnText, fnText, &sect;    , ¬ß , All
+	StringReplace, fnText, fnText, &#168;    , ¬® , All
+	StringReplace, fnText, fnText, &uml;     , ¬® , All
+	StringReplace, fnText, fnText, &#169;    , ¬© , All
+	StringReplace, fnText, fnText, &copy;    , ¬© , All
+	StringReplace, fnText, fnText, &#170;    , ¬™ , All
+	StringReplace, fnText, fnText, &ordf;    , ¬™ , All
+	StringReplace, fnText, fnText, &#171;    , ¬´ , All
+	StringReplace, fnText, fnText, &laquo;   , ¬´ , All
+	StringReplace, fnText, fnText, &#172;    , ¬¨ , All
+	StringReplace, fnText, fnText, &not;     , ¬¨ , All
 	StringReplace, fnText, fnText, &#173;    ,   , All
 	StringReplace, fnText, fnText, &shy;     ,   , All
-	StringReplace, fnText, fnText, &#174;    , Æ , All
-	StringReplace, fnText, fnText, &reg;     , Æ , All
-	StringReplace, fnText, fnText, &#175;    , Ø , All
-	StringReplace, fnText, fnText, &macr;    , Ø , All
-	StringReplace, fnText, fnText, &#176;    , ∞ , All
-	StringReplace, fnText, fnText, &deg;     , ∞ , All
-	StringReplace, fnText, fnText, &#177;    , ± , All
-	StringReplace, fnText, fnText, &plusmn;  , ± , All
-	StringReplace, fnText, fnText, &#178;    , ≤ , All
-	StringReplace, fnText, fnText, &sup2;    , ≤ , All
-	StringReplace, fnText, fnText, &#179;    , ≥ , All
-	StringReplace, fnText, fnText, &sup3;    , ≥ , All
-	StringReplace, fnText, fnText, &#180;    , ¥ , All
-	StringReplace, fnText, fnText, &acute;   , ¥ , All
-	StringReplace, fnText, fnText, &#181;    , µ , All
-	StringReplace, fnText, fnText, &micro;   , µ , All
-	StringReplace, fnText, fnText, &#182;    , ∂ , All
-	StringReplace, fnText, fnText, &para;    , ∂ , All
-	StringReplace, fnText, fnText, &#183;    , ∑ , All
-	StringReplace, fnText, fnText, &middot;  , ∑ , All
-	StringReplace, fnText, fnText, &#184;    , ∏ , All
-	StringReplace, fnText, fnText, &cedil;   , ∏ , All
-	StringReplace, fnText, fnText, &#185;    , π , All
-	StringReplace, fnText, fnText, &sup1;    , π , All
-	StringReplace, fnText, fnText, &#186;    , ∫ , All
-	StringReplace, fnText, fnText, &ordm;    , ∫ , All
-	StringReplace, fnText, fnText, &#187;    , ª , All
-	StringReplace, fnText, fnText, &raquo;   , ª , All
-	StringReplace, fnText, fnText, &#188;    , º , All
-	StringReplace, fnText, fnText, &frac14;  , º , All
-	StringReplace, fnText, fnText, &#189;    , Ω , All
-	StringReplace, fnText, fnText, &frac12;  , Ω , All
-	StringReplace, fnText, fnText, &#190;    , æ , All
-	StringReplace, fnText, fnText, &frac34;  , æ , All
-	StringReplace, fnText, fnText, &#191;    , ø , All
-	StringReplace, fnText, fnText, &iquest;  , ø , All
-	StringReplace, fnText, fnText, &#192;    , ¿ , All
-	StringReplace, fnText, fnText, &Agrave;  , ¿ , All
-	StringReplace, fnText, fnText, &#193;    , ¡ , All
-	StringReplace, fnText, fnText, &Aacute;  , ¡ , All
-	StringReplace, fnText, fnText, &#194;    , ¬ , All
-	StringReplace, fnText, fnText, &Acirc;   , ¬ , All
-	StringReplace, fnText, fnText, &#195;    , √ , All
-	StringReplace, fnText, fnText, &Atilde;  , √ , All
-	StringReplace, fnText, fnText, &#196;    , ƒ , All
-	StringReplace, fnText, fnText, &Auml;    , ƒ , All
-	StringReplace, fnText, fnText, &#197;    , ≈ , All
-	StringReplace, fnText, fnText, &Aring;   , ≈ , All
-	StringReplace, fnText, fnText, &#198;    , ∆ , All
-	StringReplace, fnText, fnText, &AElig;   , ∆ , All
-	StringReplace, fnText, fnText, &#199;    , « , All
-	StringReplace, fnText, fnText, &Ccedil;  , « , All
-	StringReplace, fnText, fnText, &#200;    , » , All
-	StringReplace, fnText, fnText, &Egrave;  , » , All
-	StringReplace, fnText, fnText, &#201;    , … , All
-	StringReplace, fnText, fnText, &Eacute;  , … , All
-	StringReplace, fnText, fnText, &#202;    ,   , All
-	StringReplace, fnText, fnText, &Ecirc;   ,   , All
-	StringReplace, fnText, fnText, &#203;    , À , All
-	StringReplace, fnText, fnText, &Euml;    , À , All
-	StringReplace, fnText, fnText, &#204;    , Ã , All
-	StringReplace, fnText, fnText, &Igrave;  , Ã , All
-	StringReplace, fnText, fnText, &#205;    , Õ , All
-	StringReplace, fnText, fnText, &Iacute;  , Õ , All
-	StringReplace, fnText, fnText, &#206;    , Œ , All
-	StringReplace, fnText, fnText, &Icirc;   , Œ , All
-	StringReplace, fnText, fnText, &#207;    , œ , All
-	StringReplace, fnText, fnText, &Iuml;    , œ , All
-	StringReplace, fnText, fnText, &#208;    , – , All
-	StringReplace, fnText, fnText, &ETH;     , – , All
-	StringReplace, fnText, fnText, &#209;    , — , All
-	StringReplace, fnText, fnText, &Ntilde;  , — , All
-	StringReplace, fnText, fnText, &#210;    , “ , All
-	StringReplace, fnText, fnText, &Ograve;  , “ , All
-	StringReplace, fnText, fnText, &#211;    , ” , All
-	StringReplace, fnText, fnText, &Oacute;  , ” , All
-	StringReplace, fnText, fnText, &#212;    , ‘ , All
-	StringReplace, fnText, fnText, &Ocirc;   , ‘ , All
-	StringReplace, fnText, fnText, &#213;    , ’ , All
-	StringReplace, fnText, fnText, &Otilde;  , ’ , All
-	StringReplace, fnText, fnText, &#214;    , ÷ , All
-	StringReplace, fnText, fnText, &Ouml;    , ÷ , All
-	StringReplace, fnText, fnText, &#215;    , ◊ , All
-	StringReplace, fnText, fnText, &times;   , ◊ , All
-	StringReplace, fnText, fnText, &#216;    , ÿ , All
-	StringReplace, fnText, fnText, &Oslash;  , ÿ , All
-	StringReplace, fnText, fnText, &#217;    , Ÿ , All
-	StringReplace, fnText, fnText, &Ugrave;  , Ÿ , All
-	StringReplace, fnText, fnText, &#218;    , ⁄ , All
-	StringReplace, fnText, fnText, &Uacute;  , ⁄ , All
-	StringReplace, fnText, fnText, &#219;    , € , All
-	StringReplace, fnText, fnText, &Ucirc;   , € , All
-	StringReplace, fnText, fnText, &#220;    , ‹ , All
-	StringReplace, fnText, fnText, &Uuml;    , ‹ , All
-	StringReplace, fnText, fnText, &#221;    , › , All
-	StringReplace, fnText, fnText, &Yacute;  , › , All
-	StringReplace, fnText, fnText, &#222;    , ﬁ , All
-	StringReplace, fnText, fnText, &THORN;   , ﬁ , All
-	StringReplace, fnText, fnText, &#223;    , ﬂ , All
-	StringReplace, fnText, fnText, &szlig;   , ﬂ , All
-	StringReplace, fnText, fnText, &#224;    , ‡ , All
-	StringReplace, fnText, fnText, &agrave;  , ‡ , All
-	StringReplace, fnText, fnText, &#225;    , · , All
-	StringReplace, fnText, fnText, &aacute;  , · , All
-	StringReplace, fnText, fnText, &#226;    , ‚ , All
-	StringReplace, fnText, fnText, &acirc;   , ‚ , All
-	StringReplace, fnText, fnText, &#227;    , „ , All
-	StringReplace, fnText, fnText, &atilde;  , „ , All
-	StringReplace, fnText, fnText, &#228;    , ‰ , All
-	StringReplace, fnText, fnText, &auml;    , ‰ , All
-	StringReplace, fnText, fnText, &#229;    , Â , All
-	StringReplace, fnText, fnText, &aring;   , Â , All
-	StringReplace, fnText, fnText, &#230;    , Ê , All
-	StringReplace, fnText, fnText, &aelig;   , Ê , All
-	StringReplace, fnText, fnText, &#231;    , Á , All
-	StringReplace, fnText, fnText, &ccedil;  , Á , All
-	StringReplace, fnText, fnText, &#232;    , Ë , All
-	StringReplace, fnText, fnText, &egrave;  , Ë , All
-	StringReplace, fnText, fnText, &#233;    , È , All
-	StringReplace, fnText, fnText, &eacute;  , È , All
-	StringReplace, fnText, fnText, &#234;    , Í , All
-	StringReplace, fnText, fnText, &ecirc;   , Í , All
-	StringReplace, fnText, fnText, &#235;    , Î , All
-	StringReplace, fnText, fnText, &euml;    , Î , All
-	StringReplace, fnText, fnText, &#236;    , Ï , All
-	StringReplace, fnText, fnText, &igrave;  , Ï , All
-	StringReplace, fnText, fnText, &#237;    , Ì , All
-	StringReplace, fnText, fnText, &iacute;  , Ì , All
-	StringReplace, fnText, fnText, &#238;    , Ó , All
-	StringReplace, fnText, fnText, &icirc;   , Ó , All
-	StringReplace, fnText, fnText, &#239;    , Ô , All
-	StringReplace, fnText, fnText, &iuml;    , Ô , All
-	StringReplace, fnText, fnText, &#240;    ,  , All
-	StringReplace, fnText, fnText, &eth;     ,  , All
-	StringReplace, fnText, fnText, &#241;    , Ò , All
-	StringReplace, fnText, fnText, &ntilde;  , Ò , All
-	StringReplace, fnText, fnText, &#242;    , Ú , All
-	StringReplace, fnText, fnText, &ograve;  , Ú , All
-	StringReplace, fnText, fnText, &#243;    , Û , All
-	StringReplace, fnText, fnText, &oacute;  , Û , All
-	StringReplace, fnText, fnText, &#244;    , Ù , All
-	StringReplace, fnText, fnText, &ocirc;   , Ù , All
-	StringReplace, fnText, fnText, &#245;    , ı , All
-	StringReplace, fnText, fnText, &otilde;  , ı , All
-	StringReplace, fnText, fnText, &#246;    , ˆ , All
-	StringReplace, fnText, fnText, &ouml;    , ˆ , All
-	StringReplace, fnText, fnText, &#247;    , ˜ , All
-	StringReplace, fnText, fnText, &divide;  , ˜ , All
-	StringReplace, fnText, fnText, &#248;    , ¯ , All
-	StringReplace, fnText, fnText, &oslash;  , ¯ , All
-	StringReplace, fnText, fnText, &#249;    , ˘ , All
-	StringReplace, fnText, fnText, &Ugrave;  , ˘ , All
-	StringReplace, fnText, fnText, &#250;    , ˙ , All
-	StringReplace, fnText, fnText, &Uacute;  , ˙ , All
-	StringReplace, fnText, fnText, &#251;    , ˚ , All
-	StringReplace, fnText, fnText, &Ucirc;   , ˚ , All
-	StringReplace, fnText, fnText, &#252;    , ¸ , All
-	StringReplace, fnText, fnText, &Uuml;    , ¸ , All
-	StringReplace, fnText, fnText, &#253;    , ˝ , All
-	StringReplace, fnText, fnText, &yacute;  , ˝ , All
-	StringReplace, fnText, fnText, &#254;    , ˛ , All
-	StringReplace, fnText, fnText, &thorn;   , ˛ , All
-	StringReplace, fnText, fnText, &#255;    , ˇ , All
-	StringReplace, fnText, fnText, &yuml;    , ˇ , All
+	StringReplace, fnText, fnText, &#174;    , ¬Æ , All
+	StringReplace, fnText, fnText, &reg;     , ¬Æ , All
+	StringReplace, fnText, fnText, &#175;    , ¬Ø , All
+	StringReplace, fnText, fnText, &macr;    , ¬Ø , All
+	StringReplace, fnText, fnText, &#176;    , ¬∞ , All
+	StringReplace, fnText, fnText, &deg;     , ¬∞ , All
+	StringReplace, fnText, fnText, &#177;    , ¬± , All
+	StringReplace, fnText, fnText, &plusmn;  , ¬± , All
+	StringReplace, fnText, fnText, &#178;    , ¬≤ , All
+	StringReplace, fnText, fnText, &sup2;    , ¬≤ , All
+	StringReplace, fnText, fnText, &#179;    , ¬≥ , All
+	StringReplace, fnText, fnText, &sup3;    , ¬≥ , All
+	StringReplace, fnText, fnText, &#180;    , ¬¥ , All
+	StringReplace, fnText, fnText, &acute;   , ¬¥ , All
+	StringReplace, fnText, fnText, &#181;    , ¬µ , All
+	StringReplace, fnText, fnText, &micro;   , ¬µ , All
+	StringReplace, fnText, fnText, &#182;    , ¬∂ , All
+	StringReplace, fnText, fnText, &para;    , ¬∂ , All
+	StringReplace, fnText, fnText, &#183;    , ¬∑ , All
+	StringReplace, fnText, fnText, &middot;  , ¬∑ , All
+	StringReplace, fnText, fnText, &#184;    , ¬∏ , All
+	StringReplace, fnText, fnText, &cedil;   , ¬∏ , All
+	StringReplace, fnText, fnText, &#185;    , ¬π , All
+	StringReplace, fnText, fnText, &sup1;    , ¬π , All
+	StringReplace, fnText, fnText, &#186;    , ¬∫ , All
+	StringReplace, fnText, fnText, &ordm;    , ¬∫ , All
+	StringReplace, fnText, fnText, &#187;    , ¬ª , All
+	StringReplace, fnText, fnText, &raquo;   , ¬ª , All
+	StringReplace, fnText, fnText, &#188;    , ¬º , All
+	StringReplace, fnText, fnText, &frac14;  , ¬º , All
+	StringReplace, fnText, fnText, &#189;    , ¬Ω , All
+	StringReplace, fnText, fnText, &frac12;  , ¬Ω , All
+	StringReplace, fnText, fnText, &#190;    , ¬æ , All
+	StringReplace, fnText, fnText, &frac34;  , ¬æ , All
+	StringReplace, fnText, fnText, &#191;    , ¬ø , All
+	StringReplace, fnText, fnText, &iquest;  , ¬ø , All
+	StringReplace, fnText, fnText, &#192;    , √Ä , All
+	StringReplace, fnText, fnText, &Agrave;  , √Ä , All
+	StringReplace, fnText, fnText, &#193;    , √Å , All
+	StringReplace, fnText, fnText, &Aacute;  , √Å , All
+	StringReplace, fnText, fnText, &#194;    , √Ç , All
+	StringReplace, fnText, fnText, &Acirc;   , √Ç , All
+	StringReplace, fnText, fnText, &#195;    , √É , All
+	StringReplace, fnText, fnText, &Atilde;  , √É , All
+	StringReplace, fnText, fnText, &#196;    , √Ñ , All
+	StringReplace, fnText, fnText, &Auml;    , √Ñ , All
+	StringReplace, fnText, fnText, &#197;    , √Ö , All
+	StringReplace, fnText, fnText, &Aring;   , √Ö , All
+	StringReplace, fnText, fnText, &#198;    , √Ü , All
+	StringReplace, fnText, fnText, &AElig;   , √Ü , All
+	StringReplace, fnText, fnText, &#199;    , √á , All
+	StringReplace, fnText, fnText, &Ccedil;  , √á , All
+	StringReplace, fnText, fnText, &#200;    , √à , All
+	StringReplace, fnText, fnText, &Egrave;  , √à , All
+	StringReplace, fnText, fnText, &#201;    , √â , All
+	StringReplace, fnText, fnText, &Eacute;  , √â , All
+	StringReplace, fnText, fnText, &#202;    , √ä , All
+	StringReplace, fnText, fnText, &Ecirc;   , √ä , All
+	StringReplace, fnText, fnText, &#203;    , √ã , All
+	StringReplace, fnText, fnText, &Euml;    , √ã , All
+	StringReplace, fnText, fnText, &#204;    , √å , All
+	StringReplace, fnText, fnText, &Igrave;  , √å , All
+	StringReplace, fnText, fnText, &#205;    , √ç , All
+	StringReplace, fnText, fnText, &Iacute;  , √ç , All
+	StringReplace, fnText, fnText, &#206;    , √é , All
+	StringReplace, fnText, fnText, &Icirc;   , √é , All
+	StringReplace, fnText, fnText, &#207;    , √è , All
+	StringReplace, fnText, fnText, &Iuml;    , √è , All
+	StringReplace, fnText, fnText, &#208;    , √ê , All
+	StringReplace, fnText, fnText, &ETH;     , √ê , All
+	StringReplace, fnText, fnText, &#209;    , √ë , All
+	StringReplace, fnText, fnText, &Ntilde;  , √ë , All
+	StringReplace, fnText, fnText, &#210;    , √í , All
+	StringReplace, fnText, fnText, &Ograve;  , √í , All
+	StringReplace, fnText, fnText, &#211;    , √ì , All
+	StringReplace, fnText, fnText, &Oacute;  , √ì , All
+	StringReplace, fnText, fnText, &#212;    , √î , All
+	StringReplace, fnText, fnText, &Ocirc;   , √î , All
+	StringReplace, fnText, fnText, &#213;    , √ï , All
+	StringReplace, fnText, fnText, &Otilde;  , √ï , All
+	StringReplace, fnText, fnText, &#214;    , √ñ , All
+	StringReplace, fnText, fnText, &Ouml;    , √ñ , All
+	StringReplace, fnText, fnText, &#215;    , √ó , All
+	StringReplace, fnText, fnText, &times;   , √ó , All
+	StringReplace, fnText, fnText, &#216;    , √ò , All
+	StringReplace, fnText, fnText, &Oslash;  , √ò , All
+	StringReplace, fnText, fnText, &#217;    , √ô , All
+	StringReplace, fnText, fnText, &Ugrave;  , √ô , All
+	StringReplace, fnText, fnText, &#218;    , √ö , All
+	StringReplace, fnText, fnText, &Uacute;  , √ö , All
+	StringReplace, fnText, fnText, &#219;    , √õ , All
+	StringReplace, fnText, fnText, &Ucirc;   , √õ , All
+	StringReplace, fnText, fnText, &#220;    , √ú , All
+	StringReplace, fnText, fnText, &Uuml;    , √ú , All
+	StringReplace, fnText, fnText, &#221;    , √ù , All
+	StringReplace, fnText, fnText, &Yacute;  , √ù , All
+	StringReplace, fnText, fnText, &#222;    , √û , All
+	StringReplace, fnText, fnText, &THORN;   , √û , All
+	StringReplace, fnText, fnText, &#223;    , √ü , All
+	StringReplace, fnText, fnText, &szlig;   , √ü , All
+	StringReplace, fnText, fnText, &#224;    , √† , All
+	StringReplace, fnText, fnText, &agrave;  , √† , All
+	StringReplace, fnText, fnText, &#225;    , √° , All
+	StringReplace, fnText, fnText, &aacute;  , √° , All
+	StringReplace, fnText, fnText, &#226;    , √¢ , All
+	StringReplace, fnText, fnText, &acirc;   , √¢ , All
+	StringReplace, fnText, fnText, &#227;    , √£ , All
+	StringReplace, fnText, fnText, &atilde;  , √£ , All
+	StringReplace, fnText, fnText, &#228;    , √§ , All
+	StringReplace, fnText, fnText, &auml;    , √§ , All
+	StringReplace, fnText, fnText, &#229;    , √• , All
+	StringReplace, fnText, fnText, &aring;   , √• , All
+	StringReplace, fnText, fnText, &#230;    , √¶ , All
+	StringReplace, fnText, fnText, &aelig;   , √¶ , All
+	StringReplace, fnText, fnText, &#231;    , √ß , All
+	StringReplace, fnText, fnText, &ccedil;  , √ß , All
+	StringReplace, fnText, fnText, &#232;    , √® , All
+	StringReplace, fnText, fnText, &egrave;  , √® , All
+	StringReplace, fnText, fnText, &#233;    , √© , All
+	StringReplace, fnText, fnText, &eacute;  , √© , All
+	StringReplace, fnText, fnText, &#234;    , √™ , All
+	StringReplace, fnText, fnText, &ecirc;   , √™ , All
+	StringReplace, fnText, fnText, &#235;    , √´ , All
+	StringReplace, fnText, fnText, &euml;    , √´ , All
+	StringReplace, fnText, fnText, &#236;    , √¨ , All
+	StringReplace, fnText, fnText, &igrave;  , √¨ , All
+	StringReplace, fnText, fnText, &#237;    , √≠ , All
+	StringReplace, fnText, fnText, &iacute;  , √≠ , All
+	StringReplace, fnText, fnText, &#238;    , √Æ , All
+	StringReplace, fnText, fnText, &icirc;   , √Æ , All
+	StringReplace, fnText, fnText, &#239;    , √Ø , All
+	StringReplace, fnText, fnText, &iuml;    , √Ø , All
+	StringReplace, fnText, fnText, &#240;    , √∞ , All
+	StringReplace, fnText, fnText, &eth;     , √∞ , All
+	StringReplace, fnText, fnText, &#241;    , √± , All
+	StringReplace, fnText, fnText, &ntilde;  , √± , All
+	StringReplace, fnText, fnText, &#242;    , √≤ , All
+	StringReplace, fnText, fnText, &ograve;  , √≤ , All
+	StringReplace, fnText, fnText, &#243;    , √≥ , All
+	StringReplace, fnText, fnText, &oacute;  , √≥ , All
+	StringReplace, fnText, fnText, &#244;    , √¥ , All
+	StringReplace, fnText, fnText, &ocirc;   , √¥ , All
+	StringReplace, fnText, fnText, &#245;    , √µ , All
+	StringReplace, fnText, fnText, &otilde;  , √µ , All
+	StringReplace, fnText, fnText, &#246;    , √∂ , All
+	StringReplace, fnText, fnText, &ouml;    , √∂ , All
+	StringReplace, fnText, fnText, &#247;    , √∑ , All
+	StringReplace, fnText, fnText, &divide;  , √∑ , All
+	StringReplace, fnText, fnText, &#248;    , √∏ , All
+	StringReplace, fnText, fnText, &oslash;  , √∏ , All
+	StringReplace, fnText, fnText, &#249;    , √π , All
+	StringReplace, fnText, fnText, &Ugrave;  , √π , All
+	StringReplace, fnText, fnText, &#250;    , √∫ , All
+	StringReplace, fnText, fnText, &Uacute;  , √∫ , All
+	StringReplace, fnText, fnText, &#251;    , √ª , All
+	StringReplace, fnText, fnText, &Ucirc;   , √ª , All
+	StringReplace, fnText, fnText, &#252;    , √º , All
+	StringReplace, fnText, fnText, &Uuml;    , √º , All
+	StringReplace, fnText, fnText, &#253;    , √Ω , All
+	StringReplace, fnText, fnText, &yacute;  , √Ω , All
+	StringReplace, fnText, fnText, &#254;    , √æ , All
+	StringReplace, fnText, fnText, &thorn;   , √æ , All
+	StringReplace, fnText, fnText, &#255;    , √ø , All
+	StringReplace, fnText, fnText, &yuml;    , √ø , All
 	StringReplace, fnText, fnText, &#338;    , OE, All
 	StringReplace, fnText, fnText, &OElig;   , OE, All
 	StringReplace, fnText, fnText, &#339;    , oe, All
 	StringReplace, fnText, fnText, &oelig;   , oe, All
-	StringReplace, fnText, fnText, &#352;    , ä , All
-	StringReplace, fnText, fnText, &Scaron;  , ä , All
-	StringReplace, fnText, fnText, &#353;    , ö , All
-	StringReplace, fnText, fnText, &scaron;  , ö , All
-	StringReplace, fnText, fnText, &#376;    , ü , All
-	StringReplace, fnText, fnText, &Yuml;    , ü , All
-	StringReplace, fnText, fnText, &#402;    , É , All
-	StringReplace, fnText, fnText, &fnof;    , É , All
-	StringReplace, fnText, fnText, &#710;    , à , All
-	StringReplace, fnText, fnText, &circ;    , à , All
-	StringReplace, fnText, fnText, &#732;    , ò , All
-	StringReplace, fnText, fnText, &tilde;   , ò , All
+	StringReplace, fnText, fnText, &#352;    , ≈† , All
+	StringReplace, fnText, fnText, &Scaron;  , ≈† , All
+	StringReplace, fnText, fnText, &#353;    , ≈° , All
+	StringReplace, fnText, fnText, &scaron;  , ≈° , All
+	StringReplace, fnText, fnText, &#376;    , ≈∏ , All
+	StringReplace, fnText, fnText, &Yuml;    , ≈∏ , All
+	StringReplace, fnText, fnText, &#402;    , ∆í , All
+	StringReplace, fnText, fnText, &fnof;    , ∆í , All
+	StringReplace, fnText, fnText, &#710;    , ÀÜ , All
+	StringReplace, fnText, fnText, &circ;    , ÀÜ , All
+	StringReplace, fnText, fnText, &#732;    , Àú , All
+	StringReplace, fnText, fnText, &tilde;   , Àú , All
 	StringReplace, fnText, fnText, &#913;    , ? , All
 	StringReplace, fnText, fnText, &Alpha;   , ? , All
 	StringReplace, fnText, fnText, &#914;    , ? , All
@@ -359,8 +359,8 @@ ReplaceHtmlEncodedChars(fnText)
 	StringReplace, fnText, fnText, &Omega;   , O , All
 	StringReplace, fnText, fnText, &#945;    , a , All
 	StringReplace, fnText, fnText, &alpha;   , a , All
-	StringReplace, fnText, fnText, &#946;    , ﬂ , All
-	StringReplace, fnText, fnText, &beta;    , ﬂ , All
+	StringReplace, fnText, fnText, &#946;    , √ü , All
+	StringReplace, fnText, fnText, &beta;    , √ü , All
 	StringReplace, fnText, fnText, &#947;    , ? , All
 	StringReplace, fnText, fnText, &gamma;   , ? , All
 	StringReplace, fnText, fnText, &#948;    , d , All
@@ -379,8 +379,8 @@ ReplaceHtmlEncodedChars(fnText)
 	StringReplace, fnText, fnText, &kappa;   , ? , All
 	StringReplace, fnText, fnText, &#955;    , ? , All
 	StringReplace, fnText, fnText, &lambda;  , ? , All
-	StringReplace, fnText, fnText, &#956;    , µ , All
-	StringReplace, fnText, fnText, &mu;      , µ , All
+	StringReplace, fnText, fnText, &#956;    , ¬µ , All
+	StringReplace, fnText, fnText, &mu;      , ¬µ , All
 	StringReplace, fnText, fnText, &#957;    , ? , All
 	StringReplace, fnText, fnText, &nu;      , ? , All
 	StringReplace, fnText, fnText, &#958;    , ? , All
@@ -427,54 +427,54 @@ ReplaceHtmlEncodedChars(fnText)
 	StringReplace, fnText, fnText, &lrm;     ,   , All
 	StringReplace, fnText, fnText, &#8207;   ,   , All
 	StringReplace, fnText, fnText, &rlm;     ,   , All
-	StringReplace, fnText, fnText, &#8211;   , ñ , All
-	StringReplace, fnText, fnText, &ndash;   , ñ , All
-	StringReplace, fnText, fnText, &#8212;   , ó , All
-	StringReplace, fnText, fnText, &mdash;   , ó , All
-	StringReplace, fnText, fnText, &#8216;   , ë , All
-	StringReplace, fnText, fnText, &lsquo;   , ë , All
-	StringReplace, fnText, fnText, &#8217;   , í , All
-	StringReplace, fnText, fnText, &rsquo;   , í , All
-	StringReplace, fnText, fnText, &#8218;   , Ç , All
-	StringReplace, fnText, fnText, &sbquo;   , Ç , All
-	StringReplace, fnText, fnText, &#8220;   , ì , All
-	StringReplace, fnText, fnText, &ldquo;   , ì , All
-	StringReplace, fnText, fnText, &#8221;   , î , All
-	StringReplace, fnText, fnText, &rdquo;   , î , All
-	StringReplace, fnText, fnText, &#8222;   , Ñ , All
-	StringReplace, fnText, fnText, &bdquo;   , Ñ , All
-	StringReplace, fnText, fnText, &#8224;   , Ü , All
-	StringReplace, fnText, fnText, &dagger;  , Ü , All
-	StringReplace, fnText, fnText, &#8225;   , á , All
-	StringReplace, fnText, fnText, &Dagger;  , á , All
-	StringReplace, fnText, fnText, &#8226;   , ï , All
-	StringReplace, fnText, fnText, &bull;    , ï , All
-	StringReplace, fnText, fnText, &#8230;   , Ö , All
-	StringReplace, fnText, fnText, &hellip;  , Ö , All
-	StringReplace, fnText, fnText, &#8240;   , â , All
-	StringReplace, fnText, fnText, &permil;  , â , All
+	StringReplace, fnText, fnText, &#8211;   , ‚Äì , All
+	StringReplace, fnText, fnText, &ndash;   , ‚Äì , All
+	StringReplace, fnText, fnText, &#8212;   , ‚Äî , All
+	StringReplace, fnText, fnText, &mdash;   , ‚Äî , All
+	StringReplace, fnText, fnText, &#8216;   , ‚Äò , All
+	StringReplace, fnText, fnText, &lsquo;   , ‚Äò , All
+	StringReplace, fnText, fnText, &#8217;   , ‚Äô , All
+	StringReplace, fnText, fnText, &rsquo;   , ‚Äô , All
+	StringReplace, fnText, fnText, &#8218;   , ‚Äö , All
+	StringReplace, fnText, fnText, &sbquo;   , ‚Äö , All
+	StringReplace, fnText, fnText, &#8220;   , ‚Äú , All
+	StringReplace, fnText, fnText, &ldquo;   , ‚Äú , All
+	StringReplace, fnText, fnText, &#8221;   , ‚Äù , All
+	StringReplace, fnText, fnText, &rdquo;   , ‚Äù , All
+	StringReplace, fnText, fnText, &#8222;   , ‚Äû , All
+	StringReplace, fnText, fnText, &bdquo;   , ‚Äû , All
+	StringReplace, fnText, fnText, &#8224;   , ‚Ä† , All
+	StringReplace, fnText, fnText, &dagger;  , ‚Ä† , All
+	StringReplace, fnText, fnText, &#8225;   , ‚Ä° , All
+	StringReplace, fnText, fnText, &Dagger;  , ‚Ä° , All
+	StringReplace, fnText, fnText, &#8226;   , ‚Ä¢ , All
+	StringReplace, fnText, fnText, &bull;    , ‚Ä¢ , All
+	StringReplace, fnText, fnText, &#8230;   , ‚Ä¶ , All
+	StringReplace, fnText, fnText, &hellip;  , ‚Ä¶ , All
+	StringReplace, fnText, fnText, &#8240;   , ‚Ä∞ , All
+	StringReplace, fnText, fnText, &permil;  , ‚Ä∞ , All
 	StringReplace, fnText, fnText, &#8242;   , ' , All
 	StringReplace, fnText, fnText, &prime;   , ' , All
 	StringReplace, fnText, fnText, &#8243;   , ? , All
 	StringReplace, fnText, fnText, &Prime;   , ? , All
-	StringReplace, fnText, fnText, &#8249;   , ã , All
-	StringReplace, fnText, fnText, &lsaquo;  , ã , All
-	StringReplace, fnText, fnText, &#8250;   , õ , All
-	StringReplace, fnText, fnText, &rsaquo;  , õ , All
+	StringReplace, fnText, fnText, &#8249;   , ‚Äπ , All
+	StringReplace, fnText, fnText, &lsaquo;  , ‚Äπ , All
+	StringReplace, fnText, fnText, &#8250;   , ‚Ä∫ , All
+	StringReplace, fnText, fnText, &rsaquo;  , ‚Ä∫ , All
 	StringReplace, fnText, fnText, &#8254;   , ? , All
 	StringReplace, fnText, fnText, &oline;   , ? , All
 	StringReplace, fnText, fnText, &#8260;   , / , All
 	StringReplace, fnText, fnText, &frasl;   , / , All
-	StringReplace, fnText, fnText, &#8364;   , Ä , All
-	StringReplace, fnText, fnText, &euro;    , Ä , All
+	StringReplace, fnText, fnText, &#8364;   , ‚Ç¨ , All
+	StringReplace, fnText, fnText, &euro;    , ‚Ç¨ , All
 	StringReplace, fnText, fnText, &#8465;   , I , All
 	StringReplace, fnText, fnText, &image;   , I , All
 	StringReplace, fnText, fnText, &#8472;   , P , All
 	StringReplace, fnText, fnText, &weierp;  , P , All
 	StringReplace, fnText, fnText, &#8476;   , R , All
 	StringReplace, fnText, fnText, &real;    , R , All
-	StringReplace, fnText, fnText, &#8482;   , ô , All
-	StringReplace, fnText, fnText, &trade;   , ô , All
+	StringReplace, fnText, fnText, &#8482;   , ‚Ñ¢ , All
+	StringReplace, fnText, fnText, &trade;   , ‚Ñ¢ , All
 	StringReplace, fnText, fnText, &#8501;   , ? , All
 	StringReplace, fnText, fnText, &alefsym; , ? , All
 	StringReplace, fnText, fnText, &#8592;   , ? , All
@@ -505,8 +505,8 @@ ReplaceHtmlEncodedChars(fnText)
 	StringReplace, fnText, fnText, &part;    , ? , All
 	StringReplace, fnText, fnText, &#8707;   , ? , All
 	StringReplace, fnText, fnText, &exist;   , ? , All
-	StringReplace, fnText, fnText, &#8709;   , ÿ , All
-	StringReplace, fnText, fnText, &empty;   , ÿ , All
+	StringReplace, fnText, fnText, &#8709;   , √ò , All
+	StringReplace, fnText, fnText, &empty;   , √ò , All
 	StringReplace, fnText, fnText, &#8711;   , ? , All
 	StringReplace, fnText, fnText, &nabla;   , ? , All
 	StringReplace, fnText, fnText, &#8712;   , ? , All
@@ -547,8 +547,8 @@ ReplaceHtmlEncodedChars(fnText)
 	StringReplace, fnText, fnText, &sim;     , ~ , All
 	StringReplace, fnText, fnText, &#8773;   , ? , All
 	StringReplace, fnText, fnText, &cong;    , ? , All
-	StringReplace, fnText, fnText, &#8776;   , ò , All
-	StringReplace, fnText, fnText, &asymp;   , ò , All
+	StringReplace, fnText, fnText, &#8776;   , Àú , All
+	StringReplace, fnText, fnText, &asymp;   , Àú , All
 	StringReplace, fnText, fnText, &#8800;   , ? , All
 	StringReplace, fnText, fnText, &ne;      , ? , All
 	StringReplace, fnText, fnText, &#8801;   , = , All
@@ -573,8 +573,8 @@ ReplaceHtmlEncodedChars(fnText)
 	StringReplace, fnText, fnText, &otimes;  , ? , All
 	StringReplace, fnText, fnText, &#8869;   , ? , All
 	StringReplace, fnText, fnText, &perp;    , ? , All
-	StringReplace, fnText, fnText, &#8901;   , ∑ , All
-	StringReplace, fnText, fnText, &sdot;    , ∑ , All
+	StringReplace, fnText, fnText, &#8901;   , ¬∑ , All
+	StringReplace, fnText, fnText, &sdot;    , ¬∑ , All
 	StringReplace, fnText, fnText, &#8968;   , ? , All
 	StringReplace, fnText, fnText, &lceil;   , ? , All
 	StringReplace, fnText, fnText, &#8969;   , ? , All

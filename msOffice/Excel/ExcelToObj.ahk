@@ -1,4 +1,4 @@
-; Function:  ExcelToObj
+﻿; Function:  ExcelToObj
 ; Author:    tmplinshi
 ; Tested On: AHK: 1.1.14.03 U32 | OS: WinXP_SP3 | Microsoft Excel: 2010
 ; =================================================================

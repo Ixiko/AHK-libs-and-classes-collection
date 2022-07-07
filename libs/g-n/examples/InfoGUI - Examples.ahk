@@ -1,4 +1,4 @@
-#NoEnv
+ï»¿#NoEnv
 #SingleInstance Force
 
 ;-- Example text for some messages
@@ -85,7 +85,7 @@ DynamicText=
     disease, tap the ocean depths, and encourage the arts and commerce.
     `n`nLet both sides unite to heed, in all corners of the earth, the command
     of Isaiah -- to "undo the heavy burdens, and [to] let the oppressed go
-    free."¹
+    free."Â¹
     `n`nAnd, if a beachhead of cooperation may push back the jungle of
     suspicion, let both sides join in creating a new endeavor -- not a new
     balance of power, but a new world of law -- where the strong are just, and
@@ -102,7 +102,7 @@ DynamicText=
     `n`nNow the trumpet summons us again -- not as a call to bear arms, though
     arms we need -- not as a call to battle, though embattled we are -- but a
     call to bear the burden of a long twilight struggle, year in and year out,
-    "rejoicing in hope; patient in tribulation,"² a struggle against the common
+    "rejoicing in hope; patient in tribulation,"Â² a struggle against the common
     enemies of man: tyranny, poverty, disease, and war itself.
     `n`nCan we forge against these enemies a grand and global alliance, North
     and South, East and West, that can assure a more fruitful life for all

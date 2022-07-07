@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Title: Command Functions
 		A wrapper set of functions for commands which have an output variable.
 

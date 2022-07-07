@@ -1,4 +1,4 @@
-/*
+﻿/*
 Mode(Delimiter := ", ", Numbers*)
 Returns the Mode of the Numbers passed to it.
 Parameters:

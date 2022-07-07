@@ -1,4 +1,4 @@
-#Include %A_ScriptDir%\RamDrive.ahk
+﻿#Include %A_ScriptDir%\RamDrive.ahk
 
 ; If there are few commands. there is no need for RAMDISK. you can simply call the function
 

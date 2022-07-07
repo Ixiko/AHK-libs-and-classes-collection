@@ -1,4 +1,4 @@
-; Usage:
+﻿; Usage:
 ; F11 hotkey        - Open a workbook in the active instance of Excel.
 ; F12 hotkey        - Open a workbook in a new instance of Excel.
 ; Win+F11 hotkey    - Create a new blank workbook in the active instance of Excel.

@@ -1,4 +1,4 @@
-DllPath := A_ScriptDir "\amf-component-vc-windesktop32.dll"     ; point to full path of dll
+﻿DllPath := A_ScriptDir "\amf-component-vc-windesktop32.dll"     ; point to full path of dll
 DllName := (d:=StrSplit( DllPath,"\"))[d.Length()]              ; for display purposes only
 
 Bitness := GetDllBitness( DllPath )                             ; test call

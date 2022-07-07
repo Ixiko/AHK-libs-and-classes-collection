@@ -1,4 +1,4 @@
-#include <CParentWindow>
+﻿#include <CParentWindow>
 
 class CScrollableWindow extends CParentWindow
 {

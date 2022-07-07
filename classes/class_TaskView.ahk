@@ -1,4 +1,4 @@
-; NOTE: Windows RS5 insider builds breaks virtual-desktop-accessor.dll
+﻿; NOTE: Windows RS5 insider builds breaks virtual-desktop-accessor.dll
 
 /**                             ;SAMPLE
 #include reloadAsAdmin.ahk

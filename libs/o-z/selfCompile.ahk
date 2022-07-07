@@ -1,4 +1,4 @@
-; Include this code at the beginning of a script to provide self-compiling functionality.
+﻿; Include this code at the beginning of a script to provide self-compiling functionality.
 ; When the .ahk file is run it will prompt to compile, but the .exe will run as intended.
 ;
 ; You can set the following compile parameter variables:

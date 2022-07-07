@@ -1,4 +1,4 @@
-LoadLib(name, exe:="") {
+﻿LoadLib(name, exe:="") {
     if (exe = "")
         exe := A_AhkPath
     libs := [A_ScriptDir "\Lib\", A_MyDocuments "\AutoHotkey\Lib\", exe "\..\Lib\"]

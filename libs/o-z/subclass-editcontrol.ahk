@@ -1,4 +1,4 @@
-Gui Add, Edit, x56 y64 w120 h21 +Number +Password +HwndHED
+﻿Gui Add, Edit, x56 y64 w120 h21 +Number +Password +HwndHED
 SubclassControl( HED, "EditSubclass" ) ; placed here to catch preemptive balloontips
 Gui, Show, w244 h155, Window
 Return

@@ -1,4 +1,4 @@
-; https://autohotkey.com/board/topic/77352-class-binaryheap/
+﻿; https://autohotkey.com/board/topic/77352-class-binaryheap/
 ; https://gist.github.com/Uberi/6459092
 
 #NoEnv

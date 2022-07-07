@@ -1,4 +1,4 @@
-/*
+﻿/*
 MsgBox,% GetTaskInfos()
 return
 ExitApp

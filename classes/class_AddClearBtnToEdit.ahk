@@ -1,4 +1,4 @@
-; AddClearBtnToEdit.ahk
+﻿; AddClearBtnToEdit.ahk
 ; http://ahkscript.org/boards/viewtopic.php?f=6&t=6788
 /*
 	Function: AddClearBtnToEdit

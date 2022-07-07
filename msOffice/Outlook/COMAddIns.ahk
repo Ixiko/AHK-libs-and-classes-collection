@@ -1,4 +1,4 @@
-; **Probably needs to be run as admin**
+﻿; **Probably needs to be run as admin**
 ; This script displays the Outlook addins. The user can choose to enable or disable the addins.
 
 Gui, Add, ListView, vLV1 w800 h300, Connected|Description|ProgId|GUID

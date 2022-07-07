@@ -1,4 +1,4 @@
-class Callback extends OptParser.Option {
+﻿class Callback extends OptParser.Option {
 
 	pFunc := 0
 

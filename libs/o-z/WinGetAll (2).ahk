@@ -1,4 +1,4 @@
-WinGetAll(Which="Title", DetectHidden="Off"){
+﻿WinGetAll(Which="Title", DetectHidden="Off"){
 O_DHW := A_DetectHiddenWindows, O_BL := A_BatchLines ;Save original states
 DetectHiddenWindows, % (DetectHidden != "off" && DetectHidden) ? "on" : "off"
 SetBatchLines, -1

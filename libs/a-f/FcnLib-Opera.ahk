@@ -1,4 +1,4 @@
-#include FcnLib.ahk
+﻿#include FcnLib.ahk
 
 ;a more specialized version of runprogram("opera")?
 RunOpera()

@@ -1,4 +1,4 @@
-;-------------------------------------------------------------------------------
+ï»¿;-------------------------------------------------------------------------------
 ; Custom Msgbox
 ; Filename: cmsgbox.ahk
 ; Author  : Danny Ben Shitrit (aka Icarus)
@@ -24,15 +24,15 @@
 ; --- TESTER BEGIN - comment out the entire section when including -------------
 #SingleInstance Force
 
-; • Simple example
+; â€¢ Simple example
   Pressed := CMsgbox( "Hello World", "Are you sure you want to say hello to the world?`n`nWarning! This operation is irreversible.", "&Yes|*Not &Sure|&Not at All|&HELP!", "E" )
   Msgbox 32,,"%pressed%" was pressed
 
-; • Custom icon
+; â€¢ Custom icon
   Pressed := CMsgbox( "Where Is It?", "Do you want to find the holy grail?`n`n(Custom icons from Shell32.dll)", "*&Yes Please|&Not Today|Not &Ever", "23" )
   Msgbox 32,,"%pressed%" was pressed
 
-; • Example for msgbox that is owned by our own GUI
+; â€¢ Example for msgbox that is owned by our own GUI
   Gui Add, Text  ,w200, This is my GUI and I'll cry if I want to.
   Gui Add, Button,wp  , Cry
   Gui Show, x200 y200

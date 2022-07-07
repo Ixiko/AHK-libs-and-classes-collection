@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: DESCKIND
 an enumeration class that identifies the type description being bound to.
 

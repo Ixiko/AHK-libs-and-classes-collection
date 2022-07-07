@@ -1,4 +1,4 @@
-#NoTrayIcon
+﻿#NoTrayIcon
 #SingleInstance, force 
 IniRead()
 oWord := ComObjActive("Word.Application") 

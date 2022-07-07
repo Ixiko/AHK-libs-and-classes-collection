@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Mute on hibernation
 	
 	Purpose:
@@ -10,7 +10,7 @@
 		reactivating them when resuming from hibernation.
 	
 	Functioning:
-		The program runs in background, listening for the system�s message to hibernate
+		The program runs in background, listening for the system´s message to hibernate
 		the computer. It then mutes the speakers and turns them on again after the
 		computer woke up.
 		The mute state is left untouched in case the speakers were not muted by this

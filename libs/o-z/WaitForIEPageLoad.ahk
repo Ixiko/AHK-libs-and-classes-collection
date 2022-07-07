@@ -1,4 +1,4 @@
-;http://www.autohotkey.com/forum/topic19256.html
+﻿;http://www.autohotkey.com/forum/topic19256.html
 
 #Persistent
 sUrl :=   "http://www.autohotkey.com/forum/"

@@ -1,4 +1,4 @@
-/* Class: MemBlk
+﻿/* Class: MemBlk
  *     - Minimal struct wrapper. Wraps VarSetCapacity-NumPut/NumGet routines.
  * License:
  *     WTFPL[http://wtfpl.net/]

@@ -1,4 +1,4 @@
-#include COM_L.ahk
+﻿#include COM_L.ahk
 /*
 	IEL_new(url="", option="") ; ????IE, ?? chuangkouid, pweb, [document]
 	IEL_attach() ; IE Attach :??: pweb document

@@ -1,4 +1,4 @@
-/* Title:	Panel
+﻿/* Title:	Panel
 			Control container.
 */
 

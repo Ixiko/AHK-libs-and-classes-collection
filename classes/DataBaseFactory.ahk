@@ -1,4 +1,4 @@
-class DataBaseFactory
+﻿class DataBaseFactory
 {
 	static AvaiableTypes := ["SQLite", "MySQL", "ADO"]
 	

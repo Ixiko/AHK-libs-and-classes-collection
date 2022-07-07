@@ -1,4 +1,4 @@
-OnExit, CleanUp
+﻿OnExit, CleanUp
 #Persistent
 
 global JCWSettings

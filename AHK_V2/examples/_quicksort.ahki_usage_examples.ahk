@@ -1,4 +1,4 @@
-#include _quick_sort.ahki
+﻿#include _quick_sort.ahki
 
 ; Simple integer array sorting example
 

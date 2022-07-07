@@ -1,4 +1,4 @@
-; Included in ui.ahk
+﻿; Included in ui.ahk
 createlib(lib, cleanupfn := '', structName := ''){
 	; Creates a function lib from array lib
 	; lib, array, on the form [ ['dll\func', 'memberName'], ... ]

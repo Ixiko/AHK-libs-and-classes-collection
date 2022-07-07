@@ -1,4 +1,4 @@
-ITL_Min(params*)
+﻿ITL_Min(params*)
 {
 	local each, value, minValue
 	for each, value in params

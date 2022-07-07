@@ -1,4 +1,4 @@
-;
+﻿;
 ; AutoHotkey (Tested) Version: 1.1.13.01
 ; Author:         Joe DF  |  http://joedf.co.nr  |  joedf@users.sourceforge.net
 ; Date:           December 13th, 2014

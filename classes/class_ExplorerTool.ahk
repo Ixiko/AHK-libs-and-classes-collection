@@ -1,4 +1,4 @@
-
+﻿
 Class ExplorerTool {
 	
 	SetViewMode( pMode := 0 ) {

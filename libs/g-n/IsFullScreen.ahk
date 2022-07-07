@@ -1,4 +1,4 @@
-; https://autohotkey.com/board/topic/50876-isfullscreen-checks-if-a-window-is-in-fullscreen-mode/
+﻿; https://autohotkey.com/board/topic/50876-isfullscreen-checks-if-a-window-is-in-fullscreen-mode/
 /*! TheGood
     Checks if a window is in fullscreen mode.
     ______________________________________________________________________________________________________________

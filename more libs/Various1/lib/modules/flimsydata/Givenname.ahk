@@ -1,4 +1,4 @@
-class Givenname extends Flimsydata.Formatter {
+﻿class Givenname extends Flimsydata.Formatter {
 
 	get(dataProvider, locale="de") {
 		if (!Object.InstanceOf(%dataProvider%, "Flimsydata.Provider")) {

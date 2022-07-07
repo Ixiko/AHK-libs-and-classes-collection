@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: RECO
 an enumeration class specifying a RichEdit clipboard operation.
 

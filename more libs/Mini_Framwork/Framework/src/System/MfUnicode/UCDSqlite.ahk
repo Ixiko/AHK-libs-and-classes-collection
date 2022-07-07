@@ -1,4 +1,4 @@
-; Namespace MfUcd
+﻿; Namespace MfUcd
 Class UCDSqlite extends MfResourceSingletonBase
 {
 	static _instance := "" ; Static var to contain the singleton instance

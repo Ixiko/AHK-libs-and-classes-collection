@@ -1,4 +1,4 @@
-#Include RomanNumbers.ahk
+﻿#Include RomanNumbers.ahk
 
 MsgBox % "** Dec2Roman() EXAMPLES **"
 

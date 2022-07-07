@@ -1,4 +1,4 @@
-CSV_(){
+﻿CSV_(){
 return true
 if (p="QBO"){
 for each,v in ["TRNTYPE","DTPOSTED","DTUSER","DTAVAIL","TRNMT","FITID","CORRECTFITID","CORRECTACTION","SRVRTID","CHECKNUM","REFNUM","SIC","PAYEEID","NAME"]{

@@ -1,4 +1,4 @@
-
+﻿
 ; FileOpen / FileSave dialogue functions
 ; This File is relased under the zlib/libpng License
 ; ( c ) 2007 Raphael Friedel

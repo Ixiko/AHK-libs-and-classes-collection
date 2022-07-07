@@ -1,4 +1,4 @@
-/* Execute (What you want) On (Element) changes.
+﻿/* Execute (What you want) On (Element) changes.
 
 Introduction:___________________________________________________________________
   These functions are supposed to monitoring specific element until it's changed

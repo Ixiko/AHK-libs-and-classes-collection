@@ -1,4 +1,4 @@
-; This function created a |-separated string of items in any director. Wildcards supported. 
+﻿; This function created a |-separated string of items in any director. Wildcards supported. 
 splashDir(dir, filter="*.*", options=""){ ; Assign a directory path to a variable at pass it to the function 
 	global
 	items = ; Clear previously assigned %items% variable 

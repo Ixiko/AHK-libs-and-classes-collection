@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ILDI
 an enumeration class containing flags for discarding an image from an image list.
 

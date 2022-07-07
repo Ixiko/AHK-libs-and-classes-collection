@@ -1,4 +1,4 @@
-NumGet_BE(ByRef VarOrAddress, Offset=0, Type = "UPtr") {
+﻿NumGet_BE(ByRef VarOrAddress, Offset=0, Type = "UPtr") {
 Static DT := AHK_DataType()
 Bytes := dt[type]
 VarSetCapacity(BE, Bytes, 0)

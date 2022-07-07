@@ -1,4 +1,4 @@
-; Type 0uid, 1uid or ruid (random guid) to expand
+﻿; Type 0uid, 1uid or ruid (random guid) to expand
 :*:0uid::00000000-0000-0000-0000-000000000000
 :*:1uid::11111111-1111-1111-1111-111111111111
 :*:ruid::

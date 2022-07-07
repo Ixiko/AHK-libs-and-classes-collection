@@ -1,4 +1,4 @@
-class Queue {
+﻿class Queue {
 
 	queueSize := 0
 	content := []

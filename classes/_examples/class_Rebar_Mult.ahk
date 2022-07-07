@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #SingleInstance, Force
 ;#Include ..\Class_Rebar.ahk
 

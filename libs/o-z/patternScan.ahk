@@ -1,4 +1,4 @@
-; Parameters
+﻿; Parameters
 ;
 ; pattern
 ;			A string of two digit numbers representing the hex value of each byte of the pattern. The '0x' hex-prefix is not required

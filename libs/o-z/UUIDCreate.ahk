@@ -1,4 +1,4 @@
-/* Function: UUIDCreate
+﻿/* Function: UUIDCreate
  *     Generate UUID using Rpcrt4\UuidCreate[Sequential/Nil]
  * License:
  *     WTFPL [http://wtfpl.net/]

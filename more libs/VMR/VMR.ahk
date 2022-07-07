@@ -1,4 +1,4 @@
-class VMR{
+﻿class VMR{
     bus:=Array(), strip:=Array(), recorder:=, option:=, patch:=, fx:=
     , on_update_levels_callback:=, on_update_parameters_callback:=, on_update_macrobuttons_callback:=
 

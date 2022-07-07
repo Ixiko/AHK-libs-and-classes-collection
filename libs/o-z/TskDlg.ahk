@@ -1,4 +1,4 @@
-/* Function: TskDlg
+﻿/* Function: TskDlg
  *     Wrapper for TaskDialog(comctl32.dll) function - http://goo.gl/lgiPd8
  *     This is a modified version of just me's TaskDialog() - http://goo.gl/qBn8dv
  * Requirements:

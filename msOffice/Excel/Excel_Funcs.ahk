@@ -1,4 +1,4 @@
-;Required Lib for use with these Functions:
+﻿;Required Lib for use with these Functions:
 ;=====================================================
 ;http://ahk4.me/1nrXKSH - Acc Lib Written by Jethrew
 ;=====================================================

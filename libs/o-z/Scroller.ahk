@@ -1,4 +1,4 @@
-/*	Title:	Scroller
+﻿/*	Title:	Scroller
 			Makes window scrollable.
 
 	Dependencies:

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: LOCKTYPE
 an enumeration class containing flags that  indicate the type of locking requested for the specified range of bytes. The values are used in the ILockBytes::LockRegion and IStream::LockRegion methods.
 

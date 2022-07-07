@@ -1,5 +1,5 @@
-; Retrieves known CSIDL paths
-; v1.0 � Drugwash June 2015, inspired by majkinetor's GetCommonPath() function
+﻿; Retrieves known CSIDL paths
+; v1.0 © Drugwash June 2015, inspired by majkinetor's GetCommonPath() function
 ; at http://www.autohotkey.com/board/topic/9399-function-getcommonpath-get-path-to-standard-system-folder/
  ;#include ..\updates.ahk
 

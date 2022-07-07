@@ -1,4 +1,4 @@
-; Crazy Scripting : Safely Remove USB Flash Drive - 45L by SKAN
+﻿; Crazy Scripting : Safely Remove USB Flash Drive - 45L by SKAN
 ; http://www.autohotkey.com/forum/viewtopic.php?p=272661#272661
 
 USBD_SafelyRemove( Drv ) {

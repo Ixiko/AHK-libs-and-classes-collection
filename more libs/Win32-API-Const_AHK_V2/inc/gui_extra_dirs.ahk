@@ -1,4 +1,4 @@
-extra_dirs() {
+﻿extra_dirs() {
     If (!Settings.Has("dirs"))
         Settings["dirs"] := Map()
     

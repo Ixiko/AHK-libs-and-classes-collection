@@ -1,4 +1,4 @@
-/*
+﻿/*
 Author: Fragman
 
 Generic function that waits for an event to happen.

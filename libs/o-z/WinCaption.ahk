@@ -1,4 +1,4 @@
-WinCaption(Hwnd) {
+﻿WinCaption(Hwnd) {
 	WinGetPos( Hwnd, X0, Y0, W0, H0, 0)
 	WinGetPos( Hwnd, X1, Y1, W1, H1, 1)
 	

@@ -1,4 +1,4 @@
-
+﻿
 /*
 HeapFunktionen:
 Diese Funktionen geben Kontrolle über den Speicher den ein Programm erhält.

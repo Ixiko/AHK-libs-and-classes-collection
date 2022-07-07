@@ -1,4 +1,4 @@
-#include <_MemoryLibrary>
+﻿#include <_MemoryLibrary>
 AhkDllThread_IsH(){ ; FileGetVersionInfo Written by SKAN modified by HotKeyIt www.autohotkey.com/forum/viewtopic.php?p=233188#233188
  Static HexVal:="msvcrt\s" (A_IsUnicode?"w":"") "printf",AHK:=A_AhkPath?A_AhkPath:A_ScriptFullPath
  If ((FSz:=DllCall("Version\GetFileVersionInfoSize","Str",AHK,"UInt",0)) && VarSetCapacity(FVI,FSz,0) && VarSetCapacity(Trans,8*(A_IsUnicode?2:1)))

@@ -1,4 +1,4 @@
-debug(msg, delimiter = False) {
+﻿debug(msg, delimiter = False) {
     global debugfile, s_name
     if (!s_name)
         s_name := A_ScriptName

@@ -1,4 +1,4 @@
-;=========================================================================
+﻿;=========================================================================
 ; TaskDialogEx(Main article, subtext, title, button, icon, width, parent window, timeout)
 TaskDialogEx(Main, Extra := "", Title := "提示：", Buttons := 1, Icon := 8, Width := 600, Parent := -1, TimeOut := 0) {
 

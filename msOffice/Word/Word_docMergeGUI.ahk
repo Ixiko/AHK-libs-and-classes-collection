@@ -1,4 +1,4 @@
-docMergeGUI(){
+﻿docMergeGUI(){
 	global
 	Gui, Add, GroupBox, x12 y10 w650 h50 , Word Template
 	Gui, Add, Text, x12 y190 w580 h20 +Center, AHKdocMerge 1.0

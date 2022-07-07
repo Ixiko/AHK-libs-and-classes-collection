@@ -1,4 +1,4 @@
-; Title:   	https://www.autohotkey.com/boards/viewtopic.php?f=6&t=83269
+﻿; Title:   	https://www.autohotkey.com/boards/viewtopic.php?f=6&t=83269
 ; Link:
 ; Author:
 ; Date:

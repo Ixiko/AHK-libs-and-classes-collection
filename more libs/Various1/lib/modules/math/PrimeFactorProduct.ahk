@@ -1,4 +1,4 @@
-class PrimeFactorProduct {
+﻿class PrimeFactorProduct {
 
 	factorList := []
 	numberOfFactors := 0

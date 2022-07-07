@@ -1,4 +1,4 @@
-/*
+﻿/*
 v0.3 (or 0.2.1+) updates
 
  *  Fix: Dlg_ChooseFont updated to correctly return font weights other than

@@ -1,4 +1,4 @@
-ITL_Max(params*)
+﻿ITL_Max(params*)
 {
 	local each, value, maxValue
 	for each, value in params

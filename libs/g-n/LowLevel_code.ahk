@@ -1,4 +1,4 @@
-; Codegen
+﻿; Codegen
 ; http://www.autohotkey.com/forum/topic26300.html
 
 ; codegen structure:

@@ -1,4 +1,4 @@
-filenameColumn(xl, refColumns) {
+﻿filenameColumn(xl, refColumns) {
 	global
 	Loop, % xl.ActiveSheet.UsedRange.Columns.Count ; Loop through used columns 
     	headers .= A_Index ": &" xl.Range(refColumns[A_Index] . 1).Value "|" ; Get column headers

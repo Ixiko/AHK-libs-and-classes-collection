@@ -1,4 +1,4 @@
-; v0.3 by gahks 
+ï»¿; v0.3 by gahks 
 ; Functions:
 ;
 ; randomdotorg_integer()	
@@ -446,7 +446,7 @@ randomdotorg_gaussian(num,mean="0.0",stdev="1.0",dec=10,rnd="new") {
       * Error: The string "Error:" will be returned followed by a string with further details. (Only if the query to RANDOM.ORG wasn't successful.)
    
    Remarks:
-      The final image resolution will be (w × z) by (h × z) where w is the width, h is the height and z is the zoom factor.
+      The final image resolution will be (w Ã— z) by (h Ã— z) where w is the width, h is the height and z is the zoom factor.
       If you want to save the generated random image to the hard disk, specify a full path in the save_path parameter, eg. 
    >randomdotorg_bitmap("c:\random\images\random1.gif") ;This'll work.
     or 

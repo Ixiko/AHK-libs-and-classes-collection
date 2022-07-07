@@ -1,4 +1,4 @@
-#Include %A_ScriptDir%\CFlyoutMenuHandler.ahk
+﻿#Include %A_ScriptDir%\CFlyoutMenuHandler.ahk
 
 class CLeapMenu
 {

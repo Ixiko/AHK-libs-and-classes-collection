@@ -1,4 +1,4 @@
-; Move the taskbar
+﻿; Move the taskbar
 ; dspNumber:    number.  device number (primary display is 1, secondary display is 2...)
 ; edge:         string.  Top, Right, Bottom, or Left
 MoveTaskbar(dspNumber, edge)

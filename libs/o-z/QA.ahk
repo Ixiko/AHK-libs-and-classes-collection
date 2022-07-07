@@ -1,4 +1,4 @@
-QA_Create(ByRef arr, capacity="4") {
+﻿QA_Create(ByRef arr, capacity="4") {
 	capacity := capacity < 1 ? 1 : capacity
 	VarSetCapacity(arr, __QA_ByteSize(capacity))
 	__QA_WriteIdentifier(arr)

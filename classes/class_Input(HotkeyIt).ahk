@@ -1,4 +1,4 @@
-/*!
+﻿/*!
 	Library: _Input Class
 		_Input class is a combination of Hotkey and Hotstrings with advanced features. It serves an advanced, easy to use and invisible interface for user / application communication. Using _Input it is very simple to keep your code very tidy and clear and very easy to maintain.
 	Author: HotKeyIt

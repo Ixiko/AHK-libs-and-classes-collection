@@ -1,4 +1,4 @@
-IsUpdated() {
+﻿IsUpdated() {
 	ver := A_AhkVersion
 	whr := ComObjCreate("WinHttp.WinHttpRequest.5.1")
 	whr.Open("GET", "http://ahkscript.org/download/" SubStr(ver, 1, 3) "/version.txt")

@@ -1,4 +1,4 @@
-class Line {
+﻿class Line {
 	leftText := ""
 	rightText := ""
 	leftMargin := 0

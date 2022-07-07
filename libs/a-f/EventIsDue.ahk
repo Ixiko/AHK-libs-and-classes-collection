@@ -1,4 +1,4 @@
-EventIsDue(fnScheduleType,fnScheduleList,fnDueHour := 0,fnValidDuration := 0,ByRef fnEventIsDue := 0,ByRef fnTriggeringScheduleEntry := "")
+﻿EventIsDue(fnScheduleType,fnScheduleList,fnDueHour := 0,fnValidDuration := 0,ByRef fnEventIsDue := 0,ByRef fnTriggeringScheduleEntry := "")
 {
 	; determines whether the current time falls within a scheduled event window
 	; when fnScheduleType is Daily/D, fnValidDuration is in minutes, otherwise in hours

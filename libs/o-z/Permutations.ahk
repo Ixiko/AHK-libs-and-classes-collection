@@ -1,4 +1,4 @@
-gString := "jabicdhefg 123 defgbachj 456 ghilcbamnop 789 something 111" 
+﻿gString := "jabicdhefg 123 defgbachj 456 ghilcbamnop 789 something 111" 
 gWord := "abcdefghi"
 
 For x,y in strsplit(gString," ")

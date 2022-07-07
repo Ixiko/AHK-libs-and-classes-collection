@@ -1,4 +1,4 @@
-NormaliseLineEndings(ByRef fnText)
+﻿NormaliseLineEndings(ByRef fnText)
 {
 	; turn all line endings into CRLF
 	; MsgBox fnText: %fnText%

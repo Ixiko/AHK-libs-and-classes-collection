@@ -1,4 +1,4 @@
-/* Title:    Splitter
+ï»¿/* Title:    Splitter
 			 Splitter control.
 
 			 (see splitter.png)
@@ -298,10 +298,10 @@ Splitter_updateFocus( HSep="" ) {
 }
 
 ;storage
-Splitter(Var="", Value="~`a ", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o5="", ByRef o6="") {
+Splitter(Var="", Value="~`aÂ ", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o5="", ByRef o6="") {
 	static
 	_ := %var%
-	ifNotEqual, value,~`a , SetEnv, %var%, %value%
+	ifNotEqual, value,~`aÂ , SetEnv, %var%, %value%
 	return _
 }
 

@@ -1,4 +1,4 @@
-; Gets focused control in XP to prevent blocking double clicks like with ControlGetFocus
+﻿; Gets focused control in XP to prevent blocking double clicks like with ControlGetFocus
 XPGetFocussed()
 {
     WinGet ctrlList, ControlList, A

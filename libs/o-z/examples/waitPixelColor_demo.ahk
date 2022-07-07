@@ -1,4 +1,4 @@
-; #Include WaitPixelColor.ahk
+﻿; #Include WaitPixelColor.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

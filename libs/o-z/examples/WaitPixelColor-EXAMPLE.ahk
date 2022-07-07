@@ -1,4 +1,4 @@
-#Include WaitPixelColor.ahk
+﻿#Include WaitPixelColor.ahk
 
 CoordMode, Pixel, Screen
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: TLIBATTR
 a structure class that contains information about a type library. Information from this structure is used to identify the type library and to provide national language support for member names.
 

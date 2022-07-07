@@ -1,4 +1,4 @@
-/*
+﻿/*
 Function: SaveHImage2File
 saves a HICON or HBITMAP to a file
 

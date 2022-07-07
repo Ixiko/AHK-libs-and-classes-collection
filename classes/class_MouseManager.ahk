@@ -1,4 +1,4 @@
-Class MouseManager
+﻿Class MouseManager
 {
 	SetMouseSpeed(MouseSpeed)
 	{

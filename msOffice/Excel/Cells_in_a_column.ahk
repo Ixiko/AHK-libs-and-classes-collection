@@ -1,4 +1,4 @@
-; This script will look for the last non-blank cell in column A. Then it loops through each cell in column A starting at
+﻿; This script will look for the last non-blank cell in column A. Then it loops through each cell in column A starting at
 ; cell A1 all the way to the last non-blank cell.
 
 WorkbookPath := A_ScriptDir "\MyWorkbook.xlsx"       ; <-- Change this to the path of your workbook

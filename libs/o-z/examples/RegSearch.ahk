@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%
 SetBatchLines -1  ; Makes searching occur at maximum speed.

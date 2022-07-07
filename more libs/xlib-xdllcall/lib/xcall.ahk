@@ -1,4 +1,4 @@
-class xcall extends xlib.callback {
+﻿class xcall extends xlib.callback {
 	
 	__new(fn, decl*){
 		base.__new(fn, decl*)									; initialises this.bin

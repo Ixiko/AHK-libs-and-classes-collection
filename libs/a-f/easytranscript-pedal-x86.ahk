@@ -1,4 +1,4 @@
-OnMessage(0x00FF, "InputMessage")
+﻿OnMessage(0x00FF, "InputMessage")
   
 RegisterHIDDevice(12, 3) ; Register Foot Pedal
   

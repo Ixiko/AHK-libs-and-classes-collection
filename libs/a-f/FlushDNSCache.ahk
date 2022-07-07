@@ -1,4 +1,4 @@
-;#include updates.ahk
+﻿;#include updates.ahk
 
 FlushDNScache(v="2.0")
 {

@@ -1,4 +1,4 @@
-Hash(pData, nSize, SID = "CRC32", nInitial = 0)
+﻿Hash(pData, nSize, SID = "CRC32", nInitial = 0)
 {
 	CALG_MD5 := 0x8003
 	CALG_SHA := CALG_SHA1 := 0x8004

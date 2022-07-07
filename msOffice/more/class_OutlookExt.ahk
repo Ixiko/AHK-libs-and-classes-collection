@@ -1,4 +1,4 @@
-class Outlook extends OfficeManager{ 
+﻿class Outlook extends OfficeManager{ 
 	
 	ExeName := ""
 	Outlook := ""

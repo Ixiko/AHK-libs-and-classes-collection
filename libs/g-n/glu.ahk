@@ -1,4 +1,4 @@
-; AutoHotkey header file for OpenGL utilities.
+﻿; AutoHotkey header file for OpenGL utilities.
 ; glu.ahk last updated Date: 2011-03-08 (Thuesday, 08 Mar 2011)
 ; Converted by: Bentschi (bentschi1337@yahoo.de)
 

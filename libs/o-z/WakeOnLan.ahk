@@ -1,4 +1,4 @@
-#include Socket.ahk ;http://pastebin.com/CtM9p4QG
+﻿#include Socket.ahk ;http://pastebin.com/CtM9p4QG
 
 WakeOnLAN("AABBCCDDEEFF")
 ExitApp

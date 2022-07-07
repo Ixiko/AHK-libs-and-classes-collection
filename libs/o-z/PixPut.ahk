@@ -1,4 +1,4 @@
-/*
+﻿/*
      ____  _      ____        __
     / __ \(_)  __/ __ \__  __/ /_             Bitmap Static Control -  Ver 1.0
    / /_/ / / |/_/ /_/ / / / / __/      www.autohotkey.com/forum/viewtopic.php?t=59248

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: REOBJECT
 a structure class that contains information about a RichEdit-object.
 

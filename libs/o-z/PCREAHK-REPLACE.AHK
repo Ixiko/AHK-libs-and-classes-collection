@@ -1,4 +1,4 @@
-; Example wrapper for PCRE regular expressions: replacing
+﻿; Example wrapper for PCRE regular expressions: replacing
 ; For details about PCRE see http://www.pcre.org or http://mushclient.com/pcre/
 ; Parameters:
 ;   string: where to replace

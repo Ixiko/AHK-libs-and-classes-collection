@@ -1,4 +1,4 @@
-/* Generic, flexible custom class for running or linking to an object, based on both functionally-passed and prompted-for text.
+﻿/* Generic, flexible custom class for running or linking to an object, based on both functionally-passed and prompted-for text.
 	
 	The programmatic entry point is ActionObject.do().
 */

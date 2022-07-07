@@ -1,4 +1,4 @@
-/*
+﻿/*
   ListView function library by Solar. Version 1.01
   
   Flag reference:

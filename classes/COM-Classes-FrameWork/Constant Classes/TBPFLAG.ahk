@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: TBPFLAG
 an enumeration class containing flags that control the current state of the progress button.
 

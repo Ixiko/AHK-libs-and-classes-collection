@@ -1,4 +1,4 @@
-/* Class: EditView
+﻿/* Class: EditView
  *     Wraps the Windows standard Edit control to provide an interface for
  *     high-level text editing/manipulation.
  * Requirements:

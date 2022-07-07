@@ -1,4 +1,4 @@
-/*Text Overlay library v1.11a for AutoHotkey_L (15th of June, 2011).
+﻿/*Text Overlay library v1.11a for AutoHotkey_L (15th of June, 2011).
 
 Description: The functions of this library can be used to capture strings and coordinates of on-screen text, to overlay graphical effects on the on-screen text and to navigate within the on-screen text.
 

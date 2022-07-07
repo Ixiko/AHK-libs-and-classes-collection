@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ILIF
 an enumeration class containing constants on image quality
 

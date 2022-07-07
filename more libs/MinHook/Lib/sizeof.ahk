@@ -1,4 +1,4 @@
-;: Title: sizeof function by HotKeyIt
+﻿;: Title: sizeof function by HotKeyIt
 ;
 
 ; Function: sizeof

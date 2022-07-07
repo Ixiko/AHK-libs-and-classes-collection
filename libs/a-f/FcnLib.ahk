@@ -1,4 +1,4 @@
-#SingleInstance Force
+﻿#SingleInstance Force
 
 #include thirdParty\Functions.ahk
 ;#include thirdParty\Notify.ahk ;this causes windows to be open forever

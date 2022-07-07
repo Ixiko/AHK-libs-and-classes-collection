@@ -1,4 +1,4 @@
-SnapFolderWindows(fnFolderNamesList,fnWhichSide := "R")
+﻿SnapFolderWindows(fnFolderNamesList,fnWhichSide := "R")
 {
 	; function description
 	; MsgBox fnFolderNamesList: %fnFolderNamesList%`nfnWhichSide %fnWhichSide%

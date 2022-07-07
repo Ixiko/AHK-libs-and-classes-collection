@@ -1,4 +1,4 @@
-class GuiCtl
+﻿class GuiCtl
 {
 	static Type := ""
 	

@@ -1,4 +1,4 @@
-VKSend(Sequence)
+﻿VKSend(Sequence)
 {
 	SetFormat, IntegerFast, hex
 	C_Index := 1

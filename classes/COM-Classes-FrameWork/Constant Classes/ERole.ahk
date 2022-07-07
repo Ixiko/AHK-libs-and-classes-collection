@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ERole
 an enumeration class containing constants that indicate the role that the system has assigned to an audio endpoint device.
 

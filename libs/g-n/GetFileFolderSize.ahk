@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: GetFileFolderSize
     Get folder or file size in GBs
 

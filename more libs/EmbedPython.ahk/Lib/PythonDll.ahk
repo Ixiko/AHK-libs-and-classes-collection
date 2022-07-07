@@ -1,4 +1,4 @@
-LoadPython() {
+﻿LoadPython() {
     ; Try default search-order. This approach works with virtualenv since
     ; activating one adds "VIRTUAL_ENV\Scripts" to the PATH.
     ; TODO: Add support for venv.

@@ -1,4 +1,4 @@
-;http://www.autohotkey.com/forum/viewtopic.php?p=388494#388494
+﻿;http://www.autohotkey.com/forum/viewtopic.php?p=388494#388494
 ;Created by MasterFocus on the forums
 ;This function cycles through various
 

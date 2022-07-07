@@ -1,4 +1,4 @@
-FileEncoding UTF-16
+ï»¿FileEncoding UTF-16
 ; the constructor is at the very end, out of the way
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1824,7 +1824,7 @@ FC_caller(f,func,p1="__deFault__",p2="__deFault__",p3="__deFault__", p4="__deFau
 				;if ( PathsAreEquivalent(path,f[A_Index]) and A_Index != exclude_index)
 	
 	UNEXPLAINED:
-		something breaks if I use …… instead of __deFault__.  I don't know why, either.  It is like the comparison doesn't work,
+		something breaks if I use â€¦â€¦ instead of __deFault__.  I don't know why, either.  It is like the comparison doesn't work,
 		or like it can't be passed to a function properly.
 		
 	NOTES:

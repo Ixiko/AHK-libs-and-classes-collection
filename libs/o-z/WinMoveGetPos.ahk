@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: WinMoveGetPos
     Returns x and y coordinates to move window to area on the screen
 

@@ -1,4 +1,4 @@
-; ----------------------------------------------------------------------------------------------------------------------
+﻿; ----------------------------------------------------------------------------------------------------------------------
 ; Name .........: UpdRes library
 ; Description ..: This library allows to load a resource from a PE file and update it. It's something written in a 
 ; ..............: couple of minutes, so don't expect it to work in all situations.

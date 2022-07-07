@@ -1,4 +1,4 @@
-class PFoldername extends Flimsydata.Provider {
+﻿class PFoldername extends Flimsydata.Provider {
 
 	; Assoziationen zu 'Information'
 	static data := [[ "Abstraktion"

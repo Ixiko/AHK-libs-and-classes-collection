@@ -1,4 +1,4 @@
-class Units {
+﻿class Units {
 	static SECONDS := "s"
 	static SECOND  := "s"
 	static MINUTES := "m"

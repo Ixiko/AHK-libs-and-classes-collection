@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Function:	ILButton
 				Creates an ImageList and associates it with a button.
 	

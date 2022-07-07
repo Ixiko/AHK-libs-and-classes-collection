@@ -1,4 +1,4 @@
-class IPortableDeviceManager extends IUnknown
+﻿class IPortableDeviceManager extends IUnknown
 {
   static iid := "{a1567595-4c2f-4574-a6fa-ecef917b9a40}"
 		,clsid := "{0af10cec-2ecd-4b92-9581-34f6ae0637f3}"

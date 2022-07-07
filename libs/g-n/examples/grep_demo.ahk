@@ -1,4 +1,4 @@
-; #Include grep.ahk
+﻿; #Include grep.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

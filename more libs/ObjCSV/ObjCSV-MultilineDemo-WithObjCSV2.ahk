@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #SingleInstance force
 objCollection := ObjCSV_CSV2Collection(A_ScriptDir . "\TheBeatles-Lyrics.txt", strFileHeader, 1, 1)
 Loop, % objCollection.MaxIndex()

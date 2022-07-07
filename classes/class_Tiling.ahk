@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #SingleInstance Force
 #WinActivateForce
 SetTitleMatchMode, 3

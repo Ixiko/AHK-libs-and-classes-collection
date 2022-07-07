@@ -1,3 +1,3 @@
-LOBYTE(a){
+﻿LOBYTE(a){
   return ToChar(a)
 }

@@ -1,4 +1,4 @@
-#Include, <Gdip>
+﻿#Include, <Gdip>
 
 #If (!LoadLib = 1)
 	ExitApp

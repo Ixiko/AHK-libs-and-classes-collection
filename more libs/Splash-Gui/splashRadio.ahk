@@ -1,4 +1,4 @@
-splashRadio(text, options){ ; Pass help text and |-separated options to populate the radio-button GUI
+﻿splashRadio(text, options){ ; Pass help text and |-separated options to populate the radio-button GUI
   global
   choice =  ; Clear previous choices
   IniRead()

@@ -1,4 +1,4 @@
-/*  Class_Compass
+﻿/*  Class_Compass
  *  By kon - ahkscript.org/boards/viewtopic.php?t=7225
  *  Translation to stand-alone Gdip thanks to jNizM - ahkscript.org/boards/viewtopic.php?&t=7225&p=45589#p45570
  *  Updated May 18, 2015

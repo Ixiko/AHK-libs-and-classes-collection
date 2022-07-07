@@ -1,4 +1,4 @@
-/*
+﻿/*
 WinSet_Click_Through - Makes a window unclickable.
 
 Paramenters:

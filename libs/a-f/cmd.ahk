@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: cmd_exec
     Runs command line commands in hidden command line window
 

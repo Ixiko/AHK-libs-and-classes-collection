@@ -1,4 +1,4 @@
-; FileExtract / FileExtract_ToMem (counterpart of FileInstall) by Lexikos
+﻿; FileExtract / FileExtract_ToMem (counterpart of FileInstall) by Lexikos
 ; http://www.autohotkey.com/forum/viewtopic.php?t=30088
 
 /*

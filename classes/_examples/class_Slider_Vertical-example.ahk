@@ -1,4 +1,4 @@
-;~ Class_Slider_Vertical.ahk  by Keylo
+﻿;~ Class_Slider_Vertical.ahk  by Keylo
 ;~ Based on tmplinshi Horizontal Slidder- https://www.autohotkey.com/boards/viewtopic.php?t=80476
 ;~ __________________________________________________________________________________________
 /*--------------------------------------------------------------------

@@ -1,4 +1,4 @@
-
+﻿
 
 ;~ This library is the Product of tank
 ;~ Updated to AHK_L compatable by sinkfaze

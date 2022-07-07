@@ -1,4 +1,4 @@
-RR(path,name){
+﻿RR(path,name){
 	RegRead,a,% path, % name
 	Return a
 }

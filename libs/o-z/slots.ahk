@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 Plugin            : Slots
 Purpose           : Load & Save 10 quick paste texts

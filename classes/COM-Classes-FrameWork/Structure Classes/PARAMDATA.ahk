@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PARAMDATA
 a structure class that describes a parameter accepted by a method or property.
 

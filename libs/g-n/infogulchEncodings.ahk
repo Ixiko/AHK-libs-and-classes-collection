@@ -1,4 +1,4 @@
-
+﻿
 ;nifty conversion functions collection by infogulch
 ;http://www.autohotkey.com/forum/viewtopic.php?t=32693&highlight=encuri
 

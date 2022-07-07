@@ -1,4 +1,4 @@
-;=========================================================================
+﻿;=========================================================================
 ; TaskDialogEx(主文,副文,标题,按钮,图标,宽度,父窗口,超时)
 TaskDialogEx(Main, Extra := "", Title := "提示：", Buttons := 1, Icon := 8, Width := 600, Parent := -1, TimeOut := 0) {
 	Static TDCB      := RegisterCallback("TaskDialogCallback", "Fast")

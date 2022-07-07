@@ -1,4 +1,4 @@
-; type(v) by lexikos - http://ahkscript.org/boards/viewtopic.php?f=6&t=2306&sid=8e1b4d1358e28ecf577a7aca4d22f9b9
+﻿; type(v) by lexikos - http://ahkscript.org/boards/viewtopic.php?f=6&t=2306&sid=8e1b4d1358e28ecf577a7aca4d22f9b9
 
 ; Object version - depends on current float format including a decimal point.
 type(v) {

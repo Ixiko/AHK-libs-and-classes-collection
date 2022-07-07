@@ -1,4 +1,4 @@
-/*
+﻿/*
 Title: para - Paragraph beautifier
     Word processing unit for homogenous display of paragraphs.
 

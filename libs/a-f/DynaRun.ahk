@@ -1,4 +1,4 @@
-DynaRun(s,pn:="",pr:="",exe:=""){
+﻿DynaRun(s,pn:="",pr:="",exe:=""){
 static AhkPath,h2o
 if !AhkPath
 AhkPath:="""" A_AhkPath """" (A_IsCompiled||(A_IsDll&&DllCall(A_AhkPath "\ahkgetvar","Str","A_IsCompiled","CDecl"))?" /E":"")

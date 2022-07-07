@@ -1,4 +1,4 @@
-#Include %A_LineFile%\..\Mailslot.ahk
+﻿#Include %A_LineFile%\..\Mailslot.ahk
 
 class MailslotEx extends Mailslot
 {

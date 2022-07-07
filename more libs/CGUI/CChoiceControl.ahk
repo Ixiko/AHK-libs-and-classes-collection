@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CChoiceControl
 This class implements DropDownList, ComboBox and ListBox controls.
 

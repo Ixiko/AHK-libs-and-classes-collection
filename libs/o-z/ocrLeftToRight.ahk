@@ -1,4 +1,4 @@
-val:=1000000000, buyItemPrice:= 0
+﻿val:=1000000000, buyItemPrice:= 0
       mis:=10 
       loop 10
       { bmp:= Gdip_BitmapFromScreen(mX "|" mY "|5|7") ;get pattern 

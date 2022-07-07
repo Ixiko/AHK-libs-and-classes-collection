@@ -1,4 +1,4 @@
-ShortcutCreate()
+﻿ShortcutCreate()
 {
 	; creates a shortcut for the link
 	; MsgBox params: %params%

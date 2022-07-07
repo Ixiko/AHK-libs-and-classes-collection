@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: GetFreeDriveSpace
     Returns available drive space in GB's
 

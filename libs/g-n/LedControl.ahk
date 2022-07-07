@@ -1,4 +1,4 @@
-/*
+﻿/*
 
     Keyboard LED control for AutoHotkey_L
         http://www.autohotkey.com/forum/viewtopic.php?p=468000#468000

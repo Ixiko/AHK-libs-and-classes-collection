@@ -1,4 +1,4 @@
-Subtitle(text:="Alert!", obj1:="", obj2:=""){
+﻿Subtitle(text:="Alert!", obj1:="", obj2:=""){
 
    if (text.destroy) {
       Gui, %obj1%: Destroy

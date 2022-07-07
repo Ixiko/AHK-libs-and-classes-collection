@@ -1,4 +1,4 @@
-; This script resolves an exchange user's display name to a SMTP address.
+﻿; This script resolves an exchange user's display name to a SMTP address.
 ; An email is open in an Inspector window for this example.
 
 olApp := ComObjActive("Outlook.Application")  ; Outlook must be running.

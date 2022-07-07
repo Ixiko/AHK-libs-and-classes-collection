@@ -1,4 +1,4 @@
-; #Include WatchDirectory.ahk
+﻿; #Include WatchDirectory.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

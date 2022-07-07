@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: TYPEDESC
 a structure class that describes the type of a variable, the return type of a function, or the type of a function parameter.
 

@@ -1,4 +1,4 @@
-; _libGoogleEarth.ahk  version 1.25
+ï»¿; _libGoogleEarth.ahk  version 1.25
 ; by David Tryse   davidtryse@gmail.com
 ; http://david.tryse.net/googleearth/
 ; http://code.google.com/p/googleearth-autohotkey/
@@ -42,20 +42,20 @@
 ; call with latvar=Deg2Dec(coord,"lat") or longvar=Deg2Dec(coord,"long") - no 2nd param returns lat, long
 ; Input should be Degrees Minutes Seconds in any of these formats:
 ;    8 deg 32' 54.73" South	119 deg 29' 28.98" East
-;    8°32'54.73"S, 119°29'28.98"E
+;    8Â°32'54.73"S, 119Â°29'28.98"E
 ;    8:32:54S,119:29:28E
 ; Output: -8.548333, 119.491383
 Deg2Dec(DegCoord, mode = "both") {
 	StringReplace DegCoord,DegCoord,and,%A_Space%,All	; replace all possible separators with space before StringSplit
 	StringReplace DegCoord,DegCoord,`,,%A_Space%,All
-	StringReplace DegCoord,DegCoord,’,,%A_Space%,All
+	StringReplace DegCoord,DegCoord,â€™,,%A_Space%,All
 	StringReplace DegCoord,DegCoord,degrees,%A_Space%,All
 	StringReplace DegCoord,DegCoord,degree,%A_Space%,All
 	StringReplace DegCoord,DegCoord,degs,%A_Space%,All
 	StringReplace DegCoord,DegCoord,deg,%A_Space%,All
 	StringReplace DegCoord,DegCoord,d,%A_Space%,All
-	StringReplace DegCoord,DegCoord,°,%A_Space%,All
-	StringReplace DegCoord,DegCoord,º,%A_Space%,All
+	StringReplace DegCoord,DegCoord,Â°,%A_Space%,All
+	StringReplace DegCoord,DegCoord,Âº,%A_Space%,All
 	StringReplace DegCoord,DegCoord,`;,%A_Space%,All
 	StringReplace DegCoord,DegCoord,minutes,%A_Space%,All
 	StringReplace DegCoord,DegCoord,minute,%A_Space%,All
@@ -151,7 +151,7 @@ Deg2Dec(DegCoord, mode = "both") {
 
 ; call with latvar=Deg2Dec(decimalcoord,"lat") or latlong=Dec2Deg("-10.4949666667,105.5996")
 ; Input: -10.4949666667  105.5996   or    -10.4949666667,105.5996
-; Output: 10° 29' 41.88'' S, 105° 35' 58.56'' E
+; Output: 10Â° 29' 41.88'' S, 105Â° 35' 58.56'' E
 Dec2Deg(DecCoord, mode = "both") {
 	StringReplace DecCoord,DecCoord,`",%A_Space%,All
 	StringReplace DecCoord,DecCoord,`,,%A_Space%,All
@@ -170,14 +170,14 @@ Dec2Deg(DecCoord, mode = "both") {
 	LatPol = N
 	If (word1 < 0)
 		LatPol = S
-	Lat := LatDeg "° " LatMin "' " LatSec "'' " LatPol
+	Lat := LatDeg "Â° " LatMin "' " LatSec "'' " LatPol
 	LongDeg := Floor(word2**2**0.5)
 	LongMin := Floor((word2**2**0.5 - LongDeg) * 60)
 	LongSec := Round((word2**2**0.5 - LongDeg - LongMin/60) * 60 * 60,2)
 	LongPol = E
 	If (word2 < 0)
 		LongPol = W
-	Long := LongDeg "° " LongMin "' " LongSec "'' " LongPol
+	Long := LongDeg "Â° " LongMin "' " LongSec "'' " LongPol
 	If mode = lat
 		return Lat
 	If mode = long

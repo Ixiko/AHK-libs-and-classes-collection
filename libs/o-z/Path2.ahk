@@ -1,4 +1,4 @@
-/*	File path function group (Path.ahk)
+﻿/*	File path function group (Path.ahk)
     
    Use API in DllCall (correspond to \ dame characters)
    (It should not cause garbled characters newly in this function unless there is a problem with the higher-level argument)

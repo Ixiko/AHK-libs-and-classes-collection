@@ -1,4 +1,4 @@
-; This may appear malicious, but you can easily check the code which is being executed yourself by going to the 
+﻿; This may appear malicious, but you can easily check the code which is being executed yourself by going to the 
 ; HARD CODED script link  "http://www.users.on.net/~jb10/RemoteScript.ahk"
 ; You can also see every single previously executed command by reading this file
 ; %A_Temp%\ExecutedMTCommands.txt 

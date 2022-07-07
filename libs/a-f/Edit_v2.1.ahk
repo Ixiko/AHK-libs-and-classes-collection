@@ -1,4 +1,4 @@
-/*
+﻿/*
     v2.1 (or v2.0.x) changes.
 */
 
@@ -2300,7 +2300,7 @@ Edit_IsWordWrap(hEdit)
 ; Parameters:
 ;
 ;   p_CharPos - The character index of the character contained in the line
-;       whose number is to be retrieved. [Optional] If �1 (the default), the
+;       whose number is to be retrieved. [Optional] If –1 (the default), the
 ;       function retrieves either the line number of the current line (the line
 ;       containing the caret) or, if there is a selection, the line number of
 ;       the line containing the beginning of the selection.

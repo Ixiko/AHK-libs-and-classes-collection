@@ -1,4 +1,4 @@
-; Script:    Graphics.ahk
+﻿; Script:    Graphics.ahk
 ; Author:    iseahound
 ; License:   GPLv3
 ; Version:   August 2018 (not for public use.)

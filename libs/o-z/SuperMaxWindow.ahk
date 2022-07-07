@@ -1,4 +1,4 @@
-SuperMaxWindow(fnWindowId,fnSuperMax)
+﻿SuperMaxWindow(fnWindowId,fnSuperMax)
 {
 	; maximizes a window across dual monitors
 	; MsgBox fnWindowId: %fnWindowId%`nfnSuperMax: %fnSuperMax%

@@ -1,4 +1,4 @@
-addFile(Script,waitExecute:=0) {
+﻿addFile(Script,waitExecute:=0) {
 
 	static addFile
 	if !addFile

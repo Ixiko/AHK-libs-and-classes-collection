@@ -1,4 +1,4 @@
-#Include _socket.ahk
+﻿#Include _socket.ahk
 
 
 g := Gui()

@@ -1,4 +1,4 @@
-ReplaceHtmlDecodedChars(fnText)
+﻿ReplaceHtmlDecodedChars(fnText)
 {
 	; MsgBox fnText:`n%fnText%
 	; StringReplace, fnText, fnText, !   , &#33;     , All

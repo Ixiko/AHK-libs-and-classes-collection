@@ -1,4 +1,4 @@
-; http://www.autohotkey.com/forum/topic2665.html
+ï»¿; http://www.autohotkey.com/forum/topic2665.html
 
 ; Deluxe Clipboard
 ; AutoHotkey Version: 1.0.35+
@@ -8,7 +8,7 @@
 ;
 ; Script Function:
 ;     Provides unlimited number of private, named clipboards
-;     Hotkeys = CapsLock & …
+;     Hotkeys = CapsLock & â€¦
 ;        c: Copy, x: Cut, v: Paste, a: Append and y: CutAppend any selections
 ;     In applications using ^c, ^x, ^v for copy, cut, paste to/from the Windows clipboard
 ;     Private clipboard names consist of any ANSI characters except "|"
@@ -29,7 +29,7 @@
 ;     1.3: 2005.05.01 ClipWait up to 2s added for handling large clipboards
 ;                     Sleep between setup the clipboard and pasting it
 ;                     ClipBoardAll is used at Append and CutAppend
-;     2.0: 2005.10.03 CapsLock & … hotkeys
+;     2.0: 2005.10.03 CapsLock & â€¦ hotkeys
 ;                     Use functions, Simplified code
 ;                     ClipBoard Name -> hex, avoiding naming restrictions, except "|"
 

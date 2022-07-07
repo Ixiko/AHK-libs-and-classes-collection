@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: MEMBERID
 an enumeration class containing special values for MEMBERID variables. They are used to identify the member in a type description.
 

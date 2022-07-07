@@ -1,4 +1,4 @@
-/*
+﻿/*
 -----------------------------
 UI Test Automation Library
 version 1.4

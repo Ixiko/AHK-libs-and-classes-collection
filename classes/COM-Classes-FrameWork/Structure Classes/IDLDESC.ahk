@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: IDLDESC
 a structure class that is used for holding information needed for transferring a structure element, parameter, or function return value between processes.
 

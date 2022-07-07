@@ -1,4 +1,4 @@
-/* Title:		Tray
+ï»¿/* Title:		Tray
 				*Tray icon controller*
  :
 				Using this module you can totally control Windows notification area. 
@@ -112,7 +112,7 @@ Tray_Count() {
   Returns:
 				String containing icon information per line. 
  */
-Tray_Define(Filter="", pQ="", ByRef o1="~`a ", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o5="", ByRef o6="", ByRef o7=""){
+Tray_Define(Filter="", pQ="", ByRef o1="~`aÂ ", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o5="", ByRef o6="", ByRef o7=""){
 	static TB_BUTTONCOUNT = 0x418, TB_GETBUTTON=0x417, sep="|"
 	ifEqual, pQ,, SetEnv, pQ, ihw
 
@@ -292,7 +292,7 @@ Tray_GetTooltip(Position){
 	Returns:
 				TRUE on success, FALSE otherwise.
  */
-Tray_Modify( hGui, hTray, Icon, Tooltip="~`a " ) {
+Tray_Modify( hGui, hTray, Icon, Tooltip="~`aÂ " ) {
 	static NIM_MODIFY=1, NIF_ICON=2, NIF_TIP=4
 
 	VarSetCapacity( NID, 88, 0)
@@ -308,7 +308,7 @@ Tray_Modify( hGui, hTray, Icon, Tooltip="~`a " ) {
 		Icon/Icon ? Tray( hTray "hIcon", hIcon) :
 	}
 
-	if (Tooltip != "~`a ")
+	if (Tooltip != "~`aÂ ")
 		DllCall("lstrcpyn", "uint", &NID+24, "str", Tooltip, "int", 64)
 
 
@@ -419,10 +419,10 @@ Tray_onShellIcon(Wparam, Lparam) {
 
 
 ;storage
-Tray(var="", value="~`a ") { 
+Tray(var="", value="~`aÂ ") { 
 	static
 	_ := %var%
-	ifNotEqual, value,~`a , SetEnv, %var%, %value%
+	ifNotEqual, value,~`aÂ , SetEnv, %var%, %value%
 	return _
 }
 

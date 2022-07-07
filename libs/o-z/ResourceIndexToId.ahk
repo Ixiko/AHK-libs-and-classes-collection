@@ -1,4 +1,4 @@
-ResourceIndexToId(aModule, aType, aIndex){
+﻿ResourceIndexToId(aModule, aType, aIndex){
 	static enum_data,ResourceIndexToIdEnumProc,RT_GROUP_ICON
 	if !RT_GROUP_ICON
     enum_data:=Struct("find_index,index,result") ;ResourceIndexToIdEnumData

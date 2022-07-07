@@ -1,4 +1,4 @@
-#Include <Type>
+﻿#Include <Type>
 
 IsFuncObj(Value)
 {

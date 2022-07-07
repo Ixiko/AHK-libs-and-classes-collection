@@ -1,4 +1,4 @@
-class DefinitionGenerator
+﻿class DefinitionGenerator
 {
 	static Template := "
 					(LTrim

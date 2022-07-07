@@ -1,4 +1,4 @@
-/*
+﻿/*
   Title:		Property
 				Properties viewer and editor.
 

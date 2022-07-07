@@ -1,4 +1,4 @@
-/* SubVersion Keywords
+﻿/* SubVersion Keywords
 RegExMatch("$LastChangedRevision: 7 $"
          . "$LastChangedDate: 2007-06-18 22:10:59 +0200 (Mo, 18 Jun 2007) $"
          , "(?P<Num>\d+).*?(?P<Date>(?:\d+-?){3})", SVN_Rev)

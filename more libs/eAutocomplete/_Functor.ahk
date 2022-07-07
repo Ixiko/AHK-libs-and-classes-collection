@@ -1,4 +1,4 @@
-Class _FunctorEx extends eAutocomplete._FunctorEx._Proxy {
+﻿Class _FunctorEx extends eAutocomplete._FunctorEx._Proxy {
 	call(_args*) {
 		return base.call(_args*)
 	}

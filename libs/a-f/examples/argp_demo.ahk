@@ -1,4 +1,4 @@
-; #Include argp.ahk
+﻿; #Include argp.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

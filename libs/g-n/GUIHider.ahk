@@ -1,4 +1,4 @@
-;                   Original Author: jpjazzy            Link: http://www.autohotkey.com/forum/viewtopic.php?p=485853#485853
+﻿;                   Original Author: jpjazzy            Link: http://www.autohotkey.com/forum/viewtopic.php?p=485853#485853
 ; =====================================================================================================================================================
 ;   GUI_AutoHide(Hide direction, [Gui # to hide, Delay in milliseconds before hiding, Number of pixels to display while hidden (offset), Enabled/Disabled Flag])
 ; =====================================================================================================================================================

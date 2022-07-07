@@ -1,4 +1,4 @@
-class Counter {
+﻿class Counter {
 
 	static flags := OptParser.OPT_NOARG
 	optionClass := 0

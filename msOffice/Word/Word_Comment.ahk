@@ -1,4 +1,4 @@
-wComment(text, header="", URL = "",  title = ""){
+﻿wComment(text, header="", URL = "",  title = ""){
     oWord := ComObjActive("Word.Application")
     if header <> ; Run only if header isn't empty 
     {

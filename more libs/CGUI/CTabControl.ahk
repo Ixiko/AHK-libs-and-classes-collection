@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CTabControl
 A tab container control. The controls added to a tab panel can be accessed through this object.
 

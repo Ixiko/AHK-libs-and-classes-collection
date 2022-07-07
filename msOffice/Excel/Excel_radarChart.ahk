@@ -1,4 +1,4 @@
-; Pass a simple or associative array to this function to have it return a radar chart. 
+﻿; Pass a simple or associative array to this function to have it return a radar chart. 
 ;
 ; Simple array: myArray := [3, 5, 3, 2, 1, 5, 3, 4, 2]
 ; Associative array:  myArray := {"Thesis": 3, "Introduction": 4, "Conclusion": 1, "Sentences": 2, "Orangization": 3, "Vocabulary": 5, "Grammar & spelling": 2}

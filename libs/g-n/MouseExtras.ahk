@@ -1,4 +1,4 @@
-; MouseExtras
+﻿; MouseExtras
 ; Author: Pulover [Rodolfo U. Batista]
 ; rodolfoub@gmail.com
 

@@ -1,4 +1,4 @@
-FilePath := A_ScriptDir "\New Microsoft Word Document.docx"  ; Path to a Word document.
+﻿FilePath := A_ScriptDir "\New Microsoft Word Document.docx"  ; Path to a Word document.
 if FileOpen(FilePath, "rw") ; FileOpen fails if the file is already open.
     FileStatus := "not open"
 else

@@ -1,4 +1,4 @@
-; Uncomment this if MI.ahk is not in your function library:
+﻿; Uncomment this if MI.ahk is not in your function library:
 ;#include %A_ScriptDir%\MI.ahk
 
 #NoEnv

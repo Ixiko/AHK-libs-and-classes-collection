@@ -1,4 +1,4 @@
-/*
+﻿/*
 	A system for handling a collection of preferences/settings with multiple prioritized override levels across extended objects.
 
 	For online documentation

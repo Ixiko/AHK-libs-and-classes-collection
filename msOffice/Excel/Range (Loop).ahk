@@ -1,4 +1,4 @@
-; This script gets/saves a reference to a Range object ('MyRange'). Then it loops through each item in the Range. Each
+﻿; This script gets/saves a reference to a Range object ('MyRange'). Then it loops through each item in the Range. Each
 ; item in the range is a Cell. Each cell is actually a Range object. ie: A range can contain several cells, or only one.
 
 xlApp := ComObjActive("Excel.Application")  ; Excel must be running.

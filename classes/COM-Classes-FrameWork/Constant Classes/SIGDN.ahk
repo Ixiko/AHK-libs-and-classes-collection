@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: SIGDN
 an enumeration class containing flags that specify the form of an item's display name to retrieve through IShellItem::GetDisplayName and SHGetNameFromIDList.
 

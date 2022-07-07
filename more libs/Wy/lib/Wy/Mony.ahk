@@ -1,4 +1,4 @@
-#include %A_LineFile%\..
+﻿#include %A_LineFile%\..
 #include JSON.ahk
 #include %A_LineFile%\..
 #include MultiMony.ahk

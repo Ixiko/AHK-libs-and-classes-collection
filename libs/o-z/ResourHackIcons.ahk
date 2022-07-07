@@ -1,4 +1,4 @@
-ResourHackIcons(dotIcoFile)
+﻿ResourHackIcons(dotIcoFile)
 {
 	if !A_IsCompiled
 		return

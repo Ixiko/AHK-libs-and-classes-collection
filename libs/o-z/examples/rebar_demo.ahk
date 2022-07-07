@@ -1,4 +1,4 @@
-; #Include Rebar.ahk
+﻿; #Include Rebar.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

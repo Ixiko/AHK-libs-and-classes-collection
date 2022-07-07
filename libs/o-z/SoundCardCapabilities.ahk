@@ -1,4 +1,4 @@
-;http://www.autohotkey.com/docs/commands/SoundSet.htm
+﻿;http://www.autohotkey.com/docs/commands/SoundSet.htm
 
 ; BASIC EXAMPLES:
 SoundSet, 50  ; Set the master volume to 50%

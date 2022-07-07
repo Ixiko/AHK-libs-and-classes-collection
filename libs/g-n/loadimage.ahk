@@ -1,4 +1,4 @@
-loadfromfile(filename){
+﻿loadfromfile(filename){
 	global loadedimg
 	if(!loadedimg[filename]){
 		tmp:=gdip_createbitmapfromfile(filename)

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: TYPEKIND
 an enumeration class that specifies a type.
 

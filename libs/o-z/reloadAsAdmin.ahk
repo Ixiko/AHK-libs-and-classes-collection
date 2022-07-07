@@ -1,4 +1,4 @@
-reloadAsAdmin(force:=True){
+﻿reloadAsAdmin(force:=True){
     if A_IsAdmin
         return 0
     Run % "*RunAs " ( A_IsCompiled ? "" : """"  A_AhkPath """" )  " """ A_ScriptFullpath """", %A_ScriptDir%, UseErrorLevel

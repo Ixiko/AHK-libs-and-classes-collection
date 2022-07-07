@@ -1,4 +1,4 @@
-class PFileext extends Flimsydata.Provider {
+﻿class PFileext extends Flimsydata.Provider {
 
 	static data := [[ "txt"
 		, "exe"

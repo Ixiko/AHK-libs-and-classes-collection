@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Title:		ScrollBar
 				Scroll Bar control.
 */

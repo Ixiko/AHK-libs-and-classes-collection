@@ -1,4 +1,4 @@
-HideInfotipOnMouseOver(fnInfotipText,ByRef fnInfotipID)
+﻿HideInfotipOnMouseOver(fnInfotipText,ByRef fnInfotipID)
 {
 	; hides a given infotip when the mouse moves over it
 	; MsgBox fnInfotipText: %fnInfotipText%`nfnInfotipID: %fnInfotipID%

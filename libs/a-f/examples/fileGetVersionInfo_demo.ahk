@@ -1,4 +1,4 @@
-#SingleInstance, Force
+﻿#SingleInstance, Force
 SetBatchLines -1
 
 Loop, %A_WinDir%\System32\*.??l

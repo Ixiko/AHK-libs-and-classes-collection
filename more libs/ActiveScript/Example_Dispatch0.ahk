@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #Include ActiveScript.ahk
 #Include ComDispatch0.ahk
 

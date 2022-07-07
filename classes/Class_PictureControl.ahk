@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CPictureControl
 A picture control.
 

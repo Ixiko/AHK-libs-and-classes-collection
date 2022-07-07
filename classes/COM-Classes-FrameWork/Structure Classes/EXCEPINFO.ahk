@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: EXCEPINFO
 a structure class that describes an exception that occurred during IDispatch::Invoke.
 

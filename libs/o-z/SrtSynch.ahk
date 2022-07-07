@@ -1,4 +1,4 @@
-;////////////////////////////////////////////////
+﻿;////////////////////////////////////////////////
 ; SrtSynch function created by GAHKS (2009)
 ; http://www.autohotkey.com/forum/topic41466.html
 ; http://www.autohotkey.net/~gahks/

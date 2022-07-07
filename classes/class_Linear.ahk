@@ -1,4 +1,4 @@
-Class Linear extends Lib.obj.Array.Generic{
+﻿Class Linear extends Lib.obj.Array.Generic{
 		Clone(Arr*)	{
 				For i, sArr in Arr {
 					tOut:=Array()

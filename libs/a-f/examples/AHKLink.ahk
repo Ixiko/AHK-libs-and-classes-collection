@@ -1,4 +1,4 @@
-#Include ..\AHKLink.ahk
+﻿#Include ..\AHKLink.ahk
 SetWorkingDir .. ; For the index file
 ; This demonstrates all options in AHKLink()
 ; Simple search:

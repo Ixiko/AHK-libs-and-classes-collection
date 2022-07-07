@@ -1,4 +1,4 @@
-/*
+﻿/*
 ;fWaitForHungWindow(),fReplaceAtPos(),fCPULoad(),CreateNamedPipe()
 ;fAffinitySet(),fAffinityGet(),fGetPID(),fGlobalMemoryStatusEx()
 ;fEnumProcesses(),fSetIOPriority(),fSeDebugPrivilege(),fGetUsageCPUCores(),fEmptyMem(),fThumbMake(),fThumbRemove(),fConvertBase()

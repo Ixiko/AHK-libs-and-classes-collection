@@ -1,4 +1,4 @@
-class Properties
+﻿class Properties
 {
 	static INSTANCE_POINTER			:= "internal://type-instance"
 	static INSTANCE_ENUMERATOR		:= "internal://instance-enumerator"

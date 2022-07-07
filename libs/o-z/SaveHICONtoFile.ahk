@@ -1,4 +1,4 @@
-SaveHICONtoFile( hicon, iconFile ) {                                ; By SKAN | 06-Sep-2017 | goo.gl/8NqmgJ
+﻿SaveHICONtoFile( hicon, iconFile ) {                                ; By SKAN | 06-Sep-2017 | goo.gl/8NqmgJ
 Static CI_FLAGS:=0x2008                                             ; LR_CREATEDIBSECTION | LR_COPYDELETEORG
 Local  File, Var, mDC, sizeofRGBQUAD, ICONINFO:=[], BITMAP:=[], BITMAPINFOHEADER:=[]
 

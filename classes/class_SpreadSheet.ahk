@@ -1,4 +1,4 @@
-/*  
+ï»¿/*  
 	Title:  SpreadSheet 
 			SpreadSheet control is extremelly fast and small Excell like control, developed in Assembler.
 
@@ -833,7 +833,7 @@ SS_SetCell(hCtrl, Col="", Row="", o1="", o2="", o3="", o4="", o5="", o6="", o7="
 	static LOCKED=1, HIDDEN=2, REDRAW=8
 
   ;named parameters:  txt, data, w, h, bg, fg, type, state, txtal, imgal, fnt
-	txt := "~`a "
+	txt := "~`aÂ "
 	loop, 10 {
 		ifEqual, o%A_Index%,,break
 		j := InStr( o%A_index%, "=" ), 	prop := SubStr(	o%A_index%, 1, j-1 ), %prop% := SubStr( o%A_index%, j+1, StrLen(o%A_Index%))
@@ -847,7 +847,7 @@ SS_SetCell(hCtrl, Col="", Row="", o1="", o2="", o3="", o4="", o5="", o6="", o7="
 		}	
 	}
     flag := 0
-	 ,flag |= (data!=""||txt!="~`a ") ? SPRIF_DATA  : 0
+	 ,flag |= (data!=""||txt!="~`aÂ ") ? SPRIF_DATA  : 0
 	 ,flag |= (type!="")	? SPRIF_TYPE		: 0
 	 ,flag |= (w != "")		? SPRIF_WIDTH		: 0
 	 ,flag |= (h != "")		? SPRIF_HEIGHT		: 0
@@ -892,7 +892,7 @@ SS_SetCell(hCtrl, Col="", Row="", o1="", o2="", o3="", o4="", o5="", o6="", o7="
 	if type in %COMBOBOX%,%CHECKBOX%,%OWNERDRAWBLOB%
 	{
 		; in this case both txt and data must be set at the same time, so if user didn't provide one, get it.
-		if (bChange && (txt="~`a " || data=""))
+		if (bChange && (txt="~`aÂ " || data=""))
 		{
 			NumPut(SPRIF_DATA, ITEM)
 			SendMessage,SPRM_GETCELLDATA,,&ITEM,, ahk_id %hCtrl%
@@ -901,7 +901,7 @@ SS_SetCell(hCtrl, Col="", Row="", o1="", o2="", o3="", o4="", o5="", o6="", o7="
 				 txt := type=COMBOBOX ? NumGet(pData+4) : SS_strAtAdr(pData + 4)
 			else data := NumGet(pData,36)
 		}	
-		ifEqual, txt, ~`a , SetEnv, txt
+		ifEqual, txt, ~`aÂ , SetEnv, txt
 
 		if (type = COMBOBOX)
 			NumPut(txt,txt)		;put combobox handle as txt

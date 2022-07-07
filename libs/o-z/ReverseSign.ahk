@@ -1,4 +1,4 @@
-ReverseSign(value)
+﻿ReverseSign(value)
 {
     If (value = 0)
     {

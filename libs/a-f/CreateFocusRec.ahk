@@ -1,4 +1,4 @@
-/* About CreateFocusRec()
+﻿/* About CreateFocusRec()
  
  Draws a transparent but coloured recangle over a controll.
  

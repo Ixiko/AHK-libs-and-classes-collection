@@ -1,4 +1,4 @@
-#SingleInstance, Force
+﻿#SingleInstance, Force
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input
 SetWorkingDir, %A_ScriptDir%

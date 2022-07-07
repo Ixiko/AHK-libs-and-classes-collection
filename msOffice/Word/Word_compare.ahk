@@ -1,4 +1,4 @@
-MSWord_CompareStringsOrFiles(StringOrFile1, StringOrFile2, options="") { ; Compares strings or files (file contents) using MS Word built-in compare documents functionality. By Learning one. 2019-04-21
+﻿MSWord_CompareStringsOrFiles(StringOrFile1, StringOrFile2, options="") { ; Compares strings or files (file contents) using MS Word built-in compare documents functionality. By Learning one. 2019-04-21
 	/*
 	Parameters & usage:
 		This function can compare strings and file contents from MS Word documents and plain text files like .txt, .ahk, .html, etc.

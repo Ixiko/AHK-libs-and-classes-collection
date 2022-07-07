@@ -1,4 +1,4 @@
-;; http://www.autohotkey.com/board/topic/77272-close-all-ahk-scripts-except-one/
+﻿;; http://www.autohotkey.com/board/topic/77272-close-all-ahk-scripts-except-one/
 
 
 /*

@@ -1,4 +1,4 @@
-
+﻿
 /** get clipboard content
 */
 Clip_Get(){

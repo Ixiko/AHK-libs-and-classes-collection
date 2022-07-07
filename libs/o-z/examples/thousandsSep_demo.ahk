@@ -1,4 +1,4 @@
-; #Include ThousandsSep.ahk
+﻿; #Include ThousandsSep.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

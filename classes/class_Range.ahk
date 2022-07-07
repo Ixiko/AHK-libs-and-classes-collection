@@ -1,4 +1,4 @@
-/**
+﻿/**
     * Class: Range
     *   Aims to create some kind of implementation of Pythons Range function
     *   excludes the ending param from the range result

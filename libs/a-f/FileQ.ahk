@@ -1,4 +1,4 @@
-FileQ( List, Folder := "", D := "|" ) {  ; by SKAN | 01-Oct-2018 | Topic: goo.gl/R4QrF4
+﻿FileQ( List, Folder := "", D := "|" ) {  ; by SKAN | 01-Oct-2018 | Topic: goo.gl/R4QrF4
 Local NewList := "", F := ( Folder<> "" ? Folder "\" : "" ) 
   Loop, Parse, List, %D%
     If FileExist( F A_LoopField )

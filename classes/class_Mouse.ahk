@@ -1,4 +1,4 @@
-;#NoTrayIcon
+﻿;#NoTrayIcon
 ;#SingleInstance force
 /**
 	Class Mouse

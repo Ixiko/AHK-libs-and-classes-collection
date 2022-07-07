@@ -1,4 +1,4 @@
-WS2_CleanUp()
+﻿WS2_CleanUp()
 global num = 0
 global received, lastmessage, firstStart = 1
 IfWinNotExist, ahk_class MozillaWindowClass

@@ -1,4 +1,4 @@
-class gdipp {
+﻿class gdipp {
     Static ObjList := []
     
     Static __New() {

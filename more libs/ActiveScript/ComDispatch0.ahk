@@ -1,4 +1,4 @@
-;
+﻿;
 ; ComDispatch0 - Alternative version of fincs' ComDispatch() function
 ;
 ; Authors: fincs, Coco, Lexikos

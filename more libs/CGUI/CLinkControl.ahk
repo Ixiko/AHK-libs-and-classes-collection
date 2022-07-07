@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CLinkControl
 A link control that can be used for hyperlinks. It uses HTML-like markup language for links, e.g. <a href="http://www.url.com">URL Text</a>.
 href tags are attempted to be executed directly, while id tags are solely handled in script.

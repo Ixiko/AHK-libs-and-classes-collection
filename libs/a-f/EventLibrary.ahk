@@ -1,4 +1,4 @@
-
+﻿
 ;Event Library
 ;Version: 1.0
 ;Author: KuroiLight/klomb

@@ -1,4 +1,4 @@
-GetDurationFromMilliseconds(fnMilliseconds,fnIncludeMilliseconds = "0",fnPreserveNegative = "0")
+﻿GetDurationFromMilliseconds(fnMilliseconds,fnIncludeMilliseconds = "0",fnPreserveNegative = "0")
 {
 	If !fnMilliseconds
 		Return "00:00:00"

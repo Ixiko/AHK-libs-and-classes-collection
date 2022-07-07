@@ -1,4 +1,4 @@
-GetMonthNum(fnText)
+﻿GetMonthNum(fnText)
 {
 	If (fnText = "Jan" || fnText = "January")
 		Return "01"

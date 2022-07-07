@@ -1,4 +1,4 @@
-; This script creates a new word documennt from a template. Then it inserts text into two bookmarks.
+﻿; This script creates a new word documennt from a template. Then it inserts text into two bookmarks.
 ; The template (Bookmarks.dotx) has two bookmarks named "MyBookmark1" and "MyBookmark2".
 
 ; Note: To run this example you will first need to open the template (Bookmarks.dotx) and click "Enable Editing".

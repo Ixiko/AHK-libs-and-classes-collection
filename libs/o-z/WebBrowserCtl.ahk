@@ -1,4 +1,4 @@
-#Include <GActiveXCtl>
+﻿#Include <GActiveXCtl>
 
 class WebBrowserCtl extends GActiveXCtl
 {

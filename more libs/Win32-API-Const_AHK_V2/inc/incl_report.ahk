@@ -1,4 +1,4 @@
-incl_report() {
+﻿incl_report() {
     g3 := Gui.New("-DPIScale -MinimizeBox -MaximizeBox +Owner" g.hwnd,"#INCLUDES Report")
     g3.OnEvent("close","g3_close")
     

@@ -1,4 +1,4 @@
-; This script opens a workbook and then loops through each sheet. Within each sheet, it finds the last non-blank cell in
+﻿; This script opens a workbook and then loops through each sheet. Within each sheet, it finds the last non-blank cell in
 ; column A. It then loops through each cell in the Range from A1 to the last cell.
 
 ; Constants

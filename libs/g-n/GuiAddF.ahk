@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Usage:
 		GuiAddF(oText = "", oEdit = "", oFSel = "")
 		

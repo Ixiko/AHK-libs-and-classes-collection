@@ -1,4 +1,4 @@
-; #Include HLink.ahk
+﻿; #Include HLink.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

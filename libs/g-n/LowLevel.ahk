@@ -1,4 +1,4 @@
-; LowLevel
+﻿; LowLevel
 ; http://www.autohotkey.com/forum/topic26300.html
 
 LowLevel_init() {

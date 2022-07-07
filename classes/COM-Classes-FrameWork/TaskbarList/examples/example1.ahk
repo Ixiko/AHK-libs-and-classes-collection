@@ -1,4 +1,4 @@
-/*
+﻿/*
 Example: Demonstrates the usage of *TaskbarList.ahk*
 	* Hiding and showing taskbar entries
 

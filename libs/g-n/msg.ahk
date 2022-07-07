@@ -1,4 +1,4 @@
-;Windows Message Constants (Total 783)
+﻿;Windows Message Constants (Total 783)
 
 Msg(Msg) {
 If Msg=WM_NULL

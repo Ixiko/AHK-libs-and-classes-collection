@@ -1,4 +1,4 @@
-/*
+﻿/*
 http://www.autohotkey.com/board/topic/71791-solved-readprocessmemory-offsets-from-cheat-engine/
 
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Change Log:
 		v1.11 (2017-01-17) - Added an internal function Ensure_Admin_And_Compiled()
 		v1.10 (2015-10-22) - Added support for sending characters that needs to press {shift} key, such as "@" or "A".

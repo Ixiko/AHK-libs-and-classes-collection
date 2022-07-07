@@ -1,0 +1,365 @@
+﻿[
+	[
+		[
+			{
+				"caption": "a",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"å","â","ä","ā","à","ã","æ","à"
+				],
+				"style": "test",
+				"altCaption": 1
+			},
+			"z",
+			{
+				"caption": "e",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"ė","ê","ë","ę","é","è","ē"
+				]
+			},
+			"r",
+			"t",
+			{
+				"caption": "y",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"y", "y", "ÿ"
+				]
+			},
+			{
+				"caption": "u",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"ū","û","ü","ù","ú"
+				]
+			},
+			{
+				"caption": "i",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"ī","î","ï","ì","į","í"
+				]
+			},
+			{
+				"caption": "o",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"ō","ô","ö","ó","ò","õ","œ","ø"
+				]
+			},
+			"p",
+			{
+				"caption": "^",
+				"f": "setAltIndexProc",
+				"params": [
+					2
+				]
+			},
+			"'",
+			{
+				"caption": "⌫",
+				"f": "sendBackSpaceProc",
+				"accessKey": "BackSpace"
+			}
+		],
+		[
+			"q",
+			"s",
+			"d",
+			"f",
+			"g",
+			"h",
+			"j",
+			"k",
+			"l",
+			"m",
+			",",
+			{
+				"caption": "◀",
+				"f": "setCaretPosProc",
+				"params": [
+					-1
+				],
+				"accessKey": null
+			},
+			{
+				"caption": "▶",
+				"f": "setCaretPosProc",
+				"params": [
+					1
+				],
+				"accessKey": null
+			}
+		],
+		[
+			{
+				"caption": "↑",
+				"f": "toLayerProc",
+				"params": [
+					2
+				],
+				"accessKey": "CapsLock"
+			},
+			{
+				"caption": "Σ",
+				"f": "toLayerProc",
+				"params": [
+					3
+				],
+				"accessKey": ""
+			},
+			"w",
+			"x",
+			{
+				"caption": "c",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"ç","c","c","č","ć"
+				]
+			},
+			"v",
+			"b",
+			"n",
+			"é",
+			{
+				"caption": "",
+				"f": "sendSpaceProc",
+				"accessKey": "Space"
+			},
+			".",
+			{
+				"caption": "↵",
+				"f": "keyWithAccessProc",
+				"accessKey": "Enter"
+			},
+			{
+				"caption": "🖂",
+				"f": "submitProc"
+			}
+		]
+	],
+	[
+		[
+			{
+				"caption": "A",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"Å","Â","Ä","Ā","À","Ã","Æ","À"
+				]
+			},
+			"Z",
+			{
+				"caption": "E",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"Ė","Ê","Ë","Ę","É","È","Ē"
+				]
+			},
+			"R",
+			"T",
+			{
+				"caption": "Y",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"Y", "Y", "Ÿ"
+				]
+			},
+			{
+				"caption": "U",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"Ū","Û","Ü","Ù","Ú"
+				]
+			},
+			{
+				"caption": "I",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"Ī","Î","Ï","Ì","Į","Í"
+				]
+			},
+			{
+				"caption": "O",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"Ō","Ô","Ö","Ó","Ò","Õ","Œ","Ø"
+				]
+			},
+			"P",
+			{
+				"caption": "¨",
+				"f": "setAltIndexProc",
+				"params": [
+					3
+				]
+			},
+			"?",
+			{
+				"caption": "⌫",
+				"f": "sendBackSpaceProc",
+				"accessKey": "BackSpace"
+			}
+		],
+		[
+			"Q",
+			"S",
+			"D",
+			"F",
+			"G",
+			"H",
+			"J",
+			"K",
+			"L",
+			"M",
+			",",
+			{
+				"caption": "◀",
+				"f": "setCaretPosProc",
+				"params": [
+					-1
+				],
+				"accessKey": null
+			},
+			{
+				"caption": "▶",
+				"f": "setCaretPosProc",
+				"params": [
+					1
+				],
+				"accessKey": null
+			}
+		],
+		[
+			{
+				"caption": "↑",
+				"f": "toLayerProc",
+				"params": [
+					1
+				],
+				"accessKey": "CapsLock"
+			},
+			{
+				"caption": "Σ",
+				"f": "toLayerProc",
+				"params": [
+					3
+				],
+				"accessKey": ""
+			},
+			"W",
+			"X",
+			{
+				"caption": "C",
+				"f": "keyWithVariantsProc",
+				"params": [
+					"Ç","C","C","Č","Ć"
+				]
+			},
+			"V",
+			"B",
+			"N",
+			{
+				"caption": "",
+				"f": "sendSpaceProc",
+				"accessKey": "Space"
+			},
+			{
+				"caption": "",
+				"f": "sendSpaceProc",
+				"accessKey": "Space"
+			},
+			".",
+			{
+				"caption": "↵",
+				"f": "keyWithAccessProc",
+				"accessKey": "Enter"
+			},
+			{
+				"caption": "🖂",
+				"f": "submitProc",
+				"accessKey": null
+			}
+		]
+	],
+	[
+		[
+			"1",
+			"2",
+			"3",
+			"4",
+			"5",
+			"6",
+			"7",
+			"8",
+			"9",
+			"0",
+			"(",
+			")",
+			{
+				"caption": "⌫",
+				"f": "sendBackSpaceProc",
+				"accessKey": "BackSpace"
+			}
+		],
+		[
+			"#",
+			"€",
+			"%",
+			"&",
+			"-",
+			"+",
+			"«",
+			"»",
+			":",
+			"\"",
+			";",
+			{
+				"caption": "◀",
+				"f": "setCaretPosProc",
+				"params": [
+					-1
+				],
+				"accessKey": null
+			},
+			{
+				"caption": "▶",
+				"f": "setCaretPosProc",
+				"params": [
+					1
+				],
+				"accessKey": null
+			}
+		],
+		[
+			"@",
+			{
+				"caption": "↑",
+				"f": "toLayerProc",
+				"params": [
+					1
+				],
+				"accessKey": "CapsLock"
+			},
+			"!",
+			"?",
+			"_",
+			"/",
+			"=",
+			"{",
+			"}",
+			"\\",
+			"...",
+			{
+				"caption": "↵",
+				"f": "keyWithAccessProc",
+				"accessKey": "Enter"
+			},
+			{
+				"caption": "🖂",
+				"f": "submitProc",
+				"accessKey": null
+			}
+		]
+	]
+]

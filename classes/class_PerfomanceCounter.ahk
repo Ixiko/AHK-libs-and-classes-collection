@@ -1,4 +1,4 @@
-
+﻿
 class PerformanceCounter{
 	;This class implements an object oriented interface to the system's performance counter.
 	

@@ -1,4 +1,4 @@
-getMimeTypes() {
+﻿getMimeTypes() {
 	mimes = 
 	(LTrim Join`n
 		text/html                             html htm shtml

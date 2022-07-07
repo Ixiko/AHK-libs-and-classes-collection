@@ -1,4 +1,4 @@
-; This script creates an email, adds "test.png" as an attachment, then includes the image in the body of the email.
+﻿; This script creates an email, adds "test.png" as an attachment, then includes the image in the body of the email.
 
 Image := A_ScriptDir "\test.png"  ; The path of the image to include.
 SplitPath, Image, ImageName  ; Get the file name from the path.

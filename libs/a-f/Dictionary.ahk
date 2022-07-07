@@ -1,4 +1,4 @@
-;By Sean
+﻿;By Sean
 /* Example
 CoInitialize()
 pdic := Dictionary()

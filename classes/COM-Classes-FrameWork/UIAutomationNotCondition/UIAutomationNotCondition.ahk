@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: UIAutomationNotCondition
 wraps the *IUIAutomationNotCondition* interface and represents a condition that is the negative of another condition.
 

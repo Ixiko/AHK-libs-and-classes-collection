@@ -1,4 +1,4 @@
-Global filter_gui
+﻿Global filter_gui
 
 load_filters() {
     filter_gui := Gui.New("-MinimizeBox -MaximizeBox +Owner" g.hwnd,"More Filter Options")

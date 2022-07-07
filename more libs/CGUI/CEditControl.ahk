@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CEditControl
 An edit control.
 

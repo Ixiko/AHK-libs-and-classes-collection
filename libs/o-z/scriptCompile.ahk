@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: scriptCompile
     Optionally creates include file "fileInstallList.ahk" in "c_SourceFile"'s dir
 	and compiles script by running autohotkey's compiler

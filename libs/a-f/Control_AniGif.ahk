@@ -1,4 +1,4 @@
-/*
+﻿/*
 Control_AniGif.ahk
 
 Add a AniGif control to your AHK Gui.

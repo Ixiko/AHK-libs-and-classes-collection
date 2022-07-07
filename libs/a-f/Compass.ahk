@@ -1,4 +1,4 @@
-^!LButton::Compass(1)   ; Ctrl+Alt+LButton
+﻿^!LButton::Compass(1)   ; Ctrl+Alt+LButton
 ^+LButton::Compass(2)   ; Ctrl+Shift+LButton
 
 

@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #Include %A_ScriptDir%\..\Ribbon.ahk
 SetWorkingDir, %A_ScriptDir%
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
     Muestra un diálogo para seleccionar una carpeta.
     Parámetros:
         Owner / Title:

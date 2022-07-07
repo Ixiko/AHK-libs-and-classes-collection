@@ -1,4 +1,4 @@
-
+﻿
 /*
 #SingleInstance ignore	; One instance at a time
 

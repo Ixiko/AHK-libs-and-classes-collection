@@ -1,4 +1,4 @@
-#Include, VMR.ahk
+﻿#Include, VMR.ahk
 
 voicemeeter := new VMR()
 voicemeeter.login()

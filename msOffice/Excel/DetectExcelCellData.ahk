@@ -1,4 +1,4 @@
-wbk := ComExcelConnect( "ahk_class XLMAIN" ).Application ; ComObjActive("Excel.Application")
+﻿wbk := ComExcelConnect( "ahk_class XLMAIN" ).Application ; ComObjActive("Excel.Application")
 ; a::
 F1::
 

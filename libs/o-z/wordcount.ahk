@@ -1,4 +1,4 @@
-
+﻿
 /*
 TestText := "
 (Join`r`n

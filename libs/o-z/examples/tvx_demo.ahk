@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #SingleInstance force
 
 	gosub CreateGui

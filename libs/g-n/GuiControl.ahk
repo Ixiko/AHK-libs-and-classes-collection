@@ -1,4 +1,4 @@
-/* About GuiControl()
+﻿/* About GuiControl()
 
  GuiControl() to update multiple controlls at once.
  You can use any of the first 3 parameters to you're liking, in the same way

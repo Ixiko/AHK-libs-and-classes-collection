@@ -1,4 +1,4 @@
-ShortcutDelete()
+﻿ShortcutDelete()
 {
 	; deletes the shortcut for a script
 	; MsgBox params: %params%

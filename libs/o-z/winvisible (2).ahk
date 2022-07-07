@@ -1,4 +1,4 @@
-WinVisible(hwnd)
+﻿WinVisible(hwnd)
 {
 	WinGet, Style, Style ,ahk_id %hwnd%
 	Transform, Result, BitAnd, %Style%, 0x10000000 ; 0x10000000 is WS_VISIBLE. 

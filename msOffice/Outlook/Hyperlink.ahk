@@ -1,4 +1,4 @@
-; This script creates a new email and adds a hyperlink.
+﻿; This script creates a new email and adds a hyperlink.
 
 ; Constants
 olMailItem := 0

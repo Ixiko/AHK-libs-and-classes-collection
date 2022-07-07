@@ -1,4 +1,4 @@
-#SingleInstance Force
+﻿#SingleInstance Force
 
 CornerNotify(0, "Quick Flash", "This is a quick flash type of message. a a a a a a a a a a a a a a a a a a a a a")
 Sleep 3000

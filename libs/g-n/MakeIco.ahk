@@ -1,4 +1,4 @@
-; MakeIco(["test.png"])
+﻿; MakeIco(["test.png"])
 
 MakeIco(sourceImages, icon:="") { ;Credits to kon - http://ahkscript.org/boards/viewtopic.php?p=14093#p14093
     If (!icon) {

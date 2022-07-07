@@ -1,4 +1,4 @@
-ocrBWConvert(ByRef bmp, color, varia:=0) ;convert bmp pattern to Black / White pattern 
+﻿ocrBWConvert(ByRef bmp, color, varia:=0) ;convert bmp pattern to Black / White pattern 
 { Gdip_GetImageDimensions(bmp, w, h)
   Loop h 
   { y:=A_Index-1

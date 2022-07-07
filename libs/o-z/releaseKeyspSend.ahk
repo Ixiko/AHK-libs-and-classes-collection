@@ -1,4 +1,4 @@
-; this releases all keys vis pSend
+﻿; this releases all keys vis pSend
 ; it can be used with the block hook, as it allows the users real key ups to pass 
 ; through. hence, can't get a stuck key outside of windows
 

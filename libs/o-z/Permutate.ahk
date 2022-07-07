@@ -1,4 +1,4 @@
-;InputBox, word, Enter a Word, Enter a series of letters to see all the arrangements of those letters.
+﻿;InputBox, word, Enter a Word, Enter a series of letters to see all the arrangements of those letters.
 ;msgbox % Permutate(word)
 
 Permutate(set,delimeter="",trim="", presc="") { ; function by [VxE], returns a newline-seperated list of

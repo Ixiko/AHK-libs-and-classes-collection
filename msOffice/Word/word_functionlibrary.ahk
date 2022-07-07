@@ -1,4 +1,4 @@
-; ~ This version was created from QMK_F24_macro_keyboard.ahk
+﻿; ~ This version was created from QMK_F24_macro_keyboard.ahk
 ;~ WHERE TO LOOK FOR HELP:
 ;~ Taran VH: 					https://youtu.be/GZEoss4XIgc
 ;~ Taran Github: 				https://github.com/TaranVH/2nd-keyboard/

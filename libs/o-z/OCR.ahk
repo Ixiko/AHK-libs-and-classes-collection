@@ -1,4 +1,4 @@
-/**
+﻿/**
  *   OCR library by camerb
  *   v0.94 - 2011-09-08
  *

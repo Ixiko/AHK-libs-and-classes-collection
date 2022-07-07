@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: Picture
 wraps the *IPicture* interface and manages a picture object and its properties.
 

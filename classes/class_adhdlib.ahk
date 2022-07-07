@@ -1,4 +1,4 @@
-; ADHDLib - Autohotkey Dynamic Hotkeys for Dummies
+﻿; ADHDLib - Autohotkey Dynamic Hotkeys for Dummies
 
 /*
 ToDo:

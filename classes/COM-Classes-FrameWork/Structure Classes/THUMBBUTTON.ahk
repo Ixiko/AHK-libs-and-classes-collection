@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: THUMBBUTTON
 a structure class that defines buttons used in a toolbar embedded in a window's thumbnail representation.
 

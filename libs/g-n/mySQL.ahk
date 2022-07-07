@@ -1,4 +1,4 @@
-/*============================================================
+ï»¿/*============================================================
 mysql.ahk
 Provides a set of functions to connect and query a mysql database
 
@@ -311,14 +311,14 @@ __MySQL_Query_Dump(_db, _query)
  ; This must be done to sql insert columns where the characters might contain special characters, such as user input fields
  ;
  ; Escape Sequence     Character Represented by Sequence
- ; \'     A single quote (“'”) character.
- ; \"     A double quote (“"”) character.
+ ; \'     A single quote (â€œ'â€) character.
+ ; \"     A double quote (â€œ"â€) character.
  ; \n     A newline (linefeed) character.
  ; \r     A carriage return character.
  ; \t     A tab character.
- ; \\     A backslash (“\”) character.
- ; \%     A “%” character. Usually indicates a wildcard character
- ; \_     A “_” character. Usually indicates a wildcard character
+ ; \\     A backslash (â€œ\â€) character.
+ ; \%     A â€œ%â€ character. Usually indicates a wildcard character
+ ; \_     A â€œ_â€ character. Usually indicates a wildcard character
  ; \b     A backspace character.
  ;
  ; these 2 have not yet been included yet

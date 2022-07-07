@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 	Title:	Form
 
 	Form module presents alternative way of creating AHK windows. It can be used alone or as a part of the Forms framework.
@@ -453,7 +453,7 @@ Form_Set(HForm, Options="", n="") {
  			Form("", "prefix_)x y z", x, y, z)	; get values of prefix_x, prefix_y and prefix_z into x, y and z.
 	(end code)
  */
-Form(Var="", Value="~`a ", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o5="", ByRef o6="") { 
+Form(Var="", Value="~`aÂ ", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o5="", ByRef o6="") { 
 	static
 	if (var = "" ){
 		if ( _ := InStr(value, ")") )
@@ -462,7 +462,7 @@ Form(Var="", Value="~`a ", ByRef o1="", ByRef o2="", ByRef o3="", ByRef o4="", B
 			_ := %__%%A_LoopField%,  o%A_Index% := _ != "" ? _ : %A_LoopField%
 		return
 	} else _ := %var%
-	ifNotEqual, value,~`a , SetEnv, %var%, %value%
+	ifNotEqual, value,~`aÂ , SetEnv, %var%, %value%
 	return _
 }
 

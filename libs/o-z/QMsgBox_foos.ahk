@@ -1,4 +1,4 @@
-HBITMAPfromHICON( hIcon )
+ï»¿HBITMAPfromHICON( hIcon )
 {
   VarSetCapacity( ICONINFO, 8 + 3*A_PtrSize, 0 )
   ret := DllCall( "User32\GetIconInfo","Ptr", hIcon, "Ptr", &ICONINFO )
@@ -30,8 +30,8 @@ StrSplit(str,delim,omit = "")
 {
   if (strlen(delim) > 1)
   {
-    StringReplace,str,str,% delim,ƒ,1 		;¦¶+
-    delim = ƒ
+    StringReplace,str,str,% delim,Æ’,1 		;Â¦Â¶+
+    delim = Æ’
   }
   ra := Array()
   loop, parse,str,% delim,% omit

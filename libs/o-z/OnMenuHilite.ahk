@@ -1,4 +1,4 @@
-/*
+﻿/*
   DISCLAIMER : Experimental code
   Show Menu tips with modeless menu / SKAN ( arian.suresh@gmail.com ) / 12-Dec-2013
   Topic:  http://ahkscript.org/boards/viewtopic.php?t=971

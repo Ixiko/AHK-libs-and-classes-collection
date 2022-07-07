@@ -1,4 +1,4 @@
-/* Title: RaGrid
+﻿/* Title: RaGrid
 		  Advanced grid custom control.
 
 		  (See RaGrid.png)

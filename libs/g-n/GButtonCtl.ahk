@@ -1,4 +1,4 @@
-#Include <GuiCtl>
+﻿#Include <GuiCtl>
 
 class GButtonCtl extends GuiCtl
 {

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: SPACTION
 an enumeration class describing an action being performed that requires progress to be shown to the user using an IActionProgress / IOperationsProgressDialog interface.
 

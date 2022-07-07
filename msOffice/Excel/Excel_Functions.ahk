@@ -1,4 +1,4 @@
-
+﻿
 /*  Excel_Functions() V4, Date: Sun April 24, 2011, Author: tidbit
 
 Forum: http://www.autohotkey.com/forum/viewtopic.php?t=70421

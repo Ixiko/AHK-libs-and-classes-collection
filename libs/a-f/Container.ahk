@@ -1,4 +1,4 @@
-/*
+﻿/*
 	A numerically indexed object with lots of useful functionality.  You can fill containers using delimited strings, 
 	lists saved to a file, or other objects.  Add, remove, split, slice, filter, sort, copy, and compare containers.  
 	Export container contents back to strings, files, and objects.  Ready to be extended for your own Container-based objects.

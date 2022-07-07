@@ -1,4 +1,4 @@
-; ╓───────────────────────────────────────────────────╖
+﻿; ╓───────────────────────────────────────────────────╖
 ; ║ Menu class for AutoHotkey                         ║
 ; ║ Create objects of AutoHotkey context/system menus ║
 ; ║ to make working withem them cleaner.              ║

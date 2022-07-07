@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: SW
 an enumeration class containing flags that control how a window is to be shown.
 

@@ -1,4 +1,4 @@
-; ThreefishKey class
+﻿; ThreefishKey class
 class ThreefishKey_t
 {
 	stateSize := 0

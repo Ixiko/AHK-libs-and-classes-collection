@@ -1,4 +1,4 @@
-RemoveDuplicates(list)
+﻿RemoveDuplicates(list)
 {
     Loop, Parse, list, `n
     {

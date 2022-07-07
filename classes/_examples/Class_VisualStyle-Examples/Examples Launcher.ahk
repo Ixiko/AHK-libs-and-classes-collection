@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #NoTrayIcon
 #Include <Class_VisualStyle>
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: TypeComp
 wraps the *ITypeComp* interface and provides a fast way to access information that compilers need when binding to and instantiating structures and interfaces. Binding is the process of mapping names to types and type members.
 

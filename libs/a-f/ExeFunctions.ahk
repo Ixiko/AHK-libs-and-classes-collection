@@ -1,4 +1,4 @@
-#DllImport, exeFunction,%A_AhkPath%\ahkFunction,Str,,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,Cdecl Str
+﻿#DllImport, exeFunction,%A_AhkPath%\ahkFunction,Str,,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,Cdecl Str
 #DllImport, exePostFunction,%A_AhkPath%\ahkPostFunction,Str,,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,PTR,0,Cdecl Str
 #DllImport, exeExec,%A_AhkPath%\ahkExec,Str,,Cdecl
 #DllImport, exeaddScript,%A_AhkPath%\addScript,Str,,UInt,0,Cdecl PTR

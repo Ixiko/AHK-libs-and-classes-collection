@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CEnumerator
 Generic enumerator object that can be used for dynamically generated array members. It requires that the object defines a MaxIndex() function.
 To make an object iterable, make sure to define the MaxIndex() function and insert this function in the class definition:

@@ -1,4 +1,4 @@
-QPX( N=0 ) {       ;  Wrapper for  QueryPerformanceCounter()by SKAN  | CD: 06/Dec/2009
+﻿QPX( N=0 ) {       ;  Wrapper for  QueryPerformanceCounter()by SKAN  | CD: 06/Dec/2009
  Static F,A,Q,P,X  ;  www.autohotkey.com/forum/viewtopic.php?t=52083 | LM: 10/Dec/2009
  If ( N && !P )
     Return  DllCall("QueryPerformanceFrequency",Int64P,F) + (X:=A:=0)

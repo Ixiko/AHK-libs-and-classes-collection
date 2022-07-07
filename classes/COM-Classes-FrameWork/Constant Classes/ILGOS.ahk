@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ILGOS
 an enumeration class containing flags for retrieving an image's size.
 

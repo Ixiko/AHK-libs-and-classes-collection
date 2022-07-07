@@ -1,4 +1,4 @@
-class_EasyIni(sFile="", sLoadFromStr="")
+﻿class_EasyIni(sFile="", sLoadFromStr="")
 {
 	return new EasyIni(sFile, sLoadFromStr)
 }

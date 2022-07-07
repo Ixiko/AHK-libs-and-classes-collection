@@ -1,4 +1,4 @@
-/*
+﻿/*
 #NoTrayIcon
 name=AutoHotkey.exe
 action=0x203

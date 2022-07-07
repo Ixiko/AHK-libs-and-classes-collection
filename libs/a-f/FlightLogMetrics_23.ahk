@@ -1,4 +1,4 @@
-	PitchRollCorrectStrong(Pitch,Roll,Heading,FoV) {
+﻿	PitchRollCorrectStrong(Pitch,Roll,Heading,FoV) {
 		global
 		
 		FixedR := Abs(Roll), FoVR := (FoV/2)+FixedR

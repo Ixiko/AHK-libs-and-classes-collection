@@ -1,4 +1,4 @@
-ShowHideTaskbar(ByRef fnShowTaskbar := 0)
+﻿ShowHideTaskbar(ByRef fnShowTaskbar := 0)
 {
 	; Hides or reveals the windows taskbar
 	; MsgBox fnShowTaskbar: %fnShowTaskbar%

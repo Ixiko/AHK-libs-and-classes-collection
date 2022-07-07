@@ -1,4 +1,4 @@
-; WinSysMenuAPI.ahk - Window System Menu Manipulator Library
+﻿; WinSysMenuAPI.ahk - Window System Menu Manipulator Library
 ;
 ; Functions to remove or reenable window managing menu items and commands.
 ;

@@ -1,4 +1,4 @@
-
+﻿
 thumbnailer(_guiID, _percent=.25, _transColor="", _guiNum=99)	;id to thumbnail, _percent of shrinkage, desired gui number of thumbnail	;
 {
 	global thumb_guiID, thumb_width, thumb_height

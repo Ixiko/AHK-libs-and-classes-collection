@@ -1,4 +1,4 @@
-; Source:
+﻿; Source:
 ;    https://superuser.com/questions/1049609/search-in-autohotkey-for-a-window-title-that-contains-a-string-but-does-not-con
 ;    
 ; Accessed:

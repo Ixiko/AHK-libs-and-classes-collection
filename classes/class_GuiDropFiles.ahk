@@ -1,4 +1,4 @@
-; http://ahkscript.org/boards/viewtopic.php?f=28&p=25564#p25564
+﻿; http://ahkscript.org/boards/viewtopic.php?f=28&p=25564#p25564
 
 Class GuiDropFiles
 {

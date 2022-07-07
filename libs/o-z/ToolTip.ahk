@@ -1,4 +1,4 @@
-;?add 2010 Modified by Tuncay
+﻿;?add 2010 Modified by Tuncay
 ;?add Function prefix changed from MI_ExtractIcon() to ToolTip_ExtractIcon()
 ;?add and prefix added at ToolTip_GetAssociatedIcon().
 /*
@@ -404,7 +404,7 @@ ToolTip(ID="", text="", title="",options=""){
    Return
    TTM_SETTITLEA:
    TTM_SETTITLEW:
-      title := (StrLen(title) < 96) ? title : ("�" . SubStr(title, -97))
+      title := (StrLen(title) < 96) ? title : ("…" . SubStr(title, -97))
       DllCall("SendMessage", "Uint", TT_HWND, "Uint", %A_ThisLabel%, "Uint", I, "Uint", &Title)
    Return
    TTM_SETWINDOWTHEME:

@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: WinMovePos
     Moves window to area on the screen
 

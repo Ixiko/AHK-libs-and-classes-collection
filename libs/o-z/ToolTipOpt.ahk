@@ -1,4 +1,4 @@
-; ToolTipOpt v1.004
+﻿; ToolTipOpt v1.004
 ; Changes:
 ;  v1.001 - Pass "Default" to restore a setting to default
 ;  v1.002 - ANSI compatibility

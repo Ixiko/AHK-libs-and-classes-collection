@@ -1,4 +1,4 @@
-; These arent mine
+﻿; These arent mine
 
 MemoryOpenFromPID(PID, Privilege=0x1F0FFF)
 {

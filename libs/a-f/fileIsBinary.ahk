@@ -1,4 +1,4 @@
-; Returns True if file content contains binary zeros.
+﻿; Returns True if file content contains binary zeros.
 ; Textfiles never contain null.
 ; http://www.autohotkey.com/forum/viewtopic.php?p=320069#320069
 fileIsBinary(_filePath)

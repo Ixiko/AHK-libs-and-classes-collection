@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CHotkeyControl
 A Hotkey control.
 

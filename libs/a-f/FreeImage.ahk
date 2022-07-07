@@ -1,4 +1,4 @@
-/*
+﻿/*
 ; ??: 2012-3-29
 ; Author: linpinger
 ; URL : http://www.autohotkey.net/~linpinger/index.html

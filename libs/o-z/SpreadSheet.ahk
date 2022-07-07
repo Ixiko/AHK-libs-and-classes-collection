@@ -1,4 +1,4 @@
-;For control version : 0.0.1.4
+﻿;For control version : 0.0.1.4
 ;
 ;HexView Structure
 ;[ITEM:|flag D|col D|row D|expx B|expy B|state B|dummy B|fmt.bckcol D|fmt.txtcol D|fmt.txtal B|fmt.imgal B|fmt.fnt B|fmt.tpe B|wt D|ht D|lpdta D

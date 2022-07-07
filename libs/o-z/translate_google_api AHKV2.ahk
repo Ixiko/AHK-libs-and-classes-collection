@@ -1,4 +1,4 @@
-translate_google(str,tl:="",sl:="",proxy:=""){
+ï»¿translate_google(str,tl:="",sl:="",proxy:=""){
 	ComObjError(false)
 	http	:= ComObjCreate("WinHttp.WinHttpRequest.5.1")
 	proxy?http.SetProxy(2,proxy):"",tl?"":tl:="en"
@@ -14,7 +14,7 @@ translate_google(str,tl:="",sl:="",proxy:=""){
 	}
 	Return text
 }
-;{hier öffnen für die Unterfunktionen der translate_google Funktion - hoffentlich deutlich schneller
+;{hier Ã¶ffnen fÃ¼r die Unterfunktionen der translate_google Funktion - hoffentlich deutlich schneller
 
 so(s,n:="") {
 	static JSON,JSONS,d,y:="`"",j:="`" `t",m:={"\b":Chr(08),"\\":"\","\t":"`t","\n":"`n","\f":Chr(12),"\r":"`r"},gu:="a??"

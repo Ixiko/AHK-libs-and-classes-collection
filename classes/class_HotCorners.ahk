@@ -1,4 +1,4 @@
-/**                             ;SAMPLE
+﻿/**                             ;SAMPLE
 #include reloadAsAdmin.ahk
 reloadAsAdmin()
 global A_ScriptPID := ProcessExist()

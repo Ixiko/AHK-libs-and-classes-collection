@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: THUMBBUTTONMASK
 an enumeration class containing flags to specify which members of a THUMBBUTTON structure contain valid data.
 

@@ -1,4 +1,4 @@
-SuspendAfterDelay(fnSuspendType,fnDelayInSeconds := 0)
+﻿SuspendAfterDelay(fnSuspendType,fnDelayInSeconds := 0)
 {
 	; suspend the computer after the specified delay
 	; MsgBox fnSuspendType: %fnSuspendType%`nfnDelayInSeconds: %fnDelayInSeconds%

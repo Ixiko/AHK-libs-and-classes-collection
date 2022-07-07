@@ -1,4 +1,4 @@
-#include <strex>
+﻿#include <strex>
 class arr{
 	contained(sub, sup){
 		c := 0

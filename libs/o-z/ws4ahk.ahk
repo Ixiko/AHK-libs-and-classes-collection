@@ -1,4 +1,4 @@
-/****h* /ws4ahk
+﻿/****h* /ws4ahk
 * About
 *	Windows Scripting for Autohotkey (stdlib) v0.21 beta
 *	

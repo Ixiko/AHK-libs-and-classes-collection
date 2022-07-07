@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: KDC
 an enumeration class containing the predefined system jump list categories.
 

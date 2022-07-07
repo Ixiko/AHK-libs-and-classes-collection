@@ -1,4 +1,4 @@
-/*
+﻿/*
 Function: Args_Process
 processes the command line arguments
 

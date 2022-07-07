@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Logger class (singleton) - Tailored to FeatShare.ahk
  *
  * FeatShare v0.2 - Text integration tool

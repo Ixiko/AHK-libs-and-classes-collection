@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 Pebwa.ahk
 
 Routines to encode and decode binary data to and from Ascii/Ansi data.
@@ -33,12 +33,12 @@ Copyright (c) 2006-2007 Philippe Lhoste / PhiLhoSoft
 // in other encoding, eg. Turkish or Russian, etc. Not to mention other platforms...
 //
 // The encoded data starts with a signature (magic number) allowing automatic
-// identification of the format: it starts with 159 (ü) 156 (ú) <a reserved char>,
+// identification of the format: it starts with 159 (Ã¼) 156 (Ãº) <a reserved char>,
 // where the reserved char will be used in the future to indicate which level /
 // version of encoding is used. Currently 1.
 //
 // To ease the decoding, the signature is followed by the size of the unencoded
-// data, encoded as described below, ending with char 151 (ó).
+// data, encoded as described below, ending with char 151 (Ã³).
 //
 // A quantity (number of chars) is encoded using the 33-126 and 161-255 ranges:
 // 0-93 is encoded by a char of code 33-126 (ie. plus 33) and
@@ -56,16 +56,16 @@ Copyright (c) 2006-2007 Philippe Lhoste / PhiLhoSoft
 // is still readable.
 //
 // Single 32 (space) and 160 (non breaking space) chars are encoded respectively
-// with 145 (ë) and 146 (í).
+// with 145 (Ã«) and 146 (Ã­).
 // The zero byte is quite frequent in binary data, I choose to encode it with a
-// single char: 149 (ï).
+// single char: 149 (Ã¯).
 //
 // Single chars in the 1-31 and the 127-159 ranges are encoded with the char
-// 134 (Ü) followed by the code of char plus 33 (34-64 and 161-192).
+// 134 (Ãœ) followed by the code of char plus 33 (34-64 and 161-192).
 //
-// Multiple consecutive runs of chars are encoded with the char 137 (â) for the
-// displayable chars and the char 135 (á) for the control chars followed by a
-// quantity (as above), the char 151 (ó) and either the char itself (in the
+// Multiple consecutive runs of chars are encoded with the char 137 (Ã¢) for the
+// displayable chars and the char 135 (Ã¡) for the control chars followed by a
+// quantity (as above), the char 151 (Ã³) and either the char itself (in the
 // displayable range) or its encoding (for 0-32, 127-160).
 // That's run-length encoding (RLE).
 // Obviously, since this takes at least 4 chars, it is interesting only for

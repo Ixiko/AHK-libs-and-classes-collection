@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: WIN32_FIND_DATA
 a structure class that contains information about the file that is found by an API method.
 

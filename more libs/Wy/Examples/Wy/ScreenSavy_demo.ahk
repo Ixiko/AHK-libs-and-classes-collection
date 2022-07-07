@@ -1,4 +1,4 @@
-#include %A_ScriptDir%\..\..\lib\Wy\ScreenSavy.ahk
+﻿#include %A_ScriptDir%\..\..\lib\Wy\ScreenSavy.ahk
 
 ; Just get the screensaver properties
 MsgBox("actived: " ScreenSavy.activated "`nsecured: " ScreenSavy.secured "`ntimeout: " ScreenSavy.timeout " sec`nexe: " ScreenSavy.exe)

@@ -1,4 +1,4 @@
-/*
+﻿/*
     Muestra un diálogo para pedirle al usuario que seleccione un color.
     Parámetros:
         Owner  : El identificador de la ventana propietaria del diálogo. Este valor puede ser cero.

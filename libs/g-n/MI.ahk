@@ -1,4 +1,4 @@
-;
+﻿;
 ;  Menu Icons v2.21
 ;   by Lexikos
 ;

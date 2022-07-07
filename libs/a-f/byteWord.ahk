@@ -1,4 +1,4 @@
-LoWord(byref dword){
+﻿LoWord(byref dword){
 	return, dword & 0xFFFF
 }
 HiWord(ByRef dword){

@@ -1,4 +1,4 @@
-;############################################################################################################
+﻿;############################################################################################################
 ; Barcode Generator Library v1.02 by Giordanno Sperotto. 
 ; Updated: 27 December 2014.
 ; General Notes for this library (Refer to functions GENERATE_QR_CODE(), GENERATE_CODE_39(), GENERATE_CODE_ITF() and GENERATE_CODE_128B()

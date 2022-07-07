@@ -1,4 +1,4 @@
-; #Include tf.ahk
+﻿; #Include tf.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

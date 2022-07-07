@@ -1,4 +1,4 @@
-; Tuncay: I made small changes only.
+﻿; Tuncay: I made small changes only.
 ; Thanks to tic for most of the demonstration script.
 ; #include regionGetColor.ahk
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.

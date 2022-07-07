@@ -1,4 +1,4 @@
-GetParamInfo(elem, method, index)
+﻿GetParamInfo(elem, method, index)
 {
 	; typeinfo - retrieve expected vt for first param:
 	local info, hr, arr, vt, td_p, vt_p, href, tkind, refInfo := 0, refName := 0, refAttr := 0, dispid := -1, fnindex := -1, fndesc := 0

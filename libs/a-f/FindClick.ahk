@@ -1,4 +1,4 @@
-FindClick(ImageFile="", Options="", ByRef FoundX="", ByRef FoundY="") ; updated February 17, 2017 ... https://autohotkey.com/boards/viewtopic.php?f=6&t=18719
+ï»¿FindClick(ImageFile="", Options="", ByRef FoundX="", ByRef FoundY="") ; updated February 17, 2017 ... https://autohotkey.com/boards/viewtopic.php?f=6&t=18719
 {
 	Static Cache
 	, Center, Silent, Delim, Count, CharX, CharY, CharN, Sleep, Stay, Func, dx, d, m, x, y, o, n, k, r, e, a, w, t, f
@@ -108,7 +108,7 @@ FindClick(ImageFile="", Options="", ByRef FoundX="", ByRef FoundY="") ; updated 
 				--------------------------------------------------------------------------------
 				r               Relative to Window Coords
 				What to give    Window Title criteria, or a window HWND
-				Description     The search area becomes the area of the given window instead of the entire screen area. This is useful when scanning for an element which only appears on a particular window – reducing the search area improves performance. Use of the s option in conjunction with r will apply these offsets to the window coordinates.
+				Description     The search area becomes the area of the given window instead of the entire screen area. This is useful when scanning for an element which only appears on a particular window â€“ reducing the search area improves performance. Use of the s option in conjunction with r will apply these offsets to the window coordinates.
 				--------------------------------------------------------------------------------
 				e               Find Every Image
 				What to give    Positive fraction between 0 and 1
@@ -117,7 +117,7 @@ FindClick(ImageFile="", Options="", ByRef FoundX="", ByRef FoundY="") ; updated 
 				--------------------------------------------------------------------------------
 				a               Search Area Modifications
 				What to give    x[,y,w,h] OR  mn
-				Description     Region within which to search for the image. Indicate either of the following: 1) A comma-delimited list in the format x,y,w,h. List items may be blank or absent to leave that value unchanged. Coordinates are relative to the window if the a option is true. For w and h, use +/- to indicate a change to the normal endpoint (depending on a, either the edge of the screen or active window). For instance, s,,-300 will search the entire screen (or window if a is specified) except for the last 300 pixels of the right side – the width of the search area has been reduced by 300. 2) The letter m and then a number to search a square region centered at the cursor position and with a width and height twice that number.
+				Description     Region within which to search for the image. Indicate either of the following: 1) A comma-delimited list in the format x,y,w,h. List items may be blank or absent to leave that value unchanged. Coordinates are relative to the window if the a option is true. For w and h, use +/- to indicate a change to the normal endpoint (depending on a, either the edge of the screen or active window). For instance, s,,-300 will search the entire screen (or window if a is specified) except for the last 300 pixels of the right side â€“ the width of the search area has been reduced by 300. 2) The letter m and then a number to search a square region centered at the cursor position and with a width and height twice that number.
 				--------------------------------------------------------------------------------
 				w               Wait until image is found
 				What to give    Number of milliseconds [, Number of milliseconds]
@@ -125,7 +125,7 @@ FindClick(ImageFile="", Options="", ByRef FoundX="", ByRef FoundY="") ; updated 
 				--------------------------------------------------------------------------------
 				t               Image Tracking
 				What to give    A percent OR a number of pixels
-				Description     This option is used to improve performance if an image will be found nearby where its last location. By analogy it's like tracking the course of a thrown ball. The script will first search nearby the last found position and if it is not found there then the rest of the area will be searched. Indicate a percentage to search within that percentage of the search area in each direction – for instance, the string 20`% will first search a box that begins 20`% of the distance between the starting x position and the last found x position, and likewise for all four directions. On the other hand, indicating a number will simply search a box that many pixels from the last found area before searching the rest of the s area. Indicate 0 to search EXACTLY the last found location first. If t is negative (including -0) then it will ONLY search in the region requested, and will not go on to search the rest of the screen if the image is not found there.
+				Description     This option is used to improve performance if an image will be found nearby where its last location. By analogy it's like tracking the course of a thrown ball. The script will first search nearby the last found position and if it is not found there then the rest of the area will be searched. Indicate a percentage to search within that percentage of the search area in each direction â€“ for instance, the string 20`% will first search a box that begins 20`% of the distance between the starting x position and the last found x position, and likewise for all four directions. On the other hand, indicating a number will simply search a box that many pixels from the last found area before searching the rest of the s area. Indicate 0 to search EXACTLY the last found location first. If t is negative (including -0) then it will ONLY search in the region requested, and will not go on to search the rest of the screen if the image is not found there.
 				--------------------------------------------------------------------------------
 				Silent          No Dialogs
 				What to give	True or False
@@ -141,7 +141,7 @@ FindClick(ImageFile="", Options="", ByRef FoundX="", ByRef FoundY="") ; updated 
 				--------------------------------------------------------------------------------
 				Center          Start at center of image
 				What to give    True or False (1 or 0)
-				Description     If Center is true then clicks will occur at the center of the image, i.e. its found position plus half its width and half its height. The x and y options treat this as 0, 0 – for instance, by default an x of 2 will click 2 pixels to the right of the image center. Indicate false to instead start at the top left corner of the image.
+				Description     If Center is true then clicks will occur at the center of the image, i.e. its found position plus half its width and half its height. The x and y options treat this as 0, 0 â€“ for instance, by default an x of 2 will click 2 pixels to the right of the image center. Indicate false to instead start at the top left corner of the image.
 				--------------------------------------------------------------------------------
 				Func            Function Callout
 				What to give    The name of a function in the script
@@ -149,7 +149,7 @@ FindClick(ImageFile="", Options="", ByRef FoundX="", ByRef FoundY="") ; updated 
 				--------------------------------------------------------------------------------
 				d               Direction Of Search
 				What to give    Left|Right|Bottom
-				Description     This setting attempts to emulate the mode of pixelsearch where you can search from right to left or top to bottom – for instance, specifying Bottom will find the image closest to the bottom of the search area. However, to accomplish this the script needs to first find every image and then choose the coordinate pair that is furthest in the requested direction, making it a time-consuming process.
+				Description     This setting attempts to emulate the mode of pixelsearch where you can search from right to left or top to bottom â€“ for instance, specifying Bottom will find the image closest to the bottom of the search area. However, to accomplish this the script needs to first find every image and then choose the coordinate pair that is furthest in the requested direction, making it a time-consuming process.
 				)
 				;||||||||||||||||||||||||||||||||||||||||||| End Settings |||||||||||||||||||||||||||||||||||||||||||
 				OptionInfo := RegExReplace(OptionInfo, "(?:`n|^)\K\s+"), OptionInfo := "`r" RegExReplace(OptionInfo, "\s*-{5,}\s*", "`r"), OptionInfo := RegExReplace(OptionInfo, "[ \t]{3,}|\t+", "`t")
@@ -830,7 +830,7 @@ FindClick(ImageFile="", Options="", ByRef FoundX="", ByRef FoundY="") ; updated 
 		StringReplace, Options, Options, `r, [CR], All
 		StringReplace, Options, Options, `n, [NL], All
 		StringReplace, Options, Options, %A_Space%, [_], All
-		StringReplace, Options, Options, %A_Tab%, [ » ], All
+		StringReplace, Options, Options, %A_Tab%, [ Â» ], All
 		Invisible = 0,1,2,3,4,5,6,7,8,11,12,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,127
 		Loop, Parse, Invisible, `,
 			StringReplace, Options, Options, % Chr(A_LoopField), [Chr%A_LoopField%], All
@@ -1180,7 +1180,7 @@ FindClick(ImageFile="", Options="", ByRef FoundX="", ByRef FoundY="") ; updated 
 				Gui, %GuiA%:-OwnDialogs
 			} Else If (TempGuiCommand = A_ThisFunc "MenuHelp") {
 				If (A_ThisMenuItem = MenuHelpWhitespaceView)
-					MsgBox, 262144, Whitespace Viewer Legend, If the "Show Whitespace" option is checked in the Settings menu, the following substitutions will be made for all non-visible characters:`n`n[EMPTY STRING]`ta blank/empty string`n[0 : FALSE]`t`t0 (`%false`%)`n[1 : TRUE]`t`t1 (`%true`%)`n[CR]`t`tcarriage return (``r)`n[NL]`t`tnewline (``n)`n[_]`t`tspace (`%A_Space`%)`n[ » ]`t`ttab (`%A_Tab`%)`n[Chr1], [Chr2], etc`tASCII character #1, #2, etc (these are non-visible characters)`n`nThese substitutions are not made when copying the contents of variables using the Clipboard menu.
+					MsgBox, 262144, Whitespace Viewer Legend, If the "Show Whitespace" option is checked in the Settings menu, the following substitutions will be made for all non-visible characters:`n`n[EMPTY STRING]`ta blank/empty string`n[0 : FALSE]`t`t0 (`%false`%)`n[1 : TRUE]`t`t1 (`%true`%)`n[CR]`t`tcarriage return (``r)`n[NL]`t`tnewline (``n)`n[_]`t`tspace (`%A_Space`%)`n[ Â» ]`t`ttab (`%A_Tab`%)`n[Chr1], [Chr2], etc`tASCII character #1, #2, etc (these are non-visible characters)`n`nThese substitutions are not made when copying the contents of variables using the Clipboard menu.
 				Else If (A_ThisMenuItem = MenuHelpAbout)
 					MsgBox, 262144, About %A_ThisFunc%, FindClick() - ImageSearch utility. Created by berban.`n`nMade with AutoHotkey. Compatible with all versions.`n`nLast updated %LastUpdate%.
 				Else If (A_ThisMenuItem = MenuHelpDocs)

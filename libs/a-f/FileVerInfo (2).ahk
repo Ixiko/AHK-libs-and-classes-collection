@@ -1,4 +1,4 @@
-
+﻿
 ; ----------------------------------------------------------------------------------------------------------------------
 ; Function .....: FileVerInfo
 ; Description ..: Return Version Information for the selected file

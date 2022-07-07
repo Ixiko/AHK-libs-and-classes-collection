@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 Markdown2HTML() + StrStartsWith() functions 
 from GenDocs v3.0-alpha004 - Author: fincs

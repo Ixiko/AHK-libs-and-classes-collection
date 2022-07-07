@@ -1,4 +1,4 @@
-;MS_SAPI by icuurd12b42
+﻿;MS_SAPI by icuurd12b42
 ;
 ; Wrapper create and enum Definitions 
 ; I got most of what I need. if you want more simply grab it off MS's site

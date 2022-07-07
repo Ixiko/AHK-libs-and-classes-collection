@@ -1,4 +1,4 @@
-
+﻿
 ;	This will return the x,y cordinates for the top left and bottom right
 ;	corners of the desktop work area (if 2 monitors, the entire area)
 

@@ -1,4 +1,4 @@
-;namespace MfUcd
+﻿;namespace MfUcd
 
 /*
 	Represents a result set of an SQLite Query

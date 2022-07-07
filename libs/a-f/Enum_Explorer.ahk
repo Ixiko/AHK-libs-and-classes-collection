@@ -1,4 +1,4 @@
-; v1.0.0
+﻿; v1.0.0
 ; http://www.autohotkey.com/board/topic/105112-enum-explorer-receive-all-explorer-in-z-order/
 Enum_Explorer(hWnd=0, lParam=0) {
 	If hWnd

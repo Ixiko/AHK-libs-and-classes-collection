@@ -1,4 +1,4 @@
-;#Include <_Struct>
+﻿;#Include <_Struct>
 Class _BinRun {
   static IMAGE_DOS_HEADER :="
   (

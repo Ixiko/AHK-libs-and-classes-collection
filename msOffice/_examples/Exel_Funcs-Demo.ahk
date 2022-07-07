@@ -1,4 +1,4 @@
-SetworkingDir, %A_ScriptDir%
+﻿SetworkingDir, %A_ScriptDir%
 #Include XLFuncs.ahk
 #Include Lv_InCellEdit.ahk
 setbatchlines, -1

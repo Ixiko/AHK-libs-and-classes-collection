@@ -1,4 +1,4 @@
-#SingleInstance force
+﻿#SingleInstance force
 #NoEnv
 #KeyHistory 0
 #Include ..\Thumbnail.ahk

@@ -1,4 +1,4 @@
-; httpQuery-0-3-5.ahk
+﻿; httpQuery-0-3-5.ahk
 ; httpQuery GET and POST requests by DerRaphael
 ; http://www.autohotkey.com/forum/topic33506.html
 httpQuery(byref Result, lpszUrl, POSTDATA="", HEADERS="")

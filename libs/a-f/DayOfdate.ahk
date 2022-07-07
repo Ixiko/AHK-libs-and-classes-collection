@@ -1,4 +1,4 @@
-/*
+﻿/*
 DayofDate() by Avi Aryan
 	Gives the day (Sunday, Mon..) of a requested date
 

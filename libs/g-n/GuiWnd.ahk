@@ -1,4 +1,4 @@
-class GuiWnd
+﻿class GuiWnd
 {
 	static Windows := {}
 	

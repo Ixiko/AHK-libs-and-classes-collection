@@ -1,4 +1,4 @@
-class PFilename extends Flimsydata.Provider {
+﻿class PFilename extends Flimsydata.Provider {
 
 	; Assoziationen zu 'Dokument'
 	static data := [[ "Adelsbrief"

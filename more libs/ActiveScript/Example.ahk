@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #Include ActiveScript.ahk
 /* Preferred usage:
       ; Put ActiveScript.ahk in a Lib folder, then:

@@ -1,4 +1,4 @@
-;PopUpMenuFix.ahk
+﻿;PopUpMenuFix.ahk
 ;include this file and use the static class included,  
 ;Fixes the Default Menu Item not working hitting enter on a menu in using Menu,MyMenu,Show
 ;  Where the Default Menu should be triggered

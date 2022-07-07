@@ -1,4 +1,4 @@
-; ==================================================================================================================================
+﻿; ==================================================================================================================================
 ; Hides the focus border for the given GUI control or GUI and all of its children.
 ; Call the function passing only the HWND of the control / GUI in wParam as only parameter.
 ; WM_UPDATEUISTATE  -> msdn.microsoft.com/en-us/library/ms646361(v=vs.85).aspx

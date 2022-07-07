@@ -1,4 +1,4 @@
-; WBImg v1.00 (2015-11-28)
+﻿; WBImg v1.00 (2015-11-28)
 
 /*
 	Description: Get WebBrowser image without redownloading.

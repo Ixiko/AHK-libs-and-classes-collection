@@ -1,4 +1,4 @@
-;Converts .REG files into VBScript code
+﻿;Converts .REG files into VBScript code
 
 #NoEnv
 SetBatchLines, -1

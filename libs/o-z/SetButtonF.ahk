@@ -1,4 +1,4 @@
-/*#####################################
+﻿/*#####################################
 FUNCTION: SetButtonF
 DESCRIPTION: Set a button control to call a function instead of a label subroutine
 PARAMETER(s):

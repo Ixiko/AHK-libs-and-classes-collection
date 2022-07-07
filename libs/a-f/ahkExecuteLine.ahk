@@ -1,4 +1,4 @@
-ahkExecuteline(pLine:=0,Mode:=0,Wait:=1) {
+﻿ahkExecuteline(pLine:=0,Mode:=0,Wait:=1) {
 
 	static ahkExecuteLine
 

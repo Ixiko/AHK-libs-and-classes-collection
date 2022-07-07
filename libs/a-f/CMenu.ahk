@@ -1,4 +1,4 @@
-/*
+﻿/*
  Function:		CMenu
 				Sets context menu for the control.
 

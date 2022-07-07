@@ -1,4 +1,4 @@
-class WindowFader {
+﻿class WindowFader {
     
     __New(hwnd) {
         this.speed := 6.0

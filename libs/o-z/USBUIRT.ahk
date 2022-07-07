@@ -1,4 +1,4 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;             USB-UIRT Functions Library             ;;;;;;;;;;;;;;;;;;;;;;;;
+﻿;;;;;;;;;;;;;;;;;;;;;;;;;;;             USB-UIRT Functions Library             ;;;;;;;;;;;;;;;;;;;;;;;;
 ; Version 1.1 contains many bug fixes.  Much help was given by wtg, Thank You.	                      ;
 ;                                                                                                     ;
 ; Completed by Specter333 (I'm only half evil)                                                        ;  

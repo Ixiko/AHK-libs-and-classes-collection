@@ -1,4 +1,4 @@
-; AHK v2
+﻿; AHK v2
 #INCLUDE _GuiCtlExt.ahk
 #Include _JXON.ahk
 

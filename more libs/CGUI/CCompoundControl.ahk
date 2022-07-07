@@ -1,4 +1,4 @@
-;This is the base class for compound controls which consist of multiple controls. Examples include a path control with an edit field and a browse button or a synchronized list
+﻿;This is the base class for compound controls which consist of multiple controls. Examples include a path control with an edit field and a browse button or a synchronized list
 Class CCompoundControl
 {
 	Container := {}

@@ -1,4 +1,4 @@
-OnMessage(0x111, "WM_COMMAND")
+﻿OnMessage(0x111, "WM_COMMAND")
 
 tbm := TbMenu_Create(0x80800044|0x1000)
 ;TbMenu_SetImageList(tbm, IL_Create(2,5,1))

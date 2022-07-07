@@ -1,4 +1,4 @@
-/*
+ï»¿/*
   Title:    Rebar
  			Rebar control act as container for child windows. 
  			An application assigns child windows, which are often other controls, to a rebar control band. 
@@ -490,12 +490,12 @@ Rebar_SetLayout(hRebar, Layout) {
 			The height of a horizontal rebar or the width of a vertical rebar may change, depending on the new layout.
 
  */
-Rebar_SizeToRect(hRebar, ByRef RECT="~`a "){
+Rebar_SizeToRect(hRebar, ByRef RECT="~`aÂ "){
 	static RB_SIZETORECT = 0x417
 	
 	hParent := DllCall("GetParent", "uint", hRebar)
 	
-	if (RECT != "~`a ")
+	if (RECT != "~`aÂ ")
 		VarSetCapacity(RECT, 16),  DllCall("GetClientRect", "uint", hParent, "uint", &RECT)
 
 	SendMessage, RB_SIZETORECT, 0, &RECT, , ahk_id %hRebar%

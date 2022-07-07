@@ -1,4 +1,4 @@
-load_gui() {
+﻿load_gui() {
     g := Gui.New("+OwnDialogs +Resize +MinSize1076x488","C++ Constants Scanner")
     g.OnEvent("close","close_gui"), g.OnEvent("size","size_gui")
     g.SetFont("s10","Consolas")

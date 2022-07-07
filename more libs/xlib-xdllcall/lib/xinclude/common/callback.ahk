@@ -1,4 +1,4 @@
-class callback {
+﻿class callback {
 	; Creates a 'compiled' callback function which can be passed to a threadHandler or pool object.
 	; See jit.ahk for details.
 	__new(fn, decl*){

@@ -1,4 +1,4 @@
-TVX_Walk(WalkHandlerFunc, FirstItem = 0, OnlySubItemsOfFirstItem := False){
+﻿TVX_Walk(WalkHandlerFunc, FirstItem = 0, OnlySubItemsOfFirstItem := False){
   ;check if WalkHandlerFunc exists and has one parameter
   If (IsFunc(WalkHandlerFunc) <> 2){
     If IsFunc(WalkHandlerFunc)

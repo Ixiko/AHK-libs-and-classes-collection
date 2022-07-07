@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: INTERFACEDATA
 a structure class that describes an object's properties and methods.
 

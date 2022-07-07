@@ -1,4 +1,4 @@
-;
+﻿;
 ; cJson.ahk 0.4.0
 ; Copyright (c) 2021 Philip Taylor (known also as GeekDude, G33kDude)
 ; https://github.com/G33kDude/cJson.ahk

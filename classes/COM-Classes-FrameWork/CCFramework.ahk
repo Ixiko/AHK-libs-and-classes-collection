@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: CCFramework
 the main class for the framework that has a lot of methods to ease the handling of other classes.
 

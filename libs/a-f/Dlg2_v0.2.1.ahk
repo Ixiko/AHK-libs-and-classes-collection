@@ -1,4 +1,4 @@
-/*  Title: Dlg2 v0.2.1 (Preview)
+﻿/*  Title: Dlg2 v0.2.1 (Preview)
 
 
 Group: Overview

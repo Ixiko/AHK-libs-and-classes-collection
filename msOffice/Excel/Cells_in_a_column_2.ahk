@@ -1,4 +1,4 @@
-; This script gets a range of cells in column A and B. (Like selecting cell A2 and then pressing Ctrl+Shift+Down and
+﻿; This script gets a range of cells in column A and B. (Like selecting cell A2 and then pressing Ctrl+Shift+Down and
 ; then Shift+Right.) Then each time the Ctrl+F12 hotkey is pressed it sends the next value.
 
 ; Usage:

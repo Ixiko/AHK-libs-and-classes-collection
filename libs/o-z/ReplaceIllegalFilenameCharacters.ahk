@@ -1,4 +1,4 @@
-ReplaceIllegalFilenameCharacters(fnText)
+﻿ReplaceIllegalFilenameCharacters(fnText)
 {
 	; replace disallowed windows filename characters in a string with an underscore
 	; MsgBox fnText: %fnText%

@@ -1,4 +1,4 @@
-; Physikengine PHY
+﻿; Physikengine PHY
 ; coded by IsNull
 ; date 2009/2010
 /***************************************************

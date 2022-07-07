@@ -1,4 +1,4 @@
-googl(url) {
+﻿googl(url) {
 	;// Forum topic: http://goo.gl/3kR4PO
 	static q := Chr(34) ;// double quote
 	static api_url := "

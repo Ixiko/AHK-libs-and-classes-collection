@@ -1,4 +1,4 @@
-; #Include CColor.ahk
+﻿; #Include CColor.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

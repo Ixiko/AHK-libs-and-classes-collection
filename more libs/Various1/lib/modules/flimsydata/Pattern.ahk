@@ -1,4 +1,4 @@
-class Pattern extends Flimsydata.Formatter {
+﻿class Pattern extends Flimsydata.Formatter {
 
 	static DIGITS := Flimsydata.Pattern.defineDigits()
 	static LC_VOWELS := Flimsydata.Pattern.defineVowelsLower()

@@ -1,4 +1,4 @@
-; These are the two files that will be used.
+﻿; These are the two files that will be used.
 Book1Path := A_ScriptDir "\Workbook1.xlsx"
 Book2Path := A_ScriptDir "\Workbook2.xlsx"  ; This workbook receives data when the Ctrl+1 hotkey is pressed. 
 

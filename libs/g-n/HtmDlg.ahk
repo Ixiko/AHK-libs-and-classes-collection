@@ -1,4 +1,4 @@
-;                                                      _     _            _____   _
+﻿;                                                      _     _            _____   _
 ;  HtmDlg() - HTML DialogBox v0.51                    | |   | |_         (____ \ | | v0.51
 ;                                                     | |__ | | |_  ____  _   \ \| | ____
 ;  Suresh Kumar A N (arian.suresh@gmail.com)          |  __)| |  _)|    \| |   | | |/ _  |

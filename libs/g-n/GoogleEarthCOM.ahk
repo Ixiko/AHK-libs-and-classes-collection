@@ -1,4 +1,4 @@
-; _libGoogleEarth.ahk  version 1.23
+﻿; _libGoogleEarth.ahk  version 1.23
 ; by David Tryse   davidtryse@gmail.com
 ; http://david.tryse.net/googleearth/
 ; http://code.google.com/p/googleearth-autohotkey/

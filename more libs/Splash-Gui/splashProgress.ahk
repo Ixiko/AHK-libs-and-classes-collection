@@ -1,4 +1,4 @@
-splashProgress(text, timeout=0){ ; Pass text to display splash popup window. Timeout defaults to off.
+﻿splashProgress(text, timeout=0){ ; Pass text to display splash popup window. Timeout defaults to off.
 	global
 	IniRead()
 	if timeout <> 0

@@ -1,4 +1,4 @@
-class HyphenationHelper {
+﻿class HyphenationHelper {
 
 	static CONSONANTS  := "bcdfghjklmnpqrstvwxz"
 	static VOCALS  := "aeiouyäöü"

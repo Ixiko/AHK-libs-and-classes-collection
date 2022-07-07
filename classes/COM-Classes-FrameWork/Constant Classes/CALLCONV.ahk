@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: CALLCONV
 an enumeration class that identifies the calling convention used by a member function described in a METHODDATA structure.
 

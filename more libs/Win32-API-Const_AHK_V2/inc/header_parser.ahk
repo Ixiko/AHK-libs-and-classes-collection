@@ -1,4 +1,4 @@
-includes_report() {
+﻿includes_report() {
     root := Settings["ApiPath"]
     SplitPath root, file, dir
     IncludesList := Map()

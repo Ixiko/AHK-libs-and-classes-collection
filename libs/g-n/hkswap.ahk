@@ -1,4 +1,4 @@
-/*
+﻿/*
 Function        : hkSwap(key,[type])
 Author          : RaptorX
 Version         : 1.0

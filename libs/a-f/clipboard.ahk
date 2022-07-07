@@ -1,4 +1,4 @@
-; Clipboard-related functions.
+﻿; Clipboard-related functions.
 
 copyWithHotkey(hotkeyKeys) {
 	if(hotkeyKeys = "")

@@ -1,4 +1,4 @@
-; https://github.com/cocobelgica/AutoHotkey-Util/blob/master/eol.ahk
+﻿; https://github.com/cocobelgica/AutoHotkey-Util/blob/master/eol.ahk
 
 ; DOS:=CRLF, Unix:=LF, Mac:=CR
 

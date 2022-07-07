@@ -1,4 +1,4 @@
-/*
+﻿/*
 ** TaskbarMove.ahk - Move the taskbar (startbar) around the screen
 **
 **   Updated: Sat, Nov 19, 2011 --- 11/19/11, 4:19:19pm EST

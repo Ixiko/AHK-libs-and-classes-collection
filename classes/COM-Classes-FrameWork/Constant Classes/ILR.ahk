@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ILR
 an enumeration class containing flags specifying how a mask is applied to an image.
 

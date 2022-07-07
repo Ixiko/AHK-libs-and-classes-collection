@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ILCF
 an enumeration class containing image list copy flags.
 

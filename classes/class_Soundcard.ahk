@@ -1,4 +1,4 @@
-;#warn
+﻿;#warn
 ; Utility for changing soundcards and toggling Realtek loudness equalisation quickly.
 class Soundcard
 {

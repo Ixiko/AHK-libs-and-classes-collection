@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CSliderControl
 A Slider control.
 

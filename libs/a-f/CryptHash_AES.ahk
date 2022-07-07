@@ -1,4 +1,4 @@
-Crypt_Hash(pData, nSize, SID = "CRC32", nInitial = 0)
+﻿Crypt_Hash(pData, nSize, SID = "CRC32", nInitial = 0)
 {
 	CALG_SHA := CALG_SHA1 := 1 + CALG_MD5 := 0x8003
 	If Not	CALG_%SID%

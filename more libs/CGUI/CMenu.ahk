@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CMenu
 CMenu represents a menu which can contain other menus and <CMenu.CMenuItem>
 */

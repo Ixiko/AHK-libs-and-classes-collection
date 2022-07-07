@@ -1,4 +1,4 @@
-GetWanIp(pDnsIp) {
+﻿GetWanIp(pDnsIp) {
     
     Local
     

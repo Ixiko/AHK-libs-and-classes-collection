@@ -1,4 +1,4 @@
-; Hotkey_IfControlActive(ControlDesc, KeyName [, VariantType, VariantTitle, VariantText])
+﻿; Hotkey_IfControlActive(ControlDesc, KeyName [, VariantType, VariantTitle, VariantText])
 
 ; hkEditInit is called by my main hotkey script.
 hkEditInit:

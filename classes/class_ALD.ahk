@@ -1,4 +1,4 @@
-class ALD
+﻿class ALD
 {
 	static NamespaceURI := "ald://package/schema/2012"
 

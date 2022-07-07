@@ -1,4 +1,4 @@
-class ITL_WrapperBaseClass
+﻿class ITL_WrapperBaseClass
 {
 	__New(typeInfo, lib)
 	{

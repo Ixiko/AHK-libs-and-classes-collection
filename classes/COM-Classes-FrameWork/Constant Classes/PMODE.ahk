@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PMODE
 an enumeration class containing operation modes, e.g. for IOperationsProgressDialog::SetMode().
 

@@ -1,4 +1,4 @@
-class LocalWorker
+﻿class LocalWorker
 {
     static WorkerIndex := 0
 

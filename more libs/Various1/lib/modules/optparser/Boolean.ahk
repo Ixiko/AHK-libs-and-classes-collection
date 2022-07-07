@@ -1,4 +1,4 @@
-class Boolean extends OptParser.Option {
+﻿class Boolean extends OptParser.Option {
 	value := true
 
 	__new(option1Dash, option2Dashes, optionClass=0, optionProperty=""

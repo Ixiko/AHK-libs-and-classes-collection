@@ -1,4 +1,4 @@
-; This script will find all values in a range.
+﻿; This script will find all values in a range.
 ; The script looks in a workbook for the text "abc123".
 ; The range searched is the used range on sheet 1, columns A-Z.
 

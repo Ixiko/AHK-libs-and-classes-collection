@@ -1,4 +1,4 @@
-cleanClipboard(){
+﻿cleanClipboard(){
   StringReplace, quote, quote, `r, %A_Space%, All 
   StringReplace, quote, quote, `r`r, %A_Space%, All 
   StringReplace, quote, quote, `r`n, %A_Space%, All 

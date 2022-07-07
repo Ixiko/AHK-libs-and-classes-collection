@@ -1,4 +1,4 @@
-;https://autohotkey.com/boards/viewtopic.php?f=6&t=1108&hilit=password+encryption
+﻿;https://autohotkey.com/boards/viewtopic.php?f=6&t=1108&hilit=password+encryption
 
 encryptStr(str="",pass="") {
         If !(enclen:=(strput(str,"utf-16")*2))

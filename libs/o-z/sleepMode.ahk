@@ -1,4 +1,4 @@
-/*
+﻿/*
 	This function merges a few of the different high resolution sleep methods available on the forum and adds an additional hybrid mode.
 	 
 	Mode "P" is the precise mode and will constantly check the performance counter to determine when the sleep time has expired. This is very accurate, but unfortunately results in considerable CPU usage. It's probably best to use this for short sleep periods.

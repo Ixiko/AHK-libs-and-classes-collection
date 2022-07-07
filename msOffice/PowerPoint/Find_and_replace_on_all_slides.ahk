@@ -1,4 +1,4 @@
-; This script replaces the text "abc" with "xyz" on every slide in the active presentation.
+﻿; This script replaces the text "abc" with "xyz" on every slide in the active presentation.
 
 ppApp := ComObjActive("Powerpoint.Application")
 ppFindReplace(ppApp, "abc", "xyz")

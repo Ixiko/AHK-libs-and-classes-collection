@@ -1,4 +1,4 @@
-/*
+﻿/*
 Name	: Mouse Gesture Recognizer v0.9.5 (09/May/2013)
 Author	: R3gX
 Link	: http://www.autohotkey.com/board/topic/66655-mgr-v094/?p=421676

@@ -1,4 +1,4 @@
-; Various DllCall and Sendmessage to control Standard Scrollbars
+﻿; Various DllCall and Sendmessage to control Standard Scrollbars
 ; It will not work on Customized scrollbars (IE/FireFox etc)
 ;
 ; - Parameters

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: IMPLTYPEFLAG
 an enumeration class that specifies implementation type flags.
 

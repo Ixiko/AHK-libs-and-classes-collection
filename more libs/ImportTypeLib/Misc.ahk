@@ -1,4 +1,4 @@
-; various misc. helper functions, later to be sorted out to separate classes / libs / files.
+﻿; various misc. helper functions, later to be sorted out to separate classes / libs / files.
 
 ITL_IsSafeArray(obj)
 {

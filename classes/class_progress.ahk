@@ -1,4 +1,4 @@
-class class_progress {
+﻿class class_progress {
 	static Instances := []
 
 	__New(MainText = "", ProgressBar = "", SubText = "", ProgressBar2 = "", SubText2 = "") {

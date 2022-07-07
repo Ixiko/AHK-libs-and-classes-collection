@@ -1,4 +1,4 @@
-#SingleInstance force
+﻿#SingleInstance force
 #include %A_ScriptDir%\..\class_RADical.ahk
 #include %A_ScriptDir%\..\..\lib-i_to_z\JSON.ahk                        	; http://ahkscript.org/boards/viewtopic.php?t=627
 #include %A_ScriptDir%\..\..\lib-i_to_z\ProfileHandler.ahk		    	; https://github.com/evilC/ProfileHandler

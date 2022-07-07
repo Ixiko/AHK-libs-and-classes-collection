@@ -1,4 +1,4 @@
-;Monday, June 17, 2013
+﻿;Monday, June 17, 2013
 ;reg.ahk
 ;some basic re-usable registry function wrappers
 

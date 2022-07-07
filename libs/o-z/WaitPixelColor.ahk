@@ -1,4 +1,4 @@
-;========================================================================
+﻿;========================================================================
 ; 
 ; Function:     WaitPixelColor
 ; Description:  Waits until pixel is a certain color (w/ optional timeout)

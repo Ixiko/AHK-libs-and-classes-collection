@@ -1,4 +1,4 @@
-; Socket class
+﻿; Socket class
 ;   Big thanks to GeekDude for remaking this.
 ;       Original script by GeekDude: https://github.com/G33kDude/Socket.ahk/blob/master/Socket.ahk
 ;        AHK Forum Post by GeekDude: https://www.autohotkey.com/boards/viewtopic.php?f=6&t=35120

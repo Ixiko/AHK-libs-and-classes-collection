@@ -1,4 +1,4 @@
-; #Include HtmDlg.ahk
+﻿; #Include HtmDlg.ahk
 #NoEnv
 SendMode Input
 #SingleInstance, Force

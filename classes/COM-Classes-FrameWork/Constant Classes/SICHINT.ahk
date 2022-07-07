@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: SICHINT
 an enumeration class used to determine how to compare two Shell items. IShellItem::Compare uses this.
 

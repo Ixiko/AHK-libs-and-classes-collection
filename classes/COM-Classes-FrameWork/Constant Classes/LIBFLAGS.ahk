@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: LIBFLAGS
 an enumeration class that defines flags that apply to type libraries.
 

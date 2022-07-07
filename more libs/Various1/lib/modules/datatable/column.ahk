@@ -1,4 +1,4 @@
-class Column {
+﻿class Column {
 
 	width := 40
 	flags := 0

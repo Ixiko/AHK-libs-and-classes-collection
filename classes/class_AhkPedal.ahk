@@ -1,4 +1,4 @@
-; Facility for scripting foot pedals.
+﻿; Facility for scripting foot pedals.
 
 ; This library was adapted from a script at
 ; http://musingsfromtheunderground.blogspot.com/2011/05/dream-autohotkey-powered-foot-pedal-for.html

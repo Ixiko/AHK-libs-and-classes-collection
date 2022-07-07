@@ -1,4 +1,4 @@
-;=================================================================
+ï»¿;=================================================================
 ;		Library: ObjCSV Library
 ;		AutoHotkey_L (AHK) functions to load from CSV files, sort, display and save collections of records using the
 ;		Object data type.
@@ -974,7 +974,7 @@ Prepare4MultilinesRegex(ByRef strCsvData, strFieldEncapsulator := """", intProgr
 		strProgressText - (Optional) Text to display in the progress bar or in the status bar. For status bar progress, the string "##" is replaced with the percentage of progress. See also intProgressType above. Empty by default.
 
 	Returns:
-		The function returns the replacement character for end-of-lines. Usualy ¡ (inverted exclamation mark, ASCII 161) or the next available safe character: ¢ (ASCII 162), £ (ASCII 163), ¤ (ASCII 164), etc.  The caller of this function *must* save this value in a variable and *must* do the reverse replacement with `n at the appropriate step inside a "Loop, Parse" command.
+		The function returns the replacement character for end-of-lines. Usualy Â¡ (inverted exclamation mark, ASCII 161) or the next available safe character: Â¢ (ASCII 162), Â£ (ASCII 163), Â¤ (ASCII 164), etc.  The caller of this function *must* save this value in a variable and *must* do the reverse replacement with `n at the appropriate step inside a "Loop, Parse" command.
 
 		The ByRef parameter strCsvData returns the data string with all end-of-line characters (`n) replaced with the safe replacement character.
 
@@ -997,7 +997,7 @@ CALL-FOR-HELP!
 			intProgressBatchSize := 8192
 		ProgressStart(intProgressType, intMaxProgress, strProgressText)
 	}
-	intEolReplacementAsciiCode := GetFirstUnusedAsciiCode(strCsvData) ; Usualy ¡ (inverted exclamation mark, ASCII 161)
+	intEolReplacementAsciiCode := GetFirstUnusedAsciiCode(strCsvData) ; Usualy Â¡ (inverted exclamation mark, ASCII 161)
 	if (ErrorLevel) ; No unused character for replacement
 		return
 	try
@@ -1043,7 +1043,7 @@ Prepare4Multilines(ByRef strCsvData, strFieldEncapsulator := """", intProgressTy
 		strProgressText - (Optional) Text to display in the progress bar or in the status bar. For status bar progress, the string "##" is replaced with the percentage of progress. See also intProgressType above. Empty by default.
 
 	Returns:
-		The function returns the replacement character for end-of-lines. Usualy ¡ (inverted exclamation mark, ASCII 161) or the next available safe character: ¢ (ASCII 162), £ (ASCII 163), ¤ (ASCII 164), etc.  The caller of this function *must* save this value in a variable and *must* do the reverse replacement with `n at the appropriate step inside a "Loop, Parse" command.
+		The function returns the replacement character for end-of-lines. Usualy Â¡ (inverted exclamation mark, ASCII 161) or the next available safe character: Â¢ (ASCII 162), Â£ (ASCII 163), Â¤ (ASCII 164), etc.  The caller of this function *must* save this value in a variable and *must* do the reverse replacement with `n at the appropriate step inside a "Loop, Parse" command.
 
 		The ByRef parameter strCsvData returns the data string with all end-of-line characters (`n) replaced with the safe replacement character.
 
@@ -1066,7 +1066,7 @@ CALL-FOR-HELP!
 			intProgressBatchSize := 8192
 		ProgressStart(intProgressType, intMaxProgress, strProgressText)
 	}
-	intEolReplacementAsciiCode := GetFirstUnusedAsciiCode(strCsvData) ; Usualy ¡ (inverted exclamation mark, ASCII 161)
+	intEolReplacementAsciiCode := GetFirstUnusedAsciiCode(strCsvData) ; Usualy Â¡ (inverted exclamation mark, ASCII 161)
 	if (ErrorLevel) ; No unused character for replacement
 		return
 	try
@@ -1103,8 +1103,8 @@ CALL-FOR-HELP!
 GetFirstUnusedAsciiCode(ByRef strData, intAscii := 161) {
 /*
 Summary: Returns the ASCII code of the first character absent from the strData string, starting at ASCII code intAscii.
-By default, ¡ (inverted exclamation mark ASCII 161) or the next available character: ¢ (ASCII 162), £ (ASCII 163),
-¤ (ASCII 164), etc.
+By default, Â¡ (inverted exclamation mark ASCII 161) or the next available character: Â¢ (ASCII 162), Â£ (ASCII 163),
+Â¤ (ASCII 164), etc.
 
 At the end of execution, the function sets ErrorLevel to: 0 No error / 3 No unused character.
 

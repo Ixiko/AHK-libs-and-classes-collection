@@ -1,4 +1,4 @@
-; http://www.autohotkey.com/board/topic/15951-base-10-to-base-36-conversion/#entry103624
+﻿; http://www.autohotkey.com/board/topic/15951-base-10-to-base-36-conversion/#entry103624
 ToBase(n,b) { ; n >= 0, 1 < b <= 36
 	Loop {
 		d := Mod(n,b), n //= b

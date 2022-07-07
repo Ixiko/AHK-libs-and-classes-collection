@@ -1,4 +1,4 @@
-/*
+﻿/*
 Tested On		Autohotkey_L version  1.1.13.00 ANSI
 Author 			Nick McCoy (Ronins)
 Initial Date			March 17, 2014

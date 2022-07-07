@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: UIAutomationBoolCondition
 wraps the *IUIAutomationBoolCondition* interface and represents a condition that can be either TRUE (selects all elements) or FALSE (selects no elements).
 

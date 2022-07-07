@@ -1,4 +1,4 @@
-; This script adds some example data to Excel and then sets some PageSetup properties.
+﻿; This script adds some example data to Excel and then sets some PageSetup properties.
 
 ; Constants
 msoTrue := -1  ; true = -1 in VBA

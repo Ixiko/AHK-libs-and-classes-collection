@@ -1,4 +1,4 @@
-HoursMinutesToDecimal(input, params) {
+﻿HoursMinutesToDecimal(input, params) {
 	Loop, Parse, input, `n
 	{
 		someTime := Trim(A_LoopField, "`r`n")

@@ -1,4 +1,4 @@
-/* Title:	HLink
+﻿/* Title:	HLink
 			HyperLink control.
 */
 

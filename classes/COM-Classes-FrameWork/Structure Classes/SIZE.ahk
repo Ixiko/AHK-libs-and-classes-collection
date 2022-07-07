@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: SIZE
 a structure class that specifies the width and height of a rectangle.
 

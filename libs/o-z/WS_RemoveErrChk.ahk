@@ -1,4 +1,4 @@
-blnIsErrorChecking := False
+﻿blnIsErrorChecking := False
 blnNextLineState := False
 
 FileDelete, ws4ahk--err.ahk

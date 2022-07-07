@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #Warn
 
 Envget,LocalAppData, LOCALAPPDATA

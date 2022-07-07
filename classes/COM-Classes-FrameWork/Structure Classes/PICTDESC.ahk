@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PICTDESC
 a structure class that contains parameters to create a picture object through the OleCreatePictureIndirect function.
 

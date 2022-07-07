@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: iniWrapper_loadAllSections
     Loads all keys from all sections into vars
 

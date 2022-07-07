@@ -1,4 +1,4 @@
-;{{{ LoggingHelper
+﻿;{{{ LoggingHelper
 /*
  *	Class: LoggingHelper
  *		Provide methods which support logging.

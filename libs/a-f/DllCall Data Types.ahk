@@ -1,4 +1,4 @@
-;AHK Data Types
+﻿;AHK Data Types
 PTR:=A_PtrSize
 UPTR:=PTR
 SHORT:=2

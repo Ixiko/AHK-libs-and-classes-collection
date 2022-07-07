@@ -1,4 +1,4 @@
-; http://www.autohotkey.com/forum/viewtopic.php?t=62180
+﻿; http://www.autohotkey.com/forum/viewtopic.php?t=62180
 /*
               +-+-+-+-+-+-+-+-+-+-+-+-+-+ +-+-+-+ +-+-+-+ +-+-+-+-+-+-+-+-+
               |R|e|s|o|u|r|c|e|-|O|n|l|y| |D|L|L| |f|o|r| |D|u|m|m|i|e|s|!|

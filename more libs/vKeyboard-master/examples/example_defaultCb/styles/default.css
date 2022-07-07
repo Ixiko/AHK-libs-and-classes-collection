@@ -1,0 +1,39 @@
+body {
+	background-color: #000000;
+}
+button.key {
+	border-bottom-right-radius: 9px;
+	border-left-color: #333333;
+	border-top-color: #333333;
+	border-right-color: #555555;
+	border-bottom-color: #444444;
+	text-align: center;
+	background-color: #111111;
+	font-family: Segoe UI;
+	color: #EA72C0;
+}
+button.key:focus {
+	background-color: #333333;
+	outline: none;
+}
+button.key:hover {
+	background-color: #222222;
+}
+button.variant {
+	border-bottom-right-radius: 9px;
+	border-left-color: #555555;
+	border-top-color: #555555;
+	border-right-color: #77777;
+	border-bottom-color: #666666;
+	text-align: center;
+	background-color: #333333;
+	font-family: Segoe UI;
+	color: #EA72C0;
+}
+button.variant:focus {
+	background-color: #555555;
+	outline: none;
+}
+button.variant:hover {
+	background-color: #444444;
+}

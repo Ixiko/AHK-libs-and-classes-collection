@@ -1,4 +1,4 @@
-ImageList_Create(cx,cy,flags,cInitial,cGrow){ 
+﻿ImageList_Create(cx,cy,flags,cInitial,cGrow){ 
    return DllCall("comctl32.dll\ImageList_Create", "int", cx, "int", cy, "uint", flags, "int", cInitial, "int", cGrow) 
 } 
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: DISPATCHF
 an enumeration class that contains invoke flags.
 

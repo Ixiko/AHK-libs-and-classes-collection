@@ -1,4 +1,4 @@
-; This script demonstrates handling events of the Outlook Application object. Other types of objects will have different
+﻿; This script demonstrates handling events of the Outlook Application object. Other types of objects will have different
 ; events.
 
 ; Usage:

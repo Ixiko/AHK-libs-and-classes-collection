@@ -1,4 +1,4 @@
-/* Title:	IconEx
+﻿/* Title:	IconEx
  			*Advanced icon dialog*
  :
 			This is advanced version of system dialog <CmnDlg_Icon>.

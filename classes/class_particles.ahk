@@ -1,4 +1,4 @@
-/*
+﻿/*
 Name: Particle System
 Version 2.1 (Tuesday, January 17, 2017)
 Created: Thursday, December 22, 2016

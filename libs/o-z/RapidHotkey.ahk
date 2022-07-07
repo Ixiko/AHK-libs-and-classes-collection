@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 ~+::RapidHotkey("Plus")
 ~h::RapidHotkey("{Raw}Hello World!", 3) ;Press h 4 times rapidly to send Hello World!
 ~o::RapidHotkey("^o", 4, 0.2) ;be careful, if you use this hotkey, above will not work properly
@@ -98,7 +98,7 @@ Morse(timeout = 400) { ;by Laszo -> http://www.autohotkey.com/forum/viewtopic.ph
 	. "+F1+F2+F3+F4+F5+F6+F7+F8+F9+F10+F11+F12+F13+F14+F15+F16+F17+F18+F19"
 	. "+F20+F21+F22+F23+F24+Pause+Break+PrintScreen+a+b"
 	. "+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z+0+1"
-	. "+2+3+4+5+6+7+8+9+Space+´+,+-+."
+	. "+2+3+4+5+6+7+8+9+Space+Â´+,+-+."
 	. "+>+^+RButton+LButton+MButton+Capslock+Scrolllock+Numlock+"
    key := RegExReplace(A_ThisHotKey,"[\*\~\$\#\+\!\^]")
 	If key=
@@ -253,7 +253,7 @@ Morse(timeout = 400) { ;by Laszo -> http://www.autohotkey.com/forum/viewtopic.ph
 	. "+F1+F2+F3+F4+F5+F6+F7+F8+F9+F10+F11+F12+F13+F14+F15+F16+F17+F18+F19"
 	. "+F20+F21+F22+F23+F24+Pause+Break+PrintScreen+a+b"
 	. "+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z+0+1"
-	. "+2+3+4+5+6+7+8+9+Space+´+,+-+."
+	. "+2+3+4+5+6+7+8+9+Space+Â´+,+-+."
 	. "+>+^+RButton+LButton+MButton+Capslock+Scrolllock+Numlock+"
 	key := RegExReplace(A_ThisHotKey,"[\*\~\$\#\+\!\^]")
 	k:=allkeys
@@ -454,7 +454,7 @@ Morse(timeout = 400) { ;by Laszo -> http://www.autohotkey.com/forum/viewtopic.ph
 	. "+F1+F2+F3+F4+F5+F6+F7+F8+F9+F10+F11+F12+F13+F14+F15+F16+F17+F18+F19"
 	. "+F20+F21+F22+F23+F24+Pause+Break+PrintScreen+a+b"
 	. "+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z+0+1"
-	. "+2+3+4+5+6+7+8+9+Space+!+""+`%+``+´+'+(+)+,+-+.+\+/"
+	. "+2+3+4+5+6+7+8+9+Space+!+""+`%+``+Â´+'+(+)+,+-+.+\+/"
 	. "+:+;+<+>+=+?+@+[+]+^+_+{+}+|+RButton+LButton+MButton+"
 	key := RegExReplace(A_ThisHotKey,"[\*\~\$\#\+\!\^]")
 	If key=
@@ -616,7 +616,7 @@ RapidHotkey(keystroke, times="2", delay=0.2, IsLabel=0)
 ;~ 	. "+F1+F2+F3+F4+F5+F6+F7+F8+F9+F10+F11+F12+F13+F14+F15+F16+F17+F18+F19"
 ;~ 	. "+F20+F21+F22+F23+F24+Pause+Break+PrintScreen+LWin+RWin+RControl+RAlt+RShift+a+b"
 ;~ 	. "+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z+0+1"
-;~ 	. "+2+3+4+5+6+7+8+9+Space+!+""+`%+``+´+'+(+)+,+-+.+\+/"
+;~ 	. "+2+3+4+5+6+7+8+9+Space+!+""+`%+``+Â´+'+(+)+,+-+.+\+/"
 ;~ 	. "+:+;+<+>+=+?+@+[+]+^+_+{+}+|"
 ;~    key := RegExReplace(A_ThisHotKey,"[\*\~\$\#\+\!\^]")
 ;~ 	If key=BS
@@ -723,7 +723,7 @@ Morse(timeout = 400) { ;by Laszo -> http://www.autohotkey.com/forum/viewtopic.ph
 	. "+F1+F2+F3+F4+F5+F6+F7+F8+F9+F10+F11+F12+F13+F14+F15+F16+F17+F18+F19"
 	. "+F20+F21+F22+F23+F24+Pause+Break+PrintScreen+a+b"
 	. "+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z+0+1"
-	. "+2+3+4+5+6+7+8+9+Space+!+""+`%+``+´+'+(+)+,+-+.+\+/"
+	. "+2+3+4+5+6+7+8+9+Space+!+""+`%+``+Â´+'+(+)+,+-+.+\+/"
 	. "+:+;+<+>+=+?+@+[+]+^+_+{+}+|+"
 	key := RegExReplace(A_ThisHotKey,"[\*\~\$\#\+\!\^]")
    IfInString, key, %A_Space%
@@ -819,7 +819,7 @@ RapidHotkey(keystroke, times="2", delay=0.2, IsLabel=0)
 	. "+F1+F2+F3+F4+F5+F6+F7+F8+F9+F10+F11+F12+F13+F14+F15+F16+F17+F18+F19"
 	. "+F20+F21+F22+F23+F24+Pause+Break+PrintScreen+LWin+RWin+RControl+RAlt+RShift+a+b"
 	. "+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z+0+1"
-	. "+2+3+4+5+6+7+8+9+Space+!+""+`%+``+´+'+(+)+,+-+.+\+/"
+	. "+2+3+4+5+6+7+8+9+Space+!+""+`%+``+Â´+'+(+)+,+-+.+\+/"
 	. "+:+;+<+>+=+?+@+[+]+^+_+{+}+|"
    key := RegExReplace(A_ThisHotKey,"[\*\~\$\#\+\!\^]")
 	If key=BS
@@ -926,7 +926,7 @@ Morse(timeout = 400) { ;by Laszo -> http://www.autohotkey.com/forum/viewtopic.ph
 	. "+F1+F2+F3+F4+F5+F6+F7+F8+F9+F10+F11+F12+F13+F14+F15+F16+F17+F18+F19"
 	. "+F20+F21+F22+F23+F24+Pause+Break+PrintScreen+LWin+RWin+RControl+RAlt+RShift+a+b"
 	. "+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z+0+1"
-	. "+2+3+4+5+6+7+8+9+Space+!+""+`%+``+´+'+(+)+,+-+.+\+/"
+	. "+2+3+4+5+6+7+8+9+Space+!+""+`%+``+Â´+'+(+)+,+-+.+\+/"
 	. "+:+;+<+>+=+?+@+[+]+^+_+{+}+|"
    key := RegExReplace(A_ThisHotKey,"[\*\~\$\#\+\!\^]")
 	If key=BS

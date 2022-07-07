@@ -1,4 +1,4 @@
-; self references (tree) syntax: 
+﻿; self references (tree) syntax: 
 ;   / is root object
 ;   sub objects referenced by index
 ;   if reference ends with "k" it is the key-object at that index

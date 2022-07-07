@@ -1,4 +1,4 @@
-; This script demonstrates getting a reference to the active workbook if more than one Excel Application is open. 
+﻿; This script demonstrates getting a reference to the active workbook if more than one Excel Application is open. 
 ; The GetActiveObjects function is required. (Paste it into this script or #Include it.)
 ; GetActiveObjects - http://ahkscript.org/boards/viewtopic.php?f=6&t=6494
 

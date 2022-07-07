@@ -1,4 +1,4 @@
-/*
+﻿/*
 https://autohotkey.com/board/topic/60985-get-paths-of-selected-items-in-an-explorer-window/
 */
 

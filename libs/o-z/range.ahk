@@ -1,4 +1,4 @@
-
+﻿
 
 range(start, stop:="", step:=1) {
 	static range := { _NewEnum: Func("_RangeNewEnum") }

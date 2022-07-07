@@ -1,4 +1,4 @@
-/*
+ï»¿/*
 
 Aero_Libary
 
@@ -19,8 +19,8 @@ Aero_ChangeFrameAreaAll() ; Extend the Frame Area into the whole Client Area. ; 
 Aero_GuiChangeFrameAreaAll() ; Extend the Frame Area into the whole Client Area. ; Line: 316
 Aero_GetDWMColor() ; Gets the Color of the current DWM options. ; Line: 337
 Aero_GetDWMTrans() ; Gets the Transparent of the Current DWM options. ; Line: 362
-Aero_SetDWMColor() ; Set´s the DWM Window Color. ; Line: 389
-Aero_SetTrans() ; Set´s the DWM Transparent value. ; Line: 416
+Aero_SetDWMColor() ; SetÂ´s the DWM Window Color. ; Line: 389
+Aero_SetTrans() ; SetÂ´s the DWM Transparent value. ; Line: 416
 Aero_DrawPicture() ; Draws a Picture onto a DWM Gui. ; Line: 454
 Aero_CreateBuffer() ; Creates a buffer from a Handle. ; Line: 481
 Aero_CreateGuiBuffer() ; Creates a buffer from a GuiCount. ; Line: 502
@@ -47,7 +47,7 @@ Aero_End() ; Unload the dll Files. ; Line: 805
 ; Load important dll Files for more perfomance.
 ;
 ;
-; Return: Module Id´s (splittet with "|") (or false if OS is not compatible)
+; Return: Module IdÂ´s (splittet with "|") (or false if OS is not compatible)
 ;
 Aero_StartUp(){
 	global
@@ -377,7 +377,7 @@ Aero_GetDWMTrans(){
 ;
 ; Aero_SetDWMColor()
 ;
-; Set´s the DWM Window Color.
+; SetÂ´s the DWM Window Color.
 ;
 ; Params:
 ;
@@ -404,7 +404,7 @@ Aero_SetDWMColor(dwmColor=0x910047ab){
 ;
 ; Aero_SetTrans()
 ;
-; Set´s the DWM Transparent value.
+; SetÂ´s the DWM Transparent value.
 ;
 ; Params:
 ;

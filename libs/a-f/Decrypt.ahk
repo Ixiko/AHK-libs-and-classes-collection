@@ -1,4 +1,4 @@
-sFileOriginl   := A_ScriptFullPath
+﻿sFileOriginl   := A_ScriptFullPath
 sPassword   := "AutoHotkey"
 
 SID := 256   ; 128 for 128bit, 192 for 192bit AES

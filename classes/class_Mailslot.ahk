@@ -1,4 +1,4 @@
-/*
+﻿/*
 # Mailslot / MailslotEx
 
 Wrapper for Windows [Mailslot](http://msdn.microsoft.com/en-us/library/windows/desktop/aa365576%28v=vs.85%29.aspx) API

@@ -1,4 +1,4 @@
-#Include ActiveScript.ahk
+﻿#Include ActiveScript.ahk
 
 FileRead, code, littledoc.js
 

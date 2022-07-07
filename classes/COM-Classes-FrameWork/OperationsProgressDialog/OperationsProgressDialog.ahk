@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: OperationsProgressDialog
 wraps the *IOperationsProgressDialog* interface and exposes methods to get, set, and query a progress dialog.
 

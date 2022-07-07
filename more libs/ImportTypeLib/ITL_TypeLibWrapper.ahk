@@ -1,4 +1,4 @@
-class ITL_TypeLibWrapper
+﻿class ITL_TypeLibWrapper
 {
 	__New(lib)
 	{

@@ -1,4 +1,4 @@
-dSpeak(Message, fSapi_vol="", fOverall_vol="")
+﻿dSpeak(Message, fSapi_vol="", fOverall_vol="")
 {	global programVolume, speech_volume
 
 	if !fSapi_vol

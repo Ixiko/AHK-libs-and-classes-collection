@@ -1,4 +1,4 @@
-; Binary AHK Array RC2
+﻿; Binary AHK Array RC2
 ; (w) by DerRaphael
 ;
 ; Released under the Terms of European Public License (EUPL 1.0)

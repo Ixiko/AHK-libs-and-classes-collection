@@ -1,4 +1,4 @@
-class SymbolReaderBase {
+﻿class SymbolReaderBase {
 	__New(pFileData, Length) {
 		this.pData := pFileData
 		this.Size := Length

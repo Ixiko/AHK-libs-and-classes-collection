@@ -1,4 +1,4 @@
-/*! TheGood
+﻿/*! TheGood
     TaskDialog() - Launches a Task Dialog (Windows Vista and later only)
     http://www.autohotkey.com/forum/viewtopic.php?t=58952
     Last updated: June 14th, 2010

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: THUMBBUTTONFLAGS
 an enumeration class containing flags to control specific states and behaviours of a thumbbar button.
 

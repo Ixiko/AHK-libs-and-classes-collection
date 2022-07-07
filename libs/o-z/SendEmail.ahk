@@ -1,4 +1,4 @@
-SendEmail(p_to, p_From, p_subject, p_message, oAttachments := "", user="macro.trainer@adam.com.au", pass="asvhaf32489hjk")
+﻿SendEmail(p_to, p_From, p_subject, p_message, oAttachments := "", user="macro.trainer@adam.com.au", pass="asvhaf32489hjk")
 { 														; username '@adam.com.au' isn't required to receive emails, but it is to SEND!
 	SMTP := "mail.adam.com.au"
 	port := 25

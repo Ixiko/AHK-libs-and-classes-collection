@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: IMAGEINFO
 a structure class that contains information about an image in an image list. This structure is used with IImageList::GetImageInfo.
 

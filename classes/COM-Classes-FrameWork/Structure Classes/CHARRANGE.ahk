@@ -1,6 +1,6 @@
-/*
+﻿/*
 class: CHARRANGE
-a structure class that specifies a range of characters in a rich edit control. If the <cpMin> and <cpMax> members are equal, the range is empty. The range includes everything if <cpMin> is 0 and <cpMax> is �1.
+a structure class that specifies a range of characters in a rich edit control. If the <cpMin> and <cpMax> members are equal, the range is empty. The range includes everything if <cpMin> is 0 and <cpMax> is –1.
 
 Authors:
 	- maul.esel (https://github.com/maul-esel)

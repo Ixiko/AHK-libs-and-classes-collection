@@ -1,4 +1,4 @@
-ocrBWCompare(recog, given, color, varia:=0) ;compare bmp patterns reduce collors to Black / White
+﻿ocrBWCompare(recog, given, color, varia:=0) ;compare bmp patterns reduce collors to Black / White
 { Gdip_GetImageDimensions(given, w, h) 
   Loop h 
   { y:= A_Index-1

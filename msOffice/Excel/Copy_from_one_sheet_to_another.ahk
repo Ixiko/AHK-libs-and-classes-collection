@@ -1,4 +1,4 @@
-; Usage:
+﻿; Usage:
 ;   Win+7 hotkey  - Assigns the active cell to the same address on Sheet2.
 ;   Ctrl+7 hotkey - Assigns a range of cells from the active worksheet to Sheet2.
 ;   Win+8 hotkey  - Assigns the active cell to the next worksheet.

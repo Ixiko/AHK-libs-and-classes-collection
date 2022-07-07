@@ -1,4 +1,4 @@
-/* Function: Include
+﻿/* Function: Include
  *     Dynamically #Include file(s) OR a string containing AHK code
  * License:
  *     WTFPL [http://wtfpl.net/]

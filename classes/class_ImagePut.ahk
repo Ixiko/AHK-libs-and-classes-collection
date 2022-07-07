@@ -1,4 +1,4 @@
-; Script:    ImagePut.ahk
+﻿; Script:    ImagePut.ahk
 ; Author:    iseahound
 ; License:   MIT License
 ; Version:   2020-05-22
@@ -44,7 +44,7 @@ ImagePutDesktop(ByRef image, scale := 1) {
    return ImagePut("desktop", image,, scale)
 }
 
-; Puts the image into a file and returns the file name. 
+; Puts the image into a file and returns the file name.
 ;   filename   -  File Extension          |  string   ->   *.bmp, *.gif, *.jpg, *.png, *.tiff
 ;   quality    -  JPEG Quality Level      |  integer  ->   0 - 100
 ImagePutFile(ByRef image, filename := "", quality := "") {
@@ -76,7 +76,7 @@ ImagePutWallpaper(ByRef image) {
 ;   image      -  Input Image             |  image    ->   Anything. Refer to ImageType().
 ;   crop       -  Crop Coordinates        |  array    ->   [x,y,w,h] could be negative or percent.
 ;   scale      -  Scale Factor            |  real     ->   2.0
-;   terms*     -  Additional Parameters   |  variadic ->   Extra parameters found in toCotype(). 
+;   terms*     -  Additional Parameters   |  variadic ->   Extra parameters found in toCotype().
 ImagePut(cotype, ByRef image, crop := "", scale := "", terms*) {
    return ImagePut.call(cotype, image, crop, scale, terms*)
 }

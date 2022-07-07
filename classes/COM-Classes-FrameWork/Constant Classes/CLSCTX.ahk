@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: CLSCTX
 an enumeration class containing flags that values that are used in activation calls to indicate the execution contexts in which an object is to be run.
 

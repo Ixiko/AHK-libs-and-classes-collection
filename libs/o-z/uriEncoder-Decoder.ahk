@@ -1,4 +1,4 @@
-;----------
+﻿;----------
 ; 2010 URI encoder/decoder gui
 ; http://autohotkey.net/~gahks
 ;

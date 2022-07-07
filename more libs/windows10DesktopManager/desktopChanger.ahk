@@ -1,4 +1,4 @@
-class JPGIncDesktopChangerClass
+﻿class JPGIncDesktopChangerClass
 {
 	goToDesktopCallbackFunctionName := "goToDesktop"
 	nextDesktopFunctionName := "goToNextDesktop"

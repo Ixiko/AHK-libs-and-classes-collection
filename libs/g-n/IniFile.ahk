@@ -1,4 +1,4 @@
-/*
+﻿/*
     Lee todas las secciones, todas las claves en la sección especificada, o el valor de la clave y sección especificada.
     Parámetros:
         FileName: El archivo INI. El archivo debe existir o la función falla y devuelve 0.

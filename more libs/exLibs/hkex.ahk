@@ -1,4 +1,4 @@
-class hkex
+﻿class hkex
 	{
 	sendSingle(key, replace*){
 		hotkey '$' key, 'SSSend', 'on'

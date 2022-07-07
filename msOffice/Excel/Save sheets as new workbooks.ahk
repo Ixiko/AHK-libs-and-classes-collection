@@ -1,4 +1,4 @@
-; This script prompts the user to select a workbook file. Then each sheet in the selected workbook is copied into a
+﻿; This script prompts the user to select a workbook file. Then each sheet in the selected workbook is copied into a
 ; new workbook. Each new workbook is then saved to the same dir as the original file.
 
 ; Select an Excel file to use.

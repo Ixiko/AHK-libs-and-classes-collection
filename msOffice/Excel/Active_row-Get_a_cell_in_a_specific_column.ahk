@@ -1,4 +1,4 @@
-; This script will display the value of the cell in column 'D' of the active row.
+﻿; This script will display the value of the cell in column 'D' of the active row.
 
 ; Excel hotkeys
 #IfWinActive, ahk_class XLMAIN

@@ -1,4 +1,4 @@
-;
+﻿;
 ; AutoHotkey Version: 1.1.30.03
 ; Language:       English
 ; Platform:       Optimized for Windows 10

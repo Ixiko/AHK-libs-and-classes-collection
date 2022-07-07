@@ -1,4 +1,4 @@
-; MsgBox, % "Example:`n`n" . rgbToHex("255,255,255") . "`n" . HexToRgb("#FFFFFF") . "`n" . CheckHexC("000000")
+﻿; MsgBox, % "Example:`n`n" . rgbToHex("255,255,255") . "`n" . HexToRgb("#FFFFFF") . "`n" . CheckHexC("000000")
 
 rgbToHex(s, d = "") {
    StringSplit, s, s, % d = "" ? "," : d

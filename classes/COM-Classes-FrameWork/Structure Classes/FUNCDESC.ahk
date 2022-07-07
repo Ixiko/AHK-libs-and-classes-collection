@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: FUNCDESC
 a structure class that describes a function.
 

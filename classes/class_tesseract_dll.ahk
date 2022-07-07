@@ -1,4 +1,4 @@
-class tesseract {
+﻿class tesseract {
     
     __new(perfix, lang, tessdll="", leptdll=""){
         this.api := 0

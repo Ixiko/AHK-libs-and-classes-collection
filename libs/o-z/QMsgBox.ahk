@@ -1,4 +1,4 @@
-QMsgBoxF( title = "", msg = "", sBtns = "OK", icon = "", centered = True, modal = False )
+﻿QMsgBoxF( title = "", msg = "", sBtns = "OK", icon = "", centered = True, modal = False )
 {
   box := new QMsgBox( { "msg" 	: msg
             , "buttons" : sBtns

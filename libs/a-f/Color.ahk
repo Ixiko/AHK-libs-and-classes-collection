@@ -1,4 +1,4 @@
-;#NoTrayIcon
+﻿;#NoTrayIcon
 #SingleInstance force
 /** Return decimal color of anay type of $color
  * 

@@ -1,4 +1,4 @@
-class Crypt
+﻿class Crypt
 {
     ;   Provider Types
 static PROV_RSA_FULL      := 1

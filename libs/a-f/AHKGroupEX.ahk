@@ -1,4 +1,4 @@
-
+﻿
 /* About AHKGroupEX()
 
  ahk_group is great for checking multiple windows.

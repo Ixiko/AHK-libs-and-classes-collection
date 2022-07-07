@@ -1,4 +1,4 @@
-/*
+﻿/*
 License: NO LICENSE
 	I (Noah Graydon) retain all rights and do not permit distribution, reproduction, or derivative works. I soley grant GitHub the required rights according to their terms of service; namely, GitHub users may view and fork this code.
 */

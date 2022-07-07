@@ -1,4 +1,4 @@
-class WBClientSite
+﻿class WBClientSite
 {
 	__New(self)
 	{

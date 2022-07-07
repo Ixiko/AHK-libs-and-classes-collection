@@ -1,4 +1,4 @@
-/*
+﻿/*
 path splitting could be delayed until used, but is it worth it?
  - if this is used for all paths in FileContainer, a single delayed initialization would be better.  It should be as close to a string as possible until the very last moment
 

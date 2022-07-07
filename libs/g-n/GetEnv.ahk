@@ -1,4 +1,4 @@
-GetEnv(){
+﻿GetEnv(){
   global
   local __env__:=DllCall("GetEnvironmentStringsW","PTR"),__thisenv__,__temp__,__tempenv__:=__env__
   While __thisenv__:=SubStr(__temp__:=StrGet(__env__,"UTF-16"),1,InStr(__temp__,"=",1,2)-1)

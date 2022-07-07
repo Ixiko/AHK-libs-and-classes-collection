@@ -1,4 +1,4 @@
-RegExFileSearch(fnSearchTerm,fnSearchRootFolder := "")
+﻿RegExFileSearch(fnSearchTerm,fnSearchRootFolder := "")
 {
 	; search files and folders using regular expressions
 	; MsgBox fnSearchRootFolder: %fnSearchRootFolder%`nfnSearchTerm: %fnSearchTerm%

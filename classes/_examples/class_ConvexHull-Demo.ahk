@@ -1,4 +1,4 @@
-; Include the ConvexHull Library
+﻿; Include the ConvexHull Library
 #include ConvexHull.ahk
 
 ; Create a C# PointsList object to allow us to pass the data to C#

@@ -1,4 +1,4 @@
-/*
+﻿/*
 		hyde.dll hides a process from the task manager on Windows 2000 - Windows 7 
 		x86 & x64 bit OSes
 		

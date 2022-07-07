@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PROPERTYKEY
 a structure class that programmatically identifies a property.
 

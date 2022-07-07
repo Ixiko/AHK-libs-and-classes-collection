@@ -1,4 +1,4 @@
-; Universally Unique Identifier (UUID/GUID) Generator by Titan
+﻿; Universally Unique Identifier (UUID/GUID) Generator by Titan
 ; http://www.autohotkey.com/forum/viewtopic.php?t=14917
 uuid(c = false) { ; v1.1 - by Titan
    static n = 0, l, i

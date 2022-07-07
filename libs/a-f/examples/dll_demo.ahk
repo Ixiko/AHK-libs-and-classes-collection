@@ -1,4 +1,4 @@
-; #Include dll.ahk
+﻿; #Include dll.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

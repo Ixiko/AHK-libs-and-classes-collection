@@ -1,4 +1,4 @@
-/*
+﻿/*
 HEADER: CCF.ahk
 This file is the main file for the framework. It includes all the other files and has some more nice additions. However, it's not strictly required to include it. You might also only include the files you need.
 

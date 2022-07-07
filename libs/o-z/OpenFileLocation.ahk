@@ -1,4 +1,4 @@
-OpenFileLocation(fnFilePath)
+﻿OpenFileLocation(fnFilePath)
 {
 	; Open a window view with the specified folder, file or application selected.
 	; http://ss64.com/nt/explorer.html

@@ -1,4 +1,4 @@
-; #Include DateParse.ahk
+﻿; #Include DateParse.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

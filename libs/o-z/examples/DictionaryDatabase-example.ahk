@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #Include %A_ScriptDir%\Function_DictionaryDatabase.ahk
 SetBatchLines,-1
 DDBD() ;initialize DDBD

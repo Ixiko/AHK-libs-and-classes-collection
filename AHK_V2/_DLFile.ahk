@@ -1,4 +1,4 @@
-; https://github.com/TheArkive/DLFile_ahk2
+﻿; https://github.com/TheArkive/DLFile_ahk2
 ; https://www.autohotkey.com/boards/viewtopic.php?f=83&p=447903#p447903
 ; ===================================================================================
 ; Example

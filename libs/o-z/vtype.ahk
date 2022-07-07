@@ -1,4 +1,4 @@
-vtype(v, assert:="")
+﻿vtype(v, assert:="")
 {
 	static is_v2      := A_AhkVersion >= "2"
 	static Type       := is_v2 ? Func("Type") : ""

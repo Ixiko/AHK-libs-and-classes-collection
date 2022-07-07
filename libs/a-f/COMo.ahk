@@ -1,4 +1,4 @@
-; -- COMo Functions - temp01 - See http://www.autohotkey.com/forum/viewtopic.php?t=49433
+﻿; -- COMo Functions - temp01 - See http://www.autohotkey.com/forum/viewtopic.php?t=49433
 COMo_GetVal(obj, name){
 	global COM_VT
 	Ret := COM_Invoke(obj.COMObj, name)

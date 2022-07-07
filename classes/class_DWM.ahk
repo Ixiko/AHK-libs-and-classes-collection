@@ -1,4 +1,4 @@
-class DWM
+﻿class DWM
 {
   __new(){
 		DllCall("LoadLibrary","str","dwmapi.dll")

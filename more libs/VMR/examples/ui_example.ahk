@@ -1,4 +1,4 @@
-#Include, ..\VMR.ahk
+﻿#Include, ..\VMR.ahk
 SetBatchLines, 20ms
 
 Global vm, GUI_hwnd, is_win_pos_changing:=0

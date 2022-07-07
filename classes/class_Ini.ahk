@@ -1,4 +1,4 @@
-class Ini
+﻿class Ini
 {
         ; Loads ini file.
     __New(File, Default = "") {

@@ -1,4 +1,4 @@
-RemoveIllegalFilenameCharacters(fnText)
+﻿RemoveIllegalFilenameCharacters(fnText)
 {
 	; remove disallowed windows filename characters from a string
 	; MsgBox fnText: %fnText%

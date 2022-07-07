@@ -1,4 +1,4 @@
-/*  Options: one or more of the following semicolon-delimited values: 
+﻿/*  Options: one or more of the following semicolon-delimited values: 
 dialogHeight:sHeight 
     Sets the height of the dialog window. 
     Valid unit-of-measure prefixes: cm, mm, in, pt, pc, em, ex, px 

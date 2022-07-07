@@ -1,4 +1,4 @@
-; httpQuery-0-3-5.ahk
+﻿; httpQuery-0-3-5.ahk
 httpQuery(byref Result, lpszUrl, POSTDATA="", HEADERS="")
 {   ; v0.3.5 (w) Sep, 8 2008 by Heresy & derRaphael / zLib-Style release
    ; updates Aug, 28 2008   

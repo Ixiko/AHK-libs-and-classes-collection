@@ -1,4 +1,4 @@
-; ahk: console
+﻿; ahk: console
 class RCopy
 {
     static CV_YEAR4 := "%y4%"

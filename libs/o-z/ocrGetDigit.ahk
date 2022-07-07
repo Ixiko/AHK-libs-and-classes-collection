@@ -1,4 +1,4 @@
-;try to recognize recBmp pattern compare to 0..9 given patterns 
+﻿;try to recognize recBmp pattern compare to 0..9 given patterns 
 ocrGetDigit(recBmp, color, varia)
 { static digBmp:= object(0,"", 1,"", 2,"", 3,"", 4,"", 5,"", 6,"", 7,"", 8,"", 9,"")
   static digIni ;static init bmps from file not work

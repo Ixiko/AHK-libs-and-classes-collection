@@ -1,4 +1,4 @@
-; #Include TaskButton.ahk
+﻿; #Include TaskButton.ahk
 #NoEnv
 #NoTrayIcon
 SendMode Input

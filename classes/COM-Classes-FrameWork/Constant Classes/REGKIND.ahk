@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: REGKIND
 an enumeration class that controls how a type library is registered.
 

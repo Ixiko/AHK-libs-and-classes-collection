@@ -1,4 +1,4 @@
-pagerActionQuit() {
+﻿pagerActionQuit() {
 	if (A_IsPaused) {
 		Ansi.write(Ansi.restoreCursorPosition() Ansi.reset()
 				. Ansi.eraseLine())

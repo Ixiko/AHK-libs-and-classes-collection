@@ -1,4 +1,4 @@
-; This script is a demonstration of the .Find method. It gets the value of the cell to the right of the active cell.
+﻿; This script is a demonstration of the .Find method. It gets the value of the cell to the right of the active cell.
 ; Then it will find that value in the range "B:B" on Sheet2.
 
 ; Constants

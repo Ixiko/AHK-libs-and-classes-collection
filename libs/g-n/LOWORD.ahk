@@ -1,3 +1,3 @@
-LOWORD(a){
+﻿LOWORD(a){
   return ToShort(a)
 }

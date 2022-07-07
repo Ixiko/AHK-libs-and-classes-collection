@@ -1,4 +1,4 @@
-; new microWindow(WinExist("My Script 2 ahk_exe explorer.exe"))
+﻿; new microWindow(WinExist("My Script 2 ahk_exe explorer.exe"))
 
 class microWindow{
     __new(wid, pos:="", w:=240, pos1:="", pos2:=""){

@@ -1,4 +1,4 @@
-;To do
+﻿;To do
 ;Read instructions at the begining of "DetailedStatistics:" and do that (later maybe)
 Letter_string = qqq,www,eee,rrr,ttt,yyy,uuu,iii,ooo,ppp,aaa,sss,ddd,fff,ggg,hhh,jjj,kkk,lll,zzz,xxx,ccc,vvv,bbb,nnn,mmm
 GoSub,ResetCounters

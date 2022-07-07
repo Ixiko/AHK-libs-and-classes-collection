@@ -1,4 +1,4 @@
-DateAdd(fnCount,fnTimeUnits,fnStartDate)
+﻿DateAdd(fnCount,fnTimeUnits,fnStartDate)
 {
 	; adds a duration to a timestamp in the specified units
 	; MsgBox fnCount: %fnCount%`nfnTimeUnits: %fnTimeUnits%`nfnStartDate: %fnStartDate%

@@ -1,4 +1,4 @@
-#SingleInstance, Force
+﻿#SingleInstance, Force
 StringReplace, GPLfile, A_AhkPath, Autohotkey.exe, License.txt
 FileRead, GPL, D:\Daten\Downloads\Automation\_PDF\EmbededHTMLPage_PDF.ahk
 View( GPL, "Title=Press <Esc> to dismiss this dialog" )

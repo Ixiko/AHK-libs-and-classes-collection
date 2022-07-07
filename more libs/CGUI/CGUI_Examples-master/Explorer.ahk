@@ -1,4 +1,4 @@
-gui := new Explorer()
+﻿gui := new Explorer()
 #include <CGUI>
 Class Explorer Extends CGUI
 {

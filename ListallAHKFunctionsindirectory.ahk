@@ -121,12 +121,15 @@ more libs\Mini_Framwork\Framework\src\System\Text
 more libs\minilib
 more libs\MsgBox2
 more libs\ObjCSV\lib
+more libs\pyahk-main
 more libs\RamDisk & CmdReturn
+more libs\Rufaydium-V1.6.1
 more libs\SendInput
 more libs\Splash-Gui
 more libs\TAB\_Functions
 more libs\Various1\lib
 more libs\VMR
+more libs\Websocket-Client\libs
 more libs\windows10DesktopManager
 more libs\windows10DesktopManager\injection dll
 more libs\WindowsScriptingObject
@@ -182,8 +185,7 @@ clines:= lib.MaxIndex()
 ; write a functionlist - maybe you use it for fast searching
 ;-----------------------------------------------------------------------------------------------------------------------------------------
 file:= FileOpen(A_ScriptDir "\FileFunctionList.ahk", "w")
-For idx, ffpath in lib
-{
+For idx, ffpath in lib {
 	ToolTip, % "File: " A_Index "/" clines, 2000, 500, 6
 	funcList:= listfunc(ffpath)
 	RegExMatch(ffpath, "\w+\\[\w\s\(\)]+\.ahk", shortpath)

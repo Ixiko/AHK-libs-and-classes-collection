@@ -1,4 +1,4 @@
-class FileUtil {
+﻿class FileUtil {
 
 	static void := FileUtil._init()
 

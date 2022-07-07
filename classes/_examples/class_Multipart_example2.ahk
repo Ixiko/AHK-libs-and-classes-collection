@@ -1,4 +1,4 @@
-If A_IsUnicode
+﻿If A_IsUnicode
 {
 	MsgBox, 48, :(, Please use AutoHotkey ANSI version to run!
 	ExitApp

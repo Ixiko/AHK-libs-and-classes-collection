@@ -1,4 +1,4 @@
-SendMSG(Msg,wParam="",byref lParam="",Control="",WinTitle="",WinText="",ExcludeTitle="",ExcludeText="",Timeout=""){
+﻿SendMSG(Msg,wParam="",byref lParam="",Control="",WinTitle="",WinText="",ExcludeTitle="",ExcludeText="",Timeout=""){
 ; sendMessage, 0x0D, 100, &Text_Field, Edit1, ahk_class #32770 ;sendMsg("0x0D", 100, &Text_Field,"Edit1","ahk_class #32770")
 static
 WM_SETTEXT=0x0C

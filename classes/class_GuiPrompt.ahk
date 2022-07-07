@@ -1,4 +1,4 @@
-/**
+﻿/**
 
 Class:
     GuiPrompt.ahk - Utility class for making prompts

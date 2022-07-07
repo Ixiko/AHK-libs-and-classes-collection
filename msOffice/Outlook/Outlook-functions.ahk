@@ -1,4 +1,4 @@
-AddAttachments(){
+﻿AddAttachments(){
 	global oOutlook, ClipSaved, ClipVar
 	ClipSaved := Clipboard
 	Clipboard := ""

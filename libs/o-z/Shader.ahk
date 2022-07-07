@@ -1,4 +1,4 @@
-MCRC := "F566D79F"
+﻿MCRC := "F566D79F"
 MVersion := "1.0.3"
 
 CreateShaderBitmap(width, height, vertical:="false") {

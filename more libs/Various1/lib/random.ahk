@@ -1,4 +1,4 @@
-class Random {
+﻿class Random {
 
 	static N := 624
 	static M := 397

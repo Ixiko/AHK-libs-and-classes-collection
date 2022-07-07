@@ -1,4 +1,4 @@
-ReadIni(fnSectionName := "",fnVarName := "",fnSkipEmptyValues := 1,fnIniFilePath := "", fnVariablePrefix := "")
+ï»¿ReadIni(fnSectionName := "",fnVarName := "",fnSkipEmptyValues := 1,fnIniFilePath := "", fnVariablePrefix := "")
 {
 	; reads values from an entire file, a section or a single line in a .ini file, setting a variable equal to the value in the line
 	; an empty value for fnVarName will read all values in that section
@@ -84,9 +84,9 @@ ReadIni(fnSectionName := "",fnVarName := "",fnSkipEmptyValues := 1,fnIniFilePath
 			FoundVar := 0
 			If (!ThisLineIsSectionHeader && FoundSection)
 			{
-				StringReplace, ThisLine, ThisLine, ``=, ¢, UseErrorLevel ; escaped equals sign
+				StringReplace, ThisLine, ThisLine, ``=, Â¢, UseErrorLevel ; escaped equals sign
 				StringSplit, LinePart, ThisLine, =, %A_Space%%A_Tab%
-				StringReplace, LinePart2, LinePart2, ¢, =, All
+				StringReplace, LinePart2, LinePart2, Â¢, =, All
 				
 				; skip empty values
 				If (fnSkipEmptyValues && !LinePart2)

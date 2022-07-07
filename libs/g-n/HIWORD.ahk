@@ -1,3 +1,3 @@
-HIWORD(a){
+﻿HIWORD(a){
   return ToInt(a)>>16&0xffff
 }

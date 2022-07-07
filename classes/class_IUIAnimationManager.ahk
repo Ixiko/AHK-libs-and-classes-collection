@@ -1,4 +1,4 @@
-;;;;;;;;;;;;;;;;;;;;;;;
+﻿;;;;;;;;;;;;;;;;;;;;;;;
 ;;IUIAnimationManager;; 
 ;;;;;;;;;;;;;;;;;;;;;;;
 class IUIAnimationManager extends IUnknown

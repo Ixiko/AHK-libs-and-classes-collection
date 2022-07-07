@@ -1,4 +1,4 @@
-Class Log_class
+﻿Class Log_class
 { ; Class that handles writing to a log file
 	; This class makes working with a log file much easier.  Once created, you can write to a log file with a single method call.
 	; Each instance of the object supports a single log file (and its inactive older versions).  To use multiple log files (with separate names) create multiple instances.

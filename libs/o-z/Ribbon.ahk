@@ -1,4 +1,4 @@
-; Insert header here?
+﻿; Insert header here?
 
 ; Initializes the Ribbon library
 Ribbon() {

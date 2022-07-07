@@ -1,4 +1,4 @@
-/* http://www.autohotkey.com/board/topic/8463-listview-colors-for-individual-lines-eg-highlighting/
+﻿/* http://www.autohotkey.com/board/topic/8463-listview-colors-for-individual-lines-eg-highlighting/
 */
 
 /* struct NMHDR { 

@@ -1,4 +1,4 @@
-;DahkX.ahk by burque505
+﻿;DahkX.ahk by burque505
 ;Easter Sunday, 2019
 ;first (and probably last) version 0.0.1
 ;

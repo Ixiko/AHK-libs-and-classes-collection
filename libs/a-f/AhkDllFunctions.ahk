@@ -1,4 +1,4 @@
-AhkDllFunctions(MemoryModule){
+﻿AhkDllFunctions(MemoryModule){
   If !MemoryModule
     return "
     (

@@ -1,4 +1,4 @@
-; Description: Create form-data for http request (Only works in ANSI!)
+﻿; Description: Create form-data for http request (Only works in ANSI!)
 ; AHK Version: 1.1.14.03 A32
 Class Multipart
 {

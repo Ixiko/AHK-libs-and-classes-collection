@@ -1,4 +1,4 @@
-ClipSave(mode = 1)
+﻿ClipSave(mode = 1)
 {
     global
     if (mode = 1)

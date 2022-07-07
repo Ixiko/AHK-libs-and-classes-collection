@@ -1,4 +1,4 @@
-OpenFilepaths(fnPathListCSV,ByRef fnCountOfItems := 0,ByRef fnCountOfErrors := 0,ByRef fnCountOfSuccesses := 0,fnBrowserId := 0)
+﻿OpenFilepaths(fnPathListCSV,ByRef fnCountOfItems := 0,ByRef fnCountOfErrors := 0,ByRef fnCountOfSuccesses := 0,fnBrowserId := 0)
 {
 	; opens a list of file or folder paths
 	; MsgBox fnPathListCSV: %fnPathListCSV%`nfnCountOfItems: %fnCountOfItems%`nfnCountOfErrors: %fnCountOfErrors%`nfnCountOfSuccesses: %fnCountOfSuccesses%`nfnBrowserId: %fnBrowserId%

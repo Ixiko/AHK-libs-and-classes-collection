@@ -1,4 +1,4 @@
-; *************************************************************************
+﻿; *************************************************************************
 ; This file: "UIAutomationClient_1_0_64bit.ahk"
 ; was generated from the type library:
 ; UIAutomationClient  version: 1.0

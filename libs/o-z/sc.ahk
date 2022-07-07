@@ -1,4 +1,4 @@
-; 2010 Added by Tuncay a prefix "sc_" to all functions and renamed file from "ScreenCapture.ahk" to "sc.ahk".
+﻿; 2010 Added by Tuncay a prefix "sc_" to all functions and renamed file from "ScreenCapture.ahk" to "sc.ahk".
 /*
 sc_CaptureScreen(aRect, bCursor, sFileTo, nQuality)
 1) If the optional parameter bCursor is True, captures the cursor too.

@@ -1,4 +1,4 @@
-#if mkex.inKW
+﻿#if mkex.inKW
 #if
 class mkex{
 	clickImage(imageAndOptions, tryFor := 0, xOffset := 0, yOffest := 0, coMode := 'client', notFoundMsg := true){

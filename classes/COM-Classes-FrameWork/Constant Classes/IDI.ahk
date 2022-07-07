@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: IDI
 an enumeration class containing the predefined system icons.
 

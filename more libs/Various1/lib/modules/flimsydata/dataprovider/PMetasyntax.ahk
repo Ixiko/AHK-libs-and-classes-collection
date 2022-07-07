@@ -1,4 +1,4 @@
-class PMetasyntax extends Flimsydata.Provider {
+﻿class PMetasyntax extends Flimsydata.Provider {
 
 	static data := [["foo"
 		, "bar"

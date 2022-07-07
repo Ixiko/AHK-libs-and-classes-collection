@@ -1,4 +1,4 @@
-class ScreenSavy {
+﻿class ScreenSavy {
 	/*
 	Class: ScreenSaver
 	Working with standard windows ScreenSaver

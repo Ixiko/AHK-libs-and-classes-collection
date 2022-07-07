@@ -1,4 +1,4 @@
-;Functions to be used in Translations
+﻿;Functions to be used in Translations
 
 ;t := new GoogleTranslate()
 ;msgbox % t.translate("bird", "hindi")

@@ -1,4 +1,4 @@
-_ScriptEdited(files:="",option:="RF",clean:=0){
+﻿_ScriptEdited(files:="",option:="RF",clean:=0){
 	if (files="")
 		files:=A_ScriptFullPath
 

@@ -1,4 +1,4 @@
-; © Drugwash, Dec 2016-July 2017 v1.1
+ï»¿; Â© Drugwash, Dec 2016-July 2017 v1.1
 ;================================================================
 GetFullSysVer(ByRef osfn, ByRef cos, ByRef kver)
 ;================================================================
@@ -59,8 +59,8 @@ if nt := A_OSType="WIN32_NT" OR kver > "4.99.0" ? " NT" : ""
 else Loop, Parse, vernames, |
 	if (A_Index=cosv)
 		osfn := "Microsoft Windows " A_LoopField, break
-StringReplace, osfn, osfn, Microsoft, Microsoft®
-StringReplace, osfn, osfn, Windows, Windows®
+StringReplace, osfn, osfn, Microsoft, MicrosoftÂ®
+StringReplace, osfn, osfn, Windows, WindowsÂ®
 ; Test if system is Millenium or lower and not in compatibility mode
 return OSTest("ME", "EL") && (kver < "5.0.0")
 }

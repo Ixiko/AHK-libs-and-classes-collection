@@ -1,4 +1,4 @@
-PleasantNotify(title, message, pnW=700, pnH=300, position="b r", time=10) {
+﻿PleasantNotify(title, message, pnW=700, pnH=300, position="b r", time=10) {
     global pn_title, pn_msg, PN_hwnd, w, h
 	Notify_Destroy()
 	Gui, Notify: +AlwaysOnTop +ToolWindow -SysMenu -Caption +LastFound

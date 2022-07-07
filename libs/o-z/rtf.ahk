@@ -1,4 +1,4 @@
-/* Title: RTF
+﻿/* Title: RTF
 Rich Text Format Generator. (*** DRAFT ***)
 */
 

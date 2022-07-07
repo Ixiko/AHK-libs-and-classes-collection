@@ -1,4 +1,4 @@
-; #Include HttpQueryInfo.ahk
+﻿; #Include HttpQueryInfo.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

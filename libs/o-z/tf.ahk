@@ -1,4 +1,4 @@
-/*
+﻿/*
 Name          : TF: Textfile & String Library for AutoHotkey
 Version       : 3.6
 Documentation : https://github.com/hi5/TF

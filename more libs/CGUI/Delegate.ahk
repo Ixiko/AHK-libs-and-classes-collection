@@ -1,4 +1,4 @@
-/*****************************************************
+﻿/*****************************************************
 Delegate Class
 
 A delegate is a extended Method Reference, as it stores the 

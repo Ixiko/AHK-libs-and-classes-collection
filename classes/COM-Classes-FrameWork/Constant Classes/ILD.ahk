@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ILD
 an enumeration class containing flags passed to IImageList::Draw in the fStyle member of IMAGELISTDRAWPARAMS.
 

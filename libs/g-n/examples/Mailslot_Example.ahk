@@ -1,4 +1,4 @@
-#Include Mailslot.ahk
+﻿#Include Mailslot.ahk
 
 server := new Mailslot("test_slot", "r")
 client := new Mailslot("test_slot", "w")

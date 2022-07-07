@@ -1,4 +1,4 @@
-;MsgBox % GetSysErrorText(-2147352570)
+﻿;MsgBox % GetSysErrorText(-2147352570)
 
 
 GetSysErrorText(errNr) ;http://msdn.microsoft.com/en-us/library/ms679351(v=vs.85).aspx

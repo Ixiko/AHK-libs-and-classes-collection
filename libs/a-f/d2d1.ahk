@@ -1,4 +1,4 @@
-class ID2D1Factory extends IUnknown
+﻿class ID2D1Factory extends IUnknown
 {
   __new(p=""){
 		if (p=""){

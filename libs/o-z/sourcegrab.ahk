@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 A class to grab the source code of a web page
 By Clive Galway - evilc@evilc.com

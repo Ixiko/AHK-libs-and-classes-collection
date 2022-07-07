@@ -1,4 +1,4 @@
-; This script saves the active mail item to a specific folder.
+﻿; This script saves the active mail item to a specific folder.
 ; The two hotkeys are the same except they use different folders.
 
 #IfWinActive ahk_exe OUTLOOK.EXE

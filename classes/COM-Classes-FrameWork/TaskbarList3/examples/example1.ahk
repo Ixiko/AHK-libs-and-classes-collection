@@ -1,4 +1,4 @@
-/*
+﻿/*
 Example: Demonstrates the usage of *TaskbarList3.ahk*
 	* OverlayIcon over TaskBarEntry is drawn
 	* Restricting the taskbar thumbnail

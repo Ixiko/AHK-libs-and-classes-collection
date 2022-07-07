@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: Unknown
 wraps the *IUnknown* interface and provides meta-functions and helper methods for inherited classes.
 

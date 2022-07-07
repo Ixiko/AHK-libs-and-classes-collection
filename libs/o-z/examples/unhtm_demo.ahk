@@ -1,4 +1,4 @@
-; #Include UnHTM.ahk
+﻿; #Include UnHTM.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

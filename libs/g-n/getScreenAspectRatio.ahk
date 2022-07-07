@@ -1,4 +1,4 @@
-getScreenAspectRatio()
+﻿getScreenAspectRatio()
 { 	;ROUND as this should group 1366x768 (1.7786458333) in with 16:9
 	AspectRatio := Round(A_ScreenWidth / A_ScreenHeight, 2)
 	if ( AspectRatio = Round(1680/1050, 2)) 	; 1.6

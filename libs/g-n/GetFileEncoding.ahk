@@ -1,4 +1,4 @@
-/*
+﻿/*
 Returns the encoding of a file
 Author	: R3gX
 Link	: http://www.autohotkey.com/forum/viewtopic.php?t=71966

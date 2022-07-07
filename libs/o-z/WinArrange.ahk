@@ -1,4 +1,4 @@
-; Credits: https://autohotkey.com/board/topic/80580-how-to-programmatically-tile-cascade-windows/
+﻿; Credits: https://autohotkey.com/board/topic/80580-how-to-programmatically-tile-cascade-windows/
 
 WinArrange( TC=1, aStr="", VH=0x1, Rect="", hWnd=0x0 )  {
  CreateArray( aRect, Rect )                  ; Create a RECT structure.   

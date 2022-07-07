@@ -1,4 +1,4 @@
-;
+﻿;
 ; AutoHotkey OOP default __Get/__Set implementation
 ; Taken from the help file
 ;

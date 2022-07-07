@@ -1,4 +1,4 @@
-Infotip(fnText := "",fnX := 0,fnY := 0,fnRelocateOnScreen := 1,fnName := "",fnIsWarning := 0,fnDestroyDelay := 5000,ByRef fnInfotipX := 0,ByRef fnInfotipY := 0,ByRef fnInfotipW := 0,ByRef fnInfotipH := 0,ByRef fnInfotipID := "0x")
+﻿Infotip(fnText := "",fnX := 0,fnY := 0,fnRelocateOnScreen := 1,fnName := "",fnIsWarning := 0,fnDestroyDelay := 5000,ByRef fnInfotipX := 0,ByRef fnInfotipY := 0,ByRef fnInfotipW := 0,ByRef fnInfotipH := 0,ByRef fnInfotipID := "0x")
 {
 	; creates a tooltip-like message box
 	; MsgBox fnText: %fnText%`n`nfnX: %fnX%`n`nfnY: %fnY%`n`nfnRelocateOnScreen: %fnRelocateOnScreen%`n`nfnName: %fnName%`n`nfnIsWarning: %fnIsWarning% `n`nfnDestroyDelay: %fnDestroyDelay%

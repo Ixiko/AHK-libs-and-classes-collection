@@ -1,4 +1,4 @@
-; Hotkey_IfControlActive(ControlDesc, KeyName [, VariantType, VariantTitle, VariantText])
+﻿; Hotkey_IfControlActive(ControlDesc, KeyName [, VariantType, VariantTitle, VariantText])
 #include %A_ScriptDir%\..\Edit_Controls.ahk
 
 

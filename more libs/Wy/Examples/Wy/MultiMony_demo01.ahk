@@ -1,4 +1,4 @@
-#include %A_ScriptDir%\..\..\lib\Wy.ahk
+﻿#include %A_ScriptDir%\..\..\lib\Wy.ahk
 #include %A_ScriptDir%\..\..\lib\Wy\MultiMony.ahk
 
 OutputDebug "DBGVIEWCLEAR"

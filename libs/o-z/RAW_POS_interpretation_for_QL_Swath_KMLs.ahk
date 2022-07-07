@@ -1,4 +1,4 @@
-;RAW_POS_interpretation_for_QL_Swath_KMLs
+﻿;RAW_POS_interpretation_for_QL_Swath_KMLs
 ;This could be used for IPAS as well.  Only the IPAS interpretation needs to be done.
 
 GPS_UTM2LatLon(UTMEast, UTMNorth, Hemisphere, Longitude_Zone) {

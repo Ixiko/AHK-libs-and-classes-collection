@@ -1,4 +1,4 @@
-
+﻿
 ;
 ; DemoAHK Scriplet for DLG_FileOpen & DLG_FileSave
 ;

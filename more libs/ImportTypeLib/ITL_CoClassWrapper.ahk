@@ -1,4 +1,4 @@
-class ITL_CoClassWrapper extends ITL.ITL_WrapperBaseClass
+﻿class ITL_CoClassWrapper extends ITL.ITL_WrapperBaseClass
 {
 	__New(typeInfo, lib)
 	{

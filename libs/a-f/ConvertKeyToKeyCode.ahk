@@ -1,4 +1,4 @@
-; #############################################################################################################
+﻿; #############################################################################################################
 ; # This script was originally developed for the TradeMacro (https://github.com/PoE-TradeMacro/POE-TradeMacro)
 ; # It allows to run script and use hotkeys regardless of the current keyboard layout
 ; #

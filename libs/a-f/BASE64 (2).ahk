@@ -1,4 +1,4 @@
-/*
+﻿/*
 b := FileOpen(A_ScriptDir "\B64.txt", "r", "CP1252").Read()
 b := RegExReplace(b, "\=+\s", "##")
 c := RegExReplace(b, "##", "")

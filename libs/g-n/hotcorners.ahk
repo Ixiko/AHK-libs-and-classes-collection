@@ -1,4 +1,4 @@
-hotcorners(){
+﻿hotcorners(){
 	CoordMode, Mouse, Screen
 	static counter:=0, trigger:=False, delay:=6
 	counterTemp:=0

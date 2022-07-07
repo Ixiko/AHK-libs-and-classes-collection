@@ -1,4 +1,4 @@
-; GetCommonPath - Get path to standard system folder by majkinetor
+﻿; GetCommonPath - Get path to standard system folder by majkinetor
 ; http://www.autohotkey.com/forum/topic10325.html
 GetCommonPath( csidl )
 {

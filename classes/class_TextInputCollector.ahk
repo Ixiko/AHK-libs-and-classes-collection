@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file
  * @copyright Dedicated to Public Domain. See UNLICENSE.txt for details
  */

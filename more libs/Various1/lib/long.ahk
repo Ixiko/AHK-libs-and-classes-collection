@@ -1,4 +1,4 @@
-class Long {
+﻿class Long {
 
 	requires() {
 		return [Math]

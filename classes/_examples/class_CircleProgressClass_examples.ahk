@@ -1,4 +1,4 @@
-#Include %A_ScriptDir%\..\class_CircleProgressClass.ahk
+﻿#Include %A_ScriptDir%\..\class_CircleProgressClass.ahk
 #Include %A_ScriptDir%\..\..\lib-a_to_h\GDIP.ahk
 
 ;Example 1 - simple:

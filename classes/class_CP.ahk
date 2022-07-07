@@ -1,4 +1,4 @@
-problemFIlePath := A_Desktop . "\Problems.txt"
+﻿problemFIlePath := A_Desktop . "\Problems.txt"
 For identifier, descryption in CP {
     If identifier is Digit
     {

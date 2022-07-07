@@ -1,4 +1,4 @@
-#Include WRandom.ahk
+﻿#Include WRandom.ahk
 
 ; =============================
 

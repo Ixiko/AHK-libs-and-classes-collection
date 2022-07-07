@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: KNOWNFOLDERID
 a class representing GUIDs (constants) that identify standard folders registered with the system as Known Folders.
 

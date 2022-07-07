@@ -1,4 +1,4 @@
-/*
+﻿/*
 Example: Demonstrates the usage of *ImageList.ahk*
 	* Image list manipulation using the ImageList class
 	* Loading system bitmaps, icons and cursors into the image list

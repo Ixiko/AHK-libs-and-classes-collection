@@ -1,4 +1,4 @@
-#include <CallbackCreate>
+﻿#include <CallbackCreate>
 ;-----------------------------------------------------------------------
 ; InputBlocker
 ;   Blocks user input until a password is entered, or Stop() is called.

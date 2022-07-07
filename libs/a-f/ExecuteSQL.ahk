@@ -1,4 +1,4 @@
-ExecuteSQL(fnConnectionString,fnQueryStatement,fnIncludeHeaders,fnResultsAsText := 1)
+﻿ExecuteSQL(fnConnectionString,fnQueryStatement,fnIncludeHeaders,fnResultsAsText := 1)
 {
 	; ADOSQL v5.04L - By [VxE]
 	; http://www.autohotkey.com/community/viewtopic.php?p=558323#p558323

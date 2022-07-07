@@ -1,4 +1,4 @@
-; This script tests if Excel is in edit mode. Many actions are forbidden while Excel is in edit-mode. They will generate
+﻿; This script tests if Excel is in edit mode. Many actions are forbidden while Excel is in edit-mode. They will generate
 ; warning messages instead of performing the requested action.
 
 F7::  ; Press F7 to check if Excel is in edit mode. One (and only one) instance of Excel must be running. 

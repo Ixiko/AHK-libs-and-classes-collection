@@ -1,4 +1,4 @@
-
+﻿
 #include %A_LineFile%\..
 #include Mony.ahk
 #include %A_LineFile%\..\..

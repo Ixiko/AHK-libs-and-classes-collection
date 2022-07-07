@@ -1,4 +1,4 @@
-DDBD(dic="",action="",ByRef Key="",ByRef Item="",skip=0,limit=9223372036854775807){
+﻿DDBD(dic="",action="",ByRef Key="",ByRef Item="",skip=0,limit=9223372036854775807){
 	static
 	local CLSID,IID,CLSID_,IID_,nLen,nLenItm,bExist,label,penum,result,nCompMode,wStr,wItm,wKey,wItem,pFunc,n,MaxParams
 			,split,split1,split2,Array_var,eline,pgit,Name,pName,pvName,this_postfix,vName,func_deref

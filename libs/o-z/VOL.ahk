@@ -1,4 +1,4 @@
-; Vista/7 Volume Commands.
+﻿; Vista/7 Volume Commands.
 ; http://www.autohotkey.com/community/viewtopic.php?t=23792
 
 ;

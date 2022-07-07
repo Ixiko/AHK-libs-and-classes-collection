@@ -1,4 +1,4 @@
-; #Include ILButton.ahk
+﻿; #Include ILButton.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

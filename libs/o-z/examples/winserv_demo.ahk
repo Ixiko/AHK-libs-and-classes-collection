@@ -1,4 +1,4 @@
-; #Include WinServ.ahk
+﻿; #Include WinServ.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

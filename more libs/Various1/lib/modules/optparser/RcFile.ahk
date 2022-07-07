@@ -1,4 +1,4 @@
-class RcFile extends OptParser.Option {
+﻿class RcFile extends OptParser.Option {
 
 	__new(option1Dash, option2Dashes, optionClass, optionProperty=""
 			, argumentDescription="", description="", flags=1

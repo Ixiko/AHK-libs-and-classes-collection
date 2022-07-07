@@ -1,4 +1,4 @@
-class Assert {
+﻿class Assert {
 
 	true(value) {
 		return (value == true)

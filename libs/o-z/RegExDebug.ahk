@@ -1,4 +1,4 @@
-pcre_callout = RegExDebug
+ï»¿pcre_callout = RegExDebug
 RegExDebug(fnMatch,fnCalloutNumber,fnFoundPos,fnHaystack,fnNeedleRegEx)
 {
 	; RegEx debugging window
@@ -39,12 +39,12 @@ RegExDebug(fnMatch,fnCalloutNumber,fnFoundPos,fnHaystack,fnNeedleRegEx)
 		If (version >= 2)
 			mark := StrGet(NumGet(A_EventInfo,36+pad+A_PtrSize*3,"Int"),"UTF-8")
 		
-		SpaceDisplayChar := "·" ; Middle Dot
+		SpaceDisplayChar := "Â·" ; Middle Dot
 
 
 		; format text for display
-		; _HAYSTACK := SubStr(fnHaystack   , 1, start_match     ) . "»" SubStr(fnHaystack   , start_match      + 1, current_position - start_match) . "«" SubStr(fnHaystack   , current_position + 1                   )
-		; _NEEDLE   := SubStr(fnNeedleRegEx, 1, pattern_position) . "»" SubStr(fnNeedleRegEx, pattern_position + 1, next_item_length              ) . "«" SubStr(fnNeedleRegEx, pattern_position + 1 + next_item_length)
+		; _HAYSTACK := SubStr(fnHaystack   , 1, start_match     ) . "Â»" SubStr(fnHaystack   , start_match      + 1, current_position - start_match) . "Â«" SubStr(fnHaystack   , current_position + 1                   )
+		; _NEEDLE   := SubStr(fnNeedleRegEx, 1, pattern_position) . "Â»" SubStr(fnNeedleRegEx, pattern_position + 1, next_item_length              ) . "Â«" SubStr(fnNeedleRegEx, pattern_position + 1 + next_item_length)
 
 		HayL := SubStr(fnHaystack,1                 ,start_match                 )
 		HayC := SubStr(fnHaystack,start_match     +1,current_position-start_match)
@@ -56,7 +56,7 @@ RegExDebug(fnMatch,fnCalloutNumber,fnFoundPos,fnHaystack,fnNeedleRegEx)
 		HayCLen := StrLen(HayC)
 		HayRLen := StrLen(HayR)
 		HaystackString     :=                  HayL         HayC                      HayR
-		MatchedSoFarString := StrReplicate(" ",HayLLen) "»" HayC "«" StrReplicate(" ",HayRLen)
+		MatchedSoFarString := StrReplicate(" ",HayLLen) "Â»" HayC "Â«" StrReplicate(" ",HayRLen)
 		
 		NeedleL := SubStr(fnNeedleRegEx,1                                  , pattern_position)
 		NeedleC := SubStr(fnNeedleRegEx,pattern_position+1                 , next_item_length)
@@ -64,7 +64,7 @@ RegExDebug(fnMatch,fnCalloutNumber,fnFoundPos,fnHaystack,fnNeedleRegEx)
 		NeedleLLen := StrLen(NeedleL)
 		NeedleCLen := StrLen(NeedleC)
 		NeedleRLen := StrLen(NeedleR)
-		LookingToMatchString := StrReplicate(" ",NeedleLLen) "»" StrReplace(NeedleC,A_Space,SpaceDisplayChar) "«" StrReplicate(" ",NeedleRLen)
+		LookingToMatchString := StrReplicate(" ",NeedleLLen) "Â»" StrReplace(NeedleC,A_Space,SpaceDisplayChar) "Â«" StrReplicate(" ",NeedleRLen)
 		
 		LastMatchFoundString := ""
 		If (pattern_position = StrLen(fnNeedleRegEx)) ; matched all elements

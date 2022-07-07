@@ -1,4 +1,4 @@
-ITL_GUID_ToString(guid)
+﻿ITL_GUID_ToString(guid)
 {
 	local string := 0
 	DllCall("Ole32\StringFromCLSID", "Ptr", guid, "Ptr*", string)

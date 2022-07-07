@@ -1,4 +1,4 @@
-Bin2Hex(ByRef h, ByRef b, n=0)      ; n bytes binary data -> stream of 2-digit hex
+﻿Bin2Hex(ByRef h, ByRef b, n=0)      ; n bytes binary data -> stream of 2-digit hex
 {                                   ; n = 0: all (SetCapacity can be larger than used!)
    format = %A_FormatInteger%       ; save original integer format
    SetFormat Integer, Hex           ; for converting bytes to hex

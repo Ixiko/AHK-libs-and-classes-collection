@@ -1,7 +1,7 @@
-; Sets cue banner for (almost) any control. Cue text may have blurred shadow on Win98+.
+﻿; Sets cue banner for (almost) any control. Cue text may have blurred shadow on Win98+.
 ; Requires comctl32 v4.72+
 ; v2.6.1
-; � Drugwash, 2017.07.26
+; © Drugwash, 2017.07.26
 ; hwnd - handle to the control that will display the cue banner
 ; pTxt - pointer to the text string that will be set as cue banner
 ; opt - options string. Possible values are 'p' (persistent caret), 's' (drop shadow), 'r' (right-aligned text),

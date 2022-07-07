@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: SLR
 an enumeration class containing flags that specify how to find the target of a shell link.
 

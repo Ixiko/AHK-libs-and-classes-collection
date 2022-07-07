@@ -1,4 +1,4 @@
-class Option {
+﻿class Option {
 	option1Dash := ""
 	option2Dashes := ""
 	optionClass := 0

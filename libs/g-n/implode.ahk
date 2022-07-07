@@ -1,4 +1,4 @@
-implode(array, sep = "")
+﻿implode(array, sep = "")
 {
 	local str := "", k := "", v := ""
 	for k, v in array

@@ -1,4 +1,4 @@
-class DateTools {
+﻿class DateTools {
 	; written by Roy Miller, 2015 Jul 10
 	; these are a collection of date related tools lumped together into a class
 	; to use these you can simply call them as datetools.<method name>

@@ -1,4 +1,4 @@
-/*
+﻿/*
 Excel_Functions()
 Forum: http://www.autohotkey.com/forum/viewtopic.php?t=70421
 version: 4

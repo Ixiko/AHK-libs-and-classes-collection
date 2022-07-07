@@ -1,4 +1,4 @@
-;---------------------------------------------------------------
+﻿;---------------------------------------------------------------
 ; CornerNotify.ahk
 ; http://www.autohotkey.com/board/topic/94458-msgbox-replacement-monolog-non-modal-transparent-message-box-cornernotify/
 

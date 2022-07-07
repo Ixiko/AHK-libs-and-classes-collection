@@ -1,4 +1,4 @@
-; #Include yaml.ahk
+﻿; #Include yaml.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

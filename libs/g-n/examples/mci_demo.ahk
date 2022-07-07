@@ -1,4 +1,4 @@
-; #Include MCI.ahk
+﻿; #Include MCI.ahk
 #NoEnv
 #SingleInstance Force
 

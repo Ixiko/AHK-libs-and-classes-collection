@@ -1,4 +1,4 @@
-;http://www.autohotkey.com/forum/topic19255.html
+﻿;http://www.autohotkey.com/forum/topic19255.html
 
 COM_Init()
 psh :=   COM_CreateObject("Shell.Application")

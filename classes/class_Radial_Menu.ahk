@@ -1,4 +1,4 @@
-; Created by ahk_user @ 2019
+﻿; Created by ahk_user @ 2019
 ; Creates radial Mouse menu
 ; V1.00046
 ; Changes

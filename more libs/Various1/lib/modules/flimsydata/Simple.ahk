@@ -1,4 +1,4 @@
-class Simple extends Flimsydata.Formatter {
+﻿class Simple extends Flimsydata.Formatter {
 
 	static CHARS_LOWERCASE := "abcdefghijklmnopqrstuvwxyz"
 	static CHARS_UPPERCASE := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"

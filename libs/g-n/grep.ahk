@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Function: grep
 		Sets the output variable to all the entire or specified subpattern matches and returns their offsets within the haystack.
 

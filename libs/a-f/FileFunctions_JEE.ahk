@@ -1,4 +1,4 @@
-
+﻿
 ;JEE_FileEmpty
 ;JEE_FileGetEncoding
 ;JEE_FileReadForce

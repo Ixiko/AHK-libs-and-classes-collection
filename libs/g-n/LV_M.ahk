@@ -1,4 +1,4 @@
-/*						ListView function library by Solar. Version 1.01
+﻿/*						ListView function library by Solar. Version 1.01
   
 	https://autohotkey.com/board/topic/41650-ahk-l-60-listview-handle-library-101/page-2
 	

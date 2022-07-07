@@ -1,4 +1,4 @@
-CMDret_RunReturn(CMDin)
+﻿CMDret_RunReturn(CMDin)
 {
   VarSetCapacity(lpBuffer,1024)
   VarSetCapacity(sui,68, 0)

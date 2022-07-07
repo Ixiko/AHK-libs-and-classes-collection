@@ -1,4 +1,4 @@
-/*! TheGood
+﻿/*! TheGood
     AHKHID - An AHK implementation of the HID functions.
     Last updated: June 14th, 2010
 

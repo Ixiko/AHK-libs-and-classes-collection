@@ -1,4 +1,4 @@
-;Message Authentication / Secure hash in AHK alone by Laszlo
+﻿;Message Authentication / Secure hash in AHK alone by Laszlo
 ;https://autohotkey.com/board/topic/4632-message-authentication-secure-hash-in-ahk-alone/
 
 /*									DESCRIPTION

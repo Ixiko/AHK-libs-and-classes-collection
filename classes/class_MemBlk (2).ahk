@@ -1,4 +1,4 @@
-/* Library: MemBlk/MemBlkView
+﻿/* Library: MemBlk/MemBlkView
  *     Wrapper for the VarSetCapacity -> NumPut/NumGet/StrPut/StrGet routines
  * Version:
  *     1.1.00.00 [updated 03/22/2015]

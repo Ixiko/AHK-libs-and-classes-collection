@@ -1,4 +1,4 @@
-/*
+﻿/*
 Function: ImportTypeLib
 loads a type library and returns a wrapper object
 

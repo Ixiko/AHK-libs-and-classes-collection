@@ -1,4 +1,4 @@
-class Font{
+﻿class Font{
 
     static _ := Canvas.Font.Initialize()
 

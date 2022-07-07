@@ -1,4 +1,4 @@
-/*
+﻿/*
  *  Author: Gerrard Lukacs
  */
 

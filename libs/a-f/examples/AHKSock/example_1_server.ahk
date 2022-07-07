@@ -1,4 +1,4 @@
-/*! TheGood
+﻿/*! TheGood
     AHKsock - A simple AHK implementation of Winsock.
     AHKsock Example 1 - Simple Scenario
     http://www.autohotkey.com/forum/viewtopic.php?p=355775

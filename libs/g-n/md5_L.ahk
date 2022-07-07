@@ -1,4 +1,4 @@
-; MD5 hashing functions by Laszlo
+﻿; MD5 hashing functions by Laszlo
 
 MD5_File( sFile="", cSz=4 ) { ; www.autohotkey.com/forum/viewtopic.php?p=275910#275910
  cSz  := (cSz<0||cSz>8) ? 2**22 : 2**(18+cSz), VarSetCapacity( Buffer,cSz,0 )

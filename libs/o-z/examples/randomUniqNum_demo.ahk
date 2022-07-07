@@ -1,4 +1,4 @@
-; #Include RandomUniqNum.ahk
+﻿; #Include RandomUniqNum.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

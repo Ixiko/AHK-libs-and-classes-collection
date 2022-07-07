@@ -1,4 +1,4 @@
-ConvertToMp3(fnInputFilePath,fnOutputFilePath := "",fnOverWrite = 0,fnBitRate = "128k")
+﻿ConvertToMp3(fnInputFilePath,fnOutputFilePath := "",fnOverWrite = 0,fnBitRate = "128k")
 {
 	; uses ffmpeg to convert files to mp3
 	; MsgBox fnInputFilePath: %fnInputFilePath%`nfnOutputFilePath: %fnOutputFilePath%`nfnBitRate: %fnBitRate%

@@ -1,4 +1,4 @@
-class Dual {
+﻿class Dual {
 	;;; Settings.
 	; They are described in detail in the readme. Remember to mirror the defaults there.
 

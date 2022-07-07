@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: UIAutomationCondition
 wraps the *IUIAutomationCondition* interface and serves as an abstract base class for other condition types.
 

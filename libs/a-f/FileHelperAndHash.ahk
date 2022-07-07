@@ -1,4 +1,4 @@
-/*
+﻿/*
 sFile := A_AhkPath	; Specify the real path
 
 MsgBox, % "CRC32:`t"	. File_Hash(sFile, "CRC32")	. "`n"

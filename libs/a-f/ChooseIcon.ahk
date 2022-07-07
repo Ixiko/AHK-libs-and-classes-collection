@@ -1,4 +1,4 @@
-/*
+﻿/*
 Muestra un diálogo para pedirle al usuario que seleccione un icono.
 Parámetros:
     Owner: El identificador de la ventana propietaria de este diálogo. Este valor puede ser cero.

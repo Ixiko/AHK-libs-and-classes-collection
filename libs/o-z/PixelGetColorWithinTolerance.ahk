@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (C) 2007, 2008, 2009 Windy Hill Technology LLC
  *
  * This file is part of Poker Shortcuts.

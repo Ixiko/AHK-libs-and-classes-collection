@@ -1,4 +1,4 @@
-
+﻿
 ResFolder := A_ScriptDir . "\Framework\src\System\Resource"
 
 try {

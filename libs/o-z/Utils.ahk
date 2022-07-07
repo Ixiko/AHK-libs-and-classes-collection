@@ -1,4 +1,4 @@
-; AutoHotkey Version: 1.0.47.06
+ï»¿; AutoHotkey Version: 1.0.47.06
 ; Language:       Chinese/English
 ; Platform:       WinXP
 ; Author:         Yonken <yonken@163.com>
@@ -18,7 +18,7 @@
 ; ##################################################
 
 ; Open the process of the target window
-; »ñµÃÄ¿±ê´°¿ÚËùÊô½ø³Ì¾ä±ú
+; ï¿½ï¿½ï¿½ï¿½ê´°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½
 OpenWindowProcess(dwDesiredAccess, bInheritHandle, hWnd)
 {
 	nPID := 0

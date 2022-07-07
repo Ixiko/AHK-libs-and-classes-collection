@@ -1,4 +1,4 @@
-/* Title:		Taskbar
+﻿/* Title:		Taskbar
 				*Taskbar monitor and controller*
  :
 				Using this module you can monitor and control Windows Taskbar buttons.
@@ -44,7 +44,7 @@ Taskbar_Count() {
   Returns:
 				String containing icon information per line. 
  */
-Taskbar_Define(Filter="", pQ="", ByRef o1="~`a�", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o5="", ByRef o6="", ByRef o7=""){
+Taskbar_Define(Filter="", pQ="", ByRef o1="~`a ", ByRef o2="", ByRef o3="", ByRef o4="", ByRef o5="", ByRef o6="", ByRef o7=""){
 	static TB_BUTTONCOUNT = 0x418, TB_GETBUTTON=0x417, sep="|"
 	ifEqual, pQ,, SetEnv, pQ, iwt
 

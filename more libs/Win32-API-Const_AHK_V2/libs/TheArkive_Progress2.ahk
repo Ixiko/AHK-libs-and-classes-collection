@@ -1,4 +1,4 @@
-; ahk v2
+﻿; ahk v2
 ; ============================================================================================
 ; Progress bar window contains a MainText element (above the progress bar), a SubText element
 ; (below the progress bar), the progress bar itself, and an optional title bar.

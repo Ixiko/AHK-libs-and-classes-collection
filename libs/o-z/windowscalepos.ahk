@@ -1,4 +1,4 @@
-/*
+﻿/*
 WindowScaledPos()
    Purpose: This function scales PosX,PosY for the current window size
       to find the new position coordinates for a different size table (compared to the

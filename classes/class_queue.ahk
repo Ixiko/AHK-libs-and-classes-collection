@@ -1,4 +1,4 @@
-class _queue {
+﻿class _queue {
     
     _list := []
     insert := _Queue.add

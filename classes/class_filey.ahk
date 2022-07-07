@@ -1,4 +1,4 @@
-;Sunday, March 06, 2016
+﻿;Sunday, March 06, 2016
 ;filey.ahk
 ;version 1.2
 ;an autohotkey library for common file functions

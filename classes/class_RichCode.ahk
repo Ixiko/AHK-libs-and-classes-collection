@@ -1,4 +1,4 @@
-/*
+﻿/*
 	class RichCode({"TabSize": 4     ; Width of a tab in characters
 		, "Indent": "`t"             ; What text to insert on indent
 		, "FGColor": 0xRRGGBB        ; Foreground (text) color

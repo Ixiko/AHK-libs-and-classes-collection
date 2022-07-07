@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 /*
 Handles binding of the hotkeys for Bind Mode
 Runs as a separate thread to the main application,

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: POINT
 a structure class that defines the x- and y- coordinates of a point.
 

@@ -1,4 +1,4 @@
-Memory(Type=3,Param1=0,Param2=0,Param3=0)
+﻿Memory(Type=3,Param1=0,Param2=0,Param3=0)
 {
    Static ProcessHandle
    If Type = 1 ; Open a new handle.     Syntax: Memory(1, PID)

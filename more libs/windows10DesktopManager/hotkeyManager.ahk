@@ -1,4 +1,4 @@
-/* 
+﻿/* 
  * this function is used when a hotkey combo is pressed. It directs the program to the appropriate function in the appropriate class
  */ 
 JPGIncDesktopManagerCallback(desktopManager, functionName, keyCombo)

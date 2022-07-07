@@ -1,4 +1,4 @@
-; Form Filler
+﻿; Form Filler
 
 
 ; Returns True if successful

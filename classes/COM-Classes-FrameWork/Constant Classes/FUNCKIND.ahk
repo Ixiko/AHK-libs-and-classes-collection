@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: FUNCKIND
 an enumeration class that specifies a function's type.
 

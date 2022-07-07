@@ -1,4 +1,4 @@
-; #Include Crypt.ahk
+﻿; #Include Crypt.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

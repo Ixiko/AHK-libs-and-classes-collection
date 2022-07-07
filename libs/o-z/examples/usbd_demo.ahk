@@ -1,4 +1,4 @@
-; #Include USBD.ahk
+﻿; #Include USBD.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

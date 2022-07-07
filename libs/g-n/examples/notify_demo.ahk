@@ -1,4 +1,4 @@
-; #Include Notify.ahk
+﻿; #Include Notify.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

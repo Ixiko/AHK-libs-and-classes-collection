@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #SingleInstance force
 Loop, Read, %A_ScriptDir%\TheBeatles-Lyrics.txt
 	if (A_Index = 1)

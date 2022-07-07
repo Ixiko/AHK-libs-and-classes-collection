@@ -1,4 +1,4 @@
-IniSettingsEditor(ProgName,IniFile,OwnedBy = 0,DisableGui = 0, HelpText = 0) {
+﻿IniSettingsEditor(ProgName,IniFile,OwnedBy = 0,DisableGui = 0, HelpText = 0) {
     static pos
 
     ;Find a GUI ID that does not exist yet

@@ -1,4 +1,4 @@
-;Dependecies: Form, Panel, Attach, Align, Toolbar, RichEdit
+﻿;Dependecies: Form, Panel, Attach, Align, Toolbar, RichEdit
 Writer_Add(hParent, X, Y, W, H, Style="", Text="", Font="") {
 	global 
 

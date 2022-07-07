@@ -1,4 +1,4 @@
-; AutoHotkey header file for OpenGL-Win32.
+﻿; AutoHotkey header file for OpenGL-Win32.
 ; wgl.ahk last updated Date: 2011-03-08 (Tuesday, 08 Mar 2011)
 ; Written by: Bentschi
 

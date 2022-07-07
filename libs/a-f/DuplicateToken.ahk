@@ -1,4 +1,4 @@
-/*
+﻿/*
     Crea un nuevo Token de acceso que duplica un Token existente. Esta función puede crear un Token primario o un Token de suplantación.
     Parámetros:
         hToken            : Un identificador a un Token de acceso abierto con el acceso TOKEN_DUPLICATE.

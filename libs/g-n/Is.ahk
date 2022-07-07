@@ -1,4 +1,4 @@
-Is(Value, Type)
+﻿Is(Value, Type)
 {
     local
     Result := false

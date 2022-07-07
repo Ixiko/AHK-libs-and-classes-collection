@@ -1,4 +1,4 @@
-#include %A_ScriptDir%\..\..\lib\Windy
+﻿#include %A_ScriptDir%\..\..\lib\Windy
 #include Windy.ahk
 
 obj := new Windy(0,0)

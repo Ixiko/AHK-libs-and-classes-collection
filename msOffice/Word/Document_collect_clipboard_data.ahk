@@ -1,4 +1,4 @@
-; This script creates a new document to hold stuff from the clipboard.
+﻿; This script creates a new document to hold stuff from the clipboard.
 
 ; Usage
 ;   - Highlight something.

@@ -1,4 +1,4 @@
-; #Include Win.ahk
+﻿; #Include Win.ahk
 ; #Include Splitter.ahk
 #NoEnv
 SendMode Input

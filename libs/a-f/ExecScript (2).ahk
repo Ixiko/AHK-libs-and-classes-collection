@@ -1,4 +1,4 @@
-/* Function: ExecScript
+﻿/* Function: ExecScript
  *     Run/execute AutoHotkey script[file, through named pipe(s) or from stdin]
  *     Mod of/inspired by HotKeyIt's DynaRun()
  * License:

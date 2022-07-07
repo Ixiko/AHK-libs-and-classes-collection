@@ -1,4 +1,4 @@
-
+ï»¿
 /*
 Copyright
 Original character transliteration tables:
@@ -11,8 +11,8 @@ Copyright 2001, Sean M. Burke <sburke@cpan.org>, all rights reserved.
 ; http://search.cpan.org/~sburke/Text-Unidecode-1.27/lib/Text/Unidecode.pm
 ; ASCII transliterations of Unicode text
 ;
-; changedbehaviour: use a String like "ÄAe ß ü €Eur" to change the behave of unidecode.
-; The Example changes Ä to Ae instead of A, ß leaves unchanged like ü, € is changed to Eur
+; changedbehaviour: use a String like "Ã„Ae ÃŸ Ã¼ â‚¬Eur" to change the behave of unidecode.
+; The Example changes Ã„ to Ae instead of A, ÃŸ leaves unchanged like Ã¼, â‚¬ is changed to Eur
 ; Author: rainer friebel
 ; ======================================================================================================================
 

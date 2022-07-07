@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ILFIP
 an enumeration class containing flags for setting an image as "current" in an image list..
 

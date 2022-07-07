@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ILS
 an enumeration class containing flags passed to IImageList::Draw in the fState member of IMAGELISTDRAWPARAMS.
 

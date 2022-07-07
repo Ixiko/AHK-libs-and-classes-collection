@@ -1,4 +1,4 @@
-Funcs() {
+﻿Funcs() {
 	Return, true
 	}
 

@@ -1,4 +1,4 @@
-;IE_Ready by Sean
+﻿;IE_Ready by Sean
 ;http://www.autohotkey.com/forum/viewtopic.php?t=19256
 
 ;#Persistent

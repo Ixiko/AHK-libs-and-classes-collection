@@ -1,4 +1,4 @@
-;~ FileSelectFile,FileName,,%A_ScriptDir%,Select a file to generate a MD5 from
+﻿;~ FileSelectFile,FileName,,%A_ScriptDir%,Select a file to generate a MD5 from
 
 ;~ IfExist,%FileName%
 ;~ {

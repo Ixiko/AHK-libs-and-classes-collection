@@ -1,4 +1,4 @@
-; Usage:
+﻿; Usage:
 ;   Copy text to the clipboard.
 ;   Press F7 to search for the clipboard text in columns A and B.
 ;   If the text is found, the found cell's address is displayed.

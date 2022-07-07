@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: MMDevice
 wraps the *IMMDevice* interface and encapsulates the generic features of a multimedia device resource.
 

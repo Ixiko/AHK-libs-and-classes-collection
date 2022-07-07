@@ -1,4 +1,4 @@
-lua_LoadDLL(dll)
+﻿lua_LoadDLL(dll)
 {
    return, DllCall("LoadLibrary", "str", dll)
 }

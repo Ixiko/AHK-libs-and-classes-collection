@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: DISPPARAMS
 a structure class that contains the arguments passed to a method or property.
 

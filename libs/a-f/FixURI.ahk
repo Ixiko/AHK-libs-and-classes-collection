@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 FixURI()
 Lintalist v1.2

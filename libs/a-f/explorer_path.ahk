@@ -1,4 +1,4 @@
-; http://www.autohotkey.com/board/topic/9350-get-the-current-path-of-a-window-explorer/
+﻿; http://www.autohotkey.com/board/topic/9350-get-the-current-path-of-a-window-explorer/
 GetWindowsExplorerPath(_hWnd)
 {
 	local pid, hMem, pv, pidl, pidl?, explorerPath

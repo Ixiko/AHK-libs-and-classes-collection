@@ -1,4 +1,4 @@
-;* 13/11/2020:
+﻿;* 13/11/2020:
 	;* Added a check to determine if the sine wave visualization needs to be redrawn.
 	;* Added a new Canvas to avoid redrawing the sine wave visualization all the time.
 	;* Refactored code.

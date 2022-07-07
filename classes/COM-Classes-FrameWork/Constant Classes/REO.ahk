@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: REO
 an enumeration class containing flags that specify what information should be placed in a REOBJECT structure.
 

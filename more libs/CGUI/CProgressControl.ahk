@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CProgressControl
 A Progress control.
 

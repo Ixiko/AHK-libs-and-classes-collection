@@ -1,4 +1,4 @@
-/*
+﻿/*
  *  ActiveScript for AutoHotkey v1.1
  *
  *  Provides an interface to Active Scripting languages like VBScript and JScript,

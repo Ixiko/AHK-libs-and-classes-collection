@@ -1,4 +1,4 @@
-;prevent this script from being opened on its own
+﻿;prevent this script from being opened on its own
 if A_ScriptName = web.ahk
 	ExitApp
 

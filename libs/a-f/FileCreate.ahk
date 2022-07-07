@@ -1,4 +1,4 @@
-; by Drugwash 2011-2015
+﻿; by Drugwash 2011-2015
 ; AHK screws up certain bytes when saving a variable to file
 ; this is a replacement for AHK's built-in function FileAppend
 ; var is a variable (buffer) name or a buffer's address

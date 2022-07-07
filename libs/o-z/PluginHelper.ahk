@@ -1,4 +1,4 @@
-; LintaList Include
+﻿; LintaList Include
 ; Purpose: Parse (nested) plugins properly and assisting functions
 ; Version: 1.6
 ; Date:    20150328

@@ -1,4 +1,4 @@
-;This file contains a bunch of functions used for checking/setting various windows settings
+﻿;This file contains a bunch of functions used for checking/setting various windows settings
 ;from 7plus.ahk
 ;==========================================================
 ;Getter functions: Return 1 when enabled, 0 when disabled, or -1 when not used on this OS.

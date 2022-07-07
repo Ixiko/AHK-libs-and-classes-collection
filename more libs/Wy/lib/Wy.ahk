@@ -1,4 +1,4 @@
-#include %A_LineFile%\..
+﻿#include %A_LineFile%\..
 #Include Const_WinUser.ahk
 #Include GdipC\GdipC.ahk
 

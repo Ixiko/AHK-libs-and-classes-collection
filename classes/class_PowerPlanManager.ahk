@@ -1,4 +1,4 @@
-Class PowerPlanManager
+﻿Class PowerPlanManager
 {
 	SetBalancedPlan()
 	{

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: INVOKEKIND
 an enumeration class that specifies the way a function is invoked.
 

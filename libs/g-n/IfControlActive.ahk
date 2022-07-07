@@ -1,4 +1,4 @@
-;
+﻿;
 ; AutoHotkey Version: 1.0.47
 ; Language:       English
 ; Platform:       Win98/NT

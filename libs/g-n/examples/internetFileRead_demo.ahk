@@ -1,4 +1,4 @@
-; #Include InternetFileRead.ahk
+﻿; #Include InternetFileRead.ahk
 ; Modified third example by SKAN
 ; Example: Download a http file: AutoHotkey installer (~2 MB) and save & run it.
 URL := "http://www.autohotkey.com/download/AutoHotkeyInstall.exe"

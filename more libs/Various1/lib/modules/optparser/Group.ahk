@@ -1,4 +1,4 @@
-class Group {
+﻿class Group {
 	description := ""
 
 	__new(description) {

@@ -1,6 +1,6 @@
-/*
+﻿/*
     MouseMove_Ellipse.ahk
-    Copyright (C) 2010,2013 Antonio Fran�a
+    Copyright (C) 2010,2013 Antonio França
 
     This script is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as

@@ -1,4 +1,4 @@
-; Script:    Subtitle.ahk
+﻿; Script:    Subtitle.ahk
 ; Author:    iseahound
 ; Version:   2018-04-17 (April 2018)
 ; Recent:    2018-05-15

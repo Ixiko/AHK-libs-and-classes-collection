@@ -1,4 +1,4 @@
-; RelativePath & AbsolutePath by toralf and Titan
+﻿; RelativePath & AbsolutePath by toralf and Titan
 ; http://www.autohotkey.com/forum/topic19489.html
 
 ; Original: RelativePath

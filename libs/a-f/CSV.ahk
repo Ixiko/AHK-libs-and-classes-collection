@@ -1,4 +1,4 @@
-; AutoHotkey Version: 1.0.48 
+﻿; AutoHotkey Version: 1.0.48 
 ; Author: Kdoske, trueski  
 ; http://www.autohotkey.com/forum/viewtopic.php?p=329126#329126
 ; http://www.autohotkey.com/community/viewtopic.php?p=340948#p340948 good link

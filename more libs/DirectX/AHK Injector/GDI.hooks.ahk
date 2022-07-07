@@ -1,4 +1,4 @@
-; <COMPILER: v1.1.11.01>
+﻿; <COMPILER: v1.1.11.01>
 global g_GDIHooks := {}
 if g_globals.config.upScale or g_globals.config.hiRes
 {

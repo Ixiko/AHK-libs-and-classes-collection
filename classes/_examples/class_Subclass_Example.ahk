@@ -1,4 +1,4 @@
-#Include, Subclass.ahk
+﻿#Include, Subclass.ahk
 
 WM_Copy := 0x301
 

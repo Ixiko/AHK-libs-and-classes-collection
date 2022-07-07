@@ -1,4 +1,4 @@
-
+﻿
 class IDCompositionDevice extends IUnknown
 {
   static iid := "{C37EA93A-E7AA-450D-B16F-9746CB0407F3}"

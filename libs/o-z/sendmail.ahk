@@ -1,4 +1,4 @@
-;this file is built from an example in the ahk forums and made into a function for including 
+﻿;this file is built from an example in the ahk forums and made into a function for including 
 ;using #include c:\pathtofile\sendmail.ahk
 
 SendMail(SMTPServer, SMTPPort, USESSL, Sender, Receiver, Subject, TextBody, Attachments="", SendUserName="username", SendPassword="password", SendUsing=2, SMTPAuthenticate=1, SMTPTimeout=60, ReplyTo=FALSE)

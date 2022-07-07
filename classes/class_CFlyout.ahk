@@ -1,4 +1,4 @@
-class CFlyout
+Ôªøclass CFlyout
 {
 	/*
 	----------------------------------------------------------------------------------------------------------------------------------
@@ -351,10 +351,10 @@ class CFlyout
 	}
 	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-	; GUI interface for editing Flyout_Config.ini. May be callable without initializing any CFlyout object like so, ìCFlyout.GUIEditSettings()î
+	; GUI interface for editing Flyout_Config.ini. May be callable without initializing any CFlyout object like so, ‚ÄúCFlyout.GUIEditSettings()‚Äù
 		; 1. hParent is for parentage GUI. If nonzero, then the parent window will be deactivated until the GUI is closed.
 		; 2. sGUI is used to determine whether or not GUIEditSettings should be a standalone GUI with its own window
-			; or simply added to an existing GUI. i.e. (GUIEditSettings(hGUI1, ì1î))
+			; or simply added to an existing GUI. i.e. (GUIEditSettings(hGUI1, ‚Äú1‚Äù))
 		; 3. bReloadOnExit : if true, Reload will be executed when the GUI is closed.
 			; This is useful if you are using multiple flyouts in one script and want them all to be updated with your latest changes.
 	GUIEditSettings(hParent=0, sGUI="", bReloadOnExit=false)
@@ -603,10 +603,10 @@ class CFlyout
 			; Each element of the array will be separated by a newline. If any element of the array is too wide,
 				; the text will be wrapped accordingly.
 		; 3. bReadOnly = 0. When true, the GUI is non-clickable, and no selection box is shown.
-		; 4. bShowInTaskbar = 0. Typically used when CFlyout is used like a control instead of a window ñ
-			; you wouldnít want your ìcontrolî showing up in the taskbar. 
+		; 4. bShowInTaskbar = 0. Typically used when CFlyout is used like a control instead of a window ‚Äì
+			; you wouldn‚Äôt want your ‚Äúcontrol‚Äù showing up in the taskbar. 
 		; 5. iX = 0. X coordinate. When iX AND iY are less than -32768, CFlyout will follow your mouse like a Tooltip;
-			; it wouldnít make sense to make CFlyout non-readonly and also set it to follow your mouse, but you can anyway.
+			; it wouldn‚Äôt make sense to make CFlyout non-readonly and also set it to follow your mouse, but you can anyway.
 			; See DictLookup for an example of how/why you would do this.
 		; 6. iY = 0. Y coordinate. Also needs to be set to be to less than -32768 in order for CFlyout to follow the mouse.
 		; 7. iW = 0. Width of the Flyout, in pixels. Text will be wrapped based on this number.
@@ -614,14 +614,14 @@ class CFlyout
 			; of elements in asTextToDisplay. If iMaxRows is set to 10 and there are 11 elements in asTextToDisplay,
 			; then the 11th element will not show up on the Flyout; instead, it will can be scrolled down to
 			; and will be located beneath the 10th element, naturally.
-		; 9. iAnchorAt = -99999. Y Coordinates to ìanchorî Flyout GUI to. When set to a number less than -32768,
+		; 9. iAnchorAt = -99999. Y Coordinates to ‚Äúanchor‚Äù Flyout GUI to. When set to a number less than -32768,
 			; this is effectively telling CFlyout to not anchor to any point. When blank, it loads the setting from CFlyout_Config.ini
 		; 10. bDrawBelowAnchor = true. Completely ignored if iAnchorAt < -32768; when true, subsequent Flyout
 			; redraws/resizes will place the Top of the Flyout below the specified point; when false,
 			; it will place the Bottom of the Flyout above the specified point.
 		; 11. sBackground = 0. Background picture for Flyout. If 0 or an invalid file, then the background will be all Black.
-		; 12. sFont = 0. Font options in native AHK format sans color. For example, ìArial, s15 Boldî
-		; 13. sFontColor = 0. Font color in native AHK format (so it can be hex code or plain color like ìBlueî)
+		; 12. sFont = 0. Font options in native AHK format sans color. For example, ‚ÄúArial, s15 Bold‚Äù
+		; 13. sFontColor = 0. Font color in native AHK format (so it can be hex code or plain color like ‚ÄúBlue‚Äù)
 		; 14. bFollowMouse=True
 	__New(asTextToDisplay, aParms*)
 	{
@@ -790,9 +790,9 @@ class CFlyout
 
 	; Handles safe destruction of all objects CFlyout is responsible for. It is very important to note that,
 	; since CFlyout.FromHwnd stores references to CFlyout classes, any object that is assigned a Flyout
-	; (i.e. vFlyout := Object(CFlyout.FromHwnd[WinExist(ìAî)])) must be released (i.e. vFlyout :=)
+	; (i.e. vFlyout := Object(CFlyout.FromHwnd[WinExist(‚ÄúA‚Äù)])) must be released (i.e. vFlyout :=)
 	; in order for __Delete to automatically be called upon removal of original Flyout object
-	; assigned via vFlyout := new CFlyout(Ö))
+	; assigned via vFlyout := new CFlyout(‚Ä¶))
 	; Any special destructor handling should go in here.
 	__Delete()
 	{
@@ -1417,7 +1417,7 @@ GetMonitorRectAt(x, y, default=1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;; My (Verdlin) modification of Titan?s/Polythene?s anchor function: https://raw.github.com/polyethene/AutoHotkey-Scripts/master/Anchor.ahk
-;;;;;;;;;;;;;; Using this one instead of Attach or Titanís/Polytheneís Anchor v4 because this function,
+;;;;;;;;;;;;;; Using this one instead of Attach or Titan‚Äôs/Polythene‚Äôs Anchor v4 because this function,
 ;;;;;;;;;;;;;; although the parameter syntax is downright atrocious, actually works in Windows 7 and 8.
 Anchor2(ctrl, a, d = false) {
 static pos

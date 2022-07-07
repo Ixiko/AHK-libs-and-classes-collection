@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CCheckboxControl
 A checkbox/radio control.
 

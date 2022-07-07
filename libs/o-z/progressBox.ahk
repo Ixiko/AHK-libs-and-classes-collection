@@ -1,4 +1,4 @@
-progressBox(input="", title:="") {
+﻿progressBox(input="", title:="") {
 	static _display
 	
 	If !(input) {

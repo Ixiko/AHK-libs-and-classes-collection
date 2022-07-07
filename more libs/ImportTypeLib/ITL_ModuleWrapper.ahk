@@ -1,4 +1,4 @@
-class ITL_ModuleWrapper extends ITL.ITL_ConstantMemberWrapperBaseClass
+﻿class ITL_ModuleWrapper extends ITL.ITL_ConstantMemberWrapperBaseClass
 {
 	__New(typeInfo, lib)
 	{

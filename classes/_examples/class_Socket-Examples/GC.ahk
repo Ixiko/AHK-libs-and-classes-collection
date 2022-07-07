@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 SetBatchLines, -1
 
 #Include %A_ScriptDir%\..\..\class_Socket.ahk

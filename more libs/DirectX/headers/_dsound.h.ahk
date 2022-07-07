@@ -1,4 +1,4 @@
-#include <DirectX\headers\dsound.h>
+﻿#include <DirectX\headers\dsound.h>
 
 dsound.result[2147942487 . ""] := "DSERR_INVALIDPARAMS"
 dsound.result[0 . ""] := "DSERR_OK"

@@ -1,4 +1,4 @@
-/*
+﻿/*
 ScriptMem - Reduce Memory consumption of your AHK Script
 by Avi Aryan
 

@@ -1,4 +1,4 @@
-RunWithTaskSheduler(FileToRun, Arguments, TaskName := "", CP := "CP866")
+﻿RunWithTaskSheduler(FileToRun, Arguments, TaskName := "", CP := "CP866")
 {
 	local
 	BatFile := A_Temp . "\RunWithTaskSheduler.bat"

@@ -1,4 +1,4 @@
-ConvexHull := new _ConvexHull()
+﻿ConvexHull := new _ConvexHull()
 
 Class _ConvexHull{
 	__New(){

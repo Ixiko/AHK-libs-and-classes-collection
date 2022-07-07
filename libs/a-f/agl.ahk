@@ -1,4 +1,4 @@
-; AutoHotkey header file for OpenGL.
+﻿; AutoHotkey header file for OpenGL.
 ; agl.ahk last updated Date: 2011-03-11 (Friday, 11 Mar 2011)
 ; Written by: Bentschi
 

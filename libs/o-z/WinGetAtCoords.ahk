@@ -1,4 +1,4 @@
-WinGetAtCoords(x,y,what="Title") {     ; by SKAN and Learning one
+﻿WinGetAtCoords(x,y,what="Title") {     ; by SKAN and Learning one
 	; Returns Title/ID/Class/PID of window at given coordinates 
     WinID := DllCall( "GetAncestor", UInt      ; by SKAN
            ,DllCall( "WindowFromPoint", Int,X, Int,Y )

@@ -1,4 +1,4 @@
-/* 
+﻿/* 
 Library of Lateralus138's window functions, objects, and classes for AutoHotkey.
 GuiLib also provides a basic screen/window interface, (API you might say)
 for better window/window placement and manipulation. Plans to make this as 

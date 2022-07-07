@@ -1,4 +1,4 @@
-; Written By: Hellbent aka CivReborn
+﻿; Written By: Hellbent aka CivReborn
 ;Date Started: June 24th, 2018
 ;Date of last edit: June 24th, 2018
 ;Name: HB_Vector Class.ahk

@@ -1,4 +1,4 @@
-
+﻿
 /*!
     Library: Map, version 2.0
         Call a function over sets of parameters.

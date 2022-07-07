@@ -1,4 +1,4 @@
-; #Include ConnectedToInternet.ahk
+﻿; #Include ConnectedToInternet.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

@@ -1,4 +1,4 @@
-; unhtml.ahk - stdlib desired name 
+﻿; unhtml.ahk - stdlib desired name 
 ; 
 ; StdLib compliant collection to convert HTML to Text 
 ; 

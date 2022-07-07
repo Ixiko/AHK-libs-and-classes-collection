@@ -1,4 +1,4 @@
-; LogonDesktop - run scripts on the Winlogon desktop
+﻿; LogonDesktop - run scripts on the Winlogon desktop
 ; 26/02/17 - qwerty12
 
 ; Modified version of RunAsTask() by SKAN: https://autohotkey.com/boards/viewtopic.php?t=4334

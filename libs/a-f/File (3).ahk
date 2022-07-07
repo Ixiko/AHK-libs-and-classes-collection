@@ -1,4 +1,4 @@
-File_Hash(sFile, SID = "CRC32")
+﻿File_Hash(sFile, SID = "CRC32")
 {
 	nSize:=	File_WriteMemory(sFile, sBuffer)
 	Return	Crypt_Hash(&sBuffer, nSize, SID)

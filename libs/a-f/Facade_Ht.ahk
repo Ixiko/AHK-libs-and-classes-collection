@@ -1,4 +1,4 @@
-#Include <HashTable>
+﻿#Include <HashTable>
 #Include <Validate>
 #Include <Array>
 

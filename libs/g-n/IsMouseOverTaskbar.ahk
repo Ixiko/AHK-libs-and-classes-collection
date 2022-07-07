@@ -1,4 +1,4 @@
-IsMouseOverStartButton() {
+﻿IsMouseOverStartButton() {
 	CoordMode, Mouse, Screen
 	MouseGetPos, , , win
 	WinGetClass, class, ahk_id %win%

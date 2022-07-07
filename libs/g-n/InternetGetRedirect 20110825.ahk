@@ -1,4 +1,4 @@
-InternetGetRedirect( URL ) { ; SKAN www.autohotkey.com/forum/viewtopic.php?p=467841#467841
+﻿InternetGetRedirect( URL ) { ; SKAN www.autohotkey.com/forum/viewtopic.php?p=467841#467841
  hMod := DllCall( "LoadLibrary", str,"wininet.dll" ), StrGet := "StrGet"  ; CD 19-Aug-2011
  CS := ( A_IsUnicode ? "W" : "A" ), VarSetCapacity( Data, nSz := 1024, 0 )
  hIO := DllCall( "wininet\InternetOpen" CS, Str,"", UInt,4, Str,"", Str,"", UInt,0 )

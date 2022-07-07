@@ -1,4 +1,4 @@
-;update with all messages?
+﻿;update with all messages?
 ;https://msdn.microsoft.com/en-us/library/ms644927(v=VS.85).aspx#system_defined
 
 ;window styles need to go somewhere in here? Maybe there should be a class for each type of control?

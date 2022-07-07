@@ -1,4 +1,4 @@
-Class CImageConverter extends CGUI
+﻿Class CImageConverter extends CGUI
 {
 	/*
 	Vars:

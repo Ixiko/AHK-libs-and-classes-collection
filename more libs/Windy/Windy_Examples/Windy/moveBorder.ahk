@@ -1,4 +1,4 @@
-#include %A_ScriptDir%\..\..\lib\Windy
+﻿#include %A_ScriptDir%\..\..\lib\Windy
 #include Windy.ahk
 
 arrBorder := ["l","r","hc","t","b","vc", "l t", "l b", "l vc", "r t", "r b", "r vc", "hc t", "hc b", "hc vc"]

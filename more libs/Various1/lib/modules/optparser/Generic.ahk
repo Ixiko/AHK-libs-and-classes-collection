@@ -1,4 +1,4 @@
-class Generic {
+﻿class Generic {
 
 	flags := OptParser.OPT_NOARG | OptParser.OPT_HIDDEN
 	optionsClass := 0

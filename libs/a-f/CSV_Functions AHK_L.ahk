@@ -1,4 +1,4 @@
-; includes bugfixes from:
+﻿; includes bugfixes from:
 ; - http://www.autohotkey.com/forum/viewtopic.php?p=400669#400669
 ; - http://www.autohotkey.com/forum/viewtopic.php?p=453352#453352
 ; AutoHotkey_L Version: 1.1.08.01

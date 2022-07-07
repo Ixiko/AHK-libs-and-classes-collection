@@ -1,4 +1,4 @@
-
+﻿
 GetCPUClock() {
     return GetSensorValue("CPU Core", "Clock")
 }

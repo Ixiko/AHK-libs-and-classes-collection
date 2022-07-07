@@ -1,4 +1,4 @@
-If 0
+﻿If 0
 	FileInstall,LiteZip.dll,Used to compress resources
 ZipFileRaw(fileIn,fileOut,password:=""){
 	static lib:=A_IsCompiled?ResourceLoadLibrary("LiteZip.dll"):MemoryLoadLibrary("LiteZip.dll"), init:=lib?"":MessageBox(0,"Error: LiteZip.dll was not found","Error"), CreateBuffer:=DynaCall(MemoryGetProcAddress(lib,"ZipCreateBuffer"),"t*tuia")

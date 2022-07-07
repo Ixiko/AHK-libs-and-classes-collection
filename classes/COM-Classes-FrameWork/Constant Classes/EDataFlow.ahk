@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: EDataFlow
 an enumeration class containing constants that indicate the direction in which audio data flows between an audio endpoint device and an application.
 

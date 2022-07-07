@@ -1,4 +1,4 @@
-#include Map.ahk
+﻿#include Map.ahk
 #include ..\LSON\LSON.ahk
 #include ..\Zip\Zip.ahk
 #SingleInstance, Force

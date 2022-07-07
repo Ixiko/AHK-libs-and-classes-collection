@@ -1,4 +1,4 @@
-class Ansi {
+﻿class Ansi {
 
 	requires() {
 		return [Console, Math, Arrays]

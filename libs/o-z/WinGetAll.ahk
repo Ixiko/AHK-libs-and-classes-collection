@@ -1,4 +1,4 @@
-WinGetAll(TextFile = True, DetHidden = False) {
+﻿WinGetAll(TextFile = True, DetHidden = False) {
 	if (A_DetectHiddenWindows)
 		detectHiddenWindowPrevious := "On"
 	else

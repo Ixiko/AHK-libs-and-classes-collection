@@ -1,4 +1,4 @@
-uriEncode(str)
+﻿uriEncode(str)
 { ; v 0.3 / (w) 24.06.2008 by derRaphael / zLib-Style release
    b_Format := A_FormatInteger
    data := ""

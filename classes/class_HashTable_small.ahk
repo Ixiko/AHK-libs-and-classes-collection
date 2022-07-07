@@ -1,4 +1,4 @@
-class HashTable
+﻿class HashTable
 {
     __New(Items*)
     {

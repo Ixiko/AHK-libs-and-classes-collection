@@ -1,4 +1,4 @@
-class PackageGenerator
+﻿class PackageGenerator
 {
 	_doc := ComObjCreate("MSXML.DOMDocument")
 

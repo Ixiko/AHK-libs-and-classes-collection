@@ -1,4 +1,4 @@
-;Image/pixel scanning class by Spawnova (5/15/22)
+﻿;Image/pixel scanning class by Spawnova (5/15/22)
 ;https://github.com/Spawnova/ShinsImageScanClass
 ;
 ;General purpose class to scan image data for images and pixels, for ahk_L (not compatible with ahk V2)

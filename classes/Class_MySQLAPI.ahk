@@ -1,4 +1,4 @@
-; ======================================================================================================================
+Ôªø; ======================================================================================================================
 ; Wrapper class for MySQL C API functions        -> http://dev.mysql.com/doc/refman/5.5/en/c-api-functions.html
 ; Based on "MySQL Library functions" by panofish -> http://www.autohotkey.com/board/topic/72629-mysql-library-functions
 ; Namespace:   MySQLAPI
@@ -672,7 +672,7 @@ Class MySQLAPI {
    ; ===================================================================================================================
    ; ===================================================================================================================
    ; Returns a null-terminated string containing the SQLSTATE error code for the most recently executed SQL statement.
-   ; The error code consists of five characters. '00000' means ìno error.î
+   ; The error code consists of five characters. '00000' means ‚Äúno error.‚Äù
    ; Return values: A null-terminated character string containing the SQLSTATE error code.
    ; ===================================================================================================================
    SQLState() {

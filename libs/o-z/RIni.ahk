@@ -1,4 +1,4 @@
-;Robert's INI library
+﻿;Robert's INI library
 ;Version 1.7
 #noenv	;Increases the speed of the library due to the large amount of dynamic variables.
 SetBatchLines -1	;Increases the overall speed of the script.

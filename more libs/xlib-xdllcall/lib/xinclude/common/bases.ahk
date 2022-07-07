@@ -1,4 +1,4 @@
-; Common bases.
+﻿; Common bases.
 class bases {
 	
 	class setErrorBase {

@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ELEMDESC
 a structure class that contains the type description and process-transfer information for a variable, a function, or a function parameter.
 

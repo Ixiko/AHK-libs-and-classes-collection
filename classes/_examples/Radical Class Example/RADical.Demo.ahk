@@ -1,4 +1,4 @@
-#SingleInstance force
+﻿#SingleInstance force
 #include %A_ScriptDir%\..\..\classes\class_RADical.ahk
 
 ; ===========================================================================================================

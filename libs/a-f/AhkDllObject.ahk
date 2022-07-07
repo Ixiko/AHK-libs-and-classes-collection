@@ -1,4 +1,4 @@
-AhkDllObject(dll="AutoHotkey.dll",obj=0){
+﻿AhkDllObject(dll="AutoHotkey.dll",obj=0){
 	static
 	static functions ="
 (Join

@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #SingleInstance ignore
 #KeyHistory 0
 ListLines Off

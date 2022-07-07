@@ -1,4 +1,4 @@
-/*
+﻿/*
 This AHK Library is intended for use when utilizing COM Methods to Internet Explorer Applications. For support please reach out to me at Ashetynw@Gmail.com
 
 *IMPORTANT*

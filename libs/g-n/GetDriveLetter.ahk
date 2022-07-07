@@ -1,4 +1,4 @@
-GetDriveLetter(fnVolumeIdentifier)
+﻿GetDriveLetter(fnVolumeIdentifier)
 {
 	; returns the drive letter for a given volume label or serial number
 	; MsgBox fnVolumeIdentifier %fnVolumeIdentifier%

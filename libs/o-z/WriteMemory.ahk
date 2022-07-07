@@ -1,4 +1,4 @@
-/*
+﻿/*
 ; ------------ Examples of usage ------------
 
 PID = 1120          ; Process Id.

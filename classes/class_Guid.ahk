@@ -1,4 +1,4 @@
-/* Function: Guid_New
+﻿/* Function: Guid_New
  *     Create a GUID(__GUID) object
  * Syntax:
  *     oGuid := Guid_New()

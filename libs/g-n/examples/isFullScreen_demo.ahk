@@ -1,4 +1,4 @@
-; #Include IsFullScreen.ahk
+﻿; #Include IsFullScreen.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

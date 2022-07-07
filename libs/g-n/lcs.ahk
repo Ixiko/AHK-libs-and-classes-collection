@@ -1,4 +1,4 @@
-MsgBox, % lcs("Training is for puppys", "Training for puppys is for dummys")
+﻿MsgBox, % lcs("Training is for puppys", "Training for puppys is for dummys")
 
 
 lcs(a,b) { ; Longest Common Subsequence of strings, using Dynamic Programming

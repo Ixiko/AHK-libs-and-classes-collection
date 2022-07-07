@@ -1,4 +1,4 @@
-#Include %A_ScriptDir%/../
+﻿#Include %A_ScriptDir%/../
 #include MCLib.ahk
 
 CPP = 

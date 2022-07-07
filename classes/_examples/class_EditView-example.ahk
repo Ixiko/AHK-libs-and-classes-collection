@@ -1,4 +1,4 @@
-#Include %A_ScriptDir%\..\class_EditView.ahk
+﻿#Include %A_ScriptDir%\..\class_EditView.ahk
 
 ; For the demo, we'll use the script's Main window's Edit control
 DetectHiddenWindows On

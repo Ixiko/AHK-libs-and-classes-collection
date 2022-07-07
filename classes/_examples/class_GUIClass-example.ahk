@@ -1,4 +1,4 @@
-#SingleInstance,Force
+﻿#SingleInstance,Force
 TVKeep:={1:[],2:[]}
 global DefaultTVText:="Press F2 To Clear"
 MainWin:=New GUIClass(2,{MarginX:2,MarginY:2})

@@ -1,4 +1,4 @@
-/*
+﻿/*
 License: Commercial Attribution 3.0
 	http://objectlistview.sourceforge.net/cs/index.html
 

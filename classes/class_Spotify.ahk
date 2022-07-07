@@ -1,4 +1,4 @@
-#MaxThreads 2
+﻿#MaxThreads 2
 class Spotify {
 	__New() {
 		this.Util := new Util(this)

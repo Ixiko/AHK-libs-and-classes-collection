@@ -1,4 +1,4 @@
-class iniex{
+﻿class iniex{
 	static ini := {}
 	
 	create(sections){

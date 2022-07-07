@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: CF
 an enumeration class defining system clipboard formats.
 

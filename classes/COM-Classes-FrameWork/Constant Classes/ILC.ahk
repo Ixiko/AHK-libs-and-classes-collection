@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: ILC
 an enumeration class containing image list creation flags.
 

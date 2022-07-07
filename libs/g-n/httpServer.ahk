@@ -1,4 +1,4 @@
-class Uri
+﻿class Uri
 {
     Decode(str) {
         Loop

@@ -1,4 +1,4 @@
-class ITL
+﻿class ITL
 {
 	static __New := Func("ITL_AbstractClassConstructor")
 

@@ -1,4 +1,4 @@
-ExtractTableData( FilePath, HeadingsArray, Delimiter, SaveDir )
+﻿ExtractTableData( FilePath, HeadingsArray, Delimiter, SaveDir )
 {
 	static htmObj
 

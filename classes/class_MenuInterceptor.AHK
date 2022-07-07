@@ -1,4 +1,4 @@
-#Persistent
+﻿#Persistent
 
 ; ################################################################################################
 ; #############  Notepad Example - Watch for Clicks on Menu Items Undo, Delete, Cut  #############

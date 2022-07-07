@@ -1,4 +1,4 @@
-; #Include RPath.ahk
+﻿; #Include RPath.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

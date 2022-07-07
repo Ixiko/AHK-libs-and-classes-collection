@@ -1,4 +1,4 @@
-;tv.ahk
+﻿;tv.ahk
 ;Tuesday, June 10, 2014
 ;a class and wrapper library for Autohotkey's treeview control
 ;http://ahkscript.org/boards/viewtopic.php?f=6&t=3716

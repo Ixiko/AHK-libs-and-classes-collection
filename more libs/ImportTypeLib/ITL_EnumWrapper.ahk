@@ -1,4 +1,4 @@
-class ITL_EnumWrapper extends ITL.ITL_ConstantMemberWrapperBaseClass
+﻿class ITL_EnumWrapper extends ITL.ITL_ConstantMemberWrapperBaseClass
 {
 	__New(typeInfo, lib)
 	{

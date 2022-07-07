@@ -1,4 +1,4 @@
-GetMonitorId(hwnd)
+﻿GetMonitorId(hwnd)
 {
 	local wp, mon, winCenterX, winCenterY
 	

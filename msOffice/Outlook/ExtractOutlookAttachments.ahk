@@ -1,4 +1,4 @@
-ExtractOutlookAttachments(Location,EmailSubject,attachmentname,PathToSaveTo)
+﻿ExtractOutlookAttachments(Location,EmailSubject,attachmentname,PathToSaveTo)
 {
 	attachmentname := "i)" attachmentname
 	outlook := ComObjActive("Outlook.Application")

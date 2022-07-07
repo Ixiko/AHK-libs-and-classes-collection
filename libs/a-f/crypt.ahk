@@ -1,4 +1,4 @@
-/* 
+﻿/* 
 AutoHotkey Version: 1.0.35+ 
 Language:  English 
 Platform:  Win2000/XP 

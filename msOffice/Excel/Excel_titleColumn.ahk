@@ -1,4 +1,4 @@
-titleColumn(xl) {
+﻿titleColumn(xl) {
 	global
     titles = ; Clear titles 
     choice = ; Clear choice

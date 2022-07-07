@@ -1,4 +1,4 @@
-OnExitF(fn:="", prms*) {
+﻿OnExitF(fn:="", prms*) {
 	; Prepend w/ '_' to make sure it gets freed first.
 	; Variables containing object references are freed alphabetically.
 	static _dummy

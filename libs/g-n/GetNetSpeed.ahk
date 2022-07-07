@@ -1,4 +1,4 @@
-GetNetSpeed() {
+﻿GetNetSpeed() {
 
     local MIB_IF_ROW2, IfIndex
     

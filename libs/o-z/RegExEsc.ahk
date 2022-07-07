@@ -1,4 +1,4 @@
-; Link:   	https://www.autohotkey.com/boards/viewtopic.php?t=59466
+﻿; Link:   	https://www.autohotkey.com/boards/viewtopic.php?t=59466
 ; Author:
 ; Date:
 ; for:     	AHK_L

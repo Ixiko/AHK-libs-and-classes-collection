@@ -1,4 +1,4 @@
-#SingleInstance, Force
+﻿#SingleInstance, Force
 #NoEnv
 
 ; gdiplus must be started up once at the beginning of your script

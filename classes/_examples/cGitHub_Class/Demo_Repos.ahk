@@ -1,4 +1,4 @@
-#Persistent
+﻿#Persistent
 ;#Warn All
 ;#Warn LocalSameAsGlobal, Off
 #SingleInstance force

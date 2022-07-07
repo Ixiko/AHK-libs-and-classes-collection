@@ -1,4 +1,4 @@
-#Include <GuiCtl>
+﻿#Include <GuiCtl>
 
 class GEditCtl extends GuiCtl
 {

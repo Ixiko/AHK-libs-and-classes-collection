@@ -1,4 +1,4 @@
-SleepRand(min,max){
+﻿SleepRand(min,max){
     ; Time Array used by for loop
     ; hr, min, sec, ms
     msTimeA := [3600000,60000,1000,1]

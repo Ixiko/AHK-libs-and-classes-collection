@@ -1,4 +1,4 @@
-; ----------------------------------------------------------------------------------------------------------------------
+﻿; ----------------------------------------------------------------------------------------------------------------------
 ; Function .....: PECreateEmpty
 ; Description ..: Create an empty PE binary file. This dummy executable was created with Visual C++ 2010 Express, with
 ; ..............: all possible optimizations so that the final size is 1KB. If run, this executable will show a message

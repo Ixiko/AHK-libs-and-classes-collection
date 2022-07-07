@@ -1,4 +1,4 @@
-Obj_Print(obj, indent = 0)
+﻿Obj_Print(obj, indent = 0)
 {
 	static level := A_Tab
 	Loop % indent

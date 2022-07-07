@@ -1,4 +1,4 @@
-; https://raw.githubusercontent.com/trizzof/ai-challenge/2ae5b42138f2100f420f3b2664651b774050e9bb/challenge/dataset/AutoHotkey/benfords-law.ahk
+﻿; https://raw.githubusercontent.com/trizzof/ai-challenge/2ae5b42138f2100f420f3b2664651b774050e9bb/challenge/dataset/AutoHotkey/benfords-law.ahk
 
 SetBatchLines, -1
 fib := NStepSequence(1, 1, 2, 1000)

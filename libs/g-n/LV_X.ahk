@@ -1,4 +1,4 @@
-/*
+﻿/*
 		Title: LVX Library
 		
 		Row colouring and cell editing functions for ListView controls.

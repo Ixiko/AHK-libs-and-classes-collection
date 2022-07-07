@@ -1,4 +1,4 @@
-; Configuration saving
+﻿; Configuration saving
 INI_FILE := "ahk.ini"  ; Persistent script variables
 NONE_VALUE := "NONE"   ; No script variable can be this value
 

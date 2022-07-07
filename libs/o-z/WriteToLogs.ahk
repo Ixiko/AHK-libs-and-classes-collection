@@ -1,4 +1,4 @@
-WriteToLogs(fnActionText,fnDetailsText := "",fnLogFile := 0,fnErrorLogFile := 0,fnDebugFile := 0,fnActionTextWidth := 35)
+﻿WriteToLogs(fnActionText,fnDetailsText := "",fnLogFile := 0,fnErrorLogFile := 0,fnDebugFile := 0,fnActionTextWidth := 35)
 {
 	; writes a text string to the provided log file objects
 	; MsgBox fnActionText: %fnActionText%`nfnDetailsText: %fnDetailsText%`nfnActionTextWidth: %fnActionTextWidth%

@@ -1,4 +1,4 @@
-ReadRawMemory(MADDRESS=0,PROGRAM="", byref Buffer="", BYTES=4)
+﻿ReadRawMemory(MADDRESS=0,PROGRAM="", byref Buffer="", BYTES=4)
 {
    Static OLDPROC, ProcessHandle
 

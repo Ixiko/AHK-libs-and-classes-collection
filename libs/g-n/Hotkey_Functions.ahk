@@ -1,4 +1,4 @@
-	;  http://forum.script-coding.com/viewtopic.php?pid=69765#p69765
+﻿	;  http://forum.script-coding.com/viewtopic.php?pid=69765#p69765
 
 Hotkey_Init(Func, Options = "") {
 	#HotkeyInterval 0

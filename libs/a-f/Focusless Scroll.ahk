@@ -1,4 +1,4 @@
-;http://www.autohotkey.com/forum/topic6772.html
+﻿;http://www.autohotkey.com/forum/topic6772.html
 ;FocuslessScroll: This code activates the window under the mouse whenever there is a scroll wheel movement.
 /*
 ;Directives

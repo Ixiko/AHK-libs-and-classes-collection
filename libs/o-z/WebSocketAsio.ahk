@@ -1,4 +1,4 @@
-;~ #NoEnv
+﻿;~ #NoEnv
 
 #include class_bcrypt.ahk
 

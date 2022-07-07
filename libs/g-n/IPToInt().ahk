@@ -1,4 +1,4 @@
-msgbox % IPToInt("64.190.207.31", "H")
+﻿msgbox % IPToInt("64.190.207.31", "H")
 ; params ip >> format (Hex, Decimal)
 
 msgbox % 1+1

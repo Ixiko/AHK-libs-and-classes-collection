@@ -1,4 +1,4 @@
-splashNoteSmall(rows = 10, defaultTxt = ""){
+﻿splashNoteSmall(rows = 10, defaultTxt = ""){
 	global  ; Set variable as global - rename 'vinput' below if you use 'input' as a variable elsewhere.
 	input = ; Clear input variable
   	IniRead()

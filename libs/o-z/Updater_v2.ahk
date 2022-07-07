@@ -1,4 +1,4 @@
-/*
+﻿/*
 	v2.1 (21 Dec 2017)
 		Added Download() and DL_Progress()
 		autohotkey.com/board/topic/17915-urldownloadtofile-progress/?p=584346

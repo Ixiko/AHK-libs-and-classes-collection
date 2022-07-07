@@ -1,4 +1,4 @@
-class Socket{
+﻿class Socket{
 
   static __eventMsg := 0x9987
 

@@ -1,4 +1,4 @@
-#Include <struct>
+﻿#Include <struct>
 ; #Include <struct\LDAPMod>
 #Include c:\work\ahk\projects\Struct\modules\struct\LDAPMod.ahk
 

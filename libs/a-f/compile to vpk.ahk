@@ -1,4 +1,4 @@
-/*
+﻿/*
 Func: vpk_Compile
     Compiles a folder to .vpk format
 

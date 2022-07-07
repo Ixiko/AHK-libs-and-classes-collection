@@ -1,4 +1,4 @@
-; #### ENVIRONMENT SETTINGS ####
+﻿; #### ENVIRONMENT SETTINGS ####
 SetBatchLines -1	; let the damn thing actually use the processor
 
 ; #### Function Definitions ####

@@ -1,4 +1,4 @@
-; #Include FileExtract.ahk
+﻿; #Include FileExtract.ahk
 #NoEnv
 SendMode Input
 SetWorkingDir %A_ScriptDir%

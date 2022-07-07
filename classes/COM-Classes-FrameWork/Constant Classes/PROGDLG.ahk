@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PROGDLG
 an enumeration class containing the possible flags for IOperationsProgressDialog::StartProgressDialog() and IProgressDialog::StartProgressDialog().
 

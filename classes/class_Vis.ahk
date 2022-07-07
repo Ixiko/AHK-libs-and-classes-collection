@@ -1,4 +1,4 @@
-#include library\Graphics.ahk
+﻿#include library\Graphics.ahk
 
 class Vision {
 

@@ -1,4 +1,4 @@
-mpgcScanPosX := -1
+﻿mpgcScanPosX := -1
 , mpgcScanPosY = -1
 , mpgcScanWidth = -1
 , mpgcScanHeight = -1

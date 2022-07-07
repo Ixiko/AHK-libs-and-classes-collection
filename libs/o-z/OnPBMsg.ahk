@@ -1,4 +1,4 @@
-/* TheGood
+﻿/* TheGood
 Wrapper to catch Power Management events
 
 ;http://msdn.microsoft.com/en-us/library/aa373162(VS.85).aspx

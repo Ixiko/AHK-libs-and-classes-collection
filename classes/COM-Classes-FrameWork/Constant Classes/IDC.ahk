@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: IDC
 an enumeration class containing the predefined system cursors.
 

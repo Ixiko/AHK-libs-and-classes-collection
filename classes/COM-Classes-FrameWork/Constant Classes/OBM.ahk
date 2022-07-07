@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: OBM
 an enumeration class containing the predefined system bitmaps.
 

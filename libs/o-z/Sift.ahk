@@ -1,4 +1,4 @@
-/* Sift
+﻿/* Sift
 ; Fanatic Guru
 ; 2015 04 30
 ; Version 1.00

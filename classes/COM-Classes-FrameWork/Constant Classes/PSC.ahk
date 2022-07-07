@@ -1,4 +1,4 @@
-/*
+﻿/*
 class: PSC
 an enumeration class containing flags that specify the state of a property.
 

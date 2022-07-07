@@ -1,4 +1,4 @@
-splashImageGUI(Picture, X, Y, tColor, Transparent = true)
+﻿splashImageGUI(Picture, X, Y, tColor, Transparent = true)
 {
 	Gui, XPT99:Margin , 0, 0
 	Gui, XPT99:Add, Picture,, %Picture%

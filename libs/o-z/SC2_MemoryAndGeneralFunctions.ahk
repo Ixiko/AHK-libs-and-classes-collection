@@ -1,4 +1,4 @@
-;lets make all of the offsets super global (cant be fucked putting them in
+﻿;lets make all of the offsets super global (cant be fucked putting them in
 ; a global memory address array)
 Global B_LocalCharacterNameID
 , B_LocalPlayerSlot

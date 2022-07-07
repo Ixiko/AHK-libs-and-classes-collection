@@ -1,4 +1,4 @@
-Xbox360Lib := {}
+﻿Xbox360Lib := {}
 
 Xbox360Lib.Enum := {}
 

@@ -1,4 +1,4 @@
-/*
+﻿/*
 Class: CTreeViewControl
 A TreeView control.
 

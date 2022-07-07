@@ -1,4 +1,4 @@
-; Usage example:
+﻿; Usage example:
 /*
 #NoEnv
 #SingleInstance force

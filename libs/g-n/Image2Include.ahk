@@ -1,4 +1,4 @@
-; ======================================================================================================================
+﻿; ======================================================================================================================
 ; Function:       Creates AHK #Include files for images providing a function which will internally create a bitmap/icon.
 ; AHK version:    1.1.10.01 (U32)
 ; Script version: 1.0.00.02/2013-06-02/just me - added support for icons (HICON)

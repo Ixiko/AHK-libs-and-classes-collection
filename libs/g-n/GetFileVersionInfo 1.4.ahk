@@ -1,4 +1,4 @@
-; v1.4 July 2017
+﻿; v1.4 July 2017
 ; #include updates.ahk, run updates() before calling the function
 ;================================================================
 FileGetVersionInfo(peFile="", StringFileInfo="")	; by SKAN (thank you), improved by Drugwash

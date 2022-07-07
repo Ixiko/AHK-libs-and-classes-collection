@@ -1,4 +1,4 @@
-hideTaskbar(toggle){
+﻿hideTaskbar(toggle){
 	WinExist("ahk_class Shell_TrayWnd")
 	ControlGetPos,,,, hTB, ahk_class Shell_TrayWnd  ; Get Taskbar Height
 	; t := !t  ; Toggle Var (0 or 1)

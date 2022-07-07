@@ -1,4 +1,4 @@
-#NoEnv
+﻿#NoEnv
 #Include ../XBOX360.ahk
 
 x360 := []

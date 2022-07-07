@@ -1,4 +1,4 @@
-Class AppFactory {
+﻿Class AppFactory {
 	_ThreadHeader := "`n#Persistent`n#NoTrayIcon`n#MaxHotkeysPerInterval 9999`n"
 	_ThreadFooter := "`nautoexecute_done := 1`nreturn`n"
 	InputThread := 0

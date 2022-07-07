@@ -1,4 +1,4 @@
-/**
+﻿/**
 
 Class:
     CmdLine.ahk - Utility class for running cmdline utils.

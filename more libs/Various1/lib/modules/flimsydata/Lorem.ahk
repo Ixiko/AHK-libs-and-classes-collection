@@ -1,4 +1,4 @@
-class Lorem extends Flimsydata.Formatter {
+﻿class Lorem extends Flimsydata.Formatter {
 
 	getChapter(dataProvider, count=1) {
 		numberOfChapter := Flimsydata.getRandomInt(this.randomizer

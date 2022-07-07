@@ -1,4 +1,4 @@
-errormessage(E:=0){ 
+﻿errormessage(E:=0){ 
 static es,i
 if !i
 i:=VarSetCapacity(ES,1024)

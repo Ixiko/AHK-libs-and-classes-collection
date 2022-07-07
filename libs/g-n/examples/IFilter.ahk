@@ -1,4 +1,4 @@
-; IFilter AutoHotkey example by qwerty12
+﻿; IFilter AutoHotkey example by qwerty12
 ; Credits:
 ; https://tlzprgmr.wordpress.com/2008/02/02/using-the-ifilter-interface-to-extract-text-from-documents/
 ; https://stackoverflow.com/questions/7177953/loadifilter-fails-on-all-pdfs-but-mss-filtdump-exe-doesnt

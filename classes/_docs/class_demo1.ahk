@@ -1,4 +1,4 @@
-#include ..\Thumbnail.ahk
+﻿#include ..\Thumbnail.ahk
 #SingleInstance force
 #KeyHistory 0
 

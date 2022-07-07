@@ -1,4 +1,4 @@
-; code cleanup and AHK_L compatibility by Drugwash
+﻿; code cleanup and AHK_L compatibility by Drugwash
 ; updated 2016.03.20 (working version)
 ; requires updates.ahk
 ; Use a user-defined function name for 'prc' to retrieve the downloaded percent

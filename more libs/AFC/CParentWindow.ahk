@@ -1,4 +1,4 @@
-#include <CWindow>
+﻿#include <CWindow>
 
 class CParentWindow extends CWindow
 {

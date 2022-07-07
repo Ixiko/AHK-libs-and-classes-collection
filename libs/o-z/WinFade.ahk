@@ -1,4 +1,4 @@
-#NoEnv  					; Recommended for performance and compatibility with future AutoHotkey releases.
+﻿#NoEnv  					; Recommended for performance and compatibility with future AutoHotkey releases.
 DetectHiddenWindows, On     ; Determines whether invisible windows are "seen" by the script.
 
 /**

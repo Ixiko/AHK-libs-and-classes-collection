@@ -1,4 +1,4 @@
-/*  ; Credits   
+﻿/*  ; Credits   
 	Created by AHK_User
 	Date: 2020-02-09
 	Lets run functions with parameters of script in excel,  usefull to quickly exicute functions trough data in Excel
