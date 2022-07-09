@@ -1,4 +1,4 @@
-class ngram {
+﻿class ngram {
 
 	; --- Static Methods ---
 	generate(param_array, param_size:=1, param_separator:="") {
