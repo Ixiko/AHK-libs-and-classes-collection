@@ -8,6 +8,10 @@
 
 #### <u>HISTORY OF UPDATES</u>
 
+* **[09.07.2022]**(3639)
+
+  * **+23 libraries**
+
 * **[07.07.2022]**(3626)
 
   * **+152 libraries**, most of them are for AHK V2
