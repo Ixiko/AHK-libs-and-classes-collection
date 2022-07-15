@@ -1,0 +1,109 @@
+#include WebView2.ahk
+#include imagedata.ahk
+
+On_Click(iClick){
+    Switch(iClick){
+        Case 1,2,3,4: MsgBox "Button " iClick " Clicked","Round Buttons","Iconi t2"
+        Case 5,6,7: ExitApp
+    }
+}
+
+HtmlStr := format("
+(
+    <body background="{1}" style="overflow:hidden">
+    <img src="{2}" style="visibility:hidden">
+    <script>
+        function On_Click(num){
+            document.title = num;
+            // Reset Title For Same Click
+            document.title = 0;
+        }
+
+        for(var i=1;i<6;i++){
+            var rButton = document.createElement("button");
+            if(i == 5){
+                 rButton.textContent = "Over EXIT";
+                 rButton.setAttribute("onmouseover","On_Click("+i+")");
+            }else{
+                rButton.textContent = "Button "+i;
+                rButton.setAttribute("onclick","On_Click("+i+")");
+                rButton.setAttribute("onmouseover","style.color='cyan';style.border='3px solid red';style.boxShadow='none';style.zIndex=1;style.transform='scale(1.3)';style.transition='all .4s'");
+                rButton.setAttribute("onmouseout","style.color='yellow';style.border='none';style.boxShadow='1px 1px 30px white';style.zIndex=0;style.transform='scale(1.0)';style.transition='all .4s'");
+            }
+            rButton.style.left         = 5;
+            rButton.style.top          = 5;
+            rButton.style.width        = 60;
+            rButton.style.height       = 60;
+            rButton.style.position     = "relative";
+            rButton.style.font         = "bold 12px arial";
+            rButton.style.color        = "yellow";
+            rButton.style.cursor       = "pointer";
+            rButton.style.background   = "navy";
+            rButton.style.border       = "none";
+            rButton.style.outline      = "none";
+            rButton.style.boxShadow    = "1px 1px 30px white";
+            rButton.style.borderRadius = "35px";
+            rButton.style.float        = "left";
+            rButton.style.transition   = "all .2s";
+            document.body.appendChild(rButton);
+        }
+
+        rButton = document.createElement("button");
+        rButton.setAttribute("onclick","On_Click("+i+++")");
+        rButton.setAttribute("onmouseover","style.color='yellow';style.boxShadow='none'");
+        rButton.setAttribute("onmouseout","style.color='cyan';style.boxShadow='5px 5px 20px white'");
+        rButton.textContent           = "Beam Me Up!";
+        rButton.style.left            = 25;
+        rButton.style.top             = 125;
+        rButton.style.width           = 200;
+        rButton.style.height          = 55;
+        rButton.style.position        = "absolute";
+        rButton.style.textDecoration  = "underline";
+        rButton.style.backgroundImage = "linear-gradient(to left,blue,red)";
+        rButton.style.font            = "bold 24px times new roman";
+        rButton.style.color           = "cyan";
+        rButton.style.cursor          = "pointer";
+        rButton.style.borderStyle     = "none";
+        rButton.style.outline         = "none";
+        rButton.style.borderRadius    = "40px";
+        rButton.style.boxShadow       = "5px 5px 20px white";
+        rButton.style.transition      = "all .2s";
+        document.body.appendChild(rButton);
+
+        var img = document.getElementsByTagName("img")[0];
+        img.style.visibility = 'visible';
+        img.style.float      = "left";
+        rButton.appendChild(img);
+
+        rButton = document.createElement("button");
+        rButton.setAttribute("onclick","On_Click("+i+")");
+        rButton.setAttribute("onmouseover","style.color='yellow';style.boxShadow='1px 1px 30px white';style.border='3px solid red'");
+        rButton.setAttribute("onmouseout","style.color='red';style.boxShadow='none';style.border='3px solid yellow'");
+        rButton.textContent          = "I Quit!";
+        rButton.style.left           = 185;
+        rButton.style.top            = 230;
+        rButton.style.width          = 100;
+        rButton.style.height         = 40;
+        rButton.style.position       = "absolute";
+        rButton.style.textDecoration = "underline";
+        rButton.style.font           = "bold 18px arial";
+        rButton.style.color          = "red";
+        rButton.style.cursor         = "pointer";
+        rButton.style.background     = "blue";
+        rButton.style.border         = "3px solid yellow";
+        rButton.style.outline        = "none";
+        rButton.style.borderRadius   = "10px";
+        document.body.appendChild(rButton);
+    </script>
+)",steel,badge)
+
+win := gui.new(,"WebView2 Button Testing")
+win.OnEvent "Close",(*) => ExitApp()
+
+Init_WebView2(win)
+
+ClickEvents_WebView2
+
+win.Show "w400 h400"
+
+Esc::ExitApp

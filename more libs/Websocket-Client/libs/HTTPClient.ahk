@@ -1,4 +1,4 @@
-#include Socket.ahk
+﻿#include Socket.ahk
 #Include Buffer.ahk
 #Include EventEmitter.ahk
 #Include URI.ahk

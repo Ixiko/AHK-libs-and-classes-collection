@@ -1,4 +1,4 @@
-#include Crypto.ahk
+﻿#include Crypto.ahk
 #include WSDataFrame.ahk
 #Include Buffer.ahk
 #Include EventEmitter.ahk

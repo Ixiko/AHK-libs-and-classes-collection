@@ -1,4 +1,4 @@
-AssocCreate(clsid, riid, ppv) => DllCall('Shlwapi\AssocCreate', 'ptr', clsid, 'ptr', riid, 'ptr', ppv, 'int')
+﻿AssocCreate(clsid, riid, ppv) => DllCall('Shlwapi\AssocCreate', 'ptr', clsid, 'ptr', riid, 'ptr', ppv, 'int')
 AssocGetPerceivedType(pszExt, ptype, pflag, ppszType) => DllCall('Shlwapi\AssocGetPerceivedType', 'wstr', pszExt, 'ptr', ptype, 'ptr', pflag, 'wstr', ppszType, 'int')
 AssocIsDangerous(pszAssoc) => DllCall('Shlwapi\AssocIsDangerous', 'wstr', pszAssoc, 'int')
 AssocQueryKey(flags, key, pszAssoc, pszExtra, phkeyOut) => DllCall('Shlwapi\AssocQueryKey', 'int', flags, 'int', key, 'str', pszAssoc, 'str', pszExtra, 'ptr', phkeyOut, 'int')

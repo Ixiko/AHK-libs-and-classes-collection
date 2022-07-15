@@ -1,0 +1,48 @@
+#include WebView2.ahk
+
+NavUri := "https://www.google.com"
+
+jsCode := Format("
+(
+    function Sleep(ms){
+        return new Promise(resolve => setTimeout(resolve,ms));
+    }
+    (async function Run_Script(){
+        // Load jQuery
+        var jq = document.createElement("script");
+        jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
+        document.head.appendChild(jq);
+
+        // Wait for jQuery to Load
+        await Sleep(350);
+
+        // Load SweetAlert
+        var msg = document.createElement("script");
+        msg.src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js";
+        document.head.appendChild(msg);
+
+        // Wait for SweetAlert to Load
+        await Sleep(350);
+
+        var style = document.createElement("style");
+        style.textContent = ".swal-title{color:yellow;}"+
+                            ".swal-modal{background-color:navy;border:3px solid cyan}"+
+                            ".swal-text{font-size:18px;background-color:navy;border:3px solid cyan;color:yellow;}"
+        document.head.appendChild(style);
+
+        // Show Cool MsgBox SweetAlert
+        await swal("Watch Google Logo Fade Out...","jQuery Version = "+$.fn.jquery+"\nAHK Version = {}","info");
+        // IF GOOGLE LOGO DOES NOT FADE, TRY OTHER FADEOUT
+        //$("#hplogo").fadeOut(3000);
+        $(".lnXdpd").fadeOut(3000);
+    })();
+)",A_AhkVersion)
+
+win := Gui("toolwindow","WebView2 Fade Google Logo")
+win.OnEvent "Close",ExitApp
+
+WebView2_Init win
+
+win.Show "w" A_ScreenWidth/2 " h" A_ScreenHeight/2
+
+Esc::ExitApp

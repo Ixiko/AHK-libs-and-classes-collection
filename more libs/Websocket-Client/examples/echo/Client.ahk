@@ -1,4 +1,4 @@
-#Persistent
+﻿#Persistent
 #SingleInstance, force
 SetBatchLines, -1
 

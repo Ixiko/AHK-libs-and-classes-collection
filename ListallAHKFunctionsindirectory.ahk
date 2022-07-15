@@ -1,4 +1,6 @@
-﻿#NoEnv
+﻿; specialized script for reading directories of  AHK-libs-and-classes collection
+
+#NoEnv
 ;#NoTrayIcon
 SetBatchLines, -1
 SetControlDelay, -1
@@ -17,6 +19,8 @@ libs\a-f\core_audio_interfaces
 libs\g-n
 libs\o-z
 AHK_V2
+AHK_V2\webview2
+AHK_V2\WinApi
 classes
 classes\Class_PictureButton-master\lib
 classes\class_Java-Access-Bridge
@@ -123,7 +127,7 @@ more libs\MsgBox2
 more libs\ObjCSV\lib
 more libs\pyahk-main
 more libs\RamDisk & CmdReturn
-more libs\Rufaydium-V1.6.1
+more libs\Rufaydium
 more libs\SendInput
 more libs\Splash-Gui
 more libs\TAB\_Functions
@@ -135,6 +139,7 @@ more libs\windows10DesktopManager\injection dll
 more libs\WindowsScriptingObject
 more libs\Windy
 more libs\WinLogon
+more libs\WinRt
 more libs\Wy\lib
 more libs\Wy\lib\GdipC
 more libs\Wy\lib\Wy
@@ -154,9 +159,10 @@ msOffice\more
 msOffice\Outlook
 msOffice\PowerPoint
 msOffice\Word
+Tools
 )
 functions          	:= Object()
-Dir                    	:= StrSplit(Directorys, "`n", "`r")
+Dir                   	:= StrSplit(Directorys, "`n", "`r")
 file_readmeMd	:= A_ScriptDir "\readme.md"
 MDTable          	:= "| **Nr** | **Library**                                      | **Directory**                                    |`n"
 MDTable          	.= "| :--- | :--------------------------------- | :------------------------------------------- |`n"
@@ -167,39 +173,38 @@ MDTable          	.= "| :--- | :--------------------------------- | :-----------
 ReadMeMd:= MakeTableLess_readmeMd(file_readmeMd, tableStartLine, libMaxOld)
 ReadMeMd .= "| **Nr** | **Library**                                      | **Directory**                                    |`n"
 ReadMeMd .= "| :--- | :--------------------------------- | :------------------------------------------- |`n"
-;ReadMeMd:= StrReplace(ReadMeMd, "history of updates `n`n", "history of updates `n`n* **[" A_DD "." A_MM "." A_YYYY "]** - on last update: " libMaxOld "`n")
-;ReadMeMd:= RegExReplace(ReadMeMd, "M)Edition\:\s\d\d\.\d\d.\d\d\d\d", "Edition: " A_DD "." A_MM "." A_YYYY)
 
 ;-----------------------------------------------------------------------------------------------------------------------------------------
 ; scan for files
 ;-----------------------------------------------------------------------------------------------------------------------------------------
-Loop, % Dir.MaxIndex()												; list all files in all directory's
-{
-		Md := list_files(Dir[A_Index])
-		ReadMeMd .= StrReplace(Md, "\", "/")
+Loop, % Dir.MaxIndex()	{											; list all files in all directory's
+	Md := list_files(Dir[A_Index])
+	ReadMeMd .= StrReplace(Md, "\", "/")
 }
 
-clines:= lib.MaxIndex()
+clines:= lib.Count()
 
 ;-----------------------------------------------------------------------------------------------------------------------------------------
 ; write a functionlist - maybe you use it for fast searching
 ;-----------------------------------------------------------------------------------------------------------------------------------------
 file:= FileOpen(A_ScriptDir "\FileFunctionList.ahk", "w")
 For idx, ffpath in lib {
-	ToolTip, % "File: " A_Index "/" clines, 2000, 500, 6
-	funcList:= listfunc(ffpath)
+	If (Mod(idx, 50) = 0)
+		ToolTip, % "File: " idx "/" clines, 2000, 500, 6
+	funcList := listfunc(ffpath)
 	RegExMatch(ffpath, "\w+\\[\w\s\(\)]+\.ahk", shortpath)
 	File.Write("[" A_Index "] " shortpath " {`n`nLine  `t|`tFunction`n" funclist "`n}`n")
 }
 File.Close()
 
+ToolTip, % "File: " idx "/" clines, 2000, 500, 6
 file:= FileOpen(A_ScriptDir "\README.md", "w")
 file.Write(ReadMeMd)
 File.Close()
 
 MsgBox, % "Ready`nlast lib count: " libMaxOld
-
-exitApp
+ToolTip,,,, 6
+ExitApp
 
 MakeTableLess_readmeMd(file_readmeMd, byref tableStartLine, byref libMaxOld) {
 
@@ -211,12 +216,10 @@ MakeTableLess_readmeMd(file_readmeMd, byref tableStartLine, byref libMaxOld) {
 	Loop, Parse, tmp, `n, `r
 	{
 		 If RegExmatch(A_LoopField, Table_RegExString, Match)
-				If !tableStartLine
-				{
-					tableStartLine:= A_Index
-				}
-				else
-					tableLastLine:= A_Index, RegExMatch(A_LoopField, "(?<=\|\s\*\*)\d+", libMaxOld)
+			If !tableStartLine
+				tableStartLine:= A_Index
+			else
+				tableLastLine:= A_Index, RegExMatch(A_LoopField, "(?<=\|\s\*\*)\d+", libMaxOld)
 		else
 			newMd.= A_LoopField "`n"
 	}
@@ -228,52 +231,48 @@ listfunc(file) {
 
 	global rl
 
-	rl:=""
-	rf:=""
+	rl:= rf:=""
 	FileRead script, % A_ScriptDir "\" file
 
-	  identifierRE = ][#@$?\w                  ; Legal characters for AHK identifiers (variables and function names)
-	  parameterListRE = %identifierRE%,=".\s-  ; Legal characters in function definition parameter list
-	  lineCommentRE = \s*(?:\s;.*)?$           ; Legal line comment regex
+	  identifierRE      	:= "][#@$?\w"                                         	; Legal characters for AHK identifiers (variables and function names)
+	  parameterListRE := "%identifierRE%,=.\s-" Chr(0x22)           	; Legal characters in function definition parameter list
+	  lineCommentRE := "\s*(?:\s;.*)?$"                                       	; Legal line comment regex
 
-	  functionNb := 1
-	  labelNb := 1
-	  hotkeyNb := 1
-	  hotstringNb := 1
-	  state = DEFAULT
+	  functionNb := labelNb := hotkeyNb := hotstringNb := 1
+	  state := "DEFAULT"
 
 	Loop Parse, script, `n, `r
     {
-      line := A_LoopField
-      If RegExMatch(line, "^\s*(?:;.*)?$")            ; Empty line or line with comment, skip it
+
+      If RegExMatch(line := A_LoopField, "^\s*(?:;.*)?$")            	; Empty line or line with comment, skip it
           Continue
 
-      Else If InStr(state, "COMMENT"){                    ; In a block comment
-          If RegExMatch(line, "S)^\s*\*/")                  ; End of block comment
-              StringReplace state, state, COMMENT         ; Remove state
+      Else If InStr(state, "COMMENT"){                                      	; In a block comment
+          If RegExMatch(line, "S)^\s*\*/")                                   	; End of block comment
+              StringReplace state, state, COMMENT                       	; Remove state
               ; "*/ function_def()" is legal but quite perverse... I won't support this
 
-      }Else If InStr(state,"CONTSECTION") {               ; In a continuation section
-          If RegExMatch(line, "^\s*\)")                   ; End of continuation section
-              state = DEFAULT
+      }Else If InStr(state,"CONTSECTION") {                              	; In a continuation section
+          If RegExMatch(line, "^\s*\)")                                        	; End of continuation section
+              state := "DEFAULT"
 
-      }Else If RegExMatch(line, "^\s*/\*")                ; Start of block comment, to skip
-          state = %state% COMMENT
+      }Else If RegExMatch(line, "^\s*/\*")                                    	; Start of block comment, to skip
+          state := state " COMMENT"
 
-      Else If RegExMatch(line, "^\s*\(")                  ; Start of continuation section, to skip
-          state = CONTSECTION
+      Else If RegExMatch(line, "^\s*\(")                                       	; Start of continuation section, to skip
+          state := "CONTSECTION"
 
       Else If RegExMatch(line, "i)^\s*(?P<Name>[^ \s:]+?(?:\s+&\s+[^\s:]+?)?(?:\s+up)?)::", hotkey){  ;Hotkey
           hotkeyList#%hotkeyNb%@name := hotkeyName
           hotkeyList#%hotkeyNb%@line := A_Index
-          hotkeyNb++
-          state = DEFAULT
+          hotkeyNb ++
+          state := "DEFAULT"
 
       }Else If RegExMatch(line, "i)^\s*(?P<Name>:(?:\*0?|\?0?|B0?|C[01]?|K(?:-1|\d+)|O0?|P\d+|R0?|S[IPE]|Z0?)*:.+?)::", hotstring){ ;HotString
           hotstringList#%hotstringNb%@name := hotstringName
           hotstringList#%hotstringNb%@line := A_Index
-          hotstringNb++
-          state = DEFAULT
+          hotstringNb ++
+          state := "DEFAULT"
 
       }Else If RegExMatch(line, "^\s*(?P<Name>[^\s,```%]+):" . lineCommentRE, label){   ; Label are very tolerant...
           labelList#%labelNb%@name := labelName
@@ -286,18 +285,18 @@ listfunc(file) {
                             . "\((?P<Parameters>[" . parameterListRE . "]*)"
                             . "(?P<ClosingParen>\)\s*(?P<OpeningBrace>\{)?)?"
                             . lineCommentRE, function){
-              state = FUNCTION
+              state := "FUNCTION"
               functionList#%functionNb%@name := functionName
               functionList#%functionNb%@parameters := functionParameters
               functionList#%functionNb%@line := A_Index
               If functionClosingParen{        ; With closed parameter list
                   If functionOpeningBrace {     ; Found! This is a function definition
-                      functionNb++                ; Validate the finding
-                      state = DEFAULT
+                      functionNb ++                ; Validate the finding
+                      state := "DEFAULT"
                   }Else                         ; List of parameters is closed, just search for opening brace
-                      state = %state% TOBRACE
+                      state := state " TOBRACE"
               }Else                           ; With open parameter list
-                  state = %state% INPARAMS      ; Search for closing parenthesis
+                  state := state " INPARAMS"      ; Search for closing parenthesis
             }
 
       }Else If InStr(state,"FUNCTION"){
@@ -309,55 +308,54 @@ listfunc(file) {
                   If functionClosingParen {            ; List of parameters is closed
                       If (functionOpeningBrace != ""){   ; Found! This is a function definition
                         functionNb++                     ; Validate the finding
-                        state = DEFAULT
+                        state := "DEFAULT"
                       }Else                              ; Just search for opening brace
                         StringReplace state, state, INPARAMS, TOBRACE ; Remove state
                     }                                    ; Otherwise, we continue
               }Else
                   ; Incorrect syntax for a parameter list, it was probably just a function call
                   ;??? does this ever happen???
-                  state = DEFAULT
+                  state := "DEFAULT"
           }Else If InStr(state,"TOBRACE"){ ; Looking for opening brace. There can be only empty lines and comments, which are already processed
               If (RegExMatch(line, "^\s*(?:\{)" . lineCommentRE) > 0){  ; Found! This is a function definition
                   functionNb++  ; Validate the finding
-                  state = DEFAULT
+                  state := "DEFAULT"
               }Else  ; Incorrect syntax between closing parenthesis and opening brace,
-                  state = DEFAULT     ; it was probably just a function call
+                  state := "DEFAULT"     ; it was probably just a function call
           }
       }
     }
 
-  functionNb--
-  rf =
-  Loop %functionNb%{
+  functionNb --
+  rf := ""
+  Loop % functionNb {
       pl := RegExReplace(functionList#%A_Index%@parameters, "\s\s*", " ")  ; Replace multiple blank chars with simple space
 		linec:= functionList#%A_Index%@line
 		linec:= SubStr("00000" . linec, -3)
 		str:= functionList#%A_Index%@name
 		If Not Instr(str, "if`(")
-				rf := rf . "" . linec . "`t|`t" . str . "(" . pl . ")`n"
+			rf .= linec . "`t|`t" . str . "(" . pl . ")`n"
     }
 
-  labelNb--
-  rl =
+  labelNb --
+  rl := ""
   Loop %labelNb% {
 		linec.= labelList#%A_Index%@line
 		linec:= SubStr("00000" . linec, -3)
-		rl := rl . "" . linec . "`t|`t" . labelList#%A_Index%@name . "`n"
+		rl .= linec . "`t|`t" . labelList#%A_Index%@name . "`n"
 
 	}
-  hotkeyNb--
-  rk =
-  Loop %hotkeyNb%
-      rk :=rk . "" . hotkeyList#%A_Index%@line . "`t|`t" . hotkeyList#%A_Index%@name . "`n"
+  hotkeyNb --
+  rk =: ""
+  Loop % hotkeyNb
+      rk .= hotkeyList#%A_Index%@line . "`t|`t" . hotkeyList#%A_Index%@name . "`n"
 
-  hotstringNb--
-  rs =
+  hotstringNb --
+  rs := ""
   Loop %hotstringNb%
-      rs := rs . "" . hotstringList#%A_Index%@line . "`t|`t" . hotstringList#%A_Index%@name . "`n"
+      rs .= hotstringList#%A_Index%@line . "`t|`t" . hotstringList#%A_Index%@name . "`n"
 
 	return rf
-
 }
 
 list_files(Directory) {
@@ -376,33 +374,31 @@ list_files(Directory) {
 		FormatTime, ftime, % ftime, yyyy-MM-dd
 		mdline .= "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "\" . StrReplace(A_LoopFileName," ", "%20") . ") <br>" fsize "kb - " ftime " | " Directory . "|`n"
 		lib.Push(Directory "\" A_LoopFileName)
-		ToolTip, found files: %files%, %mx%, %my%, 6
+		If (Mod(lib.Count(), 50) = 0)
+			ToolTip, % "files: " lib.Count(), % mx, % my , 6
 	}
 
-	;FileAppend, % "| **" . SubStr("0000" . fileIdx, -3) . "** | [" . A_LoopFileName . "](" . Directory . "\" . StrReplace(A_LoopFileName," ", "%20") . ") | " Directory . "  | `n", % A_ScriptDir "\FilesTable.md"
+		ToolTip, % "files: "  lib.Count(), % mx, % my , 6
 
-	return mdline
+return mdline
 }
 
 Contains(haystack, needle) {
+
 	; If haystack is not an object, consider it a string
-	if(!IsObject(haystack))
-  {
-    result := InStr(haystack, needle)
-;     OutputDebug Contains: returning result %i%
-    return
-  }
-	else
-	{
+	if !IsObject(haystack)   {
+
+		result := InStr(haystack, needle)
+		return result
+
+	;     OutputDebug Contains: returning result %i%
+	} else 	{
+
 		for i, v in haystack
-		{
-			if(v = needle)
-      {
-;         OutputDebug Contains: returning result %i%
-        return i
-      }
-		}
-;     OutputDebug Contains: returning false
+			if(v = needle)                                           			;     OutputDebug Contains: returning result %i%
+				return i
+
+																					;     OutputDebug Contains: returning false
 		return false
 	}
 }

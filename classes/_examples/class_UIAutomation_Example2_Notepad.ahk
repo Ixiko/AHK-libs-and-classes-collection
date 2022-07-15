@@ -2,7 +2,7 @@
 #SingleInstance force
 SetTitleMatchMode, 2
 
-#include <UIA_Interface>
+#include ..\class_UIA_Interface.ahk
 
 F5::ExitApp
 F1::
@@ -18,4 +18,4 @@ F1::
 	saveEl := npEl.WaitElementExistByName("Save",,2) ; Wait for the "Save" menu item to exist
 	saveEl.Click() ; And now click Save
 	return
-	
+

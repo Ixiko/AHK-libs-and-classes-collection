@@ -1,0 +1,41 @@
+#include WebView2.ahk
+
+HtmlSite := "https www.google.com "  Broken Link for safety
+
+jsCode := "
+(
+    function Sleep(ms){
+        return new Promise(resolve => setTimeout(resolve,ms));
+    }
+    async function InterAct(){
+        // Load jQuery
+        var jq = document.createElement("script");
+        jq.src = "https ajax.googleapis.com /ajax/libs/jquery/3.5.1/jquery.min.js";  Broken Link for safety
+        document.head.appendChild(jq);
+
+        // Load SweetAlert
+        var msg = document.createElement("script");
+        msg.src = "https unpkg.com /sweetalert/dist/sweetalert.min.js";  Broken Link for safety
+        document.head.appendChild(msg);
+
+        // Wait for jQuery & SweetAlert to Load
+        await Sleep(500);
+
+        // Show Cool MsgBox SweetAlert
+        await swal("Watch Google Logo Fade Out...","jQuery Version = "+$.fn.jquery,"info");
+
+        $("#hplogo").fadeOut(3000);
+    }
+    InterAct();
+)"
+
+win := Gui.new(,"WebView2 Fade Google Logo")
+win.OnEvent "Close",(*) => ExitApp()
+
+Init_WebView2(win)
+
+ExecuteScript_WebView2
+
+win.Show "w" A_ScreenWidth//2 " h" A_ScreenHeight//2
+
+Esc::ExitApp

@@ -1,4 +1,4 @@
-#DllImport ReadProcessMemory, Kernel32\ReadProcessMemory, i==tttutut*
+﻿#DllImport ReadProcessMemory, Kernel32\ReadProcessMemory, i==tttutut*
 #DllImport WriteProcessMemory, Kernel32\WriteProcessMemory, i==tttutut*
 #DllImport VirtualProtectEx, Kernel32\VirtualProtectEx, i==ttutuiui*
 

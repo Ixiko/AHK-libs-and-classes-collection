@@ -1,0 +1,25 @@
+#include webview2.ahk
+
+NavUri := "https www.bing.com "  Broken Link for safety
+
+win           := Gui.New("-caption","WebView2 Testing")
+win.BackColor := "Aqua"
+
+wvRight  := A_ScreenWidth
+wvBottom := A_ScreenHeight/1.5
+
+WebView2_Init(win)
+
+win.Show "w" A_ScreenWidth " h" A_ScreenHeight
+
+;Give some time to load Gui
+sleep 600
+
+NavUri := "https www.google.com "  Broken Link for safety
+
+wvtop    := A_ScreenHeight/1.5
+wvBottom := 1090
+
+WebView2_Init(win)
+
+Esc::ExitApp

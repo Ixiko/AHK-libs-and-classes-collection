@@ -1,4 +1,4 @@
-class Capabilities
+﻿class Capabilities
 {
     static Simple := {"cap":{"capabilities":{"":""}}}, olduser := {}
     static _ucof := false, _hmode := false, _incog := false
