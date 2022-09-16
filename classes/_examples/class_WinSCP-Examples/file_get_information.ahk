@@ -11,7 +11,7 @@ try
 {
 	;Open Conenction
 	FTPSession.OpenConnection("ftp://myserver.com","username","password")
-	
+
 	;Retrieve File Collection
 	FileCollection := FTPSession.ListDirectory("/")
 	;Walk trough File Collection
@@ -19,7 +19,9 @@ try
 		;Skip '.' and '..'
 		if (file.Name != "." && file.Name != "..")
 			;Display Data
-			msgbox % "Name: " file.Name "``nPermission: " file.FilePermissions.Octal "``nIsDir: " file.IsDirectory "``nFileType: " file.FileType "``nGroup: " file.Group "``nLastWriteTime: " file.LastWriteTime "``nLength: " file.Length "``nLength32: " file.Length32 "``nOwner: " file.Owner
+			msgbox % "Name: " file.Name "``nPermission: " file.FilePermissions.Octal
+							. "``nIsDir: " file.IsDirectory "``nFileType: " file.FileType "``nGroup: " file.Group
+							. "``nLastWriteTime: " file.LastWriteTime "``nLength: " file.Length "``nLength32: " file.Length32 "``nOwner: " file.Owner
 } catch e
 	;Catch Exeptions
 	msgbox % "Oops. . . Something went wrong``n" e.Message
