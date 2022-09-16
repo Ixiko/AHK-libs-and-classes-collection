@@ -1,4 +1,4 @@
-﻿#include ..\SCI.ahk
+﻿#include ..\..\class_Scintilla.ahk
 #singleinstance force
 
 /*

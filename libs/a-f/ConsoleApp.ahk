@@ -37,8 +37,7 @@
 ;;; <example>
 ;;;     MsgBox, % ConsoleApp_RunWait("cmd.exe /c echo Hello World.")
 ;;; </example>
-ConsoleApp_RunWait(CmdLine, WorkingDir="", byref ExitCode="")
-{
+ConsoleApp_RunWait(CmdLine, WorkingDir="", byref ExitCode=""){
    global
    local ConsoleAppHandle, ConsoleAppStillRunning, StdOut, BytesAppended, FirstWin32Error
 
@@ -51,7 +50,7 @@ ConsoleApp_RunWait(CmdLine, WorkingDir="", byref ExitCode="")
    ; 0 for failure.
    if (ConsoleAppHandle == 0)
       CONSOLEAPPS_PRIVATE_throw(ERROR_GENERIC_ERROR, "Unable to run console application.")
-   /* Continuously retrieve the process's output and write it to the edit control 
+   /* Continuously retrieve the process's output and write it to the edit control
     * in a loop as it arrives.
     */
    Loop
@@ -86,12 +85,12 @@ ConsoleApp_RunWait(CmdLine, WorkingDir="", byref ExitCode="")
 ;;;     Specifies a variable to receive the ProcessID of the program. This parameter is optional.
 ;;; </param>
 ;;; <returns>
-;;;     Returns a proprietary handle to the ConsoleApp for use in calls to ConsoleApp_GetStdOut() and 
-;;;     ConsoleApp_CloseHandle(). This handle cannot be specified in any Win32 API functions to identify 
+;;;     Returns a proprietary handle to the ConsoleApp for use in calls to ConsoleApp_GetStdOut() and
+;;;     ConsoleApp_CloseHandle(). This handle cannot be specified in any Win32 API functions to identify
 ;;;     a process.
 ;;; </returns>
 ;;; <remarks>
-;;;     If this function completes successfully, the handle returned by this function must be closed 
+;;;     If this function completes successfully, the handle returned by this function must be closed
 ;;;     when no longer needed using the ConsoleApp_CloseHandle() function.
 ;;;     The output of programs that are explicity redirected or "piped" in their command-lines will
 ;;;     not be captured in calls to ConsoleApp_GetStdOut (e.g. "cmd.exe /C echo Hello World > test.txt").
@@ -103,8 +102,7 @@ ConsoleApp_RunWait(CmdLine, WorkingDir="", byref ExitCode="")
 ;;;     else
 ;;;         ConsoleApp_CloseHandle(ConsoleAppHandle)
 ;;; </example>
-ConsoleApp_Run(CmdLine, WorkingDir="", Reserved="", byref PID="")
-{
+ConsoleApp_Run(CmdLine, WorkingDir="", Reserved="", byref PID=""){
    global
    local sa, pi, si, lpCurrentDirectory
    local hStdoutRead, hStdoutWrite
@@ -120,19 +118,19 @@ ConsoleApp_Run(CmdLine, WorkingDir="", Reserved="", byref PID="")
    NumPut(4*18,  si, 0, "uint") ;STARTUP_INFO {HANDLE cbSize}
    NumPut(0x100 | 0x1, si, 4*11, "uint") ;STARTUP_INFO {dwFlags = STARTF_USESTDHANDLES | STARTF_USESHOWWINDOW}
    ;NumPut(0x0, si, 4*12, "ushort") ;STARTUP_INFO {wShowWindow = SW_HIDE}
-   
+
    ;ALLOC HANDLES
    CONSOLEAPPS_PRIVATE_malloc(hStdoutRead, 4)
    CONSOLEAPPS_PRIVATE_malloc(hStdoutWrite, 4)
    CONSOLEAPPS_PRIVATE_malloc(hStdinRead, 4)
    CONSOLEAPPS_PRIVATE_malloc(hStdinWrite, 4)
-   
+
    ;ALLOC AND INIT SECURITY_ATTRIBUTES STRUC
    CONSOLEAPPS_PRIVATE_calloc(sa, 12, 0) ;security attributes
    NumPut(12,  sa, 0, "uint")
    NumPut(0, sa, 4, "uint")
    NumPut(true, sa, 8, "int")
-   
+
    ;CREATE PIPE FOR STDOUT
    if (!DllCall("CreatePipe", "uint", &hStdoutRead, "uint", &hStdoutWrite, "uint", &sa, "uint", 0))
       CONSOLEAPPS_PRIVATE_throw(CONSOLEAPPS_PRIVATE_ERROR_WIN32_ERROR, "Unable to create stdout pipe: ")
@@ -145,7 +143,7 @@ ConsoleApp_Run(CmdLine, WorkingDir="", Reserved="", byref PID="")
       DllCall("CloseHandle", "uint", hStdoutWrite) ;HANDLE hThread
       CONSOLEAPPS_PRIVATE_throw(CONSOLEAPPS_PRIVATE_ERROR_WIN32_ERROR, "Unable to set handle information: ", "", FirstWin32Error)
    }
-   
+
    /*
    ;CREATE PIPE FOR STDIN
    if (!DllCall("CreatePipe", "uint", &hStdinRead, "uint", &hStdinWrite, "uint", &sa, "uint", 0))
@@ -171,7 +169,7 @@ ConsoleApp_Run(CmdLine, WorkingDir="", Reserved="", byref PID="")
 ;   NumPut(hStdinRead, si, 4*14, "uint") ;STARTUP_INFO {HANDLE hStdInput}
    NumPut(hStdoutWrite, si, 4*15, "uint") ;STARTUP_INFO {HANDLE hStdOutput}
    NumPut(hStdoutWrite, si, 4*16, "uint") ;STARTUP_INFO {HANDLE hStdError}
-   
+
    if (StrLen(WorkingDir) == 0)
       lpCurrentDirectory := 0
    else
@@ -198,7 +196,7 @@ ConsoleApp_Run(CmdLine, WorkingDir="", Reserved="", byref PID="")
    hThread := NumGet(pi, 4, "uint")
    PID := NumGet(pi, 8, "uint") ;DWORD dwProcessId
    DllCall("CloseHandle", "uint", hThread) ;HANDLE hThread
-   
+
    ;    struct ConsoleAppsProcessInfo
    ;    {
    ;        int hProcess;
@@ -209,7 +207,7 @@ ConsoleApp_Run(CmdLine, WorkingDir="", Reserved="", byref PID="")
    ;    }
    hHeap := DllCall("GetProcessHeap", "uint")
    lpCAPI := DllCall("HeapAlloc", "uint", hHeap, "uint", 0, "uint", 0xC, "uint")
-   
+
    NumPut(hProcess, lpCAPI + 0x0)
    NumPut(hStdoutRead, lpCAPI + 0x4)
    NumPut(hStdoutWrite, lpCAPI + 0x8)
@@ -258,15 +256,15 @@ ConsoleApp_Run(CmdLine, WorkingDir="", Reserved="", byref PID="")
 ;;;             ECHO Processing %2 3 of 3
 ;;;             ping 127.0.0.1 -n 2 -w 1000 > nul
 ;;;             ping 127.0.0.1 -n 1 -w 1000 > nul
-;;;             ECHO Processing Complete;;;     ;   
+;;;             ECHO Processing Complete;;;     ;
 ;;;     ;   5. Paste the following text (without the comments) into "ConsoleApps_Test.ahk", and then run "ConsoleApps_Test.ahk"
 ;;;             #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ;;;             #Include ConsoleApps.ahk
-;;;             
+;;;
 ;;;             ;Create GUI window with an edit control to print the output.
 ;;;             Gui, Add, Edit, x15 y15 w460 h300 -Wrap ReadOnly hscroll vtxtStdout,
 ;;;             Gui, Show, w490 h330, Standard Input/Output Redirection Example
-;;;             
+;;;
 ;;;             ; Create the process
 ;;;             ConsoleAppHandle := ConsoleApp_Run("ConsoleApps_TestFile.bat -p nothing", A_ScriptDir)
 ;;;             ; In reality, this function will never return with a ConsoleAppHandle value of 0, but
@@ -277,8 +275,8 @@ ConsoleApp_Run(CmdLine, WorkingDir="", Reserved="", byref PID="")
 ;;;                 MsgBox, Error running cmd.exe
 ;;;                 ExitApp
 ;;;             }
-;;;             
-;;;             /* Continuously retrieve the process's output and write it to the edit control 
+;;;
+;;;             /* Continuously retrieve the process's output and write it to the edit control
 ;;;              * in a loop as it arrives.
 ;;;              */
 ;;;             Loop
@@ -302,7 +300,7 @@ ConsoleApp_Run(CmdLine, WorkingDir="", Reserved="", byref PID="")
 ;;;             else
 ;;;                 MsgBox, The program has exitted with an error code of %ExitCode%.
 ;;;             return
-;;;             
+;;;
 ;;;             ; The following label is receives control when the user closes the GUI window.
 ;;;             GuiClose:
 ;;;             ExitApp
@@ -311,7 +309,7 @@ ConsoleApp_GetStdOut(ConsoleAppHandle, byref Stdout, byref BytesAppended = 0, by
 {
    global
    local hProcess, hStdoutRead, buf, ec, cb, FirstWin32Error
-   
+
    ConsoleApps_Initialize()
 
    hProcess := NumGet(ConsoleAppHandle + 0x0)
@@ -319,7 +317,7 @@ ConsoleApp_GetStdOut(ConsoleAppHandle, byref Stdout, byref BytesAppended = 0, by
 ;   hStdoutWrite := NumGet(ConsoleAppHandle + 0x8)
 ;   hStdinRead := NumGet(ConsoleAppHandle + 0xC)
 ;   hStdinWrite := NumGet(ConsoleAppHandle + 0x10)
-   
+
    CONSOLEAPPS_PRIVATE_malloc(cb, 4)
    BytesAppended := 0
    Loop
@@ -336,7 +334,7 @@ ConsoleApp_GetStdOut(ConsoleAppHandle, byref Stdout, byref BytesAppended = 0, by
       stdout := stdout . buf
       BytesAppended += NumGet(cb, 0, "uint")
    }
-   
+
    CONSOLEAPPS_PRIVATE_malloc(ec, 4)
    if (!DllCall("GetExitCodeProcess", uint, hProcess, uint, &ec))
    {
@@ -345,7 +343,7 @@ ConsoleApp_GetStdOut(ConsoleAppHandle, byref Stdout, byref BytesAppended = 0, by
       CONSOLEAPPS_PRIVATE_throw(CONSOLEAPPS_PRIVATE_ERROR_WIN32_ERROR, "Error getting process exit code: ", "", FirstWin32Error)
    }
    ExitCode := NumGet(ec)
-   
+
    ; If the exit code of the process is STILL_ACTIVE (0x103) then the process is still running
    if (ExitCode == 0x103)
       return true
@@ -379,7 +377,7 @@ ConsoleApp_CloseHandle(ConsoleAppHandle)
 ;   hStdinWrite := NumGet(ConsoleAppHandle + 0x10)
    ; If any of the following functions fail, then the ConsoleAppProcessInfo structure must
    ; not be valid, or has already been closed. In this case we raise an error to alert the
-   ; user of a possible mis-handling of the handle and prevent further corruption and memory 
+   ; user of a possible mis-handling of the handle and prevent further corruption and memory
    ; leaks.
    if (!DllCall("CloseHandle", "uint", hProcess)) ;HANDLE hThread
       CONSOLEAPPS_PRIVATE_throw(ERROR_GENERIC_ERROR, "Error ConsoleAppHandle is corrupt or has already been closed.")
@@ -406,11 +404,11 @@ ConsoleApp_CloseHandle(ConsoleAppHandle)
 ConsoleApps_Initialize()
 {
    global
-   
+
    if (ConsoleApps_Initialized)
       Return
    ConsoleApps_Initialized := True
-   
+
    CONSOLEAPPS_PRIVATE_EXIT_FAILURE := 1
    CONSOLEAPPS_PRIVATE_MAXIMUM_INTEGER := 0x7FFFFFFF  ; 2147483647
    CONSOLEAPPS_PRIVATE_MAXIMUM_UNSIGNED_INTEGER := 0xFFFFFFFF  ; 4294967295

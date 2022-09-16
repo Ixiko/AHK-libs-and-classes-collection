@@ -1,4 +1,3 @@
-﻿ITL_IsComObject(obj)
-{
+﻿ITL_IsComObject(obj){
 	return IsObject(obj) && ComObjValue(obj)
 }

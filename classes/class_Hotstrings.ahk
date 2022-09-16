@@ -9,6 +9,7 @@
 SetBatchLines, -1
 
 Hotstrings.Register("Oi)MsgBox,?\s*(.*)\n", Func("Test"))
+Hotstrings.Register("Oi)\.(.*)(\n|\t|\s{2})", Func("Test"))
 return
 
 Test(Match)
@@ -18,8 +19,8 @@ Test(Match)
 
 */
 
-class Hotstrings
-{
+class Hotstrings {
+
 	static Prefix := "*~$", Buf := "", MaxBuf := 2000, RegExps := ""
 	, Reset := "Left,Right,Up,Down,Home,End,RButton,LButton"
 	, _ := Hotstrings := new Hotstrings() ; Autoinitialization trick

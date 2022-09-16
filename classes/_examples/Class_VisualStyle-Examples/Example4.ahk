@@ -1,6 +1,9 @@
 ﻿#NoEnv
 #NoTrayIcon
-#Include <Class_VisualStyle>
+;~ #Include <Class_VisualStyle>
+#Include A_ScriptDir\..\..\..\Class_VisualStyle.ahk
+#Include %A_ScriptDir%\..\..\..\libs\a-f\Const_Theme.ahk
+#Include %A_ScriptDir%\..\..\..\libs\o-z\UxTheme.ahk
 
 SendMode Input
 SetBatchLines -1
@@ -26,7 +29,7 @@ type := DefaultType="ANSI" ? "ANSI 32-bit" : "Unicode " (DefaultType="x64"?"64":
 
 Wizard.PagingCreate(6)
 
-; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Wizard.PageAdd(1)
 
@@ -43,9 +46,9 @@ Wizard.CommandLink("AnsiorUni", "p", "+5" , "p", (Ext.H+20), "Custom Installatio
 Gui %hWnd1%: Font, % " c" LinkFont.Color,
 Gui %hwnd1%: Add, Text, % "x40 y" (390-(DWM_WINEXTENT*2)), AutoHotkey is open source software:
 
-Wizard.ContentLink(CurrentPath "\license.txt", "read license", "+1", "p") 
+Wizard.ContentLink(CurrentPath "\license.txt", "read license", "+1", "p")
 
-; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Wizard.PageAdd(2)
 
@@ -60,9 +63,9 @@ Wizard.CommandLink("TestButton2", "p", "+20", (600-80), (Ext.H+20), "Reinstall (
 Wizard.CommandLink("TestButton2", "p", "+5" , (600-80), (Ext.H+20), "Modify", "", 1)
 Wizard.CommandLink("TestButton2", "p", "+5" , (600-80), (Ext.H+20), "Uninstall", "")
 
-Wizard.ContentLink("gExtract", "extract to...", "p", (390-(DWM_WINEXTENT*2))) 
+Wizard.ContentLink("gExtract", "extract to...", "p", (390-(DWM_WINEXTENT*2)))
 
-; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Wizard.PageAdd(3)
 
@@ -78,7 +81,7 @@ Wizard.CommandLink("AnsiorUni", "p", "+5" , (600-80), "p", "ANSI 32-bit", "Bette
 
 Wizard.ContentLink("gTestButton3", "More information", "p", (390-(DWM_WINEXTENT*2)))
 
-; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Wizard.PageAdd(4)
 
@@ -122,7 +125,7 @@ Gui %hWnd1%: Font, % "s" cbxsFont.Size " c" cbxsFont.Color,
 Ext := Wizard.GetTextExtent("Enable drag `& drop", "CONTROLPANEL", 11, 0, "")
 Gui %hwnd1%: Add, Link, % "xp+18 yp+" Ext.H " gMyFunction", UI Access enables scripts to automate administrative programs. <a id="/docs/Program.htm#Installer_uiAccess">[help]</a>
 
-; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Wizard.PageAdd(5)
 
@@ -134,7 +137,7 @@ Gui %hwnd1%: Add, Text, xp y+20, This shouldn't take long...
 
 Gui %hwnd1%: Add, Progress, xp+80 y+30 w360 h15 hWndhPrg -Smooth, 0
 
-; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Wizard.PageAdd(6)
 
@@ -150,11 +153,11 @@ Wizard.CommandLink("GuiClose"   , "p", "+7", (600-80), (Ext.H+23), "Exit", "")
 Gui %hWnd1%: Font, % "s" LinkFont.Size " c" LinkFont.Color,
 Gui %hwnd1%: Add, Text, % "x40 y" . (390-(DWM_WINEXTENT*2)), Did you know AutoHotkey has a
 
-Wizard.ContentLink("gViewWebsite", "new home", "+2", "p") 
+Wizard.ContentLink("gViewWebsite", "new home", "+2", "p")
 
 Gui %hwnd1%: Add, Text, x+1 yp+1, ?
 
-; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Wizard.WinShow()
 Return
@@ -174,32 +177,29 @@ Back:
 	GuiControl, Disable%nBtnSt%, %hNext%
 	GuiControl, Disable%pBtnSt%, %hPrev%
 	GuiControl,, %hNext%, Next
-	Wizard.PageChoose(PageCtrl - 1)		
-Return 	
+	Wizard.PageChoose(PageCtrl - 1)
+Return
 
 Next:
-	if (lastButton = "Uninstall")
-	{
+	if (lastButton = "Uninstall")	{
 		GoSub, UnInstall
 		Return
 	}
 
-	if (lastButton = "Express Installation")
-	{
+	if (lastButton = "Express Installation")	{
 		Ext := Wizard.GetTextExtent("Installing " CurrentName " v" CurrentVersion " (" type ")", "AEROWIZARD", AW_HEADERAREA, 0, "")
 		GuiControl, Move, %hText11%, % "w" Ext.W
 		GuiControl,, %hText11%, % "Installing " CurrentName " v" CurrentVersion " (" type ")"
 		GoSub, UnInstall
-		Return 
+		Return
 	}
 
-	if (lastButton = "Reinstall (dowload required)")
-	{
+	if (lastButton = "Reinstall (dowload required)")	{
 		Ext := Wizard.GetTextExtent("Downloading Updates...", "AEROWIZARD", AW_HEADERAREA, 0, "")
 		GuiControl, Move, %hText11%, % "w" Ext.W
 		GuiControl,, %hText11%, Downloading Updates...
 		GoSub, UnInstall
-		Return 
+		Return
 	}
 
 	Gui %hWnd1%: Submit, NoHide
@@ -207,34 +207,30 @@ Next:
 	nBtnSt := (PageCtrl >= 3) ? 1 : 0
 	pBtnSt := (PageCtrl >= 1) ? 0 : 1
 
-	if ((PageCtrl + 1) < 4)
-	{	
+	if ((PageCtrl + 1) < 4)	{
 		GuiControl, Disable%nBtnSt%, %hNext%
 		GuiControl, Disable%pBtnSt%, %hPrev%
 		Wizard.PageChoose(PageCtrl + 1)
 	}
 
-	if ((PageCtrl + 1) = 4)
-	{
-		GuiControl,, %hNext%, Install	
+	if ((PageCtrl + 1) = 4)	{
+		GuiControl,, %hNext%, Install
 		GuiControl, Disable%pBtnSt%, %hPrev%
 		Wizard.PageChoose(PageCtrl + 1)
 	}
-	
-	if ((PageCtrl + 1) = 5)
-	{
+
+	if ((PageCtrl + 1) = 5)	{
 		lastButton := "Express Installation"
 		GoSub, Next
 	}
 Return
 
 TestButton2:
-	if (A_GuiEvent = "Normal") and (A_EventInfo = 0x0000)
-	{
+	if (A_GuiEvent = "Normal") and (A_EventInfo = 0x0000)	{
 
 		if (hControl_p1)
 			Wizard.ButtonSetImage(hControl_p1)
-		
+
 		GuiControlGet, hControl_p1, Hwnd, %A_GuiControl%
 
 		lastButton := A_GuiControl
@@ -264,7 +260,7 @@ Return
 
 ViewWebsite:
 	Run_("https://autohotkey.com/")
-Return 
+Return
 
 Extract:
 	FileSelectFolder, dstDir,,, Select a folder to copy program files to.
@@ -272,18 +268,17 @@ Extract:
 		Return
 	else
 		MsgBox, 0x2030, AutoHotkey Setup, This is just an example.
-Return 
+Return
 
 AnsiorUni:
-	if (A_GuiEvent = "Normal") and (A_EventInfo = 0x0000)
-	{
+	if (A_GuiEvent = "Normal") and (A_EventInfo = 0x0000)	{
 		if (hControl_p2)
 			Wizard.ButtonSetImage(hControl_p2)
-		
+
 		GuiControlGet, hControl_p2, Hwnd, %A_GuiControl%
 
 		lastButton := A_GuiControl
-		
+
 		Wizard.ButtonSetImage(hControl_p2, "C:\Windows\system32\netshell.dll", 98, 16)
 	}
 Return
@@ -291,13 +286,11 @@ Return
 UnInstall:
 	GuiControl, Hide, %hNext%
 	GuiControl, Disable, %hPrev%
-	
+
 	Wizard.PageChoose(5)
-	
-	if (lastButton = "Reinstall (dowload required)")
-	{
-		Loop, 100
-		{
+
+	if (lastButton = "Reinstall (dowload required)")	{
+		Loop, 100		{
 			GuiControl,, %hPrg%, +1
 			Sleep, 10
 		}
@@ -306,26 +299,25 @@ UnInstall:
 		GuiControl, Move, %hText11%, % "w" Ext.W
 		GuiControl,, %hText11%, % "Installing " CurrentName " v" CurrentVersion " (" type ")."
 	}
-	
+
 	Wizard.ProgBarSetState(hPrg, "Marquee")
-	
+
 	Sleep, 7000
 
 	Wizard.ProgBarSetState(hPrg, "Marquee", 0)
-		
+
 	Wizard.PageChoose(6)
 
-	GuiControl,, %hCancel%, Close	
+	GuiControl,, %hCancel%, Close
 Return
 
-MyFunction(CtrlHwnd, GuiEvent, LinkIndex, HrefOrID)
-{
+MyFunction(CtrlHwnd, GuiEvent, LinkIndex, HrefOrID){
 	ViewHelp(HrefOrID)
 }
 
 ; **************************************************************************************************************************************************;
 ; The folowing functions courtesy of AutoHotkey installer.  Thanks Lexicos!
-; ==================================================================================================================================================;
+; ===========================================================================================================================
 DetermineVersion() {
 	global
 	local url, v
@@ -414,8 +406,7 @@ RunAutoHotkey() {
 	Run_("AutoHotkey.exe", """" A_AhkPath "\Installer.ahk"" /exec runahk")
 }
 
-ShellRun(prms*)
-{
+ShellRun(prms*){
 	shellWindows := ComObjCreate("Shell.Application").Windows
 	VarSetCapacity(_hwnd, 4, 0)
 	desktop := shellWindows.FindWindowSW(0, "", 8, ComObj(0x4003, &_hwnd), 1)

@@ -3,8 +3,6 @@
 ; Version:   2018-04-17 (April 2018)
 ; Recent:    2018-05-15
 
-#include <Gdip_All>
-
 
 class Subtitle {
 

@@ -68,8 +68,7 @@ Explorer_GetWindow(hwnd="") {
 Explorer_Get(hwnd="",selection=false) {
 	if !(window := Explorer_GetWindow(hwnd))
 		return ErrorLevel := "ERROR"
-	if (window="desktop")
-	{
+	if (window="desktop")	{
 		ControlGet, hwWindow, HWND,, SysListView321, ahk_class Progman
 		if !hwWindow ; #D mode
 			ControlGet, hwWindow, HWND,, SysListView321, A
@@ -82,8 +81,7 @@ Explorer_Get(hwnd="",selection=false) {
 				ret .= path "`n"
 		}
 	}
-	else
-	{
+	else	{
 		if selection
 			collection := window.document.SelectedItems
 		else

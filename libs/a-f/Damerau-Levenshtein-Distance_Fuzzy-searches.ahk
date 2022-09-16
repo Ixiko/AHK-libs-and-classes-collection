@@ -1,6 +1,6 @@
-﻿;~ msgbox % DLDistance("test string","test string") ;returns 0
-;~ msgbox % DLDistance("test string","Xest string") ;returns 1
-;~ msgbox % DLDistance("test string","XXst string")
+﻿msgbox % DLDistance("test string","test string") ;returns 0
+msgbox % DLDistance("test string","Xest string") ;returns 1
+msgbox % DLDistance("test string","XXst string")
 
 /*
 Damerau-Levenshtein Distance

@@ -1,8 +1,6 @@
-﻿![ahk_logo](/ahklogo.png)
+﻿![ahk_logo](ahklogo.png)
 
-api_c
-
-![lbc-logo](/lbc.png)
+![lbc-logo](lbc.png)
 
 #### This is currently a collection of around 3600 Autohotkey libraries and classes.
 

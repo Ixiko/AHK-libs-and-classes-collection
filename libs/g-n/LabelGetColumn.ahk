@@ -10,7 +10,7 @@
 */
 
 asm  	:= Clr_LoadLibrary(A_ScriptDir "\F23.StringSimilarity.dll")
-dam 	:= Clr_CreateObject(asm, "F23.StringSimilarity.Damerau")
+dam 		:= Clr_CreateObject(asm, "F23.StringSimilarity.Damerau")
 cosi   	:= Clr_CreateObject(asm, "F23.StringSimilarity.Cosine")
 ngram 	:= Clr_CreateObject(asm, "F23.StringSimilarity.NGram")
 jacc  	:= Clr_CreateObject(asm, "F23.StringSimilarity.Jaccard")

@@ -1,5 +1,22 @@
+﻿; Title:   	https://raw.githubusercontent.com/tthreeoh/ahk/d412741b8ebf7a828df771a62d6b8db79d638c0c/lib/cmdkey.ahk
+; Link:
+; Author:
+; Date:
+; for:     	AHK_L
+
+/*
+
+target:="SampleTarget",username:="SamepleUsername",pass:="Luggage12345"
+clipboard:=key.AddGeneric(target,username,pass)
+clipboard.=key.List(target)
+key.Delete(target)
+clipboard.=key.List()
+
+*/
+
+
 class cmd {
-    
+
     stdOut(command){
 
 	    return this.hideout(command)
@@ -8,7 +25,7 @@ class cmd {
     showout(command) {
         shell := comobjcreate("WScript.shell")
         exec := (shell.exec(comspec " /c " command))
-        stdout := exec.stdout.readall()   
+        stdout := exec.stdout.readall()
         Return stdout
     }
     hideout(Target, Size:=""){
@@ -50,7 +67,7 @@ class key {
             return result
         else
             return 0
-        
+
     }
     Delete(targetName){
         if (targetName=""){
@@ -122,12 +139,5 @@ class key {
         }
 
         return {"username": username, "password": password}
-    }   
+    }
 }
-/* comment this line to sample
-target:="SampleTarget",username:="SamepleUsername",pass:="Luggage12345"
-clipboard:=key.AddGeneric(target,username,pass)
-clipboard.=key.List(target)
-key.Delete(target)
-clipboard.=key.List()
-*/

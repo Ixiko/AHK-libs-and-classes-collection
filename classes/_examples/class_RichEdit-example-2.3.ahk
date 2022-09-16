@@ -1059,5 +1059,5 @@ SetTabStopsGui(RE) {
 
 #Include %A_ScriptDir%\..\Class_RichEdit.ahk
 #Include %A_ScriptDir%\..\Class_RichEditDlgs.ahk
-#Include %A_ScriptDir%\..\..\lib-i_to_z\RichEdit OleCallback.ahk
+#Include %A_ScriptDir%\..\..\libs\o-z\RichEdit OLECallback.ahk
 

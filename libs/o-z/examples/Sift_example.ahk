@@ -1,4 +1,4 @@
-﻿#Include Sift.ahk
+﻿#Include ..\Sift.ahk
 
 Data =
 (
@@ -93,7 +93,7 @@ Query:
 			}
 			else
 				Display := Sift_Ngram(Data, QueryText, NgramLimit, Data_Ngram_Matrix, NgramSize)
-			If DisplayLimit 
+			If DisplayLimit
 				Display := SubStr(Display, 1, InStr(Display,"`n",,, DisplayLimit))
 		}
 	}

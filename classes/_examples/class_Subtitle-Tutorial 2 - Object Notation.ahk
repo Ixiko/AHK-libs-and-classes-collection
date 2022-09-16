@@ -1,4 +1,5 @@
-﻿#include <Subtitle>
+﻿#include A_ScriptDir\..\..\class_Subtitle.ahk
+#include A_ScriptDir\..\..\..\libs\g-n\Gdip_All.ahk
 
 text := {}
 text.font := "Gill Sans MT Condensed"
@@ -17,5 +18,5 @@ background.x := "center"
 background.y := "40vh"
 
 
-Subtitle.Render("ta mère est une fleure rare que t'abreuve par ton amour", background, text).Screenshot("image2.png")
+Subtitle.Render("your wife is a rare flower that you water with your love", background, text).Screenshot("image2.png")
 

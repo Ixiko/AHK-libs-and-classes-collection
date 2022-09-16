@@ -20,7 +20,7 @@
 ;
 ; ==================================================================================================================================================;
 
-#Include %A_ScriptDir%\..\lib-a_to_h\Const_Theme.ahk
+;~ #Include %A_ScriptDir%\..\lib-a_to_h\Const_Theme.ahk
 
 
 Class VisualStyle {

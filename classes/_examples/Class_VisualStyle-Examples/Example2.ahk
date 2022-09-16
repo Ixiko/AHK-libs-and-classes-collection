@@ -1,6 +1,9 @@
 ﻿#NoEnv
 #NoTrayIcon
-#Include <Class_VisualStyle>
+#Include A_ScriptDir\..\..\..\Class_VisualStyle.ahk
+#Include %A_ScriptDir%\..\..\..\libs\a-f\Const_Theme.ahk
+#Include %A_ScriptDir%\..\..\..\libs\o-z\UxTheme.ahk
+;~ #Include A_ScriptDir\..\..\..\Class_VisualStyle.ahk
 
 SendMode Input
 SetBatchLines -1
@@ -8,7 +11,7 @@ SetBatchLines -1
 winTitle := "Customer Experience Improvement Program"
 winIcon  := -1
 headerText := "Do you want to join the Windows Customer Experience`nImprovement Program?"
-bodyText    = 
+bodyText    =
 (LTrim
 		The program helps Microsoft improve Windows. Without interrupting you, it collects
 		information about your computer hardware and how you use Windows. The program also
@@ -40,7 +43,7 @@ GuiControl   , Move, % TaskDialogProp.CmdBtnNext, % "X" btnX-((nExt.W+30)-btnW) 
 TaskDialog.ButtonSetElevationRequiredState(TaskDialogProp.CmdBtnNext)
 
 TaskDialog.WinShow()
-Return 
+Return
 
 btnSaveChanges:
 btnCancel:

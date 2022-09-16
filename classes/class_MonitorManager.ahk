@@ -9,6 +9,7 @@ PARTICULAR PURPOSE.
 */
 
 class MonitorManager {
+
   __New() {
     ;; enum _PROCESS_DPI_AWARENESS
     PROCESS_DPI_UNAWARE := 0
@@ -22,7 +23,7 @@ class MonitorManager {
     DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 := -4
     DllCall("User32\SetProcessDpiAwarenessContext", "UInt" , DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2)
     ;; pneumatic: -DPIScale not working properly (https://www.autohotkey.com/boards/viewtopic.php?p=241869&sid=abb2db983d2b3966bc040c3614c0971e#p241869)
-    
+
     ptr := A_PtrSize ? "Ptr" : "UInt"
     this.monitors := []
     DllCall("EnumDisplayMonitors", ptr, 0, ptr, 0, ptr, RegisterCallback("MonitorEnumProc", "", 4, &this), "UInt", 0)
@@ -35,11 +36,11 @@ MonitorEnumProc(hMonitor, hdcMonitor, lprcMonitor, dwData) {
   t := NumGet(lprcMonitor + 0,  4, "UInt")
   r := NumGet(lprcMonitor + 0,  8, "UInt")
   b := NumGet(lprcMonitor + 0, 12, "UInt")
-  
+
   this := Object(A_EventInfo)
   ;; Helgef: Allow RegisterCallback with BoundFunc objects (https://www.autohotkey.com/boards/viewtopic.php?p=235243#p235243)
   this.monitors.push(New Monitor(hMonitor, l, t, r, b))
-  
+
 	Return, 1
 }
 
@@ -50,19 +51,19 @@ class Monitor {
     this.top    := top
     this.right  := right
     this.bottom := bottom
-    
+
     this.x      := left
     this.y      := top
     this.width  := right - left
     this.height := bottom - top
-    
+
     dpi := this.getDpiForMonitor()
     this.dpiX := dpi.x
     this.dpiY := dpi.y
     this.scaleX := this.dpiX / 96
     this.scaleY := this.dpiY / 96
   }
-  
+
   getDpiForMonitor() {
     ;; enum _MONITOR_DPI_TYPE
     MDT_EFFECTIVE_DPI := 0
@@ -72,7 +73,7 @@ class Monitor {
     ptr := A_PtrSize ? "Ptr" : "UInt"
     dpiX := dpiY := 0
     DllCall("SHcore\GetDpiForMonitor", ptr, this.handle, "Int", MDT_DEFAULT, "UInt*", dpiX, "UInt*", dpiY)
-    
+
     Return, {x: dpiX, y: dpiY}
   }
   ;; InnI: Get per-monitor DPI scaling factor (https://www.autoitscript.com/forum/topic/189341-get-per-monitor-dpi-scaling-factor/?tab=comments#comment-1359832)

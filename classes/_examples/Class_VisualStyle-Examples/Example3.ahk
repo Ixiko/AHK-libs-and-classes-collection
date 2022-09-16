@@ -1,6 +1,8 @@
 ﻿#NoEnv
 #NoTrayIcon
-#Include <Class_VisualStyle>
+#Include A_ScriptDir\..\..\..\Class_VisualStyle.ahk
+#Include %A_ScriptDir%\..\..\..\libs\a-f\Const_Theme.ahk
+#Include %A_ScriptDir%\..\..\..\libs\o-z\UxTheme.ahk
 
 SendMode Input
 SetBatchLines -1
@@ -17,13 +19,13 @@ Gui, % WinProp.hwnd ": Add", Text, x10 y10, To test, click the content links bel
 Gui, % WinProp.hwnd ": Font", % "s" ContentFont.Size " c" ContentFont.Color,
 
 Window.ContentLink("https://www.autohotkey.com","AutoHotkey", "p", "+10", "SECTIONTITLELINK")
-Window.ContentLink("https://autohotkey.com/board/topic/28522-help-with-extending-client-area-in-vista-gui/","Original Post", "p", "+10", "CONTENTLINK") 
+Window.ContentLink("https://autohotkey.com/board/topic/28522-help-with-extending-client-area-in-vista-gui/","Original Post", "p", "+10", "CONTENTLINK")
 Window.ContentLink("https://www.google.com","", "p", "+10", "TASKLINK")
 Window.ContentLink("https://www.yahoo.com","", "p", "+10", "HELPLINK")
 
 GuiControl,, % WinProp.CmdBtnCancel, OK
 Window.WinShow()
-Return 
+Return
 
 GuiClose:
 ExitApp

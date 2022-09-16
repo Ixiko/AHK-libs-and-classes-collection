@@ -1,6 +1,5 @@
 ﻿; Gets focused control in XP to prevent blocking double clicks like with ControlGetFocus
-XPGetFocussed()
-{
+XPGetFocussed(){
     WinGet ctrlList, ControlList, A
     ctrlHwnd:=GetFocusedControl()
     ; Built an array indexing the control names by their hwnd
@@ -28,8 +27,7 @@ typedef struct tagGUITHREADINFO {
   RECT  rcCaret;
 } GUITHREADINFO, *PGUITHREADINFO;
 */
-GetFocusedControl()
-{
+GetFocusedControl(){
     guiThreadInfoSize := 8 + 6 * A_PtrSize + 16
     VarSetCapacity(guiThreadInfo, guiThreadInfoSize, 0)
     NumPut(GuiThreadInfoSize, GuiThreadInfo, 0)
@@ -45,8 +43,7 @@ GetFocusedControl()
 }
 
 ; Test if a window is a Dialog window
-IsDialog(window=0,ListViewSelected = False)
-{
+IsDialog(window=0,ListViewSelected = False){
     result:=0
     if (window)
         window:="ahk_id " window
@@ -106,8 +103,7 @@ IsDialog(window=0,ListViewSelected = False)
 }
 
 ; Checks if a specific control class is active. Matches by start of ClassNN.
-IsControlActive(controlclass)
-{
+IsControlActive(controlclass){
     if (WinVer >= WIN_7)
         ControlGetFocus active, A
     else
@@ -122,15 +118,13 @@ HWND WINAPI GetParent(
   __in  HWND hWnd
 );
 */
-GetParent(hWnd)
-{
+GetParent(hWnd){
     return DllCall("GetParent", "Ptr", hWnd, "Ptr")
 }
 
 ; Checks if a context menu is active and has focus
 ; Need to check if other context menus are active (trillian, browsers,...)
-IsContextMenuActive()
-{
+IsContextMenuActive(){
     GuiThreadInfoSize := 24 + 6 * A_PtrSize
     VarSetCapacity(GuiThreadInfo, GuiThreadInfoSize)
     NumPut(GuiThreadInfoSize, GuiThreadInfo, 0)
@@ -157,16 +151,14 @@ ShellContextMenu("Desktop",1)            ;Calls "Next Desktop background" in Win
 Leave 2nd parameter empty to show context menu and extract idn by clicking on an entry (shows up in debugview)
 */
 #include lib\ahklib\CNotification.ahk
-ShellContextMenu(sPath,idn=0)
-{
+ShellContextMenu(sPath,idn=0){
     result := DllCall(Settings.DllPath "\Explorer.dll\ExecuteContextMenuCommand", "Str", sPath, "Int", idn, "PTR", A_ScriptHwnd)
     if (Errorlevel != 0)
     Notify("Couldn't execute context menu command!", "Error Calling ExecuteContextMenuCommand() in Explorer.dll!", 5, NotifyIcons.Error)
 }
 
 ; Checks if a specific window is under the cursor.
-IsWindowUnderCursor(hwnd)
-{
+IsWindowUnderCursor(hwnd){
     MouseGetPos, , , win
     if hwnd is number
     return win = hwnd
@@ -175,8 +167,7 @@ IsWindowUnderCursor(hwnd)
 }
 
 ; Checks if a specific control is under the cursor and returns its ClassNN if it is.
-IsControlUnderCursor(ControlClass)
-{
+IsControlUnderCursor(ControlClass){
     MouseGetPos, , , , control
     if (InStr(Control, ControlClass))
     return control
@@ -184,8 +175,7 @@ IsControlUnderCursor(ControlClass)
 }
 
 ; Adds a tooltip to a control.
-AddToolTip(con, text, Modify = 0)
-{
+AddToolTip(con, text, Modify = 0){
     Static TThwnd,GuiHwnd
     l_DetectHiddenWindows := A_DetectHiddenWindows
     if (!TThwnd)
@@ -223,8 +213,7 @@ AddToolTip(con, text, Modify = 0)
     DetectHiddenWindows %l_DetectHiddenWindows%
 }
 
-CreateTooltipControl(hwind)
-{
+CreateTooltipControl(hwind){
     Ret := DllCall("CreateWindowEx"
         ,"Uint", 0
         ,"Str", "TOOLTIPS_CLASS32"
@@ -242,8 +231,7 @@ CreateTooltipControl(hwind)
 }
 
 ; Attaches a window as a tool window to another window from a different process. QUESTION: Is this still needed?
-AttachToolWindow(hParent, GUINumber, AutoClose)
-{
+AttachToolWindow(hParent, GUINumber, AutoClose){
     global ToolWindows
     WriteDebug("AttachToolWindow " GUINumber " to " hParent, "", "debug", "ExplorerHelpers")
     if (!IsObject(ToolWindows))
@@ -263,8 +251,7 @@ AttachToolWindow(hParent, GUINumber, AutoClose)
     return true
 }
 
-DeAttachToolWindow(GUINumber)
-{
+DeAttachToolWindow(GUINumber){
     global ToolWindows
     Gui %GUINumber%: +LastFoundExist
     if (!(hGui := WinExist()))
