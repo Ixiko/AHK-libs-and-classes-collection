@@ -1,4 +1,4 @@
-;how to use - Open up a new instance of paint select the brush or pen, then run the program
+﻿;how to use - Open up a new instance of paint select the brush or pen, then run the program
 ; it should draw a square with a cross in the center of the drawing region
 
 #noenv

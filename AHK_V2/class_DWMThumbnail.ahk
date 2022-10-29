@@ -1,4 +1,4 @@
-class DWMThumbnail {
+﻿class DWMThumbnail {
 	static thumbnails := Map(), thumbnails.Default := 0
 	static Call(hwnd) {
 		if !(hwnd is Integer)

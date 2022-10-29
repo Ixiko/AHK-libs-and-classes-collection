@@ -1,4 +1,4 @@
-/************************************************************************
+﻿/************************************************************************
  * @file: XL.ahk
  * @description: High performance library for reading and writing Excel(xls,xlsx) files.
  * @author thqby

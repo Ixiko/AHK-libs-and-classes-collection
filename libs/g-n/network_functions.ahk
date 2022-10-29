@@ -1,6 +1,6 @@
-﻿; Link:   	
-; Author:	
-; Date:   	
+﻿; Link:
+; Author:
+; Date:
 ; for:     	AHK_L
 
 /*
@@ -24,6 +24,8 @@
 ; Example texts:
 ; www.itenium.be
 ; 172.217.17.132
+
+MsgBox, % GetMyIps()
 
 GetMyIps() {
 	result .= "Public IP: " GetPublicIP()

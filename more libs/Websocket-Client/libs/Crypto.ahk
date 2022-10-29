@@ -1,4 +1,4 @@
-sha1_encode(string, encoding := "utf-8") {
+﻿sha1_encode(string, encoding := "utf-8") {
     static BCRYPT_SHA1_ALGORITHM := "SHA1"
     static BCRYPT_OBJECT_LENGTH  := "ObjectLength"
     static BCRYPT_HASH_LENGTH    := "HashDigestLength"

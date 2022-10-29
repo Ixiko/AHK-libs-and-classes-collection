@@ -1,4 +1,4 @@
-#Include, SpotifyFreeAPI.ahk
+﻿#Include, SpotifyFreeAPI.ahk
 
 ; Enable this to buffer incoming hotkeys 
 ; because api calls will take time to return

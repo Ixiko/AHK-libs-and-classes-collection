@@ -1,4 +1,4 @@
-Class Base64 {
+﻿Class Base64 {
 	/**
 	 * Base64编码
 	 * @param Buf Buffer Object has Ptr, Size Property. May contain any binary contents including NUll bytes.

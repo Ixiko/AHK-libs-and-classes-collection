@@ -1,4 +1,4 @@
-if (path  := DirSelect(A_MyDocuments, 2, "Choose a directory to map out:"))
+﻿if (path  := DirSelect(A_MyDocuments, 2, "Choose a directory to map out:"))
 {
     fso   := ComObjCreate("Scripting.FileSystemObject") ; must create FileSystemObject to pass to function
     

@@ -1,4 +1,4 @@
-EnableUIAccess(ExePath) {
+﻿EnableUIAccess(ExePath) {
     static CertName := "AutoHotkey"
     hStore := DllCall("Crypt32\CertOpenStore", "ptr", 10 ; STORE_PROV_SYSTEM_W
         , "uint", 0, "ptr", 0, "uint", 0x20000 ; SYSTEM_STORE_LOCAL_MACHINE

@@ -1,5 +1,5 @@
 ﻿#noenv
-#include AHKWebDriver.ahk
+#include ..\class_AHKWebDriver.ahk
 
 wd := new WDSession()
 if(wd.rc.isError){

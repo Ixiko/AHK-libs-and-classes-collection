@@ -11,14 +11,14 @@
 ;~ Modified:		by Ixiko 2022-09-16
 ;~					- 	added a function to help automation of
 ;~                    		registration/unregistration of WinSCPnet.dll
-;~					-  	added SessionOptions.Portnumber and
-;~						SessionOptions.SshHostKeyFingerprint
+;~					-  	added SessionOptions:
+;~						> Portnumber and SshHostKeyFingerprint <
 ;~						got's a fingerprint if there's a Fingerprint
 ;~
 ;~ -----------------------------------------------------------------------------
 ;~ TODO:
 ;~ 		- Try/Catch if dll is not registered?
-;~ 		- Allow dll to be outside A_ScriptDir?
+;~ 		- Allow dll to be outside A_ScriptDir? <-- is done!
 ;~ 		- better documentation
 ;~ 		- more methods
 ;~ 		- more events
@@ -29,7 +29,7 @@
 ;	%WINDIR%\Microsoft.NET\Framework64\v4.0.30319\RegAsm.exe WinSCPnet.dll /codebase <path_to>WinSCPnet.dll
 
 ; to test the registration of WinSCP, remove the commenting of the next line
-;~ result := RegisterWinSCP()
+result := RegisterWinSCP()
 
 
 RegisterWinSCP(dllpath:="", user_dialog:=true, unregister:=false) {  	; WinSCPnet.dll COM registration/unregistration helper
@@ -43,6 +43,8 @@ RegisterWinSCP(dllpath:="", user_dialog:=true, unregister:=false) {  	; WinSCPne
 
 		The user mode has two dialogs. Each dialogue is displayed separately to enable individual dialogue design.
 		Unless the dialogue display is suppressed with the parameter value of unregister.
+
+		result := RegisterWinSCP(A_ScriptDir "\libs\WinSCP")
 
 		** this function was added by Ixiko 2022-09-16
 
@@ -86,7 +88,6 @@ RegisterWinSCP(dllpath:="", user_dialog:=true, unregister:=false) {  	; WinSCPne
 
 	  ; User dialogs
 		If !silentmode {
-
 
 		  ; user dialog
 			If  !isRestarted && (user_dialog || !FileExist(dllpath) || !A_IsAdmin || full_command_line~=" /restart(?!\S)")  {
@@ -191,7 +192,7 @@ RegisterWinSCP(dllpath:="", user_dialog:=true, unregister:=false) {  	; WinSCPne
 		failure := true
 		; get error message for returning
 		If !silentmode {
-			EditAppend(hEdit, "The registration process was successful.")
+			EditAppend(hEdit, "The registration process was not successful.")
 			SetTimer, MoveConsole, -50
 			MsgBox, 0x1030, % RegExReplace(A_ScriptName, "\.ah.*$"), % 	"--------------------------------------------`n"
 																						            .    	"                 WinSCP Class`n"
@@ -203,10 +204,11 @@ RegisterWinSCP(dllpath:="", user_dialog:=true, unregister:=false) {  	; WinSCPne
 		}
 	}
 
-		clipboard := batch . out
+	clipboard := batch . out
   ; Registration was successful - show it!
 	If !failure && !silentmode {
 		EditAppend(hEdit, "The registration process was not successful.")
+		EditAppend(hEdit, "(Console is closed in 15 seconds)")
 		sleep 15000
 	}
 
@@ -225,6 +227,18 @@ MoveConsole:
 	WinMove, % "ahk_id " hOut	,, % wx-ww//2
 	WinMove, % "ahk_id " hMB	,, % mx+mw//2
 return
+}
+
+; Run as admin code from http://www.autohotkey.com/board/topic/46526-
+RunAsAdmin(){
+	Global 0
+	IfEqual, A_IsAdmin, 1, Return 0
+	Loop, %0% {
+		params .= A_Space . %A_Index%
+	}
+	DllCall("shell32\ShellExecute" (A_IsUnicode ? "":"A"),uint,0,str,"RunAs",str,(A_IsCompiled ? A_ScriptFullPath
+		: A_AhkPath),str,(A_IsCompiled ? "": """" . A_ScriptFullPath . """" . A_Space) params,str,A_WorkingDir,int,1)
+	ExitApp
 }
 
 EditAppend(hEdit, txt) {

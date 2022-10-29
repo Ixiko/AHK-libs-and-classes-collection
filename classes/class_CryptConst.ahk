@@ -1,5 +1,4 @@
-﻿class CryptConst
-{
+﻿class CryptConst{
 static ALG_CLASS_ANY := (0)
 static ALG_CLASS_SIGNATURE := (1 << 13)
 static ALG_CLASS_MSG_ENCRYPT := (2 << 13)

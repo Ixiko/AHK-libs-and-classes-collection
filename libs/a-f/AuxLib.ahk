@@ -238,3 +238,70 @@ LoadImage(File, Width, Height, Type, Flags := 0x10) {
 SetExplorerTheme(hWnd) {
     Return DllCall("UxTheme.dll\SetWindowTheme", "Ptr", hWnd, "WStr", "Explorer", "Ptr", 0)
 }
+
+LV_GetGroupId(hLV, Row) {
+    Local LVITEM, x64 := A_PtrSize == 8
+    VarSetCapacity(LVITEM, x64 ? 88 : 60, 0)
+    NumPut(0x100, LVITEM, 0, "UInt") ; mask: LVIF_GROUPID
+    NumPut(Row - 1, LVITEM, 4, "Int")
+    SendMessage 0x1005, 0, &LVITEM,, ahk_id %hLV% ; LVM_GETITEMA
+    Return NumGet(LVITEM, x64 ? 52 : 40, "Int") ; iGroupId
+}
+
+GetErrorMessage(ErrorCode, LanguageId := 0) {
+    Local Size, ErrorBuf, ErrorMsg
+
+    Size := DllCall("Kernel32.dll\FormatMessageW"
+        ; FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS
+        , "UInt", 0x1300
+        , "Ptr",  0
+        , "UInt", ErrorCode + 0
+        , "UInt", LanguageId
+        , "Ptr*", ErrorBuf
+        , "UInt", 0
+        , "Ptr",  0)
+
+    If (!Size) {
+        Return ""
+    }
+
+    ErrorMsg := StrGet(ErrorBuf, Size, "UTF-16")
+    DllCall("Kernel32.dll\LocalFree", "Ptr", ErrorBuf)
+
+    Return ErrorMsg
+}
+
+ErrorMsgBox(Message, Window := 1, Title := "Error") {
+    Gui %Window%: +OwnDialogs
+    MsgBox 0x10, %Title%, %Message%
+}
+
+DPIScale(x) {
+    Return (x * A_ScreenDPI) // 96
+}
+
+IsAhkFileExt(FileExt) {
+    Return FileExt ~= "i)^ah((k?h?)(2|h|s)?)$"
+}
+
+GetFileDir(FullPath) {
+    Local Dir
+    SplitPath FullPath,, Dir
+    Return FixRootDir(Dir)
+}
+
+FixRootDir(ByRef Dir) {
+    If (SubStr(Dir, 0, 1) == ":") {
+        Dir := Dir . "\"
+    }
+    Return Dir
+}
+
+GetMousePos(ByRef X, ByRef Y, Origin := "Screen") {
+    Local OldCoordMode := A_CoordModeMouse
+    CoordMode Mouse, %Origin%
+    MouseGetPos X, Y
+    CoordMode Mouse, %OldCoordMode%
+}
+
+

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * import ahk v1 library to v2. It can call v1 functions and classes, read and modify global variables.
  * 
  * - import v1 lib `v1 := import_v1lib("gdip_all.ahk", "ahkv1.exe")`

@@ -1,4 +1,4 @@
-findHeap(block) {
+﻿findHeap(block) {
 	c := 10, n := 0
 	while c > n
 		c := DllCall('GetProcessHeaps', 'uint', n, 'ptr', heaps := Buffer(A_PtrSize * (n := c)), 'uint')

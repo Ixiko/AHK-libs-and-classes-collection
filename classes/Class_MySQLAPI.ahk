@@ -41,12 +41,12 @@ Class MySQLAPI {
                        , NO_DEFAULT_VALUE: 4096, NUM:	32768}
    ; MySQL_SUCCESS
    Static MySQL_SUCCESS := 0
-   ; ===================================================================================================================
-   ; META FUNCTION __New
-   ; Load and initialize libmysql.dll which is supposed to be in the sript's folder.
-   ; Parameters:    LibPath  - Optional: Absolute path of libmysql.dll
-   ; ===================================================================================================================
    __New(LibPath := "") {
+	   ; ===================================================================================================================
+	   ; META FUNCTION __New
+	   ; Load and initialize libmysql.dll which is supposed to be in the sript's folder.
+	   ; Parameters:    LibPath  - Optional: Absolute path of libmysql.dll
+	   ; ===================================================================================================================
       Static LibMySQL := A_ScriptDir . "\..\..\dll\libmysql.dll"
       ; Do not instantiate unstances!
       If (This.Base.Base.__Class = "MySQLAPI") {
@@ -86,28 +86,28 @@ Class MySQLAPI {
       }
       This.Connected := False
    }
-   ; ===================================================================================================================
-   ; META FUNCTION __Delete
-   ; Free ressources and close the connection, if needed.
-   ; ===================================================================================================================
    __Delete() {
+	   ; ===================================================================================================================
+	   ; META FUNCTION __Delete
+	   ; Free ressources and close the connection, if needed.
+	   ; ===================================================================================================================
       If (This.MYSQL)
          This.Close()
       If (This.Module)
          DllCall("Kernel32.dll\FreeLibrary", "Ptr", This.Module)
-   }
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; Additional custom functions to get the data of a MYSQL_RES structure
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; Converts a MYSQL_FIELD structure and returns an object containing the appropriate keys and values.
-   ; Parameters:    MYSQL_FIELD - Pointer to a MYSQL_FIELD structure.
-   ; Return values: Field object.
-   ; ===================================================================================================================
+	}
    GetField(ByRef MYSQL_FIELD) {
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; Additional custom functions to get the data of a MYSQL_RES structure
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; Converts a MYSQL_FIELD structure and returns an object containing the appropriate keys and values.
+	   ; Parameters:    MYSQL_FIELD - Pointer to a MYSQL_FIELD structure.
+	   ; Return values: Field object.
+	   ; ===================================================================================================================
       Field := {}
       Offset := 0
       Field.Name      := StrGet(NumGet(MYSQL_FIELD + 0, Offset, "UPtr"), "UTF-8"), Offset += A_PtrSize
@@ -124,13 +124,13 @@ Class MySQLAPI {
       Field.CharSetNr := NumGet(MYSQL_FIELD + 0, Offset, "UInt"), Offset += 4
       Field.Type      := This.FIELD_TYPE[NumGet(MYSQL_FIELD + 0, Offset, "UInt")]
       Return Field
-   }
-   ; ===================================================================================================================
-   ; Returns the values of the next row of the given MYSQL_RES as an array.
-   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure.
-   ; Return values: Array of values, False if there is no more row
-   ; ===================================================================================================================
+	}
    GetNextRow(MYSQL_RES) {
+	   ; ===================================================================================================================
+	   ; Returns the values of the next row of the given MYSQL_RES as an array.
+	   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure.
+	   ; Return values: Array of values, False if there is no more row
+	   ; ===================================================================================================================
       If (MYSQL_ROW := This.Fetch_Row(MYSQL_RES)) {
          Row := []
          Lengths := This.Fetch_Lengths(MYSQL_RES)
@@ -144,13 +144,13 @@ Class MySQLAPI {
          Return Row
       }
       Return False
-   }
-   ; ===================================================================================================================
-   ; Gets the result for the most recent query that successfully produced a result set and returns an object containing
-   ; the appropriate keys and values.
-   ; Return values: Result object, or False if there is no result.
-   ; ===================================================================================================================
+	}
    GetResult() {
+	   ; ===================================================================================================================
+	   ; Gets the result for the most recent query that successfully produced a result set and returns an object containing
+	   ; the appropriate keys and values.
+	   ; Return values: Result object, or False if there is no result.
+	   ; ===================================================================================================================
       If !(MYSQL_RES := This.Store_Result(This.MYSQL))
             Return False
       Result := {}
@@ -163,366 +163,390 @@ Class MySQLAPI {
          Result[A_index] := Row
       This.Free_Result(MYSQL_RES)
       Return Result
-   }
-   ; ===================================================================================================================
-   ; Converts the passed string to UTF-8.
-   ; Parameters:    Str - String to convert.
-   ; Return values: Address of Str.
-   ; ===================================================================================================================
+	}
    UTF8(ByRef Str) {
+	   ; ===================================================================================================================
+	   ; Converts the passed string to UTF-8.
+	   ; Parameters:    Str - String to convert.
+	   ; Return values: Address of Str.
+	   ; ===================================================================================================================
       Var := Str, VarSetCapacity(Str, StrPut(Var, "UTF-8"), 0), StrPut(Var, &Str, "UTF-8")
       Return &Str
-   }
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; API functions
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; May be called immediately after executing a statement with mysql_query() or mysql_real_query(). It returns the
-   ; number of rows changed, deleted, or inserted by the last statement if it was an UPDATE, DELETE, or INSERT.
-   ; Return values: An integer greater than zero indicates the number of rows affected or retrieved.
-   ; ===================================================================================================================
+	}
    Affected_Rows() {
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; API functions
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; May be called immediately after executing a statement with mysql_query() or mysql_real_query(). It returns the
+	   ; number of rows changed, deleted, or inserted by the last statement if it was an UPDATE, DELETE, or INSERT.
+	   ; Return values: An integer greater than zero indicates the number of rows affected or retrieved.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_affected_rows", "Ptr", This.MYSQL, "UInt64")
-   }
-   ; ===================================================================================================================
-   ; Sets autocommit mode on if Mode is 1, off if Mode is 0.
-   ; Parameters:    Mode  - 0/1 (False/True)
-   ; Return values: Zero if successful. Nonzero if an error occurred.
-   ; ===================================================================================================================
+	}
    AutoCommit(Mode) {
+	   ; ===================================================================================================================
+	   ; Sets autocommit mode on if Mode is 1, off if Mode is 0.
+	   ; Parameters:    Mode  - 0/1 (False/True)
+	   ; Return values: Zero if successful. Nonzero if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_autocommit", "Ptr", This.MYSQL, "Char", Mode, "Char")
-   }
-   ; ===================================================================================================================
-   ; Changes the user and causes the database specified by DB to become the default (current) database on the connection
-   ; specified by mysql.
-   ; Parameters:    User     - User name
-   ;                PassWd   - Password
-   ;                DB       - Database name
-   ; Return values: Zero if successful. Nonzero if an error occurred.
-   ; ===================================================================================================================
+	}
+
    Change_User(User, PassWd, DB) {
+	   ; ===================================================================================================================
+	   ; Changes the user and causes the database specified by DB to become the default (current) database on the connection
+	   ; specified by mysql.
+	   ; Parameters:    User     - User name
+	   ;                PassWd   - Password
+	   ;                DB       - Database name
+	   ; Return values: Zero if successful. Nonzero if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_change_user", "Ptr", This.MYSQL, "Ptr", This.UTF8(User)
                   , "Ptr", This.UTF8(PassWd), "Ptr", This.UTF8(DB), "Char")
-   }
-   ; ===================================================================================================================
-   ; Returns a string containing the default character set name for the current connection.
-   ; Return values: String.
-   ; ===================================================================================================================
+	}
+
    Character_Set_Name() {
+	   ; ===================================================================================================================
+	   ; Returns a string containing the default character set name for the current connection.
+	   ; Return values: String.
+	   ; ===================================================================================================================
       Return ((P := DllCall("libmysql.dll\mysql_character_set_name", "Ptr", This.MYSQL, "UPtr")) ? StrGet(P, "UTF-8") : "")
-   }
-   ; ===================================================================================================================
-   ; Closes a previously opened connection.
-   ; Return values: None
-   ; ===================================================================================================================
-   Close() {
+	}
+
+	Close() {
+	   ; ===================================================================================================================
+	   ; Closes a previously opened connection.
+	   ; Return values: None
+	   ; ===================================================================================================================
       DllCall("libmysql.dll\mysql_close", "Ptr", This.MYSQL)
-   }
-   ; ===================================================================================================================
-   ; Commits the current transaction.
-   ; Return values: Zero if successful. Nonzero if an error occurred.
-   ; ===================================================================================================================
+	}
+
    Commit() {
+	   ; ===================================================================================================================
+	   ; Commits the current transaction.
+	   ; Return values: Zero if successful. Nonzero if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_commit", "Ptr", This.MYSQL, "Char")
-   }
-   ; ===================================================================================================================
-   ; This function is deprecated. Use mysql_real_connect() instead.
-   ; ===================================================================================================================
+	}
+
    Connect(Host, User, PassWd) {
+	   ; ===================================================================================================================
+	   ; This function is deprecated. Use mysql_real_connect() instead.
+	   ; ===================================================================================================================
       Return This.Real_Connect(Host, User, PassWD)
-   }
-   ; ===================================================================================================================
-   ; Creates the database named by the DB parameter.
-   ; This function is deprecated. It is preferable to use mysql_query() to issue an SQL CREATE DATABASE statement
-   ; instead.
-   ; Parameters:    DB    - Database name
-   ; Return values: Zero if the database was created successfully. Nonzero if an error occurred.
-   ; ===================================================================================================================
+	}
+
    Create_DB(DB) {
+	   ; ===================================================================================================================
+	   ; Creates the database named by the DB parameter.
+	   ; This function is deprecated. It is preferable to use mysql_query() to issue an SQL CREATE DATABASE statement
+	   ; instead.
+	   ; Parameters:    DB    - Database name
+	   ; Return values: Zero if the database was created successfully. Nonzero if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_create_db", "Ptr", This.MYSQL, "Ptr", This.UTF8(DB), "Int")
-   }
-   ; ===================================================================================================================
-   ; Seeks to an arbitrary row in a query result set. The Offset value is a row number.
-   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
-   ;                Offset    - Specify a value in the range from 0 to mysql_num_rows(result)-1.
-   ; Return values: None
-   ; ===================================================================================================================
+	}
+
    Data_Seek(MYSQL_RES, Offset) {
+	   ; ===================================================================================================================
+	   ; Seeks to an arbitrary row in a query result set. The Offset value is a row number.
+	   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
+	   ;                Offset    - Specify a value in the range from 0 to mysql_num_rows(result)-1.
+	   ; Return values: None
+	   ; ===================================================================================================================
       DllCall("libmysql.dll\mysql_data_seek", "Ptr", MYSQL_RES, "UInt64", Offset)
-   }
-   ; ===================================================================================================================
-   ; mysql_debug() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; Drops the database named by the DB parameter.
-   ; This function is deprecated. It is preferable to use mysql_query() to issue an SQL DROP DATABASE statement instead.
-   ; Parameters:    DB    - Database name
-   ; Return values: Zero if the database was dropped  successfully. Nonzero if an error occurred.
-   ; ===================================================================================================================
+	}
+
    Drop_DB(DB) {
+	   ; ===================================================================================================================
+	   ; mysql_debug() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; Drops the database named by the DB parameter.
+	   ; This function is deprecated. It is preferable to use mysql_query() to issue an SQL DROP DATABASE statement instead.
+	   ; Parameters:    DB    - Database name
+	   ; Return values: Zero if the database was dropped  successfully. Nonzero if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_drop_db", "Ptr", This.MYSQL, "Ptr", This.UTF8(DB), "Int")
-   }
-   ; ===================================================================================================================
-   ; mysql_dump_debug_info() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; Determines whether the last row of a result set has been read.
-   ; This function is deprecated. mysql_errno() or mysql_error() may be used instead.
-   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
-   ; Return values: Zero if no error occurred. Nonzero if the end of the result set has been reached.
-   ; ===================================================================================================================
+	}
+
    EOF(MYSQL_RES) {
+	   ; ===================================================================================================================
+	   ; mysql_dump_debug_info() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; Determines whether the last row of a result set has been read.
+	   ; This function is deprecated. mysql_errno() or mysql_error() may be used instead.
+	   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
+	   ; Return values: Zero if no error occurred. Nonzero if the end of the result set has been reached.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_eof", "Ptr", MYSQL_RES, "Char")
-   }
-   ; ===================================================================================================================
-   ; Returns the error code for the most recently invoked API function that can succeed or fail.
-   ; Return values: An error code value for the last mysql_xxx() call, if it failed. zero means no error occurred.
-   ; ===================================================================================================================
+	}
+
    ErrNo() {
+	   ; ===================================================================================================================
+	   ; Returns the error code for the most recently invoked API function that can succeed or fail.
+	   ; Return values: An error code value for the last mysql_xxx() call, if it failed. zero means no error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_errno", "Ptr", This.MYSQL, "UInt")
    }
-   ; ===================================================================================================================
-   ; Returns a null-terminated string containing the error message for the most recently invoked API
-   ; function that failed. An empty string indicates no error.
-   ; Return values: String.
-   ; ===================================================================================================================
    Error() {
+	   ; ===================================================================================================================
+	   ; Returns a null-terminated string containing the error message for the most recently invoked API
+	   ; function that failed. An empty string indicates no error.
+	   ; Return values: String.
+	   ; ===================================================================================================================
       Return ((S := DllCall("libmysql.dll\mysql_error", "Ptr", This.MYSQL, "UPtr")) ? StrGet(S, "UTF-8") : "")
    }
-   ; ===================================================================================================================
-   ; mysql_escape_string() ->  mysql_real_escape_string()
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; Returns the definition of the next column of a result set as a MYSQL_FIELD structure.
-   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
-   ; Return values: A pointer to the MYSQL_FIELD structure for the current column. NULL if no columns are left.
-   ; ===================================================================================================================
    Fetch_Field(MYSQL_RES) {
+	   ; ===================================================================================================================
+	   ; mysql_escape_string() ->  mysql_real_escape_string()
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; Returns the definition of the next column of a result set as a MYSQL_FIELD structure.
+	   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
+	   ; Return values: A pointer to the MYSQL_FIELD structure for the current column. NULL if no columns are left.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_fetch_field", "Ptr", MYSQL_RES, "UPtr")
    }
-   ; ===================================================================================================================
-   ; Given a field number FieldNr for a column within a result set, returns that column's field definition as
-   ; a MYSQL_FIELD structure.
-   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
-   ;                FieldNr   - Field number in the range from 0 to mysql_num_fields(result)-1.
-   ; Return values: A Pointer to the MYSQL_FIELD structure for the specified column.
-   ; ===================================================================================================================
    Fetch_Field_Direct(MYSQL_RES, FieldNr) {
+	   ; ===================================================================================================================
+	   ; Given a field number FieldNr for a column within a result set, returns that column's field definition as
+	   ; a MYSQL_FIELD structure.
+	   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
+	   ;                FieldNr   - Field number in the range from 0 to mysql_num_fields(result)-1.
+	   ; Return values: A Pointer to the MYSQL_FIELD structure for the specified column.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_fetch_field_direct", "Ptr", MYSQL_RES, "UInt", FieldNr, "UPtr")
    }
-   ; ===================================================================================================================
-   ; Returns an array of all MYSQL_FIELD structures for a result set. Each structure provides the field definition for
-   ; one column of the result set.
-   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
-   ; Return values: A Pointer to the MYSQL_FIELD structure for the specified column.
-   ; ===================================================================================================================
    Fetch_Fields(MYSQL_RES) {
+	   ; ===================================================================================================================
+	   ; Returns an array of all MYSQL_FIELD structures for a result set. Each structure provides the field definition for
+	   ; one column of the result set.
+	   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
+	   ; Return values: A Pointer to the MYSQL_FIELD structure for the specified column.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_fetch_fields", "Ptr", MYSQL_RES, "UPtr")
    }
-   ; ===================================================================================================================
-   ; Returns the lengths of the columns of the current row within a result set.
-   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
-   ; Return values: A Pointer to an array of unsigned long integers representing the size of each column
-   ;                (not including any terminating null characters). NULL if an error occurred.
-   ; ===================================================================================================================
    Fetch_Lengths(MYSQL_RES) {
+	   ; ===================================================================================================================
+	   ; Returns the lengths of the columns of the current row within a result set.
+	   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
+	   ; Return values: A Pointer to an array of unsigned long integers representing the size of each column
+	   ;                (not including any terminating null characters). NULL if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_fetch_lengths", "Ptr", MYSQL_RES, "UPtr")
    }
-   ; ===================================================================================================================
-   ; Retrieves the next row of a result set.
-   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
-   ; Return values: A poiner to a MYSQL_ROW structure, NULL when there are no more rows to retrieve or if an error
-   ;                occurred.
-   ; ===================================================================================================================
    Fetch_Row(MYSQL_RES) {
+	   ; ===================================================================================================================
+	   ; Retrieves the next row of a result set.
+	   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
+	   ; Return values: A poiner to a MYSQL_ROW structure, NULL when there are no more rows to retrieve or if an error
+	   ;                occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_fetch_row", "Ptr", MYSQL_RES, "UPtr")
    }
-   ; ===================================================================================================================
-   ; Returns the number of columns for the most recent query on the connection.
-   ; Return values: An unsigned integer representing the number of columns in a result set.
-   ; ===================================================================================================================
    Field_Count() {
+	   ; ===================================================================================================================
+	   ; Returns the number of columns for the most recent query on the connection.
+	   ; Return values: An unsigned integer representing the number of columns in a result set.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_field_count", "Ptr", This.MYSQL, "UInt")
    }
-   ; ===================================================================================================================
-   ; Sets the field cursor to the given offset. The next call to mysql_fetch_field() retrieves the field definition
-   ; of the column associated with that offset.
-   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
-   ;                Offset    - Specify a value in the range from 0 to mysql_num_fields(result)-1.
-   ;                            To seek to the beginning of a row, pass an offset value of zero.
-   ; Return values: The previous value of the field cursor.
-   ; ===================================================================================================================
    Field_Seek(MYSQL_RES, Offset) {
+	   ; ===================================================================================================================
+	   ; Sets the field cursor to the given offset. The next call to mysql_fetch_field() retrieves the field definition
+	   ; of the column associated with that offset.
+	   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
+	   ;                Offset    - Specify a value in the range from 0 to mysql_num_fields(result)-1.
+	   ;                            To seek to the beginning of a row, pass an offset value of zero.
+	   ; Return values: The previous value of the field cursor.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_field_seek", "Ptr", MYSQL_RES, "UInt", Offset, "UInt")
    }
-   ; ===================================================================================================================
-   ; Returns the position of the field cursor used for the last mysql_fetch_field(). This value can be used as
-   ; an argument to mysql_field_seek().
-   ; Parameters:    MYSQL_RES -  Pointer to a MYSQL_RES structure
-   ; Return values: The current offset of the field cursor.
-   ; ===================================================================================================================
    Field_Tell(MYSQL_RES) {
+	   ; ===================================================================================================================
+	   ; Returns the position of the field cursor used for the last mysql_fetch_field(). This value can be used as
+	   ; an argument to mysql_field_seek().
+	   ; Parameters:    MYSQL_RES -  Pointer to a MYSQL_RES structure
+	   ; Return values: The current offset of the field cursor.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_field_tell", "Ptr", MYSQL_RES, "UInt")
    }
-   ; ===================================================================================================================
-   ; Frees the memory allocated for a result set by mysql_store_result(), mysql_use_result(), and so forth.
-   ; Parameters:    MYSQL_RES -  Pointer to a MYSQL_RES structure
-   ; Return values: None.
-   ; ===================================================================================================================
    Free_Result(MYSQL_RES) {
+	   ; ===================================================================================================================
+	   ; Frees the memory allocated for a result set by mysql_store_result(), mysql_use_result(), and so forth.
+	   ; Parameters:    MYSQL_RES -  Pointer to a MYSQL_RES structure
+	   ; Return values: None.
+	   ; ===================================================================================================================
       DllCall("libmysql.dll\mysql_free_result", "Ptr", MYSQL_RES)
    }
-   ; ===================================================================================================================
-   ; mysql_get_character_set_info() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; Returns a string that represents the client library version.
-   ; Parameters:    None
-   ; Return values: String.
-   ; ===================================================================================================================
    Get_Client_Info() {
+	   ; ===================================================================================================================
+	   ; mysql_get_character_set_info() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; Returns a string that represents the client library version.
+	   ; Parameters:    None
+	   ; Return values: String.
+	   ; ===================================================================================================================
       Return ((S := DllCall("libmysql.dll\mysql_get_client_info", "UPtr")) ? StrGet(S, "UTF-8") : "")
    }
-   ; ===================================================================================================================
-   ; Returns an integer that represents the client library version. The value has the format XYYZZ where X is the major
-   ; version, YY is the release level, and ZZ is the version number within the release level. For example, a value of
-   ; 40102 represents a client library version of 4.1.2.
-   ; Parameters:    None
-   ; Return values: An integer that represents the MySQL client library version.
-   ; ===================================================================================================================
    Get_Client_Version() {
+	   ; ===================================================================================================================
+	   ; Returns an integer that represents the client library version. The value has the format XYYZZ where X is the major
+	   ; version, YY is the release level, and ZZ is the version number within the release level. For example, a value of
+	   ; 40102 represents a client library version of 4.1.2.
+	   ; Parameters:    None
+	   ; Return values: An integer that represents the MySQL client library version.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_get_client_version", "Int")
    }
-   ; ===================================================================================================================
-   ; Returns a string describing the type of connection in use, including the server host name.
-   ; Return values: String.
-   ; ===================================================================================================================
+
    Get_Host_Info() {
+	   ; ===================================================================================================================
+	   ; Returns a string describing the type of connection in use, including the server host name.
+	   ; Return values: String.
+	   ; ===================================================================================================================
       Return ((P := DllCall("libmysql.dll\mysql_get_host_info", "Ptr", This.MYSQL, "UPtr")) ? StrGet(P, "UTF-8") : "")
    }
-   ; ===================================================================================================================
-   ; Returns the protocol version used by current connection.
-   ; Return values: An unsigned integer representing the protocol version used by the current connection.
-   ; ===================================================================================================================
+
    Get_Proto_Info() {
+	   ; ===================================================================================================================
+	   ; Returns the protocol version used by current connection.
+	   ; Return values: An unsigned integer representing the protocol version used by the current connection.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_get_proto_info", "Ptr", This.MYSQL, "UInt")
    }
-   ; ===================================================================================================================
-   ; Returns a string that represents the server version number.
-   ; Return values: String.
-   ; ===================================================================================================================
+
    Get_Server_Info() {
+	   ; ===================================================================================================================
+	   ; Returns a string that represents the server version number.
+	   ; Return values: String.
+	   ; ===================================================================================================================
       Return ((P := DllCall("libmysql.dll\mysql_get_server_info", "Ptr", This.MYSQL, "UPtr")) ? StrGet(P, "UTF-8") : "")
    }
-   ; ===================================================================================================================
-   ; Returns the version number of the server as an unsigned integer.
-   ; Return values: A number that represents the MySQL server version, for example, 5.1.5 is returned as 50105.
-   ; ===================================================================================================================
+
    Get_Server_Version() {
+	   ; ===================================================================================================================
+	   ; Returns the version number of the server as an unsigned integer.
+	   ; Return values: A number that represents the MySQL server version, for example, 5.1.5 is returned as 50105.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_get_server_version", "Ptr", This.MYSQL, "UInt")
    }
-   ; ===================================================================================================================
-   ; mysql_get_ssl_cipher() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; mysql_hex_string()     - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; Retrieves a string providing information about the most recently executed statement.
-   ; Return values: String.
-   ; ===================================================================================================================
+
    Info() {
+	   ; ===================================================================================================================
+	   ; mysql_get_ssl_cipher() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; mysql_hex_string()     - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; Retrieves a string providing information about the most recently executed statement.
+	   ; Return values: String.
+	   ; ===================================================================================================================
       Return ((S := DllCall("libmysql.dll\mysql_info", "Ptr", This.MYSQL, "UPtr")) ? StrGet(S, "UTF-8") : "")
    }
-   ; ===================================================================================================================
-   ; Allocates or initializes a MYSQL object suitable for mysql_real_connect().
-   ; Parameters:    MYSQL - Pointer to a MYSQL structure, pass NULL to allocate a new object
-   ; Return values: An initialized MYSQL* handle. NULL if there was insufficient memory to allocate a new object.
-   ; ===================================================================================================================
+
    Init(MYSQL := 0) {
+	   ; ===================================================================================================================
+	   ; Allocates or initializes a MYSQL object suitable for mysql_real_connect().
+	   ; Parameters:    MYSQL - Pointer to a MYSQL structure, pass NULL to allocate a new object
+	   ; Return values: An initialized MYSQL* handle. NULL if there was insufficient memory to allocate a new object.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_init", "Ptr", MYSQL, "UPtr")
    }
-   ; ===================================================================================================================
-   ; Returns the value generated for an AUTO_INCREMENT column by the previous INSERT or UPDATE statement.
-   ; Return values: Generated ID, if any.
-   ; ===================================================================================================================
+
    Insert_ID() {
+	   ; ===================================================================================================================
+	   ; Returns the value generated for an AUTO_INCREMENT column by the previous INSERT or UPDATE statement.
+	   ; Return values: Generated ID, if any.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_insert_id", "Ptr", This.MYSQL, "UInt64")
    }
-   ; ===================================================================================================================
-   ; mysql_kill()           - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; mysql_library_end()    - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; mysql_library_init()   - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; mysql_list_dbs()       - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; ===================================================================================================================
-   ; Returns a result set consisting of field names in the given table that match the expression specified by
-   ; the Like parameter.
-   ; Parameters:     Table   - Table name
-   ;                 Optional: Like - Expression field names have to match
-   ;                                  (may contain the wildcard characters '%' or '_')
-   ; Return values: A pointer to a MYSQL_RES result set for success. NULL if an error occurred.
-   ; ===================================================================================================================
+
    List_Fields(Table, Like := "") {
+	   ; ===================================================================================================================
+	   ; mysql_kill()           - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; mysql_library_end()    - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; mysql_library_init()   - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; mysql_list_dbs()       - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; ===================================================================================================================
+	   ; Returns a result set consisting of field names in the given table that match the expression specified by
+	   ; the Like parameter.
+	   ; Parameters:     Table   - Table name
+	   ;                 Optional: Like - Expression field names have to match
+	   ;                                  (may contain the wildcard characters '%' or '_')
+	   ; Return values: A pointer to a MYSQL_RES result set for success. NULL if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_list_fields", "Ptr", This.MYSQL, "Ptr", This.UTF8(Table)
                    , "Ptr", (Like = "" ? 0 : This.UTF8(Like)), "UPtr")
    }
-   ; ===================================================================================================================
-   ; mysql_list_processes() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; Returns a result set consisting of table names in the current database that match the expression specified
-   ; by the Like parameter.
-   ; Parameters:     Optional: Like - Expression table names have to match
-   ;                                  (may contain the wildcard characters '%' or '_')
-   ; Return values: A pointer to a MYSQL_RES result set for success. NULL if an error occurred.
-   ; ===================================================================================================================
+
    List_Tables(Like := "") {
+	   ; ===================================================================================================================
+	   ; mysql_list_processes() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; Returns a result set consisting of table names in the current database that match the expression specified
+	   ; by the Like parameter.
+	   ; Parameters:     Optional: Like - Expression table names have to match
+	   ;                                  (may contain the wildcard characters '%' or '_')
+	   ; Return values: A pointer to a MYSQL_RES result set for success. NULL if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_list_tables", "Ptr", This.MYSQL
                    , "Ptr", (Like = "" ? 0 : This.UTF8(Like)), "UPtr")
    }
-   ; ===================================================================================================================
-   ; This function is used when you execute multiple statements specified as a single statement string, or when you
-   ; execute CALL statements, which can return multiple result sets.
-   ; Return values: TRUE (1) if more results exist. FALSE (0) if no more results exist.
-   ; ===================================================================================================================
+
    More_Results() {
+	   ; ===================================================================================================================
+	   ; This function is used when you execute multiple statements specified as a single statement string, or when you
+	   ; execute CALL statements, which can return multiple result sets.
+	   ; Return values: TRUE (1) if more results exist. FALSE (0) if no more results exist.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_more_results", "Ptr", This.MYSQL, "Char")
    }
-   ; ===================================================================================================================
-   ; This function is used when you execute multiple statements specified as a single statement string, or when you use
-   ; CALL statements to execute stored procedures, which can return multiple result sets.
-   ; Return values:  0 : Successful and there are more results.
-   ;                -1 : Successful and there are no more results.
-   ;                >0 : An error occurred.
-   ; ===================================================================================================================
+
    Next_Result() {
+	   ; ===================================================================================================================
+	   ; This function is used when you execute multiple statements specified as a single statement string, or when you use
+	   ; CALL statements to execute stored procedures, which can return multiple result sets.
+	   ; Return values:  0 : Successful and there are more results.
+	   ;                -1 : Successful and there are no more results.
+	   ;                >0 : An error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_next_result", "Ptr", This.MYSQL, "Int")
    }
-   ; ===================================================================================================================
-   ; Returns the number of columns in a result set.
-   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure.
-   ; Return values: An unsigned integer representing the number of columns in a result set.
-   ; ===================================================================================================================
+
    Num_Fields(MYSQL_RES) {
+	   ; ===================================================================================================================
+	   ; Returns the number of columns in a result set.
+	   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure.
+	   ; Return values: An unsigned integer representing the number of columns in a result set.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_num_fields", "Ptr", MYSQL_RES, "UInt")
    }
-   ; ===================================================================================================================
-   ; Returns the number of rows in a result set.
-   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure.
-   ; Return values: An unsigned 64-bit integer representing the number of rows in a result set.
-   ; ===================================================================================================================
+
    Num_Rows(MYSQL_RES) {
+	   ; ===================================================================================================================
+	   ; Returns the number of rows in a result set.
+	   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure.
+	   ; Return values: An unsigned 64-bit integer representing the number of rows in a result set.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_num_rows", "Ptr", MYSQL_RES, "UInt64")
    }
-   ; ===================================================================================================================
-   ; Can be used to set extra connect options and affect behavior for a connection.
-   ; This function may be called multiple times to set several options.
-   ; Parameters:    Option - The option that you want to set.
-   ;                Arg    - The value for the option.
-   ; Return values: Zero for success. Nonzero if you specify an unknown option.
-   ; ===================================================================================================================
+
    Options(Option, Arg) {
+	   ; ===================================================================================================================
+	   ; Can be used to set extra connect options and affect behavior for a connection.
+	   ; This function may be called multiple times to set several options.
+	   ; Parameters:    Option - The option that you want to set.
+	   ;                Arg    - The value for the option.
+	   ; Return values: Zero for success. Nonzero if you specify an unknown option.
+	   ; ===================================================================================================================
       Static MySQL_Option := {MYSQL_OPT_CONNECT_TIMEOUT: 0, MYSQL_OPT_COMPRESS: 1, MYSQL_OPT_NAMED_PIPE: 2
                             , MYSQL_INIT_COMMAND: 3, MYSQL_READ_DEFAULT_FILE: 4, MYSQL_READ_DEFAULT_GROUP: 5
                             , MYSQL_SET_CHARSET_DIR: 6, MYSQL_SET_CHARSET_NAME: 7, MYSQL_OPT_LOCAL_INFILE: 8
@@ -539,36 +563,39 @@ Class MySQLAPI {
          Return DllCall("libmysql.dll\mysql_options", "Ptr", This.MYSQL, "Int", Option, "Int64P", Arg, "Int")
       Return DllCall("libmysql.dll\mysql_options", "Ptr", This.MYSQL, "Int", Option, "Ptr", This.UTF8(Arg), "Int")
    }
-   ; ===================================================================================================================
-   ; Checks whether the connection to the server is working.
-   ; Return values: Zero if the connection to the server is active. Nonzero if an error occurred.
-   ; ===================================================================================================================
+
    Ping() {
+	   ; ===================================================================================================================
+	   ; Checks whether the connection to the server is working.
+	   ; Return values: Zero if the connection to the server is active. Nonzero if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_ping", "Ptr", This.MYSQL, "Int")
    }
-   ; ===================================================================================================================
-   ; Executes the SQL statement pointed to by the null-terminated string SQL.
-   ; Parameters:    SQL   - SQL statement.
-   ; Return values: Zero if the statement was successful. Nonzero if an error occurred.
-   ; ===================================================================================================================
+
    Query(SQL) {
+	   ; ===================================================================================================================
+	   ; Executes the SQL statement pointed to by the null-terminated string SQL.
+	   ; Parameters:    SQL   - SQL statement.
+	   ; Return values: Zero if the statement was successful. Nonzero if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_query", "Ptr", This.MYSQL, "Ptr", This.UTF8(SQL), "Int")
    }
-   ; ===================================================================================================================
-   ; Attempts to establish a connection to a MySQL database engine running on Host.
-   ; Parameters:    Host   - A host name or an IP address.
-   ;                User   - The user's MySQL login ID.
-   ;                PassWd - The password for user.
-   ;             Optional:
-   ;                DB     - The database name.
-   ;                Port   - The port number for the TCP/IP connection (Default: 3306)
-   ;                Socket - A string specifying the socket or named pipe to use.
-   ;                Flags  - Flags to enable certain features.
-   ; Return values: A MYSQL* connection handle if the connection was successful, NULL if the connection was
-   ;                unsuccessful. For a successful connection, the return value is the same as the handle passed to
-   ;                mysql_real_connect() in the first parameter.
-   ; ===================================================================================================================
+
    Real_Connect(Host, User, PassWd, DB := "", Port := 3306, Socket := 0, Flags := 0) {
+	   ; ===================================================================================================================
+	   ; Attempts to establish a connection to a MySQL database engine running on Host.
+	   ; Parameters:    Host   - A host name or an IP address.
+	   ;                User   - The user's MySQL login ID.
+	   ;                PassWd - The password for user.
+	   ;             Optional:
+	   ;                DB     - The database name.
+	   ;                Port   - The port number for the TCP/IP connection (Default: 3306)
+	   ;                Socket - A string specifying the socket or named pipe to use.
+	   ;                Flags  - Flags to enable certain features.
+	   ; Return values: A MYSQL* connection handle if the connection was successful, NULL if the connection was
+	   ;                unsuccessful. For a successful connection, the return value is the same as the handle passed to
+	   ;                mysql_real_connect() in the first parameter.
+	   ; ===================================================================================================================
       If (DB = "")
          PtrDB := 0
       Else
@@ -580,14 +607,15 @@ Class MySQLAPI {
       Return MYSQL
 
    }
-   ; ===================================================================================================================
-   ; This function is used to create a legal SQL string that you can use in an SQL statement.
-   ; The string in From is encoded to an escaped SQL string, taking into account the current character set of the
-   ; connection.
-   ; Parameters:    From   - Source string.
-   ; Return values: Escaped string.
-   ; ===================================================================================================================
+
    Real_Escape_String(ByRef From) {
+	   ; ===================================================================================================================
+	   ; This function is used to create a legal SQL string that you can use in an SQL statement.
+	   ; The string in From is encoded to an escaped SQL string, taking into account the current character set of the
+	   ; connection.
+	   ; Parameters:    From   - Source string.
+	   ; Return values: Escaped string.
+	   ; ===================================================================================================================
       L := StrPut(From, "UTF-8") - 1
       VarSetCapacity(SI, L, 0)
       StrPut(From, &SI, "UTF-8")
@@ -595,129 +623,143 @@ Class MySQLAPI {
       N := DllCall("libmysql.dll\mysql_real_escape_string", "Ptr", This.MYSQL, "Ptr", &SO, "Ptr", &SI, "UInt", L, "UInt")
       Return StrGet(&SO, N, "UTF-8")
    }
-   ; ===================================================================================================================
-   ; Executes the SQL statement pointed to by SQL, a string Length bytes long.
-   ; mysql_query() cannot be used for statements that contain binary data; you must use mysql_real_query() instead.
-   ; All strings within the SQL statement have to be UTF-8.
-   ; Parameters:    SQL    - SQL statement.
-   ;                Length - Length of the statement in bytes.
-   ; Return values: Zero if the statement was successful. Nonzero if an error occurred.
-   ; ===================================================================================================================
+
    Real_Query(ByRef SQL, Length) {
+	   ; ===================================================================================================================
+	   ; Executes the SQL statement pointed to by SQL, a string Length bytes long.
+	   ; mysql_query() cannot be used for statements that contain binary data; you must use mysql_real_query() instead.
+	   ; All strings within the SQL statement have to be UTF-8.
+	   ; Parameters:    SQL    - SQL statement.
+	   ;                Length - Length of the statement in bytes.
+	   ; Return values: Zero if the statement was successful. Nonzero if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_real_query", "Ptr", This.MYSQL, "Ptr", &SQL, "UInt", Length, "Int")
    }
-   ; ===================================================================================================================
-   ; mysql_refresh() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; mysql_reload()  - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; Rolls back the current transaction.
-   ; Return values: Zero if successful. Nonzero if an error occurred.
-   ; ===================================================================================================================
+
    Rollback() {
+	   ; ===================================================================================================================
+	   ; mysql_refresh() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; mysql_reload()  - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; Rolls back the current transaction.
+	   ; Return values: Zero if successful. Nonzero if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_rollback", "Ptr", This.MYSQL, "Char")
    }
-   ; ===================================================================================================================
-   ; Sets the row cursor to an arbitrary row in a query result set.
-   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
-   ;                Offset    - The offset value is a row offset, typically a value returned from mysql_row_tell()
-   ;                            or from mysql_row_seek(). This value is not a row number.
-   ; Return values: The previous value of the row cursor.
-   ; ===================================================================================================================
+
    Row_Seek(MYSQL_RES, Offset) {
+	   ; ===================================================================================================================
+	   ; Sets the row cursor to an arbitrary row in a query result set.
+	   ; Parameters:    MYSQL_RES - Pointer to a MYSQL_RES structure
+	   ;                Offset    - The offset value is a row offset, typically a value returned from mysql_row_tell()
+	   ;                            or from mysql_row_seek(). This value is not a row number.
+	   ; Return values: The previous value of the row cursor.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_row_seek", "Ptr", MYSQL_RES, "Ptr", Offset, "UPtr")
    }
-   ; ===================================================================================================================
-   ; Returns the current position of the row cursor for the last mysql_fetch_row(). This value can be used as an
-   ; argument to mysql_row_seek().
-   ; Parameters:    MYSQL_RES -  Pointer to a MYSQL_RES structure
-   ; Return values: The current offset of the row cursor.
-   ; ===================================================================================================================
+
    Row_Tell(MYSQL_RES) {
+	   ; ===================================================================================================================
+	   ; Returns the current position of the row cursor for the last mysql_fetch_row(). This value can be used as an
+	   ; argument to mysql_row_seek().
+	   ; Parameters:    MYSQL_RES -  Pointer to a MYSQL_RES structure
+	   ; Return values: The current offset of the row cursor.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_row_tell", "Ptr", MYSQL_RES, "UPtr")
    }
-   ; ===================================================================================================================
-   ; Causes the database specified by DB to become the default (current) database on the connection specified by mysql.
-   ; In subsequent queries, this database is the default for table references that do not include an explicit database
-   ; specifier.
-   ; Parameters:    DB     - Database name.
-   ; Return values: Zero if successful. Nonzero if an error occurred.
-   ; ===================================================================================================================
+
    Select_DB(DB) {
+	   ; ===================================================================================================================
+	   ; Causes the database specified by DB to become the default (current) database on the connection specified by mysql.
+	   ; In subsequent queries, this database is the default for table references that do not include an explicit database
+	   ; specifier.
+	   ; Parameters:    DB     - Database name.
+	   ; Return values: Zero if successful. Nonzero if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_select_db", "Ptr", This.MYSQL, "Ptr", This.UTF8(DB), "Int")
    }
-   ; ===================================================================================================================
-   ; This function is used to set the default character set for the current connection.
-   ; Parameters:    CSName - Character set name.
-   ; Return values: Zero if successful. Nonzero if an error occurred.
-   ; ===================================================================================================================
+
    Set_Character_Set(CSName) {
+	   ; ===================================================================================================================
+	   ; This function is used to set the default character set for the current connection.
+	   ; Parameters:    CSName - Character set name.
+	   ; Return values: Zero if successful. Nonzero if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_set_character_set", "Ptr", This.MYSQL, "Ptr", This.UTF8(CSName), "Int")
    }
-   ; ===================================================================================================================
-   ; mysql_set_local_infile_default() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; mysql_set_local_infile_handler() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; Enables or disables an option for the connection.
-   ; Parameters:    Option - MYSQL_OPTION_MULTI_STATEMENTS_ON  = 0
-   ;                         MYSQL_OPTION_MULTI_STATEMENTS_OFF = 1
-   ; Return values: Zero if successful. Nonzero if an error occurred.
-   ; ===================================================================================================================
+
    Set_Server_Option(Option) {
+	   ; ===================================================================================================================
+	   ; mysql_set_local_infile_default() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; mysql_set_local_infile_handler() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; Enables or disables an option for the connection.
+	   ; Parameters:    Option - MYSQL_OPTION_MULTI_STATEMENTS_ON  = 0
+	   ;                         MYSQL_OPTION_MULTI_STATEMENTS_OFF = 1
+	   ; Return values: Zero if successful. Nonzero if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_set_server_option", "Ptr", This.MYSQL, "Int", Option, "Int")
    }
-   ; ===================================================================================================================
-   ; mysql_shutdown() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; Returns a null-terminated string containing the SQLSTATE error code for the most recently executed SQL statement.
-   ; The error code consists of five characters. '00000' means “no error.”
-   ; Return values: A null-terminated character string containing the SQLSTATE error code.
-   ; ===================================================================================================================
+
    SQLState() {
+	   ; ===================================================================================================================
+	   ; mysql_shutdown() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; Returns a null-terminated string containing the SQLSTATE error code for the most recently executed SQL statement.
+	   ; The error code consists of five characters. '00000' means “no error.”
+	   ; Return values: A null-terminated character string containing the SQLSTATE error code.
+	   ; ===================================================================================================================
       Return ((P := DllCall("libmysql.dll\mysql_sqlstate", "Ptr", This.MYSQL, "UPtr")) ? StrGet(P, "UTF-8") : "")
    }
-   ; ===================================================================================================================
-   ; mysql_ssl_set() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-   ; ===================================================================================================================
-   ; ===================================================================================================================
-   ; Returns a character string containing information similar to that provided by the mysqladmin status command.
-   ; Return values: A character string describing the server status. NULL if an error occurred.
-   ; ===================================================================================================================
+
    Stat() {
+	   ; ===================================================================================================================
+	   ; mysql_ssl_set() - not implemented <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	   ; ===================================================================================================================
+	   ; ===================================================================================================================
+	   ; Returns a character string containing information similar to that provided by the mysqladmin status command.
+	   ; Return values: A character string describing the server status. NULL if an error occurred.
+	   ; ===================================================================================================================
       Return ((P := DllCall("libmysql.dll\mysql_stat", "Ptr", This.MYSQL, "UPtr")) ? StrGet(P, "UTF-8") : "")
    }
-   ; ===================================================================================================================
-   ; After invoking mysql_query() or mysql_real_query(), you must call mysql_store_result() or mysql_use_result() for
-   ; every statement that successfully produces a result set (SELECT, SHOW, DESCRIBE, EXPLAIN, CHECK TABLE, and so
-   ; forth).
-   ; Return values: A pointer to a MYSQL_RES result structure with the results. NULL (0) if an error occurred.
-   ; ===================================================================================================================
+
    Store_Result() {
+	   ; ===================================================================================================================
+	   ; After invoking mysql_query() or mysql_real_query(), you must call mysql_store_result() or mysql_use_result() for
+	   ; every statement that successfully produces a result set (SELECT, SHOW, DESCRIBE, EXPLAIN, CHECK TABLE, and so
+	   ; forth).
+	   ; Return values: A pointer to a MYSQL_RES result structure with the results. NULL (0) if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_store_result", "Ptr", This.MYSQL, "UPtr")
    }
-   ; ===================================================================================================================
-   ; Returns the thread ID of the current connection.
-   ; Return values: The thread ID of the current connection.
-   ; ===================================================================================================================
+
    Thread_ID() {
+	   ; ===================================================================================================================
+	   ; Returns the thread ID of the current connection.
+	   ; Return values: The thread ID of the current connection.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_thread_id", "Ptr", This.MYSQL, "UInt")
    }
-   ; ===================================================================================================================
-   ; After invoking mysql_query() or mysql_real_query(), you must call mysql_store_result() or mysql_use_result() for
-   ; every statement that successfully produces a result set (SELECT, SHOW, DESCRIBE, EXPLAIN, CHECK TABLE, and so
-   ; forth).
-   ; Return values: A pointer to a MYSQL_RES result structure with the results. NULL (0) if an error occurred.
-   ; ===================================================================================================================
+
    Use_Result() {
+	   ; ===================================================================================================================
+	   ; After invoking mysql_query() or mysql_real_query(), you must call mysql_store_result() or mysql_use_result() for
+	   ; every statement that successfully produces a result set (SELECT, SHOW, DESCRIBE, EXPLAIN, CHECK TABLE, and so
+	   ; forth).
+	   ; Return values: A pointer to a MYSQL_RES result structure with the results. NULL (0) if an error occurred.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_use_result", "Ptr", This.MYSQL, "UPtr")
    }
-   ; ===================================================================================================================
-   ; Returns the number of errors, warnings, and notes generated during execution of the previous SQL statement.
-   ; Return values: The warning count.
-   ; ===================================================================================================================
+
    Warning_Count() {
+	   ; ===================================================================================================================
+	   ; Returns the number of errors, warnings, and notes generated during execution of the previous SQL statement.
+	   ; Return values: The warning count.
+	   ; ===================================================================================================================
       Return DllCall("libmysql.dll\mysql_warning_count", "Ptr", This.MYSQL, "UInt")
    }
+
 }

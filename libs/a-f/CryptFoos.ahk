@@ -1,13 +1,11 @@
-﻿b64Encode( ByRef buf, bufLen )
-{
+﻿b64Encode( ByRef buf, bufLen ){
 	DllCall( "crypt32\CryptBinaryToStringA", "ptr", &buf, "UInt", bufLen, "Uint", 1 | 0x40000000, "Ptr", 0, "UInt*", outLen )
 	VarSetCapacity( outBuf, outLen, 0 )
 	DllCall( "crypt32\CryptBinaryToStringA", "ptr", &buf, "UInt", bufLen, "Uint", 1 | 0x40000000, "Ptr", &outBuf, "UInt*", outLen )
 	return strget( &outBuf, outLen, "CP0" )
 }
 
-b64Decode( b64str, ByRef outBuf )
-{
+b64Decode( b64str, ByRef outBuf ){
    static CryptStringToBinary := "crypt32\CryptStringToBinary" (A_IsUnicode ? "W" : "A")
 
    DllCall( CryptStringToBinary, "ptr", &b64str, "UInt", 0, "Uint", 1, "Ptr", 0, "UInt*", outLen, "ptr", 0, "ptr", 0 )
@@ -17,8 +15,7 @@ b64Decode( b64str, ByRef outBuf )
    return outLen
 }
 
-b2a_hex( ByRef pbData, dwLen )
-{
+b2a_hex( ByRef pbData, dwLen ){
 	if (dwLen < 1)
 		return 0
 	if pbData is integer
@@ -36,8 +33,7 @@ b2a_hex( ByRef pbData, dwLen )
 	return hash
 }
 
-a2b_hex( sHash,ByRef ByteBuf )
-{
+a2b_hex( sHash,ByRef ByteBuf ){
 	if (sHash == "" || RegExMatch(sHash,"[^\dABCDEFabcdef]") || mod(StrLen(sHash),2))
 		return 0
 	BufLen := StrLen(sHash)/2
@@ -52,8 +48,7 @@ a2b_hex( sHash,ByRef ByteBuf )
 	return BufLen
 }
 
-Free(byRef var)
-{
+Free(byRef var){
   VarSetCapacity(var,0)
   return
 }

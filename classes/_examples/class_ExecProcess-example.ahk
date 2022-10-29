@@ -1,4 +1,4 @@
-/*
+﻿/*
               Multi-process shared functions, chain shutdown and communication
 
   ProcessVar := New ExecProcess("LabelName")  Create a new associated process, you can pass parameters

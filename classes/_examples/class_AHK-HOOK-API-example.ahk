@@ -1,12 +1,12 @@
-#include AHK-HOOK-API.ahk
+п»ї#include AHK-HOOK-API.ahk
 
-global MsgBoxHook := new Hook("user32.dll", "MessageBoxA", "Hook_MessageBoxA") ; Установка хука.
-MsgBox, 0, Заголовок, Текст
+global MsgBoxHook := new Hook("user32.dll", "MessageBoxA", "Hook_MessageBoxA") ; Г“Г±ГІГ Г­Г®ГўГЄГ  ГµГіГЄГ .
+MsgBox, 0, Г‡Г ГЈГ®Г«Г®ГўГ®ГЄ, Г’ГҐГЄГ±ГІ
 
 Hook_MessageBoxA(hWnd, lpText, lpCaption, uiType)
 {
-	MsgBoxHook.SetStatus(false) ; Снимаем хук.
-	retValue := DllCall("MessageBoxA", "UInt", hWnd, "Str", StrGet(lpText), "Str", "Hooked MsgBox", "UInt", uiType) ; Вызываем оригинальную функцию, но подменяем название.
-	MsgBoxHook.SetStatus(true) ; Ставим хук обратно.
+	MsgBoxHook.SetStatus(false) ; Г‘Г­ГЁГ¬Г ГҐГ¬ ГµГіГЄ.
+	retValue := DllCall("MessageBoxA", "UInt", hWnd, "Str", StrGet(lpText), "Str", "Hooked MsgBox", "UInt", uiType) ; Г‚Г»Г§Г»ГўГ ГҐГ¬ Г®Г°ГЁГЈГЁГ­Г Г«ГјГ­ГіГѕ ГґГіГ­ГЄГ¶ГЁГѕ, Г­Г® ГЇГ®Г¤Г¬ГҐГ­ГїГҐГ¬ Г­Г Г§ГўГ Г­ГЁГҐ.
+	MsgBoxHook.SetStatus(true) ; Г‘ГІГ ГўГЁГ¬ ГµГіГЄ Г®ГЎГ°Г ГІГ­Г®.
 	return retValue
 }

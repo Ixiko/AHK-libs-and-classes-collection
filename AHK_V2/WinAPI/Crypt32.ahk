@@ -1,4 +1,4 @@
-CertAddCRLContextToStore(hCertStore, pCrlContext, dwAddDisposition, ppStoreContext) => DllCall('Crypt32\CertAddCRLContextToStore', 'ptr', hCertStore, 'ptr', pCrlContext, 'uint', dwAddDisposition, 'ptr', ppStoreContext, 'int')
+﻿CertAddCRLContextToStore(hCertStore, pCrlContext, dwAddDisposition, ppStoreContext) => DllCall('Crypt32\CertAddCRLContextToStore', 'ptr', hCertStore, 'ptr', pCrlContext, 'uint', dwAddDisposition, 'ptr', ppStoreContext, 'int')
 CertAddCRLLinkToStore(hCertStore, pCrlContext, dwAddDisposition, ppStoreContext) => DllCall('Crypt32\CertAddCRLLinkToStore', 'ptr', hCertStore, 'ptr', pCrlContext, 'uint', dwAddDisposition, 'ptr', ppStoreContext, 'int')
 CertAddCTLContextToStore(hCertStore, pCtlContext, dwAddDisposition, ppStoreContext) => DllCall('Crypt32\CertAddCTLContextToStore', 'ptr', hCertStore, 'ptr', pCtlContext, 'uint', dwAddDisposition, 'ptr', ppStoreContext, 'int')
 CertAddCTLLinkToStore(hCertStore, pCtlContext, dwAddDisposition, ppStoreContext) => DllCall('Crypt32\CertAddCTLLinkToStore', 'ptr', hCertStore, 'ptr', pCtlContext, 'uint', dwAddDisposition, 'ptr', ppStoreContext, 'int')

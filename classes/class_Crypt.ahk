@@ -1,123 +1,122 @@
-﻿/*
-Crypt class
-	Currently Contains two classes and different methods for encryption and hashing
-Classes:
-	Crypt.Encrypt - Encryption class
-	Crypt.Hash - Hashing class
-=====================================================================
-Methods:
-=====================================================================
-Crypt.Encrypt.FileEncrypt(pFileIn,pFileOut,password,CryptAlg = 1, HashAlg = 1)
-	Encrypts the file
-Parameters:
-	pFileIn - path to file which to encrypt
-	pFileOut - path to save encrypted file
-	password - no way, it's just a password...
-	(optional) CryptAlg - Encryption algorithm ID, for details see below
-	(optional) HashAlg - hashing algorithm ID, for details see below
-Return:
-	on success, - Number of bytes writen to pFileOut
-	on fail, - ""
---------
-Crypt.Encrypt.FileDecrypt(pFileIn,pFileOut,password,CryptAlg = 1, HashAlg = 1)
-	Decrypts the file, the parameters are identical to FileEncrypt,	except:
-	pFileIn - path to encrypted file which to decrypt
-	pFileOut - path to save decrypted file
-=====================================================================
-Crypt.Encrypt.StrEncrypt(string,password,CryptAlg = 1, HashAlg = 1)
-	Encrypts the string
-Parameters:
-	string - UTF string, means any string you use in AHK_L Unicode
-	password - no way, it's just a password...
-	(optional) CryptAlg - Encryption algorithm ID, for details see below
-	(optional) HashAlg - hashing algorithm ID, for details see below
-Return:
-	on success, - HASH representaion of encrypted buffer, which is easily transferable. 
-				You can get actual encrypted buffer from HASH by using function HashToByte()
-	on fail, - ""	
---------
-Crypt.Encrypt.StrDecrypt(EncryptedHash,password,CryptAlg = 1, HashAlg = 1)
-	Decrypts the string, the parameters are identical to StrEncrypt,	except:
-	EncryptedHash - hash string returned by StrEncrypt()
-=====================================================================
-Crypt.Hash.FileHash(pFile,HashAlg = 1,pwd = "",hmac_alg = 1)
---------
-	Gets the HASH of file
-Parameters:
-	pFile - path to file which hash will be calculated
-	(optional) HashAlg - hashing algorithm ID, for details see below
-	(optional) pwd - password, if present - the hashing algorith will use HMAC to calculate hash
-	(optional) hmac_alg - Encryption algorithm ID of HMAC key, will be used if pwd parameter present
-Return:
-	on success, - HASH of target file calculated using choosen algorithm
-	on fail, - ""
---------
-Crypt.Hash.StrHash(string,HashAlg = 1,pwd = "",hmac_alg = 1)
-	Gets the HASH of string. HASH will be calculated for ANSI representation of passed string
-Parameters:
-	string - UTF string
-	other parameters same as for FileHash
-=====================================================================
-FileEncryptToStr(pFileIn,password,CryptAlg = 1, HashAlg = 1)
---------
-	Encrypt file and returns it's hash
-Parameters:
-	pFileIn - path to file which will be encrypted
-	password - no way, it's just a password...
-	(optional) CryptAlg - Encryption algorithm ID, for details see below
-	(optional) HashAlg - hashing algorithm ID, for details see below
-Return:
-	on success, - HASH of target file calculated using choosen algorithm
-	on fail, - ""
-=====================================================================
-StrDecryptToFile(EncryptedHash,pFileOut,password,CryptAlg = 1, HashAlg = 1)
-	Decrypt EncryptedHash to file and returns amount of bytes writen to file
-Parameters:
-	EncryptedHash - hash of formerly encrypted data
-	pFileOut - path to destination file where decrypted data will be writen
-	password - no way, it's just a password...
-	(optional) CryptAlg - Encryption algorithm ID, for details see below
-	(optional) HashAlg - hashing algorithm ID, for details see below
-Return:
-	on success, - amount of bytes writen to the destination file
-	on fail, - ""
-=====================================================================
-Crypt.Encrypt class contain following fields
-Crypt.Encrypt.StrEncoding - encoding of string passed to Crypt.Encrypt.StrEncrypt()
-Crypt.Encrypt.PassEncoding - password encoding for each of Crypt.Encrypt methods
+﻿class Crypt{
+	/*
+	Crypt class
+		Currently Contains two classes and different methods for encryption and hashing
+	Classes:
+		Crypt.Encrypt - Encryption class
+		Crypt.Hash - Hashing class
+	=====================================================================
+	Methods:
+	=====================================================================
+	Crypt.Encrypt.FileEncrypt(pFileIn,pFileOut,password,CryptAlg = 1, HashAlg = 1)
+		Encrypts the file
+	Parameters:
+		pFileIn - path to file which to encrypt
+		pFileOut - path to save encrypted file
+		password - no way, it's just a password...
+		(optional) CryptAlg - Encryption algorithm ID, for details see below
+		(optional) HashAlg - hashing algorithm ID, for details see below
+	Return:
+		on success, - Number of bytes writen to pFileOut
+		on fail, - ""
+	--------
+	Crypt.Encrypt.FileDecrypt(pFileIn,pFileOut,password,CryptAlg = 1, HashAlg = 1)
+		Decrypts the file, the parameters are identical to FileEncrypt,	except:
+		pFileIn - path to encrypted file which to decrypt
+		pFileOut - path to save decrypted file
+	=====================================================================
+	Crypt.Encrypt.StrEncrypt(string,password,CryptAlg = 1, HashAlg = 1)
+		Encrypts the string
+	Parameters:
+		string - UTF string, means any string you use in AHK_L Unicode
+		password - no way, it's just a password...
+		(optional) CryptAlg - Encryption algorithm ID, for details see below
+		(optional) HashAlg - hashing algorithm ID, for details see below
+	Return:
+		on success, - HASH representaion of encrypted buffer, which is easily transferable.
+					You can get actual encrypted buffer from HASH by using function HashToByte()
+		on fail, - ""
+	--------
+	Crypt.Encrypt.StrDecrypt(EncryptedHash,password,CryptAlg = 1, HashAlg = 1)
+		Decrypts the string, the parameters are identical to StrEncrypt,	except:
+		EncryptedHash - hash string returned by StrEncrypt()
+	=====================================================================
+	Crypt.Hash.FileHash(pFile,HashAlg = 1,pwd = "",hmac_alg = 1)
+	--------
+		Gets the HASH of file
+	Parameters:
+		pFile - path to file which hash will be calculated
+		(optional) HashAlg - hashing algorithm ID, for details see below
+		(optional) pwd - password, if present - the hashing algorith will use HMAC to calculate hash
+		(optional) hmac_alg - Encryption algorithm ID of HMAC key, will be used if pwd parameter present
+	Return:
+		on success, - HASH of target file calculated using choosen algorithm
+		on fail, - ""
+	--------
+	Crypt.Hash.StrHash(string,HashAlg = 1,pwd = "",hmac_alg = 1)
+		Gets the HASH of string. HASH will be calculated for ANSI representation of passed string
+	Parameters:
+		string - UTF string
+		other parameters same as for FileHash
+	=====================================================================
+	FileEncryptToStr(pFileIn,password,CryptAlg = 1, HashAlg = 1)
+	--------
+		Encrypt file and returns it's hash
+	Parameters:
+		pFileIn - path to file which will be encrypted
+		password - no way, it's just a password...
+		(optional) CryptAlg - Encryption algorithm ID, for details see below
+		(optional) HashAlg - hashing algorithm ID, for details see below
+	Return:
+		on success, - HASH of target file calculated using choosen algorithm
+		on fail, - ""
+	=====================================================================
+	StrDecryptToFile(EncryptedHash,pFileOut,password,CryptAlg = 1, HashAlg = 1)
+		Decrypt EncryptedHash to file and returns amount of bytes writen to file
+	Parameters:
+		EncryptedHash - hash of formerly encrypted data
+		pFileOut - path to destination file where decrypted data will be writen
+		password - no way, it's just a password...
+		(optional) CryptAlg - Encryption algorithm ID, for details see below
+		(optional) HashAlg - hashing algorithm ID, for details see below
+	Return:
+		on success, - amount of bytes writen to the destination file
+		on fail, - ""
+	=====================================================================
+	Crypt.Encrypt class contain following fields
+	Crypt.Encrypt.StrEncoding - encoding of string passed to Crypt.Encrypt.StrEncrypt()
+	Crypt.Encrypt.PassEncoding - password encoding for each of Crypt.Encrypt methods
 
-Same is valid for Crypt.Hash class
+	Same is valid for Crypt.Hash class
 
-HASH and Encryption algorithms currently available:
-HashAlg IDs:
-1 - MD5
-2 - MD2
-3 - SHA
-4 - SHA_256	;Vista+ only
-5 - SHA_384	;Vista+ only
-6 - SHA_512	;Vista+ only
---------
-CryptAlg and hmac_alg IDs:
-1 - RC4
-2 - RC2
-3 - 3DES
-4 - 3DES_112
-5 - AES_128 ;not supported for win 2000
-6 - AES_192 ;not supported for win 2000
-7 - AES_256 ;not supported for win 2000
-=====================================================================
+	HASH and Encryption algorithms currently available:
+	HashAlg IDs:
+	1 - MD5
+	2 - MD2
+	3 - SHA
+	4 - SHA_256	;Vista+ only
+	5 - SHA_384	;Vista+ only
+	6 - SHA_512	;Vista+ only
+	--------
+	CryptAlg and hmac_alg IDs:
+	1 - RC4
+	2 - RC2
+	3 - 3DES
+	4 - 3DES_112
+	5 - AES_128 ;not supported for win 2000
+	6 - AES_192 ;not supported for win 2000
+	7 - AES_256 ;not supported for win 2000
+	=====================================================================
 
-*/
+	*/
 
-class Crypt
-{
-	class Encrypt
-	{
+
+	class Encrypt	{
+
 		static StrEncoding := "UTF-16"
 		static PassEncoding := "UTF-16"
-		
-		StrDecryptToFile(EncryptedHash,pFileOut,password,CryptAlg = 1, HashAlg = 1) 
-		{
+
+		StrDecryptToFile(EncryptedHash,pFileOut,password,CryptAlg = 1, HashAlg = 1) 		{
 			if !EncryptedHash
 				return ""
 			if !len := b64Decode( EncryptedHash, encr_Buf )
@@ -133,9 +132,8 @@ class Crypt
 			FileDelete,% temp_file
 			return bytes
 		}
-		
-		FileEncryptToStr(pFileIn,password,CryptAlg = 1, HashAlg = 1) 
-		{
+
+		FileEncryptToStr(pFileIn,password,CryptAlg = 1, HashAlg = 1) 		{
 			temp_file := "crypt.temp"
 			if !this._Encrypt( p, pp, password, 1, pFileIn, temp_file, CryptAlg, HashAlg )
 				return ""
@@ -157,44 +155,39 @@ class Crypt
 			FileDelete,% temp_file
 			return b64Encode( tembBuf, fLen )
 		}
-		
-		FileEncrypt(pFileIn,pFileOut,password,CryptAlg = 1, HashAlg = 1)
-		{
+
+		FileEncrypt(pFileIn,pFileOut,password,CryptAlg = 1, HashAlg = 1)		{
 			return this._Encrypt( p, pp, password, 1, pFileIn, pFileOut, CryptAlg, HashAlg )
 		}
 
-		FileDecrypt(pFileIn,pFileOut,password,CryptAlg = 1, HashAlg = 1)
-		{
+		FileDecrypt(pFileIn,pFileOut,password,CryptAlg = 1, HashAlg = 1)		{
 			return this._Encrypt( p, pp, password, 0, pFileIn, pFileOut, CryptAlg, HashAlg )
 		}
 
-		StrEncrypt(string,password,CryptAlg = 1, HashAlg = 1)
-		{
+		StrEncrypt(string,password,CryptAlg = 1, HashAlg = 1)		{
 			len := StrPutVar(string, str_buf,100,this.StrEncoding)
 			if this._Encrypt(str_buf,len, password, 1,0,0,CryptAlg,HashAlg)
 				return b64Encode( str_buf, len )
 			else
 				return ""
 		}
-	
-		StrDecrypt(EncryptedHash,password,CryptAlg = 1, HashAlg = 1)
-		{
+
+		StrDecrypt(EncryptedHash,password,CryptAlg = 1, HashAlg = 1)		{
 			if !EncryptedHash
 				return ""
 			if !len := b64Decode( EncryptedHash, encr_Buf )
 				return 0
-			if sLen := this._Encrypt(encr_Buf,len, password, 0,0,0,CryptAlg,HashAlg)
-			{
+			if sLen := this._Encrypt(encr_Buf,len, password, 0,0,0,CryptAlg,HashAlg)			{
 				if ( this.StrEncoding = "utf-16" || this.StrEncoding = "cp1200" )
 					sLen /= 2
 				return strget(&encr_Buf,sLen,this.StrEncoding)
 			}
 			else
 				return ""
-		}		
-	
-		_Encrypt(ByRef encr_Buf,ByRef Buf_Len, password, mode, pFileIn=0, pFileOut=0, CryptAlg = 1,HashAlg = 1)	;mode - 1 encrypt, 0 - decrypt
-		{
+		}
+
+		_Encrypt(ByRef encr_Buf,ByRef Buf_Len, password, mode, pFileIn=0, pFileOut=0, CryptAlg = 1,HashAlg = 1)	{ ;mode - 1 encrypt, 0 - decrypt
+
 			c := CryptConst
 			;password hashing algorithms
 			CUR_PWD_HASH_ALG := HashAlg == 1 || HashAlg = "MD5" ?c.CALG_MD5
@@ -216,11 +209,11 @@ class Crypt
 			KEY_LENGHT <<= 16
 			if (CUR_PWD_HASH_ALG = 0 || CUR_ENC_ALG = 0)
 				return 0
-			
+
 			if !dllCall("Advapi32\CryptAcquireContextW","Ptr*",hCryptProv,"Uint",0,"Uint",0,"Uint",c.PROV_RSA_AES,"UInt",c.CRYPT_VERIFYCONTEXT)
 					{foo := "CryptAcquireContextW", err := GetLastError(), err2 := ErrorLevel
 					GoTO FINITA_LA_COMEDIA
-					}	
+					}
 			if !dllCall("Advapi32\CryptCreateHash","Ptr",hCryptProv,"Uint",CUR_PWD_HASH_ALG,"Uint",0,"Uint",0,"Ptr*",hHash )
 					{foo := "CryptCreateHash", err := GetLastError(), err2 := ErrorLevel
 					GoTO FINITA_LA_COMEDIA
@@ -230,7 +223,7 @@ class Crypt
 			if !dllCall("Advapi32\CryptHashData","Ptr",hHash,"Ptr",&passBuf,"Uint",passLen,"Uint",0 )
 					{foo := "CryptHashData", err := GetLastError(), err2 := ErrorLevel
 					GoTO FINITA_LA_COMEDIA
-					}	
+					}
 			;getting encryption key from password
 			if !dllCall("Advapi32\CryptDeriveKey","Ptr",hCryptProv,"Uint",CUR_ENC_ALG,"Ptr",hHash,"Uint",KEY_LENGHT,"Ptr*",hKey )
 					{foo := "CryptDeriveKey", err := GetLastError(), err2 := ErrorLevel
@@ -240,7 +233,7 @@ class Crypt
 			if !dllCall("Advapi32\CryptGetKeyParam","Ptr",hKey,"Uint",c.KP_BLOCKLEN,"Uint*",BlockLen,"Uint*",dwCount := 4,"Uint",0)
 					{foo := "CryptGetKeyParam", err := GetLastError(), err2 := ErrorLevel
 					GoTO FINITA_LA_COMEDIA
-					}	
+					}
 			BlockLen /= 8
 			if (mode == 1)							;Encrypting
 			{
@@ -274,10 +267,10 @@ class Crypt
 								,"Uint",0	;dwFlags
 								,"Ptr",&ReadBuf	;pbdata
 								,"Uint*",BytesRead	;dwsize
-								,"Uint",ReadBufSize+BlockLen )	;dwbuf		
+								,"Uint",ReadBufSize+BlockLen )	;dwbuf
 						{foo := "CryptEncrypt", err := GetLastError(), err2 := ErrorLevel
 						GoTO FINITA_LA_COMEDIA
-						}	
+						}
 						pfout.RawWrite(ReadBuf,BytesRead)
 						Buf_Len += BytesRead
 					}
@@ -294,14 +287,14 @@ class Crypt
 								,"Uint",0	;dwFlags
 								,"Ptr",&encr_Buf	;pbdata
 								,"Uint*",Buf_Len	;dwsize
-								,"Uint",Buf_Len + BlockLen )	;dwbuf		
+								,"Uint",Buf_Len + BlockLen )	;dwbuf
 					{foo := "CryptEncrypt", err := GetLastError(), err2 := ErrorLevel
 					GoTO FINITA_LA_COMEDIA
-					}	
+					}
 				}
 			}
 			else if (mode == 0)								;decrypting
-			{	
+			{
 				if (pFileIn && pFileOut)					;decrypting file
 				{
 					ReadBufSize := 10240 - mod(10240,BlockLen==0?1:BlockLen )	;10KB
@@ -334,14 +327,14 @@ class Crypt
 								,"Uint*",BytesRead )	;dwsize
 						{foo := "CryptDecrypt", err := GetLastError(), err2 := ErrorLevel
 						GoTO FINITA_LA_COMEDIA
-						}	
+						}
 						pfout.RawWrite(ReadBuf,BytesRead)
 						Buf_Len += BytesRead
 					}
 					DllCall("FreeLibrary", "Ptr", hModule)
 					pfin.Close()
 					pfout.Close()
-					
+
 				}
 				else if !dllCall("Advapi32\CryptDecrypt"
 								,"Ptr",hKey	;key
@@ -352,7 +345,7 @@ class Crypt
 								,"Uint*",Buf_Len )	;dwsize
 					{foo := "CryptDecrypt", err := GetLastError(), err2 := ErrorLevel
 					GoTO FINITA_LA_COMEDIA
-					}	
+					}
 			}
 FINITA_LA_COMEDIA:
 			dllCall("Advapi32\CryptDestroyKey","Ptr",hKey )
@@ -363,31 +356,29 @@ FINITA_LA_COMEDIA:
 				if (A_IsCompiled = 1)
 					return ""
 				else
-					msgbox % foo " call failed with:`nErrorLevel: " err2 "`nLastError: " err "`n" ErrorFormat(err) 
+					msgbox % foo " call failed with:`nErrorLevel: " err2 "`nLastError: " err "`n" ErrorFormat(err)
 				return ""
 			}
 			return Buf_Len
 		}
+
 	}
-	
-	class Hash
-	{
+
+	class Hash	{
+
 		static StrEncoding := "CP0"
 		static PassEncoding := "UTF-16"
-		
-		FileHash(pFile,HashAlg = 1,pwd = "",hmac_alg = 1)
-		{
+
+		FileHash(pFile,HashAlg = 1,pwd = "",hmac_alg = 1)		{
 			return this._CalcHash(p,pp,pFile,HashAlg,pwd,hmac_alg)
 		}
-		
-		StrHash(string,HashAlg = 1,pwd = "",hmac_alg = 1)		;strType 1 for ASC, 0 for UTF
-		{
+
+		StrHash(string,HashAlg = 1,pwd = "",hmac_alg = 1)	{	;strType 1 for ASC, 0 for UTF
 			buf_len := StrPutVar(string, buf,0,this.StrEncoding)
 			return this._CalcHash(buf,buf_len,0,HashAlg,pwd,hmac_alg)
 		}
-		
-		_CalcHash(ByRef bBuffer,BufferLen,pFile,HashAlg = 1,pwd = "",hmac_alg = 1)
-		{
+
+		_CalcHash(ByRef bBuffer,BufferLen,pFile,HashAlg = 1,pwd = "",hmac_alg = 1)		{
 			c := CryptConst
 			;password hashing algorithms
 			HASH_ALG := HashAlg==1?c.CALG_MD5
@@ -420,12 +411,12 @@ FINITA_LA_COMEDIA:
 			if !dllCall("Advapi32\CryptAcquireContextW","Ptr*",hCryptProv,"Uint",0,"Uint",0,"Uint",c.PROV_RSA_AES,"UInt",c.CRYPT_VERIFYCONTEXT )
 				{foo := "CryptAcquireContextW", err := GetLastError(), err2 := ErrorLevel
 				GoTO FINITA_DA_COMEDIA
-				}	
+				}
 			if !dllCall("Advapi32\CryptCreateHash","Ptr",hCryptProv,"Uint",HASH_ALG,"Uint",0,"Uint",0,"Ptr*",hHash )
 				{foo := "CryptCreateHash1", err := GetLastError(), err2 := ErrorLevel
 				GoTO FINITA_DA_COMEDIA
 				}
-			
+
 			if (pwd != "")			;going HMAC
 			{
 				passLen := StrPutVar(pwd, passBuf,0,this.PassEncoding)
@@ -450,7 +441,7 @@ FINITA_LA_COMEDIA:
 					GoTO FINITA_DA_COMEDIA
 					}
 			}
-				
+
 			if pFile
 			{
 				f := FileOpen(pFile,"r","CP0")
@@ -500,7 +491,7 @@ FINITA_LA_COMEDIA:
 				GoTO FINITA_DA_COMEDIA
 				}
 			hashval := b2a_hex( pbHash, HashLen )
-				
+
 		FINITA_DA_COMEDIA:
 			DllCall("FreeLibrary", "Ptr", hModule)
 			dllCall("Advapi32\CryptDestroyHash","Ptr",hHash)
@@ -511,23 +502,23 @@ FINITA_LA_COMEDIA:
 				if (A_IsCompiled = 1)
 					return ""
 				else
-					msgbox % foo " call failed with:`nErrorLevel: " err2 "`nLastError: " err "`n" ErrorFormat(err) 
+					msgbox % foo " call failed with:`nErrorLevel: " err2 "`nLastError: " err "`n" ErrorFormat(err)
 				return 0
 			}
 			return hashval
 		}
+
 	}
+
 }
 
 ;returns positive hex value of last error
-GetLastError()
-{
+GetLastError(){
 	return ToHex(A_LastError < 0 ? A_LastError & 0xFFFFFFFF : A_LastError)
 }
 
 ;converting decimal to hex value
-ToHex(num)
-{
+ToHex(num){
 	if num is not integer
 		return num
 	oldFmt := A_FormatInteger
@@ -539,8 +530,7 @@ ToHex(num)
 
 ;And this function returns error description based on error number passed. ;
 ;Error number is one returned by GetLastError() or from A_LastError
-ErrorFormat(error_id)
-{
+ErrorFormat(error_id){
 	VarSetCapacity(msg,1000,0)
 	if !len := DllCall("FormatMessageW"
 				,"UInt",FORMAT_MESSAGE_FROM_SYSTEM := 0x00001000 | FORMAT_MESSAGE_IGNORE_INSERTS := 0x00000200		;dwflags
@@ -553,10 +543,7 @@ ErrorFormat(error_id)
 	return 	strget(&msg,len)
 }
 
-StrPutVar(string, ByRef var, addBufLen = 0,encoding="UTF-16")
-{
-	; Ensure capacity.
-	; StrPut returns char count, but VarSetCapacity needs bytes.
+StrPutVar(string, ByRef var, addBufLen = 0,encoding="UTF-16"){
 	tlen := ((encoding="utf-16"||encoding="cp1200") ? 2 : 1)
 	str_len := StrPut(string, encoding) * tlen
     VarSetCapacity( var, str_len + addBufLen,0 )
@@ -565,8 +552,7 @@ StrPutVar(string, ByRef var, addBufLen = 0,encoding="UTF-16")
     return str_len - tlen
 }
 
-SetKeySalt(hKey,hProv)
-{
+SetKeySalt(hKey,hProv){
 	KP_SALT_EX := 10
 	SALT := "89ABF9C1005EDD40"
 	;~ len := HashToByte(SALT,pb)
@@ -581,8 +567,7 @@ SetKeySalt(hKey,hProv)
 		msgbox % ErrorFormat(GetLastError())
 }
 
-GetKeySalt(hKey)
-{
+GetKeySalt(hKey){
 	KP_IV := 1       ; Initialization vector
 	KP_SALT := 2       ; Salt value
 	if !dllCall("Advapi32\CryptGetKeyParam"
@@ -600,6 +585,7 @@ GetKeySalt(hKey)
 				,"Ptr",&pb
 				,"Uint*",dwCount
 				,"Uint",0)
-	msgbox % "Fail to get SALT"	
+	msgbox % "Fail to get SALT"
 	;~ msgbox % ByteToHash(pb,dwCount) "`n" dwCount
 }
+

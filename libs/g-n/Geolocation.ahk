@@ -1,9 +1,8 @@
 ﻿#NoEnv
 
-;MsgBox % Clipboard := GetLocation()
+MsgBox % Clipboard := GetLocation()
 
-GetLocation(RefreshNetworkList = 0)
-{
+GetLocation(RefreshNetworkList = 0) {
  Suffix := A_IsUnicode ? "W" : "A", UPtr := A_PtrSize ? "UPtr" : "UInt", StrGetFunc := "StrGet", StrPutFunc := "StrPut"
  hWLAN := DllCall("LoadLibrary","Str","wlanapi")
  APIVersion := 0, DllCall("wlanapi\WlanOpenHandle","UInt",2,"UInt",0,"UInt*",APIVersion,"UInt*",hClientHandle)

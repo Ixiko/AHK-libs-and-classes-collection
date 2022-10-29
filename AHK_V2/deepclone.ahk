@@ -1,4 +1,4 @@
-deepclone(obj) {
+﻿deepclone(obj) {
 	objs := Map(), objs.Default := ''
 	return clone(obj)
 
