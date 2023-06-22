@@ -1,4 +1,4 @@
-
+﻿
 CommandLineToArgs(cmd) {
     argv := DllCall("shell32\CommandLineToArgvW", "wstr", cmd, 'int*', &narg:=0, "ptr")
     try {

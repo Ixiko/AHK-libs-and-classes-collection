@@ -1,9 +1,10 @@
 ﻿#SingleInstance Force
 
+Gui, +DPIScale
 hLVIL := IL_Create(2)
 IL_Add(hLVIL, "shell32.dll", 1)
 IL_Add(hLVIL, "shell32.dll", 2)
-Gui, Add, ListView, w450 h340 vTLV gLVClick AltSubmit +LV0x2, Col 1|Col 2|Col 3|Col 4|Col 5|Col 6|Col 7|Col 8|Col 9|Col 10
+Gui, Add, ListView, w850 h340 vTLV gLVClick AltSubmit +LV0x2, Col 1|Col 2|Col 3|Col 4|Col 5|Col 6|Col 7|Col 8|Col 9|Col 10
 LV_SetImageList(hLVIL, 1)
 LV_ModifyCol(1, 60)
 LV_ModifyCol(2, 200)
@@ -140,4 +141,4 @@ ExitApp
 return
 
 ; Uncomment following line if LVA.ahk is not inside the StdLib!
-#Include LVA.ahk
+#Include %A_ScriptDir%\..\LV_A.ahk

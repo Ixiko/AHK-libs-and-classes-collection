@@ -1,4 +1,4 @@
-/*
+﻿/*
   This script demonstrates the PopupMenu class. Keep your expectations low:
   it can only show up to 6 textual items, with no submenus, controls or graphics.
   More generally, it demonstrates:

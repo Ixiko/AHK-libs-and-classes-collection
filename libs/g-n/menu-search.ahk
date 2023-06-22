@@ -1,4 +1,4 @@
-SetBatchLines -1
+﻿SetBatchLines -1
 OnMessage(0x100, "GuiKeyDown")
 OnMessage(0x6, "GuiActivate")
 return

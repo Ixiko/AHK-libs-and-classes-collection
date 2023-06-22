@@ -1,6 +1,6 @@
 ﻿#NoEnv
 
-	testdata = 
+	testdata =
 	( LTrim
 		1,Bulbasaur,Fushigidane,Fushigidane
 		2,Ivysaur,Fushigiso,Fushigisou
@@ -29,12 +29,12 @@
 		25,Pikachu,Pikachu,Pikachu
 	)
 	; data from https://bulbapedia.bulbagarden.net/wiki/List_of_Japanese_Pokémon_names
-	
+
 	LVS_Init("callback", "Index|English|Japanese|Trademarked", 2, -1)  ; args: callbackfunc, col names, col to be returned, col to be searched (-1 for all).
 	LVS_SetList(testdata, ",")  ; args: data, field delimiter.
 	LVS_UpdateColOptions("AutoHdr|100|Right Auto|Left AutoHdr")  ; call with no args to make them all AutoHdr.
 	LVS_SetBottomText("Press (Pg)Up/Down to select; try selecting multiple rows with Ctrl/Shift + movements or Space")
-	
+
 	LVS_Show()
 return
 
@@ -44,9 +44,9 @@ callback(selected, escaped := False) {  ; escaped is true if gui was closed or e
 		msgbox escaped from gui
 	else
 		msgbox % selected
-	
+
 	exitapp
 }
 
 
-#Include %A_ScriptDir%\LVS.ahk
+#Include %A_ScriptDir%\..\LV_S.ahk

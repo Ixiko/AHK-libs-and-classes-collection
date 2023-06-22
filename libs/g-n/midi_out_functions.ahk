@@ -1,4 +1,4 @@
-;+++++++++++++++++++++++++++++++++MIDI Functions++++++++++++++++++++++++++++++++++++++++
+﻿;+++++++++++++++++++++++++++++++++MIDI Functions++++++++++++++++++++++++++++++++++++++++
 ;AHK functions for performing various midi output operations by calling winmm.dll
 ;by Tom Boughner
 ;Last Modified 4/27/07

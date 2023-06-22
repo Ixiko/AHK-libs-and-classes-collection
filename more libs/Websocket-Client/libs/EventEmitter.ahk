@@ -1,4 +1,4 @@
-class Event
+﻿class Event
 {
     __new(ByRef emitter, ByRef data)
     {

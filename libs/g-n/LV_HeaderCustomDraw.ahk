@@ -12,22 +12,32 @@
    ; MsgBox, % Format("{:06X}", DllCall("GetSysColor", "Int", 15, "UInt"))
    ; Create a GUI with a ListView
    Gui, +hwndHGUI
-   Gui, Margin, 20, 20
-   Gui, Font, s12 Italic
-   Gui, Add, ListView, w600 r20 hwndHLV Grid NoSort gSubLV AltSubmit Background808080
+	Gui, Margin, 10, 10
+   Gui, Color, 0xFFFFAA, 0xFFFFEE
+   Gui, Font, s12, Roboto
+   Gui, Add, ListView, w600 r20 hwndHLV Grid NoSort gSubLV AltSubmit ; BackgroundFFFFAA
       , Message|State|Item|HickCount ; C0000FF
    ; Get the HWND of the ListView's Header control
    HHDR := DllCall("SendMessage", "Ptr", HLV, "UInt", 0x101F, "Ptr", 0, "Ptr", 0, "UPtr") ; LVM_GETHEADER
    ; Create an object containing the color for each Header control
    HeaderColors := {}
-   HeaderColors[HHDR] := {Txt: 0xFFFFFF, Bkg: 0xFE9050, Grid: 1} ; Note: It's BGR instead of RGB!
+   HeaderColors[HHDR] := {Txt: 0xFFFFFF, Bkg: 0x384337, Grid: 1} ; Note: It's BGR instead of RGB!
    SubClassControl(HLV, "LV_HeaderCustomDraw")
-   LV_Add("", "Message", "State", "Item", "HickCount")
    ; LV_ModifyCol(0, "AutoHdr")
-   LV_ModifyCol(1, "Left 150")
+   LV_ModifyCol(1, "Right 150")
    LV_ModifyCol(2, "Center 150")
    LV_ModifyCol(3, "Right 150")
-   LV_ModifyCol(4, "100")
+	LV_ModifyCol(4, "100")
+	Loop 40 {
+		arr := []
+		Loop 4  {
+			Random, val, 1, 365
+			arr.Push((A_Index=1 ? Format("0x{:04X}",val) : val))
+		}
+		LV_Add("", arr*)
+	}
+	LV_ModifyCol("AutoHdr")
+
    ; ----------------------------------------------------------------------------------------------------------------------
    ; DllCall("UxTheme.dll\SetWindowTheme", "Ptr", HHEADER, "Ptr", 0, "Str", "")     ; Win XP
    ; Control, Style, +0x0200, , ahk_id %HHEADER%                                    ; Win XP (HDS_FLAT = 0x0200)
@@ -60,7 +70,7 @@ LV_HeaderCustomDraw(H, M, W, L, IdSubclass, RefData) {
    static ORect         := OHDC + A_PtrSize
    Static OItemSpec     := ORect + 16
    Static OItemState    := OItemSpec + A_PtrSize
-   Static LM := 4       ; left margin of the first column (determined experimentally)
+   Static LM := 0       ; left margin of the first column (determined experimentally)
    Static TM := 6       ; left and right text margins (determined experimentally)
    Global HeaderColors
    ;
@@ -167,7 +177,7 @@ SubclassControl(HCTL, FuncName, Data := 0) {
       DllCall("RemoveWindowSubclass", "Ptr", HCTL, "Ptr", ControlCB[HCTL], "Ptr", HCTL)
       DllCall("GlobalFree", "Ptr", ControlCB[HCTL], "Ptr")
       ControlCB.Delete(HCTL)
-      If (FuncName = "")
+      If !FuncName
          Return True
    }
    If !DllCall("IsWindow", "Ptr", HCTL, "UInt")

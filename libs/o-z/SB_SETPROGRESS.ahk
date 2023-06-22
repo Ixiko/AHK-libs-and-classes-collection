@@ -1,24 +1,23 @@
 ﻿; SB_SetProgress
-; (w) by DerRaphael / Released under the Terms of EUPL 1.0 
+; (w) by DerRaphael / Released under the Terms of EUPL 1.0
 ; see http://ec.europa.eu/idabc/en/document/7330 for details
 
-SB_SetProgress(Value=0,Seg=1,Ops="")
-{
-   ; Definition of Constants   
+SB_SetProgress(Value=0,Seg=1,Ops="") {
+   ; Definition of Constants
    Static SB_GETRECT      := 0x40a      ; (WM_USER:=0x400) + 10
         , SB_GETPARTS     := 0x406
         , SB_PROGRESS                   ; Container for all used hwndBar:Seg:hProgress
         , PBM_SETPOS      := 0x402      ; (WM_USER:=0x400) + 2
         , PBM_SETRANGE32  := 0x406
         , PBM_SETBARCOLOR := 0x409
-        , PBM_SETBKCOLOR  := 0x2001 
+        , PBM_SETBKCOLOR  := 0x2001
         , dwStyle         := 0x50000001 ; forced dwStyle WS_CHILD|WS_VISIBLE|PBS_SMOOTH
 
    ; Find the hWnd of the currentGui's StatusbarControl
    Gui,+LastFound
    ControlGet,hwndBar,hWnd,,msctls_statusbar321
 
-   if (!StrLen(hwndBar)) { 
+   if (!StrLen(hwndBar)) {
       rErrorLevel := "FAIL: No StatusBar Control"     ; Drop ErrorLevel on Error
    } else If (Seg<=0) {
       rErrorLevel := "FAIL: Wrong Segment Parameter"  ; Drop ErrorLevel on Error
@@ -90,13 +89,13 @@ SB_SetProgress(Value=0,Seg=1,Ops="")
                       ,, ahk_id %hwndProg%
          } ; If RegEx FGC
 
-         If ((RegExMatch(ops,"i)(?P<In>[^ ])?range((?P<Lo>\-?\d+)\-(?P<Hi>\-?\d+))?",r)) 
+         If ((RegExMatch(ops,"i)(?P<In>[^ ])?range((?P<Lo>\-?\d+)\-(?P<Hi>\-?\d+))?",r))
               && (rIn!="-") && (rHi>rLo)) {    ; Set new LowRange and HighRange
               SendMessage,0x406,rLo,rHi,,ahk_id %hWndProg%
          } else if ((rIn="-") || (rLo>rHi)) {  ; restore defaults on remove or invalid values
               SendMessage,0x406,0,100,,ahk_id %hWndProg%
          } ; If RegEx Range
-      
+
          If (RegExMatch(ops,"i)\bEnable\b"))
             Control, Enable,,, ahk_id %hWndProg%
          If (RegExMatch(ops,"i)\bDisable\b"))
@@ -116,7 +115,7 @@ SB_SetProgress(Value=0,Seg=1,Ops="")
    If (regExMatch(rErrorLevel,"^FAIL")) {
       ErrorLevel := rErrorLevel
       Return -1
-   } else 
+   } else
       Return hWndProg
 
 }

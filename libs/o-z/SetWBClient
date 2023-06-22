@@ -1,0 +1,122 @@
+﻿;
+; Complex workaround to override "Active scripting" setting
+; and ensure scripts can run within the WebBrowser control.
+;
+; Author: Lexikos
+;
+
+global WBClientSite
+
+SetWBClientSite(wb)
+{
+	interfaces := {
+	(Join,
+		IOleClientSite: [0,3,1,0,1,0]
+		IServiceProvider: [3]
+		IInternetSecurityManager: [1,1,3,4,8,7,3,3]
+	)}
+	unkQI      := RegisterCallback("WBClientSite_QI", "Fast")
+	unkAddRef  := RegisterCallback("WBClientSite_AddRef", "Fast")
+	unkRelease := RegisterCallback("WBClientSite_Release", "Fast")
+	WBClientSite := {_buffers: bufs := {}}, bufn := 0
+	for name, prms in interfaces
+	{
+		bufn += 1
+		bufs.SetCapacity(bufn, (4 + prms.MaxIndex()) * A_PtrSize)
+		buf := bufs.GetAddress(bufn)
+		NumPut(unkQI,      buf + 1*A_PtrSize)
+		NumPut(unkAddRef,  buf + 2*A_PtrSize)
+		NumPut(unkRelease, buf + 3*A_PtrSize)
+		for i, prmc in prms
+			NumPut(RegisterCallback("WBClientSite_" name, "Fast", prmc+1, i), buf + (3+i)*A_PtrSize)
+		NumPut(buf + A_PtrSize, buf + 0)
+		WBClientSite[name] := buf
+	}
+
+	if pOleObject := ComObjQuery(wb, "{00000112-0000-0000-C000-000000000046}")
+	{
+		; IOleObject::SetClientSite
+		DllCall(NumGet(NumGet(pOleObject+0)+3*A_PtrSize), "ptr"
+			, pOleObject, "ptr", WBClientSite.IOleClientSite, "uint")
+		ObjRelease(pOleObject)
+	}
+}
+
+WBClientSite_QI(p, piid, ppvObject)
+{
+	static IID_IUnknown := "{00000000-0000-0000-C000-000000000046}"
+	static IID_IOleClientSite := "{00000118-0000-0000-C000-000000000046}"
+	static IID_IServiceProvider := "{6d5140c1-7436-11ce-8034-00aa006009fa}"
+	iid := _String4GUID(piid)
+	if (iid = IID_IOleClientSite || iid = IID_IUnknown)
+	{
+		NumPut(WBClientSite.IOleClientSite, ppvObject+0)
+		return 0 ; S_OK
+	}
+	if (iid = IID_IServiceProvider)
+	{
+		NumPut(WBClientSite.IServiceProvider, ppvObject+0)
+		return 0 ; S_OK
+	}
+	NumPut(0, ppvObject+0)
+	return 0x80004002 ; E_NOINTERFACE
+}
+
+WBClientSite_AddRef(p)
+{
+	return 1
+}
+
+WBClientSite_Release(p)
+{
+	return 1
+}
+
+WBClientSite_IOleClientSite(p, p1="", p2="", p3="")
+{
+	if (A_EventInfo = 3) ; GetContainer
+	{
+		NumPut(0, p1+0) ; *ppContainer := NULL
+		return 0x80004002 ; E_NOINTERFACE
+	}
+	return 0x80004001 ; E_NOTIMPL
+}
+
+WBClientSite_IServiceProvider(p, pguidService, piid, ppvObject)
+{
+	static IID_IUnknown := "{00000000-0000-0000-C000-000000000046}"
+	static IID_IInternetSecurityManager := "{79eac9ee-baf9-11ce-8c82-00aa004ba90b}"
+	if (_String4GUID(pguidService) = IID_IInternetSecurityManager)
+	{
+		iid := _String4GUID(piid)
+		if (iid = IID_IInternetSecurityManager || iid = IID_IUnknown)
+		{
+			NumPut(WBClientSite.IInternetSecurityManager, ppvObject+0)
+			return 0 ; S_OK
+		}
+		NumPut(0, ppvObject+0)
+		return 0x80004002 ; E_NOINTERFACE
+	}
+	NumPut(0, ppvObject+0)
+	return 0x80004001 ; E_NOTIMPL
+}
+
+WBClientSite_IInternetSecurityManager(p, p1="", p2="", p3="", p4="", p5="", p6="", p7="", p8="")
+{
+	if (A_EventInfo = 5) ; ProcessUrlAction
+	{
+		if (p2 = 0x1400) ; dwAction = URLACTION_SCRIPT_RUN
+		{
+			NumPut(0, p3+0)  ; *pPolicy := URLPOLICY_ALLOW
+			return 0 ; S_OK
+		}
+	}
+	return 0x800C0011 ; INET_E_DEFAULT_ACTION
+}
+
+_String4GUID(pGUID)
+{
+	VarSetCapacity(String, 38*2)
+	DllCall("ole32\StringFromGUID2", "ptr", pGUID, "str", String, "int", 39)
+	return String
+}

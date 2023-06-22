@@ -36,7 +36,7 @@
     lengths := [3,5,5,3,6,4,3,4,3]
     msgbox % """" join(Map_C("SubStr", [string], indexes, lengths), """, """) """"
 
-join(arr, sep = ",") { 
+join(arr, sep = ",") {
     ;simple join script until we get one built in. :) only works with arrays
     loop % ObjMaxIndex(arr)
         ret .= sep (IsObject(arr[A_Index]) ? join(arr[A_Index], sep) : arr[A_Index])

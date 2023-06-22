@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+		<style>
+			html{margin:0;padding:0;overflow:auto;}
+			*{text-shadow:0px 1px 0px #FFFFFF;font-family:tahoma;}
+			div {color: #888888;font-size:30px}
+		</style>
+	</head>
+	<body style="background-color: #dde4ec">
+		<div>Title</div>
+		<p><b>Note:</b>This is an example page.</p>
+		<p>
+			<input type="button" value="AHK Multiply 3 * 9" onclick="my_js_and_ahk_function(3,9)">
+			<button type="button" onclick="normal_js_function()">Normal js alert</button>
+			<br><br><a href="index.html">Goto index</a>
+		</p>
+		<script>
+			function normal_js_function(s) {
+				alert("hello from javascript alone.");
+			}
+			function my_js_and_ahk_function(a,b) {
+				// let AHK do the calculation instead of javascript
+				var result = AHK('Multiply',a,b);
+				alert('AHK + js: '+result);
+			}
+		</script>
+	</body>
+</html>

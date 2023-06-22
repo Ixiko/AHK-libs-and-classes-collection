@@ -11,11 +11,25 @@
     Notas:
         Para hInstance puede utilizar: DllCall('Kernel32.dll\LoadLibraryExW', 'Str', FileName, 'UInt', 0, 'UInt', 0x2, 'Ptr').
         Para liberar hInstance debe utilziar: DllCall('Kernel32.dll\FreeLibrary', 'Ptr', hInstance).
-    Ejemplo:
-        hInstance := DllCall('Kernel32.dll\LoadLibraryExW', 'Str', 'mswsock.dll', 'UInt', 0, 'UInt', 0x2, 'Ptr')
-        MsgBox('String`t:' . LoadString(hInstance, 60100) . '`nErrorLevel`t:' . ErrorLevel)
-        DllCall('Kernel32.dll\FreeLibrary', 'Ptr', hInstance)
-*/
+
+	Loads a string resource from the executable file associated with a specified module and copies the string.
+	Parameters:
+        hInstance: an identifier for an instance of the module whose executable file contains the string resource. To get the identifier to the application itself, call the GetModuleHandle function with 0.
+        uID: The identifier of the string to be loaded.
+	Return:
+        If successful returns the string, otherwise returns an empty string.
+	ErrorLevel:
+        0 = The string was successfully retrieved.
+        1 = An error occurred. This may be because hInstance is invalid or uID does not exist.
+	Notes:
+        For hInstance you can use: DllCall('Kernel32.dll\LoadLibraryExW', 'Str', FileName, 'UInt', 0, 'UInt', 0x2, 'Ptr').
+        To free hInstance you must use: DllCall('Kernel32.dll\FreeLibrary', 'Ptr', hInstance).
+	Example:
+	Ejemplo:
+			hInstance := DllCall('Kernel32.dll\LoadLibraryExW', 'Str', 'mswsock.dll', 'UInt', 0, 'UInt', 0x2, 'Ptr')
+			MsgBox('String`t:' . LoadString(hInstance, 60100) . '`nErrorLevel`t:' . ErrorLevel)
+			DllCall('Kernel32.dll\FreeLibrary', 'Ptr', hInstance)
+		*/
 LoadString(hInstance, uID)
 {
     Local Size, p, String

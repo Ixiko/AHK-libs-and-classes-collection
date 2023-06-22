@@ -1,0 +1,195 @@
+﻿/*
+    AHK Ascii 85 encoder/decoder - v1.0
+    Recommanded fileName : Ascii85.ahk
+    Author : LHdx 2008/03
+    Permission is granted to use copy for commercial or non commercial use provided credit to author is explicitely given.
+
+    USE AT YOUR OWN RISKS !
+
+    Base reference : http://www.autohotkey.com/forum/viewtopic.php?t=21172
+
+    Usage :
+    1) Preliminary : needs MCode.ahk (see http://www.autohotkey.com/forum/viewtopic.php?p=180448#180448)
+    2) To encode, either directly call Encoder() or call AhkEncoder()
+    3) To decode, if you know the source you want to encode, you can call directly Decoder() but in this procedure there is strictly
+       no check to protect from crash ! Or you can call DecodeSize() first to help you identify needed memory allocation and validity of
+       source ASCII85 code, then allocate accordingly and finally call Decoder(). Or forget all this stuff and call AhkDecoder().
+    4) Complements :
+        * The low level code is BY DESIGN not Adobe compliant. To make it adobe-compliant for Encoder(), you must either prepend "<~" and
+          append "~>" to text after calling Encoder(), or use high level AhkEncode(). If you wish to decode adobe-compliant ASCII85, you
+          muse either remove manually <~~> *before* calling DecoderSize()/Decoder(). Failure to do so results in ASCII85 code
+          not being decoded (since ~ is invalid in ASCII85).
+        * This code does not support v4.2 extesion ('y' token to replace a 4 spaces block). You can have a workaround by replacing
+          every "y" by "+<VdL" which is the encoding for 4 spaces using StringReplace.
+        * The DecoderSize() and Decoder() both accept spaces in source ASCII85 buffer, where spaces are ' ', CR, LF.
+        * Low level functions are not fully AHK-ready to enable their use not only to embed code, but to be able to use ASCII85
+          for other general purposes.
+*/
+
+; -=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=-
+;  High level functions
+;  �߼�����
+; -=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=-
+
+/*
+  ����
+  Ascii85_AhkEncoder(ByRef SourceText, SourceSize, ByRef DestinationMemory, NbBytesPerLine=70, UseAdobeEncoding=0)
+  ���� :
+    SourceText : ��Դ���ݣ�������һ������������ָ�룬���߾����
+    SourceSize : ���ݴ�С
+    DestinationMemory : �������
+    NbBytesPerLine : ÿ�е��ֽ������м�ͨ��CR/LF�ָ���ָ��0xFFFFFFFF���ò����С�
+    UseAdobeEncoding (��ѡ) : ����1�����ڱ�����������ʹ��Adobeǰ��׺"<~" "~>"����ʱ�ڽ���ʱ��СҪ+5��Ĭ��0����ʹ�á�
+  ��� :
+    ���أ�����������ݴ�С
+*/
+
+Ascii85_AhkEncoder(ByRef SourceText, SourceSize, ByRef DestinationMemory, NbBytesPerLine=70, UseAdobeEncoding=0) {
+    Delta:=0 ; Dunno why this one is needed here, but is missing, bad results !
+    MemNeeded := ((SourceSize + 3) // 4) * 5
+    If (NbBytesPerLine)
+        MemNeeded += (MemNeeded + NbBytesPerLine - 1) // NbBytesPerLine * 2 + 1 ; add 1 for trailing '\0'
+    If (UseAdobeEncoding) {
+        MemNeeded += 4
+        Delta := 2
+    }
+    VarSetCapacity(DestinationMemory, MemNeeded)
+    TotalBytes:=Ascii85_Encoder(&SourceText, SourceSize, &DestinationMemory + Delta, NbBytesPerLine)
+    If (UseAdobeEncoding) {
+        NumPut(0x7E3C, DestinationMemory, 0, "UShort")
+        NumPut(0x3E7E, DestinationMemory, TotalBytes+Delta, "UShort")
+    }
+    NumPut(0, DestinationMemory, TotalBytes + Delta * 2, "UChar")
+    VarSetCapacity(DestinationMemory, -1)
+    Return TotalBytes + Delta * 2
+}
+
+/*
+  ������������
+  Ascii85_AhkEmbedParser(ByRef SourceText, ByRef DestinationMemory)
+  ���� :
+    SourceText : variable containing ASCII 85 encoded data
+    SourceSize : number of bytes to encode
+    DestinationMemory : variable where parsed data will be stored
+  ��� :
+    ��
+  ��ע :
+    Use this function on data you just encoded to be able to copy/paste it into your AHK code
+    This is mandatory to avoid AHK (tested : v1.0.47.5) complaining about mismatched '%', excessive ',' or invalid text after ')' in
+    a continuation section.
+    �߼�ģʽ�£���Ҫ�øú����������ַ�
+*/
+Ascii85_AhkEmbedParser(ByRef SourceText, ByRef DestinationMemory) {
+    StringReplace, DestinationMemory, SourceText, ``, ````, All
+    StringReplace, DestinationMemory, DestinationMemory, `%, ```%, All
+    StringReplace, DestinationMemory, DestinationMemory, `), ```), All
+}
+
+; -=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=-
+
+/*
+
+  Ascii85_AhkDecoder(ByRef SourceText, ByRef DestinationMemory, SourceSize)
+
+
+*/
+
+Ascii85_AhkDecoder(ByRef SourceText, ByRef DestinationMemory, SourceSize=0xFFFFFFFF){
+    BaseAddress := &SourceText
+    If (NumGet(SourceText, 0, "UShort") = 0x7E3C) {
+        ; We must check size if we don't have it : decoder doesn't recognize Adobe's pre/post-fixes so we'll remove them now
+        If (SourceSize = 0xFFFFFFFF)
+            SourceSize := StrLen(SourceText)
+        If (NumGet(SourceText, SourceSize - 2, "UShort") = 0x3E7E) {
+            BaseAddress += 2
+            SourceSize -= 4
+        }
+    }
+    Result := Ascii85_DecoderSize(BaseAddress, SourceSize)
+    If (Result = 0 || Result >= 0xFFFFFFFE)
+        Return Result
+    VarSetCapacity(DestinationMemory, Result)
+    Return % Ascii85_Decoder(BaseAddress, SourceSize, &DestinationMemory)
+}
+
+; -=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=-
+;  Low level functions
+;  �ͼ�����
+; -=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=-
+
+#Include Mcode.ahk
+
+/*
+  Ascii85_Encoder(SourceText, SourceSize, DestinationMemory, NbBytesPerLine)
+  Input :
+    SourceText : pointer to memory containing binary data to encode
+    SourceSize : number of bytes to encode
+    DestinationMemory : pointer to memory where encoded data will be put (must be pre-allocated with VarSetCapacity, for instance)
+    NbBytesPerLine : will specify how many bytes to store in each line, lines will be separated by CR/LF. you may specify 0xFFFFFFFF to
+      have no line break in output buffer.
+  Output :
+    Returns the number of bytes really stored into DestinationMemory
+  Comments :
+    WARNING : no capacity check is made on Output, so be sure memory buffer is large enough. For S source size reserve at least
+    M0=I((S+3)/4)*5) where I means integral part (drop comma) [note : let x,n integers, (x+n-1)/n <=> x/n rounded up].
+    To add line breaks every N chars, reserve (total) M0+I((M0+N-1)/N)*2
+    If you whish to add C trailing '\0', reserve one more.
+    If you wish to inject data into Adobe format, reserve 4 bytes more for header "<~" and trailer "~>", and add 2 to &DestinationMemory
+    during Encoder() call.
+*/
+
+Ascii85_Encoder(SourceText, SourceSize, DestinationMemory, NbBytesPerLine) {
+    Static lMcode
+    if (!lMcode) {
+        lHcode := "60e81a0000000100000055000000391c0000ed5e0900b1841c030203041810085b89e583c51c83ec048b45148945e0fc8b75088b7d108b4d0c09c9745d83f904"
+        lHcode := lHcode . "7231ad0fc809c0750cb07ae86a000000e9190000005131c9b10583c31483eb0431d2f733e84f00000089d0e2f05983e904ebc651c1e008ace2fa59518a4c0b16"
+        lHcode := lHcode . "d3e0598a4c0b1383c31483eb0431d2f733e82200000089d0e2f08b451483f8ff740b3b45e0740666b80d0a66ab2b7d10897d0083c40461c30421aa8b45e083e8"
+        lHcode := lHcode . "01750966b80d0a66ab8b45148945e0c3"
+        MCode(lMcode, lHcode)
+    }
+    Return DllCall(&lMcode, "UInt", SourceText, "UInt", SourceSize, "UInt", DestinationMemory, "UInt", NbBytesPerLine, "cdecl UInt")
+}
+
+; -=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=-
+
+/*
+  Ascii85_DecoderSize(SourceText, SourceSize)
+
+*/
+
+Ascii85_DecoderSize(SourceText, SourceSize) {
+    Static lMcode
+    if (!lMcode) {
+        lHcode := "608b6c240c83ed0431d231c9fc8b750809f6744b8b5d0ce84d00000074353c7a750583c204ebf0b1053c2172123c75770ee833000000e0f1740f83c204ebdfbafeffffffe9"
+        lHcode := lHcode . "1b00000080f904741183c20429ca09db740d8b5d0c83fbff7405baffffffff89550061c309db7416ac4b08c074103c2074f23c0974ee3c0d74ea3c0a74e6c3"
+        MCode(lMcode, lHcode)
+    }
+    Return DllCall(&lMcode, "UInt", SourceText, "UInt", SourceSize, "cdecl UInt")
+}
+
+; -=-=--=-=--=-=--=-=--=-=--=-=--=-=--=-=-
+
+/*
+
+  Ascii85_Decoder(SourceText, SourceSize, DestinationMemory)
+  Input :
+    SourceText : ASCII data to bring back to binary
+    SourceSize : number of ASCII char to decode
+    DestinationMemory : pointer to memory where decoded binary data will be put (must be pre-allocated with VarSetCapacity, for instance)
+  Output :
+    The number of bytes written in DestinationMemory.
+  Comments :
+    Call this function using a large enough buffer for MemoryDestination - use DecoderSize if you're unsure of the buffer capacity needed.
+    Decoder() does no check and can therefor crash AHK if misused (invalid input buffer or insufficient allocation for DestinationMemory).
+    The functions have been separated only for those who know exactly what they do to be able to achieve higher decoding speed.
+*/
+
+Ascii85_Decoder(SourceText, SourceSize, DestinationMemory){
+    Static lMcode
+    if (!lMcode) {
+        lHcode := "608b6c240c83ed0431d231c9fc8b75088b7d108b5d0c31c0e84f00000074453c7a750531c0abebeeb1042c2189c231c0e83700000074132c215031c0b055f7e25a01d0e2"
+        lHcode := lHcode . "e70fc8abebcc5131c0b055f7e283c05489c2e2f359f7d983c104c1c008aae2fa2b7d10897d0061c309db7416ac4b08c074103c2074f23c0974ee3c0d74ea3c0a74e6c3"
+        MCode(lMcode, lHcode)
+    }
+    Return DllCall(&lMcode, "UInt", SourceText, "UInt", SourceSize, "UInt", DestinationMemory, "cdecl UInt")
+}

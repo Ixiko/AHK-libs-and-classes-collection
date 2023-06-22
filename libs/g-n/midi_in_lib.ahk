@@ -1,4 +1,4 @@
-midi_in_Open(defaultDevID = -1)
+﻿midi_in_Open(defaultDevID = -1)
 {
 	global
 	if ((midi_in_hModule := DllCall("LoadLibrary", Str,A_ScriptDir . "\midi_in.dll")) == 0)

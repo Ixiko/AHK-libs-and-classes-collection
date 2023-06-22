@@ -1,4 +1,4 @@
-;
+﻿;
 ; Midi.ahk
 ; Add MIDI input event handling to your AutoHotkey scripts
 ;

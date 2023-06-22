@@ -1,4 +1,4 @@
-			q:: 
+﻿			q:: 
 		
 			ContextMenuSelectSubMenu(hMenu,"Se&nd to", "Desktop (create shortcut)")  
 			;ContextMenuSelect(hMenu,"&Print")

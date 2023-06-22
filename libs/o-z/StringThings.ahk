@@ -12,7 +12,7 @@ Credit:
    rbrtryn     --- group()
    Rseding91   --- Optimizing LineWrap and WordWrap.
    Verdlin     --- st_concat(), A couple nifty forum-only functions.
-   
+
 Description:
    A compilation of commonly needed function for strings and arrays.
 
@@ -78,8 +78,7 @@ Insert
 example: st_insert("aaa", "cccbbb", 1)
 output:  aaabbbccc
 */
-ST_Insert(insert,input,pos=1)
-{
+ST_Insert(insert,input,pos=1){
 	Length := StrLen(input)
 	((pos > 0) ? (pos2 := pos - 1) : (((pos = 0) ? (pos2 := StrLen(input),Length := 0) : (pos2 := pos))))
 	output := SubStr(input, 1, pos2) . insert . SubStr(input, pos, Length)
@@ -110,8 +109,7 @@ Overwrite
 example: st_overwrite("zzz", "aaabbbccc", 4)
 output:  aaazzzccc
 */
-st_overwrite(overwrite, into, pos=1)
-{
+st_overwrite(overwrite, into, pos=1){
    If (abs(pos) > StrLen(into))
       return 0
    else If (pos>0)
@@ -142,8 +140,7 @@ Delete
 example: st_delete("aaabbbccc", 4, 3)
 output:  aaaccc
 */
-st_delete(string, start=1, length=1)
-{
+st_delete(string, start=1, length=1){
    if (abs(start+length) > StrLen(string))
       return 0
    if (start>0)
@@ -171,8 +168,7 @@ Format
 example: st_format("aaa & bbb && ccc & ddd", 111, 222)
 output:  aaa 111 bbb & ccc 222 ddd
 */
-st_format(string, params*)
-{
+st_format(string, params*){
    while (pos:=RegExMatch(string, "(.*?)(?<!&)&(?!&)", match, ((pos) ? pos : 1)+StrLen(match)))
    {
       new.=match1 params[a_index]
@@ -187,7 +183,7 @@ st_format(string, params*)
 /*
 Pad
    Add character(s) to either side of the input string.
-   
+
    string = What text you want to add stuff to either side.
    left   = The text you want to add to the left side.
    right  = The text you want to add to the right side.
@@ -197,8 +193,7 @@ Pad
 example: st_pad("aaa", "+", "-^", 5)
 output: +++++aaa-^
 */
-st_pad(string, left="0", right="", LCount=1, RCount=1)
-{
+st_pad(string, left="0", right="", LCount=1, RCount=1){
    if (LCount>0)
    {
       if (LCount>1)
@@ -239,14 +234,13 @@ outputs: def.x
 example: st_Word("c:\abc\def.x", -2, "\")
 outputs: abc
 */
-st_word(string, wordNum=1, Delim=" ", temp="¢")
-{
+st_word(string, wordNum=1, Delim=" ", temp="¢"){
    ;Make sure delim is only one character
    if (StrLen(delim)>1)
       StringReplace, string, string, %Delim%, %temp%, All
    else
       temp:=Delim
-      
+
    If (wordNum < 0)
       StringReplace, string, string, %temp%, %temp%, UseErrorLevel ;Count # occurences
    MaxInd := ++ErrorLevel
@@ -270,12 +264,11 @@ st_subString (Made by, AfterLemon. Thanks!)
 
 Returns:
    A string based on the criteria passed to it.
-   
+
 Example: st_subString("111|222|333.444|555|444.777|888|999", "|","L",4)
 Outputs:  111|222|333.444|555
 */
-st_subString(string,search1,direction:="R",match:=1,search2:="",CaseSensitive:="")
-{ ;Credit @ AfterLemon
+st_subString(string,search1,direction:="R",match:=1,search2:="",CaseSensitive:=""){ ;Credit @ AfterLemon
 	s:=string,A=search1,d=direction,m=match,B=Search2,V=CaseSensitive,c=InStr(s,A,V),(d="B"&&B=""?B:=A:"")
 	StringCaseSense,% (V?"On":"Off")
 	StringReplace,s,s,%A%,%A%,UseErrorLevel
@@ -302,8 +295,7 @@ Jumble
 example: st_jumble("Jumble made by faqbot and others", 1, " ")
 outputs: nd oJumtherot able  by smadefaqb
 */
-st_jumble(Text, Weight=1, Delim = "`n", Omit = "`r")
-{
+st_jumble(Text, Weight=1, Delim = "`n", Omit = "`r"){
    If (StrLen(Text) <= 1) ; added safety check ...
       Return Text
    Text0:=1
@@ -323,10 +315,10 @@ st_jumble(Text, Weight=1, Delim = "`n", Omit = "`r")
       If (NewOrder != OldOrder)
          Break
    }
-   
+
    Loop, parse, NewOrder, |
    Output .= Text%A_LoopField%
-   Return Trim(Output,Delim)    
+   Return Trim(Output,Delim)
 }
 
 
@@ -341,8 +333,7 @@ Concat
 example: st_concat("|", 111, 222, 333, "abc")
 outputs: 111|222|333|abc
 */
-st_concat(delim, as*)
-{
+st_concat(delim, as*){
 	for k, v in as
 		s .= v . delim
 	return subStr(s,1,-strLen(delim))
@@ -366,8 +357,7 @@ insertLine
 example: st_insertLine("bbb", "aaa|ccc|ddd", 2, "|")
 output:  aaa|bbb|ccc|ddd
 */
-st_insertLine(insert, into, line, delim="`n", exclude="`r")
-{
+st_insertLine(insert, into, line, delim="`n", exclude="`r"){
    StringReplace, into, into, %delim%, %delim%, UseErrorLevel
    count:=errorlevel+1
 
@@ -410,8 +400,7 @@ DeleteLine
 example: st_deleteLine("aaa|bbb|777|ccc", 3, "|")
 output:  aaa|bbb|ccc
 */
-st_deleteLine(string, line, delim="`n", exclude="`r")
-{
+st_deleteLine(string, line, delim="`n", exclude="`r"){
    ; checks to see if we are trying to delete a non-existing line.
    StringReplace, string, string, %delim%, %delim%, UseErrorLevel
    count:=ErrorLevel+1
@@ -449,8 +438,7 @@ ReadLine
 example: st_readLine("aaa|bbb|ccc|ddd|eee|fff", 4, "|")
 output:  ddd
 */
-st_readLine(string, line, delim="`n", exclude="`r")
-{
+st_readLine(string, line, delim="`n", exclude="`r"){
    StringReplace, string, string, %delim%, %delim%, UseErrorLevel
    count:=ErrorLevel+1
 
@@ -486,8 +474,7 @@ Count
 example: st_count("aaa`nbbb`nccc`nddd", "`n")+1 ; add one to count the last line
 output:  4
 */
-st_count(string, searchFor="`n")
-{
+st_count(string, searchFor="`n"){
    StringReplace, string, string, %searchFor%, %searchFor%, UseErrorLevel
    return ErrorLevel
 }
@@ -496,10 +483,10 @@ st_count(string, searchFor="`n")
 /*
 LineWrap
    Wrap the specified text so each line is never more than a specified length.
-   
+
    This function does not care if it is in the middle of a word, it will
    split up any word if it exceedes the limit.
-   
+
    string     = What text you want to wrap.
    column     = The column where you want to split. Each line will never be longer than this.
    indentChar = You may optionally indent any lines that get broken up. Specify
@@ -510,8 +497,7 @@ aaabbbcccdddeeefffgg
 ---ghhhiiijjjkkklllm
 ---mmnnnoooppp
 */
-st_lineWrap(string, column= 56, indentChar= "")
-{
+st_lineWrap(string, column= 56, indentChar= ""){
     CharLength := StrLen(indentChar)
     , columnSpan := column - CharLength
     , Ptr := A_PtrSize ? "Ptr" : "UInt"
@@ -519,7 +505,7 @@ st_lineWrap(string, column= 56, indentChar= "")
     , UnicodeModifier := A_IsUnicode ? 2 : 1
     , VarSetCapacity(out, (StrLen(string) + (Ceil(StrLen(string) / columnSpan) * (column + CharLength + 1))) * UnicodeModifier, 0)
     , A := &out
-     
+
     loop, parse, string, `n, `r
         If ((FieldLength := StrLen(ALoopField := A_LoopField)) > column)
         {
@@ -528,13 +514,13 @@ st_lineWrap(string, column= 56, indentChar= "")
             , NumPut(10, A+0, 0, NewLineType)
             , A += UnicodeModifier
             , Pos := column
-             
+
             While (Pos < FieldLength)
             {
                 If CharLength
                     DllCall("RtlMoveMemory", Ptr, A, Ptr, &indentChar, "UInt", CharLength * UnicodeModifier)
                     , A += CharLength * UnicodeModifier
-                 
+
                 If (Pos + columnSpan > FieldLength)
                     DllCall("RtlMoveMemory", Ptr, A, Ptr, &ALoopField + (Pos * UnicodeModifier), "UInt", (FieldLength - Pos) * UnicodeModifier)
                     , A += (FieldLength - Pos) * UnicodeModifier
@@ -543,7 +529,7 @@ st_lineWrap(string, column= 56, indentChar= "")
                     DllCall("RtlMoveMemory", Ptr, A, Ptr, &ALoopField + (Pos * UnicodeModifier), "UInt", columnSpan * UnicodeModifier)
                     , A += columnSpan * UnicodeModifier
                     , Pos += columnSpan
-                 
+
                 NumPut(10, A+0, 0, NewLineType)
                 , A += UnicodeModifier
             }
@@ -552,7 +538,7 @@ st_lineWrap(string, column= 56, indentChar= "")
             , A += FieldLength * UnicodeModifier
             , NumPut(10, A+0, 0, NewLineType)
             , A += UnicodeModifier
-     
+
     VarSetCapacity(out, -1)
     Return SubStr(out,1, -1)
 }
@@ -561,24 +547,23 @@ st_lineWrap(string, column= 56, indentChar= "")
 /*
 WordWrap
    Wrap the specified text so each line is never more than a specified length.
-  
+
    Unlike st_lineWrap(), this function tries to take into account for words (separated by a space).
-   
+
    string     = What text you want to wrap.
    column     = The column where you want to split. Each line will never be longer than this.
    indentChar = You may optionally indent any lines that get broken up. Specify
                 What character or string you would like to define as the indent.
-                
+
 example: st_wordWrap("Apples are a round fruit, usually red.", 20, "---")
 output:
 Apples are a round
 ---fruit, usually
 ---red.
 */
-st_wordWrap(string, column=56, indentChar="")
-{
+st_wordWrap(string, column=56, indentChar=""){
     indentLength := StrLen(indentChar)
-     
+
     Loop, Parse, string, `n, `r
     {
         If (StrLen(A_LoopField) > column)
@@ -591,12 +576,12 @@ st_wordWrap(string, column=56, indentChar="")
                 Else
                     pos := loopLength + 1 + indentLength
                     , out .= "`n" indentChar A_LoopField
-             
+
             out .= "`n"
         } Else
             out .= A_LoopField "`n"
     }
-     
+
     Return SubStr(out, 1, -1)
 }
 
@@ -628,8 +613,7 @@ SetCase
 example: st_setCase("ABCDEFGH", "l")
 output:  abcdefgh
 */
-st_setCase(string, case="s")
-{
+st_setCase(string, case="s"){
    if (case=1 || case="u" || case="up" || case="upper" || case="uppercase")
       StringUpper, new, string
    else if (case=2 || case="l" || case="low" || case="lower" || case="lowercase")
@@ -686,8 +670,7 @@ Flip
 example: st_flip("aaabbbccc")
 output:  cccbbbaaa
 */
-st_flip(string)
-{
+st_flip(string){
    VarSetCapacity(new, n:=StrLen(string))
    Loop %n%
       new .= SubStr(string, n--, 1)
@@ -707,8 +690,7 @@ RemoveDuplicates
 example: st_removeDuplicates("aaa|bbb|||ccc||ddd", "|")
 output:  aaa|bbb|ccc|ddd
 */
-st_removeDuplicates(string, delim="`n")
-{
+st_removeDuplicates(string, delim="`n"){
    delim:=RegExReplace(delim, "([\\.*?+\[\{|\()^$])", "\$1")
    Return RegExReplace(string, "(" delim ")+", "$1")
 }
@@ -721,10 +703,10 @@ contains
    mixed   = The text or array* you want to search.
    lookFor = The list of stuff to search for, separated by a comma. You
              may use an array as an input aswell.
-             
+
    * When using an array/object in the string parameter, it only search the
    first level of the array. It will not go into sub-levels.
-             
+
    Returns:
       1 on success
       0 on failure
@@ -732,8 +714,7 @@ contains
 example: st_contains("aaa|bbb|ccc|ddd", "deer", "cat", "bbb", "ball")
 output:  1
 */
-st_contains(mixed, lookFor*)
-{
+st_contains(mixed, lookFor*){
    if (IsObject(mixed))
    {
       for key1,input in mixed
@@ -754,7 +735,7 @@ st_contains(mixed, lookFor*)
 /*
 Group
    Add a separator at a set interval
-   
+
    string         = The text where separators will be inserted
    size           = How big each group should be. The distance between each separator
    separator      = The string/symbol you want to separate each group by
@@ -765,8 +746,7 @@ Group
 example: st_group(28753782365, 3, ",")
 output: 28,753,782,365
 */
-st_group(string, size, separator, perLine=1, startFromFront=0)
-{
+st_group(string, size, separator, perLine=1, startFromFront=0){
    if (startFromFront==1)
       needle:=".{" size "}"
    Else
@@ -793,14 +773,14 @@ st_columnize
 	delim   = [Optional] What separates each set of data? It can be a string or it can
 	          be the word "csv" to treat it as a CSV document.
 	justify = [Optional] Specify 1 to align the data to the left of the column, 2 for
-	          aligning to the right or 3 to align centered. You may enter a 
-	          string such as "2|1|3" to adjust columns specifically. Columns are 
+	          aligning to the right or 3 to align centered. You may enter a
+	          string such as "2|1|3" to adjust columns specifically. Columns are
 	          separeted by |.
 	pad     = [Optional] The string that should fill in shorter column items to match
 	          the longest item.
 	colsep  = [Optional] What string should go between every column?
 
-example: 
+example:
 	data=
 	(
 	"Date","Pupil","Grade"
@@ -810,7 +790,7 @@ example:
 	"15 July","Bloggs, Fred","A"
 	"15 April","Muniz, Alvin ""Hank""","A"
 	)
-	output:=Columnize(data, "csv", 2)  
+	output:=Columnize(data, "csv", 2)
 
 output:
 	    Date |               Pupil | Grade
@@ -820,11 +800,10 @@ output:
 	 15 July |        Bloggs, Fred |     A
 	15 April | Muniz, Alvin "Hank" |     A
 */
-st_columnize(data, delim="csv", justify=1, pad=" ", colsep=" | ")
-{		
+st_columnize(data, delim="csv", justify=1, pad=" ", colsep=" | "){
 	widths:=[]
 	dataArr:=[]
-	
+
 	if (instr(justify, "|"))
 		colMode:=strsplit(justify, "|")
 	else
@@ -835,7 +814,7 @@ st_columnize(data, delim="csv", justify=1, pad=" ", colsep=" | ")
 		if (A_LoopField="")
 			continue
 		row:=a_index
-		
+
 		if (delim="csv")
 		{
 			loop, parse, A_LoopField, csv
@@ -894,7 +873,7 @@ st_columnize(data, delim="csv", justify=1, pad=" ", colsep=" | ")
 					if (justify=2)
 						stuff:=SubStr(padSymbol, 1, difference) stuff
 					else ; left justify by default.
-						stuff:= stuff SubStr(padSymbol, 1, difference) 
+						stuff:= stuff SubStr(padSymbol, 1, difference)
 				}
 			}
 			out.=stuff ((col!=maxc) ? colsep : "")
@@ -916,22 +895,21 @@ Center
    delim   = The string which defines a "line".
    exclude = The text you want to ignore when defining a line.
 
-  
+
 example: st_center("aaa`na`naaaaaaaa")
 output:
   aaa
    a
 aaaaaaaa
 */
-st_center(text, fill=" ", symFIll=0, delim= "`n", exclude="`r")
-{
+st_center(text, fill=" ", symFIll=0, delim= "`n", exclude="`r"){
 	fill:=SubStr(fill,1,1)
 	loop, parse, text, %delim%, %exclude%
 		if (StrLen(A_LoopField)>longest)
 			longest:=StrLen(A_LoopField)
 	loop, parse, text, %delim%, %exclude%
 	{
-		filled:=""		
+		filled:=""
 		loop, % floor((longest-StrLen(A_LoopField))/2)
 			filled.=fill
 		new.= filled A_LoopField ((symFIll=1) ? filled : "") "`n"
@@ -955,8 +933,7 @@ output:
        a
 aaaaaaaa
 */
-st_right(text, fill=" ", delim= "`n", exclude="`r")
-{
+st_right(text, fill=" ", delim= "`n", exclude="`r"){
 	fill:=SubStr(fill,1,1)
 	loop, parse, text, %delim%, %exclude%
 		if (StrLen(A_LoopField)>longest)
@@ -987,8 +964,7 @@ Split
 example: st_split("aaa|bbb|ccc")
 output:  array("aaa", "bbb", "ccc")
 */
-st_split(string, delim="`n", exclude="`r")
-{
+st_split(string, delim="`n", exclude="`r"){
    arr:=[]
    loop, parse, string, %delim%, %exclude%
       arr.insert(A_LoopField)
@@ -1006,8 +982,7 @@ Glue
 example: st_glue(arr, "|") ; where arr is an array containing: ["aaa", "bbb", "ccc"]
 output:  aaa|bbb|ccc
 */
-st_glue(array, delim="`n")
-{
+st_glue(array, delim="`n"){
    for k,v in array
       new.=v delim
    return trim(new, delim)
@@ -1036,8 +1011,7 @@ output:
     [2] ==> 222
     [3] ==> 333
 */
-st_printArr(array, depth=5, indentLevel="")
-{
+st_printArr(array, depth=5, indentLevel=""){
    for k,v in Array
    {
       list.= indentLevel "[" k "]"
@@ -1051,7 +1025,7 @@ st_printArr(array, depth=5, indentLevel="")
 }
 
 /*
-; this version by AfterLemon is shorter and better. It fixes some bugs. 
+; this version by AfterLemon is shorter and better. It fixes some bugs.
 ; It also looks nicer. However, I keep both versions available since it's quite
 ; hard to read :D
 st_printArr(array,depth:=10,indentLevel:="     ")
@@ -1075,8 +1049,7 @@ countArr
 example: st_countArr([["aaa","bbb","ccc"],[111,222,333]])
 output: 8
 */
-st_countArr(array, depth=5, count=0)
-{
+st_countArr(array, depth=5, count=0){
    for k,v in Array
    {
       if (IsObject(v) && depth>1)
@@ -1090,7 +1063,7 @@ st_countArr(array, depth=5, count=0)
 /*
 RandomArr
    Returns a random value from an array.
-   
+
    array   = The array object you want to pick something from. Don't include the []'s.
    min     = The optional minimum index value to search in.
    max     = The optional maximum index to search in. If not specified, it'll
@@ -1099,8 +1072,7 @@ RandomArr
 example: st_randomArr(["aaa", "bbb", "ccc", "ddd"])
 output: ccc
 */
-st_randomArr(array, min=0, max=0, timeout=3000)
-{
+st_randomArr(array, min=0, max=0, timeout=3000){
    start:=A_TickCount
    while (!array.HasKey(random))
    {

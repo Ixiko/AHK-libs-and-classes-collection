@@ -12,7 +12,7 @@
 	; example for adding icons to listview columns > the first
 	; after Drugwash: http://www.autohotkey.com/forum/post-234198.html#234198
 
-	#Include LV_SetSI.ahk
+	;#Include LV_SetSI.ahk
 
 	Gui, add, ListView,	w600 h400		+LV0x2 HwndHLV, Name|Size|Ext
 	ImageListID := IL_Create(10)

@@ -9,27 +9,27 @@
 
 
     ;
-    ;          /$$$$$$$                            /$$                    
-    ;          | $$__  $$                          | $$                    
-    ;  /$$$$$$ | $$  \ $$  /$$$$$$   /$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$ 
+    ;          /$$$$$$$                            /$$
+    ;          | $$__  $$                          | $$
+    ;  /$$$$$$ | $$  \ $$  /$$$$$$   /$$$$$$   /$$$$$$$  /$$$$$$   /$$$$$$
     ; /$$__  $$| $$$$$$$/ /$$__  $$ |____  $$ /$$__  $$ /$$__  $$ /$$__  $$
     ;| $$$$$$$$| $$__  $$| $$$$$$$$  /$$$$$$$| $$  | $$| $$$$$$$$| $$  \__/
-    ;| $$_____/| $$  \ $$| $$_____/ /$$__  $$| $$  | $$| $$_____/| $$      
-    ;|  $$$$$$$| $$  | $$|  $$$$$$$|  $$$$$$$|  $$$$$$$|  $$$$$$$| $$      
-    ; \_______/|__/  |__/ \_______/ \_______/ \_______/ \_______/|__/      
-    ;                                                                      
-    ;                                                                      
-    ;                                                                      
-    ;              /$$$$$$  /$$                                            
-    ;             /$$__  $$| $$                                            
-    ;            | $$  \__/| $$  /$$$$$$   /$$$$$$$ /$$$$$$$               
-    ;            | $$      | $$ |____  $$ /$$_____//$$_____/               
-    ;            | $$      | $$  /$$$$$$$|  $$$$$$|  $$$$$$                
-    ;            | $$    $$| $$ /$$__  $$ \____  $$\____  $$               
-    ;            |  $$$$$$/| $$|  $$$$$$$ /$$$$$$$//$$$$$$$/               
-    ;             \______/ |__/ \_______/|_______/|_______/                
-    ;                                                                      
-    ;                         By Casper Harkin 31/07/2020                                             
+    ;| $$_____/| $$  \ $$| $$_____/ /$$__  $$| $$  | $$| $$_____/| $$
+    ;|  $$$$$$$| $$  | $$|  $$$$$$$|  $$$$$$$|  $$$$$$$|  $$$$$$$| $$
+    ; \_______/|__/  |__/ \_______/ \_______/ \_______/ \_______/|__/
+    ;
+    ;
+    ;
+    ;              /$$$$$$  /$$
+    ;             /$$__  $$| $$
+    ;            | $$  \__/| $$  /$$$$$$   /$$$$$$$ /$$$$$$$
+    ;            | $$      | $$ |____  $$ /$$_____//$$_____/
+    ;            | $$      | $$  /$$$$$$$|  $$$$$$|  $$$$$$
+    ;            | $$    $$| $$ /$$__  $$ \____  $$\____  $$
+    ;            |  $$$$$$/| $$|  $$$$$$$ /$$$$$$$//$$$$$$$/
+    ;             \______/ |__/ \_______/|_______/|_______/
+    ;
+    ;                         By Casper Harkin 31/07/2020
 
 
     Class eReader {
@@ -45,7 +45,7 @@
             ; Showing the GUI using Coordinates bassed on the Parent GUI (PDR Toolbar)
             Gui, Show, x5 y552,
 
-            ; Because this is inside a class, we have to bind ContextMenuHandler to BoundMenu 
+            ; Because this is inside a class, we have to bind ContextMenuHandler to BoundMenu
             ; so we can reference it when pointing our menus to This.ContextMenuHandler
             BoundMenu := this.ContextMenuHandler.bind(this)
 
@@ -94,7 +94,7 @@
         WM_LBUTTONUP(wParam, lParam, Msg, Hwnd) {
             DllCall("TrackMouseEvent", "UInt", &TME)
             MouseGetPos,,,, MouseCtrl, 2
-            If KeyIsDown := GetKeyState("Shift","p") {
+            If (KeyIsDown := GetKeyState("Shift","p")) {
                 If (MouseCtrl = __Handles.hDisplayEditControl) {
                     ControlGetPos, ctlX, ctlY, ctlW, ctlH, , % "ahk_id " __Handles.hDisplayEditControl
                     Menu, FileMenu, Show, %ctlX%, % ctlY + ctlH
@@ -134,9 +134,9 @@
         }
 
         SetParentByTitle(Window_Title_Text, Gui_Number) {
-            WinGetTitle, Window_Title_Text_Complete, %Window_Title_Text% 
-            Parent_Handle := DllCall( "FindWindowEx", "uint",0, "uint",0, "uint",0, "str", Window_Title_Text_Complete) 
-            Gui, %Gui_Number%: +LastFound 
+            WinGetTitle, Window_Title_Text_Complete, %Window_Title_Text%
+            Parent_Handle := DllCall( "FindWindowEx", "uint",0, "uint",0, "uint",0, "str", Window_Title_Text_Complete)
+            Gui, %Gui_Number%: +LastFound
             Return DllCall( "SetParent", "uint", WinExist(), "uint", Parent_Handle )
         }
     }
