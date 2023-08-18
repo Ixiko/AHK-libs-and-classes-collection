@@ -1,10 +1,23 @@
-﻿splashProgress(text, timeout=0){ ; Pass text to display splash popup window. Timeout defaults to off.
+﻿#Persistent
+splashProgress("Go off in my time..", -10000)
+
+return
+splashProgress(text, timeout=0){ ; Pass text to display splash popup window. Timeout defaults to off.
 	global
-	IniRead()
-	if timeout <> 0
-		SetTimer, progressTimeout, %timeout%
-	Progress, show CT%header_color% CW%background% fm20 WS700 c00 x0 w300 h125 zy60 zh0 B0, , %text%,, %header% 
+
+	if (timeout <> 0) {
+		startTime := A_TickCount
+		stext := text
+		stimeout := timeout
+		SetTimer, progressTimeout	, % timeout
+		SetTimer, progressUpdate	, 100
+	}
+	Progress, show CTDDDDDD CW202020 fm20 WS700 c00 xCenter yCenter w350 h105 zy60 zh0 B0, , %text%,, %header%
 }
+progressUpdate:
+	progress,,, % stext " " Abs(stimeout) - (A_TickCount-startTime)
+	return
 progressTimeout:
 	Progress, Off
-	Return 
+	ExitApp
+	Return

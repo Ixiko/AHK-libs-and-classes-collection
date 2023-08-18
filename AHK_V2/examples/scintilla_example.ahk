@@ -3,7 +3,7 @@
 ; Example
 ; ====================================================================
 
-#Include scintilla.ahk
+#Include %A_ScriptDir%\..\class_scintilla.ahk
 
 (Scintilla) ; Init class, or simply #INCLUDE the extension-lib at the top.
 
@@ -54,13 +54,13 @@ ctl.SyntaxCommentLine := ";" ; set this to "//" to load up CustomLexer.c, or to 
 ; Setting DLL punct and word chars:
 ;
 ; Below are the defaults for punct and word chars for the DLL.  Setting
-; punct and word chars for Scintilla has a different purpose and a 
+; punct and word chars for Scintilla has a different purpose and a
 ; slightly different effect.  It's also kinda of squirrely.  Since it is
 ; possible to use a direct pointer to parse Scintilla text I leave the
 ; Scintilla defaults for punct and word chars alone.
 ;
 ; You'll notice that the punct defaults also contain braces, escape
-; chars, and of course " and '.  The search for punct chars happens 
+; chars, and of course " and '.  The search for punct chars happens
 ; after searching for those other elements, and thus doesn't affect
 ; how braces, strings, and escape chars function.
 ;
@@ -145,16 +145,16 @@ gui_close(*) {
 
 F2::{
     global ctl
-    
+
     msgbox ctl.CurPos " / style: " ctl.GetStyle(ctl.curPos) " / lines on screen: " ctl.LinesOnScreen
 }
 
 F3::{
     global ctl
-    
+
     ; msgbox ctl.GetChar(ctl.CurPos)
     msgbox ctl.LineLength() "`n`n" ctl.LineText()
-    
+
     ; msgbox "curPos: " ctl.curPos " / match: " ctl.Brace.Match(ctl.curPos) " / last style: " ctl.Styling.Last
 }
 

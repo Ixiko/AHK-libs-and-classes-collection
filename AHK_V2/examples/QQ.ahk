@@ -1,4 +1,4 @@
-#Include '..\XCGUI.ahk'
+#Include '..\class_XCGUI.ahk'
 DllCall('LoadLibrary', 'str', '..\' (A_PtrSize * 8) 'bit\xcgui.dll')
 XC.InitXCGUI()
 bRes := XC.LoadResource('resource.res')

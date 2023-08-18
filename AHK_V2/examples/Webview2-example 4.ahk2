@@ -1,4 +1,4 @@
-#include WebView2.ahk
+#include %A_ScriptDir%\..\webview2.ahk
 
 NavUri := "https://www.google.com"
 

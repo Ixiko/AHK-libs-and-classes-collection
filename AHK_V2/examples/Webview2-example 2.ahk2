@@ -1,4 +1,4 @@
-#include WebView2.ahk
+#include %A_ScriptDir%\..\WebView2.ahk
 
 HtmlSite := "https www.google.com "  Broken Link for safety
 

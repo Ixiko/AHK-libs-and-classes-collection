@@ -1,5 +1,5 @@
-#include WebView2.ahk
-#include imagedata.ahk
+#include %A_ScriptDir%\..\webview2.ahk
+#include %A_ScriptDir%\..\imagedata.ahk
 
 On_Click(iClick){
     Switch(iClick){

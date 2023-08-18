@@ -1,4 +1,4 @@
-﻿/*
+﻿;~ /*
 Gui +Owner +LastFound
   Gui_ID := WinExist()
 
@@ -67,7 +67,7 @@ Button6_Function(hwnd, t)   {
 GuiClose:
 ExitApp
 
-*/
+;~ */
 
 
 ; xButton by: Weston Stover
