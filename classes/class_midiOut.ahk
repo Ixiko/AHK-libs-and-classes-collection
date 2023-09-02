@@ -125,13 +125,30 @@ class MidiOut
     {
       return (DllCall("winmm\midiOutReset", "ptr", this._handle)!=0) ? "" : 1
     }
-    noteOn(note, velocity=127)
+    setDefaultChannel(channel)
     {
-      this.channel[this.defaultChannel].noteOn(note, velocity)
+      result := False
+      if (1 <= channel or channel <= 16)
+      {
+        this.defaultChannel := channel
+        result := True
+      }
+      return result
     }
-    noteOff(note="all", velocity=127)
+    controlChange(control, value, channel = 0)
     {
-      this.channel[this.defaultChannel].noteOff(note, velocity)
+      channel := (channel<1||channel>16) ? this.defaultChannel : channel
+      this.channel[channel].controlChange(control, value)
+    }     
+    noteOn(note, velocity=127, channel=0)
+    {
+      channel := (channel<1||channel>16) ? this.defaultChannel : channel
+      this.channel[channel].noteOn(note, velocity)
+    }
+    noteOff(note="all", channel=0, velocity=127)
+    {
+      channel := (channel<1||channel>16) ? this.defaultChannel : channel
+      this.channel[channel].noteOff(note, velocity)
     }
     selectInstrument(instrument=0)
     {
@@ -164,8 +181,12 @@ class MidiOut
         {
             note := this._noteValue(note)
             this._notes[note, velocity] := 1
-            return this._midiOut._message(((velocity&0xff)<<16)|((note&0xff)<<8)|((this._channelID)|0xf)|0x90)
+            return this._midiOut._message(((velocity&0xff)<<16)|((note&0xff)<<8)|(this._channelID|0x90))
         }
+        controlChange(control, value)
+        {
+            return this._midiOut._message(((value&0xff)<<16)|((control&0xff)<<8)|(this._channelID|0xB0))
+        }         
         noteOff(note="all", velocity=127)
         {
             note := this._noteValue(note)
@@ -180,12 +201,12 @@ class MidiOut
                 return 1
             }
             this._notes[note].remove(velocity)
-            return this._midiOut._message(((velocity&0xff)<<16)|((note&0xff)<<8)|((this._channelID)|0xf)|0x80)
+            return this._midiOut._message(((velocity&0xff)<<16)|((note&0xff)<<8)|(this._channelID|0x80))
         }
         selectInstrument(instrument=0)
         {
             this._instrument := instrument
-            return this._midiOut._message(((instrument&0xff)<<8)|((this._channelID)|0xf)|0xC0)
+            return this._midiOut._message(((instrument&0xff)<<8)|(this._channelID|0xC0))
         }
         _noteValue(note)
         {
